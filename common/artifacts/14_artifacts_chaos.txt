@@ -1,0 +1,161 @@
+###################
+# CHAOS ARTIFACTS #
+###################
+
+### EVERCHOSEN STUFF
+
+armor_of_morkar = {
+	martial = 3
+	diplomacy = 2
+	combat_rating = 30
+	monthly_character_piety = 1.0
+	quality = 10
+	active = {
+		trait = everchosen
+	}
+	flags = { everchosen armor armour_defence_10 armoured_caster }
+	picture = "GFX_armor_of_morkar"
+	stacking = no
+	slot = torso
+	indestructible = yes
+}
+
+crown_of_domination = {
+	quality = 10
+	vassal_opinion = 10
+	monthly_character_piety = 1
+	diplomacy = 5
+	active = {
+		trait = everchosen
+		can_wear_helmet = yes
+	}
+	flags = { crown jewelry crown_jewel }
+	stacking = no
+	picture = "GFX_crown_of_domination"
+
+	slot = crown
+}
+
+eye_of_sheerian = {
+	monthly_character_piety = 1
+	stewardship = 5
+	quality = 10
+	active = { trait = everchosen }
+	flags = { event diamond curse }
+	stacking = no
+	allowed_gift = {
+		always = no
+	}
+	picture = "GFX_eye_of_sheerian"
+	slot = neck
+}
+
+slayer_of_kings = {
+	monthly_character_prestige = 1
+	martial = 5
+	combat_rating = 30
+	quality = 10
+	active = {
+		trait = everchosen
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	allowed_gift = {
+		always = no
+	}
+	stacking = no
+	picture = "GFX_slayer_of_kings"
+	slot = weapon
+}
+
+steed_of_the_apocalypse_mount  = {
+	monthly_character_prestige = 1
+	martial = 5
+	combat_rating = 30
+	quality = 10
+	flags = { mount }
+	allowed_gift = {
+		always = no
+	}
+	stacking = no
+	picture = "GFX_dorghar"
+	slot = mount
+}
+
+### VALKIA THE BLOODY
+
+spear_slaupnir_valkia = {
+	monthly_character_prestige = 0.8
+	martial = 4
+	combat_rating = 24
+	quality = 8
+	active = {
+		is_adult = yes
+		trait = prince_khorne
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon spear daemonic religious cannot_gift_to_warp }
+	stacking = no
+	picture = "GFX_slaupnir"
+	slot = weapon
+	indestructible = yes
+}
+
+scarlet_armour_valkia = {
+	monthly_character_prestige = 0.8
+	martial = 4
+	combat_rating = 24
+	quality = 8
+	active = {
+		is_adult = yes
+		trait = prince_khorne
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_8 daemonic cannot_gift_to_warp religious }
+	stacking = no
+	picture = "GFX_scarlet_armour"
+	slot = torso
+	indestructible = yes
+}
+
+daemonshield_valkia = {
+	combat_rating = 24
+	quality = 8
+	active = {
+		is_adult = yes
+		trait = prince_khorne
+		can_hold_shield = yes
+	}
+	flags = { shield daemonic religious cannot_gift_to_warp }
+	stacking = no
+	picture = "GFX_daemonshield"
+	slot = shield
+	indestructible = yes
+}
+
+### DECHALA THE DENIED ONE/FAVOURED CONCUBINE
+
+elixir_damnation_dechala = {
+	monthly_character_piety = 0.6
+	general_opinion = 6
+	quality = 6
+	active = {
+		is_adult = yes
+		religion = slaanesh
+	}
+	flags = { enchanted_item potion }
+	stacking = no
+	picture = "GFX_elixir_of_damnation"
+}	
+### MOUNTS
+
+chaos_dragon_mount = {
+	monthly_character_prestige = 0.6
+	martial = 3
+	combat_rating = 18
+	quality = 6
+	flags = { mount }
+	stacking = no
+	picture = "GFX_dragon_chaos"
+	slot = mount
+}

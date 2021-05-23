@@ -1,0 +1,1606 @@
+
+### Imperial ###
+
+great_north_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 222	#Marienburg
+			province_id = 274	#Middenheim
+			province_id = 240	#Norden
+			province_id = 175	#Erengrad
+		}
+	}
+	
+	# Marienburg
+	start = { 222 }
+
+	# Marienburg, Noordmuur, Fauligmere
+	path = { 222 937 224 }
+	
+	# Fauligmere, Velsen
+	path = { 224 226 }
+	
+	# Fauligmere, Zandt, Scheinfeld, Mirrormoor
+	path = { 224 1171 268 2429 }
+	
+	# Fauligmere, Mirrormoor
+	path = { 224 2429 }
+	
+	# Velsen, Wouduin, Winsen
+	path = { 226 263 265 }
+	
+	# Winsen, Schadensumpf, Kammendun, Suderende
+	path = { 265 2430 273 272 }
+	
+	# Winsen, Isenbuttel, Malstedt, Suderende
+	path = { 265 266 275 272 }
+	
+	# Suderende, Middenheim, Nordlichturm, Dorfmark
+	path = { 272 274 271 242 }
+	
+	# Velsen, Ankeeven, Harskamp, Aarnau 
+	path = { 226 227 230 231 }
+	
+	# Dorfmark, Limshof
+	path = { 242 241 }
+	
+	# Dorfmark, Salzenmund
+	path = { 242 239 }
+	
+	# Limshof, Norden
+	path = { 241 240 }
+	
+	# Limshof, Manaansufer
+	path = { 241 236 }
+	
+	# Limshof, Kurtwallen, Hargendorf
+	path = { 241 238 234 }
+	
+	# Manaansufer, Luftberg, Norden
+	path = { 236 237 240 }
+	
+	# Manaansufer, Hargendorf
+	path = { 236 234 }
+	
+	# Hargendorf, Schaukel
+	path = { 234 233 }
+	
+	# Norden, Salkalten, Rossin, Gauschdorf, Erengrad
+	path = { 240 243 246 249 175 }
+}
+old_dwarf_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 451	#Karaz-a-Karak
+			province_id = 690	#Akendorf
+			province_id = 362	#Grenzstadt
+			province_id = 357	#Averheim
+		}
+	}
+	
+	# Karaz-a-Karak
+	start = { 451 }
+	
+	# Karaz-a-Karak, Kazad Urkbavak, Deiter, Kalk, Akendorf, Munzig, Haz-Drazh Kadrin, Booming Peak, Grenzstadt, Hocheleben, Longingbruck
+	path = { 451 452 692 691 690 688 440 439 362 360 358 }
+	
+	# Longingbruck, Wuppertal
+	path = { 358 356 }
+	
+	# Longingbruck, Bernloch, Heideck, Averheim
+	path = { 358 365 934 357 }
+	
+	# Averheim, Wordenern, Wurtbad
+	path = { 357 348 343 }
+	
+	# Averheim, Sauerapfe
+	path = { 357 359 }
+	
+	#Averheim, Streissen
+	path = { 357 355 }
+}
+old_forest_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 343 #Wurtbad
+			province_id = 324 #Talabheim
+			province_id = 275 #Malstedt
+			province_id = 274 #Middenheim
+			province_id = 292 #Hergig
+		}
+	}
+	
+	# Wurtbad
+	start = { 343 }
+
+	# Wurtbad, Ossino, Farlichberge, Talagaad
+	path = { 343 334 327 325 }
+	
+	# Talagaad, Talabheim
+	path = { 325 324 }
+	
+	# Talagaad, Volgen, Holtdorf, Bad Hohne
+	path = { 325 326 279 278 }
+	
+	# Talagaad, Igelhugel
+	path = { 325 288 }
+	
+	# Igelhugel, Heedenhof
+	path = { 288 284 }
+	
+	# Igelhugel, Ahlenhof
+	path = { 288 287 }
+	
+	# Igelhugel, Bergendorf, Hergig
+	path = { 288 283 292 }
+	
+	# Ahlenhof, Grimminhagen, Malstedt
+	path = { 287 277 275 }
+	
+	# Ahlenhof, Middenstag, Malstedt
+	path = { 287 276 275 }
+	
+	# Heedenhof, Krudenwald
+	path = { 284 282 }
+	
+	# Heedenhof, Kiefer
+	path = { 284 285 }
+	
+	# Krudenwald, Kiefer
+	path = { 282 285 }
+	
+	# Krudenwald, Suderende
+	path = { 282 272 }
+	
+	# Kiefer, Eiskalt, Markdorf
+	path = { 285 286 291 }
+	
+	# Malstedt, Suderende
+	path = { 275 272 }
+	
+	# Suderende, Middenheim
+	path = { 272 274 }
+	
+}
+great_reik_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 299 #Altdorf
+			province_id = 309 #Nuln
+			province_id = 304 #Ubersreik
+			province_id = 222 #Marienburg
+			province_id = 328 #Kemperbad
+		}
+	}
+	
+	# Altdorf
+	start = { 299 }
+
+	# Altdorf, Aussenstadt
+	path = { 299 1318 }
+	
+	# Altdorf, Lichtungsmarkt, Torpin
+	path = { 299 1333 330 }
+	
+	# Aussenstadt, Grunburg, Wittgendorf
+	path = { 1318 305 307   }
+	
+	# Aussenstadt, Furdienst, Bogenhafen, Osburg
+	path = { 1318 298 296 297 }
+	
+	# Osburg, Eilhart, Schilderheim
+	path = { 297 935 294 }
+	
+	# Osburg, Holthusen, Schilderheim
+	path = { 297 295 294 }
+	
+	# Schilderheim, Merxheim, Klessen, Vlakland, Marienburg
+	path = { 294 293 223 936 222 }
+	
+	# Wittgendorf, Dunkelburg, Eidelwiss
+	path = { 307 306 1269 }
+	
+	# Wittgendorf, Stimmigen
+	path = { 307 931 }
+	
+	# Wittgendorf, Auerswald
+	path = { 307 303 }
+	
+	# Wittgendorf, Kemperbad
+	path = { 307 328 }
+	
+	# Auerswald, Ubersreik
+	path = { 303 304 }
+	
+	# Auerswald, Stimmigen
+	path = { 303 931 }
+	
+	# Stimmigen, Ubersreik
+	path = { 931 304 }
+	
+	# Eidelwiss, Nuln
+	path = { 1269 309 }
+	
+	# Eidelwiss, Wissenburg
+	path = { 1269 310 }
+	
+	# Eidelwiss, Grissenwald
+	path = { 1269 308 }
+}
+grimway = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 324 #Talabheim
+			province_id = 292 #Hergig
+			province_id = 254 #Wolfenburg
+			province_id = 366 #Bechafen
+		}
+	}
+	
+	# Talabheim
+	start = { 324 }
+	
+	# Talabheim, Talagaad
+	path = { 324 325 }
+	
+	# Talagaad, Igelhugel, Bergendorf, Hergig, Vodf, Ristedt
+	path = { 325 288 283 292 290 253 }
+	
+	# Talagaad, Ostlichrand, Kusel, Bek
+	path = { 325 336 335 337 }
+	
+	# Ristedt, Wolfenburg
+	path = { 253 254 }
+	
+	# Ristedt, Markdorf
+	path = { 253 291 }
+	
+	# Ristedt, Wurzen
+	path = { 253 257 }
+	
+	# Ristedt, Nettburg, Wurzen 
+	path = { 253 256 257 }
+	
+	# Wurzen, Wolfenburg
+	path = { 257 254}
+	
+	# Wolfenburg, Dassel, Ferlangen,
+	path = { 254 251 247 }
+	
+	# Wolfenburg, Brizban, Selonian Hills, Borkrum, Rugenbuttle
+	path = { 254 255 258 338 340 }
+	
+	# Ferlangen, Huven, Salkalten
+	path = { 247 244 243 }
+	
+	# Ferlangen, Bohsenfels
+	path = { 247 250}
+	
+	# Ferlangen, Roezfels
+	path = { 247 248 }
+	
+	# Rugenbuttle, Bechafen
+	path = { 340 366 }
+	
+	# Rugenbuttle, Menshenfresserhoffen, Bechafen
+	path = { 340 339 366 }
+	
+}
+altdorf_middenheim_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 299 #Altdorf
+			province_id = 274 #Middenheim
+			province_id = 270 #Carroburg
+		}
+	}
+	
+	# Altdorf
+	start = { 299 }
+
+	# Altdorf, Geringwald, Kutenholz
+	path = { 299 1317 281 }
+	
+	# Kutenholz, Carroburg, Middenmoor
+	path = { 281 270 2428 }
+	
+	# Kutenholz, Mittelwig, Malstedt, Suderende, Middenheim,
+	path = { 281 269 275 272 274 }
+}
+grey_lady_pass = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 886 #Parravon
+			province_id = 304 #Übersreik
+			province_id = 296 #Bögenhafen
+		}
+	}
+
+	# Parravon, Bögenhafen
+	start = { 886 296 }
+
+	# Parravon, Grey Lady Pass, Übersreik
+	path = { 886 889 304 }
+	
+	# Bögenhafen, Mörlengurt Übersreik
+	path = { 296 301 304 }
+	
+}
+Pfeildorf_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 316 #Pfeildorf
+			province_id = 741 #Kreutzhofen
+			province_id = 362 #Grenzstadt
+		}
+	}
+
+	# Pfeildorf
+	start = { 316 }
+
+	# Pfeildorf, Sexau
+	path = { 316 317 }
+	
+	# Sexau, Staig
+	path = { 317 318 }
+	
+	# Staig, Steingart
+	path = { 318 }
+	
+	# Staig, Pforzen
+	path = { 318 319 }
+	
+	# Staig, Steingart, Grenzstadt
+	path = { 318 323 362 }
+	
+	# Sexau, Wittenhausen
+	path = { 317 320 }
+	
+	# Wittenhausen, Wurmgrube
+	path = { 320 312 }
+	
+	# Wittenhausen, Pforzen
+	path = { 320 319 }
+	
+	# Pforzen, Kroppenleben, Aulen, Sonnefurt
+	path = { 319 322 321 315 }
+	
+	# Sonnefurt, Kreutzhofen
+	path = { 315 741 }
+	
+	# Sonnefurt, Wusterberg
+	path = { 315 314 }
+}
+nuln_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 309 #Nuln
+			province_id = 343 #Wurtbad
+			province_id = 328 #Kemperbad
+		}
+	}
+
+	# Nuln
+	start = { 309 }
+	
+	# Nuln, Hinterland, Ramsau
+	path = { 309 1271 345 }
+	
+	# Ramsau, Zaya, Teichel
+	path = { 345 346 342 }
+	
+	# Ramsau, Nattern, Kemperbad
+	path = { 345 341 328 }
+	
+	# Teichel, Wurtbad
+	path = { 342 343 }
+	
+	# Teichel, Gostahof
+	path = { 342 332}
+	
+	# Nuln, Grotchen, Lengenfeld, Stirhugel, Wordern, Wurtbad
+	path = { 309 1270 353 347 348 343 }
+	
+	
+	
+	
+}
+
+
+###  Northern ###
+
+great_kislev_road = {
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 1026 #Sud
+			province_id = 1027 #Ghafsa
+			province_id = 1035 #Kufra
+			province_id = 1036 #Copher
+			province_id = 1038 #Al-Haikk
+			province_id = 986  #Ras Karim
+			province_id = 1034 #Nejaz
+			province_id = 1052 #Istrabul
+			province_id = 1016 #Antoch
+			province_id = 1032 #Al-Anaim
+			province_id = 983  #Sudenburg
+			province_id = 1041 #Teshert
+			province_id = 760  #Rhothira
+			province_id = 737  #Delium
+			province_id = 717  #Paragorn
+			province_id = 495  #Crookback Mountain (not at game start)
+			province_id = 494  #The Sentinels
+			province_id = 1273 #Kolkazad "Black Fortress"
+			province_id = 2374 #Gnoblarik
+			province_id = 686  #Barak Varr
+			province_id = 690  #Akendorf
+			province_id = 458  #Lantai
+			province_id = 1274 #pigbarter
+			province_id = 2369 #Vargenspeak
+			province_id = 2352 #Fire Mouth
+			province_id = 2360 #lake of eyes
+			province_id = 478  #Zharr Naggrund
+			province_id = 1293 #Sulfuras
+			province_id = 493  #Barak Zharr
+			province_id = 455  #Mount Silverspear (not at game start)
+			province_id = 1303 #Nath Agra
+			province_id = 476  #Zanen Ruvalk
+			province_id = 485  #Azgram
+			province_id = 202  #Kislev
+			province_id = 185  #Novehozy
+			province_id = 416  #Unzkulak
+			province_id = 196  #Koniecpole
+			province_id = 175  #Erengrad
+			province_id = 180  #Bolgasgrad
+			province_id = 182  #Praag
+			province_id = 159  #Ostrosk
+			province_id = 574  #Tobaro
+			province_id = 560  #Osborna
+			province_id = 553  #Magritta
+			province_id = 568  #Pajena
+			province_id = 520  #Bilbali
+			province_id = 609  #Verezzo
+			province_id = 600  #Remas
+			province_id = 599  #Pavona
+			province_id = 591  #Trantio
+			province_id = 725  #Ilios
+			province_id = 639  #Svorak
+			province_id = 723  #Kypur
+			province_id = 794  #Lyonesse
+			province_id = 810  #Couronne
+			province_id = 815  #Artois
+			province_id = 823  #Dras
+			province_id = 826  #Mousillon
+			province_id = 833  #Gisoreux
+			province_id = 844  #Bastonne
+			province_id = 837  #Bordeleaux
+			province_id = 865  #Brionne
+			province_id = 894  #Carcassonne
+			province_id = 884  #Quenelles
+			province_id = 910  #Gruyon
+			province_id = 222  #Marienburg
+			province_id = 886  #Parravon
+			province_id = 855  #Montfort
+			province_id = 885  #Helmgart
+			province_id = 296  #Bogenhafen
+			province_id = 299  #Altdorf
+			province_id = 275  #Malstedt
+			province_id = 274  #Middenheim
+			province_id = 240  #Norden
+			province_id = 307  #Wittgendorf
+			province_id = 309  #Nuln
+			province_id = 310  #Wissenburg
+			province_id = 316  #Pfeildorf
+			province_id = 741  #Kreutzhofen
+			province_id = 247  #Ferlangen
+			province_id = 251  #Dassel
+			province_id = 250  #Bohsenfels
+			province_id = 254  #Wolfenburg
+			province_id = 292  #Hergig
+			province_id = 324  #Talabheim
+			province_id = 340  #Rugenbuttle
+			province_id = 366  #Bechafen
+			province_id = 343  #Wurtbad
+			province_id = 357  #Averheim
+			province_id = 362  #Grenzstadt
+			province_id = 451  #Karaz-a-Karak
+			province_id = 436  #Karak Kadrin
+			province_id = 442  #Zhufbar
+			province_id = 1105 #Karak Dum
+			province_id = 418  #Karak Vlag
+			province_id = 433  #Red Eye Mountain
+			province_id = 450  #Mount Gunbad
+			province_id = 467  #Karak Eight Peaks
+			province_id = 781  #Misty Mountains
+			province_id = 208  #Vitevo
+		}
+	}
+
+	start = { 175 197 202 208 705 }
+	# Erengrad, Plowce, Kislev, Vitevo, Turov
+
+	# Erengrad, Plowce
+	path = { 175 197 }
+	# Plowce, Koniecpole, Taldom, Zabow, Inkodevna, Kislev
+	path = { 197 196 191 201 673 202 }
+	# Kislev, Turov,
+	path = { 202 705 }
+	# Vitevo, Voronino, Kislev
+	path = { 208 941 202 }
+	# Turov, Vdovya, Arzamas, Bolgasgrad, Zvyagino, Praag
+	path = { 705 192 186 180 942 182 }
+	#Praag, Kacirk, Petriko, Ostrosk
+	path = { 182 171 165 159 }
+}
+the_skull_road = {
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 1026 #Sud
+			province_id = 1027 #Ghafsa
+			province_id = 1035 #Kufra
+			province_id = 1036 #Copher
+			province_id = 1038 #Al-Haikk
+			province_id = 986  #Ras Karim
+			province_id = 1034 #Nejaz
+			province_id = 1052 #Istrabul
+			province_id = 1016 #Antoch
+			province_id = 1032 #Al-Anaim
+			province_id = 983  #Sudenburg
+			province_id = 1041 #Teshert
+			province_id = 760  #Rhothira
+			province_id = 737  #Delium
+			province_id = 717  #Paragorn
+			province_id = 495  #Crookback Mountain (not at game start)
+			province_id = 494  #The Sentinels
+			province_id = 1273 #Kolkazad "Black Fortress"
+			province_id = 2374 #Gnoblarik
+			province_id = 686  #Barak Varr
+			province_id = 690  #Akendorf
+			province_id = 458  #Lantai
+			province_id = 1274 #pigbarter
+			province_id = 2369 #Vargenspeak
+			province_id = 2352 #Fire Mouth
+			province_id = 2360 #lake of eyes
+			province_id = 478  #Zharr Naggrund
+			province_id = 1293 #Sulfuras
+			province_id = 493  #Barak Zharr
+			province_id = 455  #Mount Silverspear (not at game start)
+			province_id = 1303 #Nath Agra
+			province_id = 476  #Zanen Ruvalk
+			province_id = 485  #Azgram
+			province_id = 202  #Kislev
+			province_id = 185  #Novehozy
+			province_id = 416  #Unzkulak
+			province_id = 196  #Koniecpole
+			province_id = 175  #Erengrad
+			province_id = 180  #Bolgasgrad
+			province_id = 182  #Praag
+			province_id = 574  #Tobaro
+			province_id = 560  #Osborna
+			province_id = 553  #Magritta
+			province_id = 568  #Pajena
+			province_id = 520  #Bilbali
+			province_id = 609  #Verezzo
+			province_id = 600  #Remas
+			province_id = 599  #Pavona
+			province_id = 591  #Trantio
+			province_id = 725  #Ilios
+			province_id = 639  #Svorak
+			province_id = 723  #Kypur
+			province_id = 794  #Lyonesse
+			province_id = 810  #Couronne
+			province_id = 815  #Artois
+			province_id = 823  #Dras
+			province_id = 826  #Mousillon
+			province_id = 833  #Gisoreux
+			province_id = 844  #Bastonne
+			province_id = 837  #Bordeleaux
+			province_id = 865  #Brionne
+			province_id = 894  #Carcassonne
+			province_id = 884  #Quenelles
+			province_id = 910  #Gruyon
+			province_id = 222  #Marienburg
+			province_id = 886  #Parravon
+			province_id = 855  #Montfort
+			province_id = 885  #Helmgart
+			province_id = 296  #Bogenhafen
+			province_id = 299  #Altdorf
+			province_id = 275  #Malstedt
+			province_id = 274  #Middenheim
+			province_id = 240  #Norden
+			province_id = 307  #Wittgendorf
+			province_id = 309  #Nuln
+			province_id = 310  #Wissenburg
+			province_id = 316  #Pfeildorf
+			province_id = 741  #Kreutzhofen
+			province_id = 247  #Ferlangen
+			province_id = 251  #Dassel
+			province_id = 250  #Bohsenfels
+			province_id = 254  #Wolfenburg
+			province_id = 292  #Hergig
+			province_id = 324  #Talabheim
+			province_id = 340  #Rugenbuttle
+			province_id = 366  #Bechafen
+			province_id = 343  #Wurtbad
+			province_id = 357  #Averheim
+			province_id = 362  #Grenzstadt
+			province_id = 451  #Karaz-a-Karak
+			province_id = 436  #Karak Kadrin
+			province_id = 442  #Zhufbar
+			province_id = 1105 #Karak Dum
+			province_id = 418  #Karak Vlag
+			province_id = 433  #Red Eye Mountain
+			province_id = 450  #Mount Gunbad
+			province_id = 467  #Karak Eight Peaks
+			province_id = 781  #Misty Mountains
+			province_id = 208  #Vitevo
+		}
+	}
+
+	start = { 202 705 }
+	# Kislev, Turov
+
+	# Kislev, Turov,
+	path = { 202 705 }
+	# Turov, Kyrnoka, Belev, Dukhyls Spirits, Ob, Novehozy, Forest of Borisov,
+	# Belyavorota Pass, Helgrind, Unzkulak, Unzkadrin, Bakal, Komri, Tuva, Nuur, Skull Road(Offmap)
+	path = { 705 207 210 194 189 185 174 419 1266 416 479 1238 1198 1189 1188 2422 }
+}
+old_trail = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 2404	#Great Ogham
+			province_id = 2407	#Hunndaidh
+		}
+	}
+
+	# Great Ogham
+	start = { 2404 }
+	
+	# Great Ogham, Bol-A-Hat, Bleakmoor, Hunndaidh
+	path = { 2404 2415 2409 2407 }
+}
+
+###  Eastern ###
+
+the_pass_to_the_east = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 436 #Karak Kadrin
+			province_id = 478 # Zharr-Naggrund
+		}
+	}
+
+	start = { 436 }
+	# Karak Kadrin,
+
+	# Karak Kadrin, Khazid Erakkial, Gelt, Kadrin Gorm, Chade, Ironhide, Azgram, Ghal, Nath Agra
+	path = { 436 437 732 444 1077 432 485 483 1303 }
+	
+	# Nath Agra, Mizpal Ungor, Zharr-Naggrund, Gaz Orrud, Ashrift
+	path = { 1303 1301 478 1304 1285 }
+	
+	# Nath Agra, Mizpazan, Sulfaraz, Ashrift
+	path = { 1303 486 1293 1285 }
+	
+	# Ashrift, Skreefel, Gorrik, Lake of Eyes, Chimarak, Road to the East
+	path = { 1285 480 1287 2360 2359 2159 }
+}
+the_silver_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 451 #Varag Kadrin
+			province_id = 455 #Mount Grimfang
+			province_id = 461 #Varag Kadrin
+			province_id = 494 #The Sentinels
+		}
+	}
+
+	# Karaz-a-Karak, Varag Kadrin
+	start = { 451 461 }
+	
+	# Karaz-a-Karak, Kadrin Azril, Dead Rock Gap, Mount Grimfang
+	path = { 451 453 454 455 }
+	
+	# Varag Kadrin, Crookback Mountain, Morzarn, Daro, Grey Waste, The Sentinels
+	path = { 461 495 496 1265 1277 494 }
+	
+}
+spice_route = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 494 #The Sentinels
+			province_id = 1274 #Pigbarter
+		}
+	}
+
+	# The Sentinels
+	start = { 494 }
+	
+	# The Sentinels, Rhazgala, Ombra, Kurshu, Pigbarter, Zabarob, Gnoblarik, Skrapland, Spice Route
+	path = { 494 1310 1296 1280 1274 2371 2374 2373 2161 }
+}
+ivory_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		province_id = 494 #The Sentinels
+	}
+
+	# The Sentinels
+	start = { 494 }
+	
+	# The Sentinels, Skarand, The Horr, Bulgark 
+	path = { 494 1278 2365 2366 }
+	
+	# Bulgark, Vargenspeak, Ivory Road
+	path = { 2366 2369 2160}
+	
+	# Bulgark, Grimptop
+	path = { 2366 2354 }
+}
+
+###  Southern ###
+
+arabyan_trail = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 686	# Barak Varr
+			province_id = 1041	#Teshert
+		}
+	}
+
+	# Barak Varr
+	start = { 686 }
+	
+	# Barak Varr, Udibgovos, Knidus, Clazo, Paragorn, Luwaia, Delium, Eubus, Mykal, Boetus, Burushur, Rhothira, Hettasha, Chayuk, Tirzor, Teshert
+	path = { 686 751 709 708 717 735 737 752 754 756 758 760 763 1043 1042 1041 }
+}
+spice_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		province_id = 1036	# Copher
+		province_id = 1037	# Martek
+		province_id = 964	# Abu Hamed
+	}
+
+	# Copher
+	start = { 1036 }
+	
+	# Copher, Brasna
+	path = { 1036 1001 }
+	
+	# Brasna, Martek
+	path = { 1001 1037 }
+	
+	# Brasna, Lashiek, Kufra, Abu Hamed
+	path = { 1001 1053 1035 964 }
+	
+	# Copher, Zuwarah
+	path = { 1036 965 }
+}
+ancient_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		province_id = 1036	# Istrabul
+		province_id = 1052	# Martek
+		province_id = 1039	# Argigil
+		province_id = 1048	# Bel-Aliad
+		province_id = 1121	# Khemri
+	}
+
+	# Istrabul
+	start = { 1052 }
+	
+	# Istrabul, Surah, Kamt, El Mansurah, Duq, Argigil
+	path = { 1052 1004 1040 1023 996 1039 }
+	
+	# Argigil, Burnush, Martek
+	path = { 1039 999 1037 }
+	
+	# Argigil, Al-Haikk
+	path = { 1039 1038 }
+	
+	# Argigil, Ras Karim
+	path = { 1039 986 }
+	
+	# Istrabul, Maharek, Ubadir, Bel-Aliad, Siabel, Erid, Arkhan, Firez, Khemri
+	path = { 1052 1051 1050 1048 1145 1157 1119 1120 1121 }
+}
+
+### Bretonnian ###
+
+axe_bite_pass = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 855 #Montfort
+			province_id = 885 #Helmgart
+			province_id = 296 #Bogenhafen
+		}
+	}
+
+	# Montfort
+	start = { 855 }
+
+	# Montfort, Beaix, Helmgart, Osburg, Bogenhafen
+	path = { 855 852 885 297 296 }
+	
+}
+gisoreux_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 833 #Gisoreux
+			province_id = 222 #Marienburg
+		}
+	}
+
+	# Gisoreux
+	start = { 833 }
+
+	# Gisoreux, Gisoreux Gap, Gruyon, Gap of Bergbres, Noordbeemster, Klessen, Vlakland, Marienburg
+	path = { 833 914 910 913 221 223 936 222 }
+}
+old_coast_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 222 #Marienburg
+			province_id = 810 #Couronne
+			province_id = 794 #Lyonesse
+			province_id = 815 #Artois
+			province_id = 826 #Mousillon
+			province_id = 799 #L'anguille
+		}
+	}
+
+	# Marienburg, Couronne, L'anguille, Lyonesse
+	start = { 222 810 799 794 }
+
+	# Marienburg, Vlakland, Markenbinnen, Almshoven, Neuötting, Thorn, Tintannil, Chantillon, Eux, Couronne
+	path = { 222 936 220 218 216 812 811 809 806 810 }
+	
+	# Couronne, Sanz, Ganet, Havresse, L'anguille
+	path = { 810 802 801 803 799 }
+	
+	# L'anguille, Erguian, Chagrin, Lyonesse
+	path = { 799 790 791 794 }
+
+}
+bretonnian_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 799 #anguille
+			province_id = 815 #Artois
+			province_id = 826 #Mousillon
+			province_id = 833 #Gisoreux
+			province_id = 844 #Bastonne
+			province_id = 855 #Montfort
+			province_id = 886 #Parravon
+			province_id = 884 #Quenelles
+			province_id = 865 #Brionne
+			province_id = 894 #Careassonne
+			province_id = 837 #Bordeleaux
+			province_id = 861 #Aquitaine
+			province_id = 833 #Gisoreux
+			province_id = 810 #Couronne
+			province_id = 741 #Kreutzhofen
+		}
+	}
+	
+	# L'anguille, Gisoreux, Bastonne, Montfort, Parravon, Quenelles, Brionne, Careassonne, Mousillon, Bordeleaux, Aquitaine, Couronne
+	start = { 799 833 844 855 886 884 865 894 826 837 861 810 }
+	
+### L'anguille
+	# L'anguille, Fregunerre, Moulinsard, Chastillon
+	path = { 799 800 793 796 }
+	
+	# Chastillon, Larret, Yremois
+	path = { 796 816 828 }
+	
+	# Chastillon, Martonnais
+	path = { 796 797 }
+	
+	# Yremois, Artois
+	path = { 828 815 }
+	
+	# Yremois, Uexin
+	path = { 828 817 }
+	
+	# Yremois, Guerac, Dras, Elne
+	path = { 828 829 823 825 }
+	
+	# Elne, Mousillon
+	path = { 825 826 }
+	
+	# Elne, Mortagne, Carmandois, Senlou
+	path = { 825 822 820 798 }
+
+### Gisoreux
+	# Gisoreux, Gisoreux Gap, Gamay, Lorsace, Montfort
+	path = { 833 914 848 850 855 }
+
+### Bastonne
+	# Bastonne, Soudarre, Gisoreux Gap,
+	path = { 844 841 914 }
+
+### Montfort
+	# Montfort, Beaix, Fume, Beaumont, Parravon
+	path = { 855 852 888 887 886 }
+	
+### Parravon
+	# Parravon, Blarry, Perrache, Quenelles
+	path = { 886 875 883 884 }
+	
+	# Parravon, Brabillon, Blood Keep
+	path = { 886 891 906 }
+	
+	# Parravon, Fays
+	path = { 886 925 }
+	
+### Quenelles
+	# Quenelles, Roucerre, Meaux, Orlerre
+	path = { 884 881 880 879}
+	
+	# Quenelles, Marguilles, Charboneau
+	path = { 884 899 900 }
+	
+	# Charboneau, Paillole, Forac, Sammergall, Orlerre
+	path = { 900 905 897 898 879 }
+	
+	# Charboneau, Loren Pass, Kazad Elgazund, Kreutzhofen
+	path = { 900 915 646 741 }
+	
+	# Orlerre, Muret
+	path = { 879 867 }
+	
+### Brionne
+	# Brionne, Gransette
+	path = { 865 866 }
+	
+	# Gransette, Muret
+	path = { 866 867}
+	
+### Careassonne
+	# Careassonne, Brussergue, Orlerre
+	path = { 894 895 879 }
+	
+### Mousillon
+	# Mousillon, Reves, Feuilly
+	path = { 826 835 836 }
+	
+	# Feuilly, Laors, Gastix
+	path = { 836 839 846 }
+	
+	# Feuilly, Bordeleaux
+	path = { 836 837 }
+	
+### Bordeleaux
+	# Bordeleaux vignoble Epee
+	path = { 837 856 860 }
+	
+	# Epee, Aquitaine
+	path = { 860 861 }
+	
+	# Epee, Anjarlac
+	path = { 860 858}
+	
+### Aquitaine
+	# Aquitaine, Querigord, Muret
+	path = { 861 864 867 }
+
+	# Aquitaine, Bourgou, Chinon
+	path = { 861 876 873 }
+	
+	# Aquitaine, Anjarlac
+	path = { 861 858 }
+### Couronne
+	# Couronne, Sanz, Ganet, Havresse, L'anguille
+	path = { 810 802 801 803 799 }
+}
+
+### Myrmidian/Borderlands ###
+
+tobaro_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 574	#Tobaro
+			province_id = 557	#Almagora
+			province_id = 553	#Magritta
+		}
+	}
+
+	# Tobaro
+	start = { 574 }
+
+	# Tobaro, Solsona
+	path = { 574 562 }
+	
+	# Solsona, Gualcazar, Zaraguz
+	path = { 562 573 572 }
+	
+	# Solsona, Montacute
+	path = { 562 561 }
+	
+	# Montacute, Osborna, Javea
+	path = { 561 560 555 }
+	
+	# Montacute, Cordobra
+	path = { 561 558 }
+	
+	# Javea, Magritta
+	path = { 555 553 }
+	
+	# Cordobra, Fierra
+	path = { 558 559 }
+	
+	# Cordobra, Almagora, Villana, Javea
+	path = { 558 557 556 555 }
+}
+alboran_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 553	#Magritta
+			province_id = 544	#Belmoz
+			province_id = 542	#Finterra
+		}
+	}
+
+	# Magritta
+	start = { 553 }
+
+	# Magritta, Molina, Montenas
+	path = { 553 552 567 }
+
+	# Magritta, Malmeria, Torrosa, Ubrique, Alboran, Belmoz
+	path = { 553 551 549 547 545 544 }
+	
+	# Belmoz, Toletti, Urdango, Siernas
+	path = { 544 546 548 564 }
+	
+	# Belmoz, San Pedro, Finterra
+	path = { 544 543 542 }
+	
+}
+gredos_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 520	#Magritta
+			province_id = 544	#Belmoz
+			province_id = 542	#Finterra
+			province_id = 520	#Bilbali
+		}
+	}
+
+	# Bilbali
+	start = { 520 }
+
+	# Bilbali, Edeta, San luis
+	path = { 520 530 528 }
+	
+	# Bilbali, Arroca, Diamenterra, Olissipo, Verin
+	path = { 520 531 533 535 536 }
+	
+	# Verin, Portague
+	path = { 536 537 }
+	
+	# Verin, Jaraiz, Belmoz, Alboran, Ubrique, Torrosa, Malmeria, Magritta
+	path = { 536 538 544 545 547 549 551 553 }
+}
+cantabrio_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 520	#Bilbali
+			province_id = 515	#Barboza
+			province_id = 517	#Alquezaro
+			province_id = 568	#Pajena
+			province_id = 865	#Brionne
+		}
+	}
+
+	# Bilbali
+	start = { 520 }
+	
+	# Bilbali, Cantabro
+	path = { 520 519 }
+	
+	# Cantabro, Calis, Alquezaro, Sotomarca
+	path = { 519 516 517 506 }
+	
+	# Cantabro, Barboza
+	path = { 519 515 }
+	
+	# Cantabro, Sodana, Baraiz
+	path = { 519 523 525 }
+	
+	# Sotomarca, Teresca, Servillon, Gransette, Brionne
+	path = { 506 505 892 866 865 }
+	
+	# Sotomarca, Cabrera, Pajena
+	path = { 506 507 568 }
+}
+via_aurelia = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 600	#Remas
+			province_id = 584	#Miragliano
+			province_id = 884	#Quenelles
+			province_id = 591	#trantio
+			province_id = 599	#Pavona
+			province_id = 614	#Luccini
+			province_id = 609	#Verezzo
+			province_id = 639	#Zvorak
+		}
+	}
+
+	# Remas
+	start = { 600 }
+	
+	# Remas, Pontecorvo, Stiani
+	path = { 600 955 601 }
+	
+	# Stiani, Catrazza
+	path = { 601 596 }
+	
+	# Stiani, Astiano
+	path = { 601 602 }
+	
+	# Astiano, Pavona, Scozzese
+	path = { 602 599 607 }
+	
+	# Astiano, Rifraffa
+	path = { 602 603 }
+	
+	# Rifraffa, Spomanti
+	path = { 603 606 }
+	
+	# Rifraffa, Olesi
+	path = { 603 604 }
+	
+	# Rifraffa, Verezzo, Raverno, Cittafinistre
+	path = { 603 609 611 613 }
+	
+	# Cittafinistre, Volanda, Luccini
+	path = { 613 612 614 }
+	
+	# Cittafinistre, Portomaggiore
+	path = { 613 610 }
+	
+	# Catrazza, Varieno, Trantio, Andone
+	path = { 596 597 591 590}
+	
+	# Catrazza, Urbimo
+	path = { 596 592 }
+	
+	# Catrazza, Cenona, Andone
+	path = { 596 593 590 }
+	
+	# Andone, Lambruso
+	path = { 590 587 }
+	
+	# Andone, Vladeza
+	path = { 590 589 }
+	
+	# Lambruso, Campogrotta
+	path = { 587 588 }
+	
+	# Lambruso, Ebino
+	path = { 587 585 }
+	
+	# Ebino, Toscania, paillole, Charboneau, Marguilles, Quenelles
+	path = { 585 586 905 900 899 884 }
+	
+	# Ebino, Miragliano
+	path = { 585 584 }
+}
+via_diocletia = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 614	#Luccini
+			province_id = 655	#Monte Castello
+			province_id = 599	#Pavona
+		}
+	}
+
+	# Luccini
+	start = { 614 }
+	
+	# Luccini, Pelua, Mintopua, Aldente
+	path = { 614 615 618 619 }
+	
+	# Aldente, Laserno, Pavezzano, Tepanlo, Luparno, Monte Castello, Pugno, Argalis, Ilios, Umbresco, Pavona, Astiano, Stiani, Pontecorvo, Remas
+	path = { 619 622 623 624 625 655 643 656 725 926 599 602 601 955 600 }
+	
+	# Aldente, Capelli
+	path = { 619 620 }
+}
+old_silk_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 657	#Myrmidens
+			province_id = 723	#Kypur
+			province_id = 614	#Luccini
+			province_id = 655	#Monte Castello
+			province_id = 639	#Zvorak
+			province_id = 466	#Azgul Kadrin
+		}
+	}
+	
+	# Kypur
+	start = { 723 }
+
+	# Kypur, Matorca, Spinda
+	path = { 723 678 679 }
+	
+	# Spinda, Brasov
+	path = { 679 676 }
+	
+	# Spinda, Somjek, Masserschloss, Varenka, Koganusan, Barak Varr, Udibgovos, Karsack, Cimmeria, Mushki, Black Crag, Zank Batak, Azgul Kadrin
+	path = { 679 681 685 704 740 686 751 711 714 716 465 731 466 }
+	
+	# Kypur, Mognia
+	path = { 723 670 }
+	
+	# Mognia, Thessos
+	path = { 670 663 }
+	
+	# Mognia, Hinrikness, Achaes, Kasos
+	path = { 670 671 664 661 }
+	
+	# Thessos, Kasos
+	path = { 663 661 }
+	
+	# Thessos, Zvorak
+	path = { 663 639 }
+	
+	# Thessos, Atreus, Platae
+	path = { 663 660 642 }
+	
+	# Kasos, Pilos, Myrmidens
+	path = { 661 658 657 }
+	# Platae, Zvorak
+	path = { 642 639 }
+	
+	# Platae, Vardanos, Argalis, Pugno, Monte Castello, Luparno, Tepanlo, Pavezzano, Laserno, Aldente, Mintopua, Pelua, Luccini
+	path = { 642 659 656 643 655 625 624 623 622 619 618 615 614 }
+}
+kyprian_road = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 723	#Kypur
+			province_id = 600	#Remas
+			province_id = 639	#Zvorak
+			province_id = 591	#Trantio
+		}
+	}
+
+	# Kypur
+	start = { 723 }
+	
+	# Kypur, Mentreda, Brasov
+	path = { 723 722 676 }
+	
+	# Brasov, Vinsbrugge
+	path = { 676 672 }
+	
+	# Brasov, Moslac
+	path = { 676 680 }
+	
+	# Moslac, Vidovdan
+	path = { 680 675 }
+	
+	# Moslac, Galiti, Malko, Brovska
+	path = { 680 683 694 702 }
+	
+	# Brovska, Styratia
+	path = { 702 687 }
+	
+	# Brovska, Geistenmund, Koganusan, Barak Varr
+	path = { 702 695 740 686 }
+	
+	# Brovska, Bythan, Kalk, Akendorf
+	path = { 702 696 691 690 }
+	
+	# Kypur, Cabanal, Heldegrad
+	path = { 723 669 667 }
+	
+	# Kypur, Alynd, Arnalos, Pelpeonna, Zvorak, Platae, Khadiz Urbaz, Trantine Hills, Trantio, Varieno, Catrazza, Stiani, Pontecorvo, Remas
+	path = { 723 666 665 662 639 642 640 595 591 597 596 601 955 600 }
+}
+east_trail = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 686	#Barak Varr
+			province_id = 699	#Fatandira
+			province_id = 461	#Varag Kadrin
+		}
+	}
+
+	# Barak Varr
+	start = { 686 }
+	
+	# Barak Varr, Serkeskal, Gulthac
+	path = { 686 748 706 }
+	
+	# Gulthac, Levrellian
+	path = { 706 703 }
+	
+	# Gulthac, Haflok, Levrellian
+	path = { 706 707 703 }
+	
+	# Levrellian, Fatandira, Varaz Barak, Varag Kadrin
+	path = { 703 699 730 461 }
+}
+pirates_way = {	#Updated
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 626	#Sartosa
+			province_id = 629	#Vercuso
+		}
+	}
+
+	# Sartosa
+	start = { 626 }
+	
+	# Sartosa, Caprio, Vercuso
+	path = { 626 628 629 }
+}
+
+

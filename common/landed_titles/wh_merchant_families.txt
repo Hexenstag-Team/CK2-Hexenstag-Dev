@@ -1,0 +1,624 @@
+#Merchant Houses of Grande Charte
+###ÄNSI
+#Dawi
+d_barak_varr_guild = {
+	color = { 255 28 53 }
+	color2 = { 255 255 255 }
+	capital = 686 # c_barak_varr
+	short_name = yes
+
+	creation_requires_capital = no
+	dignity = 50
+	allow = {
+		OR = {
+			has_landed_title = b_barvarak_ungol
+			has_landed_title = b_darnum_gorun
+		}
+		prestige = 250
+		is_republic = yes
+	}
+}
+d_nordawal_guild = {
+	color = { 255 28 53 }
+	color2 = { 255 255 255 }
+	capital = 118 # c_taldursfjord
+	short_name = yes
+
+	creation_requires_capital = no
+	dignity = 50
+	allow = {
+		OR = {
+			has_landed_title = b_barakka_dunavik
+			has_landed_title = b_baraka_jorzul
+		}
+		prestige = 250
+		is_republic = yes
+	}
+}
+d_zharduk_guilds = { #Zhardukk Charte
+	color = { 255 28 53 }
+	color2 = { 255 255 255 }
+	capital = 478 # c_kemperbad
+	short_name = yes
+
+	creation_requires_capital = no
+	dignity = 50
+	allow = {
+		OR = {
+			has_landed_title = d_barak_enka
+			has_landed_title = b_drazril
+		}
+		is_republic = yes
+	}
+}
+
+b_azriliz = { #Norse Guilds
+	culture = dwarf_norse
+	religion = norse_ancestor_gods
+}
+b_grimkaz = { #Slavers
+	culture = dwarf_chaos
+	religion = hashut
+}
+b_rhukmar = { #Slavers
+	culture = dwarf_chaos
+	religion = hashut
+}
+b_drazril = { #Slavers
+	culture = dwarf_chaos
+	religion = hashut
+}
+
+b_mitanni = { #Mitanni'buran
+	culture = dwarf_chaos
+	religion = hashut
+}
+
+b_kazzite = { #Kazzite
+	culture = dwarf_chaos
+	religion = hashut
+}
+
+b_chemos = { #Chemos
+	culture = dwarf_chaos
+	religion = hashut
+}
+
+b_humazabab = { #Humazabab
+	culture = dwarf_chaos
+	religion = hashut
+}
+
+#Human
+d_kemperbad = { #Kemperbad Charte
+	color = { 255 28 53 }
+	color2 = { 255 255 255 }
+	capital = 328 # c_kemperbad
+	short_name = yes
+
+	dignity = 50
+	allow = {
+		always = no
+		is_republic = yes
+	}
+}
+
+b_van_hel = {
+	culture = umbrian
+	religion = myrmidian
+}
+
+b_de_belladonna = {
+	culture = umbrian
+	religion = myrmidian
+}
+
+b_hanseat = {
+	culture = reiklander
+	religion = sigmarite
+}
+b_von_hasener = {
+	culture = talabeclander
+	religion = taalite
+}
+b_du_casse = {
+	culture = gascon
+	religion = grail
+}
+
+b_lafitte = {
+	culture = gascon
+	religion = grail
+}
+
+b_wynn = {
+	culture = gascon
+	religion = grail
+}
+
+b_ordronaux = {
+	culture = gascon
+	religion = grail
+}
+
+b_le_bec = {
+	culture = gascon
+	religion = grail
+}
+
+#Merchant Houses of Ambacht
+
+b_hoegaarden = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_de_raamsdonk = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_van_daalen = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_van_de_peppel = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_veenstra = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+
+#Merchant Houses of Texelhaven
+
+b_batenburg = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_van_de_kooij = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_noordhoek = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_breedveld = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_ravensberg = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+
+#Merchant Houses of Bogenhafen
+
+b_olmstadt = {
+	culture = reiklander
+	religion = sigmarite
+}
+
+b_steinhager = {
+	culture = reiklander
+	religion = sigmarite
+}
+
+b_ruggbroder = {
+	culture = reiklander
+	religion = sigmarite
+}
+
+b_teugen = {
+	culture = reiklander
+	religion = sigmarite
+}
+
+b_haagen = {
+	culture = reiklander
+	religion = sigmarite
+}
+
+b_von_saponatheim = {
+	culture = reiklander
+	religion = sigmarite
+}
+
+#Merchant Houses of Marienburg
+
+b_van_onderzoeker = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_koopmans = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_winkler = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_vijfswinkel = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_smeele = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_van_de_kuypers = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_de_roelef = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_van_haagen = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_van_scheldt = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_van_raemerswijk = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_fooger = {
+	culture = dwarf_imperial
+	religion = ancestor_gods
+}
+
+b_van_den_nijmenk = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_den_euwe = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_rothemuur = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+b_akkerman = {
+	culture = westerlander
+	religion = sigmarite
+}
+
+#Merchant Houses of Neues Emskrank / Societas Mercatoria Septentrionalis / Northern Mercantile Society
+
+
+b_riemanns = {
+	culture = ostlander
+	religion = sigmarite
+}
+
+b_von_schweinfass = {
+	culture = nordlander
+	religion = sigmarite
+}
+
+b_von_holzmarkt = {
+	culture = hochlander
+	religion = ulrican
+}
+
+b_kaimeister = {
+	culture = nordlander
+	religion = ulrican
+}
+
+b_schutzman = {
+	culture = ostlander
+	religion = sigmarite
+}
+
+
+
+
+#Merchant Houses of Erengrad
+
+b_shein = {
+	culture = gospodar
+	religion = northern_gods
+}
+
+b_orlov = {
+	culture = gospodar
+	religion = northern_gods
+}
+
+b_pyhaniemi = {
+	culture = ungol
+	religion = northern_gods
+}
+
+b_fingerpori = {
+	culture = ungol
+	religion = northern_gods
+}
+
+b_padaste = {
+	culture = ropsmann
+	religion = northern_gods
+}
+
+# Reman Merchant Houses
+b_di_sorrento = {
+	culture = reman
+	religion = myrmidian
+}
+
+b_de_sica = {
+	culture = reman
+	religion = myrmidian
+}
+
+b_minnoli = {
+	culture = reman
+	religion = myrmidian
+}
+
+b_remi = {
+	culture = reman
+	religion = myrmidian
+}
+
+b_garrani = {
+	culture = reman
+	religion = myrmidian
+}
+
+
+# Verezzo Merchant Houses
+
+b_busarello = {
+	culture = umbrian
+	religion = myrmidian
+}
+
+b_lanese = {
+	culture = umbrian
+	religion = myrmidian
+}
+
+b_biagi = {
+	culture = umbrian
+	religion = myrmidian
+}
+
+b_ducati = {
+	culture = umbrian
+	religion = myrmidian
+}
+
+b_rustici = {
+	culture = umbrian
+	religion = myrmidian
+}
+
+b_aurino = {
+	culture = umbrian
+	religion = myrmidian
+}
+
+#Main Dwarven Guilds
+#Zhufbar Barak	
+b_grombi = {
+	culture = dwarf_main
+	religion = ancestor_gods
+}
+b_drakkigrin = {
+	culture = dwarf_main
+	religion = ancestor_gods
+}
+b_kurgani = {
+	culture = dwarf_main
+	religion = ancestor_gods
+}
+#Karark Karlnir Reserved
+b_griz = {
+	culture = dwarf_main
+	religion = ancestor_gods
+}
+b_durazgrund = {
+	culture = dwarf_main
+	religion = ancestor_gods
+}
+# Angazklad Merchant Houses
+
+b_khragbrom = {
+	culture = dwarf_main
+	religion = ancestor_gods
+}
+
+b_elgidrengi = {
+	culture = dwarf_main
+	religion = ancestor_gods
+}
+
+b_chivasson = {
+	culture = dwarf_main
+	religion = ancestor_gods
+}
+
+b_demerzak = {
+	culture = dwarf_main
+	religion = ancestor_gods
+}
+
+b_tezras = {
+	culture = dwarf_main
+	religion = ancestor_gods
+}
+
+# Barduilan Merchant Houses
+
+b_de_yanez = {
+	culture = tigarrese
+	religion = myrmidian
+}
+
+b_de_palencia = {
+	culture = montanese
+	religion = myrmidian
+}
+
+b_de_san_martin = {
+	culture = tigarrese
+	religion = myrmidian
+}
+
+b_sanudo = {
+	culture = tigarrese
+	religion = myrmidian
+}
+
+b_anso = {
+	culture = tigarrese
+	religion = myrmidian
+}
+
+# Communards
+
+b_de_alatriste = {
+	culture = astur
+	religion = myrmidian
+}
+
+b_paz = {
+	culture = astur
+	religion = myrmidian
+}
+
+b_de_arrabal = {
+	culture = avilian
+	religion = myrmidian
+}
+
+b_ibanez = {
+	culture = galice
+	religion = myrmidian
+}
+
+b_espronceda = {
+	culture = tigarrese
+	religion = myrmidian
+}
+
+# League of Kuldevind
+
+b_eketra = {
+	culture = graeling
+	religion = norscan_gods
+}
+
+b_horn = {
+	culture = fjarmann
+	religion = norscan_gods
+}
+
+b_alfthan = {
+	culture = bjornling
+	religion = norscan_gods
+}
+
+b_falgart = {
+	culture = sarl
+	religion = norscan_gods
+}
+
+b_tangen = {
+	culture = varg
+	religion = norscan_gods
+}
+
+# Merchant Houses of Pigbarter
+b_alhawt = {
+	culture = cophic
+	religion = atruhayid
+}
+
+b_zwartdoorn = {
+	culture = westerlander
+	religion = manannite
+}
+
+b_tumbleberry = {
+	culture = mootlander
+	religion = halfling_gods
+}
+
+b_remano = {
+	culture = reman
+	religion = myrmidian
+}
+
+b_goldbreaker = {
+	culture = ogre_main
+	religion = great_maw
+}
+
+# Sorcerer Clans of Zharr'Naggrund
+b_zulik = { #Zulik
+	culture = dwarf_chaos
+	religion = hashut
+}
+
+
+#Mootland
+b_lump-krooper = {
+	culture = mootlander
+	religion = halfling_gods
+}
+
+b_hupstedat = {
+	culture = mootlander
+	religion = halfling_gods
+}
+
+b_weiller = {
+	culture = mootlander
+	religion = halfling_gods
+}
+
+b_naabecker = {
+	culture = mootlander
+	religion = halfling_gods
+}
+
+b_lostpockets = {
+	culture = mootlander
+	religion = halfling_gods
+}
+
+
+
+
+

@@ -1,0 +1,889 @@
+##Dwarfs
+#Karak Ungor
+fiery_thing_rori = {
+	vassal_opinion = 8
+	monthly_character_prestige = 0.8
+	martial = 4
+	quality = 8
+	flags = { arcane_item diamond }
+	stacking = no
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_orc
+			trait = creature_goblin
+			trait = creature_dwarf
+			trait = creature_chaos_dwarf
+		}
+		can_wear_helmet = yes
+	}
+	picture = "GFX_cursed_diamond_crown"
+	slot = crown
+	indestructible = yes
+	allowed_gift = {
+		always = no
+	}
+}
+#Runes
+rune_of_swiftness = {
+	combat_rating = 3
+	command_modifier = {
+		speed = 0.1
+	}
+	quality = 1
+	active = {
+		is_adult = yes
+		NOT = { has_artifact = master_rune_of_swiftness }
+		trait = creature_dwarf
+		OR = {
+			trait = runesmith
+			trait = runelord
+		}
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_rune_offensive"
+	slot = rune
+}
+rune_of_fury = {
+	combat_rating = 3
+	command_modifier = {
+		damage = 0.1
+	}
+	quality = 1
+	active = {
+		is_adult = yes
+		NOT = { has_artifact = master_rune_of_fury }
+		trait = creature_dwarf
+		OR = {
+			trait = runesmith
+			trait = runelord
+		}
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_rune_offensive"
+	slot = rune
+}
+rune_of_stoicism = {
+	general_opinion = 6
+	quality = 1
+	active = {
+		is_adult = yes
+		NOT = { has_artifact = master_rune_of_stoicism }
+		trait = creature_dwarf
+		OR = {
+			trait = runesmith
+			trait = runelord
+		}
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_rune_misc"
+	slot = rune
+}
+rune_of_dismay = {
+	combat_rating = 3
+	command_modifier = {
+		morale_offence = 0.1
+	}
+	quality = 1
+	active = {
+		is_adult = yes
+		NOT = { has_artifact = master_rune_of_fear }
+		trait = creature_dwarf
+		OR = {
+			trait = runesmith
+			trait = runelord
+		}
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_rune_misc"
+	slot = rune
+}
+rune_of_steel = {
+	combat_rating = 6
+	command_modifier = {
+		defence = 0.1
+	}
+	quality = 1
+	active = {
+		is_adult = yes
+		NOT = { has_artifact = master_rune_of_steel }
+		trait = creature_dwarf
+		OR = {
+			trait = runesmith
+			trait = runelord
+		}
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_rune_defensive"
+	slot = rune
+}
+rune_of_shielding = {
+	combat_rating = 6
+	command_modifier = {
+		morale_defence = 0.1
+	}
+	quality = 1
+	active = {
+		is_adult = yes
+		NOT = { has_artifact = master_rune_of_shielding }
+		trait = creature_dwarf
+		OR = {
+			trait = runesmith
+			trait = runelord
+		}
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_rune_defensive"
+	slot = rune
+}
+rune_of_courage = {
+	combat_rating = 6
+	quality = 1
+	command_modifier = {
+		religious_enemy = 0.1
+	}
+	active = {
+		is_adult = yes
+		NOT = { has_artifact = master_rune_of_courage }
+		trait = creature_dwarf
+		OR = {
+			trait = runesmith
+			trait = runelord
+		}
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_rune_misc"
+	slot = rune
+}
+#Master
+master_rune_of_courage = {
+	combat_rating = 9
+	command_modifier = {
+		religious_enemy = 0.3
+	}
+	quality = 3
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		trait = runelord
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_master_rune_misc"
+	slot = master_rune
+}
+master_rune_of_stoicism = {
+	general_opinion = 18
+	quality = 3
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		trait = runelord
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_master_rune_misc"
+	slot = master_rune
+}
+master_rune_of_swiftness = {
+	combat_rating = 9
+	command_modifier = {
+		speed = 0.3
+	}
+	quality = 3
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		trait = runelord
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_master_rune_offensive"
+	slot = master_rune
+}
+master_rune_of_fury = {
+	combat_rating = 9
+	command_modifier = {
+		damage = 0.3
+	}
+	quality = 3
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		trait = runelord
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_master_rune_offensive"
+	slot = master_rune
+}
+master_rune_of_fear = { #Upgrade of Dismay
+	combat_rating = 9
+	command_modifier = {
+		damage = 0.3
+	}
+	quality = 3
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		trait = runelord
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_master_rune_misc"
+	slot = master_rune
+}
+master_rune_of_steel = {
+	combat_rating = 9
+	command_modifier = {
+		defence = 0.3
+	}
+	quality = 3
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		trait = runelord
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_master_rune_defensive"
+	slot = master_rune
+}
+master_rune_of_shielding = {
+	combat_rating = 9
+	command_modifier = {
+		morale_defence = 0.3
+	}
+	quality = 3
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		trait = runelord
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_master_rune_defensive"
+	slot = master_rune
+}
+#Special Runes
+master_rune_of_valaya = {
+	health = 1
+	quality = 5
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		trait = runelord
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_master_rune_of_valaya"
+	slot = master_rune
+}
+master_rune_of_grungi = {
+	stewardship = 5
+	town_opinion = = 5	#city_opinion?
+	quality = 5
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		trait = runelord
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_master_rune_of_grungi"
+	slot = master_rune
+}
+master_rune_of_grimnir = {
+	combat_rating = 15
+	command_modifier = {
+		religious_enemy = 0.3
+	}
+	quality = 5
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		trait = runelord
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_master_rune_of_grimnir"
+	slot = master_rune
+}
+master_rune_of_thungi = {
+	learning = 5
+	monthly_currency_gain = 0.5
+	quality = 5
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		trait = runelord
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_master_rune_of_thungi"
+	slot = master_rune
+}
+master_rune_of_morgrim = {
+	command_modifier = {
+		gunpowder = 0.3
+		siege = 0.2
+	}
+	quality = 5
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		trait = runelord
+	}
+	flags = { rune }
+	stacking = no
+	picture = "GFX_master_rune_of_morgrim"
+	slot = master_rune
+}
+#Special Mounts
+anvil_of_doom = {
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	stewardship = 3
+	quality = 6
+	active = {
+		trait = creature_dwarf
+		trait = runelord
+		is_adult = yes
+	}
+	flags = { mount }
+	stacking = no
+	picture = "GFX_anvil_of_doom"
+	slot = mount
+	indestructible = yes
+}
+#Generic
+dawi_hammer = {
+	monthly_character_prestige = 0.2
+	combat_rating = 6
+	martial = 1
+	quality = 2
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon mace }
+	stacking = no
+	picture = "GFX_dawi_hammer"
+	slot = weapon
+}
+dawi_great_hammer = {
+	monthly_character_prestige = 0.4
+	combat_rating = 12
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon mace }
+	stacking = no
+	picture = "GFX_dawi_great_hammer"
+	slot = weapon
+}
+dawi_gromril_hammer = {
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	martial = 3
+	quality = 6
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon mace }
+	stacking = no
+	picture = "GFX_dawi_gromril_hammer"
+	slot = weapon
+}
+dawi_axe = {
+	monthly_character_prestige = 0.2
+	combat_rating = 6
+	martial = 2
+	quality = 2
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon axe }
+	stacking = no
+	picture = "GFX_dawi_axe"
+	slot = weapon
+}
+dawi_battleaxe = {
+	monthly_character_prestige = 0.4
+	combat_rating = 12
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon axe }
+	stacking = no
+	picture = "GFX_dawi_battleaxe"
+	slot = weapon
+}
+dawi_norse_battleaxe = {
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	martial = 2
+	quality = 6
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon axe }
+	stacking = no
+	picture = "GFX_dawi_norse_battleaxe"
+	slot = weapon
+}
+dawi_hammernought_battleaxe = {
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	martial = 3
+	quality = 6
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon axe }
+	stacking = no
+	picture = "GFX_dawi_hammernought_battleaxe"
+	slot = weapon
+}
+dawi_light_armour = {
+	monthly_character_prestige = 0.2
+	combat_rating = 6
+	martial = 1
+	quality = 2
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_2 }
+	stacking = no
+	picture = "GFX_dawi_light_armour"
+	slot = torso
+}
+dawi_steel_armour = {
+	monthly_character_prestige = 0.4
+	combat_rating = 12
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_4 }
+	stacking = no
+	picture = "GFX_dawi_steel_armour"
+	slot = torso
+}
+dawi_artifact_gromril_armour = {
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	martial = 3
+	quality = 6
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_6 }
+	stacking = no
+	picture = "GFX_dawi_artifact_gromril_armour"
+	slot = torso
+}
+
+dawi_artifact_hammernought = { #special Order Along with Dragon Armour
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	martial = 3
+	quality = 6
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_wear_armor = yes
+	}
+
+	flags = { armor armour_defence_6 }
+	stacking = no
+	picture = "GFX_dawi_artifact_gromril_armour"
+	slot = torso
+}
+#Runic
+dawi_artifact_runic_hammernought = {
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	martial = 3
+	quality = 6
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_wear_armor = yes
+	}
+
+	flags = { armor armour_defence_6 }
+	stacking = no
+	picture = "GFX_dawi_artifact_runic_hammernought"
+	slot = torso
+}
+dawi_hammernought_runic_battleaxe = {
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	martial = 3
+	quality = 6
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon axe }
+	stacking = no
+	picture = "GFX_dawi_hammernought_runic_battleaxe"
+	slot = weapon
+}
+dawi_gromril_runic_hammer = {
+	monthly_character_prestige = 0.8
+	combat_rating = 24
+	martial = 4
+	quality = 8
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon mace }
+	stacking = no
+	picture = "GFX_dawi_gromril_runic_hammer"
+	slot = weapon
+}
+##Character_specific
+#Morekai of Karag Dum, later Gotrek Gurnisson
+dawi_axe_of_runemasters = {
+	monthly_character_prestige = 0.8
+	combat_rating = 24
+	martial = 4
+	quality = 8
+	active = {
+		trait = creature_dwarf
+		is_adult = yes
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon axe }
+	stacking = no
+	picture = "GFX_axe_grimnir_thorgrim"
+	slot = weapon
+	indestructible = yes
+}
+#King Thorgrim firebeard of Karag Dum
+dawi_hammer_fate = {
+	monthly_character_prestige = 0.8
+	combat_rating = 24
+	martial = 4
+	quality = 8
+	active = {
+		trait = creature_dwarf
+		is_adult = yes
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon mace }
+	stacking = no
+	picture = "GFX_hammer_angrund"
+	slot = weapon
+	indestructible = yes
+}
+
+# Thorgrim Grudgebearer / Current High King
+
+axe_grimnir_thorgrim = {
+	monthly_character_prestige = 0.8
+	combat_rating = 24
+	martial = 4
+	quality = 8
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon axe }
+	stacking = no
+	picture = "GFX_axe_grimnir_thorgrim"
+	slot = weapon
+	indestructible = yes
+}
+
+armour_skaldour_thorgrim = {
+	monthly_character_prestige = 0.8
+	combat_rating = 24
+	martial = 4
+	quality = 8
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_10 }
+	stacking = no
+	picture = "GFX_armour_skaldour_thorgrim"
+	slot = torso
+}
+
+dragon_crown_karaz = {
+	monthly_character_prestige = 1
+	diplomacy = 5
+	vassal_opinion = 10
+	quality = 10
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_wear_helmet = yes
+		OR = {
+			has_landed_title = e_karak_ankor
+			has_landed_title = d_high_seat
+		}
+	}
+	flags = { crown jewelry }
+	stacking = no
+	picture = "GFX_dragon_crown_karaz"
+	slot = crown
+	indestructible = yes
+}
+
+great_book_grudges = {
+	monthly_character_piety = 0.6
+	learning = 3
+	quality = 6
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+	}
+	stacking = no
+	picture = "GFX_great_book_grudges"
+	slot = library
+	indestructible = yes
+}
+
+throne_power_thorgrim = {
+	monthly_character_prestige = 0.8
+	combat_rating = 24
+	martial = 4
+	quality = 8
+	active = {
+		trait = creature_dwarf
+		is_adult = yes
+	}
+	flags = { mount }
+	stacking = no
+	picture = "GFX_throne_power_thorgrim"
+	slot = mount
+	indestructible = yes
+}
+
+##Ungrim Ironfist/Slayer Kings
+
+axe_dargo_ungrim = {
+	monthly_character_prestige = 0.8
+	combat_rating = 24
+	martial = 4
+	quality = 8
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		trait = dwarf_slayer_king
+	}
+	flags = { combat_weapon axe }
+	stacking = no
+	picture = "GFX_axe_dargo_ungrim"
+	slot = weapon
+	indestructible = yes
+}
+
+dragon_cloak_fyrskar_ungrim = {
+	monthly_character_prestige = 0.8
+	combat_rating = 24
+	martial = 4
+	quality = 8
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		trait = dwarf_slayer_king
+	}
+	stacking = no
+	picture = "GFX_dragon_cloak_fyrskar_ungrim"
+	slot = cloak
+	indestructible = yes
+}
+
+slayer_crown = {
+	monthly_character_prestige = 0.8
+	vassal_opinion = 8
+	martial = 4
+	quality = 8
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_wear_helmet = yes
+		trait = dwarf_slayer_king
+	}
+	stacking = no
+	picture = "GFX_slayer_crown"
+	slot = crown
+	indestructible = yes
+}
+
+## Thorek Ironbrow
+
+thorek_rune_armour = {
+	monthly_character_prestige = 0.8
+	combat_rating = 24
+	martial = 4
+	quality = 8
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_wear_armor = yes
+		trait = runelord
+	}
+	flags = { armor armour_defence_8 }
+	stacking = no
+	picture = "GFX_thorek_rune_armour"
+	slot = torso
+	indestructible = yes
+}
+
+klad_brakak_thorek = {
+	monthly_character_prestige = 0.8
+	combat_rating = 24
+	martial = 4
+	quality = 8
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_wear_armor = yes
+		trait = runelord
+	}
+	flags = { combat_weapon mace }
+	stacking = no
+	picture = "GFX_klad_brakak_thorek"
+	slot = weapon
+	indestructible = yes
+}
+
+## Bellegar Ironhammer / Clan Angrund
+
+hammer_angrund = {
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	martial = 3
+	quality = 6
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon mace }
+	stacking = no
+	picture = "GFX_hammer_angrund"
+	slot = weapon
+	indestructible = yes
+}
+
+defiance_shield_angrund = {
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	martial = 3
+	quality = 6
+	active = {
+		is_adult = yes
+		trait = creature_dwarf
+		can_hold_shield = yes
+	}
+	flags = { armor shield }
+	stacking = no
+	picture = "GFX_defiance_shield_angrund"
+	slot = shield
+	indestructible = yes
+}
+#Society Ingredients
+ingredient_salve1 = {
+	quality = 1
+	allowed_gift = {
+		always = no
+	}
+	flags = { hermetics ingredient salve }
+	picture = "GFX_pouch_of_ingredients"
+}
+
+ingredient_salve2 = {
+	quality = 1
+	allowed_gift = {
+		always = no
+	}
+	flags = { hermetics ingredient salve }
+	picture = "GFX_pouch_of_ingredients"
+}
+ingredient_dawi_metal1 = {
+	quality = 1
+	allowed_gift = {
+		always = no
+	}
+	flags = { hermetics ingredient metal }
+	picture = "GFX_pouch_of_ingredients"
+}
+
+ingredient_dawi_metal2 = {
+	quality = 1
+	allowed_gift = {
+		always = no
+	}
+	flags = { hermetics ingredient metal }
+	picture = "GFX_pouch_of_ingredients"
+}
+
+ingredient_dawi_metal3 = {
+	quality = 1
+	allowed_gift = {
+		always = no
+	}
+	flags = { hermetics ingredient metal }
+	picture = "GFX_pouch_of_ingredients"
+}
+
+ingredient_dawi_metal4 = {
+	quality = 4
+	allowed_gift = {
+		always = no
+	}
+	flags = { hermetics ingredient metal gromril }
+	picture = "GFX_pouch_of_ingredients"
+}
+
+ingredient_dawi_metal5 = {
+	quality = 1
+	allowed_gift = {
+		always = no
+	}
+	flags = { hermetics ingredient metal }
+	picture = "GFX_pouch_of_ingredients"
+}

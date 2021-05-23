@@ -1,0 +1,1617 @@
+decisions = {
+
+	feast_0 = {
+		only_playable = yes
+		ai_check_interval = 12
+		potential = {
+			is_playable = yes
+			NOT = { culture_group = druchi_group }
+			NOR = {
+				religion = norscan_gods
+				religion = kislev_gods
+				religion = atruhayid
+				# religion = ormazd
+				# religion = kitabid
+				# religion = hashut
+			}
+			OR = {
+				trait = creature_human
+				trait = creature_elf
+				trait = creature_dwarf
+				trait = creature_chaos_dwarf
+				trait = creature_halfling
+				trait = creature_nehekharan
+			}
+			OR = {
+				is_feudal = yes
+				is_tribal = yes
+				is_nomadic = yes
+			}
+			prisoner = no
+
+			NOT = {
+				has_character_modifier = holding_large_feast
+			}
+			NOR = {
+				has_character_modifier = holding_large_feast
+				has_character_modifier = large_feast_timer
+				has_character_modifier = fabulous_feast
+				has_character_flag = guest_feast_started
+				liege = {
+					has_character_modifier = holding_large_feast
+				}
+			}
+			num_of_vassals = 1
+		}
+		allow = {
+			war = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			custom_tooltip = { text = IS_NOT_INCAPACITATED
+					is_incapacitated_trigger = no }
+			wealth = 25
+			month = 10
+			prestige = 100
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+		}
+		effect = {
+			wealth = -25
+			add_character_modifier = {
+				name = holding_large_feast
+				duration = -1
+			}
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			hidden_tooltip = { character_event = { id = 72999 days = 150 } } # Safety catch flag clearing
+
+			hidden_tooltip = {
+				character_event = {
+					id = 72109
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+				}
+				custom_tooltip = {
+					text = capital_prospers_custom_tooltip
+					hidden_tooltip = {
+						capital_scope = {
+							change_variable = { which = prosperity_value value = 8 }
+						}
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 200
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+
+	summer_fair = {
+		only_playable = yes
+		ai_check_interval = 3
+
+		potential = {
+			is_playable = yes
+			OR = {
+				religion_group = old_world_group
+				religion_group = halfling_gods_group
+			}
+			prisoner = no
+			NOT = {
+				has_character_modifier = holding_summer_fair
+			}
+			NOT = {
+				has_character_modifier = summer_fair_timer
+			}
+			num_of_vassals = 1
+			OR = {
+				NOT = { has_character_flag = recent_summer_fair }
+				had_character_flag = {
+					flag = recent_summer_fair
+					days = 60
+				}
+			}
+		}
+		allow = {
+			war = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+			wealth = 25
+			custom_tooltip = { text = IS_NOT_INCAPACITATED
+					is_incapacitated_trigger = no }
+			NOT = { is_inaccessible_trigger = yes }
+			month = 4
+			NOT = {
+				month = 7
+			}
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+		}
+		effect = {
+			wealth = -25
+			add_character_modifier = {
+				name = holding_summer_fair
+				duration = -1
+			}
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			hidden_tooltip = {
+				character_event = {
+					id = 74047
+					days = 60
+				}
+				character_event = { id = 74050  }
+			}
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+				}
+				custom_tooltip = {
+					text = capital_prospers_custom_tooltip
+					hidden_tooltip = {
+						capital_scope = {
+							change_variable = { which = prosperity_value value = 8 }
+						}
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 200
+				}
+			}
+
+			modifier = {
+				factor = 0
+				trait = slothful
+			}
+
+			modifier = {
+				factor = 0
+				NOT = { stewardship = 10 }
+			}
+
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+
+		}
+	}
+
+	hold_grand_hunt = {
+		only_playable = yes
+		ai_check_interval = 2
+
+		potential = {
+			is_playable = yes
+			age = 16
+			prisoner = no
+			OR = {
+				religion_group = old_world_group
+				religion_group = chaos_gods_group
+				religion_group = cytharai_group
+				religion_group = cadai_group
+				has_alternate_start_parameter = { key = religion_names value = random }
+				religion = kislevite_gods
+				religion = northern_gods
+			}
+			NOT = { religion = hashut }
+			NOT = {	has_character_modifier = holding_grand_hunt }
+			OR = {
+				NOT = { has_dlc = "Way of Life" }
+				has_focus = focus_hunting
+			}
+		}
+		allow = {
+			war = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+			month = 8
+			wealth = 25
+			NOT = { month = 10 }
+			NOT = {	health_traits = 1 }
+			custom_tooltip = { text = IS_NOT_INCAPACITATED
+					is_incapacitated_trigger = no }
+			NOT = { is_inaccessible_trigger = yes }
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+		}
+		effect = {
+			wealth = -25
+			add_character_modifier = {
+				name = holding_grand_hunt
+				duration = -1
+			}
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			hidden_tooltip = { character_event = { id = 36999 days = 150 } } # Safety catch flag clearing
+			hidden_tooltip = {
+				character_event = { id = 36090 days = 60 }
+				character_event = { id = 36080  }
+			}
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+				}
+				custom_tooltip = {
+					text = capital_prospers_custom_tooltip
+					hidden_tooltip = {
+						capital_scope = {
+							change_variable = { which = prosperity_value value = 8 }
+						}
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = { wealth = 50 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { wealth = 200 }
+				NOT = { has_focus = focus_hunting }
+			}
+			modifier = {
+				factor = 0
+				trait = craven
+			}
+			modifier = {
+				factor = 0
+				NOT = {
+					martial = 10
+				}
+			}
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+
+	hold_tiger_hunt = {
+		only_playable = yes
+		ai_check_interval = 7
+
+		potential = {
+			has_dlc = "Rajas of India"
+			is_playable = yes
+			age = 16
+			prisoner = no
+			num_of_vassals = 1
+			capital_scope = {
+				region = world_india
+			}
+		}
+		allow = {
+			war = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+			NOT = { month = 10 }
+			wealth = 25
+			NOT = {	trait = incapable }
+			NOT = { is_inaccessible_trigger = yes }
+			prisoner = no
+			NOT = { religion = jain }
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = {
+					NOT = { has_character_flag = do_not_disturb }
+					NOT = { has_character_flag = holding_tiger_hunt }
+					NOT = { has_character_modifier = hunt_timer }
+				}
+			}
+		}
+		effect = {
+			wealth = -25
+			set_character_flag = holding_tiger_hunt
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			hidden_tooltip = {
+				character_event = { id = RoI.2000 }
+			}
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+				}
+				custom_tooltip = {
+					text = capital_prospers_custom_tooltip
+					hidden_tooltip = {
+						capital_scope = {
+							change_variable = { which = prosperity_value value = 8 }
+						}
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = { wealth = 50 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { wealth = 200 }
+				NOT = { has_focus = focus_hunting }
+			}
+			modifier = {
+				factor = 0
+				NOT = { martial = 10 }
+				NOT = { has_focus = focus_hunting }
+			}
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+
+	choose_hindu_patron_deity = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		potential = {
+			has_dlc = "Rajas of India"
+			is_playable = yes
+			age = 16
+			NOT = { trait = incapable }
+			religion = hindu
+			NOR = {
+				has_character_modifier = patron_shiva
+				has_character_modifier = patron_vishnu
+				has_character_modifier = patron_brahma
+				has_character_modifier = patron_kali
+				has_character_modifier = patron_ganesha
+				has_character_modifier = patron_ganga
+			}
+			NOT = { has_character_flag = selecting_patron_deity }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			custom_tooltip = {
+				text = custom_tooltip_choose_patron_diety
+			}
+			character_event = { id = RoI.100 }
+			set_character_flag = selecting_patron_deity
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 0.5
+				trait = cynical
+			}
+		}
+	}
+
+	catholic_pilgrimage = {        # For all Christians
+		only_playable = yes
+		ai_check_interval = 120
+		potential = {
+			has_dlc = "Sons of Abraham"
+			OR = {
+				NOT = { has_dlc = "Way of Life" }
+				has_focus = focus_theology
+				has_quest = quest_monastic_order_pilgrimage_christian
+			}
+			is_playable = yes
+			OR = {
+				religion = sigmarite
+				religion = ulrican
+				religion = myrmidian
+				religion = taalite
+				religion = shallyan
+				religion = grail
+				religion = false_grail
+			}
+			NOT = { trait = pilgrim }
+			NOT = { religion = morrian }
+		}
+		allow = {
+			custom_tooltip = { text = IS_NOT_INCAPACITATED
+					is_incapacitated_trigger = no }
+			war = no
+			in_command = no
+			conditional_tooltip = {
+				trigger = { has_character_modifier = coronation_request_cooldown }
+				custom_tooltip = {
+					text = TT_NOT_RECENTLY_ASKED_CORONATION
+					hidden_tooltip = {
+						NOT = { has_character_modifier = coronation_request_cooldown }
+					}
+				}
+			}
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			scaled_wealth = 0.2
+			age = 16
+			custom_tooltip = {
+				text = health_travel_condition
+				hidden_tooltip = {
+					NOT = {	trait = pregnant }
+					NOT = {	trait = incapable }
+					NOT = {	trait = blinded }
+					NOT = {	trait = has_tuberculosis }
+					NOT = {	trait = has_typhoid_fever }
+					NOT = {	trait = has_typhus }
+					NOT = {	trait = has_bubonic_plague }
+					NOT = {	trait = has_measles }
+					NOT = {	trait = has_small_pox }
+					NOT = {	trait = has_aztec_disease }
+				}
+			}
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+		}
+		effect = {
+			scaled_wealth = -0.2
+			set_character_flag = activated_pilgrimage
+			set_character_flag = do_not_disturb
+			hidden_tooltip = {
+				character_event = {
+					id = SoA.5000
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0.1             # Only a small minority of Christians ever go on a pilgrimage
+			}
+			modifier = {
+				factor = 3
+				trait = zealous
+			}
+			modifier = {
+				factor = 0
+				NOT = { wealth = 200 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { age = 30 }
+			}
+		}
+	}
+
+	#Pilgrimage to Martek ( Ormazd, Kitabid )
+	go_on_hajj = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		potential = {
+			is_playable = yes
+			OR = {
+				religion = ormazd
+				religion = kitabid
+			}
+			NOT = { trait = hajjaj }
+			NOT = { trait = on_hajj }
+			NOT = {	has_character_flag = preparing_hajj }
+			NOT = {	has_character_flag = ramadan }
+			NOT = {	has_character_flag = activated_hajj }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		allow = {
+			age = 16
+			custom_tooltip = { text = IS_NOT_INCAPACITATED
+					is_incapacitated_trigger = no }
+			scaled_wealth = 0.2
+			war = no
+			in_command = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+
+			NOT = { is_inaccessible_trigger = yes }
+			custom_tooltip = {
+				text = health_travel_condition
+				hidden_tooltip = {
+					NOT = {	trait = incapable }
+					NOT = {	trait = blinded }
+					NOT = {	trait = has_tuberculosis }
+					NOT = {	trait = has_typhoid_fever }
+					NOT = {	trait = has_typhus }
+					NOT = {	trait = has_bubonic_plague }
+					NOT = {	trait = has_measles }
+					NOT = {	trait = has_small_pox }
+					NOT = {	trait = has_aztec_disease }
+				}
+			}
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+		}
+		effect = {
+			scaled_wealth = -0.2
+			hidden_tooltip = {
+				letter_event = { id = 86000 }
+			}
+			clr_character_flag = promise_hajj
+			set_character_flag = activated_hajj
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+
+			if = {
+				limit = {
+					trait = decadent
+				}
+				remove_trait = decadent
+			}
+
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				trait = cynical
+			}
+			modifier = {
+				factor = 0
+				is_ruler = no
+				trait = decadent
+			}
+			modifier = {
+				factor = 2
+				is_ruler = yes
+				trait = decadent
+			}
+			modifier = {
+				factor = 0
+				NOT = { wealth = 300 }
+			}
+			modifier = { # Monthly randomizer for when AI takes decision (1% chance)
+				factor = 0
+				random = 1
+			}
+			modifier = {
+				factor = 0
+				NOT = { age = 30 }
+			}
+		}
+	}
+
+	commission_runestone = {
+		only_playable = yes
+		ai_check_interval = 36
+		potential = {
+			has_dlc = "The Old Gods"
+			is_playable = yes
+			age = 16
+			prisoner = no
+			OR = {
+				culture_group = norscan_group
+				culture_group = dwarf_group
+			}
+			NOT = {	has_character_flag = commissioned_runestone }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		allow = {
+			wealth = 100
+			prisoner = no
+		}
+		effect = {
+			wealth = -100
+			set_character_flag = commissioned_runestone
+			hidden_tooltip = {
+				character_event = { id = TOG.500 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { wealth = 300 }
+			}
+			modifier = {
+				factor = 0
+				NOT = { age = 30 }
+			}
+		}
+	}
+
+	hold_nerge = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 2
+		potential = {
+			has_dlc = "The Old Gods"
+			is_playable = yes
+			age = 16
+			is_female = no
+			prisoner = no
+			culture_group = beastman_group
+			NOT = { has_character_modifier = morale_from_nerge }
+			NOT = {	has_character_flag = holding_nerge }
+
+			NOT = {
+				has_alternate_start_parameter = { key = culture_names value = random }
+			}
+		}
+		allow = {
+			war = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+			month = 8
+			wealth = 50
+			NOT = { month = 10 }
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = holding_nerge
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			hidden_tooltip = {
+				character_event = { id = TOG.299 days = 150 }  # Safety catch flag clearing
+				}
+			custom_tooltip = {
+				text = prepare_nerge
+				hidden_tooltip = {
+					character_event = { id = TOG.100 }
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+					is_nomadic = no
+				}
+				custom_tooltip = {
+					text = capital_prospers_custom_tooltip
+					hidden_tooltip = {
+						capital_scope = {
+							change_variable = { which = prosperity_value value = 8 }
+						}
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = craven
+			}
+			modifier = {
+				factor = 0
+				NOT = { martial = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+
+	hold_blot = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 6
+		potential = {
+			has_dlc = "The Old Gods"
+			is_playable = yes
+			age = 16
+			prisoner = no
+			religion_group = chaos_gods_group
+			NOT = { has_character_modifier = held_blot_timer }
+			NOT = {	has_character_flag = holding_blot }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		allow = {
+			war = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+			OR = {
+				NOT = { month = 2 }
+				month = 10
+			}
+			wealth = 50
+			custom_tooltip = { text = IS_NOT_INCAPACITATED
+					is_incapacitated_trigger = no }
+			NOT = { is_inaccessible_trigger = yes }
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = holding_blot
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			hidden_tooltip = {
+				character_event = { id = TOG.699 days = 150 } # Safety catch flag clearing
+			}
+			custom_tooltip = {
+				text = prepare_blot
+				hidden_tooltip = {
+					character_event = { id = TOG.600 }
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+				}
+				custom_tooltip = {
+					text = capital_prospers_custom_tooltip
+					hidden_tooltip = {
+						capital_scope = {
+							change_variable = { which = prosperity_value value = 8 }
+						}
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+	#REMINDER: TWEAK FOR OLD FAITH/NORTHERN GODS/AKGHAN
+	ancestor_worship = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+
+		potential = {
+			has_dlc = "The Old Gods"
+			is_playable = yes
+			is_landed = yes
+			is_adult = yes
+			prisoner = no
+			OR = {
+				religion = ancestor_gods
+				religion = norse_ancestor_gods
+				religion = nehekharan_gods
+				religion = old_faith
+				religion = northern_gods
+				religion = akghan
+				has_religion_feature = religion_beatification
+			}
+		}
+
+		allow = {
+			war = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+			NOT = { is_inaccessible_trigger = yes }
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+			custom_tooltip = {
+				text = worship_cooldown_tooltip
+				hidden_tooltip = { NOT = { has_character_modifier = worshipped_ancestors_timer } }
+			}
+		}
+
+		effect = {
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			custom_tooltip = {
+				text = prepare_worship_ancestors
+				hidden_tooltip = {
+					character_event = { id = TOG.7000 }
+					add_character_modifier = {
+						name = worshipped_ancestors_timer
+						years = 10
+						hidden = yes
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+
+			modifier = {
+				factor = 0.01
+				trait = cynical
+			}
+			modifier = {
+				factor = 5
+				trait = zealous
+			}
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+
+	#Dwarfs. Northern Gods, Tomb Kings ( Old World minor cults ? Study possiblity )
+	pick_main_deity = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		potential = {
+			has_dlc = "The Old Gods"
+			is_playable = yes
+			is_adult = yes
+			prisoner = no
+			OR = {
+				religion = ancestor_gods
+				religion = norse_ancestor_gods
+				religion = nehekharan_gods
+				religion = northern_gods
+			}
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		allow = {
+			piety = 25
+			custom_tooltip = {
+				text = pick_main_deity_timer_tooltip
+				NOT = { has_character_modifier = picked_main_deity_timer }
+			}
+			prisoner = no
+		}
+		effect = {
+			if = {
+				limit = { has_character_modifier = follower_of_grungni }
+				remove_character_modifier = follower_of_grungni
+			}
+			if = {
+				limit = { has_character_modifier = follower_of_grimnir }
+				remove_character_modifier = follower_of_grimnir
+			}
+			if = {
+				limit = { has_character_modifier = follower_of_valaya }
+				remove_character_modifier = follower_of_valaya
+			}
+			if = {
+				limit = { has_character_modifier = follower_of_thungni }
+				remove_character_modifier = follower_of_thungni
+			}
+			if = {
+				limit = { has_character_modifier = follower_of_ursun }
+				remove_character_modifier = follower_of_ursun
+			}
+			if = {
+				limit = { has_character_modifier = follower_of_dazh }
+				remove_character_modifier = follower_of_dazh
+			}
+			if = {
+				limit = { has_character_modifier = follower_of_tor }
+				remove_character_modifier = follower_of_tor
+			}
+			if = {
+				limit = { has_character_modifier = follower_of_kalita }
+				remove_character_modifier = follower_of_kalita
+			}
+			if = {
+				limit = { has_character_modifier = follower_of_ptra }
+				remove_character_modifier = follower_of_ptra
+			}
+			if = {
+				limit = { has_character_modifier = follower_of_asaph }
+				remove_character_modifier = follower_of_asaph
+			}
+			if = {
+				limit = { has_character_modifier = follower_of_phakth }
+				remove_character_modifier = follower_of_phakth
+			}
+			if = {
+				limit = { has_character_modifier = follower_of_usirian }
+				remove_character_modifier = follower_of_usirian
+			}
+
+			piety = -25
+
+			custom_tooltip = {
+				text = pick_main_deity_tooltip
+
+				#Starts main deity events
+				hidden_tooltip = {
+					if = {
+						limit = { has_minor_deity_trigger = no }
+						character_event = { id = TOG.7100 days = 10 }
+					}
+				}
+
+				#Found crash with this after the events firing, ai spammed it over and over
+				add_character_modifier = {
+					name = picked_main_deity_timer
+					duration = 3650
+					hidden = yes
+				}
+
+				#Event for picking main deity
+				trigger_switch = {
+					on_trigger = religion
+					ancestor_gods 			= { character_event = { id = TOG.7110 } }
+					norse_ancestor_gods 		= { character_event = { id = TOG.7110 } }
+					northern_gods			= { character_event = { id = TOG.7200 } }
+					nehekharan_gods			= { character_event = { id = TOG.7300 } }
+				}
+
+
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.5
+			modifier = {
+				factor = 0
+				has_minor_deity_trigger = yes
+			}
+		}
+	}
+
+	hold_jarilo = {
+		only_playable = yes
+		ai_check_interval = 3
+		potential = {
+			has_dlc = "The Old Gods"
+			is_playable = yes
+			is_adult = yes
+			prisoner = no
+			religion = kislev_gods
+			NOT = { has_character_modifier = held_jarilo_timer }
+			NOT = {	has_character_flag = holding_jarilo }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		allow = {
+			war = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+			NOT = { month = 7 }
+			month = 4
+			wealth = 50
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = holding_jarilo
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			hidden_tooltip = { character_event = { id = TOG.899 days = 150 } } # Safety catch flag clearing
+			custom_tooltip = {
+				text = prepare_jarilo
+				hidden_tooltip = {
+					character_event = { id = TOG.800 }
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+				}
+				custom_tooltip = {
+					text = capital_prospers_custom_tooltip
+					hidden_tooltip = {
+						capital_scope = {
+							change_variable = { which = prosperity_value value = 8 }
+						}
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+
+	celebrate_passover = { #Halfling Pie Week
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 3
+		potential = {
+			has_dlc = "Sons of Abraham"
+			is_playable = yes
+			is_adult = yes
+			prisoner = no
+			religion_group = halfling_gods_group
+			NOT = { has_character_modifier = held_passover_timer }
+			NOT = {	has_character_flag = holding_passover }
+			NOT = {
+				has_alternate_start_parameter = { key = religion_names value = random }
+			}
+		}
+		allow = {
+			war = no
+			custom_tooltip = {
+				text = UNOCCUPIED_DEMESNE_TITLE
+				hidden_tooltip = {
+					any_demesne_title = {
+						NOT = { higher_tier_than = count }
+						is_occupied = no
+					}
+				}
+			}
+			NOT = { month = 9 }
+			month = 7
+			wealth = 50
+			prisoner = no
+			NOT = { is_inaccessible_trigger = yes }
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+		}
+		effect = {
+			wealth = -50
+			set_character_flag = holding_passover
+			set_character_flag = recent_minor_decision
+			set_character_flag = do_not_disturb
+			hidden_tooltip = { character_event = { id = SoA.599 days = 150 } } # Safety catch flag clearing
+			custom_tooltip = {
+				text = passover_celebrations
+				hidden_tooltip = {
+					character_event = { id = SoA.500 }
+				}
+			}
+			if = {
+				limit = {
+					has_dlc = "Reapers"
+				}
+				custom_tooltip = {
+					text = capital_prospers_custom_tooltip
+					hidden_tooltip = {
+						capital_scope = {
+							change_variable = { which = prosperity_value value = 8 }
+						}
+					}
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0
+				NOT = {
+					wealth = 300
+				}
+			}
+			modifier = {
+				factor = 0
+				trait = shy
+			}
+			modifier = {
+				factor = 0
+				NOT = { diplomacy = 10 }
+			}
+			modifier = {
+				factor = 0
+				has_character_flag = recent_minor_decision
+				NOT = {
+					had_character_flag = {
+						flag = recent_minor_decision
+						days = 730
+					}
+				}
+			}
+		}
+	}
+
+	# borrow_money_jews = {
+		# only_playable = yes
+		# potential = {
+			# is_playable = yes
+			# is_nomadic = no
+			# has_dlc = "Sons of Abraham"
+			# OR = {
+				# religion_group = christian
+				# religion_group = muslim
+				# religion_group = zoroastrian_group
+			# }
+			# NOT = {	religion_group = jewish_group }
+			# NOT = { trait = secretly_jewish }
+		# }
+
+		# allow = {
+			# OR = {
+				# religion_group = christian
+				# religion_group = muslim
+				# religion_group = zoroastrian_group
+			# }
+			# prisoner = no
+			# NOT = {
+				# has_character_modifier = borrowed_from_jews
+				# has_character_modifier = expelled_jewish
+			# }
+			# top_liege = { NOT = { has_character_modifier = expelled_jewish } }
+		# }
+
+		# effect = {
+			# add_character_modifier = {
+				# name = borrowed_from_jews
+				# duration = -1
+				# inherit = yes
+			# }
+			# wealth = 300
+		# }
+
+		# revoke_allowed = {
+			# always = no
+		# }
+
+		# ai_will_do = {
+			# factor = 1
+			# modifier = {
+				# factor = 0
+				# wealth = 0
+				# war = no
+			# }
+			# modifier = {
+				# factor = 0
+				# wealth = 200
+				# war = yes
+			# }
+			# modifier = {
+				# factor = 0.01 # Slow it down
+			# }
+		# }
+	# }
+	# repay_money_jews = {
+		# only_playable = yes
+		# potential = {
+			# is_playable = yes
+			# NOT = {
+				# has_character_modifier = expelled_jewish
+			# }
+			# has_character_modifier = borrowed_from_jews
+			# has_dlc = "Sons of Abraham"
+		# }
+
+		# allow = {
+			# wealth = 350
+		# }
+
+		# effect = {
+			# remove_character_modifier = borrowed_from_jews
+			# wealth = -350
+		# }
+
+		# revoke_allowed = {
+			# always = no
+		# }
+
+		# ai_will_do = {
+			# factor = 1
+			# modifier = {
+				# factor = 0
+				# NOT = { wealth = 450 }
+			# }
+			# modifier = {
+				# factor = 0.1 # Slow it down
+			# }
+		# }
+	# }
+
+
+	# Sky burial
+	sky_burial_decision = {
+		only_playable = yes
+		is_high_prio = yes
+		ai_check_interval = 12
+		potential = {
+			is_playable = yes
+			has_character_flag = sky_burial
+			NOT = { has_character_flag = performed_sky_burial }
+			OR = {
+				religion_group = chaos_gods_group
+				any_owned_bloodline = {
+					has_bloodline_flag = bloodline_sky_burial
+				}
+				AND = {
+					government = tzardom_government
+				}
+			}
+		}
+		allow = {
+			is_adult = yes
+			in_command = no
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { trait = infirm }
+			NOT = { is_inaccessible_trigger = yes }
+			NOT = { has_character_flag = do_not_disturb }
+		}
+		effect = {
+			custom_tooltip = { text = sky_burial_custom_tooltip }
+			hidden_tooltip = {
+				character_event = { id = HLF.8005 }
+				clr_character_flag = sky_burial
+				set_character_flag = performed_sky_burial
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+			}
+		}
+	}
+
+	# Choose Warhorse (Nomad)
+	choose_warhorse_nomad = {
+		only_playable = yes
+		ai_check_interval = 12
+		potential = {
+			is_playable = yes
+			is_nomadic = yes
+			NOT = { religion_group = greenskin_gods_group } #Greenskins shouldn't get out of Tribal
+			NOT = { religion = asrai_cadai } #Neither Asrai
+			NOT = { trait = creature_beastman } #Nor Beastmen
+			NOT = { trait = creature_ogre } #Can't ride horses without breaking their back
+			NOT = { has_character_modifier = nomad_warhorse }
+		}
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { religion_group = greenskin_gods_group } #Greenskins shouldn't get out of Tribal
+			NOT = { religion = asrai_cadai } #Neither Asrai
+			NOT = { trait = creature_beastman } #Nor Beastmen
+			NOT = { trait = creature_ogre } #Can't ride horses without breaking their back
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+			wealth = 20
+		}
+		effect = {
+			wealth = -20
+			custom_tooltip = { text = nomad_acquires_warhorse_tooltip }
+			hidden_tooltip = { long_character_event = { id = HL.6000 } } # Select and name horse
+			hidden_tooltip = { character_event = { id = HL.6500 days = 3500 random = 2000 } } # Horse dies
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0.1
+			modifier = {
+				factor = 0
+				NOT = { wealth = 200 }
+			}
+		}
+	}
+
+	destroy_artifact = {
+		only_playable = yes
+		ai = no
+		hide_in_decisions_list = yes
+		potential = {
+			FROM = {
+				owner = {
+					character = ROOT
+				}
+			}
+		}
+		allow = {
+			FROM = {
+				show_scope_change = no
+				is_indestructible = no
+				custom_tooltip = { text = tooltip_considering_artifact_donation NOT = { has_artifact_flag = flag_considering_donation } }
+			}
+		}
+		effect = {
+			FROM = {
+				destroy_artifact = yes
+			}
+		}
+	}
+	rename_artifact = {
+		only_playable = yes
+		ai = no
+		hide_in_decisions_list = yes
+		potential = {
+			has_dlc = "Holy Fury"
+			FROM = {
+				owner = {
+					character = ROOT
+				}
+			}
+		}
+		allow = {
+		}
+		effect = {
+			FROM = {
+				prompt_name = {
+					player = ROOT
+					type = RENAME_ARTIFACT_MESSAGE
+				}
+			}
+		}
+	}
+
+	rename_wonder = {
+		only_playable = yes
+		ai = no
+		hide_in_decisions_list = yes
+		potential = {
+			FROM = {
+				wonder_owner = {
+					character = ROOT
+				}
+			}
+		}
+		allow = {
+		}
+		effect = {
+			FROM = {
+				prompt_name = {
+					player = ROOT
+					type = RENAME_WONDER_MESSAGE
+				}
+			}
+		}
+	}
+}

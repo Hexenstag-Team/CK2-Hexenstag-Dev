@@ -1,0 +1,370 @@
+offmap_cathay = {
+	name = cathay_cathay
+	window_name = domestic_offmaps_window
+	button_name = icon_offmaps_entry
+	currency_name = TXT_GRACE
+	currency_gain = monthly_grace
+	currency_reset_on_dynasty_change = yes
+	holder_title = title_cathay_emperor			# minor title used to identify a character as holder of this offmap power
+	governor_title = e_cathay_west_governor
+	tier = emperor
+	non_aggression_modifier = peace_deal_with_cathay
+	coa_religion = taoist
+	government = confucian_bureaucracy
+	beginning_of_history = 618.6.18
+	sound = china_interaction_interface
+	display_trigger = {
+		has_dlc = "Jade Dragon"
+		FROM = { religion = draconite }
+	}
+	policies = {
+		cathay_open
+		cathay_isolationist
+		#cathay_expansionist
+	}
+	statuses = {
+		cathay_stable
+		cathay_unrest
+		cathay_civil_war
+		cathay_mongol_invasion
+		cathay_jurchen_invasion
+		cathay_famine
+		cathay_plague
+		cathay_golden_age
+	}
+	buttons = {
+		offmap_gifts = {
+			is_active_trigger = {
+			}
+		}
+		offmap_boons = {
+			is_active_trigger = {
+			}
+		}
+		offmap_hostility = {
+			is_active_trigger = {
+				cathay_offmap_hostile_decisions_enabled_trigger = yes
+			}
+			display_trigger = {
+				NOT = { offmap_cathay = { offmap_ruler = { dynasty = FROM } } }
+			}
+		}
+		offmap_hostility2 = {
+			display_trigger = {
+				always = no
+			}
+		}
+	}
+
+	#These conditions only effect the appearance of the button, it does not actually disable them from being clickable. The same triggers are used in all tribute/boon decisions respectively
+
+	icon_triggers = {
+		china_physician_cd = {
+			frame = 9
+			trigger = {
+				hidden_tooltip = {
+					has_character_flag = cathayan_grace_physician_sent
+				}
+			}
+		}
+		china_raid_cd = {
+			frame = 8
+			right = yes
+			trigger = {
+				hidden_tooltip = {
+					has_character_modifier = cathay_raid_grace_cd
+				}
+			}
+		}
+		china_famine_cd = {
+			frame = 7
+			trigger = {
+				hidden_tooltip = {
+					has_character_modifier = cathay_send_relief
+				}
+			}
+		}
+		china_tributary_cd = {
+			frame = 6
+			trigger = {
+				hidden_tooltip = {
+					has_character_modifier = cathayan_link
+				}
+			}
+		}
+		china_boon_cd = {
+			frame = 5
+			right = yes
+			trigger = {
+				hidden_tooltip = {
+					has_character_modifier = jd_cathay_boon_cd
+				}
+			}
+		}
+		china_commander_cd = {
+			frame = 4
+			trigger = {
+				hidden_tooltip = {
+					has_character_modifier = cathayan_grace_send_commander_timer
+				}
+			}
+		}
+		china_eunuch_cd = {
+			frame = 3
+			trigger = {
+				hidden_tooltip = {
+					has_character_modifier = cathayan_grace_send_eunuch_timer
+				}
+			}
+		}
+		china_concubine_cd = {
+			frame = 2
+			trigger = {
+				hidden_tooltip = {
+					has_character_modifier = cathayan_grace_send_concubine_timer
+				}
+			}
+		}
+		china_gift_cd = {
+			frame = 1
+			trigger = {
+				hidden_tooltip = {
+					has_character_modifier = cathayan_grace_send_gift_timer
+				}
+			}
+		}
+	}
+
+	monthly_currency_gain = {
+		offmap_same_dynasty = {
+			value = 10
+			offmap_cathay = { offmap_ruler = { dynasty = FROM } }
+		}
+		offmap_war_with_me = {
+			value = -10
+			war_with = FROM
+		}
+		offmap_likes_me = {
+			value = 1
+			FROM = { is_liked_by_Cathay_trigger = yes }
+			is_within_diplo_range = FROM
+		}
+		offmap_likes_tributaries = {
+			value = 2
+			offmap_cathay = {
+				offmap_has_like = likes_tributaries
+			}
+			FROM = {
+				is_tributary = {
+					type = offmap
+				}
+			}
+		}
+		vassal_of_WP = {
+			value = 2
+			FROM = {
+				liege = {
+					has_landed_title = e_cathay_west_governor
+				}
+			}
+		}
+		offmap_same_culture_and_religion = {
+			value = 2
+			offmap_ruler = {
+				culture = FROM
+				religion = FROM
+			}
+			is_within_diplo_range = FROM
+		}
+	}
+
+	temple_names = {
+		{ # Founder names
+			Gaozu
+			Taizu
+			Shizu
+			Zhaozu
+			Jingzu
+			Xianzu
+			Liezu
+			Chengzu
+		}
+		{ # Successor names
+			Zhenzong
+			Renzong
+			Zhongzong
+			Yingzong
+			Shenzong
+			Zhezhong
+			Huizong
+			Qinzong
+			Xiaozong
+			Guangzong
+			Ningzong
+			Lizong
+			Duzong
+			Duanzong
+			Xuanzong
+			Suzong
+			Daizong
+			Muzong
+			Jingzong
+			Wenzong
+			Wuzong
+			Zhaozong
+			Xizong
+			Xuanzong
+			Shizong
+			Zhangzong
+			Ruizong
+			Dingzong
+			Xianzong
+			Chengzong
+			Mingzong
+			Jinzong
+			Yizong
+			Xiangzong
+			Huanzong
+			Chongzong
+			Daozong
+			Liezong
+			Aizong
+			Zhangzong
+			Dezong
+			Shengzong
+			Xingzong
+			Kangzong
+			Zhuangzong
+			Pingzong
+			Sizong
+			Anzong
+			Yangzong
+			Shangzong
+			Shunzong
+			Zhizong
+			Chuangzong
+			Shaozong
+			Gongzong
+			Yingzong
+		}
+	}
+	holder_succession = {
+		is_female = {					# chances of getting a female holder, as a percentage: if the total is >= 100, the new holder will always be female. If the total is <= 0, the new holder will always be male
+			value = 5
+			additive_modifier = {
+				value = 45
+				has_game_rule = {
+					name = gender
+					value = all
+				}
+			}
+		}
+		culture = {
+			han = { # default culture for new emperor
+				value = 99 # if any other value reaches 100, it will be picked instead
+			}
+			FROM = { # default culture for new emperor
+								# the left side here (and for culture, religion, graphical_culture and dynasty) can be a right hand side value (FROM, ROOT, a culture name, etc). and the right hand side / inside the brackets is a standard MTTH evaluation. Only the one with the highest weight will be used. If there's a tie, one of the tied values is picked at random
+				value = 0
+				additive_modifier = { #the new emperor will keep current culture if things are great
+					value = 100
+					#cathay_is_fine_trigger = yes
+					FROM = { culture_scope = { always = yes } } # Essentially a check that the previous emperor actually exists
+				}
+			}
+			red_panda = {
+				value = 0
+				additive_modifier = {
+					has_alternate_start_parameter = { key = special_culture value = animal_world }
+					value = 100
+				}
+			}
+		}
+
+		graphical_culture = {
+			FROM = {
+				value = 100
+			}
+		}
+
+		religion = {
+			taoist = { # default religion for new emperor
+				value = 99 # if any other value reaches 100, it will be picked instead (unless equal, then it will randomize)
+			}
+			FROM = {
+				value = 0
+				additive_modifier = { # the new emperor will keep current religion if things are great
+					value = 100
+					#cathay_is_fine_trigger = yes
+					FROM = { religion_scope = { always = yes } } # Essentially a check that the previous emperor actually exists
+				}
+			}
+		}
+
+		dynasty = {
+			FROM = { #default dynasty for new emperor
+				value = 99 #might drop from modifiers -- highest value will be picked instead (unless equal, then it will randomize)
+			}
+			actually_culture = {
+				value = 0
+				additive_modifier = {
+					value = 100
+					NOT = { FROM = { character = yes } }
+				}
+				additive_modifier = { #Fix for simulating Chinese history on old save boot-up
+					value = 100
+					random < 12
+					has_game_started = no
+				}
+			}
+		}
+
+		likes = {
+			likes_concubines = {
+				value = 300
+				modifier = {
+					factor = 0.1
+					FROMFROM = { is_female = yes }
+				}
+			}
+			likes_eunuchs = {
+				value = 300
+			}
+			likes_wealth = {
+				value = 300
+			}
+			likes_tributaries = {
+				value = 100
+			}
+			likes_vengeance = {
+				value = 100
+			}
+
+		}
+
+		dislikes = {
+			likes_concubines = {
+				value = 100
+				modifier = {
+					factor = 5.0
+					FROMFROM = { is_female = yes }
+				}
+			}
+			likes_eunuchs = {
+				value = 100
+			}
+			likes_tributaries = {
+				value = 100
+			}
+			likes_wealth = {
+				value = 100
+			}
+		}
+	}
+
+    diplomatic_range = { #Already includes the western governor's "normal" diplo range
+        any_realm_province = { #Is within the Cathayan region of influence
+			region = world_greater_araby
+        }
+    }
+}

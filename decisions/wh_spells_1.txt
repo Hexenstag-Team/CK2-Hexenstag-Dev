@@ -1,0 +1,398 @@
+targetted_decisions = {
+###OTTO's###
+#Lore of Beasts#
+	leatherbane_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = leatherbane_flag
+		}
+		potential = {
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = leatherbane_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = leatherbane_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = leatherbane_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	repugnant_transformation_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = repugnant_transformation_flag
+		}
+		potential = {
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = repugnant_transformation_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = repugnant_transformation_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = repugnant_transformation_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	the_winters_long_slumber_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = the_winters_long_slumber_flag
+		}
+		potential = {
+			trait = creature_human
+		}
+
+		allow = {
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			if = {
+				limit = {
+					NOT = { has_character_modifier = the_winters_long_slumber_modifier }
+				}
+				add_character_modifier = {
+					modifier = the_winters_long_slumber_modifier
+					duration = 90
+				}
+				add_trait = incapable
+			}
+			else_if = {
+				limit = {
+					has_character_modifier = the_winters_long_slumber_modifier
+				}
+				remove_character_modifier = the_winters_long_slumber_modifier
+				remove_trait = incapable
+			}
+			FROM = { remove_character_modifier = the_winters_long_slumber_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+#Lore of Death#
+	the_animus_imprisoned_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = the_animus_imprisoned_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { trait = incapable }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_trait = incapable
+			FROM = { remove_character_modifier = the_animus_imprisoned_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	deaths_release_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = deaths_release_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = deaths_release_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = deaths_release_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = deaths_release_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	griefs_end_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = griefs_end_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { is_friend = FROM }
+			trait = Depressed
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_friend = ROOT
+			remove_trait = Depressed
+			FROM = { remove_character_modifier = griefs_end_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	lifes_end_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = lifes_end_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+			NOT = { has_magic_trigger = yes }
+		}
+
+		allow = {
+			NOT = { has_character_modifier = lifes_end_modifier }
+			is_within_diplo_range = FROM
+			NOT = { is_vampire_trigger = yes }
+		}
+
+		effect = {
+			death = { death_reason = death_natural }
+			FROM = { remove_character_modifier = lifes_end_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	limbwither_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = limbwither_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = limbwither_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = limbwither_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = limbwither_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	steal_life_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = steal_life_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			FROM = {
+				NOT = { has_character_modifier = steal_life_modifier }
+			}
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			health = -0.5
+			FROM = {
+				remove_character_modifier = steal_life_flag
+				add_character_modifier = {
+					modifier = steal_life_modifier
+					duration = 90
+				}
+			}
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	swift_passing_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = swift_passing_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			health <= 3
+			is_within_diplo_range = FROM
+			NOT = { is_vampire_trigger = yes }
+		}
+
+		effect = {
+			death = { death_reason = death_natural }
+			FROM = { remove_character_modifier = swift_passing_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	tide_of_years_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = tide_of_years_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = tide_of_years_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = tide_of_years_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = tide_of_years_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	tomb_robbers_curse_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = tomb_robbers_curse_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			trait = lore_necromancy
+			OR = {
+				has_character_modifier = necromantic_power_1
+				has_character_modifier = necromantic_power_2
+				has_character_modifier = necromantic_power_3
+				has_character_modifier = necromantic_power_4
+				has_character_modifier = necromantic_power_5
+			}
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			FROM = { remove_character_modifier = tomb_robbers_curse_flag }
+			if = {
+				limit = { has_character_modifier = necromantic_power_1 }
+				remove_character_modifier = necromantic_power_1
+			}
+			else_if = {
+				limit = { has_character_modifier = necromantic_power_2 }
+				remove_character_modifier = necromantic_power_2
+				add_character_modifier = necromantic_power_1
+			}
+			else_if = {
+				limit = { has_character_modifier = necromantic_power_3 }
+				remove_character_modifier = necromantic_power_3
+				add_character_modifier = necromantic_power_2
+			}
+			else_if = {
+				limit = { has_character_modifier = necromantic_power_4 }
+				remove_character_modifier = necromantic_power_4
+				add_character_modifier = necromantic_power_3
+			}
+			else_if = {
+				limit = { has_character_modifier = necromantic_power_5 }
+				remove_character_modifier = necromantic_power_5
+				add_character_modifier = necromantic_power_4
+			}
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}

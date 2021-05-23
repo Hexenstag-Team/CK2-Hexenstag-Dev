@@ -1,0 +1,393 @@
+# Geographical regions
+# Regions can be declared with one or more of the following fields:
+#	duchies = { }, takes duchy title names declared in landed_titles.txt
+#	counties = { }, takes county title names declared in landed_titles.txt
+#	provinces = { }, takes province id numbers declared in /history/provinces
+#	regions = { }, a region can also include other regions, however the subregions needs to be declared before the parent region.
+#		E.g. If the region world_europe contains the region world_europe_west then world_europe_west needs to be declared as a region before (i.e. higher up in this file) world_europe.
+
+###########################################################################
+# World Regions
+#	These groups are mutually exclusive on the same tier
+###########################################################################
+world_old_world_empire_north_drakwald = {
+	duchies = {
+		d_carroburg d_kristal d_erpelzug d_mirror_moor d_drakwald
+	}
+}
+
+world_old_world_empire_north = {
+	duchies = {
+		d_middenheim d_schadenmarsch d_kamistaat d_tauben d_wolfenburg d_ferlangen d_knochenkueste d_mittenberg d_korver d_drakwasser d_lugrenkust d_weissberge d_salz d_kieselstaadt d_laurelorn d_steinigkueste
+	}
+	regions = {
+		world_old_world_empire_north_drakwald
+	}
+}
+
+world_old_world_empire_south_great_forest = {
+	duchies = {
+		d_waldesruh d_farlichberge d_koelsaberge d_waldarfold d_talabheim
+	}
+}
+
+world_old_world_empire_south = {
+	duchies = {
+		d_altdorf d_blitzfelsen d_reikdahl d_reikwald d_saponatheim d_uebersreik d_uhland d_vorbergland d_averheim d_achteraver d_martig d_pferdmark d_stirhuegel d_grauenmark d_nattern d_steyr d_nuln d_meissen d_pfeildorf d_soell d_sudenland d_wissenburg d_wissetal
+	}
+	regions = {
+		world_old_world_empire_south_great_forest
+	}
+}
+
+world_old_world_empire_east_sylvania = {
+	duchies = {
+		d_drakenhoehenzug d_brachland d_kovasnia d_verbogenwald
+	}
+}
+
+world_old_world_empire_east = {
+	duchies = {
+		d_kislev_verge d_schutzen d_bechafen d_abshaumwald d_geisterforst d_griffonwald d_the_veldt
+	}
+	regions = {
+		world_old_world_empire_east_sylvania
+	}
+
+}
+
+world_old_world_empire_mootland = {
+	duchies = {
+		d_auld_styrland d_aver_march
+	}
+}
+
+world_old_world_empire_wasteland = {
+	duchies = {
+		d_marienburg d_fauligmere d_frysland d_heideland d_kikkerlandje d_noordhaven
+	}
+}
+
+world_old_world_empire = {
+	regions = {
+		world_old_world_empire_south world_old_world_empire_north world_old_world_empire_east world_old_world_empire_mootland world_old_world_empire_wasteland
+	}
+}
+
+world_old_world_border_princes_stygian_woods = {
+	duchies = {
+		d_mirkenwald d_schwarzwald d_wilderwald
+	}
+}
+
+world_old_world_border_princes = {
+	duchies = {
+	  d_ionica d_kampos d_mirasino d_scarosio d_skiros d_khypria d_drakon_coast d_kharnos d_starnek d_fatandira d_hvagir d_masse d_sarngul d_the_galat
+	}
+	regions = {
+		world_old_world_border_princes_stygian_woods
+	}
+}
+
+world_old_world_kislev_southern = {
+	duchies = {
+		d_kislev d_kalinora d_kyrnoka d_lesia d_shirokij d_resmchar d_erengrad d_dobryrion d_merya d_rubitia
+	}
+}
+
+world_old_world_kislev_northern = {
+	duchies = {
+		d_volkolamsk d_kozdramask d_murmask d_osasto d_vitzy d_zeya d_praag d_bolgasgrad d_dukhyls d_lynsk d_staslav
+	}
+}
+
+world_old_world_kislev = {
+	regions = {
+		world_old_world_kislev_southern world_old_world_kislev_northern
+	}
+}
+
+world_old_world_bretonnia = {
+	duchies = {
+		d_bastonne d_grismer d_ancon d_chalons d_toussaint d_aquitaine d_eprenois d_artois d_arden d_bordeleaux d_alemoges d_brionne d_querigord d_aix d_carcassonne d_charboneau d_glanborielle d_morency d_couronne d_franchelande d_la_marche d_normagne d_quierzy d_gisoreux d_grisoeurs d_guerac d_languille d_armagne d_lyonesse d_armorique d_grand_senlou d_pinot d_montfort d_montmagnac d_mousillon d_potevenne d_parravon d_beaumont d_nar d_ausanne d_cherry d_cuileux d_marche_orcale d_quenelles
+	}
+}
+
+world_old_world_estalia = {
+	duchies = {
+		d_the_magritate d_el_toboso d_garnata d_tartantia d_santa_clair d_nacary_isles d_fierroso d_osborna d_santoyo d_las_marcas d_irrana d_navana d_piraneo d_finterra d_diamenterra d_portua d_bilbali d_barduila d_cantabrona d_gaula d_larra d_trastamara
+	}
+}
+
+world_old_world_tilea = {
+	duchies = {
+		d_remas d_urbimo d_siren_isles d_luccini d_aldente d_organza d_pavezzano d_miragliano d_firento d_monte_castello d_luparno d_pavona d_astiano d_sartosa d_tobaro d_trantio d_perigua d_scorcio d_verezzo d_bragante
+	}
+}
+
+world_old_world = {
+	regions = { world_old_world_empire world_old_world_bretonnia world_old_world_kislev world_old_world_estalia world_old_world_tilea world_old_world_border_princes world_albion }
+}
+
+world_badlands_strygos = {
+	duchies = {
+		d_mourkain d_anksary d_lodring d_troas d_greater_khernarch d_hadastim d_qarum d_bebrikia d_clazomene d_gyrn d_haflok d_kolluk d_odris d_ophira
+	}
+}
+
+world_badlands_magnata = {
+	duchies = {
+		d_rhothira d_capra d_marash
+	}
+}
+
+world_badlands = {
+	regions = { world_badlands_strygos world_badlands_magnata }
+}
+
+world_greater_araby_araby = {
+	duchies = {
+		d_alhaka d_copher d_martek d_kufra d_ghafsa d_al_sahra d_nejaz d_istrabul d_akara d_mahabbah d_ras_karim d_yarrat d_hadmaut_islands d_corsair_strand
+	}
+}
+
+world_greater_araby = {
+	regions = { world_greater_araby_araby }
+}
+
+world_nehekhara_western = {
+	duchies = {
+		d_khemri d_assyr d_nasamon d_numas d_akheten d_ekke d_zandri d_kyrene
+	}
+}
+
+world_nehekhara = {
+	regions = { world_nehekhara_western }
+}
+
+world_norsca_northern = {
+	duchies = {
+		d_rugard d_ejsgard d_norscveg d_blodig d_hrimpurs d_iavaskh d_skadi d_sorg d_bergrisi d_blodhfell d_ursfjord d_fjelljer d_the_czegniks d_tivar d_kuldevind d_nilfheim d_upphiminn d_vestligkyst
+	}
+}
+
+world_norsca_central = {
+	duchies = {
+		d_vanaheim d_thjazi d_thorfrost d_dysmyr d_fjallfel d_hetta_syrul d_fuinn d_kaldr
+	}
+}
+
+world_norsca_southern = {
+	duchies = {
+		d_soerligslette d_jotunir d_svellgardhr d_villieldr d_iisgalt d_hjaltland d_ofanfjara d_taaketskog d_kalti d_aponnia d_dypvann d_hulebjorn
+	}
+}
+
+world_norsca = {
+	regions = { world_norsca_northern world_norsca_central world_norsca_southern }
+}
+
+world_karaz_ankor_main_holds = {
+	duchies = {
+		d_everpeak d_barodrin d_dwardin d_karag_azril d_zhufbar d_varnan d_zhufbar_barak d_grombar d_gunbad d_gromzikar d_karak_kadrin d_krombar d_peak_pass d_zarkadrin d_karak_karlnir
+	}
+}
+
+world_karaz_ankor_northern_holds = {
+	duchies = {
+		d_karak_ungor d_dukungor d_dokuvalk d_kol d_vlagaar d_eragol d_karak_opulim d_zarazri d_karak_dum
+	}
+}
+
+world_karaz_ankor_southern_holds = {
+	duchies = {
+		d_barak_varr d_kogan d_vala_azril_ungol d_karak_azul d_haraz d_death_pass d_grungozar d_karak_azgalzul d_mad_dog_pass d_karag_shathur d_langkt_orrud d_ekrund d_komar
+	}
+}
+
+world_karaz_ankor_western_holds = {
+	duchies = {
+		d_hirn d_gantuk d_haz_drazh d_izor d_ekzfilazanar d_kadridaw d_kaferkammaz d_zifilibar d_azgarazar d_karak_ziflin d_drachen_corridor d_karak_norn
+	}
+}
+
+world_karaz_ankor = {
+	regions = { world_karaz_ankor_main_holds world_karaz_ankor_northern_holds world_karaz_ankor_southern_holds world_karaz_ankor_western_holds }
+}
+
+world_darklands_plains_of_bones = {
+	duchies = {
+		d_vorag d_blackwater d_nagashizzar d_zharrud d_karish
+	}
+}
+
+world_darklands_blasted_wastes = {
+	duchies = {
+		d_baartak d_gazan d_talbar d_ugra d_drakenmoor d_harazi d_kirulg d_zutvonal
+	}
+}
+
+world_darklands_ankor_naggrund = {
+	duchies = {
+		d_zharr_naggrund d_drazhdrin d_gazan_haraz d_gazan_zharr d_grimaz_orrud d_azgorh d_nagrazzor d_chargrim d_dawizag d_howl d_ruinmarch d_unzkulak d_ossia d_zorn_uzkul
+	}
+}
+
+world_darklands_gnoblar_country = {
+	duchies = {
+		d_skald d_boggamire d_darkstone
+	}
+}
+
+world_darklands = {
+	regions = { world_darklands_ankor_naggrund world_darklands_blasted_wastes world_darklands_plains_of_bones world_darklands_gnoblar_country }
+}
+
+world_drak_ankor_main_holds = {
+	duchies = {
+		d_drakanzang d_fneldurk d_grontfell d_grontizar d_korv_ozero d_vulkrond d_zardrak d_felskagi d_karaskadi
+	}
+}
+
+world_drak_ankor_lost_holds = {
+	duchies = {
+		d_dharkwyr d_fyriksfeld d_naglifell d_hjorix
+	}
+}
+
+world_drak_ankor = {
+	regions = { world_drak_ankor_main_holds world_drak_ankor_lost_holds }
+}
+
+world_albion = {
+	duchies = {
+		d_the_lowlands d_morien d_aeryn d_urquhart_marches
+	}
+}
+
+world_dragon_isles = {
+	duchies = {
+		d_mazur d_typhlos
+	}
+}
+
+world_athel_loren_inner = {
+	duchies = {
+		d_talsyn d_aviastar d_talkoiran d_atylwyth d_cythral d_wydrioth d_atharath d_fyr_darric d_torgovann d_callach_mor
+	}
+}
+
+world_athel_loren_outer = {
+	duchies = {
+		d_arranoc d_cythair d_argwylon d_tirsyth d_anmyr d_wyldyr_anmyr d_modryn d_cavaroc
+	}
+}
+
+world_athel_loren = {
+	regions = { world_athel_loren_inner world_athel_loren_outer }
+}
+
+world_chaos_wastes_eastern_steppes = {
+	duchies = {
+		d_zays d_dzhagna d_tungask d_qagran d_gaoche d_uruma d_chakmyr d_djeiten d_ganibek d_udomn d_harzud d_zavkhan d_altaya d_kurlun d_svarg d_hahk d_potchesh
+	}
+}
+
+world_chaos_wastes_zanbaijin = {
+	duchies = {
+		d_zanbaijin
+	}
+}
+
+world_chaos_wastes_broken_lands = {
+	duchies = {
+		d_issik d_maykar d_sakatchi_alay d_zaural d_bulak d_arali d_mador d_sayon d_srubnya d_tamt_bulak d_xanbi d_shaar d_urian d_yukagh
+	}
+}
+
+world_chaos_wastes = {
+	regions = { world_chaos_wastes_broken_lands world_chaos_wastes_eastern_steppes world_chaos_wastes_zanbaijin }
+}
+
+world_mountains_of_mourn = {
+	duchies = {
+		d_doompeaks d_bloodmaw d_frozenmaw d_high_peaks d_cloudlands d_east_pass d_highgrasp d_bone_pass d_giantstone d_great_pillars d_grobbmounts
+	}
+}
+
+world_troll_country = {
+    duchies = {
+	    d_kozdramask d_volkolamsk d_osasto d_lynsk d_the_czegniks d_tivar d_fjelljer d_ursfjord d_hulebjorn d_aponnia d_dypvann d_kalti
+	}
+}
+
+###########################################################################
+# Custom Regions
+###########################################################################
+#Estalia
+custom_astarios = {
+	duchies = {
+		d_the_magritate d_el_toboso d_garnata d_tartantia
+	}
+}
+custom_cantonia = {
+	duchies = {
+		d_fierroso d_osborna d_santoyo d_nacary_isles
+	}
+}
+custom_obregon = {
+	duchies = {
+		d_finterra d_diamenterra d_portua
+	}
+}
+custom_tigarre = {
+	duchies = {
+		d_bilbali d_barduila d_cantabrona d_gaula d_larra d_trastamara
+	}
+}
+custom_castillona = {
+	duchies = {
+		d_las_marcas d_irrana d_navana d_piraneo
+	}
+}
+#Tilea
+custom_tobaro = {
+	duchies = {
+		d_tobaro d_siren_isles
+	}
+}
+custom_luccini = {
+	duchies = {
+		d_luccini d_aldente d_organza d_pavezzano
+	}
+}
+custom_verezzo = {
+	duchies = {
+		d_verezzo d_bragante
+	}
+}
+custom_remas = {
+	duchies = {
+		d_remas d_urbimo
+	}
+}
+custom_pavona = {
+	duchies = {
+		d_pavona d_astiano
+	}
+}
+custom_trantio = {
+	duchies = {
+		d_trantio d_perigua d_scorcio
+	}
+}
+custom_miragliano = {
+	duchies = {
+		d_miragliano d_firento
+	}
+}
+custom_monte_castello = {
+	duchies = {
+		d_monte_castello d_luparno
+	}
+}

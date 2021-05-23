@@ -1,0 +1,8164 @@
+
+##CHANNELING###
+offmap_decisions = {
+	magic_channeling = {
+		only_playable = yes
+		button_name = offmap_gifts
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				NOT = { has_character_modifier = channeling }
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					name = channeling
+					years = 1
+				}
+				remove_character_modifier = casted_spell
+				custom_tooltip = {
+					text = spell_casting_tt
+					mutation_toughness_test_effect = yes
+				}
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}
+
+
+
+###Spells###
+offmap_decisions = {
+##LORE OF BEASTS##
+	the_beast_broken = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = beasts_mystical
+				trait = beasts_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				create_retinue = RETTYPE_WILD_BEASTS
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	the_beast_made_well = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = beasts_mystical
+				trait = beasts_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = the_beast_made_well_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	the_beast_unleashed = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			
+			has_magic_power_2 = yes
+			OR = {
+				trait = beasts_elemental
+				trait = beasts_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = the_beast_unleashed_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	the_boars_hide = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = beasts_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = the_boars_hide_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	calm_the_wild_beast = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = beasts_elemental
+				trait = beasts_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = calm_the_wild_beast_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	claws_of_fury = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = beasts_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = claws_of_fury_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	cowering_beasts = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = beasts_mystical
+				trait = beasts_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = cowering_beasts_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	crows_feast = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = beasts_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				create_retinue = RETTYPE_CROWS
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	crueltys_desserts = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = beasts_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = crueltys_desserts_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	form_of_the_puissant_steed = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = beasts_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = form_of_the_puissant_steed_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	form_of_the_raging_bear = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = beasts_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = form_of_the_raging_bear_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	form_of_the_ravening_wolf = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = beasts_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = form_of_the_ravening_wolf_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	form_of_the_soaring_raven = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = beasts_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = form_of_the_soaring_raven_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	leatherbane = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = beasts_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = leatherbane_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	masters_voice = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			
+			has_magic_power_2 = yes
+			OR = {
+				trait = beasts_elemental
+				trait = beasts_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = masters_voice_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	the_ox_stands = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = beasts_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = the_ox_stands_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	repugnant_transformation = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = beasts_cardinal
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = repugnant_transformation_flag
+					duration = 30
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	the_talking_beast = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = beasts_elemental
+				trait = beasts_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = the_talking_beast_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+	
+	wings_of_the_falcon = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = beasts_elemental
+				trait = beasts_cardinal	
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = wings_of_the_falcon_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	the_winters_long_slumber = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = beasts_mystical
+				trait = beasts_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = the_winters_long_slumber_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+##LORE OF DEATH##
+	acceptance_of_fate = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = death_elemental
+				trait = death_mystical
+				trait = death_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = acceptance_of_fate_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	the_animus_imprisoned = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = death_mystical
+				trait = death_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = the_animus_imprisoned_flag
+					duration = 30
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	deaths_door = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = death_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = deaths_door_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	deaths_messenger = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = death_mystical
+				trait = death_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = deaths_messenger_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	deaths_release = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = death_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = deaths_release_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	deathsight = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = death_elemental
+				trait = death_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = deathsight_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	final_words = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = death_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = final_words_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	griefs_end = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = death_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = griefs_end_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	the_icy_grip_of_death = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+				trait = death_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = the_icy_grip_of_death_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	knocks_of_the_departed = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = death_mystical
+				trait = death_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = knocks_of_the_departed_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	lifes_end = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_4 = yes
+			trait = death_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = lifes_end_flag
+					duration = 30
+				}
+				spell_casting_4 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	limbwither = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = death_mystical
+				trait = death_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = limbwither_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	reaping_scythe = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = death_elemental
+				trait = death_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = reaping_scythe_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	steal_life = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = death_elemental
+				trait = death_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+				NOT = { has_character_modifier = steal_life_modifier }
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = steal_life_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	swift_passing = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = death_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = swift_passing_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	tide_of_years = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = death_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = tide_of_years_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	tomb_robbers_curse = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = death_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = tomb_robbers_curse_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	ward_against_abomination = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = death_mystical
+				trait = death_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = ward_against_abomination_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	wind_of_death = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = death_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = wind_of_death_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	youths_bane = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = death_elemental
+				trait = death_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = youths_bane_flag
+					duration = 30
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+##LORE OF FIRE##
+	aqshys_aegis = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = fire_mystical
+				trait = fire_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = aqshys_aegis_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	boiling_blood = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = fire_mystical
+				trait = fire_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = boiling_blood_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	breathe_fire = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = fire_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = breathe_fire_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	burning_vengeance = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = fire_mystical
+				trait = fire_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = burning_vengeance_flag
+					duration = 30
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	cauterize = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = fire_elemental
+				trait = fire_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = cauterize_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	choleric = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = fire_mystical
+				trait = fire_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = choleric_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	conflagration_of_doom = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_4 = yes
+			OR = {
+				trait = fire_elemental
+				trait = fire_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = conflagration_of_doom_modifier
+					duration = 90
+				}
+				spell_casting_4 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	consuming_wrath = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = fire_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = consuming_wrath_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	crown_of_fire = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = fire_elemental
+				trait = fire_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = crown_of_fire_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	curtain_of_flame = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = fire_mystical
+				trait = fire_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = curtain_of_flame_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	fiery_blast = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = fire_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = fiery_blast_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	fire_ball = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = fire_elemental
+				trait = fire_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = fire_ball_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	fires_of_uzhul = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = fire_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = fires_of_uzhul_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	flaming_sword_of_rhuin = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = fire_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = flaming_sword_of_rhuin_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	flashcook = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = fire_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = flashcook_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	hearts_of_fire = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = fire_elemental
+				trait = fire_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = hearts_of_fire_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	inextinguishable_flame = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = fire_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = inextinguishable_flame_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	ruin_and_destruction = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = fire_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = ruin_and_destruction_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	shield_of_aqshy = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = fire_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = shield_of_aqshy_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	taste_of_fire = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = fire_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = taste_of_fire_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+##LORE OF HEAVENS##
+	birdspeak = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = heavens_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = birdspeak_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	clear_sky = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = heavens_mystical
+				trait = heavens_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = clear_sky_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	curse = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = heavens_elemental
+				trait = heavens_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = curse_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	fate_of_doom = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_4 = yes
+			OR = {
+				trait = heavens_elemental
+				trait = heavens_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = fate_of_doom_flag
+					duration = 30
+				}
+				spell_casting_4 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	finding_divination = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = heavens_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = finding_divination_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	first_portent_of_amul = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = heavens_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = first_portent_of_amul_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	fortunes_renewal = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = heavens_mystical
+				trait = heavens_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = fortunes_renewal_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	lens_on_the_sky = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = heavens_mystical
+				trait = heavens_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = lens_on_the_sky_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	lightning_bolt = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = heavens_elemental
+				trait = heavens_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = lightning_bolt_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	lightning_storm = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = heavens_elemental
+				trait = heavens_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = lightning_storm_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	omen = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = heavens_elemental
+				trait = heavens_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				random_list = {
+					50 = {
+						add_character_modifier = {
+							modifier = omen_good_modifier
+							duration = 90
+						}
+					}
+					50 = {
+						add_character_modifier = {
+							modifier = omen_bad_modifier
+							duration = 90
+						}
+					}
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	polish_clean_and_gleam = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = heavens_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = polish_clean_and_gleam_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	premonition = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = heavens_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = premonition_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	project_spirit = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = heavens_mystical
+				trait = heavens_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = project_spirit_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	second_portent_of_amul = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = heavens_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = second_portent_of_amul_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	signs_in_the_stars = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = heavens_mystical
+				trait = heavens_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = signs_in_the_stars_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	starshine = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = heavens_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = starshine_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	third_portent_of_amul = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = heavens_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = third_portent_of_amul_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	wind_blast = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = heavens_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = wind_blast_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	wings_of_heaven = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = heavens_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = wings_of_heaven_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+##LORE OF Life##
+	cure_blight = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = life_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = cure_blight_flag
+					duration = 30
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	curse_of_thorns = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = life_elemental
+				trait = life_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = curse_of_thorns_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	earth_blood = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = life_elemental
+				trait = life_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = earth_blood_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	earth_gate = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = life_elemental
+				trait = life_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = earth_gate_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	father_of_thorns = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = life_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = father_of_thorns_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	fat_of_the_land = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = life_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = fat_of_the_land_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	ferment = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = life_mystical
+				trait = life_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = ferment_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	flesh_of_clay = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = life_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = flesh_of_clay_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	geyser = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = life_elemental
+				trait = life_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = geyser_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	leaf_fall = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = life_mystical
+				trait = life_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = leaf_fall_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	rivers_whisper = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = life_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = rivers_whisper_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	spring_bloom = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = life_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = spring_bloom_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	summer_heat = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = life_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = summer_heat_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	tracks_tale_told = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = life_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = tracks_tale_told_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	tree-dwellers_step = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = life_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = tree-dwellers_step_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	trees_rustle = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = life_mystical
+				trait = life_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = trees_rustle_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	vital_growth = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = life_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = vital_growth_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	the_wilds_undisturbed = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = life_mystical
+				trait = life_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = the_wilds_undisturbed_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	winter_frost = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = life_elemental
+				trait = life_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = winter_frost_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	wood_shape = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = life_mystical
+				trait = life_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = wood_shape_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+##LORE OF LIGHT##
+	banish = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = light_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = banish_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	blinding_light = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = light_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = blinding_light_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	boon_of_hysh = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = light_mystical
+				trait = light_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = boon_of_hysh_flag
+					duration = 30
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	clarity = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = light_mystical
+				trait = light_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = clarity_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	cleansing_glow = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = light_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = cleansing_glow_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	daemonbane = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = light_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = daemonbane_flag
+					duration = 30
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	dazzling_brightness = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = light_elemental
+				trait = light_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = dazzling_brightness_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	eyes_of_truth = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = light_elemental
+				trait = light_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = eyes_of_truth_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	healing_of_hysh = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = light_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = healing_of_hysh_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	ill-bane = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = light_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = ill-bane_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	illuminate_the_edifice = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = light_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = illuminate_the_edifice_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	inspiration = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = light_elemental
+				trait = light_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = inspiration_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	light_of_purity = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = light_mystical
+				trait = light_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = light_of_purity_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	lights_demand = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = light_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = lights_demand_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	pillar_of_radiance = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = light_elemental
+				trait = light_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = pillar_of_radiance_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	the_power_of_truth = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = light_mystical
+				trait = light_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = the_power_of_truth_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	radiant_sentinel = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = light_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = radiant_sentinel_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	radiant_gaze = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = light_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = radiant_gaze_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	radiant_weapon = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = light_mystical
+				trait = light_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = radiant_weapon_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	shimmering_cloak = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = light_elemental
+				trait = light_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = shimmering_cloak_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+##LORE OF METAL##
+	armour_of_lead = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = metal_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = armour_of_lead_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	breach_the_unknown = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = metal_mystical
+				trait = metal_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = breach_the_unknown_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	curse_of_rust = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = metal_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = curse_of_rust_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	enchant_item = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = metal_elemental
+				trait = metal_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = enchant_item_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	fault_of_form = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = metal_mystical
+				trait = metal_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = fault_of_form_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	fools_gold = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = metal_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = fools_gold_modifier
+					duration = 90
+				}
+				health = -0.25
+				if = {
+					limit = { has_character_modifier = magic_power_2 }
+					wealth = 100
+				}
+				else_if = {
+					limit = { has_character_modifier = magic_power_3 }
+					wealth = 250
+				}
+				else_if = {
+					limit = { has_character_modifier = magic_power_4 }
+					wealth = 500
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	guard_of_steel = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = metal_elemental
+				trait = metal_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = guard_of_steel_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	inscription = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = metal_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = inscription_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	law_of_age = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = metal_mystical
+				trait = metal_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = law_of_age_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	law_of_form = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = metal_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = law_of_gold_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	law_of_gold = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = metal_elemental
+				trait = metal_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = law_of_gold_flag
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	law_of_logic = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = metal_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				random_list = {
+					75 = { }
+					25 = {
+						random_list = {
+							20 = { change_diplomacy = 1 }
+							20 = { change_martial = 1 }
+							20 = { change_stewardship = 1 }
+							20 = { change_intrigue = 1 }
+							20 = { change_learning = 1 }
+						}
+					}
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	rigidity_of_body_and_mind = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = metal_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = rigidity_of_body_and_mind_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	secret_rune = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = metal_mystical
+				trait = metal_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = secret_rune_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	silver_arrows_of_arha = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = metal_elemental
+				trait = metal_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = silver_arrows_of_arha_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	stoke_the_forge = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = metal_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = stoke_the_forge_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	tale_of_metal = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = metal_mystical
+				trait = metal_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = tale_of_metal_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	transformation_of_metal = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = metal_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				character_event = { id = crafting.0 }
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	transmutation_of_the_unstable_mind = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = metal_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				set_variable = { which = "lunatic_counter" value = 1 }
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	trial_and_error = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = metal_elemental
+				trait = metal_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = trial_and_error_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+##LORE OF SHADOW##
+	bewilder = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = shadows_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = bewilder_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	burning_shadows = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = shadows_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = burning_shadows_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	cloak_activity = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = shadows_elemental
+				trait = shadows_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = cloak_activity_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	doppelganger = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = shadows_elemental
+				trait = shadows_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = doppelganger_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	dread_aspect = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = shadows_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = dread_aspect_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	eye_of_the_beholder = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = shadows_mystical
+				trait = shadows_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = eye_of_the_beholder_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	illusion = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = shadows_elemental
+				trait = shadows_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = illusion_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	mindhole = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			OR = {
+				trait = shadows_mystical
+				trait = shadows_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = mindhole_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	mockery_of_death = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = shadows_mystical
+				trait = shadows_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = mockery_of_death_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	mutable_visage = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = shadows_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = mutable_visage_flag
+					duration = 30
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	pall_of_darkness = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = shadows_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = pall_of_darkness_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	shadowcloak = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = shadows_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = shadowcloak_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	shadow_knives = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			OR = {
+				trait = shadows_elemental
+				trait = shadows_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = shadow_knives_modifier
+					duration = 90
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	shadow_of_death = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			trait = shadows_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = shadow_of_death_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	shadowsteed = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = shadows_mystical
+				trait = shadows_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = shadowsteed_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	shroud_of_invisibility = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = shadows_elemental
+				trait = shadows_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = shroud_of_invisibility_modifier
+					duration = 90
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	substance_of_shadow = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = shadows_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = substance_of_shadow_flag
+					duration = 30
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	take_no_heed = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_1 = yes
+			trait = shadows_mystical
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = take_no_heed_modifier
+					duration = 90
+				}
+				spell_casting_1 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	throttling = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_2 = yes
+			OR = {
+				trait = shadows_mystical
+				trait = shadows_cardinal
+			}
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = throttling_flag
+					duration = 30
+				}
+				spell_casting_2 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+
+	universal_confusion = {
+		only_playable = yes
+		button_name = offmap_boons
+		ai_check_interval = 12
+
+		potential = {
+			is_offmap_tag = offmap_magic
+		}
+
+		from_potential = {
+			magic_offmap_enabled_trigger = yes
+			has_magic_power_3 = yes
+			trait = shadows_elemental
+		}
+
+		allow = {
+			FROM = {
+				show_scope_change = no
+				prisoner = no
+				NOT = { trait = incapable }
+				is_inaccessible_trigger = no
+				custom_tooltip = {
+					text = casted_spell_tt
+					NOT = { has_character_modifier = casted_spell }
+				}
+			}
+		}
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					modifier = universal_confusion_flag
+					duration = 30
+				}
+				spell_casting_3 = yes
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.05 # slow way down
+			}
+		}
+	}
+}
+
+
+

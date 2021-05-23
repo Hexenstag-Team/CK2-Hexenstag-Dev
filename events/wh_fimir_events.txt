@@ -1,0 +1,16 @@
+namespace = fimir
+
+character_event = {
+	id = fimir.1
+	hide_window = yes
+	religion_group = chaos_gods_group
+	culture = fimir
+	trigger = {
+		trait = fimir_maergh
+	}
+	is_triggered_only = yes
+
+	immediate = {
+		make_random_lore_mage = yes
+	}
+}

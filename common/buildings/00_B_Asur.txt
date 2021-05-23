@@ -1,0 +1,976 @@
+castle={
+	#Asuryan Manors, small bonus to garrison and levy, but provides cash and tech
+	ca_asur_keep_1 = {
+		desc = ca_asur_keep_1_desc
+		replaces = ca_keep_1
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+		potential = {
+		    FROM = {
+				culture_group = asur_group
+			}
+		}
+		gold_cost = 175
+		build_time = 547 #1.5y
+		levy_size = 0.02
+		garrison_size = 0.04
+		tax_income = 0.5
+		tech_growth_modifier = 0.15
+		culture_techpoints = 0.04
+		light_infantry = -25
+		heavy_infantry = -65
+		light_cavalry = 15
+		pikemen = 40
+		knights = 23
+		archers = 45
+		ai_creation_factor = 300 #The AI should always build this when it can
+
+		extra_tech_building_start = 1.0
+	}
+	ca_asur_keep_2 = {
+		desc = ca_asur_keep_1_desc
+		replaces = ca_keep_2
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+		potential = {
+			FROM = {
+				culture_group = asur_group
+			}
+		}
+		prerequisites = { ca_wall_1 }
+		upgrades_from = ca_asur_keep_1
+		gold_cost = 225
+		build_time = 730 #2y
+		levy_size = 0.04
+		garrison_size = 0.06
+		tax_income = 0.5
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 2.0
+	}
+	ca_asur_keep_3 = {
+		desc = ca_asur_keep_1_desc
+		replaces = ca_keep_3
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+		potential = {
+			FROM = {
+				culture_group = asur_group
+			}
+		}
+		prerequisites = { ca_wall_2 }
+		upgrades_from = ca_asur_keep_2
+		gold_cost = 325
+		build_time = 1095 #3y
+		levy_size = 0.06
+		garrison_size = 0.08
+		tax_income = 0.5
+		tech_growth_modifier = 0.15
+		culture_techpoints = 0.04
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 1.0
+	}
+	ca_asur_keep_4 = {
+		desc = ca_asur_keep_1_desc
+		replaces = ca_keep_4
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
+		potential = {
+			FROM = {
+				culture_group = asur_group
+			}
+		}
+		upgrades_from = ca_asur_keep_3
+		gold_cost = 425
+		build_time = 1460 #4y
+		levy_size = 0.08
+		garrison_size = 0.1
+		tax_income = 0.75
+		ai_creation_factor = 99
+
+		extra_tech_building_start = 0.2
+	}
+	ca_asur_keep_5 = {
+		desc = ca_asur_keep_1_desc
+		replaces = ca_keep_5
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
+		potential = {
+			FROM = {
+				culture_group = asur_group
+			}
+		}
+		upgrades_from = ca_asur_keep_4
+		gold_cost = 525
+		build_time = 2190 #6y
+		levy_size = 0.1
+		garrison_size = 0.12
+		tax_income = 1
+		tech_growth_modifier = 0.15
+		culture_techpoints = 0.04
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.2
+	}
+	ca_asur_keep_6 = {
+		desc = ca_asur_keep_1_desc
+		replaces = ca_keep_6
+		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
+		potential = {
+			FROM = {
+				culture_group = asur_group
+			}
+		}
+		upgrades_from = ca_asur_keep_5
+		gold_cost = 550
+		build_time = 2190 #6y
+		levy_size = 0.12
+		garrison_size = 0.14
+		tax_income = 1
+		ai_creation_factor = 97
+
+		extra_tech_building_start = 0.2
+	}
+
+	# Asuryan Armory
+	ca_asuryan_armory_1 = {
+		desc = ca_asuryan_armory_1_desc
+		potential = {
+				 FROM = {   culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		replaces = ca_militia_barracks_1
+		gold_cost = 240
+		build_time = 420
+		archers_offensive = 0.04
+		archers_defensive = 0.05
+		pikemen_offensive = 0.04
+		pikemen_defensive = 0.05
+		knights_offensive = 0.04
+		knights_defensive = 0.05
+		light_cavalry_defensive = 0.04
+		light_cavalry_offensive = 0.05
+		light_infantry_offensive = 0.04
+		light_infantry_defensive = 0.05
+		heavy_infantry_defensive = 0.05
+		heavy_infantry_offensive = 0.04
+		horse_archers_offensive = 0.04
+		horse_archers_defensive = 0.05
+		chariots_offensive = 0.04
+		chariots_defensive = 0.05
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 1.0
+	}
+	ca_asuryan_armory_2 = {
+		desc = ca_asuryan_armory_1_desc
+		trigger = { TECH_CASTLE_CONSTRUCTION = 1 }
+		potential = {
+				 FROM = {   culture_group = asur_group }
+		}
+		prerequisites = { ca_wall_1 }
+		upgrades_from = ca_asuryan_armory_1
+		replaces = ca_militia_barracks_2
+		gold_cost = 285
+		build_time = 600
+		archers_offensive = 0.04
+		archers_defensive = 0.05
+		pikemen_offensive = 0.04
+		pikemen_defensive = 0.05
+		knights_offensive = 0.04
+		knights_defensive = 0.05
+		light_cavalry_defensive = 0.05
+		light_cavalry_offensive = 0.04
+		light_infantry_offensive = 0.04
+		light_infantry_defensive = 0.05
+		heavy_infantry_defensive = 0.05
+		heavy_infantry_offensive = 0.04
+		horse_archers_offensive = 0.04
+		horse_archers_defensive = 0.05
+		chariots_offensive = 0.04
+		chariots_defensive = 0.05
+		ai_creation_factor = 99
+
+		extra_tech_building_start = 2.0
+	}
+	ca_asuryan_armory_3 = {
+		desc = ca_asuryan_armory_1_desc
+		potential = {
+				 FROM = {   culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 3 }
+		upgrades_from = ca_asuryan_armory_2
+		replaces = ca_militia_barracks_3
+		gold_cost = 350
+		build_time = 850
+		archers_offensive = 0.04
+		archers_defensive = 0.05
+		pikemen_offensive = 0.04
+		pikemen_defensive = 0.05
+		knights_offensive = 0.04
+		knights_defensive = 0.05
+		light_cavalry_defensive = 0.05
+		light_cavalry_offensive = 0.04
+		light_infantry_offensive = 0.04
+		light_infantry_defensive = 0.05
+		heavy_infantry_defensive = 0.05
+		heavy_infantry_offensive = 0.04
+		horse_archers_offensive = 0.04
+		horse_archers_defensive = 0.05
+		chariots_offensive = 0.04
+		chariots_defensive = 0.05
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.5
+	}
+	ca_asuryan_armory_4 = {
+		desc = ca_asuryan_armory_1_desc
+		potential = {
+				 FROM = {   culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
+		upgrades_from = ca_asuryan_armory_3
+		replaces = ca_militia_barracks_4
+		gold_cost = 465
+		build_time = 1125
+		archers_offensive = 0.04
+		archers_defensive = 0.05
+		pikemen_offensive = 0.04
+		pikemen_defensive = 0.05
+		knights_offensive = 0.04
+		knights_defensive = 0.05
+		light_cavalry_defensive = 0.05
+		light_cavalry_offensive = 0.04
+		light_infantry_offensive = 0.04
+		light_infantry_defensive = 0.05
+		heavy_infantry_defensive = 0.05
+		heavy_infantry_offensive = 0.04
+		horse_archers_offensive = 0.04
+		horse_archers_defensive = 0.05
+		chariots_offensive = 0.04
+		chariots_defensive = 0.05
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.5
+	}
+
+	#Asuryan Artisans
+		 ca_asuryan_artisans_1 = {
+		desc = ca_asuryan_artisans_1_desc
+		potential = {
+				  FROM = {
+				 culture_group = asur_group
+				}
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 600
+		build_time = 1025
+		tax_income = 3
+		tech_growth_modifier = 0.07
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	 ca_asuryan_artisans_2 = {
+		desc = ca_asuryan_artisans_1_desc
+		potential = {
+				  FROM = {
+				 culture_group = asur_group
+				}
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 1 }
+		upgrades_from = ca_asuryan_artisans_1
+		gold_cost = 750
+		build_time = 1650
+		tax_income = 3
+		tech_growth_modifier = 0.07
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	 ca_asuryan_artisans_3 = {
+		desc = ca_asuryan_artisans_1_desc
+		potential = {
+				  FROM = {
+				  culture_group = asur_group
+				}
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+		upgrades_from = ca_asuryan_artisans_2
+		gold_cost = 800
+		build_time = 2190
+		tax_income = 3
+		tech_growth_modifier = 0.07
+		culture_techpoints = 0.02
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	 ca_asuryan_artisans_4 = {
+		desc = ca_asuryan_artisans_1_desc
+		potential = {
+				  FROM = {
+				  culture_group = asur_group
+				}
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+		upgrades_from = ca_asuryan_artisans_3
+		gold_cost = 900
+		build_time = 2190
+		tax_income = 3
+		tech_growth_modifier = 0.07
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+		ca_asuryan_artisans_5 = {
+		desc = ca_asuryan_artisans_1_desc
+		potential = {
+				  FROM = {
+				  culture_group = asur_group
+				}
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
+		upgrades_from = ca_asuryan_artisans_4
+		gold_cost = 900
+		build_time = 2190
+		tax_income = 3
+		tech_growth_modifier = 0.07
+		culture_techpoints = 0.02
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	##Asur Colonial buildings, only avaliable to Asur outside of the Ulthuan Region##
+		#Colony Military Wharfs
+		 ca_colonial_wharf_1 = {
+		desc = ca_colonial_wharf_1_desc
+		port = yes
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 1 }
+		gold_cost = 600
+		build_time = 1025
+		tax_income = 1.25
+		tech_growth_modifier = 0.02
+		galleys = 3
+		heavy_infantry = 10 #Marines
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	 ca_colonial_wharf_2 = {
+		desc = ca_colonial_wharf_1_desc
+		port = yes
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+		upgrades_from = ca_colonial_wharf_1
+		prerequisites = { ca_wall_1 }
+		gold_cost = 750
+		build_time = 1650
+		tax_income = 1.25
+		tech_growth_modifier = 0.02
+		galleys = 3
+		heavy_infantry = 10 #Marines
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	 ca_colonial_wharf_3 = {
+		desc = ca_colonial_wharf_1_desc
+		port = yes
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 3 }
+		upgrades_from = ca_colonial_wharf_2
+		gold_cost = 800
+		build_time = 2190
+		tax_income = 1.25
+		tech_growth_modifier = 0.02
+		galleys = 3
+		heavy_infantry = 10 #Marines
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	 ca_colonial_wharf_4 = {
+		desc = ca_colonial_wharf_1_desc
+		port = yes
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
+		upgrades_from = ca_colonial_wharf_3
+		gold_cost = 900
+		build_time = 2190
+		tax_income = 1.25
+		tech_growth_modifier = 0.02
+		galleys = 3
+		heavy_infantry = 10 #Marines
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colonial_wharf_5 = {
+		desc = ca_colonial_wharf_1_desc
+		port = yes
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+		upgrades_from = ca_colonial_wharf_4
+		gold_cost = 900
+		build_time = 2190
+		tax_income = 1.25
+		tech_growth_modifier = 0.02
+		galleys = 3
+		heavy_infantry = 10 #Marines
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	#Colony Trade Ports
+		 ca_colonial_port_1 = {
+		desc = ca_colonial_port_1_desc
+		port = yes
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		gold_cost = 600
+		build_time = 1025
+		tax_income = 2.5
+		tech_growth_modifier = 0.02
+		galleys = 1
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	 ca_colonial_port_2 = {
+		desc = ca_colonial_port_1_desc
+		port = yes
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+		upgrades_from = ca_colonial_port_1
+		prerequisites = { ca_wall_1 }
+		gold_cost = 750
+		build_time = 1650
+		tax_income = 2.5
+		tech_growth_modifier = 0.02
+		galleys = 1
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	 ca_colonial_port_3 = {
+		desc = ca_colonial_port_1_desc
+		port = yes
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 3 }
+		upgrades_from = ca_colonial_port_2
+		gold_cost = 800
+		build_time = 2190
+		tax_income = 2.5
+		tech_growth_modifier = 0.02
+		galleys = 1
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	 ca_colonial_port_4 = {
+		desc = ca_colonial_port_1_desc
+		port = yes
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+		upgrades_from = ca_colonial_port_3
+		gold_cost = 900
+		build_time = 2190
+		tax_income = 2.5
+		tech_growth_modifier = 0.02
+		galleys = 1
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colonial_port_5 = {
+		desc = ca_colonial_port_1_desc
+		port = yes
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+		upgrades_from = ca_colonial_port_4
+		gold_cost = 900
+		build_time = 2190
+		tax_income = 2.5
+		tech_growth_modifier = 0.02
+		galleys = 1
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+		#Colony Plantations
+	ca_colonial_plantation_1 = {
+		desc = ca_colonial_plantation_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+		gold_cost = 600
+		build_time = 1025
+		tax_income = 2.75
+		fort_level = 0.2 #Much like Mansions, the Plantations are quite sturdy
+		levy_size = 0.1 #Food stuffs allow for more people, generally
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	 ca_colonial_plantation_2 = {
+		desc = ca_colonial_plantation_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+		upgrades_from = ca_colonial_plantation_1
+		prerequisites = { ca_wall_1 }
+		gold_cost = 750
+		build_time = 1650
+		tax_income = 2.75
+		fort_level = 0.2 #Much like Mansions, the Plantations are quite sturdy
+		levy_size = 0.05 #Food stuffs allow for more people, generally
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	 ca_colonial_plantation_3 = {
+		desc = ca_colonial_plantation_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
+		upgrades_from = ca_colonial_plantation_2
+		gold_cost = 800
+		build_time = 2190
+		tax_income = 2.75
+		fort_level = 0.2 #Much like Mansions, the Plantations are quite sturdy
+		levy_size = 0.05 #Food stuffs allow for more people, generally
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	#Colony Guild HQ
+	ca_colonial_guildhq_1 = {
+		desc = ca_colonial_guildhq_1_desc
+		potential = {
+			FROM = { 
+				culture_group = asur_group 
+				capital_holding = { title = FROMFROM }
+			}
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+		gold_cost = 1050
+		build_time = 1565
+		tax_income = 3
+		fort_level = 1.0
+		levy_size = 0.15
+		garrison_size = 0.15
+		tech_growth_modifier = 0.15
+		culture_techpoints = 0.003
+		military_techpoints = 0.003
+		galleys = 10
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	#Colony Cavalry detatchment
+	ca_colony_cavalry_1 = {
+		desc = ca_colony_cavalry_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 1 }
+		replaces = ca_stable_1
+		gold_cost = 100
+		build_time = 730
+		knights = 10
+		light_cavalry = 25
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colony_cavalry_2 = {
+		desc = ca_colony_cavalry_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 1 }
+		upgrades_from = ca_colony_cavalry_1
+		replaces = ca_stable_2
+		gold_cost = 300
+		build_time = 1095
+		knights = 15
+		light_cavalry = 30
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colony_cavalry_3 = {
+		desc = ca_colony_cavalry_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 3 }
+		upgrades_from = ca_colony_cavalry_2
+		replaces = ca_stable_3
+		gold_cost = 400
+		build_time = 2190
+		knights = 20
+		light_cavalry = 35
+		ai_creation_factor = 99
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colony_cavalry_4 = {
+		desc = ca_colony_cavalry_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
+		upgrades_from = ca_colony_cavalry_3
+		replaces = ca_stable_4
+		gold_cost = 500
+		build_time = 2190
+		knights = 20
+		light_cavalry = 40
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colony_cavalry_5 = {
+		desc = ca_colony_cavalry_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+		upgrades_from = ca_colony_cavalry_4
+		replaces = ca_stable_5
+		gold_cost = 500
+		build_time = 2190
+		knights = 20
+		light_cavalry = 45
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colony_cavalry_6 = {
+		desc = ca_colony_cavalry_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+		upgrades_from = ca_colony_cavalry_5
+		replaces = ca_stable_6
+		gold_cost = 500
+		build_time = 2190
+		knights = 25
+		light_cavalry = 50
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.8
+	}
+	##Colony Citizen Army
+	ca_colony_citizen_1 = {
+		desc = ca_colony_citizen_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		gold_cost = 100
+		build_time = 730
+		pikemen = 30
+		archers = 35
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colony_citizen_2 = {
+		desc = ca_colony_citizen_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 1 }
+		upgrades_from = ca_colony_citizen_1
+		gold_cost = 300
+		build_time = 1095
+		pikemen = 35
+		archers = 40
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colony_citizen_3 = {
+		desc = ca_colony_citizen_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+		upgrades_from = ca_colony_citizen_2
+		gold_cost = 400
+		build_time = 2190
+		pikemen = 40
+		archers = 45
+		ai_creation_factor = 99
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colony_citizen_4 = {
+		desc = ca_colony_citizen_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+		upgrades_from = ca_colony_citizen_3
+		gold_cost = 500
+		build_time = 2190
+		pikemen = 45
+		archers = 50
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colony_citizen_5 = {
+		desc = ca_colony_citizen_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+		upgrades_from = ca_colony_citizen_4
+		gold_cost = 500
+		build_time = 2190
+		pikemen = 50
+		archers = 55
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colony_citizen_6 = {
+		desc = ca_colony_citizen_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+		upgrades_from = ca_colony_citizen_5
+		gold_cost = 500
+		build_time = 2190
+		pikemen = 55
+		archers = 60
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.8
+	}
+	#Asuryan Forum
+	ca_forums_1 = {
+		desc = ca_forums_1_desc
+		potential = {
+			FROM = {
+				culture_group = asur_group
+			}
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+		gold_cost = 600
+		build_time = 1025
+		tax_income = 1.5
+		tech_growth_modifier = 0.2
+		liege_prestige = 0.01
+		land_morale = 0.15
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	 ca_forums_2 = {
+		desc = ca_forums_1_desc
+		potential = {
+			FROM = {
+				culture_group = asur_group
+			}
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+		upgrades_from = ca_forums_1
+		prerequisites = { ca_wall_1 }
+		gold_cost = 750
+		build_time = 1650
+		tax_income = 1.5
+		tech_growth_modifier = 0.3
+		liege_prestige = 0.03
+		land_morale = 0.15
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colony_cul_1 = {
+		desc = ca_colony_cul_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		prerequisites = { ca_wall_2 }
+		gold_cost = 300
+		build_time = 730
+		
+		archers = 10
+		archers_defensive = 0.075
+		archers_morale = 0.075
+		
+		light_infantry = 10
+		light_infantry_offensive = 0.075
+		
+		pikemen = 10
+		pikemen_offensive = 0.075
+		pikemen_defensive = 0.075
+		
+		heavy_infantry = 10
+		heavy_infantry_defensive = 0.075
+		
+		knights = 10
+		knights_offensive = 0.075
+		knights_morale = 0.075
+		
+		chariots = 10
+		chariots_offensive = 0.075
+		
+		light_cavalry = 10
+		light_cavalry_offensive = 0.075
+		
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colony_cul_2 = {
+		desc = ca_colony_cul_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 1 }
+		upgrades_from = ca_colony_cul_1
+		gold_cost = 400
+		build_time = 1095
+		
+		archers = 15
+		archers_defensive = 0.075
+		archers_morale = 0.075
+		
+		light_infantry = 15
+		light_infantry_offensive = 0.075
+		
+		pikemen = 15
+		pikemen_offensive = 0.075
+		pikemen_defensive = 0.075
+		
+		heavy_infantry = 15
+		heavy_infantry_defensive = 0.075
+		
+		knights = 15
+		knights_offensive = 0.075
+		knights_morale = 0.075
+		
+		chariots = 15
+		chariots_offensive = 0.075
+		
+		light_cavalry = 15
+		light_cavalry_offensive = 0.075
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colony_cul_3 = {
+		desc = ca_colony_cul_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 3 }
+		upgrades_from = ca_colony_cul_2
+		gold_cost = 500
+		build_time = 2190
+		
+		archers = 20
+		archers_defensive = 0.075
+		archers_morale = 0.075
+		
+		light_infantry = 20
+		light_infantry_offensive = 0.075
+		
+		pikemen = 20
+		pikemen_offensive = 0.075
+		pikemen_defensive = 0.075
+		
+		heavy_infantry = 15
+		heavy_infantry_defensive = 0.075
+		
+		knights = 20
+		knights_offensive = 0.075
+		knights_morale = 0.075
+		
+		chariots = 20
+		chariots_offensive = 0.075
+		
+		light_cavalry = 20
+		light_cavalry_offensive = 0.075
+
+		extra_tech_building_start = 0.8
+	}
+	ca_colony_cul_4 = {
+		desc = ca_colony_cul_1_desc
+		potential = {
+			FROM = { culture_group = asur_group }
+		}
+		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
+		upgrades_from = ca_colony_cul_3
+		gold_cost = 600
+		build_time = 2190
+		
+		archers = 20
+		archers_defensive = 0.075
+		archers_morale = 0.075
+		
+		light_infantry = 20
+		light_infantry_offensive = 0.075
+		
+		pikemen = 20
+		pikemen_offensive = 0.075
+		pikemen_defensive = 0.075
+		
+		heavy_infantry = 15
+		heavy_infantry_defensive = 0.075
+		
+		knights = 20
+		knights_offensive = 0.075
+		knights_morale = 0.075
+		
+		chariots = 20
+		chariots_offensive = 0.075
+		
+		light_cavalry = 20
+		light_cavalry_offensive = 0.075
+		
+		extra_tech_building_start = 0.8
+	}
+}

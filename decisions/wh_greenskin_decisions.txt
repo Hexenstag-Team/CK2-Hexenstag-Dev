@@ -1,0 +1,1728 @@
+title_decisions ={
+	grant_landed_title_waagh = {
+		ai_check_interval = 6
+		ai_target_filter = owned
+		filter = owned
+		ai_third_party_filter=home_court
+		third_party_filter=sub_realm
+		only_rulers = yes
+		from_potential = {
+			government=greenskin_waagh_government
+			religion_group = greenskin_gods_group
+		}
+		third_party_potential={
+			OR={
+				FROMFROM={
+				is_ruler=no
+				is_lowborn=no
+				}
+				ROOT={location={any_neighbor_province={holder_scope={character=fromfrom}}}}
+			}
+			FROM = {
+				is_liege_of = FROMFROM
+			}
+		}
+		third_party_allow={
+			show_only_failed_conditions = yes
+			FROMFROM={
+			martial=10
+			}
+		}
+		potential = {
+			ROOT={
+				can_be_given_away = yes 
+				tier=county
+				location={has_capital=no}
+			}
+		}	
+		allow = {
+		}
+		effect = {
+			ROOT={if={limit={location={has_tribal=yes}}
+				any_province_holding={
+					limit={holding_type=tribal}
+					make_capital_holding=yes
+				}
+				}
+				else={
+					location={
+						build_holding = { type = tribal }
+						any_province_holding={
+							limit={holding_type=tribal}
+							make_capital_holding=yes #To Stop From Accidently creating Feudal-Burghers Etc
+						}
+					}
+				}
+			}
+			ROOT={
+				grant_title = {
+					target = FROMFROM
+					type = invasion
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0.01
+				FROM = {
+					any_child = {
+						is_alive = yes
+						is_female = no
+					}
+				}
+			}
+		}
+	}
+	split_clan_waagh = {
+		ai_check_interval = 6
+		ai_target_filter = owned
+		filter = owned
+		ai_third_party_filter=home_court
+		third_party_filter=sub_realm
+		only_rulers = yes
+		from_potential = {
+			government=greenskin_waagh_government
+			religion_group = greenskin_gods_group
+		}
+		third_party_potential={
+			FROMFROM={
+			is_ruler=no
+			is_lowborn=no
+			}
+			FROM = {
+				culture = FROMFROM
+				is_liege_of = FROMFROM
+			}
+		}
+		third_party_allow={
+			show_only_failed_conditions = yes
+			FROMFROM={
+			martial=10
+			}
+		}
+		potential = {
+			ROOT={
+				can_be_given_away = yes 
+				tier=county
+				location={has_capital=no}
+			}
+		}
+		allow = {
+		}
+		effect = {
+			ROOT={
+				grant_title = {
+					target = FROMFROM
+					type = invasion
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0.01
+				FROM = {
+					any_child = {
+						is_alive = yes
+						is_female = no
+					}
+				}
+			}
+		}
+	}
+}
+decisions = {
+	##Orcs & Goblins stuff
+
+	# #This decision just tribalizes the capital now - Greenskin version
+	# orkyfy_provinces = {
+		# is_high_prio = yes
+		# potential = {
+			# OR = {
+				# is_tribal = yes
+				# is_feudal = yes
+			# }
+			# religion_group = greenskin_gods_group
+			# is_theocracy = no
+			# is_republic = no
+		# }
+		# allow = {
+			# custom_tooltip = {
+				# text = orkify_tooltip_1
+			# }
+			# hidden_tooltip = {
+				# any_demesne_title = {
+					# location = {
+						# OR = {
+							# AND = {
+								# is_tribal = no
+								# NOT = {
+									# any_province_holding = {
+										# holding_type = tribal
+									# }
+								# }
+							# }
+							# # NOT = {
+								# # culture = ROOT
+							# # }
+						# }
+					# }
+				# }
+			# }
+		# }
+
+		# effect = {
+			# hidden_tooltip = {
+				# any_demesne_title = {
+					# limit = {
+						# location = {
+							# is_tribal = no
+						# }
+					# }
+					# location = { #Capital holding becomes tribal
+						# any_province_holding = {
+							# limit = {
+								# is_capital = yes
+							# }
+							# convert_to = TRIBAL
+							# add_building = tb_greenskin_camp_1
+							# refill_holding_levy = yes
+						# }
+						# # add_province_modifier = {
+							# # name = medium_greenskin_population
+							# # duration = -1
+						# # }
+						# # set_province_flag = greenksin_colonization
+					# }
+				# }
+				# # any_vassal = {
+					# # any_demesne_title = {
+						# # limit = {
+							# # location = {
+								# # has_empty_holding = yes
+								# # is_tribal = no
+								# # NOT = {
+									# # any_province_holding = {
+										# # holding_type = tribal
+									# # }
+								# # }
+							# # }
+						# # }
+						# # location = { #In an ideal world, holdings could be destroyed. Instead, anything that's not a temple will be converted to tribal
+							# # any_province_holding = {
+								# # limit = {
+									# # NOT = { is_theocracy = yes } #Temples are kept as temples
+								# # }
+								# # convert_to = TRIBAL
+								# # refill_holding_levy = yes
+							# # }
+							# # if = { #IF the province is not of the same culture of religion as ROOT, the colonization process will begin
+								# # limit = {
+									# # NOT = {
+										# # OR = {
+											# # religion = ROOT
+											# # culture = ROOT
+										# # }
+									# # }
+								# # }
+								# # # set_province_flag = greenksin_colonization
+							# # }
+						# # }
+					# # }
+				# # }
+			# }
+			# custom_tooltip = {
+				# text = orkify_tooltip_2
+			# }
+		# }
+		# revoke_allowed = {
+			# always = no
+		# }
+		# ai_will_do = {
+			# factor = 1 # On average ca 1 year before taken
+		# }
+	# }
+
+
+	unite_the_clans_1 = {
+		ai_check_interval = 6
+		is_high_prio = yes
+		only_playable = yes
+		potential = {
+			religion_group = greenskin_gods_group
+			is_playable = yes
+			tier = DUKE
+			NOT = { tier = KING }
+		}
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			independent = yes
+			prestige = 500
+			num_of_count_titles_in_realm = 10
+			# custom_tooltip = {
+				# text = form_waaagh_kingdom_requirement_tooltip
+				# hidden_tooltip = {
+					# any_demesne_title = {
+						# count = 2
+						# tier = DUKE
+					# }
+				# }
+			# }
+		}
+		effect = {
+			custom_tooltip = {
+				text = form_waaagh_kingdom_info_tooltip
+			}
+			primary_title = {
+				create_title = {
+					tier = KING
+					landless = no
+					temporary = no
+					custom_created = yes
+					culture = ROOT
+					holder = ROOT
+					base_title = THIS
+					copy_title_laws = yes
+				}
+
+				# hidden_tooltip = {
+					# empire = {
+						# ROOT = {
+							# primary_title = {
+								# de_jure_liege = PREVPREV
+							# }
+						# }
+					# }
+
+					# ROOT = {
+						# primary_title = {
+							# holder_scope = {
+								# any_title_under = {
+									# limit = {
+										# tier = DUKE
+										# kingdom = {
+											# has_holder = no
+										# }
+									# }
+									# de_jure_liege = PREVPREV
+								# }
+								# any_title_under = {
+									# limit = {
+										# tier = COUNT
+										# location = {
+											# duchy = {
+												# kingdom = {
+													# has_holder = no
+												# }
+
+												# NOT = { de_jure_liege_or_above = PREVPREVPREVPREV }
+												# ROOT = {
+													# completely_controls = PREV
+												# }
+											# }
+										# }
+									# }
+									# location = {
+										# duchy = {
+											# de_jure_liege = PREVPREVPREVPREV
+										# }
+									# }
+								# }
+							# }
+						# }
+					# }
+				# }
+
+			}
+			prestige = -400
+			# custom_tooltip = { text = form_new_kingdom_tooltip }
+			# chronicle = {
+				# entry = CHRONICLE_FOUNDED_NEW_KINGDOM_OR_EMPIRE
+				# portrait = [Root.GetID]
+			# }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+
+	#Create a titular empire tier title
+	unite_the_clans = {
+		ai_check_interval = 6
+		is_high_prio = yes
+		only_playable = yes
+		potential = {
+			religion_group = greenskin_gods_group
+			is_playable = yes
+			tier = KING
+			NOT = { tier = EMPEROR }
+		}
+		allow = {
+			is_adult = yes
+			prisoner = no
+			NOT = { trait = incapable }
+			independent = yes
+			prestige = 2000
+			custom_tooltip = {
+				text = form_waaagh_requirement_tooltip
+				hidden_tooltip = {
+					any_demesne_title = {
+						count = 2
+						tier = KING
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = {
+				text = form_waaagh_info_tooltip
+			}
+			primary_title = {
+				create_title = {
+					tier = EMPEROR
+					landless = no
+					temporary = no
+					custom_created = yes
+					culture = ROOT
+					holder = ROOT
+					base_title = THIS
+					copy_title_laws = yes
+				}
+
+				# hidden_tooltip = {
+					# ROOT = {
+						# primary_title = {
+							# holder_scope = {
+								# any_title_under = {
+									# limit = {
+										# tier = KING
+										# empire = {
+											# has_holder = no
+										# }
+									# }
+									# de_jure_liege = PREVPREV
+								# }
+								# any_title_under = {
+									# limit = {
+										# tier = DUKE
+										# location = {
+											# kingdom = {
+												# empire = {
+													# has_holder = no
+												# }
+
+												# NOT = { de_jure_liege_or_above = PREVPREVPREVPREV }
+												# ROOT = {
+													# completely_controls = PREV
+												# }
+											# }
+										# }
+									# }
+									# location = {
+										# kingdom = {
+											# de_jure_liege = PREVPREVPREVPREV
+										# }
+									# }
+								# }
+							# }
+						# }
+					# }
+				# }
+			}
+			prestige = -1500
+			# custom_tooltip = { text = form_new_empire_tooltip }
+			# chronicle = {
+				# entry = CHRONICLE_FOUNDED_NEW_KINGDOM_OR_EMPIRE
+				# portrait = [Root.GetID]
+			# }
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	duel_greenskin_liege_decision = {
+		ai_check_interval = 12
+		is_high_prio = yes
+		potential = {
+			liege = {
+				age = 16
+				prisoner = no
+				has_regent = no
+				higher_tier_than = COUNT
+				NOT = { character = ROOT }
+				NOT = { trait = incapable }
+				OR = {
+					religion_group = greenskin_gods_group
+					culture_group = orc_group
+					culture_group = goblin_group
+				}
+			}
+			age = 16
+			prisoner = no
+			has_regent = no
+			mercenary = no
+			holy_order = no
+			NOT = { trait = blinded }
+			is_female = no
+			OR = {
+					religion_group = greenskin_gods_group
+					culture_group = orc_group
+					culture_group = goblin_group
+			}
+			OR = {
+				ai = no
+				NOR = {
+					trait = craven
+					trait = content
+				}
+			}
+			OR = {
+				NOT = { tier = BARON }
+				has_job_title = job_chancellor
+				has_job_title = job_marshal
+				has_job_title = job_treasurer
+				has_job_title = job_spymaster
+				has_job_title = job_spiritual
+				liege = { is_close_relative = ROOT }
+				trait = black_orc_trait
+			}
+		}
+
+		allow = {
+			prestige = 200
+			liege = {
+				NOR = {
+					has_character_flag = do_not_disturb 
+					war = yes
+					is_looting = yes
+					has_character_modifier = recent_greenskin_duel_timer 
+					has_character_flag = duel
+					is_friend = ROOT
+				}
+				NOT={
+					ROOT = { opinion = { who = liege value = 75 }} 
+				}
+				OR={
+					trait = lunatic_2
+					trait = lunatic_3
+					trait = possessed
+					trait = drunkard
+					trait = imbecile
+					trait = inbred
+					trait = idiot
+					AND={
+						ROOT={ai=yes}
+						combat_rating_diff = {
+							character = ROOT
+							value <= 100
+						}
+					}
+					AND={
+						combat_rating_diff = {
+							character = ROOT
+							value <= 50
+						}
+						ROOT={ai=no}
+					}
+				}
+			}
+			NOT = { has_character_flag = do_not_disturb }
+			NOT = { war = yes }
+			custom_tooltip = {
+				text = duel_tooltip_recent_duel
+				hidden_tooltip = {
+					liege = { NOT = { has_character_modifier = recent_duel_timer } }
+					NOT = { has_character_modifier = recent_duel_timer }
+					NOT = { has_character_flag = duel }
+				}
+			}
+		}
+
+		effect = {
+			ROOT = {
+				add_character_modifier = {
+					modifier = recent_duel_timer
+					duration = 720
+					hidden = yes
+				}
+				save_event_target_as = scrublord
+				save_event_target_as = combatant_1
+				set_character_flag = duel
+				set_character_flag = flag_duel_no_draws
+				set_character_flag = deadly_duel@event_target:combatant_2
+			}
+			liege = { character_event = { id = DR_greenskins.212 } }
+			liege = {
+				save_event_target_as = combatant_2
+				set_character_flag = duel
+				set_character_flag = flag_duel_no_draws
+				hidden_tooltip = { character_event = { id = HFP.10095 } }
+				hidden_tooltip = { character_event = { id = DR_greenskins.212 days = 10 } }
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_character_modifier = declined_prestige_duel_timer
+			}
+			modifier = {
+				factor = 0.10
+			}
+			#the Opponent's traits
+			modifier = {
+				factor = 0.75
+				liege = { trait = brave }
+			}
+			modifier = {
+				factor = 0.75
+				liege = { trait = strong }
+			}
+			modifier = {
+				factor = 0.75
+				liege = { trait = tough }
+			}
+			modifier = {
+				factor = 0.85
+				liege = { trait = tall }
+			}
+			modifier = {
+				factor = 0.85
+				liege = { trait = quick }
+			}
+			modifier = {
+				factor = 0.85
+				liege = { trait = genius }
+			}
+			modifier = {
+				factor = 1.5
+				liege = { trait = cruel }
+			}
+			modifier = {
+				factor = 2
+				liege = { trait = weak }
+			}
+			modifier = {
+				factor = 4
+				liege = { trait = eunuch }
+			}
+
+			#Orcs won't take crap from Goblin Warbosses
+			modifier = {
+				factor = 10
+				culture_group = orc_group
+				liege = { culture_group = goblin_group }
+			}
+
+			#Weak Warbosses should get hit by this HARD TIME
+			modifier = {
+				factor = 5
+				liege = { has_character_modifier = weak_warboss }
+			}
+
+			modifier = {
+				factor = 2
+				liege = { trait = goblin_small }
+			}
+
+			modifier = {
+				factor = 2
+				liege = { trait = orc_small }
+			}
+			modifier = {
+				factor = 0.75
+				ROOT = { NOT = { trait = deceitful } }
+				liege = { is_ill = yes }
+			}
+			modifier = {
+				factor = 0.75
+				liege = { trait = master_warrior }
+			}
+
+			modifier = {
+				factor = 0.75
+				liege = { trait = orc_huge }
+			}
+
+			modifier = {
+				factor = 0.75
+				liege = { trait = goblin_huge }
+			}
+
+			modifier = {
+				factor = 0.85
+				liege = { trait = brilliant_strategist }
+			}
+			modifier = {
+				factor = 0.75
+				liege = { trait = duelist }
+			}
+			modifier = {
+				factor = 1.75
+				liege = { trait = is_fat }
+			}
+			modifier = {
+				factor = 1.75
+				liege = { trait = is_malnourished }
+			}
+			modifier = {
+				factor = 0.25
+				liege = { martial = 15 }
+			}
+			modifier = {
+				factor = 1.5
+				liege = { trait = slow }
+			}
+			modifier = {
+				factor = 2
+				liege = { trait = imbecile }
+			}
+			modifier = {
+				factor = 2
+				liege = { trait = hunchback }
+			}
+			modifier = {
+				factor = 2
+				liege = { trait = dwarf }
+			}
+			modifier = {
+				factor = 0.5
+				liege = { prestige = 2000 }
+			}
+			modifier = {
+				factor = 2
+				ROOT = { NOT = { age = 30 } }
+				liege = { age = 40 }
+			}
+			modifier = {
+				factor = 0.75
+				ROOT = { trait = brave }
+			}
+			modifier = {
+				factor = 0.25
+				liege = { is_mother = ROOT }
+			}
+			modifier = {
+				factor = 0.25
+				liege = { is_father = ROOT }
+			}
+			modifier = {
+				factor = 1.5
+				liege = { sibling = ROOT }
+			}
+			#the Challengers traits
+			modifier = {
+				factor = 2
+				ROOT = { trait = brave }
+			}
+			modifier = {
+				factor = 1.5
+				ROOT = { trait = ambitious }
+			}
+			modifier = {
+				factor = 1.5
+				ROOT = { trait = strong }
+			}
+			modifier = {
+				factor = 1.5
+				ROOT = { trait = tough }
+			}
+			modifier = {
+				factor = 1.5
+				ROOT = { trait = tall }
+			}
+			modifier = {
+				factor = 1.5
+				ROOT = { trait = quick }
+			}
+			modifier = {
+				factor = 1.5
+				ROOT = { trait = genius }
+			}
+			modifier = {
+				factor = 0.75
+				ROOT = { trait = brilliant }
+			}
+			modifier = {
+				factor = 0.5
+				ROOT = { trait = weak }
+			}
+
+			modifier = {
+				factor = 0.5
+				ROOT = { trait = goblin_small }
+			}
+
+			modifier = {
+				factor = 0.5
+				ROOT = { trait = orc_small }
+			}
+
+			modifier = {
+				factor = 0.75
+				ROOT = { trait = eunuch }
+			}
+			modifier = {
+				factor = 0.25
+				ROOT = { is_ill = yes }
+			}
+			modifier = {
+				factor = 2
+				ROOT = { trait = master_warrior }
+			}
+			modifier = {
+				factor = 2
+				ROOT = { trait = brilliant_strategist }
+			}
+			modifier = {
+				factor = 2
+				ROOT = { trait = duelist }
+			}
+			modifier = {
+				factor = 2
+				ROOT = { trait = orc_huge }
+				liege = { NOT={ martial=30 } }
+			}
+
+			modifier = {
+				factor = 1.4
+				ROOT = { trait = black_orc_trait }
+			}
+			modifier = {
+				factor = 6
+				ROOT = { trait = black_orc_trait }
+				liege = { NOT={ martial=40 } }
+			}
+
+			modifier = {
+				factor = 1.2
+				ROOT = { trait = goblin_huge }
+			}
+			modifier = {
+				factor = 2
+				ROOT = { trait = goblin_huge }
+				liege = { NOT={ martial=30 } }
+			}
+
+			modifier = {
+				factor = 0.75
+				ROOT = { trait = is_fat }
+			}
+			modifier = {
+				factor = 0.75
+				ROOT = { trait = is_malnourished }
+			}
+			modifier = {
+				factor = 5
+				ROOT = { martial = 15 }
+				liege = { NOT={martial=25} }
+			}
+			modifier = {
+				factor = 0.75
+				ROOT = { 
+					OR = { 
+						has_job_title = job_chancellor
+						has_job_title = job_treasurer
+						has_job_title = job_spymaster
+						has_job_title = job_spiritual 
+					} 
+				}
+			}
+			modifier = {
+				factor = 0.75
+				ROOT = { is_landed = yes }
+			}
+			modifier = {
+				factor = 1.5
+				liege = { NOT = { religion = ROOT } }
+			}
+			modifier = {
+				factor = 2
+				liege = { NOT = { religion_group = ROOT } }
+			}
+			modifier = {
+				factor = 1.5
+				 liege = { NOT = { culture_group = ROOT } }
+			}
+			modifier = {
+				factor = 10
+				ROOT = { NOT = { opinion = { who = liege value = -100 } } }
+			}
+			modifier = {
+				factor = 5
+				ROOT = { NOT = { opinion = { who = liege value = -80 } } }
+			}
+			modifier = {
+				factor = 2
+				ROOT = { NOT = { opinion = { who = liege value = -60 } } }
+			}
+			modifier = {
+				factor = 2
+				ROOT = { NOT = { opinion = { who = liege value = -40 } } }
+			}
+			modifier = {
+				factor = 1.5
+				ROOT = { NOT = { opinion = { who = liege value = -20 } } }
+			}
+			modifier = {
+				factor = 1.5
+				ROOT = { NOT = { opinion = { who = liege value = 0 } } }
+			}
+			modifier = {
+				factor = 0.75
+				ROOT = { opinion = { who = liege value = 20 }}
+			}
+			modifier = {
+				factor = 0.75
+				ROOT = { opinion = { who = liege value = 40 }}
+			}
+			modifier = {
+				factor = 0.75
+				ROOT = { opinion = { who = liege value = 60 }}
+			}
+
+		} #closesaiwilldo
+	} #closedecision
+
+	gather_greenskin_army = {
+		ai_check_interval = 6
+		is_high_prio = yes
+		is_mercenary = yes
+		potential = {
+			OR = {
+				religion_group = greenskin_gods_group
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+		}
+		allow = {
+			war = yes
+			piety = 800
+		}
+		effect = {
+			piety = -800
+			capital_scope = {
+				PREV = {
+					spawn_unit = {
+						owner = ROOT
+						leader = none
+						province = PREV
+						home = PREV
+						troops = {
+							archers = { 250 250 }
+							light_infantry = { 1000 1000 }
+							heavy_infantry = { 250 250 }
+						}
+						attrition = 1.0
+						disband_on_peace = yes
+						maintenance_multiplier = 0.5
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	choose_greenskin_branch = {
+		ai_check_interval = 6
+		potential = {
+			is_adult = yes
+			religion = greenskin_gods
+			NOT = {
+				OR = {
+					trait = greenskin_gods_gork
+					trait = greenskin_gods_mork
+				}
+			}
+		}
+		allow = {
+			NOT = {
+				OR = {
+					trait = greenskin_gods_gork
+					trait = greenskin_gods_mork
+				}
+			}
+		}
+		effect = {
+			character_event = { id = DR_greenskins.206 } #Choose branch
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}
+
+targetted_decisions = {
+	adopt_greenskin_heir = {
+		ai_check_interval = 6
+		ai_target_filter = home_court
+		filter = sub_realm
+		only_rulers = yes
+		is_high_prio = yes
+		from_potential = {
+			is_ruler = yes
+			is_female = no
+			religion_group = greenskin_gods_group
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+			is_theocracy = no
+			OR={
+				NOT={
+				any_child={
+					count = 2
+					is_alive=yes
+				}}
+				NOT = { num_of_children = 3 } #To avoid player taking too many heirs
+			}
+			OR={
+				is_nomadic=yes
+				is_tribal = yes
+			}
+		}
+		potential = {
+			is_female = no
+			is_liege_or_above = FROM
+			NOT = { character = FROM }
+			NOT = { is_close_relative = FROM }
+		}
+		allow = {
+			conditional_tooltip ={
+				trigger ={
+					FROM={
+						ai=yes
+						OR={
+							martial=25
+							diplomacy=15
+							learning=10
+							intrigue=15
+							stewardship=10
+						}
+					}
+				}
+				ROOT = {
+					OR={
+						is_friend = FROM
+						martial=12
+						stewardship=12
+						diplomacy=12
+						intrigue=12
+						learning=12
+						trait=lore_waaagh
+					}
+				}
+				conditional_tooltip ={
+					trigger ={
+						FROM={
+							trait=creature_orc
+							higher_tier_than=DUKE
+						}
+					}
+					ROOT = {
+						OR={
+							is_friend = FROM
+							martial=15
+							diplomacy=15
+						}
+					}
+				}
+				conditional_tooltip ={
+					trigger ={
+						FROM={
+							trait=creature_goblin
+							higher_tier_than=DUKE
+						}
+					}
+					ROOT = {
+						OR={
+							is_friend = FROM
+							martial=15
+							intrigue=15
+						}
+					}
+				}
+			}
+			age = 16
+			religion_group = greenskin_gods_group
+			OR = {
+				AND = {
+					FROM = { culture_group = orc_group}
+					culture_group = orc_group
+				}
+				AND = {
+					FROM = { culture_group = goblin_group}
+					culture_group = goblin_group
+				}
+			}
+			custom_tooltip = {
+				text = TOOLTIPADOPTGREENSKIN
+				hidden_tooltip = { dynasty = 0 }
+			}
+			NOT = { any_spouse = { is_close_relative = FROM } }
+			# opinion = { who = FROM value = 0 }
+			prisoner = no
+			NOT = { trait = incapable }
+			NOT = { trait = blinded }
+			NOT = { trait = weak }
+			NOT = { trait = imbecile }
+			OR = {
+				AND = {
+					FROM = { culture_group = orc_group}
+					martial = 9
+				}
+				AND = {
+					FROM = { culture_group = goblin_group}
+					intrigue = 9
+				}
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+				father = { ROOT = { set_real_father = PREV } }
+				set_mother = 0
+			}
+			if={
+				limit={
+				trait = black_orc_trait
+				FROM = { trait = black_orc_trait}
+				}
+				if={limit={FROM={culture=orc_black}}
+				culture=orc_black}
+				else_if={limit={FROM={trait=creature_orc}}
+				culture=FROM}
+			}
+			if={
+				limit={
+					FROM = { 
+					graphical_culture = savageorcgfx
+					NOT={culture=orc_savage}
+					}
+					NOT={culture = orc_savage}
+					trait=creature_orc
+				}
+				set_graphical_culture=orc_savage
+			}
+			if={
+				limit={
+					FROM={NOT={ trait = black_orc_trait}}
+					trait = black_orc_trait
+				}
+				if={limit={FROM={trait=creature_orc}}
+				culture=FROM}
+			}
+			set_father = FROM
+			dynasty = FROM
+			hidden_tooltip = {
+				any_child = {
+					limit = { dynasty = 0 }
+					dynasty = ROOT
+					any_child = {
+						limit = { dynasty = 0 }
+						dynasty = ROOT
+						any_child = {
+							limit = { dynasty = 0 }
+							dynasty = ROOT
+						}
+					}
+				}
+			}
+			if = {
+				limit = { FROM = { tier = EMPEROR } }
+				prestige = 200
+			}
+			if = {
+				limit = { FROM = { tier = KING } }
+				prestige = 100
+			}
+			if = {
+				limit = { FROM = { tier = DUKE } }
+				prestige = 50
+			}
+			if = {
+				limit = { FROM = { tier = COUNT } }
+				prestige = 25
+			}
+			if = {
+				limit = { FROM = { tier = BARON } }
+				prestige = 10
+			}
+			# opinion = { who = FROM modifier = opinion_adopted_me }
+			FROM = {
+				recalc_succession = yes
+			}
+		}
+		ai_will_do = {
+			factor = 1
+
+			modifier = {
+				factor = 0.1
+				FROM = {
+					any_child = {
+						is_alive = yes
+						is_female = no
+					}
+				}
+			}
+			modifier = {
+				factor = 2.2
+				ROOT = {
+					martial=20
+				}
+			}
+			modifier = {
+				factor = 1.5
+				ROOT = {
+					martial=15
+				}
+			}
+			modifier = {
+				factor = 1.5
+				ROOT = {
+					martial=30
+				}
+			}
+			modifier = {
+				factor = 2.2
+				ROOT = {
+					OR={
+						AND={
+							trait=creature_orc
+							martial=10
+						}
+						AND={
+							trait=creature_goblin
+							OR={
+								martial=10
+								intrigue=10
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 2.2
+				ROOT = {
+					OR={
+						AND={
+							trait=creature_goblin
+							martial=20
+						}
+						AND={
+							trait=creature_goblin
+							OR={
+								martial=15
+								intrigue=15
+							}
+						}
+					}
+				}
+			}
+			modifier = {
+				factor = 10
+				FROM = {
+					any_child = {
+						NOT={trait=lore_waaagh}
+					}
+				}
+				ROOT={trait=lore_waaagh}
+			}
+			modifier = {
+				factor = 0.001
+				FROM = {
+					any_child = {
+						trait=lore_waaagh
+					}
+				}
+				ROOT={trait=lore_waaagh}
+			}
+		}
+	}
+	#declare_waaagh Deleted for Now
+
+	bash_heads = {
+		ai_check_interval = 6
+		ai_target_filter = sub_realm
+		filter = sub_realm
+		only_rulers = yes
+		from_potential = {
+			is_ruler = yes
+			has_character_modifier = weak_warboss
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				religion_group = greenskin_gods_group
+			}
+		}
+
+		potential = {
+			is_within_diplo_range = FROM
+			is_female = no
+			is_liege_or_above = FROM
+			NOT = { character = FROM }
+			NOT = { has_character_flag = duel }
+			higher_tier_than = BARON
+		}
+		allow = {
+			FROM = {
+				NOT = { has_character_flag = duel }
+				has_character_modifier = weak_warboss
+				war = no
+				prisoner = no
+				combat_rating_diff = {
+					character = ROOT
+					value <= 100
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = { text = weakwarbossremoved }
+			save_event_target_as = combatant_1
+			set_character_flag = duel
+			set_character_flag = greenskin_bash_head_duel
+			FROM = {
+				set_character_flag = greenskin_bash_head_duel
+				save_event_target_as = combatant_2
+				set_character_flag = duel
+				hidden_tooltip = { character_event = { id = HFP.10095 } }
+			}
+		}
+		revoke_allowed = { always = no }
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.25
+			}
+			modifier = {
+				factor = 0.4
+				reverse_opinion = { who = FROM value = 20 }
+			}
+			modifier = {
+				factor = 0.25
+				reverse_opinion = { who = FROM value = 40 }
+			}
+			modifier = {
+				factor = 5
+				NOT = { reverse_opinion = { who = FROM value = -25 } }
+			}
+			modifier = {
+				factor = 0
+				FROM = { war = yes }
+			}
+			modifier = {
+				factor = 0
+				FROM = { trait = craven }
+				}
+			modifier = {
+				factor = 2
+				ROOT = { trait = wroth }
+			}
+		}
+	}
+}
+
+settlement_decisions = {
+	make_land_green = {
+		filter = owned
+		ai_target_filter = owned
+		is_high_prio = yes
+		only_playable = yes
+
+		potential = {
+			FROM = {
+				OR = {
+					trait = creature_orc
+					trait = creature_goblin
+					trait = creature_snotling
+				}
+			}
+			holder_scope = {
+				character = FROM
+			}
+			dejure_liege_title = {
+				holder_scope = {
+					character = FROM
+				}
+			}
+			OR = {
+				AND = {
+					FROM = { trait = creature_orc }
+					location = {
+						NOR = {
+							culture = orc_main
+							culture = orc_savage
+							culture = orc_freeboota
+							culture = orc_black
+						}
+					}
+				}
+				AND = {
+					FROM = {
+						trait = creature_orc 
+						culture = orc_black
+					}
+					location = {NOT = {culture = orc_black}}
+				}
+				AND = {
+					FROM = { trait = creature_goblin }
+					location = {
+						NOR = {
+							culture = goblin_main
+							culture = goblin_night
+							culture = goblin_forest
+							culture = goblin_seagit
+						}
+					}
+				}
+			}
+		}
+		allow = {
+			FROM = { prestige = 50 }
+			NOT = { location = { has_province_modifier = greenskins_wrecking_province } }
+		}
+		effect = {
+			FROM = { prestige = -50 }
+			custom_tooltip = {
+				text = make_land_green_tooltip
+				hidden_tooltip = {
+					FROM = {
+						random_list = {
+							25 = { character_event = { id = DR_greenskins.191 } } #prestige + advancement
+							15 = { character_event = { id = DR_greenskins.193 } } #troops + advancement
+							30 = { character_event = { id =	DR_greenskins.194 } } #advancement
+							30 = {
+								character_event = { id = DR_greenskins.195 } 
+								modifier = {
+									factor = 1.5
+									ROOT = {location={region=world_chaos_wastes}}
+								}
+							} #animosity
+						}
+					}
+					location = {
+						add_province_modifier = {
+							name = greenskins_wrecking_province
+							duration = 200
+						}
+					}
+				}
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	cleanse_greenskin_presence = {
+		filter = owned
+		ai_target_filter = owned
+		is_high_prio = yes
+		only_playable = yes
+
+		potential = {
+			FROM = {
+				NOR = {
+					trait = creature_orc
+					trait = creature_goblin
+					trait = creature_snotling
+				}
+			}
+			holder_scope = {
+				character = FROM
+			}
+			dejure_liege_title = {
+				holder_scope = {
+					character = FROM
+				}
+			}
+			OR = {
+				location = { has_province_modifier = minimal_greenskin_population }
+				location = { has_province_modifier = medium_greenskin_population }
+				location = { has_province_modifier = large_greenskin_population }
+				location = { has_province_modifier = greenskin_population_bad }
+				location = { culture_group = orc_group }
+				location = { culture_group = goblin_group }
+			}
+		}
+		allow = {
+			FROM = {
+				wealth = 40
+			}
+			NOT = { location = { has_province_modifier = hunting_greenskins } }
+			OR = {
+				location = { has_province_modifier = minimal_greenskin_population }
+				location = { has_province_modifier = medium_greenskin_population }
+				location = { has_province_modifier = large_greenskin_population }
+				location = { has_province_modifier = greenskin_population_bad }
+				location = { culture_group = orc_group }
+				location = { culture_group = goblin_group }
+			}
+		}
+		effect = {
+			hidden_tooltip = {
+					FROM = { character_event = { id = DR_greenskins.200 } }
+				 	location = {
+						add_province_modifier = {
+							name = hunting_greenskins
+							duration = 60
+							hidden = yes
+						}
+					}
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+
+
+		}
+	}
+}
+
+title_decisions = {
+	establish_greenskin_tribe = {
+		ai_check_interval = 6
+		filter = owned
+		ai_target_filter = owned
+		only_playable = yes
+		is_high_prio = yes
+
+		from_potential = {
+			is_tribal = yes
+			religion_group = greenskin_gods_group
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+		}
+		potential = {
+			tier = COUNT
+			location = {
+				num_of_empty_holdings = 1
+				NOT = { num_of_settlements = 1 }
+				religion_group = greenskin_gods_group
+				OR = {
+					culture_group = orc_group
+					culture_group = goblin_group
+				}
+			}
+		}
+		allow = {
+			is_occupied = no
+			location = {
+				NOT = { num_of_settlements = 1 }
+			}
+			FROM = {
+				war = no
+				prestige = 100
+			}
+		}
+		effect = {
+			FROM = {
+				prestige = -100
+			}
+			location = {
+				build_holding = { type = tribal }
+				hidden_tooltip = {
+					any_province_holding = { make_capital_holding = yes }
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+				always = yes
+			}
+		}
+	}
+
+
+	# give_province_greenskin_2 = {
+		# filter = owned
+		# ai_target_filter = owned
+
+		# potential = {
+			# always = no #OBSOLETE
+			# can_be_given_away = yes
+			# FROM = {
+				# OR = {
+					# trait = creature_orc
+					# trait = creature_goblin
+				# }
+				# demesne_size = 2
+			# }
+			# holder_scope = {
+			# always = no #OBSOLETE
+				# character = FROM
+				# ai = no
+			# }
+		# }
+		# allow = { FROM = { OR = { any_vassal = { has_character_modifier = tagged_recipient_greenskin }
+					# any_courtier = { has_character_modifier = tagged_recipient_greenskin } } }
+		# }
+		# effect = {
+			# if = {
+				# limit = { FROM = { any_vassal = { has_character_modifier = tagged_recipient_greenskin } } }
+					# FROM = { any_vassal = { limit = { has_character_modifier = tagged_recipient_greenskin }
+							# ROOT = { grant_title = PREV
+								# if = { limit = { higher_tier_than = COUNT }
+									# add_law = succ_turkish_succession } }
+							# remove_character_modifier = tagged_recipient_greenskin } }
+				# break = yes
+				# }
+			# if = {
+				# limit = { FROM = { any_courtier = { has_character_modifier = tagged_recipient_greenskin } } }
+					# FROM = { any_courtier = { limit = { has_character_modifier = tagged_recipient_greenskin }
+							# ROOT = { grant_title = PREV
+								# if = { limit = { higher_tier_than = COUNT }
+									# add_law = succ_turkish_succession } }
+							# remove_character_modifier = tagged_recipient_greenskin } }
+				# break = yes
+				# }
+		# }
+
+		# revoke_allowed = {
+			# always = no
+		# }
+
+		# ai_will_do = { factor = 0 }
+	# } #closestitledecision
+
+	# give_province_greenskin_ai = {
+		# filter = owned
+		# ai_target_filter = owned
+
+		# potential = {
+			# can_be_given_away = yes
+			# always = no #OBSOLETE
+			# FROM = {
+				# OR = {
+					# trait = creature_orc
+					# trait = creature_goblin
+				# }
+				# demesne_size = 2
+			# }
+			# holder_scope = {
+			# always = no #OBSOLETE
+				# character = FROM
+				# ai = yes
+				# OR = { any_courtier = {
+						# is_female = no
+						# prisoner = no
+						# NOT = { character = FROM }
+							# OR = {
+								# trait = creature_orc
+								# trait = creature_goblin
+							# }
+						# }
+					 # any_courtier = {
+						# is_female = no
+						# prisoner = no
+						# NOT = { character = FROM }
+							# OR = {
+								# trait = creature_orc
+								# trait = creature_goblin
+							# }
+						# }
+				# }
+			# }
+			# tier = COUNT
+		# }
+		# allow = {
+			# always = no #OBSOLETE
+		# }
+		# effect = {
+			# FROM = {
+			# if = {
+				# limit = { FROM = { any_vassal = { is_female = no
+								# prisoner = no
+								# NOT = { character = FROM }
+								# OR = {
+								# trait = creature_orc
+								# trait = creature_goblin
+							# }} } }
+					# FROM = { any_vassal = { limit = {
+									# is_female = no
+									# prisoner = no
+									# NOT = { character = FROM }
+									# OR = {
+								# trait = creature_orc
+								# trait = creature_goblin
+							# } }
+							# ROOT = { grant_title = PREV
+								# if = { limit = { higher_tier_than = COUNT }
+									# add_law = succ_turkish_succession } }
+							# clr_character_flag = tagged_recipient_greenskin } }
+				# break = yes
+				# }
+			# if = {
+				# limit = { FROM = { any_courtier = {
+									# is_female = no
+									# prisoner = no
+									# NOT = { character = FROM }
+									# OR = {
+								# trait = creature_orc
+								# trait = creature_goblin
+							# }} } }
+					# FROM = { any_courtier = { limit = {
+									# is_female = no
+									# prisoner = no
+									# NOT = { character = FROM }
+									# OR = {
+								# trait = creature_orc
+								# trait = creature_goblin
+							# } }
+							# ROOT = { grant_title = PREV
+								# if = { limit = { higher_tier_than = COUNT }
+									# add_law = succ_turkish_succession } }
+							# clr_character_flag = tagged_recipient_greenskin } }
+				# break = yes
+				# }
+			# }
+		# }
+
+		# revoke_allowed = {
+			# always = no
+		# }
+
+		# ai_will_do = {
+			# factor = 1
+
+			# modifier = {
+				# factor = 0
+				# NOT = { over_max_demesne_size = 1 }
+			# }
+		# }
+	# } #closestitledecision
+}

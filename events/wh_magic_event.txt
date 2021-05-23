@@ -1,0 +1,271 @@
+
+namespace = magic
+
+character_event = {
+	id = magic.1
+	hide_window = yes
+	
+	trigger = {
+		OR = {
+			trait = lore_fire
+			trait = lore_beasts
+			trait = lore_metal
+			trait = lore_light
+			trait = lore_life
+			trait = lore_heavens
+			trait = lore_death
+			trait = lore_shadows
+		}
+	}
+	
+	immediate = {
+		if = {
+			limit = { trait = lore_fire }
+			add_lore_of_fire = yes
+			remove_trait = lore_fire
+		}
+		if = {
+			limit = { trait = lore_beasts }
+			add_lore_of_beasts = yes
+			remove_trait = lore_beasts
+		}
+		if = {
+			limit = { trait = lore_metal }
+			add_lore_of_metal = yes
+			remove_trait = lore_metal
+		}
+		if = {
+			limit = { trait = lore_light }
+			add_lore_of_light = yes
+			remove_trait = lore_light
+		}
+		if = {
+			limit = { trait = lore_life }
+			add_lore_of_life = yes
+			remove_trait = lore_life
+		}
+		if = {
+			limit = { trait = lore_heavens }
+			add_lore_of_heavens = yes
+			remove_trait = lore_heavens
+		}
+		if = {
+			limit = { trait = lore_death }
+			add_lore_of_death = yes
+			remove_trait = lore_death
+		}
+		if = {
+			limit = { trait = lore_shadows }
+			add_lore_of_shadows = yes
+			remove_trait = lore_shadows
+		}
+	}
+}
+
+character_event = {
+	id = magic.2
+	desc = EVTDESC_magic_2
+    picture = GFX_evt_mage_lore_fire
+    border = GFX_event_normal_frame_war
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_magic_2
+		add_trait = fire_elemental
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		name = EVTOPTB_magic_2
+		add_trait = fire_mystical
+		ai_chance = { factor = 1 }
+	}
+	
+	option = {
+		name = EVTOPTC_magic_2
+		add_trait = fire_cardinal
+		ai_chance = { factor = 1 }
+	}
+}
+
+character_event = {
+	id = magic.3
+	desc = EVTDESC_magic_3
+    picture = GFX_evt_mage_lore_fire
+    border = GFX_event_normal_frame_war
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_magic_3
+		add_trait = beasts_elemental
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		name = EVTOPTB_magic_3
+		add_trait = beasts_mystical
+		ai_chance = { factor = 1 }
+	}
+	
+	option = {
+		name = EVTOPTC_magic_3
+		add_trait = beasts_cardinal
+		ai_chance = { factor = 1 }
+	}
+}
+
+character_event = {
+	id = magic.4
+	desc = EVTDESC_magic_4
+    picture = GFX_evt_mage_lore_fire
+    border = GFX_event_normal_frame_war
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_magic_4
+		add_trait = metal_elemental
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		name = EVTOPTB_magic_4
+		add_trait = metal_mystical
+		ai_chance = { factor = 1 }
+	}
+	
+	option = {
+		name = EVTOPTC_magic_4
+		add_trait = metal_cardinal
+		ai_chance = { factor = 1 }
+	}
+}
+
+character_event = {
+	id = magic.5
+	desc = EVTDESC_magic_5
+    picture = GFX_evt_mage_lore_fire
+    border = GFX_event_normal_frame_war
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_magic_5
+		add_trait = light_elemental
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		name = EVTOPTB_magic_5
+		add_trait = light_mystical
+		ai_chance = { factor = 1 }
+	}
+	
+	option = {
+		name = EVTOPTC_magic_5
+		add_trait = light_cardinal
+		ai_chance = { factor = 1 }
+	}
+}
+
+character_event = {
+	id = magic.6
+	desc = EVTDESC_magic_6
+    picture = GFX_evt_mage_lore_fire
+    border = GFX_event_normal_frame_war
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_magic_6
+		add_trait = life_elemental
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		name = EVTOPTB_magic_6
+		add_trait = life_mystical
+		ai_chance = { factor = 1 }
+	}
+	
+	option = {
+		name = EVTOPTC_magic_6
+		add_trait = life_cardinal
+		ai_chance = { factor = 1 }
+	}
+}
+
+character_event = {
+	id = magic.7
+	desc = EVTDESC_magic_7
+    picture = GFX_evt_mage_lore_fire
+    border = GFX_event_normal_frame_war
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_magic_7
+		add_trait = heavens_elemental
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		name = EVTOPTB_magic_7
+		add_trait = heavens_mystical
+		ai_chance = { factor = 1 }
+	}
+	
+	option = {
+		name = EVTOPTC_magic_7
+		add_trait = heavens_cardinal
+		ai_chance = { factor = 1 }
+	}
+}
+
+character_event = {
+	id = magic.8
+	desc = EVTDESC_magic_8
+    picture = GFX_evt_mage_lore_fire
+    border = GFX_event_normal_frame_war
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_magic_8
+		add_trait = death_elemental
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		name = EVTOPTB_magic_8
+		add_trait = death_mystical
+		ai_chance = { factor = 1 }
+	}
+	
+	option = {
+		name = EVTOPTC_magic_8
+		add_trait = death_cardinal
+		ai_chance = { factor = 1 }
+	}
+}
+
+character_event = {
+	id = magic.9
+	desc = EVTDESC_magic_9
+    picture = GFX_evt_mage_lore_fire
+    border = GFX_event_normal_frame_war
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_magic_9
+		add_trait = shadows_elemental
+		ai_chance = { factor = 1 }
+	}
+
+	option = {
+		name = EVTOPTC_magic_9
+		add_trait = shadows_mystical
+		ai_chance = { factor = 1 }
+	}
+	
+	option = {
+		name = EVTOPTB_magic_2
+		add_trait = shadows_cardinal
+		ai_chance = { factor = 1 }
+	}
+}

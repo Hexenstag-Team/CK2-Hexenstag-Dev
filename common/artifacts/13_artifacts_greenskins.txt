@@ -1,0 +1,390 @@
+####Greenskin
+#Missing Gfxs
+#ze_greenskin_ax
+#ze_orc_choppa
+#greenskin_ard_armour_1 #1 and 2 could probably share same one its just salvaged gear for most part
+#greenskin_ard_armour_2
+#greenskin_gnashas
+#club
+#big_club #share with giant club ? or all of them share XD?
+#greenskin_ard_armour_3
+#back_stabba_blade
+###Weapon
+giant_choppa = {
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	martial = 3
+	quality = 6
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_ogre
+			trait = black_orc_trait
+			trait = orc_huge
+			trait = orc_large
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_giant_choppa"
+	slot = weapon
+}
+
+orc_big_choppa = {
+	quality = 5
+	monthly_character_prestige = 0.5
+	combat_rating = 15
+	martial = 2
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_ogre
+			trait = creature_orc
+			trait = goblin_huge
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_orc_choppa"
+	slot = weapon
+}
+orc_choppa = {
+	quality = 4
+	monthly_character_prestige = 0.4
+	combat_rating = 12
+	martial = 2
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_orc
+			trait = creature_goblin
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_orc_choppa"
+	slot = weapon
+}
+
+club = {
+	quality = 2
+	monthly_character_prestige = 0.2
+	combat_rating = 9
+	martial = 1
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_orc
+			trait = creature_goblin
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_w_staff1"
+	slot = weapon
+}
+big_club = {
+	quality = 3
+	monthly_character_prestige = 0.3
+	combat_rating = 9
+	martial = 1
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_ogre
+			trait = creature_orc
+			trait = goblin_huge
+			trait = goblin_large
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_w_staff1"
+	slot = weapon
+}
+giant_club = {
+	quality = 4
+	monthly_character_prestige = 0.4
+	combat_rating = 12
+	martial = 2
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_ogre
+			trait = creature_orc
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_w_staff1"
+	slot = weapon
+}
+dirk = {
+	quality = 1
+	monthly_character_prestige = 0.1
+	combat_rating = 3
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_orc
+			trait = creature_goblin
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_w_dagger2"
+	slot = weapon
+}
+goblin_stabba = {
+	quality = 2
+	monthly_character_prestige = 0.2
+	combat_rating = 6
+	martial = 1
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_orc
+			trait = creature_goblin
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_goblin_stabba"
+	slot = weapon
+}
+back_stabba_blade = { #Backstabber's Blade
+	monthly_character_prestige = 0.3
+	combat_rating = 9
+	martial = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_goblin
+			trait = creature_skaven
+			trait = creature_halfling
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_goblin_stabba"
+	slot = weapon
+}
+giant_ax = {
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	martial = 3
+	quality = 6
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_ogre
+			trait = creature_orc
+			trait = goblin_huge
+			trait = goblin_large
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_giant_ax"
+	slot = weapon
+}
+
+greenskin_ax = {
+	monthly_character_prestige = 0.4
+	combat_rating = 12
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_orc
+			trait = creature_goblin
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_giant_ax"
+	slot = weapon
+}
+##Ard Armour
+greenskin_ard_armour = {
+	monthly_character_prestige = 0.4
+	combat_rating = 12
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_goblin
+			trait = creature_orc
+		}
+		can_wear_armor = yes
+	}
+	
+	flags = { armor armour_defence_4 }
+	stacking = no
+	picture = "GFX_orc_armour"
+	slot = torso
+}
+greenskin_ard_armour_2 = {
+	monthly_character_prestige = 0.5
+	combat_rating = 15
+	martial = 2
+	quality = 5
+	active = {
+		is_adult = yes
+		OR = {
+			trait = goblin_huge
+			trait = goblin_large
+			trait = creature_orc
+		}
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_5 }
+	stacking = no
+	picture = "GFX_orc_armour"
+	slot = torso
+}
+greenskin_gnashas = {
+	vassal_opinion = 3
+	monthly_character_piety = 0.3
+	martial = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		trait = creature_orc
+		can_wear_helmet = yes
+	}
+	flags = { armor helm }
+	stacking = no
+	picture = "GFX_orc_gnasha"
+	slot = crown
+}
+#Max tier stuff
+ze_orc_choppa = {
+	quality = 7
+	monthly_character_prestige = 0.7
+	combat_rating = 21
+	martial = 3
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_ogre
+			trait = creature_orc
+			trait = goblin_huge
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_orc_choppa"
+	slot = weapon
+}
+ze_greenskin_ax = {
+	monthly_character_prestige = 0.7
+	combat_rating = 21
+	martial = 3
+	quality = 7
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_ogre
+			trait = creature_orc
+			trait = goblin_huge
+			trait = goblin_large
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_giant_ax"
+	slot = weapon
+}
+greenskin_ard_armour_3 = {
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	martial = 3
+	quality = 6
+	active = {
+		is_adult = yes
+		trait = creature_orc
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_6 }
+	stacking = no
+	picture = "GFX_blood_forged_armour"
+	slot = torso
+}
+#
+#Morglor the Mangler
+morglor_the_mangler = {
+	monthly_character_prestige = 0.8
+	combat_rating = 24
+	martial = 4
+	quality = 8
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_ogre
+			trait = creature_orc
+			trait = goblin_huge
+			trait = goblin_large
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon axe }
+	stacking = no
+	picture = "GFX_morglor_the_mangler"
+	slot = weapon
+}
+#Grimgor
+#Blood Forged Armour
+blood_forged_armour = {
+	monthly_character_prestige = 0.7
+	combat_rating = 21
+	martial = 3
+	quality = 7
+	active = {
+		is_adult = yes
+		trait = creature_orc
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_7 }
+	stacking = no
+	picture = "GFX_blood_forged_armour"
+	slot = torso
+}
+#gitsnik
+gitsnik = {
+	monthly_character_prestige = 0.8
+	combat_rating = 24
+	martial = 4
+	quality = 8
+	active = {
+		is_adult = yes
+		OR = {
+			trait = creature_ogre
+			trait = creature_orc
+			trait = goblin_huge
+			trait = goblin_large
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon axe }
+	stacking = no
+	picture = "GFX_morglor_the_mangler"
+	slot = weapon
+}
+###Mount

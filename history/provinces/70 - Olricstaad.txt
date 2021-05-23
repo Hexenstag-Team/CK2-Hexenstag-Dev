@@ -1,0 +1,29 @@
+# c_olricstaad
+
+# County Title
+title = c_olricstaad
+
+# Settlements
+max_settlements = 5
+
+b_kirkja_hiti = castle
+b_kirkja_vitr = temple
+b_olricstaad = temple
+b_ar_unheim = castle
+#b_franzssonburg = city
+
+# Misc
+culture = nordlander
+religion = ulrican
+
+#History
+
+1.1.1={ b_kirkja_hiti = ca_olricstaad }
+
+#History
+100.8.08 = {
+	build_wonder = wonder_underground_city
+	set_wonder_stage = 2
+    build_wonder_upgrade = upgrade_caves_natural
+    build_wonder_upgrade = upgrade_tunnels_travel
+}

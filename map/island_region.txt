@@ -1,0 +1,75 @@
+# Island regions - no land path from the continent
+# The AI needs these to optimize path finding
+#
+# NOTE: do not add any regions here that are NOT islands
+# Regions can be declared with one or more of the following fields:
+#	duchies = { }, takes duchy title names declared in landed_titles.txt
+#	counties = { }, takes county title names declared in landed_titles.txt
+#	provinces = { }, takes province id numbers declared in /history/provinces
+#	regions = { }, a region can also include other regions, however the subregions needs to be declared before the parent region.
+#		E.g. If the region world_europe contains the region world_europe_west then world_europe_west needs to be declared as a region before (i.e. higher up in this file) world_europe.
+
+#North Sea
+
+region_kuldevind = {
+	provinces = { 1200 }
+}
+
+#South Sea
+
+region_isla_santa_clair = {
+	provinces = { 919 }
+}
+
+region_litoral_sur = {
+	provinces = { 920 924 923}
+}
+
+region_isla_colina = {
+	provinces = { 921 922 }
+}
+
+region_delamata = {
+	provinces = { 575 577 579 }
+}
+
+region_siren_point = {
+	provinces = { 580 581 }
+}
+
+region_sartosa = {
+	provinces = { 626 627 628 629 }
+}
+
+
+#Araby
+
+region_suqutra = {
+	provinces = { 1017 }
+}
+
+region_tripolana = {
+	provinces = { 993 }
+}
+
+region_fyrus = {
+	provinces = { 1021 }
+}
+
+region_hadmaut_islands = {
+	provinces = { 1055 963 962 961 }
+}
+
+#Dragon Isles
+
+region_mazur = {
+	provinces = { 1066 1067 1068 1072 }
+}
+
+region_dtella = {
+	provinces = { 1064 }
+}
+
+region_typhlos = {
+	provinces = { 1065 1069 1070 1071 1073 }
+}

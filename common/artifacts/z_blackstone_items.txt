@@ -1,0 +1,70 @@
+# ###Magic Ingredients###
+
+warpstone_dust = {
+	quality = 1
+	flags = { warpstone } #ingredient This Fires the MNM event to remove them
+	picture = "GFX_pouch_of_ingredients"
+	active = {
+		OR = {
+			trait = lore_necromancy
+			colour_magic_trigger = yes
+			trait = lore_dark_magic
+			trait = lore_chaos
+			trait = lore_nurgle
+			trait = lore_slaanesh
+			trait = lore_tzeentch
+			trait = lore_waaagh
+			trait = lore_vermin
+			trait = creature_skaven
+		}
+	}
+	stacking = no
+	monthly_character_piety = 0.1
+	health = -0.1
+}
+
+warpstone_shard = {
+	 quality = 2
+	 flags = { warpstone }
+	 picture = "GFX_warpstone_shard"
+	active = {
+		OR = {
+			trait = lore_necromancy
+			colour_magic_trigger = yes
+			trait = lore_dark_magic
+			trait = lore_chaos
+			trait = lore_nurgle
+			trait = lore_slaanesh
+			trait = lore_tzeentch
+			trait = lore_waaagh
+			trait = lore_vermin
+			trait = creature_skaven
+		}
+	}
+	stacking = no
+	monthly_character_piety = 0.2
+	health = -0.2
+}
+
+warpstone_cluster = {
+	 quality = 3
+	 flags = { warpstone }
+	 picture = "GFX_warpstone_cluster"
+	active = {
+		OR = {
+			trait = lore_necromancy
+			colour_magic_trigger = yes
+			trait = lore_dark_magic
+			trait = lore_chaos
+			trait = lore_nurgle
+			trait = lore_slaanesh
+			trait = lore_tzeentch
+			trait = lore_waaagh
+			trait = lore_vermin
+			trait = creature_skaven
+		}
+	}
+	stacking = no
+	monthly_character_piety = 0.3
+	health = -0.3
+}

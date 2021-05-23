@@ -1,0 +1,75 @@
+castle = {
+	trigger = {
+	}
+}
+
+city = {
+	trigger = {
+	}
+}
+
+temple = {
+	trigger = {
+	}
+}
+
+trade_post = {
+	trigger = {
+		conditional_tooltip = {
+			trigger = {
+				OR = {
+					FROM = {
+						is_patrician = no
+					}
+					AND = {
+						port = no
+						FROM = {
+							is_patrician = yes
+						}
+					}
+				}
+			}
+			hidden_tooltip = {
+				NOR = {
+					culture_group = beastman_group
+					culture_group = goblin_group
+					culture_group = orc_group
+					culture_group = daemonic_group
+					culture_group = skaven_group
+					culture_group = nehekharan_group
+					culture_group = monstrous_group
+					culture_group = lizardman_group
+					culture_group = halfling_lustrian
+					culture_group = forest_group
+				}
+			}
+			silk_road_trade_post_trigger = yes
+		}
+	}
+}
+
+family_palace = {
+	trigger = {
+	}
+}
+
+tribal = {
+	trigger = {
+		FROM = { NOT = { government = order_government } }
+	}
+}
+
+nomad = {
+	trigger = {
+	}
+}
+
+fort = {
+	trigger = {
+	}
+}
+
+hospital = {
+	trigger = {
+	}
+}

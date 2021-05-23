@@ -1,0 +1,627 @@
+####Skaven
+### Clan Skryre
+## Morskittar
+skryre_goggles = {
+	vassal_opinion = 4
+	monthly_character_prestige = 0.4
+	learning = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		culture = skryre
+		can_wear_helmet = yes
+	}
+	flags = { crown }
+	stacking = no
+	picture = "GFX_skryre_goggles"
+	slot = crown
+	indestructible = yes
+}
+
+doomwheel_mount = {
+	monthly_character_prestige = 0.4
+	combat_rating = 12
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		culture_group = skaven_group
+	}
+	flags = { mount }
+	stacking = no
+	picture = "GFX_doomwheel"
+	slot = mount
+}
+
+doomflayer_mount = {  #This is more the Doomflayer of Total War: Warhammer II, not the Tabletop version
+	monthly_character_prestige = 0.4
+	combat_rating = 12
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		culture_group = skaven_group
+	}
+	flags = { mount }
+	stacking = no
+	picture = "GFX_doomflayer"
+	slot = mount
+}
+
+warpstone_glaive = {
+	monthly_character_prestige = 0.2
+	combat_rating = 6
+	martial = 1
+	quality = 2
+	active = {
+		is_adult = yes
+		culture_group = skaven_group
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_warpstone_glaive"
+	slot = weapon
+}
+
+warplock_pistol = {
+	monthly_character_prestige = 0.3
+	combat_rating = 9
+	martial = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		OR = {
+			culture = skryre
+			AND = {
+				culture_group = skaven_group
+				learning = 15
+			}
+		}
+		can_hold_weapons = yes
+	}
+	flags = { hermetics invention gun combat_weapon }
+	picture = "GFX_warplock_pistol"
+	slot = weapon
+}
+
+warpfire_thrower = {
+	monthly_character_prestige = 0.4
+	combat_rating = 12
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		OR = {
+			culture = skryre
+			AND = {
+				culture_group = skaven_group
+				learning = 15
+			}
+		}
+		can_hold_weapons = yes
+	}
+	flags = { hermetics invention gun combat_weapon }
+	picture = "GFX_warpfire_thrower"
+	slot = weapon
+}
+
+warplock_jezzail = {
+	monthly_character_prestige = 0.5
+	combat_rating = 15
+	martial = 2
+	quality = 5
+	active = {
+		is_adult = yes
+		OR = {
+			culture = skryre
+			AND = {
+				culture_group = skaven_group
+				learning = 20
+			}
+		}
+		can_hold_weapons = yes
+	}
+	flags = { hermetics invention gun combat_weapon }
+	picture = "GFX_warplock_jezzail"
+	slot = weapon
+}
+
+poison_wind_globe = {
+	#Should maybe become a devastating one-use item that Skryre Warlock Engineers can build?
+	monthly_character_prestige = 0.5
+	combat_rating = 15
+	martial = 2
+	quality = 5
+	active = {
+		is_adult = yes
+		OR = {
+			culture = skryre
+			AND = {
+				culture_group = skaven_group
+				intrigue = 18
+			}
+		}
+	}
+	stacking = no
+	picture = "GFX_poison_wind_globe"
+}
+
+skaven_warpbomb = {
+	combat_rating = 3
+	quality = 1
+	active = {
+		is_adult = yes
+		OR = {
+			culture = skryre
+			AND = {
+				culture_group = skaven_group
+				learning = 5
+			}
+		}
+	}
+	stacking = no
+	picture = "GFX_skaven_smokebomb"
+}
+
+warlock_engineer_armour = {
+	monthly_character_prestige = 0.4
+	combat_rating = 12
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		OR = {
+			culture = skryre
+			AND = {
+				culture_group = skaven_group
+				learning = 20
+			}
+		}
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_4 }
+	picture = "GFX_warlock_engineer_armour"
+	stacking = no
+	slot = torso
+}
+
+###Clan Eshin
+
+weeping_blades = {
+	monthly_character_prestige = 0.3
+	combat_rating = 9
+	martial = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		OR = {
+			culture = eshin
+			AND = {
+				culture_group = skaven_group
+				intrigue = 20
+			}
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_weeping_blades"
+	slot = weapon
+}
+
+tail_blade = {
+	monthly_character_prestige = 0.2
+	combat_rating = 6
+	martial = 1
+	quality = 2
+	active = {
+		is_adult = yes
+		OR = {
+			culture = eshin
+			AND = {
+				culture_group = skaven_group
+				intrigue = 10
+			}
+		}
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_tail_blade"
+}
+
+triad_armour = {
+	monthly_character_prestige = 0.4
+	combat_rating = 12
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		culture = eshin
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_4 }
+	picture = "GFX_triad_armour"
+	stacking = no
+	slot = torso
+}
+
+punch_dagger = {
+	monthly_character_prestige = 0.1
+	combat_rating = 3
+	quality = 1
+	active = {
+		is_adult = yes
+		OR = {
+			culture = eshin
+			AND = {
+				culture_group = skaven_group
+				intrigue = 2
+			}
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_punch_dagger"
+	slot = weapon
+}
+
+skaven_shuriken = {
+	monthly_character_prestige = 0.2
+	combat_rating = 6
+	martial = 1
+	quality = 2
+	active = {
+		is_adult = yes
+		OR = {
+			culture = eshin
+			AND = {
+				culture_group = skaven_group
+				intrigue = 15
+			}
+		}
+	}
+	stacking = no
+	picture = "GFX_skaven_shuriken"
+}
+
+skaven_smokebomb = {
+	defensive_plot_power_modifier = 0.1
+	quality = 2
+	active = {
+		is_adult = yes
+		OR = {
+			culture = eshin
+			AND = {
+				culture_group = skaven_group
+				intrigue = 10
+			}
+		}
+	}
+	stacking = no
+	picture = "GFX_skaven_smokebomb"
+}
+
+nightlord_sigil = {
+	#Possibly better replaced by a trait or society? Murder Plot Power is equal to highest rank in Assassins Order.
+	intrigue = 2
+	murder_plot_power_modifier = 0.1
+	monthly_character_prestige = 0.4
+	quality = 4
+	active = {
+		is_adult = yes
+		trait = eshin_assassin
+		primary_title = { higher_tier_than = DUKE }
+	}
+	stacking = no
+	picture = "GFX_nightlord_sigil"
+}
+
+deathmaster_sigil = {
+	intrigue = 2
+	murder_plot_power_modifier = 0.1
+	monthly_character_prestige = 0.4
+	quality = 4
+	active = {
+		is_adult = yes
+		trait = eshin_assassin
+		primary_title = { higher_tier_than = COUNT }
+	}
+	stacking = no
+	picture = "GFX_nightlord_sigil"
+}
+
+cloak_of_shadows = {
+	intrigue = 1
+	monthly_character_prestige = 0.3
+	defensive_plot_power_modifier = 0.05
+	quality = 3
+	active = {
+		is_adult = yes
+		culture_group = skaven_group
+		can_wear_armor
+	}
+	stacking = no
+	picture = "GFX_cloak_of_shadows"
+	indestructible = yes
+	slot = cloak
+}
+###Clan Pestilens
+rod_of_corruption = {
+	vassal_opinion = 6
+	monthly_character_piety = 0.6
+	active = {
+		is_adult = yes
+		trait = plaguelord
+	}
+	quality = 6
+	flags = { combat_weapon flail }
+	stacking = no
+	picture = "GFX_rod_of_corruption"
+	slot = ceremonial_weapon
+	indestructible = yes
+}
+
+plague_censer = {
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	martial = 3
+	active = {
+		is_adult = yes
+		trait = plaguelord
+		can_hold_weapons = yes
+	}
+	quality = 6
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_plague_censer"
+	slot = weapon
+}
+
+blade_of_nurglitch = {
+	combat_rating = 18
+	active = {
+		is_adult = yes
+		trait = plaguelord
+		can_hold_shield
+	}
+	quality = 6
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_blade_of_nurglitch"
+	slot = shield
+	indestructible = yes
+}
+
+liber_bubonicus = {
+	learning = 4
+	active = {
+		is_adult = yes
+		trait = plaguelord
+	}
+	quality = 4
+	stacking = no
+	picture = "GFX_liber_bubonicus"
+	slot = library
+	indestructible = yes
+}
+
+bubonic_sphere = {
+	health = 3
+	active = {
+		is_adult = yes
+		trait = plaguelord
+		learning = 15
+	}
+	quality = 6
+	stacking = no
+	picture = "GFX_bubonic_sphere"
+	indestructible = yes
+}
+
+
+###Clan Moulder
+
+hellpit_abomination_mount = {
+	monthly_character_prestige = 0.5
+	combat_rating = 15
+	martial = 2
+	quality = 5
+	active = {
+		is_adult = yes
+		culture_group = skaven_group
+	}
+	flags = { mount }
+	stacking = no
+	picture = "GFX_hellpit_abomination"
+	slot = mount
+}
+
+burrowing_behemoth = {
+	stewardship = 1
+	monthly_character_prestige = 0.3
+	combat_rating = 9
+	quality = 3
+	active = {
+		is_adult = yes
+		OR = {
+			culture = moulder
+			AND = {
+				culture_group = skaven_group
+				stewardship = 8
+			}
+			AND = {
+				culture_group = dwarf_group
+				stewardship = 25
+				NOT = { trait = zealous }
+			}
+			AND = {
+				culture_group = dwarf_chaos_group
+				stewardship = 20
+				NOT = { trait = zealous }
+			}
+		}
+		culture_group = skaven_group
+	}
+	stacking = no
+	picture = "GFX_burrowing_behemoth"
+	slot = mount
+}
+
+skaven_warcage = {
+	defensive_plot_power_modifier = 0.05
+	quality = 2
+	active = {
+		is_adult = yes
+		OR = {
+			culture = moulder
+			AND = {
+				culture_group = skaven_group
+				martial = 15
+			}
+		}
+	}
+	stacking = no
+	picture = "GFX_skaven_warcage"
+}
+
+moulder_whip = {
+	monthly_character_prestige = 0.2
+	combat_rating = 6
+	martial = 1
+	quality = 2
+	active = {
+		is_adult = yes
+		OR = {
+			culture = moulder
+			AND = {
+				culture_group = skaven_group
+				martial = 15
+			}
+		}
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_moulder_whip"
+	slot = weapon
+}
+
+
+
+###General Skaven
+
+amulet_of_the_horned_one = {
+	#Might be handed out once e_underempire is founded?
+	defensive_plot_power_modifier = 0.25
+	skaven_group_opinion = 20	#Skaven got an automatic -50 relations with eachother, this will give them the blessing of the Horned One which should keep others from stabbing that target
+	quality = 5
+	active = {
+		is_adult = yes
+		culture_group = skaven_group
+		learning = 10
+	}
+	flags = { amulet }
+	stacking = no
+	picture = "GFX_amulet_of_the_horned_one"
+	slot = neck
+	indestructible = yes
+}
+
+skaven_sling = {
+	monthly_character_prestige = 0.1
+	combat_rating = 3
+	active = {
+		is_adult = yes
+		can_hold_weapons = yes
+	}
+	quality = 1
+	flags = { combat_weapon bow }
+	stacking = no
+	picture = "GFX_skaven_sling"
+	slot = weapon
+}
+
+warp_grinder = {
+	monthly_character_prestige = 0.2
+	combat_rating = 6
+	martial = 1
+	active = {
+		is_adult = yes
+		can_hold_weapons = yes
+	}
+	quality = 2
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_warp_grinder"
+	slot = weapon
+}
+
+clanrat_armour = {
+	monthly_character_prestige = 0.1
+	combat_rating = 3
+	quality = 1
+	active = {
+		is_adult = yes
+		culture_group = skaven_group
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_1 }
+	picture = "GFX_clanrat_armour"
+	stacking = no
+	slot = torso
+}
+
+stormvermin_armour = {
+	monthly_character_prestige = 0.5
+	combat_rating = 15
+	martial = 3
+	quality = 5
+	active = {
+		is_adult = yes
+		culture_group = skaven_group
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_5 }
+	picture = "GFX_stormvermin_armour"
+	stacking = no
+	slot = torso
+}
+
+grey_seer_robe = {
+	learning = 3
+	monthly_character_prestige = 0.6
+	combat_rating = 18
+	quality = 6
+	active = {
+		trait = grey_seer
+		can_wear_armor = yes
+	}
+	flags = { armor armoured_caster }
+	picture = "GFX_grey_seer_robe"
+	stacking = no
+	slot = torso
+}
+
+fellblade = {
+	monthly_character_prestige = 1
+	combat_rating = 30
+	martial = 5
+	health = -5
+	quality = 10
+	active = {
+		is_adult = yes
+		OR = {
+			culture_group = skaven_group
+			religion_group = vampiric_group
+		}
+		martial = 20
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_fellblade"
+	slot = weapon
+	indestructible = yes
+}

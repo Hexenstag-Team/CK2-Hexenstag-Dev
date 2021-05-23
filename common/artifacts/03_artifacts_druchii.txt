@@ -1,0 +1,872 @@
+####Druchii
+#druchii_dark_iron_armour
+#druchii_dark_steel #Iron could probably share? mayby diff tint?
+#druchii_sea_dragon_cloak #Needs
+#druchii_meteorite_armour #Needs
+#druchii_bleaksword
+#druchii_bleaksword_2 #Could use existing blades Technically But mweh
+#druchii_draich
+#druchii_draich_2 #Technically i could use the First Draich one
+##Armoury
+druchii_dark_iron_armour = {
+	combat_rating = 6
+	monthly_character_prestige = 0.2
+	martial = 1
+	quality = 2
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_2 }
+	stacking = no
+	picture = "GFX_armour_druchi"
+	slot = torso
+}
+druchii_dark_steel = {
+	combat_rating = 12
+	monthly_character_prestige = 0.4
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_4 }
+	stacking = no
+	picture = "GFX_armour_druchi"
+	slot = torso
+}
+druchii_sea_dragon_cloak = {
+	combat_rating = 12
+	monthly_character_prestige = 0.4
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_4 }
+	stacking = no
+	picture = "GFX_armour_of_fortune"
+	slot = torso
+}
+druchii_armour_of_fortune= {
+	combat_rating = 15
+	monthly_character_prestige = 0.5
+	martial = 2
+	quality = 5
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_wear_armor = yes
+	}
+	flags = { armor curse armour_defence_5 }
+	stacking = no
+	picture = "GFX_armour_of_fortune"
+	slot = torso
+}
+druchii_meteorite_armour = { #Max Tier #Indirect Upgrade Armour of Darkness
+	combat_rating = 12
+	monthly_character_prestige = 0.4
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_wear_armor = yes
+	}
+	cytharai_group_opinion=5
+	flags = { armor armour_defence_4 }
+	stacking = no
+	picture = "GFX_armour_of_grief_kouran"
+	slot = torso
+	indestructible = yes
+}
+druchii_armour_of_darkness = { #Max Tier #Indirect Upgrade Armour of Darkness
+	combat_rating = 15
+	monthly_character_prestige = 0.5
+	martial = 2
+	quality = 5
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_5 }
+	cytharai_group_opinion=5
+	stacking = no
+	picture = "GFX_midnight_armour_malekith"
+	slot = torso
+	indestructible = yes
+}
+druchii_bleaksword = {
+	combat_rating = 6
+	monthly_character_prestige = 0.2
+	martial = 1
+	quality = 2
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_destruction_sword"
+	slot = weapon
+}
+druchii_bleaksword_2 = {
+	combat_rating = 12
+	monthly_character_prestige = 0.4
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_heartrender_darksword_morathi"
+	slot = weapon
+}
+druchii_draich = {
+	combat_rating = 9
+	monthly_character_prestige = 0.3
+	martial = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_first_draich"
+	slot = weapon
+}
+druchii_draich_2 = {
+	combat_rating = 12
+	monthly_character_prestige = 0.4
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_first_draich"
+	slot = weapon
+}
+### Malekith
+seraphon_dragon_mount_malekith = {
+	combat_rating = 24
+	monthly_character_prestige = 0.8
+	martial = 4
+	quality = 8
+	active = {
+		is_adult = yes
+		trait = malekith
+	}
+	flags = { mount }
+	stacking = no
+	picture = "GFX_seraphon_dragon_mount_malekith"
+	slot = mount
+}
+
+destroyer_blade_malekith = {
+	combat_rating = 24
+	monthly_character_prestige = 0.8
+	martial = 4
+	quality = 8
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_weapons = yes
+		trait = malekith
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_destroyer_blade_malekith"
+	slot = weapon
+	indestructible = yes
+}
+
+midnight_armour_malekith = {
+	combat_rating = 24
+	monthly_character_prestige = 0.8
+	martial = 4
+	quality = 8
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		trait = malekith
+		can_wear_armor = yes
+	}
+	allowed_gift = {
+		always = no
+	}
+	flags = { armor armour_defence_6 curse armoured_caster }
+	picture = "GFX_midnight_armour_malekith"
+	stacking = no
+	slot = torso
+	indestructible = yes
+}
+
+supreme_spellshield_malekith = {
+	combat_rating = 24
+	quality = 8
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		trait = malekith
+		can_hold_shield = yes
+	}
+	flags = { armor shield }
+	picture = "GFX_supreme_spellshield_malekith"
+	stacking = no
+	slot = shield
+	indestructible = yes
+}
+
+circlet_of_iron_malekith = {
+	vassal_opinion = 6
+	monthly_character_prestige = 0.8
+	martial = 4
+	quality = 8
+	active = {
+		is_adult = yes
+		trait = malekith
+	}
+	flags = { armor helmet }
+	picture = "GFX_circlet_of_iron_malekith"
+	stacking = no
+	slot = crown
+	indestructible = yes
+}
+### Morathi
+darksword_morathi = {
+	combat_rating = 21
+	monthly_character_prestige = 0.7
+	martial = 3
+	quality = 7
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	picture = "GFX_heartrender_darksword_morathi"
+	stacking = no
+	slot = weapon
+	indestructible = yes
+}
+
+heartrender_morathi = {
+	combat_rating = 21
+	quality = 7
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_shield = yes
+	}
+	flags = { shield }
+	picture = "GFX_heartrender_darksword_morathi"
+	stacking = no
+	slot = shield
+	indestructible = yes
+}
+
+wand_kharaidon_morathi = {
+	vassal_opinion = 7
+	monthly_character_piety = 0.7
+	martial = 3
+	quality = 7
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+	flags = { arcane_item wand }
+	picture = "GFX_heartrender_darksword_morathi"
+	stacking = no
+	slot = ceremonial_weapon
+	indestructible = yes
+}
+
+amber_amulet_morathi = {
+	monthly_character_prestige = 0.7
+	combat_rating = 21
+	quality = 7
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+	flags = { armour_defence_5 amulet }	# Should have something to heal injuries down the line, likely in lieu of armour defence 5
+	picture = "GFX_dark_fire_amulet_hellebron"
+	stacking = no
+	slot = neck
+	indestructible = yes
+}
+
+sulephet_pegasus_mount_morathi = {
+	combat_rating = 21
+	monthly_character_prestige = 0.7
+	martial = 3
+	quality = 7
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+	flags = { mount }
+	stacking = no
+	picture = "GFX_dark_pegasus"
+	slot = mount
+}
+### Hellebron
+deathsword_hellebron = {
+	combat_rating = 9
+	monthly_character_prestige = 0.3
+	martial = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_deathsword_cursed_blade_hellebron"
+	slot = weapon
+	indestructible = yes
+}
+
+cursed_blade_hellebron = {
+	combat_rating = 9
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_shield = yes
+	}
+	flags = { shield }
+	stacking = no
+	picture = "GFX_deathsword_cursed_blade_hellebron"
+	slot = shield
+	indestructible = yes
+}
+
+dark_fire_amulet_hellebron = {
+	combat_rating = 4
+	monthly_character_prestige = 0.4
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+	flags = { amulet }
+	stacking = no
+	picture = "GFX_dark_fire_amulet_hellebron"
+	slot = neck
+	indestructible = yes
+}
+
+### Rakarth
+
+bracchus_mount = {
+	combat_rating = 12
+	monthly_character_prestige = 0.4
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+	flags = { mount }
+	stacking = no
+	picture = "GFX_dragon_black"
+	slot = mount
+}
+
+armour_of_fortune_rakarth = {
+	combat_rating = 6
+	monthly_character_prestige = 0.2
+	martial = 1
+	quality = 2
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_2 }
+	stacking = no
+	picture = "GFX_armour_of_fortune"
+	slot = torso
+	indestructible = no
+}
+
+enchanted_shield_rakarth = {
+	combat_rating = 9
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_shield = yes
+	}
+	flags = { armor shield }
+	picture = "GFX_enchanted_shield"
+	stacking = no
+	slot = shield
+	indestructible = yes
+}
+
+whip_of_agony = {
+	combat_rating = 9
+	monthly_character_prestige = 0.3
+	martial = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon whip }
+	stacking = no
+	picture = "GFX_whip_of_agony"
+	slot = weapon
+	indestructible = yes
+}
+
+### Kouran
+crimson_death_kouran = {
+	combat_rating = 9
+	monthly_character_prestige = 0.3
+	martial = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon spear }
+	stacking = no
+	picture = "GFX_crimson_death_kouran"
+	slot = weapon
+	indestructible = yes
+}
+
+armour_of_grief_kouran = {
+	combat_rating = 9
+	monthly_character_prestige = 0.3
+	martial = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_wear_armor = yes
+	}
+	flags = { armor armour_defence_3 }
+	stacking = no
+	picture = "GFX_armour_of_grief_kouran"
+	slot = torso
+	indestructible = yes
+}
+
+###Shadowblade
+
+heart_of_woe_shadowblade = {
+	monthly_character_prestige = 0.3
+	intrigue = 3
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+
+	flags = { amulet }
+	stacking = no
+	picture = "GFX_heart_of_woe"
+	slot = neck
+}
+
+potion_diabolic_strength_shadowblade = {
+	intrigue = 2
+	diplomacy = -2
+	combat_rating = 3
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+
+	flags = { enchanted_item potion }
+	stacking = no
+	picture = "GFX_potion_of_diabolic_strength"
+}
+
+### Lokhir Fellheart
+
+kraken_helm_lokhir = {
+	vassal_opinion = 4
+	monthly_character_prestige = 0.3
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+
+	flags = { armor helmet }
+	stacking = no
+	picture = "GFX_helm_of_the_kraken"
+	slot = crown
+	indestructible = yes
+}
+
+red_blades_lokhir = {
+	combat_rating = 9
+	monthly_character_prestige = 0.3
+	martial = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_weapons = yes
+	}
+
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_red_blades"
+	slot = weapon
+}
+
+## Tullaris
+
+first_draich_tullaris = {
+	combat_rating = 9
+	monthly_character_prestige = 0.3
+	martial = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_weapons = yes
+	}
+
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_first_draich"
+	slot = weapon
+	indestructible = yes
+}
+
+###Malus
+
+warpsword_khaine_malus = {
+	combat_rating = 12
+	monthly_character_prestige = 0.4
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_weapons = yes
+	}
+
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_warpsword_of_khaine"
+	slot = weapon
+	indestructible = yes
+}
+
+spite_mount = {
+	combat_rating = 12
+	monthly_character_prestige = 0.4
+	martial = 2
+	quality = 4
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+
+	flags = { mount }
+	stacking = no
+	picture = "GFX_cold_one_mount"
+	slot = mount
+}
+
+
+##Non character specific
+
+druchii_artifact_hydra_blade = {
+	combat_rating = 9
+	monthly_character_prestige = 0.3
+	martial = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_druchii_artifact_hydra_blade"
+	slot = weapon
+	indestructible = yes
+}
+
+druchii_artifact_chillblade = {
+	combat_rating = 9
+	monthly_character_prestige = 0.3
+	martial = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		can_hold_weapons = yes
+	}
+	flags = { combat_weapon sword }
+	stacking = no
+	picture = "GFX_druchii_artifact_chillblade"
+	slot = weapon
+	indestructible = yes
+}
+
+druchii_artifact_black_dragon_egg = {
+	monthly_character_prestige = 0.3
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+	stacking = no
+	picture = "GFX_druchii_artifact_black_dragon_egg"
+	slot = egg
+}
+
+druchii_artifact_black_dragon_hatchling = {
+	monthly_character_prestige = 0.6
+	quality = 6
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+	stacking = no
+	picture = "GFX_black_dragon_hatchling"
+	slot = egg
+}
+
+druchii_artifact_twilight_cloak = {
+	monthly_character_prestige = 0.4
+	intrigue = 1
+	defensive_plot_power_modifier = 0.05
+	plot_discovery_chance = 0.2
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+	quality = 4
+	stacking = no
+	picture = "GFX_druchii_artifact_twilight_cloak"
+	slot = cloak
+	indestructible = yes
+}
+
+druchii_artifact_black_amulet = {
+	monthly_character_prestige = 0.3
+	combat_rating = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+	quality = 3
+	stacking = no
+	picture = "GFX_druchii_artifact_black_amulet"
+	slot = neck
+	indestructible = yes
+}
+
+druchii_artifact_hotek_ring = {
+	monthly_character_prestige = 0.3
+	combat_rating =  3
+	defensive_plot_power_modifier = 0.05
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+	quality = 3
+	stacking = no
+	picture = "GFX_druchii_artifact_hotek_ring"
+	slot = ring
+	indestructible = yes
+}
+
+druchii_artifact_spite_gem = {
+	monthly_character_piety = 0.3
+	combat_rating = 3 # One of a kind
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		trait = lore_dark_magic
+	}
+	quality = 3
+	stacking = no
+	picture = "GFX_druchii_artifact_spite_gem"
+	slot = neck
+}
+
+druchii_artifact_sacrificial_dagger = {
+	vassal_opinion = 3
+	monthly_character_piety = 0.3
+	learning = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		trait = lore_dark_magic
+	}
+	stacking = no
+	picture = "GFX_druchii_artifact_sacrificial_dagger"
+	slot = ceremonial_weapon
+	indestructible = yes
+}
+
+druchii_artifact_tome_furion = {
+	monthly_character_piety = 0.4 # One of a kind
+	learning = 4
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		trait = lore_dark_magic
+	}
+	quality = 4
+	stacking = no
+	picture = "GFX_tome_of_furion"
+	slot = library
+	indestructible = yes
+}
+
+druchii_artifact_dark_pegasus_mount = {
+	combat_rating = 9
+	monthly_character_prestige = 0.3
+	martial = 1
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+	quality = 3
+	flags = { mount }
+	stacking = no
+	picture = "GFX_dark_pegasus"
+	slot = mount
+}
+
+druchii_artifact_manticore_mount = {
+	combat_rating = 9
+	monthly_character_prestige = 0.3
+	martial = 1
+	quality = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+	flags = { mount }
+	stacking = no
+	picture = "GFX_manticore"
+	slot = mount
+}
+
+druchii_artifact_cold_one_chariot = {
+	combat_rating = 9
+	monthly_character_prestige = 0.3
+	martial = 1
+	active = {
+		is_adult = yes
+		OR = {
+			religion_group = cytharai_group
+			religion_group = old_ones_group
+		}
+	}
+	quality = 3
+	flags = { mount }
+	stacking = no
+	picture = "GFX_cold_one_chariot"
+	slot = mount
+}
+
+druchii_artifact_cauldron_blood = {
+	combat_rating = 9
+	monthly_character_prestige = 0.3
+	martial = 1
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+		trait = druchi_witch_elf
+	}
+	quality = 3
+	flags = { mount }
+	stacking = no
+	picture = "GFX_cauldron_of_blood"
+	slot = mount
+}
+
+druchii_artifact_scourgerunner_chariot = {
+	combat_rating = 6
+	monthly_character_prestige = 0.2
+	martial = 1
+	quality = 2
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+
+	flags = { mount }
+	stacking = no
+	picture = "GFX_scourgerunner_chariot"
+	slot = mount
+}
+
+## Moved over from 00_artifacts
+
+black_dragon_mount = {
+	combat_rating = 18
+	monthly_character_prestige = 0.6
+	martial = 3
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+	quality = 6
+	flags = { mount }
+	stacking = no
+	picture = "GFX_dragon_black"
+	slot = mount
+}
+
+cold_one_mount = {
+	combat_rating = 9
+	monthly_character_prestige = 0.3
+	martial = 1
+	active = {
+		is_adult = yes
+		religion_group = cytharai_group
+	}
+	quality = 3
+	active = {
+		is_adult = yes
+		OR = {
+			religion_group = cytharai_group
+			religion_group = old_ones_group
+		}
+	}
+
+	flags = { mount }
+	stacking = no
+	picture = "GFX_cold_one_mount"
+	slot = mount
+}

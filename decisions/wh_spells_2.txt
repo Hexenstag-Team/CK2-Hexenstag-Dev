@@ -1,0 +1,1110 @@
+targetted_decisions = {
+	ward_against_abomination_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = ward_against_abomination_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = ward_against_abomination_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = ward_against_abomination_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = ward_against_abomination_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	youths_bane_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = youths_bane_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			health = -1
+			FROM = { remove_character_modifier = youths_bane_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	burning_vengeance_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = burning_vengeance_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { is_rival = FROM }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_rival = FROM
+			FROM = { remove_character_modifier = burning_vengeance_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	cauterize_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = cauterize_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			OR = {
+				trait = wounded
+				trait = severely_injured
+			}
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			irrepressible_spirit_scrip = yes
+			FROM = { remove_character_modifier = cauterize_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	choleric_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = choleric_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = choleric_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = choleric_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = choleric_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	consuming_wrath_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = consuming_wrath_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = consuming_wrath_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = consuming_wrath_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = consuming_wrath_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	taste_of_fire_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = taste_of_fire_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_province_modifier = taste_of_fire_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_province_modifier = {
+				modifier = taste_of_fire_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = taste_of_fire_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	curse_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = curse_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = curse_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = curse_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = curse_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	fate_of_doom_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = fate_of_doom_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			health = -1
+			FROM = { remove_character_modifier = fate_of_doom_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	cure_blight_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = cure_blight_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			has_disease_trigger = yes
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			remove_all_disease_effect = yes
+			FROM = { remove_character_modifier = cure_blight_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	curse_of_thorns_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = curse_of_thorns_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = curse_of_thorns_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = curse_of_thorns_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = curse_of_thorns_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	summer_heat_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = summer_heat_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = summer_heat_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = summer_heat_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = summer_heat_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	tree-dwellers_step_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = tree-dwellers_step_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = tree-dwellers_step_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = tree-dwellers_step_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = tree-dwellers_step_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	wood_shape_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = wood_shape_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = wood_shape_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = wood_shape_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = wood_shape_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+#Lore of Light#
+	banish_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = banish_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			is_basic_daemon_trigger = yes
+		}
+
+		allow = {
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			random_list = {
+				50 = {}
+				50 = {
+					death = {
+						death_reason = death_duel
+						killer = FROM
+					}
+				}
+			}
+			FROM = { remove_character_modifier = banish_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	boon_of_hysh_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = boon_of_hysh_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			OR = {
+				trait = wounded
+				trait = severely_injured
+			}
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			irrepressible_spirit_scrip = yes
+			FROM = { remove_character_modifier = boon_of_hysh_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	clarity_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = clarity_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = clarity_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = clarity_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = clarity_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	daemonbane_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = daemonbane_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			is_basic_daemon_trigger = yes
+		}
+
+		allow = {
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			death = {
+				death_reason = death_duel
+				killer = FROM
+			}
+			FROM = { remove_character_modifier = daemonbane_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	healing_of_hysh_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = healing_of_hysh_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = healing_of_hysh_flag }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = healing_of_hysh_flag
+				duration = 90
+			}
+			FROM = { remove_character_modifier = healing_of_hysh_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	ill-bane_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = ill-bane_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			has_disease_trigger = yes
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			remove_all_disease_effect = yes
+			FROM = { remove_character_modifier = ill-bane_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	the_power_of_truth_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = the_power_of_truth_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = the_power_of_truth_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = the_power_of_truth_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = the_power_of_truth_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	clarity_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = clarity_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = clarity_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = clarity_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = clarity_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	armour_of_lead_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = armour_of_lead_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = armour_of_lead_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = armour_of_lead_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = armour_of_lead_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	curse_of_rust_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = curse_of_rust_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = curse_of_rust_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = curse_of_rust_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = curse_of_rust_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	fault_of_form_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = fault_of_form_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = fault_of_form_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = fault_of_form_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = fault_of_form_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	law_of_age_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = law_of_age_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = law_of_age_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = law_of_age_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = law_of_age_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	law_of_form_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = law_of_form_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = law_of_form_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = law_of_form_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = law_of_form_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	law_of_gold_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = law_of_gold_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			if = {
+				limit = {
+					FROM = { has_character_modifier = magic_power_3 }
+				}
+				wealth = -100
+			}
+			else_if = {
+				limit = {
+					FROM = { has_character_modifier = magic_power_4 }
+				}
+				wealth = -250
+			}
+			FROM = { remove_character_modifier = law_of_gold_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	trial_and_error_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = trial_and_error_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = trial_and_error_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = trial_and_error_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = trial_and_error_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	bewilder_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = bewilder_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = bewilder_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = bewilder_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = bewilder_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	eye_of_the_beholder_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = eye_of_the_beholder_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = eye_of_the_beholder_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = eye_of_the_beholder_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = eye_of_the_beholder_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	mindhole_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = mindhole_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			OR = {
+				is_rival = FROM
+				owes_favor_to = FROM
+				is_friend = FROM
+				is_lover = FROM
+			}
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			remove_rival = FROM
+			remove_favor = FROM
+			remove_friend = FROM
+			remove_lover = FROM
+			FROM = { remove_character_modifier = mindhole_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	mockery_of_death_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = mockery_of_death_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = mockery_of_death_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = mockery_of_death_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = mockery_of_death_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	mutable_visage_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = mutable_visage_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = mutable_visage_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = mutable_visage_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = mutable_visage_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	substance_of_shadow_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = substance_of_shadow_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = substance_of_shadow_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = substance_of_shadow_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = substance_of_shadow_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	throttling_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = throttling_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = throttling_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = throttling_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = throttling_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	universal_confusion_targetted = {
+		ai_check_interval = 3
+		from_potential = {
+			has_character_modifier = universal_confusion_flag
+		}
+		potential = {
+			NOT = { character = FROM }
+			trait = creature_human
+		}
+
+		allow = {
+			NOT = { has_character_modifier = universal_confusion_modifier }
+			is_within_diplo_range = FROM
+		}
+
+		effect = {
+			add_character_modifier = {
+				modifier = universal_confusion_modifier
+				duration = 90
+			}
+			FROM = { remove_character_modifier = universal_confusion_flag }
+		}
+
+		revoke_allowed = { always = yes }
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+}
