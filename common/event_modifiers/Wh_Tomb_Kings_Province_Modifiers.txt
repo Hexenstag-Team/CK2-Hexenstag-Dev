@@ -1,0 +1,51 @@
+############################################# Tomb Kings Province Modifiers
+incapacitated_tomb_king = {
+		icon = 152
+	levy_reinforce_rate = -2
+	levy_size = -2
+	garrison_size = -2
+}
+rising_tomb_king = {
+		icon = 151
+	levy_reinforce_rate = 10000
+}
+
+nehekharan_curse = {
+		icon = 152
+	local_build_time_modifier = 1.25
+	local_build_cost_modifier = 1.5
+	levy_reinforce_rate = -0.25
+	local_tax_modifier = -0.25
+	levy_size = -0.05
+	garrison_size = -0.075
+	disease_defence = -0.1
+	local_revolt_risk = -0.15
+}
+
+nomad_unrest = {
+	local_revolt_risk = 0.15
+	city_tax_modifier = -0.15
+	castle_tax_modifier = -0.15
+	temple_tax_modifier = -0.15
+	icon = 29
+}
+
+nomad_presence = {
+	local_revolt_risk = 0.01
+	city_tax_modifier = -0.015
+	castle_tax_modifier = -0.015
+	temple_tax_modifier = -0.015
+	garrison_size = 0.075
+	levy_size = 0.025
+	icon = 11
+}
+
+scared_subjects = {
+	local_revolt_risk = 0.01
+	icon = 152
+}
+
+friendly_undead = {
+	local_revolt_risk = -0.01
+	icon = 151
+}

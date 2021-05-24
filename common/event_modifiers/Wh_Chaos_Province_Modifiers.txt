@@ -1,0 +1,191 @@
+################################################ Chaos_Province_Modifiers ################################### 
+
+#Chaos sacking of captured holdings
+sacked = {
+	local_tax_modifier = -0.15
+	icon = 19
+}
+burned = {
+	levy_size = -0.2
+	local_tax_modifier = -0.25
+	icon = 42
+}
+less_sacking = {
+	icon = 19
+}
+more_sacking = {
+	icon = 19
+}
+normal_sacking = {
+	icon = 19
+}
+zealous_sacking = {
+	icon = 19
+}
+# Marks province as target of chaos incursion
+ravaged_by_chaos = {
+	local_tax_modifier = -0.4
+	levy_size = -0.4
+	local_build_time_modifier = 0.33
+	local_build_cost_modifier = 0.33
+	disease_defence = -0.1
+	icon = 150
+}
+########################## Prevents chaos host recruiting from the recently conquered province #########################
+resistance = {
+	supply_limit = -5
+	levy_size = -0.8
+	local_revolt_risk = 0.2
+	local_tax_modifier = -0.6
+	local_build_time_modifier = 0.5
+	local_build_cost_modifier = 0.5
+	icon = 150
+}
+depopulated = {
+	supply_limit = -10
+	levy_size = -0.75
+	local_tax_modifier = -0.5
+	local_build_time_modifier = 0.75
+	local_build_cost_modifier = 0.75
+	icon = 152
+}
+dead_raised = {
+	icon = 151
+}
+war_games_khorne = {
+	supply_limit = -2
+	castle_levy_size = -0.33
+	city_levy_size = -0.33
+	temple_levy_size = -0.33
+	land_morale = 0.5
+	icon = 19
+}
+################################################# Chaos God Modifiers #################
+nurgle_province_disease = {
+	city_tax_modifier = -0.4
+	castle_tax_modifier = -0.4
+	temple_tax_modifier = -0.4
+	local_build_time_modifier = 0.2
+	local_build_cost_modifier = 0.2
+	castle_levy_size = -0.4
+	city_levy_size = -0.4
+	temple_levy_size = -0.4
+	icon = 192
+}
+
+beastmen_unrest = {
+	local_revolt_risk = 0.30
+	city_tax_modifier = -0.2
+	castle_tax_modifier = -0.2
+	temple_tax_modifier = -0.2
+	icon = 190
+}
+
+slaanesh_hedonism = {
+	city_tax_modifier = -0.7
+	castle_tax_modifier = -0.7
+	temple_tax_modifier = -0.7
+	local_build_time_modifier = 0.2
+	local_build_cost_modifier = 0.2
+	icon = 150
+}
+province_scourged = {
+	levy_reinforce_rate = -0.5
+	local_tax_modifier = -0.5
+	local_build_time_modifier = 20
+	local_build_cost_modifier = 2
+	levy_size = -0.15
+	garrison_size = -0.1
+	icon = 19
+}
+################################################ Beast Men
+beastmen_scourging_1 = {
+	icon = 150
+	monthly_character_prestige = 0.01
+	monthly_character_piety = 0.05
+	local_build_time_modifier = 5
+	local_build_cost_modifier = 1.5
+	levy_reinforce_rate = -0.15
+	local_tax_modifier = -0.15
+	levy_size = -0.05
+	garrison_size = -0.025
+	population_growth = 0.05
+	manpower_growth = 0.05
+	max_population_mult = 0.05
+}
+
+beastmen_scourging_2 = {
+		icon = 150
+	monthly_character_prestige = 0.015
+	monthly_character_piety = 0.07
+	local_build_time_modifier = 10
+	local_build_cost_modifier = 1.5
+	levy_reinforce_rate = -0.25
+	local_tax_modifier = -0.25
+	levy_size = -0.075
+	garrison_size = -0.05
+	population_growth = 0.075
+	manpower_growth = 0.075
+	max_population_mult = 0.05
+}
+
+beastmen_scourging_3 = {
+		icon = 150
+	monthly_character_prestige = 0.02
+	monthly_character_piety = 0.1
+	local_build_time_modifier = 15
+	local_build_cost_modifier = 1.75
+	levy_reinforce_rate = -0.45
+	local_tax_modifier = -0.45
+	levy_size = -0.1
+	garrison_size = -0.075
+	population_growth = 0.1
+	manpower_growth = 0.1
+	max_population_mult = 0.075
+}
+
+beastman_herdstone = {
+	icon = 167
+	local_build_time_modifier = 20
+	local_build_cost_modifier = 0.5
+	levy_reinforce_rate = -0.5
+	local_tax_modifier = -0.5
+	levy_size = -0.1
+	garrison_size = -0.075
+	disease_defence = -0.01
+	local_revolt_risk = 0.15
+	population_growth = 0.25
+	manpower_growth = 0.25
+	max_population_mult = 0.1
+	siege_speed = -0.7
+}
+minor_migration = {
+	icon = 150
+}
+###################################### Chaos Waste 
+bloodthirsty_rampage = {
+	icon = 181
+	monthly_character_prestige = -0.01
+	local_build_time_modifier = 0.05
+	local_build_cost_modifier = 0.025
+	levy_reinforce_rate = -0.02
+	local_tax_modifier = -0.02
+}
+
+reversed_gravity = {
+	icon = 150
+	land_morale = 0.2
+	levy_reinforce_rate = -0.05
+	local_tax_modifier = -0.02
+}
+
+warphole_epicentre = {
+		icon = 150
+	land_morale = -5.0
+	local_tax_modifier = -5
+	local_build_time_modifier = 5
+	local_build_cost_modifier = 5
+	levy_reinforce_rate = -5
+	garrison_size = -5
+	levy_size = -5
+}
