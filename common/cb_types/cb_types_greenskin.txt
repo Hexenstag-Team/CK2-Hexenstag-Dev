@@ -1844,8 +1844,9 @@ waaagh_war = {
 	name = CB_NAME_GREENSKIN_WAAAGH
 	war_name = WAR_NAME_GREENSKIN_WAAAGH
 	display_on_map = no
+	allow_distant = yes
 	sprite = 33
-	truce_days = 7
+	truce_days = 3650
 	is_permanent = yes
 	check_all_titles=yes
 	#check_de_jure_tier = EMPIRE
@@ -1866,21 +1867,54 @@ waaagh_war = {
 
 	can_use_gui = {
 		ROOT = {
-			prestige = 50
-			population_factor >= 0.25
+			OR = {
+				AND = {
+					prestige = 1000
+					OR = {
+						trait = orc_huge
+						trait = goblin_huge
+					}
+				}
+				AND = {
+					prestige = 2000
+					OR = {
+						trait = orc_large
+						trait = goblin_large
+					}
+				}
+				AND = {
+					prestige = 3000
+					OR = {
+						trait = orc_average
+						trait = goblin_average
+					}
+				}
+				AND = {
+					prestige = 4000
+					OR = {
+						trait = orc_small
+						trait = goblin_small
+					}
+				}
+			}
+			# population_factor >= 0.25
 			is_within_diplo_range = FROM
 			NOT = { has_character_modifier = attempted_waaagh }
 		}
-		OR = {
-			FROM={
-				and={
+		FROM = {
+			OR = {
+				AND = {
 					tier=king
-					num_of_count_titles_in_realm < 8
+					num_of_count_titles_in_realm > 8
 				}
-				and={
+				AND = {
 					tier=emperor
-					num_of_count_titles_in_realm < 15
+					num_of_count_titles_in_realm > 15
 				}
+			}
+			NOR = {
+				culture_group = goblin_group
+				culture_group = orc_group
 			}
 		}
 	}
@@ -1923,31 +1957,6 @@ waaagh_war = {
 		}
 	}
 
-	can_use = {
-		ROOT = {
-			government = greenskin_waagh_government
-			independent=yes
-			NOT={has_character_flag=using_waaagh_cb}
-			OR={
-				ai=no
-				NOT={has_character_flag=preparing_waaagh_invasion_flag}
-			}
-		}
-		FROM = {
-			OR={
-				AND={
-					tier=emperor
-					is_nomadic=no
-				}
-				population=50000 #Bash in Chaos Wastes
-				realm_size >= 100
-			}
-			NOR={ #For Now?
-				trait=creature_orc
-				trait=creature_goblin
-			}
-		}
-	}
 	on_attacker_leader_death = { end_war = invalid }
 
 	can_use_title = {
