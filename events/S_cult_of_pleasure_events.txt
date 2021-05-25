@@ -17068,16 +17068,21 @@ character_event = {
 				set_graphical_culture = aghol }
 		if = { limit = { graphical_culture = arabyanrevgfx }
 				set_graphical_culture = ramaccan }
-		if = { limit = { graphical_culture = dwarfrevgfx }
-				set_graphical_culture = dwarf_main }
+		if = {
+			limit = {
+				graphical_culture = dwarfrevgfx
+				NOT = { dwarf_main = yes }
+			}
+			set_graphical_culture = dwarf_main
+		}
 		if = { limit = { graphical_culture = slayerdwarfrevgfx }
 				set_graphical_culture = dwarf_slayer_culture }
-		if = { limit = { graphical_culture = slayerdwarfrevgfx }
-				set_graphical_culture = dwarf_norse }
+		if = { limit = { graphical_culture = norsedwarfgfx }
+				set_graphical_culture = dwarf_drak }
 		if = { limit = { graphical_culture = imperialdwarfrevgfx  }
 				set_graphical_culture = dwarf_imperial }
 		if = { limit = { graphical_culture = chaosdwarfrevgfx }
-				set_graphical_culture = dwarf_chaos }
+				set_graphical_culture = dawi_zharr }
 		if = { limit = { graphical_culture = asurrevgfx }
 				set_graphical_culture = yvressi }
 		if = { limit = { graphical_culture = asrairevgfx }

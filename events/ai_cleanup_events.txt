@@ -225,7 +225,7 @@ character_event = {
 	immediate = {
 		if = { limit = { trait = creature_chaos_dwarf
 				NOT = { trait = transgender } }
-			set_graphical_culture = dwarf_chaos_old
+			set_graphical_culture = dawi_zharr_old
 			break = yes }
 		if = { limit = { trait = creature_dwarf
 				NOT = { trait = transgender } }
@@ -260,13 +260,19 @@ character_event = {
 	}
 
 	immediate = {
-		if = { limit = { OR = { graphical_culture = olddwarfgfx
-					graphical_culture = olddwarfrevgfx } }
+		if = {
+			limit = {
+				OR = {
+					graphical_culture = olddwarfgfx
+					graphical_culture = olddwarfrevgfx
+				}
+			}
 			set_graphical_culture = dwarf_main
-			break = yes }
+			break = yes
+		}
 		if = { limit = { OR = { graphical_culture = oldchaosdwarfgfx
 					graphical_culture = oldchaosdwarfrevgfx } }
-			set_graphical_culture = dwarf_chaos
+			set_graphical_culture = dawi_zharr
 			break = yes }
 	}
 }

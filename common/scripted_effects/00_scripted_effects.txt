@@ -29886,7 +29886,7 @@ give_smith_artifacts_flag_good_effect = {
         limit = { FROM = { 
 		has_character_flag = weapon_axe
 		culture_group=dwarf_group
-		NOT={culture=dwarf_norse}
+		NOT={culture=dwarf_drak}
 		} }
         set_character_flag = axe_tier_2_new
         add_artifact = dawi_battleaxe
@@ -29898,7 +29898,7 @@ give_smith_artifacts_flag_good_effect = {
     if = {
         limit = { FROM = { 
 		has_character_flag = weapon_axe 
-		culture=dwarf_norse
+		culture=dwarf_drak
 		}}
 		add_artifact = dawi_norse_battleaxe
         set_character_flag = axe_tier_2
@@ -29997,7 +29997,7 @@ give_runesmith_artifacts_flag_effect = {
 			50={
 				modifier={
 				factor = 0.75
-				culture=dwarf_norse
+				culture=dwarf_drak
 				}
 				event_target:client_target={add_artifact = dawi_hammer}
 			}
@@ -30026,7 +30026,7 @@ give_runesmith_artifacts_flag_effect = {
 			10={
 				modifier={
 				factor = 0
-				culture=dwarf_norse
+				culture=dwarf_drak
 				}
 				event_target:client_target={add_artifact = rune_of_swiftness}
 			}
@@ -30042,7 +30042,7 @@ give_runesmith_artifacts_flag_effect = {
 			10={
 				modifier={
 				factor = 1
-				culture=dwarf_norse
+				culture=dwarf_drak
 				}
 				event_target:client_target={add_artifact = rune_of_fury}
 			}
@@ -30061,7 +30061,7 @@ give_runesmith_artifacts_flag_good_effect = {
 			50={
 				modifier={
 				factor = 0
-				culture=dwarf_norse
+				culture=dwarf_drak
 				}
 				event_target:client_target={add_artifact = dawi_battleaxe}
 			}
@@ -30071,7 +30071,7 @@ give_runesmith_artifacts_flag_good_effect = {
 			50={
 				modifier={
 				factor = 1
-				culture=dwarf_norse
+				culture=dwarf_drak
 				}
 				event_target:client_target={add_artifact = dawi_norse_battleaxe}
 			}
@@ -30097,7 +30097,7 @@ give_runesmith_artifacts_flag_good_effect = {
 			10={
 				modifier={
 				factor = 0
-				culture=dwarf_norse
+				culture=dwarf_drak
 				}
 				event_target:client_target={add_artifact = master_rune_of_swiftness}
 			}
@@ -30113,7 +30113,7 @@ give_runesmith_artifacts_flag_good_effect = {
 			10={
 				modifier={
 				factor = 1
-				culture=dwarf_norse
+				culture=dwarf_drak
 				}
 				event_target:client_target={add_artifact = master_rune_of_fury}
 			}

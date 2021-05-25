@@ -1151,9 +1151,57 @@ new_character_effect = {
 		}
 		else_if = {
 			limit = {
-				culture = dwarf_main
+				culture = dwarf_norn
 			}
-			set_graphical_culture = dwarf_main
+			set_graphical_culture = dwarf_norn
+		}
+		else_if = {
+			limit = {
+				culture = dwarf_izor
+			}
+			set_graphical_culture = dwarf_izor
+		}
+		else_if = {
+			limit = {
+				culture = dwarf_hirn
+			}
+			set_graphical_culture = dwarf_hirn
+		}
+		else_if = {
+			limit = {
+				culture = dwarf_zhufbar
+			}
+			set_graphical_culture = dwarf_zhufbar
+		}
+		else_if = {
+			limit = {
+				culture = dwarf_kadrin
+			}
+			set_graphical_culture = dwarf_kadrin
+		}
+		else_if = {
+			limit = {
+				culture = dwarf_karak
+			}
+			set_graphical_culture = dwarf_karak
+		}
+		else_if = {
+			limit = {
+				culture = dwarf_azul
+			}
+			set_graphical_culture = dwarf_azul
+		}
+		else_if = {
+			limit = {
+				culture = dwarf_varr
+			}
+			set_graphical_culture = dwarf_varr
+		}
+		else_if = {
+			limit = {
+				culture = dwarf_dum
+			}
+			set_graphical_culture = dwarf_dum
 		}
 		else_if = {
 			limit = {
@@ -1163,9 +1211,9 @@ new_character_effect = {
 		}
 		else_if = {
 			limit = {
-				culture = dwarf_norse
+				culture = dwarf_drak
 			}
-			set_graphical_culture = dwarf_norse
+			set_graphical_culture = dwarf_drak
 		}
 		else_if = {
 			limit = {
@@ -1178,7 +1226,7 @@ new_character_effect = {
 	}
 	else_if = {
 		limit = {
-			culture_group = dwarf_chaos_group
+			culture_group = dawi_zharr_group
 		}
 		add_trait = creature_chaos_dwarf
 		character_event = { id = wh_magic_law.40 days = 2 }
@@ -1201,7 +1249,7 @@ new_character_effect = {
 				10 = { add_age = 90 }
 			}
 		}
-		set_graphical_culture = dwarf_chaos
+		set_graphical_culture = dawi_zharr
 		break = yes
 	}
 	else_if = {
