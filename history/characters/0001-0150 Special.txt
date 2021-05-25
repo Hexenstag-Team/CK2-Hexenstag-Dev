@@ -1,0 +1,959 @@
+1 = { 
+	name = "Sigmar"
+	dynasty = 9000
+	religion = ulrican
+	culture = old_imperial
+	martial = 10
+	diplomacy = 9
+	intrigue = 5
+	stewardship = 5
+	learning = 0
+	historical = yes
+	add_trait = creature_human
+	add_trait = brilliant_strategist
+	add_trait = brave
+	add_trait = honest
+	add_trait = strong
+	add_trait = diligent
+	add_trait = gregarious
+	add_trait = celibate
+	1.1.1 = {
+		birth = yes
+	}
+	1.1.1 = {
+		give_nickname = nick_heldenhammer
+	}
+	50.1.1 = {
+		death = yes
+	}
+}
+2 = { 
+	name = "Morkar" #Everchosen Morkar the Uniter
+	dna = fleekhilbek
+	dynasty = 9040
+	religion = chaos
+	culture = kul
+	martial = 4
+	diplomacy = 3
+	intrigue = 6
+	stewardship = 1
+	learning = 5
+	historical = yes
+	add_trait = creature_human
+	add_trait = thrifty_clerk
+	add_trait = impaler
+	add_trait = diligent
+	1.1.1 = {
+		birth = yes
+	}
+	31.11.17 = {
+		death = yes
+	}
+}
+3 = { 
+	name = "Khaardun" #Everchosen Khaardun the Gloried, ended up possessed and annihlated by Be'lakor in Mordheim
+	dna = pmhhbebifma
+	dynasty = 9038
+	religion = chaos
+	culture = graeling
+	martial = 4
+	diplomacy = 2
+	intrigue = 3
+	stewardship = 6
+	learning = 5
+	historical = yes
+	add_trait = creature_human
+	add_trait = underhanded_rogue
+	add_trait = duelist
+	add_trait = envious
+	add_trait = cruel
+	add_trait = proud
+	1907.1.1 = {
+		birth = yes
+	}
+	2010.8.1 = {
+		death = yes
+	}
+}
+4 = { 
+	name = "Valkia" #Valkia the Bloody, Consort of Khorne
+	dna = dbggdsmaacy
+	properties = cl0joe000000
+	female = yes
+	dynasty = 9032
+	religion = khorne
+	culture = aesling
+	martial = 6
+	diplomacy = 1
+	intrigue = 7
+	stewardship = 2
+	learning = 6
+	father = 21037
+	historical = yes
+	add_trait = brilliant_strategist
+	add_trait = brave
+	add_trait = wroth
+	add_trait = strong
+	add_trait = duelist
+	add_trait = impaler
+	add_trait = celibate
+	add_trait = khorne_demon
+	add_trait = prince_khorne
+	1253.4.5 = {
+		birth = yes
+	}
+	1278.5.11 = {
+		add_spouse = 21036
+		effect = {
+			set_character_flag = ai_flag_refuse_conversion
+			set_character_flag = no_wedding_event
+			spouse = {
+				set_character_flag = no_wedding_event
+				remove_spouse = spouse
+				add_spouse_matrilineal = ROOT
+				clr_character_flag = no_wedding_event
+			}
+			clr_character_flag = no_wedding_event
+			prestige = 100
+		}
+	}
+	1396.4.25 = {
+		effect = {
+			set_character_flag = special_marshal
+			set_character_flag = ai_flag_refuse_conversion
+			set_graphical_culture = prince_khorne
+			give_nickname = nick_the_bloody
+		}
+	}
+	1396.4.26 = {
+		effect = {
+			add_artifact = spear_slaupnir_valkia
+			add_artifact = scarlet_armour_valkia
+			add_artifact = daemonshield_valkia
+		}
+	}
+	2524.1.16 = {
+		death = yes
+	}
+}
+5 = { 
+	name = "Dechala" #Dechala the Denied One, High Elf princess, now daemon champion of Slaanesh
+	dna = dmmbcqaecdi
+	properties = cl0jee000000
+	female = yes
+	dynasty = 9017
+	religion = slaanesh
+	culture = nagarythi
+	martial = 5
+	diplomacy = 4
+	intrigue = 8
+	stewardship = 5
+	learning = 4
+	historical = yes
+	add_trait = intricate_webweaver
+	add_trait = hedonist
+	add_trait = lustful
+	add_trait = ambitious
+	add_trait = beautiful
+	add_trait = greedy
+	add_trait = wroth
+	add_trait = slaanesh_demon
+	add_trait = chosen_slaanesh
+	1.2.3 = {
+		birth = yes
+		effect = {
+			set_character_flag = special_marshal
+			set_character_flag = ai_flag_refuse_conversion
+			set_graphical_culture = prince_slaanesh
+			give_nickname = nick_the_denied_one
+			add_artifact = elixir_damnation_dechala
+			trait = albino
+			trait = mer_creature
+			trait = scorpion_tail
+			trait = hypnotic_gaze
+		}
+	}
+	2312.12.14 = {
+		death = yes
+	}
+}
+6 = { 
+	name = "Scyla" #Scyla Anfinngrim, turned to Chaos Spawn
+	dna = haojakgghcj
+	dynasty = 9015
+	religion = khorne
+	culture = kul
+	martial = 2
+	diplomacy = 2
+	intrigue = 2
+	stewardship = 6
+	learning = 5
+	historical = yes
+	add_trait = creature_human
+	add_trait = brilliant_strategist
+	add_trait = patient
+	add_trait = shy
+	add_trait = wounded
+	1041.1.1 = {
+		birth = yes
+	}
+	1083.12.8 = {
+		death = yes
+	}
+}
+7 = { 
+	name = "Erlock" #Erlock One-Eye, Champion of Khorne, keeper of Scyla
+	dna = jpbgicgjmkn
+	dynasty = 9014
+	religion = khorne
+	culture = kul
+	martial = 4
+	diplomacy = 0
+	intrigue = 0
+	stewardship = 7
+	learning = 7
+	add_trait = creature_human
+	add_trait = flamboyant_schemer
+	add_trait = paranoid
+	add_trait = gregarious
+	add_trait = arbitrary
+	add_trait = leper
+	1030.1.1 = {
+		birth = yes
+	}
+	1077.2.13 = {
+		death = yes
+	}
+}
+8 = { 
+	name = "Thorgar" #Thorgar the Blooded One, general of Asavar Kul
+	dynasty = 9013
+	dna = beojpglebdb
+	culture = kul
+	religion = chaos
+	martial = 4
+	diplomacy = 2
+	stewardship = 3
+	intrigue = 4
+	learning = 2
+	historical = yes
+	add_trait = creature_human
+	add_trait = detached_priest
+	add_trait = duelist
+	add_trait = slothful
+	add_trait = proud
+	add_trait = temperate
+	1062.1.1 = {birth = yes}
+	1145.4.5 = {death = yes}
+}
+9 = {  
+	name = "Sudobaal" #Sudobaal, sorceror of Tzeentch
+	dna = lkjmmlnjfjf
+	dynasty = 9012
+	religion = tzeentch
+	culture = kul
+	martial = 3
+	diplomacy = 4
+	intrigue = 3
+	stewardship = 4
+	learning = 5
+	historical = yes
+	add_trait = creature_human
+	add_trait = flamboyant_schemer
+	add_trait = slothful
+	add_trait = brave
+	add_trait = chaste
+	add_trait = deceitful
+	1046.1.1 = {
+		birth = yes
+	}
+	1120.5.11 = {
+		death = yes
+	}
+}
+10 = { 
+	name = "Khaligudar" #A Tong warlord invading the Chaos Wastes
+	dynasty = 83015
+	religion = tzeentch
+	culture = tong
+	martial = 6
+	diplomacy = 2
+	intrigue = 3
+	stewardship = 3
+	learning = 4
+	father = 17
+	mother = 18
+	historical = yes
+	add_trait = creature_human
+	add_trait = brilliant_strategist
+	add_trait = cruel
+	add_trait = wroth
+	add_trait = ambitious
+	1960.5.2 = {
+		birth = yes
+	}
+	1978.5.11 = {
+		add_spouse = 11
+	}
+	2010.1.1 = {
+		#His army
+		effect = {
+			spawn_unit = {
+				province = 956 #Baildughan
+				owner = ROOT
+				leader = ROOT
+				match_character = ROOT
+				match_mult = 1.0
+				attrition = 0.5
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 53
+				attributes = {
+					martial = 6
+				}
+				trait = skilled_tactician
+			}
+			new_character = {
+				spawn_unit = {
+					province = 956 #Baildughan
+					owner = ROOT
+					leader = THIS
+					match_character = ROOT
+					match_mult = 0.75
+					attrition = 0.5
+				}
+			}
+			create_character = {
+				random_traits = yes
+				dynasty = random
+				religion = ROOT
+				culture = ROOT
+				female = no
+				age = 44
+				attributes = {
+					martial = 6
+				}
+				trait = skilled_tactician
+			}
+			new_character = {
+				spawn_unit = {
+					province = 956 #Baildughan
+					owner = ROOT
+					leader = THIS
+					match_character = ROOT
+					match_mult = 1.0
+					attrition = 0.5
+				}
+			}
+		}
+	}
+	2025.5.29 = {
+		death = yes
+	}
+}
+11 = {  
+	name = "Galdan"
+	female = yes
+	dynasty = 83016
+	religion = chaos
+	culture = tong
+	martial = 7
+	diplomacy = 1
+	intrigue = 3
+	stewardship = 4
+	learning = 6
+	historical = yes
+	add_trait = creature_human
+	add_trait = flamboyant_schemer
+	add_trait = wroth
+	add_trait = temperate
+	1945.1.1 = {
+		birth = yes
+	}
+	1978.5.11 = {
+		add_spouse = 10
+	}
+	2017.5.25 = {
+		death = yes
+	}
+}
+12 = { 
+	name = "Tokur"
+	dynasty = 83015
+	religion = tzeentch
+	culture = tong
+	martial = 5
+	diplomacy = 5
+	intrigue = 6
+	stewardship = 4
+	learning = 8
+	father = 10
+	mother = 11
+	historical = yes
+	add_trait = creature_human
+	add_trait = flamboyant_schemer
+	1982.5.22 = {
+		birth = yes
+	}
+	2023.10.5 = {
+		death = yes
+	}
+}
+13 = { 
+	name = "Eldegai"
+	dynasty = 83015
+	religion = tzeentch
+	culture = tong
+	martial = 4
+	diplomacy = 8
+	intrigue = 6
+	stewardship = 6
+	learning = 4
+	father = 10
+	mother = 11
+	historical = yes
+	add_trait = creature_human
+	add_trait = grey_eminence
+	add_trait = charitable
+	add_trait = brave
+	1987.2.10 = {
+		birth = yes
+	}
+	2031.6.7 = {
+		death = yes
+	}
+}
+14 = { 
+	name = "Khudukha"
+	dynasty = 83015
+	religion = tzeentch
+	culture = tong
+	martial = 3
+	diplomacy = 0
+	intrigue = 6
+	stewardship = 5
+	learning = 7
+	father = 10
+	mother = 11
+	historical = yes
+	add_trait = creature_human
+	add_trait = misguided_warrior
+	add_trait = poet
+	add_trait = content
+	add_trait = slothful
+	1990.2.10 = {
+		birth = yes
+	}
+	2053.4.28 = {
+		death = yes
+	}
+}
+15 = { 
+	name = "Botokhui-Targhun"
+	female = yes
+	dynasty = 83015
+	religion = tzeentch
+	culture = tong
+	martial = 5
+	diplomacy = 4
+	intrigue = 6
+	stewardship = 6
+	learning = 4
+	father = 10
+	mother = 11
+	historical = yes
+	add_trait = creature_human
+	add_trait = skilled_tactician
+	add_trait = brave
+	add_trait = twin
+	1993.5.21 = {
+		birth = yes
+	}
+	2066.2.21 = {
+		death = yes
+	}
+}
+16 = { 
+	name = "Turakina"
+	female = yes
+	dynasty = 83015
+	religion = tzeentch
+	culture = tong
+	martial = 6
+	diplomacy = 2
+	intrigue = 5
+	stewardship = 1
+	learning = 5
+	father = 10
+	mother = 11
+	historical = yes
+	add_trait = creature_human
+	add_trait = grey_eminence
+	add_trait = twin
+	1993.5.21 = {
+		birth = yes
+	}
+	2066.2.21 = {
+		death = yes
+	}
+}
+17 = { 
+	name = "Toghtoga"
+	dynasty = 83015
+	religion = tzeentch
+	culture = tong
+	martial = 4
+	diplomacy = 3
+	intrigue = 2
+	stewardship = 6
+	learning = 4
+	historical = yes
+	add_trait = creature_human
+	add_trait = grey_eminence
+	1927.2.10 = {
+		birth = yes
+	}
+	1955.6.21 = {
+		add_spouse = 18
+	}
+	1997.6.7 = {
+		death = yes
+	}
+}
+18 = { 
+	name = "Chulunny"
+	female = yes
+	dynasty = 83017
+	religion = tzeentch
+	culture = tong
+	martial = 3
+	diplomacy = 2
+	intrigue = 2
+	stewardship = 5
+	learning = 2
+	historical = yes
+	add_trait = creature_human
+	add_trait = misguided_warrior
+	add_trait = poet
+	1936.2.10 = {
+		birth = yes
+	}
+	1955.6.21 = {
+		add_spouse = 17
+	}
+	2003.4.28 = {
+		death = yes
+	}
+}
+19 = { 
+	name = "Ozbeg"
+	dynasty = 83015
+	religion = tzeentch
+	culture = tong
+	martial = 2
+	diplomacy = 4
+	intrigue = 6
+	stewardship = 3
+	learning = 4
+	father = 17
+	mother = 18
+	historical = yes
+	add_trait = creature_human
+	add_trait = skilled_tactician
+	add_trait = patient
+	add_trait = cynical
+	add_trait = drunkard
+	1968.2.23 = {
+		birth = yes
+	}
+	2000.5.22 = {
+		add_spouse = 20
+	}
+	2032.5.14 = {
+		death = yes
+	}
+}
+20 = { 
+	name = "Adolat"
+	female = yes
+	dynasty = 83018
+	religion = chaos
+	culture = tong
+	martial = 2
+	diplomacy = 5
+	intrigue = 7
+	stewardship = 2
+	learning = 8
+	historical = yes
+	add_trait = creature_human
+	add_trait = grey_eminence
+	add_trait = brave
+	add_trait = strong
+	1979.2.10 = {
+		birth = yes
+	}
+	2000.5.22 = {
+		add_spouse = 19
+	}
+	2024.6.7 = {
+		death = yes
+	}
+}
+21 = { 
+	name = "Cirina"
+	female = yes
+	dynasty = 83015
+	religion = tzeentch
+	culture = tong
+	martial = 9
+	diplomacy = 5
+	intrigue = 7
+	stewardship = 5
+	learning = 5
+	father = 19
+	mother = 20
+	historical = yes
+	add_trait = creature_human
+	add_trait = grey_eminence
+	add_trait = strong
+	2003.5.20 = {
+		birth = yes
+	}
+	2054.9.25 = {
+		death = yes
+	}
+}
+22 = { 
+	name = "Hjalmar"
+	dynasty = 71000
+	religion = stromfels
+	culture = sartosan_norscan
+	martial = 2
+	diplomacy = 4
+	intrigue = 6
+	stewardship = 6
+	learning = 3
+	historical = yes
+	add_trait = creature_human
+	add_trait = tough_soldier
+	add_trait = patient
+	add_trait = deceitful
+	1985.5.1 = {
+		birth = yes
+	}
+	2061.8.16 = {
+		death = yes
+	}
+}
+23 = { 
+	name = "Piggolo"
+	religion = myrmidian
+	culture = averlander
+	martial = 10
+	diplomacy = 10
+	intrigue = 10
+	stewardship = 10
+	learning = 10
+	historical = yes
+	add_trait = creature_pig
+	add_trait = grey_eminence
+	add_trait = honest
+	add_trait = gregarious
+	add_trait = kind
+	add_trait = just
+	add_trait = diligent
+	1871.9.12 = {
+		birth = yes
+	}
+	1880.9.12 = {
+		culture = tobaran
+		effect = {
+			culture = tobaran
+		}
+	}
+	1889.7.2 = {
+		death = {
+			death_reason = death_accident
+		}
+	}
+}
+24 = { 
+	name = "Tito"
+	dynasty = 41009
+	religion = myrmidian
+	culture = tobaran
+	martial = 6
+	diplomacy = 4
+	intrigue = 9
+	stewardship = 3
+	learning = 1
+	historical = yes
+	add_trait = creature_human
+	add_trait = hedonist
+	add_trait = brilliant_strategist
+	1851.4.30 = {
+		birth = yes
+	}
+	1921.12.2 = {
+		death = yes
+	}
+}
+25 = { 
+	name = "Lino"
+	dynasty = 41009
+	religion = myrmidian
+	culture = tobaran
+	martial = 6
+	diplomacy = 4
+	intrigue = 9
+	stewardship = 3
+	learning = 1
+	father = 24
+	historical = yes
+	add_trait = creature_human
+	add_trait = hedonist
+	add_trait = brilliant_strategist
+	1883.7.21 = {
+		birth = yes
+	}
+	1950.10.5 = {
+		death = yes
+	}
+}
+26 = { 
+	name = "Viviano"
+	dynasty = 41009
+	religion = myrmidian
+	culture = tobaran
+	martial = 6
+	diplomacy = 4
+	intrigue = 9
+	stewardship = 3
+	learning = 1
+	father = 25
+	historical = yes
+	add_trait = creature_human
+	add_trait = hedonist
+	add_trait = brilliant_strategist
+	1940.2.12 = {
+		birth = yes
+	}
+	1995.4.5 = {
+		death = yes
+	}
+}
+# 27 = { # 18061 # Commented out since it's a non wood elf, Otto has plans.
+	# name = "Alith" #Alith Anar
+	# dynasty = 98025
+	# religion = cadai
+	# culture = nagarythi
+	# martial = 10
+	# diplomacy = 5
+	# intrigue = 9
+	# stewardship = 6
+	# learning = 7
+	# father = 95151
+	# mother = 95152
+	# historical = yes
+	# add_trait = creature_elf
+	# add_trait = tough_soldier
+	# add_trait = proud
+	# add_trait = brave
+	# 100.11.28 = {
+		# birth = yes
+	# }
+	# 2000.1.1 = {
+		# effect = {
+			# add_artifact = midnight_stone_alith
+			# add_artifact = shadow_crown_alith
+			# add_artifact = moonbow_alith
+		# }
+	# }
+	# 2600.9.20 = {
+		# death = yes
+	# }
+# }
+28 = { 
+	name = "Morgiana" #Fay Enchantress
+	dna = cigjaccabaw
+	properties = ch0eek00000000
+	female = yes
+	dynasty = 74108
+	religion = grail
+	culture = breton
+	martial = 10
+	diplomacy = 10
+	intrigue = 10
+	stewardship = 10
+	learning = 10
+	historical = yes
+	add_trait = creature_human
+	add_trait = fay_enchantress
+	add_trait = magic_potential_2
+	add_trait = lore_high_magic
+	add_trait = zealous
+	add_trait = kind
+	add_trait = proud
+	1200.11.28 = {
+		birth = yes
+		effect = {
+			#set_graphical_culture = tiranoci
+			add_character_modifier = {
+				name = magic_power_3
+				duration = -1
+			}
+		}
+	}
+	2000.1.1 = {
+		effect = {
+			add_artifact = chalice_of_potions
+			add_artifact = morgianas_mirror
+			add_artifact = girdle_of_gold
+			add_artifact = toad_familiar
+			add_artifact = silvaron_mount
+		}
+	}
+	2524.1.1 = {
+		death = yes
+	}
+}
+29 = { 
+	name = "Xen-Huong" #The Dragon Emperor
+	dynasty = 9201
+	religion = draconite
+	culture = cathayan
+	martial = 10
+	diplomacy = 7
+	intrigue = 8
+	stewardship = 6
+	learning = 10
+	historical = yes
+	add_trait = creature_celdragon
+	add_trait = grey_eminence
+	add_trait = just
+	add_trait = cruel
+	add_trait = deceitful
+	add_trait = brave
+	add_trait = impaler
+	add_trait = genius
+	add_trait = lore_necromancy
+	occluded = yes
+	1.1.1 = {
+		birth = yes
+		effect = {
+			diplomatic_immunity = yes
+			add_character_modifier = {
+				name = magic_power_4
+				duration = -1
+			}
+		}
+	}
+	2957.8.20 = {
+		death = yes
+	}
+}
+30 = { 
+	name = "Anathrax"
+	dynasty = 3014
+	religion = nurgle
+	culture = hastling
+	martial = 4
+	diplomacy = 5
+	intrigue = 0
+	stewardship = 10
+	learning = 8
+	historical = yes
+	add_trait = midas_touched
+	add_trait = nurgle_demon
+	add_trait = prince_nurgle
+	add_trait = lore_nurgle
+	add_trait = mark_nurgle
+	add_trait = magic_potential_2
+	add_trait = patient
+	add_trait = sturdy
+	add_trait = Gardener
+	add_trait = Kind
+	add_trait = Content
+	875.4.15 = {
+		birth = yes
+	}
+	1007.7.4 = {
+		effect = {
+			set_character_flag = special_marshal
+			set_character_flag = ai_flag_refuse_conversion
+			set_graphical_culture = prince_nurgle
+			set_character_flag = magic_potential_flag_3
+			add_character_modifier = {
+				name = magic_power_2
+				duration = -1
+			}
+		}
+	}
+	2000.1.1 = {
+		effect = {
+			create_retinue = nurglitechampions
+			create_retinue = nurglitechampions
+			create_retinue = chaosmarauders
+			create_retinue = chaosmarauders
+			create_retinue = chaoswarriors
+			create_retinue = chaos_knights
+			create_retinue = chaostrolls
+			create_retinue = chaosspawn
+		}
+	}
+}
+31 = { 
+	name = "Constant" #The ruler of Castle Drachenfels
+	dna = aaikazjdagv
+	properties = fm0cb000000000000000000000000000000000h
+	dynasty = 23637
+	religion = drachen
+	culture = old_imperial
+	diplomacy = 0
+	martial = 10
+	intrigue = 9
+	stewardship = 8
+	learning = 10
+	historical = yes
+	add_trait = creature_human
+	add_trait = mastermind_theologian
+	add_trait = drachenfels
+	add_trait = magic_potential_4
+	add_trait = mystic
+	add_trait = brave
+	add_trait = strong
+	add_trait = genius
+	add_trait = diligent
+	add_trait = tall
+	add_trait = giant
+	add_trait = celibate
+	add_trait = ambitious
+	add_trait = lunatic_3
+	add_trait = lore_necromancy
+	add_trait = lore_dark_magic	#For now
+	add_trait = incapable
+	disallow_random_traits = yes
+	easter_egg = yes
+	1.1.1 = {
+		birth = yes
+		effect = {
+			set_character_flag = magic_potential_flag_4
+			add_character_modifier = {
+				name = magic_power_4
+				duration = -1
+			}
+			set_variable = {
+				which = lunatic_counter
+				value = 50
+			}
+			set_character_flag = no_court_invites
+			set_character_flag = ai_flag_refuse_concubinage
+			set_character_flag = ai_flag_refuse_marriage
+		}
+	}
+}
