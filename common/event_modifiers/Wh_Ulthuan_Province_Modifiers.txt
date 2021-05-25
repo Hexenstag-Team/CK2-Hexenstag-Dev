@@ -1,0 +1,49 @@
+######################################### Ulthuan Province Modifiers ###############################3
+ulthuan_lightly_depopulated = {
+	levy_size = -0.20
+	local_tax_modifier = -0.2
+	icon = 156
+}
+ulthuan_moderately_depopulated = {
+	levy_size = -0.50
+	local_tax_modifier = -0.5
+	icon = 157
+}
+ulthuan_heavily_depopulated = {
+	levy_size = -0.75
+	local_tax_modifier = -0.75
+	icon = 158
+}
+ulthuan_severely_depopulated = {
+	levy_size = -0.90
+	local_tax_modifier = -0.90
+    light_cavalry_defensive = 0.5
+	light_cavalry_offensive = 1.0
+    knights_defensive = 1.0
+	knights_offensive = 1.0
+    horse_archers_defensive = 0.5
+    pikemen_defensive = 1.0
+    archers_defensive = 1.0
+	archers_offensive = 2.0
+    light_infantry_defensive = 0.5
+    heavy_infantry_defensive = 1.0
+    land_organisation = 0.5
+    land_morale = 0.8
+	icon = 159
+}
+ulthuan_colony = {
+	icon = 36
+	levy_size = -0.2
+	local_tax_modifier = -0.2
+	local_build_time_modifier = 0.2
+}
+preparing_ulthuan_invasion = {
+		icon = 31
+	local_tax_modifier = -0.10
+}
+attempted_ulthuan_invasion = {
+		icon = 31
+	levy_size = -0.3
+	garrison_size = -2
+	local_tax_modifier = -0.45
+}

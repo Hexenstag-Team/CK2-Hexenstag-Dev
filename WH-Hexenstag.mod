@@ -1,7 +1,7 @@
 name = "WH: Hexenstag"
-path = "mod/WH_Hexenstag"
+path = "mod/WH-Hexenstag"
 
-user_dir = "WH_Hexenstag"
+user_dir = "WH-Hexenstag"
 
 replace_path = "bookmarks"
 replace_path = "history/characters"

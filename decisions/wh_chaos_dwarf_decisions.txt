@@ -46,14 +46,14 @@ targetted_decisions = {
 		only_rulers = yes
 		from_potential = {
 			is_ruler = yes
-			culture_group = dwarf_chaos_group
+			culture_group = dawi_zharr_group
 			NOT = { has_character_flag = selling_prisoner_slavery }
 			NOT = { has_character_flag = sacrificing_prisoner_hashut }
 		}
 		potential = {
 			prisoner = yes
 			host = { character = FROM }
-			NOT = { culture_group = dwarf_chaos_group }
+			NOT = { culture_group = dawi_zharr_group }
 			NOT = { trait = khemri_tomb_king }
 		}
 		allow = {
@@ -84,7 +84,7 @@ targetted_decisions = {
 			higher_tier_than = COUNT
 			trait = creature_chaos_dwarf
 			religion = hashut
-			culture_group = dwarf_chaos_group
+			culture_group = dawi_zharr_group
 			OR = {
 				capital_holding = {
 					OR = {
@@ -139,7 +139,7 @@ targetted_decisions = {
 			is_ruler = yes
 			higher_tier_than = BARON
 			mercenary = no
-			NOT = { culture_group = dwarf_chaos_group }
+			NOT = { culture_group = dawi_zharr_group }
 			NOT = { trait = creature_chaos_dwarf }
 			NOT = { religion = stromfels }
 			OR = {
@@ -218,7 +218,7 @@ targetted_decisions = {
 			higher_tier_than = COUNT
 			trait = creature_chaos_dwarf
 			religion = hashut
-			culture_group = dwarf_chaos_group
+			culture_group = dawi_zharr_group
 			OR = {
 				capital_holding = {
 					OR = {
@@ -273,7 +273,7 @@ targetted_decisions = {
 			is_ruler = yes
 			higher_tier_than = BARON
 			mercenary = no
-			NOT = { culture_group = dwarf_chaos_group }
+			NOT = { culture_group = dawi_zharr_group }
 			NOT = { trait = creature_chaos_dwarf }
 			NOT = { religion = stromfels }
 			OR = {
@@ -441,7 +441,7 @@ decisions = {
 		potential = {
 			age = 16
 
-			culture_group = dwarf_chaos_group
+			culture_group = dawi_zharr_group
 			religion = hashut
 			NOT = { has_artifact = lamassu_mount }
 			NOT = { has_character_flag = taming_beast }
@@ -474,7 +474,7 @@ decisions = {
 		potential = {
 			age = 16
 
-			culture_group = dwarf_chaos_group
+			culture_group = dawi_zharr_group
 			religion = hashut
 
 			NOT = { has_artifact = lamassu_mount }

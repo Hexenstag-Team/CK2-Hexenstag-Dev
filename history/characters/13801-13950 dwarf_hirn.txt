@@ -1,0 +1,661 @@
+53026 = {
+	name = Nar
+	dynasty = 75202
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 0
+	diplomacy = 8
+	stewardship = 11
+	intrigue = 2
+	learning = 4
+	add_trait = creature_dwarf
+	add_trait = impaler
+	add_trait = thrifty_clerk
+	add_trait = lisp
+	1976.1.11 = {birth = yes}
+	2064.3.30 = {death = yes}
+}
+#Hirn Royal Line
+
+53560 = {
+	name = Duregar
+	dynasty = 75006
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 8
+	diplomacy = 6
+	stewardship = 5
+	intrigue = 5
+	learning = 8
+	add_trait = creature_dwarf
+	add_trait = naive_appeaser
+	add_trait = scholar
+	add_trait = ambitious
+	add_trait = slothful
+	add_trait = proud
+	988.8.9 = {birth = yes}
+	1210.7.16 = {death = yes}
+	}
+	
+	53561 = {
+	name = Thurgrom
+	dynasty = 75006
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 6
+	diplomacy = 6
+	stewardship = 8
+	intrigue = 4
+	learning = 8
+	add_trait = creature_dwarf
+	add_trait = elusive_shadow
+	add_trait = celibate
+	add_trait = charitable
+	add_trait = zealous
+	father=53560
+	1080.10.6 = {birth = yes}
+	1324.5.30 = {death = yes}
+	}
+	
+	53562 = {
+	name = Thungni
+	dynasty = 75006
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 5
+	diplomacy = 5
+	stewardship = 8
+	intrigue = 5
+	learning = 8
+	add_trait = creature_dwarf
+	add_trait = flamboyant_schemer
+	add_trait = hunter
+	add_trait = kind
+	add_trait = humble
+	add_trait = lunatic_2
+	add_trait = slow
+	father=53561
+	1134.1.26 = {
+		birth = yes
+		effect = {
+			set_variable = { which = lunatic_counter value = 10 }
+		}
+	}
+	1479.8.25 = {death = yes}
+	}
+	
+	53563 = {
+	name = Krudd
+	dynasty = 75006
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 7
+	diplomacy = 5
+	stewardship = 5
+	intrigue = 8
+	learning = 4
+	add_trait = creature_dwarf
+	add_trait = naive_appeaser
+	add_trait = hedonist
+	add_trait = craven
+	add_trait = honest
+	father=53562
+	1218.1.18 = {birth = yes}
+	1580.9.8 = {death = yes}
+	}
+	
+	53564 = {
+	name = Furgil
+	dynasty = 75006
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 8
+	diplomacy = 8
+	stewardship = 7
+	intrigue = 6
+	learning = 8
+	add_trait = creature_dwarf
+	add_trait = misguided_warrior
+	add_trait = charitable
+	add_trait = chaste
+	add_trait = content
+	add_trait = zealous
+	add_trait = paranoid
+	add_trait = cruel
+	father=53563
+	1270.6.11 = {birth = yes}
+	1634.3.20 = {death = yes}
+	}
+	
+	53565 = {
+	name = Hergar
+	dynasty = 75006
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 5
+	diplomacy = 6
+	stewardship = 8
+	intrigue = 8
+	learning = 6
+	add_trait = creature_dwarf
+	add_trait = grey_eminence
+	add_trait = humble
+	add_trait = gluttonous
+	add_trait = honest
+	add_trait = patient
+	add_trait = gregarious
+	add_trait = cynical
+	father=53564
+	1358.11.23 = {birth = yes}
+	1722.10.14 = {death = yes}
+	}
+	
+	53566 = {
+	name = Snorri
+	dynasty = 75006
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 5
+	diplomacy = 4
+	stewardship = 7
+	intrigue = 7
+	learning = 6
+	add_trait = creature_dwarf
+	add_trait = elusive_shadow
+	add_trait = kind
+	add_trait = trusting
+	add_trait = greedy
+	add_trait = just
+	father=53565
+	1541.6.23 = {birth = yes}
+	1952.10.15 = {death = yes}
+	}
+	
+	53567 = {
+	name = Sigrid
+	female = yes
+	dynasty = 75006
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	add_trait = creature_dwarf
+	father=53566
+	1803.7.3 = {birth = yes}
+	1853.3.10 = {add_spouse = 53029}
+	2209.9.12 = {death = yes}
+	}
+	
+	53568 = {
+	name = Berta
+	female = yes
+	dynasty = 75006
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	add_trait = creature_dwarf
+	father=53028
+	1901.4.27 = {birth = yes}
+	1939.10.7 = {add_spouse = 53079}
+	2259.3.28 = {death = yes}
+	}
+	
+	53569 = {
+	name = Skorina
+	female = yes
+	dynasty = 75006
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	add_trait = creature_dwarf
+	father=53028
+	1908.12.20 = {birth = yes}
+	1945.3.10 = {add_spouse = 53548}
+	2318.1.3 = {death = yes}
+	}
+	
+	53570 = {
+	name = Rogni
+	dynasty = 75006
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 8
+	diplomacy = 7
+	stewardship = 8
+	intrigue = 8
+	learning = 6
+	add_trait = creature_dwarf
+	add_trait = brave
+	add_trait = cynical
+	father=53028
+	1972.7.3 = {birth = yes}
+	2215.9.12 = {death = yes}
+	}
+	53028 = {
+		name = Ranulf
+		dynasty = 75006
+		culture = dwarf_hirn
+		religion = ancestor_gods
+		martial = 1
+		diplomacy = 6
+		stewardship = 5
+		intrigue = 1
+		learning = 9
+		add_trait = creature_dwarf
+		add_trait = duelist
+		add_trait = brilliant_strategist
+		add_trait = fair
+		add_trait = strong
+		father=53566
+		1848.1.8 = {birth = yes}
+		2216.12.1 = {death = yes}
+	}
+	53025 = {
+		name = Khim
+		dynasty = 75380
+		culture = dwarf_hirn
+		religion = ancestor_gods
+		martial = 7
+		diplomacy = 7
+		stewardship = 6
+		intrigue = 11
+		learning = 1
+		add_trait = creature_dwarf
+		add_trait = duelist
+		add_trait = underhanded_rogue
+		add_trait = legit_bastard
+		1962.5.30 = {birth = yes}
+		2016.8.19 = {death = yes}
+	}
+	53024 = {
+		name = Thorek
+		dynasty = 75328
+		culture = dwarf_hirn
+		religion = ancestor_gods
+		martial = 2
+		diplomacy = 10
+		stewardship = 6
+		intrigue = 9
+		learning = 9
+		add_trait = creature_dwarf
+		add_trait = hunter
+		add_trait = amateurish_plotter
+		add_trait = lustful
+		1983.10.3 = {birth = yes}
+		2030.6.17 = {death = yes}
+	}
+	#Gantuk Royal Line
+
+53550 = {
+	name = Yanni
+	dynasty = 75327
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 5
+	diplomacy = 8
+	stewardship = 4
+	intrigue = 4
+	learning = 7
+	add_trait = creature_dwarf
+	add_trait = misguided_warrior
+	add_trait = slothful
+	add_trait = humble
+	add_trait = envious
+	add_trait = possessed
+	1018.7.19 = {birth = yes}
+	1278.11.21 = {death = yes}
+	}
+	
+	53551 = {
+	name = Thyk
+	dynasty = 75327
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 7
+	diplomacy = 8
+	stewardship = 7
+	intrigue = 4
+	learning = 5
+	add_trait = creature_dwarf
+	add_trait = detached_priest
+	add_trait = scholar
+	add_trait = kind
+	add_trait = patient
+	add_trait = slothful
+	add_trait = chaste
+	add_trait = humble
+	father=53550
+	1077.9.9 = {birth = yes}
+	1352.8.15 = {death = yes}
+	}
+	
+	53552 = {
+	name = Dorin
+	dynasty = 75327
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 4
+	diplomacy = 8
+	stewardship = 7
+	intrigue = 6
+	learning = 6
+	add_trait = creature_dwarf
+	add_trait = misguided_warrior
+	add_trait = kind
+	add_trait = wroth
+	add_trait = trusting
+	add_trait = lustful
+	add_trait = temperate
+	father=53551
+	1141.5.19 = {birth = yes}
+	1413.8.2 = {death = yes}
+	}
+	
+	53553 = {
+	name = Stromni
+	dynasty = 75327
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 8
+	diplomacy = 4
+	stewardship = 4
+	intrigue = 6
+	learning = 5
+	add_trait = creature_dwarf
+	add_trait = tough_soldier
+	add_trait = diligent
+	add_trait = gregarious add_trait = chaste
+	father=53552
+	1190.4.12 = {birth = yes}
+	1520.9.2 = {death = yes}
+	}
+	
+	53554 = {
+	name = Cranneg
+	dynasty = 75327
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 7
+	diplomacy = 5
+	stewardship = 8
+	intrigue = 4
+	learning = 7
+	add_trait = creature_dwarf
+	add_trait = charismatic_negotiator
+	add_trait = content
+	add_trait = honest
+	add_trait = craven
+	add_trait = proud
+	add_trait = kind
+	father=53553
+	1243.5.10 = {birth = yes}
+	1610.9.27 = {death = yes}
+	}
+	
+	53555 = {
+	name = Alaric
+	dynasty = 75327
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 7
+	diplomacy = 7
+	stewardship = 5
+	intrigue = 7
+	learning = 8
+	add_trait = creature_dwarf
+	add_trait = elusive_shadow
+	add_trait = hedonist
+	add_trait = diligent
+	add_trait = paranoid
+	add_trait = zealous
+	add_trait = deceitful
+	father=53554
+	1333.10.14 = {birth = yes}
+	1721.5.3 = {death = yes}
+	}
+	
+	53556 = {
+	name = Drumin
+	dynasty = 75327
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 6
+	diplomacy = 6
+	stewardship = 6
+	intrigue = 4
+	learning = 6
+	add_trait = creature_dwarf
+	add_trait = midas_touched
+	add_trait = trusting
+	add_trait = just
+	add_trait = charitable
+	add_trait = proud
+	father=53555
+	1548.3.14 = {birth = yes}
+	1925.8.31 = {death = yes}
+	}
+	
+	53557 = {
+	name = Tarni
+	female = yes
+	dynasty = 75327
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	add_trait = creature_dwarf
+	father=53556
+	1751.7.14 = {birth = yes}
+	1757.1.1 ={immortal_age=25}
+	1846.3.10 = {add_spouse = 53022}
+	2172.8.2 = {death = yes}
+	}
+	53029 = {
+		name = Hurgin
+		dynasty = 75327
+		culture = dwarf_hirn
+		religion = ancestor_gods
+		martial = 10
+		diplomacy = 3
+		stewardship = 1
+		intrigue = 0
+		learning = 5
+		add_trait = creature_dwarf
+		add_trait = ironbreaker
+		add_trait = hunter
+		add_trait = brilliant_strategist
+		add_trait = proud
+		add_trait = envious
+		father=53556
+		1787.4.27 = {birth = yes}
+		2117.11.11 = {death = yes}
+	}
+	#Angazhar Royal Line
+
+53540 = {
+	name = Yadri
+	dynasty = 75272
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 5
+	diplomacy = 6
+	stewardship = 4
+	intrigue = 7
+	learning = 6
+	add_trait = creature_dwarf
+	add_trait = misguided_warrior
+	add_trait = cynical
+	add_trait = cruel
+	add_trait = wroth
+	add_trait = lustful
+	1002.10.2 = {birth = yes}
+	1358.7.15 = {death = yes}
+	}
+	
+	53541 = {
+	name = Mundri
+	dynasty = 75272
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 4 diplomacy = 7
+	stewardship = 5
+	intrigue = 7
+	learning = 4
+	add_trait = creature_dwarf
+	add_trait = intricate_webweaver
+	add_trait = zealous
+	add_trait = honest
+	add_trait = temperate
+	add_trait = wroth
+	add_trait = charitable
+	father=53540
+	1082.11.14 = {birth = yes}
+	1414.6.30 = {death = yes}
+	}
+	
+	53542 = {
+	name = Gottri
+	dynasty = 75272
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 4
+	diplomacy = 4
+	stewardship = 4
+	intrigue = 8
+	learning = 4
+	add_trait = creature_dwarf
+	add_trait = martial_cleric
+	add_trait = ambitious
+	add_trait = honest
+	add_trait = kind
+	father=53541
+	1147.4.2 = {birth = yes}
+	1443.1.4 = {death = yes}
+	}
+	
+	53543 = {
+	name = Okri
+	dynasty = 75272
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 5
+	diplomacy = 4
+	stewardship = 8
+	intrigue = 8
+	learning = 4
+	add_trait = creature_dwarf
+	add_trait = misguided_warrior
+	add_trait = deceitful
+	add_trait = wroth
+	add_trait = content
+	add_trait = cruel
+	father=53542
+	1209.12.3 = {birth = yes}
+	1566.10.10 = {death = yes}
+	}
+	
+	53544 = {
+	name = Dargo
+	dynasty = 75272
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 6
+	diplomacy = 5
+	stewardship = 6
+	intrigue = 4
+	learning = 7
+	add_trait = creature_dwarf
+	add_trait = detached_priest
+	add_trait = temperate
+	add_trait = ambitious
+	add_trait = cynical
+	add_trait = chaste
+	father=53543
+	1277.2.8 = {birth = yes}
+	1641.4.28 = {death = yes}
+	}
+	
+	53545 = {
+	name = Hugnir
+	dynasty = 75272
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 5
+	diplomacy = 6
+	stewardship = 6
+	intrigue = 8
+	learning = 8
+	add_trait = creature_dwarf
+	add_trait = naive_appeaser
+	add_trait = chaste
+	add_trait = envious
+	add_trait = just
+	father=53544
+	1359.10.27 = {birth = yes}
+	1710.8.18 = {death = yes}
+	}
+	
+	53546 = {
+	name = Brogar
+	dynasty = 75272
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 8
+	diplomacy = 6
+	stewardship = 8
+	intrigue = 5
+	learning = 6
+	add_trait = creature_dwarf
+	add_trait = detached_priest
+	add_trait = temperate
+	add_trait = zealous
+	father=53545
+	1416.9.7 = {birth = yes}
+	1832.5.25 = {death = yes}
+	}
+	
+	53547 = {
+	name = Astrid
+	female = yes
+	dynasty = 75272
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	add_trait = creature_dwarf
+	father=53022
+	mother = 53557
+	1847.7.23 = {birth = yes}
+	1884.3.10 = {add_spouse = 53041}
+	2275.3.9 = {death = yes}
+	}
+	
+	53548 = {
+	name = Hurgar
+	dynasty = 75272
+	culture = dwarf_hirn
+	religion = ancestor_gods
+	martial = 4
+	diplomacy = 6
+	stewardship = 6
+	intrigue = 8
+	learning = 6
+	add_trait = creature_dwarf
+	add_trait = intricate_webweaver
+	add_trait = charitable
+	add_trait = kind
+	father=53022
+	mother = 53557
+	1857.6.10 = {birth = yes}
+	2299.1.23 = {death = yes}
+	}
+	53022 = {
+		name = Skuddi
+		dynasty = 75272
+		culture = dwarf_hirn
+		religion = ancestor_gods
+		martial = 1
+		diplomacy = 5
+		stewardship = 6
+		intrigue = 8
+		learning = 8
+		add_trait = creature_dwarf
+		add_trait = amateurish_plotter
+		add_trait = chaste
+		add_trait = trusting
+		father=53546
+		1781.1.20 = {birth = yes}
+		2090.4.24 = {death = yes}
+	}

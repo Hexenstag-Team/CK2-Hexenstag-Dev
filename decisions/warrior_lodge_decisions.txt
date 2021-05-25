@@ -439,6 +439,7 @@ society_decisions = {
 			OR = {
 				society_member_of = knights_of_old_world
 				society_member_of = warriors_of_ulric
+				society_member_of = warriors_guild_dawi
 				is_member_of_any_warband_trigger = yes
 			}
 			NOR = {
@@ -1146,77 +1147,6 @@ society_decisions = {
 				factor = 3
 				trait = brave
 			}
-		}
-	}
-}
-settlement_decisions = {
-	#Power, rank 3: Inspire Warriors
-	warrior_lodge_inspire_warriors = {
-		ai_check_interval = 80 #check only once every 80 months.
-		filter = owned
-		ai_target_filter = owned
-
-		from_potential = {
-			is_playable = yes
-			has_dlc = "Holy Fury"
-			higher_tier_than = BARON
-			is_member_of_any_warrior_lodge_trigger = yes
-			NOT={society_member_of=knights_of_old_world}
-			society_rank >= 3
-			NOT = { has_character_flag = inspiring_warriors }
-		}
-
-		potential = {
-			holder_scope = {
-				character = FROM
-			}
-		}
-		allow = {
-			#show_only_failed_conditions = yes
-			FROM = {
-				show_scope_change = no
-				has_society_currency_minor_trigger = yes
-			}
-			NOT = { holding_total_levy_percent = 1 } #Holding does not have a full garrison or levy
-		}
-		effect = {
-			save_event_target_as = target_holding
-			FROM = {
-				show_scope_change = no
-				set_character_flag = inspiring_warriors
-				detract_society_currency_minor_effect = yes
-				character_event = { id = HF.10059 }	#handle actual effect
-			}
-		}
-
-		revoke_allowed = {
-			always = no
-		}
-
-		ai_will_do = {
-			factor = 1
-	        modifier = { #I am losing the war, help!
-				factor = 1.5
-				any_war = {
-					defender = { character = FROM }
-					attacker = {
-						war_score = -50
-					}
-				}
-			}
-			modifier = { #I am winning the war, no need!
-				factor = 0
-				any_war = {
-					defender = { character = FROM }
-					attacker = {
-						war_score = 50
-					}
-				}
-			}
-			modifier = { #I am not at war, who cares!
-	            factor = 0
-	            FROM = { war = no }
-	        }
 		}
 	}
 }

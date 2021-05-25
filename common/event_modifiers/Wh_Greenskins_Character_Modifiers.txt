@@ -1,3 +1,4 @@
+########################################## Greenskin Modifiers ################################
 denied_waaagh = {
 	greenskin_gods_opinion = -5
 	icon = 154
@@ -16,9 +17,6 @@ mismanaged_warband = {
 	land_morale = -0.1
 	max_population=-1000
 	icon = 106
-}
-recently_made_capital = {
-	icon = 6
 }
 waagh_revanchism = {
 	icon = 153
@@ -78,7 +76,7 @@ empowered_by_waaagh = { #Max 10, 2 Gained by transforming to waaagh Government (
 	}
 	icon = 153
 }
-call_to_waaagh = { #Max 10, 3 gained through preparation perioid, rest gained through winning battles (Decay) (Society Power aswell?)
+call_to_waaagh = { #Max 10, 3 gained through preparation period, rest gained through winning battles (Decay) (Society Power aswell?)
 	max_population = 250
 	max_manpower = 50
 	tribal_opinion = 1
@@ -95,18 +93,53 @@ call_to_waaagh = { #Max 10, 3 gained through preparation perioid, rest gained th
 	garrison_size = -0.01
 	icon = 153
 }
-
-greenskin_population_bad_2 = {
-	local_tax_modifier = -0.5
-	local_revolt_risk = 0.3
-	supply_limit = -0.5
-	disease_defence = -0.5
-	icon = 154
+scattered_greenskins = {
+	icon = 153
+	monthly_character_prestige = 0.01
+	monthly_character_piety = 0.05
 }
-greenskin_forest_goblin_hideouts = {
-	local_tax_modifier = -0.5
-	local_revolt_risk = 0.3
-	supply_limit = -0.5
-	disease_defence = -0.5
+weak_warboss = {
 	icon = 154
+	vassal_opinion = -50
+	monthly_character_prestige = -0.3
+}
+
+greenskin_law_timer = {
+	icon = 153
+}
+preparing_waaagh_invasion = {
+	icon = 31
+	monthly_character_prestige = 0.1
+	manpower_growth = 0.25
+}
+preparing_waaagh = {
+	icon = 31
+}
+
+attempted_waaagh = {
+	icon = 31
+	levy_size = -0.3
+	local_tax_modifier = -0.45
+}
+############################################### Orcs Buy Weapons From Chaos Dwarfs
+chaos_dwarf_weapons = {
+	light_infantry_defensive = 0.3
+	archers_defensive = 0.3
+	pikemen_defensive = 0.3
+	heavy_infantry_defensive = 0.3
+	light_cavalry_defensive = 0.3
+	knights_defensive = 0.3
+	horse_archers_defensive = 0.3
+	light_infantry_offensive = 0.3
+	archers_offensive = 0.3
+	pikemen_offensive = 0.3
+	heavy_infantry_offensive = 0.3
+	light_cavalry_offensive = 0.3
+	knights_offensive = 0.3
+	horse_archers_offensive = 0.3
+
+	icon = 29
+}
+recently_brought_from_chaos_dwarfs = {
+	icon = 29
 }

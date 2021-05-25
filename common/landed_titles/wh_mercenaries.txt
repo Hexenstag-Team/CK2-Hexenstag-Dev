@@ -4596,31 +4596,6 @@ d_lothern_trade_company = {
 	mercenary_type = d_lothern_trade_company_modifier
 }
 
-d_fleet_of_lothern = {
-	color={ 160 160 160 }
-	color2={ 255 255 255 }
-
-	capital = 1492 #Lothern
-
-	allow = {
-	religion_group = cadai_group
-	}
-
-	religion = cadai
-	culture = eatainian
-
-	title = "CAPTAIN"
-	title_female = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	mercenary = yes
-	landless = yes
-	primary = yes
-	independent = yes
-
-	mercenary_type = d_fleet_of_lothern_modifier
-}
-
 d_pigbarter_hulks = {
 	color={ 160 160 160 }
 	color2={ 255 255 255 }
@@ -4661,7 +4636,7 @@ d_sons_of_war = {
 	}
 
 	religion = ancestor_gods
-	culture = dwarf_main
+	culture = dwarf_karak
 
 	title = "CAPTAIN"
 	title_female = "CAPTAIN"
@@ -4694,7 +4669,7 @@ d_hammers_of_azagar = {
 	}
 
 	religion = ancestor_gods
-	culture = dwarf_main
+	culture = dwarf_varr
 
 	title = "CAPTAIN"
 	title_female = "CAPTAIN"
@@ -4717,11 +4692,11 @@ d_oreguard = {
 	capital = 470 #Karak Azul
 
 	allow = {
-	religion_group = dwarf_gods_group
+		religion_group = dwarf_gods_group
 	}
 
 	religion = ancestor_gods
-	culture = dwarf_main
+	culture = dwarf_azul
 
 	title = "CAPTAIN"
 	title_female = "CAPTAIN"

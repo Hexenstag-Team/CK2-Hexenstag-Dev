@@ -274,6 +274,7 @@ grimway = {	#Updated
 			province_id = 292 #Hergig
 			province_id = 254 #Wolfenburg
 			province_id = 366 #Bechafen
+			province_id = 255 #Brizban
 		}
 	}
 	
@@ -304,11 +305,14 @@ grimway = {	#Updated
 	# Wurzen, Wolfenburg
 	path = { 257 254}
 	
-	# Wolfenburg, Dassel, Ferlangen,
-	path = { 254 251 247 }
+	# Wolfenburg, Brizban
+	path = { 254 255 }
 	
-	# Wolfenburg, Brizban, Selonian Hills, Borkrum, Rugenbuttle
-	path = { 254 255 258 338 340 }
+	# Brizban, Selonian Hills, Borkrum, Rugenbuttle
+	path = { 255 258 338 340 }
+	
+	# Brizban, Dassel, Ferlangen
+	path = { 255 251 247 }
 	
 	# Ferlangen, Huven, Salkalten
 	path = { 247 244 243 }
@@ -441,7 +445,6 @@ nuln_road = {	#Updated
 	modifier = {
 		icon = 4
 		local_tax_modifier = 0.01
-
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
@@ -472,12 +475,35 @@ nuln_road = {	#Updated
 	
 	# Nuln, Grotchen, Lengenfeld, Stirhugel, Wordern, Wurtbad
 	path = { 309 1270 353 347 348 343 }
-	
-	
-	
-	
 }
+bechafen_road = {	#Updated
 
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		OR = {
+			province_id = 366 #Bechafen
+			province_id = 343 #Wurtbad
+			province_id = 328 #Kemperbad
+		}
+	}
+
+	# Bechafen
+	start = { 366 }
+	
+	# Bechafen, Kolhov, Nagenhof, Regak
+	path = { 366 372 374 373 }
+	
+	# Regak, Mindas Ungor, Karak Kadrin
+	path = { 373 1088 436 }
+	
+	# Regak, Zherden
+	path = { 373 930 }
+}
 
 ###  Northern ###
 
@@ -769,7 +795,7 @@ the_pass_to_the_east = {	#Updated
 	}
 	trade_post_display_trigger = {
 		OR = {
-			province_id = 436 #Karak Kadrin
+			province_id = 436 # Karak Kadrin
 			province_id = 478 # Zharr-Naggrund
 		}
 	}

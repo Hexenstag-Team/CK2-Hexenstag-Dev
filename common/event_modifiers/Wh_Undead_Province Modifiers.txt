@@ -1,0 +1,49 @@
+################################################# Undead Province Modifiers
+
+################################## Ghoul Related
+hidden_hibernated_strigoi = {
+	levy_size = -0.95
+	garrison_size  = 0.5
+	local_tax_modifier = -3
+	supply_limit = -12
+	siege_speed = -2
+	fort_level = 5
+	icon = 152
+}
+
+ghoul_presence = {
+	levy_size = -0.02
+	local_tax_modifier = -0.12
+	supply_limit = -0.5
+	icon = 152
+}
+
+ghoul_unrest = {
+	icon = 152
+	local_revolt_risk = 0.01
+	city_tax_modifier = -0.015
+	castle_tax_modifier = -0.015
+	temple_tax_modifier = -0.015
+}
+
+############################################# Strigany Related Events
+preparing_strygos_invasion = {
+	icon = 151
+	local_tax_modifier = -0.01
+ }
+
+attempted_strygos_invasion = { icon = 31
+	levy_size = -0.15
+	garrison_size = -0.75
+	local_tax_modifier = -0.25
+ }
+strigany_caravan = {
+	local_revolt_risk = 0.05
+	local_tax_modifier = 0.2
+	icon = 4
+}
+strigany_strife = {
+	local_revolt_risk = 0.15
+	icon = 22
+}
+

@@ -4,11 +4,7 @@ decisions = {
 		only_playable = yes #Only rulers imply Mercenaries and Barons
 		potential = {
 			age = 16
-			OR = {
-				culture = dwarf_main
-				culture = dwarf_grey
-				culture = dwarf_southron
-			}
+			dwarf_main = yes
 			higher_tier_than = COUNT
 			NOT = { tier = emperor }
 			NOT = { has_character_flag = claimed_dwarf_empire }

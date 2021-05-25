@@ -440,20 +440,20 @@ character_event = {
 			}
 			if = {
 				limit = {
-					NOT = { culture = dwarf_norse }
+					NOT = { culture = dwarf_drak }
 				}
 				religion = ancestor_gods
 			}
 			if = {
 				limit = {
-					culture = dwarf_norse
+					culture = dwarf_drak
 				}
 				religion = norse_ancestor_gods
 			}
 		}
 		else_if = {
 			limit = {
-				culture_group = dwarf_chaos_group
+				culture_group = dawi_zharr_group
 			}
 			religion = hashut
 		}

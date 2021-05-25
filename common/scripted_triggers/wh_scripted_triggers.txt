@@ -1037,7 +1037,22 @@ lore_of_shadows_trigger = {
 	}
 }
 
-
+dwarf_main = {
+	custom_tooltip = {
+		text = is_main_dwarf
+		OR = {
+			culture = dwarf_norn
+			culture = dwarf_izor
+			culture = dwarf_hirn
+			culture = dwarf_zhufbar
+			culture = dwarf_kadrin
+			culture = dwarf_karak
+			culture = dwarf_azul
+			culture = dwarf_varr
+			culture = dwarf_dum
+		}
+	}
+}
 
 
 
