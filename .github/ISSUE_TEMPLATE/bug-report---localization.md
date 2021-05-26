@@ -2,7 +2,7 @@
 name: Bug Report - Localization
 about: Create a report to help us improve localization
 title: "[BUG] Incorrect/Missing Localization for ..."
-labels: bug - localization
+labels: ''
 assignees: ''
 
 ---
