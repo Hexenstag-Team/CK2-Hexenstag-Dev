@@ -11,12 +11,7 @@ great_north_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 222	#Marienburg
-			province_id = 274	#Middenheim
-			province_id = 240	#Norden
-			province_id = 175	#Erengrad
-		}
+		silk_road_trade_post_trigger = yes
 	}
 	
 	# Marienburg
@@ -86,12 +81,7 @@ old_dwarf_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 451	#Karaz-a-Karak
-			province_id = 690	#Akendorf
-			province_id = 362	#Grenzstadt
-			province_id = 357	#Averheim
-		}
+		silk_road_trade_post_trigger = yes
 	}
 	
 	# Karaz-a-Karak
@@ -125,13 +115,7 @@ old_forest_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 343 #Wurtbad
-			province_id = 324 #Talabheim
-			province_id = 275 #Malstedt
-			province_id = 274 #Middenheim
-			province_id = 292 #Hergig
-		}
+		silk_road_trade_post_trigger = yes
 	}
 	
 	# Wurtbad
@@ -196,13 +180,7 @@ great_reik_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 299 #Altdorf
-			province_id = 309 #Nuln
-			province_id = 304 #Ubersreik
-			province_id = 222 #Marienburg
-			province_id = 328 #Kemperbad
-		}
+		silk_road_trade_post_trigger = yes
 	}
 	
 	# Altdorf
@@ -269,15 +247,7 @@ grimway = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 324 #Talabheim
-			province_id = 292 #Hergig
-			province_id = 254 #Wolfenburg
-			province_id = 366 #Bechafen
-			province_id = 255 #Brizban
-			province_id = 175 #Erengrad
-			province_id = 202 #Kislev
-		}
+		silk_road_trade_post_trigger = yes
 	}
 	
 	# Talabheim
@@ -359,11 +329,7 @@ altdorf_middenheim_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 299 #Altdorf
-			province_id = 274 #Middenheim
-			province_id = 270 #Carroburg
-		}
+		silk_road_trade_post_trigger = yes
 	}
 	
 	# Altdorf
@@ -388,11 +354,7 @@ grey_lady_pass = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 886 #Parravon
-			province_id = 304 #Übersreik
-			province_id = 296 #Bögenhafen
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Parravon, Bögenhafen
@@ -415,11 +377,7 @@ Pfeildorf_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 316 #Pfeildorf
-			province_id = 741 #Kreutzhofen
-			province_id = 362 #Grenzstadt
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Pfeildorf
@@ -467,11 +425,7 @@ nuln_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 309 #Nuln
-			province_id = 343 #Wurtbad
-			province_id = 328 #Kemperbad
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Nuln
@@ -504,11 +458,7 @@ bechafen_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 366 #Bechafen
-			province_id = 343 #Wurtbad
-			province_id = 328 #Kemperbad
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Bechafen
@@ -532,11 +482,7 @@ drakenhof_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 386 #Drakenhof
-			province_id = 350 #Eicheschatten
-			province_id = 366 #Bechafen
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Drakenhof
@@ -631,11 +577,7 @@ great_kislev_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 202  #Kislev
-			province_id = 175  #Erengrad
-			province_id = 182  #Praag
-		}
+		silk_road_trade_post_trigger = yes
 	}
 	# Kislev
 	start = { 202 }
@@ -684,7 +626,7 @@ road_of_skulls = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		province_id = 182  #Praag
+		silk_road_trade_post_trigger = yes
 	}
 
 	#Praag
@@ -704,10 +646,7 @@ old_trail = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 2404	#Great Ogham
-			province_id = 2407	#Hunndaidh
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Great Ogham
@@ -726,10 +665,7 @@ bjornling__trail = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 18	# Saimaakild
-			province_id = 1168	# Bjarkavig
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Saimaakild
@@ -740,10 +676,6 @@ bjornling__trail = {
 
 	# Saimaakild, Frost
 	path = { 18 13 }
-
-	# Saimaakild, Njyl
-	path = { 18 11 }
-
 }
 skaeling__trail = {
 
@@ -755,11 +687,7 @@ skaeling__trail = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 23	# Trassel
-			province_id = 70	# Olricstaad
-			province_id = 39	# Ulfsland
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Trassel
@@ -790,11 +718,7 @@ graeling__trail = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 8		# Finnsvik
-			province_id = 47	# Cardariborg
-			province_id = 26	# Kraka Ungrim
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Finnsvik
@@ -803,8 +727,8 @@ graeling__trail = {
 	#Finnsvik, Fjisgard, Bfavark, Nilfheim, Endring, Baelkyr, Thimbulvintr
 	path = { 8 5 6 3 1 2 41 }
 
-	#Finnsvik, Steinvik
-	path = { 8 10 }
+	#Finnsvik, Steinvik, Njyl, Saimaakild
+	path = { 8 10 11 18 }
 
 	#Thimbulvintr, Tolum, Cardariborg
 	path = { 41 42 47 }
@@ -821,17 +745,23 @@ sarl__trail = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 70	# Olricstaad
-			province_id = 144	# Ulfen
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Olricstaad
 	start = { 70 }
 
-	# Olricstaad, Feigr, Suderholm, Stromstaad, Skyggehaug, Trollheim, Thorshafn, Ulfen
-	path = { 70 71 72 73 74 75 145 144 }
+	# Olricstaad, Feigr, Suderholm
+	path = { 70 71 72  }
+
+	# Suderholm, Stromstaad, Skyggehaug, Trollheim
+	path = { 72 73 74 75 }
+
+	# Suderholm, Jotunir, Everthunder, Askreved, Trollheim
+	path = { 72 66 67 68 75 }
+
+	# Trollheim, Thorshafn, Ulfen
+	path = { 75 145 144 }
 }
 varg__trail = {
 
@@ -842,10 +772,7 @@ varg__trail = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 53	# Aldeigborg
-			province_id = 82	# Fuinn
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Aldeigborg
@@ -854,9 +781,141 @@ varg__trail = {
 	# Aldeigborg, Sorg, Hills of Grofnir, Forbannet Skog, Jarluns, Kaldr, Fimbulvintr Wood, Fuinn
 	path = { 53 54 55 77 78 79 81 82 }
 }
+aesling__trail = {
 
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		silk_road_trade_post_trigger = yes
+	}
 
+	# Vollrvorthr
+	start = { 100 }
+	
+	#Vollrvorthr, Svartblodgard, Blindr Kadrin
+	path = { 100 99 103 }
 
+	#Vollrvorthr, Rugard, Blod Hals
+	path = { 100 98 97 }
+	
+	#Vollrvorthr, Frossborg, Snaegrvold
+	path = { 100 101 102 }
+
+	#Blindr Kadrin, Raseri Oks, Fuinn
+	path = { 103 83 82 }
+
+	#Blindr Kadrin, Barak Vordhr, Galafell, Skraevold
+	path = { 103 110 148 146 }
+}
+drak_road = {
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		silk_road_trade_post_trigger = yes
+	}
+
+	# Kraka Drak, Kraka Ornsmotek
+	start = { 117 87 }
+
+	#Kraka Drak, Grung Kuldongor, Kadrin Svell
+	path = { 117 108 107 }
+
+	#Kadrin Svell, Grontfell, Kraka Dorden
+	path = { 107 119 118 }
+
+	#Kadrin Svell, Khazid Fneldurk, Grung Trakekarag
+	path = { 107 106 112 }
+
+	#Grung Trakekarag, Grung Dobekzhuf
+	path = { 112 105 }
+
+	#Grung Trakekarag, Kraka Drang
+	path = { 112 113 }
+
+	#Kraka Ornsmotek, Kraka Dunkor, Kazad Dumond
+	path = { 87 88 96 }
+
+	#Kraka Ornsmotek, Khazid Skovekarag, Kazad Grontunt
+	path = { 87 86 85 }
+}
+black_blood_pass = {
+
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		silk_road_trade_post_trigger = yes
+	}
+
+	# Svida Point
+	start = { 122 }
+
+	# Svida Point, Svartrblodr, Draksfjord
+	path = { 122 124 126 }
+
+	# Draksfjord, Korv Ozero
+	path = { 126 115 }
+
+	# Draksfjord, Sidhastr Van, Kaminski
+	path = { 126 128 154 }
+}
+baersonling_trail = {
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		silk_road_trade_post_trigger = yes
+	}
+
+	# Urslo
+	start = { 130 }
+
+	# Urslo, Shadowmoor Pass
+	path = { 130 135 }
+
+	# Shadowmoor Pass, Vinteerholm
+	path = { 135 127 }
+
+	# Shadowmoor Pass, Tivar Peak
+	path = { 135 136 }
+}
+thorfrost_valley = {
+	wealth = 10
+	modifier = {
+		icon = 4
+		local_tax_modifier = 0.01
+	 	trade_route_value = 1
+	}
+	trade_post_display_trigger = {
+		silk_road_trade_post_trigger = yes
+	}
+
+	# Cardariborg
+	start = { 47 }
+
+	#Cardariborg, Narvaash, Ryval Passage, Fyruval's Passage, Jaol's Apex
+	path = { 47 48 43 44 46 }
+
+	#Jaol's Apex, Passere Brann, Fuinn
+	path = { 46 80 82 }
+
+	#Jaol's Apex, Durfang, Feigr, Olricstaad
+	path = { 46 65 71 70 }
+}
 
 ###  Eastern ###
 
@@ -870,10 +929,7 @@ the_pass_to_the_east = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 436 # Karak Kadrin
-			province_id = 478 # Zharr-Naggrund
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	start = { 436 }
@@ -901,12 +957,7 @@ the_silver_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 451 #Varag Kadrin
-			province_id = 455 #Mount Grimfang
-			province_id = 461 #Varag Kadrin
-			province_id = 494 #The Sentinels
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Karaz-a-Karak, Varag Kadrin
@@ -929,10 +980,7 @@ spice_route = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 494 #The Sentinels
-			province_id = 1274 #Pigbarter
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# The Sentinels
@@ -951,7 +999,7 @@ ivory_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		province_id = 494 #The Sentinels
+		silk_road_trade_post_trigger = yes
 	}
 
 	# The Sentinels
@@ -979,10 +1027,7 @@ arabyan_trail = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 686	# Barak Varr
-			province_id = 1041	#Teshert
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Barak Varr
@@ -1001,9 +1046,7 @@ spice_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		province_id = 1036	# Copher
-		province_id = 1037	# Martek
-		province_id = 964	# Abu Hamed
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Copher
@@ -1031,11 +1074,7 @@ ancient_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		province_id = 1036	# Istrabul
-		province_id = 1052	# Martek
-		province_id = 1039	# Argigil
-		province_id = 1048	# Bel-Aliad
-		province_id = 1121	# Khemri
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Istrabul
@@ -1069,11 +1108,7 @@ axe_bite_pass = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 855 #Montfort
-			province_id = 885 #Helmgart
-			province_id = 296 #Bogenhafen
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Montfort
@@ -1093,10 +1128,7 @@ gisoreux_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 833 #Gisoreux
-			province_id = 222 #Marienburg
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Gisoreux
@@ -1115,14 +1147,7 @@ old_coast_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 222 #Marienburg
-			province_id = 810 #Couronne
-			province_id = 794 #Lyonesse
-			province_id = 815 #Artois
-			province_id = 826 #Mousillon
-			province_id = 799 #L'anguille
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Marienburg, Couronne, L'anguille, Lyonesse
@@ -1148,23 +1173,7 @@ bretonnian_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 799 #anguille
-			province_id = 815 #Artois
-			province_id = 826 #Mousillon
-			province_id = 833 #Gisoreux
-			province_id = 844 #Bastonne
-			province_id = 855 #Montfort
-			province_id = 886 #Parravon
-			province_id = 884 #Quenelles
-			province_id = 865 #Brionne
-			province_id = 894 #Careassonne
-			province_id = 837 #Bordeleaux
-			province_id = 861 #Aquitaine
-			province_id = 833 #Gisoreux
-			province_id = 810 #Couronne
-			province_id = 741 #Kreutzhofen
-		}
+		silk_road_trade_post_trigger = yes
 	}
 	
 	# L'anguille, Gisoreux, Bastonne, Montfort, Parravon, Quenelles, Brionne, Careassonne, Mousillon, Bordeleaux, Aquitaine, Couronne
@@ -1296,11 +1305,7 @@ tobaro_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 574	#Tobaro
-			province_id = 557	#Almagora
-			province_id = 553	#Magritta
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Tobaro
@@ -1340,11 +1345,7 @@ alboran_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 553	#Magritta
-			province_id = 544	#Belmoz
-			province_id = 542	#Finterra
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Magritta
@@ -1373,12 +1374,7 @@ gredos_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 520	#Magritta
-			province_id = 544	#Belmoz
-			province_id = 542	#Finterra
-			province_id = 520	#Bilbali
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Bilbali
@@ -1406,13 +1402,7 @@ cantabrio_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 520	#Bilbali
-			province_id = 515	#Barboza
-			province_id = 517	#Alquezaro
-			province_id = 568	#Pajena
-			province_id = 865	#Brionne
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Bilbali
@@ -1446,16 +1436,7 @@ via_aurelia = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 600	#Remas
-			province_id = 584	#Miragliano
-			province_id = 884	#Quenelles
-			province_id = 591	#trantio
-			province_id = 599	#Pavona
-			province_id = 614	#Luccini
-			province_id = 609	#Verezzo
-			province_id = 639	#Zvorak
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Remas
@@ -1528,11 +1509,7 @@ via_diocletia = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 614	#Luccini
-			province_id = 655	#Monte Castello
-			province_id = 599	#Pavona
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Luccini
@@ -1557,14 +1534,7 @@ old_silk_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 657	#Myrmidens
-			province_id = 723	#Kypur
-			province_id = 614	#Luccini
-			province_id = 655	#Monte Castello
-			province_id = 639	#Zvorak
-			province_id = 466	#Azgul Kadrin
-		}
+		silk_road_trade_post_trigger = yes
 	}
 	
 	# Kypur
@@ -1615,12 +1585,7 @@ kyprian_road = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 723	#Kypur
-			province_id = 600	#Remas
-			province_id = 639	#Zvorak
-			province_id = 591	#Trantio
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Kypur
@@ -1666,11 +1631,7 @@ east_trail = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 686	#Barak Varr
-			province_id = 699	#Fatandira
-			province_id = 461	#Varag Kadrin
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Barak Varr
@@ -1698,10 +1659,7 @@ pirates_way = {
 	 	trade_route_value = 1
 	}
 	trade_post_display_trigger = {
-		OR = {
-			province_id = 626	#Sartosa
-			province_id = 629	#Vercuso
-		}
+		silk_road_trade_post_trigger = yes
 	}
 
 	# Sartosa
