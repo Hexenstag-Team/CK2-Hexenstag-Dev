@@ -23,117 +23,6 @@ character_event = {
 	}
 }
 
-##vanilla initialization
-character_event = {
-	id = mountmaint.3
-	
-	is_triggered_only = yes
-	hide_window = yes
-	
-	immediate = {
-		
-		#Albion, Great Ogham
-		2409 = {
-			save_global_event_target_as = albion_mount_province
-			add_province_modifier = { modifier = albion_mount_counter duration = -1 }
-			set_province_flag = mount_province
-		}
-		
-		#Bretonnia, Quenelles
-		884 = {
-			save_global_event_target_as = bretonnia_mounts
-			add_province_modifier = { modifier = breton_mount_counter duration = -1 }
-			set_province_flag = mount_province
-		}
-		
-		#Empire, Gruenwald
-		959 = {
-			save_global_event_target_as = imperial_mounts
-			add_province_modifier = { modifier = imperial_mount_counter duration = -1 }
-			set_province_flag = mount_province
-		}
-		
-		#Tilea, Trantio
-		591 = {
-			save_global_event_target_as = tilea_mounts
-			add_province_modifier = { modifier = tilea_mount_counter duration = -1 }
-			set_province_flag = mount_province
-		}
-		
-		
-		#Estalia, Almagora
-		557 = {
-			save_global_event_target_as = estalian_mounts
-			if = {
-				limit = { 
-					year = 769
-					NOT = { year = 1066 }
-				}
-			}
-			add_province_modifier = { modifier = estalia_mount_counter duration = -1 }
-			set_province_flag = mount_province
-		}
-		
-		#Tor Elyr, Ulthuan
-		1553 = {
-			save_global_event_target_as = ellyrian_mounts
-			add_province_modifier = { modifier = ellyrian_mount_counter duration = -1 }
-			set_province_flag = mount_province
-		}
-		
-		#Steppes, Khamchata
-		1221 = {
-			save_global_event_target_as = steppes_mount_province
-			add_province_modifier = { modifier = steppes_mount_counter duration = -1 }
-			set_province_flag = mount_province
-		}
-		
-		#Araby, El Kalabad
-		1019 = {
-			save_global_event_target_as = araby1_mounts
-			add_province_modifier = { modifier = araby_mount_counter duration = -1 }
-			set_province_flag = mount_province
-		}
-		
-		#Araby, Al Haikk
-		1038 = {
-			save_global_event_target_as = araby2_mounts
-			add_province_modifier = { modifier = cophic_mount_counter duration = -1 }
-			set_province_flag = mount_province
-		}
-		
-		#Ind, Pigbarter
-		1274 = {
-			save_global_event_target_as = pigbarter_ind_mounts
-			add_province_modifier = { modifier = ind_mount_counter duration = -1 }
-			set_province_flag = mount_province
-		}
-		
-		#Southlands, Olohrad
-		1061 = {
-			save_global_event_target_as = southlands_mounts
-			add_province_modifier = { modifier = southlands_mount_counter duration = -1 }
-			set_province_flag = mount_province
-		}
-		
-		
-		#Kislev, Bolgasgrad
-		180 = {
-			save_global_event_target_as = kislev_mounts
-			add_province_modifier = { modifier = kislev_mount_counter duration = -1 }
-			set_province_flag = mount_province
-		}
-		
-		#Athel Loren, Equos
-		2318 = {
-			save_global_event_target_as = asrai_mounts
-			add_province_modifier = { modifier = loren_mount_counter duration = -1 }
-			set_province_flag = mount_province
-		}
-		set_global_flag = mount_initialized
-	}
-}
-
 ###mount master maintenance event
 character_event = {
 	id = mountmaint.10
@@ -141,7 +30,6 @@ character_event = {
 	is_triggered_only = yes
 	hide_window = yes
 	
-	has_global_flag = mount_initialized
 	only_playable = yes
 	has_character_flag = has_mount
 
@@ -762,7 +650,7 @@ character_event = {
 							
 							#teveran horse
 							20 = {
-								trigger = { can_buy_cophic_items_trigger = yes }
+								trigger = { can_buy_arabyan_items_trigger = yes }
 								modifier = {
 									factor = 0.5
 									cophic_discount_trigger = no
@@ -886,13 +774,7 @@ character_event = {
 			30 = {
 				trigger = {
 					NOT = { has_character_flag = ai_get_breeding_mount }
-					OR = {
-						can_buy_arabyan_items_trigger = yes
-						AND = {
-							can_buy_cophic_items_trigger = yes
-							martial < 12
-						}
-					}
+					can_buy_arabyan_items_trigger = yes
 				}
 				random_list = {
 					
@@ -905,7 +787,7 @@ character_event = {
 					
 					#cophic camel
 					20 = {
-						trigger = { can_buy_cophic_items_trigger = yes }
+						trigger = { can_buy_arabyan_items_trigger = yes }
 						modifier = {
 							factor = 0.1
 							higher_tier_than = duke
@@ -939,7 +821,7 @@ character_event = {
 					NOT = { has_character_flag = ai_get_breeding_mount }
 					OR = {
 						can_buy_ind_items_trigger = yes
-						can_buy_southlands_items_trigger = yes
+						can_buy_arabyan_items_trigger = yes
 					}
 					OR = {
 						wealth = 350
@@ -981,7 +863,7 @@ character_event = {
 					
 					#southlander elephant
 					20 = {
-						trigger = { can_buy_southlands_items_trigger = yes }
+						trigger = { can_buy_arabyan_items_trigger = yes }
 						if = {
 							limit = { southlander_discount_trigger = yes }
 							wealth = -400
@@ -1522,7 +1404,7 @@ character_event = {
 					
 					#teveran horse
 					20 = {
-						trigger = { can_buy_cophic_items_trigger = yes }
+						trigger = { can_buy_arabyan_items_trigger = yes }
 						modifier = {
 							factor = 1.5
 							cophic_discount_trigger = yes
