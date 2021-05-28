@@ -2058,3 +2058,104 @@ add_trait = wroth
 1982.10.1 = {birth = yes}
 2050.10.1={death = yes}
 }
+
+5057 = {
+name = Drahmak
+dynasty = 90060
+culture = orc_black
+religion = greenskin_gods
+intrigue=5
+stewardship=7
+martial=9
+add_trait = creature_orc
+add_trait = tough_soldier
+add_trait = black_orc_trait
+add_trait = orc_large
+add_trait = wroth
+add_trait = diligent
+add_trait = shrewd
+add_trait = defensive_leader
+1949.1.11 = {birth = yes}
+2525.1.1 = {death = yes}
+}
+
+5068 = { #Untested Once and Future git
+name = Grimgor
+properties=fk0jcc
+dna=7906994
+dynasty = 90112
+culture = orc_black
+religion = greenskin_gods
+diplomacy=10
+stewardship=6
+intrigue=6
+learning=6
+martial=10
+add_trait = creature_orc
+add_trait = misguided_warrior
+add_trait = black_orc_trait
+add_trait = greenskin_gods_gork
+add_trait = orc_large
+add_trait = wounded
+add_trait = ambitious
+add_trait = brave
+add_trait = proud
+add_trait = diligent
+add_trait = strong
+add_trait = wroth
+prestige=160
+1990.1.11 = {
+	birth = yes
+}
+2010.1.1={
+	effect={
+		add_friend=5056
+		add_ten_duel_experience_modifier=yes
+		add_artifact=gitsnik
+	}
+	effect = {
+		create_retinue = snotling_swarm
+		create_retinue = blackorcs
+	}
+}
+2525.1.1 = {death = yes}
+}
+
+5055 = { #Canon led a waaagh through the mountains of mourn, defeated circa 2300ish?
+name = Urk
+dynasty = 90024
+culture = orc_black
+religion = greenskin_gods
+learning=10
+martial=10
+add_trait = creature_orc
+add_trait = skilled_tactician
+add_trait = black_orc_trait
+add_trait = orc_large
+add_trait = ambitious
+add_trait = deceitful
+add_trait = paranoid
+add_trait = cruel
+add_trait = strong
+prestige=800
+1969.1.11 = {
+	birth = yes
+	effect = {
+		add_ten_duel_experience_modifier=yes
+		add_ten_duel_experience_modifier=yes
+		add_ten_duel_experience_modifier=yes
+	}
+}
+2010.1.1={
+	effect={
+		add_friend=5068
+		add_friend=5056
+		add_artifact=blood_forged_armour
+	}
+	effect = {
+		create_retinue = snotling_swarm
+		create_retinue = blackorcs
+	}
+}
+2525.1.1 = {death = yes}
+}
