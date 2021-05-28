@@ -72,43 +72,52 @@ add_trait = weak
 }
 
 42003 = {
-name = Alfred
-dynasty = 30018	#d'Gisoreux
-culture = gisoren
-religion = grail
-dna = cmkhjcdbace
-properties = ad0afb00000000000000000000000000000000i
-disallow_random_traits = yes
-martial = 10
-diplomacy = 1
-stewardship = 3
-intrigue = 1
-learning = 4
-add_trait = creature_human
-add_trait = skilled_tactician
-add_trait = kind
-add_trait = proud
-add_trait = brave
-add_trait = zealous
-add_trait = cavalry_leader
-add_trait = holy_warrior
-add_trait = duelist
-add_trait = tall
-add_trait = scarred
-add_trait = stressed
-add_trait = noble
-1967.8.26 = { birth = yes }
-2009.1.1 = {
-	effect = {
-		create_retinue = RETTYPE_BATTLE_PILGRIMS
-		create_retinue = RETTYPE_CUL_BRET1
-		create_retinue = RETTYPE_CUL_BRET2
-		create_retinue = RETTYPE_CUL_BRET3
-		create_retinue = RETTYPE_CUL_BRET4
-		create_retinue = RETTYPE_CUL_BRET5
+	name = Alfred
+	dynasty = 30018	#d'Gisoreux
+	culture = gisoren
+	religion = grail
+	dna = cmkhjcdbace
+	properties = ad0afb00000000000000000000000000000000i
+	disallow_random_traits = yes
+	easter_egg = yes
+	martial = 13
+	diplomacy = 5
+	stewardship = 3
+	intrigue = 2
+	learning = 10
+	add_trait = creature_human
+	add_trait = brilliant_strategist
+	add_trait = kind
+	add_trait = proud
+	add_trait = brave
+	add_trait = zealous
+	add_trait = cavalry_leader
+	add_trait = holy_warrior
+	add_trait = duelist
+	add_trait = tall
+	add_trait = scarred
+	add_trait = stressed
+	add_trait = noble
+	add_trait = grail_knight
+	1967.8.26 = { birth = yes }
+	2009.1.1 = {
+		effect = {
+			create_retinue = RETTYPE_BATTLE_PILGRIMS
+			create_retinue = RETTYPE_CUL_BRET1
+			create_retinue = RETTYPE_CUL_BRET2
+			create_retinue = RETTYPE_CUL_BRET3
+			create_retinue = RETTYPE_CUL_BRET4
+			create_retinue = RETTYPE_CUL_BRET5
+			effect = {
+				join_society = knights_of_bretonnia
+				society_rank_up = {
+					society = knights_of_bretonnia
+					rank = 4
+				}
+			}
+		}
 	}
-}
-2074.5.24 = { death = yes }
+	2074.5.24 = { death = yes }
 }
 
 42004 = {
@@ -1113,33 +1122,4 @@ add_trait = tall
 add_trait = chaste
 1998.2.22 = {birth = yes}
 2009.6.5 = {death = {death_reason = death_execution killer = 42039}}
-}
-
-42052 = {
-name = Alfred
-dynasty = 74702	#d'Gisoreux
-culture = gisoren
-religion = grail
-properties="ad0afb00000000000000000000000000000000i"
-disallow_random_traits = yes
-easter_egg = yes
-martial = 20
-diplomacy = 1
-stewardship = 3
-intrigue = 1
-learning = 4
-add_trait = creature_human
-add_trait = skilled_tactician
-add_trait = kind
-add_trait = proud
-add_trait = brave
-add_trait = zealous
-add_trait = cavalry_leader
-add_trait = holy_warrior
-add_trait = duelist
-add_trait = tall
-add_trait = scarred
-add_trait = stressed
-1968.8.26 = {birth = yes}
-2009.5.24 = {death = yes}
 }
