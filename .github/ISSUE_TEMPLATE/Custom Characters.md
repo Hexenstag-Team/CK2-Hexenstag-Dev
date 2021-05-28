@@ -13,7 +13,7 @@ Dynasty:
 Culture:
 Religion:
 
-*Stats*
+*Stats* (you have 30 points to spread out to your five stats)
 Martial:
 Diplomacy:
 Stewardship:
@@ -24,7 +24,7 @@ Learning:
 
 
 *Misc*
-Your character can have a barony or landless
+Your character can have a barony or be landless
 If landless you can name who's court your in.
 
 **Screenshots**
