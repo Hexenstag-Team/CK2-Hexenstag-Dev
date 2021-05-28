@@ -9,6 +9,7 @@ assignees: ''
 
 **Describe the Character**
 Name:
+age:
 Dynasty:
 Culture:
 Religion:
