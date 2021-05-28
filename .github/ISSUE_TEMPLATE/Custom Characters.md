@@ -1,7 +1,7 @@
 ---
 name: Custom Characters
 about: Tell us about your custom characters idea
-title: "Put your Name of Character here"
+title: "Put your Character's Name here"
 labels: 'Custom Characters'
 assignees: ''
 
