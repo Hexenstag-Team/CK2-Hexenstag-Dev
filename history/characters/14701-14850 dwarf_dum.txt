@@ -1,4 +1,6 @@
-1400 = {
+#Used IDs 14701-xxxx
+#Free IDs xxxx-xxxx
+14701 = { #1400
 	name = Morek
 	dynasty = 75347
 	culture = dwarf_dum
@@ -17,8 +19,9 @@
 	add_trait = gregarious
 	1332.11.14 = {birth = yes}
 	1522.12.17 = {death = yes}
-	}
-	1401 = {
+}
+
+14702 = { #1401
 	name = Horgar
 	dynasty = 75347
 	culture = dwarf_dum
@@ -34,12 +37,13 @@
 	add_trait = kind
 	add_trait = craven
 	add_trait = gregarious
-	father=1400
+	father=14701
 	1500.1.14 = {birth = yes}
 	1529.1.14 = {immortal_age = 29}
 	1790.12.17 = {death = yes}
-	}
-	1402 = {
+}
+
+14703 = { #1402
 	name = Gorm
 	dynasty = 75347
 	culture = dwarf_dum
@@ -56,11 +60,12 @@
 	add_trait = tough
 	add_trait = craven
 	add_trait = gregarious
-	father=1401
+	father=14702
 	1701.11.14 = {birth = yes}
 	1989.12.17 = {death = yes}
-	}
-	1404 = {
+}
+
+14704 = { #1404
 	name = Thangrim
 	dynasty = 75347
 	culture = dwarf_dum
@@ -78,16 +83,20 @@
 	add_trait = patient
 	add_trait = gregarious
 	add_trait = just
-	father=1402
+	father=14703
 	1822.11.14 = {birth = yes}
-	1842.1.1={effect={add_artifact=dawi_artifact_hammernought}}
-	2534.12.17 = {death = yes} #Survived till end times, 200 Year Jump with very little(20years) aging Between 2300-2500
+	1842.1.1={
+		effect={
+			add_artifact = dawi_artifact_hammernought
+		}
 	}
-	1410 = {
+	2534.12.17 = {death = yes} #Survived till end times, 200 Year Jump with very little(20years) aging Between 2300-2500
+}
+
+14705 = { #1410
 	name = Bryngwen
 	female=yes
 	dynasty = 75347
-	father=53000
 	culture = dwarf_dum
 	religion = ancestor_gods
 	martial = 6
@@ -100,12 +109,12 @@
 	add_trait = temperate
 	add_trait = honest
 	add_trait = just
-	father=1404
+	father=14704
 	1922.4.29 = {birth = yes}
 	2336.1.3 = {death = yes}
-	}
+}
 	
-	1405 = {
+14706 = { #1405
 	name = Morekai
 	dynasty = 75347
 	culture = dwarf_dum
@@ -123,12 +132,17 @@
 	add_trait = wroth
 	add_trait = brave
 	add_trait = gregarious
-	father=1404
+	father=14704
 	1892.11.14 = {birth = yes}
-	1900.1.1={effect={add_artifact=dawi_artifact_runic_hammernought}}
-	2334.12.17 = {death = yes} #Died Outside of karag Dum Gates, his Axe was found by Gotrek
+	1900.1.1={
+		effect={
+			add_artifact=dawi_artifact_runic_hammernought
+		}
 	}
-	1403 = {
+	2334.12.17 = {death = yes} #Died Outside of karag Dum Gates, his Axe was found by Gotrek
+}
+
+14707 = { #1403
 	name = Faragrim
 	dynasty = 75347
 	culture = dwarf_dum
@@ -146,13 +160,13 @@
 	add_trait = kind
 	add_trait = craven
 	add_trait = gregarious
-	father=1400
+	father=14701
 	1723.11.14 = {birth = yes}
 	1743.11.14 = {immortal_age = 20}
 	2002.12.17 = {death = yes}
-	}
+}
 	
-	1408 = {
+14708 = { #1408
 	name = Belm
 	dynasty = 75347
 	culture = dwarf_dum
@@ -170,15 +184,14 @@
 	add_trait = kind
 	add_trait = craven
 	add_trait = gregarious
-	father=1403
+	father=14707
 	1896.11.14 = {birth = yes}
 	2066.12.17 = {death = yes}
-	}
+}
 	
-	1409 = {
+14709 = { #1409
 	name = Morek
 	dynasty = 75347
-	father=53000
 	culture = dwarf_dum
 	religion = ancestor_gods
 	martial = 8
@@ -193,7 +206,7 @@
 	add_trait = thrifty_clerk
 	add_trait = greedy
 	add_trait = honest
-	father=1408
+	father=14708
 	1986.4.29 = {birth = yes}
 	2336.1.3 = {death = yes}
-	}
+}
