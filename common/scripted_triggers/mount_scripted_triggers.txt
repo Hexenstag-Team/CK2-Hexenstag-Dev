@@ -216,7 +216,11 @@ can_buy_estalian_items_trigger = {
 }
 
 can_buy_asur_items_trigger = {
-	can_reach_asrai_mounts_trigger = yes
+	OR = {
+		culture_group = kislevite_group
+		trait = norscan_patron_ursun
+		religion = kislev_gods
+	}
 }
 
 can_buy_steppes_items_trigger = {
@@ -224,21 +228,13 @@ can_buy_steppes_items_trigger = {
 }
 
 can_buy_arabyan_items_trigger = {
-	can_reach_southlands_mounts_trigger = yes
-}
-
-
-can_buy_cophic_items_trigger = {
-	can_reach_alhaik_mounts_trigger = yes
+	can_reach_arabyan_mounts_trigger = yes
 }
 
 can_buy_ind_items_trigger = {
 	can_reach_ind_mounts_trigger = yes
 }
 
-can_buy_southlands_items_trigger = {
-	can_reach_southlands2_mounts_trigger = yes
-}
 can_buy_greenskin_items_trigger = {
 	OR={
 	trait=creature_orc
@@ -291,23 +287,6 @@ can_buy_griffon_items_trigger = {
 	}
 }
 
-can_buy_kislev_items_trigger = {
-	OR={
-		culture_group=kislevite_group
-		trait=norscan_patron_ursun
-		religion=kislev_gods
-	}
-	can_reach_kislev_mounts_trigger = yes
-}
-
-can_buy_asrai_items_trigger = {
-	OR={
-		trait=creature_elf
-		religion=asrai_cadai
-	}
-	can_reach_asrai_mounts_trigger = yes
-}
-
 #####################Mount Range Checks#####################
 can_reach_bretonnia_mounts_trigger = {
 	OR={
@@ -324,11 +303,12 @@ can_reach_bretonnia_mounts_trigger = {
 								}
 							}
 						}
-						NOT = { distance = { where = event_target:bretonnia_mounts value = 500 } }
+						region = world_old_world_bretonnia
 					}
 				}
 			}
 		}
+		region = world_old_world_bretonnia
 		primary_title = {
 			ROOT = {
 				any_realm_province = {
@@ -340,7 +320,7 @@ can_reach_bretonnia_mounts_trigger = {
 							}
 						}
 					}
-					NOT = { distance = { where = event_target:bretonnia_mounts value = 250 } }
+					region = world_old_world_bretonnia
 				}
 			}
 		}
@@ -362,7 +342,7 @@ can_reach_imperial_mounts_trigger = {
 								}
 							}
 						}
-						NOT = { distance = { where = event_target:imperial_mounts value = 500 } }
+						region = world_old_world_empire
 					}
 				}
 			}
@@ -378,7 +358,7 @@ can_reach_imperial_mounts_trigger = {
 							}
 						}
 					}
-					NOT = { distance = { where = event_target:imperial_mounts value = 250 } }
+					region = world_old_world_empire
 				}
 			}
 		}
@@ -399,7 +379,7 @@ can_reach_tilean_mounts_trigger = {
 								}
 							}
 						}
-						NOT = { distance = { where = event_target:tilea_mounts value = 250 } }
+						region = world_old_world_tilea
 					}
 				}
 			}
@@ -415,7 +395,7 @@ can_reach_tilean_mounts_trigger = {
 							}
 						}
 					}
-					NOT = { distance = { where = event_target:tilea_mounts value = 200 } }
+					region = world_old_world_tilea
 				}
 			}
 		}
@@ -440,7 +420,7 @@ can_reach_estalian_mounts_trigger = {
 								}
 							}
 						}
-						NOT = { distance = { where = event_target:estalian_mounts value = 350 } }
+						region = world_old_world_estalia
 					}
 				}
 			}
@@ -456,46 +436,7 @@ can_reach_estalian_mounts_trigger = {
 							}
 						}
 					}
-					NOT = { distance = { where = event_target:estalian_mounts value = 250 } }
-				}
-			}
-		}
-	}
-}
-
-can_reach_ellyrian_mounts_trigger = {
-	OR = {
-		culture_group=asrai_group
-		AND = {
-			culture_group = asrai_group
-			primary_title = {
-				ROOT = {
-					any_realm_province = {
-						OR = {
-							de_jure_liege_or_above = PREVPREV
-							ROOT = {
-								capital_scope = {
-									province = PREVPREV
-								}
-							}
-						}
-						NOT = { distance = { where = event_target:ellyrian_mounts value = 350 } }
-					}
-				}
-			}
-		}
-		primary_title = {
-			ROOT = {
-				any_realm_province = {
-					OR = {
-						de_jure_liege_or_above = PREVPREV
-						ROOT = {
-							capital_scope = {
-								province = PREVPREV
-							}
-						}
-					}
-					NOT = { distance = { where = event_target:ellyrian_mounts value = 250 } }
+					region = world_old_world_estalia
 				}
 			}
 		}
@@ -519,7 +460,7 @@ can_reach_steppes_mounts_trigger = {
 								}
 							}
 						}
-						NOT = { distance = { where = event_target:steppes_mount_province value = 1000 } }
+						region = world_chaos_wastes
 					}
 				}
 			}
@@ -537,7 +478,7 @@ can_reach_steppes_mounts_trigger = {
 								}
 							}
 						}
-						NOT = { distance = { where = event_target:steppes_mount_province value = 700 } }
+						region = world_chaos_wastes
 					}
 				}
 			}
@@ -545,7 +486,7 @@ can_reach_steppes_mounts_trigger = {
 	}
 }
 
-can_reach_southlands_mounts_trigger = {
+can_reach_arabyan_mounts_trigger = {
 	OR = {
 		AND = {
 			OR = {
@@ -563,7 +504,7 @@ can_reach_southlands_mounts_trigger = {
 								}
 							}
 						}
-						NOT = { distance = { where = event_target:araby1_mounts value = 700 } }
+						region = world_greater_araby
 					}
 				}
 			}
@@ -579,25 +520,8 @@ can_reach_southlands_mounts_trigger = {
 							}
 						}
 					}
-					NOT = { distance = { where = event_target:araby1_mounts value = 300 } }
+					region = world_greater_araby
 				}
-			}
-		}
-	}
-}
-can_reach_alhaik_mounts_trigger = {
-	primary_title = {
-		ROOT = {
-			any_realm_province = {
-				OR = {
-					de_jure_liege_or_above = PREVPREV
-					ROOT = {
-						capital_scope = {
-							province = PREVPREV
-						}
-					}
-				}
-				NOT = { distance = { where = event_target:araby2_mounts value = 150 } }
 			}
 		}
 	}
@@ -616,49 +540,7 @@ can_reach_ind_mounts_trigger = {
 						}
 					}
 				}
-				NOT = { distance = { where = event_target:pigbarter_ind_mounts value = 200 } }
-			}
-		}
-	}
-}
-
-can_reach_southlands2_mounts_trigger = {
-	OR = {
-		AND = {
-			OR = {
-				culture = medean
-				culture = sudenburger
-				culture_group = southlander_group
-			}
-			primary_title = {
-				ROOT = {
-					any_realm_province = {
-						OR = {
-							de_jure_liege_or_above = PREVPREV
-							ROOT = {
-								capital_scope = {
-									province = PREVPREV
-								}
-							}
-						}
-						NOT = { distance = { where = event_target:southlands_mounts value = 500 } }
-					}
-				}
-			}
-		}
-		primary_title = {
-			ROOT = {
-				any_realm_province = {
-					OR = {
-						de_jure_liege_or_above = PREVPREV
-						ROOT = {
-							capital_scope = {
-								province = PREVPREV
-							}
-						}
-					}
-					NOT = { distance = { where = event_target:southlands_mounts value = 300 } }
-				}
+				region = world_darklands_gnoblar_country
 			}
 		}
 	}
@@ -679,7 +561,7 @@ can_reach_kislev_mounts_trigger = {
 								}
 							}
 						}
-						NOT = { distance = { where = event_target:kislev_mounts value = 400 } }
+						region = world_old_world_kislev
 					}
 				}
 			}
@@ -695,7 +577,7 @@ can_reach_kislev_mounts_trigger = {
 							}
 						}
 					}
-					NOT = { distance = { where = event_target:kislev_mounts value = 200 } }
+					region = world_old_world_kislev
 				}
 			}
 		}
@@ -717,7 +599,7 @@ can_reach_asrai_mounts_trigger = {
 								}
 							}
 						}
-						NOT = { distance = { where = event_target:asrai_mounts value = 400 } }
+						region = world_athel_loren
 					}
 				}
 			}
@@ -733,7 +615,7 @@ can_reach_asrai_mounts_trigger = {
 							}
 						}
 					}
-					NOT = { distance = { where = event_target:asrai_mounts value = 200 } }
+					region = world_athel_loren
 				}
 			}
 		}

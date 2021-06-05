@@ -365,9 +365,7 @@ character_event = {
 		trigger = {
 			OR = {
 				can_buy_arabyan_items_trigger = yes
-				can_buy_cophic_items_trigger = yes
 				can_buy_ind_items_trigger = yes
-				can_buy_southlands_items_trigger = yes
 			}
 			can_buy_greenskin_items_trigger=no
 			NOR={
@@ -696,7 +694,6 @@ character_event = {
 				can_buy_steppes_items_trigger = yes
 				can_buy_arabyan_items_trigger = yes
 				can_buy_breton_items_trigger = yes
-				can_buy_cophic_items_trigger = yes
 			}
 		}
 		hidden_tooltip = {
@@ -790,7 +787,7 @@ character_event = {
 					OR = {
 						can_buy_steppes_items_trigger = yes 
 						can_buy_breton_items_trigger = yes
-						can_buy_cophic_items_trigger = yes
+						can_buy_arabyan_items_trigger = yes
 					}
 				}
 				character_event = { id = mountshop.27 }
@@ -858,7 +855,7 @@ character_event = {
 
 	#Teverian horse
 	option = {
-		trigger = { can_buy_cophic_items_trigger = yes }
+		trigger = { can_buy_arabyan_items_trigger = yes }
 		name = EVTOPTCmountshop.27
 		if = {
 			limit = { cophic_discount_trigger = yes }
@@ -890,10 +887,7 @@ character_event = {
 	#camels
 	option = {
 		trigger = {
-			OR = {
-				can_buy_arabyan_items_trigger = yes
-				can_buy_cophic_items_trigger = yes
-			}
+			can_buy_arabyan_items_trigger = yes
 		}
 		name = EVTOPTAmountshop.30
 		hidden_tooltip = { character_event = { id = mountshop.31 } }
@@ -904,7 +898,7 @@ character_event = {
 		trigger = {
 			OR = {
 				can_buy_ind_items_trigger = yes
-				can_buy_southlands_items_trigger = yes
+				can_buy_arabyan_items_trigger = yes
 			}
 		}
 		name = EVTOPTBmountshop.30
@@ -945,7 +939,7 @@ character_event = {
 
 	#cophic camel
 	option = {
-		trigger = { can_buy_cophic_items_trigger = yes }
+		trigger = { can_buy_arabyan_items_trigger = yes }
 		name = EVTOPTBmountshop.31
 		wealth = -200
 		add_artifact = cophic_camel
@@ -985,7 +979,7 @@ character_event = {
 
 	#southlander elephant
 	option = {
-		trigger = { can_buy_southlands_items_trigger = yes }
+		trigger = { can_buy_arabyan_items_trigger = yes }
 		name = EVTOPTBmountshop.32
 		if = {
 			limit = { southlander_discount_trigger = yes }
@@ -1481,320 +1475,6 @@ character_event = {
 			modifier = {
 				factor = 2
 				trait = craven
-			}
-		}
-	}
-}
-###############Province Flavor###############
-province_event = {
-	id = mountshop.300
-	
-	hide_window = yes
-	
-	trigger = {
-		has_province_flag = mount_province
-		NOT = { has_province_modifier = province_flavor_timer }
-		holder_scope = { 
-			is_adult = yes
-			war = no 
-		}
-	}
-
-	mean_time_to_happen = {
-		years = 60
-		modifier = {
-			factor = 0.9
-			has_province_flag = crown_focus_province
-		}
-		modifier = {
-			factor = 0.9
-			holder_scope = { has_ambition = obj_see_the_realm_prosper }
-		}
-		modifier = {
-			factor = 0.9
-			holder_scope = { has_education_stewardship_trigger = yes }
-		}
-		modifier = {
-			factor = 0.9
-			holder_scope = { 
-				OR = {
-					has_focus = focus_business
-					has_focus = focus_rulership
-				}
-			}
-		}
-		modifier = {
-			factor = 0.9
-			holder_scope = { stewardship = 12 }
-		}
-		modifier = {
-			factor = 0.9
-			holder_scope = { stewardship = 16 }
-		}
-		modifier = {
-			factor = 0.9
-			holder_scope = { stewardship = 18 }
-		}
-		modifier = {
-			factor = 0.8
-			holder_scope = { has_lifestyle_stewardship_trigger = yes }
-		}
-	}
-	
-	immediate = {
-		add_province_modifier = { modifier = province_flavor_timer years = 8 hidden = yes }
-		
-		random_list = {
-			
-			#fallback
-			1 = { remove_province_modifier = province_flavor_timer }
-			
-			###business brings prosperity
-			50 = {
-				trigger = {
-					has_trade_post = no
-					holder_scope = {
-						OR = {
-							stewardship >= 14
-							has_focus = focus_business
-							has_focus = focus_rulership
-						}
-					}
-				}
-				province_event = { id = mountshop.301 }
-			}
-		
-			###trade post brings prosperity
-			100 = {
-				trigger = {
-					NOT = { has_province_modifier = mount_increased_trade }
-					has_trade_post = yes
-					holder_scope = {
-						OR = {
-							stewardship >= 8
-							is_patrician = yes
-						}
-					}
-				}
-				province_event = { id = mountshop.302 }
-			}
-			
-			###craftsmen looking for sponser
-			50 = {
-				trigger = {
-					NOT = { has_province_modifier = mount_craftsmen }
-				}
-				province_event = { id = mountshop.303 }
-			}
-			###hospital improves general sanitation, less mounts die
-			100 = {
-				trigger = {
-					NOT = { has_province_modifier = mount_doctors }
-					has_hospital = yes
-				}
-				province_event = { id = mountshop.304 }
-			}
-			
-			
-			###lend land for grazing
-			50 = {
-				trigger = { NOT = { has_province_modifier = mount_lend_grazing_land } }
-				province_event = { id = mountshop.305 }
-			}
-			
-			###organize horse races
-			50 = {
-				trigger = { NOT = { has_province_modifier = mount_horse_races } }
-				province_event = { id = mountshop.307 }
-			}
-			
-		}
-	}
-}
-
-###business brings prosperity
-province_event = {
-	id = mountshop.301
-	desc = EVTDESAmountshop.301
-	picture = GFX_evt_market
-	
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAmountshop.301
-		if = {
-			limit = { has_dlc = "Reapers" }
-			holder_scope = { show_scope_change = no scaled_wealth = 0.2 }
-		}
-		else = { holder_scope = { show_scope_change = no scaled_wealth = 0.4 } }
-		mount_increase_prosperity_effect = yes
-	}
-}
-
-###trade post brings prosperity
-province_event = {
-	id = mountshop.302
-	desc = EVTDESAmountshop.302
-	picture = GFX_evt_trade_post_republic
-	
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAmountshop.302
-		if = {
-			limit = { has_dlc = "Reapers" }
-			holder_scope = { show_scope_change = no scaled_wealth = 0.2 }
-		}
-		else = { holder_scope = { show_scope_change = no scaled_wealth = 0.4 } }
-		add_province_modifier = { modifier = mount_increased_trade years = 10 }
-		mount_increase_prosperity_effect = yes
-	}
-}
-
-###craftsmen looking for sponser
-province_event = {
-	id = mountshop.303
-	desc = EVTDESAmountshop.303
-	picture = GFX_evt_construction_site
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTAmountshop.303
-		holder_scope = { scaled_wealth = { value = -0.4 min = -30 max = -500 } }
-		add_province_modifier = { modifier = mount_craftsmen years = 5 }
-		ai_chance = {
-			factor = 75
-		}
-	}
-	
-	option = {
-		name = EVTOPTBmountshop.303
-		ai_chance = {
-			factor = 25
-			modifier = {
-				factor = 2
-				holder_scope = { trait = greedy }
-			}
-			modifier = {
-				factor = 3
-				holder_scope = { wealth < 50 }
-			}
-		}
-	}
-}
-
-###hospital improves general sanitation, less mounts die
-province_event = {
-	id = mountshop.304
-	desc = EVTDESAmountshop.304
-	picture = GFX_evt_court_physician
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTAmountshop.304
-		add_province_modifier = { modifier = mount_doctors years = 7 }
-		holder_scope = { prestige = 50 }
-	}
-}
-
-###lend land for grazing
-province_event = {
-	id = mountshop.305
-	desc = EVTDESAmountshop.305
-	picture = GFX_evt_merchant_caravan
-
-	is_triggered_only = yes
-	
-	#yes
-	option = {
-		name = EVTOPTAmountshop.305
-		holder_scope = {
-			random_list = {
-				25 = { scaled_wealth = 0.2 }
-				25 = { scaled_wealth = 0.3 }
-				25 = { scaled_wealth = 0.4 }
-				25 = { scaled_wealth = 0.5 }
-			}
-		}
-		add_province_modifier = { modifier = mount_lend_grazing_land years = 10 }
-		mount_slightly_increase_prosperity_effect = yes
-		ai_chance = {
-			factor = 75 
-			modifier = {
-				factor = 2
-				holder_scope = { trait = charitable }
-			}
-			modifier = {
-				factor = 2
-				holder_scope = { trait = kind }
-			}
-		}
-	}
-
-	#no
-	option = {
-		name = EVTOPTBmountshop.305
-		ai_chance = {
-			factor = 25 
-			modifier = {
-				factor = 2
-				holder_scope = { trait = greedy }
-			}
-			modifier = {
-				factor = 2
-				holder_scope = { monthly_income < 5 }
-			}
-		}
-	}
-}
-
-###organize horse races
-province_event = {
-	id = mountshop.307
-	desc = EVTDESAmountshop.307
-	picture = GFX_evt_hippodrome_byzantine
-	
-	is_triggered_only = yes
-	
-	#yes
-	option = {
-		name = EVTOPTAmountshop.307
-		holder_scope = {
-			scaled_wealth = { value = -1.5 min = -100 max = -750 }
-		}
-		add_province_modifier = { modifier = mount_horse_races years = 10 }
-		mount_increase_prosperity_effect = yes
-		ai_chance = {
-			factor = 75
-		}
-	}
-	
-	#no
-	option = {
-		name = EVTOPTBmountshop.307
-		ai_chance = {
-			factor = 25
-			modifier = {
-				factor = 3
-				holder_scope = { trait = dull }
-			}
-			modifier = {
-				factor = 3
-				holder_scope = { trait = greedy }
-			}
-			modifier = {
-				factor = 3
-				holder_scope = { trait = slothful }
-			}
-			modifier = {
-				factor = 2
-				holder_scope = { wealth < 50 }
-			}
-			modifier = {
-				factor = 3
-				holder_scope = { tier = count }
 			}
 		}
 	}

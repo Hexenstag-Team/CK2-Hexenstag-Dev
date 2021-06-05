@@ -254,35 +254,3 @@ new_mount_setup_effect = {
 		}
 	}
 }
-#######Province Scope##########
-
-mount_slightly_increase_prosperity_effect = {
-	if = {
-		limit = { has_dlc = "Reapers" }
-		custom_tooltip = {
-			text = mount_slighty_increase_prosperity_effect_tooltip
-			hidden_tooltip = { change_variable = { which = prosperity_value value = 5 } }
-		}
-	}
-}
-
-mount_increase_prosperity_effect = {
-	if = {
-		limit = { has_dlc = "Reapers" }
-		custom_tooltip = {
-			text = mount_increase_prosperity_effect_tooltip
-			hidden_tooltip = { change_variable = { which = prosperity_value value = 15 } }
-		}
-	}
-
-}
-
-mount_greatly_increase_prosperity_effect = {
-	if = {
-		limit = { has_dlc = "Reapers" }
-		custom_tooltip = {
-			text = mount_greatly_increase_prosperity_effect_tooltip
-			hidden_tooltip = { change_variable = { which = prosperity_value value = 25 } }
-		}
-	}
-}
