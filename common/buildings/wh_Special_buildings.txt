@@ -15,7 +15,10 @@ castle = {
 		local_revolt_risk = -0.05
 		add_number_to_name = no
 		potential = {
-			FROMFROM = { title = b_kazad_azril_karak } #
+			FROMFROM = { title = b_kazad_azril_karak } 
+				OR = {religion_group = dwarf_gods_group
+					culture_group = dawi_zharr_group}
+				
 		}
 		extra_tech_building_start = 0.2
 	}
@@ -56,6 +59,7 @@ castle = {
 		desc = ca_zharr_naggrund_desc
 		potential = {
 			FROMFROM = { title = b_gromthidum } #Zharr-Naggrund's castle holding
+			FROM  = {culture_group = dawi_zharr_group}
 		}
 		auto_add_at_year = 10
 
@@ -77,6 +81,7 @@ castle = {
 		desc = ca_tower_gorgoth_desc
 		potential = {
 			FROMFROM = { title = b_hazar_gorgoth } #Gorgoth's castle holding
+			FROM  = {culture_group = dawi_zharr_group}
 		}
 		auto_add_at_year = 10
 
@@ -91,6 +96,7 @@ castle = {
 		add_number_to_name = no
 		garrison_size = 0.50
 		extra_tech_building_start = 0.2
+		
 
 		convert_to_temple = tp_tower_gorgoth
 	}
@@ -98,6 +104,7 @@ castle = {
 		desc = ca_black_fortress_desc
 		potential = {
 			FROMFROM = { title = b_black_fortress } #Black Fortress' castle holding
+			FROM  = {culture_group = dawi_zharr_group}
 		}
 		auto_add_at_year = 10
 
@@ -274,6 +281,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_khemri } #
+			FROM = {culture_group = nehekharan_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -299,6 +307,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_lybaras } #
+			FROM = {culture_group = nehekharan_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -323,6 +332,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_ahtaf_zandri } #
+			FROM = {culture_group = nehekharan_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -426,6 +436,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_al_haikk } #
+			FROM = {culture_group = arabyan_group}
 		}
 
 		extra_tech_building_start = 0.1
@@ -444,6 +455,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_lashiek } #
+			FROM = {culture_group = arabyan_group}
 		}
 
 		extra_tech_building_start = 0.1
@@ -464,6 +476,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_istrabul } #
+			FROM = {culture_group = arabyan_group}
 		}
 
 		extra_tech_building_start = 0.1
@@ -485,6 +498,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_copher } #
+			FROM = {culture_group = arabyan_group}
 		}
 
 		extra_tech_building_start = 0.1
@@ -505,6 +519,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_martek } #
+			FROM = {culture_group = arabyan_group}
 		}
 
 		extra_tech_building_start = 0.1
@@ -523,6 +538,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_el_kalabad } #
+			FROM = {culture_group = arabyan_group}
 		}
 
 		extra_tech_building_start = 0.1
@@ -660,7 +676,7 @@ castle = {
 				religion_group = old_world_group
 			}
 		}
-		trigger = {
+		trigger = { 
 			always = yes
 		}
 		gold_cost = 1
@@ -995,6 +1011,7 @@ temple = {
 		desc = ca_zharr_naggrund_desc
 		potential = {
 			FROMFROM = { title = b_gromthidum }
+			FROM = {culture_group = dawi_zharr_group}
 		}
 		auto_add_at_year = 10
 
@@ -1014,6 +1031,8 @@ temple = {
 		desc = tp_barak_mazur_desc
 		potential = {
 			FROMFROM = { title = b_mazur }
+			OR = {culture_group = dawi_zharr_group
+					religion_group = dwarf_gods_group}
 		}
 		auto_add_at_year = 10
 
@@ -1035,6 +1054,7 @@ temple = {
 		desc = ca_tower_gorgoth_desc
 		potential = {
 			FROMFROM = { title = b_hazar_gorgoth } #Gorgoth's castle holding
+				FROM = {culture_group = dawi_zharr_group}
 		}
 		auto_add_at_year = 10
 
@@ -1054,6 +1074,7 @@ temple = {
 		desc = ca_black_fortress_desc
 		potential = {
 			FROMFROM = { title = b_black_fortress } #Black Fortress' castle holding
+			FROM = {culture_group = dawi_zharr_group}
 		}
 		auto_add_at_year = 10
 
@@ -1097,6 +1118,7 @@ temple = {
 
 		potential = {
 			FROMFROM = { title = b_ystin_vaul } #
+			FROM = {culture_group = asrai_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -1140,6 +1162,7 @@ tribal = {
 
 		potential = {
 			FROMFROM = { title = b_ulfsland } #
+			FROM = {culture_group = norscan_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -1163,6 +1186,7 @@ tribal = {
 
 		potential = {
 			FROMFROM = { title = b_findol } #
+			FROM = {culture_group = asrai_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -1185,6 +1209,7 @@ tribal = {
 
 		potential = {
 			FROMFROM = { title = b_coeth_mara } #
+			FROM = {culture_group = asrai_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -1208,6 +1233,7 @@ tribal = {
 
 		potential = {
 			FROMFROM = { title = b_tal_julain } #
+			FROM = {culture_group = asrai_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -1227,6 +1253,7 @@ tribal = {
 
 		potential = {
 			FROMFROM = { title = b_equos } #
+			FROM = {culture_group = asrai_group}
 		}
 
 		extra_tech_building_start = 0.2
