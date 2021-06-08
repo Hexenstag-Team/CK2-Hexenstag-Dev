@@ -2,7 +2,7 @@
 name: Bug Report - Graphics
 about: Create a report to help us improve the graphics and textures of the mod
 title: "[BUG] Graphics Incorrect/Missing for "
-labels: 'bug - graphics'
+labels: '🦟 bug - graphics'
 assignees: ''
 
 ---
