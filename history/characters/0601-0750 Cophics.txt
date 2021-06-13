@@ -1,8 +1,9 @@
-#7000-7104 Historicals
+#601-7104 Historicals
 #The Prophet and his main lines
-7000 = {
+601 = { #7000
 name = Mulhaed
 dynasty = 48134
+culture = cophic
 culture = cophic
 religion = ormazd
 martial = 21
@@ -25,19 +26,19 @@ add_trait = magic_potential_1
 		type = mulhaed
 		has_dlc = "Holy Fury"
 	}
-	add_spouse = 7082
+	add_spouse = 642
 }
-1254.6.17 = {add_spouse = 7083}
+1254.6.17 = {add_spouse = 643}
 1274.9.2 = {add_spouse = 7068}
 1342.11.8 = {death = yes}
 }
 
 #Sons and daughters from first wife
-7001 = {
+602 = { #7001
 name = Ajdir
 dynasty = 48134
-father = 7000
-mother = 7082
+father = 601
+mother = 642
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -47,11 +48,11 @@ add_trait = magic_potential_1
 1298.6.3 = {death = yes}
 }
 
-7002 = {
+603 = { #7002
 name = Masmud
 dynasty = 48134
-father = 7000
-mother = 7082
+father = 601
+mother = 642
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -60,26 +61,12 @@ add_trait = magic_potential_1
 1259.5.2 = {birth = yes}
 1321.6.3 = {death = yes}
 }
-7003 = {
-name = Silya
-dynasty = 48134
-father = 7000
-mother = 7082
-female = yes
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-add_trait = magic_potential_1
-1265.8.1 = {birth = yes}
-1333.7.12 = {death = yes}
-}
 
-7004 = {
+604 = { #7004
 name = Kawsen
 dynasty = 48134
-father = 7000
-mother = 7082
+father = 601
+mother = 642
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -89,34 +76,12 @@ add_trait = magic_potential_1
 1341.2.28 = {death = yes}
 }
 
-####Empty Branches of Al Quyat
-7081 = {
-name = Cucung
-dynasty = 48134
-father = 7004
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1303.7.14 = {birth = yes}
-1333.5.12 = {death = {death_reason = death_battle}}
-}
+
 #Sons of the second son of Prophet
-7084 = {
-name = Isalcas
-dynasty = 48134
-father = 7002
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1279.6.4 = {birth = yes}
-1340.7.7 = {death = yes}
-}
-7085 = {
+605 = { #7085
 name = Sekla
 dynasty = 48134
-father = 7002
+father = 603
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -129,10 +94,10 @@ add_trait = arabyan_scholar
 
 #Second generation of the Prophet's Cophic bloodlines
 #Line of Aszellay of Kufra
-7088 = {
+606 = { #7088
 name = Aszellay
 dynasty = 48134
-father = 7001
+father = 602
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -140,10 +105,10 @@ add_trait = ormazd_sayyid
 1272.4.24 = {birth = yes}
 1350.2.7 = {death = yes}
 }
-7089 = {
+607 = { #7089
 name = Niptasan
 dynasty = 48134
-father = 7088
+father = 606
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -151,22 +116,11 @@ add_trait = ormazd_sayyid
 1298.3.7 = {birth = yes}
 1365.2.21 = {death = yes}
 }
-7090 = {
-name = Menzu
-dynasty = 48134
-father = 7088
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1301.8.18 = {birth = yes}
-1340.4.13 = {death = yes}
-}
 #Sons of Niptasan
-7091 = {
+608 = { #7091
 name = Seghada
 dynasty = 48134
-father = 7089
+father = 607
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -177,22 +131,10 @@ add_trait = arabyan_scholar
 1332.9.13 = {birth = yes}
 1400.2.21 = {death = {death_reason = death_murder_unknown}}
 }
-7092 = {
-name = Keraja
-dynasty = 48134
-father = 7089
-female = yes
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1341.9.13 = {birth = yes}
-1403.5.20 = {death = {death_reason = death_murder_unknown}}
-}
-7093 = {
+609 = { #7093
 name = Ighlaf
 dynasty = 48134
-father = 7089
+father = 607
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -204,144 +146,26 @@ add_trait = arabyan_scholar
 1403.5.20 = {death = {death_reason = death_murder_unknown}}
 }
 #Aaqila's Line
-7094 = {
+610 = { #7094
 name = Aaqila
 dynasty = 48134
-father = 7001
+father = 602
 female = yes
 culture = cophic
 religion = ormazd
 add_trait = creature_human
 add_trait = ormazd_sayyid
 1271.9.4 = {birth = yes}
-1287.5.14 = {add_spouse = 7061}
+1287.5.14 = {add_spouse = 650}
 1342.12.25 = {death = yes}
 }
 
-#Children of Aaqila
-7095 = {
-name = Tadefi
-dynasty = 48134
-mother = 7094
-father = 7061
-female = yes
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_mirza
-add_trait = twin
-1305.9.4 = {birth = yes}
-1362.12.25 = {death = yes}
-}
-7096 = {
-name = Meghighda
-dynasty = 48134
-mother = 7094
-father = 7061
-female = yes
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_mirza
-add_trait = twin
-1305.9.4 = {birth = yes}
-1359.2.2 = {death = yes}
-}
-
-7097 = {
-name = Sekkura
-dynasty = 48134
-mother = 7094
-father = 7061
-female = yes
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_mirza
-1313.3.19 = {birth = yes}
-1361.5.17 = {death = yes}
-}
-
-#Sons of Tadefi
-7098 = {
-name = Berkan
-dynasty = 48134
-mother = 7095
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_mirza
-1325.3.19 = {birth = yes}
-1401.5.17 = {death = {death_reason = death_murder_unknown}}
-}
-7099 = {
-name = Massiva
-dynasty = 48134
-mother = 7095
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_mirza
-1328.1.9 = {birth = yes}
-1403.7.7 = {death = {death_reason = death_murder_unknown}}
-}
-7100 = {
-name = Masgaba
-dynasty = 48134
-mother = 7095
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_mirza
-1329.10.19 = {birth = yes}
-1405.3.17 = {death = {death_reason = death_murder_unknown}}
-}
-
-#Children of Meghigda
-7101 = {
-name = Barakat
-dynasty = 48134
-mother = 7096
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_mirza
-1330.10.19 = {birth = yes}
-1405.3.17 = {death = {death_reason = death_murder_unknown}}
-}
-7102 = {
-name = Durra
-dynasty = 48134
-mother = 7096
-female = yes
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_mirza
-1331.6.12 = {birth = yes}
-1402.6.1 = {death = {death_reason = death_murder_unknown}}
-}
-7103 = {
-name = Silya
-dynasty = 48134
-mother = 7096
-female = yes
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_mirza
-1333.8.19 = {birth = yes}
-1407.1.2 = {death = {death_reason = death_murder_unknown}}
-}
-
-#Sons and daughters from second wife
-#Yazmine's line of ancestry
 #Sixth Sultan
-7005 = {
+611 = { #7005
 name = Akorakor
 dynasty = 48001
-father = 7000
-mother = 7083
+father = 601
+mother = 643
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -350,11 +174,11 @@ add_trait = magic_potential_1
 1264.3.1 = {birth = yes}
 1318.6.3 = {death = yes}
 }
-7006 = {
+612 = { #7006
 name = Kussil
 dynasty = 48001
-father = 7000
-mother = 7083
+father = 601
+mother = 643
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -363,26 +187,12 @@ add_trait = magic_potential_1
 1266.5.6 = {birth = yes}
 1322.8.11 = {death = yes}
 }
-7007 = {
-name = Adiba
-dynasty = 48001
-father = 7000
-mother = 7083
-female = yes
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-add_trait = magic_potential_1
-1267.1.7 = {birth = yes}
-1327.8.1 = {death = yes}
-}
 
 #Descendants of Akorakor
-7008 = {
+613 = { #7008
 name = Ighlaf
 dynasty = 48001
-father = 7005
+father = 611
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -391,10 +201,10 @@ add_trait = magic_potential_1
 1283.3.1 = {birth = yes}
 1368.6.3 = {death = yes}
 }
-7009 = {
+614 = { #7009
 name = Tabat
 dynasty = 48001
-father = 7008
+father = 613
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -404,10 +214,10 @@ add_trait = magic_potential_1
 1371.6.3 = {death = yes}
 }
 
-7010 = {
+615 = { #7010
 name = Hiempsal
 dynasty = 48001
-father = 7009
+father = 614
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -416,10 +226,10 @@ add_trait = ormazd_sayyid
 1399.6.3 = {death = yes}
 }
 
-7011 = {
+616 = { #7011
 name = Irgen
 dynasty = 48001
-father = 7010
+father = 615
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -429,10 +239,10 @@ add_trait = magic_potential_1
 1452.6.3 = {death = yes}
 }
 
-7012 = {
+617 = { #7012
 name = Mastan
 dynasty = 48001
-father = 7011
+father = 616
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -441,10 +251,10 @@ add_trait = ormazd_sayyid
 1470.6.3 = {death = yes}
 }
 
-7013 = {
+618 = { #7013
 name = Qutaiba
 dynasty = 48001
-father = 7012
+father = 617
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -454,10 +264,10 @@ add_trait = magic_potential_1
 1482.2.28 = {death = yes}
 }
 
-7014 = {
+619 = { #7014
 name = Youkhanna
 dynasty = 48001
-father = 7013
+father = 618
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -466,10 +276,10 @@ add_trait = ormazd_sayyid
 1501.7.13 = {death = yes}
 }
 
-7015 = {
+620 = { #7015
 name = Hiempsal
 dynasty = 48001
-father = 7014
+father = 619
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -478,10 +288,10 @@ add_trait = magic_potential_1
 1481.3.1 = {birth = yes}
 1560.3.3 = {death = yes}
 }
-7016 = {
+621 = { #7016
 name = Suggut
 dynasty = 48001
-father = 7015
+father = 620
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -493,10 +303,10 @@ add_trait = magic_potential_1
 1598.1.9 = {death = yes}
 }
 
-7017 = {
+622 = { #7017
 name = Hashim
 dynasty = 48001
-father = 7016
+father = 621
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -505,10 +315,10 @@ add_trait = ormazd_sayyid
 1575.5.16 = {death = yes}
 }
 
-7018 = {
+623 = { #7018
 name = Capussa
 dynasty = 48001
-father = 7017
+father = 622
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -517,10 +327,10 @@ add_trait = ormazd_sayyid
 1598.1.9 = {death = yes}
 }
 
-7019 = {
+624 = { #7019
 name = Awzal
 dynasty = 48001
-father = 7018
+father = 623
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -529,10 +339,10 @@ add_trait = ormazd_sayyid
 1608.5.11 = {death = yes}
 }
 
-7020 = {
+625 = { #7020
 name = Misibsen
 dynasty = 48001
-father = 7019
+father = 624
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -544,10 +354,10 @@ add_trait = magic_potential_1
 1658.6.9 = {death = yes}
 }
 
-7021 = {
+626 = { #7021
 name = Is'mail
 dynasty = 48001
-father = 7020
+father = 625
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -557,10 +367,10 @@ add_trait = magic_potential_1
 1673.4.1 = {death = yes}
 }
 
-7022 = {
+627 = { #7022
 name = Is'mail
 dynasty = 48001
-father = 7021
+father = 626
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -569,10 +379,10 @@ add_trait = ormazd_sayyid
 1691.1.2 = {death = yes}
 }
 
-7023 = {
+628 = { #7023
 name = Mastanabal
 dynasty = 48001
-father = 7022
+father = 627
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -581,10 +391,10 @@ add_trait = ormazd_sayyid
 1720.2.5 = {death = yes}
 }
 
-7024 = {
+629 = { #7024
 name = Haidar
 dynasty = 48001
-father = 7023
+father = 628
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -596,10 +406,10 @@ add_trait = arabyan_scholar
 1763.6.18 = {death = yes}
 }
 
-7025 = {
+630 = { #7025
 name = Muh'end
 dynasty = 48001
-father = 7024
+father = 629
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -611,10 +421,10 @@ add_trait = arabyan_scholar
 1812.8.7 = {death = yes}
 }
 
-7026 = {
+631 = { #7026
 name = Hashim
 dynasty = 48001
-father = 7025
+father = 630
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -623,10 +433,10 @@ add_trait = ormazd_sayyid
 1852.1.1 = {death = yes}
 }
 
-7027 = {
+632 = { #7027
 name = Misagenes
 dynasty = 48001
-father = 7026
+father = 631
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -635,10 +445,10 @@ add_trait = ormazd_sayyid
 1864.7.19 = {death = yes}
 }
 
-7028 = {
+633 = { #7028
 name = Fahd
 dynasty = 48001
-father = 7027
+father = 632
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -648,10 +458,10 @@ add_trait = ormazd_sayyid
 }
 
 #Yazmine's grandfather
-7029 = {
+634 = { #7029
 name = Kussil
 dynasty = 48001
-father = 7028
+father = 633
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -659,13 +469,13 @@ add_trait = ormazd_sayyid
 1867.3.1 = {birth = yes}
 1951.12.27 = {death = yes}
 }
-7030 = {
+635 = { #7030
 name = Hamed
 dynasty = 48001
-#dna = jlhddjchllg
+#dna = jlhddjchllg ???
 dna = kemiyrkhbio
 properties = clpfef000000
-father = 7029
+father = 634
 culture = cophic
 religion = ormazd
 martial = 0
@@ -684,7 +494,7 @@ trait = ormazd_sayyid
 1928.1.10 = {birth = yes}
 2009.5.30 = {death = yes}
 }
-7031 = {
+636 = { #7031
 name = Yazmine
 female = yes
 dynasty = 48001
@@ -697,7 +507,7 @@ diplomacy = 4
 stewardship = 7
 intrigue = 8
 learning = 5
-father = 7030
+father = 635
 add_trait = creature_human
 add_trait = lustful
 add_trait = scholarly_theologian
@@ -716,7 +526,7 @@ trait = ormazd_sayyid
 		type = jasmine
 		has_dlc = "Holy Fury"
 		}
-		add_spouse = 7032
+		add_spouse = 637
 		effect = {
 			set_character_flag = no_wedding_event
 			spouse = {
@@ -725,21 +535,21 @@ trait = ormazd_sayyid
 				add_spouse_matrilineal = ROOT
 				clr_character_flag = no_wedding_event
 			}
-			add_lover = 7032
+			add_lover = 637
 			prestige = 260
 			clr_character_flag = no_wedding_event
 		}
 	}
 2045.10.28 = {death = yes}
 }
-7032 = {
+637 = { #7032
 name = Ali
 dynasty = 48000
 dna = wjyccnsozmi
 properties = cb0hdk000000
 culture = cophic
 religion = ormazd
-father = 7034
+father = 639
 martial = 9
 diplomacy = 5
 stewardship = 1
@@ -754,18 +564,18 @@ add_trait = kind
 add_trait = brave
 add_trait = humble
 1992.4.30 = {birth = yes}
-2009.3.15 = {add_spouse = 7031}
+2009.3.15 = {add_spouse = 636}
 2021.12.2 = {death = yes}
 }
-7033 = {
+638 = { #7033
 name = Aziz
 dynasty = 48001
 dna = ajbcgyjdbcv
 properties = cm0ejd00000
 culture = cophic
 religion = ormazd
-father = 7032
-mother = 7031
+father = 637
+mother = 636
 martial = 1
 diplomacy = 1
 stewardship = 1
@@ -778,7 +588,7 @@ add_trait = beautiful
 		effect = {set_character_flag = magic_potential_flag_2}}
 2056.12.2 = {death = yes}
 }
-7034 = {
+639 = { #7034
 name = Cassim
 dynasty = 48000
 dna = cecdhrcdbdb
@@ -804,10 +614,10 @@ add_trait = greedy
 
 #Splitting line of Agrabids intermingling with the Ramaccans
 #Daughter of Hashim II
-7035 = {
+640 = { #7035
 name = Jdira
 dynasty = 48001
-father = 7026
+father = 631
 female = yes
 culture = cophic
 religion = ormazd
@@ -818,10 +628,10 @@ add_trait = ormazd_sayyid
 }
 
 #Misagenes' daughter
-7036 = {
+641 = { #7036
 name = Dinar
 dynasty = 48001
-father = 7027
+father = 632
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -829,14 +639,13 @@ add_trait = ormazd_sayyid
 1828.5.9 = {birth = yes}
 1879.2.28 = {death = yes}
 }
-###Empty Dynastical Branches of Aghrabid
 
 #Wife 1 of Prophet
-7082 = {
+642 = { #7082
 name = Tadefi
 dynasty = 48001
 female = yes
-father = 7058
+father = 647
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -844,11 +653,11 @@ add_trait = creature_human
 1320.5.5 = {death = yes}
 }
 #Wife 2  of Prophet
-7083 = {
+643 = { #7083
 name = Bibya
 dynasty = 48001
 female = yes
-father = 7058
+father = 647
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -857,10 +666,10 @@ add_trait = creature_human
 }
 
 #Sons of Kussil
-7052 = {
-name = Ghanim
+644 = { #7052
+name = Ghanim 
 dynasty = 48001
-father = 7006
+father = 612
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -868,35 +677,12 @@ add_trait = ormazd_sayyid
 1304.3.3 = {birth = yes}
 1361.11.7 = {death = yes}
 }
-7053 = {
-name = Lacumaces
-dynasty = 48001
-father = 7006
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1307.1.13 = {birth = yes}
-1361.6.27 = {death = yes}
-}
-7054 = {
-name = T'awes
-dynasty = 48001
-father = 7006
-female = yes
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1309.9.5 = {birth = yes}
-1361.3.1 = {death = yes}
-}
 
 #Sons of Ghanim
-7055 = {
+645 = { #7055
 name = Ighlaf
 dynasty = 48001
-father = 7052
+father = 644
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -904,23 +690,12 @@ add_trait = ormazd_sayyid
 1337.4.15 = {birth = yes}
 1399.5.11 = {death = {death_reason = death_murder_unknown}}
 }
-7056 = {
-name = Berkan
-dynasty = 48001
-father = 7052
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1341.2.21 = {birth = yes}
-1399.5.12 = {death = {death_reason = death_murder_unknown}}
-}
 
 #Daughter of Ighlaf
-7057 = {
+646 = { #7057
 name = Dinara
 dynasty = 48001
-father = 7055
+father = 645
 female = yes
 culture = cophic
 religion = ormazd
@@ -933,7 +708,7 @@ add_trait = ormazd_sayyid
 #The Ancient Agrabids
 
 #First Sultan
-7058 = {
+647 = { #7058
 name = Afulay
 dynasty = 48001
 culture = cophic
@@ -945,35 +720,11 @@ add_trait = ambitious
 1276.11.8 = {death = yes}
 }
 
-
-#Other Sons and Daughters of First Sultan
-7063 = {
-name = Bilqis
-female = yes
-dynasty = 48001
-father = 7058
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-1236.8.2 = {birth = yes}
-1310.2.18 = {death = yes}
-}
-7064 = {
-name = Aksil
-dynasty = 48001
-father = 7058
-culture = cophic
-religion = ormazd
-add_trait = creature_human
-1242.8.2 = {birth = yes}
-1316.4.3 = {death = yes}
-}
-
 #Firstborn and second Sultan
-7059 = {
+648 = { #7059
 name = Kenan
 dynasty = 48001
-father = 7058
+father = 647
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -982,10 +733,10 @@ add_trait = creature_human
 }
 
 #Third Sultan, son of Second Sultan
-7060 = {
+649 = { #7060
 name = Ghaysan
 dynasty = 48001
-father = 7059
+father = 648
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -994,10 +745,10 @@ add_trait = creature_human
 }
 
 #Fourth Sultan, Tizemt's father
-7061 = {
+650 = { #7061
 name = Aszellay
 dynasty = 48001
-father = 7060
+father = 649
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -1013,11 +764,11 @@ add_trait = fire_mystical
 }
 
 #Fifth Sultan and Second Caliph
-7062 = {
+651 = { #7062
 name = Seyfullah
 dynasty = 48001
-father = 7061
-mother = 7094
+father = 650
+mother = 610
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -1030,7 +781,7 @@ add_trait = ormazd_mirza
 }
 ###############
 #Mukhtar's Kufran ancestors
-7037 = {
+652 = { #7037
 name = Izza
 dynasty = 48012
 female = yes
@@ -1038,14 +789,14 @@ culture = cophic
 religion = ormazd
 add_trait = creature_human
 1831.5.9 = {birth = yes}
-1848.2.4 = {add_spouse = 7036}
+1848.2.4 = {add_spouse = 641}
 1877.6.18 = {death = yes}
 }
-7038 = {
+653 = { #7038
 name = Kenan
 dynasty = 48012
-father = 7036
-mother = 7037
+father = 641
+mother = 652
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -1053,10 +804,10 @@ add_trait = ormazd_sayyid
 1854.3.19 = {birth = yes}
 1902.4.8 = {death = yes}
 }
-7039 = {
+654 = { #7039
 name = Masgava
 dynasty = 48012
-father = 7038
+father = 653
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -1064,10 +815,10 @@ add_trait = ormazd_sayyid
 1870.3.1 = {birth = yes}
 1933.6.22 = {death = yes}
 }
-7040 = {
+655 = { #7040
 name = Yattuy
 dynasty = 48012
-father = 7039
+father = 654
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -1075,10 +826,10 @@ add_trait = ormazd_sayyid
 1895.11.30 = {birth = yes}
 1970.3.3 = {death = yes}
 }
-7041 = {
+656 = { #7041
 name = Meq'wran
 dynasty = 48012
-father = 7040
+father = 655
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -1087,10 +838,10 @@ add_trait = ormazd_sayyid
 1998.7.13 = {death = yes}
 }
 
-7042 = {
+657 = { #7042
 name = Mukhtar
 dynasty = 48012
-father = 7041
+father = 656
 culture = cophic
 religion = ormazd
 martial = 10
@@ -1110,13 +861,13 @@ effect = {add_character_modifier = {name = magic_power_1 duration = -1}}}
 2017.12.25 = {death = yes}
 }
 #Mukhtar's Sister
-7043 = {
+658 = { #7043
 name = Ifni
 culture = cophic
 dynasty = 48012
 religion = ormazd
 female = yes
-father = 7041
+father = 656
 learning = 17
 add_trait = creature_human
 add_trait = hollowed
@@ -1124,7 +875,7 @@ add_trait = hollowed
 2038.11.4 = {death = yes}
 }
 
-7208 = {
+659 = { #7208
 name = Baraah
 dynasty = 48022
 female = yes
@@ -1146,7 +897,7 @@ trait = non_ormazd_sayyid
 2050.1.1 = {death = yes}
 }
 #Corsair Strand
-7209 = {
+660 = { #7209
 name = Randja
 dynasty = 48013
 female = yes
@@ -1162,12 +913,12 @@ add_trait = scholar
 add_trait = scholarly_theologian
 add_trait = fair
 1993.2.8 = {birth = yes}
-2009.5.26 = {add_matrilineal_spouse = 7210
+2009.5.26 = {add_matrilineal_spouse = 661
 		effect = {set_character_flag = ai_flag_refuse_conversion}
 prestige = 50}
 2067.4.28 = {death = yes}
 }
-7210 = {
+661 = { #7210
 name = Ghumer
 dynasty = 48023
 culture = cophic
@@ -1190,7 +941,7 @@ prestige = 50}
 2057.11.8 = {death = yes}
 }
 
-7211 = {
+662 = { #7211
 name = Nizamaddin
 dynasty = 48014
 culture = cophic
@@ -1210,7 +961,7 @@ add_trait = envious
 }
 ###Generic Rulers##
 #Wizard Caliph's Palace
-7107 = {
+663 = { #7107
 name = "Ra's"
 dynasty = 48030
 culture = cophic
@@ -1237,11 +988,11 @@ society_rank_up = 2
 }}
 2040.1.8 = {death = yes}
 }
-7108 = {
+664 = { #7108
 name = "Taal"
 female=yes
 dynasty = 48030
-father=7107
+father=663
 culture = cophic
 secret_religion = nagashi
 religion = atruhayid
@@ -1262,7 +1013,7 @@ effect={set_character_flag=magic_potential_flag_2}}
 2040.1.8 = {death = yes}
 }
 #Ghafsa
-7200 = {
+665 = { #7200
 name = Kawsen
 dynasty = 48008
 culture = cophic
@@ -1271,10 +1022,10 @@ add_trait = creature_human
 1937.5.2 = {birth = yes}
 1989.11.24 = {death = yes}
 }
-7201 = {
+666 = { #7201
 name = Frawsen
 dynasty = 48008
-father = 7200
+father = 665
 culture = cophic
 religion = ormazd
 martial = 5
@@ -1288,10 +1039,10 @@ add_trait = content
 1985.4.20 = {birth = yes}
 2045.7.2 = {death = yes}}
 
-7203 = {
+667 = { #7203
 name = Uregh
 dynasty = 48008
-father = 7200
+father = 665
 culture = cophic
 religion = ormazd
 learning = 17
@@ -1304,7 +1055,7 @@ add_trait = magic_potential_1
 2088.11.4 = {death = yes}
 }
 #Copher
-7204 = {
+668 = { #7204
 name = Atissi
 dynasty = 48004
 culture = cophic
@@ -1322,7 +1073,7 @@ add_trait = tall
 2050.3.25 = {death = yes}
 }
 #Martek
-7205 = {
+669 = { #7205
 name = Is'mail
 dynasty = 48003
 culture = cophic
@@ -1341,7 +1092,7 @@ trait = ormazd_sayyid
 2060.8.10 = {death = yes}
 }
 #Assassins
-7206 = {
+670 = { #7206
 name = Al-Tahir
 dynasty = 48136
 culture = cophic
@@ -1362,7 +1113,7 @@ trait = temperate
 2030.1.1 = {death = yes}
 }
 #Misc
-7207 = {
+671 = { #7207
 name = Madidu
 dynasty = 48006
 culture = cophic
@@ -1381,7 +1132,7 @@ add_trait = humble
 1959.5.4 = {birth = yes}
 2062.2.1 = {death = yes}
 }
-7212 = {
+672 = { #7212
 name = Sokurah
 dynasty = 48010
 culture = cophic
@@ -1403,7 +1154,7 @@ add_trait = arabyan_scholar
 2030.5.13 = {death = yes}
 }
 
-55016 = {
+673 = { #55016
 name = Qutaiba
 dynasty = 48018
 culture = cophic
@@ -1422,7 +1173,7 @@ add_trait = honest
 1984.9.30 = {birth = yes}
 2019.11.14 = {death = yes}
 }
-55003 = {
+674 = { #55003
 name = Yeften
 dynasty = 48005
 culture = cophic
@@ -1440,7 +1191,7 @@ add_trait = wroth
 1993.5.22 = {birth = yes}
 2042.8.28 = {death = yes}
 }
-55015 = {
+675 = { #55015
 name = Hiempsal
 dynasty = 48017
 culture = cophic
@@ -1458,7 +1209,7 @@ add_trait = cynical
 1989.12.2 = {birth = yes}
 2027.1.13 = {death = yes}
 }
-55014 = {
+676 = { #55014
 name = Buxtuc
 dynasty = 48016
 culture = cophic
@@ -1479,7 +1230,7 @@ add_trait = strong
 }
 
 #Unlanded
-55017 = {
+677 = { #55017
 name = Rashid
 dynasty = 48019
 culture = cophic
@@ -1499,7 +1250,7 @@ add_trait = greedy
 2041.9.14 = {death = yes}
 }
 
-55018 = {
+678 = { #55018
 name = Zigza
 dynasty = 48020
 culture = cophic
@@ -1515,7 +1266,7 @@ add_trait = kind
 1999.11.1 = {birth = yes}
 2042.6.25 = {death = yes}
 }
-55022 = {
+679 = { #55022
 name = Sinbad
 dynasty = 48021
 culture = cophic
@@ -1533,3 +1284,75 @@ add_trait = tall
 2050.3.25 = {death = yes}
 }
 
+###Misc Characters###
+#The Usurper
+680 = { #7065
+name = Jaffar
+dna = bdottdeujbd
+properties = foyjbc000000
+culture = cophic
+religion = ormazd
+martial = 15
+diplomacy = 17
+stewardship = 8
+intrigue = 18
+learning = 25
+add_trait = creature_human
+add_trait = quick
+add_trait = mastermind_theologian
+add_trait = cynical
+add_trait = paranoid
+add_trait = addict
+add_trait = ambitious
+add_trait = deceitful
+add_trait = arbitrary
+add_trait = fire_mystical
+add_trait = arabyan_scholar
+add_trait = magic_potential_2
+
+1371.6.12 = {birth = yes}
+1452.9.15 = {death = {death_reason = death_trait}}
+}
+#Other Scholars scattered around
+681 = { #55803
+name = Mellal
+culture = cophic
+religion = ormazd
+learning = 17
+add_trait = creature_human
+add_trait = arabyan_scholar
+add_trait = fire_mystical
+add_trait = magic_potential_1
+1979.7.12 = {birth = yes
+	effect = {add_character_modifier = {name = magic_power_1 duration = -1}}}
+2058.11.4 = {death = yes}
+}
+
+682 = { #55804
+name = Ifni
+culture = cophic
+religion = ormazd
+learning = 17
+add_trait = creature_human
+add_trait = arabyan_scholar
+add_trait = fire_mystical
+add_trait = magic_potential_1
+1961.7.12 = {birth = yes
+	effect = {add_character_modifier = {name = magic_power_1 duration = -1}}}
+2038.11.4 = {death = yes}
+}
+
+#Martek's Scholar
+683 = { #55806
+name = Awinagh
+culture = cophic
+dynasty = 48024
+religion = ormazd
+add_trait = creature_human
+add_trait = arabyan_scholar
+add_trait = fire_mystical
+add_trait = magic_potential_1
+1965.9.23 = {birth = yes
+effect = {add_character_modifier = {name = magic_power_1 duration = -1}}}
+2028.4.14 = {death = yes}
+}

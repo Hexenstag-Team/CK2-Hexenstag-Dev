@@ -4,21 +4,21 @@
 #Intermingling with the Cophics
 
 #Abergel ancestry
-7044 = {
+751 = { #7044
 name = Rasul
 dynasty = 47002
 culture = ramaccan
 religion = ormazd
 add_trait = creature_human
 1798.5.25 = {birth = yes}
-1828.6.28 = {add_spouse = 7035}
+1828.6.28 = {add_spouse = 640}
 1851.12.2 = {death = yes}
 }
-7045 = {
+752 = { #7045
 name = Tawfiq
 dynasty = 47002
-mother = 7035
-father = 7044
+mother = 640
+father = 751
 culture = ramaccan
 religion = ormazd
 add_trait = creature_human
@@ -26,10 +26,10 @@ add_trait = ormazd_mirza
 1830.2.3 = {birth = yes}
 1881.8.9 = {death = yes}
 }
-7046 = {
+753 = { #7046
 name = Krystafer
 dynasty = 47002
-father = 7045
+father = 752
 culture = ramaccan
 religion = ormazd
 add_trait = creature_human
@@ -37,10 +37,10 @@ add_trait = ormazd_mirza
 1853.7.13 = {birth = yes}
 1890.3.29 = {death = yes}
 }
-7047 = {
+754 = { #7047
 name = Yahya
 dynasty = 47002
-father = 7046
+father = 753
 culture = ramaccan
 religion = ormazd
 add_trait = creature_human
@@ -48,10 +48,10 @@ add_trait = ormazd_mirza
 1877.2.8 = {birth = yes}
 1920.3.29 = {death = yes}
 }
-7048 = {
+755 = { #7048
 name = Hashmaddin
 dynasty = 47002
-father = 7047
+father = 754
 culture = ramaccan
 religion = ormazd
 add_trait = creature_human
@@ -59,10 +59,10 @@ add_trait = ormazd_mirza
 1895.12.4 = {birth = yes}
 1944.5.3 = {death = yes}
 }
-7049 = {
+756 = { #7049
 name = Abdullah
 dynasty = 47002
-father = 7048
+father = 755
 culture = ramaccan
 religion = ormazd
 add_trait = creature_human
@@ -71,10 +71,10 @@ add_trait = ormazd_mirza
 1971.4.23 = {death = yes}
 }
 #Abu-Bakr's father
-7050 = {
+757 = { #7050
 name = Ghiyasaddin
 dynasty = 47002
-father = 7049
+father = 756
 culture = ramaccan
 religion = ormazd
 add_trait = creature_human
@@ -83,10 +83,10 @@ add_trait = ormazd_mirza
 1997.4.2 = {death = yes}
 }
 
-7051 = {
+758 = { #7051
 name = Abu-Bakr
 dynasty = 47002
-father = 7050
+father = 757
 culture = ramaccan
 religion = ormazd
 martial = 3
@@ -108,7 +108,7 @@ effect = {set_character_flag = magic_potential_flag_1}}
 
 #Ancient rulers and line of the Prophet
 #First Sultan of Ramacca
-7066 = {
+759 = { #7066
 name = Hussamaddin
 dynasty = 47088 
 culture = ramaccan
@@ -124,10 +124,10 @@ add_trait = smart
 }
 #Sons and daughters of the first Sultan
 #First Son, Second Sultan
-7067 = {
+760 = { #7067
 name = Mubashir
 dynasty = 47088 
-father = 7066
+father = 759
 culture = ramaccan
 religion = ormazd
 add_trait = creature_human
@@ -140,10 +140,10 @@ add_trait = smart
 }
 
 #Third wife of the Prophet
-7068 = {
+761 = { #7068
 name = Munawwar
 dynasty = 47088 
-father = 7066
+father = 759
 female = yes
 culture = ramaccan
 religion = ormazd
@@ -152,28 +152,12 @@ add_trait = creature_human
 1311.5.5 = {death = yes}
 }
 
-#Sons and daughters from third wife
-
-7069 = {
-name = Daniyah
-dynasty = 47088 
-father = 7000
-mother = 7068
-female = yes
-culture = ramaccan
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1280.2.14 = {birth = yes}
-1367.11.15 = {death = yes}
-}
-
 #Second Caliph
-7070 = {
+762 = { #7070
 name = Abdul-Hakam
 dynasty = 47088 
 father = 7000
-mother = 7068
+mother = 761
 culture = ramaccan
 religion = ormazd
 add_trait = creature_human
@@ -190,25 +174,11 @@ add_trait = magic_potential_2
 1362.10.22 = {death = yes}
 }
 
-7071 = {
-name = Aliyah
-dynasty = 47088 
-father = 7000
-mother = 7068
-female = yes
-culture = ramaccan
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1283.5.21 = {birth = yes}
-1370.4.7 = {death = yes}
-}
-
 #Children of Abdul-Hakam
-7072 = {
+763 = { #7072
 name = Isalcas
 dynasty = 47088 
-father = 7070
+father = 762
 culture = cophic
 religion = ormazd
 add_trait = creature_human
@@ -217,45 +187,11 @@ add_trait = ormazd_sayyid
 1352.2.16 = {death = yes}
 }
 
-7073 = {
-name = Muh'end
-dynasty = 47088 
-father = 7070
-culture = ramaccan
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1306.7.19 = {birth = yes}
-1349.1.5 = {death = yes}
-}
-7074 = {
-name = Madidu
-dynasty = 47088 
-father = 7070
-culture = ramaccan
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1311.3.2 = {birth = yes}
-1368.4.15 = {death = yes}
-}
-7075 = {
-name = Sifaks
-dynasty = 47088 
-father = 7070
-culture = ramaccan
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1312.5.12 = {birth = yes}
-1370.11.2 = {death = yes}
-}
-
 #Children of Isalcas
-7076 = {
+764 = { #7076
 name = Firmus
 dynasty = 47088 
-father = 7072
+father = 763
 culture = ramaccan
 religion = ormazd
 add_trait = creature_human
@@ -266,36 +202,12 @@ add_trait = arabyan_scholar
 1332.1.3 = {birth = yes}
 1370.6.6 = {death = yes}
 }
-7077 = {
-name = Kulla
-dynasty = 47088 
-father = 7072
-female = yes
-culture = ramaccan
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1334.5.6 = {birth = yes}
-1350.3.14 = {death = yes}
-}
 
 #Children of Firmus
-7078 = {
-name = T'item
-dynasty = 47088 
-father = 7076
-female = yes
-culture = ramaccan
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1362.1.3 = {birth = yes}
-1401.12.26 = {death = {death_reason = death_murder_unknown}}
-}
-7079 = {
+765 = { #7079
 name = Khanchla
 dynasty = 47088 
-father = 7076
+father = 764
 culture = ramaccan
 religion = ormazd
 add_trait = creature_human
@@ -303,92 +215,10 @@ add_trait = ormazd_sayyid
 1362.1.3 = {birth = yes}
 1401.12.26 = {death = {death_reason = death_murder_unknown}}
 }
-7080 = {
-name = Yiliyen
-dynasty = 47088 
-father = 7076
-culture = ramaccan
-religion = ormazd
-add_trait = creature_human
-add_trait = ormazd_sayyid
-1362.1.3 = {birth = yes}
-1402.3.6 = {death = {death_reason = death_murder_unknown}}
-}
-###Misc Characters###
-#The Usurper
-7065 = {
-name = Jaffar
-dna = bdottdeujbd
-properties = foyjbc000000
-culture = cophic
-religion = ormazd
-martial = 15
-diplomacy = 17
-stewardship = 8
-intrigue = 18
-learning = 25
-add_trait = creature_human
-add_trait = quick
-add_trait = mastermind_theologian
-add_trait = cynical
-add_trait = paranoid
-add_trait = addict
-add_trait = ambitious
-add_trait = deceitful
-add_trait = arbitrary
-add_trait = fire_mystical
-add_trait = arabyan_scholar
-add_trait = magic_potential_2
 
-1371.6.12 = {birth = yes}
-1452.9.15 = {death = {death_reason = death_trait}}
-}
-#Other Scholars scattered around
-55803 = {
-name = Mellal
-culture = cophic
-religion = ormazd
-learning = 17
-add_trait = creature_human
-add_trait = arabyan_scholar
-add_trait = fire_mystical
-add_trait = magic_potential_1
-1979.7.12 = {birth = yes
-	effect = {add_character_modifier = {name = magic_power_1 duration = -1}}}
-2058.11.4 = {death = yes}
-}
-
-55804 = {
-name = Ifni
-culture = cophic
-religion = ormazd
-learning = 17
-add_trait = creature_human
-add_trait = arabyan_scholar
-add_trait = fire_mystical
-add_trait = magic_potential_1
-1961.7.12 = {birth = yes
-	effect = {add_character_modifier = {name = magic_power_1 duration = -1}}}
-2038.11.4 = {death = yes}
-}
-
-#Martek's Scholar
-55806 = {
-name = Awinagh
-culture = cophic
-dynasty = 48024
-religion = ormazd
-add_trait = creature_human
-add_trait = arabyan_scholar
-add_trait = fire_mystical
-add_trait = magic_potential_1
-1965.9.23 = {birth = yes
-effect = {add_character_modifier = {name = magic_power_1 duration = -1}}}
-2028.4.14 = {death = yes}
-}
 
 #More Scholars Ramacan
-59407 = {
+770 = { #59407
 name = Usama
 culture = ramaccan
 religion = ormazd
@@ -402,7 +232,7 @@ add_trait = magic_potential_1
 2038.11.4 = {death = yes}
 }
 
-59408 = {
+771 = { #59408
 name = Garsiya
 culture = ramaccan
 religion = ormazd
@@ -415,7 +245,7 @@ add_trait = magic_potential_1
 	effect = {add_character_modifier = {name = magic_power_1 duration = -1}}}
 2038.11.4 = {death = yes}
 }
-59409 = {
+772 = { #59409
 name = Hamdan
 culture = ramaccan
 religion = ormazd
@@ -430,7 +260,7 @@ add_trait = magic_potential_1
 }
 ###Corsairs###
 #Hadmaut
-7104 = {
+773 = { #7104
 name = Ja'far
 dynasty = 48002
 #dna = gfgkjkdmgmg
@@ -455,14 +285,14 @@ add_trait = cruel
 add_trait = magic_potential_1
 1966.5.1 = {birth = yes}
 2000.1.1 = {
-effect = {add_rival = 7032
+effect = {add_rival = 637
 	add_claim = k_alhaka
 	add_claim = c_al_haikk
 	add_character_modifier = {name = magic_power_2 duration = -1}}
 }
 2023.8.26 = {death = yes}
 }
-7105 = {
+774 = { #7105
 name = Bahram
 dynasty = 48015
 culture = ramaccan
@@ -481,10 +311,10 @@ add_trait = content
 1962.4.18 = {birth = yes}
 2010.1.1 = {death = yes}
 }
-7106 = {
+775 = { #7106
 name = Sinbad
 dynasty = 48015
-father=7105
+father=774
 culture = ramaccan
 religion = atruhayid
 martial = 6
@@ -503,4 +333,361 @@ add_trait = brave
 add_trait = trusting
 1992.4.18 = {birth = yes}
 2040.1.8 = {death = yes}
+}
+###ÄNSI
+59001 = {
+name = Jawdat
+dynasty = 47003
+culture = ramaccan
+religion = ormazd
+martial = 0
+diplomacy = 9
+stewardship = 3
+intrigue = 7
+learning = 1
+add_trait = creature_human
+add_trait = hunter
+add_trait = misguided_warrior
+add_trait = craven
+1971.11.12 = {birth = yes}
+2060.8.10 = {death = yes}
+}
+
+59002 = {
+name = Ghiyasaddin
+dynasty = 47004
+culture = ramaccan
+religion = ormazd
+martial = 9
+diplomacy = 4
+stewardship = 0
+intrigue = 11
+learning = 6
+add_trait = creature_human
+add_trait = intricate_webweaver
+add_trait = greedy
+add_trait = tall
+trait = ormazd_sayyid
+1989.9.29 = {birth = yes}
+2050.3.25 = {death = yes}
+}
+
+59003 = {
+name = Athanasios
+dynasty = 47005
+culture = ramaccan
+religion = ormazd
+martial = 3
+diplomacy = 8
+stewardship = 11
+intrigue = 1
+learning = 4
+add_trait = creature_human
+add_trait = midas_touched
+add_trait = cruel
+add_trait = weak
+add_trait = wroth
+1993.5.22 = {birth = yes}
+2042.8.28 = {death = yes}
+}
+
+59004 = {
+name = Ilyas
+dynasty = 47006
+culture = ramaccan
+religion = ormazd
+martial = 7
+diplomacy = 2
+stewardship = 9
+intrigue = 9
+learning = 7
+add_trait = creature_human
+add_trait = hedonist
+add_trait = brilliant_strategist
+add_trait = chaste
+add_trait = temperate
+add_trait = humble
+1959.5.4 = {birth = yes
+		effect = {set_character_flag = magic_potential_flag_1}
+		}
+2062.2.1 = {death = yes}
+}
+
+59005 = {
+name = Da'oud
+dynasty = 47007
+culture = ramaccan
+religion = ormazd
+martial = 4
+diplomacy = 0
+stewardship = 2
+intrigue = 5
+learning = 0
+add_trait = creature_human
+add_trait = hedonist
+add_trait = indulgent_wastrel
+
+1989.7.22 = {birth = yes}
+2033.11.3 = {death = yes}
+}
+
+59006 = {
+name = Jalaaladdin
+dynasty = 47008
+culture = ramaccan
+religion = ormazd
+martial = 5
+diplomacy = 9
+stewardship = 7
+intrigue = 11
+learning = 9
+add_trait = creature_human
+add_trait = misguided_warrior
+add_trait = content
+1985.4.20 = {birth = yes}
+2045.7.2 = {death = yes}}
+
+59007 = {
+name = Firuz
+dynasty = 47009
+culture = ramaccan
+religion = ormazd
+martial = 7
+diplomacy = 0
+stewardship = 2
+intrigue = 9
+learning = 2
+add_trait = creature_human
+add_trait = poet
+add_trait = fortune_builder
+add_trait = trusting
+add_trait = lustful
+1993.8.3 = {birth = yes}
+2025.4.10 = {death = yes}
+}
+
+59008 = {
+name = Khalil
+dynasty = 47010
+culture = ramaccan
+religion = ormazd
+martial = 6
+diplomacy = 6
+stewardship = 9
+intrigue = 11
+learning = 9
+add_trait = creature_human
+add_trait = hedonist
+add_trait = brilliant_strategist
+add_trait = drunkard
+1986.5.30 = {birth = yes}
+2030.5.13 = {death = yes}
+}
+
+59009 = {
+name = Adnan
+dynasty = 47011
+culture = ramaccan
+religion = ormazd
+martial = 8
+diplomacy = 1
+stewardship = 11
+intrigue = 5
+learning = 5
+add_trait = creature_human
+add_trait = duelist
+add_trait = grey_eminence
+1959.9.12 = {birth = yes}
+2030.2.19 = {death = yes}
+}
+
+59010 = {
+name = Abianos
+dynasty = 47012
+culture = ramaccan
+religion = ormazd
+martial = 10
+diplomacy = 8
+stewardship = 6
+intrigue = 6
+learning = 3
+add_trait = creature_human
+add_trait = hedonist
+add_trait = underhanded_rogue
+1992.9.26 = {birth = yes}
+2017.12.25 = {death = yes}
+}
+
+59011 = {
+name = Hakam
+dynasty = 47013
+culture = ramaccan
+religion = ormazd
+martial = 8
+diplomacy = 9
+stewardship = 8
+intrigue = 0
+learning = 4
+add_trait = creature_human
+add_trait = scholar
+add_trait = scholarly_theologian
+add_trait = fair
+1993.2.8 = {birth = yes}
+2067.4.28 = {death = yes}
+}
+
+59012 = {
+name = Agathos
+dynasty = 47014
+culture = ramaccan
+religion = ormazd
+martial = 5
+diplomacy = 8
+stewardship = 1
+intrigue = 6
+learning = 1
+add_trait = creature_human
+add_trait = scholar
+add_trait = scholarly_theologian
+add_trait = diligent
+add_trait = envious
+1978.10.9 = {birth = yes
+		effect = {set_character_flag = magic_potential_flag_1}
+		}
+2023.7.30 = {death = yes}
+}
+
+59013 = {
+name = Qadir
+dynasty = 47015
+culture = ramaccan
+religion = ormazd
+martial = 6
+diplomacy = 7
+stewardship = 1
+intrigue = 6
+learning = 1
+add_trait = creature_human
+add_trait = poet
+add_trait = amateurish_plotter
+add_trait = slothful
+add_trait = patient
+add_trait = shy
+1992.4.18 = {birth = yes}
+2040.1.8 = {death = yes}
+}
+
+59014 = {
+name = Zakariyah
+dynasty = 47016
+culture = ramaccan
+religion = ormazd
+martial = 8
+diplomacy = 1
+stewardship = 4
+intrigue = 0
+learning = 9
+add_trait = creature_human
+add_trait = scholar
+add_trait = underhanded_rogue
+add_trait = ambitious
+add_trait = proud
+add_trait = strong
+1980.11.22 = {birth = yes}
+2063.6.4 = {death = yes}
+}
+
+59015 = {
+name = Ghiyasaddin
+dynasty = 47017
+culture = ramaccan
+religion = ormazd
+martial = 5
+diplomacy = 0
+stewardship = 9
+intrigue = 0
+learning = 1
+add_trait = creature_human
+add_trait = mystic
+add_trait = grey_eminence
+add_trait = just
+add_trait = cynical
+1989.12.2 = {birth = yes}
+2027.1.13 = {death = yes}
+}
+
+59016 = {
+name = Khalil
+dynasty = 47018
+culture = ramaccan
+religion = ormazd
+martial = 10
+diplomacy = 2
+stewardship = 5
+intrigue = 8
+learning = 1
+add_trait = creature_human
+add_trait = duelist
+add_trait = mastermind_theologian
+add_trait = gregarious
+add_trait = paranoid
+add_trait = honest
+1984.9.30 = {birth = yes}
+2019.11.14 = {death = yes}
+}
+
+59017 = {
+name = Milad
+dynasty = 47019
+culture = ramaccan
+religion = ormazd
+martial = 1
+diplomacy = 3
+stewardship = 6
+intrigue = 6
+learning = 3
+add_trait = creature_human
+add_trait = hedonist
+add_trait = skilled_tactician
+add_trait = zealous
+add_trait = craven
+add_trait = greedy
+1977.3.17 = {birth = yes}
+2041.9.14 = {death = yes}
+}
+
+59018 = {
+name = Jawdat
+dynasty = 47020
+culture = ramaccan
+religion = ormazd
+martial = 1
+diplomacy = 3
+stewardship = 1
+intrigue = 5
+learning = 5
+add_trait = creature_human
+add_trait = midas_touched
+add_trait = kind
+1999.11.1 = {birth = yes}
+2042.6.25 = {death = yes}
+}
+
+59019 = {
+name = Ezra
+dynasty = 47021
+culture = ramaccan
+religion = ormazd
+martial = 2
+diplomacy = 0
+stewardship = 6
+intrigue = 7
+learning = 9
+add_trait = creature_human
+add_trait = mystic
+add_trait = scholarly_theologian
+add_trait = tall
+add_trait = weak
+1991.1.10 = {birth = yes}
+2045.10.28 = {death = yes}
 }
