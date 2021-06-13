@@ -1,6 +1,8 @@
-#Dwardin Thanehold Line
+#Used IDs 14251-14378
+#Free IDs 14379-14400
 
-1350 = {
+#Dwardin Thanehold Line
+14251 = {	#1350
 	name = Durak
 	dynasty = 75331
 	culture = dwarf_karak
@@ -18,7 +20,8 @@
 	1706.1.1={effect={reverse_opinion={name=opinion_dwarf_grudge who=2038 years=100}}}
 	1802.6.11 = {death = yes}
 }
-1351 = {
+
+14252 = {	#1351
 	name = Okri
 	dynasty = 75331
 	culture = dwarf_karak
@@ -33,13 +36,14 @@
 	add_trait = patient
 	add_trait = arbitrary
 	add_trait = twin
-	father=1350
+	father=14251
 	1698.1.30 = {birth = yes}
 	1706.1.1={effect={reverse_opinion={name=opinion_dwarf_grudge who=2038 years=100}}}
 	2000.1.1={effect={reverse_opinion={name=opinion_dwarf_grudge who=2039 years=100}}}
 	2028.3.18 = {death = yes}
 }
-1352 = {
+
+14253 = {	#1352
 	name = Goddi
 	dynasty = 75331
 	culture = dwarf_karak
@@ -53,15 +57,15 @@
 	add_trait = amateurish_plotter
 	add_trait = arbitrary
 	add_trait = twin
-	father=1350
+	father=14251
 	1698.1.30 = {birth = yes}
 	1706.1.1={effect={reverse_opinion={name=opinion_dwarf_grudge who=2038 years=100}}}
 	2000.1.1={effect={reverse_opinion={name=opinion_dwarf_grudge who=2039 years=100}}}
 	2028.3.18 = {death = yes}
 }
-#Karag Grim Brightshield Clan
 
-1353 = {
+#Karag Grim Brightshield Clan
+14254 = {	#1353
 	name = Dorin
 	dynasty = 75418
 	culture = dwarf_karak
@@ -76,9 +80,9 @@
 	add_trait = chaste
 	1849.5.16 = {birth = yes}
 	2161.9.18 = {death = yes}
-	}
+}
 	
-	1354 = {
+14255 = {	#1354
 	name = Loki
 	dynasty = 75418
 	culture = dwarf_karak
@@ -91,13 +95,13 @@
 	add_trait = creature_dwarf
 	add_trait = temperate
 	add_trait = chaste
-	father=1353
-	mother = 1359
+	father=14254
+	mother = 14373
 	1899.7.12 = {birth = yes}
 	2161.6.24 = {death = yes}
-	}
+}
 	
-	53452 = {
+14256 = {	#53452
 	name = Thorbal
 	dynasty = 75418
 	culture = dwarf_karak
@@ -110,13 +114,13 @@
 	add_trait = creature_dwarf
 	add_trait = temperate
 	add_trait = chaste
-	father=1353
-	mother = 1359
+	father=14254
+	mother = 14373
 	1904.1.3 = {birth = yes}
 	2190.5.8 = {death = yes}
-	}
-	
-	1355 = {
+}
+
+14257 = {	#1355
 	name = Krudd
 	dynasty = 75418
 	culture = dwarf_karak
@@ -129,13 +133,13 @@
 	add_trait = creature_dwarf
 	add_trait = temperate
 	add_trait = chaste
-	father=1353
-	mother = 1359
+	father=14254
+	mother = 14373
 	1908.8.19 = {birth = yes}
 	2205.10.27 = {death = yes}
-	}
+}
 	
-	1356 = {
+14258 = {	#1356
 	name = Logan
 	dynasty = 75418
 	culture = dwarf_karak
@@ -148,13 +152,13 @@
 	add_trait = creature_dwarf
 	add_trait = temperate
 	add_trait = chaste
-	father=1353
-	mother = 1359
+	father=14254
+	mother = 14373
 	1915.2.15 = {birth = yes}
 	2196.7.13 = {death = yes}
-	}
+}
 	
-	1357 = {
+14259 = {	#1357
 	name = Thorin
 	dynasty = 75418
 	culture = dwarf_karak
@@ -167,13 +171,13 @@
 	add_trait = creature_dwarf
 	add_trait = temperate
 	add_trait = chaste
-	father=1353
-	mother = 1359
+	father=14254
+	mother = 14373
 	1921.11.11 = {birth = yes}
 	2233.3.16 = {death = yes}
-	}
+}
 	
-	1358 = {
+14260 = {	#1358
 	name = Gwenelyn
 	female = yes
 	dynasty = 75418
@@ -187,51 +191,54 @@
 	add_trait = creature_dwarf
 	add_trait = temperate
 	add_trait = chaste
-	father=1353
-	mother = 1359
+	father=14254
+	mother = 14373
 	1910.12.14 = {birth = yes}
 	2278.3.16 = {death = yes}
-	}
-	53059 = {
-		name = Grimwold
-		dynasty = 75173
-		culture = dwarf_karak
-		religion = ancestor_gods
-		martial = 1
-		diplomacy = 7
-		stewardship = 6
-		intrigue = 8
-		learning = 1
-		add_trait = creature_dwarf
-		add_trait = hunter
-		add_trait = misguided_warrior
-		add_trait = craven
-		add_trait = greedy
-		1968.6.29 = {birth = yes}
-		2062.4.24 = {death = yes}
-	}
-	53070 = {
-		name = Norgrim
-		dynasty = 75173
-		father=53059
-		culture = dwarf_karak
-		religion = ancestor_gods
-		martial = 9
-		diplomacy = 4
-		stewardship = 4
-		intrigue = 7
-		learning = 7
-		add_trait = creature_dwarf
-		add_trait = falconer
-		add_trait = martial_cleric
-		add_trait = strong
-		add_trait = diligent
-		add_trait = envious
-		1988.12.7 = {birth = yes}
-		2041.9.4 = {death = yes}
-	}
+}
+
+14261 = {	#53059
+	name = Grimwold
+	dynasty = 75173
+	culture = dwarf_karak
+	religion = ancestor_gods
+	martial = 1
+	diplomacy = 7
+	stewardship = 6
+	intrigue = 8
+	learning = 1
+	add_trait = creature_dwarf
+	add_trait = hunter
+	add_trait = misguided_warrior
+	add_trait = craven
+	add_trait = greedy
+	1968.6.29 = {birth = yes}
+	2062.4.24 = {death = yes}
+}
+
+14262 = {	#53070
+	name = Norgrim
+	dynasty = 75173
+	father=14261
+	culture = dwarf_karak
+	religion = ancestor_gods
+	martial = 9
+	diplomacy = 4
+	stewardship = 4
+	intrigue = 7
+	learning = 7
+	add_trait = creature_dwarf
+	add_trait = falconer
+	add_trait = martial_cleric
+	add_trait = strong
+	add_trait = diligent
+	add_trait = envious
+	1988.12.7 = {birth = yes}
+	2041.9.4 = {death = yes}
+}
+
 #Clan Gunnisson Karag Azril King line
-53260 = {
+14263 = {	#53260
 	name = Gunn
 	dynasty = 75410
 	culture = dwarf_karak
@@ -245,8 +252,9 @@
 	add_trait = brave
 	1.11.14 = {birth = yes}
 	20.12.17 = {death = yes}
-	}
-	53261 = {
+}
+
+14264 = {	#53261
 	name = Dorin
 	dynasty = 75410
 	culture = dwarf_karak
@@ -258,11 +266,12 @@
 	learning = 3
 	add_trait = creature_dwarf
 	add_trait = brave
-	father=53299
+	father=14300
 	1225.11.14 = {birth = yes}
 	1598.12.17 = {death = yes}
-	}
-	53262 = {
+}
+
+14265 = {	#53262
 	name = Thorbal
 	dynasty = 75410
 	culture = dwarf_karak
@@ -274,11 +283,12 @@
 	learning = 3
 	add_trait = creature_dwarf
 	add_trait = brave
-	father=53261
+	father=14264
 	1463.11.14 = {birth = yes}
 	1832.12.17 = {death = yes}
-	}
-	53263 = {
+}
+
+14266 = {	#53263
 	name = Thorek
 	dynasty = 75410
 	culture = dwarf_karak
@@ -290,11 +300,12 @@
 	learning = 3
 	add_trait = creature_dwarf
 	add_trait = brave
-	father=53262
+	father=14265
 	1763.11.14 = {birth = yes}
 	2082.12.17 = {death = yes}
-	}
-	53264 = {
+}
+
+14267 = {	#53264
 	name = Thorin
 	dynasty = 75410
 	culture = dwarf_karak
@@ -306,13 +317,14 @@
 	learning = 3
 	add_trait = creature_dwarf
 	add_trait = brave
-	father=53263
-	mother = 1362
+	father=14266
+	mother = 14375
 	1905.11.14 = {birth = yes}
 	1973.9.26 = {give_nickname = nick_oakenshield}
 	2182.12.17 = {death = yes}
-	}
-	53265 = {
+}
+
+14268 = {	#53265
 	name = Furgil
 	dynasty = 75410
 	culture = dwarf_karak
@@ -324,11 +336,12 @@
 	learning = 3
 	add_trait = creature_dwarf
 	add_trait = brave
-	father=53278
+	father=14280
 	138.11.14 = {birth = yes}
 	156.1.8 = {death = {death_reason = death_battle}}
-	}
-	53266 = {
+}
+
+14269 = {	#53266
 	name = Grogril
 	dynasty = 75410
 	culture = dwarf_karak
@@ -340,11 +353,12 @@
 	learning = 3
 	add_trait = creature_dwarf
 	add_trait = brave
-	father=53524
+	father=14325
 	1336.11.14 = {birth = yes}
 	1539.12.17 = {death = yes}
-	}
-	53267 = {
+}
+
+14270 = {	#53267
 	name = Mundri
 	dynasty = 75410
 	culture = dwarf_karak
@@ -356,11 +370,12 @@
 	learning = 3
 	add_trait = creature_dwarf
 	add_trait = brave
-	father=53266
+	father=14269
 	1520.11.14 = {birth = yes}
 	1875.12.17 = {death = yes}
-	}
-	53268 = {
+}
+
+14271 = {	#53268
 	name = Dorin
 	dynasty = 75410
 	culture = dwarf_karak
@@ -372,12 +387,13 @@
 	learning = 3
 	add_trait = creature_dwarf
 	add_trait = brave
-	father=53267
+	father=14270
 	1771.11.14 = {birth = yes}
 	1873.9.26 = {give_nickname = nick_irongrip}
 	2086.12.17 = {death = yes}
-	}
-	53269 = {
+}
+
+14272 = {	#53269
 	name = Thorin
 	dynasty = 75410
 	culture = dwarf_karak
@@ -389,12 +405,13 @@
 	learning = 3
 	add_trait = creature_dwarf
 	add_trait = brave
-	father=53268
+	father=14271
 	1924.11.14 = {birth = yes}
 	1973.9.26 = {give_nickname = nick_ironhelm}
 	2231.12.17 = {death = yes}
-	}
-	53270 = {
+}
+
+14273 = {	#53270
 	name = Gerta
 	female = yes
 	dynasty = 75410
@@ -407,12 +424,13 @@
 	learning = 3
 	add_trait = creature_dwarf
 	add_trait = brave
-	father=53262
+	father=14265
 	1794.11.14 = {birth = yes}
-	1840.6.18 = {add_spouse = 53009}
+	1840.6.18 = {add_spouse = 14372}
 	2173.12.17 = {death = yes}
-	}
-	53272 = {
+}
+
+14274 = {	#53272
 	name = Grundi
 	dynasty = 75410
 	culture = dwarf_karak
@@ -428,11 +446,12 @@
 	add_trait = zealous
 	add_trait = patient
 	add_trait = trusting
-	father=53260
+	father=14263
 	18.12.7 = {birth = yes}
 	36.8.12 = {death = yes}
-	}
-	53273 = {
+}
+
+14275 = {	#53273
 	name = Mordin
 	dynasty = 75410
 	culture = dwarf_karak
@@ -448,11 +467,12 @@
 	add_trait = charitable
 	add_trait = just
 	add_trait = drunkard
-	father=53272
+	father=14274
 	35.3.20 = {birth = yes}
 	53.2.1 = {death = yes}
-	}
-	53274 = {
+}
+
+14276 = {	#53274
 	name = Kazrik
 	dynasty = 75410
 	culture = dwarf_karak
@@ -469,11 +489,12 @@
 	add_trait = just
 	add_trait = ambitious
 	add_trait = temperate
-	father=53273
+	father=14275
 	52.8.27 = {birth = yes}
 	70.8.27 = {death = yes}
-	}
-	53275 = {
+}
+
+14277 = {	#53275
 	name = Gorim
 	dynasty = 75410
 	culture = dwarf_karak
@@ -489,11 +510,12 @@
 	add_trait = slothful
 	add_trait = cruel
 	add_trait = gluttonous
-	father=53274
+	father=14276
 	69.12.7 = {birth = yes}
 	87.9.18 = {death = yes}
-	}
-	53276 = {
+}
+
+14278 = {	#53276
 	name = Hugnir
 	dynasty = 75410
 	culture = dwarf_karak
@@ -508,11 +530,12 @@
 	add_trait = shy
 	add_trait = paranoid
 	add_trait = charitable
-	father=53275
+	father=14277
 	86.4.22 = {birth = yes}
 	105.2.16 = {death = yes}
-	}
-	53277 = {
+}
+
+14279 = {	#53277
 	name = Lunn
 	dynasty = 75410
 	culture = dwarf_karak
@@ -527,11 +550,12 @@
 	add_trait = lustful
 	add_trait = temperate
 	add_trait = zealous
-	father=53276
+	father=14278
 	103.1.10 = {birth = yes}
 	122.1.13 = {death = yes}
-	}
-	53278 = {
+}
+
+14280 = {	#53278
 	name = Belegar
 	dynasty = 75410
 	culture = dwarf_karak
@@ -546,11 +570,12 @@
 	add_trait = craven
 	add_trait = zealous
 	add_trait = arbitrary
-	father=53277
+	father=14279
 	121.3.1 = {birth = yes}
 	139.12.9 = {death = yes}
-	}
-	53279 = {
+}
+
+14281 = {	#53279
 	name = Dimzad
 	dynasty = 75410
 	culture = dwarf_karak
@@ -567,11 +592,12 @@
 	add_trait = shy
 	add_trait = ambitious
 	add_trait = wounded
-	father=53278
+	father=14280
 	137.8.26 = {birth = yes}
 	157.8.19 = {death = yes}
-	}
-	53280 = {
+}
+
+14282 = {	#53280
 	name = Dorin
 	dynasty = 75410
 	culture = dwarf_karak
@@ -589,11 +615,12 @@
 	add_trait = wroth
 	add_trait = cruel
 	add_trait = lustful
-	father=53265
+	father=14268
 	155.9.17 = {birth = yes}
 	171.1.8 = {death = {death_reason = death_battle}}
-	}
-	53281 = {
+}
+
+14283 = {	#53281
 	name = Krudd
 	dynasty = 75410
 	culture = dwarf_karak
@@ -611,12 +638,12 @@
 	add_trait = wroth
 	add_trait = cruel
 	add_trait = lustful
-	father=53279
+	father=14281
 	155.9.17 = {birth = yes}
 	173.1.8 = {death = yes}
-	}
+}
 	
-	53282 = {
+14284 = {	#53282
 	name = Bronn
 	dynasty = 75410
 	culture = dwarf_karak
@@ -634,12 +661,12 @@
 	add_trait = honest
 	add_trait = ambitious
 	add_trait = wroth
-	father=53281
+	father=14283
 	172.9.17 = {birth = yes}
 	190.1.8 = {death = yes}
-	}
+}
 	
-	53283 = {
+14285 = {	#53283
 	name = Bradni
 	dynasty = 75410
 	culture = dwarf_karak
@@ -655,12 +682,12 @@
 	add_trait = lustful
 	add_trait = cynical
 	add_trait = diligent
-	father=53282
+	father=14284
 	189.5.1 = {birth = yes}
 	207.10.30 = {death = yes}
-	}
+}
 	
-	53284 = {
+14286 = {	#53284
 	name = Storri
 	dynasty = 75410
 	culture = dwarf_karak
@@ -678,12 +705,12 @@
 	add_trait = gregarious
 	add_trait = paranoid
 	add_trait = ugly
-	father=53283
+	father=14285
 	206.4.4 = {birth = yes}
 	224.1.25 = {death = yes}
-	}
+}
 	
-	53285 = {
+14287 = {	#53285
 	name = Norgrim
 	dynasty = 75410
 	culture = dwarf_karak
@@ -699,12 +726,12 @@
 	add_trait = cruel
 	add_trait = chaste
 	add_trait = honest
-	father=53284
+	father=14286
 	223.7.21 = {birth = yes}
 	241.9.17 = {death = yes}
-	}
+}
 	
-	53286 = {
+14287 = {	#53286
 	name = Borgin
 	dynasty = 75410
 	culture = dwarf_karak
@@ -720,12 +747,12 @@
 	add_trait = craven
 	add_trait = paranoid
 	add_trait = cynical
-	father=53285
+	father=14287
 	240.11.23 = {birth = yes}
 	258.11.10 = {death = yes}
-	}
+}
 	
-	53287 = {
+14288 = {	#53287
 	name = Dimrond
 	dynasty = 75410
 	culture = dwarf_karak
@@ -739,12 +766,12 @@
 	add_trait = flamboyant_schemer
 	add_trait = slothful
 	add_trait = greedy
-	father=53286
+	father=14287
 	257.2.16 = {birth = yes}
 	275.7.17 = {death = yes}
-	}
+}
 	
-	53288 = {
+14289 = {	#53288
 	name = Kargun
 	dynasty = 75410
 	culture = dwarf_karak
@@ -759,12 +786,12 @@
 	add_trait = paranoid
 	add_trait = cruel
 	add_trait = temperate
-	father=53287
+	father=14288
 	274.10.2 = {birth = yes}
 	292.8.20 = {death = yes}
-	}
+}
 	
-	53289 = {
+14290 = {	#53289
 	name = Gorim
 	dynasty = 75410
 	culture = dwarf_karak
@@ -781,12 +808,12 @@
 	add_trait = gregarious
 	add_trait = cynical
 	add_trait = drunkard
-	father=53288
+	father=14289
 	291.1.20 = {birth = yes}
 	309.9.7 = {death = yes}
-	}
+}
 	
-	53290 = {
+14291 = {	#53290
 	name = Snorri
 	dynasty = 75410
 	culture = dwarf_karak
@@ -803,12 +830,12 @@
 	add_trait = gluttonous
 	add_trait = diligent
 	add_trait = zealous
-	father=53289
+	father=14290
 	308.1.14 = {birth = yes}
 	326.7.3 = {death = yes}
-	}
+}
 	
-	53291 = {
+14292 = {	#53291
 	name = Kragg
 	dynasty = 75410
 	culture = dwarf_karak
@@ -825,12 +852,12 @@
 	add_trait = greedy
 	add_trait = cruel
 	add_trait = honest
-	father=53290
+	father=14291
 	325.12.15 = {birth = yes}
 	343.10.28 = {death = yes}
-	}
+}
 	
-	53292 = {
+14293 = {	#53292
 	name = Thrund
 	dynasty = 75410
 	culture = dwarf_karak
@@ -846,12 +873,12 @@
 	add_trait = slothful
 	add_trait = zealous
 	add_trait = just
-	father=53291
+	father=14292
 	342.4.14 = {birth = yes}
 	371.10.18 = {death = yes}
-	}
+}
 	
-	53293 = {
+14294 = {	#53293
 	name = Dorin
 	dynasty = 75410
 	culture = dwarf_karak
@@ -867,12 +894,12 @@
 	add_trait = ambitious
 	add_trait = gluttonous
 	add_trait = envious
-	father=53292
+	father=14293
 	361.7.6 = {birth = yes}
 	432.8.26 = {death = yes}
-	}
+}
 	
-	53294 = {
+14295 = {	#53294
 	name = Morgrim
 	dynasty = 75410
 	culture = dwarf_karak
@@ -890,12 +917,12 @@
 	add_trait = trusting
 	add_trait = deceitful
 	add_trait = content
-	father=53293
+	father=14294
 	399.3.10 = {birth = yes}
 	624.2.4 = {death = yes}
-	}
+}
 	
-	53295 = {
+14296 = {	#53295
 	name = Thorin
 	dynasty = 75410
 	culture = dwarf_karak
@@ -910,12 +937,12 @@
 	add_trait = temperate
 	add_trait = just
 	add_trait = diligent
-	father=53294
+	father=14295
 	523.1.18 = {birth = yes}
 	976.11.5 = {death = yes}
-	}
+}
 	
-	53296 = {
+14297 = {	#53296
 	name = Vragni
 	dynasty = 75410
 	culture = dwarf_karak
@@ -932,12 +959,12 @@
 	add_trait = kind
 	add_trait = proud
 	add_trait = content
-	father=53295
+	father=14296
 	711.7.15 = {birth = yes}
 	1115.2.13 = {death = yes}
-	}
+}
 	
-	53297 = {
+14298 = {	#53297
 	name = Yadri
 	dynasty = 75410
 	culture = dwarf_karak
@@ -955,12 +982,12 @@
 	add_trait = shy
 	add_trait = content
 	add_trait = deceitful
-	father=53296
+	father=14297
 	846.11.27 = {birth = yes}
 	1249.1.1 = {death = yes}
-	}
+}
 	
-	53298 = {
+14299 = {	#53298
 	name = Rungni
 	dynasty = 75410
 	culture = dwarf_karak
@@ -976,12 +1003,12 @@
 	add_trait = brave
 	add_trait = slothful
 	add_trait = cruel
-	father=53297
+	father=14298
 	1035.7.17 = {birth = yes}
 	1370.6.29 = {death = yes}
-	}
+}
 	
-	53299 = {
+14300 = {	#53299
 	name = Duregar
 	dynasty = 75410
 	culture = dwarf_karak
@@ -996,14 +1023,13 @@
 	add_trait = just
 	add_trait = envious
 	add_trait = patient
-	father=53298
+	father=14299
 	1117.8.17 = {birth = yes}
 	1473.1.16 = {death = yes}
-	}
+}
 	
-	#Line of Merc Gunnisons
-	
-	53500 = {
+#Line of Merc Gunnisons
+14301 = {	#53500
 	name = Borgin
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1020,12 +1046,12 @@
 	add_trait = brave
 	add_trait = content
 	add_trait = diligent
-	father=53276
+	father=14278
 	104.7.8 = {birth = yes}
 	122.4.28 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53501 = {
+14302 = {	#53501
 	name = Kadri
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1040,12 +1066,12 @@
 	add_trait = trusting
 	add_trait = shy
 	add_trait = cruel
-	father=53500
+	father=14301
 	121.12.27 = {birth = yes}
 	139.11.12 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53502 = {
+14303 = {	#53502
 	name = Rogni
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1059,12 +1085,12 @@
 	add_trait = skilled_tactician
 	add_trait = wroth
 	add_trait = just
-	father=53501
+	father=14302
 	138.8.19 = {birth = yes}
 	156.6.13 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53503 = {
+14304 = {	#53503
 	name = Gotrek
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1080,12 +1106,12 @@
 	add_trait = deceitful
 	add_trait = just
 	add_trait = envious
-	father=53502
+	father=14303
 	155.12.25 = {birth = yes}
 	173.9.25 = {death = yes}
-	}
+}
 	
-	53504 = {
+14305 = {	#53504
 	name = Hargin
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1102,12 +1128,12 @@
 	add_trait = shy
 	add_trait = humble
 	add_trait = cruel
-	father=53503
+	father=14304
 	172.11.18 = {birth = yes}
 	190.5.14 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53505 = {
+14306 = {	#53505
 	name = Norgrim
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1125,12 +1151,12 @@
 	add_trait = envious
 	add_trait = charitable
 	add_trait = possessed
-	father=53504
+	father=14305
 	189.10.2 = {birth = yes}
 	207.8.14 = {death = yes}
-	}
+}
 	
-	53506 = {
+14307 = {	#53506
 	name = Gorim
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1147,12 +1173,12 @@
 	add_trait = craven
 	add_trait = slothful
 	add_trait = cruel
-	father=53505
+	father=14306
 	206.11.11 = {birth = yes}
 	224.9.24 = {death = yes}
-	}
+}
 	
-	53507 = {
+14308 = {	#53507
 	name = Dwinbar
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1168,12 +1194,12 @@
 	add_trait = charitable
 	add_trait = temperate
 	add_trait = brave
-	father=53506
+	father=14307
 	223.1.1 = {birth = yes}
 	241.11.22 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53508 = {
+14309 = {	#53508
 	name = Snorri
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1190,12 +1216,12 @@
 	add_trait = cruel
 	add_trait = wroth
 	add_trait = content
-	father=53507
+	father=14308
 	240.4.17 = {birth = yes}
 	258.1.11 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53509 = {
+14310 = {	#53509
 	name = Thorin
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1211,12 +1237,12 @@
 	add_trait = kind
 	add_trait = chaste
 	add_trait = stressed
-	father=53508
+	father=14309
 	257.8.18 = {birth = yes}
 	275.2.22 = {death = yes}
-	}
+}
 	
-	53510 = {
+14311 = {	#53510
 	name = Fenni
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1232,12 +1258,12 @@
 	add_trait = chaste
 	add_trait = wroth
 	add_trait = craven
-	father=53509
+	father=14310
 	274.3.27 = {birth = yes}
 	292.10.4 = {death = yes}
-	}
+}
 	
-	53511 = {
+14312 = {	#53511
 	name = Brondi
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1256,12 +1282,12 @@
 	add_trait = trusting
 	add_trait = shy
 	add_trait = drunkard
-	father=53510
+	father=14311
 	291.3.17 = {birth = yes}
 	309.1.31 = {death = yes}
-	}
+}
 	
-	53512 = {
+14313 = {	#53512
 	name = Garil
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1278,12 +1304,12 @@
 	add_trait = arbitrary
 	add_trait = wroth
 	add_trait = envious
-	father=53511
+	father=14312
 	308.2.13 = {birth = yes}
 	326.8.3 = {death = yes}
-	}
+}
 	
-	53513 = {
+14314 = {	#53513
 	name = Dimzad
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1299,12 +1325,12 @@
 	add_trait = greedy
 	add_trait = humble
 	add_trait = lustful
-	father=53512
+	father=14313
 	325.5.10 = {birth = yes}
 	343.10.1 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53514 = {
+14315 = {	#53514
 	name = Thorbal
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1319,12 +1345,12 @@
 	add_trait = lustful
 	add_trait = shy
 	add_trait = envious
-	father=53513
+	father=14314
 	342.9.15 = {birth = yes}
 	444.1.10 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53515 = {
+14316 = {	#53515
 	name = Baragor
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1340,12 +1366,12 @@
 	add_trait = trusting
 	add_trait = lustful
 	add_trait = cruel
-	father=53514
+	father=14315
 	369.6.18 = {birth = yes}
 	573.9.22 = {death = yes}
-	}
+}
 	
-	53516 = {
+14317 = {	#53516
 	name = Enlag
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1361,7 +1387,7 @@
 	add_trait = slothful
 	add_trait = arbitrary
 	add_trait = lunatic_1
-	father=53515
+	father=14316
 	432.1.25 = {
 		birth = yes
 		effect = {
@@ -1369,9 +1395,9 @@
 		}
 	}
 	684.8.16 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53517 = {
+14318 = {	#53517
 	name = Gunn
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1387,12 +1413,12 @@
 	add_trait = ambitious
 	add_trait = just
 	add_trait = charitable
-	father=53516
+	father=14317
 	483.9.2 = {birth = yes}
 	729.6.13 = {death = yes}
-	}
+}
 	
-	53518 = {
+14319 = {	#53518
 	name = Borm
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1410,12 +1436,12 @@
 	add_trait = ambitious
 	add_trait = gluttonous
 	add_trait = wounded
-	father=53517
+	father=14318
 	540.12.12 = {birth = yes}
 	818.9.1 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53519 = {
+14320 = {	#53519
 	name = Gottri
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1431,12 +1457,12 @@
 	add_trait = gluttonous
 	add_trait = greedy
 	add_trait = ambitious
-	father=53518
+	father=14319
 	588.3.23 = {birth = yes}
 	915.2.8 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53520 = {
+14321 = {	#53520
 	name = Belegar
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1453,12 +1479,12 @@
 	add_trait = cruel
 	add_trait = patient
 	add_trait = gregarious
-	father=53519
+	father=14320
 	673.6.11 = {birth = yes}
 	1023.7.1 = {death = {death_reason = death_battle}}
-	}
-	
-	53521 = {
+}
+
+14322 = {	#53521
 	name = Skaldor
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1474,12 +1500,12 @@
 	add_trait = diligent
 	add_trait = paranoid
 	add_trait = cynical
-	father=53520
+	father=14321
 	830.7.14 = {birth = yes}
 	1185.7.18 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53522 = {
+14323 = {	#53522
 	name = Durgin
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1496,12 +1522,12 @@
 	add_trait = humble
 	add_trait = trusting
 	add_trait = greedy
-	father=53521
+	father=14322
 	908.8.15 = {birth = yes}
 	1277.9.21 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53523 = {
+14324 = {	#53523
 	name = Ulther
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1517,12 +1543,12 @@
 	add_trait = brave
 	add_trait = proud
 	add_trait = lustful
-	father=53522
+	father=14323
 	1010.7.17 = {birth = yes}
 	1346.2.2 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53524 = {
+14325 = {	#53524
 	name = Kettri
 	dynasty = 75410
 	culture = dwarf_karak
@@ -1537,13 +1563,13 @@
 	add_trait = duelist
 	add_trait = humble
 	add_trait = arbitrary
-	father=53523
+	father=14324
 	1073.12.5 = {birth = yes}
 	1431.9.19 = {death = yes}
-	}
-#Line of Thorgrim Grudgebearer Durazklad High Kings
+}
 
-53079 = {
+#Line of Thorgrim Grudgebearer Durazklad High Kings
+14326 = {	#53079
 	name = Balun
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1559,13 +1585,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53009
-	mother = 53270
+	father=14372
+	mother = 14273
 	1895.9.26 = {birth = yes}
 	2324.4.14 = {death = yes}
-	}
+}
 	
-	53080 = {
+14327 = {	#53080
 	name = Grindol
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1581,12 +1607,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53122
+	father=14369
 	1723.9.26 = {birth = yes}
 	2223.9.26 = {death = yes}
-	}
+}
 	
-	53081 = {
+14328 = {	#53081
 	name = Elmador
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1602,12 +1628,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53082
+	father=14329
 	487.9.26 = {birth = yes}
 	920.4.14 = {death = yes}
-	}
+}
 	
-	53082 = {
+14329 = {	#53082
 	name = Finn
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1623,13 +1649,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53109
+	father=14356
 	414.9.26 = {birth = yes}
 	621.9.26 = {give_nickname = nick_sourscowl}
 	755.4.14 = {death = yes}
-	}
+}
 	
-	53083 = {
+14330 = {	#53083
 	name = Kurgan
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1645,13 +1671,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53105
+	father=14352
 	326.9.26 = {birth = yes}
 	342.9.26 = {give_nickname = nick_ironbeard}
 	343.4.14 = {death = yes}
-	}
+}
 	
-	53084 = {
+14331 = {	#53084
 	name = Logan
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1667,13 +1693,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53102
+	father=14349
 	262.9.26 = {birth = yes}
 	278.9.26 = {give_nickname = nick_proudbeard}
 	279.4.14 = {death = yes}
-	}
+}
 	
-	53085 = {
+14332 = {	#53085
 	name = Yorri
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1689,13 +1715,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53098
+	father=14345
 	181.9.26 = {birth = yes}
 	197.9.26 = {give_nickname = nick_stormcrow}
 	198.4.14 = {death = yes}
-	}
+}
 	
-	53086 = {
+14333 = {	#53086
 	name = Morgrim
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1711,13 +1737,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53096
+	father=14343
 	133.9.26 = {birth = yes}
 	149.9.26 = {give_nickname = nick_blackbeard}
 	150.4.14 = {death = yes}
-	}
+}
 	
-	53087 = {
+14334 = {	#53087
 	name = Snorri
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1733,13 +1759,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53088
+	father=14335
 	116.9.26 = {birth = yes}
 	132.9.26 = {give_nickname = nick_halfhand}
 	133.4.14 = {death = {death_reason = death_battle}}
-	}
+}
 	
-	53088 = {
+14335 = {	#53088
 	name = Gotrek
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1755,13 +1781,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53094
+	father=14341
 	99.9.26 = {birth = yes}
 	116.9.26 = {give_nickname = nick_starbreaker}
 	117.4.14 = {death = yes}
-	}
+}
 	
-	53089 = {
+14336 = {	#53089
 	name = Snorri
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1779,9 +1805,9 @@
 	1.9.26 = {birth = yes}
 	17.5.7 = {give_nickname = nick_whitebeard}
 	20.4.14 = {death = yes}
-	}
+}
 	
-	53090 = {
+14337 = {	#53090
 	name = Thorik
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1796,12 +1822,12 @@
 	add_trait = grey_eminence
 	add_trait = temperate
 	add_trait = chaste
-	father=53089
+	father=14336
 	17.8.23 = {birth = yes}
 	34.7.12 = {death = yes}
-	}
+}
 	
-	53091 = {
+14338 = {	#53091
 	name = Gorim
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1816,13 +1842,13 @@
 	add_trait = grey_eminence
 	add_trait = temperate
 	add_trait = chaste
-	father=53090
+	father=14337
 	33.2.14 = {birth = yes}
 	50.8.3 = {give_nickname = nick_ironhammer}
 	51.3.21 = {death = yes}
-	}
+}
 	
-	53092 = {
+14339 = {	#53092
 	name = Vikram
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1838,12 +1864,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53091
+	father=14338
 	50.6.8 = {birth = yes}
 	67.3.22 = {death = yes}
-	}
+}
 	
-	53093 = {
+14340 = {	#53093
 	name = Kallon
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1859,12 +1885,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53092
+	father=14339
 	66.4.25 = {birth = yes}
 	83.4.7 = {death = yes}
-	}
+}
 	
-	53094 = {
+14341 = {	#53094
 	name = Gurni
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1880,13 +1906,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53093
+	father=14340
 	82.9.26 = {birth = yes}
 	99.9.26 = {give_nickname = nick_hammerfist}
 	101.4.14 = {death = yes}
-	}
+}
 	
-	53095 = {
+14342 = {	#53095
 	name = Thorik
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1902,12 +1928,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53094
+	father=14341
 	100.9.26 = {birth = yes}
 	118.1.20 = {death = yes}
-	}
+}
 	
-	53096 = {
+14343 = {	#53096
 	name = Morgrim #Elgidum
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1923,7 +1949,7 @@
 	add_trait = strong
 	add_trait = wroth
 	add_trait = stubborn
-	father=53095
+	father=14342
 	117.9.26 = {birth = yes}
 	133.9.26 = {
 		give_nickname = nick_elgidum
@@ -1933,9 +1959,9 @@
 		}
 	}
 	134.4.14 = {death = yes}
-	}
+}
 	
-	53097 = {
+14344 = {	#53097
 	name = Dwinbar
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1951,12 +1977,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53086
+	father=14333
 	149.9.26 = {birth = yes}
 	166.4.14 = {death = yes}
-	}
+}
 	
-	53098 = {
+14345 = {	#53098
 	name = Zamnil
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1972,13 +1998,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53097
+	father=14344
 	165.9.26 = {birth = yes}
 	181.9.26 = {give_nickname = nick_irongrip}
 	182.4.14 = {death = yes}
-	}
-	
-	53099 = {
+}
+
+14346 = {	#53099
 	name = Maldrek
 	dynasty = 75000
 	culture = dwarf_karak
@@ -1994,13 +2020,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53085
+	father=14332
 	197.9.26 = {birth = yes}
 	213.9.26 = {give_nickname = nick_stoneanvil}
 	214.4.14 = {death = yes}
-	}
+}
 	
-	53100 = {
+14347 = {	#53100
 	name = Olin
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2016,12 +2042,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53099
+	father=14346
 	213.9.26 = {birth = yes}
 	230.4.14 = {death = yes}
-	}
+}
 	
-	53101 = {
+14348 = {	#53101
 	name = Enik
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2037,12 +2063,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53100
+	father=14347
 	229.9.26 = {birth = yes}
 	246.4.14 = {death = yes}
-	}
+}
 	
-	53102 = {
+14349 = {	#53102
 	name = Kazgar
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2058,12 +2084,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53101
+	father=14348
 	245.9.26 = {birth = yes}
 	262.4.14 = {death = yes}
-	}
+}
 	
-	53103 = {
+14350 = {	#53103
 	name = Gundrun
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2079,13 +2105,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53084
+	father=14331
 	278.9.26 = {birth = yes}
 	294.9.26 = {give_nickname = nick_blueaxe}
 	295.4.14 = {death = yes}
-	}
+}
 	
-	53104 = {
+14351 = {	#53104
 	name = Hagred
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2101,12 +2127,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53103
+	father=14350
 	294.9.26 = {birth = yes}
 	311.4.14 = {death = yes}
-	}
+}
 	
-	53105 = {
+14352 = {	#53105
 	name = Norgrim
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2122,13 +2148,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53104
+	father=14351
 	310.9.26 = {birth = yes}
 	326.9.26 = {give_nickname = nick_sharpedge}
 	327.4.14 = {death = yes}
-	}
+}
 	
-	53106 = {
+14353 = {	#53106
 	name = Grom
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2144,12 +2170,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53083
+	father=14330
 	342.9.26 = {birth = yes}
 	361.4.14 = {death = yes}
-	}
+}
 	
-	53107 = {
+14354 = {	#53107
 	name = Rorek
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2165,13 +2191,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53106
+	father=14353
 	359.9.26 = {birth = yes}
 	377.9.26 = {give_nickname = nick_scarface}
 	402.4.14 = {death = yes}
-	}
+}
 	
-	53108 = {
+14355 = {	#53108
 	name = Skag
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2187,13 +2213,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53106
+	father=14353
 	360.9.26 = {birth = yes}
 	391.9.26 = {give_nickname = nick_ironhelm}
 	498.4.14 = {death = yes}
-	}
+}
 	
-	53109 = {
+14356 = {	#53109
 	name = Duregar
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2209,13 +2235,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53108
+	father=14355
 	383.9.26 = {birth = yes}
 	572.9.26 = {give_nickname = nick_giftgiver}
 	604.4.14 = {death = yes}
-	}
+}
 	
-	53110 = {
+14357 = {	#53110
 	name = Oldor
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2231,12 +2257,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53082
+	father=14329
 	523.9.26 = {birth = yes}
 	968.4.14 = {death = yes}
-	}
+}
 	
-	53111 = {
+14358 = {	#53111
 	name = Mordin
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2252,13 +2278,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53081
+	father=14328
 	567.9.26 = {birth = yes}
 	728.9.26 = {give_nickname = nick_axehelm}
 	995.4.14 = {death = yes}
-	}
+}
 	
-	53112 = {
+14359 = {	#53112
 	name = Snorri
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2274,12 +2300,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53111
+	father=14358
 	711.9.26 = {birth = yes}
 	1112.4.14 = {death = {death_reason = death_natural}}
-	}
+}
 	
-	53113 = {
+14360 = {	#53113
 	name = Gorim
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2295,12 +2321,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53112
+	father=14359
 	846.9.26 = {birth = yes}
 	1252.4.14 = {death = yes}
-	}
+}
 	
-	53114 = {
+14361 = {	#53114
 	name = Thungni
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2316,13 +2342,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53113
+	father=14360
 	1035.9.26 = {birth = yes}
 	1277.9.26 = {give_nickname = nick_oath_holder}
 	1368.4.14 = {death = yes}
-	}
+}
 	
-	53115 = {
+14362 = {	#53115
 	name = Haakon
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2338,13 +2364,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53114
+	father=14361
 	1117.9.26 = {birth = yes}
 	1364.9.26 = {give_nickname = nick_orcbane}
 	1440.4.14 = {death = yes}
-	}
+}
 	
-	53116 = {
+14363 = {	#53116
 	name = Grundhar
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2360,14 +2386,14 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53115
+	father=14362
 	1268.9.26 = {birth = yes}
 	1452.9.26 = {give_nickname = nick_bronze_bandages}
 	1360.1.1={immortal_age=90}
 	1532.4.14 = {death = yes}
-	}
+}
 	
-	53117 = {
+14364 = {	#53117
 	name = Hargrem
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2383,13 +2409,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53116
+	father=14363
 	1426.9.26 = {birth = yes}
 	1557.9.26 = {give_nickname = nick_greybeard}
 	1630.4.14 = {death = yes}
-	}
+}
 	
-	53118 = {
+14365 = {	#53118
 	name = Gottri
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2405,13 +2431,13 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53117
+	father=14364
 	1492.9.26 = {birth = yes}
 	1604.9.26 = {give_nickname = nick_strongwill}
 	1707.4.14 = {death = yes}
-	}
+}
 	
-	53119 = {
+14366 = {	#53119
 	name = Kendrak
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2427,12 +2453,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53118
+	father=14365
 	1564.9.26 = {birth = yes}
 	1810.4.14 = {death = yes}
-	}
+}
 	
-	53120 = {
+14367 = {	#53120
 	name = Ulther
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2448,12 +2474,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53119
+	father=14366
 	1585.9.26 = {birth = yes}
 	1870.4.14 = {death = yes}
-	}
+}
 	
-	53121 = {
+14368 = {	#53121
 	name = Bardin
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2469,12 +2495,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53120
+	father=14367
 	1647.9.26 = {birth = yes}
 	1972.4.14 = {death = yes}
-	}
+}
 	
-	53122 = {
+14369 = {	#53122
 	name = Mardin
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2490,12 +2516,12 @@
 	add_trait = tall
 	add_trait = temperate
 	add_trait = chaste
-	father=53120
+	father=14367
 	1672.9.26 = {birth = yes}
 	1826.4.14 = {death = yes}
-	}
-	
-	53123 = {
+}
+
+14370 = {	#53123
 	name = Vanyra
 	female = yes
 	dynasty = 75000
@@ -2508,14 +2534,14 @@
 	learning = 3
 	add_trait = creature_dwarf
 	add_trait = brave
-	father=53009
-	mother = 53270
+	father=14372
+	mother = 14273
 	1902.9.26 = {birth = yes}
 	1942.6.18 = {add_spouse = 14447} 
 	2387.4.14 = {death = yes}
-	}
+}
 	
-	53124 = {
+14371 = {	#53124
 	name = Enlag
 	dynasty = 75000
 	culture = dwarf_karak
@@ -2528,141 +2554,148 @@
 	add_trait = creature_dwarf
 	add_trait = temperate
 	add_trait = cruel
-	father=53080
+	father=14327
 	1840.1.3 = {birth = yes}
 	1885.6.18 = {add_spouse = 53228}
 	2222.4.20 = {death = yes}
-	}
+}
 
-	53009 = {
-		name = Alrik
-		dynasty = 75000
-		culture = dwarf_old
-		religion = ancestor_gods
-		dna = cliagubdabs
-		properties = ag00eb000000
-		martial = 10
-		diplomacy = 8
-		stewardship = 10
-		intrigue = 8
-		learning = 9
-		add_trait = creature_dwarf
-		add_trait = skilled_tactician
-		add_trait = lisp
-		father=53080
-		1824.1.3 = {birth = yes
-		culture = dwarf_karak}
-		1972.4.14={effect={
-		add_artifact = axe_grimnir_thorgrim
-		add_artifact = armour_skaldour_thorgrim
-		add_artifact = dragon_crown_karaz
-		add_artifact = great_book_grudges
-		add_artifact = throne_power_thorgrim
-		}}
-		1946.9.26 = {give_nickname = nick_deathdealer}
-		2205.4.20 = {death = yes}
-	}
-	1359 = {
-		name = Helgar
-		female = yes
-		dynasty = 75035
-		culture = dwarf_karak
-		religion = ancestor_gods
-		martial = 1
-		diplomacy = 4
-		stewardship = 9
-		intrigue = 5
-		learning = 7
-		add_trait = creature_dwarf
-		add_trait = hunter
-		add_trait = indulgent_wastrel
-		add_trait = strong
-		add_trait = diligent
-		add_trait = proud
-		add_trait = fair
-		father=1361
-		1868.2.23 = {birth = yes}
-		1894.7.10 = {add_spouse = 1353}
-		2192.11.12 = {death = yes}
-		}
-		#Stromez Zorn
-		1361 = {
-		name = Skalli
-		dynasty = 75035
-		culture = dwarf_karak
-		religion = ancestor_gods
-		martial = 1
-		diplomacy = 4
-		stewardship = 9
-		intrigue = 5
-		learning = 7
-		add_trait = creature_dwarf
-		add_trait = hunter
-		add_trait = indulgent_wastrel
-		add_trait = strong
-		add_trait = diligent
-		add_trait = proud
-		1827.1.23 = {birth = yes}
-		2139.11.12 = {death = yes}
-		}
-		1362 = {
-		name = Freda
-		female = yes
-		dynasty = 75035
-		culture = dwarf_karak
-		religion = ancestor_gods
-		martial = 1
-		diplomacy = 4
-		stewardship = 9
-		intrigue = 5
-		learning = 7
-		add_trait = creature_dwarf
-		add_trait = hunter
-		add_trait = indulgent_wastrel
-		add_trait = strong
-		add_trait = diligent
-		add_trait = proud
-		add_trait = fair
-		father=1361
-		1862.11.7 = {birth = yes}
-		1888.4.9 = {add_spouse = 53263}
-		2192.3.24 = {death = yes}
-		}
-	53405 = {
-		name = Rogni
-		dynasty = 75394
-		culture = dwarf_karak
-		religion = ancestor_gods
-		martial = 6
-		diplomacy = 8
-		stewardship = 10
-		intrigue = 1
-		learning = 1
-		add_trait = creature_dwarf
-		add_trait = temperate
-		add_trait = chaste
-		1923.4.13 = {birth = yes}
-		2281.9.22 = {death = yes}
-	}
-	1321 = {
-		name = Falgrim
-		dynasty = 75279
-		culture = dwarf_karak
-		religion = ancestor_gods
-		martial = 2
-		diplomacy = 7
-		stewardship = 3
-		intrigue = 5
-		learning = 1
-		add_trait = creature_dwarf
-		add_trait = falconer
-		add_trait = detached_priest
-		add_trait = slothful
-		add_trait = shy
-		1978.12.11 = {birth = yes}
-		2061.3.19 = {death = yes}
-	}
-	53674 = { #the Grim
+14372 = {	#53009
+	name = Alrik
+	dynasty = 75000
+	culture = dwarf_old
+	religion = ancestor_gods
+	dna = cliagubdabs
+	properties = ag00eb000000
+	martial = 10
+	diplomacy = 8
+	stewardship = 10
+	intrigue = 8
+	learning = 9
+	add_trait = creature_dwarf
+	add_trait = skilled_tactician
+	add_trait = lisp
+	father=14327
+	1824.1.3 = {birth = yes
+	culture = dwarf_karak}
+	1972.4.14={effect={
+	add_artifact = axe_grimnir_thorgrim
+	add_artifact = armour_skaldour_thorgrim
+	add_artifact = dragon_crown_karaz
+	add_artifact = great_book_grudges
+	add_artifact = throne_power_thorgrim
+	}}
+	1946.9.26 = {give_nickname = nick_deathdealer}
+	2205.4.20 = {death = yes}
+}
+
+14373 = {	#1359
+	name = Helgar
+	female = yes
+	dynasty = 75035
+	culture = dwarf_karak
+	religion = ancestor_gods
+	martial = 1
+	diplomacy = 4
+	stewardship = 9
+	intrigue = 5
+	learning = 7
+	add_trait = creature_dwarf
+	add_trait = hunter
+	add_trait = indulgent_wastrel
+	add_trait = strong
+	add_trait = diligent
+	add_trait = proud
+	add_trait = fair
+	father=14374
+	1868.2.23 = {birth = yes}
+	1894.7.10 = {add_spouse = 14254}
+	2192.11.12 = {death = yes}
+}
+
+#Stromez Zorn
+14374 = {	#1361
+	name = Skalli
+	dynasty = 75035
+	culture = dwarf_karak
+	religion = ancestor_gods
+	martial = 1
+	diplomacy = 4
+	stewardship = 9
+	intrigue = 5
+	learning = 7
+	add_trait = creature_dwarf
+	add_trait = hunter
+	add_trait = indulgent_wastrel
+	add_trait = strong
+	add_trait = diligent
+	add_trait = proud
+	1827.1.23 = {birth = yes}
+	2139.11.12 = {death = yes}
+}
+
+14375 = {	#1362
+	name = Freda
+	female = yes
+	dynasty = 75035
+	culture = dwarf_karak
+	religion = ancestor_gods
+	martial = 1
+	diplomacy = 4
+	stewardship = 9
+	intrigue = 5
+	learning = 7
+	add_trait = creature_dwarf
+	add_trait = hunter
+	add_trait = indulgent_wastrel
+	add_trait = strong
+	add_trait = diligent
+	add_trait = proud
+	add_trait = fair
+	father=14374
+	1862.11.7 = {birth = yes}
+	1888.4.9 = {add_spouse = 14266}
+	2192.3.24 = {death = yes}
+}
+
+14376 = {	#53405
+	name = Rogni
+	dynasty = 75394
+	culture = dwarf_karak
+	religion = ancestor_gods
+	martial = 6
+	diplomacy = 8
+	stewardship = 10
+	intrigue = 1
+	learning = 1
+	add_trait = creature_dwarf
+	add_trait = temperate
+	add_trait = chaste
+	1923.4.13 = {birth = yes}
+	2281.9.22 = {death = yes}
+}
+
+14377 = {	#1321
+	name = Falgrim
+	dynasty = 75279
+	culture = dwarf_karak
+	religion = ancestor_gods
+	martial = 2
+	diplomacy = 7
+	stewardship = 3
+	intrigue = 5
+	learning = 1
+	add_trait = creature_dwarf
+	add_trait = falconer
+	add_trait = detached_priest
+	add_trait = slothful
+	add_trait = shy
+	1978.12.11 = {birth = yes}
+	2061.3.19 = {death = yes}
+}
+
+#the Grim
+14378 = {	#53674
 	name = Kragg
 	culture = dwarf_old
 	culture = dwarf_karak
@@ -2681,6 +2714,6 @@
 	add_trait = temperate
 	add_trait = runelord
 	1511.7.4 = {birth = yes}
-	2000.1.1 = {employer = 53009}
+	2000.1.1 = {employer = 14372}
 	2560.8.15 = {death = yes}
-	}
+}
