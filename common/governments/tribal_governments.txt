@@ -98,7 +98,12 @@ tribal_governments = {
 			culture_group = norscan_group
 			religion = norscan_gods
 
-			NOT = { is_government_potential = chaos_host_government }
+			NOT = {
+				OR = {
+					is_government_potential = chaos_host_government
+					is_government_potential = strigoi_government
+				}
+			}
 
 			is_patrician = no
 			mercenary = no
@@ -149,6 +154,7 @@ tribal_governments = {
 			elector_count_government
 			imperial_government
 			vampiric_government
+			strigoi_government
 			chaos_host_government
 			chaos_court_government
 			tribal_government
@@ -365,6 +371,7 @@ tribal_governments = {
 
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			vampiric_government
+			strigoi_government
 			elector_count_government
 			imperial_government
 			muslim_government
@@ -705,6 +712,7 @@ tribal_governments = {
 			elector_count_government
 			imperial_government
 			vampiric_government
+			strigoi_government
 			norscan_government
 			norscan_government_feudal
 		}
@@ -783,6 +791,7 @@ tribal_governments = {
 				is_government_potential = beastman_government
 				is_government_potential = eternal_court_government
 				is_government_potential = greenskin_government
+				is_government_potential = strigoi_government
 			}
 
 			NOT = {	culture = nehekharan }
@@ -841,6 +850,7 @@ tribal_governments = {
 			elector_count_government
 			imperial_government
 			vampiric_government
+			strigoi_government
 		}
 		accepts_liege_governments_culture_and_religion = { 	# Tribals have no opinion penalty towards their liege if of the same culture and religion
 			order_government
