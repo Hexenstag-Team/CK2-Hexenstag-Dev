@@ -1093,7 +1093,7 @@ trait = ormazd_sayyid
 }
 #Assassins
 670 = { #7206
-name = Al-Tahir
+name = Al-Tahir	
 dynasty = 48136
 culture = cophic
 religion = ormazd
@@ -1292,11 +1292,11 @@ dna = bdottdeujbd
 properties = foyjbc000000
 culture = cophic
 religion = ormazd
-martial = 15
-diplomacy = 17
-stewardship = 8
-intrigue = 18
-learning = 25
+martial = 5
+diplomacy = 4
+stewardship = 0
+intrigue = 9
+learning = 10
 add_trait = creature_human
 add_trait = quick
 add_trait = mastermind_theologian
@@ -1318,7 +1318,12 @@ add_trait = magic_potential_2
 name = Mellal
 culture = cophic
 religion = ormazd
-learning = 17
+dynasty = 48093
+martial = 1
+diplomacy = 4
+stewardship = 5
+intrigue = 6
+learning = 8
 add_trait = creature_human
 add_trait = arabyan_scholar
 add_trait = fire_mystical
@@ -1332,7 +1337,13 @@ add_trait = magic_potential_1
 name = Ifni
 culture = cophic
 religion = ormazd
-learning = 17
+dynasty = 48105
+martial = 2
+diplomacy = 3
+stewardship = 5
+intrigue = 4
+learning = 9
+add_trait = detached_scholar
 add_trait = creature_human
 add_trait = arabyan_scholar
 add_trait = fire_mystical
@@ -1356,3 +1367,68 @@ add_trait = magic_potential_1
 effect = {add_character_modifier = {name = magic_power_1 duration = -1}}}
 2028.4.14 = {death = yes}
 }
+
+684 = { #38051
+	name = Yabbas
+	dynasty = 48135
+	culture = cophic
+	religion = ormazd
+	dna = rqdvofotyqe
+	properties = ef0cld0c0000
+	martial = 7
+	diplomacy = 7
+	stewardship = 4
+	intrigue = 5
+	learning = 4
+	add_trait = creature_human
+	add_trait = midas_touched
+	add_trait = cruel
+	add_trait = greedy
+	add_trait = gluttonous
+	add_trait = is_fat
+	1978.11.17 = {birth = yes}
+	2052.8.28 = {death = yes}
+	}
+	
+685 = { #38051
+	name = Kenan
+	dynasty = 48116
+	culture = cophic
+	religion = ormazd
+	dna = rqdvofotyqe
+	properties = ef0cld0c0000
+	martial = 7
+	diplomacy = 7
+	stewardship = 4
+	intrigue = 5
+	learning = 4
+	add_trait = creature_human
+	add_trait = skilled_tactician
+	add_trait = cruel
+	add_trait = greedy
+	add_trait = gluttonous
+	add_trait = is_fat
+	1978.11.17 = {birth = yes}
+	2052.8.28 = {death = yes}
+	}
+
+686 = { #38051
+	name = Yabbas
+	dynasty = 48108
+	culture = cophic
+	religion = ormazd
+	martial = 5
+	diplomacy = 9
+	stewardship = 6
+	intrigue = 1
+	learning = 0
+	add_trait = creature_human
+	add_trait = charimastic_negotiator
+	add_trait = greedy
+	add_trait = gluttonous
+	add_trait = is_fat
+	add_trait = zealous
+	add_trait = hardy
+	1981.1.17 = {birth = yes}
+	2052.8.28 = {death = yes}
+	}	
