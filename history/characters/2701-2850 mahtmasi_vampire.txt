@@ -1,0 +1,34 @@
+#Used IDs 2701-2701
+#Free IDs 2702-2850
+
+2701 = {	#15028
+	name = Maatmeses
+	dynasty = 72354
+	dna = haxqturbmfk
+	properties = eaibea0000000
+	female = yes
+	culture = lahmian_vampire
+	religion = vampiric
+	learning = 35
+	diplomacy = 20
+	add_trait = creature_human
+	add_trait = vampire_mahtmasi_visible
+	add_trait = plain
+	add_trait = lustful
+	add_trait = underhanded_rogue
+	add_trait = cruel
+	add_trait = gluttonous
+	add_trait = trusting
+	add_trait = gregarious
+	add_trait = homosexual
+	add_trait = lore_necromancy
+	add_trait = lunatic_3
+	1.4.1 = {
+		birth = yes
+		culture = nehekharan
+		effect = {
+			set_variable = { which = lunatic_counter value = 20 }
+		}
+	}
+	33.10.28 = {death = {death_reason = death_murder_unknown}}
+}
