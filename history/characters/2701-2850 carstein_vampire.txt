@@ -1,0 +1,471 @@
+#Used IDs 2701-2713
+#Free IDs 2714-2850
+
+2701 = {	#80000
+	name = Vlad #Vlad von Carstein in 2010
+	dynasty = 19000
+	dna = adgieukahal
+	properties = ce0dhk00000
+	culture = generic_vampire
+	religion = vampiric
+	martial = 8
+	diplomacy = 2
+	stewardship = 11
+	intrigue = 6
+	learning = 6
+	add_trait = creature_human
+	add_trait = lore_necromancy
+	add_trait = brilliant_strategist
+	add_trait = genius
+	add_trait = cruel
+	add_trait = just
+	add_trait = brave
+	add_trait = proud
+	add_trait = vampire_carstein_visible
+	1771.11.4 = {birth = yes
+	culture = sylvanian}
+	1797.5.10 = {add_spouse = 2713}
+	1797.5.11 = {
+		effect = {add_lover = 2713}
+		create_bloodline = {
+			type = vlad
+			has_dlc = "Holy Fury"
+		}
+	}
+	2000.1.1 = {
+		effect = {
+			add_artifact = warpstone_cluster
+		}
+	}
+	2000.1.1 = {
+		effect = {
+			add_artifact = warpstone_shard
+		}
+	}
+	2000.1.1 = {
+		effect = {
+			add_artifact = warpstone_shard
+		}
+	}
+	2000.1.1 = {
+		effect = {
+			add_artifact = warpstone_dust
+		}
+	}
+	2010.1.1 = {
+		effect = {
+			create_retinue = RETTYPE_UNDEADHORDE
+			create_retinue = RETTYPE_UNDEADHORDE
+			create_retinue = RETTYPE_DIREWOLVES
+			create_retinue = RETTYPE_DIREWOLVES
+			create_retinue = RETTYPE_DIREWOLVES
+			create_retinue = RETTYPE_DIREWOLVES
+			create_retinue = RETTYPE_V_CRYPTGHOULS
+			create_retinue = RETTYPE_V_CRYPTGHOULS
+			create_retinue = RETTYPE_V_CRYPTGHOULS
+			create_retinue = RETTYPE_V_CRYPTGHOULS
+			create_retinue = RETTYPE_V_CAIRNWRAITHS
+			create_retinue = RETTYPE_V_CAIRNWRAITHS
+			create_retinue = RETTYPE_V_CAIRNWRAITHS
+			create_retinue = RETTYPE_V_CAIRNWRAITHS
+			create_retinue = RETTYPE_V_GRAVEGUARD
+			create_retinue = RETTYPE_V_GRAVEGUARD
+			create_retinue = RETTYPE_V_GRAVEGUARD
+			create_retinue = RETTYPE_V_GRAVEGUARD
+			create_retinue = RETTYPE_V_HEXWRAITHS
+			create_retinue = RETTYPE_V_HEXWRAITHS
+			create_retinue = RETTYPE_V_HEXWRAITHS
+			create_retinue = RETTYPE_V_HEXWRAITHS
+			create_retinue = RETTYPE_V_BLACKKNIGHTS
+			create_retinue = RETTYPE_V_BLACKKNIGHTS
+			create_retinue = RETTYPE_V_BLACKKNIGHTS
+			create_retinue = RETTYPE_V_BLACKKNIGHTS
+			create_retinue = RETTYPE_V_VAMPIREKNIGHTS
+			create_retinue = RETTYPE_V_VAMPIREKNIGHTS
+			create_retinue = RETTYPE_V_CORPSECARTS
+			create_retinue = RETTYPE_V_CORPSECARTS
+			create_retinue = RETTYPE_V_CORPSECARTS
+			create_retinue = RETTYPE_V_CORPSECARTS
+			create_retinue = RETTYPE_V_CRYPTHORRORS
+			create_retinue = RETTYPE_V_CRYPTHORRORS
+			create_retinue = RETTYPE_V_CRYPTHORRORS
+			create_retinue = RETTYPE_V_CRYPTHORRORS
+			create_retinue = RETTYPE_V_VARGHEISTS
+			create_retinue = RETTYPE_V_VARGHEISTS
+		}
+	}
+	1200.7.1 = {
+		effect = {
+			add_artifact = blood_drinker
+		}
+	}
+	2010.7.1 = {
+		effect = {
+			add_artifact = carstein_ring
+			new_artifact = {
+				set_creation_date = 1.1.1
+			}
+			add_character_modifier = {name = magic_power_4 duration = -1}
+			set_character_flag = vlad_von_carstein
+	}
+	
+	}
+	2051.3.22 = {death = yes}
+}
+	
+2702 = {	#80001
+	name = Pieter
+	dynasty = 19000
+	dna = djjfkljebat
+	properties = ck0dhk00000
+	culture = generic_vampire
+	religion = vampiric
+	father = 2701
+	martial = 1
+	diplomacy = 7
+	stewardship = 11
+	intrigue = 3
+	learning = 7
+	add_trait = creature_human
+	add_trait = hedonist
+	add_trait = mastermind_theologian
+	add_trait = greedy
+	add_trait = vampire_carstein_visible
+	1982.12.12 = {
+	birth = yes
+	culture = sylvanian
+	effect = {#set_graphical_culture = generic_vampire
+	}
+	}
+	2035.3.17 = {death = yes}
+}
+	
+2703 = {	#80002
+	name = Hans
+	dynasty = 19000
+	dna = afdkhbibbaf
+	properties = cd0chk00000
+	culture = generic_vampire
+	religion = vampiric
+	father = 2701
+	martial = 2
+	diplomacy = 1
+	stewardship = 9
+	intrigue = 8
+	learning = 0
+	add_trait = creature_human
+	add_trait = hunter
+	add_trait = intricate_webweaver
+	add_trait = vampire_carstein_visible
+	add_trait = gregarious
+	add_trait = tall
+	1959.7.2 = {
+	birth = yes
+	culture = sylvanian
+	effect = {#set_graphical_culture = generic_vampire
+	}
+	}
+	2021.2.9 = {death = yes}
+}
+	
+2704 = {	#80003
+	name = Fritz
+	dynasty = 19000
+	dna = afdjkiddhar
+	properties = cn0cak00000
+	culture = generic_vampire
+	religion = vampiric
+	father = 2701
+	martial = 9
+	diplomacy = 8
+	stewardship = 1
+	intrigue = 8
+	learning = 9
+	add_trait = creature_human
+	add_trait = scholar
+	add_trait = tough_soldier
+	add_trait = cruel
+	add_trait = weak
+	add_trait = wroth
+	add_trait = vampire_carstein_visible
+	1963.11.29 = {
+	birth = yes
+	culture = sylvanian
+	effect = {#set_graphical_culture = generic_vampire
+	}
+	}
+	2017.1.19 = {death = yes}
+}
+	
+2705 = {	#80004
+	name = Eduard
+	dynasty = 19005
+	dna = bjelhcfbcat
+	properties = cb0dgd00000
+	culture = generic_vampire
+	religion = vampiric
+	martial = 5
+	diplomacy = 10
+	stewardship = 4
+	intrigue = 8
+	learning = 3
+	add_trait = creature_human
+	add_trait = hunter
+	add_trait = intricate_webweaver
+	add_trait = chaste
+	add_trait = vampire_carstein_visible
+	add_trait = humble
+	1977.2.23 = {
+	birth = yes
+	culture = sylvanian
+	effect = {#set_graphical_culture = generic_vampire
+	}
+	}
+	2000.5.10 = {add_spouse = 10954}
+	2036.9.29 = {death = yes}
+}
+	
+2706 = {	#80005
+	name = Konrad
+	dynasty = 19000
+	dna = balghicdbad
+	properties = ch0chk00000
+	culture = generic_vampire
+	religion = vampiric
+	father = 2701
+	martial = 10
+	diplomacy = 2
+	stewardship = 7
+	intrigue = 0
+	learning = 9
+	add_trait = creature_human
+	add_trait = strong
+	add_trait = arbitrary
+	add_trait = tough_soldier
+	add_trait = ambitious
+	add_trait = impaler
+	add_trait = cruel
+	add_trait = vampire_carstein_visible
+	add_trait = lunatic_2
+	1974.12.17 = {
+	birth = yes
+	culture = sylvanian
+	effect = {#set_graphical_culture = generic_vampire
+			set_variable = {which = lunatic_counter value = 11}
+			add_character_modifier = {name = bloodthirsty duration = -1}
+			}
+	}
+	2000.1.1 = {
+		effect = {
+			add_artifact = sword_of_waldenhof
+		}
+	}
+	2013.1.23 = {death = yes}
+}
+	
+2707 = {	#80006
+	name = Pieter
+	dynasty = 19032
+	culture = generic_vampire
+	religion = vampiric
+	martial = 3
+	diplomacy = 7
+	stewardship = 5
+	intrigue = 9
+	learning = 9
+	add_trait = creature_human
+	add_trait = hunter
+	add_trait = mastermind_theologian
+	add_trait = temperate
+	add_trait = vampire_carstein_visible
+	1965.1.2 = {
+	birth = yes
+	culture = sylvanian
+	effect = {#set_graphical_culture = generic_vampire
+	}
+	}
+	2069.5.15 = {death = yes}
+}
+	
+2708 = {	#80007
+	name = Johann
+	dynasty = 19021
+	culture = generic_vampire
+	religion = vampiric
+	martial = 4
+	diplomacy = 8
+	stewardship = 9
+	intrigue = 4
+	learning = 3
+	add_trait = creature_human
+	add_trait = hunter
+	add_trait = tough_soldier
+	add_trait = lustful
+	add_trait = drunkard
+	add_trait = vampire_carstein_visible
+	1975.10.29 = {
+	birth = yes
+	culture = sylvanian
+	effect = {#set_graphical_culture = generic_vampire
+	}
+	}
+	2028.2.20 = {death = yes}
+}
+	
+2709 = {	#80008
+	name = Mannfred
+	dynasty = 19000
+	dna = ckgkfvlcbaj
+	properties = co0chk00000
+	culture = generic_vampire
+	religion = vampiric
+	father = 2701
+	martial = 9
+	diplomacy = 7
+	stewardship = 3
+	intrigue = 4
+	learning = 3
+	add_trait = creature_human
+	add_trait = quick
+	add_trait = lore_necromancy
+	add_trait = intricate_webweaver
+	add_trait = cruel
+	add_trait = ambitious
+	add_trait = deceitful
+	add_trait = vampire_carstein_visible
+	1983.3.1 = {
+	birth = yes
+	culture = sylvanian
+	effect = {#set_graphical_culture = generic_vampire
+	}
+	}
+	2000.1.1 = {
+		effect = {
+			add_artifact = timor_noctis
+			add_artifact = armour_of_templehof
+			add_artifact = nyklaus_charm_mount
+		}
+	}
+	2010.7.1 = {
+	effect = {
+	add_character_modifier = {name = magic_power_2 duration = -1}
+	}
+	}
+	
+	2477.9.28 = {death = yes}
+}
+
+2710 = {	#80010
+	name = Nevena
+	female = yes
+	dynasty = 19038
+	culture = generic_vampire
+	religion = vampiric
+	martial = 6
+	diplomacy = 7
+	stewardship = 9
+	intrigue = 2
+	learning = 0
+	add_trait = creature_human
+	add_trait = scholar
+	add_trait = thrifty_clerk
+	add_trait = homosexual
+	add_trait = vampire_carstein_visible
+	1989.1.1 = {
+	birth = yes
+	culture = sylvanian
+	effect = {#set_graphical_culture = generic_vampire
+	}
+	}
+	2030.3.17 = {death = yes}
+
+
+}
+
+2711 = {	#80024
+	name = Nikole
+	female = yes
+	dynasty = 19111
+	dna = bedhmboahkn
+	culture = generic_vampire
+	religion = vampiric
+	martial = 5
+	diplomacy = 6
+	stewardship = 5
+	intrigue = 3
+	learning = 7
+	add_trait = creature_human
+	add_trait = flamboyant_schemer
+	add_trait = diligent
+	add_trait = kind
+	add_trait = vampire_carstein_visible
+	1960.1.1 = {
+	birth = yes
+	culture = sylvanian
+	}
+	2298.9.24 = {death = yes}
+}
+
+2712 = {	#80025
+	name = Elise
+	female = yes
+	dynasty = 19111
+	dna = bedhmboahkn
+	culture = generic_vampire
+	religion = sigmarite
+	martial = 4
+	diplomacy = 5
+	stewardship = 8
+	intrigue = 5
+	learning = 2
+	add_trait = creature_human
+	add_trait = elusive_shadow
+	add_trait = hedonist
+	add_trait = humble
+	add_trait = vampire_carstein_visible
+	mother = 2711
+	1985.1.1 = {
+	birth = yes
+	culture = sylvanian
+	}
+	2570.7.11 = {death = yes}
+}
+
+2713 = {	#80026
+	name = Isabella
+	female = yes
+	dynasty = 19003
+	dna = dgmlkdmbhaw
+	properties = cd0ehk00000
+	father = 10961
+	culture = generic_vampire
+	religion = vampiric
+	martial = 5
+	diplomacy = 6
+	stewardship = 4
+	intrigue = 8
+	learning = 9
+	add_trait = creature_human
+	add_trait = falconer
+	add_trait = arbitrary
+	add_trait = patient
+	add_trait = grey_eminence
+	add_trait = cruel
+	add_trait = fair
+	add_trait = proud
+	add_trait = vampire_carstein_visible
+	1755.7.29 = {
+	birth = yes
+	culture = sylvanian
+	effect = {#set_graphical_culture = generic_vampire
+	}
+	}
+	1775.7.29 = {effect = {culture = sylvanian}}
+	1797.5.10 = {add_spouse = 2701}
+	2000.1.1 = {
+		effect = {
+			add_artifact = blood_chalice_of_bathori
+		}
+	}
+	2051.3.22 = {death = yes}
+}
