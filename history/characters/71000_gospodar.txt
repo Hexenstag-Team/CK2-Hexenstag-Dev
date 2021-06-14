@@ -725,7 +725,7 @@ add_trait = wroth
 add_trait = twin
 add_trait = magic_potential_1
 1984.11.1 = {birth = yes}
-2003.6.22 = {add_spouse = 72020}
+2003.6.22 = {add_spouse = 12321}
 2029.9.30 = {death = yes}
 }
 
@@ -1261,3 +1261,83 @@ mother = 71000
 	}
 	2090.7.10 = {death = yes}
 }
+
+72033 = {
+	name = Yadwiga	 #Frosthome Lodge
+	female=yes
+	dynasty=32023
+	culture = gospodar
+	religion = kislev_gods
+	add_trait = creature_human
+	add_trait = ambitious
+	add_trait = ice_witch
+	add_trait = socializer
+	add_trait = lore_ice
+	add_trait = pretty
+	add_trait = magic_potential_2
+	learning=8
+	martial=8
+	diplomacy=10
+	intrigue=7
+	stewardship=12
+	father=72021
+	1990.3.5 = {birth = yes}
+	2007.5.5 = {employer = 72032
+		set_character_flag = ai_flag_refuse_concubinage
+		set_character_flag = ai_flag_refuse_marriage
+		set_character_flag = no_court_invites
+	}
+	2064.5.23 = {death = yes}
+}
+
+72022 = {
+	name = Puro
+	dynasty = 32073
+	dna = ndgajmepfha
+	culture = gospodar
+	religion = northern_gods
+	martial = 5
+	diplomacy = 3
+	stewardship = 4
+	intrigue = 3
+	learning = 7
+	add_trait = creature_human
+	add_trait = flamboyant_schemer
+	add_trait = arbitrary
+	add_trait = cynical
+	add_trait = greedy
+	
+	1949.1.1 = {birth = yes
+			effect = {set_character_flag = magic_potential_flag_1}
+			}
+	2013.10.20 = {death = yes}
+	}
+
+	72021 = {
+		name = Pavel
+		dynasty = 32023
+		dna = apacmhbjphh
+		culture = gospodar
+		religion = northern_gods
+		martial = 6
+		diplomacy = 7
+		stewardship = 9
+		intrigue = 2
+		learning = 4
+		add_trait = creature_human
+		add_trait = charismatic_negotiator
+		add_trait = fair
+		add_trait = just
+		add_trait = shrewd
+		1970.1.1 = {birth = yes}
+		2009.1.11 = {
+			effect = {
+				create_retinue = RETTYPE_CUL_KISLEV1
+				create_retinue = RETTYPE_CUL_KISLEV1
+				create_retinue = RETTYPE_CUL_KISLEV2
+				create_retinue = RETTYPE_CUL_KISLEV3
+				create_retinue = RETTYPE_CUL_KISLEV7
+			}
+		}
+		2042.4.9 = {death = yes}
+	}
