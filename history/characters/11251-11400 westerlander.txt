@@ -1,5 +1,5 @@
-#Used IDs 11251-11315
-#Free IDs 11316-11400
+#Used IDs 11251-11316
+#Free IDs 11317-11400
 
 11251 = {	#51000
 	name = Magritta #Granddaughter of Matthias III (11269)
@@ -1486,4 +1486,26 @@
 	add_trait = proud
 	1982.11.17 = {birth = yes}
 	2052.8.28 = {death = yes}
+}
+
+11316 = {	#64025
+	name = Tyral
+	dynasty = 19107
+	culture = westerlander
+	religion = manannite
+	dna = ybztubprhzi
+	properties = edrcdk000000
+	add_trait = creature_human
+	add_trait = elusive_shadow
+	1961.1.1 = {birth = yes}
+	1994.11.8 = {
+		effect = {add_rival = 7801}
+		employer = 7668
+	}
+	2015.4.19 = { #It takes some time to prepare to die
+		death = {
+			death_reason = death_duel
+			killer = 7801
+		}
+	}
 }
