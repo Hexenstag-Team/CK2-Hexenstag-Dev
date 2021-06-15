@@ -2421,23 +2421,52 @@ mutations_table = {
 						true_religion = chaos
 					}
 				}
-				remove_trait = champion_khorne
-				remove_trait = champion_nurgle
-				remove_trait = champion_slaanesh
-				remove_trait = champion_tzeentch
-				remove_trait = chosen_khorne
-				remove_trait = chosen_nurgle
-				remove_trait = chosen_slaanesh
-				remove_trait = chosen_tzeentch
-				remove_trait = champion_undivided
-				remove_trait = chaos_chosen
-				culture = prince_undivided
-				religion = chaos
-				set_graphical_culture = prince_undivided
-				remove_race_trait = yes
-				add_trait = undivided_demon
-				add_trait = prince_undivided
-				add_trait = disinherited
+				random_list = {
+					25 = {
+						remove_trait = champion_tzeentch
+						remove_trait = chosen_tzeentch
+						culture = prince_tzeentch
+						religion = tzeentch
+						set_graphical_culture = prince_tzeentch
+						remove_race_trait = yes
+						add_trait = tzeentch_demon
+						add_trait = prince_tzeentch
+						add_trait = disinherited
+					}
+					25 = {
+						remove_trait = champion_nurgle
+						remove_trait = chosen_nurgle
+						culture = prince_nurgle
+						religion = nurgle
+						set_graphical_culture = prince_nurgle
+						remove_race_trait = yes
+						add_trait = nurgle_demon
+						add_trait = prince_nurgle
+						add_trait = disinherited
+					}
+					25 = {
+						remove_trait = champion_slaanesh
+						remove_trait = chosen_slaanesh
+						culture = prince_slaanesh
+						religion = slaanesh
+						set_graphical_culture = prince_slaanesh
+						remove_race_trait = yes
+						add_trait = slaanesh_demon
+						add_trait = prince_slaanesh
+						add_trait = disinherited
+					}
+					25 = {
+						remove_trait = champion_khorne
+						remove_trait = chosen_khorne
+						culture = prince_khorne
+						religion = khorne
+						set_graphical_culture = prince_khorne
+						remove_race_trait = yes
+						add_trait = khorne_demon
+						add_trait = prince_khorne
+						add_trait = disinherited
+					}
+				}
 				if = {
 					limit = {
 						NOT = { religion_group = chaos_gods_group }
@@ -2445,7 +2474,6 @@ mutations_table = {
 					religion = chaos
 				}
 				banish = yes
-				
 			}
 			else_if = {
 				limit = { true_religion = tzeentch }
