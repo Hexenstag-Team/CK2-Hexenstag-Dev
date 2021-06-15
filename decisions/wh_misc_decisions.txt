@@ -1,9 +1,10 @@
 targetted_decisions = {
 	#Cartography Decision, for new map modes
 	choose_fake_map_mode = {
-		only_playable = yes	# pre-trigger
+		ai = no	# pre-trigger
 		filter = self
-		ai_target_filter = self	# but ai should not use this anyway
+		ai_target_filter = none	# but ai should not use this anyway
+		ai_check_interval = 120
 
 		from_potential = {
 			ai = no
@@ -36,7 +37,7 @@ targetted_decisions = {
 	alliance_proposal = {
 		ai_target_filter = independent_rulers
 		ai_check_interval = 18 # Determines how seldom the AI checks whether they can and should do the decision, in months.
-		only_playable = yes
+		only_independent = yes
 
 		from_potential = {
 			is_landed = yes
@@ -423,28 +424,28 @@ targetted_decisions = {
 				}
 			}
 			#Opinion
-			additive_modifier = { 
+			additive_modifier = {
 				value = 5
 				FROM={any_friend={character=root}}
 			}
-			additive_modifier = { 
+			additive_modifier = {
 				value = 5
 				FROM={ROOT={opinion = { who = FROM value = 50 }}}
 			}
-			additive_modifier = { 
+			additive_modifier = {
 				value = 5
 				FROM={ROOT={opinion = { who = FROM value = 75 }}}
 			}
-			additive_modifier = { 
+			additive_modifier = {
 				value = 5
 				FROM={ROOT={opinion = { who = FROM value = 100 }}}
 			}
-			additive_modifier = { 
+			additive_modifier = {
 				value = 5
 				FROM={any_neighbor_independent_ruler={character=root}}
 			}
 			#Diplomacy influence
-			additive_modifier = { 
+			additive_modifier = {
 				value = -15
 				FROM={
 					not={diplomacy=10}
@@ -456,8 +457,8 @@ targetted_decisions = {
 					diplomacy = 20
 				}
 				ROOT={NOT={diplomacy=20}}
-			}	
-			additive_modifier = { 
+			}
+			additive_modifier = {
 				value = 5
 				FROM={
 					diplomacy = 25
@@ -465,28 +466,28 @@ targetted_decisions = {
 				ROOT={NOT={diplomacy=25}}
 			}
 			#Realm Diplomacy Effects
-			additive_modifier = { 
+			additive_modifier = {
 				value = -15
 				FROM={
 					not={realm_diplomacy=15}
 				}
 			}
-			additive_modifier = { 
+			additive_modifier = {
 				value = -5
 				FROM={not={realm_diplomacy=20}}
 			}
-			additive_modifier = { 
+			additive_modifier = {
 				value = 5
 				FROM={realm_diplomacy=30}
 				ROOT={NOT={realm_diplomacy=20}}
 			}
-			additive_modifier = { 
+			additive_modifier = {
 				value = 5
 				FROM={realm_diplomacy=40}
 				ROOT={NOT={realm_diplomacy=30}}
 			}
 			#Martial realm Vs Everyone
-			additive_modifier = { 
+			additive_modifier = {
 				localisation_key = not_warmongering_nation
 				value = -10
 				FROM={
@@ -635,7 +636,7 @@ targetted_decisions = {
 				localisation_key = wants_to_join_waaagh
 				FROM={
 					religion_group=greenskin_gods_group
-				} 	
+				}
 				ROOT={
 					religion_group=greenskin_gods_group
 					NOT={government=greenskin_waagh_government}
@@ -656,21 +657,20 @@ targetted_decisions = {
 	}
 
 	send_son_to_university = {
-		filter = dynasty
-		ai_target_filter = dynasty
-		ai_check_interval = 6
-		only_rulers = yes
+		filter = close_relatives
+		ai_target_filter = close_relatives
+		ai_check_interval = 12
+		only_playable = yes #barons aren't that important
 		from_potential = {
-			is_ruler = yes
-			NOT = { trait = witch_hunter }
-			NOR = {
-				religion = grail
-				religion = false_grail
-			}
 			trait = creature_human
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
+			}
+			#this next condition is probably wrong - Brettonian merchants might send their sons to a university
+			NOR = {
+				religion = grail
+				religion = false_grail
 			}
 			OR = {
 				location = { region = world_old_world }
@@ -679,6 +679,8 @@ targetted_decisions = {
 			NOT = { is_tribal = yes }
 			NOT = { is_nomadic = yes }
 			prisoner = no
+			is_ruler = yes
+			NOT = { trait = witch_hunter }
 			NOT = {
 				trait = incapable
 			}
@@ -795,11 +797,11 @@ decisions = {
 	lizardmen_ships = {
 		only_playable = yes
 		is_high_prio = yes
-		ai_check_interval = 3
+		ai_check_interval = 6
 
 		potential = {
-			is_playable = yes
 			culture_group = lizardman_group
+			is_playable = yes
 			NOT = {
 				has_earmarked_regiments = lizardmen_ships
 			}
@@ -842,11 +844,11 @@ decisions = {
 	skaven_ships = {
 		only_playable = yes
 		is_high_prio = yes
-		ai_check_interval = 3
+		ai_check_interval = 6
 
 		potential = {
-			is_playable = yes
 			culture_group = skaven_group
+			is_playable = yes
 			NOT = {
 				has_earmarked_regiments = skaven_ships
 			}
@@ -887,26 +889,26 @@ decisions = {
 	}
 
 	restore_eternal_empire = {
-		ai_check_interval = 6
+		ai_check_interval = 12
 		is_high_prio = yes
-		only_playable = yes
+		only_independent = yes
 		potential = {
-			age = 16
-			prisoner = no
-			NOT = { trait = incapable }
-			NOT = { has_global_flag = ee_restored }
 			religion = myrmidian
 			OR = {
 				culture_group = estalian_group
 				culture_group = tilean_group
 			}
+			NOT = { has_global_flag = ee_restored }
+			age = 16
+			prisoner = no
+			NOT = { trait = incapable }
 		}
 		allow = {
-			prestige = 1500
 			OR = {
 				has_landed_title = e_estalia
 				has_landed_title = e_tilea
 			}
+			prestige = 1500
 			has_landed_title = c_magritta
 			completely_controls = d_remas
 			completely_controls = d_luccini
@@ -990,13 +992,13 @@ decisions = {
 	celebrate_atruhayid_festival = {
 		ai_check_interval = 12
 				is_high_prio = yes
-				only_rulers = yes
+				only_playable = yes
                 potential = {
+												religion = atruhayid
                         is_ruler = yes
                         is_feudal = yes
                         prisoner = no
 
-                        religion = atruhayid
                         NOT = { trait = incapable }
                         NOT = {
                                 has_character_modifier = holding_atruhayid_feast
@@ -1115,8 +1117,13 @@ settlement_decisions = {
 		ai_target_filter = owned
 		is_high_prio = yes
 		only_playable = yes
+		ai_check_interval = 3
 
 		potential = {
+			OR = {
+				location = { has_province_modifier = skaven_burrows }
+				location = { culture_group = skaven_group }
+			}
 			FROM = {
 				NOT = {
 					trait = creature_skaven
@@ -1131,10 +1138,6 @@ settlement_decisions = {
 				}
 			}
 			# location = { NOT = { region = world_underempire } }
-			OR = {
-				location = { has_province_modifier = skaven_burrows }
-				location = { culture_group = skaven_group }
-			}
 		}
 		allow = {
 			FROM = {
