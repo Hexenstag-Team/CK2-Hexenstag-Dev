@@ -1,5 +1,5 @@
-#Used IDs 11701-11766
-#Free IDs 11767-11850
+#Used IDs 11701-11767
+#Free IDs 11768-11850
 
 11701 = {	#71000
 	name = Tetyana
@@ -1341,4 +1341,32 @@
 		}
 	}
 	2042.4.9 = {death = yes}
+}
+
+11767 = {	#10526
+	name = Marissa
+	disallow_random_traits = yes
+	easter_egg = yes
+	female=yes
+	culture = gospodar
+	religion = vampiric
+	martial = 3
+	diplomacy = 1
+	stewardship = 7
+	intrigue = 14
+	learning = 8
+	add_trait=creature_human
+	add_trait=midas_touched
+	add_trait=gamer
+	add_trait=plain
+	add_trait=magic_potential_3
+	add_trait=lore_chaos
+	1976.6.4 = {birth = yes
+	employer=11317}
+	2000.1.1={effect={set_character_flag=no_court_invites
+		set_character_flag = ai_flag_refuse_concubinage
+		set_character_flag = ai_flag_refuse_marriage
+		}
+	}
+	2030.1.1  = {death = {death_reason=death_execution_burning}}
 }

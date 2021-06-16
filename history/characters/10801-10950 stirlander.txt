@@ -1,5 +1,5 @@
-#Used IDs 10801-10837
-#Free IDs 10838-10950
+#Used IDs 10801-10838
+#Free IDs 10839-10950
 
 10801 = {	#79000
 	name = Sepp
@@ -747,4 +747,31 @@
 	father = 10835
 	1986.6.1 = {birth = yes}
 	2046.3.2 = {death = yes}
+}
+
+10838 = {	#10525
+	name = Eckhard
+	disallow_random_traits = yes
+	easter_egg = yes
+	culture = stirlander
+	religion = vampiric
+	martial = 10
+	diplomacy = 5
+	stewardship = 12
+	intrigue = 1
+	learning = 7
+	add_trait = creature_human
+	add_trait = mastermind_theologian
+	add_trait = strategist
+	add_trait = holy_warrior
+	add_trait = magic_potential_2
+	add_trait=lore_necromancy
+	1976.6.4 = {birth = yes
+	employer=11317}
+	2000.1.1={effect={set_character_flag=no_court_invites
+		set_character_flag = ai_flag_refuse_concubinage
+		set_character_flag = ai_flag_refuse_marriage
+		}
+	}
+	2030.1.1  = {death = {death_reason=death_execution_burning}}
 }
