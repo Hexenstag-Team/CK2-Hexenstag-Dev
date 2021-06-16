@@ -5,24 +5,24 @@ send_a_seductress = {
 	from_potential = {
 		trait = lahmian_queen
 		any_dynasty_member ={
-		AND = {
-		is_female = yes
-		is_landed = no
-		trait = vampire_lahmian_visible
-		NOT = { trait = on_lahmian_mission }
+			AND = {
+				is_female = yes
+				is_landed = no
+				trait = vampire_lahmian_visible
+				NOT = { trait = on_lahmian_mission }
+			}
 		}
-	}
 	}
 
 	potential = {
+		is_within_diplo_range = FROM
+		higher_tier_than = BARON
 		is_playable = yes
 		is_female = no
-		higher_tier_than = BARON
-		is_within_diplo_range = FROM
+		trait = creature_human
 		age = 16
 		NOT = { has_character_flag = lahmian_target }
 		NOT = { is_lover = FROM }
-		trait = creature_human
 	}
 
 	allow = {
@@ -44,23 +44,25 @@ seduce_target_personally = {
 	ai = no
 	from_potential = {
 		AND = {
-		trait = lahmian_queen
-		trait = vampire_lahmian_visible
-		NOT = { trait = on_lahmian_mission }
+			trait = lahmian_queen
+			trait = vampire_lahmian_visible
+			NOT = { trait = on_lahmian_mission }
 		}
 		}
 
 	potential = {
-			custom_tooltip = { text = IS_NOT_INCAPACITATED
-					is_incapacitated_trigger = no }
-		is_playable = yes
-		is_female = no
-		higher_tier_than = BARON
 		is_within_diplo_range = FROM
+		higher_tier_than = BARON
+		is_playable = yes
+		trait = creature_human
 		age = 16
+		is_female = no
+		custom_tooltip = {
+			text = IS_NOT_INCAPACITATED
+			is_incapacitated_trigger = no
+		}
 		NOT = { has_character_flag = lahmian_target }
 		NOT = { is_lover = FROM }
-		trait = creature_human
 	}
 
 	allow = {
@@ -80,16 +82,16 @@ recall_from_mission = {
 	ai = no
 	from_potential = {
 		AND = {
-		trait = lahmian_queen
-		trait = vampire_lahmian_visible
+			trait = lahmian_queen
+			trait = vampire_lahmian_visible
 		}
-		}
+	}
 
 	potential = {
 		AND = {
-		trait = vampire_lahmian_visible
-		trait = on_lahmian_mission
-		NOT = { has_character_flag = recruitment_mission }
+			trait = vampire_lahmian_visible
+			trait = on_lahmian_mission
+			NOT = { has_character_flag = recruitment_mission }
 		}
 	}
 
@@ -110,10 +112,10 @@ recall_from_recruitment_mission = {
 	ai = no
 	from_potential = {
 		AND = {
-		trait = lahmian_queen
-		trait = vampire_lahmian_visible
+			trait = lahmian_queen
+			trait = vampire_lahmian_visible
 		}
-		}
+	}
 
 	potential = {
 		AND = {
@@ -140,7 +142,7 @@ recall_from_recruitment_mission = {
 bring_lover_home = {
 	ai = no
 	from_potential = {
-		trait = vampire_lahmian_visible
+			trait = vampire_lahmian_visible
 		}
 
 	potential = {
@@ -167,15 +169,15 @@ bring_lover_home = {
 send_on_recruitment_mission = {
 	ai = no
 	from_potential = {
-		trait = vampire_lahmian_visible
 		trait = lahmian_queen
-		any_dynasty_member ={
-		AND = {
 		trait = vampire_lahmian_visible
-		NOT = { trait = on_lahmian_mission }
+		any_dynasty_member ={
+			AND = {
+				trait = vampire_lahmian_visible
+				NOT = { trait = on_lahmian_mission }
+			}
 		}
-		}
-		}
+	}
 
 	potential = {
 		dynasty = FROM
@@ -201,15 +203,15 @@ send_on_recruitment_mission = {
 establish_lahmian_presence = {
 	ai = no
 	from_potential = {
-		trait = vampire_lahmian_visible
 		trait = lahmian_queen
-		}
+		trait = vampire_lahmian_visible
+	}
 
 	potential = {
-		higher_tier_than = BARON
 		is_within_diplo_range = FROM
 		religion_group = old_world_group
 		trait = creature_human
+		higher_tier_than = BARON
 		any_demesne_province = {
 		NOT = { has_province_modifier = lahmian_presence }
 		}

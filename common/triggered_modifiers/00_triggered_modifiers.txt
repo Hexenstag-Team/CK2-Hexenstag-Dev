@@ -127,93 +127,96 @@ negative_money = {
 
 #Asur Modifiers
 
-phoenix_queen_modifier = {
-		potential = { is_ruler = yes
-				trait = creature_elf
-				is_female = yes }
-		trigger = {
-			is_female = yes
-			trait = creature_elf
-			is_ruler = yes
-			has_landed_title = e_ulthuan
-			NOT = { has_landed_title = k_avelorn }
-			}
+# Ulthuan things - don't need them right now
+# phoenix_queen_modifier = {
+#		potential = { is_ruler = yes
+#				trait = creature_elf
+#				is_female = yes }
+#		trigger = {
+#			is_female = yes
+#			trait = creature_elf
+#			is_ruler = yes
+#			has_landed_title = e_ulthuan
+#			NOT = { has_landed_title = k_avelorn }
+#			}
+#
+#	icon = 25
+#	vassal_opinion = -20
+#}
+#
+# everking_modifier = {
+#		potential = { is_ruler = yes
+#				trait = creature_elf
+#				is_female = no }
+#		trigger = {
+#			is_ruler = yes
+#			trait = creature_elf
+#			is_female = no
+#			has_landed_title = k_avelorn
+#			NOT = { has_landed_title = e_ulthuan }
+#			}
+#
+#	icon = 25
+#	vassal_opinion = -25
+#}
+#
+# phoenix_evermonarch_modifier = {
+#		potential = { is_ruler = yes
+#				trait = creature_elf }
+#		trigger = { is_ruler = yes
+#				trait = creature_elf
+#			has_landed_title = k_avelorn
+#			has_landed_title = e_ulthuan
+#			}
+#
+#	icon = 25
+#	vassal_opinion = -75
+# }
+# flames_uncrossed = {
+#		potential = { is_ruler = yes
+#				has_landed_title = e_ulthuan
+#				is_female = no
+#				trait = creature_elf }
+#		trigger = { is_ruler = yes
+#				has_landed_title = e_ulthuan
+#				is_female = no			#the decision shouldn't be avaiable at all for Phoenix Queens
+#				trait = creature_elf
+#				age = 14
+#			NOT = { trait = phoenix_king }
+#			NOT = { trait = burnt_by_asuryan }
+#			}
+#
+#	icon = 25
+#	vassal_opinion = -25
+# }
+# unclear_stand = {
+#		potential = {
+#			culture_group = asur_group
+#			trait = creature_elf
+#			capital_scope = { empire = { title = e_ulthuan } }
+#			NOT = { has_character_flag = elf_politics_flag }
+#			NOT = { trait = isolationist_elf
+#				trait = interventionist_elf }
+#			is_ruler = yes
+#			age = 16
+#			prisoner = no }
+#		trigger = {
+#			culture_group = asur_group
+#			trait = creature_elf
+#			capital_scope = { empire = { title = e_ulthuan } }
+#			NOT = { has_character_flag = elf_politics_flag }
+#			NOT = { trait = isolationist_elf
+#				trait = interventionist_elf }
+#			is_ruler = yes
+#			age = 16
+#			prisoner = no
+#			}
+#
+#	icon = 25
+#	vassal_opinion = -15
+# }
 
-	icon = 25
-	vassal_opinion = -20
-}
-
-everking_modifier = {
-		potential = { is_ruler = yes
-				trait = creature_elf
-				is_female = no }
-		trigger = {
-			is_ruler = yes
-			trait = creature_elf
-			is_female = no
-			has_landed_title = k_avelorn
-			NOT = { has_landed_title = e_ulthuan }
-			}
-
-	icon = 25
-	vassal_opinion = -25
-}
-
-phoenix_evermonarch_modifier = {
-		potential = { is_ruler = yes
-				trait = creature_elf }
-		trigger = { is_ruler = yes
-				trait = creature_elf
-			has_landed_title = k_avelorn
-			has_landed_title = e_ulthuan
-			}
-
-	icon = 25
-	vassal_opinion = -75
-}
-flames_uncrossed = {
-		potential = { is_ruler = yes
-				has_landed_title = e_ulthuan
-				is_female = no
-				trait = creature_elf }
-		trigger = { is_ruler = yes
-				has_landed_title = e_ulthuan
-				is_female = no			#the decision shouldn't be avaiable at all for Phoenix Queens
-				trait = creature_elf
-				age = 14
-			NOT = { trait = phoenix_king }
-			NOT = { trait = burnt_by_asuryan }
-			}
-
-	icon = 25
-	vassal_opinion = -25
-}
-unclear_stand = {
-		potential = {
-			culture_group = asur_group
-			trait = creature_elf
-			capital_scope = { empire = { title = e_ulthuan } }
-			NOT = { has_character_flag = elf_politics_flag }
-			NOT = { trait = isolationist_elf
-				trait = interventionist_elf }
-			is_ruler = yes
-			age = 16
-			prisoner = no }
-		trigger = {
-			culture_group = asur_group
-			trait = creature_elf
-			capital_scope = { empire = { title = e_ulthuan } }
-			NOT = { has_character_flag = elf_politics_flag }
-			NOT = { trait = isolationist_elf
-				trait = interventionist_elf }
-			is_ruler = yes
-			age = 16
-			prisoner = no
-			}
-
-	icon = 25
-	vassal_opinion = -15
-}
+#Wood Elf things. These need workarounds
 
 not_avatar = {	#if the holder is an elf, but has not become the avatar of one of the two gods
 		potential = { is_ruler = yes
@@ -303,6 +306,8 @@ restless_spirits = {	#if the holder doesn't revere the forest
 	icon = 26
 }
 
+#Chaos things - these need workarounds
+
 tzeentchian_pet = {	#if the holder has a demon friend
 		potential = { any_friend = { trait = tzeentch_demon }
 			}
@@ -343,12 +348,14 @@ khornate_pet = {	#if the holder has a demon friend
 	icon = 54
 }
 
-doom_high = {	
-	potential = { 
+# Doom modifiers - should probably be applied and removed via the events that govern the doom system
+
+doom_high = {
+	potential = {
 		is_doom_high = yes
 		open_follower_of_any_chaos_gods = yes
 	}
-	trigger = { 
+	trigger = {
 		is_doom_high = yes
 		open_follower_of_any_chaos_gods = yes
 	}
@@ -359,12 +366,12 @@ doom_high = {
 	icon = 144
 }
 
-doom_very_high = {	
-	potential = { 
+doom_very_high = {
+	potential = {
 		is_doom_very_high = yes
 		open_follower_of_any_chaos_gods = yes
 	}
-	trigger = { 
+	trigger = {
 		is_doom_very_high = yes
 		open_follower_of_any_chaos_gods = yes
 	}

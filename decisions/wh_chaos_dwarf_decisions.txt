@@ -1,13 +1,13 @@
 ###Chaos Dwarf stuff
 targetted_decisions = {
 	sacrifice_to_hashut = {
-		ai_check_interval = 6
+		ai_check_interval = 12
 		ai_target_filter = home_court
 		filter = home_court
-		only_rulers = yes
+		only_playable = yes
 		from_potential = {
-			is_ruler = yes
 			religion = hashut
+			is_ruler = yes
 			NOT = { has_character_flag = sacrificing_prisoner_hashut }
 			NOT = { has_character_flag = selling_prisoner_slavery }
 		}
@@ -40,19 +40,19 @@ targetted_decisions = {
 	}
 
 	chaos_dwarf_sell_into_slavery = {
-		ai_check_interval = 6
+		ai_check_interval = 12
 		ai_target_filter = home_court
 		filter = home_court
-		only_rulers = yes
+		only_playable = yes
 		from_potential = {
-			is_ruler = yes
 			culture_group = dawi_zharr_group
+			is_ruler = yes
 			NOT = { has_character_flag = selling_prisoner_slavery }
 			NOT = { has_character_flag = sacrificing_prisoner_hashut }
 		}
 		potential = {
-			prisoner = yes
 			host = { character = FROM }
+			prisoner = yes
 			NOT = { culture_group = dawi_zharr_group }
 			NOT = { trait = khemri_tomb_king }
 		}
@@ -76,14 +76,14 @@ targetted_decisions = {
 
 	#Not actually FOR the Chaos Dwarfs, but for people to buy stuff from them
 	buy_from_chaos_dwarfs = {
-		ai_check_interval = 6
+		ai_check_interval = 12
 		ai_target_filter = all
-		only_rulers = yes
+		only_independent = yes
 		potential = {
-			is_ruler = yes
-			higher_tier_than = COUNT
 			trait = creature_chaos_dwarf
 			religion = hashut
+			higher_tier_than = COUNT
+			is_ruler = yes
 			culture_group = dawi_zharr_group
 			OR = {
 				capital_holding = {
@@ -136,17 +136,17 @@ targetted_decisions = {
 			}
 		}
 		from_potential = {
+			OR = {
+				religion_group = chaos_gods_group
+				religion_group = greenskin_gods_group
+				religion_group = old_gods_group
+			}
 			is_ruler = yes
 			higher_tier_than = BARON
 			mercenary = no
 			NOT = { culture_group = dawi_zharr_group }
 			NOT = { trait = creature_chaos_dwarf }
 			NOT = { religion = stromfels }
-			OR = {
-				religion_group = chaos_gods_group
-				religion_group = greenskin_gods_group
-				religion_group = old_gods_group
-			}
 		}
 		allow = {
 			NOT = { FROM = { war_with = ROOT } }
@@ -270,18 +270,17 @@ targetted_decisions = {
 			}
 		}
 		potential = {
+			OR = {
+				religion_group = chaos_gods_group
+				religion_group = greenskin_gods_group
+				religion_group = old_gods_group
+			}
 			is_ruler = yes
 			higher_tier_than = BARON
 			mercenary = no
 			NOT = { culture_group = dawi_zharr_group }
 			NOT = { trait = creature_chaos_dwarf }
 			NOT = { religion = stromfels }
-			OR = {
-				religion_group = chaos_gods_group
-				religion_group = greenskin_gods_group
-				religion_group = old_gods_group
-
-			}
 		}
 		allow = {
 			NOT = { ROOT = { war_with = FROM } }
@@ -340,12 +339,12 @@ targetted_decisions = {
 
 decisions = {
 	grand_sacrifice_hashut = {
-		ai_check_interval = 6
+		ai_check_interval = 12
 		only_playable = yes
 		potential = {
+			religion = hashut
 			higher_tier_than = BARON
 			is_ruler = yes
-			religion = hashut
 			NOT = { has_character_flag = making_grand_sacrifice_hashut }
 		}
 		allow = {
@@ -436,8 +435,8 @@ decisions = {
 	# }
 
 	get_taurus_mount ={
-		ai_check_interval = 6
-		only_rulers = yes
+		ai_check_interval = 12
+		only_playable = yes
 		potential = {
 			age = 16
 
@@ -469,8 +468,8 @@ decisions = {
 	}
 
 	get_lamassu_mount ={
-		ai_check_interval = 6
-		only_rulers = yes
+		ai_check_interval = 12
+		only_playable = yes
 		potential = {
 			age = 16
 

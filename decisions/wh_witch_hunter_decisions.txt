@@ -3,43 +3,47 @@ targetted_decisions = {
 
 	denounce_master = { #To remove a Master from charge
 		ai_check_interval = 24
-		only_rulers = yes
+		only_playable = yes
 		filter = realm
 		ai_target_filter = realm
 		from_potential = {
 			trait = witch_hunter
+			OR = {
+				 has_landed_title = d_witch_hunter_seat_1
+			 	 has_landed_title = d_witch_hunter_seat_2
+				 has_landed_title = d_witch_hunter_seat_3
+		 		 has_landed_title = d_witch_hunter_seat_4
+		 		 has_landed_title = d_witch_hunter_seat_5
+		 		 has_landed_title = d_witch_hunter_seat_6
+		 		 has_landed_title = d_witch_hunter_seat_7
+		 		 has_landed_title = d_witch_hunter_seat_8
+		 		 has_landed_title = d_witch_hunter_seat_9
+		 		 has_landed_title = d_witch_hunter_seat_10
+		 		 has_landed_title = d_witch_hunter_seat_11
+		 		 has_landed_title = d_witch_hunter_seat_12
+				 has_landed_title = k_witch_hunters_order
+			}
 			is_incapacitated_trigger = no
 			NOT = { has_character_flag = witch_hunter_accusation }
-			OR = {  has_landed_title = d_witch_hunter_seat_1
-			 has_landed_title = d_witch_hunter_seat_2
-			 has_landed_title = d_witch_hunter_seat_3
-	 		 has_landed_title = d_witch_hunter_seat_4
-	 		 has_landed_title = d_witch_hunter_seat_5
-	 		 has_landed_title = d_witch_hunter_seat_6
-	 		 has_landed_title = d_witch_hunter_seat_7
-	 		 has_landed_title = d_witch_hunter_seat_8
-	 		 has_landed_title = d_witch_hunter_seat_9
-	 		 has_landed_title = d_witch_hunter_seat_10
-	 		 has_landed_title = d_witch_hunter_seat_11
-	 		 has_landed_title = d_witch_hunter_seat_12
-			 has_landed_title = k_witch_hunters_order }
 		}
 
 		potential = {
+			OR = {
+				has_landed_title = d_witch_hunter_seat_1
+				has_landed_title = d_witch_hunter_seat_2
+				has_landed_title = d_witch_hunter_seat_3
+		 		has_landed_title = d_witch_hunter_seat_4
+		 		has_landed_title = d_witch_hunter_seat_5
+		 		has_landed_title = d_witch_hunter_seat_6
+		 		has_landed_title = d_witch_hunter_seat_7
+		 		has_landed_title = d_witch_hunter_seat_8
+		 		has_landed_title = d_witch_hunter_seat_9
+		 		has_landed_title = d_witch_hunter_seat_10
+		 		has_landed_title = d_witch_hunter_seat_11
+		 		has_landed_title = d_witch_hunter_seat_12
+				has_landed_title = k_witch_hunters_order
+			}
 			NOT = { has_character_flag = witch_hunter_accusation }
-			OR = { has_landed_title = d_witch_hunter_seat_1
-			 has_landed_title = d_witch_hunter_seat_2
-			 has_landed_title = d_witch_hunter_seat_3
-	 		 has_landed_title = d_witch_hunter_seat_4
-	 		 has_landed_title = d_witch_hunter_seat_5
-	 		 has_landed_title = d_witch_hunter_seat_6
-	 		 has_landed_title = d_witch_hunter_seat_7
-	 		 has_landed_title = d_witch_hunter_seat_8
-	 		 has_landed_title = d_witch_hunter_seat_9
-	 		 has_landed_title = d_witch_hunter_seat_10
-	 		 has_landed_title = d_witch_hunter_seat_11
-	 		 has_landed_title = d_witch_hunter_seat_12
-			 has_landed_title = k_witch_hunters_order }
 			NOT = { has_character_modifier = accused_recently }
 			NOT = { character = FROM }                            # Can't do this decision on yourself...
 		}
@@ -464,17 +468,15 @@ targetted_decisions = {
 	}
 	enlist_courtier = {
 		ai_check_interval = 50
-		only_rulers = yes
+		only_playable = yes
 		filter = court
 		ai_target_filter = court
 		is_in_society = yes
 		from_potential = {
-			trait = witch_hunter
 			is_state_witch_hunter_trigger=yes
 			society_rank=3
-			is_incapacitated_trigger = no
-			NOT = { has_character_flag = witch_hunter_accusation }
-			OR = { has_landed_title = d_witch_hunter_seat_1
+			OR = {
+			 has_landed_title = d_witch_hunter_seat_1
 			 has_landed_title = d_witch_hunter_seat_2
 			 has_landed_title = d_witch_hunter_seat_3
 	 		 has_landed_title = d_witch_hunter_seat_4
@@ -487,8 +489,14 @@ targetted_decisions = {
 	 		 has_landed_title = d_witch_hunter_seat_11
 	 		 has_landed_title = d_witch_hunter_seat_12
 			 has_landed_title = k_witch_hunters_order
-			AND = { is_landed = yes
-				higher_tier_than = BARON } }
+			 AND = {
+			  is_landed = yes
+				higher_tier_than = BARON
+			 }
+			}
+			trait = witch_hunter
+			is_incapacitated_trigger = no
+			NOT = { has_character_flag = witch_hunter_accusation }
 		}
 		potential = {
 			is_state_witch_hunter_trigger=no
@@ -514,13 +522,13 @@ targetted_decisions = {
 				trait = magic_potential_1
 				trait = magic_potential_2
 				trait = magic_potential_3
-				trait = magic_potential_4 
+				trait = magic_potential_4
 			}
 			age = 14
 			NOT = { age = 50 }
 		}
 		allow = {
-			FROM = { 
+			FROM = {
 				society_currency >= 250
 				piety=50
 			}
@@ -528,7 +536,7 @@ targetted_decisions = {
 			piety = 0
 		}
 		effect = {
-			FROM = { 
+			FROM = {
 				change_society_currency = -250
 				piety=-5
 			}
@@ -832,16 +840,16 @@ targetted_decisions = {
 			}
 		}
 	} #closes decision
+
 	exile_whunter = {
 		ai_check_interval = 32
-		only_rulers = yes
+		only_playable = yes
 		filter = court
 		ai_target_filter = court
 		from_potential = {
 			trait = witch_hunter
-			is_incapacitated_trigger = no
-			NOT = { has_character_flag = witch_hunter_accusation }
-			OR = {  has_landed_title = d_witch_hunter_seat_1
+			OR = {
+			 has_landed_title = d_witch_hunter_seat_1
 			 has_landed_title = d_witch_hunter_seat_2
 			 has_landed_title = d_witch_hunter_seat_3
 	 		 has_landed_title = d_witch_hunter_seat_4
@@ -855,7 +863,10 @@ targetted_decisions = {
 	 		 has_landed_title = d_witch_hunter_seat_12
 			 has_landed_title = k_witch_hunters_order
 			AND = { is_landed = yes
-				higher_tier_than = BARON } }
+				higher_tier_than = BARON }
+			}
+			is_incapacitated_trigger = no
+			NOT = { has_character_flag = witch_hunter_accusation }
 		}
 		potential = {
 			is_ruler = no
@@ -889,14 +900,14 @@ targetted_decisions = {
 				remove_trait = witch_hunter
 				location = { ROOT = { culture = PREV } }
 				banish = yes }
-			if = { 
-				limit = { 
+			if = {
+				limit = {
 					NOR = {
 						trait = pregnant
 						trait = lunatic_3
 						trait = incapable
-						trait = has_nurgles_rot 
-					} 
+						trait = has_nurgles_rot
+					}
 				}
 				remove_trait = witch_hunter
 				if={limit={is_state_witch_hunter_trigger=yes}
@@ -1003,13 +1014,14 @@ targetted_decisions = {
 
 	request_recruit = {
 		ai = no	#Player only, AI by events
-		only_rulers = yes
+		#only_rulers = yes
 		filter = all
-		ai_target_filter = self
+		ai_target_filter = none
 		is_in_society = yes
 		from_potential = {
-			trait = witch_hunter
+			society_rank=4
 			is_state_witch_hunter_trigger=yes
+			trait = witch_hunter
 			is_incapacitated_trigger = no
 			OR = {
 				has_landed_title = d_witch_hunter_seat_1
@@ -1026,8 +1038,7 @@ targetted_decisions = {
 				has_landed_title = d_witch_hunter_seat_12
 				has_landed_title = k_witch_hunters_order
 				AND = { is_landed = yes
-				higher_tier_than = BARON } 
-				society_rank=4
+				higher_tier_than = BARON }
 			}
 		}
 		potential = {
@@ -1056,8 +1067,8 @@ targetted_decisions = {
 			NOT = { host = { character = FROM } }
 		}
 		allow = {
-			FROM = { 
-				piety = 25 
+			FROM = {
+				piety = 25
 				society_currency >= 250
 			}
 			age = 6
@@ -1082,19 +1093,19 @@ targetted_decisions = {
 	templars_join_war = {
 		ai_check_interval = 6
 		ai_target_filter = independent_rulers
-		only_rulers = yes
+		only_playable = yes
 		from_potential = {
-			is_ruler = yes
-			trait = creature_human
-			trait = witch_hunter
 			has_landed_title = k_witch_hunters_order
 			is_within_diplo_range = ROOT
+			trait = creature_human
+			trait = witch_hunter
+			is_ruler = yes
 		}
 		potential = {
-			is_landed = yes
-			independent = yes
-			higher_tier_than = BARON
 			religion_group = old_world_group
+			independent = yes
+			is_landed = yes
+			higher_tier_than = BARON
 			NOT = { character = FROM }
 		}
 		allow = {
@@ -1130,7 +1141,7 @@ targetted_decisions = {
 			FROM = { join_defender_wars = ROOT
 				join_attacker_wars = ROOT
 				prestige = 50
-				piety = 50 
+				piety = 50
 				change_society_currency=250
 			}
 		}
@@ -1239,20 +1250,20 @@ targetted_decisions = {
 		ai_check_interval = 36
 		filter = home_court
 		ai_target_filter = home_court
-		only_rulers = yes
+		only_playable = yes
 		from_potential = {
-			has_dlc = "Horse Lords"
-			is_ruler = yes
 			has_landed_title = k_witch_hunters_order
 			trait = creature_human
 			trait = witch_hunter
+			has_dlc = "Horse Lords"
+			is_ruler = yes
 		}
 		potential = {
+			trait = witch_hunter
+			trait = creature_human
 			is_ruler = no
 			mercenary = no
 			age = 16
-			trait = creature_human
-			trait = witch_hunter
 			NOT = { character = FROM }
 		}
 		allow = {
@@ -1630,18 +1641,18 @@ targetted_decisions = {
 		ai_check_interval = 24
 		filter = vassals
 		ai_target_filter = vassals
-		only_rulers = yes
+		only_playable = yes
 		from_potential = {
+			has_landed_title = k_witch_hunters_order
+			trait = witch_hunter
 			has_dlc = "Horse Lords"
 			is_ruler = yes
-			has_landed_title = k_witch_hunters_order
 			trait = creature_human
-			trait = witch_hunter
 		}
 		potential = {
+			trait = witch_hunter
 			mercenary = yes
 			trait = creature_human
-			trait = witch_hunter
 			liege = { character = FROM }
 			primary_title = { band_creator = { character = FROM } }
 		}
@@ -1757,7 +1768,7 @@ society_decisions={
 		}
 
 		allow = {
-			society_currency >= 500 
+			society_currency >= 500
 		}
 
 		effect = {
@@ -1770,6 +1781,7 @@ society_decisions={
 		}
 	}
 }
+
 decisions = {
 	grant_title_witch_hunter = {
 		ai_check_interval = 36
@@ -2083,10 +2095,10 @@ decisions = {
 		ai_check_interval = 36
 		only_independent = yes
 		potential = {
+			has_character_modifier = expelled_k_witch_hunters_order
 			higher_tier_than = DUKE
 			independent = yes
 			trait = creature_human
-			has_character_modifier = expelled_k_witch_hunters_order
 		}
 
 		allow = { wealth = 150
@@ -2194,7 +2206,8 @@ decisions = {
 			is_tribal = no
 		}
 
-		allow = { war = yes
+		allow = {
+			war = yes
 			piety = 150
 			wealth = 50
 				k_witch_hunters_order = { holder_scope = { war = no } }
@@ -2327,19 +2340,19 @@ settlement_decisions = {
 		allow = {
 			location = { is_within_diplo_range = FROM }
 			location = { has_empty_holding = yes }
-			FROM = { 
-				wealth = 500 
-				society_currency >= 500 
+			FROM = {
+				wealth = 500
+				society_currency >= 500
 			}
 		}
 		effect = {
 			change_society_currency=-500
-				owner = { 
-					add_character_modifier = { 
+				owner = {
+					add_character_modifier = {
 						name = recent_whunter_request
 						duration = 3650
-						hidden = yes 
-					} 
+						hidden = yes
+					}
 				}
 			hidden_tooltip = { location = { province_event = { id = swhunters.22 } } }
 		} #closes effect
@@ -2367,7 +2380,7 @@ title_decisions = {
 		potential = {
 			tier = COUNT
 			owner = { religion_group = old_world_group }
-			NOR = { 
+			NOR = {
 				owner = { has_character_modifier = expelled_k_witch_hunters_order }
 				owner = {top_liege={ has_character_modifier = expelled_k_witch_hunters_order }}
 			}
@@ -2402,8 +2415,8 @@ title_decisions = {
 			location = { is_within_diplo_range = FROM }
 		}
 		effect = {
-			change_variable = { 
-				which = global_debug_witch_count 
+			change_variable = {
+				which = global_debug_witch_count
 				value = 1  # increase by 1 for every instance of scope
 			}
 			FROM={change_society_currency=-100}
@@ -2420,14 +2433,14 @@ title_decisions = {
 			modifier = {
 				factor = 2
 				location={
-					OR = { 
+					OR = {
 						has_province_modifier = nurgle_province_disease
 						has_province_modifier = beastmen_unrest
 						has_province_modifier = warpdust_traces
 						has_province_modifier = slaanesh_hedonism
 						has_province_modifier = warpstone_meteor
-						has_province_modifier = lahmian_presence 
-					} 
+						has_province_modifier = lahmian_presence
+					}
 				}
 			}
 			modifier = {

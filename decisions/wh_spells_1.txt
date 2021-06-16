@@ -3,6 +3,7 @@ targetted_decisions = {
 #Lore of Beasts#
 	leatherbane_targetted = {
 		ai_check_interval = 3
+		only_playable = yes
 		from_potential = {
 			has_character_modifier = leatherbane_flag
 		}
@@ -29,9 +30,10 @@ targetted_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	repugnant_transformation_targetted = {
 		ai_check_interval = 3
+		only_playable = yes
 		from_potential = {
 			has_character_modifier = repugnant_transformation_flag
 		}
@@ -58,9 +60,10 @@ targetted_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	the_winters_long_slumber_targetted = {
 		ai_check_interval = 3
+		only_playable = yes
 		from_potential = {
 			has_character_modifier = the_winters_long_slumber_flag
 		}
@@ -99,16 +102,17 @@ targetted_decisions = {
 			factor = 1
 		}
 	}
-	
+
 #Lore of Death#
 	the_animus_imprisoned_targetted = {
 		ai_check_interval = 3
+		only_playable = yes
 		from_potential = {
 			has_character_modifier = the_animus_imprisoned_flag
 		}
 		potential = {
-			NOT = { character = FROM }
 			trait = creature_human
+			NOT = { character = FROM }
 		}
 
 		allow = {
@@ -127,15 +131,16 @@ targetted_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	deaths_release_targetted = {
 		ai_check_interval = 3
+		only_playable = yes
 		from_potential = {
 			has_character_modifier = deaths_release_flag
 		}
 		potential = {
-			NOT = { character = FROM }
 			trait = creature_human
+			NOT = { character = FROM }
 		}
 
 		allow = {
@@ -157,15 +162,16 @@ targetted_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	griefs_end_targetted = {
 		ai_check_interval = 3
+		only_playable = yes
 		from_potential = {
 			has_character_modifier = griefs_end_flag
 		}
 		potential = {
-			NOT = { character = FROM }
 			trait = creature_human
+			NOT = { character = FROM }
 		}
 
 		allow = {
@@ -186,16 +192,17 @@ targetted_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	lifes_end_targetted = {
 		ai_check_interval = 3
+		only_playable = yes
 		from_potential = {
 			has_character_modifier = lifes_end_flag
 		}
 		potential = {
-			NOT = { character = FROM }
 			trait = creature_human
 			NOT = { has_magic_trigger = yes }
+			NOT = { character = FROM }
 		}
 
 		allow = {
@@ -215,15 +222,16 @@ targetted_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	limbwither_targetted = {
 		ai_check_interval = 3
+		only_playable = yes
 		from_potential = {
 			has_character_modifier = limbwither_flag
 		}
 		potential = {
-			NOT = { character = FROM }
 			trait = creature_human
+			NOT = { character = FROM }
 		}
 
 		allow = {
@@ -245,15 +253,16 @@ targetted_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	steal_life_targetted = {
 		ai_check_interval = 3
+		only_playable = yes
 		from_potential = {
 			has_character_modifier = steal_life_flag
 		}
 		potential = {
-			NOT = { character = FROM }
 			trait = creature_human
+			NOT = { character = FROM }
 		}
 
 		allow = {
@@ -280,15 +289,16 @@ targetted_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	swift_passing_targetted = {
 		ai_check_interval = 3
+		only_playable = yes
 		from_potential = {
 			has_character_modifier = swift_passing_flag
 		}
 		potential = {
-			NOT = { character = FROM }
 			trait = creature_human
+			NOT = { character = FROM }
 		}
 
 		allow = {
@@ -308,15 +318,16 @@ targetted_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	tide_of_years_targetted = {
 		ai_check_interval = 3
+		only_playable = yes
 		from_potential = {
 			has_character_modifier = tide_of_years_flag
 		}
 		potential = {
-			NOT = { character = FROM }
 			trait = creature_human
+			NOT = { character = FROM }
 		}
 
 		allow = {
@@ -338,15 +349,16 @@ targetted_decisions = {
 			factor = 1
 		}
 	}
-	
+
 	tomb_robbers_curse_targetted = {
 		ai_check_interval = 3
+		only_playable = yes
 		from_potential = {
 			has_character_modifier = tomb_robbers_curse_flag
 		}
 		potential = {
-			NOT = { character = FROM }
 			trait = creature_human
+			NOT = { character = FROM }
 		}
 
 		allow = {
