@@ -1993,7 +1993,7 @@ gender_laws = {
 					has_religion_feature = religion_equal
 				}
 			}
-
+			
 			is_primary_type_title = no
 		}
 
@@ -2067,7 +2067,7 @@ gender_laws = {
 							 is_female = yes
 						}
 						prestige = 1000
-					 }
+					}
 				}
 			}
 		}
@@ -2262,14 +2262,22 @@ gender_laws = {
 				NOT = { trait = content }
 				NOT = { trait = slow }
 				NOT = { trait = imbecile }
-			}
+				custom_tooltip = {
+					text = "Is not a known vampire"
+					NOT = { is_vampire_visible_trigger = yes }
+				}
+				any_owned_bloodline = {
+					has_bloodline_flag = matrilineal_bloodline
+				}
 				OR = {
+					has_law = enatic_succession
+					culture = amazon_main
 					AND = {
-						has_law = enatic_cognatic_succession
+						has_law = true_cognatic_succession
 						holder_scope = { is_female = yes }
 					}
-				culture = amazon_main
 				}
+			}
 		}
 
 		effect = {
@@ -2301,6 +2309,9 @@ gender_laws = {
 					has_religion_feature = religion_matriarchal
 					any_owned_bloodline = {
 						has_bloodline_flag = bloodline_enatic_cognatic
+					}
+					any_owned_bloodline = {
+						has_bloodline_flag = matrilineal_bloodline
 					}
 				}
 			}
@@ -2369,10 +2380,12 @@ gender_laws = {
 				NOT = { trait = content }
 				NOT = { trait = slow }
 				NOT = { trait = imbecile }
-			}
 				custom_tooltip = {
 					text = "Is not a known vampire"
 					NOT = { is_vampire_visible_trigger = yes }
+				}
+				any_owned_bloodline = {
+					has_bloodline_flag = matrilineal_bloodline
 				}
 				OR = {
 					has_law = enatic_succession
@@ -2383,6 +2396,7 @@ gender_laws = {
 					}
 				}
 			}
+		}
 		effect = {
 			gender_succ = enatic_cognatic
 		}
