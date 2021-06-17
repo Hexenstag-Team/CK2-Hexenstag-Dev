@@ -1,5 +1,5 @@
-#Used IDs 2101-2111
-#Free IDs 2112-2250
+#Used IDs 2101-2112
+#Free IDs 2113-2250
 
 2101 = {	#15014
 	name = Abhorash
@@ -194,7 +194,7 @@
 	dynasty = 24011
 	culture = blood_vampire
 	religion = vampiric
-	mother = 45240
+	mother = 6017
 	father = 2107
 	female = yes
 	martial = 9
@@ -283,4 +283,37 @@
 	1977.11.8 = {birth = yes
 	culture = blooddragons_culture}
 	2240.1.8 = {death = yes}
+}
+
+2112 = {	#43104
+	name = Pierre
+	dynasty = 28028
+	culture = blood_vampire
+	religion = vampiric
+	disallow_random_traits = yes
+	easter_egg = yes
+	martial = 10
+	diplomacy = 8
+	stewardship = 3
+	intrigue = 10
+	learning = 6
+	add_trait = creature_human
+	add_trait = brilliant_strategist
+	add_trait = attractive 
+	add_trait = noble
+	add_trait = lunatic_2
+	add_trait = diligent
+	add_trait = wroth
+	add_trait = proud
+	add_trait = brave
+	add_trait = cavalry_leader
+	add_trait = vampire_blood_visible
+	1910.9.4 = {
+		birth = yes
+		culture = blooddragons_culture
+		effect = {
+			set_variable = { which = lunatic_counter value = 10 }
+		}
+	}
+	2089.2.29 = {death = yes}
 }

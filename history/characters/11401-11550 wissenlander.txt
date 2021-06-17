@@ -1,5 +1,5 @@
-#Used IDs 11401-11480
-#Free IDs 11481-11550
+#Used IDs 11401-11482
+#Free IDs 11483-11550
 
 11401 = {	#89000
 	name = Konrad #Konrad von Blutheim, executed in 2011 by witch hunters, canon Khorne worshipper
@@ -1340,7 +1340,7 @@
 	add_trait = chaste
 	add_trait = tough
 	1964.7.3 = {birth = yes}
-	1980.11.8 = {add_spouse = 45240}
+	1980.11.8 = {add_spouse = 6017}
 	1998.11.8 = {give_nickname = nick_the_headless
 			death = {death_reason = death_duel
 				killer = 2107}}
@@ -1375,4 +1375,51 @@
 			}
 		}
 	2050.1.1 = {death = yes}
+}
+
+#Urraca's Imperial Husband
+11481 = {	#65021
+	name = Philip
+	dynasty = 23008
+	culture = wissenlander
+	religion = sigmarite
+	father = 11465
+	mother = 11466
+	add_trait = creature_human
+	add_trait = twin
+	1980.1.1 = {birth = yes}
+	1998.4.16 = {
+		add_matrilineal_spouse = 8705
+		religion = myrmidian
+		effect = {
+			set_character_flag = ai_flag_refuse_conversion
+		}
+	}
+	2044.1.1 = {death = yes}
+}
+
+11482 = {	#10524
+	name = Deitrik
+	disallow_random_traits = yes
+	easter_egg = yes
+	culture = wissenlander
+	religion = vampiric
+	martial = 4
+	diplomacy = 5
+	stewardship = 12
+	intrigue = 1
+	learning = 7
+	add_trait = creature_human
+	add_trait = mastermind_theologian
+	add_trait = ambitious
+	add_trait = magic_potential_1
+	add_trait=lore_necromancy
+	1985.6.4 = {birth = yes
+	employer=11317}
+	2000.1.1={effect={set_character_flag=no_court_invites
+		set_character_flag = ai_flag_refuse_concubinage
+		set_character_flag = ai_flag_refuse_marriage
+		}
+	}
+	2030.1.1  = {death = {death_reason=death_execution_burning}}
 }
