@@ -9393,11 +9393,14 @@ engineers_guild = {
 		OR = {
 			culture_group = dwarf_group
 			culture_group = tilean_group
-			AND = {
-				culture_group = imperial_group
-				had_global_flag = {
-					flag = imperial_engineering_school
-					months >= 12
+			custom_tooltip = {
+				text = engineers_no_imperial_school_tt
+				AND = {
+					culture_group = imperial_group
+					had_global_flag = {
+						flag = imperial_engineering_school
+						months >= 12
+					}
 				}
 			}
 		}
@@ -9462,6 +9465,7 @@ engineers_guild = {
 		decisions = {
 			engineer_training
 			economic_engineering
+			military_engineering
 		}
 	}
 
@@ -9492,7 +9496,7 @@ engineers_guild = {
 			build_time_modifier = -0.50
 		}
 		decisions = {
-
+			engineer_masterwork
 		}
 	}
 
