@@ -840,19 +840,7 @@ increased_boon_cost = {
 }
 #What goes into the two triggers above...
 brayherd_offmap_decisions_enabled_trigger = {
-	brayherd_warp = {
-#		NOT = { has_policy = china_isolationist }
-		custom_tooltip = {
-			text = brayherd_offmap_decisions_enabled_trigger_war_tt #"Is at peace with §Y[From.GetTitledFirstName]§!"
-			NOT = { governor = { war_with = FROM } }
-		}
-		governor = {
-			show_scope_change = no
-			is_within_diplo_range = FROM
-#			hidden_trigger  = { NOT = { character = FROM } } #Governor cannot use boon/tributes decisions
-		}
-	}
-	government=beastman_government
+	culture_group = beastman_group
 	hidden_trigger = { has_dlc = "Jade Dragon" }
 }
 

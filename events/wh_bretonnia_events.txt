@@ -88,6 +88,9 @@ character_event = {
 character_event = {
 	id = bretonnia.5
 	hide_window = yes
+	religion = grail
+
+	is_triggered_only = yes
 
 	immediate = {
 		if = {
@@ -143,6 +146,10 @@ character_event = {
 character_event = {
 	id = bretonnia.6
 	hide_window = yes
+	only_playable = yes
+	war = yes
+
+	is_triggered_only = yes
 
 	trigger = {
 		has_landed_title = e_bretonnia
@@ -172,6 +179,7 @@ character_event = {
 			add_artifact = dolorous_blade
 			add_artifact = shadow_steed
 			unsafe_give_minor_title = title_commander
+			character_event = { id = bretonnia.7 weeks = 24 random = 10}
 		}
 	}
 }
@@ -182,9 +190,10 @@ character_event = {
 	id = bretonnia.7
 	hide_window = yes
 
+	is_triggered_only = yes
+
 	trigger = {
 		has_character_flag = green_knight
-		liege = { NOT = { is_primary_war_defender = yes } }
 	}
 
 	immediate = {
@@ -205,6 +214,9 @@ character_event = {
 character_event = {
 	id = bretonnia.8
 	hide_window = yes
+	only_playable = yes
+
+	is_triggered_only = yes
 
 	trigger = {
 		has_landed_title = e_bretonnia
@@ -223,6 +235,8 @@ character_event = {
 	id = bretonnia.9
 	hide_window = yes
 
+	is_triggered_only = yes
+
 	trigger = {
 		has_landed_title = e_bretonnia
 		NOT = { has_artifact = bretonnia_crown }
@@ -236,6 +250,8 @@ character_event = {
 character_event = {
 	id = bretonnia.10
 	hide_window = yes
+
+	is_triggered_only = yes
 
 	trigger = {
 		NOT = { has_landed_title = e_bretonnia }

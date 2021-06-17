@@ -253,6 +253,7 @@ feudal_governments = {
 
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			vampiric_government
+			strigoi_government
 			elector_count_government
 			imperial_government
 		}
@@ -348,6 +349,7 @@ feudal_governments = {
 			theocratic_feudal_government
 			cathayan_imperial_government
 			vampiric_government
+			strigoi_government
 		}
 
 		free_revoke_on_tiers = {
@@ -521,13 +523,11 @@ feudal_governments = {
 	# Ghoul Kingdom
 	strigoi_government = {
 		potential = {
-			has_landed_title = e_strygos
 			trait = vampire_strigoi_visible
-			NOT = { is_government_potential = pirate_government }
 		}
 
 		color = { 77 24 44 }
-		frame_suffix = "_vampiricgov"
+		frame_suffix = "_strigoigov"
 		title_prefix = "strigoi_"
 		
 		uses_piety_for_law_change = yes
@@ -607,6 +607,7 @@ feudal_governments = {
 			skaven_government
 			elector_count_government
 			vampiric_government
+			strigoi_government
 		}
 
 		ignore_in_vassal_limit_calculation = {
@@ -614,6 +615,7 @@ feudal_governments = {
 			beastman_government
 			greenskin_government
 			vampiric_government
+			strigoi_government
 		}
 	}
 
@@ -624,7 +626,6 @@ feudal_governments = {
 				trait = vampire_carstein_visible
 				trait = vampire_necrarch_visible
 				trait = vampire_lahmian_visible
-				trait = vampire_strigoi_visible
 				trait = vampire_blood_visible
 				trait = vampire_jade_visible
 				trait = vampire_mahtmasi_visible
@@ -632,7 +633,7 @@ feudal_governments = {
 
 			NOT = {
 				is_government_potential = pirate_government
-				is_government_potential = strigoi_government
+				trait = vampire_strigoi_visible
 			}
 		}
 
@@ -722,6 +723,7 @@ feudal_governments = {
 			beastman_government
 			greenskin_government
 			vampiric_government
+			strigoi_government
 		}
 	}
 
@@ -1467,6 +1469,7 @@ feudal_governments = {
 
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			vampiric_government
+			strigoi_government
 			elector_count_government
 			imperial_government
 			muslim_government
@@ -1698,6 +1701,7 @@ feudal_governments = {
 
 		accepts_liege_governments = { # Gets the wrong religion modifier instead
 			vampiric_government
+			strigoi_government
 			elector_count_government
 			imperial_government
 			muslim_government
@@ -1817,6 +1821,7 @@ feudal_governments = {
 			elector_count_government
 			imperial_government
 			vampiric_government
+			strigoi_government
 			chaos_host_government
 			chaos_court_government
 			tribal_government
@@ -1916,6 +1921,7 @@ feudal_governments = {
 
 		accepts_liege_governments = {
 			vampiric_government
+			strigoi_government
 			muslim_government
 			theocratic_feudal_government
 			cathayan_imperial_government
@@ -1978,6 +1984,7 @@ feudal_governments = {
 				is_government_potential = muslim_government
 				is_government_potential = congregation_government
 				is_government_potential = vampiric_government
+				is_government_potential = strigoi_government
 				is_government_potential = dwarf_government
 				is_government_potential = chaosdwarf_government
 				is_government_potential = highborn_government
@@ -2025,6 +2032,7 @@ feudal_governments = {
 
 		accepts_liege_governments = {
 			vampiric_government
+			strigoi_government
 			elector_count_government
 			imperial_government
 			muslim_government
