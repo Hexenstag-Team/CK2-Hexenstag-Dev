@@ -22,7 +22,7 @@ decisions = {
 				religion = cult_of_pleasure
 				religion = atharti
 				religion = slaanesh }
-			any_consort = { 
+			any_consort = {
 						NOT = { trait = eunuch }
 					count = 2
 					}
@@ -88,24 +88,25 @@ targetted_decisions = {
 		ai_check_interval = 12
 		filter = court
 		ai_target_filter = court
-		only_rulers = yes
+		only_playable = yes
 		from_potential = {
+			OR = {
+				religion = slaanesh
+				religion = cult_of_pleasure
+				religion = atharti
+				# religion = amazon
+			}
 			is_ruler = yes
 			age = 14
 			is_female = no
 			NOT = { trait = incapable }
-
-       			     OR = {
-         		       NOT = { num_of_consorts = 6 }
-         		       AND = {
-          			          religion = slaanesh
-           			         NOT = { num_of_consorts = 8 }
-              				  }
-          			  }
-			OR = { religion = cult_of_pleasure
-				religion = atharti
-				religion = slaanesh
-				religion = amazon }
+	    OR = {
+	      NOT = { num_of_consorts = 6 }
+	      AND = {
+		          religion = slaanesh
+			        NOT = { num_of_consorts = 8 }
+  			}
+		  }
 		}
 
 		potential = {
@@ -287,28 +288,29 @@ targetted_decisions = {
 		ai_check_interval = 12
 		filter = court
 		ai_target_filter = court
-		only_rulers = yes
+		only_playable = yes
 		from_potential = {
+			OR = {
+				religion = cult_of_pleasure
+				religion = atharti
+				religion = slaanesh
+				#religion = amazon
+			}
 			is_ruler = yes
 			age = 14
 			NOT = { trait = incapable }
-			OR = { religion = cult_of_pleasure
-				religion = atharti
-				religion = slaanesh
-				religion = amazon }
-       		
 			OR = {
 				NOT = { num_of_consorts = 6 }
          		   AND = {
           			religion = slaanesh
-           			NOT = { 
-						num_of_consorts = 8 
-					
+           			NOT = {
+						num_of_consorts = 8
+
 					}
-              				  
+
 				}
-          	}				
-				
+          	}
+
 		}
 
 		potential = {
@@ -514,18 +516,17 @@ targetted_decisions = {
 	}
 
 	manage_pet_consort = { #For all concubinages, mostly used for Slaaneshi flavor
-		ai_check_interval = 12
+		ai_check_interval = 30 # how much does the AI care about flavor?
 		filter = court
-		ai_target_filter = court
-		only_rulers = yes
+		ai_target_filter = none
+		ai = no  # previously in from_potential
 		from_potential = {
 			is_ruler = yes
 			NOT = { has_character_flag = handling_consort }
-			ai = no			#For now, let's not stress the AI
 			OR = { religion = cult_of_pleasure
 				religion = atharti
 				religion = slaanesh
-				religion = amazon }
+				#religion = amazon }
 			age = 14
 		}
 
@@ -537,7 +538,7 @@ targetted_decisions = {
 			is_consort = FROM
 			FROM = { OR = { religion = cult_of_pleasure
 							religion = atharti
-							religion = slaanesh } 
+							religion = slaanesh }
 						} 	#Covers regular concubines
 		}
 		allow = {
@@ -644,11 +645,10 @@ targetted_decisions = {
 	dismiss_concubine = { #The vanilla option is no longer avaiable to ai to avoid rabbit-elves
 		ai_check_interval = 12
 		filter = court
-		ai_target_filter = court
-		only_rulers = yes
+		ai_target_filter = none
+		ai = no
 		from_potential = {
 			is_ruler = yes
-			ai = no			#Player only
 			age = 16
 			is_female = no
 			FROM = { NOT = { religion = cult_of_pleasure
@@ -684,15 +684,16 @@ targetted_decisions = {
 		ai_target_filter = realm
 		only_rulers = yes
 		from_potential = {
+			society_member_of = cult_of_pleasure
 			is_ruler = yes
 			custom_tooltip = { text = IS_NOT_INCAPACITATED
 					is_incapacitated_trigger = no }
 
-			society_member_of = cult_of_pleasure
 			NOT = { has_any_opinion_modifier = opinion_twisting }
 			NOT = {
 				religion = atharti
-				religion = slaanesh } #busted
+				religion = slaanesh
+			} #busted
 			age = 16
 		}
 
@@ -821,14 +822,13 @@ targetted_decisions = {
 	}
 
 	slaanesh_quirk = { #Slaaneshi having fun with their friends and relatives
-		ai_check_interval = 12
+		ai_check_interval = 18 #maybe should be higher
 		filter = court
 		ai_target_filter = court
 		from_potential = {
-			is_incapacitated_trigger = no
-			NOT = { has_character_modifier = ai_quirking_cooldown }
-			NOT = { has_any_opinion_modifier = opinion_quirking }
 			OR = {
+				religion = atharti
+				religion = slaanesh
 				AND = {
 					society_member_of = cult_of_pleasure
 					society_rank >= 2
@@ -837,15 +837,19 @@ targetted_decisions = {
 					society_member_of = cult_of_slaanesh
 					society_rank >= 2
 				}
-				religion = atharti
-				religion = slaanesh }
-			OR = { trait = creature_elf
+			}
+			OR = {
+				trait = creature_elf
 				trait = creature_chaos_dwarf
 				trait = creature_dwarf
 				trait = creature_human
 				trait = creature_amazon
-				trait = slaanesh_demon }
+				trait = slaanesh_demon
+			}
 			age = 16
+			is_incapacitated_trigger = no
+			NOT = { has_character_modifier = ai_quirking_cooldown }
+			NOT = { has_any_opinion_modifier = opinion_quirking }
 		}
 
 		potential = {
@@ -997,6 +1001,7 @@ targetted_decisions = {
 			}
 		}
 	}
+
 	vassal_polymorph = {
 		ai_check_interval = 12
 		filter = court
@@ -1004,18 +1009,20 @@ targetted_decisions = {
 		only_playable = yes
 
 		from_potential = {
-				primary_title = { higher_tier_than = BARON }
-				is_incapacitated_trigger = no
-				NOT = { has_character_modifier = magic_cooldown }
+			OR = { has_character_modifier = magic_power_1
+				has_character_modifier = magic_power_2
+				has_character_modifier = magic_power_3
+				has_character_modifier = magic_power_4
+			}
 			OR = {
 				society_member_of = cult_of_pleasure
 				religion = atharti
-				religion = slaanesh }
-				OR = { has_character_modifier = magic_power_1
-					has_character_modifier = magic_power_2
-					has_character_modifier = magic_power_3
-					has_character_modifier = magic_power_4 }
-			 }
+				religion = slaanesh
+			}
+			primary_title = { higher_tier_than = BARON }
+			is_incapacitated_trigger = no
+			NOT = { has_character_modifier = magic_cooldown }
+		}
 		potential = {
 			prisoner = yes
 			host = { character = FROM }
@@ -1137,8 +1144,8 @@ targetted_decisions = {
 		only_playable = yes
 
 		from_potential = {
-				is_married = no
 				trait = transgender
+				is_married = no
 				primary_title = { higher_tier_than = BARON }
 				NOT = { trait = incapable }
 			OR = { trait = creature_elf

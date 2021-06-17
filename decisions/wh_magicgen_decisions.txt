@@ -2,9 +2,9 @@
 ##CHANNELING###
 offmap_decisions = {
 	magic_channeling = {
-		only_playable = yes
+		ai = no  #ai_will_do set to 0, so don't even check
 		button_name = offmap_gifts
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -55,7 +55,7 @@ offmap_decisions = {
 	the_beast_broken = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -96,15 +96,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	the_beast_made_well = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -148,7 +148,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -156,7 +156,7 @@ offmap_decisions = {
 	the_beast_unleashed = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -164,7 +164,7 @@ offmap_decisions = {
 
 		from_potential = {
 			magic_offmap_enabled_trigger = yes
-			
+
 			has_magic_power_2 = yes
 			OR = {
 				trait = beasts_elemental
@@ -201,15 +201,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	the_boars_hide = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -250,15 +250,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	calm_the_wild_beast = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -302,15 +302,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	claws_of_fury = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -351,15 +351,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	cowering_beasts = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -403,15 +403,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	crows_feast = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -449,15 +449,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	crueltys_desserts = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -498,15 +498,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	form_of_the_puissant_steed = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -547,15 +547,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	form_of_the_raging_bear = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -596,15 +596,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	form_of_the_ravening_wolf = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -645,15 +645,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	form_of_the_soaring_raven = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -694,7 +694,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -702,7 +702,7 @@ offmap_decisions = {
 	leatherbane = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -743,15 +743,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	masters_voice = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -759,7 +759,7 @@ offmap_decisions = {
 
 		from_potential = {
 			magic_offmap_enabled_trigger = yes
-			
+
 			has_magic_power_2 = yes
 			OR = {
 				trait = beasts_elemental
@@ -796,15 +796,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	the_ox_stands = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -845,15 +845,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	repugnant_transformation = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -894,15 +894,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	the_talking_beast = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -946,15 +946,15 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
-	
+
 	wings_of_the_falcon = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -965,7 +965,7 @@ offmap_decisions = {
 			has_magic_power_3 = yes
 			OR = {
 				trait = beasts_elemental
-				trait = beasts_cardinal	
+				trait = beasts_cardinal
 			}
 		}
 
@@ -998,7 +998,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1006,7 +1006,7 @@ offmap_decisions = {
 	the_winters_long_slumber = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1050,7 +1050,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1059,7 +1059,7 @@ offmap_decisions = {
 	acceptance_of_fate = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1104,7 +1104,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1112,7 +1112,7 @@ offmap_decisions = {
 	the_animus_imprisoned = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1156,7 +1156,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1164,7 +1164,7 @@ offmap_decisions = {
 	deaths_door = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1205,7 +1205,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1213,7 +1213,7 @@ offmap_decisions = {
 	deaths_messenger = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1257,7 +1257,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1265,7 +1265,7 @@ offmap_decisions = {
 	deaths_release = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1306,7 +1306,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1314,7 +1314,7 @@ offmap_decisions = {
 	deathsight = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1358,7 +1358,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1366,7 +1366,7 @@ offmap_decisions = {
 	final_words = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1407,7 +1407,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1415,7 +1415,7 @@ offmap_decisions = {
 	griefs_end = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1456,7 +1456,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1464,7 +1464,7 @@ offmap_decisions = {
 	the_icy_grip_of_death = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1505,7 +1505,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1513,7 +1513,7 @@ offmap_decisions = {
 	knocks_of_the_departed = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1557,7 +1557,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1565,7 +1565,7 @@ offmap_decisions = {
 	lifes_end = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1606,7 +1606,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1614,7 +1614,7 @@ offmap_decisions = {
 	limbwither = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1658,7 +1658,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1666,7 +1666,7 @@ offmap_decisions = {
 	reaping_scythe = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1710,7 +1710,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1718,7 +1718,7 @@ offmap_decisions = {
 	steal_life = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1763,7 +1763,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1771,7 +1771,7 @@ offmap_decisions = {
 	swift_passing = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1812,7 +1812,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1820,7 +1820,7 @@ offmap_decisions = {
 	tide_of_years = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1861,7 +1861,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1869,7 +1869,7 @@ offmap_decisions = {
 	tomb_robbers_curse = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1910,7 +1910,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1918,7 +1918,7 @@ offmap_decisions = {
 	ward_against_abomination = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -1962,7 +1962,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -1970,7 +1970,7 @@ offmap_decisions = {
 	wind_of_death = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2011,7 +2011,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2019,7 +2019,7 @@ offmap_decisions = {
 	youths_bane = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2063,7 +2063,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2072,7 +2072,7 @@ offmap_decisions = {
 	aqshys_aegis = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2116,7 +2116,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2124,7 +2124,7 @@ offmap_decisions = {
 	boiling_blood = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2168,7 +2168,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2176,7 +2176,7 @@ offmap_decisions = {
 	breathe_fire = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2217,7 +2217,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2225,7 +2225,7 @@ offmap_decisions = {
 	burning_vengeance = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2269,7 +2269,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2277,7 +2277,7 @@ offmap_decisions = {
 	cauterize = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2321,7 +2321,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2329,7 +2329,7 @@ offmap_decisions = {
 	choleric = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2373,7 +2373,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2381,7 +2381,7 @@ offmap_decisions = {
 	conflagration_of_doom = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2425,7 +2425,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2433,7 +2433,7 @@ offmap_decisions = {
 	consuming_wrath = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2474,7 +2474,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2482,7 +2482,7 @@ offmap_decisions = {
 	crown_of_fire = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2526,7 +2526,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2534,7 +2534,7 @@ offmap_decisions = {
 	curtain_of_flame = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2578,7 +2578,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2586,7 +2586,7 @@ offmap_decisions = {
 	fiery_blast = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2627,7 +2627,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2635,7 +2635,7 @@ offmap_decisions = {
 	fire_ball = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2679,7 +2679,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2687,7 +2687,7 @@ offmap_decisions = {
 	fires_of_uzhul = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2728,7 +2728,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2736,7 +2736,7 @@ offmap_decisions = {
 	flaming_sword_of_rhuin = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2777,7 +2777,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2785,7 +2785,7 @@ offmap_decisions = {
 	flashcook = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2826,7 +2826,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2834,7 +2834,7 @@ offmap_decisions = {
 	hearts_of_fire = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2878,7 +2878,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2886,7 +2886,7 @@ offmap_decisions = {
 	inextinguishable_flame = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2927,7 +2927,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2935,7 +2935,7 @@ offmap_decisions = {
 	ruin_and_destruction = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -2976,7 +2976,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -2984,7 +2984,7 @@ offmap_decisions = {
 	shield_of_aqshy = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3025,7 +3025,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3033,7 +3033,7 @@ offmap_decisions = {
 	taste_of_fire = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3074,7 +3074,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3083,7 +3083,7 @@ offmap_decisions = {
 	birdspeak = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3124,7 +3124,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3132,7 +3132,7 @@ offmap_decisions = {
 	clear_sky = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3176,7 +3176,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3184,7 +3184,7 @@ offmap_decisions = {
 	curse = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3228,7 +3228,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3236,7 +3236,7 @@ offmap_decisions = {
 	fate_of_doom = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3280,7 +3280,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3288,7 +3288,7 @@ offmap_decisions = {
 	finding_divination = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3329,7 +3329,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3337,7 +3337,7 @@ offmap_decisions = {
 	first_portent_of_amul = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3378,7 +3378,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3386,7 +3386,7 @@ offmap_decisions = {
 	fortunes_renewal = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3430,7 +3430,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3438,7 +3438,7 @@ offmap_decisions = {
 	lens_on_the_sky = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3482,7 +3482,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3490,7 +3490,7 @@ offmap_decisions = {
 	lightning_bolt = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3534,7 +3534,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3542,7 +3542,7 @@ offmap_decisions = {
 	lightning_storm = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3586,7 +3586,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3594,7 +3594,7 @@ offmap_decisions = {
 	omen = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3648,7 +3648,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3656,7 +3656,7 @@ offmap_decisions = {
 	polish_clean_and_gleam = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3697,7 +3697,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3705,7 +3705,7 @@ offmap_decisions = {
 	premonition = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3746,7 +3746,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3754,7 +3754,7 @@ offmap_decisions = {
 	project_spirit = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3798,7 +3798,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3806,7 +3806,7 @@ offmap_decisions = {
 	second_portent_of_amul = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3847,7 +3847,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3855,7 +3855,7 @@ offmap_decisions = {
 	signs_in_the_stars = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3899,7 +3899,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3907,7 +3907,7 @@ offmap_decisions = {
 	starshine = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3948,7 +3948,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -3956,7 +3956,7 @@ offmap_decisions = {
 	third_portent_of_amul = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -3997,7 +3997,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4005,7 +4005,7 @@ offmap_decisions = {
 	wind_blast = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4046,7 +4046,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4054,7 +4054,7 @@ offmap_decisions = {
 	wings_of_heaven = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4095,7 +4095,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4104,7 +4104,7 @@ offmap_decisions = {
 	cure_blight = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4145,7 +4145,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4153,7 +4153,7 @@ offmap_decisions = {
 	curse_of_thorns = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4197,7 +4197,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4205,7 +4205,7 @@ offmap_decisions = {
 	earth_blood = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4249,7 +4249,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4257,7 +4257,7 @@ offmap_decisions = {
 	earth_gate = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4301,7 +4301,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4309,7 +4309,7 @@ offmap_decisions = {
 	father_of_thorns = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4350,7 +4350,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4358,7 +4358,7 @@ offmap_decisions = {
 	fat_of_the_land = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4399,7 +4399,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4407,7 +4407,7 @@ offmap_decisions = {
 	ferment = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4451,7 +4451,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4459,7 +4459,7 @@ offmap_decisions = {
 	flesh_of_clay = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4500,7 +4500,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4508,7 +4508,7 @@ offmap_decisions = {
 	geyser = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4552,7 +4552,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4560,7 +4560,7 @@ offmap_decisions = {
 	leaf_fall = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4604,7 +4604,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4612,7 +4612,7 @@ offmap_decisions = {
 	rivers_whisper = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4653,7 +4653,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4661,7 +4661,7 @@ offmap_decisions = {
 	spring_bloom = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4702,7 +4702,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4710,7 +4710,7 @@ offmap_decisions = {
 	summer_heat = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4751,7 +4751,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4759,7 +4759,7 @@ offmap_decisions = {
 	tracks_tale_told = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4800,7 +4800,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4808,7 +4808,7 @@ offmap_decisions = {
 	tree-dwellers_step = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4849,7 +4849,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4857,7 +4857,7 @@ offmap_decisions = {
 	trees_rustle = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4901,7 +4901,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4909,7 +4909,7 @@ offmap_decisions = {
 	vital_growth = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -4950,7 +4950,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -4958,7 +4958,7 @@ offmap_decisions = {
 	the_wilds_undisturbed = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5002,7 +5002,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5010,7 +5010,7 @@ offmap_decisions = {
 	winter_frost = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5054,7 +5054,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5062,7 +5062,7 @@ offmap_decisions = {
 	wood_shape = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5106,7 +5106,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5115,7 +5115,7 @@ offmap_decisions = {
 	banish = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5156,7 +5156,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5164,7 +5164,7 @@ offmap_decisions = {
 	blinding_light = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5205,7 +5205,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5213,7 +5213,7 @@ offmap_decisions = {
 	boon_of_hysh = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5257,7 +5257,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5265,7 +5265,7 @@ offmap_decisions = {
 	clarity = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5309,7 +5309,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5317,7 +5317,7 @@ offmap_decisions = {
 	cleansing_glow = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5358,7 +5358,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5366,7 +5366,7 @@ offmap_decisions = {
 	daemonbane = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5407,7 +5407,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5415,7 +5415,7 @@ offmap_decisions = {
 	dazzling_brightness = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5459,7 +5459,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5467,7 +5467,7 @@ offmap_decisions = {
 	eyes_of_truth = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5511,7 +5511,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5519,7 +5519,7 @@ offmap_decisions = {
 	healing_of_hysh = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5560,7 +5560,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5568,7 +5568,7 @@ offmap_decisions = {
 	ill-bane = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5609,7 +5609,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5617,7 +5617,7 @@ offmap_decisions = {
 	illuminate_the_edifice = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5658,7 +5658,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5666,7 +5666,7 @@ offmap_decisions = {
 	inspiration = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5710,7 +5710,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5718,7 +5718,7 @@ offmap_decisions = {
 	light_of_purity = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5762,7 +5762,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5770,7 +5770,7 @@ offmap_decisions = {
 	lights_demand = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5811,7 +5811,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5819,7 +5819,7 @@ offmap_decisions = {
 	pillar_of_radiance = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5863,7 +5863,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5871,7 +5871,7 @@ offmap_decisions = {
 	the_power_of_truth = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5915,7 +5915,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5923,7 +5923,7 @@ offmap_decisions = {
 	radiant_sentinel = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -5964,7 +5964,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -5972,7 +5972,7 @@ offmap_decisions = {
 	radiant_gaze = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6013,7 +6013,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6021,7 +6021,7 @@ offmap_decisions = {
 	radiant_weapon = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6065,7 +6065,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6073,7 +6073,7 @@ offmap_decisions = {
 	shimmering_cloak = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6117,7 +6117,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6126,7 +6126,7 @@ offmap_decisions = {
 	armour_of_lead = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6167,7 +6167,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6175,7 +6175,7 @@ offmap_decisions = {
 	breach_the_unknown = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6219,7 +6219,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6227,7 +6227,7 @@ offmap_decisions = {
 	curse_of_rust = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6268,7 +6268,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6276,7 +6276,7 @@ offmap_decisions = {
 	enchant_item = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6320,7 +6320,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6328,7 +6328,7 @@ offmap_decisions = {
 	fault_of_form = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6372,7 +6372,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6380,7 +6380,7 @@ offmap_decisions = {
 	fools_gold = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6434,7 +6434,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6442,7 +6442,7 @@ offmap_decisions = {
 	guard_of_steel = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6486,7 +6486,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6494,7 +6494,7 @@ offmap_decisions = {
 	inscription = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6535,7 +6535,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6543,7 +6543,7 @@ offmap_decisions = {
 	law_of_age = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6587,7 +6587,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6595,7 +6595,7 @@ offmap_decisions = {
 	law_of_form = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6636,7 +6636,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6644,7 +6644,7 @@ offmap_decisions = {
 	law_of_gold = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6688,7 +6688,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6696,7 +6696,7 @@ offmap_decisions = {
 	law_of_logic = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6745,7 +6745,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6753,7 +6753,7 @@ offmap_decisions = {
 	rigidity_of_body_and_mind = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6794,7 +6794,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6802,7 +6802,7 @@ offmap_decisions = {
 	secret_rune = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6846,7 +6846,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6854,7 +6854,7 @@ offmap_decisions = {
 	silver_arrows_of_arha = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6898,7 +6898,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6906,7 +6906,7 @@ offmap_decisions = {
 	stoke_the_forge = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6947,7 +6947,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -6955,7 +6955,7 @@ offmap_decisions = {
 	tale_of_metal = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -6999,7 +6999,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7007,7 +7007,7 @@ offmap_decisions = {
 	transformation_of_metal = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7045,7 +7045,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7053,7 +7053,7 @@ offmap_decisions = {
 	transmutation_of_the_unstable_mind = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7091,7 +7091,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7099,7 +7099,7 @@ offmap_decisions = {
 	trial_and_error = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7143,7 +7143,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7152,7 +7152,7 @@ offmap_decisions = {
 	bewilder = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7193,7 +7193,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7201,7 +7201,7 @@ offmap_decisions = {
 	burning_shadows = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7242,7 +7242,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7250,7 +7250,7 @@ offmap_decisions = {
 	cloak_activity = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7294,7 +7294,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7302,7 +7302,7 @@ offmap_decisions = {
 	doppelganger = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7346,7 +7346,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7354,7 +7354,7 @@ offmap_decisions = {
 	dread_aspect = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7395,7 +7395,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7403,7 +7403,7 @@ offmap_decisions = {
 	eye_of_the_beholder = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7447,7 +7447,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7455,7 +7455,7 @@ offmap_decisions = {
 	illusion = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7499,7 +7499,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7507,7 +7507,7 @@ offmap_decisions = {
 	mindhole = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7551,7 +7551,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7559,7 +7559,7 @@ offmap_decisions = {
 	mockery_of_death = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7603,7 +7603,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7611,7 +7611,7 @@ offmap_decisions = {
 	mutable_visage = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7652,7 +7652,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7660,7 +7660,7 @@ offmap_decisions = {
 	pall_of_darkness = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7701,7 +7701,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7709,7 +7709,7 @@ offmap_decisions = {
 	shadowcloak = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7750,7 +7750,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7758,7 +7758,7 @@ offmap_decisions = {
 	shadow_knives = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7802,7 +7802,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7810,7 +7810,7 @@ offmap_decisions = {
 	shadow_of_death = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7851,7 +7851,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7859,7 +7859,7 @@ offmap_decisions = {
 	shadowsteed = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7903,7 +7903,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7911,7 +7911,7 @@ offmap_decisions = {
 	shroud_of_invisibility = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -7955,7 +7955,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -7963,7 +7963,7 @@ offmap_decisions = {
 	substance_of_shadow = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -8004,7 +8004,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -8012,7 +8012,7 @@ offmap_decisions = {
 	take_no_heed = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -8053,7 +8053,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -8061,7 +8061,7 @@ offmap_decisions = {
 	throttling = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -8105,7 +8105,7 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
@@ -8113,7 +8113,7 @@ offmap_decisions = {
 	universal_confusion = {
 		only_playable = yes
 		button_name = offmap_boons
-		ai_check_interval = 12
+		ai_check_interval = 60
 
 		potential = {
 			is_offmap_tag = offmap_magic
@@ -8154,11 +8154,8 @@ offmap_decisions = {
 		ai_will_do = {
 			factor = 1
 			modifier = {
-				factor = 0.05 # slow way down
+				factor = 0.25 # interval also increased - fewer checks with higher chance of success
 			}
 		}
 	}
 }
-
-
-

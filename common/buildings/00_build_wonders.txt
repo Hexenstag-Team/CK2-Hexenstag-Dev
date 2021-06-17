@@ -17,6 +17,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_torrosa }
+				AND = {religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -28,14 +29,14 @@ castle = {
 		build_time = 3000
 
 		fort_level = 1.5
-		tax_income = 4
 		pikemen = 250
 		galleys = 10
 		ai_creation_factor = 97
 		add_number_to_name = no
 
 		potential = {
-			FROMFROM = { title = b_luccini } #
+			FROMFROM = { title = b_luccini } 
+				AND = {religion_group = old_world_group}
 		}
 		extra_tech_building_start = 0.1
 	}
@@ -48,13 +49,13 @@ castle = {
 		fort_level = 4
 		garrison_size = 0.5
 		artillery = 20
-		tax_income = 1
 
 		ai_creation_factor = 97
 		add_number_to_name = no
 
 		potential = {
 			FROMFROM = { title = b_monte_castello }
+				AND = {religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -65,7 +66,6 @@ castle = {
 		gold_cost = 1000
 		build_time = 3000
 		fort_level = 3
-		tax_income = 3.5
 		artillery = 25
 		pikemen = 150
 		archers = 75
@@ -73,7 +73,8 @@ castle = {
 		add_number_to_name = no
 
 		potential = {
-			FROMFROM = { title = b_miragliano } #
+			FROMFROM = { title = b_miragliano } 
+				AND = {religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.1
@@ -86,7 +87,6 @@ castle = {
 		build_time = 3000
 
 		fort_level = 1.5
-		tax_income = 2
 		garrison_size = 0.25
 		light_cavalry = 200
 		knights = 50
@@ -96,6 +96,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_campastello }
+				AND = {religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -122,6 +123,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_pavona }
+				AND = {religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -134,7 +136,6 @@ castle = {
 
 		fort_level = 2
 		liege_prestige = 0.5
-		tax_income = 2
 		pikemen = 100
 		tech_growth_modifier = 0.05
 
@@ -143,6 +144,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_trantio }
+				AND = {religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -160,8 +162,6 @@ castle = {
 		light_infantry = 175
 		light_cavalry = 100
 		galleys = 10
-
-		tax_income = 3
 		tech_growth_modifier = 0.1
 		levy_size = 0.25
 
@@ -170,7 +170,8 @@ castle = {
 		add_number_to_name = no
 
 		potential = {
-			FROMFROM = { title = b_khypris } #
+			FROMFROM = { title = b_khypris } 
+				AND = {religion_group = old_world_group}
 		}
 
 		convert_to_tribal = tb_khypris
@@ -190,8 +191,6 @@ castle = {
 		knights = 25
 		heavy_infantry = 125
 		galleys = 15
-
-		tax_income = 3
 		tech_growth_modifier = 0.1
 		garrison_size = 0.25
 
@@ -199,7 +198,8 @@ castle = {
 		add_number_to_name = no
 
 		potential = {
-			FROMFROM = { title = b_heraclaia } #
+			FROMFROM = { title = b_heraclaia } 
+				AND = {religion_group = old_world_group}
 		}
 
 		convert_to_tribal = tb_myrmidens
@@ -219,12 +219,12 @@ city = {
 		pikemen = 175
 		gunpowder = 175
 		garrison_size = 0.4
-		tax_income = 3
 		galleys = 25
 		ai_creation_factor = 97
 		add_number_to_name = no
 		potential = {
-			FROMFROM = { title = b_magritta } #
+			FROMFROM = { title = b_magritta } 
+				AND = {religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -240,9 +240,9 @@ city = {
 		ai_creation_factor = 97
 		add_number_to_name = no
 		garrison_size = 0.3
-		tax_income = 1.25
 		potential = {
-			FROMFROM = { title = b_bilbali } #
+			FROMFROM = { title = b_bilbali } 
+				AND = {religion_group = old_world_group}
 		}
 		extra_tech_building_start = 0.2
 	}
@@ -257,9 +257,9 @@ city = {
 		ai_creation_factor = 97
 		add_number_to_name = no
 		garrison_size = 0.4
-		tax_income = 2.25
 		potential = {
-			FROMFROM = { title = b_remas } #
+			FROMFROM = { title = b_remas } 
+				AND = {religion_group = old_world_group}
 		}
 		extra_tech_building_start = 0.2
 	}
@@ -274,11 +274,11 @@ city = {
 		garrison_size = 0.25
 		archers = 150
 		artillery = 20
-		tax_income = 1.5
 		ai_creation_factor = 97
 		add_number_to_name = no
 		potential = {
 			FROMFROM = { title = b_verezzo }
+				AND = {religion_group = old_world_group}
 		}
 		extra_tech_building_start = 0.2
 	}
@@ -297,15 +297,14 @@ city = {
 		pikemen = 60
 		galleys = 35
 
-		tax_income = 3.50
-
 		garrison_size = 0.4
 		levy_size = 0.02 #mercenaries employed by the good masters of Cavadaco
 
 		ai_creation_factor = 97
 
 		potential = {
-			FROMFROM = { title = b_cavadaco } #
+			FROMFROM = { title = b_cavadaco } 
+				AND = {religion_group = old_world_group}
 		}
 
 
@@ -320,8 +319,6 @@ temple = {
 
 		gold_cost = 1000
 		build_time = 3000
-
-		tax_income = 4
 		liege_piety = 1
 		levy_reinforce_rate = 0.1
 		culture_techpoints = 0.02
@@ -333,6 +330,9 @@ temple = {
 
 		potential = {
 			FROMFROM = { title = b_verena_capitularium }
+				OR = {religion = grail
+						religion = false_grail
+						religion = shallyan}
 		}
 		extra_tech_building_start = 0.2
 	}
@@ -341,8 +341,6 @@ temple = {
 
 		gold_cost = 1000
 		build_time = 3000
-
-		tax_income = 2
 		liege_piety = 0.5
 		fort_level = 1
 		culture_techpoints = 0.05
@@ -353,6 +351,8 @@ temple = {
 
 		potential = {
 			FROMFROM = { title = b_coeur_sacre }
+				OR = {religion = grail
+						religion = false_grail}
 		}
 		extra_tech_building_start = 0.2
 	}
@@ -375,6 +375,7 @@ temple = {
 
 		potential = {
 			FROMFROM = { title = b_inquisitoria_general }
+				FROM = {religion_group = old_world_group}
 		}
 		extra_tech_building_start = 0.2
 	}
@@ -385,7 +386,6 @@ temple = {
 		build_time = 3000
 
 		#pilgrimage site
-		tax_income = 2
 		liege_piety = 0.2
 		tech_growth_modifier = 0.05
 		#some pilgrims are crusaders!
@@ -398,6 +398,7 @@ temple = {
 
 		potential = {
 			FROMFROM = { title = b_santiago }
+				AND = {religion_group = old_world_group}
 		}
 		extra_tech_building_start = 0.2
 	}
@@ -408,7 +409,6 @@ temple = {
 		build_time = 3000
 
 		#pilgrimage site
-		tax_income = 2
 		liege_piety = 0.5
 		liege_prestige = 0.5
 		#large abbey
@@ -421,6 +421,7 @@ temple = {
 
 		potential = {
 			FROMFROM = { title = b_hirta }
+				AND = {religion_group = old_world_group}
 		}
 		extra_tech_building_start = 0.2
 	}
@@ -431,7 +432,7 @@ temple = {
 		build_time = 3000
 
 		fort_level = 3
-		tax_income = 3
+
 		liege_piety = 0.5
 		military_techpoints = 0.04
 		pikemen = 200
@@ -446,6 +447,7 @@ temple = {
 
 		potential = {
 			FROMFROM = { title = b_matermyrmidia }
+				AND = {religion_group = old_world_group}
 		}
 		extra_tech_building_start = 0.2
 	}
@@ -456,7 +458,6 @@ temple = {
 		build_time = 3000
 
 		fort_level = 0.5
-		tax_income = 2
 		liege_piety = 0.5
 		culture_techpoints = 0.04
 		heavy_infantry = 200
@@ -466,7 +467,8 @@ temple = {
 		add_number_to_name = no
 
 		potential = {
-			FROMFROM = { title = b_torenso } #
+			FROMFROM = { title = b_torenso } 
+				AND = {religion_group = old_world_group}
 		}
 		extra_tech_building_start = 0.1
 	}
@@ -490,9 +492,6 @@ tribal = {
 		heavy_infantry = 50
 		knights = 50
 		galleys = 8
-
-		tax_income = 2.00
-
 		garrison_size = 0.1
 		levy_size = 0.02
 
@@ -500,7 +499,8 @@ tribal = {
 		add_number_to_name = no
 
 		potential = {
-			FROMFROM = { title = b_khypris } #
+			FROMFROM = { title = b_khypris } 
+				AND = {religion_group = old_world_group}
 		}
 
 		convert_to_castle = ca_khypris
@@ -522,15 +522,13 @@ tribal = {
 		archers = 125
 		light_infantry = 200
 		knights = 25
-
-		tax_income = 2.00
-
 		garrison_size = 0.5
 
 		ai_creation_factor = 97
 		add_number_to_name = no
 
 		potential = { province_id = 690 } # Akendorf
+			AND = {religion_group = old_world_group}
 
 		extra_tech_building_start = 0.2
 	}
@@ -549,15 +547,13 @@ tribal = {
 		light_infantry = 150
 		knights = 50
 		galleys = 15
-
-		tax_income = 5.00
-
 		garrison_size = 0.6
 
 		ai_creation_factor = 97
 		add_number_to_name = no
 
 		potential = { province_id = 657 } # Myrmidens
+			AND = {religion_group = old_world_group}
 
 		extra_tech_building_start = 0.2
 	}

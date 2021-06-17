@@ -60,7 +60,8 @@ castle = {
 		add_number_to_name = no
 
 		potential = {
-			FROMFROM = { title = b_zimniy_dvorets } #
+			FROMFROM = { title = b_zimniy_dvorets }
+					AND = { religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -84,6 +85,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_praag } #
+				AND = { religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -92,41 +94,33 @@ castle = {
 	#Altdorf, garrison size, knights, galleys, income
 	ca_altdorf = {
 		desc = ca_altdorf_desc
-
+		potential = {
+			FROMFROM = { title = b_kaiserliche_palast } #
+				AND = { religion_group = old_world_group}
+		}
 		gold_cost = 1000
 		build_time = 3000
 		garrison_size = 0.50
 		knights = 100
 		galleys = 30
-		tax_income = 5
-
 		ai_creation_factor = 97
 		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_kaiserliche_palast } #
-		}
-
 		extra_tech_building_start = 0.2
 	}
 	#Middenheim, fort level, garrison size, heavy infantry
 	ca_middenheim = {
 		desc = ca_middenheim_desc
-
+		potential = {
+			FROMFROM = { title = b_middenheim_palast } #
+				AND = { religion_group = old_world_group}
+		}
 		gold_cost = 1000
 		build_time = 3000
 		fort_level = 2
 		garrison_size = 0.50
 		heavy_infantry = 100
-
-
 		ai_creation_factor = 97
 		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_middenheim_palast } #
-		}
-
 		extra_tech_building_start = 0.2
 	}
 	#Talabheim, fort level, garrison size, archers
@@ -144,6 +138,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_dankerood } #
+				AND = { religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -151,60 +146,48 @@ castle = {
 	#Nuln, garrison size, military tech, gunpowder, income
 	ca_nuln = {
 		desc = ca_nuln_desc
-
+		potential = {
+			FROMFROM = { title = b_festunginsel } #
+				AND = { religion_group = old_world_group}
+		}
 		gold_cost = 1000
 		build_time = 3000
 		garrison_size = 0.50
 		military_techpoints = 0.10
 		gunpowder = 150
-		tax_income = 3
-
 		ai_creation_factor = 97
 		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_festunginsel } #
-		}
-
 		extra_tech_building_start = 0.2
 	}
 	#Marienburg, garrison size, light infantry, galleys, tax income
 	ca_marienburg = {
 		desc = ca_marienburg_desc
-
+		potential = {
+			FROMFROM = { title = b_rijkers_isle } #
+				AND = { religion_group = old_world_group}
+		}
 		gold_cost = 1000
 		build_time = 3000
 		garrison_size = 0.50
 		light_infantry = 200
 		galleys = 20
-		tax_income = 8
-
 		ai_creation_factor = 97
 		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_rijkers_isle } #
-		}
-
 		extra_tech_building_start = 0.2
 	}
 	#Averheim, garrison size, pikemen, knights, tax income
 	ca_averheim = {
 		desc = ca_averheim_desc
-
+		potential = {
+			FROMFROM = { title = b_averburg } #
+				AND = { religion_group = old_world_group}
+		}
 		gold_cost = 1000
 		build_time = 3000
 		garrison_size = 0.50
 		pikemen = 100
 		knights = 75
-		tax_income = 2.00
-
 		ai_creation_factor = 97
-
-		potential = {
-			FROMFROM = { title = b_averburg } #
-		}
-
 		extra_tech_building_start = 0.2
 	}
 	#Hergig, garrison size, gunpowder with a 60% offensive and 20% defensive bonus, commander limit
@@ -225,6 +208,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_hergig } #
+				AND = { religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -232,21 +216,16 @@ castle = {
 	#Wolfenburg, fort level, 10% morale boost, heavy infantry, tax income
 	ca_wolfenburg = {
 		desc = ca_wolfenburg_desc
-
-		gold_cost = 1000
-		build_time = 3000
-
-		fort_level = 2.00
-		land_morale = 0.10
-		tax_income = 2.0
-        heavy_infantry = 125 #Bull Warriors
-
-		ai_creation_factor = 97
-
 		potential = {
 			FROMFROM = { title = b_wolfenburg } #
+				AND = { religion_group = old_world_group}
 		}
-
+		gold_cost = 1000
+		build_time = 3000
+		fort_level = 2.00
+		land_morale = 0.10
+        heavy_infantry = 125 #Bull Warriors
+		ai_creation_factor = 97
 		extra_tech_building_start = 0.2
 	}
 	#Stirland, fort level, archers, light infantry, local revolt risk reduction
@@ -264,6 +243,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_wurtbad } #
+				AND = { religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -271,187 +251,147 @@ castle = {
 	#Mordheim, tax income, commander limit, court size
 	ca_mordheim = {
 		desc = ca_mordheim_desc
-
+		potential = {
+			FROMFROM = { title = b_sigmarsstein } #
+		}
 		gold_cost = 1000
 		build_time = 3000
-		tax_income = 4
 		commander_limit = 5
 		court_size_modifier = 10
 		ai_creation_factor = 97
 		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_sigmarsstein } #
-		}
-
 		extra_tech_building_start = 5.0
 	}
 	#Sudenburg, garrison size, pikemen, tax income, commander limit, court size
 	ca_sudenburg = {
 		desc = ca_sudenburg_desc
-
+		potential = {
+			FROMFROM = { title = b_aruk } #
+				AND = { religion_group = old_world_group}
+		}
 		gold_cost = 1000
 		build_time = 3000
 		garrison_size = 0.50
 		pikemen = 120
-		tax_income = 8
 		commander_limit = 2
 		court_size_modifier = 5
 		ai_creation_factor = 97
 		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_aruk } #
-		}
-
 		extra_tech_building_start = 0.2
 	}
 	#Akendorf, garrison size, light cavalry, knights, tax income
 	ca_akendorf = {
 		desc = ca_akendorf_desc
-
+		potential = {
+			FROMFROM = { title = b_akendorf } #
+				AND = { religion_group = old_world_group}
+		}
 		gold_cost = 1000
 		build_time = 3000
 		garrison_size = 0.50
 		light_cavalry = 200
 		knights = 100
-		tax_income = 3
-
 		ai_creation_factor = 97
 		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_akendorf } #
-		}
-
 		extra_tech_building_start = 0.2
 	}
 	#Halflings
 	#Grand Moot, reduces short reign penalty up to 10 years
 	ca_grandmoot = {
 		desc = ca_grandmoot_desc
-
+		potential = {
+			FROMFROM = { title = b_eicheschatten }
+				AND = {religion_group = halfling_gods_group}
+		}
 		gold_cost = 500
 		build_time = 1095
-
-		tax_income = 2
 		garrison_size = 0.50
 		heavy_infantry = 20
 		archers = 100
 		short_reign_length = -10
-
 		ai_creation_factor = 93
 		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_eicheschatten }
-		}
-
 		extra_tech_building_start = 0.2
 	}
 	#Three Smoke Rings, garrison size, tax income, local revolt risk reduction
 	ca_three_smoke_rings = {
 		desc = ca_three_smoke_rings_desc
-
+		potential = {
+			FROMFROM = { title = b_gipfel }
+				AND = {religion_group = halfling_gods_group}
+		}
 		gold_cost = 200
 		build_time = 510
 		garrison_size = 0.50
-		#Tobacco trade
-		tax_income = 5
 		local_revolt_risk = -0.25
-
 		ai_creation_factor = 93
 		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_gipfel }
-		}
-
 		extra_tech_building_start = 0.2
 	}
 	#Sauerapfel, tax income, tech growth, levy size
 	ca_sauerapfel = {
 		desc = ca_sauerapfel_desc
-
+		potential = {
+			FROMFROM = { title = b_sauerapfel }
+				AND = {religion_group = halfling_gods_group}
+		}
 		gold_cost = 500
 		build_time = 1095
 		garrison_size = 0.50
-		#Apples
-		tax_income = 2
 		#Adventurers
 		tech_growth_modifier = 0.05
 		levy_size = 0.20
-
 		ai_creation_factor = 91
 		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_sauerapfel }
-		}
-
 		extra_tech_building_start = 0.2
 	}
 	#Couronne, commander limit, tax income, fort level, knights
 	ca_couronne = {
 		desc = ca_couronne_desc
-
-		gold_cost = 1000
-		build_time = 3000
-
-		fort_level = 2
-		commander_limit = 3
-		tax_income = 2
-		knights = 150
-
-		ai_creation_factor = 97
-		add_number_to_name = no
-
 		potential = {
 			FROMFROM = { title = b_couronne } #
+				AND = { religion_group = old_world_group}
 		}
-
+		gold_cost = 1000
+		build_time = 3000
+		fort_level = 2
+		commander_limit = 3
+		knights = 150
+		ai_creation_factor = 97
+		add_number_to_name = no
 		extra_tech_building_start = 0.2
 	}
 	#Brionne, commander limit, prestige, fort level, galleys
 	ca_brionne = {
 		desc = ca_brionne_desc
-
+		potential = {
+			FROMFROM = { title = b_brionne }
+				AND = { religion_group = old_world_group}
+		}
 		gold_cost = 1000
 		build_time = 3000
-
 		fort_level = 2
 		galleys = 20
 		commander_limit = 2
 		monthly_character_prestige = 0.25
-
 		ai_creation_factor = 97
 		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_brionne }
-		}
-
 		extra_tech_building_start = 0.2
 	}
 	#Languille, commander limit, tax income, fort level, knights
 	ca_languille = {
 		desc = ca_languille_desc
-
-		gold_cost = 1000
-		build_time = 3000
-
-		fort_level = 2
-		commander_limit = 2
-		tax_income = 2
-		knights = 150
-
-		ai_creation_factor = 97
-		add_number_to_name = no
-
 		potential = {
 			FROMFROM = { title = b_languille } #
+				AND = { religion_group = old_world_group}
 		}
-
+		gold_cost = 1000
+		build_time = 3000
+		fort_level = 2
+		commander_limit = 2
+		knights = 150
+		ai_creation_factor = 97
+		add_number_to_name = no
 		extra_tech_building_start = 0.2
 	}
 	#Lyonesse, commander limit, garrison size, fort level, galleys
@@ -471,6 +411,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_lyonesse } #
+				AND = { religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -481,8 +422,6 @@ castle = {
 
 		gold_cost = 1000
 		build_time = 3000
-
-		tax_income = 2
 		fort_level = 3
 		commander_limit = 3
 		knights = 150
@@ -492,6 +431,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_bordeleaux } #
+				AND = { religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -512,7 +452,9 @@ castle = {
 		add_number_to_name = no
 
 		potential = {
-			FROMFROM = { title = b_palais_damne } #
+			FROMFROM = { title = b_palais_damne }
+				OR = {religion_group = old_world_group
+					culture_group = bretonnian_group}#
 		}
 
 		extra_tech_building_start = 0.2
@@ -532,7 +474,8 @@ castle = {
 		ai_creation_factor = 97
 
 		potential = {
-			FROMFROM = { title = b_montfort } #
+			FROMFROM = { title = b_montfort }
+				AND = { religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -545,7 +488,6 @@ castle = {
 		build_time = 3000
 
 		fort_level = 3
-		tax_income = 2
 		commander_limit = 1
 		knights = 100
 
@@ -553,6 +495,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_parravon } #
+				AND = { religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -573,6 +516,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_castel_artois } #
+				AND = { religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -583,8 +527,6 @@ castle = {
 
 		gold_cost = 1000
 		build_time = 3000
-
-		tax_income = 3.0
 		fort_level = 2
 		commander_limit = 1
 		knights = 100
@@ -593,6 +535,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_gisoreux } #
+				AND = { religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -605,7 +548,6 @@ castle = {
 		build_time = 3000
 
 		commander_limit = 2
-		tax_income = 1
 		light_cavalry = 100
 		knights = 50
 
@@ -614,6 +556,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_antoch }
+				AND = { religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -630,13 +573,13 @@ castle = {
 		archers = 150
 		fort_level = 2
 		garrison_size = 0.75
-		tax_income = 1
-
 		ai_creation_factor = 97
 		add_number_to_name = no
 
 		potential = {
 			FROMFROM = { title = b_kirkja_hiti } #
+				AND = {culture_group = norscan_group}
+				
 		}
 		extra_tech_building_start = 0.2
 	}
@@ -659,6 +602,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_ulfsland } #
+				AND = {culture_group = norscan_group}
 		}
 		extra_tech_building_start = 0.2
 	}

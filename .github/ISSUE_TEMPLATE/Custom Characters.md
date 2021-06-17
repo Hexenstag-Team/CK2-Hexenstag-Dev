@@ -14,7 +14,7 @@ Dynasty:
 Culture:
 Religion:
 
-*Stats* (you have 30 points to spread out to your five stats)
+*Stats* (you have 30 points to spread out to your five stats, with a max of 10 in one stat)
 Martial:
 Diplomacy:
 Stewardship:

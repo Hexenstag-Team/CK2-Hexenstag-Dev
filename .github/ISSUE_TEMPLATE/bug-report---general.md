@@ -2,7 +2,7 @@
 name: Bug Report - General
 about: Create a report to help us improve the mod
 title: "[BUG] TITLE"
-labels: ''
+labels: '🦟 bug - general'
 assignees: ''
 
 ---

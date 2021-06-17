@@ -25,7 +25,6 @@ city = {
 		build_time = 3000
 
 		fort_level = 2
-		tax_income = 5
 		gunpowder = 250
 		light_infantry = 500
 		galleys = 20
@@ -34,7 +33,8 @@ city = {
 		add_number_to_name = no
 
 		potential = {
-			FROMFROM = { title = b_erengrad } #
+			FROMFROM = { title = b_erengrad}  
+			AND = {religion_group = old_world_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -5025,7 +5025,6 @@ temple = {
 		liege_piety = 0.20
 		liege_prestige = 0.20
 		garrison_size = 0.5
-		tax_income = 3
 		galleys = 40
 		heavy_infantry = 250
 
@@ -5052,7 +5051,6 @@ temple = {
 		fort_level = 2
 		garrison_size = 0.5
 		heavy_infantry = 150
-		tax_income = 3
 		land_morale = 0.15
 		ai_creation_factor = 97
 		add_number_to_name = no

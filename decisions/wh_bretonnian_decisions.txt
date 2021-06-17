@@ -336,6 +336,7 @@ decisions = {
 ###Quest###
 	#Donating Money to the Lady
 	donate_money_to_the_lady_decision = {
+		only_playable = yes #only very rare AI characters will be unlanded with 300 gold
 		potential = {
 			has_quest = quest_ladys_onlyfans
 		}
@@ -382,6 +383,7 @@ decisions = {
 settlement_decisions = {
 #Power, rank 1: Levy Farmers
 	levy_farmers = {
+		only_playable = yes
 		ai_check_interval = 80
 		filter = owned
 		ai_target_filter = owned

@@ -8,14 +8,16 @@ castle = {
 		build_time = 3000
 		heavy_infantry = 60
 		garrison_size = 0.25
-		tax_income = 2
 		liege_prestige = 0.25
 		liege_piety	= 0.25
 		ai_creation_factor = 97
 		local_revolt_risk = -0.05
 		add_number_to_name = no
 		potential = {
-			FROMFROM = { title = b_kazad_azril_karak } #
+			FROMFROM = { title = b_kazad_azril_karak } 
+				OR = {religion_group = dwarf_gods_group
+					culture_group = dawi_zharr_group}
+				
 		}
 		extra_tech_building_start = 0.2
 	}
@@ -56,6 +58,7 @@ castle = {
 		desc = ca_zharr_naggrund_desc
 		potential = {
 			FROMFROM = { title = b_gromthidum } #Zharr-Naggrund's castle holding
+			FROM  = {culture_group = dawi_zharr_group}
 		}
 		auto_add_at_year = 10
 
@@ -65,7 +68,6 @@ castle = {
 		heavy_infantry = 500
 		artillery = 100
 		galleys = 23
-		tax_income = 5
 		ai_creation_factor = 97
 		add_number_to_name = no
 		garrison_size = 0.50
@@ -77,6 +79,7 @@ castle = {
 		desc = ca_tower_gorgoth_desc
 		potential = {
 			FROMFROM = { title = b_hazar_gorgoth } #Gorgoth's castle holding
+			FROM  = {culture_group = dawi_zharr_group}
 		}
 		auto_add_at_year = 10
 
@@ -86,11 +89,11 @@ castle = {
 		light_infantry = 600 #Slaves
 		heavy_infantry = 200
 		artillery = 10
-		tax_income = 5
 		ai_creation_factor = 97
 		add_number_to_name = no
 		garrison_size = 0.50
 		extra_tech_building_start = 0.2
+		
 
 		convert_to_temple = tp_tower_gorgoth
 	}
@@ -98,6 +101,7 @@ castle = {
 		desc = ca_black_fortress_desc
 		potential = {
 			FROMFROM = { title = b_black_fortress } #Black Fortress' castle holding
+			FROM  = {culture_group = dawi_zharr_group}
 		}
 		auto_add_at_year = 10
 
@@ -109,7 +113,6 @@ castle = {
 		knights = 100
 		gunpowder = 500
 		galleys = 23
-		tax_income = 4
 		ai_creation_factor = 97
 		add_number_to_name = no
 		garrison_size = 1.00
@@ -148,7 +151,6 @@ castle = {
 		build_time = 3000
 		heavy_infantry = 200
 		light_infantry = 200
-		tax_income = 5
 		liege_prestige = 0.5
 		monthly_character_prestige = 0.5
 		monthly_character_piety = 0.25
@@ -167,7 +169,6 @@ castle = {
 		gold_cost = 1000
 		build_time = 3000
 		fort_level = 4.50
-		tax_income = 0.5
 		garrison_size = 0.45
 		war_elephants = 150
 		heavy_infantry = 150
@@ -216,7 +217,6 @@ castle = {
 		archers = 250
 		heavy_infantry = 75
 		galleys = 20
-		tax_income = 3
 		levy_size = 0.05
 		ai_creation_factor = 97
 		add_number_to_name = no
@@ -238,7 +238,6 @@ castle = {
 		garrison_size = 1.65
 		liege_piety = 2
 		liege_prestige = 2
-		tax_income = 4
 		pikemen = 800
         archers = 800
         chariots = 400
@@ -264,7 +263,6 @@ castle = {
 		fort_level = 3.00
 		garrison_size = 0.5
 		liege_prestige = 1.00
-		tax_income = 2
 		archers = 175
 		pikemen = 325
         chariots = 125
@@ -274,6 +272,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_khemri } #
+			FROM = {culture_group = nehekharan_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -289,7 +288,6 @@ castle = {
 		liege_prestige = 1.00
 		fort_level = 4.00
 		garrison_size = 0.75
-		tax_income = 2
         pikemen = 250
         archers = 175
 		chariots = 85
@@ -299,6 +297,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_lybaras } #
+			FROM = {culture_group = nehekharan_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -323,6 +322,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_ahtaf_zandri } #
+			FROM = {culture_group = nehekharan_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -339,7 +339,6 @@ castle = {
 		pikemen= 350
 		knights = 150
 		garrison_size = 0.50
-		tax_income = 2.5
 		ai_creation_factor = 97
 		add_number_to_name = no
 		local_revolt_risk = -0.05
@@ -360,7 +359,6 @@ castle = {
 		pikemen= 175
 		light_infantry = 500
 		garrison_size = 0.75
-		tax_income = 5
 		ai_creation_factor = 97
 		add_number_to_name = no
 		local_revolt_risk = -0.05
@@ -380,7 +378,6 @@ castle = {
 		archers= 275
 		pikemen= 275
 		garrison_size = 0.25
-		tax_income = 5
 		ai_creation_factor = 97
 		local_revolt_risk = -0.05
 		add_number_to_name = no
@@ -399,7 +396,6 @@ castle = {
 		build_time = 3000
 		heavy_infantry = 550
 		garrison_size = 0.25
-		tax_income = 5
 		ai_creation_factor = 97
 		local_revolt_risk = -0.05
 		add_number_to_name = no
@@ -417,7 +413,6 @@ castle = {
 		gold_cost = 1000
 		build_time = 3000
 		fort_level = 2.25
-		tax_income = 1.75
 		levy_size = 0.3
 		knights = 100
 		heavy_infantry = 150
@@ -426,6 +421,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_al_haikk } #
+			FROM = {culture_group = arabyan_group}
 		}
 
 		extra_tech_building_start = 0.1
@@ -436,7 +432,6 @@ castle = {
 		gold_cost = 1000
 		build_time = 3000
 		fort_level = 1
-		tax_income = 3
 		knights = 200 #should be elephants but one special/holding
 		galleys = 10
 		ai_creation_factor = 97
@@ -444,6 +439,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_lashiek } #
+			FROM = {culture_group = arabyan_group}
 		}
 
 		extra_tech_building_start = 0.1
@@ -454,7 +450,6 @@ castle = {
 		gold_cost = 1000
 		build_time = 3000
 		fort_level = 4
-		tax_income = 2
 		garrison_size = 0.5
 		levy_size = 0.5
 		horse_archers = 250
@@ -464,6 +459,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_istrabul } #
+			FROM = {culture_group = arabyan_group}
 		}
 
 		extra_tech_building_start = 0.1
@@ -473,8 +469,6 @@ castle = {
 
 		gold_cost = 1000
 		build_time = 3000
-
-		tax_income = 4
 		tech_growth_modifier = 0.10
 		culture_techpoints = 0.01
 		economy_techpoints = 0.01
@@ -485,6 +479,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_copher } #
+			FROM = {culture_group = arabyan_group}
 		}
 
 		extra_tech_building_start = 0.1
@@ -495,7 +490,6 @@ castle = {
 		gold_cost = 1000
 		build_time = 3000
 		fort_level = 3
-		tax_income = 2
 		garrison_size = 1
 		light_infantry = 250
 		light_infantry_offensive = 0.05
@@ -505,6 +499,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_martek } #
+			FROM = {culture_group = arabyan_group}
 		}
 
 		extra_tech_building_start = 0.1
@@ -523,6 +518,7 @@ castle = {
 
 		potential = {
 			FROMFROM = { title = b_el_kalabad } #
+			FROM = {culture_group = arabyan_group}
 		}
 
 		extra_tech_building_start = 0.1
@@ -587,59 +583,37 @@ castle = {
 		extra_tech_building_start = 0.2
 	}
 	ca_vampire_cove = {
-
 		desc = ca_vampire_cove_desc
-
+		potential = {
+			FROMFROM = { title = b_huatl } #
+		}
 
 		gold_cost = 1000
-
 		build_time = 3000
-
 		fort_level = 3
-
 		archers = 35
 		light_infantry = 60
 		pikemen = 30
 		light_cavalry = 20
 		galleys = 15
-
-		tax_income = 2.5
-
 		garrison_size = 0.27
 		levy_size = 0.1 #Undead and pirates fill this holding
-
 		ai_creation_factor = 97
-
-		potential = {
-			FROMFROM = { title = b_huatl } #
-		}
-
 		extra_tech_building_start = 0.2
 	}
 	ca_al_aliman = {
-
 		desc = ca_al_aliman_desc
-
-
-		gold_cost = 1000
-
-		build_time = 3000
-
-		light_cavalry = 75
-		light_infantry = 50
-		galleys = 15
-
-		tax_income = 1.5
-
-		garrison_size = 0.22
-		levy_size = 0.02
-
-		ai_creation_factor = 97
-
 		potential = {
 			FROMFROM = { title = b_xizoh } #
 		}
-
+		gold_cost = 1000
+		build_time = 3000
+		light_cavalry = 75
+		light_infantry = 50
+		galleys = 15
+		garrison_size = 0.22
+		levy_size = 0.02
+		ai_creation_factor = 97
 		extra_tech_building_start = 0.2
 	}
 
@@ -660,19 +634,15 @@ castle = {
 				religion_group = old_world_group
 			}
 		}
-		trigger = {
+		trigger = { 
 			always = yes
 		}
 		gold_cost = 1
 		build_time = 1
-		
-		tax_income = 4
 		fort_level = 2
 		garrison_size = 0.40
-
 		ai_creation_factor = 1000
 		ai_republic_modifier = 1000
-		
 		extra_tech_building_start = 0
 	}
 	
@@ -694,11 +664,8 @@ castle = {
 		}
 		gold_cost = 1
 		build_time = 1
-		
-		tax_income = 3
 		fort_level = 0.5
 		garrison_size = 0.05
-
 		ai_creation_factor = 1000
 		ai_republic_modifier = 1000
 		
@@ -719,7 +686,6 @@ city = {
 		light_infantry = 500
 		pikemen = 300
 		garrison_size = 1.00
-		tax_income = 10
 		ai_creation_factor = 97
 		add_number_to_name = no
 		potential = {
@@ -836,7 +802,6 @@ city = {
 		knights = 225
 		war_elephants = 125
 		garrison_size = 0.50
-		tax_income = 10
 		ai_creation_factor = 97
 		local_revolt_risk = -0.05
 		add_number_to_name = no
@@ -881,7 +846,6 @@ city = {
 		archers = 250
 		heavy_infantry = 75
 		galleys = 20
-		tax_income = 3
 		levy_size = 0.05
 		ai_creation_factor = 97
 		add_number_to_name = no
@@ -932,11 +896,8 @@ city = {
 		}
 		gold_cost = 1
 		build_time = 1
-		
-		tax_income = 4
 		fort_level = 2
 		garrison_size = 0.40
-
 		ai_creation_factor = 1000
 		ai_republic_modifier = 1000
 		
@@ -961,8 +922,6 @@ city = {
 		}
 		gold_cost = 1
 		build_time = 1
-		
-		tax_income = 3
 		fort_level = 0.5
 		garrison_size = 0.05
 
@@ -995,6 +954,7 @@ temple = {
 		desc = ca_zharr_naggrund_desc
 		potential = {
 			FROMFROM = { title = b_gromthidum }
+			FROM = {culture_group = dawi_zharr_group}
 		}
 		auto_add_at_year = 10
 
@@ -1004,7 +964,6 @@ temple = {
 		heavy_infantry = 500
 		artillery = 100
 		galleys = 20
-		tax_income = 5
 		ai_creation_factor = 97
 		add_number_to_name = no
 		garrison_size = 0.50
@@ -1014,6 +973,8 @@ temple = {
 		desc = tp_barak_mazur_desc
 		potential = {
 			FROMFROM = { title = b_mazur }
+			OR = {culture_group = dawi_zharr_group
+					religion_group = dwarf_gods_group}
 		}
 		auto_add_at_year = 10
 
@@ -1024,7 +985,6 @@ temple = {
 		light_infantry = 300
 		artillery = 20
 		galleys = 10
-		tax_income = 2
 		ai_creation_factor = 97
 		add_number_to_name = no
 		garrison_size = 0.05
@@ -1035,6 +995,7 @@ temple = {
 		desc = ca_tower_gorgoth_desc
 		potential = {
 			FROMFROM = { title = b_hazar_gorgoth } #Gorgoth's castle holding
+				FROM = {culture_group = dawi_zharr_group}
 		}
 		auto_add_at_year = 10
 
@@ -1044,7 +1005,6 @@ temple = {
 		light_infantry = 600 #Slaves
 		heavy_infantry = 200
 		artillery = 10
-		tax_income = 5
 		ai_creation_factor = 97
 		add_number_to_name = no
 		garrison_size = 0.50
@@ -1054,6 +1014,7 @@ temple = {
 		desc = ca_black_fortress_desc
 		potential = {
 			FROMFROM = { title = b_black_fortress } #Black Fortress' castle holding
+			FROM = {culture_group = dawi_zharr_group}
 		}
 		auto_add_at_year = 10
 
@@ -1065,7 +1026,6 @@ temple = {
 		knights = 100
 		gunpowder = 500
 		galleys = 23
-		tax_income = 4
 		ai_creation_factor = 97
 		add_number_to_name = no
 		garrison_size = 1.00
@@ -1097,6 +1057,7 @@ temple = {
 
 		potential = {
 			FROMFROM = { title = b_ystin_vaul } #
+			FROM = {culture_group = asrai_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -1140,6 +1101,7 @@ tribal = {
 
 		potential = {
 			FROMFROM = { title = b_ulfsland } #
+			FROM = {culture_group = norscan_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -1163,6 +1125,7 @@ tribal = {
 
 		potential = {
 			FROMFROM = { title = b_findol } #
+			FROM = {culture_group = asrai_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -1185,6 +1148,7 @@ tribal = {
 
 		potential = {
 			FROMFROM = { title = b_coeth_mara } #
+			FROM = {culture_group = asrai_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -1208,6 +1172,7 @@ tribal = {
 
 		potential = {
 			FROMFROM = { title = b_tal_julain } #
+			FROM = {culture_group = asrai_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -1227,6 +1192,7 @@ tribal = {
 
 		potential = {
 			FROMFROM = { title = b_equos } #
+			FROM = {culture_group = asrai_group}
 		}
 
 		extra_tech_building_start = 0.2
@@ -1234,94 +1200,58 @@ tribal = {
 
 	#Dragon Isles
 	tb_mabuya = {
-
 		desc = tb_mabuya_desc
-
-
+		potential = {
+			FROMFROM = { title = b_nodos } #
+		}
 		gold_cost = 1000
-
 		build_time = 3000
-
 		fort_level = 1.5
-
 		archers = 150
 		light_infantry = 175
 		heavy_infantry = 75
 		galleys = 15
-
-		tax_income = 2.5
-
 		garrison_size = 0.15
 		levy_size = 0.02
-
 		ai_creation_factor = 97
 		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_nodos } #
-		}
-
 		convert_to_castle = ca_mabuya
 		convert_to_city = ct_mabuya
 		extra_tech_building_start = 0.2
 	}
 	#New World
 	tb_quittax = {
-
 		desc = tb_quittax_desc
-
-
-		gold_cost = 1000
-
-		build_time = 3000
-
-		fort_level = 3
-
-		archers = 130
-		light_infantry = 75
-		heavy_infantry = 10
-
-		tax_income = 3.00
-
-		garrison_size = 0.15
-		levy_size = 0.01
-
-		ai_creation_factor = 97
-		add_number_to_name = no
-
 		potential = {
 			FROMFROM = { title = b_quittax } #
 		}
-
+		gold_cost = 1000
+		build_time = 3000
+		fort_level = 3
+		archers = 130
+		light_infantry = 75
+		heavy_infantry = 10
+		garrison_size = 0.15
+		levy_size = 0.01
+		ai_creation_factor = 97
+		add_number_to_name = no
 		extra_tech_building_start = 0.2
 	}
 	tb_ganaina = {
-
 		desc = tb_ganaina_desc
-
-
-		gold_cost = 1000
-
-		build_time = 3000
-
-		fort_level = 2
-
-		light_infantry = 85
-		heavy_infantry = 75
-		archers = 35
-
-		tax_income = 2.00
-
-		garrison_size = 0.15
-		levy_size = 0.03
-
-		ai_creation_factor = 97
-		add_number_to_name = no
-
 		potential = {
 			FROMFROM = { title = b_ganaina } #
 		}
-
+		gold_cost = 1000
+		build_time = 3000
+		fort_level = 2
+		light_infantry = 85
+		heavy_infantry = 75
+		archers = 35
+		garrison_size = 0.15
+		levy_size = 0.03
+		ai_creation_factor = 97
+		add_number_to_name = no
 		extra_tech_building_start = 0.2
 	}
 

@@ -1,19 +1,19 @@
 decisions = {
 
 	openslaverymenu ={
-		ai_check_interval = 6
-		only_rulers = yes
+		ai_check_interval = 12
+		only_playable = yes
 		potential = {
-		age = 16
-		NOT = { religion = hashut }
-		NOT = { trait = creature_beastman }
-		OR = {
-			religion_group = cytharai_group
-			religion_group = greenskin_gods_group
-			religion_group = chaos_gods_group
-			religion_group = old_gods_group
-			religion = amazon
-		}
+			age = 16
+			NOT = { religion = hashut }
+			NOT = { trait = creature_beastman }
+			OR = {
+				religion_group = cytharai_group
+				religion_group = greenskin_gods_group
+				religion_group = chaos_gods_group
+				religion_group = old_gods_group
+				religion = amazon
+			}
 	}
 
 		allow = {
@@ -45,6 +45,11 @@ settlement_decisions = {
 		is_high_prio = yes
 
 		from_potential = {
+			OR = {
+				check_variable = { which = elfslaves value = 1 }
+				check_variable = { which = dwarfslaves value = 1 }
+				check_variable = { which = humanslaves value = 1 }
+			}
 			is_playable = yes
 			age = 16
 			ai = no
@@ -56,11 +61,6 @@ settlement_decisions = {
 				religion_group = chaos_gods_group
 				religion_group = old_gods_group
 				religion = amazon
-			}
-			OR = {
-				check_variable = { which = elfslaves value = 1 }
-				check_variable = { which = dwarfslaves value = 1 }
-				check_variable = { which = humanslaves value = 1 }
 			}
 		}
 
