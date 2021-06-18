@@ -8661,7 +8661,7 @@ mutation_toughness_test_effect = {
 	###Health 10+###
 	else_if = {
 		limit = {
-			health_10+_trigger = yes
+			health_over_10_trigger = yes
 			champion_chosen_trigger = no
 			NOT = { is_vampire_trigger = yes }
 		}

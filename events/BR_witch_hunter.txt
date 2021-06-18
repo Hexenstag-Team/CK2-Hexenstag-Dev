@@ -245,8 +245,8 @@ character_event = {
 					trait = ugly
 					trait = dwarf
 					trait = imbecile
-					NOT = { religion = ROOT }
-					NOT = { culture_group = ROOT }
+					religion_group = { chaos_gods_group }
+					is_mutated_trigger = yes
 				}
 			}
 			character_event = { id = witchhunter.9 }

@@ -1,0 +1,215 @@
+#Used IDs 2251-2257
+#Free IDs 2258-2400
+
+2251 = {	#15000
+	name = Ushoran
+	dynasty = 87029
+	culture = strigoi_vampire
+	religion = vampiric
+	dna = pdwedtotako
+	properties = ci0hbf000000
+	father = 1232
+	martial = 15
+	diplomacy = 15
+	stewardship = 7
+	intrigue = 17
+	learning = 26
+	add_trait = creature_human
+	add_trait = vampire_strigoi_visible
+	add_trait = special_char_ushoran
+	add_trait = elusive_shadow
+	add_trait = deceitful
+	add_trait = cruel
+	add_trait = wroth
+	add_trait = proud
+	add_trait = lunatic_2
+	add_trait = lore_necromancy
+	22.2.1 = {birth = yes
+			culture = strygan}
+	35.9.21 = {
+		effect = {
+			add_rival = 1951
+			set_variable = {which = lunatic_counter value = 11}
+			add_character_modifier = {name = god_delusion duration = -1}
+			add_character_modifier = {name = magic_power_2 duration = -1}
+			any_claim = {ROOT = {remove_claim = PREV}}
+			set_variable = { which = lunatic_counter value = 10 }
+			add_artifact = armour_of_hyperion
+		}
+		create_bloodline = {
+			type = ushoran
+			has_dlc = "Holy Fury"
+		}
+	}
+	2433.3.7 = {death = yes}
+}
+
+2252 = {	#15001
+	name = Vorag
+	dynasty = 87029
+	culture = strigoi_vampire
+	religion = vampiric
+	father = 2251
+	martial = 8
+	diplomacy = 5
+	stewardship = 3
+	intrigue = 5
+	learning = 5
+	add_trait = creature_human
+	add_trait = vampire_strigoi_visible
+	add_trait = tough_soldier
+	add_trait = wroth
+	add_trait = cruel
+	add_trait = lunatic_2
+	38.2.11 = {birth = yes
+	culture = strygan}
+	216.2.1 = {
+	effect = {give_nickname = nick_the_bloodytooth
+			set_variable = {which = lunatic_counter value = 11}
+			add_character_modifier = {name = bloodthirsty duration = -1}
+		}}
+	2666.3.7 = {death = yes}
+}
+
+2253 = {	#15002
+	name = Gashnag
+	dynasty = 87029
+	culture = strigoi_vampire
+	religion = vampiric
+	dna = eodtolxneht
+	properties = eb0efk000000
+	father = 2252
+	martial = 8
+	diplomacy = 7
+	stewardship = 3
+	intrigue = 5
+	learning = 17
+	add_trait = creature_human
+	add_trait = vampire_strigoi_visible
+	add_trait = intricate_webweaver
+	add_trait = lustful
+	add_trait = deceitful
+	add_trait = shy
+	add_trait = ambitious
+	add_trait = lunatic_3
+	add_trait = lore_necromancy
+	182.2.1 = {birth = yes
+	culture = strygan}
+	213.2.1 = {effect = {give_nickname = nick_the_black_prince
+			set_variable = {which = lunatic_counter value = 20}
+			add_character_modifier = {name = exquisite_agonies duration = -1}
+			add_character_modifier = {name = magic_power_1 duration = -1}
+		}}
+	2733.3.7 = {death = yes}
+}
+
+2254 = {	#15003
+	name = Urzen
+	dynasty = 87200
+	culture = strigoi_vampire
+	religion = vampiric
+	martial = 8
+	diplomacy = 4
+	stewardship = 3
+	intrigue = 5
+	learning = 5
+	add_trait = creature_human
+	add_trait = vampire_strigoi_visible
+	add_trait = misguided_warrior
+	add_trait = wroth
+	add_trait = brave
+	add_trait = zealous
+	add_trait = ambitious
+	add_trait = lunatic_2
+	182.2.1 = {birth = yes
+	culture = strygan}
+	213.2.1 = {effect = {add_rival = 1951
+		give_nickname = nick_the_unrelenting
+		set_variable = {which = lunatic_counter value = 11}
+		add_character_modifier = {name = bloodthirsty duration = -1}
+		}}
+	2733.3.7 = {death = yes}
+}
+
+2255 = {	#15004
+	name = Rametep
+	dynasty = 87206
+	culture = strigoi_vampire
+	religion = vampiric
+	martial = 5
+	diplomacy = 4
+	stewardship = 3
+	intrigue = 5
+	learning = 5
+	add_trait = creature_human
+	add_trait = vampire_strigoi_visible
+	add_trait = thrifty_clerk
+	add_trait = patient
+	add_trait = greedy
+	add_trait = slothful
+	add_trait = content
+	add_trait = strong
+	add_trait = dim
+	add_trait = lunatic_3
+	182.2.1 = {birth = yes
+	culture = strygan}
+	213.2.1 = {effect = {give_nickname = nick_the_monster
+			set_variable = {which = lunatic_counter value = 20}
+			add_character_modifier = {name = heart_of_melancholy duration = -1}}
+	}
+	2733.3.7 = {death = yes}
+}
+
+2256 = {	#15005
+	name = Emrath
+	dynasty = 87261
+	culture = strigoi_vampire
+	religion = vampiric
+	martial = 5
+	diplomacy = 4
+	stewardship = 3
+	intrigue = 5
+	learning = 5
+	add_trait = creature_human
+	add_trait = vampire_strigoi_visible
+	add_trait = thrifty_clerk
+	add_trait = patient
+	add_trait = gluttonous
+	add_trait = slothful
+	add_trait = content
+	add_trait = strong
+	add_trait = dim
+	add_trait = lunatic_1
+	575.12.30 = {birth = yes
+	culture = strygan}
+	611.1.5 = {effect = {set_variable = {which = lunatic_counter value = 10}}
+	}
+	2733.3.7 = {death = yes}
+}
+
+2257 = {	#15006
+	name = Kyeraile
+	dynasty = 87266
+	female = yes
+	culture = strigoi_vampire
+	religion = vampiric
+	martial = 5
+	diplomacy = 3
+	stewardship = 3
+	intrigue = 6
+	learning = 5
+	add_trait = creature_human
+	add_trait = vampire_strigoi_visible
+	add_trait = intricate_webweaver
+	add_trait = patient
+	add_trait = cruel
+	add_trait = slothful
+	add_trait = proud
+	add_trait = greedy
+	add_trait = lunatic_1
+	772.5.5 = {birth = yes
+	culture = strygan}
+	991.1.5 = {effect = {set_variable = {which = lunatic_counter value = 9}}
+	}
+	2733.3.7 = {death = yes}
+}

@@ -1,0 +1,319 @@
+#Used IDs 2101-2112
+#Free IDs 2113-2250
+
+2101 = {	#15014
+	name = Abhorash
+	dynasty = 23094
+	culture = blood_vampire
+	religion = grail
+	martial = 3
+	diplomacy = 7
+	stewardship = 5
+	intrigue = 9
+	learning = 9
+	add_trait = creature_human
+	add_trait = vampire_blood_visible
+	1.1.1 = {
+		birth = yes
+		culture = blooddragons_culture
+		effect = { dynasty = none } 
+	}
+	2010.1.1 = {death = yes}
+}
+
+2102 = {	#15015
+	name = Walach
+	dynasty = 23094
+	culture = blood_vampire
+	religion = vampiric
+	martial = 14
+	diplomacy = 7
+	stewardship = 5
+	intrigue = 9
+	learning = 9
+	father = 2101
+	add_trait = creature_human
+	add_trait = brilliant_strategist
+	add_trait = proud
+	add_trait = wroth
+	add_trait = vampire_blood_visible
+	1722.1.2 = {birth = yes
+	culture = blooddragons_culture
+	effect = {
+			add_artifact = nightmare_mount
+			add_artifact = crimson_blade_walach
+			add_artifact = blood_chalice_walach
+			add_artifact = blood_dragon_standard_walach
+	}}
+	2069.5.15 = {death = yes}
+}
+
+#1st son of Walach
+2103 = {	#15016
+	name = Geoffe
+	dynasty = 23094
+	culture = blood_vampire
+	religion = vampiric
+	martial = 10
+	diplomacy = 7
+	stewardship = 5
+	intrigue = 9
+	learning = 9
+	father = 2102
+	add_trait = creature_human
+	add_trait = brilliant_strategist
+	add_trait = proud
+	add_trait = wroth
+	add_trait = vampire_blood_visible
+	1900.1.2 = {birth = yes
+	culture = blooddragons_culture}
+	2069.5.15 = {death = yes}
+}
+
+#2nd son of Walach and commander of the blood dragon mercs, lieged to Walach/d_dar
+2104 = {	#15017
+	name = Lafayette
+	dynasty = 23094
+	culture = blood_vampire
+	religion = vampiric
+	martial = 13
+	diplomacy = 7
+	stewardship = 8
+	intrigue = 9
+	learning = 9
+	father = 2102
+	add_trait = creature_human
+	add_trait = brilliant_strategist
+	add_trait = proud
+	add_trait = wroth
+	add_trait = vampire_blood_visible
+	1905.1.2 = {birth = yes
+	culture = blooddragons_culture}
+	2069.5.15 = {death = yes}
+}
+
+#The Red Duke
+2105 = {	#15018
+	name = ""
+	dynasty = 28016
+	culture = blood_vampire
+	religion = vampiric
+	father = 2101
+	martial = 13
+	diplomacy = 7
+	stewardship = 11
+	intrigue = 9
+	learning = 9
+	add_trait = creature_human
+	add_trait = brilliant_strategist
+	add_trait = proud
+	add_trait = ambitious
+	add_trait = strong
+	add_trait = quick
+	add_trait = cruel
+	add_trait = impaler
+	add_trait = vampire_blood_visible
+	add_trait = special_char_red_duke
+	add_trait = celibate
+	1887.5.12 = {birth = yes
+	culture = blooddragons_culture}
+	1900.11.3 = {
+		add_claim = k_aquitaine
+		piety = 200
+		create_bloodline = {
+			type = red_duke
+			has_dlc = "Holy Fury"
+		}
+	}
+	1900.11.4 = { effect = {
+			add_artifact = blade_of_leaping_gold
+			add_artifact = armour_of_blood
+			add_artifact = el_morzillo }
+	}
+	2009.1.1 = {
+		effect = {
+			create_retinue = RETTYPE_UNDEADHORDE
+			create_retinue = RETTYPE_UNDEADHORDE
+			create_retinue = RETTYPE_UNDEADHORDE
+			create_retinue = RETTYPE_UNDEADHORDE
+			create_retinue = RETTYPE_V_VAMPIREKNIGHTS
+			create_retinue = RETTYPE_V_VAMPIREKNIGHTS
+			create_retinue = RETTYPE_V_VAMPIREKNIGHTS
+		}
+	}
+	2069.5.15 = {death = yes}
+}
+
+2106 = {	#15019
+	name = Kaourantin
+	dynasty = 24010
+	culture = blood_vampire
+	religion = vampiric
+	martial = 8
+	diplomacy = 7
+	stewardship = 8
+	intrigue = 9
+	learning = 9
+	add_trait = creature_human
+	add_trait = tough_soldier
+	add_trait = tough
+	add_trait = gregarious
+	add_trait = cruel
+	add_trait = vampire_blood_visible
+	1887.4.12 = {birth = yes
+	culture = blooddragons_culture}
+	2169.5.15 = {death = yes}
+}
+
+2107 = {	#15020
+	name = Varison
+	dynasty = 24011
+	culture = blood_vampire
+	religion = vampiric
+	martial = 8
+	diplomacy = 7
+	stewardship = 8
+	intrigue = 9
+	learning = 9
+	add_trait = creature_human
+	add_trait = tough_soldier
+	add_trait = tough
+	add_trait = gregarious
+	add_trait = cruel
+	add_trait = vampire_blood_visible
+	1793.5.3 = {birth = yes
+	culture = blooddragons_culture}
+	1897.4.12 = {give_nickname = nick_the_blade}
+	1998.11.8 = {add_spouse = 2108
+		effect = {add_lover = 2108}}
+	2169.5.15 = {death = yes}
+}
+
+2108 = {	#15021
+	name = Tatjana
+	dynasty = 24011
+	culture = blood_vampire
+	religion = vampiric
+	mother = 6017
+	father = 2107
+	female = yes
+	martial = 9
+	diplomacy = 1
+	stewardship = 3
+	intrigue = 6
+	learning = 0
+	employer = 2107
+	add_trait = creature_human
+	add_trait = hunter
+	add_trait = tough_soldier
+	add_trait = strong
+	add_trait = ugly
+	add_trait = lustful
+	add_trait = patient
+	add_trait = cruel
+	1981.11.8 = {birth = yes
+	culture = blooddragons_culture}
+	1998.11.8 = {give_nickname = nick_the_lewd
+		add_trait = vampire_blood_visible
+		add_spouse = 2107
+		effect = {add_lover = 2107}}
+	2140.1.8 = {death = yes}
+}
+
+2109 = {	#15022
+	name = Enisan
+	dynasty = 74519
+	culture = blood_vampire
+	religion = vampiric
+	martial = 10
+	diplomacy = 7
+	stewardship = 8
+	intrigue = 6
+	learning = 7
+	add_trait = creature_human
+	add_trait = brilliant_strategist
+	add_trait = hardy
+	add_trait = paranoid
+	add_trait = deceitful
+	add_trait = vampire_blood_visible
+	1987.4.12 = {birth = yes
+	culture = blooddragons_culture}
+	2269.5.15 = {death = yes}
+}
+
+2110 = {	#15023
+	name = Lothar
+	dynasty = 74520
+	culture = blood_vampire
+	religion = vampiric
+	martial = 11
+	diplomacy = 5
+	stewardship = 8
+	intrigue = 5
+	learning = 2
+	add_trait = creature_human
+	add_trait = skilled_tactician
+	add_trait = dim
+	add_trait = shy
+	add_trait = cruel
+	add_trait = vampire_blood_visible
+	1923.5.3 = {birth = yes
+	culture = blooddragons_culture}
+	2169.5.15 = {death = yes}
+}
+
+2111 = {	#15024
+	name = Eliza
+	dynasty = 74521
+	culture = blood_vampire
+	religion = vampiric
+	female = yes
+	martial = 10
+	diplomacy = 7
+	stewardship = 4
+	intrigue = 2
+	learning = 4
+	add_trait = creature_human
+	add_trait = duelist
+	add_trait = tough_soldier
+	add_trait = chaste
+	add_trait = wroth
+	add_trait = cruel
+	add_trait = vampire_blood_visible
+	1977.11.8 = {birth = yes
+	culture = blooddragons_culture}
+	2240.1.8 = {death = yes}
+}
+
+2112 = {	#43104
+	name = Pierre
+	dynasty = 28028
+	culture = blood_vampire
+	religion = vampiric
+	disallow_random_traits = yes
+	easter_egg = yes
+	martial = 10
+	diplomacy = 8
+	stewardship = 3
+	intrigue = 10
+	learning = 6
+	add_trait = creature_human
+	add_trait = brilliant_strategist
+	add_trait = attractive 
+	add_trait = noble
+	add_trait = lunatic_2
+	add_trait = diligent
+	add_trait = wroth
+	add_trait = proud
+	add_trait = brave
+	add_trait = cavalry_leader
+	add_trait = vampire_blood_visible
+	1910.9.4 = {
+		birth = yes
+		culture = blooddragons_culture
+		effect = {
+			set_variable = { which = lunatic_counter value = 10 }
+		}
+	}
+	2089.2.29 = {death = yes}
+}

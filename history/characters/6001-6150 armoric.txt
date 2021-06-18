@@ -1,0 +1,633 @@
+#Used IDs 6001-6030
+#Free IDs 6031-6150
+
+6001 = {	#45018
+	name = Repanse #Repanse de lyonese
+	female = yes
+	dynasty = 24008 #2-4-0-0-8
+	dna = bhcjewicacv
+	properties = aj00db000000
+	culture = armoric religion = grail
+	martial = 10
+	diplomacy = 4
+	stewardship = 7
+	intrigue = 7
+	learning = 0
+	add_trait = brilliant_strategist
+	add_trait = nun
+	add_trait = proud
+	add_trait = brave
+	add_trait = zealous
+	add_trait = peasant
+	1991.9.15 = {birth = yes
+	effect = {set_character_flag = special_marshal}}
+	2007.10.5 = {
+		give_nickname = nick_the_maid
+		create_bloodline = {
+			type = repanse
+			has_dlc = "Holy Fury"
+		}
+		effect = {
+			add_artifact = sword_of_lyonesse
+			add_artifact = fleur_de_lys_banner
+			add_artifact = suleman
+			add_artifact = halo_of_maidenly_wrath
+		}
+	}
+	2009.1.1 = {
+		effect = {
+			create_retinue = RETTYPE_BATTLE_PILGRIMS
+			create_retinue = RETTYPE_BATTLE_PILGRIMS
+			create_retinue = RETTYPE_BATTLE_PILGRIMS
+			create_retinue = RETTYPE_CUL_BRET1
+			create_retinue = RETTYPE_CUL_BRET1
+			create_retinue = RETTYPE_CUL_BRET1
+			create_retinue = RETTYPE_CUL_BRET1
+			create_retinue = RETTYPE_CUL_BRET3
+			create_retinue = RETTYPE_CUL_BRET4
+			create_retinue = RETTYPE_CUL_BRET4
+			create_retinue = RETTYPE_CUL_BRET6
+		}
+	}
+	2010.1.1 = {
+		effect = {
+			join_society = knights_of_bretonnia
+
+			society_rank_up = {
+				society = knights_of_bretonnia
+				rank = 1
+			}
+		}
+	}
+	2036.4.12 = {death = yes}
+}
+
+6002 = {	#45216
+	name = Emmerin
+	dynasty = 24059
+	dna = nejbfjenhnp
+	culture = armoric religion = grail
+	martial = 6 diplomacy = 4 stewardship = 8 intrigue = 5 learning = 7
+	add_trait = indulgent_wastrel add_trait = charitable add_trait = arbitrary add_trait = ambitious add_trait = stressed add_trait = noble
+	1956.2.8 = {birth = yes}
+	2008.7.3 = {death = yes}
+}
+
+6003 = {	#45218
+	name = Hawiz
+	female = yes
+	dynasty = 24059
+	dna = nebbpelienh
+	culture = armoric religion = grail
+	add_trait = noble
+	father = 6002	#Emmerin
+	1978.12.1 = {birth = yes}
+	2034.12.9 = {death = yes}
+}
+
+6004 = {	#45219
+	name = Vinsant
+	dynasty = 24059
+	dna = pedbfjijlip
+	culture = armoric religion = grail
+	martial = 6 diplomacy = 6 stewardship = 5 intrigue = 8 learning = 8
+	add_trait = flamboyant_schemer add_trait = kind add_trait = just add_trait = slothful add_trait = craven add_trait = noble
+	father = 6002	#Emmerin
+	1982.8.4 = {birth = yes}
+	2024.5.24 = {death = yes}
+}
+
+6005 = {	#45220
+	name = Budic
+	dynasty = 24059
+	dna = nejbfhgnhnp
+	culture = armoric religion = grail
+	martial = 6 diplomacy = 5 stewardship = 6 intrigue = 5 learning = 4
+	add_trait = flamboyant_schemer add_trait = trusting add_trait = patient add_trait = cruel add_trait = temperate add_trait = noble
+	father = 6002	#Emmerin
+	1984.6.16 = {birth = yes}
+	2045.7.16 = {death = yes}
+}
+
+6006 = {	#45221
+	name = Vinsant
+	dynasty = 24059
+	dna = ocjnhpnmhnp
+	culture = armoric religion = grail
+	martial = 8 diplomacy = 5 stewardship = 4 intrigue = 6 learning = 4
+	add_trait = scholarly_theologian add_trait = deceitful add_trait = lustful add_trait = noble
+	father = 6002	#Emmerin
+	1988.11.27 = {birth = yes}
+	2040.1.15 = {death = yes}
+}
+
+6007 = {	#45222
+	name = Katell
+	female = yes
+	dynasty = 24059
+	dna = bedbifkjgep
+	culture = armoric religion = grail
+	add_trait = noble
+	father = 6004	#Vinsant
+	2002.4.22 = {birth = yes}
+	2059.3.7 = {death = yes}
+}
+
+6008 = {	#45223
+	name = Morganez
+	female = yes
+	dynasty = 24059
+	dna = homffjhcmkd
+	culture = armoric religion = grail
+	add_trait = noble
+	father = 6004	#Vinsant
+	2004.6.19 = {birth = yes}
+	2042.7.15 = {death = yes}
+}
+
+6009 = {	#45224
+	name = Maldred
+	dynasty = 24059
+	dna = aidbflddhip
+	culture = armoric religion = grail
+	martial = 8 diplomacy = 7 stewardship = 6 intrigue = 4 learning = 5
+	add_trait = scholarly_theologian add_trait = arbitrary add_trait = gregarious add_trait = honest add_trait = kind add_trait = noble
+	father = 6004	#Vinsant
+	2008.10.15 = {birth = yes}
+	2054.9.12 = {death = yes}
+}
+
+6010 = {	#45232
+	name = Farulin
+	dynasty = 24025
+	culture = armoric
+	religion = grail
+	martial = 4
+	diplomacy = 0
+	stewardship = 2
+	intrigue = 5
+	learning = 0
+	add_trait = creature_human
+	add_trait = hedonist
+	add_trait = indulgent_wastrel
+	add_trait = noble
+
+	1989.7.22 = {birth = yes}
+	2033.11.3 = {death = yes}
+}
+
+6011 = {	#45233
+	name = Aodred
+	dynasty = 24026
+	culture = armoric
+	religion = grail
+	martial = 5
+	diplomacy = 9
+	stewardship = 7
+	intrigue = 11
+	learning = 9
+	add_trait = creature_human
+	add_trait = misguided_warrior
+	add_trait = content
+	add_trait = noble
+	1985.4.20 = {birth = yes}
+	2045.7.2 = {death = yes}
+}
+
+6012 = {	#45234
+	name = Edouarzh
+	dynasty = 24029
+	culture = armoric
+	religion = grail
+	martial = 7
+	diplomacy = 0
+	stewardship = 2
+	intrigue = 9
+	learning = 2
+	add_trait = creature_human
+	add_trait = poet
+	add_trait = fortune_builder
+	add_trait = trusting
+	add_trait = lustful
+	add_trait = noble
+	father = 6029
+	1993.8.3 = {birth = yes}
+	2025.4.10 = {death = yes}
+}
+
+6013 = {	#45236
+	name = Hrodbert
+	dynasty = 24044
+	culture = armoric
+	religion = grail
+	martial = 8
+	diplomacy = 1
+	stewardship = 11
+	intrigue = 5
+	learning = 5
+	add_trait = creature_human
+	add_trait = duelist
+	add_trait = grey_eminence
+	add_trait = homosexual
+	add_trait = noble
+	1959.9.12 = {birth = yes}
+	2030.2.19 = {death = yes}
+}
+
+6014 = {	#45237
+	name = Leobas
+	dynasty = 24019
+	culture = armoric
+	religion = grail
+	martial = 10
+	diplomacy = 8
+	stewardship = 6
+	intrigue = 6
+	learning = 3
+	add_trait = creature_human
+	add_trait = hedonist
+	add_trait = underhanded_rogue
+	add_trait = noble
+	1992.9.26 = {birth = yes}
+	2017.12.25 = {death = yes}
+}
+
+6015 = {	#45238
+	name = Leri
+	dynasty = 24024
+	culture = armoric
+	religion = grail
+	martial = 8
+	diplomacy = 9
+	stewardship = 8
+	intrigue = 0
+	learning = 4
+	add_trait = creature_human
+	add_trait = scholar
+	add_trait = scholarly_theologian
+	add_trait = fair
+	add_trait = noble
+	1993.2.8 = {birth = yes}
+	2067.4.28 = {death = yes}
+}
+
+6016 = {	#45239
+	name = Pêr
+	dynasty = 24036
+	culture = armoric
+	religion = grail
+	martial = 5
+	diplomacy = 8
+	stewardship = 1
+	intrigue = 6
+	learning = 1
+	add_trait = creature_human
+	add_trait = scholar
+	add_trait = scholarly_theologian
+	add_trait = diligent
+	add_trait = envious
+	add_trait = noble
+	1978.10.9 = {birth = yes}
+	2023.7.30 = {death = yes}
+}
+
+6017 = {	#45240
+	name = Gwenn
+	dynasty = 24023
+	culture = armoric
+	religion = grail
+	female = yes
+	martial = 6
+	diplomacy = 7
+	stewardship = 1
+	intrigue = 6
+	learning = 1
+	add_trait = creature_human
+	add_trait = poet
+	add_trait = amateurish_plotter
+	add_trait = chaste
+	add_trait = patient
+	add_trait = shy
+	add_trait = widowed
+	add_trait = noble
+	1962.4.18 = {birth = yes}
+	1980.11.8 = {add_spouse = 11479}
+	1998.11.8 = {effect = {add_rival = 2107}}
+	2040.1.8 = {death = yes}
+}
+
+6018 = {	#45241
+	name = Anton
+	dynasty = 24057
+	culture = armoric
+	religion = grail
+	martial = 8
+	diplomacy = 1
+	stewardship = 4
+	intrigue = 0
+	learning = 9
+	add_trait = creature_human
+	add_trait = scholar
+	add_trait = mastermind_theologian
+	add_trait = ambitious
+	add_trait = proud
+	add_trait = strong
+	add_trait = noble
+	1980.11.22 = {birth = yes}
+	2063.6.4 = {death = yes}
+}
+
+6019 = {	#45242
+	name = Blanche
+	female = yes
+	dynasty = 24058
+	culture = armoric
+	religion = grail
+	martial = 5
+	diplomacy = 0
+	stewardship = 9
+	intrigue = 0
+	learning = 1
+	add_trait = creature_human
+	add_trait = mystic
+	add_trait = grey_eminence
+	add_trait = just
+	add_trait = cynical
+	add_trait = noble
+	1979.12.2 = {birth = yes}
+	2027.1.13 = {death = yes}
+}
+
+6020 = {	#45243
+	name = Gormou
+	dynasty = 24029
+	culture = armoric
+	religion = grail
+	martial = 10
+	diplomacy = 2
+	stewardship = 5
+	intrigue = 8
+	learning = 1
+	add_trait = creature_human
+	add_trait = duelist
+	add_trait = mastermind_theologian
+	add_trait = gregarious
+	add_trait = paranoid
+	add_trait = honest
+	add_trait = noble
+	father = 6029
+	1984.9.30 = {birth = yes}
+	2019.11.14 = {death = yes}
+}
+
+6021 = {	#45244
+	name = Derrien
+	dynasty = 24022
+	culture = armoric
+	religion = grail
+	martial = 1
+	diplomacy = 3
+	stewardship = 6
+	intrigue = 6
+	learning = 3
+	add_trait = creature_human
+	add_trait = hedonist
+	add_trait = skilled_tactician
+	add_trait = zealous
+	add_trait = craven
+	add_trait = greedy
+	add_trait = noble
+	1977.3.17 = {birth = yes}
+	2041.9.14 = {death = yes}
+}
+
+6022 = {	#45245
+	name = Adalhard
+	dynasty = 24030
+	culture = armoric
+	religion = grail
+	martial = 1
+	diplomacy = 3
+	stewardship = 1
+	intrigue = 5
+	learning = 5
+	add_trait = creature_human
+	add_trait = midas_touched
+	add_trait = kind
+	add_trait = noble
+	1999.11.1 = {birth = yes}
+	2042.6.25 = {death = yes}
+}
+
+6023 = {	#45246
+	name = Drogon
+	dynasty = 24015
+	culture = armoric
+	religion = grail
+	martial = 2
+	diplomacy = 0
+	stewardship = 6
+	intrigue = 7
+	learning = 9
+	add_trait = creature_human
+	add_trait = mystic
+	add_trait = scholarly_theologian
+	add_trait = tall
+	add_trait = weak
+	add_trait = noble
+	1991.1.10 = {birth = yes
+			effect = {set_character_flag = magic_potential_flag_1}
+			}
+	2045.10.28 = {death = yes}
+}
+
+6024 = {	#45247
+	name = Jacen
+	dynasty = 24136
+	dna = ngelfckehii
+	culture = armoric
+	religion = grail
+	martial = 5
+	diplomacy = 0
+	stewardship = 2
+	intrigue = 6
+	learning = 3
+	add_trait = creature_human
+	add_trait = skilled_tactician
+	add_trait = duelist
+	add_trait = honest
+	add_trait = noble
+	1046.1.1 = {birth = yes}
+	1186.3.9 = {death = yes}
+}
+
+6025 = {	#45248
+	name = Baudoin
+	dynasty = 24137
+	dna = ocghmeoagli
+	culture = armoric
+	religion = grail
+	martial = 3
+	diplomacy = 4
+	stewardship = 6
+	intrigue = 5
+	learning = 2
+	add_trait = creature_human
+	add_trait = tough_soldier
+	add_trait = mystic
+	add_trait = wroth
+	add_trait = trusting
+	add_trait = content
+	add_trait = noble
+	1147.1.1 = {birth = yes}
+	1202.9.13 = {give_nickname = nick_dragon_slayer}
+	1241.11.21 = {death = yes}
+}
+
+6026 = {	#45249
+	name = Ballaume
+	dynasty = 24138
+	dna = opdlhhmadlg
+	culture = armoric
+	religion = grail
+	martial = 3
+	diplomacy = 2
+	stewardship = 3
+	intrigue = 2
+	learning = 3
+	add_trait = creature_human
+	add_trait = brilliant_strategist
+	add_trait = patient
+	add_trait = zealous
+	add_trait = shy
+	add_trait = noble
+	1640.1.1 = {birth = yes}
+	1734.12.18 = {give_nickname = nick_the_brave}
+	1799.4.12 = {death = yes}
+}
+
+6027 = {	#45250
+	name = Godfrey
+	dynasty = 24139
+	dna = dgcofpgjnol
+	culture = armoric
+	religion = grail
+	martial = 5
+	diplomacy = 6
+	stewardship = 8
+	intrigue = 6
+	learning = 8
+	add_trait = creature_human
+	add_trait = grey_eminence
+	add_trait = celibate
+	add_trait = kind
+	add_trait = zealous
+	add_trait = noble
+	1415.1.1 = {birth = yes
+			effect = {set_character_flag = magic_potential_flag_1}
+			}
+	1539.12.4 = {death = yes}
+}
+
+6028 = {	#45251
+	name = Gael
+	dynasty = 24023
+	culture = armoric
+	religion = grail
+	mother = 6017
+	father = 11479
+	martial = 6
+	diplomacy = 7
+	stewardship = 1
+	intrigue = 6
+	learning = 1
+	add_trait = creature_human
+	add_trait = skilled_tactician
+	add_trait = duelist
+	add_trait = chaste
+	add_trait = wroth
+	add_trait = plain
+	add_trait = scarred
+	add_trait = hardy
+	add_trait = noble
+	1981.11.8 = {birth = yes}
+	1998.11.8 = {effect = {add_rival = 2107
+			add_rival = 2108}}
+	2001.1.5 = {
+		effect = {
+			give_minor_title = title_sir_bretonnian
+			join_society  = {
+				society = knights_of_bretonnia
+				rank = 2
+			}
+		}
+	}
+	2060.1.8 = {death = yes}
+}
+
+6029 = {	#45252
+	name = Edouarzh
+	dynasty = 24029
+	culture = armoric
+	religion = grail
+	martial = 5
+	diplomacy = 2
+	stewardship = 0
+	intrigue = 5
+	learning = 4
+	add_trait = creature_human
+	add_trait = poet
+	add_trait = fortune_builder
+	add_trait = noble
+	1955.2.3 = {birth = yes}
+	2005.4.10 = {death = yes}
+}
+
+6030 = {	#45253
+	name = Henri
+	dynasty = 24140
+	culture = armoric
+	religion = grail
+	martial = 10
+	diplomacy = 5
+	stewardship = 1
+	intrigue = 1
+	learning = 1
+	add_trait = creature_human
+	add_trait = brilliant_strategist
+	add_trait = inspiring_leader
+	add_trait = giant
+	add_trait = brave
+	add_trait = charitable
+	add_trait = proud
+	add_trait = zealous
+	add_trait = content
+	add_trait = noble
+	employer = 6001
+	1923.1.1 = {birth = yes}
+	1945.5.1 = {
+		effect = {
+			add_artifact = sword_of_heroes
+		}
+	}
+	1958.5.2 = {
+		effect = {
+			add_artifact = charmed_shield
+		}
+	}
+	1947.5.3 = {
+		effect = {
+			add_artifact = custom_chainmail
+		}
+	}
+	2000.1.1 = {
+		effect={
+			give_minor_title = minor_title_commander
+			join_society  = {
+				society = knights_of_bretonnia
+				rank = 4
+			}
+		}
+	}
+	2050.1.1 = {death = yes}
+}
