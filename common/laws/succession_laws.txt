@@ -12,6 +12,7 @@ succession_laws = {
 			NOT = { title = k_shadowrealm }
 			NOT = { title = k_horned_church }
 			NOT = { title = e_bretonnia }
+			NOT = { title = e_hashut }
 			NOT = { holder_scope = { has_landed_title = k_horned_church } }
 			holder_scope = {
 				OR = {
@@ -159,6 +160,7 @@ succession_laws = {
 			NOT = { title = k_shadowrealm }
 			NOT = { title = k_horned_church }
 			NOT = { title = e_bretonnia }
+			NOT = { title = e_hashut }
 			holder_scope = {
 				is_nomadic = no
 				OR = {
@@ -391,6 +393,7 @@ succession_laws = {
 			NOT = { title = k_shadowrealm }
 			NOT = { title = k_horned_church }
 			NOT = { title = e_bretonnia }
+			NOT = { title = e_hashut }
 			holder_scope = {
 				OR = {
 					independent = yes
@@ -562,6 +565,7 @@ succession_laws = {
 			NOT = { title = k_shadowrealm }
 			NOT = { title = k_horned_church }
 			NOT = { title = e_bretonnia }
+			NOT = { title = e_hashut }
 			holder_scope = {
 				NOT = { religion_group = ormazd_gods_group }
 				NOT = { religion_group = necromantic_group }
@@ -740,6 +744,7 @@ succession_laws = {
 		potential = {
 			NOT = { title = k_horned_church }
 			NOT = { title = e_bretonnia }
+			NOT = { title = e_hashut }
 			holder_scope = {
 				OR = {
 					independent = yes
@@ -983,6 +988,7 @@ succession_laws = {
 			NOT = { title = k_shadowrealm }
 			NOT = { title = k_horned_church }
 			NOT = { title = e_bretonnia }
+			NOT = { title = e_hashut }
 			holder_scope = {
 				OR = {
 					independent = yes
@@ -1127,6 +1133,7 @@ succession_laws = {
 			NOT = { title = k_shadowrealm }
 			NOT = { title = k_horned_church }
 			NOT = { title = e_bretonnia }
+			NOT = { title = e_hashut }
 			holder_scope = {
 				OR = {
 					independent = yes
@@ -1283,6 +1290,7 @@ succession_laws = {
 			NOT = { title = k_shadowrealm }
 			NOT = { title = k_horned_church }
 			NOT = { title = e_bretonnia }
+			NOT = { title = e_hashut }
 			holder_scope = {
 				NOT = { culture_group = lizardman_group }
 				NOT = { culture_group = skaven_group }
@@ -1370,6 +1378,7 @@ succession_laws = {
 			NOT = { title = k_shadowrealm }
 			NOT = { title = k_horned_church }
 			NOT = { title = e_bretonnia }
+			NOT = { title = e_hashut }
 			holder_scope = {
 				NOT = { culture_group = skaven_group }
 				is_feudal = yes
@@ -1392,14 +1401,15 @@ succession_laws = {
 
 	succ_open_elective = {
 		potential = {
-			NOR = { 
+			NOR = {
 				has_law = succ_military_elective
-				has_law = succ_whunter_elective 
+				has_law = succ_whunter_elective
 			}
 			NOT = { title = e_realm_of_brayherd }
 			NOT = { title = k_shadowrealm }
 			NOT = { title = k_cult_of_sigmar }
 			NOT = { title = e_bretonnia }
+			NOT = { title = e_hashut }
 			NAND = { NOT = { title = k_horned_church }
 				holder_scope = { culture_group = skaven_group } }
 			NAND = { independent = no
@@ -1500,6 +1510,7 @@ succession_laws = {
 			NOT = { title = k_shadowrealm }
 			NOT = { title = k_horned_church }
 			NOT = { title = e_bretonnia }
+			NOT = { title = e_hashut }
 			holder_scope = {
 				NOT = { culture_group = skaven_group }
 			}
@@ -1542,6 +1553,7 @@ succession_laws = {
 			NOT = { title = k_shadowrealm }
 			NOT = { title = k_horned_church }
 			NOT = { title = e_bretonnia }
+			NOT = { title = e_hashut }
 			NOT = { holder_scope = { culture_group = skaven_group } }
 			OR = {
 				is_primary_holder_title = yes
@@ -1571,6 +1583,7 @@ succession_laws = {
 			NOT = { title = k_shadowrealm }
 			NOT = { title = k_horned_church }
 			NOT = { title = e_bretonnia }
+			NOT = { title = e_hashut }
 			NOT = { holder_scope = { culture_group = skaven_group } }
 			holder_scope = {
 				is_nomadic = yes
@@ -1601,14 +1614,14 @@ succession_laws = {
 			always = no
 		}
 	}
-	
+
 	succ_military_elective = {
 		vassal_opinion=5
 		potential = {
 			NAND = { independent = no
 				has_law = succ_appointment } #Do not allow lizardmen vassals to turn back
 			temporary = no
-			OR = { 
+			OR = {
 				OR = {
 					title = c_shadow_warriors
 					title = d_knights_of_antoch
@@ -1717,6 +1730,33 @@ succession_laws = {
 		}
 	}
 
+	succ_sorcererous_conclave_elective = {
+		#Hashut-approved law, dynasty isn't going to complain
+		vassal_opinion = 10
+		potential = {
+			title = e_hashut #Title-bound.
+			holder_scope = {
+				religion = hashut
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				text = not_forced_tt
+				hidden_tooltip = {
+					holder_scope = { NOT = { has_character_flag = liege_forced_succ_law } }
+				}
+			}
+		}
+		effect = {
+			succession = {
+				base_type = feudal_elective
+				voting_rules = sorcerous_conclave_voting
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+	}
 }
 
 gender_laws = {
@@ -1993,7 +2033,7 @@ gender_laws = {
 					has_religion_feature = religion_equal
 				}
 			}
-			
+
 			is_primary_type_title = no
 		}
 
