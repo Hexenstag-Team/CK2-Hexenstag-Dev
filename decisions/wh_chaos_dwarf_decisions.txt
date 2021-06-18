@@ -1,43 +1,7 @@
 ###Chaos Dwarf stuff
 targetted_decisions = {
-	sacrifice_to_hashut = {
-		ai_check_interval = 12
-		ai_target_filter = home_court
-		filter = home_court
-		only_playable = yes
-		from_potential = {
-			religion = hashut
-			is_ruler = yes
-			NOT = { has_character_flag = sacrificing_prisoner_hashut }
-			NOT = { has_character_flag = selling_prisoner_slavery }
-		}
-		potential = {
-			prisoner = yes
-			host = { character = FROM }
-		}
-		allow = {
-			prisoner = yes
-		}
-		effect = {
-			FROM = {
-				set_character_flag = sacrificing_prisoner_hashut
-				long_character_event = { id = DR_chaos_dwarf.1 }
-			}
-		}
 
-		ai_will_do = {
-			factor = 1
-			modifier = { factor = 0.04 }
-			modifier = { factor = 4 FROM = { trait = creature_dwarf } }
-			modifier = { factor = 3 ROOT = { trait = impaler } }
-			modifier = { factor = 2 ROOT = { trait = zealous } }
-			modifier = { factor = 3 ROOT = { trait = lunatic_3 } }
-			modifier = { factor = 2 ROOT = { trait = lunatic_2 } }
-			modifier = { factor = 2 ROOT = { trait = cruel } }
-			modifier = { factor = 0.1 ROOT = { trait = kind } }
-			modifier = { factor = 100 ROOT = { has_character_modifier = must_sacrifice_hashut } }
-		}
-	}
+#specific sacrifice to Hashut decision integrated into general sacrifice to the gods decision
 
 	chaos_dwarf_sell_into_slavery = {
 		ai_check_interval = 12
