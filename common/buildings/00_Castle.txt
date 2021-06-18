@@ -579,7 +579,7 @@ castle = {
 		potential = {
 			FROMFROM = { title = b_kirkja_hiti } #
 				AND = {culture_group = norscan_group}
-				
+
 		}
 		extra_tech_building_start = 0.2
 	}
@@ -3364,9 +3364,12 @@ castle = {
 	ca_ruinous_kiln_1 = {
 		desc = ca_ruinous_kiln_1_desc
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
 		replaces = ca_library_1
@@ -3382,9 +3385,12 @@ castle = {
 	ca_ruinous_kiln_2 = {
 		desc = ca_ruinous_kiln_2_desc
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		trigger = { TECH_CASTLE_CONSTRUCTION = 3 }
 		prerequisites = { ca_wall_1 }
@@ -3402,9 +3408,12 @@ castle = {
 	ca_ruinous_kiln_3 = {
 		desc = ca_ruinous_kiln_3_desc
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
 		upgrades_from = ca_ruinous_kiln_2
@@ -3969,9 +3978,12 @@ castle = {
 	ca_norscan_training_grounds_1 = {
 		desc = ca_norscan_training_grounds_1_desc
 		potential = {
-			  location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
 		replaces = ca_training_grounds_1
@@ -3989,9 +4001,12 @@ castle = {
 	ca_norscan_training_grounds_2 = {
 		desc = ca_norscan_training_grounds_2_desc
 		potential = {
-			  location = {
-				culture_group = norscan_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		trigger = { TECH_CASTLE_CONSTRUCTION = 3 }
 		upgrades_from = ca_norscan_training_grounds_1
@@ -4009,9 +4024,12 @@ castle = {
 	ca_norscan_training_grounds_3 = {
 		desc = ca_norscan_training_grounds_3_desc
 		potential = {
-			  location = {
-				culture_group = norscan_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
 		upgrades_from = ca_norscan_training_grounds_2

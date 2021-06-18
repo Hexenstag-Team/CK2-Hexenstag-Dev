@@ -33,7 +33,7 @@ city = {
 		add_number_to_name = no
 
 		potential = {
-			FROMFROM = { title = b_erengrad}  
+			FROMFROM = { title = b_erengrad}
 			AND = {religion_group = old_world_group}
 		}
 
@@ -6549,7 +6549,12 @@ temple = {
 		desc = tp_chaos_barracks_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = { religion_group = chaos_gods_group }
+			location = {
+        religion_group = chaos_gods_group
+        NOT = {
+          religion = hashut
+        }
+      }
 		}
 		replaces = tp_elite_barracks_1
 		gold_cost = 150
@@ -6566,7 +6571,12 @@ temple = {
 		desc = tp_chaos_barracks_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = { religion_group = chaos_gods_group }
+			location = {
+        religion_group = chaos_gods_group
+        NOT = {
+          religion = hashut
+        }
+      }
 		}
 		replaces = tp_elite_barracks_2
 		prerequisites = { tp_wall_1 }
@@ -6583,7 +6593,12 @@ temple = {
 		desc = tp_chaos_barracks_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		potential = {
-			location = { religion_group = chaos_gods_group }
+      location = {
+        religion_group = chaos_gods_group
+        NOT = {
+          religion = hashut
+        }
+      }
 		}
 		replaces = tp_elite_barracks_3
 		prerequisites = { tp_wall_2 }
@@ -6600,7 +6615,12 @@ temple = {
 		desc = tp_chaos_barracks_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
 		potential = {
-			location = { religion_group = chaos_gods_group }
+      location = {
+        religion_group = chaos_gods_group
+        NOT = {
+          religion = hashut
+        }
+      }
 		}
 		replaces = tp_elite_barracks_4
 		upgrades_from = tp_chaos_barracks_3
@@ -6616,7 +6636,12 @@ temple = {
 		desc = tp_chaos_barracks_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
 		potential = {
-			location = { religion_group = chaos_gods_group }
+      location = {
+        religion_group = chaos_gods_group
+        NOT = {
+          religion = hashut
+        }
+      }
 		}
 		replaces = tp_elite_barracks_5
 		upgrades_from = tp_chaos_barracks_4
@@ -6632,7 +6657,12 @@ temple = {
 		desc = tp_chaos_barracks_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
 		potential = {
-			location = { religion_group = chaos_gods_group }
+      location = {
+        religion_group = chaos_gods_group
+        NOT = {
+          religion = hashut
+        }
+      }
 		}
 		replaces = tp_elite_barracks_6
 		upgrades_from = tp_chaos_barracks_5
@@ -7515,6 +7545,9 @@ temple = {
 		potential = {
 				 location = {
 					 religion_group = chaos_gods_group
+           NOT = {
+            religion = hashut
+           }
 				}
 		}
 		replaces = tp_monastery_1
@@ -7537,9 +7570,12 @@ temple = {
 		desc = tp_chaosgodstemple_2_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-				 location = {
+				location = {
 					 religion_group = chaos_gods_group
-				}
+           NOT = {
+            religion = hashut
+           }
+      	}
 		}
 		replaces = tp_monastery_2
 		prerequisites = { tp_wall_1 }
@@ -7561,9 +7597,12 @@ temple = {
 		desc = tp_chaosgodstemple_3_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		potential = {
-				 location = {
-					 religion_group = chaos_gods_group
-				}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_monastery_3
 		upgrades_from = tp_chaosgodstemple_2
@@ -7584,9 +7623,12 @@ temple = {
 		desc = tp_chaosgodstemple_3_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
 		potential = {
-				 location = {
-					 religion_group = chaos_gods_group
-				}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_monastery_4
 		upgrades_from = tp_chaosgodstemple_3
@@ -7606,9 +7648,12 @@ temple = {
 		desc = tp_chaosgodstemple_5_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
 		potential = {
-				 location = {
-					 religion_group = chaos_gods_group
-				}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_monastery_5
 		upgrades_from = tp_chaosgodstemple_4
@@ -7631,9 +7676,12 @@ temple = {
 		desc = tp_chaosgodstemple_6_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
 		potential = {
-				 location = {
-					 religion_group = chaos_gods_group
-				}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_monastery_6
 		upgrades_from = tp_chaosgodstemple_5
@@ -8253,9 +8301,12 @@ temple = {
 		desc = tp_guard_shack_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_barracks_1
 		gold_cost = 120
@@ -8272,9 +8323,12 @@ temple = {
 		desc = tp_guard_shack_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_barracks_2
 		prerequisites = { tp_wall_1 }
@@ -8293,9 +8347,12 @@ temple = {
 		desc = tp_guard_shack_2_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 1 }
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_barracks_3
 		prerequisites = { tp_wall_2 }
@@ -8314,9 +8371,12 @@ temple = {
 		desc = tp_guard_shack_2_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 3 }
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_barracks_4
 		upgrades_from = tp_guard_shack_3
@@ -8334,9 +8394,12 @@ temple = {
 		desc = tp_guard_shack_3_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 5 }
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_barracks_5
 		prerequisites = { tp_wall_3 }
@@ -8356,9 +8419,12 @@ temple = {
 		desc = tp_guard_shack_3_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 7 }
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_barracks_6
 		upgrades_from = tp_guard_shack_5
@@ -8714,9 +8780,12 @@ temple = {
 		desc = tp_chaostrophies_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_town_1
 		gold_cost = 120
@@ -8732,9 +8801,12 @@ temple = {
 		desc = tp_chaostrophies_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_town_2
 		prerequisites = { tp_wall_1 }
@@ -8753,9 +8825,12 @@ temple = {
 		desc = tp_chaostrophies_2_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 1 }
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_town_3
 		prerequisites = { tp_wall_1 }
@@ -8774,9 +8849,12 @@ temple = {
 		desc = tp_chaostrophies_2_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 3 }
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_town_4
 		prerequisites = { tp_wall_1 }
@@ -8795,9 +8873,12 @@ temple = {
 		desc = tp_chaostrophies_3_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 5 }
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_town_5
 		prerequisites = { tp_wall_2 }
@@ -8816,9 +8897,12 @@ temple = {
 		desc = tp_chaostrophies_4_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 7 }
 		potential = {
-			location = {
-				religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_town_6
 		prerequisites = { tp_wall_2 }
@@ -9512,9 +9596,12 @@ temple = {
 		desc = tp_altar_bloodfathers_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-					religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_school_1
 		prerequisites = { tp_wall_1 }
@@ -9536,9 +9623,12 @@ temple = {
 		desc = tp_altar_bloodfathers_2_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 3 }
 		potential = {
-			location = {
-					religion_group = chaos_gods_group
-			}
+      location = {
+         religion_group = chaos_gods_group
+         NOT = {
+          religion = hashut
+         }
+      }
 		}
 		replaces = tp_school_2
 		prerequisites = { tp_wall_2 }
