@@ -1,0 +1,346 @@
+#Used IDs 5851-5864
+#Free IDs 5865-6000
+
+5851 = { 	#3300
+	name = Maruviel #WRFP Canon
+	female = yes
+	dynasty = 6000
+	culture = avelorni
+	culture = eonir
+	religion = cadai
+	martial = 7
+	diplomacy = 6
+	stewardship = 3
+	intrigue = 4
+	learning = 5
+	add_trait = creature_elf
+	add_trait = mastermind_theologian
+	add_trait = humble
+	add_trait = patient
+	add_trait = honest
+	add_trait = beautiful
+	add_trait = just
+	add_trait = lore_high_magic
+	add_trait = magic_potential_2
+	1.10.1 = {
+		birth = yes
+		effect = {
+			add_character_modifier = {name = magic_power_3 duration = -1}
+			add_artifact = asrai_stag
+		}
+	}
+	26.10.1 = {immortal_age = 25}
+	433.10.1 = {death = yes}
+}
+
+5852 = { 	#3301
+	name = Terrelia #WRFP Canon
+	female = yes
+	dynasty = 6000
+	culture = avelorni
+	culture = eonir
+	religion = asrai_cadai
+	martial = 7
+	diplomacy = 6
+	stewardship = 3
+	intrigue = 4
+	learning = 5
+	add_trait = creature_elf
+	add_trait = naive_appeaser
+	add_trait = charitable
+	add_trait = trusting
+	add_trait = honest
+	add_trait = beautiful
+	add_trait = just
+	add_trait = magic_potential_2
+	mother = 5851
+	410.10.1 = {
+		birth = yes
+		effect = {
+			add_character_modifier = {name = magic_power_3 duration = -1}
+		}
+	}
+	435.10.1 = {immortal_age = 25}
+	1689.10.1 = {death = {death_reason = death_murder killer = 5854}}
+}
+
+5853 = {	#3302
+	name = Millandriell #WRFP Canon
+	female = yes
+	dynasty = 6000
+	culture = avelorni
+	culture = eonir
+	religion = asrai_cadai
+	martial = 7
+	diplomacy = 6
+	stewardship = 3
+	intrigue = 4
+	learning = 5
+	add_trait = creature_elf
+	add_trait = charismatic_negotiator
+	add_trait = humble
+	add_trait = patient
+	add_trait = honest
+	add_trait = just
+	mother = 5852
+	1640.10.1 = {
+		birth = yes
+		effect = {
+			add_character_modifier = {name = magic_power_3 duration = -1}
+			add_artifact = asrai_stag
+		}
+	}
+	1681.10.1 = {immortal_age = 40}
+	1966.10.1={death = yes}
+}
+
+5854 = {	#3303
+	name = Sinestra  #WRFP Canon Archmage
+	female = yes
+	dynasty = 6000
+	culture = eonir
+	religion = asrai_cadai
+	martial = 7
+	diplomacy = 6
+	stewardship = 3
+	intrigue = 4
+	learning = 5
+	add_trait = creature_elf
+	add_trait = intricate_webweaver
+	add_trait = deceitful
+	add_trait = patient
+	add_trait = brilliant
+	add_trait = zealous
+	add_trait = lore_high_magic
+	add_trait = magic_potential_3
+	mother = 5851
+	288.10.1 = {
+		birth = yes
+		effect = {
+			add_character_modifier = {name = magic_power_3 duration = -1}
+			add_artifact = asrai_stag
+		}
+	}
+	330.10.1 = {immortal_age = 40}
+	2553.10.1 = {death = yes}
+}
+
+5855 = {	#3304
+	name = Marrisith  #Lore Canon
+	female = yes
+	dynasty = 6000
+	dna = aciccnlbadj #aciccnlbadj
+	properties = vl0bmb #
+	culture = eonir
+	religion = asrai_cadai
+	martial = 7
+	diplomacy = 6
+	stewardship = 3
+	intrigue = 4
+	learning = 5
+	add_trait = creature_elf
+	add_trait = charismatic_negotiator
+	add_trait = humble
+	add_trait = patient
+	add_trait = honest
+	add_trait = beautiful
+	add_trait = just
+	add_trait = asrai_spellsinger
+	add_trait = beasts_cardinal
+	add_trait = magic_potential_3
+	mother = 5853
+	1760.10.1 = {
+		birth = yes
+		effect = {
+			create_retinue = RETTYPE_CUL_ASRAI2
+			create_retinue = RETTYPE_CUL_EONIR
+			add_character_modifier = {name = magic_power_3 duration = -1}
+			add_artifact = asrai_stag
+		}
+	}
+	1785.10.1 = {immortal_age = 25}
+	2553.10.1={death = yes}
+}
+
+5856 = { 	#3305
+	name = Aesryn #WRFP Canon
+	dynasty = 6000
+	dna = aciccnlbadj
+	culture = eonir
+	religion = asrai_cadai
+	martial = 7
+	diplomacy = 6
+	stewardship = 3
+	intrigue = 4
+	learning = 5
+	add_trait = creature_elf
+	add_trait = charismatic_negotiator
+	add_trait = envious
+	add_trait = proud
+	add_trait = robust
+	add_trait = magic_potential_2
+	mother = 5853
+	1723.10.1 = {birth = yes}
+	1750.10.1 = {immortal_age = 25}
+	2553.10.1 = {death = yes}
+}
+
+5857 = {	#3317
+	name = Kaia #WRFP Canon
+	female = yes
+	dynasty = 6006
+	culture = eonir
+	religion =asrai_cadai
+	martial = 6
+	diplomacy = 6
+	stewardship = 5
+	intrigue = 4
+	learning = 5
+	add_trait = creature_elf
+	add_trait = lore_high_magic
+	1880.10.1 = {
+		birth = yes
+		effect = {
+			add_character_modifier = {name = magic_power_1 duration = -1}
+			add_artifact = asrai_stag
+		}
+	}
+	1900.10.1 = {immortal_age = 20}
+	2000.1.1 = {employer = 5855}
+	2553.10.1 = {death = yes}
+}
+
+5858 = {	#3318
+	name = Galenstra #WRFP Canon
+	dynasty = 6001
+	culture = eonir
+	religion = asrai_cadai
+	martial = 6
+	diplomacy = 3
+	stewardship = 5
+	intrigue = 1
+	learning = 5
+	add_trait = creature_elf
+	add_trait = tough_soldier
+	add_trait = diligent
+	father = 5860
+	1992.10.1 = {birth = yes}
+	2010.10.1= { immortal_age = 18}
+	2553.10.1 = {death = yes}
+}
+
+5859 = {	#3319
+	name = Delynna #WRFP Canon
+	female = yes
+	dynasty = 6004
+	culture = eonir
+	religion = asrai_cadai
+	add_trait = creature_elf
+	dna = jomhdkndpcj
+	1880.10.1 = {birth = yes}
+	1900.10.1 = {immortal_age = 20}
+	2553.10.1 = {death = yes}
+}
+
+5860 = {	#3320
+	name = Phaonix #Tww2 Canon
+	dynasty = 6001
+	culture = eonir
+	religion = asrai_cadai
+	martial = 6
+	diplomacy = 6
+	stewardship = 5
+	intrigue = 4
+	learning = 5
+	add_trait = creature_elf
+	add_trait = skilled_tactician
+	add_trait = holy_warrior
+	add_trait = proud
+	add_trait = duelist
+	add_trait = gregarious
+	1460.10.1 = {birth = yes}
+	2085.10.1 = {immortal_age = 25}
+	2553.10.1 = {death = yes}
+}
+
+5861 = { 	#3321
+	name = Legolan #NonCanon
+	dynasty = 6002
+	culture = eonir
+	religion = asrai_cadai
+	martial = 6
+	diplomacy = 8
+	stewardship = 3
+	intrigue = 4
+	learning = 5
+	add_trait = creature_elf
+	add_trait = skilled_tactician
+	add_trait = hunter
+	add_trait = brave
+	add_trait = duelist
+	add_trait = diligent
+	1772.10.1 = {birth = yes}
+	1797.10.1 = {immortal_age = 20}
+	2553.10.1 = {death = yes}
+}
+
+5862 = { 	#3322
+	name = Thrann
+	dynasty = 6003
+	culture = eonir
+	religion = asrai_cadai
+	stewardship = 8
+	add_trait = creature_elf
+	add_trait = fortune_builder
+	add_trait = temperate
+	1858.10.1 = {birth = yes}
+	1878.10.1 = { 
+	immortal_age = 20 
+	add_spouse = 5863
+	}
+	2553.10.1 = {death = yes}
+}
+
+5863 = { 	#3323
+	name = Galadarien
+	female = yes
+	dynasty = 6002
+	father= 5861
+	culture = eonir
+	religion = asrai_cadai
+	stewardship = 8
+	add_trait = creature_elf
+	add_trait = naive_appeaser
+	add_trait = smart
+	add_trait = asrai_spellsinger
+	add_trait = life_elemental
+	add_trait = magic_potential_2
+	1838.10.1 = {
+	birth = yes
+	effect = {add_character_modifier = {name = magic_power_3 duration = -1}}
+	}
+	1878.10.1 = { 
+	immortal_age = 20
+	add_spouse = 5862
+	}
+	2553.10.1 = {death = yes}
+}
+
+5864 = {	#3324
+	name = Ledwarn
+	dynasty = 6003
+	culture = eonir
+	religion = asrai_cadai
+	stewardship = 8
+	add_trait = creature_elf
+	add_trait = fortune_builder
+	add_trait = temperate
+	add_trait = magic_potential_2
+	father = 5862
+	mother = 5863
+	1979.10.1 = {birth = yes}
+	2000.10.1 = { 
+	immortal_age = 20 
+	}
+	2553.10.1 = {death = yes}
+}

@@ -1,0 +1,219 @@
+#Used IDs 2401-2406
+#Free IDs 2407-2550
+
+2401 = {	#15007
+	name = W'soran
+	dynasty = 72114
+	culture = necrarch_vampire
+	religion = nagashi
+	martial = 0
+	diplomacy = 4
+	stewardship = 6
+	intrigue = 8
+	learning = 26
+	add_trait = creature_human
+	add_trait = vampire_necrarch_visible
+	add_trait = special_char_wsoran
+	add_trait = mastermind_theologian
+	add_trait = lore_necromancy
+	add_trait = mystic
+	add_trait = brilliant
+	add_trait = cruel
+	add_trait = trusting
+	add_trait = content
+	add_trait = khemri_liche_priest
+	add_trait = lunatic_3
+	1.1.5 = {birth = yes
+	culture = nehekharan}
+	33.1.5 = {
+		give_nickname = nick_the_father_of_vampires
+		create_bloodline = {
+			type = wsoran
+			has_dlc = "Holy Fury"
+		}
+		effect = {
+			set_variable = { which = lunatic_counter value = 20 }
+		}
+	}
+	230.3.7 = {
+		death =  {
+			death_reason = death_murder
+			killer = 2402
+		}
+	}
+}
+
+2402 = {	#15008
+	name = Melkhior
+	dynasty = 72311
+	culture = necrarch_vampire
+	religion = nagashi
+	father = 2401
+	martial = 0
+	diplomacy = 4
+	stewardship = 6
+	intrigue = 8
+	learning = 21
+	add_trait = creature_human
+	add_trait = vampire_necrarch_visible
+	add_trait = mastermind_theologian
+	add_trait = lore_necromancy
+	add_trait = mystic
+	add_trait = bright
+	add_trait = cruel
+	add_trait = paranoid
+	add_trait = deceitful
+	add_trait = ambitious
+	add_trait = lunatic_3
+	31.1.5 = {birth = yes
+	culture = strigany}
+	133.1.5 = {effect = {add_rival = 1951
+			add_artifact = abyssal_terror_mount
+			give_nickname = nick_the_ancient
+			any_claim = {remove_claim = PREV}
+			set_variable = {which = lunatic_counter value = 25}
+			add_character_modifier = {name = bloodthirsty duration = -1}
+			add_character_modifier = {name = magic_power_4 duration = -1}
+			piety = 650}
+	}
+	230.3.7 = {effect = {
+			add_artifact = painbringer_melkhior
+			add_artifact = grimoire_necronium_melkhior
+			add_artifact = black_cloak_lahmia_melkhior
+			add_artifact = book_of_nagash_melkhior
+			add_artifact = circlet_rathek_melkhior
+	}}
+	2530.3.7 = {death = yes}
+}
+
+2403 = {	#15009
+	name = Zacharias
+	dynasty = 72311
+	culture = necrarch_vampire
+	religion = nagashi
+	father = 2402
+	martial = 0
+	diplomacy = 4
+	stewardship = 6
+	intrigue = 8
+	learning = 19
+	add_trait = creature_human
+	add_trait = vampire_necrarch_visible
+	add_trait = mastermind_theologian
+	add_trait = lore_necromancy
+	add_trait = mystic
+	add_trait = quick
+	add_trait = cruel
+	add_trait = wroth
+	add_trait = ambitious
+	add_trait = lunatic_3
+	1611.11.2 = {birth = yes
+	culture = ostlander}
+	1733.6.1 = {effect = {set_variable = {which = lunatic_counter value = 20}
+			add_character_modifier = {name = magic_power_2 duration = -1}
+			piety = 550}
+	}
+	1733.7.1 = {effect = {
+			add_artifact = staff_kaphamon_zacharias
+			add_artifact = scrolls_semhtep_zacharias
+	}}
+	2530.3.7 = {death = yes}
+}
+
+2404 = {	#15010
+	name = Heloise
+	dynasty = 24073
+	father = 2406
+	culture = necrarch_vampire
+	religion = nagashi
+	female = yes
+	martial = 0
+	diplomacy = 4
+	stewardship = 6
+	intrigue = 8
+	learning = 16
+	add_trait = creature_human
+	add_trait = vampire_necrarch_visible
+	add_trait = scholarly_theologian
+	add_trait = lore_necromancy
+	add_trait = poet
+	add_trait = bright
+	add_trait = cruel
+	add_trait = envious
+	add_trait = ambitious
+	add_trait = lunatic_3
+	1500.11.2 = {birth = yes
+	culture = armoric}
+	1521.6.1 = {effect = {set_variable = {which = lunatic_counter value = 25}
+			add_character_modifier = {name = everchild_syndrome duration = -1}
+			add_character_modifier = {name = magic_power_2 duration = -1}
+			piety = 350}
+	}
+	2530.3.7 = {death = yes}
+}
+
+2405 = {	#15011
+	name = Dintomaz
+	dynasty = 87212
+	culture = necrarch_vampire
+	religion = nagashi
+	martial = 0
+	diplomacy = 4
+	stewardship = 6
+	intrigue = 6
+	learning = 15
+	add_trait = creature_human
+	add_trait = vampire_necrarch_visible
+	add_trait = martial_cleric
+	add_trait = lore_necromancy
+	add_trait = hunter
+	add_trait = brilliant
+	add_trait = cynical
+	add_trait = cruel
+	add_trait = ambitious
+	add_trait = lunatic_2
+	1103.11.2 = {birth = yes
+	culture = averlander}
+	1256.6.1 = {effect = {set_variable = {which = lunatic_counter value = 15}
+			add_character_modifier = {name = bloodthirsty duration = -1}
+			add_character_modifier = {name = magic_power_1 duration = -1}
+			piety = 350}
+	}
+	2530.3.7 = {death = yes}
+}
+
+2406 = {	#15012
+	name = Chigaru
+	dynasty = 87219
+	culture = necrarch_vampire
+	religion = nagashi
+	martial = 0
+	diplomacy = 4
+	stewardship = 6
+	intrigue = 8
+	learning = 15
+	add_trait = creature_human
+	add_trait = vampire_necrarch_visible
+	add_trait = mastermind_theologian
+	add_trait = lore_necromancy
+	add_trait = mystic
+	add_trait = quick
+	add_trait = cruel
+	add_trait = wroth
+	add_trait = ambitious
+	add_trait = weak
+	add_trait = lunatic_2
+	901.11.2 = {
+		birth = yes
+		culture = nehekharan
+		effect = {
+			set_variable = { which = lunatic_counter value = 10 }
+		}
+	}
+	1544.3.7 = {
+		death = {
+			death_reason = death_murder
+			killer = 2404
+		}
+	}
+}
