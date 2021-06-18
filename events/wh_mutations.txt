@@ -1,5 +1,4 @@
 
-
 namespace = wh_mutation
 
 ###The Mutation Event for Location###
@@ -641,7 +640,7 @@ character_event = {
 	immediate = {
 		liege = {
 			ROOT = {
-				opinion = { modifier = opinion_mutant who = PREV years = 1000 }
+				opinion = { modifier = opinion_mutant who = PREV duration = -1 }
 			}
 		}
 	}
@@ -669,73 +668,6 @@ character_event = {
 		liege = {
 			ROOT = {
 				remove_opinion = { modifier = opinion_mutant who = PREV }
-			}
-		}
-	}
-}
-
-# vassal under lunatic
-character_event = {
-	id = wh_mutation.302
-	hide_window = yes
-
-	trigger = {
-		independent = no
-		NOT = { trait = incapable }
-		NOT = { trait = lunatic_3 }
-		NOT = { trait = lunatic_2 }
-		NOT = { trait = lunatic_1 }
-		NOT = { trait = trusting }
-		NOT = { has_any_opinion_modifier = opinion_lunatic_w }
-		NOT = { true_religion_group = chaos_gods_group }
-		NOT = { true_religion_group = horned_rat_god_group }
-		liege = {
-			OR = {
-				trait = lunatic_3
-				trait = lunatic_2
-			}
-		}
-	}
-    mean_time_to_happen = { months = 2 }
-
-	immediate = {
-		liege = {
-			ROOT = {
-				opinion = { modifier = opinion_lunatic_w who = PREV years = 1000 }
-			}
-		}
-	}
-}
-
-# vassal no longer under lunatic/turned to chaos
-character_event = {
-	id = wh_mutation.303
-	hide_window = yes
-
-	trigger = { independent = no
-		NOT = { trait = incapable }
-		has_any_opinion_modifier = opinion_lunatic_w
-		OR = {
-			true_religion_group = chaos_gods_group
-			true_religion_group = horned_rat_god_group
-			trait = trusting
-			trait = lunatic_3
-			trait = lunatic_2
-			trait = lunatic_1
-			liege = {
-				NOT = {
-					trait = lunatic_3
-					trait = lunatic_2
-				}
-			}
-		}
-	}
-    mean_time_to_happen = { months = 2 }
-
-	immediate = {
-		liege = {
-			ROOT = {
-				remove_opinion = { modifier = opinion_lunatic_w who = PREV }
 			}
 		}
 	}

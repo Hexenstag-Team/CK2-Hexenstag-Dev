@@ -641,13 +641,14 @@ RETTYPE_SOLBLACKRIDER = {
 		can_use_retinue_trigger = yes
 		OR = {
 			culture = sollander
-				OR = {
-					has_landed_title = k_wissenland
-					has_landed_title = k_solland
-					has_landed_title = d_sudenland
-					has_landed_title = d_soell
-					has_landed_title = d_pfeildorf
-					any_vassal = {
+			OR = {
+				has_landed_title = k_wissenland
+				has_landed_title = k_solland
+				has_landed_title = d_sudenland
+				has_landed_title = d_soell
+				has_landed_title = d_pfeildorf
+				any_vassal = {
+					OR = {
 						has_landed_title = k_wissenland
 						has_landed_title = k_solland
 						has_landed_title = d_sudenland
@@ -655,6 +656,7 @@ RETTYPE_SOLBLACKRIDER = {
 						has_landed_title = d_pfeildorf
 					}
 				}
+			}
 		}
 	}
 	modifier = {
@@ -925,8 +927,8 @@ RETTYPE_WISSENARTY = {
 	}
 
 	modifier = {
-		artillery_offensive = 0.80
-		artillery_defensive = 0.50
+		artillery_offensive = 1.00
+		artillery_defensive = 1.20
 	}
 }
 #Wissenarty, Wissenland, artillery with a 120% offensive and 75% defensive bonus
@@ -959,7 +961,7 @@ RETTYPE_WISSENARTY_2 = {
 
 	modifier = {
 		artillery_offensive = 1.2
-		artillery_defensive = 0.75
+		artillery_defensive = 1.5
 	}
 }
 

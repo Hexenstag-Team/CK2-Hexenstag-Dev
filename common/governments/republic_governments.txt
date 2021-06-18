@@ -606,7 +606,12 @@ republic_governments = {
 				NOT = { religion = asrai_cadai }
 				NOT = { religion_group = ormazd_gods_group }
 			}
-			NOR = { is_government_potential = vampiric_government }
+			NOR = {
+				OR = {
+					is_government_potential = vampiric_government
+					is_government_potential = strigoi_government
+				}
+			}
 			holy_order = no
 		}
 
