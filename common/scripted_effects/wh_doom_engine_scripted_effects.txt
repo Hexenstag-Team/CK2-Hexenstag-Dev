@@ -88,6 +88,13 @@ reduce_doom_progress_massive_effect = {
 	}
 }
 
+reduce_doom_progress_to_0_effect = {
+	custom_tooltip = { text = chaos_decreases_tt }
+	hidden_effect = {
+		set_variable = { which = "global_doom_counter" value = 0 }
+	}
+}
+
 check_doom_not_negative = {
 	if = {
 		limit = {
