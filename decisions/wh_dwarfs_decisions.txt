@@ -4,7 +4,7 @@ targetted_decisions = {
 		ai_check_interval = 6
 		ai_target_filter = rivals
 		filter = all
-		only_rulers = yes
+		only_playable = yes #was only_rulers, I don't think we'll miss Barons demanding compensation
 
 		from_potential = {
 			trait = creature_dwarf
@@ -77,13 +77,13 @@ decisions = {
 		is_mercenary = yes
 
 		potential = {
-			NOT = { has_character_modifier = summoned_throngs }
 			is_playable = yes
 			is_landed = yes
 			OR = {
 				religion = ancestor_gods
 				religion = norse_ancestor_gods
 			}
+			NOT = { has_character_modifier = summoned_throngs }
 		}
 
 		allow = {
@@ -289,15 +289,16 @@ decisions = {
 	hammerer_regiments = {
 		ai_check_interval = 12
 		is_high_prio = yes
-		only_playable = yes
+		only_independent = yes
 
 		potential = {
-			war = no
-					is_incapacitated_trigger = no
+			realm_size = 80
+			tier = emperor
 			trait = creature_dwarf
 			religion_group = dwarf_gods_group
 			culture_group = dwarf_group
-			tier = emperor
+			war = no
+			is_incapacitated_trigger = no
 			AND = {
 				OR = {
 					any_vassal = {
@@ -309,7 +310,6 @@ decisions = {
 				}
 				count = 2
 			}
-			realm_size = 80
 			is_feudal = yes
 			capital_scope = {
 				has_empty_holding = yes
@@ -320,6 +320,7 @@ decisions = {
 		}
 
 		allow = {
+			realm_size = 120
 			AND = {
 				OR = {
 					any_vassal = {
@@ -331,7 +332,6 @@ decisions = {
 				}
 				count = 3
 			}
-			realm_size = 120
 			treasury = 400
 		}
 

@@ -1,13 +1,13 @@
 decisions = {
 	claim_the_throne = {
 		is_high_prio = yes
-		only_playable = yes
+		only_independent = yes # this only restricts the ai, and  the ai won't meet the allow as a vassal anyway
 		ai_check_interval = 36 #No Rush
 		potential = {
-			age = 16
+		higher_tier_than = DUKE
 			culture_group = imperial_group
 			religion_group = old_world_group
-			higher_tier_than = DUKE
+			age = 16
 			NOT = { has_character_flag = claimed_empire }
 			NOT = { has_global_flag = united_empire }
 			e_the_empire = { has_holder = no }
@@ -15,7 +15,6 @@ decisions = {
 		}
 
 		allow = {
-			age = 16
 			NOT = { government = congregation_government }
 			custom_tooltip = {
 				text = is_elector_count_tt

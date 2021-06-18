@@ -1,21 +1,21 @@
 targeted_decisions = {
 	choose_chaos_cults_aspect = {
 		is_in_society = yes
-		
+
 		filter = self
 		ai_target_filter = self
 		ai_check_interval = 12
-		
+
 		potential = {
+			society_rank = 2
+			is_devil_worshiper_trigger = yes
+			has_chaos_cult_aspects_trait = NO
 			prisoner = no
 			NOT = { trait = incapable }
 			character = FROM
 			has_dlc = "Mystics"
-			society_rank = 2
-			is_devil_worshiper_trigger = yes
-			has_chaos_cult_aspects_trait = NO
 		}
-		
+
 		allow = {
 			has_society_currency_minor_trigger = yes
 			custom_tooltip = {
@@ -29,13 +29,13 @@ targeted_decisions = {
 				}
 			}
 		}
-		
+
 		effect = {
 			character_event = { id = CC.10000 }
 			set_character_flag = choosing_chaos_cults_aspect
 			detract_society_currency_minor_effect = yes
 		}
-		
+
 		revoke_allowed = { always = no }
 
 		ai_will_do = {
@@ -44,10 +44,10 @@ targeted_decisions = {
 	}
 	chaos_cult_contain_yourself = {
 		is_in_society = yes
-		
+
 		filter = self
 		ai=no
-		
+
 		potential = {
 			prisoner = no
 			NOT = { trait = incapable }
@@ -64,25 +64,25 @@ targeted_decisions = {
 				has_character_modifier=tzeentch_contain2
 			}
 		}
-		
+
 		allow = {
 			has_society_currency_minor_trigger = yes
 		}
-		
+
 		effect = {
 			if={limit={society_member_of = cult_of_slaanesh }
 				if={limit={society_rank==4}
 					add_character_modifier = {
 						modifier = tzeentch_contain2
 						years = 1
-						
+
 					}
 				}
 				else={
 					add_character_modifier = {
 						modifier = tzeentch_contain
 						years = 1
-						
+
 					}
 				}
 			}
@@ -91,14 +91,14 @@ targeted_decisions = {
 					add_character_modifier = {
 						modifier = nurgle_contain2
 						years = 1
-						
+
 					}
 				}
 				else={
 					add_character_modifier = {
 						modifier = nurgle_contain
 						years = 1
-						
+
 					}
 				}
 			}
@@ -107,14 +107,14 @@ targeted_decisions = {
 					add_character_modifier = {
 						modifier = khorne_contain2
 						years = 1
-						
+
 					}
 				}
 				else={
 					add_character_modifier = {
 						modifier = khorne_contain
 						years = 1
-						
+
 					}
 				}
 			}
@@ -123,14 +123,14 @@ targeted_decisions = {
 					add_character_modifier = {
 						modifier = tzeentch_contain2
 						years = 1
-						
+
 					}
 				}
 				else={
 					add_character_modifier = {
 						modifier = tzeentch_contain
 						years = 1
-						
+
 					}
 				}
 			}
@@ -139,14 +139,14 @@ targeted_decisions = {
 					add_character_modifier = {
 						modifier = tzeentch_contain2
 						years = 1
-						
+
 					}
 				}
 				else={
 					add_character_modifier = {
 						modifier = tzeentch_contain
 						years = 1
-						
+
 					}
 				}
 			}
@@ -160,10 +160,10 @@ targeted_decisions = {
 	}
 	chaos_cult_free_yourself = {
 		is_in_society = yes
-		
+
 		filter = self
 		ai=no
-		
+
 		potential = {
 			prisoner = no
 			NOT = { trait = incapable }
@@ -180,11 +180,11 @@ targeted_decisions = {
 				has_character_modifier=tzeentch_contain2
 			}
 		}
-		
+
 		allow = {
 			has_society_currency_minor_trigger = yes
 		}
-		
+
 		effect = {
 			remove_character_modifier=nurgle_contain
 			remove_character_modifier=nurgle_contain2

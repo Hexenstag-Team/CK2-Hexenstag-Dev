@@ -24,30 +24,31 @@ decisions = {
         }
       }
     }
+
     distribute_runefangs = {
-		only_independent = yes
-		ai_check_interval = 6
+		  only_independent = yes
+		  ai_check_interval = 12
 	    potential = {
-	        tier = EMPEROR
+	      tier = EMPEROR
 		    calc_true_if = {
 		        amount = 2
-				has_artifact = mothers_ruin
-				has_artifact = goblin_bane
-				has_artifact = legbiter
-				has_artifact = crow_feeder
-				has_artifact = brain_wounder
-				has_artifact = troll_cleaver
-				has_artifact = dragon_tooth
-				has_artifact = orc_hewer
-				has_artifact = stone_breaker
-				has_artifact = blood_bringer
-				has_artifact = grudge_settler
-				has_artifact = beast_slayer
+    				has_artifact = mothers_ruin
+    				has_artifact = goblin_bane
+    				has_artifact = legbiter
+    				has_artifact = crow_feeder
+    				has_artifact = brain_wounder
+    				has_artifact = troll_cleaver
+    				has_artifact = dragon_tooth
+    				has_artifact = orc_hewer
+    				has_artifact = stone_breaker
+    				has_artifact = blood_bringer
+    				has_artifact = grudge_settler
+    				has_artifact = beast_slayer
 		    }
 		}
 
 		allow = { }
-		
+
 		effect = {
 			if = {
 				limit = {

@@ -5,20 +5,16 @@ decisions = {
 		is_high_prio = yes
 		only_rulers = yes
 		potential = {
-			age = 16
-			NOT = { religion = hashut }
-			NOT = { trait = creature_beastman }
+			OR={
+				intrigue = 14
+				religion_group = horned_rat_god_group
+			}
 			OR = {
 				trait = lore_necromancy
 				trait = lore_dark_magic
 				religion_group = cytharai_group
 				religion_group = greenskin_gods_group
 				religion_group = chaos_gods_group
-				religion_group = horned_rat_god_group
-			}
-			NOT={has_character_flag=shadow_warpstone_dealings}
-			OR={
-				intrigue = 14
 				religion_group = horned_rat_god_group
 			}
 			OR={
@@ -32,6 +28,10 @@ decisions = {
 					}
 				}
 			}
+			age = 16
+			NOT = { religion = hashut }
+			NOT = { trait = creature_beastman }
+			NOT={has_character_flag=shadow_warpstone_dealings}
 		}
 		allow = {
 			OR={

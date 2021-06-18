@@ -31,4 +31,4 @@ replace_path = "decisions"
 
 picture = "icon.jpg"
 
-tags = { Complete Overhaul Total Conversion Warhammer Fantasy Warhammer Fantasy Hexenstag }
+tags = { "Complete Overhaul" "Total Conversion" "Warhammer Fantasy" "Warhammer" "Fantasy" "Hexenstag" }

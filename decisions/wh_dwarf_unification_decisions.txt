@@ -1,11 +1,11 @@
 decisions = {
 	claim_the_high_kingship ={
 		ai_check_interval = 24 #Really seriusly hard to attain so whats the rush for ai to check every so often
-		only_playable = yes #Only rulers imply Mercenaries and Barons
+		only_independent = yes #No vassal is a contender for the High Kingship
 		potential = {
-			age = 16
-			dwarf_main = yes
+			dwarf_main_trigger = yes
 			higher_tier_than = COUNT
+			age = 16
 			NOT = { tier = emperor }
 			NOT = { has_character_flag = claimed_dwarf_empire }
 			NOT = { has_global_flag = united_dwarf_empire }
@@ -76,16 +76,16 @@ targeted_decisions={
 		}
 
 		potential = {
-			prisoner = no
 			religion_group=dwarf_gods_group
 			trait=creature_dwarf
 			independent = yes
+			prisoner = no
 			lower_tier_than=emperor
 		}
 
 		allow = {
 			#These conditions are for ROOT.
-			FROM={piety=500}
+			FROM={ piety=500 }
 			opinion = { who = FROM value = 25 }
 		}
 
@@ -189,7 +189,7 @@ targeted_decisions={
 			additive_modifier = {
 				value = 5
 				FROM={trait=mastermind_theologian}
-			}	
+			}
 			additive_modifier = {
 				value = 5
 				FROM={trait=brilliant_strategist}
@@ -257,19 +257,19 @@ targeted_decisions={
 				FROM={infamy >= 50}
 			}
 			#Opinion
-			additive_modifier = { 
+			additive_modifier = {
 				value = 5
 				FROM={any_friend={character=root}}
 			}
-			additive_modifier = { 
+			additive_modifier = {
 				value = 5
 				FROM={ROOT={opinion = { who = FROM value = 50 }}}
 			}
-			additive_modifier = { 
+			additive_modifier = {
 				value = 5
 				FROM={ROOT={opinion = { who = FROM value = 75 }}}
 			}
-			additive_modifier = { 
+			additive_modifier = {
 				value = 5
 				FROM={ROOT={opinion = { who = FROM value = 100 }}}
 			}
@@ -278,7 +278,7 @@ targeted_decisions={
 				FROM={any_neighbor_independent_ruler={character=root}}
 			}
 			#Diplomacy influence
-			additive_modifier = { 
+			additive_modifier = {
 				value = -15
 				FROM={
 					not={diplomacy=10}
@@ -290,8 +290,8 @@ targeted_decisions={
 					diplomacy = 20
 				}
 				ROOT={NOT={diplomacy=20}}
-			}	
-			additive_modifier = { 
+			}
+			additive_modifier = {
 				value = 5
 				FROM={
 					diplomacy = 25
@@ -299,28 +299,28 @@ targeted_decisions={
 				ROOT={NOT={diplomacy=25}}
 			}
 			#Realm Diplomacy Effects
-			additive_modifier = { 
+			additive_modifier = {
 				value = -15
 				FROM={
 					not={realm_diplomacy=15}
 				}
 			}
-			additive_modifier = { 
+			additive_modifier = {
 				value = -5
 				FROM={not={realm_diplomacy=20}}
 			}
-			additive_modifier = { 
+			additive_modifier = {
 				value = 5
 				FROM={realm_diplomacy=30}
 				ROOT={NOT={realm_diplomacy=20}}
 			}
-			additive_modifier = { 
+			additive_modifier = {
 				value = 5
 				FROM={realm_diplomacy=40}
 				ROOT={NOT={realm_diplomacy=30}}
 			}
 			#Martial realm Vs Everyone
-			additive_modifier = { 
+			additive_modifier = {
 				localisation_key = not_warmongering_nation
 				value = -10
 				FROM={

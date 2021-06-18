@@ -6,8 +6,8 @@ plot_decisions = {
 		ai_check_interval = 3
 
 		potential = {
-			is_playable = yes
 			leads_faction = faction_antimagic_revolters
+			is_playable = yes
 			OR = {
 				NOT = { has_character_flag = faction_magic_revolters_ultimatum_taken}
 				had_character_flag = { flag = faction_magic_revolters_ultimatum_taken days = 7 }
@@ -114,15 +114,15 @@ plot_decisions = {
 			}
 		}
 	}
-	
+
 	faction_promagic_revolters_ultimatum = {
 		only_playable = yes
 		is_high_prio = yes
 		ai_check_interval = 3
 
 		potential = {
-			is_playable = yes
 			leads_faction = faction_promagic_revolters
+			is_playable = yes
 			OR = {
 				NOT = { has_character_flag = faction_magic_revolters_ultimatum_taken}
 				had_character_flag = { flag = faction_magic_revolters_ultimatum_taken days = 7 }
@@ -230,5 +230,3 @@ plot_decisions = {
 		}
 	}
 }
-
-

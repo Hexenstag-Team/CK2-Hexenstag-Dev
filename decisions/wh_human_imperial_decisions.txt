@@ -1,10 +1,9 @@
 decisions = {
 	hire_engineer_human = {
-		only_rulers = yes
+		ai = no  #decision seems to be disabled
 		potential = {
 			always = no
-			ai = no
-			OR = {
+				OR = {
 				is_patrician = yes
 				AND = {
 					higher_tier_than = BARON
@@ -54,11 +53,10 @@ decisions = {
 	}
 
 	put_engineer_to_work = {
-		only_rulers = yes
+		ai = no #decision appears to be disabled
 		potential = {
 			always = no
 			is_ruler = yes
-			ai = no
 			capital_scope = {
 				NOR = {
 					has_province_modifier = engineer_working_artillery
