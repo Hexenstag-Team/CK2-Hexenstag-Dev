@@ -823,6 +823,7 @@ feudal_governments = {
 	chaosdwarf_government = {
 		potential = {
 			culture_group = dawi_zharr_group
+			NOT = { culture = servile_hobgoblin }
 			religion = hashut
 
 			NOT = { is_government_potential = pirate_government } # Dawi Zharr pirates on daemonships
@@ -874,7 +875,7 @@ feudal_governments = {
 		}
 
 		free_revoke_on_governments = {
-			greenskin_government
+			#greenskin_government - Chaos Dwarfs have a special relationship with greenskins
 			freeboota_government
 			pirate_government
 			beastman_government
@@ -893,6 +894,7 @@ feudal_governments = {
 			dwarf_government
 			lizardmen_government
 			skaven_government
+			#hobgoblin satrapies absolutely pay tax to their overlords
 		}
 		vassal_call_to_arms = {
 			eternal_court_government
@@ -904,6 +906,7 @@ feudal_governments = {
 			dwarf_government
 			lizardmen_government
 			skaven_government
+			hobgoblin_satrapy
 		}
 
 		ignore_in_vassal_limit_calculation = {

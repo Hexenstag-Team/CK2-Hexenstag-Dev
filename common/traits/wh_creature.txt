@@ -32,6 +32,7 @@ creature_human = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 
 	same_opinion = 10
@@ -85,6 +86,7 @@ creature_elf = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	command_modifier = {
 		speed = 0.01
@@ -140,6 +142,7 @@ creature_dwarf = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	opinion_of_creature_beastman=-50
 	opinion_of_creature_chaosspawn=-100 #No Order Can Love Chaosspawn
@@ -204,6 +207,7 @@ creature_chaos_dwarf = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	command_modifier = {
 		speed = -0.1
@@ -251,6 +255,7 @@ creature_halfling = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	inherit_chance = 100
 	stewardship = 1
@@ -301,6 +306,7 @@ creature_orc = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	immortal = yes
 	inherit_chance = 100
@@ -313,7 +319,7 @@ creature_orc = {
 	intrigue = -2
 	health = 1
 	infidel_opinion=-10 #Will Bash Everyone Equally
-	opinion_of_creature_goblin = -10 
+	opinion_of_creature_goblin = -10
 	combat_rating = 10
 	same_opinion = 20
 	opposite_opinion = -50
@@ -362,6 +368,7 @@ creature_goblin = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	inherit_chance = 100
 	learning = -2
@@ -390,6 +397,7 @@ creature_snotling = {
 		OR = {
 			culture_group = goblin_group
 			culture_group = orc_group
+			culture = servile_hobgoblin
 		}
 		is_female = yes
 	}
@@ -423,6 +431,7 @@ creature_snotling = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	inherit_chance = 100
 	learning = -4
@@ -483,6 +492,7 @@ creature_amazon = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	cannot_marry = yes
 	opposite_opinion = -100
@@ -523,6 +533,7 @@ creature_nehekharan = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	inherit_chance = 100
 	health = 15
@@ -571,6 +582,7 @@ creature_skaven = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	intrigue = 2
 	diplomacy = -1
@@ -628,6 +640,7 @@ creature_ogre = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	diplomacy = -1
 	learning = -2
@@ -680,6 +693,7 @@ creature_pig = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	random = no
 	same_opinion = 10
@@ -729,6 +743,7 @@ creature_toad = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	random = no
 	same_opinion = 10
@@ -770,6 +785,7 @@ creature_beastman = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	inherit_chance = 100
 	opinion_of_cruel=10
@@ -828,6 +844,7 @@ creature_forestspirit = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	martial = 5
 	combat_rating = 5
@@ -883,6 +900,7 @@ creature_treekin = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	martial = 3
 	combat_rating = 10
@@ -937,6 +955,7 @@ creature_chaosspawn = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	opposite_opinion = -100
 	same_opinion = -100
@@ -991,6 +1010,7 @@ creature_monster = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	opposite_opinion = -100
 	fertility = -40
@@ -1040,6 +1060,7 @@ creature_celdragon = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	customizer = no
 	fertility = -50.0
@@ -1097,6 +1118,7 @@ creature_skink = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	opposite_opinion = -60
 	inherit_chance = 100
@@ -1151,6 +1173,7 @@ creature_slann = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	old_ones_opinion = 70
 	health = 15
@@ -1204,6 +1227,7 @@ creature_saurus = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	opposite_opinion = -100
 	old_ones_opinion = 60
@@ -1256,6 +1280,7 @@ creature_fimir = {
 		nurgle_demon
 		khorne_demon
 		hashut_kdaai
+		creature_hobgoblin
 	}
 	general_opinion = -20
 	same_opinion = 20
@@ -1268,4 +1293,63 @@ creature_fimir = {
 lizardman_sleepingslann = {
 	incapacitating = yes
 	customizer = no
+}
+
+creature_hobgoblin = {
+	potential = {
+		OR = {
+			culture = servile_hobgoblin
+			culture = hobgoblin
+		}
+		is_female = no
+	}
+	opposites = {
+		creature_human
+		creature_elf
+		creature_dwarf
+		creature_chaos_dwarf
+		creature_halfling
+		creature_orc
+ 	    creature_snotling
+		creature_amazon
+		creature_nehekharan
+		creature_skaven
+		creature_ogre
+		creature_pig
+		creature_toad
+		creature_beastman
+		creature_forestspirit
+		creature_treekin
+		creature_chaosspawn
+		creature_monster
+		creature_celdragon
+		creature_skink
+		creature_slann
+		creature_saurus
+		creature_fimir
+		undivided_demon
+		slaanesh_demon
+		tzeentch_demon
+		nurgle_demon
+		khorne_demon
+		hashut_kdaai
+	}
+	inherit_chance = 100
+	intrigue = 3 #completely trustworthy
+	defensive_plot_power_modifier = 0.25 #evolved in a culture of fairness and honesty
+	customizer = no
+	ruler_designer_cost = 0
+	opposite_opinion = -20
+	ai_rationality = 50
+	infidel_opinion=-10 #faithfully treats with all on the same terms
+	opinion_of_creature_chaos_dwarf = 20 #loyal servant
+	ai_honor = -200 #true to their own hearts
+	ai_zeal = 0
+	immortal = yes
+	fertility = -10.0
+	general_opinion = -20 #unfairly maligned
+	male_insult = INSULT_RENEGADE
+	female_insult = INSULT_RENEGADE
+	male_insult_adj = INSULT_SCHEMING
+	female_insult_adj = INSULT_SCHEMING
 }
