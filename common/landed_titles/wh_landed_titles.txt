@@ -21202,8 +21202,8 @@ e_the_empire = {
 			c_mirrormoor = { # 2429
 				color = { 115 158 166 }
 				color2 = { 255 255 255 }
-				b_stapelhugel = {}
-				b_fassberg = {}
+				b_dunkelleben = {}
+				b_gorshof = {}
 				b_verden = {}
 				b_heidenmoor = {}
 				b_dusselhof = {}
@@ -21235,11 +21235,11 @@ e_the_empire = {
 				b_hornenburg = {}
 				b_brahalt = {}
 			}
-			c_gorssel = { # 2427
+			c_stapelhugel = { # 2427
 				color = { 126 189 191 }
 				color2 = { 255 255 255 }
-				b_gorssel = {}
-				b_gorshof = {}
+				b_stapelhugel = {}
+				b_fassberg = {}
 				b_gorsburg = {}
 				b_lahmorg = {}
 				b_pomenerish = {}
@@ -23066,8 +23066,6 @@ e_the_empire = {
 				gisoren = "Faugilmère"
 				carcassian = "Faugilmère"
 
-				b_leydenhove = {}
-				b_salfen = {}
 				b_fauligmere = {
 					nortagnese = "Faugilmère"
 					bourgon = "Faugilmère"
@@ -23082,6 +23080,8 @@ e_the_empire = {
 				b_medemoord = {}
 				b_grobommel = {}
 				b_hoogestadt = {}
+				b_zoutespui = {}
+				b_wetering = {}
 			}
 			c_zandt = { # 1171
 				color = { 43 105 213 }
@@ -23113,22 +23113,58 @@ e_the_empire = {
 				b_medemsingen = {}
 				b_bredachem = {}
 			}
+			c_leydenhove = {	#971
+				color = { 149 61 128 }
+				color2 = { 255 255 255 }
+				
+				b_leydenhove = {}
+				b_zoeterwoude = {}
+				b_stroopuit = {}
+				b_petten = {}
+				b_venraij = {}
+				b_nagele = {}
+				b_garderen = {}
+			}
+			c_salfen = {	#972
+				color = { 173 219 134 }
+				color2 = { 255 255 255 }
+				
+				b_salfen = {}
+				b_drimmelen = {}
+				b_zoutkamp = {}
+				b_balmahuizen = {}
+				b_wateringen = {}
+				b_lutjewolde = {}
+				b_krewerd = {}
+			}
 		}
-		d_frysland = {
-			color = { 136 35 19 }
+		d_zuidhaven = {
+			color = { 0 36 140 }
 			color2 = { 255 255 255 }
 
-			capital = 228 # c_harenskarpel
+			capital = 225 # c_manaanspoort
+	
+			c_manaanspoort = { # 225
+				color = { 0 36 140 }
+				color2 = { 255 255 255 }
 
-			nortagnese = "Fresie"
-			bourgon = "Fresie"
-			armoric = "Fresie"
-			gascon = "Fresie"
-			breton = "Fresie"
-			mousillonian = "Fresie"
-			gisoren = "Fresie"
-			carcassian = "Fresie"
+				nortagnese = "Grau de Manne"
+				bourgon = "Grau de Manne"
+				armoric = "Grau de Manne"
+				gascon = "Grau de Manne"
+				breton = "Grau de Manne"
+				mousillonian = "Grau de Manne"
+				gisoren = "Grau de Manne"
+				carcassian = "Grau de Manne"
 
+				b_venhuizen = {}
+				b_vogolenzang = {}
+				b_texel = {}
+				b_medemneuzen = {}
+				b_appingegein = {}
+				b_arnelingen = {}
+				b_rotterloopen = {}
+			}
 			c_harenskarpel = { # 228
 				color = { 126 45 14 }
 				color2 = { 255 255 255 }
@@ -23159,35 +23195,45 @@ e_the_empire = {
 				b_landmere = {}
 				b_zouterdorp = {}
 			}
-			c_ankeeven = { # 227
-				color = { 84 42 141 }
+			c_kollumerland = {	#974
+				color = { 15 94 70 }
 				color2 = { 255 255 255 }
+				
+				b_kollumerland = {}
+				b_bedaf = {}
+				b_giekerk = {}
+				b_spanbeek = {}
+				b_straten = {}
+				b_rhenoij = {}
+				b_straten = {}
+			}
+		}
+		d_frysland = {
+			color = { 94 209 219 }
+			color2 = { 255 255 255 }
 
-				nortagnese = "Arsenquère"
-				bourgon = "Arsenquère"
-				armoric = "Arsenquère"
-				gascon = "Arsenquère"
-				breton = "Arsenquère"
-				mousillonian = "Arsenquère"
-				gisoren = "Arsenquère"
-				carcassian = "Arsenquère"
+			capital = 977 # c_vasse
 
-				b_ankeeven = {
-					nortagnese = "Arsenquère"
-					bourgon = "Arsenquère"
-					armoric = "Arsenquère"
-					gascon = "Arsenquère"
-					breton = "Arsenquère"
-					mousillonian = "Arsenquère"
-					gisoren = "Arsenquère"
-					carcassian = "Arsenquère"
-				}
-				b_de_gesp = {}
-				b_halfweg = {}
-				b_genevorden = {}
-				b_landrichem = {}
-				b_nieuwedam = {}
-				b_nieuwedaal = {}
+			nortagnese = "Fresie"
+			bourgon = "Fresie"
+			armoric = "Fresie"
+			gascon = "Fresie"
+			breton = "Fresie"
+			mousillonian = "Fresie"
+			gisoren = "Fresie"
+			carcassian = "Fresie"
+
+			c_vasse = {	#977
+				color = { 94 209 219 }
+				color2 = { 255 255 255 }
+				
+				b_vasse = {}	
+				b_tjeintgum = {}
+				b_zeese = {}
+				b_kibbelgaarn = {}
+				b_nieuwerhoek = {}
+				b_holk = {}
+				b_kievitsbraak = {}
 			}
 			c_harskamp = { # 230
 				color = { 0 51 15 }
@@ -23219,26 +23265,48 @@ e_the_empire = {
 				b_rotterrade = {}
 				b_amsterhuizen = {}
 			}
-			c_manaanspoort = { # 225
-				color = { 0 36 140 }
+			c_andelst = {	#979
+				color = { 61 128 143 }
 				color2 = { 255 255 255 }
+				
+				b_andelst = {}	
+				b_poonhaven = {}
+				b_perkpolder = {}
+				b_vuchtschoot = {}
+				b_nieuwegen = {}
+				b_vuilpan = {}
+				b_dijkerhoek = {}
+			}
+			c_wolfheeze = {	#978
+				color = { 39 21 30 }
+				color2 = { 255 255 255 }
+				
+				b_wolfheeze = {}
+				b_vogelwaarde = {}
+				b_uithoorn = {}
+				b_zandeind = {}
+				b_burgerveen = {}
+				b_oorloo = {}
+				b_stramproij = {}
+			}
+		}
+		d_wouduin = {
+			color = { 36 194 124 }
+			color2 = { 255 255 255 }
 
-				nortagnese = "Grau de Manne"
-				bourgon = "Grau de Manne"
-				armoric = "Grau de Manne"
-				gascon = "Grau de Manne"
-				breton = "Grau de Manne"
-				mousillonian = "Grau de Manne"
-				gisoren = "Grau de Manne"
-				carcassian = "Grau de Manne"
-
-				b_venhuizen = {}
-				b_vogolenzang = {}
-				b_texel = {}
-				b_medemneuzen = {}
-				b_appingegein = {}
-				b_arnelingen = {}
-				b_rotterloopen = {}
+			capital = 975 # c_gorssel
+			
+			c_gorssel = {	#975
+				color = { 36 194 124 }
+				color2 = { 255 255 255 }
+				
+				b_gorssel = {}
+				b_spanbeek = {}
+				b_ubbena = {}
+				b_boschoven = {}
+				b_drieborg = {}
+				b_verrenbest = {}
+				b_lemselo = {}
 			}
 			c_velsen = { # 226
 				color = { 42 39 13 }
@@ -23269,6 +23337,48 @@ e_the_empire = {
 				b_hilverhof = {}
 				b_bredevoort = {}
 				b_hoogedaal = {}
+			}
+			c_gieten = {	#976
+				color = { 67 103 9 }
+				color2 = { 255 255 255 }
+				
+				b_gieten = {}
+				b_rumelaar = {}
+				b_steelhoven = {}
+				b_sybrandaburen = {}
+				b_nieuwoord = {}
+				b_prosperdorp = {}
+				b_valeiskreek = {}
+			}
+			c_ankeeven = { # 227
+				color = { 84 42 141 }
+				color2 = { 255 255 255 }
+
+				nortagnese = "Arsenquère"
+				bourgon = "Arsenquère"
+				armoric = "Arsenquère"
+				gascon = "Arsenquère"
+				breton = "Arsenquère"
+				mousillonian = "Arsenquère"
+				gisoren = "Arsenquère"
+				carcassian = "Arsenquère"
+
+				b_ankeeven = {
+					nortagnese = "Arsenquère"
+					bourgon = "Arsenquère"
+					armoric = "Arsenquère"
+					gascon = "Arsenquère"
+					breton = "Arsenquère"
+					mousillonian = "Arsenquère"
+					gisoren = "Arsenquère"
+					carcassian = "Arsenquère"
+				}
+				b_de_gesp = {}
+				b_halfweg = {}
+				b_genevorden = {}
+				b_landrichem = {}
+				b_nieuwedam = {}
+				b_nieuwedaal = {}
 			}
 		}
 		d_heideland = {
@@ -23754,6 +23864,18 @@ e_the_empire = {
 				b_genselt = {}
 				b_leeuwnisse = {}
 				b_eindlem = {}
+			}
+			c_denekamp = {	#980
+				color = { 58 44 149 }
+				color2 = { 255 255 255 }
+				
+				b_denekamp = {}
+				b_lemselo = {}
+				b_vlagtwedde = {}
+				b_rijkerswoerd = {}
+				b_nibbikswoud = {}
+				b_vissersburen = {}
+				b_haarxuilens = {}
 			}
 		}
 		d_texelhaven = {

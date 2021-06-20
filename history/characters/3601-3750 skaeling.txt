@@ -1,5 +1,5 @@
-#Used IDs 3601-3629
-#Free IDs 3630-3750
+#Used IDs 3601-3637
+#Free IDs 3638-3750
 
 3601 = {	#23000
 	name = Arnóra
@@ -619,4 +619,141 @@
 		}
 	}
 	2070.3.26 = { death = yes }
+}
+
+3630 = {	#17418
+	name = Gnæggir
+	dynasty = 57001
+	dna = nkkgomjfeao
+	add_trait = creature_human
+	culture = skaeling
+	religion = norscan_gods
+	martial = 6
+	diplomacy = 8
+	stewardship = 6
+	intrigue = 8
+	learning = 6
+	add_trait = midas_touched
+	add_trait = temperate
+	1938.12.1 = {birth = yes}
+	2004.11.15 = {death = yes}
+}
+
+3631 = {	#17421
+	name = Hanef
+	dynasty = 57001
+	dna = fkagojjonpi
+	add_trait = creature_human
+	culture = skaeling
+	religion = norscan_gods
+	martial = 6
+	diplomacy = 6
+	stewardship = 5
+	intrigue = 7
+	learning = 8
+	add_trait = charismatic_negotiator
+	add_trait = zealous
+	add_trait = stressed
+	father = 3630 #GnæggiR
+	1960.8.4 = {birth = yes}
+	2011.8.29 = {death = yes}
+}
+
+3632 = {	#17422
+	name = Iðunn
+	female = yes
+	dynasty = 57001
+	dna = mphkpenbeao
+	add_trait = creature_human
+	culture = skaeling
+	religion = norscan_gods
+	father = 3630 #GnæggiR
+	1963.8.16 = {birth = yes}
+	2009.2.16 = {death = yes}
+}
+
+3633 = {	#17423
+	name = Húnrøðr
+	dynasty = 57001
+	dna = jkkgompdegi
+	add_trait = creature_human
+	culture = skaeling
+	religion = norscan_gods
+	martial = 5
+	diplomacy = 7
+	stewardship = 8
+	intrigue = 6
+	learning = 8
+	add_trait = midas_touched
+	add_trait = temperate
+	add_trait = slow
+	father = 3630 #GnæggiR
+	1966.10.24 = {
+		birth = yes
+		effect = {
+			give_nickname = nick_deadliest
+		}
+	}
+	2017.10.23 = {death = yes}
+}
+
+3634 = {	#17424
+	name = Þrúðr
+	female = yes
+	dynasty = 57001
+	dna = flkpolnfpdo
+	add_trait = creature_human
+	culture = skaeling
+	religion = norscan_gods
+	father = 3630 #GnæggiR
+	1970.11.5 = {birth = yes}
+	2038.6.8 = {death = yes}
+}
+
+3635 = {	#17425
+	name = Stóðkell
+	dynasty = 57001
+	dna = fkakojddnhi
+	add_trait = creature_human
+	culture = skaeling
+	religion = norscan_gods
+	martial = 5
+	diplomacy = 4
+	stewardship = 7
+	intrigue = 4
+	learning = 6
+	add_trait = naive_appeaser
+	add_trait = paranoid
+	add_trait = honest
+	add_trait = greedy
+	add_trait = cruel
+	father = 3631 #Hanef
+	1982.9.9 = {birth = yes}
+	2028.3.12 = {death = yes}
+}
+
+3636 = {	#17426
+	name = Ginnlaug
+	female = yes
+	dynasty = 57001
+	dna = hmnboimhodi
+	add_trait = creature_human
+	culture = skaeling
+	religion = norscan_gods
+	father = 3631 #Hanef
+	1985.3.11 = {birth = yes}
+	2021.9.10 = {death = yes}
+}
+
+3637 = {	#17427
+	name = Dagmær
+	female = yes
+	dynasty = 57001
+	dna = baagojppdpn
+	add_trait = creature_human
+	culture = skaeling
+	religion = norscan_gods
+	father = 3631 #Hanef
+	1989.5.4 = {birth = yes}
+	2050.10.27 = {death = yes}
 }
