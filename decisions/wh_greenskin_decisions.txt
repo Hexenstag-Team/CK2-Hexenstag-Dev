@@ -980,30 +980,38 @@ targetted_decisions = {
 		filter = sub_realm
 		is_high_prio = yes
 		from_potential = {
-			religion_group = greenskin_gods_group
+			OR = {
+				religion_group = greenskin_gods_group
+				religion = hashut
+			}
 			is_ruler = yes
 			is_female = no
 			OR = {
 				culture_group = orc_group
 				culture_group = goblin_group
+				culture = servile_hobgoblin
 			}
 			is_theocracy = no
 			OR={
 				NOT={
-				any_child={
-					count = 2
-					is_alive=yes
-				}}
+					any_child={
+						count = 2
+						is_alive=yes
+					}
+				}
 				NOT = { num_of_children = 3 } #To avoid player taking too many heirs
 			}
 			OR={
-				is_nomadic=yes
+				is_nomadic = yes
 				is_tribal = yes
 			}
 		}
 		potential = {
-			age = 16
-			religion_group = greenskin_gods_group
+			is_liege_or_above = FROM
+			OR = {
+				religion_group = greenskin_gods_group
+				religion = hashut
+			}
 			OR = {
 				AND = {
 					FROM = { culture_group = orc_group}
@@ -1013,9 +1021,13 @@ targetted_decisions = {
 					FROM = { culture_group = goblin_group}
 					culture_group = goblin_group
 				}
+				AND = {
+					FROM = { culture = servile_hobgoblin }
+					culture = servile_hobgoblin
+				}
 			}
+			age = 16
 			is_female = no
-			is_liege_or_above = FROM
 			NOT = { character = FROM }
 			NOT = { is_close_relative = FROM }
 		}
@@ -1062,7 +1074,10 @@ targetted_decisions = {
 				conditional_tooltip ={
 					trigger ={
 						FROM={
-							trait=creature_goblin
+							OR = {
+								trait=creature_goblin
+								trait=creature_hobgoblin
+							}
 							higher_tier_than=DUKE
 						}
 					}
@@ -1092,7 +1107,12 @@ targetted_decisions = {
 					martial = 9
 				}
 				AND = {
-					FROM = { culture_group = goblin_group}
+					FROM = {
+						OR = {
+							culture_group = goblin_group
+							culture = servile_hobgoblin
+						}
+					}
 					intrigue = 9
 				}
 			}

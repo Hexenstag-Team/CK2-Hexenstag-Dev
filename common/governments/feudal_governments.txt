@@ -834,8 +834,8 @@ feudal_governments = {
 		color = { 190 75 6 }
 		frame_suffix = "_chaosdwarfgov"
 
-		demesne_size = 1
-		vassal_limit = -2
+		#demesne_size = 1
+		vassal_limit = -15 #not expansive
 		commander_limit = 1
 
 		capital_move_delay = 600
@@ -906,13 +906,13 @@ feudal_governments = {
 			dwarf_government
 			lizardmen_government
 			skaven_government
-			hobgoblin_satrapy
 		}
 
 		ignore_in_vassal_limit_calculation = {
 			tribal_government
 			beastman_government
 			greenskin_government
+			hobgoblin_satrapy #efficient middle managers
 		}
 	}
 
