@@ -21654,7 +21654,7 @@ e_the_empire = {
 				b_salzenmund = {}
 				b_oldenlitz = {}
 				b_grafenrich = {}
-				b_beeckerhoven = {}
+				b_wermsdorf = {}
 				b_silver_hills = {}
 				b_coswig = {}
 				b_gladenzach = {}
@@ -21675,29 +21675,29 @@ e_the_empire = {
 				b_seleberg = {}
 				b_allenraeschen = {}
 			}
-			c_dorfmark = { # 242
-				color = { 84 87 21 }
+			c_beeckerhoven = { # 982
+				color = { 149 49 131 }
 				color2 = { 255 255 255 }
 
-				b_dorfmark = {}
-				b_dunsen = {}
-				b_marklohe = {}
-				b_vohengries = {}
-				b_sortsor = {}
-				b_oskarsun = {}
-				b_waldfurt = {}
+				b_beeckerhoven = {}
+				b_zierstorf = {}
+				b_bayrischzell = {}
+				b_kleinenkoogsdeich = {}
+				b_grammelkam = {}
+				b_ostbusch = {}
+				b_utzenfeld = {}
 			}
-			c_limshof = { # 241
-				color = { 42 84 148 }
+			c_frienstedt = {	# 983
+				color = { 106 197 88 }
 				color2 = { 255 255 255 }
-
-				b_limshof = {}
-				b_schuten = {}
-				b_seuschenhof = {}
-				b_marktburg = {}
-				b_tromland = {}
-				b_groentorp = {}
-				b_wittenhan = {}
+				
+				b_frienstedt = {}
+				b_geveshausen = {}
+				b_lacken = {}
+				b_hutzelberg = {}
+				b_spleth = {}
+				b_dauvelshausen = {}
+				b_dasing = {}
 			}
 		}
 		d_lugrenkust = {
@@ -21718,18 +21718,6 @@ e_the_empire = {
 				b_neues_emskrank = {}
 				b_anskirchen = {}
 			}
-			c_hargendorf = { # 234
-				color = { 168 63 17 }
-				color2 = { 255 255 255 }
-
-				b_hargendorf = {}
-				b_beilen = {}
-				b_ueblingen = {}
-				b_schlaghuegel = {}
-				b_falsterfed = {}
-				b_dingelzach = {}
-				b_innsstein = {}
-			}
 			c_kurtwallen = { # 238
 				color = { 126 75 19 }
 				color2 = { 255 255 255 }
@@ -21741,6 +21729,18 @@ e_the_empire = {
 				b_golebruck = {}
 				b_miesehofen = {}
 				b_wachtendorf = {}
+			}
+			c_wilhelmskoog = {	#985
+				color = { 106 222 85 }
+				color2 = { 255 255 255 }
+				
+				b_wilhelmskoog = {}
+				b_warber = {}
+				b_siegburg = {}
+				b_kartzow = {}
+				b_entringen = {}
+				b_schultenhedfeld = {}
+				b_buchleiten = {}
 			}
 		}
 		d_kieselstaadt = {
@@ -21768,11 +21768,24 @@ e_the_empire = {
 				b_stavern = {}
 				b_alfhausen = {}
 				b_luftberg = {}
-				b_wilhelmskoog = {}
+				b_Hainham = {}
 				b_skjaldberg = {}
 				b_brondborg = {}
 				b_fraunedorf = {}
 			}
+			c_limshof = { # 241
+				color = { 42 84 148 }
+				color2 = { 255 255 255 }
+
+				b_limshof = {}
+				b_schuten = {}
+				b_seuschenhof = {}
+				b_marktburg = {}
+				b_tromland = {}
+				b_groentorp = {}
+				b_wittenhan = {}
+			}
+			
 		}
 		d_laurelorn = {
 			color = { 10 131 35 }
@@ -21875,6 +21888,68 @@ e_the_empire = {
 				b_larstrom = {}
 				b_denewald = {}
 			}
+		}
+		d_dorfmark = {
+			color = { 84 87 21 }
+			color2 = { 255 255 255 }
+				
+			capital = 242 # c_dorfmark
+				
+			c_dorfmark = { # 242
+				color = { 84 87 21 }
+				color2 = { 255 255 255 }
+
+				b_dorfmark = {}
+				b_dunsen = {}
+				b_marklohe = {}
+				b_vohengries = {}
+				b_sortsor = {}
+				b_oskarsun = {}
+				b_waldfurt = {}
+			}
+			c_frote = { # 981
+				color = { 124 185 100 }
+				color2 = { 255 255 255 }
+
+				b_frote = {}
+				b_dorndiel = {}
+				b_heurenbach = {}
+				b_stenzenhof = {}
+				b_alfen = {}
+				b_hohenossig = {}
+				b_rossel = {}
+			}
+			c_taterwald = {	#984
+				color = { 82 100 97 }
+				color2 = { 255 255 255 }
+				
+				b_taterwald = {}
+				b_bschorrwald = {}
+				b_hafendorf = {}
+				b_quanens = {}
+				b_glaucha = {}
+				b_ehst = {}
+				b_hannober = {}
+			}
+		}
+		d_verzauberterhugel = {
+			color = { 168 63 17 }
+			color2 = { 255 255 255 }
+			
+			capital = 234 # c_hargendorf
+			
+			c_hargendorf = { # 234
+				color = { 168 63 17 }
+				color2 = { 255 255 255 }
+
+				b_hargendorf = {}
+				b_beilen = {}
+				b_ueblingen = {}
+				b_schlaghuegel = {}
+				b_falsterfed = {}
+				b_dingelzach = {}
+				b_innsstein = {}
+			}
 			c_schaukel = { # 233
 				color = { 126 60 144 }
 				color2 = { 255 255 255 }
@@ -21883,9 +21958,9 @@ e_the_empire = {
 				loren="Ildenfane"
 				asur_colonial="Ildenfane"
 				b_mainburg = {
-				eonir="Ildenfane"
-				loren="Ildenfane"
-				asur_colonial="Ildenfane"
+					eonir="Ildenfane"
+					loren="Ildenfane"
+					asur_colonial="Ildenfane"
 				}
 				b_schaukeln = {}
 				b_idstein = {}
@@ -21893,6 +21968,18 @@ e_the_empire = {
 				b_hadersted = {}
 				b_alsund = {}
 				b_adenbruck = {}
+			}
+			c_lipphugel = {	#991
+				color = { 1 9 210 }
+				color2 = { 255 255 255 }
+				
+				b_lipphugel = {}
+				b_wietingsbeck = {}
+				b_eppenich = {}
+				b_bankewitz = {}
+				b_heinkenbusch = {}
+				b_hetzlinshofen = {}
+				b_oberquembach = {}
 			}
 		}
 	}
