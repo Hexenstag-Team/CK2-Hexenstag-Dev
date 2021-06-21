@@ -129,7 +129,7 @@ republic_governments = {
 								title = d_barak_varr_guild
 							}
 						}
-					
+
 					}
 					NOT = {
 						liege_before_war = {
@@ -166,6 +166,7 @@ republic_governments = {
 		court_size_modifier = 5
 		court_size_maintenance_cost_modifier = -0.05
 	}
+
 	chaosdwarf_guilds_government = {
 		preferred_holdings = { CITY }
 		allowed_holdings = {
@@ -189,15 +190,12 @@ republic_governments = {
 			pirate_government
 			lizardmen_government
 			skaven_government
+			hobgoblin_satrapy #this vassal call to arms thing is usually a benefit
 		}
-		accepts_liege_governments = { # Accepts other republics
-			republic_government
-			dwarf_government
+		accepts_liege_governments = { # Doesn't accept anything but sorcerer-priests
 			chaos_dwarf_government
-			skaven_government
 		}
 		free_revoke_on_governments = { # Vassals of can have their titles revoked for free
-			greenskin_government
 			freeboota_government
 			pirate_government
 			beastman_government
@@ -232,8 +230,8 @@ republic_governments = {
 					primary_title = {
 						#OR = {
 							title = d_zharduk_guilds
-						#} 
-					}	
+						#}
+					}
 					is_patrician = yes
 				}
 				AND = {
@@ -314,14 +312,12 @@ republic_governments = {
 		capital_move_delay = 600
 
 		## Modifiers
-		court_size_modifier = 5
-		court_size_maintenance_cost_modifier = -0.05
 		character_modifier = {
-		city_vassal_min_levy=0.3
-		city_vassal_tax_modifier=-0.1
+			city_vassal_min_levy=0.3
+			city_vassal_tax_modifier=-0.1
 		}
-		commander_limit = 1
 	}
+	
 	merchant_republic_government = {
 		preferred_holdings = { CITY }
 		allowed_holdings = {

@@ -64,46 +64,99 @@ title_decisions ={
 		allow = {
 			FROM={
 				OR={
-					AND={
-						family_palace={has_building=fp_guildhall_4}
-						custom_tooltip = {
-							text = mining_outpost_allow8
-							NOT={any_trade_post={
-								count = 8
-								has_province_flag = mining_outpost_flag
+				# most likely case, eval now to pass ai without excessive checks and hide for player's benefit
+					hidden_trigger = {
+						AND = {
+							ai = yes
+							NOT = {
+								any_trade_post = {
+									count = 4
+									has_province_flag = mining_outpost_flag
+								}
 							}
 						}
-					}}
-					AND={
-					family_palace={has_building=fp_guildhall_3}
-					custom_tooltip = {
-						text = mining_outpost_allow6
-						NOT={any_trade_post={
-							count = 6
-							has_province_flag = mining_outpost_flag
-						}}
-					}}
-					AND={
-					OR={
-						ai=yes
-						family_palace={has_building=fp_guildhall_2}
 					}
-					custom_tooltip = {
-						text = mining_outpost_allow4
-						NOT={any_trade_post={
-							count = 4
-							has_province_flag = mining_outpost_flag
-						}}
-					}}
-					AND={
-					family_palace={has_building=fp_guildhall_1}
-					custom_tooltip = {
-						text = mining_outpost_allow2
-						NOT={any_trade_post={
-							count = 2
-							has_province_flag = mining_outpost_flag
-						}}
-					}}
+					conditional_tooltip = {
+						trigger = {
+							family_palace = {
+								has_building = fp_guildhall_4
+							}
+						}
+						AND = {
+							family_palace = { has_building=fp_guildhall_4 }
+							custom_tooltip = {
+								text = mining_outpost_allow8
+								NOT = {
+									any_trade_post = {
+										count = 8
+										has_province_flag = mining_outpost_flag
+									}
+								}
+							}
+						}
+					}
+					conditional_tooltip = {
+						trigger = {
+							family_palace = {
+								has_building = fp_guildhall_3
+								NOT = { has_building = fp_guildhall_4 }
+							}
+						}
+						AND={
+							family_palace = { has_building = fp_guildhall_3 }
+							custom_tooltip = {
+								text = mining_outpost_allow6
+								NOT = {
+									any_trade_post = {
+										count = 6
+										has_province_flag = mining_outpost_flag
+									}
+								}
+							}
+						}
+					}
+					conditional_tooltip = {
+						trigger = {
+							family_palace = {
+								has_building = fp_guildhall_2
+								NOT = { has_building = fp_guildhall_3 }
+							}
+						}
+						AND={
+							family_palace = { has_building=fp_guildhall_2 }
+							custom_tooltip = {
+								text = mining_outpost_allow4
+								NOT = {
+									any_trade_post = {
+										count = 4
+										has_province_flag = mining_outpost_flag
+									}
+								}
+							}
+						}
+					}
+					#tooltip doesn't check for level 1 guildhall because of edge cases in which player has no guildhall levels but still needs an informative tooltip
+					conditional_tooltip = {
+						trigger = {
+							family_palace = {
+								NOT = {
+									has_building = fp_guildhall_2
+								}
+							}
+						}
+						AND = {
+							family_palace = { has_building=fp_guildhall_1 }
+							custom_tooltip = {
+								text = mining_outpost_allow2
+								NOT = {
+									any_trade_post = {
+										count = 2
+										has_province_flag = mining_outpost_flag
+									}
+								}
+							}
+						}
+					}
 				}
 			}
 			ROOT={
@@ -358,10 +411,10 @@ title_decisions ={
 							}
 						}
 					}
+					#tooltip doesn't check for level 1 guildhall because of edge cases in which player has no guildhall levels but still needs an informative tooltip
 					conditional_tooltip = {
 						trigger = {
 							family_palace = {
-								has_building = fp_cdguildhall_1
 								NOT = { has_building = fp_cdguildhall_2 }
 							}
 						}

@@ -76,13 +76,13 @@ new_battle_magic_calc_magic_pool = {
 		if = {
 			limit = {
 				location = { is_winter = yes }
-				
+
 			}
 			change_variable = { which = MagicPool value = 1 }
 		}
 	}
-	
-	#Ice magic is more effective depending on climate 
+
+	#Ice magic is more effective depending on climate
 	if = {
 		limit = {
 			trait = lore_ice
@@ -90,14 +90,14 @@ new_battle_magic_calc_magic_pool = {
 		if = {
 			limit = {
 				location = { is_winter = yes }
-				
+
 			}
 			change_variable = { which = MagicPool value = 1 }
 		}
 		if = {
 			limit = {
 				location = { climate = severe_winter }
-				
+
 			}
 			change_variable = { which = MagicPool value = 1 }
 		}
@@ -109,11 +109,11 @@ new_battle_magic_calc_magic_pool = {
 		}
 		else_if	= {
 			limit = {
-				location = { 
+				location = {
 					NOR = {
 						climate = severe_winter
 						climate = normal_winter
-						climate = mild_winter 
+						climate = mild_winter
 					}
 				}
 			}
@@ -147,6 +147,7 @@ new_battle_magic_calc_magic_pool = {
 				is_strong_trigger = yes
 				is_vampire_trigger = yes
 				trait = chaos_dwarf_sorcerer
+				trait = chaos_dwarf_daemonsmith
 			}
 		}
 		if = {
@@ -198,7 +199,7 @@ new_battle_magic_calc_magic_pool = {
 		}
 		change_variable = { which = MagicPool value = 3 }
 	}
-	
+
 	#Non Magic traits, skilled mages can will apply their powers at the right times and avoid wasting power
 	if = {
 		limit = {
@@ -1140,7 +1141,7 @@ add_random_lore = {
 				50 = {
 					add_lore_of_shadows = yes
 				}
-			}	
+			}
 			if = {
 				limit = {
 					is_female = yes
@@ -1169,14 +1170,22 @@ add_random_lore = {
 				25 = {
 					add_lore_of_light = yes
 				}
-			}				
+			}
 		}
 	}
 	else_if = {
 		limit = {
 			culture_group = dawi_zharr_group
+			NOT = culture = servile_hobgoblin
 		}
-		add_trait = chaos_dwarf_sorcerer
+		random_list = {
+			75 = {
+				add_trait = chaos_dwarf_daemonsmith
+			}
+			25 = {
+				add_trait = chaos_dwarf_sorcerer
+			}
+		}
 	}
 	else_if = {
 		limit = {
@@ -1203,6 +1212,7 @@ add_random_lore = {
 			OR = {
 				trait = creature_goblin
 				trait = creature_orc
+				trait = creature_hobgoblin
 			}
 		}
 		add_trait = lore_waaagh
@@ -1258,6 +1268,7 @@ add_random_lore = {
 
 remove_lore_trait = {
 	remove_trait = chaos_dwarf_sorcerer
+	remove_trait = chaos_dwarf_daemonsmith
 	remove_trait = khemri_liche_priest
 	remove_trait = warlock_engineer
 	remove_trait = lore_vermin
@@ -1800,31 +1811,31 @@ level_up_magic_power = {
 }
 
 reveal_hidden_magic_potential ={
-	if = { 
-		limit = { 
-			has_character_flag = magic_potential_flag_4 
+	if = {
+		limit = {
+			has_character_flag = magic_potential_flag_4
 		}
 		add_trait = magic_potential_4
 		clr_character_flag = magic_potential_flag_4 }
-	if = { 
-		limit = { 
-			has_character_flag = magic_potential_flag_3 
+	if = {
+		limit = {
+			has_character_flag = magic_potential_flag_3
 		}
 		add_trait = magic_potential_3
-		clr_character_flag = magic_potential_flag_3 
+		clr_character_flag = magic_potential_flag_3
 	}
-	if = { 
-		limit = { 
-			has_character_flag = magic_potential_flag_2 
+	if = {
+		limit = {
+			has_character_flag = magic_potential_flag_2
 		}
 		add_trait = magic_potential_2
-		clr_character_flag = magic_potential_flag_2 
+		clr_character_flag = magic_potential_flag_2
 	}
-	if = { 
-		limit = { 
+	if = {
+		limit = {
 			has_character_flag = magic_potential_flag_1
 		}
 		add_trait = magic_potential_1
-		clr_character_flag = magic_potential_flag_1 
+		clr_character_flag = magic_potential_flag_1
 	}
 }

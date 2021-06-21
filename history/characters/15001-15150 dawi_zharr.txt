@@ -1,6 +1,7 @@
 #Used IDs 15001-15071
 #Free IDs 15072-15150
 
+#'Doge' of Zharduk Guilds, Patrician, holds barak marduk
 15001 = { #1200
 	name = Zhorgrath
 	dynasty = 78099
@@ -22,6 +23,7 @@
 	2462.5.17 = {death = yes}
 }
 
+#Daemonsmith, holds Naggrund Thryng
 15002 = { #1205
 	name = Ghorth
 	dynasty = 78097
@@ -36,7 +38,8 @@
 	add_trait = scholarly_theologian
 	add_trait = ambitious
 	add_trait = quick
-	add_trait = chaos_dwarf_sorcerer
+	#was sorcerer but he's just a boy
+	add_trait = chaos_dwarf_daemonsmith
 	1986.1.1 = {
 		birth = yes
 		effect = {
@@ -49,6 +52,7 @@
 	2555.5.17 = {death = yes}
 }
 
+#'Count' of Zanen Ruvalk, holds Rhukmar
 15003 = { #1210
 	name = Rhun
 	dynasty=78098
@@ -66,6 +70,7 @@
 	2020.4.4 = {death = yes}
 }
 
+#concubine
 15004 = { #54005
 	name = Phaibis
 	female = yes
@@ -86,6 +91,7 @@
 	2029.9.17 = {death = yes}
 }
 
+#High Priest of Hashut
 #Personality for Astragoth is stereotypical Chaos Dwarf but that seems right for their most prominent character
 15005 = { #54010
 	name = Astragoth
@@ -121,9 +127,22 @@
 			}
 		}
 	}
-	2017.8.22 = {death = yes}
+	1999.1.1 = {
+		add_spouse = 15033 #Phanbis
+		add_consort = 15029 #Dejaar
+		add_consort = 15030 #Vatai
+		give_nickname = nick_iron_hand
+	}
+	2000.1.1 = {
+		add_consort = 15004 #Phaibis
+	}
+	2009.1.1 = {
+		add_consort = 15012 #Lantok
+	}
+	2528.8.22 = {death = yes}
 }
 
+#holds Karak Varrson
 15006 = { #54011
 	name = Ash'azel
 	dynasty = 78011
@@ -143,6 +162,7 @@
 	2025.3.19 = {death = yes}
 }
 
+#Despot of Gazan Haraz
 15007 = { #54012
 	name = Lumtur
 	dynasty = 78012
@@ -172,6 +192,7 @@
 	2012.11.25 = {death = yes}
 }
 
+#Patrician
 15008 = { #54013
 	name = Gibil
 	dynasty = 78013
@@ -189,6 +210,7 @@
 	2037.7.17 = {death = yes}
 }
 
+#Daemonsmith, Barak Nimrok
 15009 = { #54014
 	name = Slotch
 	dynasty = 78014
@@ -205,10 +227,20 @@
 	add_trait = ambitious
 	add_trait = chaste
 	add_trait = cruel
-	1976.1.1 = {birth = yes}
+	add_trait = chaos_dwarf_daemonsmith
+	1976.1.1 = {
+		birth = yes
+		effect = {
+			add_character_modifier = {
+				name = magic_power_1
+				duration = -1
+			}
+		}
+	}
 	2029.5.27 = {death = yes}
 }
 
+#Patrician
 15010 = { #54015
 	name = Zhrazak
 	dynasty = 78015
@@ -227,6 +259,7 @@
 	2012.9.22 = {death = yes}
 }
 
+#Patrician
 15011 = { #54016
 	name = Avas
 	dynasty = 78016
@@ -247,6 +280,7 @@
 	2057.2.6 = {death = yes}
 }
 
+#concubine
 15012 = { #54017
 	name = Lantok
 	female = yes
@@ -269,6 +303,7 @@
 	2057.6.25 = {death = yes}
 }
 
+#unlanded
 15013 = { #54018
 	name = Phakova
 	dynasty = 78018
@@ -289,6 +324,7 @@
 	2019.8.22 = {death = yes}
 }
 
+#Despot of Azgorh
 15014 = { #54019
 	name = Dathor
 	dynasty = 78019
@@ -317,6 +353,7 @@
 	2030.11.20 = {death = yes}
 }
 
+#unlanded
 15015 = { #54020
 	name = Shatai
 	female = yes
@@ -336,6 +373,7 @@
 	2019.11.30 = {death = yes}
 }
 
+#Despot of Dawizag?
 15016 = { #54021
 	name = Hengist
 	dynasty = 78021
@@ -355,6 +393,7 @@
 	2057.11.7 = {death = yes}
 }
 
+#Unlanded
 15017 = { #54022
 	name = Enum'elish
 	dynasty = 78022
@@ -373,6 +412,7 @@
 	2032.10.7 = {death = yes}
 }
 
+#Lady of the Sentinels
 15018 = { #54023
 	name = Taah
 	female = yes
@@ -394,6 +434,7 @@
 	2032.10.6 = {death = yes}
 }
 
+#unlanded
 15019 = { #54024
 	name = Talvan
 	dynasty = 78024
@@ -413,6 +454,7 @@
 	2021.6.22 = {death = yes}
 }
 
+#Despot of Gazanmar
 15020 = { #54025
 	name = Tigia
 	female = yes
@@ -434,6 +476,7 @@
 	2016.4.27 = {death = yes}
 }
 
+#Despot of Unzkulak
 15021 = { #54026
 	name = Hengist
 	dynasty = 78026
@@ -462,6 +505,8 @@
 	2013.3.15 = {death = yes}
 }
 
+
+#lore-breaking ruler of Vlagaar, Karak Vlag
 15022 = { #54027
 	name = Alnun
 	dynasty = 78027
@@ -482,6 +527,7 @@
 	2021.10.15 = {death = yes}
 }
 
+#lore-breaking ruler in Vlagaar
 15023 = { #54028
 	name = Huwaz
 	dynasty = 78028
@@ -501,6 +547,7 @@
 	2020.4.29 = {death = yes}
 }
 
+#lore-dubious ruler in Eragol
 15024 = { #54029
 	name = Seri
 	female = yes
@@ -522,6 +569,7 @@
 	2013.6.30 = {death = yes}
 }
 
+#lore-dubious ruler in Eragol
 15025 = { #54030
 	name = Oensus
 	dynasty = 78030
@@ -539,6 +587,7 @@
 	2018.4.6 = {death = yes}
 }
 
+#lore-dubious ruler of Eragol
 15026 = { #54031
 	name = Florbis
 	female = yes
@@ -560,6 +609,7 @@
 	2035.6.9 = {death = yes}
 }
 
+#lore-dubious ruler of karak unvilak
 15027 = { #54032
 	name = El'graz
 	dynasty = 78032
@@ -581,6 +631,7 @@
 	2028.7.10 = {death = yes}
 }
 
+#unlanded
 15028 = { #54033
 	name = Shamaz
 	dynasty = 78033
@@ -601,6 +652,7 @@
 	2032.8.1 = {death = yes}
 }
 
+#concubine
 15029 = { #54034
 	name = Dejaar
 	female = yes
@@ -621,6 +673,7 @@
 	2032.7.9 = {death = yes}
 }
 
+#concubine
 15030 = { #54035
 	name = Vatai
 	female = yes
@@ -642,6 +695,7 @@
 	2019.1.24 = {death = yes}
 }
 
+#Despot of Chargrim
 15031 = { #54036
 	name = Dargah
 	dynasty = 78036
@@ -671,6 +725,7 @@
 	2043.6.2 = {death = yes}
 }
 
+#baron of barak ishtaz, d-smith candidate
 15032 = { #54037
 	name = Bzaark
 	dynasty = 78037
@@ -687,10 +742,21 @@
 	add_trait = temperate
 	add_trait = envious
 	add_trait = patient
-	1977.1.1 = {birth = yes}
+	add_trait = chaos_dwarf_daemonsmith
+	1977.1.1 = {
+		birth = yes
+		effect = {
+			add_character_modifier = {
+				name = magic_power_1
+				duration = -1
+			}
+		}
+	}	
+	
 	2037.1.11 = {death = yes}
 }
 
+#Current wife of Astragoth
 15033 = { #54038
 	name = Phanbis
 	female = yes
@@ -711,6 +777,7 @@
 	2012.12.14 = {death = yes}
 }
 
+#unlanded
 15034 = { #54039
 	name = Drazhoath
 	dynasty = 78039
@@ -731,6 +798,7 @@
 	1967.1.1 = {birth = yes}
 	2030.1.2 = {death = yes}
 }
+
 
 15035 = { #54040
 	name = Sithan
@@ -771,6 +839,7 @@
 	2026.4.20 = {death = yes}
 }
 
+#unlanded
 15037 = { #54042
 	name = Dugud
 	dynasty = 78042
@@ -790,6 +859,7 @@
 	2042.12.11 = {death = yes}
 }
 
+#unlanded
 15038 = { #54043
 	name = Belit'ser
 	female = yes
@@ -811,6 +881,7 @@
 	2018.1.2 = {death = yes}
 }
 
+#unlanded
 15039 = { #54044
 	name = Dario
 	dynasty = 78044
@@ -828,6 +899,7 @@
 	2018.8.7 = {death = yes}
 }
 
+#overseer of Barak Mundur
 15040 = { #54045
 	name = Lardar
 	dynasty = 78045
@@ -849,6 +921,7 @@
 	2025.1.11 = {death = yes}
 }
 
+#unlanded
 15041 = { #54046
 	name = Horkaj
 	dynasty = 78046
@@ -870,6 +943,7 @@
 	2016.6.30 = {death = yes}
 }
 
+#unlanded
 15042 = { #54047
 	name = Thaitina
 	female = yes
@@ -891,6 +965,7 @@
 	2053.8.19 = {death = yes}
 }
 
+#unlanded
 15043 = { #54048
 	name = Mannit
 	female = yes
@@ -912,6 +987,7 @@
 	2030.9.22 = {death = yes}
 }
 
+#unlanded
 15044 = { #54049
 	name = Kanlu
 	dynasty = 78049
@@ -934,6 +1010,7 @@
 	2040.8.30 = {death = yes}
 }
 
+#unlanded
 15045 = { #54050
 	name = Anzar
 	dynasty = 78050
@@ -955,6 +1032,7 @@
 	2016.11.26 = {death = yes}
 }
 
+#unlanded
 15046 = { #54051
 	name = Marduk
 	dynasty = 78051
@@ -974,6 +1052,7 @@
 	2014.2.10 = {death = yes}
 }
 
+#unlanded
 15047 = { #54052
 	name = Sarkth
 	female = yes
@@ -993,6 +1072,7 @@
 	2030.5.18 = {death = yes}
 }
 
+#unlanded
 15048 = { #54053
 	name = Kimah
 	female = yes
@@ -1015,6 +1095,7 @@
 	2026.4.26 = {death = yes}
 }
 
+#unlanded
 15049 = { #54054
 	name = Rorkaz
 	dynasty = 78054
@@ -1033,6 +1114,7 @@
 	1989.1.1 = {birth = yes}
 	2026.6.8 = {death = yes}
 }
+
 
 15050 = { #54055
 	name = Varrkhulg
@@ -1055,6 +1137,7 @@
 	2043.12.5 = {death = yes}
 }
 
+#unlanded
 15051 = { #54056
 	name = Mothensu
 	dynasty = 78056
@@ -1077,6 +1160,7 @@
 	2035.9.30 = {death = yes}
 }
 
+#unlanded
 15052 = { #54057
 	name = Zharg
 	dynasty = 78057
@@ -1096,6 +1180,7 @@
 	2019.11.13 = {death = yes}
 }
 
+#unlanded
 15053 = { #54058
 	name = Hadvas
 	dynasty = 78058
@@ -1116,6 +1201,7 @@
 	2043.4.15 = {death = yes}
 }
 
+#unlanded
 15054 = { #54059
 	name = Shamaz
 	dynasty = 78059
@@ -1192,6 +1278,7 @@
 	2044.5.6 = {death = yes}
 }
 
+#unlanded
 15058 = { #54063
 	name = Tigia
 	female = yes
@@ -1212,6 +1299,7 @@
 	2046.4.2 = {death = yes}
 }
 
+#unlanded
 15059 = { #54064
 	name = Grizal
 	dynasty = 78064
@@ -1230,6 +1318,7 @@
 	2029.5.5 = {death = yes}
 }
 
+#unlanded
 15060 = { #54065
 	name = Telar
 	dynasty = 78065
@@ -1248,6 +1337,7 @@
 	2021.3.14 = {death = yes}
 }
 
+#unlanded
 15061 = { #54066
 	name = Fonras
 	dynasty = 78066
@@ -1267,6 +1357,7 @@
 	2038.5.17 = {death = yes}
 }
 
+#unlanded
 15062 = { #54067
 	name = Fonsu
 	dynasty = 78067
@@ -1286,6 +1377,7 @@
 	2036.4.24 = {death = yes}
 }
 
+#unlanded
 15063 = { #54068
 	name = Fonhajus
 	dynasty = 78068
@@ -1305,6 +1397,7 @@
 	2011.8.13 = {death = yes}
 }
 
+#unlanded
 15064 = { #54069
 	name = Florth
 	female = yes

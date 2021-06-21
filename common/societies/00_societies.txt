@@ -8590,22 +8590,17 @@ warriors_guild_dawi = {
 			limit = { prisoner = yes }
 			prisoner = no
 		}
+		#not sure why this is OR? removed chaos_dwarf eligibility anyway
 		OR = {
 			religion_group=dwarf_gods_group
-			OR={
-				trait=creature_dwarf
-				trait=creature_chaos_dwarf
-			}
+			trait=creature_dwarf
 		}
 	}
 	show_society = {
 		OR = {
 			#You are this religion: will show only this lodge (the other "show_society"'s will make sure)
 			religion_group=dwarf_gods_group
-			OR={
-				trait=creature_dwarf
-				trait=creature_chaos_dwarf
-			}
+			trait=creature_dwarf
 			#Always show if: You are already a member. Duh.
 			society_member_of = warriors_guild_dawi
 		}
