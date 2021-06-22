@@ -121,10 +121,6 @@
 				name = magic_power_4
 				duration = -1
 			}
-			set_variable = {
-				which = lunatic_counter
-				value = 10
-			}
 		}
 	}
 	1999.1.1 = {
@@ -353,7 +349,7 @@
 	2030.11.20 = {death = yes}
 }
 
-#unlanded
+#Holder of Orilai
 15015 = { #54020
 	name = Shatai
 	female = yes
@@ -393,7 +389,7 @@
 	2057.11.7 = {death = yes}
 }
 
-#Unlanded
+#Daemonsmith, holder of Grung Hargmur
 15017 = { #54022
 	name = Enum'elish
 	dynasty = 78022
@@ -407,8 +403,17 @@
 	learning = 5
 	add_trait = creature_chaos_dwarf
 	add_trait = charismatic_negotiator
+	add_trait = chaos_dwarf_daemonsmith
 	add_trait = stressed
-	1975.1.1 = {birth = yes}
+	1975.1.1 = {
+		birth = yes
+		effect = {
+			add_character_modifier = {
+				which = magic_power_1
+				duration = -1
+			}
+		}
+	}
 	2032.10.7 = {death = yes}
 }
 
@@ -434,7 +439,7 @@
 	2032.10.6 = {death = yes}
 }
 
-#unlanded
+#Holder of Thurth Bar
 15019 = { #54024
 	name = Talvan
 	dynasty = 78024
@@ -799,7 +804,7 @@
 	2030.1.2 = {death = yes}
 }
 
-
+#Holder of Kavakar
 15035 = { #54040
 	name = Sithan
 	dynasty = 78040
@@ -819,6 +824,7 @@
 	2037.12.29 = {death = yes}
 }
 
+#unlanded
 15036 = { #54041
 	name = Drazh
 	dynasty = 78041

@@ -330,7 +330,10 @@ title_decisions ={
 		potential = {
 			owner={ is_within_diplo_range = FROM }
 			tier=county
-			location={has_trade_post=no}
+			location={
+				has_trade_post = no
+				port = no
+			}
 		}
 		allow = {
 			FROM={

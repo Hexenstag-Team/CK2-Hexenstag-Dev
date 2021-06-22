@@ -1,0 +1,70 @@
+namespace = wh_chaos_dwarf
+
+### Satrapy interactions ###
+
+## Granting Satrapies ##
+
+#AI pre-event, fired from on_new_holder
+character_event = {
+  id = wh_chaos_dwarf.11
+  hide_window = yes
+
+  religion = hashut  #definitely faster than only_playable in this on_action
+
+  ai = yes
+
+  trigger = {
+    trait = creature_chaos_dwarf
+    FROM = {
+      location = {
+        has_tribal = yes
+      }
+    }
+  }
+
+  immediate = {
+    FROM = {
+      save_event_target_as = target_satrapy
+    }
+    character_event = {
+      id = wh_chaos_dwarf.12
+    }
+  }
+
+}
+
+#Install Satrap, player (from decision) and AI (from pre-event) meet here
+#starting with bare bones version
+character_event = {
+  id = wh_chaos_dwarf.12
+  hide_window = yes
+
+  is_triggered_only = yes
+
+  immediate = {
+    create_random_satrap = yes
+    new_character = {
+      set_character_flag = gaining_satrapy
+      event_target:target_satrapy = {
+        grant_title = PREV
+        location = {
+          if = {
+            limit = {
+              culture = servile_hobgoblin
+            }
+            any_province_holding = {
+              limit = {
+                is_tribal = yes
+              }
+              add_building = tb_hobgoblin_overseers_1
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+}

@@ -139,6 +139,103 @@ tribal = {
     extra_tech_building_start = 3
   }
 
+  #Slavebreakers
+  #represents a satrap overcoming the resistance of unruly slaves
+  #L4 allows for a special culture/religion conversion effect (ai by on_action, player by decision)
+  tb_hobgoblin_slavebreakers_1 = {
+    desc = tb_hobgoblin_slavebreakers_desc
+    potential = {
+      tribal_hobgoblin_unruly_slaves_building_trigger = yes
+    }
+    replaces = {
+      tb_hillfort_1
+    }
+    trigger = {
+      TECH_RECRUITMENT = 0
+    }
+    prestige_cost = 150
+    build_time = 730
+
+    garrison_size = 0.2
+    fort_level = 1
+
+    ai_creation_factor = 100
+
+    extra_tech_building_start = 0.3
+  }
+
+  tb_hobgoblin_slavebreakers_2 = {
+    desc = tb_hobgoblin_slavebreakers_desc
+    potential = {
+      tribal_hobgoblin_unruly_slaves_building_trigger = yes
+    }
+    replaces = {
+      tb_hillfort_2
+    }
+    trigger = {
+      TECH_RECRUITMENT = 0
+    }
+    upgrades_from = tb_hobgoblin_slavebreakers_1
+    prestige_cost = 150
+    build_time = 730
+
+    garrison_size = 0.2
+    fort_level = 1
+
+    ai_creation_factor = 100
+
+    extra_tech_building_start = 5
+  }
+
+  tb_hobgoblin_slavebreakers_3 = {
+    desc = tb_hobgoblin_slavebreakers_desc
+    potential = {
+      tribal_hobgoblin_unruly_slaves_building_trigger = yes
+    }
+    replaces = {
+      tb_hillfort_3
+    }
+    trigger = {
+      TECH_RECRUITMENT = 0
+    }
+    upgrades_from = tb_hobgoblin_slavebreakers_2
+
+    prestige_cost = 150
+    build_time = 730
+
+    garrison_size = 0.2
+    fort_level = 1
+
+    ai_creation_factor = 100
+
+    extra_tech_building_start = 12
+
+  }
+
+  tb_hobgoblin_slavebreakers_4 = {
+    desc = tb_hobgoblin_slavebreakers_desc
+    potential = {
+      tribal_hobgoblin_unruly_slaves_building_trigger = yes
+    }
+    replaces = {
+      tb_hillfort_4
+    }
+    trigger = {
+      TECH_RECRUITMENT = 0
+    }
+    upgrades_from = tb_hobgoblin_slavebreakers_3
+    prestige_cost = 150
+    build_time = 730
+
+    garrison_size = 0.2
+    fort_level = 1
+
+    ai_creation_factor = 100
+
+    extra_tech_building_start = 12
+
+  }
+
   #slave market
   #replaces tribal market town
   #adds to trade value to help Chaos Dwarf Slaver Guilds
