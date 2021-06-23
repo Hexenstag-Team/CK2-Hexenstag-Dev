@@ -361,7 +361,7 @@ e_drakwald = {
 	title_female = "EMPRESS"
 
 
-	capital = 267 #Seidewald
+	capital = 270 # Carroburg
 
 	old_imperial = "Thuringia"
 
@@ -440,6 +440,34 @@ d_societas_mercatoria_septentrionalis = {
 	}
 }
 
+d_texelhaven = {
+	color = { 89 44 178 }
+	color2 = { 255 255 255 }
+
+	capital = 225 #Manaanspoort
+
+	dignity = 200
+
+	allow = {
+		always = no
+		is_republic = yes
+	}
+}
+
+d_ambacht = {
+	color = { 142 142 142 }
+	color2 = { 255 255 255 }
+
+	capital = 223 #Klessen
+
+	dignity = 200
+
+	allow = {
+		always = no
+		is_republic = yes
+	}
+}
+
 d_siegfriedhof = {
 	color = { 153 0 0 }
 	color2 = { 204 0 0 }
@@ -455,56 +483,24 @@ d_siegfriedhof = {
 
 }
 
+k_carroburg_middenland = {
+	color = { 58 89 196 }
+	color2 = { 255 255 255 }
+
+	title = "Grand Count"
+	title_female = "Grand Countess"
+
+	capital = 270 # Carroburg
+
+	allow = {
+		always = no
+	}
+
+	short_name = yes
+}
+
 ################
 #Border Princes
-
-k_eagle_confederacy = {
-	color = { 190 190 18 }
-	color2 = { 255 255 255 }
-
-	capital = 675 #Vidovdan
-
-	title = "PRINCE"
-	title_female = "PRINCESS"
-
-	short_name = yes
-}
-
-k_northern_border_confederacy = {
-	color = { 170 40 20 }
-	color2 = { 255 255 255 }
-
-	capital = 702 #Brovska
-
-	title = "PRINCE"
-	title_female = "PRINCESS"
-
-	short_name = yes
-}
-
-k_sarngul = {
-	color = { 215 124 37 }
-	color2 = { 255 255 255 }
-
-	capital = 695 # c_geistenmund
-
-	title = "PRINCE"
-	title_female = "PRINCESS"
-
-	title_prefix = "PRINCIPALITY_OF"
-}
-
-k_khypria = {
-	color = { 65 94 177 }
-	color2 = { 255 255 255 }
-
-	capital = 723 #Khypris
-
-	title = "PRINCE"
-	title_female = "PRINCESS"
-
-	title_prefix = "PRINCIPALITY_OF"
-}
 
 k_myrmidens = {
 	color = { 158 148 78 }
@@ -516,6 +512,10 @@ k_myrmidens = {
 	title_female = "PRINCESS"
 
 	title_prefix = "PRINCIPALITY_OF"
+	
+	allow = {
+		always = no
+	}
 }
 
 

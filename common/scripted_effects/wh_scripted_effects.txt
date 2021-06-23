@@ -51,11 +51,16 @@ return_to_travel_tombola_effect = {
 
 de_jure_realm_drakwald_effect = {
 	d_carroburg = { de_jure_liege = k_drakwald }
+	d_middenmoor = { de_jure_liege = k_drakwald }
+	d_mirror_moor = { de_jure_liege = k_drakwald }
 	d_kristal = { de_jure_liege = k_drakwald }
 	d_drakwald = { de_jure_liege = k_drakwald }
-	d_mirror_moor = { de_jure_liege = k_drakwald }
-	d_laurelorn = { de_jure_liege = k_drakwald }
-	d_schadenmarsch = { de_jure_liege = k_drakwald }
+	d_oberschadenmarsch = { de_jure_liege = k_drakwald }
+	d_unterschadenmarsch = { de_jure_liege = k_drakwald }
+	d_vastlaurelorn = { de_jure_liege = k_drakwald }
+	d_ostlaurelorn = { de_jure_liege = k_drakwald }
+	d_norrlaurelorn = { de_jure_liege = k_drakwald }
+	c_finsternchen = { de_jure_liege = d_norrlaurelorn }
 	set_global_flag = de_jure_realm_drakwald_formed
 	add_artifact = beast_slayer
 }

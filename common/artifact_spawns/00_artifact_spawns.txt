@@ -676,3 +676,31 @@ fearfrost = {
 		}
 	}
 }
+
+beast_slayer = {
+	max_amount = 1
+	spawn_date = 100.11.20
+
+	spawn_chance = {
+		value = 100
+		modifier = {
+			factor = 0
+			NOT = { has_dlc = "Mystics" }
+		}
+	}
+
+	weight = {
+		value = 0
+		additive_modifier = {
+			value = 100
+			primary_title = {
+				title = k_carroburg_middenland
+			}
+		}
+	}
+	artifacts = {
+		beast_slayer = {
+			value = 1
+		}
+	}
+}

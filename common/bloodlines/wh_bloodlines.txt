@@ -1,6 +1,6 @@
 #May need to mess with some numbers, but it shouldn't be too hard to find a vanilla bloodline that matches most of these
 #Araby
-jasmine = { #55019 Women don't seem to rule in Araby too often
+jasmine = { # Women don't seem to rule in Araby too often
 	monthly_character_piety = 0.1
 	cophic_opinion = 5
 	inheritance = patrilineal
@@ -9,7 +9,7 @@ jasmine = { #55019 Women don't seem to rule in Araby too often
 	flags = { araby_bloodline historical_bloodline always_transfer }
 }
 	
-mulhaed = { #55200 Warhammer Muhammad?
+mulhaed = { # Warhammer Muhammad?
 	monthly_character_prestige = 0.25
 	ormazd_opinion = 5
 	combat_rating = 5
@@ -23,7 +23,7 @@ mulhaed = { #55200 Warhammer Muhammad?
 	}
 }
 
-rasul = { #59400 warhammer osman? only one thats got a wife so must be important
+rasul = { # warhammer osman? only one thats got a wife so must be important
 	ramaccan_opinion = 10
 	archers_offensive = 0.10
 	nehekharan_opinion = -10 #tk donlike change
@@ -34,7 +34,7 @@ rasul = { #59400 warhammer osman? only one thats got a wife so must be important
 }
 #Bretonnia
 #No living descendents of Gilles le Breton, maybe some should be added
-louis_the_brave = { #41098
+louis_the_brave = { #
 	combat_rating = 5
 	monthly_character_piety = 0.1
 	command_modifier = {
@@ -46,7 +46,7 @@ louis_the_brave = { #41098
 	flags = { bretonnian_bloodline historical_bloodline }
 }
 
-fatandira_blood = { #47100
+fatandira_blood = { #
 	combat_rating = 10
 	monthly_character_prestige = 0.25
 	vassal_opinion = 5
@@ -58,7 +58,7 @@ fatandira_blood = { #47100
 }
 
 #Fay Enchantress?
-repanse = { #45018
+repanse = { #
 	combat_rating = 5
 	monthly_character_piety = 0.25
 	command_modifier = {
@@ -84,7 +84,7 @@ losteriksson = { #Needs to be added to the character and title history, founder 
 	picture = GFX_bloodlines_symbol_longship
 	flags = { norsca_bloodline historical_bloodline }
 }
-svengarson = { #23043
+svengarson = { #
 	combat_rating = 5
 	norscan_group_opinion = 5
 	viking_opinion = 5
@@ -101,7 +101,7 @@ svengarson = { #23043
 
 #Kurgan/Hung Ghengis Khan?
 #Dwarfs
-baragor = { #53201 Slayer King of Karak Kadrin
+baragor = { # Slayer King of Karak Kadrin
 	combat_rating = 10
 	dwarf_group_opinion = 5
 	bloodline_effect_battle_survivor = 1
@@ -110,7 +110,7 @@ baragor = { #53201 Slayer King of Karak Kadrin
 	picture = GFX_bloodlines_symbol_ares_helmet #can pass for the mohawk helmet of the Slayer King
 	flags = { dwarf_bloodline historical_bloodline battle_survivor_bloodline }
 }
-lunn = { #53319 True King of Eight Peaks
+lunn = { # True King of Eight Peaks
 	combat_rating = 5
 	dwarf_group_opinion = 5
 	command_modifier = {
@@ -121,7 +121,7 @@ lunn = { #53319 True King of Eight Peaks
 	picture = GFX_bloodlines_symbol_ruthless
 	flags = { dwarf_bloodline historical_bloodline }
 }
-morgrim_elgidum = { #53096 victor in the War of the Beard
+morgrim_elgidum = { # victor in the War of the Beard
 	monthly_character_prestige = 0.1
 	combat_rating = 5
 	dwarf_group_opinion = 10
@@ -136,7 +136,7 @@ morgrim_elgidum = { #53096 victor in the War of the Beard
 #King of Kraka Drak? (Not enough history to implement yet)
 #King of the Chaos Dwarfs? (Potentially something that makes it easier to get started with chaos dwarf magic?)
 #Elves
-aenarion = { #95000 First Phoenix King
+aenarion = { # First Phoenix King
 	combat_rating = 10
 	command_modifier = {
 		morale_defence = 0.15
@@ -147,7 +147,7 @@ aenarion = { #95000 First Phoenix King
 	picture = GFX_bloodlines_symbol_lion
 	flags = { elf_bloodline historical_bloodline aenarion_bloodline }
 }
-ariel = { #60001
+ariel = { #
 	asrai_group_opinon = 10
 	asur_group_opinion = 5
 	monthly_character_piety = 0.1
@@ -156,7 +156,7 @@ ariel = { #60001
 	picture = GFX_bloodlines_symbol_romuva
 	flags = { elf_bloodline historical_bloodline always_transfer }
 }
-caledor = { #95003 first challenger to Malekith
+caledor = { # first challenger to Malekith
 	asur_group_opinion = 5
 	druchi_group_opinion = -10
 	bloodline_effect_great_heroes_appear = 1
@@ -179,7 +179,7 @@ finubar = {
 	picture = GFX_bloodlines_symbol_lion
 	flags = { elf_bloodline historical_bloodline }
 }
-hellebron = { #90531
+hellebron = {
 	druchi_group_opinion = 5
 	asur_group_opinion = -10
 	combat_rating = 5
@@ -284,47 +284,149 @@ burnt_by_flames_redeemed_female = {
 }
 
 #Morathi for the Delfs?
+
 #Empire
-#Minor bloodlines (like Rudolf's) for the Pretenders with the Otto (Magnus the Pious) Bloodline for winning.
-magritta = { #51000
+asoborn_blood = {
+	combat_rating = 5
+	stirlander_opinion = 5
 	monthly_character_prestige = 0.1
-	westerlander_opinion = 5
-	nordlander_opinion = 5
-	town_opinion = 10 #Marienburg pretender
+	bloodline_effect_enatic_cognatic = 1
 	inheritance = patrilineal
 	allow_bastards = yes
-	picture = GFX_bloodlines_symbol_lion #placeholder
-	flags = { historical_bloodline }
+	picture = GFX_bloodlines_placeholder_symbol_2
+	flags = { historical_bloodline bloodline_enatic_cognatic legend_bloodline_freya }
 }
-mannfred = { #81000 I would like to bring this founding back to the first Wolf Emperor Siegfred, but that takes some history doing
+brigundian_blood = {
+	combat_rating = 5
+	averlander_opinion = 5
 	monthly_character_prestige = 0.1
-	middenlander_opinion = 5
+	command_modifier = {
+		light_cavalry = 0.05
+	}
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_horse
+	flags = { historical_bloodline legend_bloodline_siggurd }
+}
+cherusen_blood = {
+	combat_rating = 5
 	hochlander_opinion = 5
-	religion_head_opinion = 10 #Ulrican Pretender
+	monthly_character_piety = 0.1
+	command_modifier = {
+		light_infantry = 0.05
+	}
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_placeholder_symbol_2
+	flags = { historical_bloodline legend_bloodline_aloysis }
+}
+endals_blood = {
+	combat_rating = 5
+	westerlander_opinion = 5
+	city_vassal_tax_modifier = 0.05
+	monthly_character_piety = 0.1
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_longship
+	flags = { historical_bloodline legend_bloodline_marbad }
+}
+jutones_blood = {
+	combat_rating = 10
+	nordlander_opinion = 5
+	monthly_character_prestige = 0.1
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_longship
+	flags = { historical_bloodline legend_bloodline_marius }
+}
+menogoth_blood = {
+	combat_rating = 5
+	sollander_opinion = 5
+	monthly_character_prestige = 0.1
+	command_modifier = {
+		flank = 0.05
+	}
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_war
+	flags = { historical_bloodline legend_bloodline_markus }
+}
+merogen_blood = {
+	combat_rating = 5
+	wissenlander_opinion = 5
+	monthly_character_prestige = 0.1
+	command_modifier = {
+		center = 0.05
+	}
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_war
+	flags = { historical_bloodline legend_bloodline_henroth }
+}
+udoses_blood = {
+	combat_rating = 5
+	ostermarker_opinion = 5
+	monthly_character_prestige = 0.1
+	command_modifier = {
+		morale_defence = 0.05
+	}
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_placeholder_symbol_2
+	flags = { historical_bloodline legend_bloodline_adelhard }
+}
+taleuten_blood = {
+	combat_rating = 5
+	talabeclander_opinion = 5
+	monthly_character_piety = 0.1
+	build_time_city_modifier = -0.05
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_horse
+	flags = { historical_bloodline legend_bloodline_kruger }
+}
+teutogen_blood = {
+	combat_rating = 5
+	middenlander_opinion = 5
+	monthly_character_piety = 0.1
+	command_modifier = {
+		morale_offence = 0.05
+	}
 	inheritance = patrilineal
 	allow_bastards = yes
 	picture = GFX_bloodlines_symbol_norse_wolf
-	flags = { historical_bloodline }
+	flags = { historical_bloodline legend_bloodline_wulcan }
 }
-marius = { #88047
+thuringian_blood = {
+	combat_rating = 5
+	drawkwalder_opinion = 5
 	monthly_character_prestige = 0.1
+	command_modifier = {
+		damage = 0.05
+	}
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_war
+	flags = { historical_bloodline legend_bloodline_otwin }
+}
+ostagoths_blood = {
+	combat_rating = 5
+	ostlander_opinion = 5
+	monthly_character_prestige = 0.1
+	siege_defence = 0.05
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_norse_wolf
+	flags = { historical_bloodline legend_bloodline_wolfila }
+}
+unberogen_blood = {
+	combat_rating = 5
 	reiklander_opinion = 5
-	wissenlander_opinion = 5
-	religion_head_opinion = 10 #Sigmarite pretender
-	inheritance = patrilineal
-	allow_bastards = yes
-	picture = GFX_bloodlines_symbol_lion #placeholder
-	flags = { historical_bloodline }
-}
-ottilia = { #84066
 	monthly_character_prestige = 0.1
-	talabeclander_opinion = 5
-	ostermarker_opinion = 5
-	religion_head_opinion = 10 #Taalite pretender
 	inheritance = patrilineal
 	allow_bastards = yes
-	picture = GFX_bloodlines_symbol_lion #placeholder
-	flags = { historical_bloodline }
+	picture = GFX_bloodlines_placeholder_symbol_2
+	flags = { historical_bloodline legend_bloodline_bjorn }
 }
 
 magnus = {
@@ -400,7 +502,7 @@ myrmidian_emperor = {
 	flags = { }
 	picture = GFX_bloodlines_symbol_roman
 }
-inigo_montoya = { #64000
+inigo_montoya = { #
 	monthly_character_prestige = 0.1
 	combat_rating = 20
 	drunkard_opinion = 10
@@ -417,7 +519,7 @@ inigo_montoya = { #64000
 #khalida = {}
 #Vampires - Opportunity to represent the vampiric bloodlines as bloodlines instead of traits, probably harder to implement
 #Carsteins
-vlad = { #80000
+vlad = { #
 	combat_rating = 10
 	sylvanian_opinion = 10
 	bloodline_effect_ambition = 1
@@ -427,7 +529,7 @@ vlad = { #80000
 	flags = { historical_bloodline bloodline_ambition bloodline_murderous } #should make the Carstein kids more likely to plot against one another and Vlad
 	picture = GFX_bloodlines_temp_symbol_2
 }
-mad_otto = { #80034
+mad_otto = { #
 	monthly_character_prestige = 0.1
 	sylvanian_opinion = 5
 	impaler_opinion = 5
@@ -446,7 +548,7 @@ abhorash = {
 	flags = { historical_bloodline battle_survivor_bloodline }
 	picture = GFX_bloodlines_symbol_murder_war
 }
-red_duke = { #15018
+red_duke = { #
 	combat_rating = 15
 	bretonnian_group_opinion = 5
 	bloodline_effect_battle_survivor = 1
@@ -455,7 +557,7 @@ red_duke = { #15018
 	flags = { historical_bloodline battle_survivor_bloodline }
 	picture = GFX_bloodlines_symbol_murder_war
 }
-harkon = { #96010
+harkon = { #
 	combat_rating = 5
 	sartosan_group_opinion = 5
 	pirate_opinon = 10
@@ -466,7 +568,7 @@ harkon = { #96010
 	flags = { historical_bloodline }
 }
 #Lahmia
-neferata = { #15025
+neferata = { #
 	seductress_opinon = 10
 	schemer_opinion = 10
 	plot_power_modifier = 0.1
@@ -477,7 +579,7 @@ neferata = { #15025
 	flags = { historical_bloodline bloodline_endearing always_transfer }
 }
 #Strigoi
-ushoran = { #15000
+ushoran = { #
 	strigany_opinion = 10
 	combat_rating = 10
 	intrigue = 1 #was the spymaster also strigoi are scary
@@ -485,7 +587,7 @@ ushoran = { #15000
 	allow_bastards = yes
 }
 #Necrarch
-wsoran = { #15007
+wsoran = { #
 	nagashi_opinion = 10 #he to vampires is the best necromacer thats not nagash
 	learning = 2 #mage is smart
 	defensive_plot_power_modifier = 0.3 #hard to kill someone who never leaves there house

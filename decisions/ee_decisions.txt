@@ -8,19 +8,25 @@ decisions = {
 		only_playable = yes
 		
 		potential = {
-			culture = drakwalder
 			NOT = { has_global_flag = de_jure_realm_drakwald_formed }
+			capital_scope = {
+				region = world_old_empire_drakwald
+			}
 		}
 		
 		allow = {
 			completely_controls = d_carroburg
 			calc_true_if = {
-				amount = 2
-				completely_controls = d_laurelorn
+				amount = 5
+				completely_controls = d_middenmoor
 				completely_controls = d_mirror_moor
 				completely_controls = d_kristal
 				completely_controls = d_drakwald
-				completely_controls = d_schadenmarsch
+				completely_controls = d_oberschadenmarsch
+				completely_controls = d_unterschadenmarsch
+				completely_controls = d_vastlaurelorn
+				completely_controls = d_ostlaurelorn
+				completely_controls = d_norrlaurelorn
 			}
 			prestige = 2000
 		}
@@ -30,7 +36,9 @@ decisions = {
 				text = DE_JURE_REALM_DRAKWALD_CT
 				narrative_event = { id = ee.1 }
 				any_player = {
-					limit = { NOT = {character=ROOT }}
+					limit = {
+						NOT = { character = ROOT }
+					}
 					narrative_event = { id = ee.2 days = 7 }
 				}
 			}

@@ -46,14 +46,24 @@ title_empire_champion = {
 
 
 	gain_effect = {
-		FROM = {
-			add_artifact = beast_slayer
+		if = {
+			limit = {
+				NOT = { has_global_flag = de_jure_realm_drakwald_formed }
+			}
+			FROM = {
+				add_artifact = beast_slayer
+			}
 		}
 	}
 
 	lose_effect = {
-		FROM = {
-			unsafe_destroy_artifact = beast_slayer
+		if = {
+			limit = {
+				NOT = { has_global_flag = de_jure_realm_drakwald_formed }
+			}
+			FROM = {
+				unsafe_destroy_artifact = beast_slayer
+			}
 		}
 	}
 

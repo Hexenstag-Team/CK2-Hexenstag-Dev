@@ -10,67 +10,174 @@
 # World Regions
 #	These groups are mutually exclusive on the same tier
 ###########################################################################
-world_old_world_empire_north_drakwald = {
+world_old_empire_nordland = {
 	duchies = {
-		d_carroburg d_kristal d_erpelzug d_mirror_moor d_drakwald
+		d_salz
+		d_lugrenkust
+		d_kieselstaadt
+		d_steinigkueste
+		d_dorfmark
 	}
 }
 
-world_old_world_empire_north = {
+world_old_empire_drakwald = {
 	duchies = {
-		d_middenheim d_schadenmarsch d_kamistaat d_tauben d_wolfenburg d_ferlangen d_knochenkueste d_mittenberg d_korver d_drakwasser d_lugrenkust d_weissberge d_salz d_kieselstaadt d_laurelorn d_steinigkueste
+		d_unterschadenmarsch
+		d_kristal
+		d_drakwald
+		d_carroburg
+		d_mirror_moor
+		d_middenmoor
+		d_oberschadenmarsch
 	}
+}
+
+world_old_empire_middenland = {
+	duchies = {
+		d_middenheim
+		d_kamistaat
+		d_erpelzug
+		d_tauben
+	}
+}
+
+world_old_empire_hochland = {
+	duchies = {
+		d_korver
+		d_drakwasser
+		d_weissberge
+	}
+}
+
+world_old_empire_ostland = {
+	duchies = {
+		d_wolfenburg
+		d_ferlangen
+		d_kislev_verge
+		d_knochenkueste
+		d_mittenberg
+		d_schutzen
+	}
+}
+
+world_old_empire_talabecland = {
+	duchies = {
+		d_talabheim
+		d_farlichberge
+		d_koelsaberge
+		d_waldarfold
+		d_waldesruh
+	}
+}
+
+world_old_empire_reikland = {
+	duchies = {
+		d_altdorf
+		d_blitzfelsen
+		d_reikdahl
+		d_reikwald
+		d_saponatheim
+		d_uebersreik
+		d_uhland
+		d_vorbergland
+	}
+}
+
+world_old_empire_wissenland = {
+	duchies = {
+		d_nuln
+		d_meissen
+		d_wissenburg
+		d_wissetal
+	}
+}
+
+world_old_empire_solland = {
+	duchies = {
+		d_pfeildorf
+		d_soell
+		d_sudenland
+	}
+}
+
+world_old_empire_averland = {
+	duchies = {
+		d_averheim
+		d_achteraver
+		d_martig
+		d_pferdmark
+	}
+}
+
+world_old_empire_stirland = {
+	duchies = {
+		d_stirhuegel
+		d_grauenmark
+		d_nattern
+		d_steyr
+	}
+}
+
+world_old_empire_sylvania = {
+	duchies = {
+		d_drakenhoehenzug
+		d_brachland
+		d_kovasnia
+		d_verbogenwald
+	}
+}
+
+world_old_empire_ostermark = {
+	duchies = {
+		d_bechafen
+		d_abshaumwald
+		d_geisterforst
+		d_griffonwald
+		d_the_veldt
+	}
+}
+
+world_old_empire_mootland = {
+	duchies = {
+		d_auld_styrland
+		d_aver_march
+	}
+}
+
+world_old_empire_westerland = {
+	duchies = {
+		d_marienburg
+		d_fauligmere
+		d_zuidhaven
+		d_frysland
+		d_wouduin
+		d_heideland
+		d_klessen
+		d_tancred
+		d_bitter_moors
+		d_westerbleke_zusters
+		d_kleinland
+		d_noordhaven
+	}
+}
+
+world_old_empire = {
 	regions = {
-		world_old_world_empire_north_drakwald
-	}
-}
-
-world_old_world_empire_south_great_forest = {
-	duchies = {
-		d_waldesruh d_farlichberge d_koelsaberge d_waldarfold d_talabheim
-	}
-}
-
-world_old_world_empire_south = {
-	duchies = {
-		d_altdorf d_blitzfelsen d_reikdahl d_reikwald d_saponatheim d_uebersreik d_uhland d_vorbergland d_averheim d_achteraver d_martig d_pferdmark d_stirhuegel d_grauenmark d_nattern d_steyr d_nuln d_meissen d_pfeildorf d_soell d_sudenland d_wissenburg d_wissetal
-	}
-	regions = {
-		world_old_world_empire_south_great_forest
-	}
-}
-
-world_old_world_empire_east_sylvania = {
-	duchies = {
-		d_drakenhoehenzug d_brachland d_kovasnia d_verbogenwald
-	}
-}
-
-world_old_world_empire_east = {
-	duchies = {
-		d_kislev_verge d_schutzen d_bechafen d_abshaumwald d_geisterforst d_griffonwald d_the_veldt
-	}
-	regions = {
-		world_old_world_empire_east_sylvania
-	}
-
-}
-
-world_old_world_empire_mootland = {
-	duchies = {
-		d_auld_styrland d_aver_march
-	}
-}
-
-world_old_world_empire_wasteland = {
-	duchies = {
-		d_marienburg d_fauligmere d_frysland d_heideland d_noordhaven d_tancred d_bitter_moors d_westerbleke d_kleinland d_klessen d_zuidhaven d_wouduin
-	}
-}
-
-world_old_world_empire = {
-	regions = {
-		world_old_world_empire_south world_old_world_empire_north world_old_world_empire_east world_old_world_empire_mootland world_old_world_empire_wasteland
+		world_old_empire_nordland
+		world_old_empire_drakwald
+		world_old_empire_middenland
+		world_old_empire_hochland
+		world_old_empire_ostland
+		world_old_empire_talabecland
+		world_old_empire_reikland
+		world_old_empire_wissenland
+		world_old_empire_solland
+		world_old_empire_averland
+		world_old_empire_stirland
+		world_old_empire_sylvania
+		world_old_empire_ostermark
+		world_old_empire_mootland
+		world_old_empire_westerland
 	}
 }
 
@@ -126,7 +233,7 @@ world_old_world_tilea = {
 }
 
 world_old_world = {
-	regions = { world_old_world_empire world_old_world_bretonnia world_old_world_kislev world_old_world_estalia world_old_world_tilea world_old_world_border_princes world_albion }
+	regions = { world_old_empire world_old_world_bretonnia world_old_world_kislev world_old_world_estalia world_old_world_tilea world_old_world_border_princes world_albion }
 }
 
 world_badlands_strygos = {

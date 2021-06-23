@@ -1,5 +1,5 @@
-#Used IDs 9751-9778
-#Free IDs 9779-9900
+#Used IDs 9751-9785
+#Free IDs 9786-9900 9773, 9774
 
 9751 = {	#81000
 	name = Mannfred #Mannfred Todbringer
@@ -25,7 +25,7 @@
 	1971.3.7 = {birth = yes}
 	1980.2.6 = {
 		create_bloodline = {
-			type = mannfred
+			type = teutogen_blood
 			has_dlc = "Holy Fury"
 		}
 	}
@@ -476,44 +476,6 @@
 	2038.12.26 = {death = yes}
 }
 
-9773 = {	#81030
-	name = Siegfried # Siegfried von Wulfingstein First Wolf Emperor
-	dynasty = 16001
-	culture = middenlander
-	religion = ulrican
-	martial = 4
-	diplomacy = 3
-	stewardship = 5
-	intrigue = 4
-	learning = 5
-	add_trait = creature_human
-	add_trait = charismatic_negotiator
-	add_trait = slothful
-	add_trait = kind
-
-	1533.9.27 = {birth = yes}
-	1597.11.2 = {death = yes}
-}
-
-9774 = {	#81031
-	name = Gerhardt # Graf Gerhardt Meister of Middenland
-	dynasty = 16132
-	culture = middenlander
-	religion = ulrican
-	martial = 4
-	diplomacy = 3
-	stewardship = 5
-	intrigue = 4
-	learning = 5
-	add_trait = creature_human
-	add_trait = intricate_webweaver
-	add_trait = temperate
-	add_trait = proud
-
-	1670.5.22 = {birth = yes}
-	1749.12.20 = {death = yes}
-}
-
 ##Knights of the White Wolf
 9775 = {	#81050
 	name = Jerek
@@ -623,3 +585,80 @@
 	1979.3.7 = {birth = yes}
 	2038.12.15 = {death = yes}
 }
+
+##von Bildhofen
+9779 = {
+	name = Heinrich
+	dynasty = 23001
+	culture = middenlander
+	religion = ulrican
+	1954.2.5 = {
+		birth = yes
+		create_bloodline = {
+			type = unberogen_blood
+			has_dlc = "Holy Fury"
+		}
+	}
+	2006.5.24 = {death = yes}
+}
+
+9780 = {
+	name = Folkmar
+	dynasty = 23001
+	culture = middenlander
+	religion = ulrican
+	father = 9779
+	1978.8.16 = {birth = yes}
+	2023.1.24 = {death = yes}
+}
+
+9781 = {
+	name = Heinz
+	dynasty = 23001
+	culture = middenlander
+	religion = ulrican
+	father = 9779
+	1980.3.7 = {birth = yes}
+	2035.4.19 = {death = yes}
+}
+
+9782 = {
+	name = Ignaz
+	dynasty = 23001
+	culture = middenlander
+	religion = ulrican
+	father = 9779
+	1983.7.3 = {birth = yes}
+	2050.6.10 = {death = yes}
+}
+
+9783 = {
+	name = Hartwig
+	dynasty = 23001
+	culture = middenlander
+	religion = ulrican
+	father = 9780
+	2000.4.11 = {birth = yes}
+	2060.1.1 = {death = yes}
+}
+
+9784 = {
+	name = Theodor
+	dynasty = 23001
+	culture = middenlander
+	religion = ulrican
+	father = 9780
+	2003.9.18 = {birth = yes}
+	2060.1.1 = {death = yes}
+}
+
+9785 = {
+	name = Ulfred
+	dynasty = 23001
+	culture = middenlander
+	religion = ulrican
+	father = 9781
+	1998.12.29 = {birth = yes}
+	2060.1.1 = {death = yes}
+}
+##

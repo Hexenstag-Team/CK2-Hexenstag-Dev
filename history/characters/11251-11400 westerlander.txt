@@ -1,5 +1,5 @@
 #Used IDs 11251-11317
-#Free IDs 11318-11400
+#Free IDs 11318-11400 11268
 
 11251 = {	#51000
 	name = Magritta #Granddaughter of Matthias III (11269)
@@ -23,12 +23,6 @@
 	add_trait = kind
 	add_trait = ambitious
 	1976.3.10 = {birth = yes}
-	1980.2.6 = {
-		create_bloodline = {
-			type = magritta
-			has_dlc = "Holy Fury"
-		}
-	}
 	1998.9.21 = {
 			add_spouse = 11278
 			effect = {set_character_flag = ai_flag_refuse_conversion
@@ -402,26 +396,6 @@
 	1767.3.1 = {death = yes}
 }
 
-11268 = {	#51026
-	name = Carolus
-	dynasty = 13000 #van Hoensbroech
-	culture = westerlander
-	religion = sigmarite
-	martial = 3
-	diplomacy = 2
-	stewardship = 4
-	intrigue = 6
-	learning = 7
-	add_trait = creature_human
-	add_trait = gardener
-
-	add_trait = zealous
-	add_trait = greedy
-
-	1853.10.9 = {birth = yes}
-	1907.6.13 = {death = yes}
-}
-
 11269 = {	#51027
 	name = Matthias
 	dynasty = 13003 #13000 #van Hoensbroech
@@ -435,9 +409,7 @@
 	add_trait = creature_human
 	add_trait = impaler
 	add_trait = midas_touched
-
 	add_trait = tall
-	father = 11268
 
 	1886.4.4 = {birth = yes}
 	1951.3.8 = {death = yes}
@@ -1649,12 +1621,19 @@
 	1986.5.15 = {birth = yes}
 	2060.2.11 = {death = yes}
 }
+###
 
 11327 = {
 	name = Henry
 	dynasty = 13579
 	culture = westerlander
 	religion = sigmarite
-	1976.1.1 = {birth = yes}
+	1976.1.1 = {
+		birth = yes
+		create_bloodline = {
+			type = endals_blood
+			has_dlc = "Holy Fury"
+		}
+	}
 	2060.8.20 = {death = yes}
 }
