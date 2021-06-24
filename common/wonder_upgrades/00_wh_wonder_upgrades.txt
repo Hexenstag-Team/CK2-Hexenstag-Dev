@@ -1217,11 +1217,10 @@ upgrade_arachnid_hive = {
 	picture = GFX_upgrade_icon_gs_hive
 	potential = { }
 	allow = {
-		from = { religion=spider_god }
-		NOT={location={province=450}}
+		FROM = { culture = goblin_forest }
 	}
 	active = {
-		religion =spider_god
+		culture = goblin_forest
 	}
 	flags = {
 		is_singular

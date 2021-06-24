@@ -11,56 +11,49 @@
 very_easy_player = {
 	fertility = 0.5
 	land_morale = 0.5
+	retinue_maintenence_cost = -0.5
+	horde_maintenence_cost = -0.5
 }
 
 easy_player = {
 	fertility = 0.25
 	land_morale = 0.25
+	retinue_maintenence_cost = -0.25
+	horde_maintenence_cost = -0.25
 }
 
 normal_player = {
 }
 
 hard_player = {
+	land_morale = -0.25
+	retinue_maintenence_cost = 0.25
 }
 
 very_hard_player = {
-	land_morale = -0.25
+	land_morale = -0.5
+	retinue_maintenence_cost = 0.5
 }
 
 very_easy_ai = {
-	land_morale = -0.25
 }
 
 easy_ai = {
-	attrition = -0.25
 }
 
 normal_ai = {
-	max_population=1000
-	max_manpower=500 #To Avoid Disbandings
-	retinue_maintenence_cost=-0.1
-	horde_maintenence_cost=-0.1
 }
 
 hard_ai = {
-	max_population=1500
-	max_manpower=500
 	land_morale = 0.25
-	retinue_maintenence_cost=-0.2
-	horde_maintenence_cost=-0.2
-	global_tax_modifier = 0.1
-	levy_reinforce_rate = 0.5
+	retinue_maintenence_cost = -0.25
+	horde_maintenence_cost = -0.25
 }
 
 very_hard_ai = {
-	max_population=2000
-	max_manpower=500
-	retinue_maintenence_cost=-0.3
-	horde_maintenence_cost=-0.3
 	land_morale = 0.5
-	global_tax_modifier = 0.2
-	levy_reinforce_rate = 1.0
+	retinue_maintenence_cost = -0.5
+	horde_maintenence_cost = -0.5
 }
 
 ##########################################################################
@@ -522,7 +515,6 @@ static_stewardship_mod = {
 
 static_martial_mod = {
 	land_organisation = 0.01
-	combat_rating = 0.2
 }
 
 static_learning_mod = {
@@ -1096,7 +1088,7 @@ goblin_culture_modifier = {
 	land_organisation = 0.2
 }
 night_goblin_culture_modifier = {
-	levy_size = 0.5
+	levy_size = 0.1
 	levy_reinforce_rate = 0.15
 	heavy_infantry_defensive = -0.1
 	light_infantry_defensive = -0.1
@@ -1154,7 +1146,10 @@ beastman_culture_modifier = {
 	land_organisation = 0.5
 	land_morale = 0.2
 	population_growth = 0.2
-	global_movement_speed = 0.8
+	manpower_growth = 0.2
+	max_population_mult = 0.2
+	max_manpower_mult = 0.2
+	global_movement_speed = 0.4
 }
 
 nehekharan_culture_modifier = {

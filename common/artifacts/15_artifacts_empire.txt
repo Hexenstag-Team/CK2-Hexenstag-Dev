@@ -48,7 +48,11 @@ legbiter = {
 	active = {
 		is_adult = yes
 		can_hold_weapons = yes
-		has_landed_title = k_middenland
+		OR = {
+			has_landed_title = k_middenland
+			has_landed_title = k_carroburg_middenland
+			has_landed_title = k_middenheim
+		}
 	}
 	allowed_gift = {
 		always = no

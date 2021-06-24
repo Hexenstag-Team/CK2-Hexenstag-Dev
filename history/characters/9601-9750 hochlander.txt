@@ -3,9 +3,8 @@
 
 9601 = {	#82000
 	name = Gottschalk
-	dynasty = 17004
+	dynasty = 17003
 	father = 9622
-	mother = 9624
 	culture = hochlander
 	religion = ulrican
 	martial = 2
@@ -21,27 +20,10 @@
 	add_trait = honest
 
 	2006.12.14 = {birth = yes}
-	2009.1.1 = {
-		effect = {
-			set_special_character_title = GRAND_BARON
-		}
-	}
-	2010.1.1 = {
-		effect = {
-			create_retinue = RETTYPE_ST_SWORDSMEN
-			create_retinue = RETTYPE_ST_SWORDSMEN
-			create_retinue = RETTYPE_ST_SPEARMEN
-			create_retinue = RETTYPE_ST_ARCHERS
-			create_retinue = RETTYPE_ST_ARCHERS
-			create_retinue = RETTYPE_LONGRIFLES
-			create_retinue = RETTYPE_LONGRIFLES
-			create_retinue = RETTYPE_ST_OUTRIDER
-			create_retinue = RETTYPE_ST_KNIGHTS
-		}
-	}
 	2040.5.20 = {death = yes}
 }
 
+#Drakwasser
 9602 = {	#82001
 	name = Detlef
 	dynasty = 17025
@@ -62,8 +44,7 @@
 }
 
 9603 = {	#82002
-	name = Julianne
-	female = yes
+	name = Pieter
 	dynasty = 17041
 	culture = hochlander
 	religion = ulrican
@@ -76,13 +57,13 @@
 	add_trait = falconer
 	add_trait = fortune_builder
 	add_trait = strong
-	1995.9.2 = {birth = yes}
+	1992.9.2 = {birth = yes}
 	2060.7.7 = {death = yes}
 }
 
+#Selmigerholz
 9604 = {	#82003
-	name = Cacilie
-	female = yes
+	name = Ottmar
 	dynasty = 17051
 	culture = hochlander
 	religion = ulrican
@@ -101,8 +82,7 @@
 }
 
 9605 = {	#82004
-	name = Anita
-	female = yes
+	name = Seiger
 	dynasty = 17034
 	culture = hochlander
 	religion = ulrican
@@ -117,7 +97,7 @@
 	add_trait = tall
 	add_trait = humble
 	add_trait = wroth
-	1999.4.9 = {birth = yes}
+	1986.4.9 = {birth = yes}
 	2044.9.24 = {death = yes}
 }
 
@@ -142,8 +122,7 @@
 }
 
 9607 = {	#82006
-	name = Lile
-	female = yes
+	name = Jörg
 	dynasty = 17023
 	culture = hochlander
 	religion = ulrican
@@ -161,6 +140,7 @@
 	2062.3.7 = {death = yes}
 }
 
+#
 9608 = {	#82007
 	name = Ranelf
 	dynasty = 17048
@@ -231,27 +211,9 @@
 	2020.4.10 = {death = yes}
 }
 
-9612 = {	#82011
-	name = Ignaz
-	dynasty = 17008
-	culture = hochlander
-	religion = ulrican
-	martial = 1
-	diplomacy = 8
-	stewardship = 3
-	intrigue = 8
-	learning = 7
-	add_trait = creature_human
-	add_trait = hunter
-	add_trait = intricate_webweaver
-	add_trait = fair
-	add_trait = strong
-	mother = 9629
-	1999.12.9 = {birth = yes
-			effect = {set_character_flag = magic_potential_flag_1}
-			}
-	2049.3.4 = {death = yes}
-}
+##########
+###9612###
+##########
 
 9613 = {	#82012
 	name = Petrus
@@ -433,9 +395,10 @@
 }
 ######
 
+#Grand Baron of Hochland
 9622 = {	#82022
 	name = Baldemar
-	dynasty = 17004
+	dynasty = 17003
 	culture = hochlander
 	religion = ulrican
 	father = 9626
@@ -449,14 +412,37 @@
 	add_trait = lustful
 	add_trait = trusting
 
-	1984.3.2 = {birth = yes}
-	2003.8.5 = {add_spouse = 9624}
+	1984.3.2 = {
+		birth = yes
+		create_bloodline = {
+			type = cherusen_blood
+			has_dlc = "Holy Fury"
+		}
+	}
+	2003.1.1 = {
+		effect = {
+			set_special_character_title = GRAND_BARON
+		}
+	}
+	2006.1.1 = {
+		effect = {
+			create_retinue = RETTYPE_ST_SWORDSMEN
+			create_retinue = RETTYPE_ST_SWORDSMEN
+			create_retinue = RETTYPE_ST_SPEARMEN
+			create_retinue = RETTYPE_ST_ARCHERS
+			create_retinue = RETTYPE_ST_ARCHERS
+			create_retinue = RETTYPE_LONGRIFLES
+			create_retinue = RETTYPE_LONGRIFLES
+			create_retinue = RETTYPE_ST_OUTRIDER
+			create_retinue = RETTYPE_ST_KNIGHTS
+		}
+	}
 	2044.9.10 = {death = yes}
 }
 
 9623 = {	#82023
 	name = Hildegarde
-	dynasty = 17004
+	dynasty = 17003
 	female = yes
 	culture = hochlander
 	religion = ulrican
@@ -470,34 +456,17 @@
 	add_trait = flamboyant_schemer
 	add_trait = paranoid
 	father = 9622
-	mother = 9624
 	2007.11.5 = {birth = yes}
 	2066.1.1 = {death = yes}
 }
 
-9624 = {	#82024
-	name = Amaltrude
-	female = yes
-	dynasty = 17008 # Hochen
-	culture = hochlander
-	religion = ulrican
-	martial = 5
-	diplomacy = 7
-	stewardship = 7
-	intrigue = 2
-	learning = 8
-	add_trait = creature_human
-	add_trait = underhanded_rogue
-	add_trait = envious
-	father = 9625
-	mother = 9629
-	1985.8.1 = {birth = yes}
-	2010.6.11 = {death = yes}
-}
+##########
+###9624###
+##########
 
 9625 = {	#82025
 	name = Waldemar
-	dynasty = 17008
+	dynasty = 17004
 	culture = hochlander
 	religion = ulrican
 	martial = 8
@@ -516,7 +485,7 @@
 
 9626 = {	#82026
 	name = Gottschalk
-	dynasty = 17004
+	dynasty = 17003
 	culture = hochlander
 	religion = ulrican
 	martial = 8
@@ -534,7 +503,7 @@
 
 9627 = {	#82044
 	name = Reinhold #Gottschalk's fictional uncle
-	dynasty = 17004
+	dynasty = 17003
 	culture = hochlander
 	religion = ulrican
 	father = 9626
@@ -576,20 +545,4 @@
 	2055.2.10 = {death = yes}
 }
 
-9629 = {	#82046
-	name = Erika
-	female = yes
-	dynasty = 17008 # Hochen
-	culture = hochlander
-	religion = ulrican
-	martial = 1
-	diplomacy = 3
-	stewardship = 2
-	intrigue = 5
-	learning = 3
-	add_trait = creature_human
-	add_trait = underhanded_rogue
-	add_trait = gregarious
-	1965.9.1 = {birth = yes}
-	2020.2.11 = {death = yes}
-}
+9629

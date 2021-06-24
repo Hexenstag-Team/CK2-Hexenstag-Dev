@@ -238,7 +238,7 @@
 }
 
 9912 = {	#52011
-	name = Fredrik
+	name = Alfrich
 	dynasty = 14029
 	culture = nordlander
 	religion = ulrican
@@ -491,9 +491,15 @@
 	add_trait = creature_human
 	add_trait = charismatic_negotiator
 	add_trait = chaste
-	1942.10.5 = {birth = yes}
+	1942.10.5 = {
+		birth = yes
+		create_bloodline = {
+			type = jutones_blood
+			has_dlc = "Holy Fury"
+		}
+	}
 	1960.6.21 = {add_spouse = 9926}
-	1989.10.5 = {death = yes}
+	1987.10.5 = {death = yes}
 }
 
 9926 = {	#52025
