@@ -1,0 +1,926 @@
+### Upgrades for Old World City ###
+
+# # Imported straight from Dawi Legacy project, needs to be worked over # #
+
+#########
+#	INDEX	#
+#########
+#	GENERAL CITY IMPROVEMENTS
+#	upgrade_art_gallery
+#	upgrade_city_gardens
+#	upgrade_court_of_law
+#	upgrade_dwarf_quarter
+#	upgrade_industrial_district
+#	upgrade_palace
+#	upgrade_racetrack
+#	upgrade_streetlights
+#	EDUCATION
+#	upgrade_university
+#	upgrade_engineering_school
+#	upgrade_engineered_canals
+#	upgrade_engineered_defences
+#	MILITARY
+#	upgrade_gunnery_school
+#	upgrade_cannon_foundry
+#	RELIGION
+#	upgrade_temple_quarter
+#	upgrade_templar_orders
+#	upgrade_great_dazh_temple
+#	upgrade_great_grail_chapel
+#	upgrade_great_manann_temple
+#	upgrade_great_morr_temple
+#	upgrade_great_myrmidia_temple
+#	upgrade_great_sigmar_temple
+#	upgrade_great_shallya_temple
+#	upgrade_great_taal_rhya_temple
+#	upgrade_great_ulric_temple
+#	upgrade_great_ursun_temple
+#	upgrade_great_verena_temple
+
+#Art Gallery. owner: monthly_character_prestige tilean_group_opinion
+
+upgrade_art_gallery = {
+	picture = GFX_upgrade_icon_decorative
+
+	potential = {	}
+	allow = {	}
+	active = {	}
+	flags = {
+		is_singular
+		romantic
+		secluded
+	}
+	build_time = 12
+	gold_cost_flat = 180
+	gold_cost_ticking = 1
+	local_modifier = {	}
+	owner_modifier = {
+		monthly_character_prestige = 0.25
+		tilean_group_opinion = 5
+		custom_modifier_text = private_talk_possible_modifier_tt
+	}
+}
+
+#City Gardens. owner: town_opinion and local: revolt risk
+
+upgrade_city_gardens = {
+	picture = GFX_upgrade_icon_roses_yellow
+
+	potential = {  }
+	allow = {  }
+	active = {  }
+	flags = {
+		is_plural
+		romantic
+		secluded
+	}
+	build_time = 12
+	gold_cost_flat = 180
+	gold_cost_ticking = 1
+	local_modifier = {
+		local_revolt_risk = -0.02
+	}
+	owner_modifier = {
+		town_opinion = 5
+		custom_modifier_text = private_talk_possible_modifier_tt
+	}
+}
+
+#Court of Law. owner: vassal_limit and local city_tax_modifier
+
+upgrade_court_of_law = {
+	picture = GFX_upgrade_icon_door
+
+	potential = {  }
+	allow = {
+		FROMFROMFROM = {
+			TECH_LEGALISM = 4
+		}
+	}
+	active = {
+		religion_group = old_world_group
+	}
+	flags = {
+		is_singular
+	}
+	build_time = 12
+	gold_cost_flat = 180
+	gold_cost_ticking = 1
+	local_modifier = {
+		city_tax_modifier = 0.05
+	}
+	owner_modifier = {
+		stewardship = 1
+	}
+}
+
+#Dwarf Quarter. local local_build_time_modifier, heavy_infantry and heavy_infantry_defensive
+
+upgrade_dwarf_quarter = {
+	picture = GFX_upgrade_icon_guard_helmet
+
+	potential = {  }
+	allow = {
+		FROMFROMFROM = {
+			OR = {
+				religion = sigmarite
+				TECH_CULTURE_FLEX = 2
+			}
+		}
+	}
+	active = {
+		religion_group = old_world_group
+	}
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 150
+	gold_cost_ticking = 1
+	local_modifier = {
+		local_build_time_modifier = -0.05
+		heavy_infantry = 50
+		heavy_infantry_defensive = 0.05
+	}
+	owner_modifier = {  }
+}
+
+#Industrial District. local_build_cost_city_modifier, city_levy_size, and owner levy_reinforce_rate
+
+upgrade_industrial_district = {
+	picture = GFX_upgrade_icon_crates
+
+	potential = {  }
+	allow = {
+		FROMFROMFROM = {
+			TECH_RECRUITMENT = 4
+		}
+	}
+	active = {  }
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 200
+	gold_cost_ticking = 2
+	local_modifier = {
+		local_build_cost_city_modifier = -0.05
+		city_levy_size = 0.1
+	}
+	owner_modifier = {
+		levy_reinforce_rate = 0.05
+	}
+}
+
+#Palace. retinuesize, monthly_character_prestige and castle_opinion
+
+upgrade_palace = {
+	picture = GFX_upgrade_icon_key
+
+	potential = {  }
+	allow = {  }
+	active = {  }
+	flags = {
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {  }
+	owner_modifier = {
+		castle_opinion = 5
+		monthly_character_prestige = 1
+		retinuesize = 500
+	}
+}
+
+#Race track. Adds cavalry troops and movement speed
+upgrade_racetrack = {
+	picture = GFX_upgrade_icon_crates
+
+	potential = {  }
+	allow = {
+		FROMFROMFROM = {
+			OR = {
+				religion = grail
+				TECH_CAVALRY = 4
+			}
+		}
+	}
+	active = {  }
+	flags = {
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+		light_cavalry = 150
+		knights = 50
+	}
+	owner_modifier = {
+		global_movement_speed = 0.05
+	}
+}
+
+#+Streetlights. local garrison_size and owner defensive_plot_power_modifier
+upgrade_streetlights = {
+	picture = GFX_upgrade_icon_crates
+
+	potential = {  }
+	allow = {
+		FROMFROMFROM = {
+			TECH_CITY_CONSTRUCTION = 6
+		}
+	}
+	active = {  }
+	flags = {
+		is_plural
+	}
+	build_time = 24
+	gold_cost_flat = 200
+	gold_cost_ticking = 2
+	local_modifier = {
+		garrison_size = 0.25
+	}
+	owner_modifier = {
+		defensive_plot_power_modifier = 0.2
+	}
+}
+
+#+Zoo?
+
+##########################################
+# Schools and Education
+##########################################
+
+#University. owner: +1 learning and technology benefits
+
+upgrade_university = {
+	picture = GFX_upgrade_icon_written_paper
+	potential = {  }
+	allow = {  }
+	active = {
+		religion_group = old_world_group
+	}
+	flags = {
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 150
+	gold_cost_ticking = 1
+	local_modifier = {
+		tech_growth_modifier = 0.5
+	}
+	owner_modifier = {
+		culture_techpoints = 0.1
+		learning = 1
+	}
+}
+
+#Engineering School: combat bonuses for siege_tanks, adds retinue
+
+upgrade_engineering_school = {
+	picture = GFX_upgrade_icon_book_red
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_university
+		}
+	}
+	allow = {  }
+	active = {
+		religion_group = old_world_group
+	}
+	flags = {
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 150
+	gold_cost_ticking = 1
+	local_modifier = {
+		siege_tanks_offensive = 0.25
+		siege_tanks_defensive = 0.25
+		retinuesize = 250
+	}
+	owner_modifier = {
+		economy_techpoints = 0.1
+	}
+}
+
+#Engineered Canals: local tax_income
+
+upgrade_engineered_canals = {
+	picture = GFX_upgrade_icon_crates
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_engineering_school
+		}
+	}
+	allow = {
+		FROMFROMFROM = {
+			TECH_CONSTRUCTION = 6
+		}
+	}
+	active = {  }
+	flags = {
+		is_plural
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+		tax_income = 3
+	}
+}
+
+#Engineered Defences: local fort_level, siege speed advantages
+
+upgrade_engineered_defences = {
+	picture = GFX_upgrade_icon_tower
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_engineering_school
+		}
+	}
+	allow = {
+		FROMFROMFROM = {
+			TECH_FORTIFICATIONS_CONSTRUCTION = 6
+		}
+	}
+	active = {  }
+	flags = {
+		is_plural
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+		fort_level = 2
+		siege_defence = 0.1
+	}
+	owner_modifier = {
+		siege_speed = 0.1
+	}
+}
+
+
+#Gunnery School: combat bonuses for gunpowder, adds retinue (and retinue option?)
+
+upgrade_gunnery_school = {
+	picture = GFX_upgrade_icon_crates
+	potential = {  }
+	allow = {  }
+	active = {
+		religion_group = old_world_group
+	}
+	flags = {
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 150
+	gold_cost_ticking = 1
+	local_modifier = {
+		gunpowder_offensive = 0.25
+		gunpowder_defensive = 0.25
+		retinuesize = 250
+	}
+	owner_modifier = {
+		military_technpoints = 0.1
+	}
+}
+
+upgrade_cannon_foundry = {
+	picture = GFX_upgrade_icon_crates
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_gunnery_school
+			has_wonder_upgrade = upgrade_industrial_district
+		}
+	}
+	allow = {	}
+	active = {	}
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 200
+	gold_cost_ticking = 1
+	local_modifier = {
+		artillery_offensive = 0.25
+		artillery_defensive = 0.25
+		siege_speed = 0.1
+	}
+	owner_modifier = {	}
+}
+
+#College of Magic?
+
+##########################################
+# Old World Temple upgrades....
+##########################################
+
+#Temple Quarter. local local_build_time_temple_modifier, owner + church_opinion & piety
+
+upgrade_temple_quarter = {
+	picture = GFX_upgrade_icon_crates
+
+	potential = {  }
+	allow = {  }
+	active = {
+		religion_group = old_world_group
+	}
+	flags = {
+		is_singular
+	}
+	build_time = 24
+	gold_cost_flat = 150
+	gold_cost_ticking = 1
+	local_modifier = {
+		local_build_time_temple_modifier = -0.10
+	}
+	owner_modifier = {
+		church_opinion = 5
+		monthly_character_piety = 0.5
+	}
+}
+
+
+#Templar Orders: adds retinue (and retinue options?) and temple_levy_size
+
+upgrade_templar_orders = {
+	picture = GFX_upgrade_icon_guard
+
+	potential = {
+		FROMFROMFROM = {
+			religion_group = old_world_group
+		}
+	}
+	allow = {
+		has_wonder_upgrade = upgrade_temple_quarter
+	}
+	active = {
+		religion_group = old_world_group
+	}
+
+	flags = {
+		is_plural
+	}
+
+	build_time = 12
+	gold_cost_flat = 400
+	gold_cost_ticking = 2
+	local_modifier = {
+		temple_levy_size = 0.5
+		knights = 50
+	}
+	owner_modifier = {
+		retinue_maintenence_cost = -0.05
+	}
+}
+
+###Great Temples: only one per city. Where applicable I *think* these can add society currency
+
+#Great Temple of Dazh: adds vassal_opinion and prestige
+
+upgrade_great_dazh_temple = {
+	picture = GFX_upgrade_icon_crates
+	show_in_history = yes
+	potential = {
+		FROMFROMFROM = {
+			OR = {
+				religion = kislev_gods
+				religion = northern_gods
+			}
+		}
+	}
+	allow = {
+		DL_may_build_great_temple_trigger = yes
+	}
+	active = {
+		OR = {
+			religion = kislev_gods
+			religion = northern_gods
+		}
+	}
+	flags = {
+		great_temple
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+	}
+	owner_modifier = {
+		vassal_opinion = 5
+		add_prestige_modifier = 0.1
+	}
+}
+
+#Great Chapel: adds knight_offensive, knight_morale, grail_opinion
+
+upgrade_great_grail_chapel = {
+	picture = GFX_upgrade_icon_crates
+	show_in_history = yes
+	potential = {
+		FROMFROMFROM = {
+			religion = grail
+		}
+	}
+	allow = {
+		DL_may_build_great_temple_trigger = yes
+	}
+	active = {
+		religion = grail
+	}
+
+	flags = {
+		great_temple
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+		knights_offensive = 0.2
+		knights = 100
+	}
+	owner_modifier = {
+		grail_opinion = 5
+	}
+}
+
+#Great Temple of Manann: adds local galleys and tradevalue
+
+upgrade_great_manann_temple = {
+	picture = GFX_upgrade_icon_crates
+	show_in_history = yes
+	potential = {
+		FROMFROMFROM = {
+			OR = {
+				religion = grail
+				religion = kislev_gods
+				religion = myrmidian
+				religion = sigmarite
+				religion = taalite
+				religion = ulrican
+			}
+			port = yes
+		}
+	}
+	allow = {
+		DL_may_build_great_temple_trigger = yes
+	}
+	active = {
+		OR = {
+			religion = grail
+			religion = kislev_gods
+			religion = myrmidian
+			religion = sigmarite
+			religion = taalite
+			religion = ulrican
+		}
+	}
+	flags = {
+		great_temple
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+		galleys_perc = 0.5
+		tradevalue = 100
+		trade_route_wealth = 3
+	}
+	owner_modifier = {  }
+}
+#Great Temple of Morr: adds owner health, local heavy_infantry_defensive
+upgrade_great_morr_temple = {
+	picture = GFX_upgrade_icon_crates
+	show_in_history = yes
+	potential = {
+		FROMFROMFROM = {
+			OR = {
+				religion = grail
+				religion = kislev_gods
+				religion = myrmidian
+				religion = sigmarite
+				religion = taalite
+				religion = ulrican
+			}
+		}
+	}
+	allow = {
+		DL_may_build_great_temple_trigger = yes
+	}
+	active = {
+		OR = {
+			religion = grail
+			religion = kislev_gods
+			religion = myrmidian
+			religion = sigmarite
+			religion = taalite
+			religion = ulrican
+		}
+	}
+	flags = {
+		great_temple
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+		heavy_infantry_defensive = 0.5
+		heavy_infantry_morale = 0.25
+	}
+	owner_modifier = {
+		health = 0.5
+	}
+}
+
+
+#Great Temple of Myrmidia: adds owner martial, adds pikemen
+
+upgrade_great_myrmidia_temple = {
+	picture = GFX_upgrade_icon_crates
+	show_in_history = yes
+	potential = {
+		FROMFROMFROM = {
+			OR = {
+				religion = grail
+				religion = myrmidian
+				religion = sigmarite
+				religion = taalite
+				religion = ulrican
+			}
+		}
+	}
+	allow = {
+		DL_may_build_great_temple_trigger = yes
+	}
+	active = {
+		OR = {
+			religion = grail
+			religion = myrmidian
+			religion = sigmarite
+			religion = taalite
+			religion = ulrican
+		}
+	}
+	flags = {
+		great_temple
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+		pikemen = 100
+	}
+	owner_modifier = {
+		martial = 1
+	}
+}
+
+#Great Temple of Shallya: adds disease_defence and owner piety
+upgrade_great_shallya_temple = {
+	picture = GFX_upgrade_icon_crates
+	show_in_history = yes
+	potential = {
+		FROMFROMFROM = {
+			OR = {
+				religion = grail
+				religion = myrmidian
+				religion = sigmarite
+				religion = taalite
+				religion = ulrican
+			}
+		}
+	}
+	allow = {
+		DL_may_build_great_temple_trigger = yes
+	}
+	active = {
+		OR = {
+			religion = grail
+			religion = myrmidian
+			religion = sigmarite
+			religion = taalite
+			religion = ulrican
+		}
+	}
+	flags = {
+		great_temple
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+		disease_defence = 0.1
+	}
+	owner_modifier = {
+		monthly_character_piety = 1
+	}
+}
+
+#Great Temple of Sigmar: adds local heavy_infantry owner sigmarite_opinion
+
+upgrade_great_sigmar_temple = {
+	picture = GFX_upgrade_icon_crates
+	show_in_history = yes
+	potential = {
+		FROMFROMFROM = {
+			OR = {
+				religion = sigmarite
+				religion = taalite
+				religion = ulrican
+			}
+		}
+	}
+	allow = {
+		DL_may_build_great_temple_trigger = yes
+	}
+	active = {
+		OR = {
+			religion = sigmarite
+			religion = taalite
+			religion = ulrican
+		}
+	}
+	flags = {
+		great_temple
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+		heavy_infantry = 200
+	}
+	owner_modifier = {
+		sigmarite_opinion = 5
+	}
+}
+
+#Great Temple of Taal and Rhya: adds owner fertility, local archer_offenisve, archers
+upgrade_great_taal_rhya_temple = {
+	picture = GFX_upgrade_icon_crates
+	show_in_history = yes
+	potential = {
+		FROMFROMFROM = {
+			religion_group = old_world_group
+		}
+	}
+	allow = {
+		DL_may_build_great_temple_trigger = yes
+	}
+	active = {
+		religion_group = old_world_group
+	}
+	flags = {
+		great_temple
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+		archers = 200
+		archers_offensive = 0.1
+	}
+	owner_modifier = {
+		fertility = 0.15
+	}
+}
+
+#no great temple of Tor because he doesn't have much of a cult
+
+#Great Temple of Ulric: adds owner combat_rating, phase_melee_attack, threat_decay_speed
+
+upgrade_great_ulric_temple = {
+	picture = GFX_upgrade_icon_guard_helmet
+	show_in_history = yes
+	potential = {
+		FROMFROMFROM = {
+			OR = {
+				religion = grail
+				religion = kislev_gods
+				religion = myrmidian
+				religion = sigmarite
+				religion = taalite
+				religion = ulrican
+			}
+		}
+	}
+	allow = {
+		DL_may_build_great_temple_trigger = yes
+	}
+	active = {
+		OR = {
+			religion = grail
+			religion = kislev_gods
+			religion = myrmidian
+			religion = sigmarite
+			religion = taalite
+			religion = ulrican
+		}
+	}
+	flags = {
+		great_temple
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+		heavy_infantry = 150
+	}
+	owner_modifier = {
+		combat_rating = 5
+		threat_decay_speed = 0.1
+	}
+}
+
+#Great Temple of Ursun: adds local levy_reinforce_rate, owner kislev_gods_opinion
+
+upgrade_great_ursun_temple = {
+	picture = GFX_upgrade_icon_guard_helmet
+	show_in_history = yes
+	potential = {
+		FROMFROMFROM = {
+			OR = {
+				religion = kislev_gods
+				religion = northern_gods
+			}
+		}
+	}
+	allow = {
+		DL_may_build_great_temple_trigger = yes
+	}
+	active = {
+		OR = {
+			religion = kislev_gods
+			religion = northern_gods
+		}
+	}
+	flags = {
+		great_temple
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+		levy_reinforce_rate = 0.5
+	}
+	owner_modifier = {
+		kislev_gods_opinion = 5
+		northern_gods_opinion = 5
+	}
+}
+
+#Great Temple of Verena: adds owner learning, scholar_opinion
+upgrade_great_verena_temple = {
+	picture = GFX_upgrade_icon_guard_helmet
+	show_in_history = yes
+	potential = {
+		FROMFROMFROM = {
+			OR = {
+				religion = grail
+				religion = myrmidian
+				religion = sigmarite
+				religion = taalite
+				religion = ulrican
+			}
+		}
+	}
+	allow = {
+		DL_may_build_great_temple_trigger = yes
+	}
+	active = {
+		OR = {
+			religion = grail
+			religion = myrmidian
+			religion = sigmarite
+			religion = taalite
+			religion = ulrican
+		}
+	}
+	flags = {
+		great_temple
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+		tech_growth_modifier = 0.5
+	}
+	owner_modifier = {
+		learning = 1
+		scholar_opinion = 10
+	}
+}

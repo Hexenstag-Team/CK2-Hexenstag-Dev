@@ -65,6 +65,184 @@ character_event = {
   }
 }
 
+### Favor of Hashut (hashut_favor variable) events ###
+
+  #Hashut favor maintenance event
+  #fires yearly, updates favor with bonuses for courtiers on the sorcerer track
+  #Also checks progress of courtiers towards fulfilling Hashut objectives
+
+  character_event = {
+    id = wh_chaos_dwarf.100
+    hide_window = yes
+
+    religion = hashut
+
+    min_age = 14
+
+    trigger = {
+      is_chaos_dwarf_sorcerer_path = yes
+      trait = creature_chaos_dwarf #should be implied by previous checks but just in case
+    }
+
+    immediate = {
+      #update hashut_favor
+      if = {
+        limit = {
+          is_hashut_good_minion_trigger = yes
+        }
+        change_variable = {
+          which = hashut_favor
+          value = 0.75
+        }
+        character_event = {
+          id = wh_chaos_dwarf.101
+          days = 3
+          random = 3
+        }
+      }
+      else_if = {
+        limit = {
+          is_hashut_bad_minion_trigger = yes
+        }
+        change_variable = {
+          which = hashut_favor
+          value = -0.25
+        }
+        character_event = {
+          id = wh_chaos_dwarf.103
+          days = 3
+          random = 3
+        }
+      }
+      else = {
+        change_variable = {
+          which = hashut_favor
+          value = 0.25
+        }
+        character_event = {
+          id = wh_chaos_dwarf.102
+          days = 3
+          random = 3
+        }
+      }
+      #AI bonus
+      if = {
+        limit = {
+          ai = yes
+        }
+        change_variable = {
+          which = hashut_favor
+          value = 0.5
+        }
+      }
+      #now check for becoming daemonsmith
+      if = {
+        limit = {
+          has_ambition = obj_chaos_dwarf_become_daemonsmith
+          check_variable = {
+            which = hashut_favor
+            value >= 10
+          }
+        }
+        character_event = {
+          id = wh_chaos_dwarf.110
+          days = 15
+          random = 10
+        }
+      }
+      #check for becoming sorcerer
+      if = {
+        limit = {
+          has_ambition = obj_chaos_dwarf_become_sorcerer
+          check_variable = {
+            which = hashut_favor
+            value >= 50
+          }
+        }
+      }
+      #start trial of the sorcerer
+    }
+
+  }
+
+  #Notification - good minion
+  character_event = {
+    id = wh_chaos_dwarf.101
+    desc = EVTDESC_wh_chaos_dwarf.101
+    picture = GFX_evt_hashut_rune
+    border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+
+    trigger = {
+
+    }
+
+    option = {
+      name = PRAISE_HASHUT
+    }
+
+  }
+  #Notification - adequate minion
+  character_event = {
+    id = wh_chaos_dwarf.102
+    desc = EVTDESC_wh_chaos_dwarf.102
+    picture = GFX_evt_hashut_rune
+    border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+
+    trigger = {
+
+    }
+
+    option = {
+      name = PRAISE_HASHUT
+    }
+
+  }
+  #Notification - must try harder
+  character_event = {
+    id = wh_chaos_dwarf.102
+    desc = EVTDESC_wh_chaos_dwarf.102
+    picture = GFX_evt_hashut_rune
+    border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+
+    trigger = {
+
+    }
+
+    option = {
+      name = CURSES
+    }
+
+  }
+
+  #set aside ids through 109 for future development of this line
+
+  #Notification - become a daemonsmith
+  character_event = {
+    id = wh_chaos_dwarf.110
+    desc = EVTDESC_wh_chaos_dwarf.110
+    picture = GFX_evt_hashut_rune
+    border = GFX_event_normal_frame_religion
+    is_triggered_only = yes
+
+    trigger = {
+
+    }
+
+    option = {
+      name = PRAISE_HASHUT
+      add_trait = chaos_dwarf_daemonsmith
+      add_character_modifier = {
+        name = magic_power_1
+        duration = -1
+      }
+    }
+  }
+
+  #Notification - start trial of the sorcerer
+
 
 
 }

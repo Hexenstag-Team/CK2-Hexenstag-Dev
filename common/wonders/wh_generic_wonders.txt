@@ -1,0 +1,221 @@
+#########################################
+### Warhammer Fantasy generic wonders ###
+#########################################
+#
+# # Please place specific named wonders in their own file # #
+#
+# # INDEX # #
+#
+# 1. Old World City
+# 2. Dwarf Hold
+#
+#
+
+### OLD WORLD CITY ###
+# This should be appropriate for Imperials, Bretonnians, Estalians, Tileans, and Border Princes.
+# Maybe it should be built to work for Arabyans as well.
+
+wonder_old_world_city = {
+	allow_coastal = yes
+	picture = GFX_wonder_strip_grandfortress
+	potential = {
+		always = no #needs more development
+	}
+	active = {
+		religion_group = old_world_group #probably too restrictive because an Arabyan City would look pretty similar
+	}
+	flags = {
+		defensive
+		great_city
+		is_destructible
+		cost_high
+	}
+	available_upgrades = {
+
+	###CITY THINGS###
+	upgrade_art_gallery
+	upgrade_city_gardens
+	upgrade_court_of_law
+	upgrade_dwarf_quarter
+	upgrade_industrial_district
+	upgrade_palace
+	upgrade_racetrack
+	upgrade_streetlights
+
+	###EDUCATION###
+	upgrade_university
+	upgrade_engineering_school
+	upgrade_engineered_canals
+	upgrade_engineered_defences
+	upgrade_gunnery_school
+	upgrade_cannon_foundry
+
+	###TEMPLES###
+	upgrade_temple_quarter
+	upgrade_templar_orders
+	#GREAT TEMPLES
+	upgrade_great_dazh_temple
+	upgrade_great_grail_chapel
+	upgrade_great_manann_temple
+	upgrade_great_morr_temple
+	upgrade_great_myrmidia_temple
+	upgrade_great_sigmar_temple
+	upgrade_great_shallya_temple
+	upgrade_great_taal_rhya_temple
+	#no great temple of Tor because he doesn't have much of a cult
+	upgrade_great_ulric_temple
+	upgrade_great_ursun_temple
+	upgrade_great_verena_temple
+
+	}
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			tradevalue = 15
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 4
+				TECH_CONSTRUCTION = 4
+			}
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 4
+		restore_time = 360
+		loot_time = 6
+		restore_cost_flat = 1000
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			tradevalue = 15
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 6
+				TECH_CONSTRUCTION = 6
+			}
+		}
+		build_time = 375
+		gold_cost_flat = 2400
+		gold_cost_ticking = 5
+		restore_time = 480
+		loot_time = 6
+		restore_cost_flat = 1000
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			tradevalue = 15
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 8
+				TECH_CONSTRUCTION = 8
+			}
+		}
+		build_time = 375
+		gold_cost_flat = 2600
+		gold_cost_ticking = 4
+		restore_time = 360
+		loot_time = 6
+		restore_cost_flat = 1000
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			tradevalue = 15
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+}
+
+### DWARF HOLD ###
+# This needs to be appropriate for Dwarf and Chaos Dwarf builders (though the upgrades can diverge), and a good fit for Greenskin squatters
+
+wonder_dwarf_hold = {
+  allow_coastal = yes
+
+  #Default picture is for the most common case, Dwarfs in their hold.
+  #Scripts can handle changing the GFX using the command set_wonder_model from the wonder scope
+	picture = GFX_wonder_strip_grandfortress #placeholder
+
+  potential = {
+    always = no #not ready yet
+    any_dwarf_building_trigger = yes
+  }
+
+  active = {
+    #probably
+  }
+
+  flags = {
+    cost_high
+    defensive
+    is_destructible #maybe it's not though?
+  }
+
+  available_upgrades = {
+
+  }
+
+  stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+}

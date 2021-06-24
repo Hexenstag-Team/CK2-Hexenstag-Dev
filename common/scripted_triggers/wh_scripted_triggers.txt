@@ -667,6 +667,7 @@ has_magic_trigger = {
 	trait = asrai_spellsinger
 	trait = asur_mage
 	trait = chaos_dwarf_sorcerer
+	trait = chaos_dwarf_daemonsmith
 	trait = greenskin_shaman
 	trait = druchi_mage
 	trait = druchi_sorceress
@@ -1054,8 +1055,42 @@ dwarf_main_trigger = {
 	}
 }
 
+is_chaos_dwarf_sorcerer_path = {
+	OR = {
+		has_ambition = obj_chaos_dwarf_become_daemonsmith
+		trait = chaos_dwarf_daemonsmith
+		trait = chaos_dwarf_sorcerer
+		#no need for become sorcerer ambition as it requires daemonsmith trait
+	}
+}
 
+has_hashut_good_trait_trigger = {
+	OR = {
+		trait = cruel
+		trait = diligent
+		trait = patient
+		trait = proud
+		trait = zealous
+	}
+}
 
+has_hashut_bad_trait_trigger = {
+	OR = {
+		trait = just
+		trait = kind
+		trait = humble
+		trait = slothful
+		trait = trusting
+		#specifically not wroth - patience is a virtue to Hashut but anger isn't a sin
+	}
+}
 
+is_hashut_good_minion_trigger = {
+	has_hashut_good_trait_trigger = yes
+	NOT = { has_hashut_bad_trait_trigger = yes }
+}
 
-
+is_hashut_bad_minion_trigger = {
+	NOT = { has_hashut_good_trait_trigger = yes }
+	has_hashut_bad_trait_trigger = yes
+}

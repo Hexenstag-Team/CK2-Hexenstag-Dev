@@ -1,4 +1,12 @@
 family_palace = {
+
+#Any Dwarf Patrician
+#buildings that should be shared by Ancestor Dwarfs and Chaos Dwarfs
+
+
+
+#Ancestor Dwarf Trading Clans
+
 	fp_dwarf_warrior_guild_halls = {
 		desc = fp_dwarf_guild_halls_1_desc
 		trigger = { TECH_CASTLE_CONSTRUCTION = 1 }
@@ -187,13 +195,13 @@ family_palace = {
 	}
 	fp_dwarf_runesmith_guild_halls = {
 		desc = fp_dwarf_guild_halls_1_desc
-		trigger = { 
+		trigger = {
 			FROM={OR={
 				trait=runesmith
 				trait=runelord
 				}
 			}
-		}	
+		}
 		prerequisites={fp_guildhall_1}
 		gold_cost = 50
 		build_time = 64
@@ -221,13 +229,13 @@ family_palace = {
 	}
 	fp_dwarf_runesmith_guild_halls_2 = {
 		desc = fp_dwarf_guild_halls_1_desc
-		trigger = { 
+		trigger = {
 			FROM={OR={
 				trait=runesmith
 				trait=runelord
 				}
 			}
-		}	
+		}
 		prerequisites={fp_guildhall_3}
 		gold_cost = 525
 		build_time = 1700
@@ -756,10 +764,652 @@ family_palace = {
 
 		galleys = 12
 		tax_income = 6
-		
+
 		is_active_trigger = {
 			FROMFROM = {location={port = yes}}
 		}
 		extra_tech_building_start = 4.0
 	}
+
+  #Chaos Dwarf Slaving Clans
+  #cheaper gold costs, longer build times, deeper construction possibilities
+  #better basic tax (plenty of business in the city) but fewer trading posts (same reason!)
+  #light troops - below warriors in caste hierarchy, rely on hobgoblin warriors
+
+  	#Clan quarters - equivalent to mansion, provides more money but fewer trade posts
+  	#tech limited but has two extra levels ("tall" play style)
+  	fp_cdguildhall_1 = {
+  		desc = fp_cdguildhall_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+  		potential = {
+  		     chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_mansion_1
+  		gold_cost = 150
+  		build_time = 1460
+  		ai_creation_factor = 200
+
+  		levy_size = 0.10
+  		tax_income = 3
+
+  		extra_tech_building_start = 0.0
+  	}
+
+  	fp_cdguildhall_2 = {
+  		desc = fp_cdguildhall_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_mansion_2
+  		upgrades_from = fp_cdguildhall_1
+  		gold_cost = 250
+  		build_time = 1825
+  		ai_creation_factor = 104
+
+  		levy_size = 0.15
+  		tax_income = 9
+  		max_tradeposts = 2
+
+  		extra_tech_building_start = 2.0
+  	}
+
+  	fp_cdguildhall_3 = {
+  		desc = fp_cdguildhall_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_mansion_3
+  		upgrades_from = fp_cdguildhall_2
+  		gold_cost = 350
+  		build_time = 2920
+  		ai_creation_factor = 103
+
+  		levy_size = 0.25
+  		tax_income = 12
+  		max_tradeposts = 2
+
+  		extra_tech_building_start = 3.5
+  	}
+
+  	fp_cdguildhall_4 = {
+  		desc = fp_cdguildhall_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_mansion_4
+  		upgrades_from = fp_cdguildhall_3
+  		gold_cost = 450
+  		build_time = 2920
+  		ai_creation_factor = 102
+
+  		levy_size = 0.25
+  		tax_income = 15
+  		max_tradeposts = 2
+
+  		extra_tech_building_start = 5.0
+  	}
+
+  	fp_cdguildhall_5 = {
+  		desc = fp_cdguildhall_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		upgrades_from = fp_cdguildhall_4
+  		gold_cost = 600
+  		build_time = 3650
+  		ai_creation_factor = 102
+
+  		levy_size = 0.25
+  		tax_income = 15
+  		max_tradeposts = 2
+
+  		extra_tech_building_start = 5.0
+  	}
+
+  	fp_cdguildhall_6 = {
+  		desc = fp_cdguildhall_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 8 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		upgrades_from = fp_cdguildhall_5
+  		gold_cost = 750
+  		build_time = 3650
+  		ai_creation_factor = 102
+
+  		levy_size = 0.25
+  		tax_income = 15
+  		max_tradeposts = 2
+
+  		extra_tech_building_start = 5.0
+  	}
+
+  	fp_cdbackstabbers_1 = {
+  		desc = fp_cdbackstabbers_desc
+  		trigger = { TECH_INFANTRY = 0 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_barracks_1
+  		gold_cost = 100
+  		build_time = 1065
+  		ai_creation_factor = 95
+
+  		light_infantry = 200
+  		light_infantry_offensive = 0.05
+
+  		extra_tech_building_start = 0.3
+  	}
+
+  	fp_cdbackstabbers_2 = {
+  		desc = fp_cdbackstabbers_desc
+  		trigger = { TECH_INFANTRY = 2 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_barracks_2
+  		upgrades_from = fp_cdbackstabbers_1
+  		prerequisites = { fp_cdguildhall_2 }
+  		gold_cost = 200
+  		build_time = 1460
+  		ai_creation_factor = 99
+
+  		light_infantry = 250
+  		light_infantry_offensive = 0.05
+
+  		extra_tech_building_start = 0.5
+  	}
+
+  	fp_cdbackstabbers_3 = {
+  		desc = fp_cdbackstabbers_desc
+  		trigger = { TECH_INFANTRY = 4 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_barracks_3
+  		upgrades_from = fp_cdbackstabbers_2
+  		prerequisites = { fp_cdguildhall_3 }
+  		gold_cost = 300
+  		build_time = 2190
+  		ai_creation_factor = 98
+
+  		light_infantry = 300
+  		light_infantry_offensive = 0.05
+
+  		extra_tech_building_start = 1.5
+  	}
+
+  	fp_cdbackstabbers_4 = {
+  		desc = fp_cdbackstabbers_desc
+  		trigger = { TECH_INFANTRY = 6 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		upgrades_from = fp_cdbackstabbers_3
+  		prerequisites = { fp_cdguildhall_4 }
+  		gold_cost = 400
+  		build_time = 2920
+  		ai_creation_factor = 98
+
+  		light_infantry = 350
+  		light_infantry_offensive = 0.05
+
+  		extra_tech_building_start = 1.5
+  	}
+
+  	#Khans quarters
+  	#represents ties with steppe hobgoblins - LC & HA
+  	#same "tall" design principles as above, but no discount as the troops are better than fp_stable chain
+  	fp_hobgoblins_1 = {
+  		desc = fp_hobgoblins_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_stable_1
+  		gold_cost = 150
+  		build_time = 1095
+  		ai_creation_factor = 100
+
+  		light_cavalry = 50
+  		horse_archers = 25
+
+  		extra_tech_building_start = 1.0
+  	}
+
+  	fp_hobgoblins_2 = {
+  		desc = fp_hobgoblins_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_stable_2
+  		gold_cost = 250
+  		build_time = 1460
+  		upgrades_from = fp_hobgoblins_1
+  		prerequisites = { fp_cdguildhall_2 }
+  		ai_creation_factor = 99
+
+  		light_cavalry = 60
+  		horse_archers = 30
+
+  		extra_tech_building_start = 2.5
+  	}
+
+  	fp_hobgoblins_3 = {
+  		desc = fp_hobgoblins_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_stable_3
+  		gold_cost = 350
+  		build_time = 1825
+  		upgrades_from = fp_hobgoblins_2
+  		prerequisites = { fp_cdguildhall_3 }
+  		ai_creation_factor = 98
+
+  		light_cavalry = 100
+  		horse_archers = 50
+
+  		extra_tech_building_start = 4.0
+  	}
+
+  	fp_hobgoblins_4 = {
+  		desc = fp_hobgoblins_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		gold_cost = 500
+  		build_time = 2190
+  		upgrades_from = fp_hobgoblins_3
+  		prerequisites = { fp_cdguildhall_4 }
+  		ai_creation_factor = 98
+
+  		light_cavalry = 120
+  		horse_archers = 60
+
+  		extra_tech_building_start = 4.0
+  	}
+
+  	#Slavebreakers
+  	#not allowed weapons of real CD warriors, so archers
+  	#cheaper, longer construction times & "tall" support
+  	fp_cdguildretinue_1 = {
+  		desc = fp_cdguildretinue_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_bowyer_1
+  		gold_cost = 100
+  		build_time = 1095
+  		ai_creation_factor = 100
+
+  		archers = 180
+  		archers_defensive = 0.05
+
+  		extra_tech_building_start = 0.3
+  	}
+
+  	fp_cdguildretinue_2 = {
+  		desc = fp_cdguildretinue_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_bowyer_2
+  		upgrades_from = fp_cdguildretinue_1
+  		prerequisites = { fp_cdguildhall_2 }
+  		gold_cost = 200
+  		build_time = 1460
+  		ai_creation_factor = 99
+
+  		archers = 200
+  		archers_defensive = 0.05
+
+  		extra_tech_building_start = 0.5
+  	}
+
+  	fp_cdguildretinue_3 = {
+  		desc = fp_cdguildretinue_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_bowyer_3
+  		upgrades_from = fp_cdguildretinue_2
+  		prerequisites = { fp_cdguildhall_3 }
+  		gold_cost = 300
+  		build_time = 2190
+  		ai_creation_factor = 98
+
+  		archers = 250
+  		archers_defensive = 0.05
+
+  		extra_tech_building_start = 1.5
+  	}
+
+  	fp_cdguildretinue_4 = {
+  		desc = fp_cdguildretinue_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		upgrades_from = fp_cdguildretinue_3
+  		prerequisites = { fp_cdguildhall_4 }
+  		gold_cost = 400
+  		build_time = 2920
+  		ai_creation_factor = 98
+
+  		archers = 300
+  		archers_defensive = 0.05
+
+  		extra_tech_building_start = 1.5
+  	}
+
+  	# Small Private Shipyard
+  	fp_cdwarfshipyard_1 = {
+  		desc = fp_cdwarfshipyard_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+  		potential = {
+  		          FROM = { culture_group = dawi_zharr_group }
+  		}
+  		replaces = fp_shipyard_1
+  		gold_cost = 250
+  		build_time = 730
+  		ai_creation_factor = 100
+
+  		galleys = 8
+  		tax_income = 4
+  		local_tax_modifier = 0.1
+
+  		extra_tech_building_start = 1.0
+  	}
+
+  	#  Private Shipyard
+  	fp_cdwarfshipyard_2 = {
+  		desc = fp_cdwarfshipyard_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+  		potential = {
+  		          FROM = { culture_group = dawi_zharr_group }
+  		}
+  		replaces = fp_shipyard_2
+  		gold_cost = 350
+  		build_time = 1095
+  		upgrades_from = fp_cdwarfshipyard_1
+  		prerequisites = { fp_cdguildhall_2 }
+  		ai_creation_factor = 99
+
+  		galleys = 12
+  		tax_income = 5
+  		local_tax_modifier = 0.1
+
+  		extra_tech_building_start = 2.5
+  	}
+
+  	# Large Private Shipyard
+  	fp_cdwarfshipyard_3 = {
+  		desc = fp_cdwarfshipyard_1_desc
+  		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+  		potential = {
+  		          FROM = { culture_group = dawi_zharr_group }
+  		}
+  		replaces = fp_shipyard_3
+  		gold_cost = 450
+  		build_time = 1460
+  		upgrades_from = fp_cdwarfshipyard_2
+  		prerequisites = { fp_cdguildhall_3 }
+  		ai_creation_factor = 98
+
+  		galleys = 16
+  		tax_income = 6
+  		local_tax_modifier = 0.1
+
+  		extra_tech_building_start = 4.0
+  	}
+
+  	#overseers quarters
+  	#doesn't provide a private army because that's illegal
+  	#does help with recruiting slavebreakers & slavecatchers
+  	#also organizes logistics
+  	fp_cd_overseers_quarters_1 = {
+  		desc = fp_cd_overseers_quarters_desc
+  		trigger = { TECH_RECRUITMENT = 0 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_warehouse_1
+  		gold_cost = 100
+  		build_time = 1095
+
+  		levy_reinforce_rate = 0.1
+  		global_movement_speed = 0.05
+  		max_tradeposts = 1
+
+  		ai_creation_factor = 91
+  		extra_tech_building_start = 0.3
+  	}
+
+  	fp_cd_overseers_quarters_2 = {
+  		desc = fp_cd_overseers_quarters_desc
+  		trigger = { TECH_RECRUITMENT = 2 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_warehouse_2
+  		upgrades_from = fp_cd_overseers_quarters_1
+  		prerequisites = { fp_cdguildhall_1 }
+  		gold_cost = 120
+  		build_time = 1460
+
+  		stewardship = 1
+  		levy_reinforce_rate = 0.2
+  		global_movement_speed = 0.05
+  		max_tradeposts = 1
+
+  		ai_creation_factor = 91
+  		extra_tech_building_start = 0.5
+  	}
+
+  	fp_cd_overseers_quarters_3 = {
+  		desc = fp_cd_overseers_quarters_desc
+  		trigger = { TECH_RECRUITMENT = 4 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_warehouse_3
+  		upgrades_from = fp_cd_overseers_quarters_2
+  		prerequisites = { fp_cdguildhall_3 }
+
+  		stewardship = 1
+  		levy_reinforce_rate = 0.3
+  		global_movement_speed = 0.05
+  		max_tradeposts = 1
+
+  		ai_creation_factor = 91
+  		extra_tech_building_start = 1.5
+  	}
+
+  	fp_cd_overseers_quarters_4 = {
+  		desc = fp_cd_overseers_quarters_desc
+  		trigger = { TECH_RECRUITMENT = 6 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		upgrades_from = fp_cd_overseers_quarters_3
+  		prerequisites = { fp_cdguildhall_5 }
+
+  		stewardship = 1
+  		levy_reinforce_rate = 0.4
+  		global_movement_speed = 0.05
+  		max_tradeposts = 1
+
+  		ai_creation_factor = 91
+  		extra_tech_building_start = 3
+  	}
+
+  	#Pleasure Slaves
+  	#storytelling the idea of a lower caste that has limited ways to show off its wealth
+  	fp_cd_pleasure_slaves_1 = {
+  		desc = fp_cd_pleasure_slaves_desc
+  		trigger = { TECH_MAJESTY = 0 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_garden_1
+
+  		gold_cost = 120
+  		build_time = 1095
+
+  		monthly_character_prestige = 0.25
+
+  		ai_creation_factor = 88
+  		extra_tech_building_start = 0.5
+  	}
+
+  	fp_cd_pleasure_slaves_2 = {
+  		desc = fp_cd_pleasure_slaves_desc
+  		trigger = { TECH_MAJESTY = 2 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_garden_2
+  		upgrades_from = fp_cd_pleasure_slaves_1
+  		prerequisites = { fp_cdguildhall_1 }
+
+  		gold_cost = 200
+  		build_time = 1460
+
+  		diplomacy = 1
+  		monthly_character_prestige = 0.3
+
+  		ai_creation_factor = 88
+  		extra_tech_building_start = 0.5
+  	}
+
+  	fp_cd_pleasure_slaves_3 = {
+  		desc = fp_cd_pleasure_slaves_desc
+  		trigger = { TECH_MAJESTY = 4 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_garden_3
+  		prerequisites = { fp_cdguildhall_3 }
+
+  		gold_cost = 300
+  		build_time = 1825
+
+  		diplomacy = 1
+  		monthly_character_prestige = 0.35
+
+  		ai_creation_factor = 88
+  		extra_tech_building_start = 1.5
+  	}
+
+  	fp_cd_pleasure_slaves_4 = {
+  		desc = fp_cd_pleasure_slaves_desc
+  		trigger = { TECH_MAJESTY = 6 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		prerequisites = { fp_cdguildhall_5 }
+
+  		gold_cost = 400
+  		build_time = 2190
+
+  		diplomacy = 1
+  		monthly_character_prestige = 0.5
+
+  		ai_creation_factor = 88
+  		extra_tech_building_start = 3
+  	}
+
+    #Cellar replacement (Ale Cellar) shared with Ancestor Dwarfs, see top of this file
+
+    #Shrine to Hashut
+    fp_cd_hashut_shrine_1 = {
+      desc = fp_cd_hashut_shrine_desc
+      trigger = {
+        TECH_RELIGIOUS_CUSTOMS = 0
+      }
+      potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_shrine_1
+
+  		gold_cost = 120
+  		build_time = 1095
+
+      church_opinion = 2
+  		monthly_character_piety = 0.1
+
+  		ai_creation_factor = 88
+  		extra_tech_building_start = 0.5
+  	}
+
+  	fp_cd_hashut_shrine_2 = {
+  		desc = fp_cd_hashut_shrine_desc
+  		trigger = { TECH_RELIGIOUS_CUSTOMS = 2 }
+      potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_shrine_2
+  		upgrades_from = fp_cd_hashut_shrine_1
+  		prerequisites = { fp_cdguildhall_1 }
+
+  		gold_cost = 200
+  		build_time = 1460
+
+  		learning = 1
+  		monthly_character_piety = 0.25
+
+  		ai_creation_factor = 88
+  		extra_tech_building_start = 0.5
+  	}
+
+  	fp_cd_hashut_shrine_3 = {
+  		desc = fp_cd_hashut_shrine_desc
+  		trigger = { TECH_RELIGIOUS_CUSTOMS = 4 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		replaces = fp_shrine_3
+  		prerequisites = { fp_cdguildhall_3 }
+
+  		gold_cost = 300
+  		build_time = 1825
+
+  		learning = 1
+  		monthly_character_piety = 0.30
+
+  		ai_creation_factor = 88
+  		extra_tech_building_start = 1.5
+  	}
+
+  	fp_cd_hashut_shrine_4 = {
+  		desc = fp_cd_hashut_shrine_desc
+  		trigger = { TECH_MAJESTY = 6 }
+  		potential = {
+  			chaos_dwarf_building_trigger = yes
+  		}
+  		prerequisites = { fp_cdguildhall_5 }
+
+  		gold_cost = 400
+  		build_time = 2190
+
+  		learning = 1
+  		monthly_character_piety = 0.35
+
+  		ai_creation_factor = 88
+  		extra_tech_building_start = 3
+  	}
+
+    #Vault replacement (Clan Vault) shared with Ancestor Dwarfs, see top of this file
+
 }
