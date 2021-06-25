@@ -707,3 +707,22 @@ character_event = {
 		}
 	}
 }
+
+character_event = {
+	id = aicleanup.034
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = { has_global_flag = united_middenland }
+		has_landed_title = k_middenland
+	}
+
+	immediate = {
+		k_middenheim = { usurp_title = ROOT }
+		k_carroburg_middenland = { usurp_title = ROOT }
+		k_middenheim = { destroy_landed_title = THIS }
+		k_carroburg_middenland = { destroy_landed_title = THIS }
+		set_global_flag = united_middenland
+	}
+}
