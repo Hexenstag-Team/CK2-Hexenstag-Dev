@@ -74,6 +74,7 @@ character_event = {
   character_event = {
     id = wh_chaos_dwarf.100
     hide_window = yes
+    is_triggered_only = yes
 
     religion = hashut
 
@@ -94,10 +95,23 @@ character_event = {
           which = hashut_favor
           value = 0.75
         }
-        character_event = {
-          id = wh_chaos_dwarf.101
-          days = 3
-          random = 3
+        #send notification to the player if they want it
+        if = {
+          limit = {
+            ai = no
+            NOR = {
+              has_character_flag = hashut_favor_all_silenced
+              has_character_flag = hashut_favor_good_minion_silenced
+            }
+          }
+          #clear the two specific silencing flags so player will get notified if they return to either status
+          clr_character_flag = hashut_favor_OK_minion_silenced
+          clr_character_flag = hashut_favor_bad_minion_silenced
+          character_event = {
+            id = wh_chaos_dwarf.101
+            days = 3
+            random = 3
+          }
         }
       }
       else_if = {
@@ -108,21 +122,48 @@ character_event = {
           which = hashut_favor
           value = -0.25
         }
-        character_event = {
-          id = wh_chaos_dwarf.103
-          days = 3
-          random = 3
+        #send notification to the player if they want it
+        if = {
+          limit = {
+            ai = no
+            NOR = {
+              has_character_flag = hashut_favor_all_silenced
+              has_character_flag = hashut_favor_bad_minion_silenced
+            }
+          }
+          #clear the two specific silencing flags so player will get notified if they return to either status
+          clr_character_flag = hashut_favor_good_minion_silenced
+          clr_character_flag = hashut_favor_OK_minion_silenced
+          character_event = {
+            id = wh_chaos_dwarf.103
+            days = 3
+            random = 3
+          }
         }
       }
+      #not good, not bad
       else = {
         change_variable = {
           which = hashut_favor
           value = 0.25
         }
-        character_event = {
-          id = wh_chaos_dwarf.102
-          days = 3
-          random = 3
+        #send notification to the player if they want it
+        if = {
+          limit = {
+            ai = no
+            NOR = {
+              has_character_flag = hashut_favor_all_silenced
+              has_character_flag = hashut_favor_OK_minion_silenced
+            }
+          }
+          #clear the two specific silencing flags so player will get notified if they return to either status
+          clr_character_flag = hashut_favor_good_minion_silenced
+          clr_character_flag = hashut_favor_bad_minion_silenced
+          character_event = {
+            id = wh_chaos_dwarf.102
+            days = 3
+            random = 3
+          }
         }
       }
       #AI bonus
@@ -149,6 +190,11 @@ character_event = {
           days = 15
           random = 10
         }
+        #keep this somewhat mysterious, mechanics could be made more transparent to the player if desired
+        change_variable = {
+          which = hashut_favor
+          value = -10
+        }
       }
       #check for becoming sorcerer
       if = {
@@ -159,8 +205,17 @@ character_event = {
             value >= 50
           }
         }
+        #start trial of the sorcerer by pinging the High Priest
+        e_hashut = {
+          holder = {
+            character_event = {
+              id = wh_chaos_dwarf.120
+              days = 30
+              random = 150 #this should be unpredictable
+            }
+          }
+        }
       }
-      #start trial of the sorcerer
     }
 
   }
@@ -178,7 +233,19 @@ character_event = {
     }
 
     option = {
-      name = PRAISE_HASHUT
+      name = EVTOPT_hashut_guidance
+      custom_tooltip = {
+        text = hashut_favor_until_update_tt
+        set_character_flag = hashut_favor_good_minion_silenced
+      }
+    }
+
+    option = {
+      name = EVTOPT_hashut_knows_me
+      custom_tooltip = {
+        text = hashut_favor_no_updates_tt
+        set_character_flag = hashut_favor_all_silenced
+      }
     }
 
   }
@@ -195,14 +262,26 @@ character_event = {
     }
 
     option = {
-      name = PRAISE_HASHUT
+      name = EVTOPT_hashut_guidance
+      custom_tooltip = {
+        text = hashut_favor_until_update_tt
+        set_character_flag = hashut_favor_OK_minion_silenced
+      }
+    }
+
+    option = {
+      name = EVTOPT_hashut_knows_me
+      custom_tooltip = {
+        text = hashut_favor_no_updates_tt
+        set_character_flag = hashut_favor_all_silenced
+      }
     }
 
   }
-  #Notification - must try harder
+  #Notification - bad minion
   character_event = {
-    id = wh_chaos_dwarf.102
-    desc = EVTDESC_wh_chaos_dwarf.102
+    id = wh_chaos_dwarf.103
+    desc = EVTDESC_wh_chaos_dwarf.103
     picture = GFX_evt_hashut_rune
     border = GFX_event_normal_frame_religion
     is_triggered_only = yes
@@ -212,7 +291,19 @@ character_event = {
     }
 
     option = {
-      name = CURSES
+      name = EVTOPT_hashut_guidance
+      custom_tooltip = {
+        text = hashut_favor_until_update_tt
+        set_character_flag = hashut_favor_bad_minion_silenced
+      }
+    }
+
+    option = {
+      name = EVTOPT_hashut_knows_me
+      custom_tooltip = {
+        text = hashut_favor_no_updates_tt
+        set_character_flag = hashut_favor_all_silenced
+      }
     }
 
   }
@@ -232,7 +323,7 @@ character_event = {
     }
 
     option = {
-      name = PRAISE_HASHUT
+      name = EVTOPT_praise_hashut
       add_trait = chaos_dwarf_daemonsmith
       add_character_modifier = {
         name = magic_power_1
@@ -241,8 +332,67 @@ character_event = {
     }
   }
 
-  #Notification - start trial of the sorcerer
+  #ids through to 119 reserved for expanding on daemonsmith
 
+  # # Trial of the Sorcerer # #
 
+  #Start by pinging the High Priest
+  character_event = {
+    id = wh_chaos_dwarf.120
+    hide_window = yes
 
-}
+    is_triggered_only = yes
+
+    immediate = {
+      FROM = {
+        letter_event = {
+          id = wh_chaos_dwarf.121
+          days = 15
+          random = 15
+        }
+      }
+    }
+  }
+
+  #receive letter from High Priest summoning the would-be sorcerer for the test
+  letter_event = {
+    id = wh_chaos_dwarf.121
+    desc = EVTDESC_wh_chaos_dwarf.121
+    portrait = FROM
+    border = GFX_event_letter_frame_religion
+
+    is_triggered_only = yes
+
+    immediate = {
+      character_event = {
+        id = wh_chaos_dwarf.122
+        days = 15
+        random = 15
+      }
+    }
+
+    #this is not negotiable
+    option = {
+      name = EVTOPT_praise_hashut
+      add_trait = travelling
+    }
+
+  }
+
+  #trial begins
+  character_event = {
+    id = wh_chaos_dwarf.122
+    desc = EVTDESC_wh_chaos_dwarf.122
+    picture = GFX_evt_altar_hashut
+    border = GFX_event_normal_frame_religion
+
+    is_triggered_only = yes
+
+    #short-circuit to success conditions during testing
+    option = {
+      name = EVTOPT_praise_hashut
+      add_trait = chaos_dwarf_sorcerer
+      remove_trait = travelling
+    }
+
+  }

@@ -176,22 +176,63 @@ wonder_dwarf_hold = {
 	picture = GFX_wonder_strip_grandfortress #placeholder
 
   potential = {
-    always = no #not ready yet
+		always = no
     any_dwarf_building_trigger = yes
   }
 
   active = {
-    #probably
-  }
 
-  flags = {
-    cost_high
-    defensive
-    is_destructible #maybe it's not though?
   }
 
   available_upgrades = {
+		# MINING #
+		upgrade_mining_layer_1
+		upgrade_mining_layer_2
+		upgrade_mining_layer_3
+		upgrade_mining_layer_4
+		upgrade_mining_pumps
+		#alluvial minerals
+		upgrade_mining_cassiterite
+		upgrade_mining_native_gold
+		upgrade_mining_tetrahedrite
+		#sedimentary minerals
+		upgrade_mining_coal
+		upgrade_mining_galena
+		upgrade_mining_hematite
+		upgrade_mining_limonite
+		upgrade_mining_megnetite
+		#igneous extrusive minerals
+		upgrade_mining_native_copper
+		upgrade_mining_obsidian
+		#igneous intrusive minerals
+		upgrade_mining_garnierite
+		upgrade_mining_granite
+		# COMMERCE #
+		upgrade_great_dwarf_port
+		upgrade_tunnel_roads
+		# FORTIFICATION #
+		upgrade_great_gate
+		upgrade_defensive_tunnels
+		upgrade_outer_watchposts
+		# INDUSTRY #
+		upgrade_coal_power
+		upgrade_geothermal_power
+		upgrade_water_power
+		# MILITARY #
+		upgrade_dwarf_aerodrome
+		upgrade_dwarf_shipyard
+		upgrade_warrior_brotherhood #e.g. Infernal Guard, Slayers
+		# TEMPLE #
+		upgrade_great_grimnir_temple
+		upgrade_great_grungni_temple
+		upgrade_great_valaya_temple
+		upgrade_great_hashut_temple
+  }
 
+	flags = {
+    cost_high
+    defensive
+    is_destructible #maybe it's not though?
   }
 
   stage = {
@@ -217,5 +258,222 @@ wonder_dwarf_hold = {
 
 		}
 	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
 
 }

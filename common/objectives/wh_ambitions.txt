@@ -568,11 +568,8 @@ obj_chaos_dwarf_become_daemonsmith = {
 
 		#Patricians represent lower-status clans
 		#also the succession mechanics don't play well together
-		NOR = {
-			is_patrician = yes
-			liege = {
-				is_patrician = yes
-			}
+		NOT = {
+			is_republic = yes
 		}
 		piety = 0  #low but this is only to hedge out obviously faithless characters
 		age >= 14  #a prodigy might begin training as an apprentice, but the learning req. is going to hedge out most children
@@ -634,14 +631,11 @@ obj_chaos_dwarf_become_daemonsmith = {
 			trait = chaos_dwarf_daemonsmith
 			trait = creature_chaos_dwarf
 			learning >= 10
-			
+
 			#Patricians represent lower-status clans
 			#also the succession mechanics don't play well together
-			NOR = {
-				is_patrician = yes
-				liege = {
-					is_patrician = yes
-				}
+			NOT = {
+				is_republic = yes
 			}
 			piety = 100 #low but this is only to hedge out obviously faithless characters
 			age >= 50 #no beardlings, thanks
