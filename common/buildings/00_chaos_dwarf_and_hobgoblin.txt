@@ -840,7 +840,7 @@ city = {
   # Slave Market - replaces Arsenal
   # economic building because the slaver clans aren't much of a military power
   ct_chaos_dwarf_slave_market_1 = {
-    desc = ca_chaos_dwarf_slave_market_desc
+    desc = ct_chaos_dwarf_slave_market_desc
     potential = {
       FROM = {
         capital_holding = {
@@ -864,7 +864,7 @@ city = {
   }
 
   ct_chaos_dwarf_slave_market_2 = {
-    desc = ca_chaos_dwarf_slave_market_desc
+    desc = ct_chaos_dwarf_slave_market_desc
     potential = {
       FROM = {
         capital_holding = {
@@ -889,7 +889,7 @@ city = {
   }
 
   ct_chaos_dwarf_slave_market_3 = {
-    desc = ca_chaos_dwarf_slave_market_desc
+    desc = ct_chaos_dwarf_slave_market_desc
     potential = {
       FROM = {
         capital_holding = {
@@ -914,7 +914,7 @@ city = {
   }
 
   ct_chaos_dwarf_slave_market_4 = {
-    desc = ca_chaos_dwarf_slave_market_desc
+    desc = ct_chaos_dwarf_slave_market_desc
     potential = {
       FROM = {
         capital_holding = {
@@ -3361,6 +3361,80 @@ tb_hobgoblin_traps_6 = {
 
     extra_tech_building_start = 3
   }
-  #two slots free
+
+  #TEST
+  tb_hobgoblin_slaver_clans_1 = {
+    desc = tb_hobgoblin_slaver_clans_desc
+    potential = {
+      tribal_hobgoblin_building_trigger = yes
+    }
+    trigger = {
+      has_trade_post = yes
+      TECH_TRADE_PRACTICES = 0
+    }
+    is_active_trigger = {
+      has_trade_post = yes
+    }
+
+    piety_cost = 200
+    build_time = 365
+
+    local_tax_modifier = 0.25
+    land_morale = 0.1
+
+    ai_creation_factor = 100
+    extra_tech_building_start = 0.5
+  }
+
+  tb_hobgoblin_slaver_clans_2 = {
+    desc = tb_hobgoblin_slaver_clans_desc
+    potential = {
+      tribal_hobgoblin_building_trigger = yes
+    }
+    trigger = {
+      trade_post_has_building = tr_slaver_clan_hobgoblins_1
+      TECH_TRADE_PRACTICES = 3
+    }
+    is_active_trigger = {
+      has_trade_post = yes
+    }
+    upgrades_from = tb_hobgoblin_slaver_clans_1
+
+    piety_cost = 200
+    build_time = 365
+
+    local_tax_modifier = 0.25
+    land_morale = 0.1
+
+    ai_creation_factor = 100
+    extra_tech_building_start = 0.5
+  }
+
+  tb_hobgoblin_slaver_clans_3 = {
+    desc = tb_hobgoblin_slaver_clans_desc
+    potential = {
+      tribal_hobgoblin_building_trigger = yes
+    }
+    trigger = {
+      trade_post_has_building = tr_slaver_clan_hobgoblins_2
+      TECH_TRADE_PRACTICES = 6
+      has_trade_post = yes
+    }
+    is_active_trigger = {
+      has_trade_post = yes
+    }
+    upgrades_from = tb_hobgoblin_slaver_clans_2
+
+    piety_cost = 200
+    build_time = 365
+
+    local_tax_modifier = 0.25
+    land_morale = 0.1
+
+    ai_creation_factor = 100
+    extra_tech_building_start = 0.5
+  }
+
+  #one slot free
 
 }

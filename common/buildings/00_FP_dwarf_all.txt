@@ -1,15 +1,11 @@
 ### Family Palace buildings for all Dwarfs ###
 #
 # INDEX
-# 1. Shared buildings for Dwarfs
-# 2. Ancenstor (standard) Dwarf buildings
-# 3. Chaos Dwarf buildings
+# 1. Ancestor (standard) Dwarf buildings
+# 2. Chaos Dwarf buildings
+# 3. Shared buildings for Dwarfs
 
 family_palace = {
-
-#Any Dwarf Patrician
-#buildings that should be shared by Ancestor Dwarfs and Chaos Dwarfs
-
 
 
 #Ancestor Dwarf Trading Clans
@@ -1307,6 +1303,7 @@ family_palace = {
   			chaos_dwarf_building_trigger = yes
   		}
   		replaces = fp_garden_3
+			upgrades_from = fp_cd_pleasure_slaves_2
   		prerequisites = { fp_cdguildhall_3 }
 
   		gold_cost = 300
@@ -1325,6 +1322,7 @@ family_palace = {
   		potential = {
   			chaos_dwarf_building_trigger = yes
   		}
+			upgrades_from = fp_cd_pleasure_slaves_3
   		prerequisites = { fp_cdguildhall_5 }
 
   		gold_cost = 400
@@ -1337,7 +1335,7 @@ family_palace = {
   		extra_tech_building_start = 3
   	}
 
-    #Cellar replacement (Ale Cellar) shared with Ancestor Dwarfs, see top of this file
+    #Cellar replacement (Ale Cellar) shared with Ancestor Dwarfs, see bottom of this file
 
     #Shrine to Hashut
     fp_cd_hashut_shrine_1 = {
@@ -1387,6 +1385,7 @@ family_palace = {
   			chaos_dwarf_building_trigger = yes
   		}
   		replaces = fp_shrine_3
+			upgrades_from = fp_cd_hashut_shrine_2
   		prerequisites = { fp_cdguildhall_3 }
 
   		gold_cost = 300
@@ -1405,6 +1404,7 @@ family_palace = {
   		potential = {
   			chaos_dwarf_building_trigger = yes
   		}
+			upgrades_from = fp_cd_hashut_shrine_3
   		prerequisites = { fp_cdguildhall_5 }
 
   		gold_cost = 400
@@ -1417,6 +1417,157 @@ family_palace = {
   		extra_tech_building_start = 3
   	}
 
-    #Vault replacement (Clan Vault) shared with Ancestor Dwarfs, see top of this file
+    #Vault replacement (Clan Vault) shared with Ancestor Dwarfs, see bottom of this file
+
+		#Any Dwarf Patrician
+		#buildings that should be shared by Ancestor Dwarfs and Chaos Dwarfs
+
+		#Ale Cellar
+		#Shrine to Hashut
+		fp_dwarf_ale_cellar_1 = {
+			desc = fp_dwarf_ale_cellar_desc
+			trigger = {
+				TECH_TRADE_PRACTICES = 0
+			}
+			potential = {
+				any_dwarf_building_trigger = yes
+			}
+			replaces = fp_cellar_1
+
+			gold_cost = 120
+			build_time = 1095
+
+			monthly_character_prestige = 0.2
+
+			ai_creation_factor = 88
+			extra_tech_building_start = 0.5
+		}
+
+		fp_dwarf_ale_cellar_2 = {
+			desc = fp_dwarf_ale_cellar_desc
+			trigger = { TECH_TRADE_PRACTICES = 2 }
+			potential = {
+				any_dwarf_building_trigger = yes
+			}
+			replaces = fp_cellar_2
+			upgrades_from = fp_dwarf_ale_cellar_1
+
+			gold_cost = 200
+			build_time = 1460
+
+			martial = 1
+			monthly_character_prestige = 0.25
+
+			ai_creation_factor = 88
+			extra_tech_building_start = 0.5
+		}
+
+		fp_dwarf_ale_cellar_3 = {
+			desc = fp_dwarf_ale_cellar_desc
+			trigger = { TECH_TRADE_PRACTICES = 4 }
+			potential = {
+				any_dwarf_building_trigger = yes
+			}
+			replaces = fp_cellar_3
+			upgrades_from = fp_dwarf_ale_cellar_2
+
+			gold_cost = 300
+			build_time = 1825
+
+			martial = 1
+			monthly_character_prestige = 0.30
+
+			ai_creation_factor = 88
+			extra_tech_building_start = 1.5
+		}
+
+		fp_dwarf_ale_cellar_4 = {
+			desc = fp_dwarf_ale_cellar_desc
+			trigger = { TECH_TRADE_PRACTICES = 6 }
+			potential = {
+				any_dwarf_building_trigger = yes
+			}
+			upgrades_from = fp_dwarf_ale_cellar_3
+
+			gold_cost = 400
+			build_time = 2190
+
+			martial = 1
+			monthly_character_prestige = 0.35
+
+			ai_creation_factor = 88
+			extra_tech_building_start = 3
+		}
+
+		#Clan Vault
+		fp_dwarf_vault_1 = {
+			desc = fp_dwarf_vault_desc
+			trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+			potential = {
+				any_dwarf_building_trigger = yes
+			}
+			replaces = fp_vault_1
+
+			gold_cost = 120
+			build_time = 1095
+
+			vassal_opinion = 5
+			commander_limit = 1
+
+			extra_tech_building_start = 0.5
+		}
+
+		fp_dwarf_vault_2 = {
+			desc = fp_dwarf_vault_desc
+			trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+			potential = {
+				any_dwarf_building_trigger = yes
+			}
+			replaces = fp_vault_2
+			upgrades_from = fp_dwarf_vault_1
+
+			gold_cost = 120
+			build_time = 1095
+
+			intrigue = 1
+			retinue_maintenence_cost = -0.05
+
+			extra_tech_building_start = 0.5
+		}
+
+		fp_dwarf_vault_3 = {
+			desc = fp_dwarf_vault_desc
+			trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
+			potential = {
+				any_dwarf_building_trigger = yes
+			}
+			replaces = fp_vault_3
+			upgrades_from = fp_dwarf_vault_2
+
+			gold_cost = 120
+			build_time = 1095
+
+			intrigue = 1
+			retinue_maintenence_cost = -0.05
+
+			extra_tech_building_start = 1.5
+		}
+
+		fp_dwarf_vault_4 = {
+			desc = fp_dwarf_vault_desc
+			trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
+			potential = {
+				any_dwarf_building_trigger = yes
+			}
+			upgrades_from = fp_dwarf_vault_3
+
+			gold_cost = 120
+			build_time = 1095
+
+			intrigue = 1
+			retinue_maintenence_cost = -0.05
+
+			extra_tech_building_start = 1.5
+		}
 
 }

@@ -328,7 +328,9 @@ title_decisions ={
 			government=chaosdwarf_guilds_government
 		}
 		potential = {
-			owner={ is_within_diplo_range = FROM }
+			owner = {
+				same_realm = FROM
+			}
 			tier=county
 			location={
 				has_trade_post = no
@@ -337,6 +339,7 @@ title_decisions ={
 		}
 		allow = {
 			FROM={
+				#pseudo check for TP limit. Should run a more direct check instead.
 				OR={
 					# most likely case, eval now to pass ai without excessive checks and hide for player's benefit
 					hidden_trigger = {
@@ -466,134 +469,12 @@ title_decisions ={
 			}
 		}
 		effect = {
-			#there's no way to scope to an otherwise landless patrician's "capital" province, so we default to Zharr Naggrund (478)
+			#replacing nightmare if_else zone with simplicity
 			FROM={
-				if={
-					limit={
-						ROOT={
-							owner = {
-								NOT = { same_realm = FROM }
-							}
-						}
-					}
-					scaled_wealth = {
-						value = -0.1
-						min = -20
-						max = -200
-					}
-					piety=-200
-				}
-				if={
-					limit={
-						478 = {
-							ROOT = {
-								location = {
-									distance = {
-										where = PREVPREV
-										value >= 100
-									}
-								}
-							}
-						}
-					}
-					scaled_wealth = {
-						value = -0.1
-						min = -20
-						max = -200
-					}
-					piety=-200
-				}
-				if={
-					limit={ROOT={owner={NOT={culture_group=FROM}}}}
-					scaled_wealth = {
-						value = -0.15
-						min = -25
-						max = -200
-					}
-					piety=-100
-				}
-				if = {
-					limit={
-						478 = {
-							ROOT = {
-								location = {
-									distance = {
-										where = PREVPREV
-										value >= 300
-									}
-								}
-							}
-						}
-					}
-					scaled_wealth = {
-						value = -0.1
-						min = -20
-						max = -200
-					}
-					piety=-250
-				}
-				if={
-					limit={
-						478 = {
-							ROOT = {
-								location = {
-									distance = {
-										where = PREVPREV
-										value >= 800
-									}
-								}
-							}
-						}
-					}
-					scaled_wealth = {
-						value = -0.2
-						min = -50
-						max = -200
-					}
-					piety=-500
-				}
-				if={
-					limit={ROOT={owner={
-					opinion = {
-						who = FROM
-						value <= 20
-					}}}}
-					scaled_wealth = {
-						value = -0.2
-						min = -40
-						max = -200
-					}
-				}
-				if={
-					limit={ROOT={owner={
-					opinion = {
-						who = FROM
-						value <= -20
-					}}}}
-					scaled_wealth = {
-						value = -0.25
-						min = -40
-						max = -200
-					}
-				}
-				if={
-					limit={
-						root={
-							owner={ character=from }
-						}
-					}
-					scaled_wealth = {
-						value = -0.4
-						min = -90
-						max = -200
-					}
-				}
-				else={
-					scaled_wealth = {
-						value = -0.5
-						min = -180
-						max = -400
-					}
+				scaled_wealth = {
+					value = -0.5
+					min = -180
+					max = -400
 				}
 			}
 			location = {
