@@ -973,10 +973,6 @@ change_council_job_potential_trigger = {
 }
 
 can_be_chancellor_trigger = {
-		liege = {
-			NOT = { trait = vampire_necrarch_visible }
-		}
-		NOT = { trait = vampire_necrarch_visible }		#Necrarchs are reclusive, they do not get any diplomatic action
 		OR = {
 			AND = {
 				OR = {
@@ -1403,10 +1399,6 @@ can_be_spymaster_trigger = {
 }
 
 can_be_spiritual_trigger = {
-	liege = {
-		NOT = { trait = vampire_necrarch_visible }
-	}
-	NOT = { trait = vampire_necrarch_visible }		#Necrarchs are reclusive, they do not get any diplomatic action
 	prisoner = no
 	OR = {
 		is_incapable = no
@@ -1565,7 +1557,6 @@ can_be_witch_hunter_trigger = {
 	liege = {
 		religion_group = old_world_group
 	}
-	NOT = { trait = vampire_necrarch_visible }		#Necrarchs are reclusive, they do not get any diplomatic action
 	prisoner = no
 	is_incapable = no
 	NOT = { trait = in_hiding }
@@ -5960,6 +5951,8 @@ silk_road_trade_post_trigger = {
 				province_id = 222	#Marienburg
 				province_id = 236	#Manaansufer
 				province_id = 239	#Salzenmund
+				province_id = 243	#Salkalten
+				province_id = 247	#Ferlangen
 				province_id = 254	#Wolfenburg
 				province_id = 255	#Brizban
 				province_id = 270	#Carroburg

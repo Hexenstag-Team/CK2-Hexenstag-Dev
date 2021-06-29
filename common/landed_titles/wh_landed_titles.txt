@@ -21293,8 +21293,13 @@ e_the_empire = {
 		old_imperial = "Teutogen"
 		
 		allow = {
-			owns = 274	# Middenheim
-			owns = 270	# Carroburg
+			if = {
+				limit = {
+					NOT = { has_global_flag = united_middenland }
+				}
+				owns = 274	# Middenheim
+				owns = 270	# Carroburg
+			}
 		}
 		
 		d_middenheim = {
@@ -22751,8 +22756,485 @@ e_the_empire = {
 		slaanesh = 5000
 		khorne = 5000
 		old_imperial = "Udose"
-
 		
+		d_wolfenburg = {
+			color = { 178 113 32 }
+			color2 = { 255 255 255 }
+
+			capital = 254 # c_wolfenburg
+			
+			c_wolfenburg = { # 254
+				color = { 168 123 27 }
+				color2 = { 255 255 255 }
+
+				holy_site = ulrican
+
+				b_wolfenburg = {}
+				b_levudaldorf = {}
+				b_gruenackeren = {}
+				b_regensdorf = {}
+				b_zundap = {}
+				b_jever = {}
+				b_blankenfeld = {}
+			}
+			c_castle_lenkster = { # 291
+				color = { 42 21 173 }
+				color2 = { 255 255 255 }
+
+				b_castle_lenkster = {}
+				b_mirow = {}
+				b_hallenberg = {}
+				b_appertshofen = {}
+				b_kitzstatt = {}
+				b_weinseruck = {}
+				b_kirchbuehel = {}
+			}
+			c_ristedt = { # 253
+				color = { 126 120 154 }
+				color2 = { 255 255 255 }
+
+				b_schloss_lenkster = {}
+				b_ristedt = {}
+				b_senftenberg = {}
+				b_wendorf = {}
+				b_kienbaum = {}
+				b_oranienburg = {}
+				b_kufzis = {}
+				b_walshaus = {}
+			}
+			c_dassel = { # 251
+				color = { 42 114 153 }
+				color2 = { 255 255 255 }
+
+				b_dassel = {}
+				b_greifswald = {}
+				b_felde = {}
+				b_steneuheim = {}
+				b_ohenfels = {}
+				b_arnsland = {}
+				b_schroseheim = {}
+			}
+		}
+		d_ferlangen = {
+			color = { 94 92 156 }
+			color2 = { 255 255 255 }
+
+			capital = 247 # c_ferlangen
+			
+			c_ferlangen = { # 247
+				color = { 84 102 151 }
+				color2 = { 255 255 255 }
+
+				b_ferlangenschlosse = {}
+				b_ferlangen = {}
+				b_stralsund = {}
+				b_aukrug = {}
+				b_ochsunfurt = {}
+				b_chenkov = {}
+				b_zierenheim = {}
+			}
+			c_obelstein = { # 1151
+				color = { 85 60 91 }
+				color2 = { 255 255 255 }
+				
+				b_obelstein = {}
+				b_neubrandenburg = {}
+				b_schwerin = {}
+				b_rostock = {}
+				b_stahnsdorf = {}
+				b_templin = {}
+				b_lubbenau = {}
+			}
+			c_hasselhund = { # 1133
+				color = { 85 165 136 }
+				color2 = { 255 255 255 }
+				
+				b_hasselhund = {}
+				b_altentreptow = {}
+				b_burg_stargard = {}
+				b_gadebusch = {}
+				b_grabow = {}
+				b_stavenhagen = {}
+				b_plau_am_see = {}
+			}
+			c_jego = { # 1140
+				color = { 1 96 160 }
+				color2 = { 255 255 255 }
+				
+				b_jego = {}
+				b_krakow_am_see = {}
+				b_goldberg = {}
+				b_rehna = {}
+				b_mirow = {}
+				b_neubukow = {}
+				b_neukloster = {}
+			}
+		}
+		d_kislev_verge = {
+			color = { 94 107 31 }
+			color2 = { 255 255 255 }
+
+			capital = 249 # c_gauschdorf
+			
+			c_gauschdorf = { # 249
+				color = { 168 108 152 }
+				color2 = { 255 255 255 }
+
+				b_gauschdorf = {}
+				b_schonfeld = {}
+				b_rastatt = {}
+				b_voelksill = {}
+				b_lustenzis = {}
+				b_klenefeld = {}
+				b_lahnfeld = {}
+			}
+			c_bohsenfels = { # 250
+				color = { 0 111 25 }
+				color2 = { 255 255 255 }
+
+				b_bohsenfels = {}
+				b_jegow = {}
+				b_vogelsang = {}
+				b_miklava = {}
+				b_dietzenberg = {}
+				b_oldenbruck = {}
+				b_battendorf = {}
+			}
+			c_bendern = { # 1138
+				color = { 127 90 159 }
+				color2 = { 255 255 255 }
+				
+				b_bendern = {}
+				b_tessin = {}
+				b_dassow = {}
+				b_sternberg = {}
+				b_penzlin = {}
+				b_loitz = {}
+				b_woldegk = {}
+			}
+			c_lums = { # 1139
+				color = { 169 93 32 }
+				color2 = { 255 255 255 }
+				
+				b_lums = {}
+				b_panketal = {}
+				b_kleinmachnow = {}
+				b_luckenwalde = {}
+				b_spremberg = {}
+				b_wandlitz = {}
+				b_rathenow = {}
+			}
+		}
+		d_knochenkueste = {
+			color = { 136 128 54 }
+			color2 = { 255 255 255 }
+
+			capital = 243 # c_salkalten
+			
+			c_salkalten = { # 243
+				color = { 126 138 49 }
+				color2 = { 255 255 255 }
+
+				holy_site = manannite
+
+				b_salkalten = {}
+				b_teltow = {}
+				b_doemitz = {}
+				b_peine = {}
+				b_quickborn = {}
+				b_werther = {}
+				b_mainbirkstein = {}
+			}
+			c_verborgenbucht = { # 1142
+				color = { 85 102 161 }
+				color2 = { 255 255 255 }
+				
+				b_verborgenbucht = {}
+				b_penkun = {}
+				b_rerik = {}
+				b_garz = {}
+				b_bruel = {}
+				b_tribsees = {}
+				b_gnoien = {}
+			}
+			c_rossin = { # 246
+				color = { 42 99 23 }
+				color2 = { 255 255 255 }
+
+				b_rossin = {}
+				b_birkewiese = {}
+				b_lowitz = {}
+				b_ploen = {}
+				b_hockirchfels = {}
+				b_ebenstatt = {}
+				b_helsebach = {}
+			}
+		}
+		d_korvergebiet = {
+			color = { 84 132 156 }
+			color2 = { 255 255 255 }
+
+			capital = 257 # c_wurzen
+			
+			c_wurzen = { # 257
+				color = { 84 132 156 }
+				color2 = { 255 255 255 }
+
+				b_wurzen = {}
+				b_csenger = {}
+				b_dorog = {}
+				b_boven = {}
+				b_penzlin = {}
+				b_sprolzellstadt = {}
+				b_klosterkirchen = {}
+			}
+			c_zundap = { # 1126
+				color = { 43 54 153 }
+				color2 = { 255 255 255 }
+				
+				b_zundap = {}
+				b_boizenburg = {}
+				b_wolgast = {}
+				b_ludwigslust = {}
+				b_hagenow = {}
+				b_anklam = {}
+				b_bad_doberan = {}
+			}
+			c_nettburg = { # 256
+				color = { 42 129 28 }
+				color2 = { 255 255 255 }
+
+				b_korver = {}
+				b_trillheim = {}
+				b_dargun = {}
+				b_hillebruck = {}
+				b_klenestein = {}
+				b_bischofkreis = {}
+				b_benscheid = {}
+			}
+			c_erbi = { # 1124
+				color = { 169 48 152 }
+				color2 = { 255 255 255 }
+				
+				b_erbi = {}
+				b_bergen_auf_rugen = {}
+				b_ribnitz_damgarten = {}
+				b_parchim = {}
+				b_neustrelitz = {}
+				b_muritz = {}
+				b_gustrow = {}
+			}
+		}
+		d_ostreichweite = {
+			color = { 84 117 26 }
+			color2 = { 255 255 255 }
+
+			capital = 252 # c_vandengart
+			
+			c_vandengart = { # 252
+				color = { 84 117 26 }
+				color2 = { 255 255 255 }
+
+				b_vandengart = {}
+				b_ludwigsfelde = {}
+				b_wismar = {}
+				b_irjisara = {}
+				b_rheiden = {}
+				b_goldfoerde = {}
+				b_weneuheim = {}
+			}
+			c_levudaldorf = { # 1128
+				color = { 127 60 154 }
+				color2 = { 255 255 255 }
+				
+				b_levudaldorf = {}
+				b_torgelow = {}
+				b_sassnitz = {}
+				b_grimmen = {}
+				b_pasewalk = {}
+				b_grevesmuhlen = {}
+				b_demmin = {}
+			}
+			c_grenzburg = { # 255
+				color = { 0 126 155 }
+				color2 = { 255 255 255 }
+
+				b_grenzburg = {}
+				b_kukonois = {}
+				b_osel = {}
+				b_ostwind = {}
+				b_leissestadt = {}
+				b_saalkirchen = {}
+				b_sterauruck = {}
+			}
+			c_selonian_hills = { # 258
+				color = { 126 135 29 }
+				color2 = { 255 255 255 }
+
+				b_zwollen = {}
+				b_steinhof = {}
+				b_schutzen = {}
+				b_griesraeschen = {}
+				b_geiselrath = {}
+				b_lustenmarkt = {}
+				b_ullenbach = {}
+			}
+		}
+		d_westlichschattenwald = {
+			color = { 168 93 22 }
+			color2 = { 255 255 255 }
+
+			capital = 244 # c_huven
+			
+			c_huven = { # 244
+				color = { 168 93 22 }
+				color2 = { 255 255 255 }
+
+				b_krausnick = {}
+				b_bokenhof = {}
+				b_huven = {}
+				b_ebreichweg = {}
+				b_seneruck = {}
+				b_gmunsill = {}
+				b_lustenbirn = {}
+			}
+			c_silum = { # 1141
+				color = { 43 99 33 }
+				color2 = { 255 255 255 }
+				
+				b_silum = {}
+				b_jarmen = {}
+				b_gutzkow = {}
+				b_domitz = {}
+				b_wesenberg = {}
+				b_klutz = {}
+				b_warin = {}
+			}
+			c_foppa = { # 1152
+				color = { 127 63 219 }
+				color2 = { 255 255 255 }
+				
+				b_foppa = {}
+				b_finsterwalde = {}
+				b_guben = {}
+				b_wittenberge = {}
+				b_nauen = {}
+				b_hoppegarten = {}
+				b_prenzlau = {}
+			}
+			c_rotaboda = { # 1143
+				color = { 127 105 34 }
+				color2 = { 255 255 255 }
+				
+				b_rotaboda = {}
+				b_Richtenberg = {}
+				b_franzburg = {}
+				b_lassan = {}
+				b_usedom = {}
+				b_bad_sulze = {}
+				b_neukalen = {}
+			}
+		}
+		d_untermittelgebirge = {
+			color = { 126 105 24 }
+			color2 = { 255 255 255 }
+
+			capital = 248 # c_roezfels
+			
+			c_roezfels = { # 248
+				color = { 126 105 24 }
+				color2 = { 255 255 255 }
+
+				holy_site = old_faithw
+
+				b_roezfels = {}
+				b_mierach = {}
+				b_hasselhund = {}
+				b_dunkelpfad = {}
+				b_udershofen = {}
+				b_vormaifeld = {}
+				b_moedten = {}
+			}
+			c_friedmark = { # 245
+				color = { 0 96 150 }
+				color2 = { 255 255 255 }
+
+				b_friedhof = {}
+				b_helburg = {}
+				b_friedberg = {}
+				b_wahnsinningen = {}
+				b_moedhaus = {}
+				b_freudendrungen = {}
+				b_grossenlein = {}
+			}
+			c_schattenweld = { # 2425
+				color = { 134 117 85 }
+				color2 = { 255 255 255 }
+
+				b_schatten = {}
+				b_bramble_hills = {}
+				b_bavarhof = {}
+				b_obelraun = {}
+				b_morghanburg = {}
+				b_bessel = {}
+				b_khornehof = {}
+			}
+		}	
+		d_ostlichschattenwald = {
+			color = { 43 69 28 }
+			color2 = { 255 255 255 }
+
+			capital = 1131 # c_smallhof
+			
+			c_smallhof = { # 1131
+				color = { 43 69 28 }
+				color2 = { 255 255 255 }
+				
+				b_smallhof = {}
+				b_malchin = {}
+				b_butzow = {}
+				b_kuhlungsborn = {}
+				b_teterow = {}
+				b_ueckermunde = {}
+				b_barth = {}
+			}
+			c_lubrecht = { # 1132
+				color = { 43 162 8 }
+				color2 = { 255 255 255 }
+				
+				b_lubrecht = {}
+				b_lubz = {}
+				b_wittenburg = {}
+				b_friedland = {}
+				b_laage = {}
+				b_malchow = {}
+				b_neustadt_glewe = {}
+			}
+			c_studaberg = { # 1137
+				color = { 85 87 31 }
+				color2 = { 255 255 255 }
+				
+				b_studaberg = {}
+				b_dargun = {}
+				b_putbus = {}
+				b_marlow = {}
+				b_uckermark = {}
+				b_lubtheen = {}
+				b_eggesin = {}
+			}
+			c_nendeln = { # 1136
+				color = { 43 84 158 }
+				color2 = { 255 255 255 }
+				
+				b_nendeln = {}
+				b_schonberg = {}
+				b_kropelin = {}
+				b_crivitz = {}
+				b_muritz = {}
+				b_schwaan = {}
+				b_zarrentin_am_schaalsee = {}
+			}
+		}
 	}
 	k_stirland = {
 		color = { 20 180 40 }

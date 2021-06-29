@@ -550,10 +550,7 @@ castle = {
 		build_time = 0
 		land_morale = 1.5
 		garrison_size = 1.5
-		levy_size = -0.75
-		fort_level = 13
-		supply_limit = -5
-		tax_income = -2
+		fort_level = 5
 		local_revolt_risk = -0.75
 		add_number_to_name = no
 	}
@@ -1086,26 +1083,6 @@ temple = {
 
 tribal = {
     #Norsca#
-	tb_ulfsland = {
-		desc = tb_ulfsland_desc
-		gold_cost = 1000
-		build_time = 3000
-		fort_level = 1.5
-		levy_size = 0.6
-		heavy_infantry = 150
-		light_infantry = 75
-		archers = 75
-
-		ai_creation_factor = 97
-		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_ulfsland } #
-			FROM = {culture_group = norscan_group}
-		}
-
-		extra_tech_building_start = 0.2
-	}
 	tb_wydrioth = {
 		desc = tb_wydrioth_desc
 

@@ -23,8 +23,10 @@
 	add_trait = content
 	add_trait = khemri_liche_priest
 	add_trait = lunatic_3
-	1.1.5 = {birth = yes
-	culture = nehekharan}
+	1.1.5 = {
+		birth = yes
+		culture = nehekharan
+	}
 	33.1.5 = {
 		give_nickname = nick_the_father_of_vampires
 		create_bloodline = {
@@ -65,24 +67,42 @@
 	add_trait = deceitful
 	add_trait = ambitious
 	add_trait = lunatic_3
-	31.1.5 = {birth = yes
-	culture = strigany}
-	133.1.5 = {effect = {add_rival = 1951
+	31.1.5 = {
+		birth = yes
+		culture = nehekharan
+	}
+	133.1.5 = {
+		effect = {
+			add_rival = 1951
 			add_artifact = abyssal_terror_mount
 			give_nickname = nick_the_ancient
 			any_claim = {remove_claim = PREV}
 			set_variable = {which = lunatic_counter value = 25}
 			add_character_modifier = {name = bloodthirsty duration = -1}
 			add_character_modifier = {name = magic_power_4 duration = -1}
-			piety = 650}
+			piety = 650
+		}
 	}
-	230.3.7 = {effect = {
+	230.3.7 = {
+		effect = {
 			add_artifact = painbringer_melkhior
 			add_artifact = grimoire_necronium_melkhior
 			add_artifact = black_cloak_lahmia_melkhior
 			add_artifact = book_of_nagash_melkhior
 			add_artifact = circlet_rathek_melkhior
-	}}
+			spawn_unit = {
+				province = 1136 #Nendeln
+				owner = ROOT
+				leader = ROOT
+				troops = {
+					light_infantry = { 750 750 }
+					undead_horde = { 1250 1250 }
+				}
+				attrition = 0
+				maintenance_multiplier = 0
+			}
+		}
+	}
 	2530.3.7 = {death = yes}
 }
 

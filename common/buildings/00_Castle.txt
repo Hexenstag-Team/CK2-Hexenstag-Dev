@@ -583,29 +583,6 @@ castle = {
 		}
 		extra_tech_building_start = 0.2
 	}
-	#Ulfsland, heavy infantry, light infantry, archers, fort level, levy size, tax income, commander limit
-	ca_ulfsland = {
-		desc = ca_ulfsland_desc
-
-		gold_cost = 1000
-		build_time = 3000
-
-		commander_limit = 1
-		heavy_infantry = 150
-		light_infantry = 100
-		archers = 100
-		levy_size = 0.5
-		fort_level = 2
-
-		ai_creation_factor = 97
-		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_ulfsland } #
-				AND = {culture_group = norscan_group}
-		}
-		extra_tech_building_start = 0.2
-	}
 	#Phoenix Gaurd Base, heavy infantry,  light cavalry, Knights, magic archers, garrison size, land morale, prestige
 	ca_phoenix_guard_base = {
 		desc = tp_phoenix_guard_base_desc
