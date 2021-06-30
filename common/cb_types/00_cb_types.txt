@@ -13045,14 +13045,9 @@ pagan_county_conquest = {
 						culture_group = norscan_group
 						religion = stromfels #Because PIRATES
 						religion = atruhayid #Because CORSAIRS
-						religion = chaos
-				        religion = khorne
-				        religion = slaanesh
-				        religion = tzeentch
-				        religion = nurgle
+						religion_group = chaos_gods_group #simplification
 						government = freeboota_government
 						government = pirate_government
-						trait = creature_chaos_dwarf #So they get some options to expand outside
 					}
 					NOT = { same_realm = FROM }
 				}
@@ -13082,7 +13077,13 @@ pagan_county_conquest = {
 				NOT = { same_realm = ROOT }
 			}
 		}
-
+		#hashut worshippers can only use this CB in the darklands
+		OR = {
+			de_jure_liege_or_above = e_darklands
+			ROOT = {
+				NOT = { religion = hashut }
+			}
+		}
 		NOT = {
 			OR = {
 				ROOT = {

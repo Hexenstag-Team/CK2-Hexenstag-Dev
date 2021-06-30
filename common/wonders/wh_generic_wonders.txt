@@ -2,14 +2,81 @@
 ### Warhammer Fantasy generic wonders ###
 #########################################
 #
-# # Please place specific named wonders in their own file # #
-#
 # # INDEX # #
 #
+# 0. Help
 # 1. Old World City
 # 2. Dwarf Hold
 #
 #
+
+### Help for new modders ###
+#
+# Vanilla used specific wonder items for its historical great works because they were all 'one offs'.
+# But in Hexenstag, the wonder items represent classes of special areas in the Old World.
+# In addition, Hexenstag is a work constantly in development. Future modders (maybe even you!)
+# will have to work with these wonders and might want to change the available upgrades for some class.
+# It is much easier to change the available upgrades for one item than it is to make the same upgrade
+# for sixteen items.
+#
+# When adding a wonder (or converting a vanilla special building into a wonder), follow these steps:
+# 0. Read the full instructions before beginning. This will save your time, rather than waste it.
+# 1. Check lore details, confirming location and getting the best construction dates possible.
+# 	a. Estimates will often be required.
+# 2. Check the developed generic wonders to find the best match.
+# 	a. In the rare case that no close match exists, you may need to script a new class of wonder.
+# 3. Find the appropriate province file in the \history\provinces\ folder.
+#		a. Add a new date entry corresponding to the construction of the wonder, or 1.1.1 for wonders pre-Sigmar.
+#		b. Add the 'build_wonder = <wonder_type> command inside that date entry, replacing <wonder_type> with the
+#			 id of the new wonder.
+#		c. Use the 'set_wonder_stage = X' command inside the date entry, replacing X with the correct number of stages
+#			 that the wonder should have at its first appearance. (Usually the right number of stages is based on the
+#			 number of upgrades that the wonder will have at that point in its life.)
+#		d. For each upgrade that the wonder should have, use the 'build_wonder_upgrade = <upgrade_type>' command. As
+#			 with the build_wonder command, replace <upgrade_type> with the id of the upgrade.
+#		NOTE: You can refer to file 478 - Zharr-Naggrund.txt for an example of this initial entry.
+# 4. If information exists for charting the life of the wonder and showing when upgrades or new stages were built,
+#		 this can be scripted into the province history file as well. Just add a new date entry for each group of changes
+#		 and use the set_wonder_stage and build_wonder_upgrade commands described in steps 3c and 3d to add these details.
+# 5. Open CK2 using your newly modded files to check that the wonder has appeared. At this stage its name and description
+#		 will appear unlocalized as something like 'wonder_type' and 'wonder_type_desc'.
+#		 a. If the wonder has not appeared, you only have one file to debug - the history file which you just edited. Check that
+#			  the brackets close correctly (this is a common problem even for fairly experienced modders), then confirm that there
+#			  are no typos in the commands.
+#		 b. If everything seems in order but the wonder still won't load properly, it is best to ask someone more knowledgeable
+#			  for help at this point.
+# 6. Once the wonder is appearing correctly, it is time to set the name. You will need to open the file wh_setup_events.txt
+#		 in the folder \events\.
+#		 a. Search for wh_setp.100. You should find a comment identifying it as the event that sets up wonder names and descriptions.
+#		 b. Scroll down to the immediate command block and look for the comment identifying where new entries should be added.
+#		 NOTE: If there is no comment, someone has deleted it and they should be ashamed of themselves, but you can still find the correct
+#				place by looking for the command 'set_global_flag = wh_wonder_names_and_descriptions_set'. Please add a new line above that command
+#				and restore the comment by adding a hashtag and a short note.
+#		 c. Add a new line above the comment. Check the province id for the province your wonder is located in. It's the number at the
+#				start of the province filename. (So in our example of Zharr-Naggrund, the id is 478.) Match up with the indent for the comment, then
+@				open an entry for the province by typing its id into the new line, followed by the equals and opening curly bracket as normal.
+#		 d. Add a new line, increase the indent and change scopes to the wonder using, wonder = {
+#		 e. Add a new line, increase the indent, and set the wonder's name by typing, set_name = "<your_wonder_name>" . As in previous
+#				steps, replace <your_wonder_name> with the text that should be displayed in game.
+#		 f. Add a new line and maintain the current indent, then set the wonder's description by typing,
+#				set_description = <your_wonder_description>. <your_wonder_description> should be replaced by EITHER:
+#				i. The actual text to be displayed in game, within quotation marks. For example, "Zharr-Naggrund is a pretty cool place".
+#				ii. A localization key, typically ending in _desc. This is the preferred style and if you're replacing a special building
+#				    there should alrady be a localization key associated with it. Whatever the source of the key, be sure not to add any
+#						quotation marks and just have it follow the equals sign.
+#			g. Add a new line, decrease the indent, and close the wonder scope with a closing curly bracket.
+#			h. Add a new line, decrease the indent, and close the province command with a closing curly bracket.
+#	7. Save your work and start a new game using your modded files. The new name and description should be applied.
+#		a. If the details are not correctly displayed, open up the ledger and go to the Great Works tab to check if other wonders are
+#			 affected. If they are, it is probably best to revert your change to wh_setup_events.txt altogether and try again.
+#		NOTE: If this has happened more than once, it is time to ask for help.
+#		b. If only your wonder has a problem, you should be able to debug by checking that the brackets open and close correctly and that
+#			 the text is free of typos. If the name displays correctly but the description does not, check the entry corresponding to the
+#			 localization key. (Or ask the person who gave you the localization key to help sort this out.)
+# 8. Once the wonder is displaying correctly with its proper name and description, pat yourself on the back for helping the mod grow!
+#
+### Help ends here ###
+
 
 ### OLD WORLD CITY ###
 # This should be appropriate for Imperials, Bretonnians, Estalians, Tileans, and Border Princes.
@@ -169,20 +236,26 @@ wonder_old_world_city = {
 # This needs to be appropriate for Dwarf and Chaos Dwarf builders (though the upgrades can diverge), and a good fit for Greenskin squatters
 
 wonder_dwarf_hold = {
-  allow_coastal = yes
-
   #Default picture is for the most common case, Dwarfs in their hold.
   #Scripts can handle changing the GFX using the command set_wonder_model from the wonder scope
 	picture = GFX_wonder_strip_grandfortress #placeholder
 
   potential = {
-		always = no
-    any_dwarf_building_trigger = yes
+    FROMFROMFROM = {
+			OR = {
+				culture_group = dwarf_group
+				culture_group = dawi_zharr_group
+			}
+			NOT = { culture = servile_hobgoblin }
+		}
   }
 
   active = {
 
   }
+
+	#set to forbid new constructions, testing!
+	allow_construction = no
 
   available_upgrades = {
 		# MINING #
@@ -194,34 +267,50 @@ wonder_dwarf_hold = {
 		#alluvial minerals
 		upgrade_mining_cassiterite
 		upgrade_mining_native_gold
+		upgrade_mining_pyrite
 		upgrade_mining_tetrahedrite
 		#sedimentary minerals
 		upgrade_mining_coal
 		upgrade_mining_galena
 		upgrade_mining_hematite
 		upgrade_mining_limonite
-		upgrade_mining_megnetite
+		upgrade_mining_magnetite
+		upgrade_mining_rubies
+		upgrade_mining_sapphires
 		#igneous extrusive minerals
+		upgrade_mining_cinnabar
 		upgrade_mining_native_copper
 		upgrade_mining_obsidian
 		#igneous intrusive minerals
+		upgrade_mining_diamonds
+		upgrade_mining_emeralds
 		upgrade_mining_garnierite
 		upgrade_mining_granite
+		#metamorphic minerals
+		upgrade_mining_marble
 		# COMMERCE #
 		upgrade_great_dwarf_port
 		upgrade_tunnel_roads
 		# FORTIFICATION #
-		upgrade_great_gate
 		upgrade_defensive_tunnels
+		upgrade_great_gate
 		upgrade_outer_watchposts
+		upgrade_subterranean_keep
 		# INDUSTRY #
 		upgrade_coal_power
 		upgrade_geothermal_power
 		upgrade_water_power
-		# MILITARY #
+		# MILITARY INFRASTRUCTURE #
 		upgrade_dwarf_aerodrome
 		upgrade_dwarf_shipyard
+		# MILITARY TRADITIONS  - low cost but high build time #
+		upgrade_artillery_tradition
+		upgrade_gunnery_tradition #Blunderbussiers, Thunderers
 		upgrade_warrior_brotherhood #e.g. Infernal Guard, Slayers
+		# PRESTIGE ARCHITECTURE #
+		upgrade_dwarf_great_hall
+		upgrade_dwarf_statues
+		upgrade_dwarf_throne_room
 		# TEMPLE #
 		upgrade_great_grimnir_temple
 		upgrade_great_grungni_temple

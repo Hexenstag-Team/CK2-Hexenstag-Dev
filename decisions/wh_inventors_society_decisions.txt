@@ -334,8 +334,8 @@ society_decisions = {
 title_decisions = {
   #decision to use engineer society currency to give a short-term improvement to a county
 	inventor_testing_range = {
-		filter = sub_realm_owned
-		ai_target_filter = sub_realm_owned
+		filter = sub_realm_owned #trust the player to use this intelligently
+		ai_target_filter = owned #but not the AI
 		only_playable = yes
 
 		from_potential = {
@@ -409,8 +409,8 @@ title_decisions = {
 	}
 
   inventor_target_practice = {
-		filter = sub_realm_owned
-		ai_target_filter = sub_realm_owned
+		filter = sub_realm_owned #trust the player to use this intelligently
+		ai_target_filter = owned #but not the AI
 		only_playable = yes
 
 		from_potential = {

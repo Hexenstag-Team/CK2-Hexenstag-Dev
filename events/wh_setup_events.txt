@@ -163,9 +163,9 @@ character_event = {
 				}
 			}
 			new_character = {
-				ROOT = { 
+				ROOT = {
 					abdicate_to = PREV
-					e_realm_of_undivided={ #They REAALLLLLLY did not want to return to their court so o-ö warp gate
+					e_realm_of_undivided={ #They REAALLLLLLY did not want to return to their court so o-ï¿½ warp gate
 						holder_scope={
 							any_courtier={limit={has_character_flag=courtier_migration}
 								force_host=PREVPREVPREVPREV
@@ -277,9 +277,9 @@ character_event = {
 				}
 			}
 			new_character = {
-				ROOT = { 
+				ROOT = {
 					abdicate_to = PREV
-					e_realm_of_undivided={ #They REAALLLLLLY did not want to return to their court so o-ö warp gate
+					e_realm_of_undivided={ #They REAALLLLLLY did not want to return to their court so o-ï¿½ warp gate
 						holder_scope={
 							any_courtier={limit={has_character_flag=courtier_migration}
 								force_host=PREVPREVPREVPREV
@@ -1703,3 +1703,30 @@ character_event = {
 	}
 }
 
+#Set up wonder names, descriptions
+character_event = {
+	id = wh_setup.100
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	religion = sigmarite
+
+	trigger = {
+		NOT = {
+			has_global_flag = wh_wonder_names_and_descriptions_set
+		}
+		has_landed_title = k_cult_of_sigmar
+	}
+
+	immediate = {
+		478 = {
+			wonder = {
+				set_name = "Mingol Zharr-Naggrund"
+				set_description = tp_zharr_naggrund_desc
+			}
+		}
+		#Add new entries here
+		set_global_flag = wh_wonder_names_and_descriptions_set
+	}
+}

@@ -14,10 +14,10 @@ castle = {
 		local_revolt_risk = -0.05
 		add_number_to_name = no
 		potential = {
-			FROMFROM = { title = b_kazad_azril_karak } 
+			FROMFROM = { title = b_kazad_azril_karak }
 				OR = {religion_group = dwarf_gods_group
 					culture_group = dawi_zharr_group}
-				
+
 		}
 		extra_tech_building_start = 0.2
 	}
@@ -54,27 +54,6 @@ castle = {
 		extra_tech_building_start = 0.2
 	}
 	#Chaos Dwarf
-	ca_zharr_naggrund = {
-		desc = ca_zharr_naggrund_desc
-		potential = {
-			FROMFROM = { title = b_gromthidum } #Zharr-Naggrund's castle holding
-			FROM  = {culture_group = dawi_zharr_group}
-		}
-		auto_add_at_year = 10
-
-		gold_cost = 1000
-		build_time = 3000
-		fort_level = 7
-		heavy_infantry = 500
-		artillery = 100
-		galleys = 23
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 0.50
-		extra_tech_building_start = 0.2
-
-		convert_to_temple = tp_zharr_naggrund
-	}
 	ca_tower_gorgoth = {
 		desc = ca_tower_gorgoth_desc
 		potential = {
@@ -93,7 +72,7 @@ castle = {
 		add_number_to_name = no
 		garrison_size = 0.50
 		extra_tech_building_start = 0.2
-		
+
 
 		convert_to_temple = tp_tower_gorgoth
 	}
@@ -624,7 +603,7 @@ castle = {
 				AND = {
 					has_province_flag = houses_college_of_magic
 					FROMFROM = { is_capital = yes }
-					is_capital = yes	
+					is_capital = yes
 				}
 				has_building = ca_college_of_magic
 			}
@@ -634,7 +613,7 @@ castle = {
 				religion_group = old_world_group
 			}
 		}
-		trigger = { 
+		trigger = {
 			always = yes
 		}
 		gold_cost = 1
@@ -645,13 +624,13 @@ castle = {
 		ai_republic_modifier = 1000
 		extra_tech_building_start = 0
 	}
-	
+
 	ca_college_of_magic_local = {
 		desc = ca_college_of_magic_local_desc
 		potential = {
 			AND = {
 				has_province_flag = houses_college_of_magic_local
-				FROMFROM = { is_capital = yes }		
+				FROMFROM = { is_capital = yes }
 			}
 		}
 		is_active_trigger = {
@@ -659,7 +638,7 @@ castle = {
 				religion_group = old_world_group
 			}
 		}
-		trigger = { 
+		trigger = {
 			always = yes
 		}
 		gold_cost = 1
@@ -668,7 +647,7 @@ castle = {
 		garrison_size = 0.05
 		ai_creation_factor = 1000
 		ai_republic_modifier = 1000
-		
+
 		extra_tech_building_start = 0
 	}
 }
@@ -873,7 +852,7 @@ city = {
 		local_revolt_risk = -0.75
 		add_number_to_name = no
 	}
-	
+
 	ct_college_of_magic = {
 		desc = ca_college_of_magic_desc
 		potential = {
@@ -881,7 +860,7 @@ city = {
 				AND = {
 					has_province_flag = houses_college_of_magic
 					FROMFROM = { is_capital = yes }
-					is_capital = yes	
+					is_capital = yes
 				}
 				has_building = ct_college_of_magic
 			}
@@ -891,7 +870,7 @@ city = {
 				religion_group = old_world_group
 			}
 		}
-		trigger = { 
+		trigger = {
 			always = yes
 		}
 		gold_cost = 1
@@ -900,16 +879,16 @@ city = {
 		garrison_size = 0.40
 		ai_creation_factor = 1000
 		ai_republic_modifier = 1000
-		
+
 		extra_tech_building_start = 0
 	}
-	
+
 	ct_college_of_magic_local = {
 		desc = ca_college_of_magic_local_desc
 		potential = {
 			AND = {
 				has_province_flag = houses_college_of_magic_local
-				FROMFROM = { is_capital = yes }		
+				FROMFROM = { is_capital = yes }
 			}
 		}
 		is_active_trigger = {
@@ -917,7 +896,7 @@ city = {
 				religion_group = old_world_group
 			}
 		}
-		trigger = { 
+		trigger = {
 			always = yes
 		}
 		gold_cost = 1
@@ -927,7 +906,7 @@ city = {
 
 		ai_creation_factor = 1000
 		ai_republic_modifier = 1000
-		
+
 		extra_tech_building_start = 0
 	}
 }
@@ -950,25 +929,6 @@ temple = {
 		extra_tech_building_start = 0.2
 	}
 	#Chaos Dwarf
-	tp_zharr_naggrund = {
-		desc = ca_zharr_naggrund_desc
-		potential = {
-			FROMFROM = { title = b_gromthidum }
-			FROM = {culture_group = dawi_zharr_group}
-		}
-		auto_add_at_year = 10
-
-		gold_cost = 1000
-		build_time = 3000
-		fort_level = 7
-		heavy_infantry = 500
-		artillery = 100
-		galleys = 20
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 0.50
-		extra_tech_building_start = 0.2
-	}
 	tp_barak_mazur = {
 		desc = tp_barak_mazur_desc
 		potential = {
