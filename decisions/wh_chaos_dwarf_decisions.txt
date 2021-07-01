@@ -1,44 +1,4 @@
 ###Chaos Dwarf stuff
-targetted_decisions = {
-
-#specific sacrifice to Hashut decision integrated into general sacrifice to the gods decision
-
-	chaos_dwarf_sell_into_slavery = {
-		ai_check_interval = 12
-		ai_target_filter = home_court
-		filter = home_court
-		only_playable = yes
-		from_potential = {
-			culture_group = dawi_zharr_group
-			is_ruler = yes
-			NOT = { has_character_flag = selling_prisoner_slavery }
-			NOT = { has_character_flag = sacrificing_prisoner_hashut }
-		}
-		potential = {
-			host = { character = FROM }
-			prisoner = yes
-			NOT = { culture_group = dawi_zharr_group }
-			NOT = { trait = khemri_tomb_king }
-		}
-		allow = {
-			prisoner = yes
-		}
-		effect = {
-			FROM = {
-				set_character_flag = selling_prisoner_slavery
-				character_event = { id = DR_chaos_dwarf.12 }
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = { factor = 0.04 }
-			modifier = { factor = 3 trait = greedy }
-			modifier = { factor = 0.1 trait = kind }
-		}
-	}
-}
-
 decisions = {
 
 	# become_chaos_dwarf_sorcerer = {

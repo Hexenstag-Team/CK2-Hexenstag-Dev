@@ -56,14 +56,16 @@
 #				start of the province filename. (So in our example of Zharr-Naggrund, the id is 478.) Match up with the indent for the comment, then
 @				open an entry for the province by typing its id into the new line, followed by the equals and opening curly bracket as normal.
 #		 d. Add a new line, increase the indent and change scopes to the wonder using, wonder = {
-#		 e. Add a new line, increase the indent, and set the wonder's name by typing, set_name = "<your_wonder_name>" . As in previous
-#				steps, replace <your_wonder_name> with the text that should be displayed in game.
+#		 e. Add a new line, increase the indent, and set the wonder's name by typing, set_name = "<your_wonder_name>" . <your_wonder_name>
+#			  should be replaced by EITHER:
+#				i. The actual text to be displayed in game, within quotation marks. For example, "Zharr-Naggrund".
+#				ii. A localization key. This is the preferred style and if you're replacing a special building there should alrady be a localization
+#					  key associated with it. Whatever the source of the key, be sure not to add any quotation marks and just have it follow the equals sign.
 #		 f. Add a new line and maintain the current indent, then set the wonder's description by typing,
 #				set_description = <your_wonder_description>. <your_wonder_description> should be replaced by EITHER:
 #				i. The actual text to be displayed in game, within quotation marks. For example, "Zharr-Naggrund is a pretty cool place".
-#				ii. A localization key, typically ending in _desc. This is the preferred style and if you're replacing a special building
-#				    there should alrady be a localization key associated with it. Whatever the source of the key, be sure not to add any
-#						quotation marks and just have it follow the equals sign.
+#				ii. A localization key, typically ending in _desc. As with the localization key for the wonder name, be sure not to use quotation marks.
+#				NOTE: Usually localization keys use easily associated terms, with the description key just adding _desc to the name key's id.
 #			g. Add a new line, decrease the indent, and close the wonder scope with a closing curly bracket.
 #			h. Add a new line, decrease the indent, and close the province command with a closing curly bracket.
 #	7. Save your work and start a new game using your modded files. The new name and description should be applied.

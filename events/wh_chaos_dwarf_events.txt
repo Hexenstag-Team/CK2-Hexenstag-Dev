@@ -166,14 +166,45 @@ character_event = {
           }
         }
       }
-      #AI bonus
+      #AI bonus (Balance: AI doesn't loot vigorously for prisoners who can be sacrificed)
       if = {
         limit = {
           ai = yes
         }
         change_variable = {
           which = hashut_favor
-          value = 0.5
+          value = 0.75
+        }
+        #while we're here, push ai daemonsmiths into the sorcerer objective
+        if = {
+          limit = {
+            trait = chaos_dwarf_daemonsmith
+            age >= 50
+            piety >= 100
+            NOT = {
+              has_ambition = obj_chaos_dwarf_become_sorcerer
+            }
+          }
+          random_list = {
+            90 = {
+              #no effect
+            }
+            #roughly 50/50 chance over five years
+            #so comparable effect to MTTH 5 years, but with a trivial overhead because it's piggybacked on the other evals
+            10 = {
+              add_ambition = obj_chaos_dwarf_become_sorcerer
+            }
+          }
+        }
+      }
+      #bonus for theology focus (trying for intuitive gameplay)
+      if = {
+        limit = {
+          has_focus = focus_theology
+        }
+        change_variable = {
+          which = hashut_favor
+          value = 0.25
         }
       }
       #now check for becoming daemonsmith
@@ -202,7 +233,7 @@ character_event = {
           has_ambition = obj_chaos_dwarf_become_sorcerer
           check_variable = {
             which = hashut_favor
-            value >= 50
+            value >= 40
           }
         }
         #start trial of the sorcerer by pinging the High Priest
@@ -334,7 +365,8 @@ character_event = {
 
   #ids through to 119 reserved for expanding on daemonsmith
 
-  # # Trial of the Sorcerer # #
+  # # Becoming a Sorcerer # #
+  # relatively unambitious version, this could be made into a bigger deal later
 
   #Start by pinging the High Priest
   character_event = {
@@ -379,7 +411,7 @@ character_event = {
 
   }
 
-  #trial begins
+  #ceremony begins - present your sacrifices!
   character_event = {
     id = wh_chaos_dwarf.122
     desc = EVTDESC_wh_chaos_dwarf.122
@@ -388,7 +420,89 @@ character_event = {
 
     is_triggered_only = yes
 
-    #short-circuit to success conditions during testing
+    #AI doesn't know to be prepared
+    #also doesn't know to collect taxes
+    option = {
+      trigger = {
+        ai = yes
+      }
+      #simulate some ai daemonsmiths arriving with lousy sacrifices
+      random_list = {
+        95 = {  }
+        5 = {
+          add_maimed_trait_effect = yes
+        }
+      }
+      character_event = {
+        id = wh_chaos_dwarf.123
+        days = 3
+      }
+    }
+
+    #offer a great sacrifice
+    option = {
+      name = EVTOPTA_wh_chaos_dwarf.122
+      trigger = {
+        ai = no
+        #Surely Hashut deserves two years of your income?
+        scaled_wealth = 2
+      }
+      scaled_wealth = -2
+      custom_tooltip = {
+        text = hashut_sacrifice_many_fine_slaves_tt
+        character_event = {
+          id = wh_chaos_dwarf.123
+          days = 3
+        }
+      }
+    }
+
+    #offer an adequate sacrifice
+    option = {
+      name = EVTOPTB_wh_chaos_dwarf.122
+      trigger = {
+        ai = no
+        scaled_wealth = 0.5
+      }
+      #Hashut gives you something to remember your stingines though
+      add_maimed_trait_effect = yes
+      custom_tooltip = {
+        text = hashut_sacrifice_some_slaves_tt
+        character_event = {
+          id = wh_chaos_dwarf.123
+          days = 3
+        }
+      }
+    }
+
+    #oh dear
+    option = {
+      name = EVTOPTC_wh_chaos_dwarf.122
+      trigger = {
+        ai = no
+        NOT = {
+          scaled_wealth = 0.5
+        }
+      }
+      custom_tooltip = {
+        text = hashut_sacrifice_just_me_then_tt
+      }
+      death = {
+        death_reason = death_sacrificed
+        killer = ROOT
+      }
+    }
+  }
+
+
+  character_event = {
+    id = wh_chaos_dwarf.123
+    desc = EVTDESC_wh_chaos_dwarf.123
+    picture = GFX_evt_chaos_dwarf_sorcerer
+    border = GFX_event_normal_frame_religion
+
+    is_triggered_only = yes
+
     option = {
       name = EVTOPT_praise_hashut
       add_trait = chaos_dwarf_sorcerer
