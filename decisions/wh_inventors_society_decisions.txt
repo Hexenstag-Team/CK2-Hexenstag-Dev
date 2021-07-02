@@ -17,8 +17,8 @@ targeted_decisions = {
 				has_character_modifier = practical_innovation
 				has_character_modifier = busy_engineer
 			}
-      NAND = {
-        trait = chaos_dwarf_sorcerer #too busy & valuable
+      OR = {
+        NOT = { trait = chaos_dwarf_sorcerer } #too busy & valuable
         ai = no #but players gonna play
       }
 			is_incapable = no

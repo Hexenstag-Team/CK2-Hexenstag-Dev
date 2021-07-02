@@ -60,12 +60,17 @@ character_event = {
             }
           }
         }
+        add_law = succ_gavelkind
       }
     }
   }
 }
 
 ### Favor of Hashut (hashut_favor variable) events ###
+#NOTE: the lore suggests that Chaos Dwarf women don't get the favor of Hashut at all
+#But that sounds extra unfun for the player so we'll be permissive - but biased
+
+
 
   #Hashut favor maintenance event
   #fires yearly, updates favor with bonuses for courtiers on the sorcerer track
@@ -167,9 +172,11 @@ character_event = {
         }
       }
       #AI bonus (Balance: AI doesn't loot vigorously for prisoners who can be sacrificed)
+      #doesn't apply to female AI courtiers, so only exceptional women will make progress
       if = {
         limit = {
           ai = yes
+          is_female = no
         }
         change_variable = {
           which = hashut_favor
@@ -178,6 +185,7 @@ character_event = {
         #while we're here, push ai daemonsmiths into the sorcerer objective
         if = {
           limit = {
+            is_female = no
             trait = chaos_dwarf_daemonsmith
             age >= 50
             piety >= 100
@@ -233,7 +241,7 @@ character_event = {
           has_ambition = obj_chaos_dwarf_become_sorcerer
           check_variable = {
             which = hashut_favor
-            value >= 40
+            value >= 25
           }
         }
         #start trial of the sorcerer by pinging the High Priest
@@ -507,6 +515,580 @@ character_event = {
       name = EVTOPT_praise_hashut
       add_trait = chaos_dwarf_sorcerer
       remove_trait = travelling
+    }
+
+  }
+
+  #set aside ids through 139 for expanding on the sorcerer ceremony and related
+
+  # # Sorcerer's Curse # #
+
+  # maintenance event
+  # fired on decade pulse and some special triggers
+  # applies hashut_favor penalties, then resolves consequences
+  character_event = {
+    id = wh_chaos_dwarf.140
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    religion = hashut
+
+    trigger = {
+      trait = chaos_dwarf_sorcerer
+    }
+
+    immediate = {
+      #debug help
+      clr_character_flag = passed_curse_check
+      clr_character_flag = failed_curse_check
+      #basic cost of doing business
+      hashut_favor_major_penalty_effect = yes
+      #age penalties. Cumulative structure
+      if = {
+        limit = {
+          age >= 200
+          hashut_favor_trivial_penalty_effect = yes
+        }
+      }
+      if = {
+        limit = {
+          age >= 250
+        }
+        hashut_favor_trivial_penalty_effect = yes
+      }
+      if = {
+        limit = {
+          age >= 300
+        }
+        hashut_favor_small_penalty_effect = yes
+      }
+      if = {
+        limit = {
+          age >= 350
+        }
+        hashut_favor_small_penalty_effect = yes
+      }
+      if = {
+        limit = {
+          age >= 400
+        }
+        hashut_favor_medium_penalty_effect = yes
+      }
+      if = {
+        limit = {
+          age >= 500
+        }
+        hashut_favor_major_penalty_effect = yes
+      }
+      if = {
+        limit = {
+          age >= 600
+        }
+        hashut_favor_major_penalty_effect = yes
+      }
+      #being a good minion
+      if = {
+        limit = {
+          trait = cruel
+        }
+        hashut_favor_trivial_bonus_effect = yes
+      }
+      if = {
+        limit = {
+          trait = zealous
+        }
+        hashut_favor_trivial_bonus_effect = yes
+      }
+      #refusing to die
+      if = {
+        limit = {
+          trait = stubborn
+        }
+        hashut_favor_small_bonus_effect = yes
+      }
+      #being a bad minion
+      if = {
+        limit = {
+          trait = kind
+        }
+        hashut_favor_trivial_penalty_effect = yes
+      }
+      if = {
+        limit = {
+          trait = cynical
+        }
+        hashut_favor_trivial_penalty_effect = yes
+      }
+      #high learning adjustment. Cumulative design.
+      if = {
+        limit = {
+          learning >= 25
+        }
+        hashut_favor_trivial_bonus_effect = yes
+      }
+      if = {
+        limit = {
+          learning >=30
+        }
+        hashut_favor_trivial_bonus_effect = yes
+      }
+      if = {
+        limit = {
+          learning >=35
+        }
+        hashut_favor_trivial_bonus_effect = yes
+      }
+      if = {
+        limit = {
+          learning >= 40
+        }
+        hashut_favor_trivial_bonus_effect = yes
+      }
+      #consequences
+      if = {
+        limit = {
+          check_variable = {
+            which = hashut_favor
+            value <= 0
+          }
+        }
+        #debug help
+        set_character_flag = failed_curse_check
+        trigger_switch = {
+          on_trigger = trait
+          chaos_dwarf_petrification_2 = {
+            character_event = {
+              id = wh_chaos_dwarf.144
+              days = 1
+            }
+          }
+          chaos_dwarf_petrification_1 = {
+            character_event = {
+              id = wh_chaos_dwarf.143
+              days = 1
+            }
+          }
+          fallback = {
+            if = {
+              limit = {
+                has_character_flag = hashut_sorcerer_curse
+              }
+              character_event = {
+                id = wh_chaos_dwarf.142
+                days = 1
+              }
+            }
+            else = {
+              character_event = {
+                id = wh_chaos_dwarf.141
+                days = 1
+              }
+            }
+          }
+        }
+      }
+      else = {
+        #debug help
+        set_character_flag = passed_curse_check
+      }
+    }
+
+  }
+
+  #First signs of petrification
+  character_event = {
+    id = wh_chaos_dwarf.141
+    picture = GFX_evt_stone_chaos_dwarf
+    desc = EVTDESC0sorcererscurse
+
+    is_triggered_only = yes
+
+    immediate = {
+      set_character_flag = hashut_sorcerer_curse
+      #delay next effect
+      change_variable = {
+        which = hashut_favor
+        value = 50
+      }
+    }
+
+    option = {
+      name = EVTOPT_hashut_guidance
+    }
+  }
+
+  #Sorcerer's Curse taking effect
+  character_event = {
+    id = wh_chaos_dwarf.142
+    picture = GFX_evt_stone_chaos_dwarf
+    desc = EVTDESCAsorcererscurse
+
+    is_triggered_only = yes
+
+    immediate = {
+      #delay next effect
+      change_variable = {
+        which = hashut_favor
+        value = 50
+      }
+    }
+
+    option = {
+      name = EVTOPT_hashut_guidance
+      add_trait = chaos_dwarf_petrification_1
+    }
+  }
+
+  #Sorcerer's Curse worsens
+  character_event = {
+    id = wh_chaos_dwarf.143
+    picture = GFX_evt_stone_chaos_dwarf
+    desc = EVTDESCBsorcererscurse
+
+    is_triggered_only = yes
+
+    immediate = {
+      #delay next effect
+      change_variable = {
+        which = hashut_favor
+        value = 50
+      }
+    }
+
+    option = {
+      name = EVTOPT_hashut_knows_me
+      add_trait = chaos_dwarf_petrification_2
+    }
+  }
+
+  #Claimed by the curse
+  character_event = {
+    id = wh_chaos_dwarf.144
+    picture = GFX_evt_stone_chaos_dwarf
+    desc = EVTDESCCsorcererscurse
+
+    is_triggered_only = yes
+
+    #no need to delay next check now!
+
+    option = {
+      name = EVTOPT_hashut_grant_me
+      set_graphical_culture = dawi_zharr_stoned
+			death = { death_reason = death_trait }
+    }
+  }
+
+
+
+### Council politics ###
+#
+# Added to force the game to supply sorcerers to e_hashut
+# But affirms the lore and could be used as scaffolding for more narratives
+
+  #There must be a Master of the Conclave
+  character_event = {
+    id = wh_chaos_dwarf.200
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    #would use only_independent but this should fire even in edge cases in which e_hashut is a tributary
+    religion = hashut
+
+    trigger = {
+      has_landed_title = e_hashut
+    }
+
+    immediate = {
+      #check that e_hashut has a Master of the Conclave
+      if = {
+        limit = {
+          NOT = {
+            has_assigned_minor_title = title_head_of_sorcerer_conclave
+          }
+        }
+        #if not, fire event to create and appoint one
+        character_event = {
+          id = wh_chaos_dwarf.201
+        }
+      }
+    }
+
+    after = {
+      #run check for missing Master of the Cabal titles among vassals
+      any_vassal = {
+        limit = {
+          primary_title = {
+            OR = {
+              tier = DUKE
+              tier = KING
+            }
+          }
+          is_feudal = yes
+          trait = creature_chaos_dwarf
+        }
+        if = {
+          limit = {
+            NOT = { has_assigned_minor_title = title_head_of_sorcerer_cabal }
+          }
+          character_event = {
+            id = wh_chaos_dwarf.202
+          }
+        }
+      }
+    }
+
+  }
+
+  #Create and appoint Master of the Conclave
+  character_event = {
+    id = wh_chaos_dwarf.201
+    desc = EVTDESC_wh_chaos_dwarf.201
+    picture = GFX_evt_chaos_dwarf_sorcerer
+    border = GFX_event_normal_frame_religion
+
+    is_triggered_only = yes
+
+    immediate = {
+      create_character = {
+        random_traits = no
+        dynasty = none
+        culture = dawi_zharr
+        religion = hashut
+        female = no
+        age = 80
+        health = 6
+        fertility = 0.5
+
+        attributes = {
+         martial = 5
+         diplomacy = 4
+         stewardship = 6
+         intrigue = 4
+         learning = 8
+        }
+        add_trait = creature_chaos_dwarf
+        add_trait = scholarly_theologian
+        add_trait = cruel
+        add_trait = zealous
+        add_trait = ambitious
+        add_trait = chaos_dwarf_sorcerer
+      }
+      new_character = {
+        save_event_target_as = new_master_of_the_conclave
+        give_minor_title = title_head_of_sorcerer_conclave
+        #dither age
+        random_list = {
+          20 = {
+            add_age = -5
+          }
+          20 = {
+            add_age = -3
+          }
+          20 = {  }
+          20 = {
+            add_age = 3
+          }
+          20 = {
+            add_age = 5
+          }
+        }
+        #election reason
+        random_list = {
+          20 = {
+            change_martial = 1
+            add_trait = brave
+          }
+          20 = {
+            change_diplomacy = 1
+            add_trait = gregarious
+          }
+          20 = {
+            change_stewardship = 1
+            add_trait = diligent
+          }
+          20 = {
+            change_intrigue = 1
+            add_trait = deceitful
+          }
+          20 = {
+            change_learning = 1
+            add_trait = erudite
+          }
+        }
+        #lifestyle
+        random_list = {
+          20 = {
+            add_trait = administrator
+          }
+          10 = {
+            add_trait = architect
+          }
+          10 = {
+            add_trait = gamer
+          }
+          10 = {
+            add_trait = hedonist
+          }
+          20 = {
+            add_trait = hunter
+          }
+          30 = {
+            add_trait = impaler
+          }
+          20 = {
+            add_trait = schemer
+          }
+          30 = {
+            add_trait = mystic
+          }
+          30 = {
+            add_trait = scholar
+          }
+          10 = {
+            add_trait = socializer
+          }
+          20 = {
+            add_trait = strategist
+          }
+          50 = {
+            add_trait = theologian
+          }
+        }
+      }
+    }
+
+    option = {
+      name = EVTOPT_hashut_guidance
+    }
+
+  }
+
+  #Create and appoint Leader of the Cabal
+  character_event = {
+    id = wh_chaos_dwarf.202
+    desc = EVTDESC_wh_chaos_dwarf.202
+    picture = GFX_evt_chaos_dwarf_sorcerer
+    border = GFX_event_normal_frame_religion
+
+    is_triggered_only = yes
+
+    immediate = {
+      create_character = {
+        random_traits = no
+        dynasty = none
+        culture = dawi_zharr
+        religion = hashut
+        female = no
+        age = 60
+        health = 6
+        fertility = 0.5
+
+        attributes = {
+         martial = 5
+         diplomacy = 4
+         stewardship = 5
+         intrigue = 4
+         learning = 7
+        }
+        add_trait = creature_chaos_dwarf
+        add_trait = scholarly_theologian
+        add_trait = cruel
+        add_trait = zealous
+        add_trait = chaos_dwarf_daemonsmith
+      }
+      new_character = {
+        save_event_target_as = new_master_of_the_cabal
+        give_minor_title = title_head_of_sorcerer_cabal
+        #chance of being a full Sorcerer-Prophet
+        random = {
+          chance = 15
+          add_trait = chaos_dwarf_sorcerer
+        }
+        #dither age
+        random_list = {
+          20 = {
+            add_age = -5
+          }
+          20 = {
+            add_age = -3
+          }
+          20 = {  }
+          20 = {
+            add_age = 3
+          }
+          20 = {
+            add_age = 5
+          }
+        }
+        #election reason
+        random_list = {
+          20 = {
+            change_martial = 1
+            add_trait = brave
+          }
+          20 = {
+            change_diplomacy = 1
+            add_trait = gregarious
+          }
+          20 = {
+            change_stewardship = 1
+            add_trait = diligent
+          }
+          20 = {
+            change_intrigue = 1
+            add_trait = deceitful
+          }
+          20 = {
+            change_learning = 1
+            add_trait = erudite
+          }
+        }
+        #lifestyle
+        random_list = {
+          20 = {
+            add_trait = administrator
+          }
+          10 = {
+            add_trait = architect
+          }
+          10 = {
+            add_trait = gamer
+          }
+          10 = {
+            add_trait = hedonist
+          }
+          20 = {
+            add_trait = hunter
+          }
+          30 = {
+            add_trait = impaler
+          }
+          20 = {
+            add_trait = schemer
+          }
+          30 = {
+            add_trait = mystic
+          }
+          30 = {
+            add_trait = scholar
+          }
+          10 = {
+            add_trait = socializer
+          }
+          20 = {
+            add_trait = strategist
+          }
+          50 = {
+            add_trait = theologian
+          }
+        }
+      }
+    }
+
+    option = {
+      name = EVTOPT_hashut_guidance
     }
 
   }

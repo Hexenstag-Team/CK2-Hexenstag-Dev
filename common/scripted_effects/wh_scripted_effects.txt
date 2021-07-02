@@ -6195,6 +6195,22 @@ antideath_effect = {
 		 	character_event = { id = snehekharan.1 days = 1 }
 			break = yes
 		}
+		if = {
+			limit = {
+				trait = chaos_dwarf_sorcerer
+				NOT = { trait = chaos_dwarf_petrification_2 }
+				NAND = {
+					trait = chaos_dwarf_petrification_1
+					check_variable = {
+						which = hashut_favor
+						value <= 5
+					}
+				}
+				ai = yes
+			}
+			character_event = { id = wh_chaos_dwarf.140 days = 1 }
+			break = yes
+		}
 }
 
 send_duel_result_tournament_effect = {
@@ -7439,5 +7455,61 @@ create_random_satrap = {
 				add_age = 3
 			}
 		}
+	}
+}
+
+hashut_favor_trivial_penalty_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = -1
+	}
+}
+
+hashut_favor_small_penalty_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = -2
+	}
+}
+
+hashut_favor_medium_penalty_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = -5
+	}
+}
+
+hashut_favor_major_penalty_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = -10
+	}
+}
+
+hashut_favor_trivial_bonus_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = 1
+	}
+}
+
+hashut_favor_small_bonus_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = 2
+	}
+}
+
+hashut_favor_medium_bonus_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = 5
+	}
+}
+
+hashut_favor_major_bonus_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = 10
 	}
 }

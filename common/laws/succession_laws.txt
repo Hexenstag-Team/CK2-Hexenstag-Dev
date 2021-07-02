@@ -9,11 +9,10 @@ succession_laws = {
 		vassal_opinion = 5
 
 		potential = {
-			NOT = { title = k_shadowrealm }
-			NOT = { title = k_horned_church }
-			NOT = { title = e_bretonnia }
-			NOT = { title = e_hashut }
-			NOT = { holder_scope = { has_landed_title = k_horned_church } }
+			is_not_title_with_special_succession_trigger = yes
+			holder_scope = {
+				has_landed_title = k_horned_church
+			}
 			holder_scope = {
 				OR = {
 					independent = yes
@@ -157,10 +156,7 @@ succession_laws = {
 		dynasty_opinion = 5
 
 		potential = {
-			NOT = { title = k_shadowrealm }
-			NOT = { title = k_horned_church }
-			NOT = { title = e_bretonnia }
-			NOT = { title = e_hashut }
+			is_not_title_with_special_succession_trigger = yes
 			holder_scope = {
 				is_nomadic = no
 				OR = {
@@ -390,10 +386,7 @@ succession_laws = {
 		dynasty_opinion = 5
 
 		potential = {
-			NOT = { title = k_shadowrealm }
-			NOT = { title = k_horned_church }
-			NOT = { title = e_bretonnia }
-			NOT = { title = e_hashut }
+			is_not_title_with_special_succession_trigger = yes
 			holder_scope = {
 				OR = {
 					independent = yes
@@ -562,10 +555,7 @@ succession_laws = {
 		child_opinion = -10
 		dynasty_opinion = -5
 		potential = {
-			NOT = { title = k_shadowrealm }
-			NOT = { title = k_horned_church }
-			NOT = { title = e_bretonnia }
-			NOT = { title = e_hashut }
+			is_not_title_with_special_succession_trigger = yes
 			holder_scope = {
 				NOT = { religion_group = ormazd_gods_group }
 				NOT = { religion_group = necromantic_group }
@@ -985,10 +975,7 @@ succession_laws = {
 		dynasty_opinion = 5
 		vassal_opinion = 5
 		potential = {
-			NOT = { title = k_shadowrealm }
-			NOT = { title = k_horned_church }
-			NOT = { title = e_bretonnia }
-			NOT = { title = e_hashut }
+			is_not_title_with_special_succession_trigger = yes
 			holder_scope = {
 				OR = {
 					independent = yes
@@ -1130,10 +1117,7 @@ succession_laws = {
 		child_opinion = -10
 		dynasty_opinion = -5
 		potential = {
-			NOT = { title = k_shadowrealm }
-			NOT = { title = k_horned_church }
-			NOT = { title = e_bretonnia }
-			NOT = { title = e_hashut }
+			is_not_title_with_special_succession_trigger = yes
 			holder_scope = {
 				OR = {
 					independent = yes
@@ -1287,10 +1271,7 @@ succession_laws = {
   		#child_opinion = 30
   		#dynasty_opinion = 10
 		potential = {
-			NOT = { title = k_shadowrealm }
-			NOT = { title = k_horned_church }
-			NOT = { title = e_bretonnia }
-			NOT = { title = e_hashut }
+			is_not_title_with_special_succession_trigger = yes
 			holder_scope = {
 				NOT = { culture_group = lizardman_group }
 				NOT = { culture_group = skaven_group }
@@ -1375,10 +1356,7 @@ succession_laws = {
 	# Titles revert back to the liege on death
 	succ_appointment = {
 		potential = {
-			NOT = { title = k_shadowrealm }
-			NOT = { title = k_horned_church }
-			NOT = { title = e_bretonnia }
-			NOT = { title = e_hashut }
+			is_not_title_with_special_succession_trigger = yes
 			holder_scope = {
 				NOT = { culture_group = skaven_group }
 				is_feudal = yes
@@ -1406,10 +1384,7 @@ succession_laws = {
 				has_law = succ_whunter_elective
 			}
 			NOT = { title = e_realm_of_brayherd }
-			NOT = { title = k_shadowrealm }
-			NOT = { title = k_cult_of_sigmar }
-			NOT = { title = e_bretonnia }
-			NOT = { title = e_hashut }
+			is_not_title_with_special_succession_trigger = yes
 			NAND = { NOT = { title = k_horned_church }
 				holder_scope = { culture_group = skaven_group } }
 			NAND = { independent = no
@@ -1507,10 +1482,7 @@ succession_laws = {
 
 	succ_catholic_bishopric = {
 		potential = {
-			NOT = { title = k_shadowrealm }
-			NOT = { title = k_horned_church }
-			NOT = { title = e_bretonnia }
-			NOT = { title = e_hashut }
+			is_not_title_with_special_succession_trigger = yes
 			holder_scope = {
 				NOT = { culture_group = skaven_group }
 			}
@@ -1550,10 +1522,7 @@ succession_laws = {
 
 	succ_patrician_elective = {
 		potential = {
-			NOT = { title = k_shadowrealm }
-			NOT = { title = k_horned_church }
-			NOT = { title = e_bretonnia }
-			NOT = { title = e_hashut }
+			is_not_title_with_special_succession_trigger = yes
 			NOT = { holder_scope = { culture_group = skaven_group } }
 			OR = {
 				is_primary_holder_title = yes
@@ -1580,10 +1549,7 @@ succession_laws = {
 
 	succ_nomad_succession = {
 		potential = {
-			NOT = { title = k_shadowrealm }
-			NOT = { title = k_horned_church }
-			NOT = { title = e_bretonnia }
-			NOT = { title = e_hashut }
+			is_not_title_with_special_succession_trigger = yes
 			NOT = { holder_scope = { culture_group = skaven_group } }
 			holder_scope = {
 				is_nomadic = yes
