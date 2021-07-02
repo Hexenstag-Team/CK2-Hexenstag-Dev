@@ -18,6 +18,9 @@ the_oubliette = {
 house_arrest = {
 	diplomacy = -5
 	icon = 38
+				is_visible = {
+		visible_trait = yes
+	}
 }
 truce_breaker = {
 	diplomacy = -5
@@ -6560,7 +6563,10 @@ justinians_insight = {
 	}
 }
 picked_pagan_branch_cooldown = {
-	icon = 1
+  icon = 1
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 grieving_over_warrior_lover = {
 	icon = 19
@@ -6722,7 +6728,10 @@ dedicated_to_hestia = {
 	dynasty_opinion = 10
 }
 recently_dedicated_temple_cooldown = {
-	icon = 79 #Hidden
+  icon = 79
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 emulating_legend = {
 	icon = 9
@@ -6798,7 +6807,10 @@ lodge_zun_battle_trance_3 = {
 	}
 }
 lodge_slavic_stand_together_cooldown = {
-	icon = 1
+  icon = 1
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 pet_hunting_eagle = {
 	combat_rating = 10
@@ -7176,7 +7188,12 @@ lodge_war_sacrifice_4 = {
 		religion_group_visible_trait = yes
 	}
 }
-lodge_war_sacrifice_cooldown = { icon = 1 }
+lodge_war_sacrifice_cooldown = {
+  icon = 1
+  is_visible = {
+    hidden_trait = yes
+  }
+}
 
 call_to_glory = {
 	icon = 13
@@ -7196,7 +7213,10 @@ pillagers_morale = {
 	}
 }
 recent_pirate_infiltration_cooldown = {
-	icon = 1
+  icon = 42
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 #Astrology + Haruspicy.
 astrology_very_good_omen = {
@@ -7358,7 +7378,10 @@ enemy_made_mass_sacrifice = {
 	}
 }
 bloodthirsty_mass_sacrifice_cooldown = {
-	icon = 41
+  icon = 42
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 undermined_spy_network_1 = {
 	defensive_plot_power_modifier = -0.05
@@ -8028,7 +8051,10 @@ ephemeral_knowledge = {
 }
 
 crusade_event_meeting_caravan_cooldown = {
-	icon = 1
+  icon = 1
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 
 joyous_festivities = {
@@ -8094,15 +8120,24 @@ crusade_great_general = {
 }
 
 assassins_raise_troops_cooldown = {
-	icon = 1
+  icon = 1
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 
 hire_teutonic_honor_guard_cooldown = {
-	icon = 1
+  icon = 1
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 
 northern_crusade_cooldown = {
-	icon = 1
+  icon = 1
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 
 drinking_to_fallen_friends = {
@@ -8130,10 +8165,16 @@ annoyed_with_barbarians = {
 	}
 }
 duels_declined = {
-	icon = 122
+  icon = 122
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 has_recently_declined_duel_cooldown = {
-	icon = 122
+  icon = 122
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 trigger_happy = {
 	icon = 13
@@ -8190,10 +8231,16 @@ crucible_weapon_caught_heretic = {
 }
 
 arm_wrestling_challenge_cooldown = {
-	icon = 1
+  icon = 1
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 flyting_challenge_cooldown = {
-	icon = 1
+  icon = 1
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 
 elder_long_life_modifier = {
@@ -8206,7 +8253,10 @@ elder_long_life_modifier = {
 }
 
 elder_demand_cooldown = {
-	icon = 1
+  icon = 1
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 
 elder_care_modifier = {
@@ -8339,11 +8389,15 @@ cautious_decision_making = {
 	defensive_plot_power_modifier = 0.35
 }
 cancel_crusade_cooldown = {
-	icon = 1
+  icon = 1
+  is_visible = {
+    hidden_trait = yes
+  }
 }
 hidden_commander_bonus = {
 	icon = 1
 	combat_rating = 10
+
 }
 
 naive_host = {
