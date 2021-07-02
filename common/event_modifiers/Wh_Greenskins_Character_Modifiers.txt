@@ -2,6 +2,9 @@
 denied_waaagh = {
 	greenskin_gods_opinion = -5
 	icon = 154
+			is_visible = {
+		religion_visible_trait = yes
+	}
 }
 settled_warlord = {
 	levy_size = -0.2
@@ -9,6 +12,9 @@ settled_warlord = {
 	population_growth = -0.1
 	land_morale = -0.05
 	icon = 19
+	is_visible = {
+		visible_trait = yes
+	}
 }
 mismanaged_warband = {
 	manpower_growth = -0.1
@@ -17,6 +23,9 @@ mismanaged_warband = {
 	land_morale = -0.1
 	max_population=-1000
 	icon = 106
+		is_visible = {
+		visible_trait = yes
+	}
 }
 waagh_revanchism = {
 	icon = 153
@@ -33,6 +42,9 @@ waagh_revanchism = {
 		morale_defence=0.02
 		retreat=0.02
 	}
+				is_visible = {
+		religion_visible_trait = yes
+	}
 }
 waagh_fervor = {
 	icon = 153
@@ -44,6 +56,9 @@ waagh_fervor = {
 	command_modifier = {
 		center = 0.05
 		speed = 0.05
+	}
+					is_visible = {
+		religion_visible_trait = yes
 	}
 }
 greenskin_fightiness = { #Max 25, Prompt Waaagh government decision at 15,20,25 (Decaying?)
@@ -59,6 +74,9 @@ greenskin_fightiness = { #Max 25, Prompt Waaagh government decision at 15,20,25 
 	}
 	land_morale = 0.01
 	icon = 119
+					is_visible = {
+		religion_visible_trait = yes
+	}
 }
 empowered_by_waaagh = { #Max 10, 2 Gained by transforming to waaagh Government (trades 10 Fightiness), Rest gained through Waagh Events, Winning Waaagh/Invasion
 	max_population = 500 # (Perma, everytime you lose war, lose one)
@@ -75,6 +93,9 @@ empowered_by_waaagh = { #Max 10, 2 Gained by transforming to waaagh Government (
 		religious_enemy = 0.01
 	}
 	icon = 153
+					is_visible = {
+		religion_visible_trait = yes
+	}
 }
 call_to_waaagh = { #Max 10, 3 gained through preparation period, rest gained through winning battles (Decay) (Society Power aswell?)
 	max_population = 250
@@ -92,34 +113,55 @@ call_to_waaagh = { #Max 10, 3 gained through preparation period, rest gained thr
 	levy_size = 0.02
 	garrison_size = -0.01
 	icon = 153
+					is_visible = {
+		religion_visible_trait = yes
+	}
 }
 scattered_greenskins = {
 	icon = 153
 	monthly_character_prestige = 0.01
 	monthly_character_piety = 0.05
+			is_visible = {
+		visible_trait = yes
+	}
 }
 weak_warboss = {
 	icon = 154
 	vassal_opinion = -50
 	monthly_character_prestige = -0.3
+			is_visible = {
+		visible_trait = yes
+	}
 }
 
 greenskin_law_timer = {
 	icon = 153
+			is_visible = {
+		hidden_trait = yes
+	}
 }
 preparing_waaagh_invasion = {
 	icon = 31
 	monthly_character_prestige = 0.1
 	manpower_growth = 0.25
+			is_visible = {
+		visible_trait = yes
+	}
 }
 preparing_waaagh = {
 	icon = 31
+			is_visible = {
+		visible_trait = yes
+	}
 }
 
 attempted_waaagh = {
 	icon = 31
 	levy_size = -0.3
 	local_tax_modifier = -0.45
+			is_visible = {
+		visible_trait = yes
+	}
 }
 ############################################### Orcs Buy Weapons From Chaos Dwarfs
 chaos_dwarf_weapons = {
@@ -139,7 +181,13 @@ chaos_dwarf_weapons = {
 	horse_archers_offensive = 0.3
 
 	icon = 29
+			is_visible = {
+		visible_trait = yes
+	}
 }
 recently_brought_from_chaos_dwarfs = {
 	icon = 29
+			is_visible = {
+		hidden_trait = yes
+	}
 }

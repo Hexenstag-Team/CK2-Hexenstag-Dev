@@ -4,6 +4,9 @@
 knights_call_of_the_war_boost = {
 	icon = 56
 	levy_reinforce_rate = 0.15
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 knight_of_blazing_sun = {
 	icon = 115
@@ -13,6 +16,9 @@ knight_of_blazing_sun = {
 	center=0.1
 	}
 	combat_rating = 10
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 knight_of_everlasting_light = {
 	icon = 115
@@ -22,6 +28,9 @@ knight_of_everlasting_light = {
 	speed=0.1
 	}
 	combat_rating = 10
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 knight_of_white_wolf = {
 	icon = 115
@@ -32,6 +41,9 @@ knight_of_white_wolf = {
 	heavy_infantry = 0.1
 	}
 	combat_rating = 20
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 knight_of_black_rose = {
 	icon = 115
@@ -40,6 +52,9 @@ knight_of_black_rose = {
 	morrian_opinion = 5
 	command_modifier = {
 	religious_enemy = 0.05
+	}
+			is_visible = {
+		religion_group_visible_trait = yes
 	}
 }
 knight_of_mariner = {
@@ -50,6 +65,9 @@ knight_of_mariner = {
 	command_modifier = {
 	light_infantry = 0.05
 	heavy_infantry = 0.05
+	}
+			is_visible = {
+		religion_group_visible_trait = yes
 	}
 }
 knight_of_taals_fury = {
@@ -62,6 +80,9 @@ knight_of_taals_fury = {
 	religious_enemy = 0.05
 	} # Various command modifiers
 	taalite_opinion=10
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 knight_of_hammer_of_sigmar = {
 	icon = 115
@@ -72,12 +93,19 @@ knight_of_hammer_of_sigmar = {
 	command_modifier = {
 	religious_enemy = 0.15
 	}
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 knight_of_griffon = {
 	icon = 115
 	martial = 3
 	combat_rating = 20
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
+
 knight_of_panther = {
 	icon = 115
 	martial = 1
@@ -87,6 +115,9 @@ knight_of_panther = {
 	command_modifier = {
 	morale_offence = 0.1
 	} # Various command modifiers
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 knight_of_fiery_heart = {
 	icon = 115
@@ -95,12 +126,18 @@ knight_of_fiery_heart = {
 	command_modifier = {
 	religious_enemy = 0.1
 	} # Various command modifiers
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 reiksguard_knight = {
 	icon = 115
 	martial = 3
 	combat_rating = 15
 	monthly_character_prestige=0.25
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 #Southern Realms
 knight_of_righeous_spear = {
@@ -108,6 +145,9 @@ knight_of_righeous_spear = {
 	martial = 1
 	combat_rating = 10
 	myrmidian_opinion=10
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 knight_of_fury = {
 	icon = 115
@@ -117,6 +157,9 @@ knight_of_fury = {
 	tilean_group_opinion=-5
 	command_modifier={
 	damage=0.1
+	}
+			is_visible = {
+		religion_group_visible_trait = yes
 	}
 }
 knight_of_eagle = {
@@ -129,6 +172,9 @@ knight_of_eagle = {
 	command_modifier={
 	terrain=plains
 	}
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 #Tilea
 knight_of_encarmine = {
@@ -138,6 +184,9 @@ knight_of_encarmine = {
 	command_modifier={
 	random=0.2
 	}
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 knight_of_raven = {
 	icon = 115
@@ -145,6 +194,9 @@ knight_of_raven = {
 	combat_rating = 12
 	morrian_opinion = 5
 	tilean_group_opinion = 5
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 #Kislev
 knight_of_gryhpon_legion = {
@@ -156,20 +208,32 @@ knight_of_gryhpon_legion = {
 	speed=0.05
 	cavalry=0.1
 	}
+			is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 
 one_eyed_pirate = {
 	icon = 39
 	sex_appeal_opinion = 5
 	combat_rating = 10
+			is_visible = {
+		religion_visible_trait = yes
+	}
 }
 one_handed_pirate = {
 	icon = 39
 	sex_appeal_opinion = 5
 	combat_rating = 20
+			is_visible = {
+		religion_visible_trait = yes
+	}
 }
 one_legged_pirate = {
 	icon = 39
 	sex_appeal_opinion = 10
 	combat_rating = 30
+			is_visible = {
+		religion_visible_trait = yes
+	}
 }
