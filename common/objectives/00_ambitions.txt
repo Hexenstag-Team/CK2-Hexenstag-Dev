@@ -731,7 +731,7 @@ obj_become_paragon_of_virtue = {
 		NOT = { trait = incapable }
 		NOT = { trait = creature_chaosspawn }
 		NOT = { trait = khemri_soldier }
-      		NOT = { culture_group = daemonic_group }
+      	NOT = { culture_group = daemonic_group }
 	}
 
 	chance = {
@@ -770,7 +770,13 @@ obj_become_paragon_of_virtue = {
 	abort_effect = {
 	}
 	effect = {
-		change_learning = 1
+		if = {
+			limit = {
+				NOT = { has_character_flag = successful_paragon_of_virtue }
+			}
+			change_learning = 1
+			set_character_flag = successful_paragon_of_virtue
+		}
 		piety = 100
 		if = {
 			limit = {
@@ -815,7 +821,6 @@ obj_become_exalted = {
 	type = character
 
 	potential = {
-		NOT = { has_character_flag = became_exalted }
 		NOT = { trait = creature_chaosspawn }
 		NOT = { trait = khemri_soldier }
       		NOT = { culture_group = daemonic_group }
@@ -877,7 +882,13 @@ obj_become_exalted = {
 	abort_effect = {
 	}
 	effect = {
-		change_diplomacy = 1
+		if = {
+			limit = {
+				NOT = { has_character_flag = successful_become_exalted }
+			}
+			change_diplomacy = 1
+			set_character_flag = successful_become_exalted
+		}
 		prestige = 100
 		any_vassal = {
 			opinion = {
@@ -892,7 +903,6 @@ obj_become_exalted = {
 				limit = { ai = no }
 				set_character_flag = achievement_become_exalted
 			}
-			set_character_flag = became_exalted
 		}
 	}
 }
@@ -2181,6 +2191,7 @@ obj_see_the_realm_prosper = {
 		is_nomadic = no
 		liege = { is_nomadic = no }
 		NOT = { has_character_modifier = prosper_ambition_timer }
+		NOT = { has_character_flag = see_the_realm_prosper }
 	}
 
 	allow = {
@@ -2295,6 +2306,7 @@ obj_see_the_realm_prosper = {
 
 	effect = {
 		change_stewardship = 1
+		set_character_flag = see_the_realm_prosper
 		custom_tooltip = {
 			text = realm_prospers_custom_tooltip
 			hidden_tooltip = {

@@ -8,8 +8,6 @@ imperial_reconquest = {
 
     can_use = {
         ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
-			FROM = { NOT = { trait = vampire_necrarch_visible } }
             has_landed_title = e_the_empire
             independent = yes
             religion_group = old_world_group
@@ -355,7 +353,6 @@ imperial_reconquest = {
     # can_use = {
         # ROOT = {
             # culture_group = norscan_group
-			# NOT = { trait = vampire_necrarch_visible }
             # NOT = { same_realm = FROM }
             # NOT = { is_liege_or_above = FROM }
             # #has_horde_culture = no # This is chaos cb
@@ -596,7 +593,6 @@ vlad_subjugation = {
         ROOT = {
             has_artifact = carstein_ring
             NOT = { same_realm = FROM }
-			NOT = { trait = vampire_necrarch_visible }
             NOT = { is_liege_or_above = FROM }
 			primary_title = { higher_tier_than = KING }
             #has_horde_culture = no # This is chaos cb
@@ -1008,8 +1004,6 @@ imperial_reconquest2 = {
 			}
 		}
         ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
-			FROM = { NOT = { trait = vampire_necrarch_visible } }
             OR = {
                 has_landed_title = e_westerland
                 has_landed_title = e_reikland
@@ -2848,7 +2842,6 @@ cathayan_subjugation = {
 				prestige = 500
 				piety = 1000 } }
             NOT = { same_realm = FROM }
-			NOT = { trait = vampire_necrarch_visible }
             NOT = { is_liege_or_above = FROM }
 			primary_title = { higher_tier_than = KING }
         }

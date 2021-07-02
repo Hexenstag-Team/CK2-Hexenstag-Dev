@@ -408,7 +408,6 @@ other_claim = {
 		ROOT = {
 			mercenary = no
 			NOT = { trait = witch_hunter }
-			NOT = { trait = vampire_necrarch_visible }
 		}
 	}
 
@@ -976,11 +975,10 @@ claim_on_liege = {
 				culture_group = goblin_group
 			}
 		}
-		#No witch Hunters or Necrarch Vampires
+		#No witch Hunters
 		ROOT = {
-			NOR = {
+			NOT = {
 				trait = witch_hunter
-				trait = vampire_necrarch_visible
 			}
 		}
 	}
@@ -1333,10 +1331,6 @@ claim_on_liege_plot = {
 				culture_group = goblin_group
 			}
 		}
-		#No Necrarch Vampires
-		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
-		}
 	}
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
@@ -1635,10 +1629,6 @@ claim_on_vassal_plot = {
 				culture_group = goblin_group
 			}
 		}
-		#No Necrarch Vampires
-		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
-		}
 	}
 	
 	is_valid = {
@@ -1857,11 +1847,10 @@ other_claim_on_liege = {
 				culture_group = goblin_group
 			}
 		}
-		#No witch Hunters or Necrarch Vampires
+		#No witch Hunters
 		ROOT = {
-			NOR = {
+			NOT = {
 				trait = witch_hunter
-				trait = vampire_necrarch_visible
 			}
 		}
 	}
@@ -2260,7 +2249,6 @@ claim_all = {
 				value = 2
 			}
 			NOR = {
-				trait = vampire_necrarch_visible
 			 	trait = witch_hunter
 				religion_group = greenskin_gods_group
 				culture_group = orc_group
@@ -2522,11 +2510,10 @@ change_seniority_succession_law = {
 				culture_group = goblin_group
 			}
 		}
-		#No witch Hunters or Necrarch Vampires
+		#No witch Hunters
 		ROOT = {
-			NOR = {
+			NOT = {
 				trait = witch_hunter
-				trait = vampire_necrarch_visible
 			}
 		}
 	}
@@ -2773,11 +2760,10 @@ change_primogeniture_succession_law = {
 				culture_group = goblin_group
 			}
 		}
-		#No witch Hunters or Necrarch Vampires
+		#No witch Hunters
 		ROOT = {
-			NOR = {
+			NOT = {
 				trait = witch_hunter
-				trait = vampire_necrarch_visible
 			}
 		}
 	}
@@ -3028,11 +3014,10 @@ change_feudal_elective_succession_law = {
 				culture_group = goblin_group
 			}
 		}
-		#No witch Hunters or Necrarch Vampires
+		#No witch Hunters
 		ROOT = {
-			NOR = {
+			NOT = {
 				trait = witch_hunter
-				trait = vampire_necrarch_visible
 			}
 		}
 	}
@@ -3332,13 +3317,9 @@ invasion = {
 				culture_group = goblin_group
 			}
 		}
-		#No Necrarch Vampires
-		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
-		}
 		#the title must have at least one county which is NOT nehekharan (if all are, it is dead land, and cannot be occupied).
 		NOR = {
-			de_jure_liege_or_above = e_the_under_empire
+			de_jure_liege_or_above = e_the_under_empire ###REMOVE!!!!
 			de_jure_liege_or_above = e_nehekhara
 		}
 	}
@@ -3864,10 +3845,6 @@ tribal_invasion = {
 				culture_group = orc_group
 				culture_group = goblin_group
 			}
-		}
-		#No Necrarch Vampires
-		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 		}
 		#the title must have at least one county which is NOT nehekharan (if all are, it is dead land, and cannot be occupied).
 		NOR = {
@@ -6060,7 +6037,6 @@ religious = {
 			NOT = { culture_group = orc_group }
 			NOT = { culture_group = goblin_group }
 			NOT = { religion_group = greenskin_gods_group }
-			NOT = { trait = vampire_necrarch_visible }
 			#No order humans vs dwarfs
 			NOT = {
 				AND = {
@@ -6184,7 +6160,6 @@ religious = {
 		}
 		FROM = {
 			is_nomadic = no
-			NOT = { trait = vampire_necrarch_visible }
 			NOT = { culture_group = skaven_group }
 			NOT = { culture_group = orc_group }
 			NOT = { culture_group = goblin_group }
@@ -6690,7 +6665,6 @@ excommunicated_ruler = {
 		}
 		ROOT = {
 			NOT = { excommunicated_for = ROOT }
-			NOT = { trait = vampire_necrarch_visible }
 			mercenary = no
 		}
 	}
@@ -6904,7 +6878,6 @@ bid_for_independence = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			de_facto_liege = FROM
 
 			higher_tier_than = BARON
@@ -7207,7 +7180,6 @@ depose_liege = {
 	can_use = {
 		always = no # v2.21 - Disabled - not working well
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			de_facto_liege = FROM
 		}
 
@@ -7426,7 +7398,6 @@ overthrow_ruler = {
 			}
 		}
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			de_facto_liege = FROM
 		}
 	}
@@ -7667,7 +7638,6 @@ overthrow_ruler_no_calls = {
 			}
 		}
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			de_facto_liege = FROM
 		}
 	}
@@ -7846,7 +7816,6 @@ change_gavelkind_succession_law = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			vassal_of = FROM
 		}
 	}
@@ -8071,7 +8040,6 @@ lower_crown_authority_law = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			vassal_of = FROM
 		}
 		NOT = { has_dlc = "Zeus" }
@@ -8298,7 +8266,6 @@ lower_tribal_organization_law = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			vassal_of = FROM
 		}
 	}
@@ -8512,7 +8479,6 @@ coastal_republic = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			OR = {
 				is_merchant_republic = yes
 				is_patrician = yes
@@ -8704,7 +8670,6 @@ coastal_county_republic = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			OR = {
 				is_merchant_republic = yes
 				is_patrician = yes
@@ -9817,7 +9782,6 @@ cb_faction_independence = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			vassal_of = FROM
 			mercenary = no
 		}
@@ -9896,7 +9860,6 @@ cb_faction_independence = {
 							higher_tier_than = BARON
 							FROM = {
 								OR = { # If the old liege can use the subjugation CB, give no claims
-									NOT = { trait = vampire_necrarch_visible }
 									NOR = {
 										religion = norscan_gods
 										religion = northern_gods
@@ -10277,7 +10240,6 @@ embargo_cb = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			independent = yes
 			NOT = { has_embargo = FROM }
 			mercenary = no
@@ -10527,7 +10489,6 @@ seize_trade_post = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			OR = {
 				is_merchant_republic = yes
 				is_patrician = yes
@@ -10730,7 +10691,6 @@ viking_invasion = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			has_opinion_modifier = { who = FROM modifier = preparing_to_invade }
 			NOT = { is_liege_or_above = FROM }
 			mercenary = no
@@ -10947,7 +10907,6 @@ pagan_subjugation = {
 	can_use = {
 		ROOT = {
 			is_daemon_prince_trigger = no
-			NOT = { trait = vampire_necrarch_visible }
 			OR = {
 				religion = norscan_gods
 				religion = northern_gods
@@ -11215,7 +11174,6 @@ peasant_revolt = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			primary_title = { temporary = yes } # Revolter or adventurer trigger
 			war = no
 			NOT = { is_liege_or_above = FROM }
@@ -12450,7 +12408,6 @@ caliphal_subjugation = {
 				}
 			}
 			religion_group = ormazd_gods_group
-			NOT = { trait = vampire_necrarch_visible }
 			OR = {
 				has_landed_title = k_caliph_al_umma
 				AND = {
@@ -12648,7 +12605,6 @@ muslim_county_conquest = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			NOT = { is_liege_or_above = FROM }
 			mercenary = no
 			is_nomadic = no # Use the 'pagan_county_conquest' CB instead
@@ -12985,7 +12941,6 @@ pagan_county_conquest = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			NOT = { trait = creature_beastman }
 			OR={
 				ROOT = { government = freeboota_government }
@@ -13069,7 +13024,6 @@ pagan_county_conquest = {
 		OR = {
 			FROM = {
 				has_landed_title = PREV
-				NOT = { trait = vampire_necrarch_visible }
 			}
 			holder_scope = {
 				is_liege_or_above = FROM
@@ -13719,7 +13673,6 @@ dejure_county_claim = {
 			}
 		}
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			NOT = {
 				OR = {
 					religion_group = greenskin_gods_group
@@ -13730,7 +13683,6 @@ dejure_county_claim = {
 			}
 		}
 		FROM = {
-			NOT = { trait = vampire_necrarch_visible }
 			NOT = {
 				OR = {
 					religion_group = greenskin_gods_group
@@ -13960,9 +13912,6 @@ dejure_barony_claim = {
 	}
 
 	can_use = {
-		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
-		}
 		FROM = {
 			NOT = { is_vassal_or_below = ROOT }
 			OR = {
@@ -14219,7 +14168,6 @@ other_dejure_county_claim = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			NOT = {
 				OR = {
 					religion_group = greenskin_gods_group
@@ -14474,7 +14422,6 @@ ormazd_caliphate_rising = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			has_character_flag = ormazd_caliphate_pretender
 		}
 	}
@@ -15427,12 +15374,6 @@ tributary_cb = {
 				distance_from_realm = { who = FROM value = 120 }
 			}
 		}
-		modifier = {
-			factor = 0.1
-			FROM = {
-				trait = vampire_necrarch_visible
-			}
-		}
 	}
 
 	ai_will_do = {
@@ -15970,7 +15911,6 @@ cb_install_khan2 = {
 		has_dlc = "Horse Lords"
 
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			is_nomadic = yes
 		}
 	}
@@ -16485,7 +16425,6 @@ cb_minor_clan_revolt = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			primary_title = { temporary = yes } # Revolter or adventurer trigger
 			war = no
 			NOT = { is_liege_or_above = FROM }
@@ -16756,7 +16695,6 @@ nomad_subjugation = {
 				}
 			}
 			is_nomadic = yes
-			NOT = { trait = vampire_necrarch_visible }
 			NOT = { trait = creature_beastman }
 			NOT = { trait = creature_orc }
 			NOT = { trait = creature_goblin }
@@ -17094,7 +17032,6 @@ nomad_invasion = {
 			distance_from_realm = { who = FROM value < 500 }
 		}
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			NOT = { trait = creature_beastman }
 			NOT = { trait = creature_orc }
 			NOT = { trait = creature_goblin }
@@ -17394,7 +17331,6 @@ nomad_expansion = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			NOT = { trait = creature_beastman }
 			NOT = { trait = creature_orc }
 			NOT = { trait = creature_goblin }
