@@ -20,7 +20,7 @@ decisions = {
 		}
 
 		effect = {
-			ROOT = { character_event = { id = DR_chaos_dwarf.20 } }
+			ROOT = { character_event = { id = wh_chaos_dwarf.170 } }
 		}
 
 		ai_will_do = {
@@ -43,7 +43,10 @@ decisions = {
 			culture_group = dawi_zharr_group
 			age = 16
 
-
+			#get your money-grubbing hands off my lamassu
+			NOT = {
+				is_republic = yes
+			}
 			NOT = { has_artifact = lamassu_mount }
 			NOT = { has_character_flag = taming_beast }
 		}
@@ -56,7 +59,7 @@ decisions = {
 		}
 
 		effect = {
-			ROOT = { character_event = { id = DR_chaos_dwarf.22 } }
+			ROOT = { character_event = { id = wh_chaos_dwarf.172 } }
 		}
 
 		ai_will_do = {

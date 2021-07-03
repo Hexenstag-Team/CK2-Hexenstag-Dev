@@ -789,7 +789,138 @@ character_event = {
     }
   }
 
+  #events for Hashut rewards
+  #Great Taurus mount event
+  character_event = {
+  	id = wh_chaos_dwarf.170
+  	desc = EVTDESC_chaos_dwarf_great_taurus
 
+  	# desc = {
+  		# trigger = { NOT = { capital_scope = { kingdom = { title = k_zharrduk } } } }
+  		# text = = EVTDESCB_chaos_dwarf_great_taurus
+  	# }
+
+  	picture = "GFX_evt_desert"
+
+  	is_triggered_only = yes
+
+  	option = {
+  		name = EVTOPTA_chaos_dwarf_great_taurus
+  		set_character_flag = taming_beast
+  		piety = -1000
+  		character_event = { id = wh_chaos_dwarf.171 days = 1825 }
+  	}
+
+  	option = {
+  		name = ILL_WAIT_A_BIT
+  		trigger = { ai = no }
+  	}
+
+  }
+
+  character_event = {
+  	id = wh_chaos_dwarf.171
+
+  	desc = EVTDESC_chaos_dwarf_great_taurus_trained
+  	picture = "GFX_evt_great_taurus"
+
+  	is_triggered_only = yes
+
+  	option = {
+  		name = EVTOPTA_chaos_dwarf_great_taurus_trained
+  		add_artifact = great_taurus_mount
+  	}
+
+  }
+
+  #Lamassu mount event
+  character_event = {
+  	id = wh_chaos_dwarf.172
+
+  	desc = EVTDESC_chaos_dwarf_lamassu
+
+  	picture = "GFX_evt_desert"
+
+  	is_triggered_only = yes
+
+  	option = {
+  		name = EVTOPTA_chaos_dwarf_lamassu
+  		set_character_flag = taming_beast
+  		piety = -1000
+  		character_event = { id = wh_chaos_dwarf.173 days = 1825 }
+  	}
+
+  	option = {
+  		name = ILL_WAIT_A_BIT
+  		trigger = { ai = no }
+  	}
+
+  }
+
+  character_event = {
+  	id = wh_chaos_dwarf.173
+
+  	desc = EVTDESC_chaos_dwarf_lamassu_trained
+  	picture = "GFX_evt_lamassu"
+
+  	is_triggered_only = yes
+
+  	option = {
+  		name = EVTOPTA_chaos_dwarf_lamassu_trained
+  		add_artifact = lamassu_mount
+  	}
+
+  }
+
+  #events for sacrifices to Hashut
+  #courtier sacrificed, triggered by sunset_invasion decision
+  long_character_event = {
+  	id = wh_chaos_dwarf.190
+  	desc = EVTDESC_hashut_sac
+  	picture = GFX_evt_altar_hashut
+
+  	is_triggered_only = yes
+
+  	option = {
+  		name = EVTOPT_hashut_sac_dwarf
+  		trigger = {
+  			FROM = { trait = creature_dwarf }
+  		}
+  		piety = 50 #Normal Dwarfs are the most priced sacrifice
+  		clr_character_flag = sacrificing_prisoner_hashut
+  		hidden_tooltip = {
+  			change_variable = { which = "hashut_favor" value = 1 }
+  		}
+  		ai_chance = { factor = 1000 }
+  	}
+
+  	option = {
+  		name = EVTOPT_hashut_sac_minor
+  		trigger = {
+  			FROM = { is_ruler = yes }
+  			FROM = { NOT = { trait = creature_dwarf } }
+  		}
+  		set_character_flag = sac_minor
+  		clr_character_flag = sacrificing_prisoner_hashut
+  		hidden_tooltip = {
+  			change_variable = { which = "hashut_favor" value = 1 }
+  		}
+  		ai_chance = { factor = 50 }
+  	}
+
+  	option = {
+  		name = EVTOPT_hashut_sac_courtier
+  		trigger = {
+  			FROM = { is_ruler = no }
+  			FROM = { NOT = { trait = creature_dwarf } }
+  		}
+  		clr_character_flag = sacrificing_prisoner_hashut
+  		hidden_tooltip = {
+  			change_variable = { which = "hashut_favor" value = 0.5 }
+  		}
+  		ai_chance = { factor = 10 }
+  	}
+  }
 
 ### Council politics ###
 #
