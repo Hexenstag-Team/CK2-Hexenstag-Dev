@@ -14,15 +14,15 @@ character_event = {
 
 	immediate = {
 		remove_trait = hard_pregnancy
-		
+
 	}
 
 	option = {
-		name = "OK"		
+		name = "OK"
 		if = {
-			limit = { 
+			limit = {
 				OR = {
-					culture_group = asur_group 
+					culture_group = asur_group
 					culture_group = asrai_group
 					culture_group = druchi_group
 				}
@@ -168,8 +168,8 @@ character_event = {
 
 	is_triggered_only = yes
 	trigger = {
-		OR = { 
-			mother = { 
+		OR = {
+			mother = {
 				OR = {
 					trait = creature_elf
 					trait = creature_dwarf
@@ -186,29 +186,29 @@ character_event = {
 	}
 
 	immediate = {
-		if = { 
-			limit = { 
-				mother = { trait = creature_elf } 
+		if = {
+			limit = {
+				mother = { trait = creature_elf }
 			}
-			mother = { character_event = { id = health.1 days = 2 } } 
+			mother = { character_event = { id = health.1 days = 2 } }
 		}
-		else_if = { 
+		else_if = {
 			limit = { father = { trait = creature_elf age = 200 } }
-			father = { character_event = { id = health.4 days = 2 } } 
+			father = { character_event = { id = health.4 days = 2 } }
 		}
-		else_if = { 
+		else_if = {
 			limit = { father = { OR = { trait = creature_dwarf trait = creature_chaos_dwarf } age = 120 } }
-			father = { character_event = { id = health.5 days = 2 } } 
+			father = { character_event = { id = health.5 days = 2 } }
 		}
-		else_if = { 
+		else_if = {
 			limit = { mother = { OR = { trait = creature_dwarf trait = creature_chaos_dwarf } } }
-			mother = { character_event = { id = health.2 days = 2 } } 
+			mother = { character_event = { id = health.2 days = 2 } }
 		}
 		if = {
 			limit = {
 				mother = {
-					OR = { 
-						trait = creature_dwarf 
+					OR = {
+						trait = creature_dwarf
 						trait = creature_chaos_dwarf
 						trait = creature_elf
 					}
@@ -224,7 +224,7 @@ character_event = {
 						duration = 3650
 					}
 				}
-				else = { 
+				else = {
 					add_character_modifier = {
 						modifier = elder_race_fertility_mod_2
 						duration = 3650
@@ -235,8 +235,8 @@ character_event = {
 		if = {
 			limit = {
 				father = {
-					OR = { 
-						trait = creature_dwarf 
+					OR = {
+						trait = creature_dwarf
 						trait = creature_chaos_dwarf
 						trait = creature_elf
 					}
@@ -252,7 +252,7 @@ character_event = {
 						duration = 3650
 					}
 				}
-				else = { 
+				else = {
 					add_character_modifier = {
 						modifier = elder_race_fertility_mod_2
 						duration = 3650
@@ -429,7 +429,12 @@ character_event = {
 
 
 	immediate = {
-		random_list = { 60 = {
+		random_list = {
+			60 = {
+				modifier = {
+					factor = 1.5
+					has_focus = focus_family
+				}
 				modifier = {
 				factor = 0.75
 				age = 150
@@ -467,7 +472,22 @@ character_event = {
 				has_massive_mutation_trigger = yes
 				}
 			 }
-			40 = { add_trait = infertile }
+			40 = {
+				#male chaos dwarfs without sons keep on trying
+				modifier = {
+					factor = 0
+					AND = {
+						trait = creature_chaos_dwarf
+						is_female = no
+						NOT = {
+							any_child = {
+								is_female = no
+							}
+						}
+					}
+				}
+				add_trait = infertile
+			}
 		}
 	}
 }

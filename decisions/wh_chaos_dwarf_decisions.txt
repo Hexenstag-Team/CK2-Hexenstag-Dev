@@ -1,29 +1,6 @@
 ###Chaos Dwarf stuff
 decisions = {
 
-	# become_chaos_dwarf_sorcerer = {
-		# is_high_prio = yes
-		# potential = {
-			# is_ruler = yes
-			# religion = hashut
-			# NOT = { has_character_flag = chaos_dwarf_sorc_ceremony }
-			# NOT = { trait = chaos_dwarf_sorcerer }
-		# }
-		# allow = {
-			# piety = 1000
-		# }
-		# effect = {
-			# FROM = {
-				# long_character_event = { id = DR_chaos_dwarf.5 days = 5 }
-				# set_character_flag = chaos_dwarf_sorc_ceremony
-			# }
-		# }
-		# ai_will_do = {
-			# factor = 1
-			# modifier = { factor = 0.04 }
-		# }
-	# }
-
 	get_taurus_mount ={
 		ai_check_interval = 12
 		only_playable = yes
@@ -92,6 +69,218 @@ decisions = {
 		}
 
 	}
+}
+
+targeted_decisions = {
+	urge_son_become_daemonsmith = {
+		only_playable = yes
+		filter = close_relatives
+		ai_filter = close_relatives
+		ai_check_interval = 60
+
+		from_potential = {
+			trait = chaos_dwarf_sorcerer
+			has_living_children = yes
+			NOT = { has_character_modifier = hashut_heir_interaction }
+			trait = creature_chaos_dwarf
+			religion = hashut
+		}
+
+		potential = {
+			is_child_of = FROM
+			is_female = no
+			is_adult = yes
+			NOT = {
+				is_chaos_dwarf_sorcerer_path = yes
+			}
+			trait = creature_chaos_dwarf
+			religion = hashut
+		}
+
+		allow = {
+			learning >= 10
+			FROM = {
+				prestige = 100
+			}
+		}
+
+		effect = {
+			FROM = {
+				prestige = -100
+				add_character_modifier = {
+					name = hashut_heir_interaction
+					months = 48
+					hidden = yes
+				}
+			}
+			ROOT = {
+				add_ambition = obj_chaos_dwarf_become_daemonsmith
+			}
+			hidden_tooltip = {
+				random = {
+					chance = 25
+					FROM = {
+						hashut_favor_trivial_penalty_effect = yes
+					}
+				}
+			}
+		}
+
+		revoke_allowed = {		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	urge_son_become_sorcerer = {
+		only_playable = yes
+		filter = close_relatives
+		ai_filter = close_relatives
+		ai_check_interval = 60
+
+		from_potential = {
+			trait = chaos_dwarf_sorcerer
+			has_living_children = yes
+			NOT = { has_character_modifier = hashut_heir_interaction }
+			trait = creature_chaos_dwarf
+			religion = hashut
+		}
+
+		potential = {
+			is_child_of = FROM
+			is_female = no
+			trait = chaos_dwarf_daemonsmith
+			NOR = {
+				has_ambition = obj_chaos_dwarf_become_sorcerer
+				trait = chaos_dwarf_sorcerer
+			}
+			is_adult = yes
+			trait = creature_chaos_dwarf
+			religion = hashut
+		}
+
+		allow = {
+			age >= 50
+			piety = 100
+			FROM = {
+				prestige = 1000
+			}
+		}
+
+		effect = {
+			FROM = {
+				prestige = -1000
+				add_character_modifier = {
+					name = hashut_heir_interaction
+					months = 48
+					hidden = yes
+				}
+			}
+			ROOT = {
+				add_ambition = obj_chaos_dwarf_become_sorcerer
+			}
+			hidden_tooltip = {
+				random = {
+					chance = 25
+					FROM = {
+						hashut_favor_trivial_penalty_effect = yes
+					}
+				}
+			}
+		}
+
+		revoke_allowed = {		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	invoke_hashut_blessing = {
+		only_playable = yes
+		filter = close_relatives
+		ai_filter = close_relatives
+		ai_check_interval = 60
+
+		from_potential = {
+			OR = {
+				trait = chaos_dwarf_petrification_1
+				trait = chaos_dwarf_petrification_2
+			}
+			trait = chaos_dwarf_sorcerer
+			has_living_children = yes
+			NOT = { has_character_modifier = hashut_heir_interaction }
+			trait = creature_chaos_dwarf
+			religion = hashut
+		}
+
+		potential = {
+			is_child_of = FROM
+			is_chaos_dwarf_sorcerer_path = yes
+			is_female = no
+			is_adult = yes
+			trait = creature_chaos_dwarf
+			religion = hashut
+		}
+
+		allow = {
+			FROM = {
+				piety = 500
+				wealth = 200
+				add_character_modifier = {
+					name = hashut_heir_interaction
+					months = 48
+					hidden = yes
+				}
+			}
+		}
+
+		effect = {
+			#what we're pretending this decision is about
+			FROM = {
+				piety = -250
+				wealth = -100
+			}
+			ROOT = {
+				piety = 500
+			}
+			#what this decision is really about
+			hidden_tooltip = {
+				#Sire: lose five to eight hashut_favor
+				FROM = {
+					hashut_favor_medium_penalty_effect = yes
+					random = {
+						chance = 60
+						hashut_favor_trivial_penalty_effect = yes
+					}
+					random = {
+						chance = 40
+						hashut_favor_small_penalty_effect = yes
+					}
+				}
+				#Son: gain two to five hashut_favor
+				ROOT = {
+				hashut_favor_small_bonus_effect = yes
+					random = {
+						chance = 75
+						hashut_favor_trivial_bonus_effect = yes
+					}
+					random = {
+						chance = 50
+						hashut_favor_small_bonus_effect = yes
+					}
+				}
+			}
+		}
+
+		revoke_allowed = {		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
 }
 
 title_decisions = {

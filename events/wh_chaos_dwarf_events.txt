@@ -44,7 +44,6 @@ character_event = {
   immediate = {
     create_random_satrap = yes
     new_character = {
-      set_character_flag = gaining_satrapy
       event_target:target_satrapy = {
         grant_title = PREV
         location = {
@@ -480,6 +479,10 @@ character_event = {
           id = wh_chaos_dwarf.123
           days = 3
         }
+        change_variable = {
+          which = hashut_favor
+          value = -25
+        }
       }
     }
 
@@ -539,12 +542,51 @@ character_event = {
     }
 
     immediate = {
-      #debug help
-      clr_character_flag = passed_curse_check
-      clr_character_flag = failed_curse_check
       #basic cost of doing business
       hashut_favor_major_penalty_effect = yes
-      #age penalties. Cumulative structure
+      #high priest bonus
+      if = {
+        limit = {
+          has_landed_title = e_hashut
+        }
+        hashut_favor_small_bonus_effect = yes
+      }
+      #fickle favor. Cumulative design.
+      random = {
+        chance = 75
+        hashut_favor_trivial_penalty_effect = yes
+      }
+      random = {
+        chance = 60
+        hashut_favor_small_penalty_effect = yes
+      }
+      random = {
+        chance = 45
+        hashut_favor_medium_penalty_effect = yes
+      }
+      random = {
+        chance = 30
+        hashut_favor_major_penalty_effect = yes
+      }
+      #age modifiers. Cumulative structure
+      if = {
+        limit = {
+          age <= 100
+        }
+        hashut_favor_medium_bonus_effect = yes
+      }
+      if = {
+        limit = {
+          age <= 125
+        }
+        hashut_favor_small_bonus_effect = yes
+      }
+      if = {
+        limit = {
+          age <= 150
+        }
+        hashut_favor_trivial_bonus_effect = yes
+      }
       if = {
         limit = {
           age >= 200
@@ -587,38 +629,12 @@ character_event = {
         }
         hashut_favor_major_penalty_effect = yes
       }
-      #being a good minion
-      if = {
-        limit = {
-          trait = cruel
-        }
-        hashut_favor_trivial_bonus_effect = yes
-      }
-      if = {
-        limit = {
-          trait = zealous
-        }
-        hashut_favor_trivial_bonus_effect = yes
-      }
       #refusing to die
       if = {
         limit = {
           trait = stubborn
         }
         hashut_favor_small_bonus_effect = yes
-      }
-      #being a bad minion
-      if = {
-        limit = {
-          trait = kind
-        }
-        hashut_favor_trivial_penalty_effect = yes
-      }
-      if = {
-        limit = {
-          trait = cynical
-        }
-        hashut_favor_trivial_penalty_effect = yes
       }
       #high learning adjustment. Cumulative design.
       if = {
@@ -653,8 +669,6 @@ character_event = {
             value <= 0
           }
         }
-        #debug help
-        set_character_flag = failed_curse_check
         trigger_switch = {
           on_trigger = trait
           chaos_dwarf_petrification_2 = {
@@ -688,10 +702,6 @@ character_event = {
           }
         }
       }
-      else = {
-        #debug help
-        set_character_flag = passed_curse_check
-      }
     }
 
   }
@@ -700,7 +710,7 @@ character_event = {
   character_event = {
     id = wh_chaos_dwarf.141
     picture = GFX_evt_stone_chaos_dwarf
-    desc = EVTDESC0sorcererscurse
+    desc = EVTDESCAsorcererscurse
 
     is_triggered_only = yes
 
@@ -709,7 +719,7 @@ character_event = {
       #delay next effect
       change_variable = {
         which = hashut_favor
-        value = 50
+        value = 20
       }
     }
 
@@ -722,7 +732,7 @@ character_event = {
   character_event = {
     id = wh_chaos_dwarf.142
     picture = GFX_evt_stone_chaos_dwarf
-    desc = EVTDESCAsorcererscurse
+    desc = EVTDESCBsorcererscurse
 
     is_triggered_only = yes
 
@@ -730,7 +740,7 @@ character_event = {
       #delay next effect
       change_variable = {
         which = hashut_favor
-        value = 50
+        value = 20
       }
     }
 
@@ -744,7 +754,7 @@ character_event = {
   character_event = {
     id = wh_chaos_dwarf.143
     picture = GFX_evt_stone_chaos_dwarf
-    desc = EVTDESCBsorcererscurse
+    desc = EVTDESCCsorcererscurse
 
     is_triggered_only = yes
 
@@ -752,7 +762,7 @@ character_event = {
       #delay next effect
       change_variable = {
         which = hashut_favor
-        value = 50
+        value = 20
       }
     }
 
@@ -766,11 +776,11 @@ character_event = {
   character_event = {
     id = wh_chaos_dwarf.144
     picture = GFX_evt_stone_chaos_dwarf
-    desc = EVTDESCCsorcererscurse
+    desc = EVTDESCDsorcererscurse
 
     is_triggered_only = yes
 
-    #no need to delay next check now!
+    #no need to delay next effect now!
 
     option = {
       name = EVTOPT_hashut_grant_me

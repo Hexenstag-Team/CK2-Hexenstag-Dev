@@ -19,19 +19,10 @@ long_character_event = {
 		trigger = {
 			FROM = { trait = creature_dwarf }
 		}
-		piety = 150 #Normal Dwarfs are the most priced sacrifice
-		change_variable = { which = "hashut_favor" value = 1 }
-		# custom_tooltip = { text = hashut_sacrifice }
-		if = {
-			limit = {
-				has_character_modifier = must_sacrifice_hashut
-			}
-			remove_character_modifier = must_sacrifice_hashut
-		}
-		clr_character_flag = flag_sacrifice_made_hashut
-		set_character_flag = flag_sacrifice_made_hashut
+		piety = 50 #Normal Dwarfs are the most priced sacrifice
 		clr_character_flag = sacrificing_prisoner_hashut
 		hidden_tooltip = {
+			change_variable = { which = "hashut_favor" value = 1 }
 			FROM = { character_event = { id = DR_chaos_dwarf.2 } }
 		}
 		ai_chance = { factor = 1000 }
@@ -44,18 +35,9 @@ long_character_event = {
 			FROM = { NOT = { trait = creature_dwarf } }
 		}
 		set_character_flag = sac_minor
-		change_variable = { which = "hashut_favor" value = 1 }
-		if = {
-			limit = {
-				has_character_modifier = must_sacrifice_hashut
-			}
-			remove_character_modifier = must_sacrifice_hashut
-		}
-		clr_character_flag = flag_sacrifice_made_hashut
-		set_character_flag = flag_sacrifice_made_hashut
 		clr_character_flag = sacrificing_prisoner_hashut
-		piety = 100
 		hidden_tooltip = {
+			change_variable = { which = "hashut_favor" value = 1 }
 			FROM = { character_event = { id = DR_chaos_dwarf.2 } }
 		}
 		ai_chance = { factor = 50 }
@@ -67,18 +49,9 @@ long_character_event = {
 			FROM = { is_ruler = no }
 			FROM = { NOT = { trait = creature_dwarf } }
 		}
-		piety = 50
-		change_variable = { which = "hashut_favor" value = 1 }
-		if = {
-			limit = {
-				has_character_modifier = must_sacrifice_hashut
-			}
-			remove_character_modifier = must_sacrifice_hashut
-		}
-		clr_character_flag = flag_sacrifice_made_hashut
-		set_character_flag = flag_sacrifice_made_hashut
 		clr_character_flag = sacrificing_prisoner_hashut
 		hidden_tooltip = {
+			change_variable = { which = "hashut_favor" value = 0.5 }
 			FROM = { character_event = { id = DR_chaos_dwarf.2 } }
 		}
 		ai_chance = { factor = 10 }

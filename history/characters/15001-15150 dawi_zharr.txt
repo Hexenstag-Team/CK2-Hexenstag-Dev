@@ -511,8 +511,7 @@
 	2013.3.15 = {death = yes}
 }
 
-
-#lore-breaking ruler of Vlagaar, Karak Vlag
+#unlanded
 15022 = { #54027
 	name = Alnun
 	dynasty = 78027
@@ -533,7 +532,7 @@
 	2021.10.15 = {death = yes}
 }
 
-#lore-breaking ruler in Vlagaar
+#unlanded
 15023 = { #54028
 	name = Huwaz
 	dynasty = 78028
@@ -553,7 +552,7 @@
 	2020.4.29 = {death = yes}
 }
 
-#lore-dubious ruler in Eragol
+#Captain of the Guns of Zharr-Naggrund
 15024 = { #54029
 	name = Seri
 	female = yes
@@ -571,11 +570,13 @@
 	add_trait = craven
 	add_trait = honest
 	add_trait = kind
+	add_trait = dwarf_engineer
+	add_trait = chaos_dwarf_daemonsmith
 	1960.1.1 = {birth = yes}
 	2013.6.30 = {death = yes}
 }
 
-#lore-dubious ruler in Eragol
+#unlanded
 15025 = { #54030
 	name = Oensus
 	dynasty = 78030
@@ -593,7 +594,7 @@
 	2018.4.6 = {death = yes}
 }
 
-#lore-dubious ruler of Eragol
+#unlanded
 15026 = { #54031
 	name = Florbis
 	female = yes
@@ -615,7 +616,7 @@
 	2035.6.9 = {death = yes}
 }
 
-#lore-dubious ruler of karak unvilak
+#leader of Uzkulak Arsenal mercenaries
 15027 = { #54032
 	name = El'graz
 	dynasty = 78032
@@ -633,6 +634,8 @@
 	add_trait = shy
 	add_trait = temperate
 	add_trait = content
+	add_trait = chaos_dwarf_daemonsmith
+	add_trait = dwarf_engineer
 	1979.1.1 = {birth = yes}
 	2028.7.10 = {death = yes}
 }
@@ -1581,5 +1584,33 @@
 			death_reason = death_murder
 			killer = 7000
 		}
+	}
+}
+
+#WHAP character (Mathias probably found him elsewhere), leads Daemon Engines mercenaries
+15072 = {
+	name = Hrothgar
+	dynasty = none
+	culture = dawi_zharr
+	religion = hashut
+	martial = 9
+	diplomacy = 2
+	stewardship = 6
+	intrigue = 5
+	learning = 7
+	add_trait = creature_chaos_dwarf
+	add_trait = shy
+	add_trait = brilliant
+	add_trait = dwarf_engineer_master
+	add_trait = chaos_dwarf_daemonsmith
+	add_trait = diligent
+	1877.8.2 = {
+		birth = yes
+		effect = {
+			dynasty = none
+		}
+	}
+	2217.1.6 = {
+		death = yes
 	}
 }
