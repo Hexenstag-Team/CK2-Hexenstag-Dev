@@ -9134,6 +9134,9 @@ engineers_guild = {
 			trait = creature_dwarf
 			trait = creature_human
 		}
+		NOT ={
+			religion_group = chaos_gods_group
+		}
 		hidden_trigger = {
 			OR = {
 				culture_group = tilean_group
@@ -9198,7 +9201,7 @@ engineers_guild = {
 			learning = 2
 			stewardship = 1
 			#church_opinion = -10
-			build_time_modifier  = -0.25
+			build_time_modifier  = -0.10
 		}
 		decisions = {
 			deploy_war_machines
@@ -9214,7 +9217,7 @@ engineers_guild = {
 			learning = 3
 			stewardship = 1
 			#church_opinion = -10
-			build_time_modifier = -0.50
+			build_time_modifier = -0.25
 		}
 		decisions = {
 			engineer_masterwork
@@ -9387,6 +9390,7 @@ mad_inventors = {
 		OR = {
 			trait = creature_goblin
 			trait = creature_chaos_dwarf
+			trait = creature_hobgoblin
 		}
 		learning = 10
 		NOR = {

@@ -83,7 +83,7 @@ upgrade_mining_layer_1 = {
 
   local_modifier = {
     garrison_size = 0.10
-    levy_size = 0.10
+    levy_size = 0.05
   }
 
   owner_modifier = {  }
@@ -108,7 +108,7 @@ upgrade_mining_layer_2 = {
 
   local_modifier = {
     garrison_size = 0.10
-    levy_size = 0.10
+    levy_size = 0.05
   }
 
   owner_modifier = {  }
@@ -136,7 +136,7 @@ upgrade_mining_layer_3 = {
 
   local_modifier = {
     garrison_size = 0.10
-    levy_size = 0.10
+    levy_size = 0.05
   }
 
   owner_modifier = {  }
@@ -164,7 +164,7 @@ upgrade_mining_layer_4 = {
 
   local_modifier = {
     garrison_size = 0.10
-    levy_size = 0.10
+    levy_size = 0.05
   }
 
   owner_modifier = {  }
@@ -263,8 +263,8 @@ upgrade_mining_pyrite = {
   gold_cost_ticking = 1
 
   local_modifier = {
-    artillery_offensive = 0.10
-    gunpowder_offensive = 0.10
+    artillery_offensive = 0.50
+    gunpowder_offensive = 0.25
   }
 }
 
@@ -691,11 +691,41 @@ upgrade_mining_marble = {
 
 # COMMERCE #
 
+upgrade_great_dwarf_brewery = {
+  picture = GFX_upgrade_icon_crates
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_dwarf_great_hall
+    }
+  }
+  flags = { }
+
+  build_time = 60
+  gold_cost_flat = 240
+  gold_cost_ticking = 1
+
+  local_modifier = {  }
+  owner_modifier = {
+    land_morale = 0.05
+    retinuesize_perc = 0.1
+  }
+}
+
 #e.g. Barak Varr
 #adds galleys and trade value
 upgrade_great_dwarf_port = {
   picture = GFX_upgrade_icon_anchor
-  potential = { }
+  potential = {
+    FROMFROMFROM = {
+      is_coastal = yes
+    }
+  }
   allow = { }
   flags = { }
 
@@ -911,15 +941,20 @@ upgrade_dwarf_aerodrome = {
 
   local_modifier = {  }
   owner_modifier = {
-    demesne_size = 1
-    vassal_opinion = 5 #would have preferred vassal_limit but that's not available on wonders
+    #airlifted supplies make it easier to keep armies fed and moving
+    global_movement_speed = 0.05
+    global_supply_limit = 0.20
   }
 }
 
 #mainly included so Barak Varr can have all the ships
 upgrade_dwarf_shipyard = {
   picture = GFX_upgrade_icon_anchor
-  potential = { }
+  potential = {
+    FROMFROMFROM = {
+      is_coastal = yes
+    }
+  }
   allow = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_coal
@@ -955,7 +990,7 @@ upgrade_artillery_tradition = {
   gold_cost_ticking = 1
 
   local_modifier = {
-    artillery_offensive = 2.0
+    artillery_offensive = 1.5
   }
   owner_modifier = {  }
 }
@@ -980,7 +1015,7 @@ upgrade_gunnery_tradition = {
 
   #this is pretty solid but gunpowder isn't everywhere
   local_modifier = {
-    gunpowder_offensive = 0.5
+    gunpowder_offensive = 0.25
     gunpowder_defensive = 0.5
   }
   owner_modifier = {  }

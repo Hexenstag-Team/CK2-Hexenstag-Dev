@@ -2258,6 +2258,26 @@ temple = {
 
 tribal = {
 
+  #satrap billboard
+  #unbuildable, included so that players looking to improve a tribal holding with buildings find help there
+  tb_satrap_billboard = {
+    desc = tb_satrap_billboard_desc
+    potential = {
+      FROM = {
+        trait = creature_chaos_dwarf
+      }
+    }
+    trigger = {
+      custom_tooltip = {
+        text = tb_satrap_billboard_tt
+        always = no
+      }
+    }
+
+    extra_tech_building_start = 16
+  }
+
+
   #overseers - replaces tribal hillfort
   #long build time, more focused on fortification and garrisons
   tb_hobgoblin_overseers_1 = {
