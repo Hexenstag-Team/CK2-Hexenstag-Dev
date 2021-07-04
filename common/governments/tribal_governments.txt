@@ -792,6 +792,7 @@ tribal_governments = {
 				is_government_potential = eternal_court_government
 				is_government_potential = greenskin_government
 				is_government_potential = strigoi_government
+				is_government_potential = hobgoblin_satrapy
 			}
 
 			NOT = {	culture = nehekharan }
@@ -897,6 +898,99 @@ tribal_governments = {
 			lizardmen_government
 			skaven_government
 			dwarf_government
+		}
+	}
+
+	#special government for hobgoblins working for The Dwarf
+	hobgoblin_satrapy = {
+		potential = {
+			culture = servile_hobgoblin
+			religion = hashut
+
+			NOT = { is_government_potential = pirate_government }
+
+			is_patrician = no
+		}
+
+		color = { 10 138 57 }
+		frame_suffix = "_tribal"
+
+		title_prefix = "tribal_"
+
+		demesne_size = 2
+		vassal_limit = -10
+
+		capital_move_delay = 600
+
+		dukes_called_kings = yes
+
+		uses_decadence = yes
+
+		allow_looting = yes
+		#max_consorts = 3
+		ignores_de_jure_laws = yes
+		can_build_castle = no
+		can_build_city = no
+		can_build_temple = no
+		can_build_tribal = yes
+		can_build_hospitals = yes
+		#can_change_to_nomad_on_start = yes
+
+		preferred_holdings = { TRIBAL }
+		allowed_holdings = {
+			TRIBAL
+			FORT
+		}
+		allowed_holdings_culture = {
+			CASTLE
+		}
+
+		builds_with_prestige = {
+			TRIBAL
+		}
+
+		accepts_liege_governments = {
+			chaosdwarf_government
+			chaosdwarf_guilds_government
+		}
+
+		free_revoke_on_governments = {
+			greenskin_government
+			freeboota_government
+			pirate_government
+			beastman_government
+			skaven_government
+		}
+
+		no_vassal_tax = {
+			nehekharan_government
+			highborn_government
+			druchii_government
+			eternal_court_government
+			beastman_government
+			greenskin_government
+			freeboota_government
+			pirate_government
+			dwarf_government
+			lizardmen_government
+			skaven_government
+		}
+		vassal_call_to_arms = {
+			eternal_court_government
+			beastman_government
+			greenskin_government
+			freeboota_government
+			pirate_government
+			nehekharan_government
+			dwarf_government
+			lizardmen_government
+			skaven_government
+		}
+
+		ignore_in_vassal_limit_calculation = {
+			tribal_government
+			beastman_government
+			greenskin_government
 		}
 	}
 

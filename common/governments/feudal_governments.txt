@@ -529,7 +529,7 @@ feudal_governments = {
 		color = { 77 24 44 }
 		frame_suffix = "_strigoigov"
 		title_prefix = "strigoi_"
-		
+
 		uses_piety_for_law_change = yes
 
 		dukes_called_kings = yes
@@ -823,6 +823,7 @@ feudal_governments = {
 	chaosdwarf_government = {
 		potential = {
 			culture_group = dawi_zharr_group
+			NOT = { culture = servile_hobgoblin }
 			religion = hashut
 
 			NOT = { is_government_potential = pirate_government } # Dawi Zharr pirates on daemonships
@@ -833,14 +834,17 @@ feudal_governments = {
 		color = { 190 75 6 }
 		frame_suffix = "_chaosdwarfgov"
 
-		demesne_size = 1
-		vassal_limit = -2
+		#demesne_size = 1
+		vassal_limit = -15 #not expansive
 		commander_limit = 1
 
 		capital_move_delay = 600
 
 		can_build_tribal = no
 
+		can_create_kingdoms = no
+		can_create_empires = no
+		can_usurp_kingdoms_and_empires = no
 		allow_title_revokation = yes
 		dukes_called_kings = yes
 		barons_need_dynasty = yes
@@ -848,6 +852,7 @@ feudal_governments = {
 		can_revoke_without_reason = no
 		can_grant_kingdoms_and_empires_to_other_government = no
 		can_demand_religious_conversion = no
+		max_consorts = 5 #privileged castes
 
 		## Modifiers
 		court_size_modifier = 10
@@ -871,7 +876,7 @@ feudal_governments = {
 		}
 
 		free_revoke_on_governments = {
-			greenskin_government
+			#greenskin_government - Chaos Dwarfs have a special relationship with greenskins
 			freeboota_government
 			pirate_government
 			beastman_government
@@ -890,6 +895,7 @@ feudal_governments = {
 			dwarf_government
 			lizardmen_government
 			skaven_government
+			#hobgoblin satrapies absolutely pay tax to their overlords
 		}
 		vassal_call_to_arms = {
 			eternal_court_government
@@ -907,6 +913,7 @@ feudal_governments = {
 			tribal_government
 			beastman_government
 			greenskin_government
+			hobgoblin_satrapy #efficient middle managers
 		}
 	}
 
@@ -1763,7 +1770,7 @@ feudal_governments = {
 			tribal_government
 		}
 	}
-	
+
 	# Norscan Tribes ( Feudal )
 	norscan_government_feudal = {
 		potential = {
@@ -1876,7 +1883,7 @@ feudal_governments = {
 			skaven_government
 		}
 	}
-	
+
 	# Feudal
 	subfeudal_government = {
 		potential = {

@@ -1,0 +1,568 @@
+#########################################
+### Warhammer Fantasy generic wonders ###
+#########################################
+#
+# # INDEX # #
+#
+# 0. Help
+# 1. Old World City
+# 2. Dwarf Hold
+#
+#
+
+### Help for new modders ###
+#
+# Vanilla used specific wonder items for its historical great works because they were all 'one offs'.
+# But in Hexenstag, the wonder items represent classes of special areas in the Old World.
+# In addition, Hexenstag is a work constantly in development. Future modders (maybe even you!)
+# will have to work with these wonders and might want to change the available upgrades for some class.
+# It is much easier to change the available upgrades for one item than it is to make the same upgrade
+# for sixteen items.
+#
+# When adding a wonder (or converting a vanilla special building into a wonder), follow these steps:
+# 0. Read the full instructions before beginning. This will save your time, rather than waste it.
+# 1. Check lore details, confirming location and getting the best construction dates possible.
+# 	a. Estimates will often be required.
+# 2. Check the developed generic wonders to find the best match.
+# 	a. In the rare case that no close match exists, you may need to script a new class of wonder.
+# 3. Find the appropriate province file in the \history\provinces\ folder.
+#		a. Add a new date entry corresponding to the construction of the wonder, or 1.1.1 for wonders pre-Sigmar.
+#		b. Add the 'build_wonder = <wonder_type> command inside that date entry, replacing <wonder_type> with the
+#			 id of the new wonder.
+#		c. Use the 'set_wonder_stage = X' command inside the date entry, replacing X with the correct number of stages
+#			 that the wonder should have at its first appearance. (Usually the right number of stages is based on the
+#			 number of upgrades that the wonder will have at that point in its life.)
+#		d. For each upgrade that the wonder should have, use the 'build_wonder_upgrade = <upgrade_type>' command. As
+#			 with the build_wonder command, replace <upgrade_type> with the id of the upgrade.
+#		NOTE: You can refer to file 478 - Zharr-Naggrund.txt for an example of this initial entry.
+# 4. If information exists for charting the life of the wonder and showing when upgrades or new stages were built,
+#		 this can be scripted into the province history file as well. Just add a new date entry for each group of changes
+#		 and use the set_wonder_stage and build_wonder_upgrade commands described in steps 3c and 3d to add these details.
+# 5. Open CK2 using your newly modded files to check that the wonder has appeared. At this stage its name and description
+#		 will appear unlocalized as something like 'wonder_type' and 'wonder_type_desc'.
+#		 a. If the wonder has not appeared, you only have one file to debug - the history file which you just edited. Check that
+#			  the brackets close correctly (this is a common problem even for fairly experienced modders), then confirm that there
+#			  are no typos in the commands.
+#		 b. If everything seems in order but the wonder still won't load properly, it is best to ask someone more knowledgeable
+#			  for help at this point.
+# 6. Once the wonder is appearing correctly, it is time to set the name. You will need to open the file wh_setup_events.txt
+#		 in the folder \events\.
+#		 a. Search for wh_setp.100. You should find a comment identifying it as the event that sets up wonder names and descriptions.
+#		 b. Scroll down to the immediate command block and look for the comment identifying where new entries should be added.
+#		 NOTE: If there is no comment, someone has deleted it and they should be ashamed of themselves, but you can still find the correct
+#				place by looking for the command 'set_global_flag = wh_wonder_names_and_descriptions_set'. Please add a new line above that command
+#				and restore the comment by adding a hashtag and a short note.
+#		 c. Add a new line above the comment. Check the province id for the province your wonder is located in. It's the number at the
+#				start of the province filename. (So in our example of Zharr-Naggrund, the id is 478.) Match up with the indent for the comment, then
+@				open an entry for the province by typing its id into the new line, followed by the equals and opening curly bracket as normal.
+#		 d. Add a new line, increase the indent and change scopes to the wonder using, wonder = {
+#		 e. Add a new line, increase the indent, and set the wonder's name by typing, set_name = "<your_wonder_name>" . <your_wonder_name>
+#			  should be replaced by EITHER:
+#				i. The actual text to be displayed in game, within quotation marks. For example, "Zharr-Naggrund".
+#				ii. A localization key. This is the preferred style and if you're replacing a special building there should alrady be a localization
+#					  key associated with it. Whatever the source of the key, be sure not to add any quotation marks and just have it follow the equals sign.
+#		 f. Add a new line and maintain the current indent, then set the wonder's description by typing,
+#				set_description = <your_wonder_description>. <your_wonder_description> should be replaced by EITHER:
+#				i. The actual text to be displayed in game, within quotation marks. For example, "Zharr-Naggrund is a pretty cool place".
+#				ii. A localization key, typically ending in _desc. As with the localization key for the wonder name, be sure not to use quotation marks.
+#				NOTE: Usually localization keys use easily associated terms, with the description key just adding _desc to the name key's id.
+#			g. Add a new line, decrease the indent, and close the wonder scope with a closing curly bracket.
+#			h. Add a new line, decrease the indent, and close the province command with a closing curly bracket.
+#	7. Save your work and start a new game using your modded files. The new name and description should be applied.
+#		a. If the details are not correctly displayed, open up the ledger and go to the Great Works tab to check if other wonders are
+#			 affected. If they are, it is probably best to revert your change to wh_setup_events.txt altogether and try again.
+#		NOTE: If this has happened more than once, it is time to ask for help.
+#		b. If only your wonder has a problem, you should be able to debug by checking that the brackets open and close correctly and that
+#			 the text is free of typos. If the name displays correctly but the description does not, check the entry corresponding to the
+#			 localization key. (Or ask the person who gave you the localization key to help sort this out.)
+# 8. Once the wonder is displaying correctly with its proper name and description, pat yourself on the back for helping the mod grow!
+#
+### Help ends here ###
+
+
+### OLD WORLD CITY ###
+# This should be appropriate for Imperials, Bretonnians, Estalians, Tileans, and Border Princes.
+# Maybe it should be built to work for Arabyans as well.
+
+wonder_old_world_city = {
+	allow_coastal = yes
+	picture = GFX_wonder_strip_grandfortress
+	potential = {
+		always = no #needs more development
+	}
+	active = {
+		religion_group = old_world_group #probably too restrictive because an Arabyan City would look pretty similar
+	}
+	flags = {
+		defensive
+		great_city
+		is_destructible
+		cost_high
+	}
+	available_upgrades = {
+
+	###CITY THINGS###
+	upgrade_art_gallery
+	upgrade_city_gardens
+	upgrade_court_of_law
+	upgrade_dwarf_quarter
+	upgrade_industrial_district
+	upgrade_palace
+	upgrade_racetrack
+	upgrade_streetlights
+
+	###EDUCATION###
+	upgrade_university
+	upgrade_engineering_school
+	upgrade_engineered_canals
+	upgrade_engineered_defences
+	upgrade_gunnery_school
+	upgrade_cannon_foundry
+
+	###TEMPLES###
+	upgrade_temple_quarter
+	upgrade_templar_orders
+	#GREAT TEMPLES
+	upgrade_great_dazh_temple
+	upgrade_great_grail_chapel
+	upgrade_great_manann_temple
+	upgrade_great_morr_temple
+	upgrade_great_myrmidia_temple
+	upgrade_great_sigmar_temple
+	upgrade_great_shallya_temple
+	upgrade_great_taal_rhya_temple
+	#no great temple of Tor because he doesn't have much of a cult
+	upgrade_great_ulric_temple
+	upgrade_great_ursun_temple
+	upgrade_great_verena_temple
+
+	}
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			tradevalue = 15
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 4
+				TECH_CONSTRUCTION = 4
+			}
+		}
+		build_time = 375
+		gold_cost_flat = 2200
+		gold_cost_ticking = 4
+		restore_time = 360
+		loot_time = 6
+		restore_cost_flat = 1000
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			tradevalue = 15
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 6
+				TECH_CONSTRUCTION = 6
+			}
+		}
+		build_time = 375
+		gold_cost_flat = 2400
+		gold_cost_ticking = 5
+		restore_time = 480
+		loot_time = 6
+		restore_cost_flat = 1000
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			tradevalue = 15
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 8
+				TECH_CONSTRUCTION = 8
+			}
+		}
+		build_time = 375
+		gold_cost_flat = 2600
+		gold_cost_ticking = 4
+		restore_time = 360
+		loot_time = 6
+		restore_cost_flat = 1000
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			tradevalue = 15
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+}
+
+### DWARF HOLD ###
+# This needs to be appropriate for Dwarf and Chaos Dwarf builders (though the upgrades can diverge), and a good fit for Greenskin squatters
+
+wonder_dwarf_hold = {
+	picture = GFX_wonder_strip_dwarfhold #functional placeholder
+
+  potential = {
+    FROMFROMFROM = {
+			OR = {
+				culture_group = dwarf_group
+				culture_group = dawi_zharr_group
+			}
+			NOT = { culture = servile_hobgoblin }
+		}
+  }
+
+  active = {
+
+  }
+
+	#set to forbid new constructions, testing!
+	allow_construction = no
+
+  available_upgrades = {
+		# MINING #
+		upgrade_mining_layer_1
+		upgrade_mining_layer_2
+		upgrade_mining_layer_3
+		upgrade_mining_layer_4
+		upgrade_mining_pumps
+		#alluvial minerals
+		upgrade_mining_cassiterite
+		upgrade_mining_native_gold
+		upgrade_mining_pyrite
+		upgrade_mining_tetrahedrite
+		#sedimentary minerals
+		upgrade_mining_coal
+		upgrade_mining_galena
+		upgrade_mining_hematite
+		upgrade_mining_limonite
+		upgrade_mining_magnetite
+		upgrade_mining_rubies
+		upgrade_mining_sapphires
+		#igneous extrusive minerals
+		upgrade_mining_cinnabar
+		upgrade_mining_native_copper
+		upgrade_mining_obsidian
+		#igneous intrusive minerals
+		upgrade_mining_diamonds
+		upgrade_mining_emeralds
+		upgrade_mining_garnierite
+		upgrade_mining_granite
+		#metamorphic minerals
+		upgrade_mining_marble
+		# COMMERCE #
+		upgrade_great_dwarf_port
+		upgrade_tunnel_roads
+		# FORTIFICATION #
+		upgrade_defensive_tunnels
+		upgrade_great_gate
+		upgrade_outer_watchposts
+		upgrade_subterranean_keep
+		# INDUSTRY #
+		upgrade_coal_power
+		upgrade_geothermal_power
+		upgrade_water_power
+		# MILITARY INFRASTRUCTURE #
+		upgrade_dwarf_aerodrome
+		upgrade_dwarf_shipyard
+		# MILITARY TRADITIONS  - low cost but high build time #
+		upgrade_artillery_tradition
+		upgrade_gunnery_tradition #Blunderbussiers, Thunderers
+		upgrade_warrior_brotherhood #e.g. Infernal Guard, Slayers
+		# PRESTIGE ARCHITECTURE #
+		upgrade_dwarf_great_hall
+		upgrade_dwarf_statues
+		upgrade_dwarf_throne_room
+		# TEMPLE #
+		upgrade_great_grimnir_temple
+		upgrade_great_grungni_temple
+		upgrade_great_valaya_temple
+		upgrade_great_hashut_temple
+  }
+
+	flags = {
+    cost_high
+    defensive
+    is_destructible #maybe it's not though?
+  }
+
+  stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2000
+		gold_cost_ticking = 3
+		restore_time = 180
+		loot_time = 6
+		restore_cost_flat = 800
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			fort_level = 0.25
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+
+}

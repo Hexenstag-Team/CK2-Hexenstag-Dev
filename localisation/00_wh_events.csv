@@ -2664,6 +2664,39 @@ EVTOPTAsdwarfmarriage14;;;;;;;;;;;;;;;
 #
 # DAWI ZHARR EVENTS
 #
+## New Events ##
+#
+# General purpose option names
+EVTOPT_praise_hashut;Praise Hashut!;;;;;;;;;;;;x
+EVTOPT_hashut_grant_me;ALL FOR HASHUT!;;;;;;;;;;;;x
+EVTOPT_hashut_guidance;May Hashut guide my way;;;;;;;;;;;;x
+EVTOPT_hashut_knows_me;I know what the Dark Father thinks of me;;;;;;;;;;;;x
+# General purpose option tooltips
+hashut_favor_until_update_tt;Send a new notification if my status with Hashut changes;;;;;;;;;;;;x
+hashut_favor_no_updates_tt;Don't send notifications about Hashut's favor for this character;;;;;;;;;;;;x
+hashut_sacrifice_many_fine_slaves_tt;You watch with satisfaction as the thralls' souls are offered up to Hashut.;;;;;;;;;;;;x
+hashut_sacrifice_some_slaves_tt;One of the slaves thrashes as they fall, causing a gob of hot metal to strike and burn you. You will live, but are marked for life.;;;;;;;;;;;;x
+hashut_sacrifice_just_me_then_tt;The bull centaurs' grip your arms gently, a glimmer of respect in their cruel eyes. With their help you hurl yourself into the molten metal. The pain is intense, but brief.;;;;;;;;;;;;x
+#
+#Specific event localisation
+EVTDESC_wh_chaos_dwarf.101;You are a fine follower of the will of the Dark Father and His Sevenfold Mystery. Revel in Hashut's favor!;;;;;;;;;;;;x
+EVTDESC_wh_chaos_dwarf.102;You are constant to the tenets of the Cult of Hashut. Perhaps you could do more, but surely the Dark Father smiles upon you.;;;;;;;;;;;;x
+EVTDESC_wh_chaos_dwarf.103;You try to hide it, but you know your soft character is offensive in the eyes of Hashut. You must try harder!;;;;;;;;;;;;x
+EVTDESC_wh_chaos_dwarf.110;After much time and sacrifice, you have obtained the mark of the Dark Father and may call upon magic in His name. You are a Daemonsmith!;;;;;;;;;;;;x
+EVTDESC_wh_chaos_dwarf.121;I have seen the truth in fire and stone. Your hour of trial draws near. Report to the Great Temple and face your God!;;;;;;;;;;;;x
+EVTDESC_wh_chaos_dwarf.122;You arrive at the Great Temple and are confronted by the Bull Centaur guards. They usher you to the altar room where your sacrifices will be thrown into a pool of molten metal as tribute to the Dark Father. Speaking of sacrifices, what are you offering to Hashut?;;;;;;;;;;;;x
+EVTDESC_wh_chaos_dwarf.123;Sating the hunger of your dark god was the final step in your long journey. You feel the power that Hashut set within you when you became a Daemonsmith swell, opening new perceptions and possibilities. You are a Sorcerer-Prophet, one of the masters of the Dawi Zharr!
+EVTOPTA_wh_chaos_dwarf.122;Many exotic slaves, including an infidel dwarf;;;;;;;;;;;;x
+EVTOPTB_wh_chaos_dwarf.122;A collection of strong greenskin slaves;;;;;;;;;;;;x
+EVTOPTC_wh_chaos_dwarf.122;... yourself;;;;;;;;;;;;x
+EVTDESC_wh_chaos_dwarf.201;The Conclave is normally willing to accept your nomination for a new master, but in the absence of guidance they have decided to appoint the head of a minor clan to lead them. \n Hail [new_master_of_the_conclave.GetFirstName], Master of the Conclave!;;;;;;;;;;;;x
+EVTDESC_wh_chaos_dwarf.202;The Cabal of sorcerers in your territory is usually content to accept your nomination for a new leader, but in the absence of your guidance they have decided to appoint the head of a minor clan to lead them. \n Hail [new_master_of_the_cabal.GetFirstName], Leader of the Cabal!;;;;;;;;;;;;x
+EVTDESCAsorcererscurse;Dwarfs were never meant to use magic. You knew this when you deepened your pact with Hashut, and knew it every time you called on his power. But the price always seemed so far away. Today it is coming closer. Your toenails have blackened and turned to stone, and as time goes on the Curse will claim more of your body.;;;;;;;;;;;;x
+EVTDESCBsorcererscurse;There is no denying it any longer. The dreaded Sorcerer's Curse is seriously affecting you now, spreading from your nails into your digits. Already your feet are more stone than flesh, and though your hands still function they are stiff and numb. As the Curse progresses, your servants start to think you as weak...;;;;;;;;;;;;x
+EVTDESCCsorcererscurse;The Sorcerer's Curse has almost completely claimed your body. The entirety of your lower body has petrified into black stone, and you can barely move your arms. Though you can still talk and think with clarity, your ability to influence events has been greatly diminished. Someone may try to take advantage of your weakened state...;;;;;;;;;;;;x
+EVTDESCDsorcererscurse;As your head is completely petrified into black stone you struggle with terror and strive to take on a stern expression. Soon your body will become a testament to Hashut's power and take a place among the petrified bodies of the other Sorcerer-Prophets that stand watch over the highways of Zharr-Naggrund.;;;;;;;;;;;;x
+#
+# Legacy event localisation
 EVTNAME_hashut_sac;A Sacrifice to Hashut;;;;;;;;;;;;x
 EVTDESC_hashut_sac;Your guards bring [From.GetTitledFirstName] up the stairs of the temple, towards to a great, brazen statue of Hashut at it's highest point, which has a pool of liquid, molten metal beneath it that acts as a furnace. As the temple's Bull Centaur places [From.GetHerHim] close to the furnace, you hear the mumblings of a [From.Religion.GetName] prayer to [From.Religion.GetHighGodName].\n\nThe Bull Centaur looks to you, his sturdy skin, blessed by Hashut, unaffected by the extreme heat that comes off the statue's furnace. With a nod from you, he will throw the sacrifice into the furnace...;;;;;;;;;;;;x
 EVTOPT_hashut_sac_dwarf;Mighty Hashut, we offer you this traitor pig, a servant of the Ancestor Gods!;;;;;;;;;;;;x
@@ -2676,14 +2709,9 @@ EVTOPT_hashut_bless_me;Great Hashut, grant me the Gift of Infernal Fire!;;;;;;;;
 EVTOPT_hashut_bless_provinces_forges;Mighty Hashut, bless my lands with the Power of Molten Rock!;;;;;;;;;;;;x
 EVTOPT_hashut_centaur_bulls;Father Hashut, grant me the aid of your greatest servants, the Bull Centaurs!;;;;;;;;;;;;x
 EVTDESC_chaos_dwarf_sorcerer;"As you enter the ritual chamber, at the tip of [Root.Location.GetName]'s greatest ziggurat-temple, you notice that the acolytes have prepared everything for your great ceremony of ascension into a Sorcerer-Prophet of Hashut. A hundred slaves, the best specimens from your pits, have been brought as offerings to the Bullfather.\nOne by one, all the slaves are dropped into the fiery pools of molten metal underneath the effigy of Hashut by the temple's Bull Centaurs. The acolytes, enthralled, start singing dirges to Hashut:\nO Bullfather, this sacrifice which we now slay upon Your altar!\nRejoice, drink of its slave blood and feast on its slave flesh!\nMay Your fire and smoke be content to offer naught but power!\n\nYou move towards the altar before the brazen idol, and raise your hands...;;;;;;;;;;;;x
-EVTOPT_hashut_grant_me;ALL FOR HASHUT!;;;;;;;;;;;;x
 EVTDESC_chaos_dwarf_sorcerer_succeed;"As the cavernous sound of the acolytes' dirges wanes, a chocking cloud of ash and smoke fills the room. A powerful voice resonates from the brazen idol's head:\nLET THIS BE A TESTAMENT OF HASHUT'S MIGHT, THIS SERVANT HAS NOW BEEN GRANTED POWER TO SUBJUGATE THE WINDS OF MAGIC IN MY NAME!\n All Chaos Dwarfs in the room prostrate before these words, and you follow example. You feel a new power stirring inside you...;;;;;;;;;;;;x
-EVTOPT_praise_hashut;Praise Hashut!;;;;;;;;;;;;x
 EVTDESC_chaos_dwarf_sorcerer_fail;As the cavernous sound of the acolytes' dirges wanes, a chocking cloud of ash and smoke fills the room... you a strange sensation in goes through your body. Is this Hashut's greatest gift? As you search yourself for any changes, you notice that your feet don't move any more... they have turned into stones. As the curse quickly creeps through the rest of your body, you can only hear a booming, metalling laughter before you're fully entrapped into stone...;;;;;;;;;;;;x
 EVTOPT_so_close_chaosdwarf;I was so... close...;;;;;;;;;;;;x
-EVTDESCAsorcererscurse;You have noticed that as of late, your feet and hands, starting from your toes and fingers, have started to petrify into black stone. It is clear, the dreaded Sorcerer's Curse is starting to affect you. You're still able to move independently, but you've clearly lost mobility, and your servants start to think you as weak...;;;;;;;;;;;;x
-EVTDESCBsorcererscurse;The Sorcerer's Curse has almost completely claimed your body. You the entirety of your lower body has petrified into black stone, and you can barely move your arms. Though you can still talk and think with clarity, it's obvious to everyone that you're no longer fit to rule, and many of your servants see you as weak...;;;;;;;;;;;;x
-EVTDESCCsorcererscurse;As your head is completely petrified into black stone you compose a stern expression, knowing that your body will become a testament to Hashut's power, littering the highways to Zharr-Naggrund next to the petrified bodies of the other Sorcerer-Prophets.;;;;;;;;;;;;x
 EVTOTPAsorcererscurse;Curses!;;;;;;;;;;;;x
 EVTOTPBsorcererscurse;Hashut's balls!;;;;;;;;;;;;x
 EVTOTPCsorcererscurse;I go to the Bullfather...;;;;;;;;;;;;x

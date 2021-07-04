@@ -1,447 +1,14 @@
 ###Chaos Dwarf stuff
-targetted_decisions = {
-	sacrifice_to_hashut = {
-		ai_check_interval = 12
-		ai_target_filter = home_court
-		filter = home_court
-		only_playable = yes
-		from_potential = {
-			religion = hashut
-			is_ruler = yes
-			NOT = { has_character_flag = sacrificing_prisoner_hashut }
-			NOT = { has_character_flag = selling_prisoner_slavery }
-		}
-		potential = {
-			prisoner = yes
-			host = { character = FROM }
-		}
-		allow = {
-			prisoner = yes
-		}
-		effect = {
-			FROM = {
-				set_character_flag = sacrificing_prisoner_hashut
-				long_character_event = { id = DR_chaos_dwarf.1 }
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = { factor = 0.04 }
-			modifier = { factor = 4 FROM = { trait = creature_dwarf } }
-			modifier = { factor = 3 ROOT = { trait = impaler } }
-			modifier = { factor = 2 ROOT = { trait = zealous } }
-			modifier = { factor = 3 ROOT = { trait = lunatic_3 } }
-			modifier = { factor = 2 ROOT = { trait = lunatic_2 } }
-			modifier = { factor = 2 ROOT = { trait = cruel } }
-			modifier = { factor = 0.1 ROOT = { trait = kind } }
-			modifier = { factor = 100 ROOT = { has_character_modifier = must_sacrifice_hashut } }
-		}
-	}
-
-	chaos_dwarf_sell_into_slavery = {
-		ai_check_interval = 12
-		ai_target_filter = home_court
-		filter = home_court
-		only_playable = yes
-		from_potential = {
-			culture_group = dawi_zharr_group
-			is_ruler = yes
-			NOT = { has_character_flag = selling_prisoner_slavery }
-			NOT = { has_character_flag = sacrificing_prisoner_hashut }
-		}
-		potential = {
-			host = { character = FROM }
-			prisoner = yes
-			NOT = { culture_group = dawi_zharr_group }
-			NOT = { trait = khemri_tomb_king }
-		}
-		allow = {
-			prisoner = yes
-		}
-		effect = {
-			FROM = {
-				set_character_flag = selling_prisoner_slavery
-				character_event = { id = DR_chaos_dwarf.12 }
-			}
-		}
-
-		ai_will_do = {
-			factor = 1
-			modifier = { factor = 0.04 }
-			modifier = { factor = 3 trait = greedy }
-			modifier = { factor = 0.1 trait = kind }
-		}
-	}
-
-	#Not actually FOR the Chaos Dwarfs, but for people to buy stuff from them
-	buy_from_chaos_dwarfs = {
-		ai_check_interval = 12
-		ai_target_filter = all
-		only_independent = yes
-		potential = {
-			trait = creature_chaos_dwarf
-			religion = hashut
-			higher_tier_than = COUNT
-			is_ruler = yes
-			culture_group = dawi_zharr_group
-			OR = {
-				capital_holding = {
-					OR = {
-						has_building = ca_zharr_naggrund
-						has_building = ca_tower_gorgoth
-						has_building = ca_black_fortress
-						has_building = tp_zharr_naggrund
-						has_building = tp_tower_gorgoth
-						has_building = tp_black_fortress
-						has_building = ca_chaos_dwarf_factory_1
-						has_building = ca_chaos_dwarf_factory_2
-						has_building = ca_chaos_dwarf_factory_3
-						has_building = ca_chaos_dwarf_factory_4
-						has_building = ca_chaos_dwarf_slave_levy_1
-						has_building = ca_chaos_dwarf_slave_levy_2
-						has_building = ca_chaos_dwarf_slave_levy_3
-						has_building = ca_chaos_dwarf_slave_levy_4
-						has_building = ct_chaos_dwarf_factory_1
-						has_building = ct_chaos_dwarf_factory_2
-						has_building = ct_chaos_dwarf_factory_3
-						has_building = ct_chaos_dwarf_factory_4
-						has_building = ct_chaos_dwarf_slave_levy_1
-						has_building = ct_chaos_dwarf_slave_levy_2
-						has_building = ct_chaos_dwarf_slave_levy_3
-						has_building = ct_chaos_dwarf_slave_levy_4
-						has_building = tp_chaos_dwarf_factory_1
-						has_building = tp_chaos_dwarf_factory_2
-						has_building = tp_chaos_dwarf_factory_3
-						has_building = tp_chaos_dwarf_factory_4
-						has_building = tp_chaos_dwarf_slave_levy_1
-						has_building = tp_chaos_dwarf_slave_levy_2
-						has_building = tp_chaos_dwarf_slave_levy_3
-						has_building = tp_chaos_dwarf_slave_levy_4
-
-					}
-				}
-				family_palace = {
-					OR = {
-						has_building = fp_chaos_dwarf_factory_1
-						has_building = fp_chaos_dwarf_factory_2
-						has_building = fp_chaos_dwarf_factory_3
-						has_building = fp_chaos_dwarf_factory_4
-						has_building = fp_chaos_dwarf_slave_levy_1
-						has_building = fp_chaos_dwarf_slave_levy_2
-						has_building = fp_chaos_dwarf_slave_levy_3
-						has_building = fp_chaos_dwarf_slave_levy_4
-					}
-				}
-			}
-		}
-		from_potential = {
-			OR = {
-				religion_group = chaos_gods_group
-				religion_group = greenskin_gods_group
-				religion_group = old_gods_group
-			}
-			is_ruler = yes
-			higher_tier_than = BARON
-			mercenary = no
-			NOT = { culture_group = dawi_zharr_group }
-			NOT = { trait = creature_chaos_dwarf }
-			NOT = { religion = stromfels }
-		}
-		allow = {
-			NOT = { FROM = { war_with = ROOT } }
-			NOT = { has_character_flag = buying_chaos_dwarfs }
-			NOT = { has_character_modifier = recently_brought_from_chaos_dwarfs }
-			NOT = { ROOT = { has_character_modifier = recently_sold_chaos_dwarfs }  }
-			NOT = { FROM = { liege = { character = ROOT } } }
-			is_within_diplo_range = FROM
-			FROM = {
-				OR = {
-					wealth = 0
-					NOT = { capital_scope = { has_province_modifier = slaves_taken } }
-					NOT = { capital_scope = { has_province_modifier = province_slave_raid_chaos_dwarf } }
-					check_variable = { which = elfslaves value = 1 }
-					check_variable = { which = dwarfslaves value = 1 }
-					check_variable = { which = humanslaves value = 1 }
-				}
-			}
-		}
-		effect = {
-			FROM = {
-				set_character_flag = buying_chaos_dwarfs
-				character_event = { id = DR_chaos_dwarf.14 }
-			}
-		}
-		revoke_allowed = {
-			always = no
-		}
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 0.1
-			}
-
-			modifier = {
-				factor = 2
-				FROM = { war = yes }
-			}
-			modifier = {
-				factor = 0
-				NOT = { wealth = 200 }
-			}
-			modifier = {
-				factor = 2
-				FROM = { is_tribal = yes } #Tribes are eager to get their hands on better stuff
-			}
-			modifier = {
-				factor = 0.25
-				ROOT = { trait = greedy }
-				}
-			modifier = {
-				factor = 2
-				FROM = { religion_group = chaos_gods_group }
-			}
-			modifier = {
-				factor = 0.5
-				FROM = { NOT = { empire = { title = e_chaos_wastes } } }
-			}
-		}
-	}
-
-	#Sell your god damn stuff
-	sell_stuff_chaos_dwarfs = {
-		ai = no
-		only_playable = yes
-		from_potential = {
-			is_ruler = yes
-			higher_tier_than = COUNT
-			trait = creature_chaos_dwarf
-			religion = hashut
-			culture_group = dawi_zharr_group
-			OR = {
-				capital_holding = {
-					OR = {
-						has_building = ca_zharr_naggrund
-						has_building = ca_tower_gorgoth
-						has_building = ca_black_fortress
-						has_building = tp_zharr_naggrund
-						has_building = tp_tower_gorgoth
-						has_building = tp_black_fortress
-						has_building = ca_chaos_dwarf_factory_1
-						has_building = ca_chaos_dwarf_factory_2
-						has_building = ca_chaos_dwarf_factory_3
-						has_building = ca_chaos_dwarf_factory_4
-						has_building = ca_chaos_dwarf_slave_levy_1
-						has_building = ca_chaos_dwarf_slave_levy_2
-						has_building = ca_chaos_dwarf_slave_levy_3
-						has_building = ca_chaos_dwarf_slave_levy_4
-						has_building = ct_chaos_dwarf_factory_1
-						has_building = ct_chaos_dwarf_factory_2
-						has_building = ct_chaos_dwarf_factory_3
-						has_building = ct_chaos_dwarf_factory_4
-						has_building = ct_chaos_dwarf_slave_levy_1
-						has_building = ct_chaos_dwarf_slave_levy_2
-						has_building = ct_chaos_dwarf_slave_levy_3
-						has_building = ct_chaos_dwarf_slave_levy_4
-						has_building = tp_chaos_dwarf_factory_1
-						has_building = tp_chaos_dwarf_factory_2
-						has_building = tp_chaos_dwarf_factory_3
-						has_building = tp_chaos_dwarf_factory_4
-						has_building = tp_chaos_dwarf_slave_levy_1
-						has_building = tp_chaos_dwarf_slave_levy_2
-						has_building = tp_chaos_dwarf_slave_levy_3
-						has_building = tp_chaos_dwarf_slave_levy_4
-
-					}
-				}
-				family_palace = {
-					OR = {
-						has_building = fp_chaos_dwarf_factory_1
-						has_building = fp_chaos_dwarf_factory_2
-						has_building = fp_chaos_dwarf_factory_3
-						has_building = fp_chaos_dwarf_factory_4
-						has_building = fp_chaos_dwarf_slave_levy_1
-						has_building = fp_chaos_dwarf_slave_levy_2
-						has_building = fp_chaos_dwarf_slave_levy_3
-						has_building = fp_chaos_dwarf_slave_levy_4
-					}
-				}
-			}
-		}
-		potential = {
-			OR = {
-				religion_group = chaos_gods_group
-				religion_group = greenskin_gods_group
-				religion_group = old_gods_group
-			}
-			is_ruler = yes
-			higher_tier_than = BARON
-			mercenary = no
-			NOT = { culture_group = dawi_zharr_group }
-			NOT = { trait = creature_chaos_dwarf }
-			NOT = { religion = stromfels }
-		}
-		allow = {
-			NOT = { ROOT = { war_with = FROM } }
-			NOT = { ROOT = { has_character_flag = buying_chaos_dwarfs } }
-			NOT = { ROOT = { has_character_modifier = recently_brought_from_chaos_dwarfs }  }
-			NOT = { ROOT = { liege = { character = FROM } } }
-			NOT = { FROM = { has_character_modifier = recently_sold_chaos_dwarfs }  }
-			NOT = { FROM = { has_character_flag = selling_armaments } }
-			is_within_diplo_range = FROM
-			ROOT = {
-				OR = {
-					wealth = 0
-					NOT = { capital_scope = { has_province_modifier = slaves_taken } }
-					NOT = { capital_scope = { has_province_modifier = province_slave_raid_chaos_dwarf } }
-					check_variable = { which = elfslaves value = 1 }
-					check_variable = { which = dwarfslaves value = 1 }
-					check_variable = { which = humanslaves value = 1 }
-				}
-			}
-		}
-		effect = {
-			FROM = {
-				character_event = { id = DR_chaos_dwarf.24 }
-				set_character_flag = selling_armaments
-			}
-		}
-		revoke_allowed = {
-			always = no
-		}
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 2
-				ROOT = { war = yes }
-			}
-			modifier = {
-				factor = 2
-				ROOT = { is_tribal = yes } #Tribes are eager to get their hands on better stuff
-			}
-			modifier = {
-				factor = 2
-				FROM = { trait = greedy }
-				}
-			modifier = {
-				factor = 2
-				ROOT = { religion_group = chaos_gods_group }
-			}
-			modifier = {
-				factor = 0.5
-				ROOT = { NOT = { empire = { title = e_chaos_wastes } } }
-			}
-		}
-	}
-}
-
 decisions = {
-	grand_sacrifice_hashut = {
-		ai_check_interval = 12
-		only_playable = yes
-		potential = {
-			religion = hashut
-			higher_tier_than = BARON
-			is_ruler = yes
-			NOT = { has_character_flag = making_grand_sacrifice_hashut }
-		}
-		allow = {
-			OR = {
-				num_of_prisoners = 1
-				capital_holding = {
-					OR = {
-						has_building = ca_chaos_dwarf_slave_levy_1
-						has_building = ca_chaos_dwarf_slave_levy_2
-						has_building = ca_chaos_dwarf_slave_levy_3
-						has_building = ca_chaos_dwarf_slave_levy_4
-						has_building = ct_chaos_dwarf_slave_levy_1
-						has_building = ct_chaos_dwarf_slave_levy_2
-						has_building = ct_chaos_dwarf_slave_levy_3
-						has_building = ct_chaos_dwarf_slave_levy_4
-						has_building = tp_chaos_dwarf_slave_levy_1
-						has_building = tp_chaos_dwarf_slave_levy_2
-						has_building = tp_chaos_dwarf_slave_levy_3
-						has_building = tp_chaos_dwarf_slave_levy_4
-						has_building = fp_chaos_dwarf_slave_levy_1
-						has_building = fp_chaos_dwarf_slave_levy_2
-						has_building = fp_chaos_dwarf_slave_levy_3
-						has_building = fp_chaos_dwarf_slave_levy_4
-						}
-				}
-				capital_holding = {
-					OR = {
-						has_building = ca_chaos_dwarf_factory_1
-						has_building = ca_chaos_dwarf_factory_2
-						has_building = ca_chaos_dwarf_factory_3
-						has_building = ca_chaos_dwarf_factory_4
-						has_building = ct_chaos_dwarf_factory_1
-						has_building = ct_chaos_dwarf_factory_2
-						has_building = ct_chaos_dwarf_factory_3
-						has_building = ct_chaos_dwarf_factory_4
-						has_building = tp_chaos_dwarf_factory_1
-						has_building = tp_chaos_dwarf_factory_2
-						has_building = tp_chaos_dwarf_factory_3
-						has_building = tp_chaos_dwarf_factory_4
-						has_building = fp_chaos_dwarf_factory_1
-						has_building = fp_chaos_dwarf_factory_2
-						has_building = fp_chaos_dwarf_factory_3
-						has_building = fp_chaos_dwarf_factory_4
-
-					}
-				}
-			}
-			wealth = 500
-			piety = 250
-			NOT = { has_character_modifier = recently_asked_hashut }
-		}
-		effect = {
-			long_character_event = { id = DR_chaos_dwarf.26 }
-			set_character_flag = making_grand_sacrifice_hashut
-		}
-		ai_will_do = {
-			factor = 1
-			modifier = { factor = 3 ROOT = { trait = impaler } }
-			modifier = { factor = 2 ROOT = { trait = zealous } }
-			modifier = { factor = 3 ROOT = { trait = lunatic_3 } }
-			modifier = { factor = 2 ROOT = { trait = lunatic_2 } }
-			modifier = { factor = 2 ROOT = { trait = cruel } }
-			modifier = { factor = 0.1 ROOT = { trait = kind } }
-		}
-	}
-
-	# become_chaos_dwarf_sorcerer = {
-		# is_high_prio = yes
-		# potential = {
-			# is_ruler = yes
-			# religion = hashut
-			# NOT = { has_character_flag = chaos_dwarf_sorc_ceremony }
-			# NOT = { trait = chaos_dwarf_sorcerer }
-		# }
-		# allow = {
-			# piety = 1000
-		# }
-		# effect = {
-			# FROM = {
-				# long_character_event = { id = DR_chaos_dwarf.5 days = 5 }
-				# set_character_flag = chaos_dwarf_sorc_ceremony
-			# }
-		# }
-		# ai_will_do = {
-			# factor = 1
-			# modifier = { factor = 0.04 }
-		# }
-	# }
 
 	get_taurus_mount ={
 		ai_check_interval = 12
 		only_playable = yes
 		potential = {
-			age = 16
-
-			culture_group = dawi_zharr_group
+			trait = creature_chaos_dwarf
 			religion = hashut
+			culture_group = dawi_zharr_group
+			age = 16
 			NOT = { has_artifact = lamassu_mount }
 			NOT = { has_character_flag = taming_beast }
 		}
@@ -453,7 +20,7 @@ decisions = {
 		}
 
 		effect = {
-			ROOT = { character_event = { id = DR_chaos_dwarf.20 } }
+			ROOT = { character_event = { id = wh_chaos_dwarf.170 } }
 		}
 
 		ai_will_do = {
@@ -471,11 +38,15 @@ decisions = {
 		ai_check_interval = 12
 		only_playable = yes
 		potential = {
+			trait = creature_chaos_dwarf
+			religion = hashut
+			culture_group = dawi_zharr_group
 			age = 16
 
-			culture_group = dawi_zharr_group
-			religion = hashut
-
+			#get your money-grubbing hands off my lamassu
+			NOT = {
+				is_republic = yes
+			}
 			NOT = { has_artifact = lamassu_mount }
 			NOT = { has_character_flag = taming_beast }
 		}
@@ -488,7 +59,7 @@ decisions = {
 		}
 
 		effect = {
-			ROOT = { character_event = { id = DR_chaos_dwarf.22 } }
+			ROOT = { character_event = { id = wh_chaos_dwarf.172 } }
 		}
 
 		ai_will_do = {
@@ -500,5 +71,305 @@ decisions = {
 			}
 		}
 
+	}
+}
+
+targeted_decisions = {
+	urge_son_become_daemonsmith = {
+		only_playable = yes
+		filter = close_relatives
+		ai_filter = close_relatives
+		ai_check_interval = 60
+
+		from_potential = {
+			trait = chaos_dwarf_sorcerer
+			has_living_children = yes
+			NOT = { has_character_modifier = hashut_heir_interaction }
+			trait = creature_chaos_dwarf
+			religion = hashut
+		}
+
+		potential = {
+			is_child_of = FROM
+			is_female = no
+			is_adult = yes
+			NOT = {
+				is_chaos_dwarf_sorcerer_path = yes
+			}
+			trait = creature_chaos_dwarf
+			religion = hashut
+		}
+
+		allow = {
+			learning >= 10
+			FROM = {
+				prestige = 100
+			}
+		}
+
+		effect = {
+			FROM = {
+				prestige = -100
+				add_character_modifier = {
+					name = hashut_heir_interaction
+					months = 48
+					hidden = yes
+				}
+			}
+			ROOT = {
+				add_ambition = obj_chaos_dwarf_become_daemonsmith
+			}
+			hidden_tooltip = {
+				random = {
+					chance = 25
+					FROM = {
+						hashut_favor_trivial_penalty_effect = yes
+					}
+				}
+			}
+		}
+
+		revoke_allowed = {		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	urge_son_become_sorcerer = {
+		only_playable = yes
+		filter = close_relatives
+		ai_filter = close_relatives
+		ai_check_interval = 60
+
+		from_potential = {
+			trait = chaos_dwarf_sorcerer
+			has_living_children = yes
+			NOT = { has_character_modifier = hashut_heir_interaction }
+			trait = creature_chaos_dwarf
+			religion = hashut
+		}
+
+		potential = {
+			is_child_of = FROM
+			is_female = no
+			trait = chaos_dwarf_daemonsmith
+			NOR = {
+				has_ambition = obj_chaos_dwarf_become_sorcerer
+				trait = chaos_dwarf_sorcerer
+			}
+			is_adult = yes
+			trait = creature_chaos_dwarf
+			religion = hashut
+		}
+
+		allow = {
+			age >= 50
+			piety = 100
+			FROM = {
+				prestige = 1000
+			}
+		}
+
+		effect = {
+			FROM = {
+				prestige = -1000
+				add_character_modifier = {
+					name = hashut_heir_interaction
+					months = 48
+					hidden = yes
+				}
+			}
+			ROOT = {
+				add_ambition = obj_chaos_dwarf_become_sorcerer
+			}
+			hidden_tooltip = {
+				random = {
+					chance = 25
+					FROM = {
+						hashut_favor_trivial_penalty_effect = yes
+					}
+				}
+			}
+		}
+
+		revoke_allowed = {		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	invoke_hashut_blessing = {
+		only_playable = yes
+		filter = close_relatives
+		ai_filter = close_relatives
+		ai_check_interval = 60
+
+		from_potential = {
+			OR = {
+				trait = chaos_dwarf_petrification_1
+				trait = chaos_dwarf_petrification_2
+			}
+			trait = chaos_dwarf_sorcerer
+			has_living_children = yes
+			NOT = { has_character_modifier = hashut_heir_interaction }
+			trait = creature_chaos_dwarf
+			religion = hashut
+		}
+
+		potential = {
+			is_child_of = FROM
+			is_chaos_dwarf_sorcerer_path = yes
+			is_female = no
+			is_adult = yes
+			trait = creature_chaos_dwarf
+			religion = hashut
+		}
+
+		allow = {
+			FROM = {
+				piety = 500
+				wealth = 200
+				add_character_modifier = {
+					name = hashut_heir_interaction
+					months = 48
+					hidden = yes
+				}
+			}
+		}
+
+		effect = {
+			#what we're pretending this decision is about
+			FROM = {
+				piety = -250
+				wealth = -100
+			}
+			ROOT = {
+				piety = 500
+			}
+			#what this decision is really about
+			hidden_tooltip = {
+				#Sire: lose five to eight hashut_favor
+				FROM = {
+					hashut_favor_medium_penalty_effect = yes
+					random = {
+						chance = 60
+						hashut_favor_trivial_penalty_effect = yes
+					}
+					random = {
+						chance = 40
+						hashut_favor_small_penalty_effect = yes
+					}
+				}
+				#Son: gain two to five hashut_favor
+				ROOT = {
+				hashut_favor_small_bonus_effect = yes
+					random = {
+						chance = 75
+						hashut_favor_trivial_bonus_effect = yes
+					}
+					random = {
+						chance = 50
+						hashut_favor_small_bonus_effect = yes
+					}
+				}
+			}
+		}
+
+		revoke_allowed = {		}
+
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}
+
+title_decisions = {
+	install_hobgoblin_satrap = {
+		ai = no #ai does this via on_action
+		filter = owned
+
+		from_potential = {
+			trait = creature_chaos_dwarf
+			religion = hashut
+		}
+
+		potential = {
+			location = {
+				owned_by = FROM
+				has_tribal = yes
+			}
+			tier = count
+		}
+
+		allow = {
+			#probably don't need conditions
+		}
+
+		effect = {
+			save_event_target_as = target_satrapy
+			FROM = {
+				character_event = {
+					id = wh_chaos_dwarf.12
+				}
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	hobgoblins_break_slaves = {
+		only_playable = yes
+		ai_target_filter = owned
+		filter = owned
+		ai_check_interval = 12
+
+		from_potential = {
+			trait = creature_hobgoblin
+			culture = servile_hobgoblin
+			religion = hashut
+		}
+
+		potential = {
+			location = {
+				owned_by = FROM
+				has_tribal = yes
+				NAND = {
+					culture = servile_hobgoblin
+					religion = hashut
+				}
+			}
+		}
+
+		allow = {
+			location = {
+				any_province_holding = {
+		      has_building = tb_hobgoblin_slavebreakers_4
+		    }
+			}
+		}
+
+		effect = {
+			location = {
+	      culture = servile_hobgoblin
+	      religion = hashut
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 1
+		}
 	}
 }

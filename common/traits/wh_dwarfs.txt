@@ -311,7 +311,10 @@ chaos_dwarf_petrification_1 = {
 	intrigue = -3
 	fertility = -50
 	sex_appeal_opinion = -25
-	vassal_opinion = -15
+	vassal_opinion = -5
+	opposites = {
+		chaos_dwarf_petrification_2
+	}
 }
 
 chaos_dwarf_petrification_2 = {
@@ -326,8 +329,11 @@ chaos_dwarf_petrification_2 = {
 	fertility = -100
 	health = -1
 	sex_appeal_opinion = -50
-	vassal_opinion = -30
-	incapacitating = yes
+	vassal_opinion = -15
+	#incapacitating = yes
+	opposites = {
+		chaos_dwarf_petrification_1
+	}
 }
 
 runesmith = {

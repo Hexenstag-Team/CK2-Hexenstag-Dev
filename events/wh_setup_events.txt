@@ -163,9 +163,9 @@ character_event = {
 				}
 			}
 			new_character = {
-				ROOT = { 
+				ROOT = {
 					abdicate_to = PREV
-					e_realm_of_undivided={ #They REAALLLLLLY did not want to return to their court so o-ö warp gate
+					e_realm_of_undivided={ #They REAALLLLLLY did not want to return to their court so o-ï¿½ warp gate
 						holder_scope={
 							any_courtier={limit={has_character_flag=courtier_migration}
 								force_host=PREVPREVPREVPREV
@@ -277,9 +277,9 @@ character_event = {
 				}
 			}
 			new_character = {
-				ROOT = { 
+				ROOT = {
 					abdicate_to = PREV
-					e_realm_of_undivided={ #They REAALLLLLLY did not want to return to their court so o-ö warp gate
+					e_realm_of_undivided={ #They REAALLLLLLY did not want to return to their court so o-ï¿½ warp gate
 						holder_scope={
 							any_courtier={limit={has_character_flag=courtier_migration}
 								force_host=PREVPREVPREVPREV
@@ -1703,3 +1703,49 @@ character_event = {
 	}
 }
 
+#Set up wonder names, descriptions
+character_event = {
+	id = wh_setup.100
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	religion = sigmarite
+
+	trigger = {
+		NOT = {
+			has_global_flag = wh_wonder_names_and_descriptions_set
+		}
+		has_landed_title = k_cult_of_sigmar
+	}
+
+	immediate = {
+		#Dawi Zharr holds in the Darklands
+		478 = {
+			wonder = {
+				set_name = wonder_zharr_naggrund
+				set_description = wonder_zharr_naggrund_desc
+			}
+		}
+		416 = {
+			wonder = {
+				set_name = wonder_uzkulak
+				set_description = wonder_uzkulak_desc
+			}
+		}
+		1253 = {
+			wonder = {
+				set_name = wonder_tower_gorgoth
+				set_description = wonder_tower_gorgoth_desc
+			}
+		}
+		1273 = {
+			wonder ={
+				set_name = wonder_black_fortress
+				set_description = wonder_black_fortress_desc
+			}
+		}
+		#Add new entries here
+		set_global_flag = wh_wonder_names_and_descriptions_set
+	}
+}

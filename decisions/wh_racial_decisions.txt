@@ -484,8 +484,8 @@ decisions = {
         effect = {
             if = {
                 limit = { is_female = no }
-		any_spouse = { remove_spouse = ROOT }
-                add_trait = creature_orc
+		        any_spouse = { remove_spouse = ROOT }
+            add_trait = creature_orc
 				if = {
 					limit = {
 						is_landed = yes
@@ -582,6 +582,57 @@ decisions = {
 					}
 					add_trait = lore_waaagh
 				}
+            }
+			if = {
+                limit = { is_female = yes }
+                add_trait = creature_snotling
+            }
+        }
+        ai_will_do = { factor = 1500 }
+    }
+
+    # Hobgoblins
+    ai_race_hobgoblin = {
+		ai_check_interval = 6
+		potential = {
+			has_racial_trait = no
+			ai=yes
+				graphical_culture = hobgoblingfx
+			NOR = {
+					trait = creature_hobgoblin
+					trait = creature_snotling
+				   }
+		}
+        allow = {
+            always = yes
+        }
+        effect = {
+            if = {
+                limit = { is_female = no }
+                add_trait = creature_hobgoblin
+            		any_spouse = { remove_spouse = ROOT }
+            				if = {
+            					limit = {
+            						is_landed = yes
+            					}
+            					any_courtier = {
+            						limit = {
+            							is_female = yes
+            						}
+            						add_trait = creature_snotling
+            					}
+            					any_vassal = {
+            						limit = {
+            							is_female = no
+            						}
+            						any_courtier = {
+            							limit = {
+            								is_female = yes
+            							}
+            							add_trait = creature_snotling
+            						}
+            					}
+            				}
             }
 			if = {
                 limit = { is_female = yes }
@@ -698,30 +749,30 @@ decisions = {
         }
         effect = {
 			add_trait = creature_skaven
-        	random = { 
+        	random = {
 				chance = 80
 				add_trait = craven
 			}
-        	random = { 
+        	random = {
 				chance = 80
-				add_trait = envious 
+				add_trait = envious
 			}
-        	random = { 
+        	random = {
 				chance = 60
-				add_trait = deceitful 
+				add_trait = deceitful
 			}
-        	random = { 
+        	random = {
 				chance = 40
-				add_trait = paranoid 
+				add_trait = paranoid
 			}
         	random = {
 				chance = 20
-				add_trait = ambitious 
+				add_trait = ambitious
 			}
 			any_spouse = { remove_spouse = ROOT }
-			if = { 
+			if = {
 				limit = { is_female = yes }
-				add_trait = skaven_breeder 
+				add_trait = skaven_breeder
 			}
 			if = {
 				limit = {
@@ -740,21 +791,21 @@ decisions = {
 				add_trait=grey_seer
 				add_trait = lore_vermin
 			}
-			if = { 
+			if = {
 				limit = { graphical_culture = skavenwhitegfx
 					is_female = no
-					age = 16 
+					age = 16
 				}
-				add_trait = grey_seer 
+				add_trait = grey_seer
 			}
-			if = { 
+			if = {
 				limit = { graphical_culture = skavenwhitegfx }
 				add_trait = white_skaven
-				break = yes 
+				break = yes
 			}
 			if = { limit = { graphical_culture = skavenblackgfx }
 				add_trait = black_skaven
-				break = yes 
+				break = yes
 			}
         }
         ai_will_do = { factor = 1500 }

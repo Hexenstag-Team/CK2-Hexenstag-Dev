@@ -168,7 +168,7 @@ claim = {
 			}
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -537,7 +537,7 @@ other_claim = {
 			}
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -1640,7 +1640,7 @@ claim_on_vassal_plot = {
 			NOT = { trait = vampire_necrarch_visible }
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -9160,7 +9160,7 @@ decadence_invasion = {
 			}
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -10527,7 +10527,6 @@ seize_trade_post = {
 
 	can_use = {
 		ROOT = {
-			NOT = { trait = vampire_necrarch_visible }
 			OR = {
 				is_merchant_republic = yes
 				is_patrician = yes
@@ -10545,6 +10544,7 @@ seize_trade_post = {
 					}
 				}
 			}
+			NOT = { trait = vampire_necrarch_visible } #low priority check
 			mercenary = no
 		}
 		FROM = {
@@ -10561,14 +10561,20 @@ seize_trade_post = {
 			}
 		}
 		tier = COUNT
-		location = {
-			port = yes
-		}
+		#pull port = yes trigger because dwarf patricians can build inland trading posts
+		#location = {
+		#	port = yes
+		#}
 		has_trade_post = yes
 		trade_post_owner = {
 			OR = {
 				character = FROM
 				is_liege_or_above = FROM
+			}
+			#add check for patrician/MR to support wars over inland trade posts
+			OR = {
+				is_merchant_republic = yes
+				is_patrician = yes
 			}
 		}
 		holder_scope = {
@@ -10747,7 +10753,7 @@ viking_invasion = {
 		}
 		is_valid_viking_invasion_target = FROM # Checks that FROM holds the right amount of territory in the kingdom
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -11044,7 +11050,7 @@ pagan_subjugation = {
 			}
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -11226,7 +11232,7 @@ peasant_revolt = {
 	can_use_title = {
 		tier = count
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -12491,7 +12497,7 @@ caliphal_subjugation = {
 			}
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -12705,7 +12711,7 @@ muslim_county_conquest = {
 			}
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -13039,14 +13045,9 @@ pagan_county_conquest = {
 						culture_group = norscan_group
 						religion = stromfels #Because PIRATES
 						religion = atruhayid #Because CORSAIRS
-						religion = chaos
-				        religion = khorne
-				        religion = slaanesh
-				        religion = tzeentch
-				        religion = nurgle
+						religion_group = chaos_gods_group #simplification
 						government = freeboota_government
 						government = pirate_government
-						trait = creature_chaos_dwarf #So they get some options to expand outside
 					}
 					NOT = { same_realm = FROM }
 				}
@@ -13076,7 +13077,13 @@ pagan_county_conquest = {
 				NOT = { same_realm = ROOT }
 			}
 		}
-
+		#hashut worshippers can only use this CB in the darklands
+		OR = {
+			de_jure_liege_or_above = e_darklands
+			ROOT = {
+				NOT = { religion = hashut }
+			}
+		}
 		NOT = {
 			OR = {
 				ROOT = {
@@ -13312,7 +13319,7 @@ pagan_county_conquest = {
 			}
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -13780,7 +13787,7 @@ dejure_county_claim = {
 			}
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -14030,7 +14037,7 @@ dejure_barony_claim = {
 			}
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -14289,7 +14296,7 @@ other_dejure_county_claim = {
 			}
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -14478,8 +14485,8 @@ ormazd_caliphate_rising = {
 			has_character_flag = ormazd_caliphate_pretender
 		}
 	}
-	
-	
+
+
 
 	is_valid_title = {
 		ROOT = {
@@ -14725,7 +14732,7 @@ cb_decadence_usurption = {
 			mercenary = no
 		}
 	}
-	
+
 
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
@@ -16148,7 +16155,7 @@ nomad_dispute = {
 			has_landed_title = PREV
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -16828,7 +16835,7 @@ nomad_subjugation = {
 			}
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -17130,7 +17137,7 @@ nomad_invasion = {
 			}
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -17914,7 +17921,7 @@ nomad_humiliate_cb = {
 			}
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -18195,7 +18202,7 @@ powerful_vassal_takeover_war = { # Started from faction
 			}
 		}
 	}
-	
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {

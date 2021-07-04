@@ -15,88 +15,106 @@
 # HARD: AUTO-GRANTED - DO NOT REMOVE!
 #######################################
 
-## EMPIRE MINOR TITLES
-title_empire_champion = {
-	dignity = 0.5
-	realm_in_name = yes
-	revoke_allowed = yes
+### HUMANS ###
+
+#Scholars are very appreciated in all the Old World... except in Bretonnia
+title_court_scholar = {
+	dignity = 0.15
 	grant_limit = 1
-	opinion_effect = 20
+	opinion_effect = 15
+
+	is_unique = yes
 
 	monthly_salary = 0.1
 	monthly_prestige = 0.75
 
-	is_unique = yes
-	is_high_prio = yes
-
 	allowed_to_hold = {
-		NOT = {
-			primary_title = { temporary = yes }
-		}
-		is_adult = yes
-		culture_group = imperial_group
-	}
-
-	allowed_to_grant = {
-		AND = {
-			has_landed_title = e_the_empire
-			culture_group = imperial_group
-		}
-	}
-
-
-	gain_effect = {
-		FROM = {
-			add_artifact = beast_slayer
-		}
-	}
-
-	lose_effect = {
-		FROM = {
-			unsafe_destroy_artifact = beast_slayer
-		}
-	}
-
-	message = no
-}
-title_reiksmarshal = {
-	realm_in_name = yes
-	dignity = 0.9
-	revoke_allowed = yes
-	grant_limit = 1
-	opinion_effect = 25
-
-	monthly_salary = 0.075
-	monthly_prestige = 0.075
-
-	is_unique = yes
-	is_high_prio = yes
-
-	allowed_to_hold = {
-		is_adult = yes
-	}
-
-	allowed_to_grant = {
-		AND = {
-			has_landed_title = e_the_empire
-			culture_group = imperial_group
-		}
-	}
-
-	gain_effect = {
-		FROM = {
-			add_artifact = grudge_settler
+		OR = {
+			primary_title = { temporary = no }
+			NOT = {
+				primary_title = {
+					always = yes
+				}
 			}
+		}
+		OR = {
+			learning = 10
+			trait = academic
+		}
+		is_adult = yes
+		NOT = { trait = incapable }
 	}
-
-	lose_effect = {
-		FROM = {
-			unsafe_destroy_artifact = grudge_settler
+	allowed_to_grant = {
+		OR = {
+			religion_group = old_world_group
+			religion_group = ormazd_gods_group
+		}
+		OR = {
+			is_feudal = yes
+			is_republic = yes
+		}
+		NOR = {
+			religion = grail
+			religion = false_grail
+			religion = old_faith
 		}
 	}
 
+	gain_effect = {}
+	lose_effect = {}
+
 	message = no
 }
+
+#Scribes are much in demand in the Old world courts. Probably Arabyan courts too.
+title_court_scribe = {
+	dignity = 0.05
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 5
+
+	monthly_salary = 0.01
+	monthly_prestige = 0.02
+
+	is_unique = yes
+
+	allowed_to_hold = {
+		is_adult = yes
+		is_female = no
+		OR = {
+			diplomacy = 8
+			learning = 10
+		}
+		OR = {
+			primary_title = { temporary = no }
+			NOT = {
+				primary_title = {
+					always = yes
+				}
+			}
+		}
+	}
+
+	allowed_to_grant = {
+		OR = {
+			religion_group = old_world_group
+			religion_group = ormazd_gods_group
+		}
+		is_feudal = yes
+		NOR = {
+			religion = grail
+			religion = false_grail
+			religion = old_faith
+		}
+	}
+
+	gain_effect = { }
+	lose_effect = { }
+
+	message = yes
+}
+
+#In the long run this should be made an Empire thing
 title_court_witchhunter = {
 	is_high_prio = yes
 	dignity = 0.05
@@ -174,94 +192,190 @@ title_court_state_witchhunter = {
 
 	message = yes
 }
-#Scholars are very appreciated in all the Old World... except in Bretonnia
-title_court_scholar = {
-	dignity = 0.15
-	grant_limit = 1
-	opinion_effect = 15
 
-	is_unique = yes
+
+# # IMPERIAL # #
+
+title_empire_champion = {
+	dignity = 0.5
+	realm_in_name = yes
+	revoke_allowed = yes
+	grant_limit = 1
+	opinion_effect = 20
 
 	monthly_salary = 0.1
 	monthly_prestige = 0.75
 
+	is_unique = yes
+	is_high_prio = yes
+
 	allowed_to_hold = {
-		OR = {
-			primary_title = { temporary = no }
-			NOT = {
-				primary_title = {
-					always = yes
-				}
-			}
-		}
-		OR = {
-			learning = 10
-			trait = academic
+		NOT = {
+			primary_title = { temporary = yes }
 		}
 		is_adult = yes
-		NOT = { trait = incapable }
+		culture_group = imperial_group
 	}
+
 	allowed_to_grant = {
-		religion_group = old_world_group
-		is_feudal = yes
-		NOR = {
-			religion = grail
-			religion = false_grail
-			religion = old_faith
+		AND = {
+			has_landed_title = e_the_empire
+			culture_group = imperial_group
 		}
 	}
 
-	gain_effect = {}
-	lose_effect = {}
+
+	gain_effect = {
+		FROM = {
+			add_artifact = beast_slayer
+		}
+	}
+
+	lose_effect = {
+		FROM = {
+			unsafe_destroy_artifact = beast_slayer
+		}
+	}
 
 	message = no
 }
-#Scribes are much in demand in the Old world courts
-title_court_scribe = {
-	dignity = 0.05
-	realm_in_name = yes
-	grant_limit = 1
-	opinion_effect = 5
 
-	monthly_salary = 0.01
-	monthly_prestige = 0.02
+title_reiksmarshal = {
+	realm_in_name = yes
+	dignity = 0.9
+	revoke_allowed = yes
+	grant_limit = 1
+	opinion_effect = 25
+
+	monthly_salary = 0.075
+	monthly_prestige = 0.075
 
 	is_unique = yes
+	is_high_prio = yes
 
 	allowed_to_hold = {
 		is_adult = yes
-		is_female = no
-		OR = {
-			diplomacy = 8
-			learning = 10
-		}
-		OR = {
-			primary_title = { temporary = no }
-			NOT = {
-				primary_title = {
-					always = yes
-				}
-			}
-		}
 	}
 
 	allowed_to_grant = {
-		religion_group = old_world_group
-		is_feudal = yes
-		NOR = {
-			religion = grail
-			religion = false_grail
-			religion = old_faith
+		AND = {
+			has_landed_title = e_the_empire
+			culture_group = imperial_group
 		}
 	}
 
-	gain_effect = { }
-	lose_effect = { }
+	gain_effect = {
+		FROM = {
+			add_artifact = grudge_settler
+			}
+	}
+
+	lose_effect = {
+		FROM = {
+			unsafe_destroy_artifact = grudge_settler
+		}
+	}
+
+	message = no
+}
+
+title_grandmaster_heir = {
+	is_high_prio = yes
+	dignity = 0.05
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 40
+
+
+	monthly_salary = 0.01
+	monthly_prestige = 0.002
+	monthly_piety = 0.05
+
+	allowed_to_hold = {
+		is_adult = yes
+		is_ruler = yes #Either another Master or a dynamic agent
+		trait = witch_hunter
+		NOT = { trait = incapable }
+		liege = { character = FROM }
+
+	}
+
+	allowed_to_grant = {
+		NOT = { trait = incapable }
+		is_adult = yes
+		trait = witch_hunter
+		religion = sigmarite
+		has_landed_title = k_witch_hunters_order
+	}
+
+	gain_effect = {
+		piety = 50
+		prestige = 50
+	}
+	lose_effect = {
+		piety = -100
+		prestige = -100
+		remove_trait=on_witch_hunt
+	}
 
 	message = yes
 }
 
-# Kislevites and Ungols
+#Assigned title for independent chapters
+title_knight_captain_heir = {
+	is_high_prio = yes
+	dignity = 0.02
+	realm_in_name = yes
+	grant_limit = 1
+	opinion_effect = 40
+
+
+	monthly_salary = 0.01
+	monthly_prestige = 0.001
+	monthly_piety = 0.02
+
+	allowed_to_hold = {
+		is_adult = yes
+		trait = witch_hunter
+		religion = sigmarite
+		NOT = { trait = incapable }
+		liege = { character = FROM }
+	}
+
+	allowed_to_grant = {
+		NOT = { trait = incapable }
+		is_adult = yes
+		trait = witch_hunter
+		religion = sigmarite
+		NOR = {  has_landed_title = d_witch_hunter_seat_1
+			 has_landed_title = d_witch_hunter_seat_2
+			 has_landed_title = d_witch_hunter_seat_3
+	 		 has_landed_title = d_witch_hunter_seat_4
+	 		 has_landed_title = d_witch_hunter_seat_5
+	 		 has_landed_title = d_witch_hunter_seat_6
+	 		 has_landed_title = d_witch_hunter_seat_7
+	 		 has_landed_title = d_witch_hunter_seat_8
+	 		 has_landed_title = d_witch_hunter_seat_9
+	 		 has_landed_title = d_witch_hunter_seat_10
+	 		 has_landed_title = d_witch_hunter_seat_11
+	 		 has_landed_title = d_witch_hunter_seat_12
+			 has_landed_title = k_witch_hunters_order }
+	}
+
+	gain_effect = {
+		piety = 10
+		prestige = 10
+	}
+	lose_effect = {
+		piety = -50
+		prestige = -50
+		remove_trait=on_witch_hunt
+	}
+
+	message = yes
+}
+
+# # KISLEVITES AND UNGOLS # #
 title_koniushy = {
 	dignity = 0.06
 	realm_in_name = yes
@@ -464,120 +578,8 @@ title_organist_of_praag = {
 	message = yes
 }
 
-# Norsca and Chaos
-title_chaos_champion = {
-	dignity = 0.5
-	realm_in_name = yes
-	revoke_allowed = yes
-	grant_limit = 1
-	opinion_effect = 20
+# # BRETONNIA # #
 
-	monthly_salary = 0.1
-	monthly_prestige = 0.75
-
-	is_unique = yes
-
-	allowed_to_hold = {
-		NOT = {
-			primary_title = { temporary = yes }
-		}
-		is_adult = yes
-		religion_group = chaos_gods_group
-	}
-
-	allowed_to_grant = {
-		AND = {
-			religion_group = chaos_gods_group
-		}
-	}
-
-
-	gain_effect = {
-	}
-
-	lose_effect = {
-	}
-
-	message = no
-}
-
-# Dawi
-# Commander, granted via its own interaction, so very special
-title_hammerer = {
-	is_high_prio = yes
-	attribute = martial
-	realm_in_name = yes
-	dignity = 0.05
-	grant_limit = 4
-	opinion_effect = 5
-
-	monthly_salary = 0.1
-	monthly_prestige = 0.50
-	#combat_rating = 10 # Reactivate if we get this working
-	revoke_allowed = no
-
-	allowed_to_grant = {
-		or={
-			trait=creature_chaos_dwarf
-			trait=creature_dwarf
-		}
-		war = no
-		has_regent = no
-		higher_tier_than = count
-	}
-	allowed_to_hold = {
-		NOR={
-		trait=dwarf_slayer_king
-		trait=dwarf_slayer
-		}
-		OR={
-			society_member_of=warriors_guild_dawi
-			is_in_society=no
-		}
-		NOT = {
-			primary_title = { temporary = yes }
-		}
-		NOT = {
-			is_primary_heir = FROM
-		}
-		OR={
-			trait=creature_dwarf
-			trait=creature_chaos_dwarf
-		}
-		is_female = no
-		OR = {
-			duelist_skill_is_medium_group_trigger = yes
-			duelist_skill_is_high_group_trigger = yes
-			martial = 20
-		}
-		OR = {
-			AND={
-				NOR = {
-					culture = dwarf_drak #Not Expected to Survive too long
-					culture_group = dawi_zharr_group
-				}
-				age=50
-			}
-			age = 75
-		}
-		prisoner = no
-		is_incapable = no
-		NOT = { is_inaccessible_trigger = yes }
-	}
-
-	gain_effect = {
-		join_society=warriors_guild_dawi
-		character_event = {id = SJDwarfevents.69}
-	}
-
-	lose_effect = {
-		character_event = {id = SJDwarfevents.71}
-	}
-
-	message = yes
-}
-
-#Bretonnia
 title_sir_bretonnian = {
 	dignity = 0.25
 	grant_limit = 100
@@ -601,6 +603,7 @@ title_sir_bretonnian = {
 
 	message = no
 }
+
 title_lady_knight_bretonnian = {
 	dignity = 0.25
 	grant_limit = 100
@@ -623,36 +626,6 @@ title_lady_knight_bretonnian = {
 	lose_effect = { }
 
 	message = no
-}
-
-#Estalians
-#the Estalian Diestros are some of the most skilled swordsmen in the Old World
-title_diestro = {
-	grant_limit = 3
-	opinion_effect = 5
-	monthly_prestige = 0.1
-	monthly_salary = 0.01
-	revoke_allowed = no
-
-	allowed_to_hold = {
-		age = 16
-		trait = duelist
-		NOT = { trait = craven }
-		NOT = { trait = infirm }
-	}
-	allowed_to_grant = {
-		OR =  {
-			is_patrician = yes
-			is_feudal = yes
-		}
-		religion_group = old_world_group
-		culture_group = estalian_group
-	}
-
-	gain_effect = { }
-	lose_effect = { }
-
-	message = yes
 }
 
 #The Bretonnians, pompous as they are, like to flaunt their titles to everyone. That's the court herald's job.
@@ -695,9 +668,79 @@ title_court_herald = {
 	message = yes
 }
 
-#Dwarfs
+# # ESTALIA # #
+
+#the Estalian Diestros are some of the most skilled swordsmen in the Old World
+title_diestro = {
+	grant_limit = 3
+	opinion_effect = 5
+	monthly_prestige = 0.1
+	monthly_salary = 0.01
+	revoke_allowed = no
+
+	allowed_to_hold = {
+		age = 16
+		trait = duelist
+		NOT = { trait = craven }
+		NOT = { trait = infirm }
+	}
+	allowed_to_grant = {
+		OR =  {
+			is_patrician = yes
+			is_feudal = yes
+		}
+		religion_group = old_world_group
+		culture_group = estalian_group
+	}
+
+	gain_effect = { }
+	lose_effect = { }
+
+	message = yes
+}
+
+### CHAOS AND THE NORSCANS ###
+title_chaos_champion = {
+	dignity = 0.5
+	realm_in_name = yes
+	revoke_allowed = yes
+	grant_limit = 1
+	opinion_effect = 20
+
+	monthly_salary = 0.1
+	monthly_prestige = 0.75
+
+	is_unique = yes
+
+	allowed_to_hold = {
+		NOT = {
+			primary_title = { temporary = yes }
+		}
+		is_adult = yes
+		religion_group = chaos_gods_group
+	}
+
+	allowed_to_grant = {
+		religion_group = chaos_gods_group
+		NOT = { religion = hashut }
+	}
+
+
+	gain_effect = {
+	}
+
+	lose_effect = {
+	}
+
+	message = no
+}
+
+
+### DWARFS ###
+
 #Court Goldsmith
 #Most renowned craftsmen in a Dwarfen court
+#Alfred notes that Artisans are as prestigious as warriors among the Dawi Zharr, so they would have this or equivalent
 title_chief_goldsmith = {
 	dignity = 0.15
 	grant_limit = 1
@@ -724,7 +767,10 @@ title_chief_goldsmith = {
 	}
 
 	allowed_to_grant = {
-		religion_group = dwarf_gods_group
+		OR = {
+			trait = creature_dwarf
+			trait = creature_chaos_dwarf
+		}
 		OR = {
 			is_feudal = yes
 			is_patrician = yes
@@ -735,6 +781,76 @@ title_chief_goldsmith = {
 	lose_effect = {}
 
 	message = no
+}
+
+# # DAWI # #
+# Commander, granted via its own interaction, so very special
+title_hammerer = {
+	is_high_prio = yes
+	attribute = martial
+	realm_in_name = yes
+	dignity = 0.05
+	grant_limit = 4
+	opinion_effect = 5
+
+	monthly_salary = 0.1
+	monthly_prestige = 0.50
+	#combat_rating = 10 # Reactivate if we get this working
+	revoke_allowed = no
+
+	allowed_to_grant = {
+		trait = creature_dwarf
+		war = no
+		has_regent = no
+		higher_tier_than = count
+	}
+	allowed_to_hold = {
+		trait = creature_dwarf
+		is_female = no
+		NOR={
+		trait=dwarf_slayer_king
+		trait=dwarf_slayer
+		}
+		OR={
+			society_member_of=warriors_guild_dawi
+			is_in_society=no
+		}
+		NOT = {
+			primary_title = { temporary = yes }
+		}
+		NOT = {
+			is_primary_heir = FROM
+		}
+		OR = {
+			duelist_skill_is_medium_group_trigger = yes
+			duelist_skill_is_high_group_trigger = yes
+			martial = 20
+		}
+		OR = {
+			AND={
+				NOR = {
+					culture = dwarf_drak #Not Expected to Survive too long
+					culture_group = dawi_zharr_group
+				}
+				age=50
+			}
+			age = 75
+		}
+		prisoner = no
+		is_incapable = no
+		NOT = { is_inaccessible_trigger = yes }
+	}
+
+	gain_effect = {
+		join_society=warriors_guild_dawi
+		character_event = {id = SJDwarfevents.69}
+	}
+
+	lose_effect = {
+		character_event = {id = SJDwarfevents.71}
+	}
+
+	message = yes
 }
 
 #Leads Dwarf mining expeditions; a very appreciated effort in Dwarf realms
@@ -775,6 +891,90 @@ title_chief_prospector = {
 	lose_effect = {}
 
 	message = no
+}
+
+# # DAWI ZHARR # #
+
+#Head of the Conclave.
+#If the High Priest is the President, this is the Speaker of the House
+title_head_of_sorcerer_conclave = {
+	is_high_prio = yes
+	show_as_title = yes
+	realm_in_name = no
+	is_voter = yes
+	dignity = 1
+
+	grant_limit = 1
+	opinion_effect = 5 #complicated relationship
+	monthly_salary = 0.25
+	monthly_prestige = 1
+	is_unique = yes
+
+	allowed_to_hold = {
+		trait = chaos_dwarf_sorcerer
+	}
+
+	allowed_to_grant = {
+		has_landed_title = e_hashut
+		is_feudal = yes
+		trait = creature_chaos_dwarf
+	}
+
+	gain_effect = {
+		prestige = 1000
+	}
+
+	revoke_trigger = {
+		always = no
+	}
+}
+
+#Leader of the Cabal
+#Lower-level version of previous
+title_head_of_sorcerer_cabal = {
+	is_high_prio = yes
+	show_as_title = yes
+	realm_in_name = no
+	is_voter = yes
+	dignity = 0.5
+
+	grant_limit = 1
+	opinion_effect = 10 #not as complicated at this level
+	monthly_salary = 0.1
+	monthly_prestige = 0.5
+	is_unique = yes
+
+	allowed_to_hold = {
+		OR = {
+			trait = chaos_dwarf_daemonsmith
+			trait = chaos_dwarf_sorcerer
+		}
+	}
+
+	allowed_to_grant = {
+		top_liege = {
+			has_landed_title = e_hashut
+			NOT = {
+				character = PREV
+			}
+		}
+		is_feudal = yes
+		primary_title = {
+			OR = {
+				tier = DUKE
+				tier = KING
+			}
+		}
+		trait = creature_chaos_dwarf
+	}
+
+	gain_effect = {
+		prestige = 100
+	}
+
+	revoke_trigger = {
+		always = no
+	}
 }
 
 #High Elves
@@ -850,102 +1050,6 @@ title_spellsinger = {
 	lose_effect = { }
 
 	message = no
-}
-
-title_grandmaster_heir = {
-	is_high_prio = yes
-	dignity = 0.05
-	realm_in_name = yes
-	grant_limit = 1
-	opinion_effect = 40
-
-
-	monthly_salary = 0.01
-	monthly_prestige = 0.002
-	monthly_piety = 0.05
-
-	allowed_to_hold = {
-		is_adult = yes
-		is_ruler = yes #Either another Master or a dynamic agent
-		trait = witch_hunter
-		NOT = { trait = incapable }
-		liege = { character = FROM }
-
-	}
-
-	allowed_to_grant = {
-		NOT = { trait = incapable }
-		is_adult = yes
-		trait = witch_hunter
-		religion = sigmarite
-		has_landed_title = k_witch_hunters_order
-	}
-
-	gain_effect = {
-		piety = 50
-		prestige = 50
-	}
-	lose_effect = {
-		piety = -100
-		prestige = -100
-		remove_trait=on_witch_hunt
-	}
-
-	message = yes
-}
-
-#Assigned title for independent chapters
-title_knight_captain_heir = {
-	is_high_prio = yes
-	dignity = 0.02
-	realm_in_name = yes
-	grant_limit = 1
-	opinion_effect = 40
-
-
-	monthly_salary = 0.01
-	monthly_prestige = 0.001
-	monthly_piety = 0.02
-
-	allowed_to_hold = {
-		is_adult = yes
-		trait = witch_hunter
-		religion = sigmarite
-		NOT = { trait = incapable }
-		liege = { character = FROM }
-	}
-
-	allowed_to_grant = {
-		NOT = { trait = incapable }
-		is_adult = yes
-		trait = witch_hunter
-		religion = sigmarite
-		NOR = {  has_landed_title = d_witch_hunter_seat_1
-			 has_landed_title = d_witch_hunter_seat_2
-			 has_landed_title = d_witch_hunter_seat_3
-	 		 has_landed_title = d_witch_hunter_seat_4
-	 		 has_landed_title = d_witch_hunter_seat_5
-	 		 has_landed_title = d_witch_hunter_seat_6
-	 		 has_landed_title = d_witch_hunter_seat_7
-	 		 has_landed_title = d_witch_hunter_seat_8
-	 		 has_landed_title = d_witch_hunter_seat_9
-	 		 has_landed_title = d_witch_hunter_seat_10
-	 		 has_landed_title = d_witch_hunter_seat_11
-	 		 has_landed_title = d_witch_hunter_seat_12
-			 has_landed_title = k_witch_hunters_order }
-	}
-
-	gain_effect = {
-		piety = 10
-		prestige = 10
-	}
-	lose_effect = {
-		piety = -50
-		prestige = -50
-		remove_trait=on_witch_hunt
-	}
-
-	message = yes
 }
 
 # Lizardmen
@@ -1095,16 +1199,16 @@ title_college_wizard = {
 	grant_limit = 100
 	show_as_title = yes
 	revoke_allowed = no
-	
+
 	monthly_prestige = 0.5
-	
+
 	allowed_to_hold = {
 		is_college_of_magic_member = yes
 	}
 	allowed_to_grant = {
 		always = no
 	}
-	
+
 	gain_effect = {
 	}
 	lose_effect = {

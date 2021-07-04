@@ -6195,6 +6195,22 @@ antideath_effect = {
 		 	character_event = { id = snehekharan.1 days = 1 }
 			break = yes
 		}
+		if = {
+			limit = {
+				trait = chaos_dwarf_sorcerer
+				NOT = { trait = chaos_dwarf_petrification_2 }
+				NAND = {
+					trait = chaos_dwarf_petrification_1
+					check_variable = {
+						which = hashut_favor
+						value <= 5
+					}
+				}
+				ai = yes
+			}
+			character_event = { id = wh_chaos_dwarf.140 days = 1 }
+			break = yes
+		}
 }
 
 send_duel_result_tournament_effect = {
@@ -6805,7 +6821,7 @@ create_cultists_crossing_border = {
 		limit = {
 			event_target:the_target = {
 				character = no
-			}			
+			}
 		}
 		break = yes
 	}
@@ -6822,11 +6838,11 @@ create_cultists_crossing_border = {
 				which = cultists_to_move
 				value = 1
 			}
-			random_realm_character = {	
+			random_realm_character = {
 				limit = {
 					is_human = yes
 					is_adult = yes
-					open_follower_of_any_chaos_gods = yes 
+					open_follower_of_any_chaos_gods = yes
 					is_unimportant_trigger = yes
 					is_chaos_champion_chosen_or_prince_trigger = no
 					is_in_society = no
@@ -6839,7 +6855,7 @@ create_cultists_crossing_border = {
 					is_smart_trigger = yes
 					is_strong_trigger = yes
 				}
-				set_character_flag = chaos_cult_from@event_target:chaos_ruler	
+				set_character_flag = chaos_cult_from@event_target:chaos_ruler
 				save_event_target_as = chosen_cultist
 				event_target:the_target = {
 					random_realm_lord = {
@@ -6859,12 +6875,12 @@ create_cultists_crossing_border = {
 							NOT = { secret_religion_group = chaos_gods_group }
 						}
 						event_target:chosen_cultist = {
-							move_character = PREV	
+							move_character = PREV
 							religion = PREV
 							culture = PREV
 							try_join_random_society = yes
 						}
-					}		
+					}
 				}
 				clear_event_target = chosen_cultist
 			}
@@ -7096,7 +7112,7 @@ set_amazon_male_to_female = {
 			}
 		}
 		set_gender = female
-		culture = amazon_main 
+		culture = amazon_main
 		religion = amazon
 		remove_trait = in_stock
 		remove_trait = disinherited_amazon
@@ -7404,9 +7420,96 @@ spell_casting_4 = {
 	}
 }
 
+create_random_satrap = {
+	create_character = {
+		age = 25
+		culture = servile_hobgoblin
+		religion = hashut
+		female = no
+		dynasty = random
+		random_trait = yes
+		add_trait = creature_hobgoblin
+	}
+	new_character = {
+		#dither age
+		random_list = {
+			10 = {
+				add_age = -3
+			}
+			10 = {
+				add_age = -2
+			}
+			20 = {
+				add_age = -1
+			}
+			20 = {
+				#no change
+			}
+			20 = {
+				add_age = 1
+			}
+			10 = {
+				add_age = 2
+			}
+			10 = {
+				add_age = 3
+			}
+		}
+	}
+}
 
+hashut_favor_trivial_penalty_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = -1
+	}
+}
 
+hashut_favor_small_penalty_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = -2
+	}
+}
 
+hashut_favor_medium_penalty_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = -5
+	}
+}
 
+hashut_favor_major_penalty_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = -10
+	}
+}
 
+hashut_favor_trivial_bonus_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = 1
+	}
+}
 
+hashut_favor_small_bonus_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = 2
+	}
+}
+
+hashut_favor_medium_bonus_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = 5
+	}
+}
+
+hashut_favor_major_bonus_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = 10
+	}
+}

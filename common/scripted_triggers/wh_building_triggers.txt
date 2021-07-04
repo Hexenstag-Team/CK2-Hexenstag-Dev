@@ -1,0 +1,51 @@
+tribal_hobgoblin_building_trigger = {
+  location = {
+    culture = servile_hobgoblin
+  }
+  FROM = {
+    trait = creature_hobgoblin
+  }
+}
+
+tribal_hobgoblin_unruly_slaves_building_trigger = {
+  FROM = {
+    trait = creature_hobgoblin
+  }
+  location = {
+    NOT = { culture = servile_hobgoblin }
+  }
+}
+
+chaos_dwarf_trade_with_hobgoblins_building_trigger = {
+  culture = servile_hobgoblin
+  FROM = {
+    is_patrician = yes
+    trait = creature_chaos_dwarf
+  }
+}
+
+chaos_dwarf_building_trigger = {
+  location = {
+    culture_group = dawi_zharr_group
+    NOT = { culture = servile_hobgoblin }
+  }
+  FROM = {
+    trait = creature_chaos_dwarf
+  }
+}
+
+order_dwarf_building_trigger = {
+  location = {
+    culture_group = dwarf_group
+  }
+  FROM = {
+    trait = creature_dwarf
+  }
+}
+
+any_dwarf_building_trigger = {
+  OR = {
+    order_dwarf_building_trigger = yes
+    chaos_dwarf_building_trigger = yes
+  }
+}
