@@ -9346,21 +9346,24 @@ engineers_guild = {
 
 	startup_populate = {
 	    trigger = {
-			ai = yes
-	    	controls_religion = no
-			age = 16
-			is_in_society = no
-			is_dumb_trigger = no
-			NOT = { is_priest = yes }
-			OR = {
-				culture_group = dwarf_group
-				culture_group = tilean_group
-			}
 			OR = {
 				trait = engineer
 				trait = dwarf_engineer
 				is_smart_trigger = yes
 			}
+			NOT = {
+				religion_group = chaos_gods_group
+			}
+	    controls_religion = no
+			age = 16
+			is_in_society = no
+			is_dumb_trigger = no
+			OR = {
+				culture_group = dwarf_group
+				culture_group = tilean_group
+			}
+			NOT = { is_priest = yes }
+			ai = yes
 		}
 	}
 }
