@@ -1427,7 +1427,7 @@ character_event = {
 	immediate = {
 	#Now make all previous vassals independent too
 		character_event = { id = beastmen.12 days = 1 }
-		FROM = { 
+		FROM = {
 			any_demesne_title = { limit = { has_title_flag = migrating_away }
 			grant_title = ROOT
 			clr_title_flag = migrating_away
@@ -1446,18 +1446,18 @@ character_event = {
 
 	is_triggered_only = yes
 
-	immediate = { 
-		if = { 
+	immediate = {
+		if = {
 			limit = {
 			FROMFROMFROM = { has_character_flag = beastmen_former_liege }
 			}
 			FROMFROMFROM = { clr_character_flag = beastmen_former_liege }
-			ROOT = { 
+			ROOT = {
 				set_defacto_liege = event_target:target_new_liege
 				prestige = 50
-				piety = 10 
+				piety = 10
 			}
-			any_vassal = { 
+			any_vassal = {
 				limit = { has_character_flag = migrating_away_vassal }
 				clr_character_flag = migrating_away_vassal
 				set_defacto_liege = event_target:target_new_liege
@@ -1469,13 +1469,13 @@ character_event = {
 			}
 		}
 		else={
-			ROOT = { 
+			ROOT = {
 				set_defacto_liege = THIS
 				prestige = 50
-				piety = 10 
+				piety = 10
 			}
 			any_demesne_title = { add_law = agnatic_succession }
-			any_vassal = { 
+			any_vassal = {
 				limit = { has_character_flag = migrating_away_vassal }
 				character_event = { id = beastmen.13 }
 				clr_character_flag = migrating_away_vassal
@@ -2388,7 +2388,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTAbeastmen16
-		 location = { 
+		 location = {
 			capital_holding = { convert_to = NOMAD }
 			random_province_holding = { limit = { is_capital = no }
 			destroy_settlement = THIS }
@@ -2663,59 +2663,59 @@ character_event = {
 		hidden_tooltip  = {
 		location = {
 				random_list ={
-					10= { 
+					10= {
 						random_province_holding = {
-						limit = { 
+						limit = {
 							is_capital = no
-							holding_type = tribal 
+							holding_type = tribal
 						}
-						destroy_random_building = yes 
+						destroy_random_building = yes
 						}
 						liege = { character_event = { id = beastmen.33 } }
 					}
-					5 = { 
+					5 = {
 						change_variable = {
 							which = beastman_despoiler
 							value = 1
 						}
 						religion = from
 					}
-					5 = { 
+					5 = {
 						change_variable = {
 							which = beastman_despoiler
 							value = 1
 						}
-						random_province_holding = { 
-							limit = { 
+						random_province_holding = {
+							limit = {
 								is_capital = no
-								holding_type = tribal 
+								holding_type = tribal
 							}
-						destroy_random_building = yes 
+						destroy_random_building = yes
 						}
 						liege = { character_event = { id = beastmen.33 } }
 					}
-					1 = { 
+					1 = {
 						change_variable = {
 							which = beastman_despoiler
 							value = 5
 						}
-						random_province_holding = { 
-							limit = { 
+						random_province_holding = {
+							limit = {
 								is_capital = no
-								holding_type = tribal 
+								holding_type = tribal
 							}
-							destroy_random_building = yes 
-							destroy_random_building = yes 
+							destroy_random_building = yes
+							destroy_random_building = yes
 						}
 						liege = { character_event = { id = beastmen.33 } }
 					}
-					5 = { 
+					5 = {
 					}
 				}
 				if = { limit = { NOT={has_province_modifier = province_scourged }}
 					add_province_modifier = {
 						name = province_scourged
-						duration = 4000 
+						duration = 4000
 						}
 				}
 			}
@@ -3247,62 +3247,8 @@ character_event = {
 	}
 }
 
-# What to do with captured slaves?
-character_event = {
-	id = beastmen.43
-	desc = EVTDESCbeastmen43
-	picture = GFX_evt_beastmen_charge
-	border = GFX_event_normal_frame_war
+# removed special slave mechanics
 
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAbeastmen43
-			trigger = { capital_scope = { has_province_modifier = beastman_herdstone } }
-			prestige = 125
-			piety = 50
-			hidden_tooltip = { if = { limit = { check_variable = { which = dwarfslaves value = 1 } }
-								change_variable = { which = dwarfslaves value = -1 }
-								break = yes
-							}
-						if = { limit = { check_variable = { which = humanslaves value = 1 } }
-								change_variable = { which = humanslaves value = -1 }
-								break = yes
-							}
-						if = { limit = { check_variable = { which = elfslaves value = 1 } }
-								change_variable = { which = elfslaves value = -1 }
-								break = yes
-							}
-				}
-		ai_chance = { factor = 100 }
-
-	}
-	option = {
-		name = EVTOPTBbeastmen43
-			prestige = 50
-			piety = 10
-			hidden_tooltip = { if = { limit = { check_variable = { which = dwarfslaves value = 1 } }
-								change_variable = { which = dwarfslaves value = -1 }
-								break = yes
-							}
-						if = { limit = { check_variable = { which = humanslaves value = 1 } }
-								change_variable = { which = humanslaves value = -1 }
-								break = yes
-							}
-						if = { limit = { check_variable = { which = elfslaves value = 1 } }
-								change_variable = { which = elfslaves value = -1 }
-								break = yes
-							}
-				}
-		ai_chance = { factor = 20 }
-
-	}
-	option = {
-		name = EVTOPTCbeastmen43
-		ai_chance = { factor = 0 }
-
-	}
-}
 # Beastmen interbreeding event
 character_event = {
 	id = beastmen.46
@@ -5246,9 +5192,7 @@ character_event = {
 	trigger = {
 		higher_tier_than = DUKE
 		religion_group = chaos_gods_group
-		FROM = { NOT = { location = { has_province_modifier = province_slave_raid } } }
 		FROM = { NOT = { location = { has_province_modifier = province_scourged } } }
-		FROM = { NOT = { location = { has_province_modifier = province_slave_raid_chaos_dwarf } } }
 		OR={
 			AND={
 				FROM={
@@ -5258,7 +5202,7 @@ character_event = {
 				}
 				any_war = {
 					attacker = { character = ROOT }
-					using_cb = beastmen_despoilment 
+					using_cb = beastmen_despoilment
 				}
 			}
 			any_war={
@@ -5275,16 +5219,16 @@ character_event = {
 
 	option = {
 		name = EVTOPTAasrai36
-		if = { 
+		if = {
 			limit = { FROM = { owner = { top_liege = { NOT = { character = PREV } } } } }
 			FROM = { owner = { top_liege = { character_event = { id = beastmen.70 } } } }
 		}
 		FROM = { owner = { character_event = { id = beastmen.70 } } }
 		FROM = { set_province_flag = flag_province_scourged }
 		if = {
-			limit = { 
-				FROM = { 
-					OR = { 
+			limit = {
+				FROM = {
+					OR = {
 						any_neighbor_province = { is_tribal = yes }
 						has_province_flag = flag_province_scourged
 						NOT = { num_of_settlements = 2 }
@@ -5297,13 +5241,13 @@ character_event = {
 				FROM = { convert_to = TRIBAL }
 			}
 		}
-		if = { 
+		if = {
 			limit = { FROM = { location = { NOT = { has_province_modifier = province_scourged } } } }
 			FROM = {
-				location = { 
-					add_province_modifier = { 
+				location = {
+					add_province_modifier = {
 						name = province_scourged
-						duration = 2400 
+						duration = 2400
 					}
 				}
 			}
@@ -5350,7 +5294,7 @@ character_event = {
 				random_courtier = {
 					limit = {
 						is_abroad = no
-						NOT = { trait = creature_beastman } 
+						NOT = { trait = creature_beastman }
 					}
 					random = {
 						chance = 75
@@ -5442,11 +5386,11 @@ character_event = {
 			factor = 25
 			modifier = {
 				factor = 1.75
-				ROOT = { 
+				ROOT = {
 					OR = { trait = cruel
 						trait = lunatic_3
-						trait = wroth 
-					} 
+						trait = wroth
+					}
 				}
 			}
 			modifier = {
@@ -5586,9 +5530,9 @@ character_event = {
 		prestige = -50
 		wealth = 10
 		if = { limit = { trait = cruel }
-			random = { 
+			random = {
 				chance = 1
-				remove_trait = cruel 
+				remove_trait = cruel
 			}
 		}
 		from={
@@ -5598,12 +5542,12 @@ character_event = {
 			factor = 75
 			modifier = {
 				factor = 1.2
-				ROOT = { 
-					NOT = { 
+				ROOT = {
+					NOT = {
 						trait = possessed
 						trait = lunatic_3
-						trait = lunatic_2 
-					} 
+						trait = lunatic_2
+					}
 				}
 			}
 			modifier = {

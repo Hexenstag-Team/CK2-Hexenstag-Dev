@@ -500,32 +500,7 @@ gather_beastmen_army = {
 		}
 	}
 
-beastman_slaver = {
-	ai_check_interval = 12
-	only_playable = yes
-		potential = {
-				trait = creature_beastman
-				age = 16
-				religion_group = chaos_gods_group
-		}
-
-		allow = {
-			OR = {
-				check_variable = { which = elfslaves value = 1 }
-				check_variable = { which = dwarfslaves value = 1 }
-				check_variable = { which = humanslaves value = 1 }
-				}
-			}
-
-		effect = {
-				ROOT = { character_event = { id = beastmen.43 } }
-				}
-
-		ai_will_do = {
-				factor = 1
-						}
-
-	}
+#special beastman slaver decision removed (general removal of bespoke slavery mechanics)
 
 beastman_herdstone_offering = {
 		ai_check_interval = 12
