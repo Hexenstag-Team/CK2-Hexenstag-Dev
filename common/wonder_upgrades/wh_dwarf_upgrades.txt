@@ -69,7 +69,7 @@
 #Mining layers. Allow mineral upgrades to be built, add to levy and garrison size (more living space)
 
 upgrade_mining_layer_1 = {
-  picture = GFX_upgrade_icon_door
+  picture = GFX_upgrade_icon_mining_cart
 
   potential = { }
   allow = {  }
@@ -91,7 +91,7 @@ upgrade_mining_layer_1 = {
 
 
 upgrade_mining_layer_2 = {
-  picture = GFX_upgrade_icon_door
+  picture = GFX_upgrade_icon_mining_cart
 
   potential = {  }
   allow = {
@@ -115,7 +115,7 @@ upgrade_mining_layer_2 = {
 }
 
 upgrade_mining_layer_3 = {
-  picture = GFX_upgrade_icon_door
+  picture = GFX_upgrade_icon_mining_cart
 
   potential = {
     FROMFROM = {
@@ -143,7 +143,7 @@ upgrade_mining_layer_3 = {
 }
 
 upgrade_mining_layer_4 = {
-  picture = GFX_upgrade_icon_door
+  picture = GFX_upgrade_icon_mining_cart
 
   potential = {
     FROMFROM = {
@@ -295,7 +295,7 @@ upgrade_mining_tetrahedrite = {
 #Coal. Not differentiating between heavy and light coals
 #The essential industrial mineral, so provides a heavy bonus to taxes
 upgrade_mining_coal = {
-  picture = GFX_upgrade_icon_brazier
+  picture = GFX_upgrade_icon_stones
   potential = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_1
@@ -508,7 +508,7 @@ upgrade_mining_cinnabar = {
 #Native Copper
 #Encountered earlier but still a useful craft metal.
 upgrade_mining_native_copper = {
-  picture = GFX_upgrade_icon_ingots_gold
+  picture = GFX_upgrade_icon_ingots_bronze
   potential = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_2
@@ -743,7 +743,7 @@ upgrade_great_dwarf_port = {
 #Underway & Dawi Zharr equivalent
 #Significant bonus to local movement, adds trade value
 upgrade_tunnel_roads = {
-  picture = GFX_upgrade_icon_stones
+  picture = GFX_upgrade_icon_mining_cart
   potential = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_1
@@ -805,7 +805,7 @@ upgrade_great_gate = {
 }
 
 upgrade_outer_watchposts = {
-  picture = GFX_upgrade_icon_stones
+  picture = GFX_upgrade_icon_bow_and_arrows
   potential = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_1
