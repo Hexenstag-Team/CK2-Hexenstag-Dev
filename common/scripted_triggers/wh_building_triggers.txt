@@ -43,6 +43,24 @@ order_dwarf_building_trigger = {
   }
 }
 
+#use in potential when any_dwarf_building_trigger is being used in is_active_trigger
+weak_any_dwarf_building_trigger = {
+  FROM = {
+    OR = {
+      trait = creature_chaos_dwarf
+      trait = creature_dwarf
+    }
+  }
+  location = {
+    OR = {
+      culture_group = dwarf_group
+      culture_group = dawi_zharr_group
+    }
+    NOT = { culture = servile_hobgoblin }
+  }
+}
+
+#use in potential for either/or buildings, in is_active_trigger with weak_any_dwarf_building_trigger for buildings that should persist through conquest
 any_dwarf_building_trigger = {
   OR = {
     order_dwarf_building_trigger = yes
