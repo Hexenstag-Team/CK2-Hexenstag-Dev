@@ -38,8 +38,14 @@ great_north_road = { #
 	# Schoninghagen, Middenheim
 	path = { 1032 274 }
 	
-	# Deinste, Winsen, Isenbuttel, Sotturm, Rippig, Malstedt, Gruhentreich, Suderende, Middenheim
-	path = { 263 265 266 1057 1058 275 1056 272 274 }
+	# Deinste, Winsen, Isenbuttel, Sotturm
+	path = { 263 265 266 1057 }
+	
+	# Sotturm, Rippig, Malstedt
+	path = { 1057 1058 275 }
+	
+	# Malstedt, Gruhentreich, Suderende, Middenheim
+	path = { 275 1056 272 274 }
 	
 	# Middenheim, Nordlichturm
 	path = { 274 271 }
@@ -62,8 +68,11 @@ great_north_road = { #
 	# Beeckerhoven, Salzenmund
 	path = { 982 239 }
 	
-	# Norden, Salkalten, Verborgenbucht, Rossin, Gauschdorf, Erengrad
-	path = { 240 243 1142 246 249 175 }
+	# Norden, Salkalten
+	path = { 240 243 }
+	
+	# Salkalten, Verborgenbucht, Rossin, Gauschdorf, Erengrad
+	path = { 243 1142 246 249 175 }
 }
 old_dwarf_road = { #
 
@@ -225,8 +234,8 @@ grimway = { #
 	# Talabheim, Talagaad
 	path = { 324 325 }
 
-	# Talagaad, Farlichberge, Ossino, Krugenheim, Menshenfresserhoffen
-	path = { 325 327 334 333 339 }
+	# Talagaad, Farlichberge, Ossino, Krugenheim, Bissendorf, Kiel, Menshenfresserhoffen, Taakweg, Bechafen
+	path = { 325 327 334 333 1632 1159 339 1158 366 }
 	
 	# Talagaad, Ostlichrand
 	path = { 325 336 }
@@ -243,8 +252,8 @@ grimway = { #
 	# Wolfenburg, Levudaldorf, Vandengart, Grenzburg
 	path = { 254 1128 252 255 }
 	
-	# Grenzburg, Selonian Hills, Borkrum, Rugenbuttle
-	path = { 255 258 338 340 }
+	# Grenzburg, Selonian Hills, Borkrum, Gross Selon, Rugenbuttle, Bechafen
+	path = { 255 258 338 1153 340 366 }
 
 	# Grenzburg, Ptorsk
 	path = { 255 204 }
@@ -263,15 +272,6 @@ grimway = { #
 
 	#Salkalten, Verborgenbucht, Rossin, Gauschdorf, Erengrad
 	path = { 243 1142 246 249 175 }
-	
-	# Rugenbuttle, Bechafen
-	path = { 340 366 }
-	
-	# Rugenbuttle, Menshenfresserhoffen
-	path = { 340 339 }
-	
-	# Menshenfresserhoffen, Bechafen
-	path = { 339 366 }
 }
 altdorf_middenheim_road = { #
 
@@ -295,8 +295,14 @@ altdorf_middenheim_road = { #
 	# Kutenholz, Senden, Carroburg
 	path = { 281 1018 270 }
 	
-	# Kutenholz, Brockel, Mittelwig, Sotturm Rippig Malstedt, Gruhentreich Suderende, Middenheim
-	path = { 281 1059 269 1057 1058 275 1056 272 274 }
+	# Kutenholz, Brockel, Mittelwig, Sotturm
+	path = { 281 1059 269 1057 }
+	
+	# Sotturm, Rippig, Malstedt
+	path = { 1057 1058 275 }
+	
+	# Malstedt, Gruhentreich, Suderende, Middenheim
+	path = {  275 1056 272 274 }
 }
 grey_lady_pass = { #
 
@@ -416,18 +422,15 @@ bechafen_road = { #
 	trade_post_display_trigger = {
 		silk_road_trade_post_trigger = yes
 	}
-
+	
 	# Bechafen
 	start = { 366 }
 	
-	# Bechafen, Kolhov, Nagenhof, Regak
-	path = { 366 372 374 373 }
+	# Bechafen, Muckenhof, Remer
+	path = { 366 1161 1166}
 	
-	# Regak, Mindas Ungor, Karak Kadrin
-	path = { 373 1088 436 }
-	
-	# Regak, Zherden
-	path = { 373 930 }
+	# Bechafen, Muckenhof, Remer, Elbing, Nagenhof, Osterwald, Nachtdorf, Mindas Ungor, Karak Kadrin
+	path = { 1166 1334 374 373 1343 1088 436 }
 }
 drakenhof_road = { #
 
@@ -457,11 +460,14 @@ drakenhof_road = { #
 	#Wartenhof, Vanhaldenhof
 	path = { 384 379 }
 
-	#Wartenhof, Waldenhof, Regak, Nagenhof, Kolhov, Bechafen
-	path = { 384 382 373 374 372 366 }
+	#Wartenhof, Waldenhof, Zherden, Fichetal, Burgenhof, Remer
+	path = { 384 382 930 1338 1336 1166 }
 
 	#Wartenhof, Mikaldorf
 	path = { 384 381 }
+	
+	#Remer, Muckenhof, Bechafen
+	path = { 1166 1161 366 }
 
 	#Tempelhof, Vanhaldenhof
 	path = { 380 379 }

@@ -1,5 +1,5 @@
 #Used IDs 10201-10239
-#Free IDs 10240-10350
+#Free IDs 10202, 10226-10231, 10240-10350
 
 10201 = {	#85000
 	name = Erich
@@ -16,7 +16,6 @@
 	add_trait = intricate_webweaver
 	add_trait = kind
 	add_trait = craven
-	father = 10231
 
 	1962.7.30 = {birth = yes
 			effect = {set_character_flag = magic_potential_flag_1}
@@ -41,25 +40,9 @@
 	2022.12.25 = {death = yes}
 }
 
-10202 = {	#85001
-	name = Suanhilda
-	female = yes
-	dynasty = 21044
-	culture = ostermarker
-	religion = sigmarite
-	martial = 8
-	diplomacy = 5
-	stewardship = 7
-	intrigue = 6
-	learning = 1
-	add_trait = creature_human
-	add_trait = hunter
-	add_trait = brilliant_strategist
-	add_trait = zealous
-	add_trait = honest
-	1959.5.13 = {birth = yes}
-	2019.5.5 = {death = yes}
-}
+###########
+###10202###
+###########
 
 10203 = {	#85002
 	name = Stoyanka
@@ -117,7 +100,6 @@
 	add_trait = tough_soldier
 	add_trait = chaste
 	add_trait = cruel
-	father = 10230
 	1956.7.12 = {birth = yes}
 	1982.8.2 = {add_spouse = 10233}
 	2040.11.4 = {death = yes}
@@ -176,7 +158,6 @@
 	add_trait = creature_human
 	add_trait = hunter
 	add_trait = mastermind_theologian
-	father = 10226
 
 	1968.6.13 = {birth = yes}
 	2051.12.20 = {death = yes}
@@ -476,172 +457,52 @@
 	1797.9.20 = {birth = yes}
 	1869.8.29 = {death = yes}
 }
+###
 
-10224 = {	#85025
-	name = Thietmar
-	dynasty = 21042
-	dna = enbidfpccjk
+10224 = {
+	name = Raymond
+	dynasty = 10020	#von Gruber
 	culture = ostermarker
 	religion = taalite
-	martial = 5
-	diplomacy = 2
-	stewardship = 3
-	intrigue = 3
-	learning = 6
-	add_trait = creature_human
-	add_trait = detached_priest
-	add_trait = cruel
-	1860.1.1 = {birth = yes}
-	1922.7.26 = {death = yes}
-}
-
-10225 = {	#85026
-	name = Stanislaus
-	dynasty = 21042
-	dna = jlhdcedeemj
-	culture = ostermarker
-	religion = taalite
-	martial = 2
-	diplomacy = 3
-	stewardship = 8
-	intrigue = 3
-	learning = 7
+	martial = 4
+	diplomacy = 7
+	stewardship = 6
+	intrigue = 9
+	learning = 4
 	add_trait = creature_human
 	add_trait = elusive_shadow
-	add_trait = deceitful
-	add_trait = craven
-	father = 10224
+	add_trait = ambitious
+	add_trait = greedy
+	add_trait = proud
 
-	1882.9.1 = {birth = yes}
-	1939.9.1 = {death = yes}
+	1952.2.23 = {birth = yes}
+	1995.5.8 = {death = yes}
 }
 
-85027 = {	#10226
-	name = Wolfdietrich
-	dynasty = 21038
-	dna = hkaoihlogbe
-	culture = ostermarker
-	religion = taalite
-	martial = 6
-	diplomacy = 4
-	stewardship = 7
-	intrigue = 1
-	learning = 5
-	add_trait = creature_human
-	add_trait = grey_eminence
-	father = 10239
-
-	1906.9.1 = {birth = yes}
-	1942.1.13 = {death = yes}
-}
-
-10227 = {	#85028
-	name = Catarina
-	female = yes
-	dynasty = 21042
-	dna = onpiddfgpmd
-	culture = ostermarker
-	religion = taalite
-	martial = 5
-	diplomacy = 1
-	stewardship = 0
-	intrigue = 4
-	learning = 5
-	add_trait = creature_human
-	add_trait = skilled_tactician
-	add_trait = scholar
-	add_trait = lustful
-	father = 10224
-
-	1879.11.1 = {birth = yes}
-	1947.5.17 = {death = yes}
-}
-
-10228 = {	#85029
+10225 = {
 	name = Wernher
-	dynasty = 21064
-	dna = hnhllooldfp
+	dynasty = 18112	#von Kessel
 	culture = ostermarker
 	religion = taalite
-	martial = 3
-	diplomacy = 4
+	martial = 7
+	diplomacy = 6
 	stewardship = 6
-	intrigue = 3
+	intrigue = 5
 	learning = 6
 	add_trait = creature_human
-	add_trait = charismatic_negotiator
-	add_trait = ambitious
-	add_trait = gregarious
-	add_trait = wounded
+	add_trait = grey_eminence
+	add_trait = brilliant
+	add_trait = just
+	add_trait = diligent
+	add_trait = shrewd
 
-	1921.5.1 = {birth = yes}
-	1952.5.22 = {death = yes}
+	1992.5.8 = {birth = yes}
+	2060.1.1 = {death = yes}
 }
 
-10229 = {	#85030
-	name = Athela
-	female = yes
-	dynasty = 21038
-	dna = onlbnjhofck
-	culture = ostermarker
-	religion = taalite
-	martial = 6
-	diplomacy = 7
-	stewardship = 3
-	intrigue = 1
-	learning = 1
-	add_trait = creature_human
-	add_trait = tough_soldier
-	add_trait = patient
-	add_trait = arbitrary
-	add_trait = content
-	father = 10239
-
-	1901.11.1 = {birth = yes}
-	1968.9.8 = {death = yes}
-}
-
-10230 = {	#85031
-	name = Gustav
-	dynasty = 21032
-	dna = ppoeheacjbl
-	culture = ostermarker
-	religion = taalite
-	martial = 0
-	diplomacy = 4
-	stewardship = 4
-	intrigue = 4
-	learning = 3
-	add_trait = creature_human
-	add_trait = indulgent_wastrel
-	add_trait = trusting
-	add_trait = wounded
-
-	1922.9.1 = {birth = yes}
-	1982.4.3 = {death = yes}
-}
-
-10231 = {	#85032
-	name = Chedwic
-	dynasty = 21064
-	dna = acldjdigkpk
-	culture = ostermarker
-	religion = taalite
-	martial = 3
-	diplomacy = 5
-	stewardship = 6
-	intrigue = 6
-	learning = 5
-	add_trait = creature_human
-	add_trait = flamboyant_schemer
-	add_trait = cynical
-	add_trait = slothful
-	add_trait = greedy
-	father = 10228
-
-	1947.3.1 = {birth = yes}
-	1997.5.10 = {death = yes}
-}
+#################
+###10226-10231###
+#################
 
 10232 = {	#85052
 	name = Alaric
@@ -743,7 +604,6 @@
 	add_trait = envious
 	add_trait = patient
 	add_trait = lustful
-	mother = 10227
 
 	1952.8.26 = {birth = yes}
 	2008.1.2 = {death = yes}
@@ -788,20 +648,113 @@
 	1995.5.8 = {death = yes}
 }
 
-10239 = {	#85059
-	name = Ulricht
-	dynasty = 21038
-	dna = hkaoihlogbe
+###Plase
+10239 = {
+	name = Harold
+	dynasty = 21117
 	culture = ostermarker
 	religion = taalite
-	martial = 6
-	diplomacy = 4
-	stewardship = 7
-	intrigue = 1
-	learning = 5
 	add_trait = creature_human
-	add_trait = grey_eminence
+	1967.4.15 = {birth = yes}
+	2040.1.1 = {death = yes}
+}
 
-	1880.1.9 = {birth = yes}
-	1920.12.1 = {death = yes}
+10240 = {
+	name = Folkmar
+	dynasty = 21116
+	culture = ostermarker
+	religion = taalite
+	add_trait = creature_human
+	1967.4.15 = {birth = yes}
+	2040.1.1 = {death = yes}
+}
+
+10241 = {
+	name = Theodoric
+	dynasty = 21115
+	culture = ostermarker
+	religion = taalite
+	add_trait = creature_human
+	1967.4.15 = {birth = yes}
+	2040.1.1 = {death = yes}
+}
+
+10242 = {
+	name = Ulli
+	dynasty = 21114
+	culture = ostermarker
+	religion = taalite
+	add_trait = creature_human
+	1980.6.1 = {birth = yes}
+	2040.1.1 = {death = yes}
+}
+
+10243 = {
+	name = Nicholaus
+	dynasty = 21113
+	culture = ostermarker
+	religion = taalite
+	add_trait = creature_human
+	1990.7.18 = {birth = yes}
+	2040.1.1 = {death = yes}
+}
+
+10244 = {
+	name = Oldrich
+	dynasty = 21112
+	culture = ostermarker
+	religion = taalite
+	add_trait = creature_human
+	1992.2.8 = {birth = yes}
+	2040.1.1 = {death = yes}
+}
+
+10245 = {
+	name = Dan
+	dynasty = 21111
+	culture = ostermarker
+	religion = taalite
+	add_trait = creature_human
+	1987.4.2 = {birth = yes}
+	2040.1.1 = {death = yes}
+}
+
+10246 = {
+	name = Kaspar
+	dynasty = 21110
+	culture = ostermarker
+	religion = taalite
+	add_trait = creature_human
+	1982.9.5 = {birth = yes}
+	2040.1.1 = {death = yes}
+}
+
+10247 = {
+	name = Erberhardt
+	dynasty = 21109
+	culture = ostermarker
+	religion = taalite
+	add_trait = creature_human
+	1992.7.24 = {birth = yes}
+	2040.1.1 = {death = yes}
+}
+
+10248 = {
+	name = Sander
+	dynasty = 21108
+	culture = ostermarker
+	religion = taalite
+	add_trait = creature_human
+	1999.4.15 = {birth = yes}
+	2040.1.1 = {death = yes}
+}
+
+10249 = {
+	name = Konred
+	dynasty = 21107
+	culture = ostermarker
+	religion = taalite
+	add_trait = creature_human
+	1994.4.11 = {birth = yes}
+	2040.1.1 = {death = yes}
 }
