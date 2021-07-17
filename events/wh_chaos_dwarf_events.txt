@@ -218,38 +218,57 @@ character_event = {
       if = {
         limit = {
           has_ambition = obj_chaos_dwarf_become_daemonsmith
-          check_variable = {
-            which = hashut_favor
-            value >= 10
+        }
+        #sometimes the ambition migrates from heir to ruler so we need to clear it away
+        if = {
+          limit = {
+            OR = {
+              trait = chaos_dwarf_daemonsmith
+              trait = chaos_dwarf_sorcerer
+            }
           }
+          cancel_ambition = yes
         }
-        character_event = {
-          id = wh_chaos_dwarf.110
-          days = 15
-          random = 10
-        }
-        #keep this somewhat mysterious, mechanics could be made more transparent to the player if desired
-        change_variable = {
-          which = hashut_favor
-          value = -10
+        else_if = {
+          limit = {
+            check_variable = {
+              which = hashut_favor
+              value >= 10
+            }
+          }
+          character_event = {
+            id = wh_chaos_dwarf.110
+            days = 15
+            random = 10
+          }
         }
       }
       #check for becoming sorcerer
       if = {
         limit = {
           has_ambition = obj_chaos_dwarf_become_sorcerer
-          check_variable = {
-            which = hashut_favor
-            value >= 25
-          }
         }
-        #start trial of the sorcerer by pinging the High Priest
-        e_hashut = {
-          holder = {
-            character_event = {
-              id = wh_chaos_dwarf.120
-              days = 30
-              random = 150 #this should be unpredictable
+        if = {
+          limit = {
+            trait = chaos_dwarf_sorcerer
+          }
+          cancel_ambition = yes
+        }
+        else_if = {
+          limit = {
+            check_variable = {
+              which = hashut_favor
+              value >= 25
+            }
+          }
+          #start trial of the sorcerer by pinging the High Priest
+          e_hashut = {
+            holder = {
+              character_event = {
+                id = wh_chaos_dwarf.120
+                days = 30
+                random = 150 #this should be unpredictable
+              }
             }
           }
         }
@@ -362,10 +381,45 @@ character_event = {
 
     option = {
       name = EVTOPT_praise_hashut
-      add_trait = chaos_dwarf_daemonsmith
-      add_character_modifier = {
-        name = magic_power_1
-        duration = -1
+      if = {
+        #in rare cases the ambition seems to "migrate" to the wrong character, so check that the character should be trying to become a daemonsmith
+        limit = {
+          NOR = {
+            trait = chaos_dwarf_sorcerer
+            trait = chaos_dwarf_daemonsmith
+          }
+        }
+        add_trait = chaos_dwarf_daemonsmith
+        add_character_modifier = {
+          name = magic_power_1
+          duration = -1
+        }
+        hidden_tooltip = {
+          #keep this somewhat mysterious, mechanics could be made more transparent to the player if desired
+          change_variable = {
+            which = hashut_favor
+            value = -10
+          }
+          #add a Bull Centaur guardian if appropriate
+          if = {
+            limit = {
+              any_owned_bloodline = {
+                has_bloodline_flag = chaos_dwarf_sorcerer_statue_bloodline
+              }
+              NOT = {
+                has_character_flag = bull_centaur_guardian_flag
+              }
+            }
+            character_event = {
+              id = wh_chaos_dwarf.180
+              days = 1
+            }
+          }
+        }
+      }
+      #this failsafe stops this event from turning sorcerers into daemonsmiths
+      else = {
+        cancel_ambition = yes
       }
     }
   }
@@ -571,19 +625,43 @@ character_event = {
       #age modifiers. Cumulative structure
       if = {
         limit = {
+          age <= 60
+        }
+        hashut_favor_medium_bonus_effect = yes
+      }
+      if = {
+        limit = {
+          age <= 80
+        }
+        hashut_favor_medium_bonus_effect = yes
+      }
+      if = {
+        limit = {
           age <= 100
         }
         hashut_favor_medium_bonus_effect = yes
       }
       if = {
         limit = {
-          age <= 125
+          age <= 120
         }
         hashut_favor_small_bonus_effect = yes
       }
       if = {
         limit = {
-          age <= 150
+          age <= 140
+        }
+        hashut_favor_small_bonus_effect = yes
+      }
+      if = {
+        limit = {
+          age <= 160
+        }
+        hashut_favor_trivial_bonus_effect = yes
+      }
+      if = {
+        limit = {
+          age <= 180
         }
         hashut_favor_trivial_bonus_effect = yes
       }
@@ -633,6 +711,13 @@ character_event = {
       if = {
         limit = {
           trait = stubborn
+        }
+        hashut_favor_small_bonus_effect = yes
+      }
+      #Barons can't effectively use the sacrifice decision, so this compensates them
+      if = {
+        limit = {
+          real_tier = BARON
         }
         hashut_favor_small_bonus_effect = yes
       }
@@ -785,7 +870,10 @@ character_event = {
     option = {
       name = EVTOPT_hashut_grant_me
       set_graphical_culture = dawi_zharr_stoned
-			death = { death_reason = death_trait }
+      create_bloodline = {
+        type = chaos_dwarf_sorcerer_statue_bloodline
+      }
+			death = { death_reason = death_sorcerers_curse }
     }
   }
 
@@ -870,6 +958,290 @@ character_event = {
   		add_artifact = lamassu_mount
   	}
 
+  }
+
+  #Pregnancy - consult Hashut
+  character_event = {
+    id = wh_chaos_dwarf.174
+    hide_window = yes
+
+    religion = hashut
+
+    is_triggered_only = yes
+
+    trigger = {
+      trait = creature_chaos_dwarf
+      is_female = yes
+    }
+
+    immediate = {
+      #chance of bull centaur
+      random = {
+        chance = 5
+        character_event = {
+          id = wh_chaos_dwarf.175
+          days = 18
+          random = 18
+        }
+      }
+    }
+
+  }
+
+  character_event = {
+    id = wh_chaos_dwarf.175
+    desc = EVTDESC_wh_chaos_dwarf.175
+    picture = GFX_evt_hashut_rune
+
+    is_triggered_only = yes
+
+    immediate = {
+      set_character_flag = bull_centaur_mother
+      add_trait = troubled_pregnancy
+    }
+
+    option = {
+      name = EVTOPT_hashut_guidance
+      piety = 100
+      tooltip = { add_trait = troubled_pregnancy }
+    }
+  }
+
+  #bull centaur birth - child
+  #it's not possible to be playing the child
+  character_event ={
+    id = wh_chaos_dwarf.176
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    trigger = {
+      mother = {
+        has_character_flag = bull_centaur_mother
+      }
+    }
+
+    immediate = {
+      add_trait = chaos_dwarf_bull_centaur
+      random_list = {
+        20 = {
+          NOT = {
+            trait = strong
+          }
+          add_trait = strong
+        }
+        25 = {
+          trigger = {
+            NOR = {
+              trait = strong
+              trait = tough
+            }
+          }
+          add_trait = tough
+        }
+        30 = {
+          trigger = {
+            NOR = {
+              trait = strong
+              trait = tough
+              trait = hardy
+            }
+          }
+          add_trait = hardy
+        }
+        15 = {
+          #null result
+        }
+      }
+      mother = {
+        character_event = {
+          id = wh_chaos_dwarf.177
+        }
+      }
+      father = {
+        character_event = {
+          id = wh_chaos_dwarf.178
+        }
+      }
+    }
+
+  }
+
+  #bull centaur birth - mother :(
+  character_event = {
+    id = wh_chaos_dwarf.177
+    desc = EVTDESC_wh_chaos_dwarf.177
+    picture = GFX_evt_bad_news_female
+
+    is_triggered_only = yes
+
+    option = {
+      name = EVTOPT_hashut_grant_me
+      #bearing a bull centaur implies the favor of Hashut
+      prestige = 1000
+      piety = 1000
+      custom_tooltip = {
+        text = bull_centaur_mother_birth_tt
+        hashut_favor_medium_bonus_effect = yes
+        clr_character_flag = bull_centaur_mother
+        #in the lore, this is usually fatal
+        random_list = {
+          #normal outcome
+          60 = {
+            modifier = {
+              factor = 0.5
+              is_strong_trigger = yes
+            }
+            modifier = {
+              factor = 2
+              is_weak_trigger = yes
+            }
+            if = {
+      				limit = { is_invincible_trigger = yes }
+      				antideath_effect = yes
+      				break = yes
+      			}
+            death = {
+              death_reason = death_childbirth
+            }
+          }
+          #not dead, but dying
+          20 = {
+            modifier = {
+              factor = 0.5
+              trait = stubborn
+            }
+            add_trait = incapable
+            add_trait = stressed
+            add_trait = feeble
+            health = -5
+          }
+          # terribly injured but might recover (RIP and non-RIP versions)
+          15 = {
+            trigger = {
+              has_dlc = "Reapers"
+            }
+            add_trait = wounded
+            add_trait = mangled
+            add_trait = stressed
+            add_trait = feeble
+            health = -5
+          }
+          15 = {
+            trigger = {
+              NOT = {
+                has_dlc = "Reapers"
+              }
+            }
+            add_trait = wounded
+            add_trait = maimed
+            add_trait = stressed
+            add_trait = feeble
+            health = -5
+          }
+          #best case scenario - physically and emotionally hurt, but should recover
+          5 = {
+            modifier = {
+              factor = 5
+              is_strong_trigger = yes
+            }
+            modifier = {
+              factor = 5
+              OR = {
+                trait = chaos_dwarf_daemonsmith
+                trait = chaos_dwarf_sorcerer
+              }
+            }
+            add_trait = wounded
+            add_trait = stressed
+          }
+        }
+      }
+    }
+
+  }
+
+  character_event = {
+    id = wh_chaos_dwarf.178
+    desc = EVTDESC_wh_chaos_dwarf.178
+    picture = GFX_evt_bull_centaur
+
+    is_triggered_only = yes
+
+    immediate = {
+      hashut_favor_trivial_bonus_effect = yes
+    }
+
+    option = {
+      name = EVTOPT_praise_hashut
+      #high rewards, but remember that Chaos Dwarfs have fertility throttling events
+      piety = 500
+      prestige = 500
+    }
+  }
+
+  #wholesome bull centaur guardian appears :3
+  #landing for inheriting minors
+  character_event = {
+    id = wh_chaos_dwarf.179
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    religion = hashut
+    max_age = 15
+
+    trigger = {
+      any_owned_bloodline = {
+        has_bloodline_flag = chaos_dwarf_sorcerer_statue_bloodline
+      }
+      NOT = {
+        has_character_flag = bull_centuar_guardian_flag
+      }
+    }
+
+    immediate = {
+      character_event = {
+        id = wh_chaos_dwarf.180
+        days = 1
+      }
+    }
+  }
+
+  #event to create and announce bull centaur guardian
+  character_event = {
+    id = wh_chaos_dwarf.180
+    desc = EVTDESC_wh_chaos_dwarf.180
+    picture = GFX_evt_bull_centaur
+
+    is_triggered_only = yes
+
+    immediate = {
+      spawn_bull_centaur_effect = yes
+      new_character = {
+        save_event_target_as = bull_centaur_guardian
+      }
+      random_bloodline = {
+        limit = {
+          has_bloodline_flag = chaos_dwarf_sorcerer_statue_bloodline
+        }
+        founder = {
+          save_event_target_as = sorcerer_ancestor
+        }
+      }
+    }
+
+    option = {
+      name = EVTOPT_praise_hashut
+      event_target:bull_centaur_guardian = {
+        opinion = {
+          modifier = opinion_loyal_servant
+          who = ROOT
+          years = 1000
+        }
+      }
+      set_character_flag = bull_centuar_guardian_flag
+    }
   }
 
   #events for sacrifices to Hashut

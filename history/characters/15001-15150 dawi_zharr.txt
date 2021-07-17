@@ -300,13 +300,14 @@
 	2057.6.25 = {death = yes}
 }
 
-#unlanded
+#Holds Zanen Ruvalk
 15013 = { #54018
 	name = Phakova
 	dynasty = 78018
 	dna = admemmoodia
 	culture = dawi_zharr
 	religion = hashut
+	father = 15073
 	martial = 4
 	diplomacy = 3
 	stewardship = 0
@@ -1612,5 +1613,38 @@
 	}
 	2217.1.6 = {
 		death = yes
+	}
+}
+
+#Petrified father of Phakova
+15073 = {
+	name = Khost
+	dynasty=78018
+	culture = dawi_zharr_stoned
+	religion = hashut
+	martial = 6
+	diplomacy = 4
+	stewardship = 7
+	intrigue = 6
+	learning = 9
+	add_trait = creature_chaos_dwarf
+	add_trait = chaos_dwarf_sorcerer
+	add_trait = zealous
+	add_trait = erudite
+	add_trait = cruel
+	add_trait = charitable
+	add_trait = scholarly_theologian
+	1604.7.7 = {
+		birth = yes
+		culture = dawi_zharr
+	}
+	1990.4.4 = {
+		add_trait = chaos_dwarf_petrification_2
+		create_bloodline = {
+			type = chaos_dwarf_sorcerer_statue_bloodline
+		}
+		death = {
+			death_reason = death_sorcerers_curse
+		}
 	}
 }
