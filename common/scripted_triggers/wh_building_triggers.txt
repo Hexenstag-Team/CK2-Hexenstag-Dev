@@ -62,8 +62,11 @@ weak_any_dwarf_building_trigger = {
 
 #use in potential for either/or buildings, in is_active_trigger with weak_any_dwarf_building_trigger for buildings that should persist through conquest
 any_dwarf_building_trigger = {
-  OR = {
-    order_dwarf_building_trigger = yes
-    chaos_dwarf_building_trigger = yes
+  custom_tooltip = {
+    text = any_dwarf_building_trigger_tt
+    OR = {
+      order_dwarf_building_trigger = yes
+      chaos_dwarf_building_trigger = yes
+    }
   }
 }

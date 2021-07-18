@@ -151,7 +151,19 @@ character_event = {
 character_event = {
 	id = wh_engineers_society.10
 	desc = EVTDESC_wh_engineers_society_10
-	picture = GFX_evt_weaponsmith
+  picture = {
+    trigger = {
+      trait = creature_dwarf
+    }
+    picture = GFX_evt_chaos_dwarf_forge
+  }
+  picture = {
+    trigger = {
+      NOT = { trait = creature_dwarf }
+    }
+    picture = GFX_evt_lab
+  }
+
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
@@ -334,7 +346,7 @@ character_event = {
 character_event = {
 	id = wh_engineers_society.11
 	desc = EVTDESC_wh_engineers_society_11
-	picture = GFX_evt_weaponsmith
+  picture = GFX_evt_burning_house_arabic
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
@@ -407,7 +419,18 @@ character_event = {
 character_event = {
 	id = wh_engineers_society.12
 	desc = EVTDESC_wh_engineers_society_12
-	picture = GFX_evt_weaponsmith
+  picture = {
+    trigger = {
+      trait = creature_dwarf
+    }
+    picture = GFX_evt_chaos_dwarf_forge
+  }
+  picture = {
+    trigger = {
+      NOT = { trait = creature_dwarf }
+    }
+    picture = GFX_evt_lab
+  }
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
@@ -427,7 +450,7 @@ character_event = {
 character_event = {
 	id = wh_engineers_society.13
 	desc = EVTDESC_wh_engineers_society_13
-	picture = GFX_evt_weaponsmith
+  picture = GFX_evt_machines_of_war
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
@@ -448,7 +471,7 @@ character_event = {
 character_event = {
 	id = wh_engineers_society.14
 	desc = EVTDESC_wh_engineers_society_14
-	picture = GFX_evt_weaponsmith
+  picture = GFX_evt_machines_of_war
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
@@ -470,7 +493,7 @@ character_event = {
 character_event = {
 	id = wh_engineers_society.15
 	desc = EVTDESC_wh_engineers_society_15
-	picture = GFX_evt_weaponsmith
+  picture = GFX_evt_steam_tank
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = YES

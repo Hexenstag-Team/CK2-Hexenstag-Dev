@@ -152,7 +152,31 @@ character_event = {
 character_event = {
 	id = wh_inventors_society.10
 	desc = EVTDESC_wh_inventors_society_10
-	picture = GFX_evt_weaponsmith
+	picture = {
+    trigger = {
+      trait = creature_chaos_dwarf
+    }
+    picture = GFX_evt_chaos_dwarf_forge
+  }
+  picture = {
+    trigger = {
+      OR = {
+        trait = creature_hobgoblin
+        trait = creature_goblin
+      }
+    }
+    picture = GFX_evt_greenskin_throne
+  }
+  picture = {
+    trigger = {
+      NOR = {
+        trait = creature_chaos_dwarf
+        trait = creature_goblin
+        trait = creature_hobgoblin
+      }
+    }
+    picture = GFX_evt_weaponsmith
+  }
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
@@ -331,7 +355,7 @@ character_event = {
 character_event = {
 	id = wh_inventors_society.11
 	desc = EVTDESC_wh_inventors_society_11
-	picture = GFX_evt_weaponsmith
+  picture = GFX_evt_burning_house_arabic
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
@@ -408,7 +432,31 @@ character_event = {
 character_event = {
 	id = wh_inventors_society.12
 	desc = EVTDESC_wh_inventors_society_12
-	picture = GFX_evt_weaponsmith
+  picture = {
+    trigger = {
+      trait = creature_chaos_dwarf
+    }
+    picture = GFX_evt_chaos_dwarf_forge
+  }
+  picture = {
+    trigger = {
+      OR = {
+        trait = creature_hobgoblin
+        trait = creature_goblin
+      }
+    }
+    picture = GFX_evt_greenskin_throne
+  }
+  picture = {
+    trigger = {
+      NOR = {
+        trait = creature_chaos_dwarf
+        trait = creature_goblin
+        trait = creature_hobgoblin
+      }
+    }
+    picture = GFX_evt_weaponsmith
+  }
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
@@ -428,7 +476,7 @@ character_event = {
 character_event = {
 	id = wh_inventors_society.13
 	desc = EVTDESC_wh_inventors_society_13
-	picture = GFX_evt_weaponsmith
+  picture = GFX_evt_machines_of_war
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
@@ -449,7 +497,7 @@ character_event = {
 character_event = {
 	id = wh_inventors_society.14
 	desc = EVTDESC_wh_inventors_society_14
-	picture = GFX_evt_weaponsmith
+  picture = GFX_evt_machines_of_war
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
@@ -471,7 +519,20 @@ character_event = {
 character_event = {
 	id = wh_inventors_society.15
 	desc = EVTDESC_wh_inventors_society_15
-	picture = GFX_evt_weaponsmith
+  picture = {
+    trigger = {
+      trait = creature_chaos_dwarf
+    }
+    picture = GFX_evt_chaos_dwarf_artillery_crew
+  }
+  picture = {
+    trigger = {
+      NOT = {
+        trait = creature_chaos_dwarf
+      }
+    }
+    picture = GFX_evt_machines_of_war
+  }
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = YES
