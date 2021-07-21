@@ -502,7 +502,7 @@ character_event = {
 
     #offer a great sacrifice
     option = {
-      name = EVTOPTA_wh_chaos_dwarf.122
+      name = EVTOPT_hashut_great_sacrifice
       trigger = {
         ai = no
         #Surely Hashut deserves two years of your income?
@@ -510,7 +510,7 @@ character_event = {
       }
       scaled_wealth = -2
       custom_tooltip = {
-        text = hashut_sacrifice_many_fine_slaves_tt
+        text = hashut_sacrifice_satisfaction_tt
         character_event = {
           id = wh_chaos_dwarf.123
           days = 3
@@ -520,7 +520,7 @@ character_event = {
 
     #offer an adequate sacrifice
     option = {
-      name = EVTOPTB_wh_chaos_dwarf.122
+      name = EVTOPT_hashut_good_sacrifice
       trigger = {
         ai = no
         scaled_wealth = 0.5
@@ -528,7 +528,7 @@ character_event = {
       #Hashut gives you something to remember your stingines though
       add_maimed_trait_effect = yes
       custom_tooltip = {
-        text = hashut_sacrifice_some_slaves_tt
+        text = hashut_sacrifice_burned_tt
         character_event = {
           id = wh_chaos_dwarf.123
           days = 3
@@ -596,6 +596,20 @@ character_event = {
     }
 
     immediate = {
+      #squeeze in a check for AI sorcerers to gain a bull centaur, once in a lifetime
+      if = {
+        limit = {
+          is_ruler = yes
+          ai = yes
+          #uses same flag as player taking this decision in case of inheritance
+          NOT = { has_character_flag = summoned_bull_centaur_by_decision }
+        }
+        random = {
+          chance = 35
+          spawn_bull_centaur_effect = yes
+          set_character_flag = summoned_bull_centaur_by_decision
+        }
+      }
       #basic cost of doing business
       hashut_favor_major_penalty_effect = yes
       #high priest bonus
@@ -625,85 +639,61 @@ character_event = {
       #age modifiers. Cumulative structure
       if = {
         limit = {
-          age <= 60
-        }
-        hashut_favor_medium_bonus_effect = yes
-      }
-      if = {
-        limit = {
-          age <= 80
-        }
-        hashut_favor_medium_bonus_effect = yes
-      }
-      if = {
-        limit = {
           age <= 100
         }
+        hashut_favor_major_bonus_effect = yes
+      }
+      if = {
+        limit = {
+          age <= 150
+        }
         hashut_favor_medium_bonus_effect = yes
       }
       if = {
         limit = {
-          age <= 120
+          age <= 250
         }
         hashut_favor_small_bonus_effect = yes
       }
       if = {
         limit = {
-          age <= 140
-        }
-        hashut_favor_small_bonus_effect = yes
-      }
-      if = {
-        limit = {
-          age <= 160
+          age <= 400
         }
         hashut_favor_trivial_bonus_effect = yes
       }
       if = {
         limit = {
-          age <= 180
+          age <= 600
         }
         hashut_favor_trivial_bonus_effect = yes
       }
       if = {
         limit = {
-          age >= 200
-          hashut_favor_trivial_penalty_effect = yes
-        }
-      }
-      if = {
-        limit = {
-          age >= 250
+          age <= 1000
         }
         hashut_favor_trivial_penalty_effect = yes
       }
       if = {
         limit = {
-          age >= 300
+          age <= 1500
+        }
+        hashut_favor_trivial_penalty_effect = yes
+      }
+      if = {
+        limit = {
+          age >= 2000
         }
         hashut_favor_small_penalty_effect = yes
       }
       if = {
         limit = {
-          age >= 350
+          age >= 2200
         }
-        hashut_favor_small_penalty_effect = yes
+        hashut_favor_medium_penalty_effectr_penalty_effect = yes
       }
       if = {
         limit = {
-          age >= 400
-        }
-        hashut_favor_medium_penalty_effect = yes
-      }
-      if = {
-        limit = {
-          age >= 500
-        }
-        hashut_favor_major_penalty_effect = yes
-      }
-      if = {
-        limit = {
-          age >= 600
+          age >= 2400
         }
         hashut_favor_major_penalty_effect = yes
       }
@@ -804,7 +794,7 @@ character_event = {
       #delay next effect
       change_variable = {
         which = hashut_favor
-        value = 20
+        value = 50
       }
     }
 
@@ -825,7 +815,7 @@ character_event = {
       #delay next effect
       change_variable = {
         which = hashut_favor
-        value = 20
+        value = 50
       }
     }
 
@@ -847,7 +837,7 @@ character_event = {
       #delay next effect
       change_variable = {
         which = hashut_favor
-        value = 20
+        value = 50
       }
     }
 
@@ -910,7 +900,7 @@ character_event = {
   	id = wh_chaos_dwarf.171
 
   	desc = EVTDESC_chaos_dwarf_great_taurus_trained
-  	picture = "GFX_evt_great_taurus"
+  	picture = GFX_evt_chaos_dwarf_monster_ride
 
   	is_triggered_only = yes
 
@@ -949,7 +939,7 @@ character_event = {
   	id = wh_chaos_dwarf.173
 
   	desc = EVTDESC_chaos_dwarf_lamassu_trained
-  	picture = "GFX_evt_lamassu"
+  	picture = GFX_evt_chaos_dwarf_monster_ride
 
   	is_triggered_only = yes
 
@@ -957,7 +947,6 @@ character_event = {
   		name = EVTOPTA_chaos_dwarf_lamassu_trained
   		add_artifact = lamassu_mount
   	}
-
   }
 
   #Pregnancy - consult Hashut
@@ -1161,6 +1150,7 @@ character_event = {
 
   }
 
+  #bull centaur birth - father
   character_event = {
     id = wh_chaos_dwarf.178
     desc = EVTDESC_wh_chaos_dwarf.178
@@ -1292,6 +1282,285 @@ character_event = {
   		}
   		ai_chance = { factor = 10 }
   	}
+  }
+
+  #Ordeal of Fire - Hashut Baptism
+  character_event = {
+    id = wh_chaos_dwarf.191
+    desc = EVTDESC_wh_chaos_dwarf.191
+    picture = GFX_evt_altar_hashut
+
+    is_triggered_only = yes
+
+    immediate = {
+      event_target:ordeal_of_fire_child = {
+        set_character_flag = ordeal_of_fire_parents_made_sacrifices
+      }
+    }
+
+    ## All options are intended to allow some debt (realism)
+    #Great sacrifice
+    option = {
+      name = EVTOPT_hashut_great_sacrifice
+      trigger = {
+        scaled_wealth = 1.8
+      }
+      scaled_wealth = -2
+      piety = 100
+      custom_tooltip = {
+        text = hashut_sacrifice_satisfaction_tt
+        hashut_favor_small_bonus_effect = yes
+        event_target:ordeal_of_fire_child = {
+          hashut_favor_small_bonus_effect = yes
+          set_character_flag = ordeal_of_fire_great_sacrifice_made
+          random_list = {
+            20 = {
+              set_character_flag = ordeal_of_fire_blessed_with_strength
+            }
+            20 = {
+              set_character_flag = ordeal_of_fire_blessed_with_intelligence
+            }
+          }
+          character_event = {
+            id = wh_chaos_dwarf.193
+            months = 72
+            random = 60
+          }
+        }
+      }
+    }
+
+    #Good sacrifice
+    option = {
+      name = EVTOPT_hashut_good_sacrifice
+      trigger = {
+        scaled_wealth = 0.35
+      }
+      scaled_wealth = -0.5
+      piety = 50
+      custom_tooltip = {
+        text = hashut_sacrifice_satisfaction_tt
+        hashut_favor_trivial_bonus_effect = yes
+        event_target:ordeal_of_fire_child = {
+          set_character_flag = ordeal_of_fire_good_sacrifice_made
+          random_list = {
+            20 = {
+              set_character_flag = ordeal_of_fire_blessed_with_strength
+            }
+            20 = {
+              set_character_flag = ordeal_of_fire_blessed_with_intelligence
+            }
+          }
+          character_event = {
+            id = wh_chaos_dwarf.193
+            months = 72
+            random = 60
+          }
+        }
+      }
+    }
+
+    #Decent sacrifice
+    option = {
+      name = EVTOPT_hashut_decent_sacrifice
+      scaled_wealth = -0.135
+      piety = 25
+      custom_tooltip = {
+        text = hashut_sacrifice_satisfaction_tt
+        hashut_favor_trivial_bonus_effect = yes
+        event_target:ordeal_of_fire_child = {
+          hashut_favor_trivial_bonus_effect = yes
+        }
+      }
+    }
+  }
+
+  #AI decision event - player uses targeted decision
+  character_event = {
+    id = wh_chaos_dwarf.192
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    religion = hashut
+
+    #By intent, this trigger rules out player's AI spouse paying for sacrifices
+    trigger = {
+      father = {
+        ai = yes
+      }
+      mother = {
+        ai = yes
+      }
+      OR = {
+        father = {
+          is_ruler = yes
+        }
+        mother = {
+          is_ruler = yes
+        }
+      }
+    }
+
+    immediate = {
+      ROOT = {
+        save_event_target_as = ordeal_of_fire_child
+      }
+      father = {
+        if = {
+          limit = {
+            is_ruler = yes
+            scaled_wealth = 0.135
+          }
+          random = {
+            chance = 75
+            #could be more sophisticated
+            character_event = {
+              id = wh_chaos_dwarf.191
+              days = 1
+            }
+            break = yes #don't need to ask mom to pay if dad's already agreed
+          }
+        }
+      }
+      mother = {
+        if = {
+          limit = {
+            is_ruler = yes
+            scaled_wealth = 0.135
+          }
+          random = {
+            chance = 75
+            #could be more sophisticated
+            character_event = {
+              id = wh_chaos_dwarf.191
+              days = 1
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #payoff for big sacrifices
+  character_event = {
+    id = wh_chaos_dwarf.193
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+      if = {
+        limit = { has_character_flag = ordeal_of_fire_blessed_with_intelligence }
+        if = {
+          limit = { has_character_flag = ordeal_of_fire_good_sacrifice_made }
+          trigger_switch = {
+            on_trigger = trait
+            genius = {
+              if = {
+                limit = { trait = shrewd }
+                change_learning = 4
+              }
+              else = {
+                add_trait = shrewd
+              }
+            }
+            brilliant = {
+              add_trait = genius
+              change_learning = 2
+            }
+            quick = { add_trait = genius }
+            smart = { add_trait = brilliant }
+            bright = { add_trait = quick }
+            fallback = { add_trait = smart }
+          }
+        }
+        if = {
+          limit = { has_character_flag = ordeal_of_fire_great_sacrifice_made }
+          trigger_switch = {
+            on_trigger = trait
+            genius = {
+              if = {
+                limit = { trait = shrewd }
+                change_martial = 2
+                change_stewardship = 2
+                change_learning = 6
+              }
+              else = {
+                add_trait = shrewd
+                change_learning = 3
+              }
+            }
+            brilliant = {
+              add_trait = genius
+              add_trait = shrewd
+            }
+            quick = {
+              add_trait = genius
+              change_learning = 3
+            }
+            smart = { add_trait = genius }
+            bright = { add_trait = brilliant }
+            fallback = { add_trait = quick }
+          }
+        }
+      }
+      if = {
+        limit = { has_character_flag = ordeal_of_fire_blessed_with_strength }
+        if = {
+          limit = { has_character_flag = ordeal_of_fire_good_sacrifice_made }
+          trigger_switch = {
+            on_trigger = trait
+            strong = {
+              if = {
+                limit = { trait = robust }
+                change_martial = 2
+                health = 0.5
+                fertility = 0.10
+              }
+              else = {
+                add_trait = robust
+              }
+            }
+            tough = { add_trait = strong }
+            hardy = { add_trait = tough }
+            fallback = { add_trait = hardy }
+          }
+        }
+        if = {
+          limit = { has_character_flag = ordeal_of_fire_great_sacrifice_made }
+          trigger_switch = {
+            on_trigger = trait
+            strong = {
+              if = {
+                limit = { trait = robust }
+                change_martial = 3
+                health = 1
+                fertility = 0.15
+              }
+              else = {
+                add_trait = robust
+                change_martial = 1
+                fertility = 0.05
+              }
+            }
+            tough = {
+              add_trait = strong
+              if = {
+                limit = { trait = robust }
+                change_martial = 1
+                fertility = 0.05
+              }
+              else = {
+                add_trait = robust
+              }
+            }
+            hardy = { add_trait = strong }
+            fallback = { add_trait = tough }
+          }
+        }
+      }
+    }
   }
 
 ### Council politics ###

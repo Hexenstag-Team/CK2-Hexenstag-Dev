@@ -939,12 +939,13 @@ upgrade_dwarf_aerodrome = {
   gold_cost_flat = 150
   gold_cost_ticking = 1
 
-  local_modifier = {  }
-  owner_modifier = {
+  local_modifier = {
     #airlifted supplies make it easier to keep armies fed and moving
-    global_movement_speed = 0.05
-    global_supply_limit = 0.20
+    global_movement_speed = 0.10
+    global_supply_limit = 0.50
+    upgrade_aerodrome_capital_only_effect = 1
   }
+  owner_modifier = {  }
 }
 
 #mainly included so Barak Varr can have all the ships

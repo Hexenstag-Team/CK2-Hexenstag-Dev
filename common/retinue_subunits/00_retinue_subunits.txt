@@ -3957,7 +3957,7 @@ amazon_temple_guards = {
 
 
 #Chaos Dwarfs
-RET_fireglaives = {
+RET_blunderbussiers = {
     first_type = 6
     first_amount = 150
 	potential = {
@@ -3966,9 +3966,9 @@ RET_fireglaives = {
 	}
 	special_troops = gunpowder
     modifier = {
-		gunpowder_offensive = 0.2
-		gunpowder_defensive = 0.2
-		gunpowder_morale = 0.4
+			gunpowder_offensive = 0.2
+			gunpowder_defensive = 0.2
+			gunpowder_morale = 0.4
     }
 }
 RET_earthshaker = {
@@ -3983,38 +3983,47 @@ RET_earthshaker = {
 	}
 	special_troops = artillery
     modifier = {
-		artillery_offensive = 0.5
-		artillery_defensive = 0.5
-		artillery_morale = 0.5
-		heavy_infantry_offensive = 0.4
-		heavy_infantry_defensive = 0.4
-		heavy_infantry_morale = 0.4
+			artillery_offensive = 0.5
+			artillery_defensive = 0.5
+			artillery_morale = 0.5
+			heavy_infantry_offensive = 0.4
+			heavy_infantry_defensive = 0.4
+			heavy_infantry_morale = 0.4
     }
 }
 RET_bull_centaurs = {
     first_type = 4
     first_amount = 150
+		hire_cost = 300
+		costs_piety = yes
 	potential = {
 		can_use_retinue_trigger = yes
-		trait = creature_chaos_dwarf
+		OR = {
+			trait = chaos_dwarf_sorcerer
+			trait = chaos_dwarf_bull_centaur
+			any_owned_bloodline = {
+				has_bloodline_flag = chaos_dwarf_sorcerer_statue_bloodline
+			}
+		}
 	}
-    modifier = {
+  modifier = {
 		knights_offensive = 0.5
 		knights_defensive = 0.5
 		knights_morale = 0.5
-    }
+  }
 }
-RET_infernalguard = {
+RET_chaos_dwarf_warriors = {
     first_type = 1
     first_amount = 150
 	potential = {
 		can_use_retinue_trigger = yes
 		trait = creature_chaos_dwarf
+		NOT = { is_republic = yes }
 	}
     modifier = {
-		heavy_infantry_offensive = 0.4
-		heavy_infantry_defensive = 0.4
-		heavy_infantry_morale = 0.4
+			heavy_infantry_offensive = 0.4
+			heavy_infantry_defensive = 0.4
+			heavy_infantry_morale = 0.4
     }
 }
 RET_hobgoblin_slavers = {
@@ -4026,16 +4035,41 @@ RET_hobgoblin_slavers = {
 
 	potential = {
 		can_use_retinue_trigger = yes
-		trait = creature_chaos_dwarf
+		OR = {
+			trait = creature_chaos_dwarf
+			trait = creature_hobgoblin
+		}
 	}
-    modifier = {
+  modifier = {
 		light_cavalry_defensive = -0.1
 		light_cavalry_morale = -0.15
 		light_cavalry_offensive = -0.1
 		horse_archers_defensive = -0.05
 		horse_archers_morale = -0.1
 		horse_archers_offensive = -0.05
-    }
+  }
+}
+
+RET_hobgoblin_warriors = {
+	first_type = 0
+	first_amount = 250
+	second_type = 5
+	second_amount = 50
+	hire_cost = 30
+
+	potential = {
+		can_use_retinue_trigger = yes
+		OR = {
+			trait = creature_chaos_dwarf
+			trait = creature_hobgoblin
+		}
+	}
+	modifier = {
+		light_infantry_offensive = -0.30
+		light_infantry_defensive = -0.20
+		archers_offensive = -0.30
+		archers_defensive = -0.20
+	}
 }
 
 #Araby
@@ -4091,9 +4125,9 @@ RETTYPE_CUL_ARABY_4 = {
 RETTYPE_CUL_ARABY_5 = {
     first_type = 6
     first_amount = 75
-	
+
 	hire_cost = 50
-	
+
 	special_troops = daemonic_host #Flying Carpets!
 
 	potential = {

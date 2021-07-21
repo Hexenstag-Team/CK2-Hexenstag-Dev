@@ -9392,17 +9392,16 @@ mad_inventors = {
 		}
 		OR = {
 			trait = creature_goblin
-			trait = creature_chaos_dwarf
 			trait = creature_hobgoblin
+			AND = {
+				trait = creature_chaos_dwarf
+				is_tribal = no
+			}
 		}
 		learning = 10
 		NOR = {
 			is_nomadic = yes
 			mercenary = yes
-		}
-		OR = {
-			trait = creature_goblin
-			NOT = { is_tribal = yes }
 		}
 		age = 16
 	}

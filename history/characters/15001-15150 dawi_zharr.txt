@@ -1,6 +1,10 @@
 #Used IDs 15001-15071
 #Free IDs 15072-15150
 
+#characters so old that they're born before the start of the Imperial Calendar should have an approximate birth date noted, become Daemonsmiths before they're 100, and become Sorcerers before they're 160.
+
+#NOTE: graphical culture can't be changed for dead characters, so histories set these characters with the correct deadface then use commands to give the correct living look in case of earlier bookmarks
+
 #'Doge' of Zharduk Guilds, Patrician, holds barak marduk
 15001 = { #1200
 	name = Zhorgrath
@@ -25,6 +29,7 @@
 
 #Daemonsmith, holds Naggrund Thryng
 #This seem to be Ghorth the Cruel, a signature character from the Karl Franz era
+#a remarkable prodigy. Ghorth will go on to be Astragoth's rival and heir apparent
 15002 = { #1205
 	name = Ghorth
 	dynasty = 78097
@@ -39,16 +44,21 @@
 	add_trait = scholarly_theologian
 	add_trait = ambitious
 	add_trait = quick
-	add_trait = chaos_dwarf_sorcerer
-	#made older to justify his sorcerer status
 	1959.1.1 = {
 		birth = yes
+	}
+	1980.5.18 = {
+		add_trait = chaos_dwarf_daemonsmith
 		effect = {
 			add_character_modifier = {
 				name = magic_power_2
 				duration = -1
 			}
 		}
+	}
+	2005.4.27 = {
+		remove_trait = chaos_dwarf_daemonsmith
+		add_trait = chaos_dwarf_sorcerer
 	}
 	2555.5.17 = {death = yes}
 }
@@ -99,7 +109,7 @@
 	dynasty = 78100
 	dna = bbgampibakm
 	properties = aa0aic000000
-	culture = dawi_zharr_old
+	culture = dawi_zharr
 	religion = hashut
 	martial = 6
 	diplomacy = 4
@@ -114,14 +124,23 @@
 	add_trait = patient
 	add_trait = bright
 	add_trait = chaos_dwarf_sorcerer
-	1720.1.1 = {birth = yes
-	culture = dawi_zharr}
-	1920.1.1 = {
+	#should be born c. -700 on the Imperial Calendar
+	1.1.1 = {
+		birth = yes
 		effect = {
 			add_character_modifier = {
 				name = magic_power_4
 				duration = -1
 			}
+			change_variable = {
+				which = hashut_favor
+				value = 50
+			}
+		}
+	}
+	800.1.1 = {
+		effect = {
+			set_graphical_culture = dawi_zharr_old
 		}
 	}
 	1999.1.1 = {
@@ -135,6 +154,13 @@
 	}
 	2009.1.1 = {
 		add_consort = 15012 #Lantok
+	}
+	2200.1.1 = {
+		add_trait = chaos_dwarf_petrification_1
+	}
+	2450.1.1 = {
+		remove_trait = chaos_dwarf_petrification_1
+		add_trait = chaos_dwarf_petrification_2
 	}
 	2528.8.22 = {death = yes}
 }
@@ -166,19 +192,20 @@
 	dna = kbmdphiflhe
 	culture = dawi_zharr
 	religion = hashut
+	father = 15074
 	martial = 5
 	diplomacy = 8
 	stewardship = 4
 	intrigue = 4
-	learning = 4
+	learning = 8
 	add_trait = creature_chaos_dwarf
 	add_trait = underhanded_rogue
 	add_trait = slothful
 	add_trait = humble
 	add_trait = brave
-	add_trait = chaos_dwarf_sorcerer
-	1860.1.1 = {birth = yes}
-	1920.1.1 = {
+	1460.1.1 = {birth = yes}
+	1597.2.12 = {
+		add_trait = chaos_dwarf_daemonsmith
 		effect = {
 			add_character_modifier = {
 				name = magic_power_2
@@ -186,7 +213,21 @@
 			}
 		}
 	}
-	2012.11.25 = {death = yes}
+	1720.1.1 = {
+		remove_trait = chaos_dwarf_daemonsmith
+		add_trait = chaos_dwarf_sorcerer
+	}
+	1968.1.1 = {
+		add_trait = chaos_dwarf_petrification_1
+		effect = {
+			set_graphical_culture = dawi_zharr_old
+			change_variable = {
+				which = hashut_favor
+				value = 50
+			}		
+		}
+	}
+	2032.11.25 = {death = yes}
 }
 
 #Patrician
@@ -338,15 +379,19 @@
 	add_trait = midas_touched
 	add_trait = envious
 	add_trait = zealous
-	add_trait = chaos_dwarf_sorcerer
-	1852.1.1 = {birth = yes}
-	1920.1.1 = {
+	952.1.1 = {birth = yes}
+	997.1.1 = {
+		add_trait = chaos_dwarf_daemonsmith
 		effect = {
 			add_character_modifier = {
 				name = magic_power_2
 				duration = -1
 			}
 		}
+	}
+	1030.1.1 = {
+		remove_trait = chaos_dwarf_daemonsmith
+		add_trait = chaos_dwarf_sorcerer
 	}
 	2030.11.20 = {death = yes}
 }
@@ -499,15 +544,19 @@
 	add_trait = midas_touched
 	add_trait = scholar
 	add_trait = trusting
-	add_trait = chaos_dwarf_sorcerer
-	1860.1.1 = {birth = yes}
-	1920.1.1 = {
+	1344.1.1 = {birth = yes}
+	1407.1.1 = {
+		add_trait = chaos_dwarf_daemonsmith
 		effect = {
 			add_character_modifier = {
 				name = magic_power_2
 				duration = -1
 			}
 		}
+	}
+	1442.1.1 = {
+		remove_trait = chaos_dwarf_daemonsmith
+		add_trait = chaos_dwarf_sorcerer
 	}
 	2013.3.15 = {death = yes}
 }
@@ -716,21 +765,47 @@
 	diplomacy = 2
 	stewardship = 3
 	intrigue = 3
-	learning = 2
+	learning = 7
 	add_trait = creature_chaos_dwarf
 	add_trait = fortune_builder
 	add_trait = impaler
 	add_trait = cruel
 	add_trait = arbitrary
-	add_trait = chaos_dwarf_sorcerer
-	1873.1.1 = {birth = yes}
-	1920.1.1 = {
+	793.1.1 = {birth = yes}
+	840.1.1 = {
+		add_trait = chaos_dwarf_daemonsmith
 		effect = {
 			add_character_modifier = {
 				name = magic_power_2
 				duration = -1
 			}
 		}
+	}
+	890.1.1 = {
+		remove_trait = chaos_dwarf_daemonsmith
+		add_trait = chaos_dwarf_sorcerer
+	}
+	1738.1.1 = {
+		add_trait = chaos_dwarf_petrification_1
+		effect = {
+			set_graphical_culture = dawi_zharr_old
+			change_variable = {
+				which = hashut_favor
+				value = 50
+			}		
+		}
+	}
+	2025.1.1 = {
+		effect = {
+			change_variable = {
+				which = hashut_favor
+				value = -50
+			}
+		}
+	}
+	2029.1.1 = {
+		remove_trait = chaos_dwarf_petrification_1
+		add_trait = chaos_dwarf_petrification_2
 	}
 	2043.6.2 = {death = yes}
 }
@@ -1628,23 +1703,121 @@
 	intrigue = 6
 	learning = 9
 	add_trait = creature_chaos_dwarf
-	add_trait = chaos_dwarf_sorcerer
 	add_trait = zealous
 	add_trait = erudite
 	add_trait = cruel
 	add_trait = charitable
 	add_trait = scholarly_theologian
-	1604.7.7 = {
+	1114.7.7 = {
 		birth = yes
-		culture = dawi_zharr
+		effect = {
+			culture = dawi_zharr
+			set_graphical_culture = dawi_zharr
+		}
+	}
+	1198.4.7 = {
+		add_trait = chaos_dwarf_daemonsmith
+		effect = {
+			add_character_modifier = {
+				name = magic_power_1
+				duration = -1
+			}
+		}
+	}
+	1278.9.21 = {
+		remove_trait = chaos_dwarf_daemonsmith
+		add_trait = chaos_dwarf_sorcerer
+	}
+	1506.1.1={
+		add_trait = chaos_dwarf_petrification_1
+		effect = {
+			set_graphical_culture = dawi_zharr_old
+			change_variable = {
+				which = hashut_favor
+				value = 50
+			}		
+		}
+	}
+	1680.1.1={
+		effect = {
+			change_variable = {
+				which = hashut_favor
+				value = -50
+			}
+		}
+	}
+	1685.1.1={
+		effect = {
+			change_variable = {
+				which = hashut_favor
+				value = -100
+			}
+		}
+	}
+	1788.1.1={
+		remove_trait = chaos_dwarf_petrification_1
+		add_trait = chaos_dwarf_petrification_2
+		effect = {
+			change_variable = {
+				which = hashut_favor
+				value = 50
+			}		
+		}
+	}
+	1990.1.1 = {
+		effect = {
+			change_variable = {
+				which = hashut_favor
+				value = -50
+			}
+		}
 	}
 	1990.4.4 = {
-		add_trait = chaos_dwarf_petrification_2
 		create_bloodline = {
 			type = chaos_dwarf_sorcerer_statue_bloodline
 		}
 		death = {
 			death_reason = death_sorcerers_curse
+		}
+	}
+}
+
+#High Priest Zarkgar, famous for killing the Liche Lord Vorag in single combat
+15074 = {
+	name = Zarkgar
+	dynasty = 78012
+	culture = dawi_zharr_old
+	religion = hashut
+	martial = 7
+	diplomacy = 8
+	stewardship = 6
+	learning = 7
+	add_trait = creature_chaos_dwarf
+	add_trait = chaos_dwarf_sorcerer
+	add_trait = duelist
+	add_trait = brave
+	add_trait = diligent
+	add_trait = mastermind_theologian
+	#should be born c. -1300 on the Imperial Calendar
+	1.1.1 = {
+		birth = yes
+		effect = {
+			add_character_modifier = {
+				name = magic_power_1
+				duration = -1
+			}
+			culture = dawi_zharr
+			set_graphical_culture = dawi_zharr
+		}
+	}
+	200.1.1 = {
+		effect = {
+			set_graphical_culture = dawi_zharr_old
+		}
+	}
+	1812.8.12 = {
+		death = {
+			death_reason = death_battle
 		}
 	}
 }
