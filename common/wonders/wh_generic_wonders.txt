@@ -46,7 +46,7 @@
 #		 b. If everything seems in order but the wonder still won't load properly, it is best to ask someone more knowledgeable
 #			  for help at this point.
 # 6. Once the wonder is appearing correctly, it is time to set the name. You will need to open the file wh_wonder_names_and_descriptions.txt
-#		 in the folder \common\on_actions\.
+#		 in the folder \common\scriped_effects\.
 #		 a. Look for the wonder_naming_and_describing_effect. (At the time of writing, it's the only effect in the file.) You should find a comment identifying it as the scripted effect that sets up wonder names and descriptions.
 #		 b. Scroll down and look for the comment identifying where new entries should be added.
 #		 NOTE: If there is no comment, someone has deleted it and they should be ashamed of themselves, but you can still find the correct
@@ -54,7 +54,7 @@
 #				by adding a hashtag and a short note.
 #		 c. Add a new line above the comment. Check the province id for the province your wonder is located in. It's the number at the
 #				start of the province filename. (So in our example of Zharr-Naggrund, the id is 478.) Match up with the indent for the comment, then
-@				open an entry for the province by typing its id into the new line, followed by the equals and opening curly bracket as normal.
+#				open an entry for the province by typing its id into the new line, followed by the equals and opening curly bracket as normal.
 #		 d. Add a new line, increase the indent and change scopes to the wonder using, wonder = {
 #		 e. Add a new line, increase the indent, and set the wonder's name by typing, set_name = "<your_wonder_name>" . <your_wonder_name>
 #			  should be replaced by EITHER:
@@ -274,6 +274,7 @@ wonder_dwarf_hold = {
 		upgrade_mining_native_gold
 		upgrade_mining_pyrite
 		upgrade_mining_tetrahedrite
+		upgrade_mining_water
 		#sedimentary minerals
 		upgrade_mining_coal
 		upgrade_mining_galena

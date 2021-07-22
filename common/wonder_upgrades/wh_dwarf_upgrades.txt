@@ -16,6 +16,7 @@
 # upgrade_mining_native_gold
 # upgrade_mining_pyrite
 # upgrade_mining_tetrahedrite
+# upgrade_mining_water
 # -> sedimentary minerals (req. upgrade_mining_layer_2)
 # upgrade_mining_coal
 # upgrade_mining_galena
@@ -288,6 +289,28 @@ upgrade_mining_tetrahedrite = {
     tax_income = 1.5
   }
   owner_modifier = {  }
+}
+
+#Artesian water supplies are typically very clean and contain important trace minerals
+upgrade_mining_water = {
+    picture = GFX_upgrade_icon_crates
+    potential = {   }
+    allow = {
+        FROMFROM = {
+            has_wonder_upgrade = upgrade_mining_layer_1
+        }
+    }
+    flags = {   }
+
+    build_time = 60
+    gold_cost_flat = 120
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        disease_defence = 0.10
+        fort_level = 0.5
+    }
+    owner_modifier = {  }
 }
 
 #sedimentary minerals - req. upgrade_mining_layer_2, but visible at upgrade_mining_layer_1
@@ -713,7 +736,7 @@ upgrade_great_dwarf_brewery = {
   local_modifier = {  }
   owner_modifier = {
     land_morale = 0.05
-    retinuesize_perc = 0.1
+    retinuesize_perc = 0.5
   }
 }
 
