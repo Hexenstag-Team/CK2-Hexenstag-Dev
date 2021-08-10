@@ -9,10 +9,10 @@
 #
 
 # UNIQUE RELIGIOUS REGIMENTS
-#Warrior Priests of Sigmar, sigmarite, heavy infantry with a 50% offensive and 100% morale bonus
+#Flagellants, sigmarite, light infantry with a 150% morale bonus
 RETTYPE_SIGMARMONKS = {
-	first_type = 1
-	first_amount = 50
+	first_type = 0
+	first_amount = 150
 	costs_piety = yes
 	hire_cost = 100
 
@@ -24,8 +24,7 @@ RETTYPE_SIGMARMONKS = {
 	}
 
 	modifier = {
-		heavy_infantry_offensive = 0.50
-		heavy_infantry_morale = 1.0
+		light_infantry_morale = 1.5
 	}
 }
 #Wolves of Ulric, ulrican, heavy infantry with a 100% offensive and 50% morale bonus
@@ -167,123 +166,8 @@ RETTYPE_MYRMIDONS = {
 
 # THE EMPIRE
 # STATE TROOPS
-#Swordsmen, light infantry with a 40% offensive and 20% defensive bonus
-RETTYPE_ST_SWORDSMEN = {
-	first_type = 0
-	first_amount = 200
-	hire_cost = 40
+# According to the lore, most state troops function as levies, so there's no need to bloat the Empire's retinue list with these guys
 
-	maintenance_multiplier = 0.40
-
-	potential = {
-		can_use_retinue_trigger = yes
-		is_nomadic = no
-		culture_group = imperial_group
-		NOR = {
-			culture = sudenburger
-			culture = stirlander
-			culture = sylvanian
-		}
-	}
-
-	modifier = {
-		light_infantry_offensive = 0.40
-		light_infantry_defensive = 0.20
-	}
-}
-#Spearmen, light infantry with a 20% offensive and 40% defensive bonus
-RETTYPE_ST_SPEARMEN = {
-	first_type = 0
-	first_amount = 200
-	hire_cost = 40
-
-	maintenance_multiplier = 0.40
-
-	potential = {
-		can_use_retinue_trigger = yes
-		is_nomadic = no
-		culture_group = imperial_group
-		NOR = {
-			culture = sudenburger
-			culture = sylvanian
-		}
-	}
-
-	modifier = {
-		light_infantry_offensive = 0.20
-		light_infantry_defensive = 0.40
-	}
-}
-#Archers, archers with a 30% offensive and 30% defensive bonus
-RETTYPE_ST_ARCHERS = {
-	first_type = 5
-	first_amount = 100
-	hire_cost = 40
-
-	maintenance_multiplier = 0.40
-
-	potential = {
-		can_use_retinue_trigger = yes
-		is_nomadic = no
-		culture_group = imperial_group
-		NOR = {
-			culture = sudenburger
-			culture = talabeclander
-			culture = sylvanian
-		}
-	}
-
-	modifier = {
-	archers_offensive = 0.30
-	archers_defensive = 0.30
-	}
-}
-#Crossbows, archers with a 60% offensive bonus
-RETTYPE_ST_CROSSBOWS = {
-	first_type = 5
-	first_amount = 100
-	hire_cost = 50
-
-	maintenance_multiplier = 0.40
-
-	potential = {
-		can_use_retinue_trigger = yes
-		is_nomadic = no
-		culture_group = imperial_group
-		NOR = {
-			culture = sudenburger
-			culture = sylvanian
-		}
-	}
-
-	modifier = {
-	archers_offensive = 0.60
-	}
-}
-#Halbadiers, pikemen with a 20% offensive and 40% defensive bonus
-RETTYPE_ST_HALBERDIERS = {
-	first_type = 2
-	first_amount = 100
-	hire_cost = 70
-
-	maintenance_multiplier = 0.40
-
-	potential = {
-		can_use_retinue_trigger = yes
-		is_nomadic = no
-		culture_group = imperial_group
-		NOR = {
-			culture = sudenburger
-			culture = sylvanian
-			culture = averlander
-		}
-	}
-
-	modifier = {
-		pikemen_offensive = 0.20
-		pikemen_defensive = 0.40
-	}
-}
 #Greatswords, heavy infantry with a 40% offensive and 20% morale bonus
 RETTYPE_ST_GREATSWORDS = {
 	first_type = 1
@@ -296,10 +180,6 @@ RETTYPE_ST_GREATSWORDS = {
 		can_use_retinue_trigger = yes
 		is_nomadic = no
 		culture_group = imperial_group
-		NOR = {
-			culture = sudenburger
-			culture = sylvanian
-		}
 	}
 
 	modifier = {
@@ -319,11 +199,6 @@ RETTYPE_ST_OUTRIDER = {
 		can_use_retinue_trigger = yes
 		is_nomadic = no
 		culture_group = imperial_group
-		NOR = {
-			culture = sudenburger
-			culture = sylvanian
-			culture = sollander
-		}
 	}
 
 	modifier = {
@@ -343,74 +218,11 @@ RETTYPE_ST_KNIGHTS = {
 		can_use_retinue_trigger = yes
 		is_nomadic = no
 		culture_group = imperial_group
-		NOR = {
-			culture = sudenburger
-			culture = sylvanian
-			culture = reiklander
-		}
 	}
 
 	modifier = {
 		knights_offensive = 0.40
 		knights_morale = 0.20
-	}
-}
-#Handgunners, gunpowder with a 40% offensive and 20% morale bonus
-RETTYPE_ST_HANGUNNERS = {
-	first_type = 6
-	first_amount = 100
-	special_troops = gunpowder
-	hire_cost = 400
-
-	maintenance_multiplier = 0.40
-
-	potential = {
-		can_use_retinue_trigger = yes
-		is_nomadic = no
-		culture_group = imperial_group
-		NOR = {
-			culture = sudenburger
-			culture = sylvanian
-			culture = hochlander
-		}
-		NOR = {
-			any_demesne_title = {title = c_nuln}
-			high_engineering_tech_trigger=yes
-		}
-	}
-
-	modifier = {
-		gunpowder_offensive = 0.40
-		gunpowder_morale = 0.20
-	}
-}
-#Handgunners, gunpowder with a 60% offensive and 30% morale bonus
-RETTYPE_ST_HANGUNNERS_2 = {
-	first_type = 6
-	first_amount = 100
-	special_troops = gunpowder
-	hire_cost = 200
-
-	maintenance_multiplier = 0.45
-
-	potential = {
-		can_use_retinue_trigger = yes
-		is_nomadic = no
-		culture_group = imperial_group
-		NOR = {
-			culture = sudenburger
-			culture = sylvanian
-			culture = hochlander
-		}
-		OR={
-			any_demesne_title = {title = c_nuln}
-			high_engineering_tech_trigger=yes
-		}
-	}
-
-	modifier = {
-		gunpowder_offensive = 0.60
-		gunpowder_morale = 0.30
 	}
 }
 #Cannons, artillery and light infantry with a 100% offensive/defensive and 50% morale bonus
@@ -428,55 +240,12 @@ RETTYPE_ST_CANNONS = {
 		can_use_retinue_trigger = yes
 		is_nomadic = no
 		culture_group = imperial_group
-		NOR = {
-			culture = wissenlander
-			has_landed_title = k_wissenland
-			culture = sudenburger
-			culture = sylvanian
-		}
-		NOR = {
-			any_demesne_title = {title = c_nuln}
-			high_engineering_tech_trigger=yes
-		}
 	}
 
 	modifier = {
 		artillery_offensive = 1.0
 		artillery_defensive = 1.0
 		light_infantry_morale = 0.50
-	}
-}
-#Cannons, artillery and light infantry with a 150% offensive/defensive and 75% morale bonus
-RETTYPE_ST_CANNONS_2 = {
-	first_type = 0
-	first_amount = 90
-	second_type = 6
-	second_amount = 30
-	special_troops = artillery
-	hire_cost = 200
-
-	maintenance_multiplier = 0.40
-
-	potential = {
-		can_use_retinue_trigger = yes
-		is_nomadic = no
-		culture_group = imperial_group
-		NOR = {
-			culture = wissenlander
-			has_landed_title = k_wissenland
-			culture = sudenburger
-			culture = sylvanian
-		}
-		NOR = {
-			any_demesne_title = {title = c_nuln}
-			high_engineering_tech_trigger=no
-		}
-	}
-
-	modifier = {
-		artillery_offensive = 1.5
-		artillery_defensive = 1.5
-		light_infantry_morale = 0.75
 	}
 }
 
@@ -493,12 +262,12 @@ RETTYPE_DEATHWATCH = {
 		can_use_retinue_trigger = yes
 		OR = {
 			culture = stirlander
-				OR = {
+			OR = {
+				has_landed_title = k_stirland
+				any_vassal = {
 					has_landed_title = k_stirland
-					any_vassal = {
-						has_landed_title = k_stirland
-					}
 				}
+			}
 		}
 	}
 	modifier = {
@@ -518,12 +287,12 @@ RETTYPE_NORDLANDERBESERKERS = {
 		can_use_retinue_trigger = yes
 		OR = {
 			culture = nordlander
-				OR = {
+			OR = {
+				has_landed_title = k_nordland
+				any_vassal = {
 					has_landed_title = k_nordland
-					any_vassal = {
-						has_landed_title = k_nordland
-					}
 				}
+			}
 		}
 	}
 	modifier = {
@@ -543,12 +312,12 @@ RETTYPE_BEASTHUNTERS = {
 		can_use_retinue_trigger = yes
 		OR = {
 			culture = talabeclander
-				OR = {
+			OR = {
+				has_landed_title = k_talabecland
+				any_vassal = {
 					has_landed_title = k_talabecland
-					any_vassal = {
-						has_landed_title = k_talabecland
-					}
 				}
+			}
 		}
 	}
 
@@ -569,12 +338,12 @@ RETTYPE_AVERLANLANDSKNECHT = {
 		can_use_retinue_trigger = yes
 		OR = {
 			culture = averlander
-				OR = {
+			OR = {
+				has_landed_title = k_averland
+				any_vassal = {
 					has_landed_title = k_averland
-					any_vassal = {
-						has_landed_title = k_averland
-					}
 				}
+			}
 		}
 	}
 	modifier = {
@@ -703,53 +472,18 @@ RETTYPE_LONGRIFLES = {
 		can_use_retinue_trigger = yes
 		OR = {
 			culture = hochlander
-				OR = {
+			OR = {
+				has_landed_title = k_hochland
+				any_vassal = {
 					has_landed_title = k_hochland
-					any_vassal = {
-						has_landed_title = k_hochland
-					}
 				}
-		}
-		NOR={
-			any_demesne_title = {title = c_hergig}
-			high_engineering_tech_trigger=yes
+			}
 		}
 	}
 
 	modifier = {
 		gunpowder_offensive = 0.60
 		gunpowder_defensive = 0.20
-	}
-}
-#Long Rifle Company, Hochland, gunpowder with a 90% offensive and 30% defensive bonus
-RETTYPE_LONGRIFLES_2 = {
-	first_type = 6
-	first_amount = 100
-	special_troops = gunpowder
-	hire_cost = 250
-
-	maintenance_multiplier = 0.60
-
-	potential = {
-		can_use_retinue_trigger = yes
-		OR = {
-			culture = hochlander
-				OR = {
-					has_landed_title = k_hochland
-					any_vassal = {
-						has_landed_title = k_hochland
-					}
-				}
-		}
-		OR={
-			any_demesne_title = {title = c_hergig}
-			high_engineering_tech_trigger=yes
-		}
-	}
-
-	modifier = {
-		gunpowder_offensive = 0.90
-		gunpowder_defensive = 0.30
 	}
 }
 
@@ -769,12 +503,12 @@ RETTYPE_OSTLANDEROGRES = {
 		can_use_retinue_trigger = yes
 		OR = {
 			culture = ostlander
-				OR = {
+			OR = {
+				has_landed_title = k_ostland
+				any_vassal = {
 					has_landed_title = k_ostland
-					any_vassal = {
-						has_landed_title = k_ostland
-					}
 				}
+			}
 		}
 	}
 
@@ -800,12 +534,12 @@ RETTYPE_PIKESQUARE = {
 		can_use_retinue_trigger = yes
 		OR = {
 			culture = ostermarker
-				OR = {
+			OR = {
+				has_landed_title = k_ostermark
+				any_vassal = {
 					has_landed_title = k_ostermark
-					any_vassal = {
-						has_landed_title = k_ostermark
-					}
 				}
+			}
 		}
 	}
 
@@ -830,10 +564,10 @@ RETTYPE_WESTERLANDMARINES = {
 		can_use_retinue_trigger = yes
 		OR = {
 			culture = westerlander
+			has_landed_title = k_westerland
+			any_vassal = {
 				has_landed_title = k_westerland
-				any_vassal = {
-					has_landed_title = k_westerland
-				}
+			}
 		}
 	}
 
@@ -859,43 +593,11 @@ RETTYPE_WISSENGUN = {
 			culture = wissenlander
 			has_landed_title = k_wissenland
 		}
-		NOR = {
-			any_demesne_title = {title = c_nuln}
-			high_engineering_tech_trigger=yes
-		}
 	}
 
 	modifier = {
 		artillery_offensive = 0.60
 		artillery_defensive = 0.60
-	}
-}
-#Wissengun, Wissenland, artillery with a 90% offensive bonus
-RETTYPE_WISSENGUN_2 = {
-	first_type = 0
-	first_amount = 75
-	second_type = 6
-	second_amount = 25
-	special_troops = artillery
-	hire_cost = 250
-
-	maintenance_multiplier = 0.65
-
-	potential = {
-		can_use_retinue_trigger = yes
-		OR = {
-			culture = wissenlander
-			has_landed_title = k_wissenland
-		}
-		OR={
-			any_demesne_title = {title = c_nuln}
-			high_engineering_tech_trigger=yes
-		}
-	}
-
-	modifier = {
-		artillery_offensive = 0.90
-		artillery_defensive = 0.90
 	}
 }
 #Wissenarty, Wissenland, artillery with a 80% offensive and 50% defensive bonus
@@ -920,48 +622,11 @@ RETTYPE_WISSENARTY = {
 					}
 				}
 		}
-		NOR = {
-			any_demesne_title = {title = c_nuln}
-			high_engineering_tech_trigger=yes
-		}
 	}
 
 	modifier = {
 		artillery_offensive = 1.00
 		artillery_defensive = 1.20
-	}
-}
-#Wissenarty, Wissenland, artillery with a 120% offensive and 75% defensive bonus
-RETTYPE_WISSENARTY_2 = {
-	first_type = 0
-	first_amount = 75
-	second_type = 6
-	second_amount = 25
-	special_troops = artillery
-	hire_cost = 300
-
-	maintenance_multiplier = 0.65
-
-	potential = {
-		can_use_retinue_trigger = yes
-		OR = {
-			culture = wissenlander
-				OR = {
-					has_landed_title = k_wissenland
-					any_vassal = {
-						has_landed_title = k_wissenland
-					}
-				}
-		}
-		OR={
-			any_demesne_title = {title = c_nuln}
-			high_engineering_tech_trigger=yes
-		}
-	}
-
-	modifier = {
-		artillery_offensive = 1.2
-		artillery_defensive = 1.5
 	}
 }
 

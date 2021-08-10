@@ -70,3 +70,32 @@ any_dwarf_building_trigger = {
     }
   }
 }
+
+old_world_city_can_build_great_temple_trigger = {
+    FROMFROM = {
+        has_wonder_upgrade = upgrade_temple_quarter
+        NOR = {
+            has_wonder_upgrade = upgrade_great_dazh_temple
+            has_wonder_upgrade = upgrade_great_grail_chapel
+            has_wonder_upgrade = upgrade_great_manann_temple
+            has_wonder_upgrade = upgrade_great_morr_temple
+            has_wonder_upgrade = upgrade_great_myrmidia_temple
+            has_wonder_upgrade = upgrade_great_sigmar_temple
+            has_wonder_upgrade = upgrade_great_shallya_temple
+            has_wonder_upgrade = upgrade_great_taal_rhya_temple
+            has_wonder_upgrade = upgrade_great_ulric_temple
+            has_wonder_upgrade = upgrade_great_ursun_temple
+            has_wonder_upgrade = upgrade_great_verena_temple
+        }
+    }
+}
+
+has_city_state_special_levy_building_trigger = {
+    OR = {
+        province = 222
+        province = 274
+        province = 299
+        province = 309
+        province = 324
+    }
+}

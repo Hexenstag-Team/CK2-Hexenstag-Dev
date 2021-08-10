@@ -21,7 +21,7 @@
 #
 # When adding a wonder (or converting a vanilla special building into a wonder), follow these steps:
 # 0. Read the full instructions before beginning. This will save your time, rather than waste it.
-# 1. Check lore details, confirming location and getting the best construction dates possible.
+# 1. Check lore details, confirming FROMFROMFROM and getting the best construction dates possible.
 # 	a. Estimates will often be required.
 # 2. Check the developed generic wonders to find the best match.
 # 	a. In the rare case that no close match exists, you may need to script a new class of wonder.
@@ -82,11 +82,11 @@
 
 ### OLD WORLD CITY ###
 # This should be appropriate for Imperials, Bretonnians, Estalians, Tileans, and Border Princes.
-# Maybe it should be built to work for Arabyans as well.
+# Maybe it should be built to work for Arabyans and even settled Chaos people as well? This will require more work on conditions for upgrades
 
 wonder_old_world_city = {
 	allow_coastal = yes
-	picture = GFX_wonder_strip_grandfortress
+	picture = GFX_wonder_strip_oldworldcity
 	potential = {
 		always = no #needs more development
 	}
@@ -99,42 +99,63 @@ wonder_old_world_city = {
 		is_destructible
 		cost_high
 	}
+
+	allow_construction = no
+
 	available_upgrades = {
 
 	###CITY THINGS###
-	upgrade_art_gallery
+	upgrade_banking_district
+	upgrade_city_farms
 	upgrade_city_gardens
+	upgrade_clock_tower
 	upgrade_court_of_law
+	upgrade_customs_wall
 	upgrade_dwarf_quarter
 	upgrade_industrial_district
-	upgrade_palace
+	upgrade_opera_house
 	upgrade_racetrack
+	upgrade_sports_field
 	upgrade_streetlights
+
+	###PALACE THINGS###
+	upgrade_palace
+	upgrade_art_gallery
+	upgrade_concert_hall
+	upgrade_crypt
 
 	###EDUCATION###
 	upgrade_university
 	upgrade_engineering_school
 	upgrade_engineered_canals
+	upgrade_school_of_history
+	upgrade_school_of_medicine
+
+	###MILITARY###
 	upgrade_engineered_defences
 	upgrade_gunnery_school
 	upgrade_cannon_foundry
+	upgrade_parade_grounds
+	upgrade_riding_school
 
 	###TEMPLES###
 	upgrade_temple_quarter
 	upgrade_templar_orders
-	#GREAT TEMPLES
-	upgrade_great_dazh_temple
-	upgrade_great_grail_chapel
-	upgrade_great_manann_temple
-	upgrade_great_morr_temple
-	upgrade_great_myrmidia_temple
-	upgrade_great_sigmar_temple
-	upgrade_great_shallya_temple
-	upgrade_great_taal_rhya_temple
-	#no great temple of Tor because he doesn't have much of a cult
-	upgrade_great_ulric_temple
-	upgrade_great_ursun_temple
-	upgrade_great_verena_temple
+
+		#OLD WORLD GROUP
+		upgrade_great_dazh_temple
+		upgrade_great_grail_chapel
+		upgrade_great_handrich_temple
+		upgrade_great_manann_temple
+		upgrade_great_morr_temple
+		upgrade_great_myrmidia_temple
+		upgrade_great_sigmar_temple
+		upgrade_great_shallya_temple
+		upgrade_great_taal_rhya_temple
+		#no great temple of Tor because he doesn't have much of a cult
+		upgrade_great_ulric_temple
+		upgrade_great_ursun_temple
+		upgrade_great_verena_temple
 
 	}
 	stage = {
@@ -144,8 +165,8 @@ wonder_old_world_city = {
 				TECH_CONSTRUCTION = 3
 			}
 		}
-		build_time = 325
-		gold_cost_flat = 2000
+		build_time = 150
+		gold_cost_flat = 1000
 		gold_cost_ticking = 3
 		restore_time = 180
 		loot_time = 6
@@ -164,12 +185,12 @@ wonder_old_world_city = {
 	stage = {
 		allow = {
 			FROMFROMFROM = {
-				TECH_CITY_CONSTRUCTION = 4
-				TECH_CONSTRUCTION = 4
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
 			}
 		}
-		build_time = 375
-		gold_cost_flat = 2200
+		build_time = 175
+		gold_cost_flat = 1250
 		gold_cost_ticking = 4
 		restore_time = 360
 		loot_time = 6
@@ -188,12 +209,12 @@ wonder_old_world_city = {
 	stage = {
 		allow = {
 			FROMFROMFROM = {
-				TECH_CITY_CONSTRUCTION = 6
-				TECH_CONSTRUCTION = 6
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
 			}
 		}
-		build_time = 375
-		gold_cost_flat = 2400
+		build_time = 200
+		gold_cost_flat = 1500
 		gold_cost_ticking = 5
 		restore_time = 480
 		loot_time = 6
@@ -212,12 +233,108 @@ wonder_old_world_city = {
 	stage = {
 		allow = {
 			FROMFROMFROM = {
-				TECH_CITY_CONSTRUCTION = 8
-				TECH_CONSTRUCTION = 8
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
 			}
 		}
-		build_time = 375
-		gold_cost_flat = 2600
+		build_time = 225
+		gold_cost_flat = 1750
+		gold_cost_ticking = 4
+		restore_time = 360
+		loot_time = 6
+		restore_cost_flat = 1000
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			tradevalue = 15
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 250
+		gold_cost_flat = 2000
+		gold_cost_ticking = 4
+		restore_time = 360
+		loot_time = 6
+		restore_cost_flat = 1000
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			tradevalue = 15
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 275
+		gold_cost_flat = 2250
+		gold_cost_ticking = 4
+		restore_time = 360
+		loot_time = 6
+		restore_cost_flat = 1000
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			tradevalue = 15
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 300
+		gold_cost_flat = 2500
+		gold_cost_ticking = 4
+		restore_time = 360
+		loot_time = 6
+		restore_cost_flat = 1000
+		restore_cost_ticking = 2
+		upgrade_slots = 3
+		local_modifier = {
+			tradevalue = 15
+			garrison_size = 0.1
+		}
+		owner_modifier = {
+
+		}
+	}
+
+	stage = {
+		allow = {
+			FROMFROMFROM = {
+				TECH_CITY_CONSTRUCTION = 3
+				TECH_CONSTRUCTION = 3
+			}
+		}
+		build_time = 325
+		gold_cost_flat = 2750
 		gold_cost_ticking = 4
 		restore_time = 360
 		loot_time = 6

@@ -9110,6 +9110,7 @@ engineers_guild = {
 					rank = 1
 				}
 			}
+			NOT = { is_vampire_visible_trigger = yes }
 		}
 		OR = {
 			culture_group = dwarf_group
@@ -9152,6 +9153,7 @@ engineers_guild = {
 			culture_group = tilean_group
 			culture_group = imperial_group
 		}
+		NOT = { is_vampire_visible_trigger = yes }
 	}
 
 	potential = {
@@ -9353,6 +9355,7 @@ engineers_guild = {
 			}
 			NOT = {
 				religion_group = chaos_gods_group
+				is_vampire_visible_trigger = yes
 			}
 	    controls_religion = no
 			age = 16
