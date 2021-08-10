@@ -1,687 +1,774 @@
 ### Chaos Dwarfs and Hobgoblins ###
 # NOTE: Castle, City, and Temple are for Chaos Dwarfs, Tribal for Hobgoblins
+# Faction identity:
+# Chaos Dwarfs in the lore do not make many conquests, so their buildings can be slanted to defence.
+# They also need longer building chains to make the player feel like they have an alternative to expansion.
+# Longer building times make sense for a long-lived race.
+# To balance this, they get a cost reduction rather than stronger effects. (Stronger effects AND more levels would be too good!)
 
-# # Chaos Dwarf Fortress # #
-# Builds "tall" (or perhaps "deep")
-# Emphasize Dawi Zharr warrior caste
+
+
+### Chaos Dwarf Fortress ###
+
+# Bleak and depressing place to live
+# Emphasize Dawi Zharr warrior caste b/c city & work camp have slave levies
+# Overall levy is grounded in HI/melee with some screens
+# Shouldn't specialize in levy_reinforce_rate because they are not a numerous people
 
 castle = {
 
-    #Castle Walls
-    #use vanilla ca_wall
+  #uses any_dwarf Defensive Cannons fortification
 
-    #Slave attendants
-    #replace Castle Town
-    #less money and no court size bonus (small numbers) but helps CD warriors
-    ca_cd_slave_attendants_1 = {
-      desc = ca_cd_slave_attendants_desc
-      potential = {
-        chaos_dwarf_building_trigger = yes
-      }
-      replaces = ca_town_1
-      trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-      gold_cost = 80
-      build_time = 730
-      tax_income = 2
-      heavy_infantry_morale = 0.05
+  #Castle Walls
+  #use vanilla ca_wall
 
-      ai_creation_factor = 97
-      extra_tech_building_start = 0.5
+  #Obsidian Fortress
+  #Superior building so gains fort_level instead of a cost reduction from faction identity
+  #Garrisons for these buildings are usually quite mobile because they cover a lot of ground, so more levy_size and less garrison_size
+
+  # "level 0" - corrects levy types
+  ca_chaos_dwarf_ziggurat_1 = {
+    desc = ca_chaos_dwarf_ziggurat_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
     }
+    replaces = ca_keep_1
+    #notional costs as this isn't a real building
+    prestige_cost = 1
+    build_time = 1
+    light_infantry = -60
+    heavy_infantry = 20
+    gunpowder = 15
 
-    ca_cd_slave_attendants_2 = {
-      desc = ca_cd_slave_attendants_desc
-      potential = {
-        chaos_dwarf_building_trigger = yes
-      }
-      replaces = ca_town_2
-      trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-      upgrades_from = ca_cd_slave_attendants_1
-      gold_cost = 100
-      build_time = 912
-      tax_income = 2
-      heavy_infantry_morale = 0.05
+    #huge ai creation factor to get the ai to play ball
+    ai_creation_factor = 300
+    extra_tech_building_start = 0.5
+  }
 
-      ai_creation_factor = 97
-      extra_tech_building_start = 1.5
-    }
-
-    ca_cd_slave_attendants_3 = {
-      desc = ca_cd_slave_attendants_desc
-      potential = {
-        chaos_dwarf_building_trigger = yes
-      }
-      replaces = ca_town_3
-      trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
-      upgrades_from = ca_cd_slave_attendants_2
-      gold_cost = 150
-      build_time = 1095
-      tax_income = 2
-      heavy_infantry_morale = 0.05
-
-      ai_creation_factor = 97
-      extra_tech_building_start = 1.5
-    }
-
-    ca_cd_slave_attendants_4 = {
-      desc = ca_cd_slave_attendants_desc
-      potential = {
-        chaos_dwarf_building_trigger = yes
-      }
-      replaces = ca_town_4
-      trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
-      upgrades_from = ca_cd_slave_attendants_3
-      gold_cost = 250
-      build_time = 1460
-      tax_income = 2
-      heavy_infantry_morale = 0.05
-
-      ai_creation_factor = 97
-      extra_tech_building_start = 1.5
-    }
-
-    ca_cd_slave_attendants_5 = {
-      desc = ca_cd_slave_attendants_desc
-      potential = {
-        chaos_dwarf_building_trigger = yes
-      }
-      replaces = ca_town_5
-      trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
-      upgrades_from = ca_cd_slave_attendants_4
-      gold_cost = 350
-      build_time = 2555
-      tax_income = 2
-      heavy_infantry_morale = 0.05
-
-      ai_creation_factor = 97
-      extra_tech_building_start = 1.5
-    }
-
-    ca_cd_slave_attendants_6 = {
-      desc = ca_cd_slave_attendants_desc
-      potential = {
-        chaos_dwarf_building_trigger = yes
-      }
-      replaces = ca_town_6
-      trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
-      upgrades_from = ca_cd_slave_attendants_5
-      gold_cost = 450
-      build_time = 2555
-      tax_income = 2
-      heavy_infantry_morale = 0.05
-
-      ai_creation_factor = 97
-      extra_tech_building_start = 3
-    }
-
-    ca_cd_slave_attendants_7 = {
-      desc = ca_cd_slave_attendants_desc
-      potential = {
-        chaos_dwarf_building_trigger = yes
-      }
-      trigger = { TECH_CASTLE_CONSTRUCTION = 7 }
-      upgrades_from = ca_cd_slave_attendants_6
-      gold_cost = 500
-      build_time = 2920
-      tax_income = 2
-      heavy_infantry_morale = 0.05
-
-      ai_creation_factor = 97
-      extra_tech_building_start = 3
-    }
-
-    ca_cd_slave_attendants_8 = {
-      desc = ca_cd_slave_attendants_desc
-      potential = {
-        chaos_dwarf_building_trigger = yes
-      }
-      trigger = { TECH_CASTLE_CONSTRUCTION = 8 }
-      upgrades_from = ca_cd_slave_attendants_7
-      gold_cost = 600
-      build_time = 2920
-      tax_income = 2
-      heavy_infantry_morale = 0.05
-
-      ai_creation_factor = 97
-      extra_tech_building_start = 3
-    }
-
-    ca_chaos_dwarf_ziggurat_1 = {
-	    desc = ca_chaos_dwarf_ziggurat_1_desc
-		potential = {
-		          FROM = { culture_group = dawi_zharr_group }
+  ca_chaos_dwarf_ziggurat_2 = {
+    desc = ca_chaos_dwarf_ziggurat_1_desc
+    potential = {
+			chaos_dwarf_building_trigger = yes
 		}
 		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		replaces = ca_keep_1
-		gold_cost = 150
-		build_time = 265
-		fort_level = 3.0
-		garrison_size = 0.03
-		levy_size = 0.05
-		retinuesize = 20
-		heavy_infantry = 50
-		light_cavalry = 75
-		gunpowder = 40
-		levy_reinforce_rate = 1.00
-		ai_creation_factor = 300 #The AI should always build this when it can
-
-		extra_tech_building_start = 1.0
-	}
-	ca_chaos_dwarf_ziggurat_2 = {
-	    desc = ca_chaos_dwarf_ziggurat_1_desc
-		potential = {
-		          FROM = { culture_group = dawi_zharr_group }
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		prerequisites = { ca_wall_1 }
 		replaces = ca_keep_2
-		upgrades_from = ca_chaos_dwarf_ziggurat_1
-		gold_cost = 200
-		build_time = 620
-		fort_level = 3.0
-		garrison_size = 0.06
-		levy_size = 0.1
-		retinuesize = 20
-		ai_creation_factor = 101
+    upgrades_from = ca_chaos_dwarf_ziggurat_1
+		gold_cost = 150
+		build_time = 912
 
-		extra_tech_building_start = 2.0
-	}
-	ca_chaos_dwarf_ziggurat_3 = {
-	    desc = ca_chaos_dwarf_ziggurat_1_desc
-		potential = {
-		          FROM = { culture_group = dawi_zharr_group }
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
-		prerequisites = { ca_wall_2 }
-		replaces = ca_keep_3
-		upgrades_from = ca_chaos_dwarf_ziggurat_2
-		gold_cost = 300
-		build_time = 875
-		fort_level = 3.0
-		garrison_size = 0.09
-		levy_size = 0.15
-		retinuesize = 20
-		ai_creation_factor = 100
+		fort_level = 0.5
+		garrison_size = 0.025
+		levy_size = 0.075
 
-		extra_tech_building_start = 1.0
-	}
-	ca_chaos_dwarf_ziggurat_4 = {
-	    desc = ca_chaos_dwarf_ziggurat_1_desc
-		potential = {
-		          FROM = { culture_group = dawi_zharr_group }
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
-		replaces = ca_keep_4
-		upgrades_from = ca_chaos_dwarf_ziggurat_3
-		gold_cost = 400
-		build_time = 1265
-		fort_level = 3.0
-		garrison_size = 0.12
-		levy_size = 0.20
-		retinuesize = 20
-		ai_creation_factor = 100
-
-		extra_tech_building_start = 0.2
-	}
-	ca_chaos_dwarf_ziggurat_5 = {
-	    desc = ca_chaos_dwarf_ziggurat_1_desc
-		potential = {
-		          FROM = { culture_group = dawi_zharr_group }
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
-		replaces = ca_keep_5
-		upgrades_from = ca_chaos_dwarf_ziggurat_4
-		gold_cost = 500
-		build_time = 1852
-		fort_level = 3.0
-		garrison_size = 0.15
-		levy_size = 0.25
-		retinuesize = 20
-		ai_creation_factor = 100
-
-		extra_tech_building_start = 0.2
-	}
-	ca_chaos_dwarf_ziggurat_6 = {
-	    desc = ca_chaos_dwarf_ziggurat_1_desc
-		potential = {
-		          FROM = { culture_group = dawi_zharr_group }
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 8 }
-		replaces = ca_keep_6
-		upgrades_from = ca_chaos_dwarf_ziggurat_5
-		gold_cost = 600
-		build_time = 1852
-		fort_level = 3.0
-		garrison_size = 0.18
-		levy_size = 0.30
-		retinuesize = 20
-		ai_creation_factor = 100
-
-		extra_tech_building_start = 0.2
-	}
-
-	ca_chaos_dwarf_barracks_1 = {
-		desc = ca_chaos_dwarf_barracks_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		replaces = ca_barracks_1
-		gold_cost = 100
-		build_time = 365
-		heavy_infantry = 180
-		gunpowder = 35
-		ai_creation_factor = 105
-
-		extra_tech_building_start = 1.0
-	}
-	ca_chaos_dwarf_barracks_2 = {
-		desc = ca_chaos_dwarf_barracks_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		prerequisites = { ca_wall_1 }
-		upgrades_from = ca_chaos_dwarf_barracks_1
-		replaces = ca_barracks_2
-		gold_cost = 120
-		build_time = 547
-		heavy_infantry = 140
-		gunpowder = 15
-		ai_creation_factor = 104
-
-		extra_tech_building_start = 1.8
-	}
-	ca_chaos_dwarf_barracks_3 = {
-		desc = ca_chaos_dwarf_barracks_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 1 }
-		prerequisites = { ca_wall_2 }
-		upgrades_from = ca_chaos_dwarf_barracks_2
-		replaces = ca_barracks_3
-		gold_cost = 200
-		build_time = 730
-		heavy_infantry = 145
-		gunpowder = 20
-		ai_creation_factor = 103
-
-		extra_tech_building_start = 3.0
-	}
-	ca_chaos_dwarf_barracks_4 = {
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		desc = ca_chaos_dwarf_barracks_1_desc
-		trigger = { TECH_CASTLE_CONSTRUCTION = 3 }
-		upgrades_from = ca_chaos_dwarf_barracks_3
-		replaces = ca_barracks_4
-		gold_cost = 300
-		build_time = 1095
-		heavy_infantry = 150
-		gunpowder = 25
-		ai_creation_factor = 102
-
-		extra_tech_building_start = 3.0
-	}
-	ca_chaos_dwarf_barracks_5 = {
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		desc = ca_chaos_dwarf_barracks_1_desc
-		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
-		upgrades_from = ca_chaos_dwarf_barracks_4
-		replaces = ca_barracks_5
-		gold_cost = 400
-		build_time = 2190
-		heavy_infantry = 85
-		gunpowder = 30
-		ai_creation_factor = 101
-
-		extra_tech_building_start = 2.0
-	}
-	ca_chaos_dwarf_barracks_6 = {
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		desc = ca_chaos_dwarf_barracks_1_desc
-		trigger = { TECH_CASTLE_CONSTRUCTION = 7 }
-		upgrades_from = ca_chaos_dwarf_barracks_5
-		replaces = ca_barracks_6
-		gold_cost = 500
-		build_time = 2190
-		heavy_infantry = 100
-		gunpowder = 35
-		ai_creation_factor = 100
-
-		extra_tech_building_start = 0.2
-	}
-
-	ca_chaos_dwarf_fireglaives_1 = {
-		desc = ca_chaos_dwarf_fireglaives_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		gold_cost = 100
-		build_time = 365
-		gunpowder = 140
-		heavy_infantry = 30
-		ai_creation_factor = 105
-
-		extra_tech_building_start = 1.0
-	}
-	ca_chaos_dwarf_fireglaives_2 = {
-		desc = ca_chaos_dwarf_fireglaives_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		prerequisites = { ca_wall_1 }
-		upgrades_from = ca_chaos_dwarf_fireglaives_1
-		gold_cost = 120
-		build_time = 547
-		gunpowder = 95
-		heavy_infantry = 10
-		ai_creation_factor = 104
-
-		extra_tech_building_start = 1.8
-	}
-	ca_chaos_dwarf_fireglaives_3 = {
-		desc = ca_chaos_dwarf_fireglaives_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 1 }
-		prerequisites = { ca_wall_2 }
-		upgrades_from = ca_chaos_dwarf_fireglaives_2
-		gold_cost = 200
-		build_time = 730
-		gunpowder = 110
-		heavy_infantry = 20
-		ai_creation_factor = 103
-
-		extra_tech_building_start = 3.0
-	}
-	ca_chaos_dwarf_fireglaives_4 = {
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		desc = ca_chaos_dwarf_fireglaives_1_desc
-		trigger = { TECH_CASTLE_CONSTRUCTION = 3 }
-		upgrades_from = ca_chaos_dwarf_fireglaives_3
-		gold_cost = 300
-		build_time = 1095
-		gunpowder = 125
-		heavy_infantry = 25
-		ai_creation_factor = 102
-
-		extra_tech_building_start = 3.0
-	}
-	ca_chaos_dwarf_fireglaives_5 = {
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		desc = ca_chaos_dwarf_fireglaives_1_desc
-		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
-		upgrades_from = ca_chaos_dwarf_fireglaives_4
-		gold_cost = 400
-		build_time = 2190
-		gunpowder = 70
-		heavy_infantry = 30
-		ai_creation_factor = 101
-
-		extra_tech_building_start = 2.0
-	}
-	ca_chaos_dwarf_fireglaives_6 = {
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		desc = ca_chaos_dwarf_fireglaives_1_desc
-		trigger = { TECH_CASTLE_CONSTRUCTION = 7 }
-		upgrades_from = ca_chaos_dwarf_fireglaives_5
-		gold_cost = 500
-		build_time = 2190
-		gunpowder = 90
-		heavy_infantry = 35
-		ai_creation_factor = 100
-
-		extra_tech_building_start = 0.2
-	}
-
-	ca_hobgoblin_tents_1 = {
-		desc = ca_hobgoblin_tents_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		replaces = ca_stable_1
-		gold_cost = 100
-		build_time = 365
-		light_cavalry = 50
-		light_cavalry_morale = -0.25 #They are Goblins after all
-		garrison_size = -0.05 #Counterbalance for insane garrison sizes
-		ai_creation_factor = 89
-
-		extra_tech_building_start = 0.4
-	}
-	ca_hobgoblin_tents_2 = {
-		desc = ca_hobgoblin_tents_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		prerequisites = { ca_wall_1 }
-		upgrades_from = ca_hobgoblin_tents_1
-		replaces = ca_stable_2
-		gold_cost = 120
-		build_time = 547
-		light_cavalry = 60
-		garrison_size = -0.05 #Counterbalance for insane garrison sizes
 		ai_creation_factor = 88
-
-		extra_tech_building_start = 0.8
-	}
-	ca_hobgoblin_tents_3 = {
-		desc = ca_hobgoblin_tents_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
-		replaces = ca_stable_3
-		prerequisites = { ca_wall_2 }
-		upgrades_from = ca_hobgoblin_tents_2
-		gold_cost = 200
-		build_time = 730
-		light_cavalry = 70
-		garrison_size = -0.05 #Counterbalance for insane garrison sizes
-		ai_creation_factor = 87
-
-		extra_tech_building_start = 0.2
-	}
-	ca_hobgoblin_tents_4 = {
-		desc = ca_hobgoblin_tents_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
-		replaces = ca_stable_4
-		upgrades_from = ca_hobgoblin_tents_3
-		gold_cost = 300
-		build_time = 1095
-		light_cavalry = 80
-		garrison_size = -0.05 #Counterbalance for insane garrison sizes
-		ai_creation_factor = 86
-
-		extra_tech_building_start = 0.2
-	}
-	ca_hobgoblin_tents_5 = {
-		desc = ca_hobgoblin_tents_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
-		replaces = ca_stable_5
-		upgrades_from = ca_hobgoblin_tents_4
-		gold_cost = 400
-		build_time = 2190
-		light_cavalry = 90
-		garrison_size = -0.05 #Counterbalance for insane garrison sizes
-		ai_creation_factor = 85
-
-		extra_tech_building_start = 0.2
-	}
-	ca_hobgoblin_tents_6 = {
-		desc = ca_hobgoblin_tents_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 8 }
-		replaces = ca_stable_6
-		upgrades_from = ca_hobgoblin_tents_5
-		gold_cost = 500
-		build_time = 2190
-		light_cavalry = 100
-		garrison_size = -0.05 #Counterbalance for insane garrison sizes
-		ai_creation_factor = 85
-
-		extra_tech_building_start = 0.2
-	}
-
-	ca_slave_pens_1 = {
-		desc = ca_slave_pens_1_desc
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
-		gold_cost = 100
-		build_time = 365
-		light_infantry = 105
-		garrison_size = -0.03 #Counterbalance for insane garrison sizes
-
 		extra_tech_building_start = 0.5
 	}
-	ca_slave_pens_2 = {
-		desc = ca_slave_pens_1_desc
+	ca_chaos_dwarf_ziggurat_3 = {
+    desc = ca_chaos_dwarf_ziggurat_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+    replaces = ca_keep_2
+    upgrades_from = ca_chaos_dwarf_ziggurat_2
+    gold_cost = 200
+    build_time = 1095
+
+    fort_level = 0.5
+    garrison_size = 0.05
+    levy_size = 0.15
+
+    #no need for huge ai_creation value because this doesn't correct the levy
+    ai_creation_factor = 88
+    extra_tech_building_start = 1.5
+  }
+	ca_chaos_dwarf_ziggurat_4 = {
+    desc = ca_chaos_dwarf_ziggurat_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+    replaces = ca_keep_3
+    prerequisites = { ca_wall_2 }
+    upgrades_from = ca_chaos_dwarf_ziggurat_3
+    gold_cost = 300
+    build_time = 1460
+
+    fort_level = 0.5
+    garrison_size = 0.075
+    levy_size = 0.225
+
+    #no need for huge ai_creation value because this doesn't correct the levy
+    ai_creation_factor = 88
+    extra_tech_building_start = 1.5
+  }
+	ca_chaos_dwarf_ziggurat_5 = {
+    desc = ca_chaos_dwarf_ziggurat_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+    replaces = ca_keep_4
+    upgrades_from = ca_chaos_dwarf_ziggurat_4
+    gold_cost = 400
+    build_time = 1825
+
+    fort_level = 0.5
+    garrison_size = 0.1
+    levy_size = 0.35
+
+    #no need for huge ai_creation value because this doesn't correct the levy
+    ai_creation_factor = 88
+    extra_tech_building_start = 1.5
+  }
+	ca_chaos_dwarf_ziggurat_6 = {
+    desc = ca_chaos_dwarf_ziggurat_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
+    replaces = ca_keep_5
+    upgrades_from = ca_chaos_dwarf_ziggurat_5
+    gold_cost = 500
+    build_time = 2190
+
+    fort_level = 0.5
+    garrison_size = 0.1
+    levy_size = 0.4
+
+    #no need for huge ai_creation value because this doesn't correct the levy
+    ai_creation_factor = 88
+    extra_tech_building_start = 1.5
+  }
+	ca_chaos_dwarf_ziggurat_7 = {
+    desc = ca_chaos_dwarf_ziggurat_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+    replaces = ca_keep_6
+    prerequisites = { ca_wall_4}
+    upgrades_from = ca_chaos_dwarf_ziggurat_6
+    gold_cost = 500
+    build_time = 2555
+
+    fort_level = 0.5
+    garrison_size = 0.1
+    levy_size = 0.45
+
+    #no need for huge ai_creation value because this doesn't correct the levy
+    ai_creation_factor = 88
+    extra_tech_building_start = 3
+  }
+
+  ca_chaos_dwarf_ziggurat_8 = {
+    desc = ca_chaos_dwarf_ziggurat_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_CASTLE_CONSTRUCTION = 7 }
+    upgrades_from = ca_chaos_dwarf_ziggurat_7
+    gold_cost = 600
+    build_time = 2920
+
+    fort_level = 0.5
+    garrison_size = 0.125
+    levy_size = 0.50
+
+    #no need for huge ai_creation value because this doesn't correct the levy
+    ai_creation_factor = 88
+    extra_tech_building_start = 3
+  }
+
+  ca_chaos_dwarf_ziggurat_9 = {
+    desc = ca_chaos_dwarf_ziggurat_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_CASTLE_CONSTRUCTION = 8 }
+    upgrades_from = ca_chaos_dwarf_ziggurat_8
+    gold_cost = 600
+    build_time = 3285
+
+    fort_level = 0.5
+    garrison_size = 0.125
+    levy_size = 0.50
+
+    #no need for huge ai_creation value because this doesn't correct the levy
+    ai_creation_factor = 88
+    extra_tech_building_start = 3
+  }
+
+  #Devastators
+  #Mathias uses the term for blunderbussiers in the WHAP
+  #Replaces militia barracks, but cost, line length, and effects are more like regular barracks (elder race "militia" are trained for a long time)
+  #LI + A become gunpowder troops
+  ca_chaos_dwarf_devastators_1 = {
+    desc = ca_chaos_dwarf_devastators_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
 		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
-		prerequisites = { ca_wall_1 }
-		upgrades_from = ca_slave_pens_1
-		gold_cost = 120
-		build_time = 547
-		light_infantry = 110
-		garrison_size = -0.03 #Counterbalance for insane garrison sizes
+    replaces = ca_militia_barracks_1
+    gold_cost = 80
+    build_time = 730
+    gunpowder = 75
 
-		extra_tech_building_start = 1.0
-	}
-	ca_slave_pens_3 = {
-		desc = ca_slave_pens_1_desc
+    extra_tech_building_start = 0.5
+  }
+
+  ca_chaos_dwarf_devastators_2 = {
+    desc = ca_chaos_dwarf_devastators_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+    replaces = ca_militia_barracks_2
+    upgrades_from = ca_chaos_dwarf_devastators_1
+    gold_cost = 100
+    build_time = 912
+    gunpowder = 85
+
+    extra_tech_building_start = 1.5
+  }
+
+  ca_chaos_dwarf_devastators_3 = {
+    desc = ca_chaos_dwarf_devastators_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
 		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
-		prerequisites = { ca_wall_2 }
-		upgrades_from = ca_slave_pens_2
-		gold_cost = 200
-		build_time = 730
-		light_infantry = 115
-		garrison_size = -0.03 #Counterbalance for insane garrison sizes
+    replaces = ca_militia_barracks_3
+    prerequisites = { ca_wall_2 }
+    upgrades_from = ca_chaos_dwarf_devastators_2
+    gold_cost = 150
+    build_time = 1095
+    gunpowder = 95
 
-		extra_tech_building_start = 0.2
-	}
-	ca_slave_pens_4 = {
-		desc = ca_slave_pens_1_desc
+    extra_tech_building_start = 1.5
+  }
+
+  ca_chaos_dwarf_devastators_4 = {
+    desc = ca_chaos_dwarf_devastators_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
 		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
-		upgrades_from = ca_slave_pens_3
-		gold_cost = 300
-		build_time = 1095
-		light_infantry = 115
-		garrison_size = -0.03 #Counterbalance for insane garrison sizes
+    replaces = ca_militia_barracks_4
+    upgrades_from = ca_chaos_dwarf_devastators_3
+    gold_cost = 250
+    build_time = 1460
+    gunpowder = 115
 
-		extra_tech_building_start = 0.2
-	}
-	ca_slave_pens_5 = {
-		desc = ca_slave_pens_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
+    extra_tech_building_start = 1.5
+  }
+
+  ca_chaos_dwarf_devastators_5 = {
+    desc = ca_chaos_dwarf_devastators_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
+    upgrades_from = ca_chaos_dwarf_devastators_4
+    gold_cost = 300
+    build_time = 2555
+    gunpowder = 125
+
+    extra_tech_building_start = 1.5
+  }
+
+  ca_chaos_dwarf_devastators_6 = {
+    desc = ca_chaos_dwarf_devastators_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
 		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
-		upgrades_from = ca_slave_pens_4
-		gold_cost = 400
-		build_time = 2190
-		light_infantry = 120
-		garrison_size = -0.03 #Counterbalance for insane garrison sizes
+    prerequisites = { ca_wall_4 }
+    upgrades_from = ca_chaos_dwarf_devastators_5
+    gold_cost = 400
+    build_time = 2555
+    gunpowder = 125
 
-		extra_tech_building_start = 0.2
-	}
-	ca_slave_pens_6 = {
-		desc = ca_slave_pens_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
+    extra_tech_building_start = 3
+  }
+
+  ca_chaos_dwarf_devastators_7 = {
+    desc = ca_chaos_dwarf_devastators_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_CASTLE_CONSTRUCTION = 7 }
+    upgrades_from = ca_chaos_dwarf_devastators_6
+    gold_cost = 400
+    build_time = 2920
+    gunpowder = 135
+
+    extra_tech_building_start = 3
+  }
+
+  ca_chaos_dwarf_devastators_8 = {
+    desc = ca_chaos_dwarf_devastators_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
 		trigger = { TECH_CASTLE_CONSTRUCTION = 8 }
-		upgrades_from = ca_slave_pens_5
-		gold_cost = 500
-		build_time = 2190
-		light_infantry = 1120
-		garrison_size = -0.03 #Counterbalance for insane garrison sizes
+    upgrades_from = ca_chaos_dwarf_devastators_7
+    gold_cost = 400
+    build_time = 2920
+    gunpowder = 135
 
-		extra_tech_building_start = 0.2
-	}
+    extra_tech_building_start = 3
+  }
+
+  #Legion camp
+  #The lore suggests that Chaos Dwarfs have semi-independent Legions with a brief to carry out operations as their commander sees fit
+  #Replaces Training Grounds
+  #Exotic replacement. Uses Prestige to build, larger retinue_size adjustment but no morale increase (HI morale already improved at this holding) and less reinforce rate (small population)
+  ca_chaos_dwarf_legion_commander_1 = {
+    desc = ca_chaos_dwarf_legion_commander_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_RECRUITMENT = 0 }
+    replaces = ca_training_grounds_1
+    prestige_cost = 400
+    build_time = 1095
+    levy_reinforce_rate = 0.05
+    retinuesize = 50
+
+    ai_creation_factor = 91
+    extra_tech_building_start = 0.5
+  }
+
+  ca_chaos_dwarf_legion_commander_2 = {
+    desc = ca_chaos_dwarf_legion_commander_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_RECRUITMENT = 2 }
+    replaces = ca_training_grounds_2
+    upgrades_from = ca_chaos_dwarf_legion_commander_1
+    prestige_cost = 600
+    build_time = 1460
+    levy_reinforce_rate = 0.075
+    retinuesize = 50
+
+    ai_creation_factor = 91
+    extra_tech_building_start = 0.5
+  }
+
+  ca_chaos_dwarf_legion_commander_3 = {
+    desc = ca_chaos_dwarf_legion_commander_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_RECRUITMENT = 4 }
+    replaces = ca_training_grounds_3
+    upgrades_from = ca_chaos_dwarf_legion_commander_2
+    prestige_cost = 750
+    build_time = 1460
+    levy_reinforce_rate = 0.10
+    retinuesize = 50
+
+    ai_creation_factor = 91
+    extra_tech_building_start = 0.5
+  }
+
+  ca_chaos_dwarf_legion_commander_4 = {
+    desc = ca_chaos_dwarf_legion_commander_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_RECRUITMENT = 6 }
+    upgrades_from = ca_chaos_dwarf_legion_commander_3
+    prestige_cost = 1000
+    build_time = 1460
+    levy_reinforce_rate = 0.125
+    retinuesize = 50
+
+    ai_creation_factor = 91
+    extra_tech_building_start = 0.5
+  }
+
+  #Chaos Dwarf Garrison
+  #Lore indicates that troops at Dawi Zharr fortresses are drawn from the city population - conscripts!
+  #Replaces Castle Barracks
+  #Consolidate HI/P into HI
+
+  ca_chaos_dwarf_barracks_1 = {
+    desc = ca_chaos_dwarf_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+    replaces = ca_barracks_1
+    gold_cost = 80
+    build_time = 730
+    heavy_infantry = 50
+
+    extra_tech_building_start = 0.5
+  }
+
+  ca_chaos_dwarf_barracks_2 = {
+    desc = ca_chaos_dwarf_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+    replaces = ca_barracks_2
+    upgrades_from = ca_chaos_dwarf_barracks_1
+    gold_cost = 100
+    build_time = 912
+    heavy_infantry = 60
+
+    extra_tech_building_start = 1.5
+  }
+
+  ca_chaos_dwarf_barracks_3 = {
+    desc = ca_chaos_dwarf_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+    replaces = ca_barracks_3
+    prerequisites = { ca_wall_2 }
+    upgrades_from = ca_chaos_dwarf_barracks_2
+    gold_cost = 150
+    build_time = 1095
+    heavy_infantry = 75
+
+    extra_tech_building_start = 1.5
+  }
+
+  ca_chaos_dwarf_barracks_4 = {
+    desc = ca_chaos_dwarf_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+    replaces = ca_barracks_4
+    upgrades_from = ca_chaos_dwarf_barracks_3
+    gold_cost = 250
+    build_time = 1460
+    heavy_infantry = 85
+
+    extra_tech_building_start = 1.5
+  }
+
+  ca_chaos_dwarf_barracks_5 = {
+    desc = ca_chaos_dwarf_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
+    replaces = ca_barracks_5
+	  upgrades_from = ca_chaos_dwarf_barracks_4
+    gold_cost = 300
+    build_time = 2555
+    heavy_infantry = 95
+
+    extra_tech_building_start = 1.5
+  }
+
+  ca_chaos_dwarf_barracks_6 = {
+    desc = ca_chaos_dwarf_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+	  trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+    replaces = ca_barracks_6
+    prerequisites = { ca_wall_4 }
+    upgrades_from = ca_chaos_dwarf_barracks_5
+    gold_cost = 400
+    build_time = 2555
+    heavy_infantry = 110
+
+    extra_tech_building_start = 3
+  }
+
+  ca_chaos_dwarf_barracks_7 = {
+    desc = ca_chaos_dwarf_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_CASTLE_CONSTRUCTION = 7 }
+    upgrades_from = ca_chaos_dwarf_barracks_6
+    gold_cost = 400
+    build_time = 2920
+    heavy_infantry = 120
+
+    extra_tech_building_start = 3
+  }
+
+  ca_chaos_dwarf_barracks_8 = {
+    desc = ca_chaos_dwarf_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_CASTLE_CONSTRUCTION = 8 }
+    upgrades_from = ca_chaos_dwarf_barracks_7
+    gold_cost = 400
+    build_time = 2920
+    heavy_infantry = 120
+
+    extra_tech_building_start = 3
+  }
+
+  #Hobgoblin Khans
+  #Fresh from the Steppe
+  #Replaces cavalry barracks
+  ca_chaos_dwarf_khans_1 = {
+    desc = ca_chaos_dwarf_khans_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_TRADE_PRACTICES = 0 }
+    replaces = ca_stable_1
+    gold_cost = 80
+    build_time = 730
+    light_cavalry = 35
+
+    extra_tech_building_start = 0.5
+  }
+
+  ca_chaos_dwarf_khans_2 = {
+    desc = ca_chaos_dwarf_khans_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_TRADE_PRACTICES = 0 }
+    replaces = ca_stable_2
+    upgrades_from = ca_chaos_dwarf_khans_1
+    gold_cost = 100
+    build_time = 912
+    light_cavalry = 45
+
+    extra_tech_building_start = 1.5
+  }
+
+  ca_chaos_dwarf_khans_3 = {
+    desc = ca_chaos_dwarf_khans_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_TRADE_PRACTICES = 2 }
+    replaces = ca_stable_3
+    prerequisites = { ca_wall_2 }
+    upgrades_from = ca_chaos_dwarf_khans_2
+    gold_cost = 150
+    build_time = 1095
+    light_cavalry = 55
+
+    extra_tech_building_start = 1.5
+  }
+
+  ca_chaos_dwarf_khans_4 = {
+    desc = ca_chaos_dwarf_khans_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_TRADE_PRACTICES = 4 }
+    replaces = ca_stable_4
+    upgrades_from = ca_chaos_dwarf_khans_3
+    gold_cost = 250
+    build_time = 1460
+    light_cavalry = 75
+
+    extra_tech_building_start = 1.5
+  }
+
+  ca_chaos_dwarf_khans_5 = {
+    desc = ca_chaos_dwarf_khans_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_TRADE_PRACTICES = 5 }
+    upgrades_from = ca_chaos_dwarf_khans_4
+    gold_cost = 300
+    build_time = 2555
+    light_cavalry = 95
+
+    extra_tech_building_start = 1.5
+  }
+
+  ca_chaos_dwarf_khans_6 = {
+    desc = ca_chaos_dwarf_khans_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_TRADE_PRACTICES = 6 }
+    prerequisites = { ca_wall_4 }
+    upgrades_from = ca_chaos_dwarf_khans_5
+    gold_cost = 400
+    build_time = 2555
+    light_cavalry = 135
+
+    extra_tech_building_start = 3
+  }
+
+  ca_chaos_dwarf_khans_7 = {
+    desc = ca_chaos_dwarf_khans_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_TRADE_PRACTICES = 7 }
+    upgrades_from = ca_chaos_dwarf_khans_6
+    gold_cost = 400
+    build_time = 2920
+    light_cavalry = 175
+
+    extra_tech_building_start = 3
+  }
+
+  ca_chaos_dwarf_khans_8 = {
+    desc = ca_chaos_dwarf_khans_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+		trigger = { TECH_TRADE_PRACTICES = 8 }
+    upgrades_from = ca_chaos_dwarf_khans_7
+    gold_cost = 400
+    build_time = 2920
+    light_cavalry = 175
+
+    extra_tech_building_start = 3
+  }
+
+  #Slave attendants
+  #replace Castle Town
+  #less money and no court size bonus (small numbers) but helps CD warriors
+  ca_cd_slave_attendants_1 = {
+    desc = ca_cd_slave_attendants_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    replaces = ca_town_1
+    trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+    gold_cost = 80
+    build_time = 730
+    tax_income = 2
+    heavy_infantry_morale = 0.05
+
+    ai_creation_factor = 97
+    extra_tech_building_start = 0.5
+  }
+
+  ca_cd_slave_attendants_2 = {
+    desc = ca_cd_slave_attendants_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    replaces = ca_town_2
+    trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+    upgrades_from = ca_cd_slave_attendants_1
+    gold_cost = 100
+    build_time = 912
+    tax_income = 2
+    heavy_infantry_morale = 0.05
+
+    ai_creation_factor = 97
+    extra_tech_building_start = 1.5
+  }
+
+  ca_cd_slave_attendants_3 = {
+    desc = ca_cd_slave_attendants_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    replaces = ca_town_3
+    trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+    upgrades_from = ca_cd_slave_attendants_2
+    gold_cost = 150
+    build_time = 1095
+    tax_income = 2
+    heavy_infantry_morale = 0.05
+
+    ai_creation_factor = 97
+    extra_tech_building_start = 1.5
+  }
+
+  ca_cd_slave_attendants_4 = {
+    desc = ca_cd_slave_attendants_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    replaces = ca_town_4
+    trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+    upgrades_from = ca_cd_slave_attendants_3
+    gold_cost = 250
+    build_time = 1460
+    tax_income = 2
+    heavy_infantry_morale = 0.05
+
+    ai_creation_factor = 97
+    extra_tech_building_start = 1.5
+  }
+
+  ca_cd_slave_attendants_5 = {
+    desc = ca_cd_slave_attendants_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    replaces = ca_town_5
+    trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
+    upgrades_from = ca_cd_slave_attendants_4
+    gold_cost = 350
+    build_time = 2555
+    tax_income = 2
+    heavy_infantry_morale = 0.05
+
+    ai_creation_factor = 97
+    extra_tech_building_start = 1.5
+  }
+
+  ca_cd_slave_attendants_6 = {
+    desc = ca_cd_slave_attendants_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    replaces = ca_town_6
+    trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+    upgrades_from = ca_cd_slave_attendants_5
+    gold_cost = 450
+    build_time = 2555
+    tax_income = 2
+    heavy_infantry_morale = 0.05
+
+    ai_creation_factor = 97
+    extra_tech_building_start = 3
+  }
+
+  ca_cd_slave_attendants_7 = {
+    desc = ca_cd_slave_attendants_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_CASTLE_CONSTRUCTION = 7 }
+    upgrades_from = ca_cd_slave_attendants_6
+    gold_cost = 500
+    build_time = 2920
+    tax_income = 2
+    heavy_infantry_morale = 0.05
+
+    ai_creation_factor = 97
+    extra_tech_building_start = 3
+  }
+
+  ca_cd_slave_attendants_8 = {
+    desc = ca_cd_slave_attendants_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_CASTLE_CONSTRUCTION = 8 }
+    upgrades_from = ca_cd_slave_attendants_7
+    gold_cost = 600
+    build_time = 2920
+    tax_income = 2
+    heavy_infantry_morale = 0.05
+
+    ai_creation_factor = 97
+    extra_tech_building_start = 3
+  }
 
 	ca_cdshipyard_1 = {
 		desc = ca_cdshipyard_desc
@@ -750,90 +837,438 @@ castle = {
 		extra_tech_building_start = 0.2
 	}
 
+  # # 'Culture' Buildings # #
+  # No subcultures so use de_jure Kingdoms as a proxy
+
+  #Heartland troops
+  #Drawn from the more heavily populated, more pacified regions
+  #More artisans = more gunpowder troops
+  #Shorter rotations (closer to home) = better morale
+  ca_chaos_dwarf_heartland_troops_1 = {
+    desc = ca_chaos_dwarf_heartland_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        OR = {
+          de_jure_liege_or_above = k_zharrduk
+          de_jure_liege_or_above = k_zorn_uzkul
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 0 }
+    prerequisites = { ca_wall_2 }
+    gold_cost = 160
+    build_time = 1095
+    gunpowder = 45
+    gunpowder_morale = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_heartland_troops_2 = {
+    desc = ca_chaos_dwarf_heartland_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        OR = {
+          de_jure_liege_or_above = k_zharrduk
+          de_jure_liege_or_above = k_zorn_uzkul
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 1 }
+    upgrades_from = ca_chaos_dwarf_heartland_troops_1
+    gold_cost = 240
+    build_time = 1460
+    gunpowder = 60
+    gunpowder_morale = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_heartland_troops_3 = {
+    desc = ca_chaos_dwarf_heartland_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        OR = {
+          de_jure_liege_or_above = k_zharrduk
+          de_jure_liege_or_above = k_zorn_uzkul
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 2 }
+    upgrades_from = ca_chaos_dwarf_heartland_troops_2
+    gold_cost = 320
+    build_time = 1825
+    gunpowder = 75
+    gunpowder_morale = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_heartland_troops_4 = {
+    desc = ca_chaos_dwarf_heartland_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        OR = {
+          de_jure_liege_or_above = k_zharrduk
+          de_jure_liege_or_above = k_zorn_uzkul
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 4 }
+    upgrades_from = ca_chaos_dwarf_heartland_troops_3
+    gold_cost = 400
+    build_time = 2190
+    gunpowder = 90
+    gunpowder_morale = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_heartland_troops_5 = {
+    desc = ca_chaos_dwarf_heartland_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        OR = {
+          de_jure_liege_or_above = k_zharrduk
+          de_jure_liege_or_above = k_zorn_uzkul
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 6 }
+    upgrades_from = ca_chaos_dwarf_heartland_troops_4
+    gold_cost = 480
+    build_time = 2190
+    gunpowder = 105
+    gunpowder_morale = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_heartland_troops_6 = {
+    desc = ca_chaos_dwarf_heartland_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        OR = {
+          de_jure_liege_or_above = k_zharrduk
+          de_jure_liege_or_above = k_zorn_uzkul
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 8 }
+    upgrades_from = ca_chaos_dwarf_heartland_troops_5
+    gold_cost = 560
+    build_time = 2555
+    gunpowder = 120
+    gunpowder_morale = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  #Infernal Guard
+  #One of the worst assignments available.
+  #Nihilistic Heavy Infantry w/ higher offensive
+  ca_chaos_dwarf_azgorh_troops_1 = {
+    desc = ca_chaos_dwarf_azgorh_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        OR = {
+          de_jure_liege_or_above = k_azgorh
+          de_jure_liege_or_above = k_dawizag
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 0 }
+    prerequisites = { ca_wall_2 }
+    gold_cost = 160
+    build_time = 1095
+    heavy_infantry = 45
+    heavy_infantry_offensive = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_azgorh_troops_2 = {
+    desc = ca_chaos_dwarf_azgorh_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        OR = {
+          de_jure_liege_or_above = k_azgorh
+          de_jure_liege_or_above = k_dawizag
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 1 }
+    upgrades_from = ca_chaos_dwarf_azgorh_troops_1
+    gold_cost = 240
+    build_time = 1460
+    heavy_infantry = 60
+    heavy_infantry_offensive = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_azgorh_troops_3 = {
+    desc = ca_chaos_dwarf_azgorh_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        OR = {
+          de_jure_liege_or_above = k_azgorh
+          de_jure_liege_or_above = k_dawizag
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 2 }
+    upgrades_from = ca_chaos_dwarf_azgorh_troops_2
+    gold_cost = 320
+    build_time = 1825
+    heavy_infantry = 75
+    heavy_infantry_offensive = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_azgorh_troops_4 = {
+    desc = ca_chaos_dwarf_azgorh_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        OR = {
+          de_jure_liege_or_above = k_azgorh
+          de_jure_liege_or_above = k_dawizag
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 4 }
+    upgrades_from = ca_chaos_dwarf_azgorh_troops_3
+    gold_cost = 400
+    build_time = 2190
+    heavy_infantry = 90
+    heavy_infantry_offensive = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_azgorh_troops_5 = {
+    desc = ca_chaos_dwarf_azgorh_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        OR = {
+          de_jure_liege_or_above = k_azgorh
+          de_jure_liege_or_above = k_dawizag
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 6 }
+    upgrades_from = ca_chaos_dwarf_azgorh_troops_4
+    gold_cost = 480
+    build_time = 2190
+    heavy_infantry = 105
+    heavy_infantry_offensive = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_azgorh_troops_6 = {
+    desc = ca_chaos_dwarf_azgorh_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        OR = {
+          de_jure_liege_or_above = k_azgorh
+          de_jure_liege_or_above = k_dawizag
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 8 }
+    upgrades_from = ca_chaos_dwarf_azgorh_troops_5
+    gold_cost = 560
+    build_time = 2555
+    heavy_infantry = 120
+    heavy_infantry_offensive = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  #Fallback
+  #Only applies to weird places like the Dragon Isles at game start
+  #Assumes more hobgoblin troops are used in new fortresses even further from Zharr-Naggrund
+  ca_chaos_dwarf_frontier_troops_1 = {
+    desc = ca_chaos_dwarf_frontier_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        NOR = {
+		  de_jure_liege_or_above = k_zharrduk
+		  de_jure_liege_or_above = k_zorn_uzkul
+          de_jure_liege_or_above = k_azgorh
+          de_jure_liege_or_above = k_dawizag
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 0 }
+    prerequisites = { ca_wall_2 }
+    gold_cost = 160
+    build_time = 1095
+    light_cavalry = 30
+    light_cavalry_offensive = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_frontier_troops_2 = {
+    desc = ca_chaos_dwarf_frontier_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        NOR = {
+		  de_jure_liege_or_above = k_zharrduk
+		  de_jure_liege_or_above = k_zorn_uzkul
+          de_jure_liege_or_above = k_azgorh
+          de_jure_liege_or_above = k_dawizag
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 1 }
+    upgrades_from = ca_chaos_dwarf_frontier_troops_1
+    gold_cost = 240
+    build_time = 1460
+    light_cavalry = 40
+    light_cavalry_offensive = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_frontier_troops_3 = {
+    desc = ca_chaos_dwarf_frontier_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        NOR = {
+		  de_jure_liege_or_above = k_zharrduk
+		  de_jure_liege_or_above = k_zorn_uzkul
+          de_jure_liege_or_above = k_azgorh
+          de_jure_liege_or_above = k_dawizag
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 2 }
+    upgrades_from = ca_chaos_dwarf_frontier_troops_2
+    gold_cost = 320
+    build_time = 1825
+    light_cavalry = 50
+    light_cavalry_offensive = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_frontier_troops_4 = {
+    desc = ca_chaos_dwarf_frontier_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        NOR = {
+		  de_jure_liege_or_above = k_zharrduk
+		  de_jure_liege_or_above = k_zorn_uzkul
+          de_jure_liege_or_above = k_azgorh
+          de_jure_liege_or_above = k_dawizag
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 4 }
+    upgrades_from = ca_chaos_dwarf_frontier_troops_3
+    gold_cost = 400
+    build_time = 2190
+    light_cavalry = 60
+    light_cavalry_offensive = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_frontier_troops_5 = {
+    desc = ca_chaos_dwarf_frontier_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        NOR = {
+		  de_jure_liege_or_above = k_zharrduk
+		  de_jure_liege_or_above = k_zorn_uzkul
+          de_jure_liege_or_above = k_azgorh
+          de_jure_liege_or_above = k_dawizag
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 6 }
+    upgrades_from = ca_chaos_dwarf_frontier_troops_4
+    gold_cost = 480
+    build_time = 2190
+    light_cavalry = 70
+    light_cavalry_offensive = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
+
+  ca_chaos_dwarf_frontier_troops_6 = {
+    desc = ca_chaos_dwarf_frontier_troops_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+      FROMFROM = {
+        NOR = {
+		  de_jure_liege_or_above = k_zharrduk
+		  de_jure_liege_or_above = k_zorn_uzkul
+          de_jure_liege_or_above = k_azgorh
+          de_jure_liege_or_above = k_dawizag
+        }
+      }
+    }
+    trigger = { TECH_CITY_CONSTRUCTION = 8 }
+    upgrades_from = ca_chaos_dwarf_frontier_troops_5
+    gold_cost = 560
+    build_time = 2555
+    light_cavalry = 80
+    light_cavalry_offensive = 0.15
+
+    ai_creation_factor = 99
+    extra_tech_building_start = 0.8
+  }
 }
+
+
+### Chaos Dwarf City ###
+
+#Industrial hellscape, full of people - mostly slaves
+#Levies are dominated by ranged troops and artillery, and lack staying power
+#Theoretically has a lot of late game power but probably a bad investment vs. conquering more land
 
 city = {
 
-    #extra fortification buildings
-    ct_chaos_dwarf_ziggurat_walls_1 = {
-		desc = ct_chaos_dwarf_ziggurat_walls_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
-    potential = {
-	     chaos_dwarf_building_trigger = yes
-		}
-		replaces = ct_wall_q_1
-		gold_cost = 50
-		build_time = 365
-		fort_level = 0.5
-		tax_income = 0.35
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 1.0
-	}
-	ct_chaos_dwarf_ziggurat_walls_2 = {
-		desc = ct_chaos_dwarf_ziggurat_walls_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
-    potential = {
-	     chaos_dwarf_building_trigger = yes
-		}
-		upgrades_from = ct_chaos_dwarf_ziggurat_walls_1
-		replaces = ct_wall_q_2
-		gold_cost = 50
-		build_time = 547
-		fort_level = 0.5
-		tax_income = 0.35
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 1.0
-	}
-	ct_chaos_dwarf_ziggurat_walls_3 = {
-		desc = ct_chaos_dwarf_ziggurat_walls_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
-    potential = {
-	     chaos_dwarf_building_trigger = yes
-		}
-		upgrades_from = ct_chaos_dwarf_ziggurat_walls_2
-		replaces = ct_wall_q_3
-		gold_cost = 100
-		build_time = 730
-		fort_level = 0.5
-		tax_income = 0.35
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 1.5
-	}
-	ct_chaos_dwarf_ziggurat_walls_4 = {
-		desc = ct_chaos_dwarf_ziggurat_walls_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
-    potential = {
-	     chaos_dwarf_building_trigger = yes
-		}
-		upgrades_from = ct_chaos_dwarf_ziggurat_walls_3
-		replaces = ct_wall_q_4
-		gold_cost = 100
-		build_time = 1095
-		fort_level = 0.5
-		tax_income = 0.35
-		ai_creation_factor = 92
-
-		extra_tech_building_start = 0.2
-	}
-	ct_chaos_dwarf_ziggurat_walls_5 = {
-		desc = ct_chaos_dwarf_ziggurat_walls_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
-    potential = {
-	     chaos_dwarf_building_trigger = yes
-		}
-		upgrades_from = ct_chaos_dwarf_ziggurat_walls_4
-		replaces = ct_wall_q_5
-		gold_cost = 150
-		build_time = 1460
-		fort_level = 1.5
-		tax_income = 0.75
-		ai_creation_factor = 91
-
-		extra_tech_building_start = 0.2
-	}
+  #uses Guardians of the Hearth any_dwarf fortification building
 
   #uses vanilla walls
 
@@ -938,28 +1373,24 @@ city = {
   }
 
   # Tenement buildings
-  # huge garrisons because cities have such a big population
-
+  # huge garrisons and added fort level because cities have such a big population, limited levies
+  # overall weaker than vanilla because levy size is a more significant modifier
+  # doesn't need a levy-correction stage because LI/A = hobgoblins
 	ct_chaos_dwarf_ziggurat_keep_1 = {
 		desc = ct_chaos_dwarf_ziggurat_keep_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
     potential = {
 	     chaos_dwarf_building_trigger = yes
 		}
-		gold_cost = 150
 		replaces = ct_training_grounds_1
-		build_time = 547
-		fort_level = 1.5
-		levy_size = 0.1
-		garrison_size = 0.5
-		light_infantry = 150
-		archers = -40
-		heavy_infantry = 30
-		levy_reinforce_rate = 1.00
-		light_infantry_morale = -0.25
+    gold_cost = 120
+		build_time = 730
+		fort_level = 0.25
+		levy_size = 0.025
+		garrison_size = 0.25
 		ai_creation_factor = 300 #The AI should always build this when it can
 		add_number_to_name = no
-		extra_tech_building_start = 1.0
+		extra_tech_building_start = 0.5
 	}
 	ct_chaos_dwarf_ziggurat_keep_2 = {
 		desc = ct_chaos_dwarf_ziggurat_keep_1_desc
@@ -967,35 +1398,36 @@ city = {
     potential = {
 	     chaos_dwarf_building_trigger = yes
 		}
-		prerequisites = { ct_chaos_dwarf_ziggurat_walls_1 }
 		upgrades_from = ct_chaos_dwarf_ziggurat_keep_1
 		replaces = tp_ct_training_grounds_2
-		gold_cost = 200
-		build_time = 730
-		levy_size = 0.1
-		garrison_size = 0.5
+		gold_cost = 150
+		build_time = 1095
+    fort_level = 0.25
+		levy_size = 0.05
+		garrison_size = 0.3
 		ai_creation_factor = 95
 		add_number_to_name = no
 
-		extra_tech_building_start = 2.0
+		extra_tech_building_start = 1.5
 	}
 	ct_chaos_dwarf_ziggurat_keep_3 = {
 		desc = ct_chaos_dwarf_ziggurat_keep_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
+    prerequisites = { ct_wall_2 }
     potential = {
 	     chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = ct_chaos_dwarf_ziggurat_keep_2
 		replaces = ct_training_grounds_3
-		gold_cost = 300
-		build_time = 1095
-		fort_level = 0.15
-		levy_size = 0.1
-		garrison_size = 0.5
+		gold_cost = 250
+		build_time = 1460
+		fort_level = 0.25
+		levy_size = 0.075
+		garrison_size = 0.35
 		ai_creation_factor = 94
 		add_number_to_name = no
 
-		extra_tech_building_start = 2.0
+		extra_tech_building_start = 1.5
 	}
 	ct_chaos_dwarf_ziggurat_keep_4 = {
 		desc = ct_chaos_dwarf_ziggurat_keep_1_desc
@@ -1005,449 +1437,731 @@ city = {
 		}
 		upgrades_from = ct_chaos_dwarf_ziggurat_keep_3
 		replaces = ct_training_grounds_4
-		gold_cost = 400
-		build_time = 1460
-		fort_level = 0.15
-		levy_size = 0.125
-		garrison_size = 0.5
+		gold_cost = 350
+		build_time = 1825
+		fort_level = 0.25
+		levy_size = 0.1
+		garrison_size = 0.4
 		ai_creation_factor = 93
 		add_number_to_name = no
 
-		extra_tech_building_start = 2.0
+		extra_tech_building_start = 1.5
 	}
 	ct_chaos_dwarf_ziggurat_keep_5 = {
 		desc = ct_chaos_dwarf_ziggurat_keep_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 6 }
+		trigger = { TECH_CITY_CONSTRUCTION = 5 }
     potential = {
 	     chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = ct_chaos_dwarf_ziggurat_keep_4
 		replaces = ct_training_grounds_5
-		gold_cost = 500
-		build_time = 2190
-		fort_level = 0.15
-		levy_size = 0.15
+		gold_cost = 450
+		build_time = 2555
+		fort_level = 0.5
+		levy_size = 0.125
 		garrison_size = 0.5
 		ai_creation_factor = 92
 		add_number_to_name = no
 
-		extra_tech_building_start = 0.2
+		extra_tech_building_start = 1.5
 	}
 	ct_chaos_dwarf_ziggurat_keep_6 = {
 		desc = ct_chaos_dwarf_ziggurat_keep_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 8 }
+		trigger = { TECH_CITY_CONSTRUCTION = 6 }
+    prerequisites = { ct_wall_4 }
 		potential = {
 	     chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = ct_chaos_dwarf_ziggurat_keep_5
 		replaces = ct_training_grounds_6
-		gold_cost = 500
-		build_time = 2190
-		fort_level = 0.2
-		levy_size = 0.15
+		gold_cost = 450
+		build_time = 2555
+		fort_level = 0.5
+		levy_size = 0.125
 		garrison_size = 0.5
 		ai_creation_factor = 91
 		add_number_to_name = no
 
-		extra_tech_building_start = 0.2
+		extra_tech_building_start = 3
 	}
-
-		ct_cdbarracks_1 = {
-		desc = ct_cdbarracks_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
-		replaces = ct_barracks_1
-		gold_cost = 100
-		build_time = 365
-		heavy_infantry = 40
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 0.5
-	}
-	ct_cdbarracks_2 = {
-		desc = ct_cdbarracks_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
-		prerequisites = { ct_chaos_dwarf_ziggurat_walls_1 }
-		upgrades_from = ct_cdbarracks_1
-		replaces = ct_barracks_2
-		gold_cost = 120
-		build_time = 547
-		heavy_infantry = 45
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 1.0
-	}
-	ct_cdbarracks_3 = {
-		desc = ct_cdbarracks_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 1 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
-		prerequisites = { ct_chaos_dwarf_ziggurat_walls_2 }
-		upgrades_from = ct_cdbarracks_2
-		replaces = ct_barracks_3
-		gold_cost = 200
-		build_time = 730
-		heavy_infantry = 45
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 1.0
-	}
-	ct_cdbarracks_4 = {
-		desc = ct_cdbarracks_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
-		upgrades_from = ct_cdbarracks_3
-		replaces = ct_barracks_4
-		gold_cost = 300
-		build_time = 1095
-		heavy_infantry = 50
-		ai_creation_factor = 92
-
-		extra_tech_building_start = 0.2
-	}
-	ct_cdbarracks_5 = {
-		desc = ct_cdbarracks_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
-		upgrades_from = ct_cdbarracks_4
-		replaces = ct_barracks_5
-		gold_cost = 400
-		build_time = 2190
-		heavy_infantry = 55
-		ai_creation_factor = 91
-
-		extra_tech_building_start = 0.2
-	}
-	ct_cdbarracks_6 = {
-		desc = ct_cdbarracks_1_desc
+  ct_chaos_dwarf_ziggurat_keep_7 = {
+		desc = ct_chaos_dwarf_ziggurat_keep_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 7 }
 		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
+	     chaos_dwarf_building_trigger = yes
 		}
-		}
-		upgrades_from = ct_cdbarracks_5
-		replaces = ct_barracks_6
+		upgrades_from = ct_chaos_dwarf_ziggurat_keep_6
 		gold_cost = 500
-		build_time = 2190
-		heavy_infantry = 60
-		ai_creation_factor = 90
+		build_time = 2920
+		fort_level = 0.5
+		levy_size = 0.15
+		garrison_size = 0.6
+		ai_creation_factor = 91
+		add_number_to_name = no
 
-		extra_tech_building_start = 0.2
+		extra_tech_building_start = 3
 	}
-
-	ct_hobgoblinguards_1 = {
-		desc = ct_hobgoblinguards_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
-		replaces = ct_guard_1
-		gold_cost = 100
-		build_time = 365
-		light_cavalry = 50
-		light_cavalry_morale = -0.25 #They are goblins, after all
-		ai_creation_factor = 96
-
-		extra_tech_building_start = 1.0
-	}
-	ct_hobgoblinguards_2 = {
-		desc = ct_hobgoblinguards_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 2 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
-		prerequisites = { ct_chaos_dwarf_ziggurat_walls_1 }
-		upgrades_from = ct_hobgoblinguards_1
-		replaces = ct_guard_2
-		gold_cost = 120
-		build_time = 547
-		light_cavalry = 60
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 0.2
-	}
-	ct_hobgoblinguards_3 = {
-		desc = ct_hobgoblinguards_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 4 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
-		prerequisites = { ct_chaos_dwarf_ziggurat_walls_2 }
-		upgrades_from = ct_hobgoblinguards_2
-		replaces = ct_guard_3
-		gold_cost = 200
-		build_time = 730
-		light_cavalry = 70
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 0.2
-	}
-	ct_hobgoblinguards_4 = {
-		desc = ct_hobgoblinguards_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 6 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-		}
-		}
-		upgrades_from = ct_hobgoblinguards_3
-		replaces = ct_guard_4
-		gold_cost = 300
-		build_time = 1095
-		light_cavalry = 80
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 0.2
-	}
-	ct_hobgoblinguards_5 = {
-		desc = ct_hobgoblinguards_1_desc
+  ct_chaos_dwarf_ziggurat_keep_8 = {
+		desc = ct_chaos_dwarf_ziggurat_keep_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
 		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
+	     chaos_dwarf_building_trigger = yes
 		}
-		}
-		upgrades_from = ct_hobgoblinguards_4
-		replaces = ct_guard_5
-		gold_cost = 400
-		build_time = 2190
-		light_cavalry = 90
-		ai_creation_factor = 92
-
-		extra_tech_building_start = 0.2
-	}
-
-	ct_cdmine_1 = {
-		desc = ct_cdmine_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		gold_cost = 100
-		build_time = 365
-		tax_income = 2
-		ai_creation_factor = 100
-		light_infantry = 60
-		light_cavalry = 40 #Enforcers
-		extra_tech_building_start = 1.0
-		potential = {
-			culture_group = dawi_zharr_group
-		}
-	}
-	ct_cdmine_2 = {
-		desc = ct_cdmine_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		prerequisites = { ct_chaos_dwarf_ziggurat_keep_1 }
-		upgrades_from = ct_cdmine_1
-		gold_cost = 120
-		build_time = 547
-		tax_income = 2.5
-		ai_creation_factor = 99
-
-		extra_tech_building_start = 10.0 # Never get at start of game
-		potential = {
-			FROM = { culture_group = dawi_zharr_group  }
-		}
-	}
-	ct_cdmine_3 = {
-		desc = ct_cdmine_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		prerequisites = { ct_chaos_dwarf_ziggurat_keep_2 }
-		upgrades_from = ct_cdmine_2
-		gold_cost = 200
-		build_time = 730
-		tax_income = 3
-		ai_creation_factor = 98
-		light_infantry = 60
-		light_cavalry = 60 #Enforcers
-		extra_tech_building_start = 10.0 # Never get at start of game
-		potential = {
-			FROM = { culture_group = dawi_zharr_group  }
-		}
-	}
-	ct_cdmine_4 = {
-		desc = ct_cdmine_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 4 }
-		upgrades_from = ct_cdmine_3
-		gold_cost = 300
-		build_time = 1095
-		tax_income = 4
-		heavy_infantry_defensive = 0.02
-		heavy_infantry_offensive = 0.02
-		artillery_defensive = 0.03
-		artillery_offensive = 0.03
-		light_cavalry_defensive = 0.02
-		light_cavalry_offensive = 0.02
-		ai_creation_factor = 97
-
-		extra_tech_building_start = 10.0 # Never get at start of game
-		potential = {
-			FROM = { culture_group = dawi_zharr_group  }
-		}
-	}
-	ct_cdmine_5 = {
-		desc = ct_cdmine_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		upgrades_from = ct_cdmine_4
-		gold_cost = 400
-		build_time = 2190
-		tax_income = 5
-		ai_creation_factor = 96
-		light_infantry = 60
-		light_cavalry = 80 #Enforcers
-		heavy_infantry_defensive = 0.02
-		heavy_infantry_offensive = 0.02
-		artillery_defensive = 0.03
-		artillery_offensive = 0.03
-		light_cavalry_defensive = 0.02
-		light_cavalry_offensive = 0.02
-		extra_tech_building_start = 10.0 # Never get at start of game
-		potential = {
-			FROM = { culture_group = dawi_zharr_group  }
-		}
-	}
-	ct_cdmine_6 = {
-		desc = ct_cdmine_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 7 }
-		upgrades_from = ct_cdmine_5
+		upgrades_from = ct_chaos_dwarf_ziggurat_keep_7
 		gold_cost = 500
-		build_time = 2190
-		tax_income = 8
-		heavy_infantry_defensive = 0.04
-		heavy_infantry_offensive = 0.04
-		artillery_defensive = 0.05
-		artillery_offensive = 0.05
-		light_cavalry_defensive = 0.04
-		light_cavalry_offensive = 0.04
-		ai_creation_factor = 96
+		build_time = 2920
+		fort_level = 0.5
+		levy_size = 0.15
+		garrison_size = 0.6
+		ai_creation_factor = 91
+		add_number_to_name = no
 
-		extra_tech_building_start = 10.0 # Never get at start of game
-		potential = {
-			FROM = { culture_group = dawi_zharr_group  }
-		}
+		extra_tech_building_start = 3
 	}
 
-	ct_chaos_dwarf_daemonsmith_1 = {
-		desc = ct_chaos_dwarf_daemonsmith_1_desc
-
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+  #Hobgoblin overseers
+  #replaces city barracks, overall slightly stronger levy
+  #Light Infatry w/ 50% more troops, -25% morale (represents slave levies led by hobgoblins)
+  #Archers as vanilla
+  ct_chaos_dwarf_hobgoblin_overseers_1 = {
+    desc = ct_chaos_dwarf_hobgoblin_overseers_desc
+    trigger = { TECH_SKIRMISH = 0 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
 		}
-		prerequisites = { ct_chaos_dwarf_ziggurat_walls_1 }
-		gold_cost = 120
-		build_time = 547
+    replaces = ct_barracks_1
+    gold_cost = 80
+    build_time = 730
 
-		tech_growth_modifier = 0.1
-		artillery = 5
-		heavy_infantry_defensive = 0.01
-		heavy_infantry_offensive = 0.01
+    #morale penalty only applies once!
+    light_infantry_morale = -0.25
+    light_infantry = 90
+    archers = 30
 
-		ai_creation_factor = 93
+    ai_creation_factor = 98
+    add_number_to_name = yes
 
+    extra_tech_building_start = 0.5
+  }
 
-		extra_tech_building_start = 1.0
-	}
-	ct_chaos_dwarf_daemonsmith_2 = {
-		desc = ct_chaos_dwarf_daemonsmith_1_desc
-
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+  ct_chaos_dwarf_hobgoblin_overseers_2 = {
+    desc = ct_chaos_dwarf_hobgoblin_overseers_desc
+    trigger = { TECH_SKIRMISH = 0 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
 		}
-		prerequisites = { ct_chaos_dwarf_ziggurat_walls_2 }
-		upgrades_from = ct_chaos_dwarf_daemonsmith_1
+    replaces = ct_barracks_2
+    upgrades_from = ct_chaos_dwarf_hobgoblin_overseers_1
+    gold_cost = 100
+    build_time = 912
 
-		gold_cost = 120
-		build_time = 547
+    light_infantry = 60
+    archers = 70
 
-		tech_growth_modifier = 0.2
-		artillery = 10
-		heavy_infantry_defensive = 0.01
-		heavy_infantry_offensive = 0.01
+    ai_creation_factor = 98
+    add_number_to_name = yes
 
-		ai_creation_factor = 92
+    extra_tech_building_start = 1.5
+  }
 
-
-
-		extra_tech_building_start = 2.0
-	}
-
-	ct_chaos_dwarf_daemonsmith_3 = {
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		desc = ct_chaos_dwarf_daemonsmith_1_desc
-
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+  ct_chaos_dwarf_hobgoblin_overseers_3 = {
+    desc = ct_chaos_dwarf_hobgoblin_overseers_desc
+    trigger = { TECH_SKIRMISH = 2 }
+    prerequisites = { ct_wall_2 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
 		}
-		upgrades_from = ct_chaos_dwarf_daemonsmith_2
+    replaces = ct_barracks_3
+    upgrades_from = ct_chaos_dwarf_hobgoblin_overseers_2
+    gold_cost = 150
+    build_time = 1095
 
-		gold_cost = 120
-		build_time = 547
+    light_infantry = 120
+    archers = 50
 
-		tech_growth_modifier = 0.25
-		artillery = 10
-		heavy_infantry_defensive = 0.02
-		heavy_infantry_offensive = 0.02
+    ai_creation_factor = 98
+    add_number_to_name = yes
 
-		ai_creation_factor = 92
+    extra_tech_building_start = 1.5
+  }
 
-
-		extra_tech_building_start = 10.0
-	}
-
-	ct_chaos_dwarf_daemonsmith_4 = {
-		trigger = { TECH_CITY_CONSTRUCTION = 6 }
-		desc = ct_chaos_dwarf_daemonsmith_1_desc
-
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+  ct_chaos_dwarf_hobgoblin_overseers_4 = {
+    desc = ct_chaos_dwarf_hobgoblin_overseers_desc
+    trigger = { TECH_SKIRMISH = 4 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
 		}
-		upgrades_from = ct_chaos_dwarf_daemonsmith_3
+    replaces = ct_barracks_4
+    upgrades_from = ct_chaos_dwarf_hobgoblin_overseers_3
+    gold_cost = 250
+    build_time = 1460
 
-		gold_cost = 120
-		build_time = 547
+    light_infantry = 90
+    archers = 90
 
-		tech_growth_modifier = 0.3
-		artillery = 15
-		heavy_infantry_defensive = 0.02
-		heavy_infantry_offensive = 0.02
+    ai_creation_factor = 98
+    add_number_to_name = yes
 
-		ai_creation_factor = 92
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_hobgoblin_overseers_5 = {
+    desc = ct_chaos_dwarf_hobgoblin_overseers_desc
+    trigger = { TECH_SKIRMISH = 5 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_barracks_5
+    upgrades_from = ct_chaos_dwarf_hobgoblin_overseers_4
+    gold_cost = 350
+    build_time = 2555
+
+    light_infantry = 150
+    archers = 70
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_hobgoblin_overseers_6 = {
+    desc = ct_chaos_dwarf_hobgoblin_overseers_desc
+    trigger = { TECH_SKIRMISH = 6 }
+    prerequisites = { ct_wall_4 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_barracks_6
+    upgrades_from = ct_chaos_dwarf_hobgoblin_overseers_5
+    gold_cost = 450
+    build_time = 2555
+
+    light_infantry = 120
+    archers = 110
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 3
+  }
+
+  ct_chaos_dwarf_hobgoblin_overseers_7 = {
+    desc = ct_chaos_dwarf_hobgoblin_overseers_desc
+    trigger = { TECH_SKIRMISH = 7 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    upgrades_from = ct_chaos_dwarf_hobgoblin_overseers_6
+    gold_cost = 500
+    build_time = 2920
+
+    light_infantry = 180
+    archers = 90
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 3
+  }
+
+  ct_chaos_dwarf_hobgoblin_overseers_8 = {
+    desc = ct_chaos_dwarf_hobgoblin_overseers_desc
+    trigger = { TECH_SKIRMISH = 8 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    upgrades_from = ct_chaos_dwarf_hobgoblin_overseers_7
+    gold_cost = 600
+    build_time = 2920
+
+    light_infantry = 150
+    archers = 130
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 3
+  }
+
+  #Hell Pit
+  #replaces city guard building, refocused levy towards skirmish phase
+  #replaces pikes with heavy infantry and artillery
+
+  ct_chaos_dwarf_hell_pit_1 = {
+    desc = ct_chaos_dwarf_hell_pit_desc
+    trigger = { TECH_CITY_CONSTRUCTION = 0 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_guard_1
+    gold_cost = 80
+    build_time = 730
+
+    heavy_infantry = 30
+    artillery = 5
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 0.5
+  }
+
+  ct_chaos_dwarf_hell_pit_2 = {
+    desc = ct_chaos_dwarf_hell_pit_desc
+    trigger = { TECH_CITY_CONSTRUCTION = 0 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_guard_2
+    upgrades_from = ct_chaos_dwarf_hell_pit_1
+    gold_cost = 100
+    build_time = 912
+
+    heavy_infantry = 40
+    artillery = 5
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_hell_pit_3 = {
+    desc = ct_chaos_dwarf_hell_pit_desc
+    trigger = { TECH_CITY_CONSTRUCTION = 2 }
+    prerequisites = { ct_wall_2 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_guard_3
+    upgrades_from = ct_chaos_dwarf_hell_pit_2
+    gold_cost = 150
+    build_time = 1095
+
+    heavy_infantry = 50
+    artillery = 5
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_hell_pit_4 = {
+    desc = ct_chaos_dwarf_hell_pit_desc
+    trigger = { TECH_CITY_CONSTRUCTION = 4 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_guard_4
+    upgrades_from = ct_chaos_dwarf_hell_pit_3
+    gold_cost = 250
+    build_time = 1460
+
+    heavy_infantry = 60
+    artillery = 5
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_hell_pit_5 = {
+    desc = ct_chaos_dwarf_hell_pit_desc
+    trigger = { TECH_CITY_CONSTRUCTION = 5 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_guard_5
+    upgrades_from = ct_chaos_dwarf_hell_pit_4
+    gold_cost = 350
+    build_time = 2555
+
+    heavy_infantry = 70
+    artillery = 5
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_hell_pit_6 = {
+    desc = ct_chaos_dwarf_hell_pit_desc
+    trigger = { TECH_CITY_CONSTRUCTION = 6 }
+    prerequisites = { ct_wall_4 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    upgrades_from = ct_chaos_dwarf_hell_pit_5
+    gold_cost = 450
+    build_time = 2555
+
+    heavy_infantry = 80
+    artillery = 5
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 3
+  }
+
+  ct_chaos_dwarf_hell_pit_7 = {
+    desc = ct_chaos_dwarf_hell_pit_desc
+    trigger = { TECH_CITY_CONSTRUCTION = 7 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    upgrades_from = ct_chaos_dwarf_hell_pit_6
+    gold_cost = 500
+    build_time = 2920
+
+    heavy_infantry = 90
+    artillery = 5
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 3
+  }
+
+  ct_chaos_dwarf_hell_pit_8 = {
+    desc = ct_chaos_dwarf_hell_pit_desc
+    trigger = { TECH_CITY_CONSTRUCTION = 8 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    upgrades_from = ct_chaos_dwarf_hell_pit_7
+    gold_cost = 600
+    build_time = 2920
+
+    heavy_infantry = 100
+    artillery = 5
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 3
+  }
+
+  #Bloodsports
+  #replaces marketplace
+  #vanilla effect modified by faction identity
+  ct_chaos_dwarf_bloodsports_1 = {
+    desc = ct_chaos_dwarf_bloodsports_desc
+    trigger = { TECH_MELEE = 0 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_marketplace_1
+    gold_cost = 80
+    build_time = 730
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 0.5
+  }
+
+  ct_chaos_dwarf_bloodsports_2 = {
+    desc = ct_chaos_dwarf_bloodsports_desc
+    trigger = { TECH_MELEE = 0 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_marketplace_2
+    upgrades_from = ct_chaos_dwarf_bloodsports_1
+    gold_cost = 100
+    build_time = 912
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_bloodsports_3 = {
+    desc = ct_chaos_dwarf_bloodsports_desc
+    trigger = { TECH_MELEE = 2 }
+    prerequisites = { ct_wall_2 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_marketplace_3
+    upgrades_from = ct_chaos_dwarf_bloodsports_2
+    gold_cost = 150
+    build_time = 1095
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_bloodsports_4 = {
+    desc = ct_chaos_dwarf_bloodsports_desc
+    trigger = { TECH_MELEE = 4 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_marketplace_4
+    upgrades_from = ct_chaos_dwarf_bloodsports_3
+    gold_cost = 250
+    build_time = 1460
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_bloodsports_5 = {
+    desc = ct_chaos_dwarf_bloodsports_desc
+    trigger = { TECH_MELEE = 5 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_marketplace_5
+    upgrades_from = ct_chaos_dwarf_bloodsports_4
+    gold_cost = 350
+    build_time = 2555
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_bloodsports_6 = {
+    desc = ct_chaos_dwarf_bloodsports_desc
+    trigger = { TECH_MELEE = 6 }
+    prerequisites = { ct_wall_4 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_marketplace_6
+    upgrades_from = ct_chaos_dwarf_bloodsports_5
+    gold_cost = 450
+    build_time = 2555
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 3
+  }
+
+  ct_chaos_dwarf_bloodsports_7 = {
+    desc = ct_chaos_dwarf_bloodsports_desc
+    trigger = { TECH_MELEE = 7 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    upgrades_from = ct_chaos_dwarf_bloodsports_6
+    gold_cost = 500
+    build_time = 2920
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 3
+  }
+
+  ct_chaos_dwarf_bloodsports_8 = {
+    desc = ct_chaos_dwarf_bloodsports_desc
+    trigger = { TECH_MELEE = 8 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    upgrades_from = ct_chaos_dwarf_bloodsports_7
+    gold_cost = 600
+    build_time = 2920
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 3
+  }
 
 
-		extra_tech_building_start = 10.0
-	}
+  #Loading Cranes
+  #replaces port
+  #vanilla effect modified by faction identity
+
+  ct_chaos_dwarf_loadingcranes_1 = {
+    desc = ct_chaos_dwarf_loadingcranes_desc
+    port = yes
+    trigger = { TECH_CONSTRUCTION = 0 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_port_1
+    gold_cost = 80
+    build_time = 730
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 0.5
+  }
+
+  ct_chaos_dwarf_loadingcranes_2 = {
+    desc = ct_chaos_dwarf_loadingcranes_desc
+    port = yes
+    trigger = { TECH_CONSTRUCTION = 0 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_port_2
+    upgrades_from = ct_chaos_dwarf_loadingcranes_1
+    gold_cost = 100
+    build_time = 912
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_loadingcranes_3 = {
+    desc = ct_chaos_dwarf_loadingcranes_desc
+    port = yes
+    trigger = { TECH_CONSTRUCTION = 2 }
+    prerequisites = { ct_wall_2 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_port_3
+    upgrades_from = ct_chaos_dwarf_loadingcranes_2
+    gold_cost = 150
+    build_time = 1095
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_loadingcranes_4 = {
+    desc = ct_chaos_dwarf_loadingcranes_desc
+    port = yes
+    trigger = { TECH_CONSTRUCTION = 4 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_port_4
+    upgrades_from = ct_chaos_dwarf_loadingcranes_3
+    gold_cost = 250
+    build_time = 1460
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_loadingcranes_5 = {
+    desc = ct_chaos_dwarf_loadingcranes_desc
+    port = yes
+    trigger = { TECH_CONSTRUCTION = 5 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    replaces = ct_port_5
+    upgrades_from = ct_chaos_dwarf_loadingcranes_4
+    gold_cost = 350
+    build_time = 2555
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_loadingcranes_6 = {
+    desc = ct_chaos_dwarf_loadingcranes_desc
+    port = yes
+    trigger = { TECH_CONSTRUCTION = 6 }
+    prerequisites = { ct_wall_4 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    upgrades_from = ct_chaos_dwarf_loadingcranes_5
+    gold_cost = 450
+    build_time = 2555
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 3
+  }
+
+  ct_chaos_dwarf_loadingcranes_7 = {
+    desc = ct_chaos_dwarf_loadingcranes_desc
+    port = yes
+    trigger = { TECH_CONSTRUCTION = 7 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    upgrades_from = ct_chaos_dwarf_loadingcranes_6
+    gold_cost = 500
+    build_time = 2920
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 3
+  }
+
+  ct_chaos_dwarf_loadingcranes_8 = {
+    desc = ct_chaos_dwarf_loadingcranes_desc
+    port = yes
+    trigger = { TECH_CONSTRUCTION = 8 }
+    potential = {
+	     chaos_dwarf_building_trigger = yes
+		}
+    upgrades_from = ct_chaos_dwarf_loadingcranes_7
+    gold_cost = 600
+    build_time = 2920
+
+    tax_income = 3
+
+    ai_creation_factor = 98
+    add_number_to_name = yes
+
+    extra_tech_building_start = 3
+  }
 
 	ct_cdshipyard_1 = {
 		desc = ct_cdshipyard_desc
@@ -1515,586 +2229,667 @@ city = {
 
 		extra_tech_building_start = 0.2
 	}
- }
+
+  #Steamworks
+  #replaces university
+  #less tech advantage (though recall that Chaos Dwarf rulers will tend to have a higher learning score)
+  #adds more artillery troops
+  ct_chaos_dwarf_steamworks_1 = {
+    desc = ct_chaos_dwarf_steamworks_desc
+    trigger = { TECH_CITY_CONSTRUCTION = 1 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    replaces = ct_university_1
+
+    gold_cost = 500
+    build_time = 1460
+
+    artillery = 15
+    economy_techpoints = 0.02
+
+    ai_creation_factor = 91
+    extra_tech_building_start = 0.5
+  }
+
+  ct_chaos_dwarf_steamworks_2 = {
+    desc = ct_chaos_dwarf_steamworks_desc
+    trigger = { TECH_CITY_CONSTRUCTION = 3 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    replaces = ct_university_2
+    upgrades_from = ct_chaos_dwarf_steamworks_1
+
+    gold_cost = 700
+    build_time = 2555
+
+    artillery = 15
+    economy_techpoints = 0.02
+
+    ai_creation_factor = 91
+    extra_tech_building_start = 1.5
+  }
+
+  ct_chaos_dwarf_steamworks_3 = {
+    desc = ct_chaos_dwarf_steamworks_desc
+    trigger = { TECH_CITY_CONSTRUCTION = 5 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    replaces = ct_university_3
+    upgrades_from = ct_chaos_dwarf_steamworks_2
+
+    gold_cost = 700
+    build_time = 2555
+
+    artillery = 15
+    economy_techpoints = 0.02
+
+    ai_creation_factor = 91
+    extra_tech_building_start = 2.5
+  }
+
+  ct_chaos_dwarf_steamworks_4 = {
+    desc = ct_chaos_dwarf_steamworks_desc
+    trigger = { TECH_CITY_CONSTRUCTION = 7 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
+    }
+    upgrades_from = ct_chaos_dwarf_steamworks_3
+
+    gold_cost = 700
+    build_time = 2555
+
+    artillery = 15
+    economy_techpoints = 0.02
+
+    ai_creation_factor = 91
+    extra_tech_building_start = 3
+  }
+}
+
+### Chaos Dwarf Temple ###
+
+#The dark sanctum of Hashut
+#Important not to spam his name through this
+#Levy identity is determined by the available troop types, but ends up as a screened melee force
 
 temple = {
 
   #uses vanilla walls
 
-  #fortifications
-	tp_chaos_dwarf_ziggurat_walls_1 = {
-		desc = tp_chaos_dwarf_ziggurat_walls_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
-    potential = {
-	     chaos_dwarf_building_trigger = yes
-		}
-		replaces = tp_wall_q_1
-		gold_cost = 50
-		build_time = 365
-		fort_level = 1.0
-		tax_income = 0.2
-		ai_creation_factor = 95
+  #uses any_dwarf Dwarfwrought Walls fortification building
 
-		extra_tech_building_start = 1.0
-	}
-	tp_chaos_dwarf_ziggurat_walls_2 = {
-		desc = tp_chaos_dwarf_ziggurat_walls_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
-    potential = {
-	     chaos_dwarf_building_trigger = yes
-		}
-		upgrades_from = tp_chaos_dwarf_ziggurat_walls_1
-		replaces = tp_wall_q_2
-		gold_cost = 50
-		build_time = 547
-		fort_level = 1.0
-		tax_income = 0.2
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 1.0
-	}
-	tp_chaos_dwarf_ziggurat_walls_3 = {
-		desc = tp_chaos_dwarf_ziggurat_walls_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
-    potential = {
-	     chaos_dwarf_building_trigger = yes
-		}
-		upgrades_from = tp_chaos_dwarf_ziggurat_walls_2
-		replaces = tp_wall_q_3
-		gold_cost = 100
-		build_time = 730
-		fort_level = 1.0
-		tax_income = 0.2
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 1.5
-	}
-	tp_chaos_dwarf_ziggurat_walls_4 = {
-		desc = tp_chaos_dwarf_ziggurat_walls_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
-    potential = {
-	     chaos_dwarf_building_trigger = yes
-		}
-		upgrades_from = tp_chaos_dwarf_ziggurat_walls_3
-		replaces = tp_wall_q_4
-		gold_cost = 100
-		build_time = 1095
-		fort_level = 1.0
-		tax_income = 0.2
-		ai_creation_factor = 92
-
-		extra_tech_building_start = 0.2
-	}
-	tp_chaos_dwarf_ziggurat_walls_5 = {
-		desc = tp_chaos_dwarf_ziggurat_walls_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
-    potential = {
-	     chaos_dwarf_building_trigger = yes
-		}
-		upgrades_from = tp_chaos_dwarf_ziggurat_walls_4
-		replaces = tp_wall_q_5
-		gold_cost = 150
-		build_time = 1460
-		fort_level = 1.0
-		tax_income = 0.5
-		ai_creation_factor = 91
-
-		extra_tech_building_start = 0.2
-	}
-
+  #Temple Building
+  #longer build times, lower gold cost, longer overall line
+  #Gameplay "settlement" building. Notional cost and build time, adjusts to lore-friendly levy type
 	tp_chaos_dwarf_ziggurat_keep_1 = {
 		desc = tp_chaos_dwarf_ziggurat_keep_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+			chaos_dwarf_building_trigger = yes
 		}
-		gold_cost = 150
 		replaces = tp_monastery_1
-		build_time = 547
-		fort_level = 2
-		levy_size = 0.1
-		garrison_size = 0.05
-		light_infantry = -45
-		archers = -40
-		heavy_infantry = 100
-		knights = 25
-		levy_reinforce_rate = 1.00
+    prestige_cost = 1
+    build_time = 1
+    fort_level = 2
+    archers = -40
+    light_infantry = -45
+    knights = 25
 		ai_creation_factor = 300 #The AI should always build this when it can
 		add_number_to_name = no
 		liege_piety = 0.05
 		extra_tech_building_start = 1.0
 	}
+  #First "real" level of the line
 	tp_chaos_dwarf_ziggurat_keep_2 = {
 		desc = tp_chaos_dwarf_ziggurat_keep_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+      chaos_dwarf_building_trigger = yes
 		}
-		prerequisites = { tp_wall_1 }
 		upgrades_from = tp_chaos_dwarf_ziggurat_keep_1
 		replaces = tp_monastery_2
-		gold_cost = 200
+		gold_cost = 120
 		build_time = 730
-		fort_level = 0.5
-		levy_size = 0.1
-		garrison_size = 0.1
-		ai_creation_factor = 95
-		add_number_to_name = no
-		liege_piety = 0.05
+		levy_size = 0.05
+		garrison_size = 0.05
+    liege_piety = 0.05
 
-		extra_tech_building_start = 2.0
+		add_number_to_name = no
+
+    ai_creation_factor = 95
+		extra_tech_building_start = 0.5
 	}
-	tp_chaos_dwarf_ziggurat_keep_3 = {
+
+  tp_chaos_dwarf_ziggurat_keep_3 = {
 		desc = tp_chaos_dwarf_ziggurat_keep_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 2 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = tp_chaos_dwarf_ziggurat_keep_2
-		replaces = tp_monastery_3
-		gold_cost = 300
+		replaces = tp_monastery_2
+		gold_cost = 150
 		build_time = 1095
-		fort_level = 1
-		levy_size = 0.1
-		garrison_size = 0.15
-		ai_creation_factor = 94
-		add_number_to_name = no
-		liege_piety = 0.05
+		levy_size = 0.075
+		garrison_size = 0.10
+    liege_piety = 0.05
 
-		extra_tech_building_start = 2.0
+		add_number_to_name = no
+
+    ai_creation_factor = 95
+		extra_tech_building_start = 1.5
 	}
-	tp_chaos_dwarf_ziggurat_keep_4 = {
+
+  tp_chaos_dwarf_ziggurat_keep_4 = {
 		desc = tp_chaos_dwarf_ziggurat_keep_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 4 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+		trigger = { TECH_CITY_CONSTRUCTION = 2 }
+    prerequisites = { tp_wall_2 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = tp_chaos_dwarf_ziggurat_keep_3
-		replaces = tp_monastery_4
-		gold_cost = 400
+		replaces = tp_monastery_3
+		gold_cost = 250
 		build_time = 1460
-		fort_level = 0.15
-		levy_size = 0.125
-		garrison_size = 0.2
-		ai_creation_factor = 93
-		add_number_to_name = no
-		liege_piety = 0.05
+		levy_size = 0.1
+		garrison_size = 0.15
+    liege_piety = 0.05
 
-		extra_tech_building_start = 2.0
+		add_number_to_name = no
+
+    ai_creation_factor = 95
+		extra_tech_building_start = 1.5
 	}
-	tp_chaos_dwarf_ziggurat_keep_5 = {
+
+  tp_chaos_dwarf_ziggurat_keep_5 = {
 		desc = tp_chaos_dwarf_ziggurat_keep_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 6 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+		trigger = { TECH_CITY_CONSTRUCTION = 4 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = tp_chaos_dwarf_ziggurat_keep_4
-		replaces = tp_monastery_5
-		gold_cost = 500
-		build_time = 2190
-		fort_level = 0.15
-		levy_size = 0.15
-		garrison_size = 0.25
-		ai_creation_factor = 92
-		add_number_to_name = no
-		liege_piety = 0.05
+		replaces = tp_monastery_4
+		gold_cost = 350
+		build_time = 1825
+		levy_size = 0.125
+		garrison_size = 0.2
+    liege_piety = 0.05
 
-		extra_tech_building_start = 0.2
+		add_number_to_name = no
+
+    ai_creation_factor = 95
+		extra_tech_building_start = 1.5
 	}
-	tp_chaos_dwarf_ziggurat_keep_6 = {
+
+  tp_chaos_dwarf_ziggurat_keep_6 = {
 		desc = tp_chaos_dwarf_ziggurat_keep_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 8 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+		trigger = { TECH_CITY_CONSTRUCTION = 5 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = tp_chaos_dwarf_ziggurat_keep_5
-		replaces = tp_monastery_6
-		gold_cost = 500
-		build_time = 2190
-		fort_level = 0.2
+		replaces = tp_monastery_5
+		gold_cost = 450
+		build_time = 2555
 		levy_size = 0.15
 		garrison_size = 0.25
-		ai_creation_factor = 91
-		add_number_to_name = no
-		liege_piety = 0.05
+    liege_piety = 0.05
 
-		extra_tech_building_start = 0.2
+		add_number_to_name = no
+
+    ai_creation_factor = 95
+		extra_tech_building_start = 1.5
+	}
+
+  tp_chaos_dwarf_ziggurat_keep_7 = {
+		desc = tp_chaos_dwarf_ziggurat_keep_1_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 6 }
+    prerequisites = { tp_wall_4 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		upgrades_from = tp_chaos_dwarf_ziggurat_keep_6
+		replaces = tp_monastery_6
+		gold_cost = 450
+		build_time = 2555
+		levy_size = 0.15
+		garrison_size = 0.25
+    liege_piety = 0.05
+
+		add_number_to_name = no
+
+    ai_creation_factor = 95
+		extra_tech_building_start = 3
+	}
+
+  tp_chaos_dwarf_ziggurat_keep_8 = {
+		desc = tp_chaos_dwarf_ziggurat_keep_1_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 7 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		upgrades_from = tp_chaos_dwarf_ziggurat_keep_7
+		gold_cost = 500
+		build_time = 2920
+		levy_size = 0.20
+		garrison_size = 0.30
+    liege_piety = 0.05
+
+		add_number_to_name = no
+
+    ai_creation_factor = 95
+		extra_tech_building_start = 3
+	}
+
+  tp_chaos_dwarf_ziggurat_keep_9 = {
+		desc = tp_chaos_dwarf_ziggurat_keep_1_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 8 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		upgrades_from = tp_chaos_dwarf_ziggurat_keep_8
+		gold_cost = 500
+		build_time = 2920
+		levy_size = 0.20
+		garrison_size = 0.30
+    liege_piety = 0.05
+
+		add_number_to_name = no
+
+    ai_creation_factor = 95
+		extra_tech_building_start = 3
 	}
 
   #barracks replacement
+  #provides Zealot Berzerkers, wonderfully mad ladz who the mod should not be without
   tp_chaos_dwarf_barracks_1 = {
 		desc = tp_chaos_dwarf_barracks_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+    potential = {
+      chaos_dwarf_building_trigger = yes
 		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
+    prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
 		replaces = tp_barracks_1
-		gold_cost = 100
-		build_time = 365
-		heavy_infantry = 90
-		ai_creation_factor = 105
-
-		extra_tech_building_start = 1.0
-	}
-	tp_chaos_dwarf_barracks_2 = {
-		desc = tp_chaos_dwarf_barracks_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		prerequisites = { tp_wall_1 }
-		replaces = tp_barracks_2
-		upgrades_from = tp_chaos_dwarf_barracks_1
-		gold_cost = 120
-		build_time = 547
-		heavy_infantry = 95
-		ai_creation_factor = 104
-
-		extra_tech_building_start = 2.0
-	}
-	tp_chaos_dwarf_barracks_3 = {
-		desc = tp_chaos_dwarf_barracks_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 1 }
-		prerequisites = { tp_wall_2 }
-		replaces = tp_barracks_3
-		upgrades_from = tp_chaos_dwarf_barracks_2
-		gold_cost = 200
+		gold_cost = 80
 		build_time = 730
-		heavy_infantry = 100
-		ai_creation_factor = 103
-
-		extra_tech_building_start = 3.0
-	}
-	tp_chaos_dwarf_barracks_4 = {
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		desc = tp_chaos_dwarf_barracks_1_desc
-		replaces = tp_barracks_54
-		trigger = { TECH_CASTLE_CONSTRUCTION = 3 }
-		upgrades_from = tp_chaos_dwarf_barracks_3
-		gold_cost = 300
-		build_time = 1095
-		heavy_infantry = 105
-		ai_creation_factor = 102
-
-		extra_tech_building_start = 3.0
-	}
-	tp_chaos_dwarf_barracks_5 = {
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		desc = tp_chaos_dwarf_barracks_1_desc
-		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
-		upgrades_from = tp_chaos_dwarf_barracks_4
-		replaces = tp_barracks_5
-		gold_cost = 400
-		build_time = 2190
-		heavy_infantry = 110
-		ai_creation_factor = 101
-
-		extra_tech_building_start = 2.0
-	}
-	tp_chaos_dwarf_barracks_6 = {
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		desc = tp_chaos_dwarf_barracks_1_desc
-		trigger = { TECH_CASTLE_CONSTRUCTION = 7 }
-		upgrades_from = tp_chaos_dwarf_barracks_5
-		replaces = tp_barracks_6
-		gold_cost = 500
-		build_time = 2190
-		heavy_infantry = 115
-		ai_creation_factor = 100
-
-		extra_tech_building_start = 0.2
-	}
-
-  #elite barracks replacement
-  tp_bull_centaur_barracks_1 = {
-		desc = tp_bull_centaur_barracks_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		replaces = tp_elite_barracks_1
-		gold_cost = 100
-		build_time = 365
-		knights = 30
-		ai_creation_factor = 89
+		light_infantry = 100
+    light_infantry_morale = 0.125
+		ai_creation_factor = 105
 
 		extra_tech_building_start = 0.5
 	}
-	tp_bull_centaur_barracks_2 = {
-		desc = tp_bull_centaur_barracks_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+	tp_chaos_dwarf_barracks_2 = {
+		desc = tp_chaos_dwarf_barracks_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
 		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		prerequisites = { tp_wall_1 }
-		upgrades_from = tp_bull_centaur_barracks_1
-		replaces = tp_elite_barracks_2
-		gold_cost = 120
-		build_time = 547
-		knights = 40
-		ai_creation_factor = 88
+		replaces = tp_barracks_2
+		upgrades_from = tp_chaos_dwarf_barracks_1
+		gold_cost = 100
+		build_time = 912
+		light_infantry = 125
+    light_infantry_morale = 0.125
+		ai_creation_factor = 104
 
-		extra_tech_building_start = 0.4
+		extra_tech_building_start = 1.5
 	}
-	tp_bull_centaur_barracks_3 = {
-		desc = tp_bull_centaur_barracks_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+	tp_chaos_dwarf_barracks_3 = {
+		desc = tp_chaos_dwarf_barracks_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
 		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+		trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		prerequisites = { tp_wall_2 }
-		upgrades_from = tp_bull_centaur_barracks_2
-		replaces = tp_elite_barracks_3
-		gold_cost = 200
-		build_time = 730
-		knights = 50
-		ai_creation_factor = 87
-
-		extra_tech_building_start = 0.2
-	}
-	tp_bull_centaur_barracks_4 = {
-		desc = tp_bull_centaur_barracks_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
-		upgrades_from = tp_bull_centaur_barracks_3
-		replaces = tp_elite_barracks_4
-		gold_cost = 300
+		replaces = tp_barracks_3
+		upgrades_from = tp_chaos_dwarf_barracks_2
+		gold_cost = 150
 		build_time = 1095
-		knights = 60
-		ai_creation_factor = 86
+		light_infantry = 150
+    light_infantry_morale = 0.125
+		ai_creation_factor = 103
 
-		extra_tech_building_start = 0.2
+		extra_tech_building_start = 1.5
 	}
-	tp_bull_centaur_barracks_5 = {
-		desc = tp_bull_centaur_barracks_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+	tp_chaos_dwarf_barracks_4 = {
+		desc = tp_chaos_dwarf_barracks_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
 		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
-		upgrades_from = tp_bull_centaur_barracks_4
-		replaces = tp_elite_barracks_5
-		gold_cost = 400
-		build_time = 2190
-		knights = 70
-		ai_creation_factor = 85
+    replaces = tp_barracks_4
+		trigger = { TECH_CITY_CONSTRUCTION = 4 }
+		upgrades_from = tp_chaos_dwarf_barracks_3
+		gold_cost = 250
+		build_time = 1460
+		light_infantry = 175
+    light_infantry_morale = 0.125
+		ai_creation_factor = 102
 
-		extra_tech_building_start = 0.2
+		extra_tech_building_start = 1.5
 	}
-	tp_bull_centaur_barracks_6 = {
-		desc = tp_bull_centaur_barracks_1_desc
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+	tp_chaos_dwarf_barracks_5 = {
+		desc = tp_chaos_dwarf_barracks_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
 		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 8 }
-		upgrades_from = tp_bull_centaur_barracks_5
-		replaces = tp_elite_barracks_6
+		trigger = { TECH_CITY_CONSTRUCTION = 5 }
+		upgrades_from = tp_chaos_dwarf_barracks_4
+		replaces = tp_barracks_5
+		gold_cost = 350
+		build_time = 2555
+    light_infantry = 200
+    light_infantry_morale = 0.125
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 1.5
+	}
+	tp_chaos_dwarf_barracks_6 = {
+		desc = tp_chaos_dwarf_barracks_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 6 }
+    prerequisites = { tp_wall_4 }
+		upgrades_from = tp_chaos_dwarf_barracks_5
+		replaces = tp_barracks_6
+		gold_cost = 450
+		build_time = 2555
+    light_infantry = 225
+    light_infantry_morale = 0.125
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 3
+	}
+  tp_chaos_dwarf_barracks_7 = {
+		desc = tp_chaos_dwarf_barracks_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 7 }
+		upgrades_from = tp_chaos_dwarf_barracks_6
 		gold_cost = 500
-		build_time = 2190
-		knights = 80
-		ai_creation_factor = 85
+		build_time = 2920
+    light_infantry = 250
+    light_infantry_morale = 0.125
+		ai_creation_factor = 100
 
-		extra_tech_building_start = 0.2
+		extra_tech_building_start = 3
+	}
+  tp_chaos_dwarf_barracks_8 = {
+		desc = tp_chaos_dwarf_barracks_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 8 }
+		upgrades_from = tp_chaos_dwarf_barracks_7
+		gold_cost = 600
+		build_time = 2920
+    light_infantry = 275
+    light_infantry_morale = 0.125
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 3
 	}
 
+  #Immortals
+  #Elite temple guardians. HI probably understates these guys
+  #elite barracks replacement
+  tp_chaos_dwarf_elite_barracks_1 = {
+		desc = tp_chaos_dwarf_elite_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
+    prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
+		replaces = tp_elite_barracks_1
+		gold_cost = 80
+		build_time = 730
+		heavy_infantry = 45
+		ai_creation_factor = 105
+
+		extra_tech_building_start = 0.5
+	}
+	tp_chaos_dwarf_elite_barracks_2 = {
+		desc = tp_chaos_dwarf_elite_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
+		prerequisites = { tp_wall_1 }
+		replaces = tp_elite_barracks_2
+		upgrades_from = tp_chaos_dwarf_elite_barracks_1
+		gold_cost = 100
+		build_time = 912
+		heavy_infantry = 55
+		ai_creation_factor = 104
+
+		extra_tech_building_start = 1.5
+	}
+	tp_chaos_dwarf_elite_barracks_3 = {
+		desc = tp_chaos_dwarf_elite_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 2 }
+		prerequisites = { tp_wall_2 }
+		replaces = tp_elite_barracks_3
+		upgrades_from = tp_chaos_dwarf_elite_barracks_2
+		gold_cost = 150
+		build_time = 1095
+		heavy_infantry = 65
+		ai_creation_factor = 103
+
+		extra_tech_building_start = 1.5
+	}
+	tp_chaos_dwarf_elite_barracks_4 = {
+		desc = tp_chaos_dwarf_elite_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+    replaces = tp_elite_barracks_4
+		trigger = { TECH_CITY_CONSTRUCTION = 4 }
+		upgrades_from = tp_chaos_dwarf_elite_barracks_3
+		gold_cost = 250
+		build_time = 1460
+		heavy_infantry = 75
+		ai_creation_factor = 102
+
+		extra_tech_building_start = 1.5
+	}
+	tp_chaos_dwarf_elite_barracks_5 = {
+		desc = tp_chaos_dwarf_elite_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 5 }
+		upgrades_from = tp_chaos_dwarf_elite_barracks_4
+		replaces = tp_elite_barracks_5
+		gold_cost = 350
+		build_time = 2555
+    heavy_infantry = 85
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 1.5
+	}
+	tp_chaos_dwarf_elite_barracks_6 = {
+		desc = tp_chaos_dwarf_elite_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 6 }
+    prerequisites = { tp_wall_4 }
+		upgrades_from = tp_chaos_dwarf_elite_barracks_5
+		replaces = tp_elite_barracks_6
+		gold_cost = 450
+		build_time = 2555
+    heavy_infantry = 95
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 3
+	}
+  tp_chaos_dwarf_elite_barracks_7 = {
+		desc = tp_chaos_dwarf_elite_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 7 }
+		upgrades_from = tp_chaos_dwarf_elite_barracks_6
+		gold_cost = 500
+		build_time = 2920
+    heavy_infantry = 105
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 3
+	}
+  tp_chaos_dwarf_elite_barracks_8 = {
+		desc = tp_chaos_dwarf_elite_barracks_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		trigger = { TECH_CITY_CONSTRUCTION = 8 }
+		upgrades_from = tp_chaos_dwarf_elite_barracks_7
+		gold_cost = 600
+		build_time = 2920
+    heavy_infantry = 115
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 3
+	}
+
+  #Bronze Roads
   #town replacement
   #current version breaks lore because CDs don't keep slaves in their temples this way
-  tp_chaos_dwarf_ziggurat_slave_pits_1 = {
-		desc = tp_chaos_dwarf_ziggurat_slave_pits_1_desc
+  tp_chaos_dwarf_bronze_roads_1 = {
+		desc = tp_chaos_dwarf_bronze_roads_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+    prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
 		}
 		replaces = tp_town_1
-		gold_cost = 100
-		build_time = 365
-		tax_income = 1.5
-		light_infantry = 120
-		garrison_size = -0.03 #Counterbalance for insane garrison sizes
-		heavy_infantry_defensive = 0.01
-		artillery_defensive = 0.02
-		knights_defensive = 0.01
-		heavy_infantry_offensive = 0.01
-		artillery_offensive = 0.02
-		knights_offensive = 0.01
+		gold_cost = 80
+		build_time = 730
+		tax_income = 2
+
 		ai_creation_factor = 98
 
-		extra_tech_building_start = 0.3
+		extra_tech_building_start = 0.5
 	}
-	tp_chaos_dwarf_ziggurat_slave_pits_2 = {
-		desc = tp_chaos_dwarf_ziggurat_slave_pits_1_desc
+	tp_chaos_dwarf_bronze_roads_2 = {
+		desc = tp_chaos_dwarf_bronze_roads_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+    potential = {
+      chaos_dwarf_building_trigger = yes
 		}
-		prerequisites = { tp_wall_1 }
 		replaces = tp_town_2
-		upgrades_from = tp_chaos_dwarf_ziggurat_slave_pits_1
-		gold_cost = 120
-		build_time = 547
+		upgrades_from = tp_chaos_dwarf_bronze_roads_1
+		gold_cost = 100
+		build_time = 912
 		tax_income = 2
-		light_infantry = 100
-		garrison_size = -0.03 #Counterbalance for insane garrison sizes
-		heavy_infantry_defensive = 0.01
-		artillery_defensive = 0.02
-		knights_defensive = 0.01
-		heavy_infantry_offensive = 0.01
-		artillery_offensive = 0.02
-		knights_offensive = 0.01
+
 		ai_creation_factor = 96
 
-		extra_tech_building_start = 0.6
+		extra_tech_building_start = 1.5
 	}
-	tp_chaos_dwarf_ziggurat_slave_pits_3 = {
-		desc = tp_chaos_dwarf_ziggurat_slave_pits_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 1 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+	tp_chaos_dwarf_bronze_roads_3 = {
+		desc = tp_chaos_dwarf_bronze_roads_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 2 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
 		}
 		prerequisites = { tp_wall_2 }
 		replaces = tp_town_3
-		upgrades_from = tp_chaos_dwarf_ziggurat_slave_pits_2
-		gold_cost = 200
-		build_time = 730
-		tax_income = 2
-		light_infantry = 115
-		garrison_size = -0.03 #Counterbalance for insane garrison sizes
-		heavy_infantry_defensive = 0.02
-		artillery_defensive = 0.03
-		knights_defensive = 0.02
-		heavy_infantry_offensive = 0.02
-		artillery_offensive = 0.03
-		knights_offensive = 0.02
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 0.2
-	}
-	tp_chaos_dwarf_ziggurat_slave_pits_4 = {
-		desc = tp_chaos_dwarf_ziggurat_slave_pits_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
-		}
-		upgrades_from = tp_chaos_dwarf_ziggurat_slave_pits_3
-		replaces = tp_town_4
-		gold_cost = 300
+		upgrades_from = tp_chaos_dwarf_bronze_roads_2
+		gold_cost = 150
 		build_time = 1095
 		tax_income = 2
-		light_infantry = 120
-		garrison_size = -0.03 #Counterbalance for insane garrison sizes
-		heavy_infantry_defensive = 0.03
-		artillery_defensive = 0.04
-		knights_defensive = 0.03
-		heavy_infantry_offensive = 0.03
-		artillery_offensive = 0.04
-		knights_offensive = 0.03
+
+		ai_creation_factor = 95
+
+		extra_tech_building_start = 1.5
+	}
+	tp_chaos_dwarf_bronze_roads_4 = {
+		desc = tp_chaos_dwarf_bronze_roads_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 4 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		upgrades_from = tp_chaos_dwarf_bronze_roads_3
+		replaces = tp_town_4
+		gold_cost = 250
+		build_time = 1460
+		tax_income = 2
+
 		ai_creation_factor = 94
 
-		extra_tech_building_start = 0.2
+		extra_tech_building_start = 1.5
 	}
-	tp_chaos_dwarf_ziggurat_slave_pits_5 = {
-		desc = tp_chaos_dwarf_ziggurat_slave_pits_1_desc
+	tp_chaos_dwarf_bronze_roads_5 = {
+		desc = tp_chaos_dwarf_bronze_roads_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+    potential = {
+      chaos_dwarf_building_trigger = yes
 		}
-		upgrades_from = tp_chaos_dwarf_ziggurat_slave_pits_4
+		upgrades_from = tp_chaos_dwarf_bronze_roads_4
 		replaces = tp_town_5
-		gold_cost = 400
-		build_time = 2190
+		gold_cost = 350
+		build_time = 2555
 		tax_income = 2
-		light_infantry = 130
-		garrison_size = -0.03 #Counterbalance for insane garrison sizes
-		heavy_infantry_defensive = 0.03
-		artillery_defensive = 0.04
-		knights_defensive = 0.03
-		heavy_infantry_offensive = 0.03
-		artillery_offensive = 0.04
-		knights_offensive = 0.03
+
 		ai_creation_factor = 93
 
-		extra_tech_building_start = 0.2
+		extra_tech_building_start = 1.5
 	}
-	tp_chaos_dwarf_ziggurat_slave_pits_6 = {
-		desc = tp_chaos_dwarf_ziggurat_slave_pits_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 7 }
-		potential = {
-			FROM = {
-				culture_group = dawi_zharr_group
-			}
+	tp_chaos_dwarf_bronze_roads_6 = {
+		desc = tp_chaos_dwarf_bronze_roads_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 6 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
 		}
-		upgrades_from = tp_chaos_dwarf_ziggurat_slave_pits_5
+		upgrades_from = tp_chaos_dwarf_bronze_roads_5
 		replaces = tp_town_6
-		gold_cost = 500
-		build_time = 2190
+    prerequisites = { tp_wall_4 }
+		gold_cost = 450
+		build_time = 2555
 		tax_income = 2
-		light_infantry = 140
-		garrison_size = -0.03 #Counterbalance for insane garrison sizes
-		heavy_infantry_defensive = 0.04
-		artillery_defensive = 0.05
-		knights_defensive = 0.04
-		heavy_infantry_offensive = 0.04
-		artillery_offensive = 0.05
-		knights_offensive = 0.04
+
 		ai_creation_factor = 92
 
-		extra_tech_building_start = 0.2
+		extra_tech_building_start =3
+	}
+  tp_chaos_dwarf_bronze_roads_7 = {
+		desc = tp_chaos_dwarf_bronze_roads_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 7 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		upgrades_from = tp_chaos_dwarf_bronze_roads_6
+		gold_cost = 500
+		build_time = 2920
+		tax_income = 2
+
+		ai_creation_factor = 92
+
+		extra_tech_building_start =3
+	}
+  tp_chaos_dwarf_bronze_roads_8 = {
+		desc = tp_chaos_dwarf_bronze_roads_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 8 }
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+		upgrades_from = tp_chaos_dwarf_bronze_roads_7
+		gold_cost = 500
+		build_time = 2920
+		tax_income = 2
+
+		ai_creation_factor = 92
+
+		extra_tech_building_start =3
 	}
 
   #shipyard
@@ -2102,6 +2897,7 @@ temple = {
 		desc = tp_cdshipyard_desc
 		port = yes
 		trigger = { TECH_NAVAL = 1 }
+    prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
 		potential = {
 			culture_group = dawi_zharr_group
 		}
@@ -2165,23 +2961,26 @@ temple = {
 		extra_tech_building_start = 0.2
 	}
 
-  #Daemosmith Laboratory
-  #Not the worst name and lore, but this is an obvious place to include the K'daai
-  #school replacement
+  #Sorcerer-Prophet Sanctum
+  #K'daai and magic items. Enhance LI because Chaos Dwarfs have so many HI buffs
+  #Requires Wonder Upgrade
+  #Exotic cost - pay with Piety.
 	tp_chaos_dwarf_daemonsmith_1 = {
 		desc = tp_chaos_dwarf_daemonsmith_desc
 		potential = {
 			chaos_dwarf_building_trigger = yes
+      wonder = {
+        has_wonder_upgrade = upgrade_great_hashut_temple
+      }
 		}
-    replaces = tp_school_1
     trigger = { TECH_CITY_CONSTRUCTION = 2 }
-		prerequisites = { tp_wall_1 }
-		gold_cost = 100
+    prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
+		piety_cost = 400
 		build_time = 730
 
     war_elephants = 6
-    heavy_infantry_offensive = 0.1
-    heavy_infantry_defensive = 0.1
+    light_infantry_offensive = 0.125
+    light_infantry_defensive = 0.125
 
 		ai_creation_factor = 93
 		extra_tech_building_start = 0.5
@@ -2191,18 +2990,20 @@ temple = {
 		desc = tp_chaos_dwarf_daemonsmith_desc
 		potential = {
 			chaos_dwarf_building_trigger = yes
+      wonder = {
+        has_wonder_upgrade = upgrade_great_hashut_temple
+      }
 		}
-    replaces = tp_school_2
-    trigger = { TECH_CITY_CONSTRUCTION = 4 }
+    trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		prerequisites = { tp_wall_2 }
 		upgrades_from = tp_chaos_dwarf_daemonsmith_1
 
-		gold_cost = 150
+    piety_cost = 600
 		build_time = 730
 
     war_elephants = 10
-    heavy_infantry_offensive = 0.1
-    heavy_infantry_defensive = 0.1
+    light_infantry_offensive = 0.125
+    light_infantry_defensive = 0.125
 
 		ai_creation_factor = 92
     extra_tech_building_start = 2.0
@@ -2212,17 +3013,20 @@ temple = {
     desc = tp_chaos_dwarf_daemonsmith_desc
 		potential = {
       chaos_dwarf_building_trigger = yes
+      wonder = {
+        has_wonder_upgrade = upgrade_great_hashut_temple
+      }
 		}
-    trigger = { TECH_CITY_CONSTRUCTION = 3 }
+    trigger = { TECH_CITY_CONSTRUCTION = 4 }
     prerequisites = { tp_wall_3 }
     upgrades_from = tp_chaos_dwarf_daemonsmith_2
 
-		gold_cost = 200
+    piety_cost = 1000
 		build_time = 1095
 
     war_elephants = 14
-    heavy_infantry_offensive = 0.1
-    heavy_infantry_defensive = 0.1
+    light_infantry_offensive = 0.125
+    light_infantry_defensive = 0.125
 
 		ai_creation_factor = 92
 		extra_tech_building_start = 10.0
@@ -2232,31 +3036,127 @@ temple = {
     desc = tp_chaos_dwarf_daemonsmith_desc
     potential = {
 			chaos_dwarf_building_trigger = yes
+      wonder = {
+        has_wonder_upgrade = upgrade_great_hashut_temple
+      }
 		}
     trigger = { TECH_CITY_CONSTRUCTION = 6 }
     prerequisites = { tp_wall_4 }
 		upgrades_from = tp_chaos_dwarf_daemonsmith_3
 
-		gold_cost = 250
+    piety_cost = 1250
 		build_time = 1095
 
     war_elephants = 20
-    heavy_infantry_offensive = 0.1
-    heavy_infantry_defensive = 0.1
+    light_infantry_offensive = 0.125
+    light_infantry_defensive = 0.125
 
 		ai_creation_factor = 92
 		extra_tech_building_start = 10.0
 	}
 
+  #Temple Guardians
+  #Bull Centaurs
+  #School replacement. I guess. Don't think too hard about it.
+  tp_bull_centaur_barracks_1 = {
+    desc = tp_bull_centaur_barracks_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+    replaces = tp_school_1
+    trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+    prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
+    gold_cost = 100
+    build_time = 730
+    knights = 35
+    knights_offensive = 0.125
+    knights_defensive = 0.125
+    ai_creation_factor = 89
+
+    extra_tech_building_start = 0.5
+  }
+  tp_bull_centaur_barracks_2 = {
+    desc = tp_bull_centaur_barracks_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+    replaces = tp_school_2
+    trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
+    prerequisites = { tp_wall_1 }
+    upgrades_from = tp_bull_centaur_barracks_1
+    gold_cost = 150
+    build_time = 730
+    knights = 45
+    knights_offensive = 0.125
+    knights_defensive = 0.125
+    ai_creation_factor = 88
+
+    extra_tech_building_start = 0.4
+  }
+  tp_bull_centaur_barracks_3 = {
+    desc = tp_bull_centaur_barracks_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+    trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
+    prerequisites = { tp_wall_2 }
+    upgrades_from = tp_bull_centaur_barracks_2
+    gold_cost = 200
+    build_time = 1095
+    knights = 55
+    knights_offensive = 0.125
+    knights_defensive = 0.125
+    ai_creation_factor = 87
+
+    extra_tech_building_start = 0.2
+  }
+  tp_bull_centaur_barracks_4 = {
+    desc = tp_bull_centaur_barracks_1_desc
+    potential = {
+      chaos_dwarf_building_trigger = yes
+		}
+    trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
+    upgrades_from = tp_bull_centaur_barracks_3
+    gold_cost = 250
+    build_time = 1095
+    knights = 65
+    knights_offensive = 0.125
+    knights_defensive = 0.125
+    ai_creation_factor = 86
+
+    extra_tech_building_start = 0.2
+  }
+
 }
 
-# # Servile Hobgoblin Work Camp # #
+### Servile Hobgoblin Work Camp ###
+
 #"civilized" tribal with more money, no real retinue, light troops but solid forts & garrisons, and bonus trade value to harmonize with slave trader guild
 #goes deeper into the tech tree than conventional tribes so the Satrapy system continues to make sense
 #most buildings have gold_cost to represent their different character
 #but NOTE exceptions to that rule
 
 tribal = {
+
+  #satrap billboard
+  #unbuildable, included so that players looking to improve a tribal holding with buildings find help there
+  tb_satrap_billboard = {
+    desc = tb_satrap_billboard_desc
+    potential = {
+      FROM = {
+        trait = creature_chaos_dwarf
+      }
+    }
+    trigger = {
+      custom_tooltip = {
+        text = tb_satrap_billboard_tt
+        always = no
+      }
+    }
+
+    extra_tech_building_start = 16
+  }
+
 
   #overseers - replaces tribal hillfort
   #long build time, more focused on fortification and garrisons

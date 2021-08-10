@@ -42,7 +42,7 @@ character_event = {
   is_triggered_only = yes
 
   immediate = {
-    create_random_satrap = yes
+    create_random_satrap_effect = yes
     new_character = {
       event_target:target_satrapy = {
         grant_title = PREV
@@ -218,38 +218,57 @@ character_event = {
       if = {
         limit = {
           has_ambition = obj_chaos_dwarf_become_daemonsmith
-          check_variable = {
-            which = hashut_favor
-            value >= 10
+        }
+        #sometimes the ambition migrates from heir to ruler so we need to clear it away
+        if = {
+          limit = {
+            OR = {
+              trait = chaos_dwarf_daemonsmith
+              trait = chaos_dwarf_sorcerer
+            }
           }
+          cancel_ambition = yes
         }
-        character_event = {
-          id = wh_chaos_dwarf.110
-          days = 15
-          random = 10
-        }
-        #keep this somewhat mysterious, mechanics could be made more transparent to the player if desired
-        change_variable = {
-          which = hashut_favor
-          value = -10
+        else_if = {
+          limit = {
+            check_variable = {
+              which = hashut_favor
+              value >= 10
+            }
+          }
+          character_event = {
+            id = wh_chaos_dwarf.110
+            days = 15
+            random = 10
+          }
         }
       }
       #check for becoming sorcerer
       if = {
         limit = {
           has_ambition = obj_chaos_dwarf_become_sorcerer
-          check_variable = {
-            which = hashut_favor
-            value >= 25
-          }
         }
-        #start trial of the sorcerer by pinging the High Priest
-        e_hashut = {
-          holder = {
-            character_event = {
-              id = wh_chaos_dwarf.120
-              days = 30
-              random = 150 #this should be unpredictable
+        if = {
+          limit = {
+            trait = chaos_dwarf_sorcerer
+          }
+          cancel_ambition = yes
+        }
+        else_if = {
+          limit = {
+            check_variable = {
+              which = hashut_favor
+              value >= 25
+            }
+          }
+          #start trial of the sorcerer by pinging the High Priest
+          e_hashut = {
+            holder = {
+              character_event = {
+                id = wh_chaos_dwarf.120
+                days = 30
+                random = 150 #this should be unpredictable
+              }
             }
           }
         }
@@ -352,7 +371,7 @@ character_event = {
   character_event = {
     id = wh_chaos_dwarf.110
     desc = EVTDESC_wh_chaos_dwarf.110
-    picture = GFX_evt_hashut_rune
+    picture = GFX_evt_chaos_dwarf_spell
     border = GFX_event_normal_frame_religion
     is_triggered_only = yes
 
@@ -362,10 +381,45 @@ character_event = {
 
     option = {
       name = EVTOPT_praise_hashut
-      add_trait = chaos_dwarf_daemonsmith
-      add_character_modifier = {
-        name = magic_power_1
-        duration = -1
+      if = {
+        #in rare cases the ambition seems to "migrate" to the wrong character, so check that the character should be trying to become a daemonsmith
+        limit = {
+          NOR = {
+            trait = chaos_dwarf_sorcerer
+            trait = chaos_dwarf_daemonsmith
+          }
+        }
+        add_trait = chaos_dwarf_daemonsmith
+        add_character_modifier = {
+          name = magic_power_1
+          duration = -1
+        }
+        hidden_tooltip = {
+          #keep this somewhat mysterious, mechanics could be made more transparent to the player if desired
+          change_variable = {
+            which = hashut_favor
+            value = -10
+          }
+          #add a Bull Centaur guardian if appropriate
+          if = {
+            limit = {
+              any_owned_bloodline = {
+                has_bloodline_flag = chaos_dwarf_sorcerer_statue_bloodline
+              }
+              NOT = {
+                has_character_flag = bull_centaur_guardian_flag
+              }
+            }
+            character_event = {
+              id = wh_chaos_dwarf.180
+              days = 7
+            }
+          }
+        }
+      }
+      #this failsafe stops this event from turning sorcerers into daemonsmiths
+      else = {
+        cancel_ambition = yes
       }
     }
   }
@@ -448,7 +502,7 @@ character_event = {
 
     #offer a great sacrifice
     option = {
-      name = EVTOPTA_wh_chaos_dwarf.122
+      name = EVTOPT_hashut_great_sacrifice
       trigger = {
         ai = no
         #Surely Hashut deserves two years of your income?
@@ -456,7 +510,7 @@ character_event = {
       }
       scaled_wealth = -2
       custom_tooltip = {
-        text = hashut_sacrifice_many_fine_slaves_tt
+        text = hashut_sacrifice_satisfaction_tt
         character_event = {
           id = wh_chaos_dwarf.123
           days = 3
@@ -466,7 +520,7 @@ character_event = {
 
     #offer an adequate sacrifice
     option = {
-      name = EVTOPTB_wh_chaos_dwarf.122
+      name = EVTOPT_hashut_good_sacrifice
       trigger = {
         ai = no
         scaled_wealth = 0.5
@@ -474,7 +528,7 @@ character_event = {
       #Hashut gives you something to remember your stingines though
       add_maimed_trait_effect = yes
       custom_tooltip = {
-        text = hashut_sacrifice_some_slaves_tt
+        text = hashut_sacrifice_burned_tt
         character_event = {
           id = wh_chaos_dwarf.123
           days = 3
@@ -542,6 +596,20 @@ character_event = {
     }
 
     immediate = {
+      #squeeze in a check for AI sorcerers to gain a bull centaur, once in a lifetime
+      if = {
+        limit = {
+          is_ruler = yes
+          ai = yes
+          #uses same flag as player taking this decision in case of inheritance
+          NOT = { has_character_flag = summoned_bull_centaur_by_decision }
+        }
+        random = {
+          chance = 35
+          spawn_bull_centaur_effect = yes
+          set_character_flag = summoned_bull_centaur_by_decision
+        }
+      }
       #basic cost of doing business
       hashut_favor_major_penalty_effect = yes
       #high priest bonus
@@ -573,59 +641,59 @@ character_event = {
         limit = {
           age <= 100
         }
-        hashut_favor_medium_bonus_effect = yes
-      }
-      if = {
-        limit = {
-          age <= 125
-        }
-        hashut_favor_small_bonus_effect = yes
+        hashut_favor_major_bonus_effect = yes
       }
       if = {
         limit = {
           age <= 150
         }
+        hashut_favor_medium_bonus_effect = yes
+      }
+      if = {
+        limit = {
+          age <= 250
+        }
+        hashut_favor_small_bonus_effect = yes
+      }
+      if = {
+        limit = {
+          age <= 400
+        }
         hashut_favor_trivial_bonus_effect = yes
       }
       if = {
         limit = {
-          age >= 200
-          hashut_favor_trivial_penalty_effect = yes
+          age <= 600
         }
+        hashut_favor_trivial_bonus_effect = yes
       }
       if = {
         limit = {
-          age >= 250
+          age <= 1000
         }
         hashut_favor_trivial_penalty_effect = yes
       }
       if = {
         limit = {
-          age >= 300
+          age <= 1500
+        }
+        hashut_favor_trivial_penalty_effect = yes
+      }
+      if = {
+        limit = {
+          age >= 2000
         }
         hashut_favor_small_penalty_effect = yes
       }
       if = {
         limit = {
-          age >= 350
+          age >= 2200
         }
-        hashut_favor_small_penalty_effect = yes
+        hashut_favor_medium_penalty_effectr_penalty_effect = yes
       }
       if = {
         limit = {
-          age >= 400
-        }
-        hashut_favor_medium_penalty_effect = yes
-      }
-      if = {
-        limit = {
-          age >= 500
-        }
-        hashut_favor_major_penalty_effect = yes
-      }
-      if = {
-        limit = {
-          age >= 600
+          age >= 2400
         }
         hashut_favor_major_penalty_effect = yes
       }
@@ -633,6 +701,13 @@ character_event = {
       if = {
         limit = {
           trait = stubborn
+        }
+        hashut_favor_small_bonus_effect = yes
+      }
+      #Barons can't effectively use the sacrifice decision, so this compensates them
+      if = {
+        limit = {
+          real_tier = BARON
         }
         hashut_favor_small_bonus_effect = yes
       }
@@ -719,7 +794,7 @@ character_event = {
       #delay next effect
       change_variable = {
         which = hashut_favor
-        value = 20
+        value = 50
       }
     }
 
@@ -740,7 +815,7 @@ character_event = {
       #delay next effect
       change_variable = {
         which = hashut_favor
-        value = 20
+        value = 50
       }
     }
 
@@ -762,7 +837,7 @@ character_event = {
       #delay next effect
       change_variable = {
         which = hashut_favor
-        value = 20
+        value = 50
       }
     }
 
@@ -785,7 +860,10 @@ character_event = {
     option = {
       name = EVTOPT_hashut_grant_me
       set_graphical_culture = dawi_zharr_stoned
-			death = { death_reason = death_trait }
+      create_bloodline = {
+        type = chaos_dwarf_sorcerer_statue_bloodline
+      }
+			death = { death_reason = death_sorcerers_curse }
     }
   }
 
@@ -822,7 +900,7 @@ character_event = {
   	id = wh_chaos_dwarf.171
 
   	desc = EVTDESC_chaos_dwarf_great_taurus_trained
-  	picture = "GFX_evt_great_taurus"
+  	picture = GFX_evt_chaos_dwarf_monster_ride
 
   	is_triggered_only = yes
 
@@ -861,7 +939,7 @@ character_event = {
   	id = wh_chaos_dwarf.173
 
   	desc = EVTDESC_chaos_dwarf_lamassu_trained
-  	picture = "GFX_evt_lamassu"
+  	picture = GFX_evt_chaos_dwarf_monster_ride
 
   	is_triggered_only = yes
 
@@ -869,7 +947,291 @@ character_event = {
   		name = EVTOPTA_chaos_dwarf_lamassu_trained
   		add_artifact = lamassu_mount
   	}
+  }
 
+  #Pregnancy - consult Hashut
+  character_event = {
+    id = wh_chaos_dwarf.174
+    hide_window = yes
+
+    religion = hashut
+
+    is_triggered_only = yes
+
+    trigger = {
+      trait = creature_chaos_dwarf
+      is_female = yes
+    }
+
+    immediate = {
+      #chance of bull centaur
+      random = {
+        chance = 5
+        character_event = {
+          id = wh_chaos_dwarf.175
+          days = 18
+          random = 18
+        }
+      }
+    }
+
+  }
+
+  character_event = {
+    id = wh_chaos_dwarf.175
+    desc = EVTDESC_wh_chaos_dwarf.175
+    picture = GFX_evt_hashut
+
+    is_triggered_only = yes
+
+    immediate = {
+      set_character_flag = bull_centaur_mother
+      add_trait = troubled_pregnancy
+    }
+
+    option = {
+      name = EVTOPT_hashut_guidance
+      piety = 100
+      tooltip = { add_trait = troubled_pregnancy }
+    }
+  }
+
+  #bull centaur birth - child
+  #it's not possible to be playing the child
+  character_event ={
+    id = wh_chaos_dwarf.176
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    trigger = {
+      mother = {
+        has_character_flag = bull_centaur_mother
+      }
+    }
+
+    immediate = {
+      add_trait = chaos_dwarf_bull_centaur
+      random_list = {
+        20 = {
+          NOT = {
+            trait = strong
+          }
+          add_trait = strong
+        }
+        25 = {
+          trigger = {
+            NOR = {
+              trait = strong
+              trait = tough
+            }
+          }
+          add_trait = tough
+        }
+        30 = {
+          trigger = {
+            NOR = {
+              trait = strong
+              trait = tough
+              trait = hardy
+            }
+          }
+          add_trait = hardy
+        }
+        15 = {
+          #null result
+        }
+      }
+      mother = {
+        character_event = {
+          id = wh_chaos_dwarf.177
+        }
+      }
+      father = {
+        character_event = {
+          id = wh_chaos_dwarf.178
+        }
+      }
+    }
+
+  }
+
+  #bull centaur birth - mother :(
+  character_event = {
+    id = wh_chaos_dwarf.177
+    desc = EVTDESC_wh_chaos_dwarf.177
+    picture = GFX_evt_bad_news_female
+
+    is_triggered_only = yes
+
+    option = {
+      name = EVTOPT_hashut_grant_me
+      #bearing a bull centaur implies the favor of Hashut
+      prestige = 1000
+      piety = 1000
+      custom_tooltip = {
+        text = bull_centaur_mother_birth_tt
+        hashut_favor_medium_bonus_effect = yes
+        clr_character_flag = bull_centaur_mother
+        #in the lore, this is usually fatal
+        random_list = {
+          #normal outcome
+          60 = {
+            modifier = {
+              factor = 0.5
+              is_strong_trigger = yes
+            }
+            modifier = {
+              factor = 2
+              is_weak_trigger = yes
+            }
+            if = {
+      				limit = { is_invincible_trigger = yes }
+      				antideath_effect = yes
+      				break = yes
+      			}
+            death = {
+              death_reason = death_childbirth
+            }
+          }
+          #not dead, but dying
+          20 = {
+            modifier = {
+              factor = 0.5
+              trait = stubborn
+            }
+            add_trait = incapable
+            add_trait = stressed
+            add_trait = feeble
+            health = -5
+          }
+          # terribly injured but might recover (RIP and non-RIP versions)
+          15 = {
+            trigger = {
+              has_dlc = "Reapers"
+            }
+            add_trait = wounded
+            add_trait = mangled
+            add_trait = stressed
+            add_trait = feeble
+            health = -5
+          }
+          15 = {
+            trigger = {
+              NOT = {
+                has_dlc = "Reapers"
+              }
+            }
+            add_trait = wounded
+            add_trait = maimed
+            add_trait = stressed
+            add_trait = feeble
+            health = -5
+          }
+          #best case scenario - physically and emotionally hurt, but should recover
+          5 = {
+            modifier = {
+              factor = 5
+              is_strong_trigger = yes
+            }
+            modifier = {
+              factor = 5
+              OR = {
+                trait = chaos_dwarf_daemonsmith
+                trait = chaos_dwarf_sorcerer
+              }
+            }
+            add_trait = wounded
+            add_trait = stressed
+          }
+        }
+      }
+    }
+
+  }
+
+  #bull centaur birth - father
+  character_event = {
+    id = wh_chaos_dwarf.178
+    desc = EVTDESC_wh_chaos_dwarf.178
+    picture = GFX_evt_bull_centaur
+
+    is_triggered_only = yes
+
+    immediate = {
+      hashut_favor_trivial_bonus_effect = yes
+    }
+
+    option = {
+      name = EVTOPT_praise_hashut
+      #high rewards, but remember that Chaos Dwarfs have fertility throttling events
+      piety = 500
+      prestige = 500
+    }
+  }
+
+  #wholesome bull centaur guardian appears :3
+  #landing for inheriting minors
+  character_event = {
+    id = wh_chaos_dwarf.179
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    religion = hashut
+    max_age = 15
+
+    trigger = {
+      any_owned_bloodline = {
+        has_bloodline_flag = chaos_dwarf_sorcerer_statue_bloodline
+      }
+      NOT = {
+        has_character_flag = bull_centuar_guardian_flag
+      }
+    }
+
+    immediate = {
+      character_event = {
+        id = wh_chaos_dwarf.180
+        days = 7
+      }
+    }
+  }
+
+  #event to create and announce bull centaur guardian
+  character_event = {
+    id = wh_chaos_dwarf.180
+    desc = EVTDESC_wh_chaos_dwarf.180
+    picture = GFX_evt_bull_centaur
+
+    is_triggered_only = yes
+
+    immediate = {
+      spawn_bull_centaur_effect = yes
+      new_character = {
+        save_event_target_as = bull_centaur_guardian
+      }
+      random_bloodline = {
+        limit = {
+          has_bloodline_flag = chaos_dwarf_sorcerer_statue_bloodline
+        }
+        founder = {
+          save_event_target_as = sorcerer_ancestor
+        }
+      }
+    }
+
+    option = {
+      name = EVTOPT_praise_hashut
+      event_target:bull_centaur_guardian = {
+        opinion = {
+          modifier = opinion_loyal_servant
+          who = ROOT
+          years = 1000
+        }
+      }
+      set_character_flag = bull_centuar_guardian_flag
+    }
   }
 
   #events for sacrifices to Hashut
@@ -920,6 +1282,285 @@ character_event = {
   		}
   		ai_chance = { factor = 10 }
   	}
+  }
+
+  #Ordeal of Fire - Hashut Baptism
+  character_event = {
+    id = wh_chaos_dwarf.191
+    desc = EVTDESC_wh_chaos_dwarf.191
+    picture = GFX_evt_altar_hashut
+
+    is_triggered_only = yes
+
+    immediate = {
+      event_target:ordeal_of_fire_child = {
+        set_character_flag = ordeal_of_fire_parents_made_sacrifices
+      }
+    }
+
+    ## All options are intended to allow some debt (realism)
+    #Great sacrifice
+    option = {
+      name = EVTOPT_hashut_great_sacrifice
+      trigger = {
+        scaled_wealth = 1.8
+      }
+      scaled_wealth = -2
+      piety = 100
+      custom_tooltip = {
+        text = hashut_sacrifice_satisfaction_tt
+        hashut_favor_small_bonus_effect = yes
+        event_target:ordeal_of_fire_child = {
+          hashut_favor_small_bonus_effect = yes
+          set_character_flag = ordeal_of_fire_great_sacrifice_made
+          random_list = {
+            20 = {
+              set_character_flag = ordeal_of_fire_blessed_with_strength
+            }
+            20 = {
+              set_character_flag = ordeal_of_fire_blessed_with_intelligence
+            }
+          }
+          character_event = {
+            id = wh_chaos_dwarf.193
+            months = 72
+            random = 60
+          }
+        }
+      }
+    }
+
+    #Good sacrifice
+    option = {
+      name = EVTOPT_hashut_good_sacrifice
+      trigger = {
+        scaled_wealth = 0.35
+      }
+      scaled_wealth = -0.5
+      piety = 50
+      custom_tooltip = {
+        text = hashut_sacrifice_satisfaction_tt
+        hashut_favor_trivial_bonus_effect = yes
+        event_target:ordeal_of_fire_child = {
+          set_character_flag = ordeal_of_fire_good_sacrifice_made
+          random_list = {
+            20 = {
+              set_character_flag = ordeal_of_fire_blessed_with_strength
+            }
+            20 = {
+              set_character_flag = ordeal_of_fire_blessed_with_intelligence
+            }
+          }
+          character_event = {
+            id = wh_chaos_dwarf.193
+            months = 72
+            random = 60
+          }
+        }
+      }
+    }
+
+    #Decent sacrifice
+    option = {
+      name = EVTOPT_hashut_decent_sacrifice
+      scaled_wealth = -0.135
+      piety = 25
+      custom_tooltip = {
+        text = hashut_sacrifice_satisfaction_tt
+        hashut_favor_trivial_bonus_effect = yes
+        event_target:ordeal_of_fire_child = {
+          hashut_favor_trivial_bonus_effect = yes
+        }
+      }
+    }
+  }
+
+  #AI decision event - player uses targeted decision
+  character_event = {
+    id = wh_chaos_dwarf.192
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    religion = hashut
+
+    #By intent, this trigger rules out player's AI spouse paying for sacrifices
+    trigger = {
+      father = {
+        ai = yes
+      }
+      mother = {
+        ai = yes
+      }
+      OR = {
+        father = {
+          is_ruler = yes
+        }
+        mother = {
+          is_ruler = yes
+        }
+      }
+    }
+
+    immediate = {
+      ROOT = {
+        save_event_target_as = ordeal_of_fire_child
+      }
+      father = {
+        if = {
+          limit = {
+            is_ruler = yes
+            scaled_wealth = 0.135
+          }
+          random = {
+            chance = 75
+            #could be more sophisticated
+            character_event = {
+              id = wh_chaos_dwarf.191
+              days = 1
+            }
+            break = yes #don't need to ask mom to pay if dad's already agreed
+          }
+        }
+      }
+      mother = {
+        if = {
+          limit = {
+            is_ruler = yes
+            scaled_wealth = 0.135
+          }
+          random = {
+            chance = 75
+            #could be more sophisticated
+            character_event = {
+              id = wh_chaos_dwarf.191
+              days = 1
+            }
+          }
+        }
+      }
+    }
+  }
+
+  #payoff for big sacrifices
+  character_event = {
+    id = wh_chaos_dwarf.193
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+      if = {
+        limit = { has_character_flag = ordeal_of_fire_blessed_with_intelligence }
+        if = {
+          limit = { has_character_flag = ordeal_of_fire_good_sacrifice_made }
+          trigger_switch = {
+            on_trigger = trait
+            genius = {
+              if = {
+                limit = { trait = shrewd }
+                change_learning = 4
+              }
+              else = {
+                add_trait = shrewd
+              }
+            }
+            brilliant = {
+              add_trait = genius
+              change_learning = 2
+            }
+            quick = { add_trait = genius }
+            smart = { add_trait = brilliant }
+            bright = { add_trait = quick }
+            fallback = { add_trait = smart }
+          }
+        }
+        if = {
+          limit = { has_character_flag = ordeal_of_fire_great_sacrifice_made }
+          trigger_switch = {
+            on_trigger = trait
+            genius = {
+              if = {
+                limit = { trait = shrewd }
+                change_martial = 2
+                change_stewardship = 2
+                change_learning = 6
+              }
+              else = {
+                add_trait = shrewd
+                change_learning = 3
+              }
+            }
+            brilliant = {
+              add_trait = genius
+              add_trait = shrewd
+            }
+            quick = {
+              add_trait = genius
+              change_learning = 3
+            }
+            smart = { add_trait = genius }
+            bright = { add_trait = brilliant }
+            fallback = { add_trait = quick }
+          }
+        }
+      }
+      if = {
+        limit = { has_character_flag = ordeal_of_fire_blessed_with_strength }
+        if = {
+          limit = { has_character_flag = ordeal_of_fire_good_sacrifice_made }
+          trigger_switch = {
+            on_trigger = trait
+            strong = {
+              if = {
+                limit = { trait = robust }
+                change_martial = 2
+                health = 0.5
+                fertility = 0.10
+              }
+              else = {
+                add_trait = robust
+              }
+            }
+            tough = { add_trait = strong }
+            hardy = { add_trait = tough }
+            fallback = { add_trait = hardy }
+          }
+        }
+        if = {
+          limit = { has_character_flag = ordeal_of_fire_great_sacrifice_made }
+          trigger_switch = {
+            on_trigger = trait
+            strong = {
+              if = {
+                limit = { trait = robust }
+                change_martial = 3
+                health = 1
+                fertility = 0.15
+              }
+              else = {
+                add_trait = robust
+                change_martial = 1
+                fertility = 0.05
+              }
+            }
+            tough = {
+              add_trait = strong
+              if = {
+                limit = { trait = robust }
+                change_martial = 1
+                fertility = 0.05
+              }
+              else = {
+                add_trait = robust
+              }
+            }
+            hardy = { add_trait = strong }
+            fallback = { add_trait = tough }
+          }
+        }
+      }
+    }
   }
 
 ### Council politics ###
@@ -986,7 +1627,7 @@ character_event = {
   character_event = {
     id = wh_chaos_dwarf.201
     desc = EVTDESC_wh_chaos_dwarf.201
-    picture = GFX_evt_chaos_dwarf_sorcerer
+    picture = GFX_evt_chaos_dwarf_spell
     border = GFX_event_normal_frame_religion
 
     is_triggered_only = yes

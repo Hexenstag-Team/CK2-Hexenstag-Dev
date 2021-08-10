@@ -50,3 +50,29 @@ character_event = {
 		}
 	}
 }
+
+#Engineering comes to the Empire
+narrative_event = {
+	id = wh_wonders.2
+	title = EVTTITLE_wh_wonders.2
+	desc = EVTDESC_wh_wonders.2
+	picture = GFX_evt_empire_master_engineer
+
+	trigger = {
+		FROM = {
+			has_wonder_upgrade = upgrade_engineering_school
+		}
+		FROMFROMFROM = {
+			de_jure_liege_or_above = e_the_empire
+		}
+	}
+
+	immediate = {
+		set_global_flag = imperial_engineering_school
+	}
+
+	option = {
+		name = EVTOPT_wh_wonders.2
+		prestige = 1000
+	}
+}

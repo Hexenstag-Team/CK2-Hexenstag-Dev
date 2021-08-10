@@ -430,7 +430,7 @@ knights_of_bretonnia = {
 			combat_rating = 30
 		}
 		powers = {
-			virtue_grail_power #Grail Virtues (the one that matches the characterâ€™s Virtue of Knighthood)
+			virtue_grail_power #Grail Virtues (the one that matches the character’s Virtue of Knighthood)
 		}
 	}
 
@@ -9110,6 +9110,7 @@ engineers_guild = {
 					rank = 1
 				}
 			}
+			NOT = { is_vampire_visible_trigger = yes }
 		}
 		OR = {
 			culture_group = dwarf_group
@@ -9134,6 +9135,9 @@ engineers_guild = {
 			trait = creature_dwarf
 			trait = creature_human
 		}
+		NOT ={
+			religion_group = chaos_gods_group
+		}
 		hidden_trigger = {
 			OR = {
 				culture_group = tilean_group
@@ -9149,6 +9153,7 @@ engineers_guild = {
 			culture_group = tilean_group
 			culture_group = imperial_group
 		}
+		NOT = { is_vampire_visible_trigger = yes }
 	}
 
 	potential = {
@@ -9198,7 +9203,7 @@ engineers_guild = {
 			learning = 2
 			stewardship = 1
 			#church_opinion = -10
-			build_time_modifier  = -0.25
+			build_time_modifier  = -0.10
 		}
 		decisions = {
 			deploy_war_machines
@@ -9214,7 +9219,7 @@ engineers_guild = {
 			learning = 3
 			stewardship = 1
 			#church_opinion = -10
-			build_time_modifier = -0.50
+			build_time_modifier = -0.25
 		}
 		decisions = {
 			engineer_masterwork
@@ -9343,21 +9348,25 @@ engineers_guild = {
 
 	startup_populate = {
 	    trigger = {
-			ai = yes
-	    	controls_religion = no
-			age = 16
-			is_in_society = no
-			is_dumb_trigger = no
-			NOT = { is_priest = yes }
-			OR = {
-				culture_group = dwarf_group
-				culture_group = tilean_group
-			}
 			OR = {
 				trait = engineer
 				trait = dwarf_engineer
 				is_smart_trigger = yes
 			}
+			NOT = {
+				religion_group = chaos_gods_group
+				is_vampire_visible_trigger = yes
+			}
+	    controls_religion = no
+			age = 16
+			is_in_society = no
+			is_dumb_trigger = no
+			OR = {
+				culture_group = dwarf_group
+				culture_group = tilean_group
+			}
+			NOT = { is_priest = yes }
+			ai = yes
 		}
 	}
 }
@@ -9386,16 +9395,16 @@ mad_inventors = {
 		}
 		OR = {
 			trait = creature_goblin
-			trait = creature_chaos_dwarf
+			trait = creature_hobgoblin
+			AND = {
+				trait = creature_chaos_dwarf
+				is_tribal = no
+			}
 		}
 		learning = 10
 		NOR = {
 			is_nomadic = yes
 			mercenary = yes
-		}
-		OR = {
-			trait = creature_goblin
-			NOT = { is_tribal = yes }
 		}
 		age = 16
 	}
@@ -9404,6 +9413,7 @@ mad_inventors = {
 		OR = {
 			trait = creature_chaos_dwarf
 			trait = creature_goblin
+			trait = creature_hobgoblin
 		}
 	}
 
@@ -9411,6 +9421,7 @@ mad_inventors = {
 		OR = {
 			trait = creature_chaos_dwarf
 			trait = creature_goblin
+			trait = creature_hobgoblin
 		}
 		age = 16
 		#If something else is added here, it could break apprenticeship. Create an event if they can get kicked out. title_hermetics_apprentice
@@ -9593,6 +9604,7 @@ mad_inventors = {
 			OR = {
 				trait = creature_chaos_dwarf
 				trait = creature_goblin
+				trait = creature_hobgoblin
 			}
 			OR = {
 				is_smart_trigger = yes

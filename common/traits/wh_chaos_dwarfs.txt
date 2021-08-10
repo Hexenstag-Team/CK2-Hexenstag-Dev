@@ -1,0 +1,20 @@
+chaos_dwarf_bull_centaur = {
+	is_visible = {
+		visible_trait = yes
+	}
+	cannot_marry = yes
+	cannot_inherit = yes
+	diplomacy = -1
+	martial = 4
+	intrigue = -1
+	stewardship = -1
+	learning = 1
+	combat_rating = 20
+	fertility = -10
+	hashut_opinion = 10
+	#knights in Chaos Dwarf armies are bull centaurs, so bull centaur commanders have synergy here
+	command_modifier = {
+		speed = 0.1
+		knights = 0.1
+	}
+}

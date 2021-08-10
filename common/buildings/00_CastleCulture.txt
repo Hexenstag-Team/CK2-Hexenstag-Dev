@@ -13,3 +13,1934 @@
 
  # Castle
 ####
+castle = {
+
+    ### IMPERIAL HUMAN CULTURE LEVIES ###
+    # Should look a lot like vanilla because these are humans
+
+    # Altdorf. Largest dwarf community in Huamn lands, so gets stout Heavy Infantry
+    # This is super-synergistic with other HI benefits in the area but let's see if they go full SigMarine before panicking
+    ca_imperial_altdorf_troops_1 = {
+        desc = ca_imperial_altdorf_troops_desc
+        potential = {
+            province = 299
+        }
+        trigger = {
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 300
+        build_time = 730
+        knights = 15
+        knights_morale = 0.15
+        levy_reinforce_rate = 0.05
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_altdorf_troops_2 = {
+        desc = ca_imperial_altdorf_troops_desc
+        potential = {
+            province = 299
+        }
+        trigger = {
+            TECH_CAVALRY = 1
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_altdorf_troops_1
+        gold_cost = 400
+        build_time = 1095
+        knights = 20
+        knights_morale = 0.15
+        levy_reinforce_rate = 0.05
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_altdorf_troops_3 = {
+        desc = ca_imperial_altdorf_troops_desc
+        potential = {
+            province = 299
+        }
+        trigger = {
+            TECH_CAVALRY = 2
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_altdorf_troops_2
+        gold_cost = 500
+        build_time = 2190
+        knights = 25
+        knights_morale = 0.15
+        levy_reinforce_rate = 0.05
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_altdorf_troops_4 = {
+        desc = ca_imperial_altdorf_troops_desc
+        potential = {
+            province = 299
+        }
+        trigger = {
+            TECH_CAVALRY = 4
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_altdorf_troops_3
+        gold_cost = 600
+        build_time = 2190
+        knights = 30
+        knights_morale = 0.15
+        levy_reinforce_rate = 0.05
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_averland_troops_1 = {
+        desc = ca_imperial_averland_troops_desc
+        potential = {
+            culture = averlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            FROM = {
+                culture = averlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 200
+        build_time = 730
+        knights = 15
+        knights_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_averland_troops_2 = {
+        desc = ca_imperial_averland_troops_desc
+        potential = {
+            culture = averlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 1
+            FROM = {
+                culture = averlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_averland_troops_1
+        gold_cost = 300
+        build_time = 1095
+        knights = 20
+        knights_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_averland_troops_3 = {
+        desc = ca_imperial_averland_troops_desc
+        potential = {
+            culture = averlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 2
+            FROM = {
+                culture = averlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_averland_troops_2
+        gold_cost = 400
+        build_time = 2190
+        knights = 25
+        knights_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_averland_troops_4 = {
+        desc = ca_imperial_averland_troops_desc
+        potential = {
+            culture = averlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 4
+            FROM = {
+                culture = averlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_averland_troops_3
+        gold_cost = 500
+        build_time = 2190
+        knights = 30
+        knights_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    # Hochland - the Jaegerkorps
+    # Mixed skrimisher troops, sliding from archer-focused to gunpowder-focused
+    ca_imperial_hochland_troops_1 = {
+        desc = ca_imperial_hochland_troops_desc
+        potential = {
+            culture = hochlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            FROM = {
+                culture = hochlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 200
+        build_time = 730
+        archers = 60
+        archers_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_hochland_troops_2 = {
+        desc = ca_imperial_hochland_troops_desc
+        potential = {
+            culture = hochlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 1
+            FROM = {
+                culture = hochlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_hochland_troops_1
+        gold_cost = 300
+        build_time = 1095
+        archers = 20
+        archers_offensive = 0.05
+        gunpowder = 30
+        gunpowder_offensive = 0.1
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_hochland_troops_3 = {
+        desc = ca_imperial_hochland_troops_desc
+        potential = {
+            culture = hochlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 2
+            FROM = {
+                culture = hochlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_hochland_troops_2
+        gold_cost = 400
+        build_time = 2190
+        archers = 20
+        archers_offensive = 0.05
+        gunpowder = 40
+        gunpowder_offensive = 0.1
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_hochland_troops_4 = {
+        desc = ca_imperial_hochland_troops_desc
+        potential = {
+            culture = hochlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 4
+            FROM = {
+                culture = hochlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_hochland_troops_3
+        gold_cost = 500
+        build_time = 2190
+        gunpowder = 60
+        gunpowder_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    # Marienburg troops - Knights Mariner
+    # Considered giving these guys added tradevalue but the convergence of trade routes gives Marienburg a solid bonus anyway
+    ca_imperial_marienburg_troops_1 = {
+        desc = ca_imperial_marienburg_troops_desc
+        potential = {
+            province = 222
+        }
+        trigger = {
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 300
+        build_time = 730
+        galleys = 7
+        heavy_infantry = 30
+        heavy_infantry_morale = 0.075
+        heavy_infantry_defensive = 0.075
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_marienburg_troops_2 = {
+        desc = ca_imperial_marienburg_troops_desc
+        potential = {
+            province = 222
+        }
+        trigger = {
+            TECH_NAVAL = 1
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_marienburg_troops_1
+        gold_cost = 400
+        build_time = 1095
+        galleys = 8
+        heavy_infantry = 40
+        heavy_infantry_morale = 0.075
+        heavy_infantry_defensive = 0.075
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_marienburg_troops_3 = {
+        desc = ca_imperial_marienburg_troops_desc
+        potential = {
+            province = 222
+        }
+        trigger = {
+            TECH_NAVAL = 2
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_marienburg_troops_2
+        gold_cost = 500
+        build_time = 2190
+        galleys = 9
+        heavy_infantry = 50
+        heavy_infantry_morale = 0.075
+        heavy_infantry_defensive = 0.075
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_marienburg_troops_4 = {
+        desc = ca_imperial_marienburg_troops_desc
+        potential = {
+            province = 222
+        }
+        trigger = {
+            TECH_NAVAL = 4
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_marienburg_troops_3
+        gold_cost = 600
+        build_time = 2190
+        galleys = 10
+        heavy_infantry = 60
+        heavy_infantry_morale = 0.075
+        heavy_infantry_defensive = 0.075
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+
+    #Middenheim (the city, not the province) troops - the Knights of the White Wolf
+    #We get to sneak in extra defensive bonuses here to represent the city's natural advantages
+    ca_imperial_middenheim_troops_1 = {
+        desc = ca_imperial_middenheim_troops_desc
+        potential = {
+            province = 274
+        }
+        trigger = {
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 300
+        build_time = 730
+        knights = 15
+        knights_offensive = 0.15
+        fort_level = 1
+        garrison_size = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_middenheim_troops_2 = {
+        desc = ca_imperial_middenheim_troops_desc
+        potential = {
+            province = 274
+        }
+        trigger = {
+            TECH_CAVALRY = 1
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_middenheim_troops_1
+        gold_cost = 400
+        build_time = 1095
+        knights = 20
+        knights_offensive = 0.15
+        fort_level = 1
+        garrison_size = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_middenheim_troops_3 = {
+        desc = ca_imperial_middenheim_troops_desc
+        potential = {
+            province = 274
+        }
+        trigger = {
+            TECH_CAVALRY = 2
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_middenheim_troops_2
+        gold_cost = 500
+        build_time = 2190
+        knights = 25
+        knights_offensive = 0.15
+        fort_level = 1
+        garrison_size = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_middenheim_troops_4 = {
+        desc = ca_imperial_middenheim_troops_desc
+        potential = {
+            province = 274
+        }
+        trigger = {
+            TECH_CAVALRY = 4
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_middenheim_troops_3
+        gold_cost = 600
+        build_time = 2190
+        knights = 30
+        knights_offensive = 0.15
+        fort_level = 1
+        garrison_size = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    # Middenland (the province, not the city) troops - Drakwald Patrol
+    # Light Infantry here because a) there isn't much of that in the list and b) it's roughly "I was going to kill a boar with this spear but I'll kill you instead" gear
+    ca_imperial_middenland_troops_1 = {
+        desc = ca_imperial_middenland_troops_desc
+        potential = {
+            OR = {
+                culture = drakwalder
+                culture = middenlander
+            }
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            FROM = {
+                OR = {
+                    culture = drakwalder
+                    culture = middenlander
+                }
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 200
+        build_time = 730
+        light_infantry = 60
+        light_infantry_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_middenland_troops_2 = {
+        desc = ca_imperial_middenland_troops_desc
+        potential = {
+            OR = {
+                culture = drakwalder
+                culture = middenlander
+            }
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 1
+            FROM = {
+                OR = {
+                    culture = drakwalder
+                    culture = middenlander
+                }
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_middenland_troops_1
+        gold_cost = 300
+        build_time = 1095
+        light_infantry = 80
+        light_infantry_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_middenland_troops_3 = {
+        desc = ca_imperial_middenland_troops_desc
+        potential = {
+            OR = {
+                culture = drakwalder
+                culture = middenlander
+            }
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 2
+            FROM = {
+                OR = {
+                    culture = drakwalder
+                    culture = middenlander
+                }
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_middenland_troops_2
+        gold_cost = 400
+        build_time = 2190
+        light_infantry = 100
+        light_infantry_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_middenland_troops_4 = {
+        desc = ca_imperial_middenland_troops_desc
+        potential = {
+            OR = {
+                culture = drakwalder
+                culture = middenlander
+            }
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 4
+            FROM = {
+                OR = {
+                    culture = drakwalder
+                    culture = middenlander
+                }
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_middenland_troops_3
+        gold_cost = 500
+        build_time = 2190
+        light_infantry = 120
+        light_infantry_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_neuesland_troops_1 = {
+        desc = ca_imperial_neuesland_troops_desc
+        potential = {
+            culture = neueslander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            FROM = {
+                culture = neueslander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 200
+        build_time = 730
+        archers = 30
+        archers_morale = 0.075
+        light_infantry = 30
+        light_infantry_morale = 0.075
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    #Neuesland Troops - Neuesland Soldaten
+    ca_imperial_neuesland_troops_2 = {
+        desc = ca_imperial_neuesland_troops_desc
+        potential = {
+            culture = neueslander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 1
+            FROM = {
+                culture = neueslander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_neuesland_troops_1
+        gold_cost = 300
+        build_time = 1095
+        archers = 40
+        archers_morale = 0.075
+        light_infantry = 40
+        light_infantry_morale = 0.075
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_neuesland_troops_3 = {
+        desc = ca_imperial_neuesland_troops_desc
+        potential = {
+            culture = neueslander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 2
+            FROM = {
+                culture = neueslander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_neuesland_troops_2
+        gold_cost = 400
+        build_time = 2190
+        archers = 50
+        archers_morale = 0.075
+        light_infantry = 50
+        light_infantry_morale = 0.075
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_neuesland_troops_4 = {
+        desc = ca_imperial_neuesland_troops_desc
+        potential = {
+            culture = neueslander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 4
+            FROM = {
+                culture = neueslander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_neuesland_troops_3
+        gold_cost = 500
+        build_time = 2190
+        archers = 60
+        archers_morale = 0.075
+        light_infantry = 60
+        light_infantry_morale = 0.075
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    #Nordland troops - the Nordland Mariners
+    ca_imperial_nordland_troops_1 = {
+        desc = ca_imperial_nordland_troops_desc
+        potential = {
+            culture = nordlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            FROM = {
+                culture = nordlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 200
+        build_time = 730
+        light_infantry = 60
+        light_infantry_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_nordland_troops_2 = {
+        desc = ca_imperial_nordland_troops_desc
+        potential = {
+            culture = nordlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 1
+            FROM = {
+                culture = nordlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_nordland_troops_1
+        gold_cost = 300
+        build_time = 1095
+        light_infantry = 80
+        light_infantry_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_nordland_troops_3 = {
+        desc = ca_imperial_nordland_troops_desc
+        potential = {
+            culture = nordlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 2
+            FROM = {
+                culture = nordlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_nordland_troops_2
+        gold_cost = 400
+        build_time = 2190
+        light_infantry = 100
+        light_infantry_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_nordland_troops_4 = {
+        desc = ca_imperial_nordland_troops_desc
+        potential = {
+            culture = nordlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 4
+            FROM = {
+                culture = nordlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_nordland_troops_3
+        gold_cost = 500
+        build_time = 2190
+        light_infantry = 120
+        light_infantry_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    #Nuln troops
+    #Gunnery specialists. It would be nice to use artillery here but that's too limiting for other building options
+    ca_imperial_nuln_troops_1 = {
+        desc = ca_imperial_nuln_troops_desc
+        potential = {
+            province = 309
+        }
+        trigger = {
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 300
+        build_time = 730
+        gunpowder = 30
+        gunpowder_offensive = 0.15
+        levy_reinforce_rate = 0.05
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_nuln_troops_2 = {
+        desc = ca_imperial_nuln_troops_desc
+        potential = {
+            province = 309
+        }
+        trigger = {
+            TECH_CULTURE_FLEX = 1
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_nuln_troops_1
+        gold_cost = 400
+        build_time = 1095
+        gunpowder = 40
+        gunpowder_offensive = 0.15
+        levy_reinforce_rate = 0.05
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_nuln_troops_3 = {
+        desc = ca_imperial_nuln_troops_desc
+        potential = {
+            province = 309
+        }
+        trigger = {
+            TECH_CULTURE_FLEX = 2
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_nuln_troops_2
+        gold_cost = 500
+        build_time = 2190
+        gunpowder = 50
+        gunpowder_offensive = 0.15
+        levy_reinforce_rate = 0.05
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_nuln_troops_4 = {
+        desc = ca_imperial_nuln_troops_desc
+        potential = {
+            province = 309
+        }
+        trigger = {
+            TECH_CULTURE_FLEX = 4
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_nuln_troops_3
+        gold_cost = 600
+        build_time = 2190
+        gunpowder = 60
+        gunpowder_offensive = 0.15
+        levy_reinforce_rate = 0.05
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    #Ostermark troops - Huntsmen
+    ca_imperial_ostermark_troops_1 = {
+        desc = ca_imperial_ostermark_troops_desc
+        potential = {
+            culture = ostermarker
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            FROM = {
+                culture = ostermarker
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 200
+        build_time = 730
+        archers = 60
+        archers_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_ostermark_troops_2 = {
+        desc = ca_imperial_ostermark_troops_desc
+        potential = {
+            culture = ostermarker
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 1
+            FROM = {
+                culture = ostermarker
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_ostermark_troops_1
+        gold_cost = 300
+        build_time = 1095
+        archers = 30
+        archers_defensive = 0.05
+        gunpowder = 25
+        gunpowder_defensive = 0.10
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_ostermark_troops_3 = {
+        desc = ca_imperial_ostermark_troops_desc
+        potential = {
+            culture = ostermarker
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 2
+            FROM = {
+                culture = ostermarker
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_ostermark_troops_2
+        gold_cost = 400
+        build_time = 2190
+        archers = 40
+        archers_defensive = 0.05
+        gunpowder = 30
+        gunpowder_defensive = 0.1
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_ostermark_troops_4 = {
+        desc = ca_imperial_ostermark_troops_desc
+        potential = {
+            culture = ostermarker
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 4
+            FROM = {
+                culture = ostermarker
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_ostermark_troops_3
+        gold_cost = 500
+        build_time = 2190
+        gunpowder = 60
+        gunpowder_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    #Ostland troops - Rangers
+    ca_imperial_ostland_troops_1 = {
+        desc = ca_imperial_ostland_troops_desc
+        potential = {
+            culture = ostlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            FROM = {
+                culture = ostlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 200
+        build_time = 730
+        archers = 60
+        archers_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_ostland_troops_2 = {
+        desc = ca_imperial_ostland_troops_desc
+        potential = {
+            culture = ostlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 1
+            FROM = {
+                culture = ostlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_ostland_troops_1
+        gold_cost = 300
+        build_time = 1095
+        archers = 30
+        archers_defensive = 0.05
+        gunpowder = 25
+        gunpowder_defensive = 0.10
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_ostland_troops_3 = {
+        desc = ca_imperial_ostland_troops_desc
+        potential = {
+            culture = ostlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 2
+            FROM = {
+                culture = ostlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_ostland_troops_2
+        gold_cost = 400
+        build_time = 2190
+        archers = 40
+        archers_defensive = 0.05
+        gunpowder = 30
+        gunpowder_defensive = 0.1
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_ostland_troops_4 = {
+        desc = ca_imperial_ostland_troops_desc
+        potential = {
+            culture = ostlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 4
+            FROM = {
+                culture = ostlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_ostland_troops_3
+        gold_cost = 500
+        build_time = 2190
+        gunpowder = 60
+        gunpowder_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    #Reikland Troops
+    ca_imperial_reikland_troops_1 = {
+        desc = ca_imperial_reikland_troops_desc
+        potential = {
+            culture = reiklander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            FROM = {
+                culture = reiklander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 200
+        build_time = 730
+        gunpowder = 30
+        gunpowder_morale = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_reikland_troops_2 = {
+        desc = ca_imperial_reikland_troops_desc
+        potential = {
+            culture = reiklander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 1
+            FROM = {
+                culture = reiklander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_reikland_troops_1
+        gold_cost = 300
+        build_time = 1095
+        gunpowder = 40
+        gunpowder_morale = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_reikland_troops_3 = {
+        desc = ca_imperial_reikland_troops_desc
+        potential = {
+            culture = reiklander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 2
+            FROM = {
+                culture = reiklander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_reikland_troops_2
+        gold_cost = 400
+        build_time = 2190
+        gunpowder = 50
+        gunpowder_morale = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_reikland_troops_4 = {
+        desc = ca_imperial_reikland_troops_desc
+        potential = {
+            culture = reiklander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 4
+            FROM = {
+                culture = reiklander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_reikland_troops_3
+        gold_cost = 500
+        build_time = 2190
+        gunpowder = 60
+        gunpowder_morale = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    #Stirland Troops - Stirland Yeomen
+    ca_imperial_stirland_troops_1 = {
+        desc = ca_imperial_stirland_troops_desc
+        potential = {
+            culture = stirlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            FROM = {
+                culture = stirlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 200
+        build_time = 730
+        archers = 60
+        archers_morale = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_stirland_troops_2 = {
+        desc = ca_imperial_stirland_troops_desc
+        potential = {
+            culture = stirlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 1
+            FROM = {
+                culture = stirlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_stirland_troops_1
+        gold_cost = 300
+        build_time = 1095
+        archers = 80
+        archers_morale = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_stirland_troops_3 = {
+        desc = ca_imperial_stirland_troops_desc
+        potential = {
+            culture = stirlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 2
+            FROM = {
+                culture = stirlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_stirland_troops_2
+        gold_cost = 400
+        build_time = 2190
+        archers = 100
+        archers_morale = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_stirland_troops_4 = {
+        desc = ca_imperial_stirland_troops_desc
+        potential = {
+            culture = stirlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 4
+            FROM = {
+                culture = stirlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_stirland_troops_3
+        gold_cost = 500
+        build_time = 2190
+        archers = 120
+        archers_morale = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    #Talabecland troops - Men of the Great Forest
+    ca_imperial_talabecland_troops_1 = {
+        desc = ca_imperial_talabecland_troops_desc
+        potential = {
+            culture = talabeclander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            FROM = {
+                culture = talabeclander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 200
+        build_time = 730
+        archers = 60
+        archers_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_talabecland_troops_2 = {
+        desc = ca_imperial_talabecland_troops_desc
+        potential = {
+            culture = talabeclander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 1
+            FROM = {
+                culture = talabeclander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_talabecland_troops_1
+        gold_cost = 300
+        build_time = 1095
+        archers = 80
+        archers_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_talabecland_troops_3 = {
+        desc = ca_imperial_talabecland_troops_desc
+        potential = {
+            culture = talabeclander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 2
+            FROM = {
+                culture = talabeclander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_talabecland_troops_2
+        gold_cost = 400
+        build_time = 2190
+        archers = 100
+        archers_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_talabecland_troops_4 = {
+        desc = ca_imperial_talabecland_troops_desc
+        potential = {
+            culture = talabeclander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 4
+            FROM = {
+                culture = talabeclander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_talabecland_troops_3
+        gold_cost = 500
+        build_time = 2190
+        archers = 120
+        archers_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+
+    #Talabheim troops - the Knights of the Verdant Field
+    #This is where we give Talabheim its special fortification bonus, so the buildings are more expensive
+    ca_imperial_talabheim_troops_1 = {
+        desc = ca_imperial_talabheim_troops_desc
+        potential = {
+            province = 324
+        }
+        trigger = {
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 300
+        build_time = 730
+        archers = 60
+        archers_defensive = 0.15
+        fort_level = 1
+        garrison_size = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_talabheim_troops_2 = {
+        desc = ca_imperial_talabheim_troops_desc
+        potential = {
+            province = 324
+        }
+        trigger = {
+            TECH_SKIRMISH = 1
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_talabheim_troops_1
+        gold_cost = 400
+        build_time = 1095
+        archers = 80
+        archers_defensive = 0.15
+        fort_level = 1
+        garrison_size = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_talabheim_troops_3 = {
+        desc = ca_imperial_talabheim_troops_desc
+        potential = {
+            province = 324
+        }
+        trigger = {
+            TECH_SKIRMISH = 2
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_talabheim_troops_2
+        gold_cost = 500
+        build_time = 2190
+        archers = 100
+        archers_defensive = 0.15
+        fort_level = 1
+        garrison_size = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_talabheim_troops_4 = {
+        desc = ca_imperial_talabheim_troops_desc
+        potential = {
+            province = 324
+        }
+        trigger = {
+            TECH_SKIRMISH = 4
+            FROM = {
+                culture_group = imperial_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_talabheim_troops_3
+        gold_cost = 600
+        build_time = 2190
+        archers = 120
+        archers_defensive = 0.15
+        fort_level = 1
+        garrison_size = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    #Wissenland troops - Flagellants
+    ca_imperial_wissenland_troops_1 = {
+        desc = ca_imperial_wissenland_troops_desc
+        potential = {
+            OR = {
+                culture = sollander
+                culture = wissenlander
+            }
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            FROM = {
+                OR = {
+                    culture = sollander
+                    culture = wissenlander
+                }
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 200
+        build_time = 730
+        light_infantry = 60
+        light_infantry_morale = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_wissenland_troops_2 = {
+        desc = ca_imperial_wissenland_troops_desc
+        potential = {
+            OR = {
+                culture = sollander
+                culture = wissenlander
+            }
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 1
+            FROM = {
+                OR = {
+                    culture = sollander
+                    culture = wissenlander
+                }
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_wissenland_troops_1
+        gold_cost = 300
+        build_time = 1095
+        light_infantry = 80
+        light_infantry_morale = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_wissenland_troops_3 = {
+        desc = ca_imperial_wissenland_troops_desc
+        potential = {
+            OR = {
+                culture = sollander
+                culture = wissenlander
+            }
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 2
+            FROM = {
+                OR = {
+                    culture = sollander
+                    culture = wissenlander
+                }
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_wissenland_troops_2
+        gold_cost = 400
+        build_time = 2190
+        light_infantry = 100
+        light_infantry_morale = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_wissenland_troops_4 = {
+        desc = ca_imperial_wissenland_troops_desc
+        potential = {
+            OR = {
+                culture = sollander
+                culture = wissenlander
+            }
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 4
+            FROM = {
+                OR = {
+                    culture = sollander
+                    culture = wissenlander
+                }
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_wissenland_troops_3
+        gold_cost = 500
+        build_time = 2190
+        light_infantry = 120
+        light_infantry_morale = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    #Westerland Troops - Swampers
+    ca_imperial_westerland_troops_1 = {
+        desc = ca_imperial_westerland_troops_desc
+        potential = {
+            culture = westerlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            FROM = {
+                culture = westerlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 200
+        build_time = 730
+        gunpowder = 30
+        gunpowder_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_westerland_troops_2 = {
+        desc = ca_imperial_westerland_troops_desc
+        potential = {
+            culture = westerlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 1
+            FROM = {
+                culture = westerlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_westerland_troops_1
+        gold_cost = 300
+        build_time = 1095
+        gunpowder = 40
+        gunpowder_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_westerland_troops_3 = {
+        desc = ca_imperial_westerland_troops_desc
+        potential = {
+            culture = westerlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 2
+            FROM = {
+                culture = westerlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_westerland_troops_2
+        gold_cost = 400
+        build_time = 2190
+        gunpowder = 50
+        gunpowder_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_imperial_westerland_troops_4 = {
+        desc = ca_imperial_westerland_troops_desc
+        potential = {
+            culture = westerlander
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 4
+            FROM = {
+                culture = westerlander
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_imperial_westerland_troops_3
+        gold_cost = 500
+        build_time = 2190
+        gunpowder = 60
+        gunpowder_defensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+
+}

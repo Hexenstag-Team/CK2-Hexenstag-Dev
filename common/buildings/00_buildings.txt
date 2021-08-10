@@ -50,8 +50,6 @@ city = {
 					culture_group = orc_group
 					culture_group = goblin_group
 					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
 					culture = nehekharan
 				}
 			}
@@ -77,8 +75,6 @@ city = {
 					culture_group = orc_group
 					culture_group = goblin_group
 					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
 					culture = nehekharan
 				}
 			}
@@ -105,8 +101,6 @@ city = {
 					culture_group = orc_group
 					culture_group = goblin_group
 					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
 					culture = nehekharan
 				}
 			}
@@ -132,8 +126,6 @@ city = {
 					culture_group = orc_group
 					culture_group = goblin_group
 					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
 					culture = nehekharan
 				}
 			}
@@ -159,8 +151,6 @@ city = {
 					culture_group = orc_group
 					culture_group = goblin_group
 					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
 					culture = nehekharan
 				}
 			}
@@ -4032,710 +4022,6 @@ city = {
 		extra_tech_building_start = 0.8
 	}
 
-	#Taverns, levy reinforcement, land organisation and local movement speed up to 20%
-	ct_taverns_1 = {
-		desc = ct_taverns_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-					culture_group = bretonnian_group
-					culture_group = kislevite_group
-				}
-			}
-		}
-		gold_cost = 200
-		build_time = 510
-		land_organisation  = 0.02
-		levy_reinforce_rate = 0.05
-		local_movement_speed = 0.05
-
-		ai_creation_factor = 90
-
-		extra_tech_building_start = 1.2
-	}
-	ct_taverns_2 = {
-		desc = ct_taverns_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 2 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-					culture_group = bretonnian_group
-					culture_group = kislevite_group
-				}
-			}
-		}
-		upgrades_from = ct_taverns_1
-		gold_cost = 350
-		build_time = 1095
-		land_organisation  = 0.03
-		levy_reinforce_rate = 0.05
-		local_movement_speed = 0.05
-
-		ai_creation_factor = 89
-
-		extra_tech_building_start = 2.1
-	}
-	ct_taverns_3 = {
-		desc = ct_taverns_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 4 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-					culture_group = bretonnian_group
-					culture_group = kislevite_group
-				}
-			}
-		}
-		upgrades_from = ct_taverns_2
-		gold_cost = 500
-		build_time = 2190
-		land_organisation  = 0.05
-		levy_reinforce_rate = 0.10
-		local_movement_speed = 0.10
-
-		ai_creation_factor = 88
-
-		extra_tech_building_start = 1.6
-	}
-	#Coaching Inns, enhanced taverns, provides levy reinforcement, land organisation and local movement speed up to 30%
-	ct_impcoaching_inns_1 = {
-		desc = ct_impcoaching_inns_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		potential = {
-			location = {
-				NOT = { culture = sudenburger }
-				OR = {
-					culture_group = halfling_old_world
-					culture_group = imperial_group
-				}
-			}
-		}
-		gold_cost = 200
-		build_time = 510
-		land_organisation  = 0.02
-		levy_reinforce_rate = 0.10
-		local_movement_speed = 0.05
-
-		ai_creation_factor = 90
-
-		extra_tech_building_start = 1.2
-	}
-	ct_impcoaching_inns_2 = {
-		desc = ct_impcoaching_inns_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 2 }
-		potential = {
-			location = {
-				NOT = { culture = sudenburger }
-				OR = {
-					culture_group = halfling_old_world
-					culture_group = imperial_group
-				}
-			}
-		}
-		upgrades_from = ct_impcoaching_inns_1
-		gold_cost = 350
-		build_time = 1095
-		land_organisation  = 0.03
-		levy_reinforce_rate = 0.15
-		local_movement_speed = 0.10
-
-		ai_creation_factor = 89
-
-		extra_tech_building_start = 2.1
-	}
-	ct_impcoaching_inns_3 = {
-		desc = ct_impcoaching_inns_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 4 }
-		potential = {
-			location = {
-				NOT = { culture = sudenburger }
-				OR = {
-					culture_group = halfling_old_world
-					culture_group = imperial_group
-				}
-			}
-		}
-		upgrades_from = ct_impcoaching_inns_2
-		gold_cost = 500
-		build_time = 2190
-		land_organisation  = 0.05
-		levy_reinforce_rate = 0.15
-		local_movement_speed = 0.15
-
-		ai_creation_factor = 88
-
-		extra_tech_building_start = 1.6
-	}
-
-	#Farmlands, terrain locked, trade value and garrison size
-	ct_human_farmlands_1 = {
-		desc = ct_human_farmlands_1_desc
-		potential = {
-			OR = {
-				terrain = farmlands
-				terrain = plains
-			}
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		gold_cost = 200
-		build_time = 365
-		tradevalue = 2
-		garrison_size = 0.05
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 1.2
-	}
-	ct_human_farmlands_2 = {
-		desc = ct_human_farmlands_1_desc
-		potential = {
-			OR = {
-				terrain = farmlands
-				terrain = plains
-			}
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		upgrades_from = ct_human_farmlands_1
-		gold_cost = 300
-		build_time = 547
-		tradevalue = 3
-		garrison_size = 0.05
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 1.0
-	}
-	ct_human_farmlands_3 = {
-		desc = ct_human_farmlands_1_desc
-		potential = {
-			OR = {
-				terrain = farmlands
-				terrain = plains
-			}
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		upgrades_from = ct_human_farmlands_2
-		gold_cost = 400
-		build_time = 1045
-		tradevalue = 5
-		garrison_size = 0.05
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 0.8
-	}
-	#Mines, terrain locked, trade value and garrison size
-	ct_human_mines_1 = {
-		desc = ct_human_mines_1_desc
-		potential = {
-			OR = {
-				terrain = hills
-				terrain = mountain
-			}
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		gold_cost = 200
-		build_time = 365
-		tradevalue = 2
-		garrison_size = 0.05
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 1.2
-	}
-	ct_human_mines_2 = {
-		desc = ct_human_mines_1_desc
-		potential = {
-			OR = {
-				terrain = hills
-				terrain = mountain
-			}
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		upgrades_from = ct_human_mines_1
-		gold_cost = 300
-		build_time = 547
-		tradevalue = 3
-		garrison_size = 0.05
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 1.0
-	}
-	ct_human_mines_3 = {
-		desc = ct_human_mines_1_desc
-		potential = {
-			OR = {
-				terrain = hills
-				terrain = mountain
-			}
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		upgrades_from = ct_human_mines_2
-		gold_cost = 400
-		build_time = 1045
-		tradevalue = 5
-		garrison_size = 0.05
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 0.8
-	}
-	#Forest Villages, terrain locked, trade value and garrison size
-	ct_human_forest_1 = {
-		desc = ct_human_forest_1_desc
-		potential = {
-			OR = {
-				terrain = woods
-				terrain = forest
-				terrain = jungle
-			}
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		gold_cost = 200
-		build_time = 365
-		tradevalue = 2
-		garrison_size = 0.05
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 1.2
-	}
-	ct_human_forest_2 = {
-		desc = ct_human_forest_1_desc
-		potential = {
-			OR = {
-				terrain = woods
-				terrain = forest
-				terrain = jungle
-			}
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		upgrades_from = ct_human_forest_1
-		gold_cost = 300
-		build_time = 547
-		tradevalue = 3
-		garrison_size = 0.05
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 1.0
-	}
-	ct_human_forest_3 = {
-		desc = ct_human_forest_1_desc
-		potential = {
-			OR = {
-				terrain = woods
-				terrain = forest
-				terrain = jungle
-			}
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		upgrades_from = ct_human_forest_2
-		gold_cost = 400
-		build_time = 1045
-		tradevalue = 5
-		garrison_size = 0.05
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 0.8
-	}
-	#Desert Villages, terrain locked, trade value and garrison size
-	ct_human_desert_1 = {
-		desc = ct_human_desert_1_desc
-		potential = {
-			OR = {
-				terrain = desert
-				terrain = coastal_desert
-			}
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		gold_cost = 200
-		build_time = 365
-		tradevalue = 2
-		garrison_size = 0.05
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 1.2
-	}
-	ct_human_desert_2 = {
-		desc = ct_human_desert_1_desc
-		potential = {
-			OR = {
-				terrain = desert
-				terrain = coastal_desert
-			}
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		upgrades_from = ct_human_desert_1
-		gold_cost = 300
-		build_time = 547
-		tradevalue = 3
-		garrison_size = 0.05
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 1.0
-	}
-	ct_human_desert_3 = {
-		desc = ct_human_desert_1_desc
-		potential = {
-			OR = {
-				terrain = desert
-				terrain = coastal_desert
-			}
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		upgrades_from = ct_human_desert_2
-		gold_cost = 400
-		build_time = 1045
-		tradevalue = 5
-		garrison_size = 0.05
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 0.8
-	}
-	#Tundra Villages, terrain locked, trade value and garrison size
-	ct_human_arctic_1 = {
-		desc = ct_human_arctic_1_desc
-		potential = {
-			terrain = arctic
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		gold_cost = 200
-		build_time = 365
-		tradevalue = 2
-		garrison_size = 0.05
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 1.2
-	}
-	ct_human_arctic_2 = {
-		desc = ct_human_arctic_1_desc
-		potential = {
-			terrain = arctic
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		upgrades_from = ct_human_arctic_1
-		gold_cost = 300
-		build_time = 547
-		tradevalue = 3
-		garrison_size = 0.05
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 1.0
-	}
-	ct_human_arctic_3 = {
-		desc = ct_human_arctic_1_desc
-		potential = {
-			terrain = arctic
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		upgrades_from = ct_human_arctic_2
-		gold_cost = 400
-		build_time = 1045
-		tradevalue = 5
-		garrison_size = 0.05
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 0.8
-	}
-	#Steppe Villages, terrain locked, trade value and garrison size
-	ct_human_steppe_1 = {
-		desc = ct_human_steppe_1_desc
-		potential = {
-			terrain = steppe
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		gold_cost = 200
-		build_time = 365
-		tradevalue = 2
-		garrison_size = 0.05
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 1.2
-	}
-	ct_human_steppe_2 = {
-		desc = ct_human_steppe_1_desc
-		potential = {
-			terrain = steppe
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		upgrades_from = ct_human_steppe_1
-		gold_cost = 300
-		build_time = 547
-		tradevalue = 3
-		garrison_size = 0.05
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 1.0
-	}
-	ct_human_steppe_3 = {
-		desc = ct_human_steppe_1_desc
-		potential = {
-			terrain = steppe
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		upgrades_from = ct_human_steppe_2
-		gold_cost = 400
-		build_time = 1045
-		tradevalue = 5
-		garrison_size = 0.05
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 0.8
-	}
-
 	#Architect Bloodline buildings.
 	ct_planned_infrastructure_1 = { #Garrisoned roads
 		desc = ct_planned_infrastructure_1_desc
@@ -4991,50 +4277,6 @@ temple = {
 
 		extra_tech_building_start = 0.2
 	}
-	#Temple of the Sacred Flame, fort level, garrison size, prestige/piety, heavy infantry and some knights with 15% defensive bonuses
-	tp_sacred_flame = {
-		desc = tp_sacred_flame_desc
-		potential = {
-			FROMFROM = { title = b_ulricsmund }
-		}
-
-		gold_cost = 1000
-		build_time = 3000
-		liege_piety = 0.20
-		liege_prestige = 0.20
-		fort_level = 2
-		garrison_size = 0.5
-		heavy_infantry = 200
-		heavy_infantry_defensive = 0.15
-		knights = 50
-		knights_defensive = 0.15
-		ai_creation_factor = 97
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	#Centre For Manaan, more galleys, some tax income, prestige/piety and heavy infantry
-	tp_manann_centre = {
-		desc = tp_manann_centre_desc
-		potential = {
-			FROMFROM = { title = b_tempelwijk }
-		}
-
-		gold_cost = 1000
-		build_time = 3000
-		liege_piety = 0.20
-		liege_prestige = 0.20
-		garrison_size = 0.5
-		galleys = 40
-		heavy_infantry = 250
-
-		ai_creation_factor = 97
-		add_number_to_name = no
-
-
-
-		extra_tech_building_start = 0.2
-	}
 	#Witch Hunter Temple in Sudenburg, fort level, garrison size, prestige/piety, income and heavy infantry with 15% morale bonus
 	tp_witchhunter_samur = {
 		desc = tp_witchhunter_samur_desc
@@ -5068,7 +4310,6 @@ temple = {
 					culture_group = orc_group
 					culture_group = goblin_group
 					culture_group = lizardman_group
-					culture_group = dwarf_group
 					culture_group = asrai_group
 					culture = nehekharan
 				}
@@ -5096,7 +4337,6 @@ temple = {
 					culture_group = orc_group
 					culture_group = goblin_group
 					culture_group = lizardman_group
-					culture_group = dwarf_group
 					culture_group = asrai_group
 					culture = nehekharan
 				}
@@ -5125,7 +4365,6 @@ temple = {
 					culture_group = orc_group
 					culture_group = goblin_group
 					culture_group = lizardman_group
-					culture_group = dwarf_group
 					culture_group = asrai_group
 					culture = nehekharan
 				}
@@ -5154,7 +4393,6 @@ temple = {
 					culture_group = orc_group
 					culture_group = goblin_group
 					culture_group = lizardman_group
-					culture_group = dwarf_group
 					culture_group = asrai_group
 					culture = nehekharan
 				}
@@ -5183,7 +4421,6 @@ temple = {
 					culture_group = orc_group
 					culture_group = goblin_group
 					culture_group = lizardman_group
-					culture_group = dwarf_group
 					culture_group = asrai_group
 					culture = nehekharan
 				}
@@ -5213,8 +4450,6 @@ temple = {
 				NOR = {
 					culture_group = orc_group
 					culture_group = goblin_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
 					culture_group = lizardman_group
 					culture_group = asrai_group
 					culture = nehekharan
@@ -5241,8 +4476,6 @@ temple = {
 				NOR = {
 					culture_group = orc_group
 					culture_group = goblin_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
 					culture_group = lizardman_group
 					culture_group = asrai_group
 					culture = nehekharan
@@ -5270,8 +4503,6 @@ temple = {
 				NOR = {
 					culture_group = orc_group
 					culture_group = goblin_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
 					culture_group = lizardman_group
 					culture_group = asrai_group
 					culture = nehekharan
@@ -5298,8 +4529,6 @@ temple = {
 				NOR = {
 					culture_group = orc_group
 					culture_group = goblin_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
 					culture_group = lizardman_group
 					culture_group = asrai_group
 					culture = nehekharan
@@ -5326,8 +4555,6 @@ temple = {
 				NOR = {
 					culture_group = orc_group
 					culture_group = goblin_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
 					culture_group = lizardman_group
 					culture_group = asrai_group
 					culture = nehekharan

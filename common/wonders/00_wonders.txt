@@ -351,6 +351,7 @@ wonder_temple_pagan = {
 	model = wonder_temple
 	potential = {
 		religion_group = chaos_gods_group
+		NOT = { religion = hashut }
 	}
 	active = {
 		ROOT = {
@@ -1387,7 +1388,10 @@ chaos_fortress = {
 	picture = GFX_wonder_strip_chaos_fortress
 	potential = {
 		religion_group = chaos_gods_group
-		NOT = { religion = norscan_gods }
+		NOR = {
+			religion = hashut
+			religion = norscan_gods 
+		}
 	}
 	active = {
 		ROOT = {

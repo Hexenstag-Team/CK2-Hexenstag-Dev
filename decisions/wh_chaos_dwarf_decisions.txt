@@ -284,6 +284,55 @@ targeted_decisions = {
 		}
 	}
 
+	ordeal_of_fire = {
+		ai = no #more efficient for AI to do this by event
+		filter = close_relatives
+		ai_filter = none
+
+		from_potential = {
+			trait = creature_chaos_dwarf
+			has_living_children = yes
+			religion = hashut
+		}
+
+		potential = {
+			is_child_of = FROM
+			age < 1
+			trait = creature_chaos_dwarf
+			religion = hashut
+			NOT = {
+				has_character_flag = ordeal_of_fire_parents_made_sacrifices
+			}
+		}
+
+		allow = {
+			FROM = {
+				scaled_wealth = 0.135 # seven weeks income
+			}
+		}
+
+		effect = {
+			hidden_tooltip = {
+				ROOT = {
+					save_event_target_as = ordeal_of_fire_child
+				}
+				FROM = {
+					character_event = {
+						id = wh_chaos_dwarf.191
+						days = 3
+					}
+				}
+			}
+		}
+
+		revoke_allowed = {	}
+
+		ai_will_do = {
+			factor = 0
+		}
+
+	}
+
 }
 
 title_decisions = {
@@ -294,6 +343,7 @@ title_decisions = {
 		from_potential = {
 			trait = creature_chaos_dwarf
 			religion = hashut
+			higher_real_tier_than = COUNT
 		}
 
 		potential = {

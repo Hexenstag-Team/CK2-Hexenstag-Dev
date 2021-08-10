@@ -16,6 +16,7 @@
 # upgrade_mining_native_gold
 # upgrade_mining_pyrite
 # upgrade_mining_tetrahedrite
+# upgrade_mining_water
 # -> sedimentary minerals (req. upgrade_mining_layer_2)
 # upgrade_mining_coal
 # upgrade_mining_galena
@@ -69,7 +70,7 @@
 #Mining layers. Allow mineral upgrades to be built, add to levy and garrison size (more living space)
 
 upgrade_mining_layer_1 = {
-  picture = GFX_upgrade_icon_door
+  picture = GFX_upgrade_icon_mining_cart
 
   potential = { }
   allow = {  }
@@ -83,7 +84,7 @@ upgrade_mining_layer_1 = {
 
   local_modifier = {
     garrison_size = 0.10
-    levy_size = 0.10
+    levy_size = 0.05
   }
 
   owner_modifier = {  }
@@ -91,7 +92,7 @@ upgrade_mining_layer_1 = {
 
 
 upgrade_mining_layer_2 = {
-  picture = GFX_upgrade_icon_door
+  picture = GFX_upgrade_icon_mining_cart
 
   potential = {  }
   allow = {
@@ -108,14 +109,14 @@ upgrade_mining_layer_2 = {
 
   local_modifier = {
     garrison_size = 0.10
-    levy_size = 0.10
+    levy_size = 0.05
   }
 
   owner_modifier = {  }
 }
 
 upgrade_mining_layer_3 = {
-  picture = GFX_upgrade_icon_door
+  picture = GFX_upgrade_icon_mining_cart
 
   potential = {
     FROMFROM = {
@@ -136,14 +137,14 @@ upgrade_mining_layer_3 = {
 
   local_modifier = {
     garrison_size = 0.10
-    levy_size = 0.10
+    levy_size = 0.05
   }
 
   owner_modifier = {  }
 }
 
 upgrade_mining_layer_4 = {
-  picture = GFX_upgrade_icon_door
+  picture = GFX_upgrade_icon_mining_cart
 
   potential = {
     FROMFROM = {
@@ -164,7 +165,7 @@ upgrade_mining_layer_4 = {
 
   local_modifier = {
     garrison_size = 0.10
-    levy_size = 0.10
+    levy_size = 0.05
   }
 
   owner_modifier = {  }
@@ -263,8 +264,8 @@ upgrade_mining_pyrite = {
   gold_cost_ticking = 1
 
   local_modifier = {
-    artillery_offensive = 0.10
-    gunpowder_offensive = 0.10
+    artillery_offensive = 0.50
+    gunpowder_offensive = 0.25
   }
 }
 
@@ -290,12 +291,34 @@ upgrade_mining_tetrahedrite = {
   owner_modifier = {  }
 }
 
+#Artesian water supplies are typically very clean and contain important trace minerals
+upgrade_mining_water = {
+    picture = GFX_upgrade_icon_crates
+    potential = {   }
+    allow = {
+        FROMFROM = {
+            has_wonder_upgrade = upgrade_mining_layer_1
+        }
+    }
+    flags = {   }
+
+    build_time = 60
+    gold_cost_flat = 120
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        disease_defence = 0.10
+        fort_level = 0.5
+    }
+    owner_modifier = {  }
+}
+
 #sedimentary minerals - req. upgrade_mining_layer_2, but visible at upgrade_mining_layer_1
 
 #Coal. Not differentiating between heavy and light coals
 #The essential industrial mineral, so provides a heavy bonus to taxes
 upgrade_mining_coal = {
-  picture = GFX_upgrade_icon_brazier
+  picture = GFX_upgrade_icon_stones
   potential = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_1
@@ -508,7 +531,7 @@ upgrade_mining_cinnabar = {
 #Native Copper
 #Encountered earlier but still a useful craft metal.
 upgrade_mining_native_copper = {
-  picture = GFX_upgrade_icon_ingots_gold
+  picture = GFX_upgrade_icon_ingots_bronze
   potential = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_2
@@ -691,11 +714,41 @@ upgrade_mining_marble = {
 
 # COMMERCE #
 
+upgrade_great_dwarf_brewery = {
+  picture = GFX_upgrade_icon_crates
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_dwarf_great_hall
+    }
+  }
+  flags = { }
+
+  build_time = 60
+  gold_cost_flat = 240
+  gold_cost_ticking = 1
+
+  local_modifier = {  }
+  owner_modifier = {
+    land_morale = 0.05
+    retinuesize_perc = 0.5
+  }
+}
+
 #e.g. Barak Varr
 #adds galleys and trade value
 upgrade_great_dwarf_port = {
   picture = GFX_upgrade_icon_anchor
-  potential = { }
+  potential = {
+    FROMFROMFROM = {
+      is_coastal = yes
+    }
+  }
   allow = { }
   flags = { }
 
@@ -713,7 +766,7 @@ upgrade_great_dwarf_port = {
 #Underway & Dawi Zharr equivalent
 #Significant bonus to local movement, adds trade value
 upgrade_tunnel_roads = {
-  picture = GFX_upgrade_icon_stones
+  picture = GFX_upgrade_icon_mining_cart
   potential = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_1
@@ -769,13 +822,13 @@ upgrade_great_gate = {
   gold_cost_ticking = 1
 
   local_modifier = {
-    fort_level = 1
+    fort_level = 2
   }
   owner_modifier = {  }
 }
 
 upgrade_outer_watchposts = {
-  picture = GFX_upgrade_icon_stones
+  picture = GFX_upgrade_icon_bow_and_arrows
   potential = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_1
@@ -909,17 +962,23 @@ upgrade_dwarf_aerodrome = {
   gold_cost_flat = 150
   gold_cost_ticking = 1
 
-  local_modifier = {  }
-  owner_modifier = {
-    demesne_size = 1
-    vassal_opinion = 5 #would have preferred vassal_limit but that's not available on wonders
+  local_modifier = {
+    #airlifted supplies make it easier to keep armies fed and moving
+    global_movement_speed = 0.10
+    global_supply_limit = 0.50
+    upgrade_aerodrome_capital_only_effect = 1
   }
+  owner_modifier = {  }
 }
 
 #mainly included so Barak Varr can have all the ships
 upgrade_dwarf_shipyard = {
   picture = GFX_upgrade_icon_anchor
-  potential = { }
+  potential = {
+    FROMFROMFROM = {
+      is_coastal = yes
+    }
+  }
   allow = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_coal
@@ -955,7 +1014,7 @@ upgrade_artillery_tradition = {
   gold_cost_ticking = 1
 
   local_modifier = {
-    artillery_offensive = 2.0
+    artillery_offensive = 1.5
   }
   owner_modifier = {  }
 }
@@ -980,7 +1039,7 @@ upgrade_gunnery_tradition = {
 
   #this is pretty solid but gunpowder isn't everywhere
   local_modifier = {
-    gunpowder_offensive = 0.5
+    gunpowder_offensive = 0.25
     gunpowder_defensive = 0.5
   }
   owner_modifier = {  }
@@ -996,10 +1055,9 @@ upgrade_warrior_brotherhood = {
   gold_cost_flat = 40
   gold_cost_ticking = 1
 
-  #dwarf levies are FULL of these guys
   local_modifier = {
     heavy_infantry = 50
-    heavy_infantry_defensive = 0.5
+    levy_reinforce_rate = 0.25
   }
   owner_modifier = {  }
 }
@@ -1208,10 +1266,9 @@ upgrade_great_hashut_temple = {
   local_modifier = {
     #Bull!
     knights = 50
-    knights_offensive = 0.5
-    knights_defensive = 0.5
   }
   owner_modifier = {
     monthly_character_piety = 1
+    upgrade_new_temple_buildings_special_effect = 1
   }
 }
