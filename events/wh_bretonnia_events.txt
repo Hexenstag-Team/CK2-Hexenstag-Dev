@@ -179,7 +179,7 @@ character_event = {
 			add_artifact = dolorous_blade
 			add_artifact = shadow_steed
 			unsafe_give_minor_title = title_commander
-			character_event = { id = bretonnia.7 days = 24 random = 10}
+			character_event = { id = bretonnia.7 weeks = 24 random = 10}
 		}
 	}
 }
@@ -743,7 +743,7 @@ character_event = {
 	hide_window = yes
     is_triggered_only = yes
     immediate = {
-    	FROM = { letter_event = { id = bretonnia.202 } }
+    	FROM = { character_event = { id = bretonnia.202 } }
     }
 }
 
@@ -866,12 +866,12 @@ character_event = {
 	hide_window = yes
 	
 	trigger = {
+		is_member_of_bretonnia_trigger = yes
 		OR = {
 			society_rank == 1
 			society_rank == 2
 			society_rank == 3
 		}
-		is_member_of_bretonnia_trigger = yes
 		ai = yes
 	}
 	
@@ -881,11 +881,11 @@ character_event = {
 			50 = {
 				if = {
 					limit = {
-						ai = yes
+						society_rank == 1
 						prisoner = no
 						NOT = { trait = incapable }
 						is_adult = yes
-						society_rank == 1
+						ai = yes
 					}
 					society_rank_up = 1
 					clr_character_flag = has_sent_request_to_rank_up
@@ -894,11 +894,11 @@ character_event = {
 				}
 				else_if = {
 					limit = {
-						ai = yes
+						society_rank == 2
 						prisoner = no
 						NOT = { trait = incapable }
 						is_adult = yes
-						society_rank == 2
+						ai = yes
 					}
 					society_rank_up = 1
 					clr_character_flag = has_sent_request_to_rank_up
@@ -910,12 +910,11 @@ character_event = {
 				}
 				else_if = {
 					limit = {
-						ai = yes
+						society_rank == 3
 						prisoner = no
 						NOT = { trait = incapable }
 						is_adult = yes
-						society_rank == 3
-						NOT = { had_character_flag = failed_grail_quest }
+						ai = yes
 					}
 					society_rank_up = 1
 					clr_character_flag = has_sent_request_to_rank_up
@@ -1032,38 +1031,6 @@ character_event = {
 				trigger = {
 					ai = yes
 				}
-				random_list = {
-					70 = {
-						modifier = {
-							factor = 0.9
-							society_influence >= 30
-						}
-						modifier = {
-							factor = 0.9
-							society_influence >= 40
-						}
-						modifier = {
-							factor = 0.8
-							society_influence >= 50
-						}
-						modifier = {
-							factor = 0.7
-							society_influence >= 70
-						}
-						modifier = {
-							factor = 0.6
-							society_influence >= 80
-						}
-						modifier = {
-							factor = 0.5
-							society_influence >= 90
-						}
-						add_mission_succeed_influence_effect = yes
-					}
-					30 = {
-						add_mission_fail_influence_effect = yes
-					}
-				}
 			}
 		}
 	}
@@ -1146,9 +1113,9 @@ character_event = {
 		name = FORWARD_INTO_THE_DARKNESS
 		if = {
 			limit = {
-				NOT = {martial = 10 }
+				NOT = { martial = 10 }
 			}
-			custom_tooltip = {
+			hidden_tooltip = {
 				random_list = {
 					75 = { character_event = { id = bretonnia.403 } }
 					25 = { long_character_event = { id = bretonnia.402 } }
@@ -1292,7 +1259,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTBRETONNIA.11.a # I hope there's enough for all of us!
-		custom_tooltip = {
+		hidden_tooltip = {
 			if = {
 				limit = {
 					NOT = { martial = 15 }
@@ -1418,7 +1385,7 @@ character_event = {
 			limit = {
 				NOT = { martial = 15 }
 			}
-			custom_tooltip = {
+			hidden_tooltip = {
 				random_list = {
 					80 = { character_event = { id = bretonnia.409 } }
 					20 = { character_event = { id = bretonnia.410 } }
@@ -1540,7 +1507,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTBRETONNIA.17.a # Forwards! To victory! For the Lady!
-		custom_tooltip = {
+		hidden_tooltip = {
 			random_list = {
 				50 = { character_event = { id = bretonnia.412 } }
 				50 = { character_event = { id = bretonnia.413 } }
@@ -1839,7 +1806,7 @@ character_event = {
 		}
 		wealth = -300
 		piety = 300
-		custom_tooltip = {
+		hidden_tooltip = {
 			random_list = {
 				90 = {
 					add_trait = ill
