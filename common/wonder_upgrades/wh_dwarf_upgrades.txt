@@ -122,6 +122,12 @@ upgrade_mining_layer_3 = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_1
     }
+    FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+    }
   }
   allow = {
     FROMFROM = {
@@ -149,6 +155,12 @@ upgrade_mining_layer_4 = {
   potential = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_2
+    }
+    FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
     }
   }
   allow = {
@@ -720,12 +732,27 @@ upgrade_great_dwarf_brewery = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_1
     }
+    FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+    }
   }
 
   allow = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_dwarf_great_hall
     }
+  }
+  active = {
+      FROMFROMFROM = {
+          culture_group = ROOT
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+      }
   }
   flags = { }
 
@@ -813,7 +840,14 @@ upgrade_defensive_tunnels = {
 
 upgrade_great_gate = {
   picture = GFX_upgrade_icon_key
-  potential = { }
+  potential = {
+      FROMFROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+      }
+  }
   allow = { }
   flags = { }
 
@@ -832,6 +866,12 @@ upgrade_outer_watchposts = {
   potential = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_1
+    }
+    FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
     }
   }
   allow = {
@@ -857,6 +897,12 @@ upgrade_subterranean_keep = {
   potential = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_3
+    }
+    FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
     }
   }
   allow = {
@@ -911,11 +957,26 @@ upgrade_geothermal_power = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_3
     }
+    FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+    }
   }
   allow = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_4
     }
+  }
+  active = {
+      FROMFROMFROM = {
+          culture_group = ROOT
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+      }
   }
   flags = { }
 
@@ -977,12 +1038,29 @@ upgrade_dwarf_shipyard = {
   potential = {
     FROMFROMFROM = {
       is_coastal = yes
+      OR = {
+          culture_group = dwarf_group
+          culture_group = dawi_zharr_group
+      }
     }
   }
   allow = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_coal
     }
+    OR = {
+        culture_group = dwarf_group
+        culture_group = dawi_zharr_group
+    }
+  }
+  active = {
+      FROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+          culture_group = ROOT
+      }
   }
 
   build_time = 60
@@ -1002,11 +1080,26 @@ upgrade_artillery_tradition = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_1
     }
+    FROMFROMFROM = {
+      OR = {
+          culture_group = dwarf_group
+          culture_group = dawi_zharr_group
+      }
+    }
   }
   allow = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_pyrite
     }
+  }
+  active = {
+      FROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+          culture_group = ROOT
+      }
   }
 
   build_time = 120
@@ -1026,11 +1119,26 @@ upgrade_gunnery_tradition = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_1
     }
+      FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+      }
   }
   allow = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_pyrite
     }
+  }
+  active = {
+      FROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+          culture_group = ROOT
+      }
   }
 
   build_time = 120
@@ -1048,8 +1156,24 @@ upgrade_gunnery_tradition = {
 #e.g. Infernal Guard, Slayers
 upgrade_warrior_brotherhood = {
   picture = GFX_upgrade_icon_equipment
-  potential = {  }
+  potential = {
+      FROMFROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+      }
+  }
   allow = { }
+  active = {
+      FROMFROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+          culture_group = ROOT
+      }
+  }
 
   build_time = 120
   gold_cost_flat = 40
@@ -1104,6 +1228,15 @@ upgrade_dwarf_statues = {
       }
     }
   }
+  active = {
+      FROMFROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+          culture_group = ROOT
+      }
+  }
 
   build_time = 24
   gold_cost_flat = 100
@@ -1123,6 +1256,15 @@ upgrade_dwarf_throne_room = {
     }
   }
   allow = { }
+  active = {
+      FROMFROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+          culture_group = ROOT
+      }
+  }
 
   build_time = 120
   gold_cost_flat = 300
@@ -1156,6 +1298,12 @@ upgrade_great_grimnir_temple = {
       has_wonder_upgrade = upgrade_mining_marble
     }
   }
+  active = {
+      religion_group = dwarf_gods_group
+      FROMFROMFROM = {
+          religion_group = dwarf_gods_group
+      }
+ }
 
   build_time = 120
   gold_cost_flat = 300
@@ -1189,6 +1337,12 @@ upgrade_great_grungni_temple = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_marble
     }
+  }
+  active = {
+      religion_group = dwarf_gods_group
+      FROMFROMFROM = {
+          religion_group = dwarf_gods_group
+      }
   }
 
   build_time = 120
@@ -1224,6 +1378,12 @@ upgrade_great_valaya_temple = {
       has_wonder_upgrade = upgrade_mining_marble
     }
   }
+  active = {
+      religion_group = dwarf_gods_group
+      FROMFROMFROM = {
+          religion_group = dwarf_gods_group
+      }
+  }
 
   build_time = 120
   gold_cost_flat = 300
@@ -1257,6 +1417,12 @@ upgrade_great_hashut_temple = {
     FROMFROM = {
         has_wonder_upgrade = upgrade_mining_obsidian
     }
+  }
+  active = {
+      religion = hashut
+      FROMFROMFROM = {
+          religion = hashut
+      }
   }
 
   build_time = 120

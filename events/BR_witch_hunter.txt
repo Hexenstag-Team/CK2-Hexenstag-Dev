@@ -57,7 +57,7 @@ character_event = {
 		any_courtier = {
 			limit = {
 				OR={
-					has_minor_title=title_court_witchhunter 
+					has_minor_title=title_court_witchhunter
 					has_minor_title=title_knight_captain_heir
 				}
 				NOT = { trait = on_witch_hunt }
@@ -165,7 +165,7 @@ character_event = {
 					change_learning = 1
 				}
 			}
-			
+
 			50={
 				if={limit={NOT={intrigue=10}}
 					change_intrigue = 1
@@ -245,7 +245,7 @@ character_event = {
 					trait = ugly
 					trait = dwarf
 					trait = imbecile
-					religion_group = { chaos_gods_group }
+					religion_group = chaos_gods_group 
 					is_mutated_trigger = yes
 				}
 			}
@@ -271,7 +271,7 @@ character_event = {
 		name = EVTOPT_WITCHHUNTER_9A #"I.. ehh, heresy? No no, let me explain!"
 		#first the events where the courtier successfully explains the suspicious actions#
 		hidden_tooltip = {
-			random_list = { 
+			random_list = {
 				60 = {
 					modifier = {
 						factor = 0
@@ -405,7 +405,7 @@ character_event = {
 							has_character_modifier = magic_power_1
 							has_character_modifier = magic_power_2
 							has_character_modifier = magic_power_3
-							has_character_modifier = magic_power_4 
+							has_character_modifier = magic_power_4
 						}
 					}
 					modifier = { factor = 1.2
@@ -420,7 +420,7 @@ character_event = {
 							society_member_of = cult_of_slaanesh3
 							society_member_of = cult_of_tzeentch
 							society_member_of = cult_of_tzeentch2
-							society_member_of = cult_of_tzeentch3 
+							society_member_of = cult_of_tzeentch3
 						}
 						NOR={
 							intrigue=15
@@ -432,7 +432,7 @@ character_event = {
 							is_state_witch_hunter_trigger=no #mercenary witch hunters arent as effective
 						}
 					}
-					FROM = { character_event = { id = witchhunter.10 } } 
+					FROM = { character_event = { id = witchhunter.10 } }
 				}
 				40 = {
 					modifier = {
@@ -459,7 +459,7 @@ character_event = {
 							society_member_of = cult_of_slaanesh3
 							society_member_of = cult_of_tzeentch
 							society_member_of = cult_of_tzeentch2
-							society_member_of = cult_of_tzeentch3 
+							society_member_of = cult_of_tzeentch3
 						}
 					}
 					modifier = { factor = 1.2
@@ -469,7 +469,7 @@ character_event = {
 					}
 					#modifier = { factor = 1.2 FROM={society_member_of=estalian_witch_hunters} }
 					#modifier = { factor = 1.5 FROM={society_member_of=solkanite_witch_hunters} }
-					FROM = { character_event = { id = witchhunter.11 } } 
+					FROM = { character_event = { id = witchhunter.11 } }
 				}
 			}
 		}
@@ -489,9 +489,9 @@ character_event = {
 		name = EVTOPT_WITCHHUNTER_10A #"Fine..."
 		ai_chance = {
 			factor = 80
-			modifier = { 
+			modifier = {
 				factor = 0.5
-				trait = paranoid 
+				trait = paranoid
 			}
 		}
 	}
@@ -499,13 +499,13 @@ character_event = {
 	option = {
 		name = EVTOPT_WITCHHUNTER_10B #"A good cultist is a good liar! This is proof of guilt!"
 		liege = { character_event = { id = witchhunter.12 } }
-		ai_chance = { 
+		ai_chance = {
 			factor = 20
-			modifier = { 
+			modifier = {
 				factor = 0
-				FROM = { trait = witch_hunter } 
+				FROM = { trait = witch_hunter }
 			}
-			modifier = { 
+			modifier = {
 				factor = 0.1
 				is_state_witch_hunter_trigger=no #State Witch hunters are more suspicious of everyone
 			}
@@ -745,7 +745,7 @@ character_event = {
     desc = EVTDESC_WITCHHUNTER_17 #"You have managed to remove the taint of chaos from the province. But there may still be cultists and heretics lurking about..."
     picture = "GFX_evt_witch_hunters"
 	religion_group=old_world_group
-	
+
 	trigger = {
 		age = 16
 		prisoner = no
@@ -922,7 +922,7 @@ character_event = {
 		add_character_modifier = {
 			name = wh_accused
 			duration = 730
-			hidden = yes 
+			hidden = yes
 		}
 	}
 	option = {
@@ -2146,7 +2146,7 @@ narrative_event = {
 				society_rank_up = 1
 			}
 		}
-		event_target:target_title = { 
+		event_target:target_title = {
 			grant_title = event_target:witch_hunter_general_choice_1
 		}
 		ai_chance = { factor = 1 }
@@ -2160,7 +2160,7 @@ narrative_event = {
 				society_rank_up = 1
 			}
 		}
-		event_target:target_title = { 
+		event_target:target_title = {
 			grant_title = event_target:witch_hunter_general_choice_2
 		}
 		ai_chance = { factor = 1 }
@@ -2174,7 +2174,7 @@ narrative_event = {
 				society_rank_up = 1
 			}
 		}
-		event_target:target_title = { 
+		event_target:target_title = {
 			grant_title = event_target:witch_hunter_general_choice_3
 		}
 		ai_chance = { factor = 1 }
@@ -2188,7 +2188,7 @@ narrative_event = {
 				society_rank_up = 1
 			}
 		}
-		event_target:target_title = { 
+		event_target:target_title = {
 			grant_title = event_target:witch_hunter_general_choice_4
 		}
 		ai_chance = { factor = 1 }
@@ -2211,7 +2211,7 @@ narrative_event = {
 			new_character={
 				join_society=sigmar_witch_hunters
 				society_rank_up = 1
-				event_target:target_title = { 
+				event_target:target_title = {
 					grant_title = PREV
 				}
 			}
@@ -2266,7 +2266,7 @@ narrative_event = {
 			new_character={
 				join_society=sigmar_witch_hunters
 				society_rank_up = 1
-				event_target:target_title_2 = { 
+				event_target:target_title_2 = {
 					grant_title = PREV
 				}
 			}
@@ -2297,7 +2297,7 @@ character_event = {
 
 	trigger = {
 		NOT={primary_title={has_law = succ_whunter_elective}}
-		OR = { 
+		OR = {
 			has_landed_title = d_witch_hunter_seat_1
 			has_landed_title = d_witch_hunter_seat_2
 			has_landed_title = d_witch_hunter_seat_3
@@ -2309,14 +2309,14 @@ character_event = {
 			has_landed_title = d_witch_hunter_seat_9
 			has_landed_title = d_witch_hunter_seat_10
 			has_landed_title = d_witch_hunter_seat_11
-			has_landed_title = d_witch_hunter_seat_12 
+			has_landed_title = d_witch_hunter_seat_12
 		}
 	}
 
 	immediate = {
-		if = { 
-			limit = { 
-				any_courtier = { 
+		if = {
+			limit = {
+				any_courtier = {
 					religion = sigmarite
 					trait = witch_hunter
 					trait = creature_human
@@ -2339,12 +2339,12 @@ character_event = {
 						trait = magic_potential_1
 						trait = magic_potential_2
 						trait = magic_potential_3
-						trait = magic_potential_4 
+						trait = magic_potential_4
 					}
 				}
 			}
-			random_courtier = { 
-				limit = { 
+			random_courtier = {
+				limit = {
 					religion = sigmarite
 					trait = witch_hunter
 					trait = creature_human
@@ -2367,15 +2367,15 @@ character_event = {
 						trait = magic_potential_1
 						trait = magic_potential_2
 						trait = magic_potential_3
-						trait = magic_potential_4 
-					} 
+						trait = magic_potential_4
+					}
 				}
-				character_event = { id = witchhunter.45 } 
+				character_event = { id = witchhunter.45 }
 			}
 			break = yes
 		}
 		#If no elegible character is aviable, create a new one
-		random_list = { 
+		random_list = {
 			25 = {
 				create_character = {
 				random_traits = yes
@@ -2432,11 +2432,11 @@ character_event = {
 
 	is_triggered_only = yes
 
-	immediate = { 
-		FROM = { 
-			any_demesne_title = { 
-				limit = { 
-					OR = { 
+	immediate = {
+		FROM = {
+			any_demesne_title = {
+				limit = {
+					OR = {
 						title = d_witch_hunter_seat_1
 						title = d_witch_hunter_seat_2
 						title = d_witch_hunter_seat_3
@@ -2448,11 +2448,11 @@ character_event = {
 						title = d_witch_hunter_seat_9
 						title = d_witch_hunter_seat_10
 						title = d_witch_hunter_seat_11
-						title = d_witch_hunter_seat_12 
+						title = d_witch_hunter_seat_12
 					}
 				}
-				grant_title = ROOT 
-			} 
+				grant_title = ROOT
+			}
 		}
 		if={limit={not={society_member_of=sigmar_witch_hunters}}
 			join_society=sigmar_witch_hunters
@@ -2469,12 +2469,12 @@ character_event = {
 	is_triggered_only = yes
 	only_rulers = yes
 
-	trigger = { 
+	trigger = {
 		is_landed = yes
 		higher_tier_than = BARON
 		trait = witch_hunter
 		NOT={primary_title={has_law = succ_whunter_elective}}
-		NOR = { 
+		NOR = {
 			has_landed_title = d_witch_hunter_seat_1
 			has_landed_title = d_witch_hunter_seat_2
 			has_landed_title = d_witch_hunter_seat_3
@@ -2486,7 +2486,7 @@ character_event = {
 	 		has_landed_title = d_witch_hunter_seat_9
 	 		has_landed_title = d_witch_hunter_seat_10
 	 		has_landed_title = d_witch_hunter_seat_11
-	 		has_landed_title = d_witch_hunter_seat_12 
+	 		has_landed_title = d_witch_hunter_seat_12
 		}
 	}
 
@@ -2518,7 +2518,7 @@ character_event = {
 	is_triggered_only = yes
 
 	immediate = { 	#if the elected party is of a band, destroy the title.
-		any_demesne_title = { 
+		any_demesne_title = {
 			limit = { mercenary = yes }
 			activate_title = { title = THIS status = no }
 			destroy_landed_title = THIS
@@ -2542,8 +2542,8 @@ character_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		if = { 
-			limit = { 
+		if = {
+			limit = {
 				any_courtier = {
 					religion = sigmarite
 					trait = witch_hunter
@@ -2568,12 +2568,12 @@ character_event = {
 						trait = magic_potential_1
 						trait = magic_potential_2
 						trait = magic_potential_3
-						trait = magic_potential_4 
-					} 
-				} 
+						trait = magic_potential_4
+					}
+				}
 			}
-			random_courtier = { 
-				limit = { 
+			random_courtier = {
+				limit = {
 					religion = sigmarite
 					trait = witch_hunter
 					trait = creature_human
@@ -2597,8 +2597,8 @@ character_event = {
 						trait = magic_potential_1
 						trait = magic_potential_2
 						trait = magic_potential_3
-						trait = magic_potential_4 
-					} 
+						trait = magic_potential_4
+					}
 				}
 				character_event = { id = witchhunter.49 }
 			}

@@ -91,20 +91,6 @@ castle = {
 		extra_tech_building_start = 0.2
 	}
 	#The Empire
-	#Mordheim, tax income, commander limit, court size
-	ca_mordheim = {
-		desc = ca_mordheim_desc
-		potential = {
-			FROMFROM = { title = b_sigmarsstein } #
-		}
-		gold_cost = 1000
-		build_time = 3000
-		commander_limit = 5
-		court_size_modifier = 10
-		ai_creation_factor = 97
-		add_number_to_name = no
-		extra_tech_building_start = 5.0
-	}
 	#Sudenburg, garrison size, pikemen, tax income, commander limit, court size
 	ca_sudenburg = {
 		desc = ca_sudenburg_desc
@@ -118,22 +104,6 @@ castle = {
 		pikemen = 120
 		commander_limit = 2
 		court_size_modifier = 5
-		ai_creation_factor = 97
-		add_number_to_name = no
-		extra_tech_building_start = 0.2
-	}
-	#Akendorf, garrison size, light cavalry, knights, tax income
-	ca_akendorf = {
-		desc = ca_akendorf_desc
-		potential = {
-			FROMFROM = { title = b_akendorf } #
-				AND = { religion_group = old_world_group}
-		}
-		gold_cost = 1000
-		build_time = 3000
-		garrison_size = 0.50
-		light_cavalry = 200
-		knights = 100
 		ai_creation_factor = 97
 		add_number_to_name = no
 		extra_tech_building_start = 0.2
@@ -4437,8 +4407,8 @@ castle = {
 		replaces = ca_barracks_1
 		gold_cost = 100
 		build_time = 365
-		heavy_infantry = -10
-		gunpowder = 40
+		heavy_infantry = 30
+		gunpowder = 10
 		ai_creation_factor = 105
 
 		extra_tech_building_start = 1.0
@@ -4464,9 +4434,9 @@ castle = {
 		upgrades_from = ca_imperial_barracks_1
 		gold_cost = 120
 		build_time = 547
-		heavy_infantry = -10
+		heavy_infantry = 30
 		light_cavalry = 5
-		gunpowder = 45
+		gunpowder = 15
 		ai_creation_factor = 104
 
 		extra_tech_building_start = 2.2
@@ -4492,9 +4462,9 @@ castle = {
 		upgrades_from = ca_imperial_barracks_2
 		gold_cost = 200
 		build_time = 730
-		heavy_infantry = -10
+		heavy_infantry = -30
 		light_cavalry = 10
-		gunpowder = 45
+		gunpowder = 60
 		ai_creation_factor = 103
 
 		extra_tech_building_start = 3.0
@@ -4519,9 +4489,9 @@ castle = {
 		upgrades_from = ca_imperial_barracks_3
 		gold_cost = 300
 		build_time = 1095
-		heavy_infantry = -10
+		heavy_infantry = -30
 		light_cavalry = 15
-		gunpowder = 55
+		gunpowder = 70
 		ai_creation_factor = 102
 
 		extra_tech_building_start = 3.0
@@ -4546,9 +4516,9 @@ castle = {
 		upgrades_from = ca_imperial_barracks_4
 		gold_cost = 400
 		build_time = 2190
-		heavy_infantry = -10
+		heavy_infantry = -30
 		light_cavalry = 20
-		gunpowder = 55
+		gunpowder = 70
 		ai_creation_factor = 101
 
 		extra_tech_building_start = 2.0
@@ -4573,9 +4543,9 @@ castle = {
 		upgrades_from = ca_imperial_barracks_5
 		gold_cost = 500
 		build_time = 2190
-		heavy_infantry = -10
+		heavy_infantry = -30
 		light_cavalry = 20
-		gunpowder = 60
+		gunpowder = 75
 		ai_creation_factor = 100
 
 		extra_tech_building_start = 0.2

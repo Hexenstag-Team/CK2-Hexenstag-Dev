@@ -3,7 +3,7 @@
 wonder_naming_and_describing_effect = {
     trigger_switch = {
       on_trigger = province
-      #Dawi Zharr holds in the Darklands
+      #Dawi Zharr holds
       478 = {
         wonder = {
           set_name = wonder_zharr_naggrund
@@ -34,7 +34,7 @@ wonder_naming_and_describing_effect = {
           set_description = wonder_black_fortress_desc
         }
       }
-      #Old World Dwarf Holds
+      #Dwarf Holds
       451 = {
         wonder = {
             set_name = wonder_everpeak
@@ -120,7 +120,7 @@ wonder_naming_and_describing_effect = {
             set_description = wonder_kraka_dorden_desc
         }
       }
-      #Imperial Cities
+      #Empire Cities
       299 = {
         wonder = {
             set_name = wonder_altdorf
@@ -181,6 +181,54 @@ wonder_naming_and_describing_effect = {
             set_description = wonder_mordheim_desc
         }
       }
+      #Estalian Cities
+      516 = {
+        wonder = {
+            set_name = wonder_cap_i_casal
+            set_description = wonder_cap_i_casal_desc
+        }
+      }
+      520 = {
+        wonder = {
+            set_name = wonder_bilbali
+            set_description = wonder_bilbali_desc
+        }
+      }
+      549 = {
+        wonder = {
+            set_name = wonder_alhamra
+            set_description = wonder_alhamra_desc
+        }
+      }
+      553 = {
+        wonder = {
+            set_name = wonder_magritta
+            set_description = wonder_magritta_desc
+        }
+      }
+      570 = {
+        wonder = {
+            set_name = wonder_cervantes
+            set_description = wonder_cervantes_desc
+        }
+      }
       #add new entries here
+      fallback = {
+        if = {
+            limit = {
+                OR = {
+                    has_wonder = wonder_dwarf_hold
+                    has_wonder = wonder_old_world_city
+                }
+            }
+            county = {
+                location = {
+                    wonder = {
+                        copy_name = PREVPREV
+                    }
+                }
+            }
+        }
+      }
     }
 }

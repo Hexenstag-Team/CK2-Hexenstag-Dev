@@ -59,6 +59,9 @@ narrative_event = {
 	picture = GFX_evt_empire_master_engineer
 
 	trigger = {
+		NOT = {
+			has_global_flag = imperial_engineering_school
+		}
 		FROM = {
 			has_wonder_upgrade = upgrade_engineering_school
 		}

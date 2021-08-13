@@ -138,6 +138,11 @@ wonder_old_world_city = {
 	upgrade_parade_grounds
 	upgrade_riding_school
 
+	###PORTS&TRADE###
+	upgrade_great_port
+	upgrade_great_lighthouse
+	upgrade_dockyard_district
+
 	###TEMPLES###
 	upgrade_temple_quarter
 	upgrade_templar_orders
@@ -359,25 +364,25 @@ wonder_dwarf_hold = {
 
   potential = {
     FROMFROMFROM = {
-			OR = {
-				culture_group = dwarf_group
-				culture_group = dawi_zharr_group
-			}
-			OR = {
-				de_jure_liege_or_above = e_darklands
-				de_jure_liege_or_above = e_karak_ankor
-				de_jure_liege_or_above = e_drak_ankor
-			}
-			NOT = { culture = servile_hobgoblin }
+		OR = {
+			culture_group = dwarf_group
+			culture_group = dawi_zharr_group
 		}
+		OR = {
+			de_jure_liege_or_above = e_darklands
+			de_jure_liege_or_above = e_karak_ankor
+			de_jure_liege_or_above = e_drak_ankor
+		}
+		NOT = { culture = servile_hobgoblin }
+	}
   }
 
   active = {
 
   }
 
-	#set to forbid new constructions, testing!
-	allow_construction = no
+	#let's try allowing construction
+	#allow_construction = no
 
   available_upgrades = {
 		# MINING #

@@ -212,7 +212,7 @@ castle = {
     replaces = ca_militia_barracks_1
     gold_cost = 80
     build_time = 730
-    gunpowder = 75
+    gunpowder = 25
 
     extra_tech_building_start = 0.5
   }
@@ -227,7 +227,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_devastators_1
     gold_cost = 100
     build_time = 912
-    gunpowder = 85
+    gunpowder = 30
 
     extra_tech_building_start = 1.5
   }
@@ -243,7 +243,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_devastators_2
     gold_cost = 150
     build_time = 1095
-    gunpowder = 95
+    gunpowder = 50
 
     extra_tech_building_start = 1.5
   }
@@ -258,7 +258,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_devastators_3
     gold_cost = 250
     build_time = 1460
-    gunpowder = 115
+    gunpowder = 60
 
     extra_tech_building_start = 1.5
   }
@@ -272,7 +272,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_devastators_4
     gold_cost = 300
     build_time = 2555
-    gunpowder = 125
+    gunpowder = 75
 
     extra_tech_building_start = 1.5
   }
@@ -287,7 +287,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_devastators_5
     gold_cost = 400
     build_time = 2555
-    gunpowder = 125
+    gunpowder = 75
 
     extra_tech_building_start = 3
   }
@@ -301,7 +301,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_devastators_6
     gold_cost = 400
     build_time = 2920
-    gunpowder = 135
+    gunpowder = 80
 
     extra_tech_building_start = 3
   }
@@ -315,7 +315,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_devastators_7
     gold_cost = 400
     build_time = 2920
-    gunpowder = 135
+    gunpowder = 80
 
     extra_tech_building_start = 3
   }
@@ -323,7 +323,7 @@ castle = {
   #Legion camp
   #The lore suggests that Chaos Dwarfs have semi-independent Legions with a brief to carry out operations as their commander sees fit
   #Replaces Training Grounds
-  #Exotic replacement. Uses Prestige to build, larger retinue_size adjustment but no morale increase (HI morale already improved at this holding) and less reinforce rate (small population)
+  #Exotic replacement. Uses Prestige to build, improves heavy_infantry morale only and has less reinforce rate (small population)
   ca_chaos_dwarf_legion_commander_1 = {
     desc = ca_chaos_dwarf_legion_commander_desc
     potential = {
@@ -333,6 +333,7 @@ castle = {
     replaces = ca_training_grounds_1
     prestige_cost = 400
     build_time = 1095
+    heavy_infantry_morale = 0.15
     levy_reinforce_rate = 0.05
     retinuesize = 50
 
@@ -350,6 +351,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_legion_commander_1
     prestige_cost = 600
     build_time = 1460
+    heavy_infantry_morale = 0.15
     levy_reinforce_rate = 0.075
     retinuesize = 50
 
@@ -367,6 +369,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_legion_commander_2
     prestige_cost = 750
     build_time = 1460
+    heavy_infantry_morale = 0.15
     levy_reinforce_rate = 0.10
     retinuesize = 50
 
@@ -383,6 +386,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_legion_commander_3
     prestige_cost = 1000
     build_time = 1460
+    heavy_infantry_morale = 0.15
     levy_reinforce_rate = 0.125
     retinuesize = 50
 
@@ -404,7 +408,7 @@ castle = {
     replaces = ca_barracks_1
     gold_cost = 80
     build_time = 730
-    heavy_infantry = 50
+    heavy_infantry = 40
 
     extra_tech_building_start = 0.5
   }
@@ -419,7 +423,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_barracks_1
     gold_cost = 100
     build_time = 912
-    heavy_infantry = 60
+    heavy_infantry = 55
 
     extra_tech_building_start = 1.5
   }
@@ -435,7 +439,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_barracks_2
     gold_cost = 150
     build_time = 1095
-    heavy_infantry = 75
+    heavy_infantry = 60
 
     extra_tech_building_start = 1.5
   }
@@ -450,7 +454,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_barracks_3
     gold_cost = 250
     build_time = 1460
-    heavy_infantry = 85
+    heavy_infantry = 75
 
     extra_tech_building_start = 1.5
   }
@@ -465,7 +469,7 @@ castle = {
 	  upgrades_from = ca_chaos_dwarf_barracks_4
     gold_cost = 300
     build_time = 2555
-    heavy_infantry = 95
+    heavy_infantry = 85
 
     extra_tech_building_start = 1.5
   }
@@ -481,7 +485,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_barracks_5
     gold_cost = 400
     build_time = 2555
-    heavy_infantry = 110
+    heavy_infantry = 90
 
     extra_tech_building_start = 3
   }
@@ -495,7 +499,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_barracks_6
     gold_cost = 400
     build_time = 2920
-    heavy_infantry = 120
+    heavy_infantry = 95
 
     extra_tech_building_start = 3
   }
@@ -509,7 +513,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_barracks_7
     gold_cost = 400
     build_time = 2920
-    heavy_infantry = 120
+    heavy_infantry = 105
 
     extra_tech_building_start = 3
   }
@@ -572,7 +576,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_khans_3
     gold_cost = 250
     build_time = 1460
-    light_cavalry = 75
+    light_cavalry = 65
 
     extra_tech_building_start = 1.5
   }
@@ -586,7 +590,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_khans_4
     gold_cost = 300
     build_time = 2555
-    light_cavalry = 95
+    light_cavalry = 75
 
     extra_tech_building_start = 1.5
   }
@@ -601,7 +605,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_khans_5
     gold_cost = 400
     build_time = 2555
-    light_cavalry = 135
+    light_cavalry = 95
 
     extra_tech_building_start = 3
   }
@@ -615,7 +619,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_khans_6
     gold_cost = 400
     build_time = 2920
-    light_cavalry = 175
+    light_cavalry = 120
 
     extra_tech_building_start = 3
   }
@@ -629,7 +633,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_khans_7
     gold_cost = 400
     build_time = 2920
-    light_cavalry = 175
+    light_cavalry = 135
 
     extra_tech_building_start = 3
   }
@@ -647,7 +651,7 @@ castle = {
     gold_cost = 80
     build_time = 730
     tax_income = 2
-    heavy_infantry_morale = 0.05
+    gunpowder_morale = 0.05
 
     ai_creation_factor = 97
     extra_tech_building_start = 0.5
@@ -664,7 +668,7 @@ castle = {
     gold_cost = 100
     build_time = 912
     tax_income = 2
-    heavy_infantry_morale = 0.05
+    gunpowder_morale = 0.05
 
     ai_creation_factor = 97
     extra_tech_building_start = 1.5
@@ -681,7 +685,7 @@ castle = {
     gold_cost = 150
     build_time = 1095
     tax_income = 2
-    heavy_infantry_morale = 0.05
+    gunpowder_morale = 0.05
 
     ai_creation_factor = 97
     extra_tech_building_start = 1.5
@@ -698,7 +702,7 @@ castle = {
     gold_cost = 250
     build_time = 1460
     tax_income = 2
-    heavy_infantry_morale = 0.05
+    gunpowder_morale = 0.05
 
     ai_creation_factor = 97
     extra_tech_building_start = 1.5
@@ -715,7 +719,7 @@ castle = {
     gold_cost = 350
     build_time = 2555
     tax_income = 2
-    heavy_infantry_morale = 0.05
+    gunpowder_morale = 0.05
 
     ai_creation_factor = 97
     extra_tech_building_start = 1.5
@@ -732,7 +736,7 @@ castle = {
     gold_cost = 450
     build_time = 2555
     tax_income = 2
-    heavy_infantry_morale = 0.05
+    gunpowder_morale = 0.05
 
     ai_creation_factor = 97
     extra_tech_building_start = 3
@@ -748,7 +752,7 @@ castle = {
     gold_cost = 500
     build_time = 2920
     tax_income = 2
-    heavy_infantry_morale = 0.05
+    gunpowder_morale = 0.05
 
     ai_creation_factor = 97
     extra_tech_building_start = 3
@@ -764,7 +768,7 @@ castle = {
     gold_cost = 600
     build_time = 2920
     tax_income = 2
-    heavy_infantry_morale = 0.05
+    gunpowder_morale = 0.05
 
     ai_creation_factor = 97
     extra_tech_building_start = 3
@@ -859,7 +863,7 @@ castle = {
     prerequisites = { ca_wall_2 }
     gold_cost = 160
     build_time = 1095
-    gunpowder = 45
+    gunpowder = 30
     gunpowder_morale = 0.15
 
     ai_creation_factor = 99
@@ -881,7 +885,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_heartland_troops_1
     gold_cost = 240
     build_time = 1460
-    gunpowder = 60
+    gunpowder = 40
     gunpowder_morale = 0.15
 
     ai_creation_factor = 99
@@ -903,7 +907,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_heartland_troops_2
     gold_cost = 320
     build_time = 1825
-    gunpowder = 75
+    gunpowder = 50
     gunpowder_morale = 0.15
 
     ai_creation_factor = 99
@@ -925,7 +929,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_heartland_troops_3
     gold_cost = 400
     build_time = 2190
-    gunpowder = 90
+    gunpowder = 60
     gunpowder_morale = 0.15
 
     ai_creation_factor = 99
@@ -947,7 +951,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_heartland_troops_4
     gold_cost = 480
     build_time = 2190
-    gunpowder = 105
+    gunpowder = 70
     gunpowder_morale = 0.15
 
     ai_creation_factor = 99
@@ -969,7 +973,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_heartland_troops_5
     gold_cost = 560
     build_time = 2555
-    gunpowder = 120
+    gunpowder = 80
     gunpowder_morale = 0.15
 
     ai_creation_factor = 99
@@ -994,7 +998,7 @@ castle = {
     prerequisites = { ca_wall_2 }
     gold_cost = 160
     build_time = 1095
-    heavy_infantry = 45
+    heavy_infantry = 30
     heavy_infantry_offensive = 0.15
 
     ai_creation_factor = 99
@@ -1016,7 +1020,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_azgorh_troops_1
     gold_cost = 240
     build_time = 1460
-    heavy_infantry = 60
+    heavy_infantry = 40
     heavy_infantry_offensive = 0.15
 
     ai_creation_factor = 99
@@ -1038,7 +1042,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_azgorh_troops_2
     gold_cost = 320
     build_time = 1825
-    heavy_infantry = 75
+    heavy_infantry = 50
     heavy_infantry_offensive = 0.15
 
     ai_creation_factor = 99
@@ -1060,7 +1064,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_azgorh_troops_3
     gold_cost = 400
     build_time = 2190
-    heavy_infantry = 90
+    heavy_infantry = 60
     heavy_infantry_offensive = 0.15
 
     ai_creation_factor = 99
@@ -1082,7 +1086,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_azgorh_troops_4
     gold_cost = 480
     build_time = 2190
-    heavy_infantry = 105
+    heavy_infantry = 70
     heavy_infantry_offensive = 0.15
 
     ai_creation_factor = 99
@@ -1104,7 +1108,7 @@ castle = {
     upgrades_from = ca_chaos_dwarf_azgorh_troops_5
     gold_cost = 560
     build_time = 2555
-    heavy_infantry = 120
+    heavy_infantry = 80
     heavy_infantry_offensive = 0.15
 
     ai_creation_factor = 99
@@ -1383,7 +1387,7 @@ city = {
 	     chaos_dwarf_building_trigger = yes
 		}
 		replaces = ct_training_grounds_1
-    gold_cost = 120
+        gold_cost = 120
 		build_time = 730
 		fort_level = 0.25
 		levy_size = 0.025
@@ -1402,7 +1406,7 @@ city = {
 		replaces = tp_ct_training_grounds_2
 		gold_cost = 150
 		build_time = 1095
-    fort_level = 0.25
+        fort_level = 0.25
 		levy_size = 0.05
 		garrison_size = 0.3
 		ai_creation_factor = 95
@@ -1413,8 +1417,8 @@ city = {
 	ct_chaos_dwarf_ziggurat_keep_3 = {
 		desc = ct_chaos_dwarf_ziggurat_keep_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
-    prerequisites = { ct_wall_2 }
-    potential = {
+        prerequisites = { ct_wall_2 }
+        potential = {
 	     chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = ct_chaos_dwarf_ziggurat_keep_2
@@ -1432,7 +1436,7 @@ city = {
 	ct_chaos_dwarf_ziggurat_keep_4 = {
 		desc = ct_chaos_dwarf_ziggurat_keep_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
-    potential = {
+        potential = {
 	     chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = ct_chaos_dwarf_ziggurat_keep_3
@@ -1450,7 +1454,7 @@ city = {
 	ct_chaos_dwarf_ziggurat_keep_5 = {
 		desc = ct_chaos_dwarf_ziggurat_keep_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-    potential = {
+        potential = {
 	     chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = ct_chaos_dwarf_ziggurat_keep_4
@@ -1468,7 +1472,7 @@ city = {
 	ct_chaos_dwarf_ziggurat_keep_6 = {
 		desc = ct_chaos_dwarf_ziggurat_keep_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
-    prerequisites = { ct_wall_4 }
+        prerequisites = { ct_wall_4 }
 		potential = {
 	     chaos_dwarf_building_trigger = yes
 		}
@@ -1698,7 +1702,7 @@ city = {
     gold_cost = 80
     build_time = 730
 
-    heavy_infantry = 30
+    heavy_infantry = 25
     artillery = 5
 
     ai_creation_factor = 98
@@ -1718,7 +1722,7 @@ city = {
     gold_cost = 100
     build_time = 912
 
-    heavy_infantry = 40
+    heavy_infantry = 30
     artillery = 5
 
     ai_creation_factor = 98
@@ -1739,7 +1743,7 @@ city = {
     gold_cost = 150
     build_time = 1095
 
-    heavy_infantry = 50
+    heavy_infantry = 40
     artillery = 5
 
     ai_creation_factor = 98
@@ -1759,7 +1763,7 @@ city = {
     gold_cost = 250
     build_time = 1460
 
-    heavy_infantry = 60
+    heavy_infantry = 50
     artillery = 5
 
     ai_creation_factor = 98
@@ -1779,7 +1783,7 @@ city = {
     gold_cost = 350
     build_time = 2555
 
-    heavy_infantry = 70
+    heavy_infantry = 60
     artillery = 5
 
     ai_creation_factor = 98
@@ -1799,7 +1803,7 @@ city = {
     gold_cost = 450
     build_time = 2555
 
-    heavy_infantry = 80
+    heavy_infantry = 70
     artillery = 5
 
     ai_creation_factor = 98
@@ -1818,7 +1822,7 @@ city = {
     gold_cost = 500
     build_time = 2920
 
-    heavy_infantry = 90
+    heavy_infantry = 80
     artillery = 5
 
     ai_creation_factor = 98
@@ -1837,7 +1841,7 @@ city = {
     gold_cost = 600
     build_time = 2920
 
-    heavy_infantry = 100
+    heavy_infantry = 90
     artillery = 5
 
     ai_creation_factor = 98
@@ -2264,7 +2268,7 @@ city = {
     gold_cost = 700
     build_time = 2555
 
-    artillery = 15
+    artillery = 20
     economy_techpoints = 0.02
 
     ai_creation_factor = 91
@@ -2283,7 +2287,7 @@ city = {
     gold_cost = 700
     build_time = 2555
 
-    artillery = 15
+    artillery = 25
     economy_techpoints = 0.02
 
     ai_creation_factor = 91
@@ -2301,7 +2305,7 @@ city = {
     gold_cost = 700
     build_time = 2555
 
-    artillery = 15
+    artillery = 30
     economy_techpoints = 0.02
 
     ai_creation_factor = 91
@@ -2505,6 +2509,7 @@ temple = {
 
   #barracks replacement
   #provides Zealot Berzerkers, wonderfully mad ladz who the mod should not be without
+  #provides fewer troops than cost would indicate but adds a morale bonus to LI
   tp_chaos_dwarf_barracks_1 = {
 		desc = tp_chaos_dwarf_barracks_1_desc
     potential = {
@@ -2516,7 +2521,7 @@ temple = {
 		gold_cost = 80
 		build_time = 730
 		light_infantry = 100
-    light_infantry_morale = 0.125
+        light_infantry_morale = 0.125
 		ai_creation_factor = 105
 
 		extra_tech_building_start = 0.5
@@ -2533,15 +2538,15 @@ temple = {
 		gold_cost = 100
 		build_time = 912
 		light_infantry = 125
-    light_infantry_morale = 0.125
+        light_infantry_morale = 0.125
 		ai_creation_factor = 104
 
 		extra_tech_building_start = 1.5
 	}
 	tp_chaos_dwarf_barracks_3 = {
 		desc = tp_chaos_dwarf_barracks_1_desc
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		prerequisites = { tp_wall_2 }
@@ -2550,86 +2555,86 @@ temple = {
 		gold_cost = 150
 		build_time = 1095
 		light_infantry = 150
-    light_infantry_morale = 0.125
+        light_infantry_morale = 0.125
 		ai_creation_factor = 103
 
 		extra_tech_building_start = 1.5
 	}
 	tp_chaos_dwarf_barracks_4 = {
 		desc = tp_chaos_dwarf_barracks_1_desc
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+            chaos_dwarf_building_trigger = yes
 		}
-    replaces = tp_barracks_4
+        replaces = tp_barracks_4
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
 		upgrades_from = tp_chaos_dwarf_barracks_3
 		gold_cost = 250
 		build_time = 1460
 		light_infantry = 175
-    light_infantry_morale = 0.125
+        light_infantry_morale = 0.125
 		ai_creation_factor = 102
 
 		extra_tech_building_start = 1.5
 	}
 	tp_chaos_dwarf_barracks_5 = {
 		desc = tp_chaos_dwarf_barracks_1_desc
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 5 }
 		upgrades_from = tp_chaos_dwarf_barracks_4
 		replaces = tp_barracks_5
 		gold_cost = 350
 		build_time = 2555
-    light_infantry = 200
-    light_infantry_morale = 0.125
+        light_infantry = 200
+        light_infantry_morale = 0.125
 		ai_creation_factor = 101
 
 		extra_tech_building_start = 1.5
 	}
 	tp_chaos_dwarf_barracks_6 = {
 		desc = tp_chaos_dwarf_barracks_1_desc
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
-    prerequisites = { tp_wall_4 }
+        prerequisites = { tp_wall_4 }
 		upgrades_from = tp_chaos_dwarf_barracks_5
 		replaces = tp_barracks_6
 		gold_cost = 450
 		build_time = 2555
-    light_infantry = 225
-    light_infantry_morale = 0.125
+        light_infantry = 225
+        light_infantry_morale = 0.125
 		ai_creation_factor = 100
 
 		extra_tech_building_start = 3
 	}
   tp_chaos_dwarf_barracks_7 = {
 		desc = tp_chaos_dwarf_barracks_1_desc
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 7 }
 		upgrades_from = tp_chaos_dwarf_barracks_6
 		gold_cost = 500
 		build_time = 2920
-    light_infantry = 250
-    light_infantry_morale = 0.125
+        light_infantry = 250
+        light_infantry_morale = 0.125
 		ai_creation_factor = 100
 
 		extra_tech_building_start = 3
 	}
   tp_chaos_dwarf_barracks_8 = {
 		desc = tp_chaos_dwarf_barracks_1_desc
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
 		upgrades_from = tp_chaos_dwarf_barracks_7
 		gold_cost = 600
 		build_time = 2920
-    light_infantry = 275
-    light_infantry_morale = 0.125
+        light_infantry = 275
+        light_infantry_morale = 0.125
 		ai_creation_factor = 100
 
 		extra_tech_building_start = 3
@@ -2638,13 +2643,13 @@ temple = {
   #Immortals
   #Elite temple guardians. HI probably understates these guys
   #elite barracks replacement
-  tp_chaos_dwarf_elite_barracks_1 = {
+      tp_chaos_dwarf_elite_barracks_1 = {
 		desc = tp_chaos_dwarf_elite_barracks_desc
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-    prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
+        prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
 		replaces = tp_elite_barracks_1
 		gold_cost = 80
 		build_time = 730
@@ -2655,8 +2660,8 @@ temple = {
 	}
 	tp_chaos_dwarf_elite_barracks_2 = {
 		desc = tp_chaos_dwarf_elite_barracks_desc
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		prerequisites = { tp_wall_1 }
@@ -2687,10 +2692,10 @@ temple = {
 	}
 	tp_chaos_dwarf_elite_barracks_4 = {
 		desc = tp_chaos_dwarf_elite_barracks_desc
-    potential = {
-      chaos_dwarf_building_trigger = yes
-		}
-    replaces = tp_elite_barracks_4
+        potential = {
+          chaos_dwarf_building_trigger = yes
+    		}
+        replaces = tp_elite_barracks_4
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
 		upgrades_from = tp_chaos_dwarf_elite_barracks_3
 		gold_cost = 250
@@ -2702,59 +2707,59 @@ temple = {
 	}
 	tp_chaos_dwarf_elite_barracks_5 = {
 		desc = tp_chaos_dwarf_elite_barracks_desc
-    potential = {
-      chaos_dwarf_building_trigger = yes
-		}
+        potential = {
+          chaos_dwarf_building_trigger = yes
+    	}
 		trigger = { TECH_CITY_CONSTRUCTION = 5 }
 		upgrades_from = tp_chaos_dwarf_elite_barracks_4
 		replaces = tp_elite_barracks_5
 		gold_cost = 350
 		build_time = 2555
-    heavy_infantry = 85
+        heavy_infantry = 85
 		ai_creation_factor = 101
 
 		extra_tech_building_start = 1.5
 	}
 	tp_chaos_dwarf_elite_barracks_6 = {
 		desc = tp_chaos_dwarf_elite_barracks_desc
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
-    prerequisites = { tp_wall_4 }
+        prerequisites = { tp_wall_4 }
 		upgrades_from = tp_chaos_dwarf_elite_barracks_5
 		replaces = tp_elite_barracks_6
 		gold_cost = 450
 		build_time = 2555
-    heavy_infantry = 95
+        heavy_infantry = 95
 		ai_creation_factor = 100
 
 		extra_tech_building_start = 3
 	}
   tp_chaos_dwarf_elite_barracks_7 = {
 		desc = tp_chaos_dwarf_elite_barracks_desc
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 7 }
 		upgrades_from = tp_chaos_dwarf_elite_barracks_6
 		gold_cost = 500
 		build_time = 2920
-    heavy_infantry = 105
+        heavy_infantry = 105
 		ai_creation_factor = 100
 
 		extra_tech_building_start = 3
 	}
   tp_chaos_dwarf_elite_barracks_8 = {
 		desc = tp_chaos_dwarf_elite_barracks_desc
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
 		upgrades_from = tp_chaos_dwarf_elite_barracks_7
 		gold_cost = 600
 		build_time = 2920
-    heavy_infantry = 115
+        heavy_infantry = 115
 		ai_creation_factor = 100
 
 		extra_tech_building_start = 3
@@ -2762,13 +2767,13 @@ temple = {
 
   #Bronze Roads
   #town replacement
-  #current version breaks lore because CDs don't keep slaves in their temples this way
+  #previous version broke lore because CDs don't keep slaves in their temples this way
   tp_chaos_dwarf_bronze_roads_1 = {
 		desc = tp_chaos_dwarf_bronze_roads_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-    prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		replaces = tp_town_1
 		gold_cost = 80
@@ -2782,8 +2787,8 @@ temple = {
 	tp_chaos_dwarf_bronze_roads_2 = {
 		desc = tp_chaos_dwarf_bronze_roads_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		replaces = tp_town_2
 		upgrades_from = tp_chaos_dwarf_bronze_roads_1
@@ -2798,8 +2803,8 @@ temple = {
 	tp_chaos_dwarf_bronze_roads_3 = {
 		desc = tp_chaos_dwarf_bronze_roads_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		prerequisites = { tp_wall_2 }
 		replaces = tp_town_3
@@ -2815,8 +2820,8 @@ temple = {
 	tp_chaos_dwarf_bronze_roads_4 = {
 		desc = tp_chaos_dwarf_bronze_roads_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = tp_chaos_dwarf_bronze_roads_3
 		replaces = tp_town_4
@@ -2831,8 +2836,8 @@ temple = {
 	tp_chaos_dwarf_bronze_roads_5 = {
 		desc = tp_chaos_dwarf_bronze_roads_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = tp_chaos_dwarf_bronze_roads_4
 		replaces = tp_town_5
@@ -2847,12 +2852,12 @@ temple = {
 	tp_chaos_dwarf_bronze_roads_6 = {
 		desc = tp_chaos_dwarf_bronze_roads_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = tp_chaos_dwarf_bronze_roads_5
 		replaces = tp_town_6
-    prerequisites = { tp_wall_4 }
+        prerequisites = { tp_wall_4 }
 		gold_cost = 450
 		build_time = 2555
 		tax_income = 2
@@ -2864,8 +2869,8 @@ temple = {
   tp_chaos_dwarf_bronze_roads_7 = {
 		desc = tp_chaos_dwarf_bronze_roads_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 7 }
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = tp_chaos_dwarf_bronze_roads_6
 		gold_cost = 500
@@ -2879,8 +2884,8 @@ temple = {
   tp_chaos_dwarf_bronze_roads_8 = {
 		desc = tp_chaos_dwarf_bronze_roads_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
-    potential = {
-      chaos_dwarf_building_trigger = yes
+        potential = {
+          chaos_dwarf_building_trigger = yes
 		}
 		upgrades_from = tp_chaos_dwarf_bronze_roads_7
 		gold_cost = 500
@@ -2897,7 +2902,7 @@ temple = {
 		desc = tp_cdshipyard_desc
 		port = yes
 		trigger = { TECH_NAVAL = 1 }
-    prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
+        prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
 		potential = {
 			culture_group = dawi_zharr_group
 		}
@@ -2969,18 +2974,18 @@ temple = {
 		desc = tp_chaos_dwarf_daemonsmith_desc
 		potential = {
 			chaos_dwarf_building_trigger = yes
-      wonder = {
-        has_wonder_upgrade = upgrade_great_hashut_temple
-      }
+            wonder = {
+                has_wonder_upgrade = upgrade_great_hashut_temple
+            }
 		}
-    trigger = { TECH_CITY_CONSTRUCTION = 2 }
-    prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
+        trigger = { TECH_CITY_CONSTRUCTION = 2 }
+        prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
 		piety_cost = 400
 		build_time = 730
 
-    war_elephants = 6
-    light_infantry_offensive = 0.125
-    light_infantry_defensive = 0.125
+        war_elephants = 6
+        light_infantry_offensive = 0.125
+        light_infantry_defensive = 0.125
 
 		ai_creation_factor = 93
 		extra_tech_building_start = 0.5
@@ -2990,43 +2995,43 @@ temple = {
 		desc = tp_chaos_dwarf_daemonsmith_desc
 		potential = {
 			chaos_dwarf_building_trigger = yes
-      wonder = {
-        has_wonder_upgrade = upgrade_great_hashut_temple
-      }
+            wonder = {
+                has_wonder_upgrade = upgrade_great_hashut_temple
+            }
 		}
-    trigger = { TECH_CITY_CONSTRUCTION = 2 }
+        trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		prerequisites = { tp_wall_2 }
 		upgrades_from = tp_chaos_dwarf_daemonsmith_1
 
-    piety_cost = 600
+        piety_cost = 600
 		build_time = 730
 
-    war_elephants = 10
-    light_infantry_offensive = 0.125
-    light_infantry_defensive = 0.125
+        war_elephants = 10
+        light_infantry_offensive = 0.125
+        light_infantry_defensive = 0.125
 
 		ai_creation_factor = 92
-    extra_tech_building_start = 2.0
+        extra_tech_building_start = 2.0
 	}
 
 	tp_chaos_dwarf_daemonsmith_3 = {
     desc = tp_chaos_dwarf_daemonsmith_desc
 		potential = {
-      chaos_dwarf_building_trigger = yes
-      wonder = {
-        has_wonder_upgrade = upgrade_great_hashut_temple
-      }
+            chaos_dwarf_building_trigger = yes
+            wonder = {
+                has_wonder_upgrade = upgrade_great_hashut_temple
+            }
 		}
-    trigger = { TECH_CITY_CONSTRUCTION = 4 }
-    prerequisites = { tp_wall_3 }
-    upgrades_from = tp_chaos_dwarf_daemonsmith_2
+        trigger = { TECH_CITY_CONSTRUCTION = 4 }
+        prerequisites = { tp_wall_3 }
+        upgrades_from = tp_chaos_dwarf_daemonsmith_2
 
-    piety_cost = 1000
+        piety_cost = 1000
 		build_time = 1095
 
-    war_elephants = 14
-    light_infantry_offensive = 0.125
-    light_infantry_defensive = 0.125
+        war_elephants = 14
+        light_infantry_offensive = 0.125
+        light_infantry_defensive = 0.125
 
 		ai_creation_factor = 92
 		extra_tech_building_start = 10.0
@@ -3036,20 +3041,20 @@ temple = {
     desc = tp_chaos_dwarf_daemonsmith_desc
     potential = {
 			chaos_dwarf_building_trigger = yes
-      wonder = {
-        has_wonder_upgrade = upgrade_great_hashut_temple
-      }
+            wonder = {
+                has_wonder_upgrade = upgrade_great_hashut_temple
+            }
 		}
-    trigger = { TECH_CITY_CONSTRUCTION = 6 }
-    prerequisites = { tp_wall_4 }
+        trigger = { TECH_CITY_CONSTRUCTION = 6 }
+        prerequisites = { tp_wall_4 }
 		upgrades_from = tp_chaos_dwarf_daemonsmith_3
 
-    piety_cost = 1250
+        piety_cost = 1250
 		build_time = 1095
 
-    war_elephants = 20
-    light_infantry_offensive = 0.125
-    light_infantry_defensive = 0.125
+        war_elephants = 20
+        light_infantry_offensive = 0.125
+        light_infantry_defensive = 0.125
 
 		ai_creation_factor = 92
 		extra_tech_building_start = 10.0
@@ -3068,9 +3073,7 @@ temple = {
     prerequisites = { tp_chaos_dwarf_ziggurat_keep_1 }
     gold_cost = 100
     build_time = 730
-    knights = 35
-    knights_offensive = 0.125
-    knights_defensive = 0.125
+    knights = 25
     ai_creation_factor = 89
 
     extra_tech_building_start = 0.5
@@ -3086,9 +3089,7 @@ temple = {
     upgrades_from = tp_bull_centaur_barracks_1
     gold_cost = 150
     build_time = 730
-    knights = 45
-    knights_offensive = 0.125
-    knights_defensive = 0.125
+    knights = 30
     ai_creation_factor = 88
 
     extra_tech_building_start = 0.4
@@ -3103,9 +3104,7 @@ temple = {
     upgrades_from = tp_bull_centaur_barracks_2
     gold_cost = 200
     build_time = 1095
-    knights = 55
-    knights_offensive = 0.125
-    knights_defensive = 0.125
+    knights = 35
     ai_creation_factor = 87
 
     extra_tech_building_start = 0.2
@@ -3119,9 +3118,7 @@ temple = {
     upgrades_from = tp_bull_centaur_barracks_3
     gold_cost = 250
     build_time = 1095
-    knights = 65
-    knights_offensive = 0.125
-    knights_defensive = 0.125
+    knights = 40
     ai_creation_factor = 86
 
     extra_tech_building_start = 0.2
@@ -3519,122 +3516,122 @@ tribal = {
   #replaces defensive fortifications
   #gives prestige as well as fort level
 
-tb_hobgoblin_traps_1 = {
-  desc = tb_hobgoblin_traps_desc
-  potential = {
-    tribal_hobgoblin_building_trigger = yes
-  }
-  replaces = tb_defensive_fortifications_1
-  trigger = {
-    TECH_FORTIFICATIONS_CONSTRUCTION = 0
-  }
-  gold_cost = 100
-  build_time = 365
-  fort_level = 0.5
-  monthly_character_prestige = 0.1 #hobgoblins admire a good trap
+    tb_hobgoblin_traps_1 = {
+      desc = tb_hobgoblin_traps_desc
+      potential = {
+        tribal_hobgoblin_building_trigger = yes
+      }
+      replaces = tb_defensive_fortifications_1
+      trigger = {
+        TECH_FORTIFICATIONS_CONSTRUCTION = 0
+      }
+      gold_cost = 100
+      build_time = 365
+      fort_level = 0.5
+      monthly_character_prestige = 0.1 #hobgoblins admire a good trap
 
-  ai_creation_factor = 98
+      ai_creation_factor = 98
 
-  extra_tech_building_start = 0.3
-}
+      extra_tech_building_start = 0.3
+    }
 
-tb_hobgoblin_traps_2 = {
-  desc = tb_hobgoblin_traps_desc
-  potential = {
-    tribal_hobgoblin_building_trigger = yes
-  }
-  replaces = tb_defensive_fortifications_2
-  trigger = {
-    TECH_FORTIFICATIONS_CONSTRUCTION = 1
-  }
-  upgrades_from = tb_hobgoblin_traps_1
-  gold_cost = 150
-  build_time = 365
-  fort_level = 0.5
-  monthly_character_prestige = 0.1 #hobgoblins admire a good trap
+    tb_hobgoblin_traps_2 = {
+      desc = tb_hobgoblin_traps_desc
+      potential = {
+        tribal_hobgoblin_building_trigger = yes
+      }
+      replaces = tb_defensive_fortifications_2
+      trigger = {
+        TECH_FORTIFICATIONS_CONSTRUCTION = 1
+      }
+      upgrades_from = tb_hobgoblin_traps_1
+      gold_cost = 150
+      build_time = 365
+      fort_level = 0.5
+      monthly_character_prestige = 0.1 #hobgoblins admire a good trap
 
-  ai_creation_factor = 98
+      ai_creation_factor = 98
 
-  extra_tech_building_start = 0.8
-}
+      extra_tech_building_start = 0.8
+    }
 
-tb_hobgoblin_traps_3 = {
-  desc = tb_hobgoblin_traps_desc
-  potential = {
-    tribal_hobgoblin_building_trigger = yes
-  }
-  replaces = tb_defensive_fortifications_3
-  trigger = {
-    TECH_FORTIFICATIONS_CONSTRUCTION = 2
-  }
-  upgrades_from = tb_hobgoblin_traps_2
-  gold_cost = 200
-  build_time = 365
-  fort_level = 0.5
-  monthly_character_prestige = 0.1 #hobgoblins admire a good trap
+    tb_hobgoblin_traps_3 = {
+      desc = tb_hobgoblin_traps_desc
+      potential = {
+        tribal_hobgoblin_building_trigger = yes
+      }
+      replaces = tb_defensive_fortifications_3
+      trigger = {
+        TECH_FORTIFICATIONS_CONSTRUCTION = 2
+      }
+      upgrades_from = tb_hobgoblin_traps_2
+      gold_cost = 200
+      build_time = 365
+      fort_level = 0.5
+      monthly_character_prestige = 0.1 #hobgoblins admire a good trap
 
-  ai_creation_factor = 98
+      ai_creation_factor = 98
 
-  extra_tech_building_start = 1.5
-}
+      extra_tech_building_start = 1.5
+    }
 
-tb_hobgoblin_traps_4 = {
-  desc = tb_hobgoblin_traps_desc
-  potential = {
-    tribal_hobgoblin_building_trigger = yes
-  }
-  replaces = tb_defensive_fortifications_4
-  trigger = {
-    TECH_FORTIFICATIONS_CONSTRUCTION = 4
-  }
-  upgrades_from = tb_hobgoblin_traps_3
-  gold_cost = 250
-  build_time = 365
-  fort_level = 0.5
-  monthly_character_prestige = 0.1 #hobgoblins admire a good trap
+    tb_hobgoblin_traps_4 = {
+      desc = tb_hobgoblin_traps_desc
+      potential = {
+        tribal_hobgoblin_building_trigger = yes
+      }
+      replaces = tb_defensive_fortifications_4
+      trigger = {
+        TECH_FORTIFICATIONS_CONSTRUCTION = 4
+      }
+      upgrades_from = tb_hobgoblin_traps_3
+      gold_cost = 250
+      build_time = 365
+      fort_level = 0.5
+      monthly_character_prestige = 0.1 #hobgoblins admire a good trap
 
-  ai_creation_factor = 98
+      ai_creation_factor = 98
 
-  extra_tech_building_start = 1.5
-}
+      extra_tech_building_start = 1.5
+    }
 
-tb_hobgoblin_traps_5 = {
-  desc = tb_hobgoblin_traps_desc
-  potential = {
-    tribal_hobgoblin_building_trigger = yes
-  }
-  trigger = {
-    TECH_FORTIFICATIONS_CONSTRUCTION = 6
-  }
-  upgrades_from = tb_hobgoblin_traps_4
-  gold_cost = 300
-  build_time = 365
-  fort_level = 0.5
-  monthly_character_prestige = 0.1 #hobgoblins admire a good trap
+    tb_hobgoblin_traps_5 = {
+      desc = tb_hobgoblin_traps_desc
+      potential = {
+        tribal_hobgoblin_building_trigger = yes
+      }
+      trigger = {
+        TECH_FORTIFICATIONS_CONSTRUCTION = 6
+      }
+      upgrades_from = tb_hobgoblin_traps_4
+      gold_cost = 300
+      build_time = 365
+      fort_level = 0.5
+      monthly_character_prestige = 0.1 #hobgoblins admire a good trap
 
-  ai_creation_factor = 98
+      ai_creation_factor = 98
 
-  extra_tech_building_start = 3
-}
+      extra_tech_building_start = 3
+    }
 
-tb_hobgoblin_traps_6 = {
-  desc = tb_hobgoblin_traps_desc
-  potential = {
-    tribal_hobgoblin_building_trigger = yes
-  }
-  trigger = {
-    TECH_FORTIFICATIONS_CONSTRUCTION = 8
-  }
-  upgrades_from = tb_hobgoblin_traps_5
-  gold_cost = 400
-  build_time = 365
-  fort_level = 0.5
-  monthly_character_prestige = 0.1 #hobgoblins admire a good trap
+    tb_hobgoblin_traps_6 = {
+      desc = tb_hobgoblin_traps_desc
+      potential = {
+        tribal_hobgoblin_building_trigger = yes
+      }
+      trigger = {
+        TECH_FORTIFICATIONS_CONSTRUCTION = 8
+      }
+      upgrades_from = tb_hobgoblin_traps_5
+      gold_cost = 400
+      build_time = 365
+      fort_level = 0.5
+      monthly_character_prestige = 0.1 #hobgoblins admire a good trap
 
-  ai_creation_factor = 98
+      ai_creation_factor = 98
 
-  extra_tech_building_start = 3
-}
+      extra_tech_building_start = 3
+    }
   #hobgoblin docks
   #replaces tribal shipyard
   #fewer galleys, more trade value

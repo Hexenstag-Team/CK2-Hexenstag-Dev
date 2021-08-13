@@ -23,9 +23,16 @@
 #	upgrade_university
 #	upgrade_engineering_school
 #	upgrade_engineered_canals
+#	MILITARY
 #	upgrade_engineered_defences
 #	upgrade_gunnery_school
 #	upgrade_cannon_foundry
+#	upgrade_parade_grounds
+#	upgrade_riding_school
+#	PORT
+#	upgrade_great_port
+#	upgrade_great_lighthouse
+#	upgrade_dockyard_district
 #	RELIGION
 #	upgrade_temple_quarter
 #	upgrade_templar_orders
@@ -461,6 +468,9 @@ upgrade_engineering_school = {
 	allow = {  }
 	active = {
 		religion_group = old_world_group
+		FROMFROMFROM = {
+			religion_group = ROOT
+		}
 	}
 	flags = {
 		is_singular
@@ -486,6 +496,9 @@ upgrade_school_of_history = {
 	allow = {  }
 	active = {
 		religion_group = old_world_group
+		FROMFROMFROM = {
+			religion_group = ROOT
+		}
 	}
 	flags = {
 		is_singular
@@ -511,6 +524,9 @@ upgrade_school_of_medicine = {
 	allow = {  }
 	active = {
 		religion_group = old_world_group
+		FROMFROMFROM = {
+			religion_group = ROOT
+		}
 	}
 	flags = {
 		is_singular
@@ -597,6 +613,9 @@ upgrade_gunnery_school = {
 	}
 	active = {
 		religion_group = old_world_group
+		FROMFROMFROM = {
+			religion_group = ROOT
+		}
 	}
 	flags = {
 		is_singular
@@ -666,7 +685,12 @@ upgrade_riding_school = {
 			TECH_CAVALRY = 2
 		}
 	}
-	active = {	}
+	active = {
+		religion_group = old_world_group
+		FROMFROMFROM = {
+			religion_group = ROOT
+		}
+	}
 	flags = {
 		is_singular
 	}
@@ -683,6 +707,77 @@ upgrade_riding_school = {
 #College of Magic?
 
 ##########################################
+# Ports and trade
+##########################################
+upgrade_great_port = {
+	picture = GFX_upgrade_icon_anchor
+	potential = {
+		FROMFROMFROM = {
+			is_coastal = yes
+		}
+	}
+	allow = {	}
+	active = {	}
+	flags = {
+		is_singular
+	}
+
+	build_time = 24
+	gold_cost_flat = 200
+	gold_cost_ticking = 2
+
+	local_modifier = {
+		galleys_perc = 0.5
+		tradevalue = 15
+	}
+	owner_modifier = {	}
+}
+	upgrade_great_lighthouse = {
+		picture = GFX_upgrade_icon_brazier
+		potential = {
+			FROMFROM = {
+				has_wonder_upgrade = upgrade_great_port
+			}
+		}
+		allow = {	}
+		active = {	}
+		flags = {
+			is_singular
+		}
+		build_time = 60
+		gold_cost_flat = 100
+		gold_cost_ticking = 1
+
+		local_modifier = {
+			tradevalue = 35
+		}
+		owner_modifier = {	}
+	}
+
+	upgrade_dockyard_district = {
+		picture = GFX_upgrade_icon_anchor
+		potential = {
+			FROMFROM = {
+				has_wonder_upgrade = upgrade_great_port
+			}
+		}
+		allow = {	}
+		active = {	}
+		flags = {
+			is_singular
+		}
+		build_time = 60
+		gold_cost_flat = 200
+		gold_cost_ticking = 3
+
+		local_modifier = {
+			light_infantry = 100
+			tradevalue = 15
+		}
+	}
+
+
+##########################################
 # Old World Temple upgrades....
 ##########################################
 
@@ -694,7 +789,9 @@ upgrade_temple_quarter = {
 	potential = {  }
 	allow = {  }
 	active = {
-		religion_group = old_world_group
+		FROMFROMFROM = {
+			religion = ROOT
+		}
 	}
 	flags = {
 		is_singular
@@ -728,7 +825,9 @@ upgrade_templar_orders = {
 		}
 	}
 	active = {
-		religion_group = old_world_group
+		FROMFROMFROM = {
+			religion = ROOT
+		}
 	}
 
 	flags = {
@@ -740,9 +839,9 @@ upgrade_templar_orders = {
 	gold_cost_ticking = 2
 	local_modifier = {
 		temple_levy_size = 0.5
+		fort_level = 0.5
 	}
 	owner_modifier = {
-		retinue_maintenence_cost = -0.05
 	}
 }
 
