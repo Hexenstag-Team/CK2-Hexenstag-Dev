@@ -239,7 +239,7 @@ character_event = {
 				character_event = { id = dwarfunification.3 }
 			}
 			set_defacto_liege = FROM
-		
+
 		}
 		else={
 			event_target:high_king_candidate={
@@ -251,7 +251,7 @@ character_event = {
 			}
 			event_target:high_king_candidate={
 				change_variable={
-					which=against_candidate 
+					which=against_candidate
 					value=1
 				}
 			}
@@ -371,7 +371,7 @@ character_event = {
 			}
 		}
 		if={limit={from={tier=emperor}}
-		
+
 		}
 		else={
 			event_target:high_king_candidate={
@@ -383,7 +383,7 @@ character_event = {
 			}
 			event_target:high_king_candidate={
 				change_variable={
-					which=against_candidate 
+					which=against_candidate
 					value=1
 				}
 			}
@@ -521,7 +521,10 @@ character_event = {
 	option = {
 		name=dwarfunification12a
 		trigger={
-			check_variable={which=sides_with_candidate value<1}
+			check_variable={
+				which = sides_with_candidate
+				value < 1
+			}
 			OR={
 				AND={
 				age=200
@@ -544,7 +547,7 @@ character_event = {
 			limit = {
 				AND = {
 					has_opinion_modifier={
-						who=event_target:high_king_candidate 
+						who=event_target:high_king_candidate
 						modifier=supported_me_as_high_king_opinion
 					}
 					higher_tier_than = COUNT
@@ -594,7 +597,7 @@ character_event = {
 				AND = {
 					independent = yes
 					has_opinion_modifier={
-						who=event_target:high_king_candidate 
+						who=event_target:high_king_candidate
 						modifier=supported_me_as_high_king_opinion
 					}
 					higher_tier_than = COUNT
@@ -615,7 +618,7 @@ character_event = {
 			character_event = { id = dwarfunification.7 days = 7 }
 		}
 		event_target:high_king_candidate = { character_event = { id = dwarfunification.4 days = 7 } }
-		
+
 		set_global_flag = united_dwarf_empire
 		ai_chance={
 			factor=50
@@ -624,12 +627,17 @@ character_event = {
 	option = {
 		change_diplomacy=-1 #Fool Hardy try
 		name=dwarfunification12c
-		trigger={check_variable={which=sides_with_candidate value<1}}
+		trigger = {
+			check_variable = {
+				which = sides_with_candidate
+				value<1
+			}
+		}
 		any_playable_ruler = {
 			limit = {
 				AND = {
 					has_opinion_modifier={
-						who=event_target:high_king_candidate 
+						who=event_target:high_king_candidate
 						modifier=supported_me_as_high_king_opinion
 					}
 					higher_tier_than = COUNT

@@ -7,7 +7,7 @@ namespace = aicleanup
 ##################################################################
 
 character_event = {
-	id = aicleanup.002
+		id = aicleanup.002
 	hide_window = yes
 
 	is_triggered_only = yes
@@ -17,87 +17,13 @@ character_event = {
 	}
 }
 
-#on death to pass Avelorn to the next Everqueen
-character_event = {
-	id = aicleanup.003
-	hide_window = yes
-	religion = cadai
-	only_rulers = yes
-	only_women = yes
-
-	is_triggered_only = yes
-
-	trigger = { #	has_landed_title = k_avelorn
-			trait = everqueen
-			everqueen_heir = { is_alive = yes }
-		}
-
-	immediate = {
-		everqueen_heir = { character_event = { id = aicleanup.004 } }
-	}
-}
-
-# Inheritance Everqueen
-character_event = {
-	id = aicleanup.004
-	hide_window = yes
-
-	is_triggered_only = yes
-
-	immediate = { remove_trait = everqueen_heir
-			add_trait = everqueen
-			 set_character_flag = ai_flag_refuse_conversion
-			any_demesne_title = { limit = { has_title_flag = asur_supercourtier_flag }
-							unsafe_destroy_landed_title = THIS }
-			FROM = { any_demesne_title = { grant_title = ROOT } }
-			}
-}
-##################################################################
-
-### The Everqueen/Phoenix King traits
-
-# Everqueen Trait Lost
-character_event = {
-	id = aicleanup.005
-	hide_window = yes
-	religion = cadai
-	only_women = yes
-	is_triggered_only = yes
-
-	trigger = {
-		trait = everqueen
-		NOT = { has_landed_title = k_avelorn }
-		is_alive = yes
-	}
-
-	immediate = {
-		remove_trait = everqueen
-	}
-}
-# Phoenix King trait lost
-character_event = {
-	id = aicleanup.006
-	hide_window = yes
-	only_men = yes
-	is_triggered_only = yes
-	
-	trigger = {
-		trait = phoenix_king
-		NOT = { has_landed_title = e_ulthuan }
-		is_alive = yes
-	}
-
-	immediate = {
-		remove_trait = phoenix_king
-	}
-}
 # Gain old age traits
 character_event = {
 	id = aicleanup.007
 	hide_window = yes
 	min_age = 50
 	is_triggered_only = yes
-	
+
 	trigger = {
 		is_chaos_champion_chosen_or_prince_trigger = no
 		immortal = no
@@ -132,7 +58,6 @@ character_event = {
 			add_trait = old_4 }
 	}
 }
-
 
 #ROOT is the demander, FROM is the vassal
 character_event = {
@@ -284,16 +209,16 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		any_friend = { 
-			trait = mage_apprentice 
+		any_friend = {
+			trait = mage_apprentice
 			has_character_flag =  mage_master@ROOT
 		}
 	}
 
 	immediate = {
-		any_friend = { 
+		any_friend = {
 			limit = { has_character_flag =  mage_master@ROOT }
-			remove_trait = mage_apprentice 
+			remove_trait = mage_apprentice
 		}
 	}
 }
@@ -309,7 +234,7 @@ character_event = {
 
 	trigger = {
 		trait = creature_dwarf
-		NOR = { 
+		NOR = {
 			trait = dwarf_slayer_king
 			trait = dwarf_slayer
 			trait = dwarf_warrior

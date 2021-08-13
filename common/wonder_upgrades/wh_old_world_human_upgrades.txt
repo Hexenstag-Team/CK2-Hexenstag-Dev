@@ -289,6 +289,22 @@ upgrade_racetrack = {
 	}
 }
 
+upgrade_sewer_system = {
+	picture = GFX_upgrade_icon_logs
+
+	potential = {	}
+	allow = {	}
+	active = {	}
+	build_time = 60
+	gold_cost_flat = 300
+	gold_cost_ticking = 2
+	local_modifier = {
+		disease_defence = 0.05
+		levy_reinforce_rate = 0.10
+	}
+	owner_modifier = {	}
+}
+
 #Sports Field. Adds castle_levy_size and reduces local_revolt_risk
 upgrade_sports_field = {
 	picture = GFX_upgrade_icon_equipment
@@ -325,7 +341,7 @@ upgrade_streetlights = {
 	gold_cost_ticking = 2
 	local_modifier = {
 		garrison_size = 0.25
-		disease_defence = 0.10
+		disease_defence = 0.05
 	}
 	owner_modifier = {
 	}
@@ -535,7 +551,7 @@ upgrade_school_of_medicine = {
 	gold_cost_flat = 150
 	gold_cost_ticking = 1
 	local_modifier = {
-		disease_defence = 0.1
+		disease_defence = 0.05
 		economy_techpoints = 0.05
 	}
 }
@@ -1124,7 +1140,7 @@ upgrade_great_shallya_temple = {
 	gold_cost_flat = 500
 	gold_cost_ticking = 2
 	local_modifier = {
-		disease_defence = 0.1
+		disease_defence = 0.05
 	}
 	owner_modifier = {
 		monthly_character_piety = 0.5

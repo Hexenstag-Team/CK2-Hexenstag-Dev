@@ -19,8 +19,30 @@ culture = miraglian
 religion = myrmidian
 terrain = farmlands
 #History
-1.1.1={
-b_miragliano = ca_miragliano
+
+#Dark Ages City
+1250.1.1 = {
+	build_wonder = wonder_old_world_city
+	set_wonder_stage = 1
+	build_wonder_upgrade = upgrade_great_port
+	build_wonder_upgrade = upgrade_great_lighthouse
+	build_wonder_upgrade = upgrade_dockyard_district
+}
+
+#rebuilding post-Red Pox
+1850.1.1 = {
+	set_wonder_stage = 2
+	build_wonder_upgrade = upgrade_university
+	build_wonder_upgrade = upgrade_engineering_school
+	build_wonder_upgrade = upgrade_engineered_canals
+}
+
+#Leonardo
+1990.1.1 = {
+	set_wonder_stage = 3
+	build_wonder_upgrade = upgrade_opera_house
+	build_wonder_upgrade = upgrade_sewer_system
+	build_wonder_upgrade = upgrade_engineered_defences
 }
 
 2250.1.1 = {

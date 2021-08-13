@@ -193,7 +193,7 @@ republic_governments = {
 			hobgoblin_satrapy #this vassal call to arms thing is usually a benefit
 		}
 		accepts_liege_governments = { # Doesn't accept anything but sorcerer-priests
-			chaos_dwarf_government
+			chaosdwarf_government
 		}
 		free_revoke_on_governments = { # Vassals of can have their titles revoked for free
 			freeboota_government
@@ -476,11 +476,12 @@ republic_governments = {
 			lizardmen_government
 			skaven_government
 		}
-		accepts_liege_governments = { # Accepts other republics
+		accepts_liege_governments = { # Accepts other republics, rule by the Empire (historical case), rule by dwarfs (ahistorical but plausible case)
 			republic_government
 			dwarf_government
-			chaos_dwarf_government
-			skaven_government
+			dwarf_guilds_government
+			imperial_government
+			elector_count_government
 		}
 		free_revoke_on_governments = { # Vassals of can have their titles revoked for free
 			greenskin_government
