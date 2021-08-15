@@ -88,10 +88,10 @@ wonder_old_world_city = {
 	allow_coastal = yes
 	picture = GFX_wonder_strip_oldworldcity
 	potential = {
-		always = no #needs more development
+		religion_group = old_world_group #should become broader as more content is developed
 	}
 	active = {
-		religion_group = old_world_group #probably too restrictive because an Arabyan City would look pretty similar
+		trait = creature_human
 	}
 	flags = {
 		defensive
@@ -100,7 +100,7 @@ wonder_old_world_city = {
 		cost_high
 	}
 
-	allow_construction = no
+	allow_construction = yes
 
 	available_upgrades = {
 
@@ -129,10 +129,13 @@ wonder_old_world_city = {
 	upgrade_university
 	upgrade_engineering_school
 	upgrade_engineered_canals
+	upgrade_school_of_arithmetic
 	upgrade_school_of_history
 	upgrade_school_of_medicine
 
 	###MILITARY###
+	upgrade_great_keep
+	upgrade_great_walls
 	upgrade_engineered_defences
 	upgrade_gunnery_school
 	upgrade_cannon_foundry
@@ -144,24 +147,23 @@ wonder_old_world_city = {
 	upgrade_great_lighthouse
 	upgrade_dockyard_district
 
-	###TEMPLES###
+	###OLD WORLD TEMPLES###
 	upgrade_temple_quarter
 	upgrade_templar_orders
-
-		#OLD WORLD GROUP
-		upgrade_great_dazh_temple
-		upgrade_great_grail_chapel
-		upgrade_great_handrich_temple
-		upgrade_great_manann_temple
-		upgrade_great_morr_temple
-		upgrade_great_myrmidia_temple
-		upgrade_great_sigmar_temple
-		upgrade_great_shallya_temple
-		upgrade_great_taal_rhya_temple
-		#no great temple of Tor because he doesn't have much of a cult
-		upgrade_great_ulric_temple
-		upgrade_great_ursun_temple
-		upgrade_great_verena_temple
+	upgrade_great_damu_temple
+	upgrade_great_dazh_temple
+	upgrade_great_grail_chapel
+	upgrade_great_handrich_temple
+	upgrade_great_manann_temple
+	upgrade_great_morr_temple
+	upgrade_great_myrmidia_temple
+	upgrade_great_sigmar_temple
+	upgrade_great_shallya_temple
+	upgrade_great_taal_rhya_temple
+	#no great temple of Tor because he doesn't have much of a cult
+	upgrade_great_ulric_temple
+	upgrade_great_ursun_temple
+	upgrade_great_verena_temple
 
 	}
 	stage = {

@@ -36,6 +36,7 @@
 #	RELIGION
 #	upgrade_temple_quarter
 #	upgrade_templar_orders
+#	upgrade_great_damu_temple
 #	upgrade_great_dazh_temple
 #	upgrade_great_grail_chapel
 #	upgrade_great_manann_temple
@@ -173,7 +174,7 @@ upgrade_customs_wall = {
 
 	local_modifier = {
 		local_revolt_risk = 0.01
-		tax_income = 3
+		tax_income = 2
 		tradevalue = -10
 	}
 }
@@ -251,12 +252,15 @@ upgrade_opera_house = {
 	flags = {
 		is_singular
 	}
-	build_time = 24
-	gold_cost_flat = 250
+	build_time = 60
+	gold_cost_flat = 300
 	gold_cost_ticking = 2
 
 	local_modifier = {
 		city_levy_size = 0.25
+	}
+	owner_modifier = {
+		monthly_character_prestige = 0.25
 	}
 }
 
@@ -312,11 +316,11 @@ upgrade_sports_field = {
 	potential = {	}
 	allow = {	}
 	active = {	}
-	build_time = 24
-	gold_cost_flat = 240
+	build_time = 60
+	gold_cost_flat = 300
 	gold_cost_ticking = 2
 	local_modifier = {
-		castle_levy_size = 0.20
+		castle_levy_size = 0.25
 		local_revolt_risk = -0.01
 	}
 }
@@ -456,7 +460,7 @@ upgrade_university = {
 	potential = {  }
 	allow = {  }
 	active = {
-		religion_group = old_world_group
+		trait = creature_human
 	}
 	flags = {
 		is_singular
@@ -466,7 +470,7 @@ upgrade_university = {
 	gold_cost_ticking = 1
 	local_modifier = {
 		culture_techpoints = 0.05
-		tech_growth_modifier = 0.5
+		tech_growth_modifier = 0.25
 	}
 	owner_modifier = {
 	}
@@ -481,12 +485,42 @@ upgrade_engineering_school = {
 			has_wonder_upgrade = upgrade_university
 		}
 	}
-	allow = {  }
-	active = {
-		religion_group = old_world_group
+	allow = {
 		FROMFROMFROM = {
-			religion_group = ROOT
+			TECH_SIEGE_EQUIPMENT = 2
 		}
+	}
+	active = {
+		trait = creature_human
+	}
+	flags = {
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 150
+	gold_cost_ticking = 1
+	local_modifier = {
+		military_techpoints = 0.05
+		global_supply_limit = 0.50
+	}
+	owner_modifier = {
+	}
+}
+
+upgrade_school_of_arithmetic = {
+	picture = GFX_upgrade_icon_book_green
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_university
+		}
+	}
+	allow = {
+		FROMFROMFROM = {
+			TECH_TRADE_PRACTICES = 3
+		}
+	}
+	active = {
+		trait = creature_human
 	}
 	flags = {
 		is_singular
@@ -496,9 +530,7 @@ upgrade_engineering_school = {
 	gold_cost_ticking = 1
 	local_modifier = {
 		economy_techpoints = 0.05
-		global_supply_limit = 0.50
-	}
-	owner_modifier = {
+		local_tax_modifier = 0.10
 	}
 }
 
@@ -509,12 +541,13 @@ upgrade_school_of_history = {
 			has_wonder_upgrade = upgrade_university
 		}
 	}
-	allow = {  }
-	active = {
-		religion_group = old_world_group
+	allow = {
 		FROMFROMFROM = {
-			religion_group = ROOT
+			TECH_NOBLE_CUSTOMS = 3
 		}
+	}
+	active = {
+		trait = creature_human
 	}
 	flags = {
 		is_singular
@@ -531,18 +564,19 @@ upgrade_school_of_history = {
 }
 
 upgrade_school_of_medicine = {
-	picture = GFX_upgrade_icon_book_blue
+	picture = GFX_upgrade_icon_book_greem
 	potential = {
 		FROMFROM = {
 			has_wonder_upgrade = upgrade_university
 		}
 	}
-	allow = {  }
-	active = {
-		religion_group = old_world_group
+	allow = {
 		FROMFROMFROM = {
-			religion_group = ROOT
+			TECH_CONSTRUCTION = 3
 		}
+	}
+	active = {
+		trait = creature_human
 	}
 	flags = {
 		is_singular
@@ -553,6 +587,35 @@ upgrade_school_of_medicine = {
 	local_modifier = {
 		disease_defence = 0.05
 		economy_techpoints = 0.05
+	}
+}
+
+upgrade_school_of_music = {
+	picture = GFX_upgrade_icon_book_blue
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_university
+		}
+	}
+	allow = {
+		FROMFROMFROM = {
+			TECH_MAJESTY = 3
+		}
+	}
+	active = {
+		trait = creature_human
+	}
+	flags = {
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 150
+	gold_cost_ticking = 1
+	local_modifier = {
+		culture_techpoints = 0.05
+	}
+	owner_modifier = {
+		threat_decay_speed = 0.05
 	}
 }
 
@@ -574,7 +637,7 @@ upgrade_engineered_canals = {
 	flags = {
 		is_plural
 	}
-	build_time = 60
+	build_time = 120
 	gold_cost_flat = 500
 	gold_cost_ticking = 2
 	local_modifier = {
@@ -587,6 +650,40 @@ upgrade_engineered_canals = {
 ##########################################
 
 #Engineered Defences: local fort_level, siege speed advantages
+upgrade_great_keep = {
+	picture = GFX_upgrade_icon_bricks
+	potential = {	}
+	allow = {	}
+	active = {	}
+	flags = {
+		is_singular
+	}
+	build_time = 120
+	gold_cost_flat = 250
+	gold_cost_ticking = 2
+	local_modifier = {
+		fort_level = 1
+		garrison_size = 0.15
+	}
+}
+
+upgrade_great_walls = {
+	picture = GFX_upgrade_icon_bricks
+	potential = {	}
+	allow = {	}
+	active = {	}
+	flags = {
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 200
+	gold_cost_ticking = 2
+	local_modifier = {
+		fort_level = 0.5
+		garrison_size = 0.1
+	}
+}
+
 
 upgrade_engineered_defences = {
 	picture = GFX_upgrade_icon_bricks
@@ -805,8 +902,9 @@ upgrade_temple_quarter = {
 	potential = {  }
 	allow = {  }
 	active = {
+		religion_group = old_world_group
 		FROMFROMFROM = {
-			religion = ROOT
+			religion_group = old_world_group
 		}
 	}
 	flags = {
@@ -841,20 +939,18 @@ upgrade_templar_orders = {
 		}
 	}
 	active = {
-		FROMFROMFROM = {
-			religion = ROOT
-		}
+		religion_group = old_world_group
 	}
 
 	flags = {
 		is_plural
 	}
 
-	build_time = 12
-	gold_cost_flat = 400
+	build_time = 60
+	gold_cost_flat = 300
 	gold_cost_ticking = 2
 	local_modifier = {
-		temple_levy_size = 0.5
+		temple_levy_size = 0.25
 		fort_level = 0.5
 	}
 	owner_modifier = {
@@ -863,8 +959,37 @@ upgrade_templar_orders = {
 
 ###Great Temples: only one per city. Where applicable I *think* these can add society currency
 
-#Great Temple of Dazh: adds vassal_opinion and prestige
+#Great Temple of Damu, goddess of Albion. Adds LI morale and piety.
+upgrade_great_damu_temple = {
+	picture = GFX_upgrade_icon_stones
+	show_in_history = yes
+	potential = {
+		old_world_city_can_build_great_temple_trigger = yes
+	}
+	allow = {
+		FROMFROMFROM = {
+			religion = old_faith
+		}
+	}
+	active = {
+		religion = old_faith
+	}
+	flags = {
+		great_temple
+		is_singular
+	}
+	build_time = 60
+	gold_cost_flat = 500
+	gold_cost_ticking = 2
+	local_modifier = {
+		light_infantry_morale = 0.25
+	}
+	owner_modifier = {
+		monthly_character_piety = 0.5
+	}
+}
 
+#Great Temple of Dazh: adds vassal_opinion and prestige
 upgrade_great_dazh_temple = {
 	picture = GFX_upgrade_icon_brazier
 	show_in_history = yes
@@ -925,7 +1050,7 @@ upgrade_great_grail_chapel = {
 	gold_cost_flat = 500
 	gold_cost_ticking = 2
 	local_modifier = {
-		knights_morale = 0.5
+		knights_morale = 0.25
 	}
 	owner_modifier = {
 		monthly_character_piety = 0.5
@@ -949,10 +1074,7 @@ upgrade_great_handrich_temple = {
 	}
 	active = {
 		OR = {
-			religion = kislev_gods
-			religion = myrmidian
-			religion = sigmarite
-			religion = taalite
+			religion_group = old_world_group
 		}
 	}
 	flags = {
@@ -994,14 +1116,7 @@ upgrade_great_manann_temple = {
 		}
 	}
 	active = {
-		OR = {
-			religion = grail
-			religion = kislev_gods
-			religion = myrmidian
-			religion = sigmarite
-			religion = taalite
-			religion = ulrican
-		}
+		religion_group = old_world_group
 	}
 	flags = {
 		great_temple
@@ -1054,7 +1169,7 @@ upgrade_great_morr_temple = {
 	gold_cost_flat = 500
 	gold_cost_ticking = 2
 	local_modifier = {
-		heavy_infantry_defensive = 0.5
+		heavy_infantry_defensive = 0.25
 	}
 	owner_modifier = {
 		monthly_character_piety = 0.5
@@ -1098,7 +1213,7 @@ upgrade_great_myrmidia_temple = {
 	gold_cost_flat = 500
 	gold_cost_ticking = 2
 	local_modifier = {
-		pikemen_defensive = 0.5
+		pikemen_defensive = 0.25
 	}
 	owner_modifier = {
 		monthly_character_piety = 0.5
@@ -1114,23 +1229,14 @@ upgrade_great_shallya_temple = {
 	}
 	allow = {
 		FROMFROMFROM = {
-			OR = {
-				religion = grail
-				religion = myrmidian
-				religion = sigmarite
-				religion = taalite
-				religion = ulrican
+			religion_group = old_world_group
+			NOT = {
+				religion = old_faith
 			}
 		}
 	}
 	active = {
-		OR = {
-			religion = grail
-			religion = myrmidian
-			religion = sigmarite
-			religion = taalite
-			religion = ulrican
-		}
+		religion_group = old_world_group
 	}
 	flags = {
 		great_temple
@@ -1166,6 +1272,7 @@ upgrade_great_sigmar_temple = {
 	}
 	active = {
 		OR = {
+			religion = kislev_gods
 			religion = sigmarite
 			religion = taalite
 			religion = ulrican
@@ -1179,7 +1286,7 @@ upgrade_great_sigmar_temple = {
 	gold_cost_flat = 500
 	gold_cost_ticking = 2
 	local_modifier = {
-		light_infantry_defensive = 0.5
+		light_infantry_defensive = 0.25
 	}
 	owner_modifier = {
 		monthly_character_piety = 0.5
@@ -1209,7 +1316,7 @@ upgrade_great_taal_rhya_temple = {
 	gold_cost_flat = 500
 	gold_cost_ticking = 2
 	local_modifier = {
-		archers_offensive = 0.5
+		archers_offensive = 0.25
 	}
 	owner_modifier = {
 		monthly_character_piety = 0.5
@@ -1218,7 +1325,7 @@ upgrade_great_taal_rhya_temple = {
 
 #no great temple of Tor because he doesn't have much of a cult
 
-#Great Temple of Ulric: adds owner combat_rating, phase_melee_attack, threat_decay_speed
+#Great Temple of Ulric: adds owner combat_rating, phase_melee_attack
 
 upgrade_great_ulric_temple = {
 	picture = GFX_upgrade_icon_brazier
@@ -1228,25 +1335,11 @@ upgrade_great_ulric_temple = {
 	}
 	allow = {
 		FROMFROMFROM = {
-			OR = {
-				religion = grail
-				religion = kislev_gods
-				religion = myrmidian
-				religion = sigmarite
-				religion = taalite
-				religion = ulrican
-			}
+			religion_group = old_world_group
 		}
 	}
 	active = {
-		OR = {
-			religion = grail
-			religion = kislev_gods
-			religion = myrmidian
-			religion = sigmarite
-			religion = taalite
-			religion = ulrican
-		}
+		religion_group = old_world_group
 	}
 	flags = {
 		great_temple
@@ -1256,7 +1349,7 @@ upgrade_great_ulric_temple = {
 	gold_cost_flat = 500
 	gold_cost_ticking = 2
 	local_modifier = {
-		heavy_infantry_offensive = 0.5
+		heavy_infantry_offensive = 0.25
 	}
 	owner_modifier = {
 		monthly_character_piety = 0.5
@@ -1293,7 +1386,7 @@ upgrade_great_ursun_temple = {
 	gold_cost_flat = 500
 	gold_cost_ticking = 2
 	local_modifier = {
-		levy_reinforce_rate = 0.5
+		levy_reinforce_rate = 0.25
 	}
 	owner_modifier = {
 		monthly_character_piety = 0.5

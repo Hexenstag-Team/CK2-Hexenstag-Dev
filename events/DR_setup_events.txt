@@ -680,27 +680,14 @@ character_event = {
 	}
 }
 
-#Correct inheritance for female temple holders and religious heads
+#Correct inheritance for Cult of the Lady.
 character_event = {
 	id =  DR_startup.3
 	is_triggered_only = yes
 	hide_window = yes
 
 	trigger = {
-		OR = {
-			has_landed_title = k_cult_of_the_lady
-			has_landed_title = k_cult_of_shallya
-			has_landed_title = k_cult_of_myrmidia
-			AND = {
-				is_theocracy = yes
-				controls_religion = no
-				OR = {
-					religion = myrmidian
-					religion = shallyan
-					religion = amazon
-				}
-			}
-		}
+		has_landed_title = k_cult_of_the_lady
 	}
 
 	option = {
@@ -1401,6 +1388,7 @@ character_event = {
 
 character_event = {
 	id = DR_startup.8
+	hide_window = yes
 
 	is_triggered_only = yes
 

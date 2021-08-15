@@ -1751,23 +1751,35 @@ character_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOT = {
-			has_global_flag = red_duke_bloodline_continues
-		}
 		dynasty = 28016
+		NOT = {
+			any_owned_bloodline = {
+				has_bloodline_flag = warhammer_bloodline_red_duke
+			}
+		}
 	}
 
 	immediate = {
 		c_2105 = {
 			random_owned_bloodline = {
-				add_bloodline_member = ROOT
+				ROOT = {
+					add_to_bloodline = PREV
+				}
 			}
 		}
 		any_child_even_if_dead = {
-			character_event = {
-				id = wh_setup.200
+			if = {
+				limit = {
+					NOT = {
+						any_owned_bloodline = {
+							has_bloodline_flag = warhammer_bloodline_red_duke
+						}
+					}
+				}
+				character_event = {
+					id = wh_setup.200
+				}
 			}
 		}
-		set_global_flag = red_duke_bloodline_continues
 	}
 }
