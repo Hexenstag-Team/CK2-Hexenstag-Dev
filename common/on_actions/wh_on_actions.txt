@@ -48,6 +48,7 @@ on_yearly_pulse = {
 		bretonnia.503
 		wh_chaos_dwarf.100 #Hashut Favor maintenance for Chaos Dwarfs
 		wh_chaos_dwarf.200 #Master of the Conclave/Cabal maintenance for e_hashut
+		chaosmagic.0 #Open worshipper of chaos learns chaos magic
 		# dwarfengineering.0
 		# dwarfengineering.1
 		# dwarfengineering.2
@@ -316,11 +317,6 @@ on_siege_over_winner = {
 		100 = chaosr.1502
 		50 = chaosr.1511
 		10 = chaosr.1515
-		adventurers_events = {
-			200 = DoWA.1 #Raiding Party Sacks Holding
-			100 = DoWA.2 #
-			100 = 0 #
-		}
 		raiding_events = {
 			#delay = 3
 			500 = HL.4813 # Nomads may pillage holdings on siege
@@ -561,7 +557,6 @@ on_new_holder_usurpation = {
 		DR_greenskins.182
 		br_maintenance.101 #upon title holder change clears crown_law_change title flag
 		svampires.81 #Shadowrealm collapses
-		aicleanup.029 # Destroy Samur's Witch Hunter Chapter
 		DR_misc.1001 #Special title localisations ( Elector-Counts, Everqueen )
 		aicleanup.012 #Greenskin Government Maintance
 	}
@@ -643,6 +638,12 @@ on_society_bi_yearly_pulse = {
 		300 = DR_cults.20060 # Devil Worshippers: Infernal Choir (only with Rivals)
 		40 = cultofmorr.150
 		60 = cultofmorr.140
+	}
+}
+
+on_unit_entering_province = {
+	events = {
+		DR_misc.1002 #mists of albion
 	}
 }
 

@@ -1952,5 +1952,761 @@ castle = {
         extra_tech_building_start = 0.8
     }
 
+    #Lucian culture barracks. Pikes
+    ca_tilean_lucian_troops_1 = {
+		desc = ca_tilean_lucian_troops_1_desc
+        potential = {
+			culture = lucian
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+		is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				culture = lucian
+			}
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 200
+		build_time = 730
+		pikemen = 30
+		pikemen_morale = 0.15
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_tilean_lucian_troops_2 = {
+		desc = ca_tilean_lucian_troops_1_desc
+        potential = {
+			culture = lucian
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+        is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 1
+			FROM = {
+				culture = lucian
+			}
+		}
+		upgrades_from = ca_tilean_lucian_troops_1
+		gold_cost = 300
+		build_time = 1095
+		pikemen = 40
+		pikemen_morale = 0.15
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 0.8
+	}
+	ca_tilean_lucian_troops_3 = {
+		desc = ca_tilean_lucian_troops_1_desc
+        potential = {
+			culture = lucian
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+        is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			FROM = {
+				culture = lucian
+			}
+		}
+		upgrades_from = ca_tilean_lucian_troops_2
+		gold_cost = 400
+		build_time = 2190
+		pikemen = 60
+		pikemen_morale = 0.15
+		ai_creation_factor = 99
+
+		extra_tech_building_start = 0.8
+	}
+	ca_tilean_lucian_troops_4 = {
+		desc = ca_tilean_lucian_troops_1_desc
+		potential = {
+			culture = lucian
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+        is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = {
+				culture = lucian
+			}
+		}
+		upgrades_from = ca_tilean_lucian_troops_3
+		gold_cost = 500
+		build_time = 2190
+		pikemen = 80
+		pikemen_morale = 0.15
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.8
+	}
+
+
+    #Miraglian culture barracks. Master-crafted crossbows, later master-crafted guns
+    ca_tilean_miraglian_troops_1 = {
+        desc = ca_tilean_miraglian_troops_1_desc
+        potential = {
+            culture = miraglian
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            FROM = {
+                culture = miraglian
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 200
+        build_time = 730
+        archers = 60
+        archers_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_tilean_miraglian_troops_2 = {
+        desc = ca_tilean_miraglian_troops_1_desc
+        potential = {
+            culture = miraglian
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 1
+            FROM = {
+                culture = miraglian
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_tilean_miraglian_troops_1
+        gold_cost = 300
+        build_time = 1095
+        archers = 80
+        archers_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_tilean_miraglian_troops_3 = {
+        desc = ca_tilean_miraglian_troops_2_desc
+        potential = {
+            culture = miraglian
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 2
+            FROM = {
+                culture = miraglian
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_tilean_miraglian_troops_2
+        gold_cost = 400
+        build_time = 2190
+        archers_offensive = -0.15
+        gunpowder = 50
+        gunpowder_offensive = 0.25
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_tilean_miraglian_troops_4 = {
+        desc = ca_tilean_miraglian_troops_2_desc
+        potential = {
+            culture = miraglian
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 4
+            FROM = {
+                culture = miraglian
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_tilean_miraglian_troops_3
+        gold_cost = 500
+        build_time = 2190
+        archers = -140
+        archers_offensive = -0.15
+        gunpowder = 130
+        gunpowder_offensive = 0.35
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    #Monte Castello city-state barracks. Provides extra garrison and fort benefits as well as pikemen, but is more expensive
+    ca_tilean_monte_castello_troops_1 = {
+        desc = ca_tilean_monte_castello_troops_desc
+        potential = {
+            province = 655
+        }
+        trigger = {
+            FROM = {
+                culture_group = tilean_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 300
+        build_time = 730
+		pikemen = 30
+		pikemen_defensive = 0.15
+        fort_level = 1
+        garrison_size = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_tilean_monte_castello_troops_2 = {
+        desc = ca_tilean_monte_castello_troops_desc
+        potential = {
+            province = 655
+        }
+        trigger = {
+            TECH_CAVALRY = 1
+            FROM = {
+                culture_group = tilean_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_tilean_monte_castello_troops_1
+        gold_cost = 400
+        build_time = 1095
+		pikemen = 40
+		pikemen_defensive = 0.15
+        fort_level = 1
+        garrison_size = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_tilean_monte_castello_troops_3 = {
+        desc = ca_tilean_monte_castello_troops_desc
+        potential = {
+            province = 655
+        }
+        trigger = {
+            TECH_CAVALRY = 2
+            FROM = {
+                culture_group = tilean_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_tilean_monte_castello_troops_2
+        gold_cost = 500
+        build_time = 2190
+		pikemen = 50
+		pikemen_defensive = 0.15
+        fort_level = 1
+        garrison_size = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_tilean_monte_castello_troops_4 = {
+        desc = ca_tilean_monte_castello_troops_desc
+        potential = {
+            province = 655
+        }
+        trigger = {
+            TECH_CAVALRY = 4
+            FROM = {
+                culture_group = tilean_group
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_tilean_monte_castello_troops_3
+        gold_cost = 600
+        build_time = 2190
+		pikemen = 60
+		pikemen_defensive = 0.15
+        fort_level = 1
+        garrison_size = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+
+    #Myken troops. Light cavalry.
+    ca_tilean_myken_troops_1 = {
+		desc = ca_tilean_myken_troops_1_desc
+        potential = {
+			culture = myken
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+		is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				culture = myken
+			}
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 200
+		build_time = 730
+		light_cavalry = 30
+		light_cavalry_morale = 0.15
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_tilean_myken_troops_2 = {
+		desc = ca_tilean_myken_troops_1_desc
+        potential = {
+			culture = myken
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+        is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 1
+			FROM = {
+				culture = myken
+			}
+		}
+		upgrades_from = ca_tilean_myken_troops_1
+		gold_cost = 300
+		build_time = 1095
+		light_cavalry = 40
+		light_cavalry_morale = 0.15
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 0.8
+	}
+	ca_tilean_myken_troops_3 = {
+		desc = ca_tilean_myken_troops_1_desc
+        potential = {
+			culture = myken
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+        is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			FROM = {
+				culture = myken
+			}
+		}
+		upgrades_from = ca_tilean_myken_troops_2
+		gold_cost = 400
+		build_time = 2190
+		light_cavalry = 60
+		light_cavalry_morale = 0.15
+		ai_creation_factor = 99
+
+		extra_tech_building_start = 0.8
+	}
+	ca_tilean_myken_troops_4 = {
+		desc = ca_tilean_myken_troops_1_desc
+		potential = {
+			culture = myken
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+        is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = {
+				culture = myken
+			}
+		}
+		upgrades_from = ca_tilean_myken_troops_3
+		gold_cost = 500
+		build_time = 2190
+		light_cavalry = 80
+		light_cavalry_morale = 0.15
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.8
+	}
+
+    #Reman cultural barracks. Pikemen
+    ca_tilean_reman_troops_1 = {
+		desc = ca_tilean_reman_troops_1_desc
+        potential = {
+			culture = reman
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+		is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				culture = reman
+			}
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 200
+		build_time = 730
+		pikemen = 30
+		pikemen_offensive = 0.15
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_tilean_reman_troops_2 = {
+		desc = ca_tilean_reman_troops_1_desc
+        potential = {
+			culture = reman
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+        is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 1
+			FROM = {
+				culture = reman
+			}
+		}
+		upgrades_from = ca_tilean_reman_troops_1
+		gold_cost = 300
+		build_time = 1095
+		pikemen = 40
+		pikemen_offensive = 0.15
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 0.8
+	}
+	ca_tilean_reman_troops_3 = {
+		desc = ca_tilean_reman_troops_1_desc
+        potential = {
+			culture = reman
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+        is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			FROM = {
+				culture = reman
+			}
+		}
+		upgrades_from = ca_tilean_reman_troops_2
+		gold_cost = 400
+		build_time = 2190
+		pikemen = 60
+		pikemen_offensive = 0.15
+		ai_creation_factor = 99
+
+		extra_tech_building_start = 0.8
+	}
+	ca_tilean_reman_troops_4 = {
+		desc = ca_tilean_reman_troops_1_desc
+		potential = {
+			culture = reman
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+        is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = {
+				culture = reman
+			}
+		}
+		upgrades_from = ca_tilean_reman_troops_3
+		gold_cost = 500
+		build_time = 2190
+		pikemen = 80
+		pikemen_offensive = 0.15
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.8
+	}
+
+    #Tobaran cultural barracks. Light Infantry.
+    ca_tilean_tobaran_troops_1 = {
+		desc = ca_tilean_tobaran_troops_1_desc
+        potential = {
+			culture = tobaran
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+		is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 0
+			FROM = {
+				culture = tobaran
+			}
+		}
+		prerequisites = { ca_wall_2 }
+		gold_cost = 200
+		build_time = 730
+		light_infantry = 120
+		light_infantry_morale = 0.15
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+	ca_tilean_tobaran_troops_2 = {
+		desc = ca_tilean_tobaran_troops_1_desc
+        potential = {
+			culture = tobaran
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+        is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 1
+			FROM = {
+				culture = tobaran
+			}
+		}
+		upgrades_from = ca_tilean_tobaran_troops_1
+		gold_cost = 300
+		build_time = 1095
+		light_infantry = 160
+		light_infantry_morale = 0.15
+		ai_creation_factor = 100
+
+		extra_tech_building_start = 0.8
+	}
+	ca_tilean_tobaran_troops_3 = {
+		desc = ca_tilean_tobaran_troops_1_desc
+        potential = {
+			culture = tobaran
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+        is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 2
+			FROM = {
+				culture = tobaran
+			}
+		}
+		upgrades_from = ca_tilean_tobaran_troops_2
+		gold_cost = 400
+		build_time = 2190
+		light_infantry = 200
+		light_infantry_morale = 0.15
+		ai_creation_factor = 99
+
+		extra_tech_building_start = 0.8
+	}
+	ca_tilean_tobaran_troops_4 = {
+		desc = ca_tilean_tobaran_troops_1_desc
+		potential = {
+			culture = tobaran
+			NOT = { has_city_state_special_levy_building_trigger = yes }
+		}
+        is_active_trigger = {
+			FROM = {
+                trait = creature_human
+            }
+		}
+		trigger = {
+			TECH_CASTLE_CONSTRUCTION = 4
+			FROM = {
+				culture = tobaran
+			}
+		}
+		upgrades_from = ca_tilean_tobaran_troops_3
+		gold_cost = 500
+		build_time = 2190
+		light_infantry = 240
+		light_infantry_morale = 0.15
+		ai_creation_factor = 98
+
+		extra_tech_building_start = 0.8
+	}
+
+    #Umbrian cultural barracks. Light Cavalry
+    ca_tilean_umbrian_troops_1 = {
+        desc = ca_tilean_umbrian_troops_1_desc
+        potential = {
+            culture = umbrian
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            FROM = {
+                culture = umbrian
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        prerequisites = { ca_wall_2 }
+        gold_cost = 200
+        build_time = 730
+        light_cavalry = 30
+        light_cavalry_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_tilean_umbrian_troops_2 = {
+        desc = ca_tilean_umbrian_troops_1_desc
+        potential = {
+            culture = umbrian
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 1
+            FROM = {
+                culture = umbrian
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_tilean_umbrian_troops_1
+        gold_cost = 300
+        build_time = 1095
+        light_cavalry = 40
+        light_cavalry_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_tilean_umbrian_troops_3 = {
+        desc = ca_tilean_umbrian_troops_1_desc
+        potential = {
+            culture = umbrian
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 2
+            FROM = {
+                culture = umbrian
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_tilean_umbrian_troops_2
+        gold_cost = 400
+        build_time = 2190
+        light_cavalry = 50
+        light_cavalry_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
+
+    ca_tilean_umbrian_troops_4 = {
+        desc = ca_tilean_umbrian_troops_1_desc
+        potential = {
+            culture = umbrian
+            NOT = { has_city_state_special_levy_building_trigger = yes }
+        }
+        trigger = {
+            TECH_CASTLE_CONSTRUCTION = 4
+            FROM = {
+                culture = umbrian
+            }
+        }
+        is_active_trigger = {
+            FROM = {
+                trait = creature_human
+            }
+        }
+        upgrades_from = ca_tilean_umbrian_troops_3
+        gold_cost = 500
+        build_time = 2190
+        light_cavalry = 60
+        light_cavalry_offensive = 0.15
+        ai_creation_factor = 101
+
+        extra_tech_building_start = 0.8
+    }
 
 }

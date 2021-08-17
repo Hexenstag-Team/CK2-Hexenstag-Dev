@@ -375,7 +375,10 @@ character_event = {
 		name = EVTDESCORCS13A #"Wot? Jus' tell 'im ta stay outta mah way!!
 		prestige = 50
 		piety = 25
-		if={limit={age>=90}
+		if={
+			limit={
+				age >= 90
+			}
 			create_random_priest = {
 				random_traits = yes
 				dynasty = ROOT
@@ -394,7 +397,10 @@ character_event = {
 			}
 			recalc_succession = yes
 		}
-		else_if={limit={age>=60}
+		else_if={
+			limit={
+				age >= 60
+			}
 			create_random_priest = {
 				random_traits = yes
 				dynasty = ROOT
@@ -413,7 +419,7 @@ character_event = {
 			}
 			recalc_succession = yes
 		}
-		else_if={limit={age<60}
+		else = {
 			create_random_priest = {
 				random_traits = yes
 				dynasty = ROOT

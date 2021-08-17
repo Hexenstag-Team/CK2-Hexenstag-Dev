@@ -328,16 +328,16 @@ character_event = {
 
 	immediate = {
 		if = {
-			limit = { character = k_red_dukedom }
+			limit = { has_landed_title = k_red_dukedom }
 			k_red_dukedom = { unsafe_destroy_landed_title = THIS }
 		}
 		if = {
-			limit = { character = k_drachenfels }
+			limit = { has_landed_title = k_drachenfels }
 			k_drachenfels = { unsafe_destroy_landed_title = THIS }
 			clr_global_flag = drachenfels_back
 		}
 		if = {
-			limit = { character = e_sylvania }
+			limit = { has_landed_title = e_sylvania }
 			e_sylvania = { unsafe_destroy_landed_title = THIS }
 		}
 	}
@@ -498,22 +498,6 @@ character_event = {
 		 }
 }
 
-#On Succession event - if holder of Samur's Witch Hunter chapter is not a Witch Hunter, the title disappears.
-character_event = {
-	id = aicleanup.029
-	hide_window = yes
-	only_rulers = yes
-
-	is_triggered_only = yes
-
-	trigger = { FROM = { title = d_samur_chapter }
-		NOT = { trait = witch_hunter } }
-
-	immediate = {
-		d_samur_chapter = { destroy_landed_title = THIS }
-		activate_title = { title = d_samur_chapter status = no }
-		 }
-}
 #on_adolescence, elves receive the youngling trait, preventing them from wasting away themselves in lowborn marriages.
 character_event = {
 	id = aicleanup.030
@@ -590,12 +574,17 @@ character_event = {
 	desc = OK
 
 	trigger = {
-		#FROM=
-		FROM = {has_province_flag = mining_outpost_flag}
+		FROM = {
+			has_province_flag = mining_outpost_flag
+		}
 	}
 	immediate= {
 		FROM = {
-			province_event = { id=aicleanup.041 days=1}
+			save_event_target_as = mining_province
+			province_event = {
+				id = aicleanup.041
+				days=1
+			}
 		}
 	}
 	option = {
@@ -603,13 +592,22 @@ character_event = {
 	}
 }
 
-character_event = {
+province_event = {
 	id = aicleanup.041
 	desc = OK
 	hide_window = yes
 
 	is_triggered_only = yes
-	immediate={if={limit={FROMFROM={has_trade_post=no}}clr_province_flag=mining_outpost_flag}}
+	immediate={
+		event_target:mining_province = {
+			if={
+				limit={
+					has_trade_post = no
+				}
+				clr_province_flag = mining_outpost_flag
+			}
+		}
+	}
 
 	option = {
 		name = OK

@@ -15,7 +15,6 @@ character_event = {
 	desc = {
 		trigger = {
 			OR = {
-				trait = malekith
 				trait = fay_enchantress
 				trait = drachenfels
 			 }
@@ -51,18 +50,11 @@ character_event = {
 				limit = {
 					NOR = {
 					 	trait = king_settra
-					 	trait = malekith
 					 	trait = fay_enchantress
 						trait = drachenfels
 					}
 				}
 				character_event = { id = snehekharan.2 days = 1095 random = 7300 }
-			}
-			else_if = {
-				limit = {
-					trait = malekith
-				}
-				character_event = { id = snehekharan.2 days = 365 random = 3650 }
 			}
 			else_if = {
 				limit = {
@@ -88,7 +80,6 @@ character_event = {
 	desc = {
 		trigger = {
 			OR = {
-				trait = malekith
 				trait = fay_enchantress
 				trait = drachenfels
 			 }
@@ -2657,7 +2648,7 @@ character_event = {
 	trigger = { }
 
 	immediate = {
-		ROOT={ 
+		ROOT={
 			set_variable = { which = global_nehekharan_age value = 0 }
 			set_variable = { which = global_nehekharan_age_start value = 0 }
 			set_variable = { which = global_nehekharan_age_father value = 0 }
@@ -2671,7 +2662,7 @@ character_event = {
 				NOT={father = {always = yes}}
 				}
 				set_character_flag=option_a
-			}		
+			}
 			else_if={limit={
 					NOT={age=1900}
 					father = {
@@ -2723,7 +2714,7 @@ character_event = {
 					}
 					50={
 						set_character_flag=option_c
-					
+
 					}
 				}
 			}
@@ -2852,7 +2843,7 @@ character_event = {
 					33={add_trait=genius}
 					33={
 						add_trait=strong
-						add_intrigue=2 
+						add_intrigue=2
 					}
 					33={
 						add_trait=quick
@@ -2968,7 +2959,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option={
 		trigger={NOT={has_character_flag=option_d}}
 		name = {
@@ -3222,7 +3213,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option={
 		trigger={NOT={has_character_flag=option_d}}
 		name = {
@@ -3453,7 +3444,7 @@ character_event = {
         	}
         	text = EVT_OPT_AWAKEN_RELATIVE_S
         }
-	
+
 		if={limit={has_character_flag=option_a}
 			create_character = {
 				random_traits = no
@@ -3471,7 +3462,7 @@ character_event = {
 					25={add_trait=fortune_builder}
 					25={add_trait=grey_eminence}
 				}
-				
+
 				random_list={
 					25={
 						add_trait=greedy
@@ -3521,7 +3512,7 @@ character_event = {
 					25={add_trait=fortune_builder}
 					25={add_trait=grey_eminence}
 				}
-				
+
 				random_list={
 					25={
 						add_trait=greedy
@@ -3691,19 +3682,19 @@ character_event = {
 		clr_character_flag=awakening_ritual
 		if={limit={root={has_dynasty_flag =awakening_1}}
 			ROOT={set_dynasty_flag=awakening_2}
-		
+
 		}
 		else_if={limit={root={has_dynasty_flag =awakening_2}}
 			ROOT={set_dynasty_flag=awakening_3}
-		
+
 		}
 		else_if={limit={root={has_dynasty_flag =awakening_3}}
 			ROOT={set_dynasty_flag=awakening_4}
-		
+
 		}
 		else_if={limit={root={has_dynasty_flag =awakening_4}}
 			ROOT={set_dynasty_flag=awakening_5}
-		
+
 		}
 		else={
 			ROOT={set_dynasty_flag=awakening_1}

@@ -16,42 +16,16 @@
 
 # City
 city = {
-	#Kislev
-	#Erengrad, fort level, tax income, gunpowder, light  infantry, galleys
-	ct_erengrad = {
-		desc = ct_erengrad_desc
-
-		gold_cost = 1000
-		build_time = 3000
-
-		fort_level = 2
-		gunpowder = 250
-		light_infantry = 500
-		galleys = 20
-
-		ai_creation_factor = 97
-		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_erengrad}
-			AND = {religion_group = old_world_group}
-		}
-
-		extra_tech_building_start = 0.2
-	}
-
     #Wall quality, gives fort level
 	ct_wall_q_1 = {
 		desc = ct_wall_q_1_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -70,13 +44,11 @@ city = {
 		desc = ct_wall_q_2_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 1 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -96,13 +68,11 @@ city = {
 		desc = ca_wall_q_3_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 3 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -121,13 +91,11 @@ city = {
 		desc = ca_wall_q_4_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -146,13 +114,11 @@ city = {
 		desc = ca_wall_q_5_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -173,13 +139,11 @@ city = {
 		desc = ca_wall_1_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -199,13 +163,11 @@ city = {
 		desc = ca_wall_2_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -226,13 +188,11 @@ city = {
 		desc = ct_wall_3_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -253,13 +213,11 @@ city = {
 		desc = ct_wall_4_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -280,13 +238,11 @@ city = {
 		desc = ct_wall_5_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -309,17 +265,14 @@ city = {
 		desc = ct_guard_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-				NOR = {
-					culture = sudenburger
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = druchi_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = halfling_old_world
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = druchi_group
+				culture_group = skaven_group
+				culture = nehekharan
 			}
 		}
 		gold_cost = 100
@@ -333,17 +286,14 @@ city = {
 		desc = ct_guard_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		potential = {
-			location = {
-				NOR = {
-					culture = sudenburger
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = druchi_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = halfling_old_world
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = druchi_group
+				culture_group = skaven_group
+				culture = nehekharan
 			}
 		}
 		prerequisites = { ct_wall_1 }
@@ -359,17 +309,14 @@ city = {
 		desc = ct_guard_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
 		potential = {
-			location = {
-				NOR = {
-					culture = sudenburger
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = druchi_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = halfling_old_world
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = druchi_group
+				culture_group = skaven_group
+				culture = nehekharan
 			}
 		}
 		prerequisites = { ct_wall_2 }
@@ -385,17 +332,14 @@ city = {
 		desc = ct_guard_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
 		potential = {
-			location = {
-				NOR = {
-					culture = sudenburger
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = druchi_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = halfling_old_world
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = druchi_group
+				culture_group = skaven_group
+				culture = nehekharan
 			}
 		}
 		upgrades_from = ct_guard_3
@@ -410,17 +354,14 @@ city = {
 		desc = ct_guard_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
 		potential = {
-			location = {
-				NOR = {
-					culture = sudenburger
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = druchi_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = halfling_old_world
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = druchi_group
+				culture_group = skaven_group
+				culture = nehekharan
 			}
 		}
 		upgrades_from = ct_guard_4
@@ -436,9 +377,7 @@ city = {
 		desc = ct_rota_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-				culture_group = kislevite_group
-			}
+			culture_group = kislevite_group
 		}
 		replaces = ct_guard_1
 		gold_cost = 100
@@ -452,9 +391,7 @@ city = {
 		desc = ct_rota_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		potential = {
-			location = {
-				culture_group = kislevite_group
-			}
+			culture_group = kislevite_group
 		}
 		prerequisites = { ct_wall_1 }
 		replaces = ct_guard_2
@@ -471,9 +408,7 @@ city = {
 		desc = ct_rota_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
 		potential = {
-			location = {
-				culture_group = kislevite_group
-			}
+			culture_group = kislevite_group
 		}
 		prerequisites = { ct_wall_2 }
 		replaces = ct_guard_3
@@ -490,9 +425,7 @@ city = {
 		desc = ct_rota_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
 		potential = {
-			location = {
-				culture_group = kislevite_group
-			}
+			culture_group = kislevite_group
 		}
 		upgrades_from = ct_rota_3
 		replaces = ct_guard_4
@@ -508,9 +441,7 @@ city = {
 		desc = ct_rota_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
 		potential = {
-			location = {
-				culture_group = kislevite_group
-			}
+			culture_group = kislevite_group
 		}
 		upgrades_from = ct_rota_4
 		replaces = ct_guard_5
@@ -528,7 +459,7 @@ city = {
 		replaces = ct_guard_1
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = { culture_group = bretonnian_group }
+			 culture_group = bretonnian_group
 		}
 		gold_cost = 100
 		build_time = 365
@@ -543,7 +474,7 @@ city = {
 		replaces = ct_guard_2
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		potential = {
-			location = { culture_group = bretonnian_group }
+			 culture_group = bretonnian_group
 		}
 		prerequisites = { ct_wall_1 }
 		upgrades_from = ct_peasantmuster_1
@@ -561,7 +492,7 @@ city = {
 		replaces = ct_guard_3
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
 		potential = {
-			location = { culture_group = bretonnian_group }
+			 culture_group = bretonnian_group
 		}
 		prerequisites = { ct_wall_2 }
 		upgrades_from = ct_peasantmuster_2
@@ -578,8 +509,7 @@ city = {
 		replaces = ct_guard_4
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
 		potential = {
-			FROM = { culture_group = bretonnian_group
-			}
+			 culture_group = bretonnian_group
 		}
 		upgrades_from = ct_peasantmuster_3
 		gold_cost = 300
@@ -595,7 +525,7 @@ city = {
 		replaces = ct_guard_5
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
 		potential = {
-			location = { culture_group = bretonnian_group }
+			 culture_group = bretonnian_group
 		}
 		upgrades_from = ct_peasantmuster_4
 		gold_cost = 400
@@ -611,23 +541,13 @@ city = {
 		desc = ct_tilean_guard_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-		    location = {
-			    OR = {
-			    	culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = {
-					culture = myken
-				}
-			}
+	    	culture_group = tilean_group
 		}
 		replaces = ct_guard_1
-		gold_cost = 150
+		gold_cost = 100
 		build_time = 365
-		pikemen = 25
-		gunpowder = 5
-		levy_reinforce_rate = 0.03
-        tax_income = -0.1
+		pikemen = 35
+		archers = 15
 		ai_creation_factor = 96
 
 		extra_tech_building_start = 1.2
@@ -636,26 +556,15 @@ city = {
 		desc = ct_tilean_guard_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		potential = {
-		    location = {
-			    OR = {
-			    	culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = {
-					culture = myken
-				}
-			}
+	    	culture_group = tilean_group
 		}
 		replaces = ct_guard_2
 		prerequisites = { ct_wall_1 }
 		upgrades_from = ct_tilean_guard_1
-		gold_cost = 170
+		gold_cost = 120
 		build_time = 547
-		pikemen = 35
-		gunpowder = 10
-		levy_size = 0.03
-		levy_reinforce_rate = 0.03
-        tax_income = -0.1
+		pikemen = 40
+		archers = 20
 		ai_creation_factor = 95
 
 		extra_tech_building_start = 0.2
@@ -664,25 +573,15 @@ city = {
 		desc = ct_tilean_guard_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
 		potential = {
-		    location = {
-			    OR = {
-			    	culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = {
-					culture = myken
-				}
-			}
+	    	culture_group = tilean_group
 		}
 		replaces = ct_guard_3
 		prerequisites = { ct_wall_2 }
 		upgrades_from = ct_tilean_guard_2
-		gold_cost = 250
+		gold_cost = 200
 		build_time = 730
-		pikemen = 45
-		gunpowder = 15
-		levy_reinforce_rate = 0.04
-        tax_income = -0.2
+		pikemen = 50
+		archers = 20
 		ai_creation_factor = 94
 
 		extra_tech_building_start = 0.2
@@ -691,24 +590,14 @@ city = {
 		desc = ct_tilean_guard_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
 		potential = {
-		    location = {
-			    OR = {
-			    	culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = {
-					culture = myken
-				}
-			}
+	    	culture_group = tilean_group
 		}
 		replaces = ct_guard_4
 		upgrades_from = ct_tilean_guard_3
-		gold_cost = 350
+		gold_cost = 300
 		build_time = 1095
 		pikemen = 55
-		gunpowder = 20
-		levy_reinforce_rate = 0.05
-        tax_income = -0.2
+		archers = 25
 		ai_creation_factor = 93
 
 		extra_tech_building_start = 0.2
@@ -717,119 +606,18 @@ city = {
 		desc = ct_tilean_guard_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
 		potential = {
-		    location = {
-			    OR = {
-			    	culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = {
-					culture = myken
-				}
-			}
+	    	culture_group = tilean_group
 		}
 		replaces = ct_guard_5
 		upgrades_from = ct_tilean_guard_4
-		gold_cost = 450
-		build_time = 2190
-		pikemen = 65
-		gunpowder = 25
-		levy_reinforce_rate = 0.05
-        tax_income = -0.2
-		ai_creation_factor = 92
-
-		extra_tech_building_start = 0.2
-	}
-	#Ballistarii Crossbows, replaces City Guard, Provides enhanced archers
-	ct_ballistarii_1 = {
-		desc = ct_ballistarii_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		replaces = ct_guard_1
-		gold_cost = 100
-		build_time = 365
-		archers = 45
-		archers_offensive = 0.50
-		archers_defensive = 0.25
-		ai_creation_factor = 96
-
-		extra_tech_building_start = 1.0
-	}
-	ct_ballistarii_2 = {
-		desc = ct_ballistarii_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 2 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		prerequisites = { ct_wall_1 }
-		replaces = ct_guard_2
-		upgrades_from = ct_ballistarii_1
-		gold_cost = 120
-		build_time = 547
-		archers = 50
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 0.2
-	}
-	ct_ballistarii_3 = {
-		desc = ct_ballistarii_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 4 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		prerequisites = { ct_wall_2 }
-		replaces = ct_guard_3
-		upgrades_from = ct_ballistarii_2
-		gold_cost = 200
-		build_time = 730
-		archers = 55
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 0.2
-	}
-	ct_ballistarii_4 = {
-		desc = ct_ballistarii_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 6 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		upgrades_from = ct_ballistarii_3
-		replaces = ct_guard_4
-		gold_cost = 300
-		build_time = 1095
-		archers = 60
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 0.2
-	}
-	ct_ballistarii_5 = {
-		desc = ct_ballistarii_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 8 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		upgrades_from = ct_ballistarii_4
-		replaces = ct_guard_5
 		gold_cost = 400
 		build_time = 2190
-		archers = 65
-		archers_offensive = 0.03
+		pikemen = 65
+		archers = 25
 		ai_creation_factor = 92
 
 		extra_tech_building_start = 0.2
 	}
-
 
 	#Merchant Republic Arsenal, gives fort level, garrison size, levy size, and galleys
 	ct_rep_arsenal_1 = {
@@ -947,12 +735,10 @@ city = {
 		port = yes
 		trigger = { TECH_NAVAL = 2 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					# region = world_underempire
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				# region = world_underempire
 			}
 		}
 		upgrades_from = ct_shipyard_1
@@ -968,12 +754,10 @@ city = {
 		port = yes
 		trigger = { TECH_NAVAL = 3 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					# region = world_underempire
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				# region = world_underempire
 			}
 		}
 		upgrades_from = ct_shipyard_2
@@ -989,12 +773,10 @@ city = {
 		port = yes
 		trigger = { TECH_NAVAL = 4 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					# region = world_underempire
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				# region = world_underempire
 			}
 		}
 		upgrades_from = ct_shipyard_3
@@ -1012,17 +794,15 @@ city = {
 		port = yes
 		trigger = { TECH_TRADE_PRACTICES = 0 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = lizardman_group
-					culture = nehekharan
-					# region = world_underempire
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = dawi_zharr_group
+				culture_group = dwarf_group
+				culture_group = druchi_group
+				culture_group = lizardman_group
+				culture = nehekharan
+				# region = world_underempire
 			}
 		}
 		gold_cost = 100
@@ -1037,17 +817,15 @@ city = {
 		port = yes
 		trigger = { TECH_TRADE_PRACTICES = 1 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = lizardman_group
-					culture = nehekharan
-					# region = world_underempire
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = dawi_zharr_group
+				culture_group = dwarf_group
+				culture_group = druchi_group
+				culture_group = lizardman_group
+				culture = nehekharan
+				# region = world_underempire
 			}
 		}
 		prerequisites = { ct_wall_1 }
@@ -1064,17 +842,15 @@ city = {
 		port = yes
 		trigger = { TECH_TRADE_PRACTICES = 3 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = lizardman_group
-					culture = nehekharan
-					# region = world_underempire
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = dawi_zharr_group
+				culture_group = dwarf_group
+				culture_group = druchi_group
+				culture_group = lizardman_group
+				culture = nehekharan
+				# region = world_underempire
 			}
 		}
 		prerequisites = { ct_wall_2 }
@@ -1091,17 +867,15 @@ city = {
 		port = yes
 		trigger = { TECH_TRADE_PRACTICES = 4 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = lizardman_group
-					culture = nehekharan
-					# region = world_underempire
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = dawi_zharr_group
+				culture_group = dwarf_group
+				culture_group = druchi_group
+				culture_group = lizardman_group
+				culture = nehekharan
+				# region = world_underempire
 			}
 		}
 		upgrades_from = ct_port_3
@@ -1117,17 +891,15 @@ city = {
 		port = yes
 		trigger = { TECH_TRADE_PRACTICES = 6 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = lizardman_group
-					culture = nehekharan
-					# region = world_underempire
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = dawi_zharr_group
+				culture_group = dwarf_group
+				culture_group = druchi_group
+				culture_group = lizardman_group
+				culture = nehekharan
+				# region = world_underempire
 			}
 		}
 		upgrades_from = ct_port_4
@@ -1138,319 +910,21 @@ city = {
 
 		extra_tech_building_start = 0.2
 	}
-	#Imperial Port, gives extra income
-	ct_impport_1 = {
-		desc = ct_port_1_desc
-		port = yes
-		trigger = { TECH_TRADE_PRACTICES = 0 }
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-		replaces = ct_port_1
-		gold_cost = 100
-		build_time = 365
-		tax_income = 4
-		ai_creation_factor = 110
-
-		extra_tech_building_start = 0.6
-	}
-	ct_impport_2 = {
-		desc = ct_port_1_desc
-		port = yes
-		trigger = { TECH_TRADE_PRACTICES = 1 }
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-		prerequisites = { ct_wall_1 }
-		replaces = ct_port_2
-		upgrades_from = ct_impport_1
-		gold_cost = 120
-		build_time = 547
-		tax_income = 4
-		ai_creation_factor = 109
-
-		extra_tech_building_start = 0.2
-	}
-	ct_impport_3 = {
-		desc = ct_port_1_desc
-		port = yes
-		trigger = { TECH_TRADE_PRACTICES = 3 }
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-		prerequisites = { ct_wall_2 }
-		replaces = ct_port_3
-		upgrades_from = ct_impport_2
-		gold_cost = 200
-		build_time = 730
-		tax_income = 4
-		ai_creation_factor = 108
-
-		extra_tech_building_start = 0.2
-	}
-	ct_impport_4 = {
-		desc = ct_port_1_desc
-		port = yes
-		trigger = { TECH_TRADE_PRACTICES = 4 }
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-		upgrades_from = ct_impport_3
-		replaces = ct_port_4
-		gold_cost = 300
-		build_time = 1095
-		tax_income = 4
-		ai_creation_factor = 107
-
-		extra_tech_building_start = 0.2
-	}
-	ct_impport_5 = {
-		desc = ct_port_1_desc
-		port = yes
-		trigger = { TECH_TRADE_PRACTICES = 6 }
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-		upgrades_from = ct_impport_4
-		replaces = ct_port_5
-		gold_cost = 400
-		build_time = 2190
-		tax_income = 4
-		ai_creation_factor = 106
-
-		extra_tech_building_start = 0.2
-	}
-	#Tilean/Estalian Port, gives extra income and levy reinforcement rate up to 20%
-	ct_tileanport_1 = {
-		desc = ct_tileanport_1_desc
-		port = yes
-		trigger = { TECH_TRADE_PRACTICES = 0 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_port_1
-		gold_cost = 100
-		build_time = 365
-		tax_income = 3.5
-		levy_reinforce_rate = 0.05
-		ai_creation_factor = 110
-
-		extra_tech_building_start = 0.6
-	}
-	ct_tileanport_2 = {
-		desc = ct_tileanport_1_desc
-		port = yes
-		trigger = { TECH_TRADE_PRACTICES = 1 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_port_2
-		prerequisites = { ct_wall_1 }
-		upgrades_from = ct_tileanport_1
-		gold_cost = 120
-		build_time = 547
-		tax_income = 3.5
-		levy_reinforce_rate = 0.05
-		ai_creation_factor = 109
-
-		extra_tech_building_start = 0.2
-	}
-	ct_tileanport_3 = {
-		desc = ct_tileanport_1_desc
-		port = yes
-		trigger = { TECH_TRADE_PRACTICES = 3 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_port_3
-		prerequisites = { ct_wall_2 }
-		upgrades_from = ct_tileanport_2
-		gold_cost = 200
-		build_time = 730
-		tax_income = 3.5
-		levy_reinforce_rate = 0.05
-		ai_creation_factor = 108
-
-		extra_tech_building_start = 0.2
-	}
-	ct_tileanport_4 = {
-		desc = ct_tileanport_1_desc
-		port = yes
-		trigger = { TECH_TRADE_PRACTICES = 4 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_port_4
-		upgrades_from = ct_tileanport_3
-		gold_cost = 300
-		build_time = 1095
-		tax_income = 3.5
-		levy_reinforce_rate = 0.05
-		ai_creation_factor = 107
-
-		extra_tech_building_start = 0.2
-	}
-	ct_tileanport_5 = {
-		desc = ct_tileanport_1_desc
-		port = yes
-		trigger = { TECH_TRADE_PRACTICES = 6 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_port_5
-		upgrades_from = ct_tileanport_4
-		gold_cost = 400
-		build_time = 2190
-		tax_income = 3.5
-		levy_reinforce_rate = 0.05
-		ai_creation_factor = 106
-
-		extra_tech_building_start = 0.2
-	}
-	#Fishing Villages, gives less income but provides levy reinforcement
-	ct_bretonnianport_1 = {
-		desc = ct_port_1_desc
-		port = yes
-		replaces = ct_port_1
-		trigger = { TECH_TRADE_PRACTICES = 0 }
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		gold_cost = 100
-		build_time = 365
-		tax_income = 2
-		levy_reinforce_rate = 0.05
-		ai_creation_factor = 110
-
-		extra_tech_building_start = 0.6
-	}
-	ct_bretonnianport_2 = {
-		desc = ct_port_1_desc
-		port = yes
-		replaces = ct_port_2
-		trigger = { TECH_TRADE_PRACTICES = 1 }
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		prerequisites = { ct_wall_1 }
-		upgrades_from = ct_bretonnianport_1
-		gold_cost = 120
-		build_time = 547
-		tax_income = 2
-		levy_reinforce_rate = 0.05
-		ai_creation_factor = 109
-
-		extra_tech_building_start = 0.2
-	}
-	ct_bretonnianport_3 = {
-		desc = ct_port_1_desc
-		port = yes
-		replaces = ct_port_3
-		trigger = { TECH_TRADE_PRACTICES = 3 }
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		prerequisites = { ct_wall_2 }
-		upgrades_from = ct_bretonnianport_2
-		gold_cost = 200
-		build_time = 730
-		tax_income = 2
-		levy_reinforce_rate = 0.05
-		ai_creation_factor = 108
-
-		extra_tech_building_start = 0.2
-	}
-	ct_bretonnianport_4 = {
-		desc = ct_port_1_desc
-		port = yes
-		replaces = ct_port_4
-		trigger = { TECH_TRADE_PRACTICES = 4 }
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		upgrades_from = ct_bretonnianport_3
-		gold_cost = 300
-		build_time = 1095
-		tax_income = 2
-		levy_reinforce_rate = 0.05
-		ai_creation_factor = 107
-
-		extra_tech_building_start = 0.2
-	}
-	ct_bretonnianport_5 = {
-		desc = ct_port_1_desc
-		port = yes
-		trigger = { TECH_TRADE_PRACTICES = 6 }
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		upgrades_from = ct_bretonnianport_4
-		gold_cost = 400
-		build_time = 2190
-		tax_income = 2
-		levy_reinforce_rate = 0.10
-		ai_creation_factor = 106
-
-		extra_tech_building_start = 0.2
-	}
-
 	#Marketplace, gives tax income
 	ct_marketplace_1 = {
 		desc = ct_marketplace_1_desc
 		potential = {
-			 location = {
-				NOR = {
-					culture_group = asur_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = arabyan_group
-					culture_group = skaven_group
-					culture = nehekka
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = asur_group
+				culture_group = lizardman_group
+				culture_group = dawi_zharr_group
+				culture_group = dwarf_group
+				culture_group = druchi_group
+				culture_group = sartosan_group
+				culture_group = arabyan_group
+				culture_group = skaven_group
+				culture = nehekka
+				culture = nehekharan
 			}
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
@@ -1465,19 +939,17 @@ city = {
 	ct_marketplace_2 = {
 		desc = ct_marketplace_2_desc
 		potential = {
-			 location = {
-				NOR = {
-					culture_group = asur_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = arabyan_group
-					culture_group = skaven_group
-					culture = nehekka
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = asur_group
+				culture_group = lizardman_group
+				culture_group = dawi_zharr_group
+				culture_group = dwarf_group
+				culture_group = druchi_group
+				culture_group = sartosan_group
+				culture_group = arabyan_group
+				culture_group = skaven_group
+				culture = nehekka
+				culture = nehekharan
 			}
 		}
 		prerequisites = { ct_wall_1 }
@@ -1494,19 +966,17 @@ city = {
 	ct_marketplace_3 = {
 		desc = ct_marketplace_3_desc
 		potential = {
-			 location = {
-				NOR = {
-					culture_group = asur_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = arabyan_group
-					culture_group = skaven_group
-					culture = nehekka
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = asur_group
+				culture_group = lizardman_group
+				culture_group = dawi_zharr_group
+				culture_group = dwarf_group
+				culture_group = druchi_group
+				culture_group = sartosan_group
+				culture_group = arabyan_group
+				culture_group = skaven_group
+				culture = nehekka
+				culture = nehekharan
 			}
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 1 }
@@ -1523,19 +993,17 @@ city = {
 	ct_marketplace_4 = {
 		desc = ct_marketplace_4_desc
 		potential = {
-			 location = {
-				NOR = {
-					culture_group = asur_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = arabyan_group
-					culture_group = skaven_group
-					culture = nehekka
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = asur_group
+				culture_group = lizardman_group
+				culture_group = dawi_zharr_group
+				culture_group = dwarf_group
+				culture_group = druchi_group
+				culture_group = sartosan_group
+				culture_group = arabyan_group
+				culture_group = skaven_group
+				culture = nehekka
+				culture = nehekharan
 			}
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 3 }
@@ -1552,19 +1020,17 @@ city = {
 		desc = ct_marketplace_5_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 5 }
 		potential = {
-			 location = {
-				NOR = {
-					culture_group = asur_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = arabyan_group
-					culture_group = skaven_group
-					culture = nehekka
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = asur_group
+				culture_group = lizardman_group
+				culture_group = dawi_zharr_group
+				culture_group = dwarf_group
+				culture_group = druchi_group
+				culture_group = sartosan_group
+				culture_group = arabyan_group
+				culture_group = skaven_group
+				culture = nehekka
+				culture = nehekharan
 			}
 		}
 		upgrades_from = ct_marketplace_4
@@ -1579,19 +1045,17 @@ city = {
 	ct_marketplace_6 = {
 		desc = ct_marketplace_6_desc
 		potential = {
-			 location = {
-				NOR = {
-					culture_group = asur_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = arabyan_group
-					culture_group = skaven_group
-					culture = nehekka
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = asur_group
+				culture_group = lizardman_group
+				culture_group = dawi_zharr_group
+				culture_group = dwarf_group
+				culture_group = druchi_group
+				culture_group = sartosan_group
+				culture_group = arabyan_group
+				culture_group = skaven_group
+				culture = nehekka
+				culture = nehekharan
 			}
 		}
 		trigger = { TECH_CITY_CONSTRUCTION = 7 }
@@ -1604,490 +1068,17 @@ city = {
 
 		extra_tech_building_start = 0.2
 	}
-	#Imperial Marketplace, gives extra income
-	ct_impmarketplace_1 = {
-		desc = ct_marketplace_1_desc
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		replaces = ct_marketplace_1
-		gold_cost = 150
-		build_time = 365
-		tax_income = 4
-		ai_creation_factor = 110
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.4
-	}
-	ct_impmarketplace_2 = {
-		desc = ct_marketplace_2_desc
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-		prerequisites = { ct_wall_1 }
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		replaces = ct_marketplace_2
-		upgrades_from = ct_impmarketplace_1
-		gold_cost = 170
-		build_time = 547
-		tax_income = 4
-		ai_creation_factor = 109
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.8
-	}
-	ct_impmarketplace_3 = {
-		desc = ct_marketplace_3_desc
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 1 }
-		replaces = ct_marketplace_3
-		prerequisites = { ct_wall_2 }
-		upgrades_from = ct_impmarketplace_2
-		gold_cost = 250
-		build_time = 730
-		tax_income = 4
-		ai_creation_factor = 108
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	ct_impmarketplace_4 = {
-		desc = ct_marketplace_4_desc
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		replaces = ct_marketplace_4
-		upgrades_from = ct_impmarketplace_3
-		gold_cost = 350
-		build_time = 1095
-		tax_income = 4
-		ai_creation_factor = 107
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	ct_impmarketplace_5 = {
-		desc = ct_marketplace_5_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-		replaces = ct_marketplace_3
-		upgrades_from = ct_impmarketplace_4
-		gold_cost = 450
-		build_time = 2190
-		tax_income = 4
-		ai_creation_factor = 106
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	ct_impmarketplace_6 = {
-		desc = ct_marketplace_6_desc
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 7 }
-		replaces = ct_marketplace_6
-		upgrades_from = ct_impmarketplace_5
-		gold_cost = 650
-		build_time = 2190
-		tax_income = 4
-		ai_creation_factor = 105
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	#Tirsa, Replaces Marketplace, less income, but provides troops
-	ct_tirsa_1 = {
-		desc = ct_tirsa_desc
-		potential = {
-			location = { culture_group = kislevite_group }
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		replaces = ct_marketplace_1
-		gold_cost = 100
-		build_time = 365
-		tax_income = 2
-		pikemen = 25
-		horse_archers = 10
-		ai_creation_factor = 110
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.4
-	}
-	ct_tirsa_2 = {
-		desc = ct_tirsa_desc
-		potential = {
-			location = { culture_group = kislevite_group }
-		}
-		prerequisites = { ct_wall_1 }
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		replaces = ct_marketplace_2
-		upgrades_from = ct_tirsa_1
-		gold_cost = 120
-		build_time = 547
-		tax_income = 2
-		pikemen = 30
-		horse_archers = 15
-		ai_creation_factor = 109
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.8
-	}
-	ct_tirsa_3 = {
-		desc = ct_tirsa_desc
-		potential = {
-			location = { culture_group = kislevite_group }
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 1 }
-		replaces = ct_marketplace_3
-		prerequisites = { ct_wall_2 }
-		upgrades_from = ct_tirsa_2
-		gold_cost = 200
-		build_time = 730
-		tax_income = 2
-		pikemen = 35
-		horse_archers = 20
-		ai_creation_factor = 108
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	ct_tirsa_4 = {
-		desc = ct_tirsa_desc
-		potential = {
-			location = { culture_group = kislevite_group }
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		replaces = ct_marketplace_4
-		upgrades_from = ct_tirsa_3
-		gold_cost = 300
-		build_time = 1095
-		tax_income = 2
-		pikemen = 40
-		horse_archers = 25
-		ai_creation_factor = 107
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	ct_tirsa_5 = {
-		desc = ct_tirsa_desc
-		potential = {
-			location = { culture_group = kislevite_group }
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		replaces = ct_marketplace_5
-		upgrades_from = ct_tirsa_4
-		gold_cost = 400
-		build_time = 2190
-		tax_income = 2
-		pikemen = 45
-		horse_archers = 30
-		ai_creation_factor = 106
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	ct_tirsa_6 = {
-		desc = ct_tirsa_desc
-		potential = {
-			location = { culture_group = kislevite_group }
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 7 }
-		replaces = ct_marketplace_6
-		upgrades_from = ct_tirsa_5
-		gold_cost = 500
-		build_time = 2190
-		tax_income = 2
-		pikemen = 50
-		horse_archers = 35
-		ai_creation_factor = 105
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	#Bretonnian Marketplace, less income, but provides troops
-	ct_bretonnianmarketplace_1 = {
-		desc = ct_bretonnianmarketplace_1_desc
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		replaces = ct_marketplace_1
-		gold_cost = 100
-		build_time = 365
-		tax_income = 2
-		pikemen = 25
-		horse_archers = 10
-		ai_creation_factor = 110
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.4
-	}
-	ct_bretonnianmarketplace_2 = {
-		desc = ct_bretonnianmarketplace_1_desc
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		prerequisites = { ct_wall_1 }
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		replaces = ct_marketplace_2
-		upgrades_from = ct_bretonnianmarketplace_1
-		gold_cost = 120
-		build_time = 547
-		tax_income = 2
-		pikemen = 30
-		horse_archers = 15
-		ai_creation_factor = 109
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.8
-	}
-	ct_bretonnianmarketplace_3 = {
-		desc = ct_bretonnianmarketplace_1_desc
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 1 }
-		replaces = ct_marketplace_3
-		prerequisites = { ct_wall_2 }
-		upgrades_from = ct_bretonnianmarketplace_2
-		gold_cost = 200
-		build_time = 730
-		tax_income = 2
-		pikemen = 35
-		horse_archers = 20
-		ai_creation_factor = 108
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	ct_bretonnianmarketplace_4 = {
-		desc = ct_bretonnianmarketplace_1_desc
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		replaces = ct_marketplace_4
-		upgrades_from = ct_bretonnianmarketplace_3
-		gold_cost = 300
-		build_time = 1095
-		tax_income = 2
-		pikemen = 40
-		horse_archers = 25
-		ai_creation_factor = 107
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	ct_bretonnianmarketplace_5 = {
-		desc = ct_bretonnianmarketplace_1_desc
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		replaces = ct_marketplace_5
-		upgrades_from = ct_bretonnianmarketplace_4
-		gold_cost = 400
-		build_time = 2190
-		tax_income = 2
-		pikemen = 45
-		horse_archers = 30
-		ai_creation_factor = 106
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	ct_bretonnianmarketplace_6 = {
-		desc = ct_bretonnianmarketplace_1_desc
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 7 }
-		replaces = ct_marketplace_6
-		upgrades_from = ct_bretonnianmarketplace_5
-		gold_cost = 500
-		build_time = 2190
-		tax_income = 2
-		pikemen = 50
-		horse_archers = 35
-		ai_creation_factor = 105
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	#Tilean/Estalian marketplace, gives extra income and tech growth up to 10%
-	ct_tileanmarketplace_1 = {
-		desc = ct_tileanmarketplace_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_marketplace_1
-		gold_cost = 150
-		build_time = 365
-		tax_income = 3.5
-		tech_growth_modifier = 0.01
-		ai_creation_factor = 110
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.4
-	}
-	ct_tileanmarketplace_2 = {
-		desc = ct_tileanmarketplace_1_desc
-		prerequisites = { ct_wall_1 }
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_marketplace_2
-		upgrades_from = ct_tileanmarketplace_1
-		gold_cost = 170
-		build_time = 547
-		tax_income = 3.5
-		tech_growth_modifier = 0.01
-		ai_creation_factor = 109
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.8
-	}
-	ct_tileanmarketplace_3 = {
-		desc = ct_tileanmarketplace_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 1 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_marketplace_3
-		prerequisites = { ct_wall_2 }
-		upgrades_from = ct_tileanmarketplace_2
-		gold_cost = 250
-		build_time = 730
-		tax_income = 3.5
-		tech_growth_modifier = 0.01
-		ai_creation_factor = 108
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	ct_tileanmarketplace_4 = {
-		desc = ct_tileanmarketplace_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_marketplace_4
-		upgrades_from = ct_tileanmarketplace_3
-		gold_cost = 350
-		build_time = 1095
-		tax_income = 3.5
-		tech_growth_modifier = 0.01
-		ai_creation_factor = 107
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	ct_tileanmarketplace_5 = {
-		desc = ct_tileanmarketplace_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_marketplace_5
-		upgrades_from = ct_tileanmarketplace_4
-		gold_cost = 450
-		build_time = 2190
-		tax_income = 3.5
-		tech_growth_modifier = 0.01
-		ai_creation_factor = 106
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-	ct_tileanmarketplace_6 = {
-		desc = ct_tileanmarketplace_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 7 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_marketplace_6
-		upgrades_from = ct_tileanmarketplace_5
-		gold_cost = 650
-		build_time = 2190
-		tax_income = 3.5
-		tech_growth_modifier = 0.05
-		ai_creation_factor = 105
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-
     #Training grounds, gives levy size, and garrison size
 	ct_training_grounds_1 = {
 		desc = ct_training_grounds_1_desc
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = druchi_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = dawi_zharr_group
+				culture_group = druchi_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -2106,15 +1097,13 @@ city = {
 	ct_training_grounds_2 = {
 		desc = ct_training_grounds_1_desc
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = druchi_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = dawi_zharr_group
+				culture_group = druchi_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -2135,15 +1124,13 @@ city = {
 	ct_training_grounds_3 = {
 		desc = ct_training_grounds_1_desc
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = druchi_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = dawi_zharr_group
+				culture_group = druchi_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -2164,15 +1151,13 @@ city = {
 		desc = ct_training_grounds_1_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = druchi_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = dawi_zharr_group
+				culture_group = druchi_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -2192,15 +1177,13 @@ city = {
 		desc = ct_training_grounds_1_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = druchi_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = dawi_zharr_group
+				culture_group = druchi_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -2220,15 +1203,13 @@ city = {
 		desc = ct_training_grounds_1_desc
 		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = druchi_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = dawi_zharr_group
+				culture_group = druchi_group
+				culture = nehekharan
 			}
 			NAND = {
 				FROM = { culture_group = skaven_group }
@@ -2244,612 +1225,20 @@ city = {
 
 		extra_tech_building_start = 0.2
 	}
-    #Imperial Militia Grounds, slightly more garrison for slightly less levy
-    ct_imptraining_grounds_1 = {
-        desc = ct_training_grounds_1_desc
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-        replaces = ct_training_grounds_1
-        trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
-        gold_cost = 150
-        build_time = 547
-        levy_size = 0.02
-        garrison_size = 0.08
-        ai_creation_factor = 98
-
-        extra_tech_building_start = 0.6
-    }
-    ct_imptraining_grounds_2 = {
-        desc = ct_training_grounds_1_desc
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-        replaces = ct_training_grounds_2
-        trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
-        prerequisites = { ct_wall_1 }
-        upgrades_from = ct_imptraining_grounds_1
-        gold_cost = 200
-        build_time = 730
-        levy_size = 0.03
-        garrison_size = 0.16
-        ai_creation_factor = 97
-
-        extra_tech_building_start = 1.2
-    }
-    ct_imptraining_grounds_3 = {
-        desc = ct_training_grounds_1_desc
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-        replaces = ct_training_grounds_3
-        trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
-        upgrades_from = ct_imptraining_grounds_2
-        gold_cost = 300
-        build_time = 1095
-        levy_size = 0.04
-        garrison_size = 0.24
-        ai_creation_factor = 96
-
-        extra_tech_building_start = 0.2
-    }
-    ct_imptraining_grounds_4 = {
-        desc = ct_training_grounds_1_desc
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
-        upgrades_from = ct_imptraining_grounds_3
-		replaces = ct_training_grounds_4
-        gold_cost = 400
-        build_time = 1460
-        levy_size = 0.05
-        garrison_size = 0.32
-        ai_creation_factor = 95
-
-        extra_tech_building_start = 0.2
-    }
-    ct_imptraining_grounds_5 = {
-        desc = ct_training_grounds_1_desc
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-        replaces = ct_training_grounds_5
-        trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
-        upgrades_from = ct_imptraining_grounds_4
-        gold_cost = 500
-        build_time = 2190
-        levy_size = 0.06
-        garrison_size = 0.40
-        ai_creation_factor = 94
-
-        extra_tech_building_start = 0.2
-    }
-    ct_imptraining_grounds_6 = {
-        desc = ct_training_grounds_1_desc
-		potential = {
-			location = {
-				culture_group = imperial_group
-			}
-		}
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
-        upgrades_from = ct_imptraining_grounds_5
-		replaces = ct_training_grounds_6
-        gold_cost = 625
-        build_time = 2190
-        levy_size = 0.10
-        garrison_size = 0.30
-        ai_creation_factor = 93
-
-        extra_tech_building_start = 0.2
-    }
-	#Burmistrz Zal, Replaces Training grounds, slightly more garrison for slightly less levy
-	ct_burmistrz_zal_1 = {
-        desc = ct_burmistrz_zal_desc
-		potential = {
-			location = {
-				culture_group = kislevite_group
-			}
-		}
-        replaces = ct_training_grounds_1
-        trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
-        gold_cost = 150
-        build_time = 547
-        levy_size = 0.02
-        garrison_size = 0.08
-        ai_creation_factor = 98
-
-        extra_tech_building_start = 0.6
-    }
-    ct_burmistrz_zal_2 = {
-        desc = ct_burmistrz_zal_desc
-		potential = {
-			location = {
-				culture_group = kislevite_group
-			}
-		}
-        replaces = ct_training_grounds_2
-        trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
-        prerequisites = { ct_wall_1 }
-        upgrades_from = ct_burmistrz_zal_1
-        gold_cost = 200
-        build_time = 730
-        levy_size = 0.03
-        garrison_size = 0.16
-        ai_creation_factor = 97
-
-        extra_tech_building_start = 1.2
-    }
-    ct_burmistrz_zal_3 = {
-        desc = ct_burmistrz_zal_desc
-		potential = {
-			location = {
-				culture_group = kislevite_group
-			}
-		}
-        replaces = ct_training_grounds_3
-        trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
-        upgrades_from = ct_burmistrz_zal_2
-        gold_cost = 300
-        build_time = 1095
-        levy_size = 0.04
-        garrison_size = 0.24
-        ai_creation_factor = 96
-
-        extra_tech_building_start = 0.2
-    }
-    ct_burmistrz_zal_4 = {
-        desc = ct_burmistrz_zal_desc
-		potential = {
-			location = {
-				culture_group = kislevite_group
-			}
-		}
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
-        upgrades_from = ct_burmistrz_zal_3
-		replaces = ct_training_grounds_4
-        gold_cost = 400
-        build_time = 1460
-        levy_size = 0.05
-        garrison_size = 0.32
-        ai_creation_factor = 95
-
-        extra_tech_building_start = 0.2
-    }
-    ct_burmistrz_zal_5 = {
-        desc = ct_burmistrz_zal_desc
-		potential = {
-			location = {
-				culture_group = kislevite_group
-			}
-		}
-        replaces = ct_training_grounds_5
-        trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
-        upgrades_from = ct_burmistrz_zal_4
-        gold_cost = 500
-        build_time = 2190
-        levy_size = 0.06
-        garrison_size = 0.40
-        ai_creation_factor = 94
-
-        extra_tech_building_start = 0.2
-    }
-    ct_burmistrz_zal_6 = {
-        desc = ct_burmistrz_zal_desc
-		potential = {
-			location = {
-				culture_group = kislevite_group
-			}
-		}
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
-        upgrades_from = ct_burmistrz_zal_5
-		replaces = ct_training_grounds_6
-        gold_cost = 625
-        build_time = 2190
-        levy_size = 0.10
-        garrison_size = 0.30
-        ai_creation_factor = 93
-
-        extra_tech_building_start = 0.2
-    }
-	#Bretonnian Cities, trades levy size for garrison size, Less morale
-	ct_bretonnian_city_1 = {
-		desc = ct_training_grounds_1_desc
-		replaces = ct_training_grounds_1
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		gold_cost = 150
-		build_time = 547 #1.5y
-		levy_size = 0.05
-		garrison_size = 0.05
-		light_infantry_morale = -0.02
-		archers_morale = -0.02
-		ai_creation_factor = 98
-
-		extra_tech_building_start = 0.6
-	}
-	ct_bretonnian_city_2 = {
-		desc = ct_training_grounds_1_desc
-		replaces = ct_training_grounds_2
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		prerequisites = { ct_wall_1 }
-		upgrades_from = ct_bretonnian_city_1
-		gold_cost = 200
-		build_time = 730 #2y
-		levy_size = 0.10
-		garrison_size = 0.075
-		light_infantry_morale = -0.02
-		archers_morale = -0.02
-		ai_creation_factor = 97
-
-		extra_tech_building_start = 1.2
-	}
-	ct_bretonnian_city_3 = {
-		desc = ct_training_grounds_1_desc
-		replaces = ct_training_grounds_3
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		prerequisites = { ct_wall_2 }
-		upgrades_from = ct_bretonnian_city_2
-		gold_cost = 300
-		build_time = 1095 #3y
-		levy_size = 0.15
-		garrison_size = 0.1
-		light_infantry_morale = -0.02
-		archers_morale = -0.02
-		ai_creation_factor = 96
-
-		extra_tech_building_start = 0.2
-	}
-	ct_bretonnian_city_4 = {
-		desc = ct_training_grounds_1_desc
-		replaces = ct_training_grounds_4
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		upgrades_from = ct_bretonnian_city_3
-		gold_cost = 400
-		build_time = 1460 #4y
-		levy_size = 0.2
-		garrison_size = 0.125
-		light_infantry_morale = -0.03
-		archers_morale = -0.03
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 0.2
-	}
-	ct_bretonnian_city_5 = {
-		desc = ct_training_grounds_1_desc
-		replaces = ct_training_grounds_5
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		upgrades_from = ct_bretonnian_city_4
-		gold_cost = 500
-		build_time = 2190 #6y
-		levy_size = 0.25
-		garrison_size = 0.15
-		light_infantry_morale = -0.03
-		archers_morale = -0.03
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 0.2
-	}
-	ct_bretonnian_city_6 = {
-		desc = ct_training_grounds_1_desc
-		replaces = ct_training_grounds_6
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
-		potential = {
-			location = { culture_group = bretonnian_group }
-		}
-		upgrades_from = ct_bretonnian_city_5
-		gold_cost = 500
-		build_time = 2190 #6y
-		levy_size = 0.25
-		garrison_size = 0.15
-		light_infantry_morale = -0.03
-		archers_morale = -0.03
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 0.2
-	}
-	#Myken Gladiatorius, slightly less garrison/levy provides tax income
-	ct_myken_city_1 = {
-		desc = ct_myken_city_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		replaces = ct_training_grounds_1
-		gold_cost = 150
-		build_time = 547
-		levy_size = 0.02
-		garrison_size = 0.02
-		light_infantry = -75
-		pikemen = 75
-		light_cavalry = 15
-		tax_income = 0.5
-		ai_creation_factor = 98
-
-		extra_tech_building_start = 0.6
-	}
-	ct_myken_city_2 = {
-		desc = ct_myken_city_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		replaces = ct_training_grounds_2
-		prerequisites = { ct_wall_1 }
-		upgrades_from = ct_myken_city_1
-		gold_cost = 200
-		build_time = 730
-		levy_size = 0.03
-		garrison_size = 0.03
-		tax_income = 0.5
-		ai_creation_factor = 97
-
-		extra_tech_building_start = 1.2
-	}
-	ct_myken_city_3 = {
-		desc = ct_myken_city_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		replaces = ct_training_grounds_3
-		upgrades_from = ct_myken_city_2
-		gold_cost = 300
-		build_time = 1095
-		levy_size = 0.05
-		garrison_size = 0.1
-		tax_income = 0.5
-		ai_creation_factor = 96
-
-		extra_tech_building_start = 0.2
-	}
-	ct_myken_city_4 = {
-		desc = ct_myken_city_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		replaces = ct_training_grounds_4
-		upgrades_from = ct_myken_city_3
-		gold_cost = 400
-		build_time = 1460
-		levy_size = 0.1
-		garrison_size = 0.15
-		tax_income = 0.5
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 0.2
-	}
-	ct_myken_city_5 = {
-		desc = ct_myken_city_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		replaces = ct_training_grounds_5
-		upgrades_from = ct_myken_city_4
-		gold_cost = 500
-		build_time = 2190
-		levy_size = 0.15
-		garrison_size = 0.2
-		tax_income = 0.5
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 0.2
-	}
-	ct_myken_city_6 = {
-		desc = ct_myken_city_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		replaces = ct_training_grounds_6
-		upgrades_from = ct_myken_city_5
-		gold_cost = 500
-		build_time = 2190
-		levy_size = 0.2
-		garrison_size = 0.2
-		tax_income = 0.5
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 0.2
-	}
-	#Tilean Forum, slightly less garrison/levy provides tax income
-	ct_tilean_city_1 = {
-		desc = ct_tilean_city_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_training_grounds_1
-		gold_cost = 150
-		build_time = 547
-		levy_size = 0.02
-		garrison_size = 0.02
-		light_infantry = -75
-		pikemen = 60
-		archers = 25
-		tax_income = 1
-		ai_creation_factor = 98
-
-		extra_tech_building_start = 0.6
-	}
-	ct_tilean_city_2 = {
-		desc = ct_tilean_city_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_training_grounds_2
-		prerequisites = { ct_wall_1 }
-		upgrades_from = ct_tilean_city_1
-		gold_cost = 200
-		build_time = 730
-		levy_size = 0.03
-		garrison_size = 0.03
-		tax_income = 0.5
-		ai_creation_factor = 97
-
-		extra_tech_building_start = 1.2
-	}
-	ct_tilean_city_3 = {
-		desc = ct_tilean_city_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_training_grounds_3
-		upgrades_from = ct_tilean_city_2
-		gold_cost = 300
-		build_time = 1095
-		levy_size = 0.05
-		garrison_size = 0.1
-		tax_income = 0.5
-		ai_creation_factor = 96
-
-		extra_tech_building_start = 0.2
-	}
-	ct_tilean_city_4 = {
-		desc = ct_tilean_city_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_training_grounds_4
-		upgrades_from = ct_tilean_city_3
-		gold_cost = 400
-		build_time = 1460
-		levy_size = 0.1
-		garrison_size = 0.15
-		tax_income = 1
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 0.2
-	}
-	ct_tilean_city_5 = {
-		desc = ct_tilean_city_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_training_grounds_5
-		upgrades_from = ct_tilean_city_4
-		gold_cost = 500
-		build_time = 2190
-		levy_size = 0.15
-		garrison_size = 0.2
-		tax_income = 1
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 0.2
-	}
-	ct_tilean_city_6 = {
-		desc = ct_tilean_city_1_desc
-		trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-				NOT = { culture = myken }
-			}
-		}
-		replaces = ct_training_grounds_6
-		upgrades_from = ct_tilean_city_5
-		gold_cost = 500
-		build_time = 2190
-		levy_size = 0.2
-		garrison_size = 0.2
-		tax_income = 1
-		tech_growth_modifier = 0.05
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 0.2
-	}
 
     #Mustering Ground, gives light infantry, light cavalry and archers
 	ct_barracks_1 = {
 		desc = ct_barracks_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = asur_group
-					culture = cathayan
-					culture_group = lizardman_group
-					culture_group = druchi_group
-					culture = nehekharan
-			   		culture_group = skaven_group
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = asur_group
+				culture = cathayan
+				culture_group = lizardman_group
+				culture = nehekharan
+		   		culture_group = skaven_group
 			}
 		}
 		gold_cost = 100
@@ -2864,17 +1253,14 @@ city = {
 		desc = ct_barracks_2_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = asur_group
-					culture = cathayan
-					culture_group = lizardman_group
-					culture_group = druchi_group
-					culture = nehekharan
-			   		culture_group = skaven_group
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = asur_group
+				culture = cathayan
+				culture_group = lizardman_group
+				culture = nehekharan
+		   		culture_group = skaven_group
 			}
 		}
 		prerequisites = { ct_wall_1 }
@@ -2891,17 +1277,14 @@ city = {
 		desc = ct_barracks_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 1 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = asur_group
-					culture = cathayan
-					culture_group = lizardman_group
-					culture_group = druchi_group
-					culture = nehekharan
-			   		culture_group = skaven_group
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = asur_group
+				culture = cathayan
+				culture_group = lizardman_group
+				culture = nehekharan
+		   		culture_group = skaven_group
 			}
 		}
 		prerequisites = { ct_wall_2 }
@@ -2918,17 +1301,14 @@ city = {
 		desc = ct_barracks_2_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 3 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = asur_group
-					culture = cathayan
-					culture_group = lizardman_group
-					culture_group = druchi_group
-					culture = nehekharan
-			   		culture_group = skaven_group
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = asur_group
+				culture = cathayan
+				culture_group = lizardman_group
+				culture = nehekharan
+		   		culture_group = skaven_group
 			}
 		}
 		upgrades_from = ct_barracks_3
@@ -2944,17 +1324,14 @@ city = {
 		desc = ct_barracks_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 5 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = asur_group
-					culture = cathayan
-					culture_group = lizardman_group
-					culture_group = druchi_group
-					culture = nehekharan
-			   		culture_group = skaven_group
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = asur_group
+				culture = cathayan
+				culture_group = lizardman_group
+				culture = nehekharan
+		   		culture_group = skaven_group
 			}
 		}
 		upgrades_from = ct_barracks_4
@@ -2970,17 +1347,14 @@ city = {
 		desc = ct_barracks_2_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 7 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = asur_group
-					culture = cathayan
-					culture_group = lizardman_group
-					culture_group = druchi_group
-					culture = nehekharan
-			   		culture_group = skaven_group
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = asur_group
+				culture = cathayan
+				culture_group = lizardman_group
+				culture = nehekharan
+		   		culture_group = skaven_group
 			}
 		}
 		upgrades_from = ct_barracks_5
@@ -3091,133 +1465,17 @@ city = {
 
 		extra_tech_building_start = 0.2
 	}
-	#Scutarii Muster, replaces Mustering Ground, gives pikemen and archers
-	ct_scutarii_muster_1 = {
-		desc = ct_scutarii_muster_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		replaces = ct_barracks_1
-		gold_cost = 100
-		build_time = 365
-		pikemen = 30
-		archers = 10
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 0.5
-	}
-	ct_scutarii_muster_2 = {
-		desc = ct_scutarii_muster_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		prerequisites = { ct_wall_1 }
-		replaces = ct_barracks_2
-		upgrades_from = ct_scutarii_muster_1
-		gold_cost = 120
-		build_time = 547
-		pikemen = 45
-		archers = 15
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 1.0
-	}
-	ct_scutarii_muster_3 = {
-		desc = ct_scutarii_muster_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 1 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		prerequisites = { ct_wall_2 }
-		replaces = ct_barracks_3
-		upgrades_from = ct_scutarii_muster_2
-		gold_cost = 200
-		build_time = 730
-		pikemen = 60
-		archers = 20
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 1.0
-	}
-	ct_scutarii_muster_4 = {
-		desc = ct_scutarii_muster_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		upgrades_from = ct_scutarii_muster_3
-		replaces = ct_barracks_4
-		gold_cost = 300
-		build_time = 1095
-		pikemen = 75
-		archers = 25
-		ai_creation_factor = 92
-
-		extra_tech_building_start = 0.2
-	}
-	ct_scutarii_muster_5 = {
-		desc = ct_scutarii_muster_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		upgrades_from = ct_scutarii_muster_4
-		replaces = ct_barracks_5
-		gold_cost = 400
-		build_time = 2190
-		pikemen = 90
-		archers = 30
-		ai_creation_factor = 91
-
-		extra_tech_building_start = 0.2
-	}
-	ct_scutarii_muster_6 = {
-		desc = ct_scutarii_muster_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 7 }
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		upgrades_from = ct_scutarii_muster_5
-		replaces = ct_barracks_6
-		gold_cost = 500
-		build_time = 2190
-		pikemen = 105
-		archers = 35
-		ai_creation_factor = 90
-
-		extra_tech_building_start = 0.2
-	}
 	#Citizen Barracks, replaces Mustering Ground, gives pikemen and enhanced archers
 	ct_tilean_barracks_1 = {
 		desc = ct_tilean_barracks_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-			    culture_group = tilean_group
-				NOT = { culture = myken }
-			}
+			culture_group = tilean_group
 		}
 		replaces = ct_barracks_1
 		gold_cost = 100
 		build_time = 365
-		pikemen = 35
-		archers = 15
-		archers_offensive = 0.50
-		archers_defensive = 0.25
+		light_infantry = 150
 		ai_creation_factor = 95
 
 		extra_tech_building_start = 0.5
@@ -3226,18 +1484,14 @@ city = {
 		desc = ct_tilean_barracks_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-			    culture_group = tilean_group
-				NOT = { culture = myken }
-			}
+			culture_group = tilean_group
 		}
 		replaces = ct_barracks_2
 		prerequisites = { ct_wall_1 }
 		upgrades_from = ct_tilean_barracks_1
 		gold_cost = 120
 		build_time = 547
-		pikemen = 50
-		archers = 20
+		light_infantry = 200
 		ai_creation_factor = 94
 
 		extra_tech_building_start = 1.0
@@ -3246,18 +1500,14 @@ city = {
 		desc = ct_tilean_barracks_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 1 }
 		potential = {
-			location = {
-			    culture_group = tilean_group
-				NOT = { culture = myken }
-			}
+			culture_group = tilean_group
 		}
 		replaces = ct_barracks_3
 		prerequisites = { ct_wall_2 }
 		upgrades_from = ct_tilean_barracks_2
 		gold_cost = 200
 		build_time = 730
-		pikemen = 65
-		archers = 25
+		light_infantry = 250
 		ai_creation_factor = 93
 
 		extra_tech_building_start = 1.0
@@ -3266,17 +1516,13 @@ city = {
 		desc = ct_tilean_barracks_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 3 }
 		potential = {
-			location = {
-			    culture_group = tilean_group
-				NOT = { culture = myken }
-			}
+			culture_group = tilean_group
 		}
 		replaces = ct_barracks_4
 		upgrades_from = ct_tilean_barracks_3
 		gold_cost = 300
 		build_time = 1095
-		pikemen = 80
-		archers = 30
+		light_infantry = 300
 		ai_creation_factor = 92
 
 		extra_tech_building_start = 0.2
@@ -3285,17 +1531,13 @@ city = {
 		desc = ct_tilean_barracks_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 5 }
 		potential = {
-			location = {
-			    culture_group = tilean_group
-				NOT = { culture = myken }
-			}
+			culture_group = tilean_group
 		}
 		replaces = ct_barracks_5
 		upgrades_from = ct_tilean_barracks_4
 		gold_cost = 400
 		build_time = 2190
-		pikemen = 95
-		archers = 35
+		light_infantry = 350
 		ai_creation_factor = 91
 
 		extra_tech_building_start = 0.2
@@ -3304,247 +1546,18 @@ city = {
 		desc = ct_tilean_barracks_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 7 }
 		potential = {
-			location = {
-			    culture_group = tilean_group
-				NOT = { culture = myken }
-			}
+			culture_group = tilean_group
 		}
 		replaces = ct_barracks_6
 		upgrades_from = ct_tilean_barracks_5
 		gold_cost = 500
 		build_time = 2190
-		pikemen = 110
-		archers = 40
-		ai_creation_factor = 90
-
-		extra_tech_building_start = 0.2
-	}
-	#Satrap Free companies, replaces Mustering Ground, gives light infantry and archers with an offensive bonus up to 30%
-	ct_sudfreecorps_1 = {
-		desc = ct_sudfreecorps_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-		replaces = ct_barracks_1
-		gold_cost = 100
-		build_time = 365
-		light_infantry = 60
-		archers = 30
-		archers_offensive = 0.05
-		light_infantry_offensive = 0.05
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 0.5
-	}
-	ct_sudfreecorps_2 = {
-		desc = ct_sudfreecorps_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 1 }
-		replaces = ct_barracks_2
-		prerequisites = { ct_wall_1 }
-		upgrades_from = ct_sudfreecorps_1
-		gold_cost = 120
-		build_time = 547
-		light_infantry = 70
-		archers = 40
-		archers_offensive = 0.05
-		light_infantry_offensive = 0.05
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 1.0
-	}
-	ct_sudfreecorps_3 = {
-		desc = ct_sudfreecorps_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 1 }
-		replaces = ct_barracks_3
-		prerequisites = { ct_wall_2 }
-		upgrades_from = ct_sudfreecorps_2
-		gold_cost = 200
-		build_time = 730
-		light_infantry = 50
-		archers = 80
-		archers_offensive = 0.05
-		light_infantry_offensive = 0.05
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 1.0
-	}
-	ct_sudfreecorps_4 = {
-		desc = ct_sudfreecorps_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		upgrades_from = ct_sudfreecorps_3
-		replaces = ct_barracks_4
-		gold_cost = 300
-		build_time = 1095
-		light_infantry = 50
-		archers = 100
-		archers_offensive = 0.05
-		light_infantry_offensive = 0.05
-		ai_creation_factor = 92
-
-		extra_tech_building_start = 0.2
-	}
-	ct_sudfreecorps_5 = {
-		desc = ct_sudfreecorps_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		replaces = ct_barracks_5
-		upgrades_from = ct_sudfreecorps_4
-		gold_cost = 400
-		build_time = 2190
-		light_infantry = 100
-		archers = 70
-		archers_offensive = 0.05
-		light_infantry_offensive = 0.05
-		ai_creation_factor = 91
-
-		extra_tech_building_start = 0.2
-	}
-	ct_sudfreecorps_6 = {
-		desc = ct_sudfreecorps_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 7 }
-		replaces = ct_barracks_6
-		upgrades_from = ct_sudfreecorps_5
-		gold_cost = 500
-		build_time = 2190
-		light_infantry = 110
-		archers = 80
-		archers_offensive = 0.05
-		light_infantry_offensive = 0.05
+		light_infantry = 400
 		ai_creation_factor = 90
 
 		extra_tech_building_start = 0.2
 	}
 
-	#Atamos Light Cav, no garrison or levy
-	ct_atamos_1 = {
-		desc = ct_atamos_1_desc
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-
-		gold_cost = 150
-		build_time = 547
-		light_cavalry = 20
-		ai_creation_factor = 98
-
-		extra_tech_building_start = 0.6
-	}
-	ct_atamos_2 = {
-		desc = ct_atamos_1_desc
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 0 }
-
-		prerequisites = { ct_wall_1 }
-		upgrades_from = ct_atamos_1
-		gold_cost = 200
-		build_time = 730
-		light_cavalry = 30
-		ai_creation_factor = 97
-
-		extra_tech_building_start = 1.2
-	}
-	ct_atamos_3 = {
-		desc = ct_atamos_1_desc
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 2 }
-
-		upgrades_from = ct_atamos_2
-		gold_cost = 300
-		build_time = 1095
-		light_cavalry = 40
-		ai_creation_factor = 96
-
-		extra_tech_building_start = 0.2
-	}
-	ct_atamos_4 = {
-		desc = ct_atamos_1_desc
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 4 }
-
-		upgrades_from = ct_atamos_3
-		gold_cost = 400
-		build_time = 1460
-		light_cavalry = 50
-		ai_creation_factor = 95
-
-		extra_tech_building_start = 0.2
-	}
-	ct_atamos_5 = {
-		desc = ct_atamos_1_desc
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 6 }
-
-		upgrades_from = ct_atamos_4
-		gold_cost = 500
-		build_time = 2190
-		light_cavalry = 60
-		ai_creation_factor = 94
-
-		extra_tech_building_start = 0.2
-	}
-	ct_atamos_6 = {
-		desc = ct_atamos_1_desc
-		potential = {
-			location = {
-				culture = myken
-			}
-		}
-		trigger = { TECH_CITY_CONSTRUCTION = 8 }
-
-		upgrades_from = ct_atamos_5
-		gold_cost = 500
-		build_time = 2190
-		light_cavalry = 70
-		ai_creation_factor = 93
-
-		extra_tech_building_start = 0.2
-	}
 	#Mootland Ogres, Gives heavy infantry and increases their offensive/defensive up to 50%
 	ct_mootlandogres_1 = {
 		desc = ct_mootlandogres_1_desc
@@ -3643,19 +1656,17 @@ city = {
 		desc = ct_university_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = halfling_old_world
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = dawi_zharr_group
+				culture_group = dwarf_group
+				culture_group = druchi_group
+				culture_group = sartosan_group
+				culture_group = skaven_group
+				culture = nehekharan
 			}
 		}
 		gold_cost = 600
@@ -3674,19 +1685,17 @@ city = {
 		desc = ct_university_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = halfling_old_world
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = dawi_zharr_group
-					culture_group = dwarf_group
-					culture_group = druchi_group
-					culture_group = sartosan_group
-					culture_group = skaven_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = halfling_old_world
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = dawi_zharr_group
+				culture_group = dwarf_group
+				culture_group = druchi_group
+				culture_group = sartosan_group
+				culture_group = skaven_group
+				culture = nehekharan
 			}
 		}
 		upgrades_from = ct_university_1
@@ -3730,6 +1739,64 @@ city = {
 		culture_techpoints = 0.03
 		military_techpoints = 0.03
 
+		ai_creation_factor = 88
+
+		extra_tech_building_start = 1.2
+	}
+	ct_cannonsmith_1 = {
+		desc = ct_cannonsmith_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 2 }
+		potential = {
+			OR = {
+				culture_group = imperial_group
+				culture_group = estalian_group
+				culture_group = tilean_group
+			}
+		}
+		replaces = ct_university_1
+		gold_cost = 600
+		build_time = 1095
+		artillery = 30
+		ai_creation_factor = 90
+
+		extra_tech_building_start = 1.2
+	}
+
+	ct_cannonsmith_2 = {
+		desc = ct_cannonsmith_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 4 }
+		potential = {
+			OR = {
+				culture_group = imperial_group
+				culture_group = estalian_group
+				culture_group = tilean_group
+			}
+		}
+		replaces = ct_university_2
+		upgrades_from = ct_cannonsmith_1
+		gold_cost = 800
+		build_time = 2190
+		artillery = 40
+		ai_creation_factor = 89
+
+		extra_tech_building_start = 1.2
+	}
+
+	ct_cannonsmith_3 = {
+		desc = ct_cannonsmith_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 8 }
+		potential = {
+			OR = {
+				culture_group = imperial_group
+				culture_group = estalian_group
+				culture_group = tilean_group
+			}
+		}
+		replaces = ct_university_3
+		upgrades_from = ct_cannonsmith_2
+		gold_cost = 800
+		build_time = 2190
+		artillery = 50
 		ai_creation_factor = 88
 
 		extra_tech_building_start = 1.2
@@ -3859,84 +1926,6 @@ city = {
 		ai_creation_factor = 88
 
 		extra_tech_building_start = 1.2
-	}
-	#Grand Academia, replaces University, gives more tech growth and techpoints as well as court size
-	ct_academia_1 = {
-		desc = ct_academia_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 1 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-			}
-		}
-		gold_cost = 600
-		build_time = 1095
-		replaces = ct_university_1
-
-		tech_growth_modifier = 0.3
-		economy_techpoints = 0.02
-		culture_techpoints = 0.02
-		military_techpoints = 0.02
-		court_size_modifier = 1
-
-		ai_creation_factor = 90
-
-		extra_tech_building_start = 0.8
-	}
-	ct_academia_2 = {
-		desc = ct_academia_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 3 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-			}
-		}
-		upgrades_from = ct_academia_1
-		gold_cost = 800
-		build_time = 2190
-		replaces = ct_university_2
-
-		tech_growth_modifier = 0.3
-		economy_techpoints = 0.03
-		culture_techpoints = 0.03
-		military_techpoints = 0.03
-		court_size_modifier = 2
-
-		ai_creation_factor = 89
-
-		extra_tech_building_start = 0.8
-	}
-	ct_academia_3 = {
-		desc = ct_academia_1_desc
-		trigger = { TECH_CITY_CONSTRUCTION = 5 }
-		potential = {
-			location = {
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-			}
-		}
-		upgrades_from = ct_academia_2
-		gold_cost = 800
-		build_time = 2190
-		replaces = ct_university_3
-
-		tech_growth_modifier = 0.4
-		economy_techpoints = 0.05
-		culture_techpoints = 0.05
-		military_techpoints = 0.05
-		court_size_modifier = 2
-
-		ai_creation_factor = 88
-
-		extra_tech_building_start = 0.8
 	}
 
 	#Architect Bloodline buildings.
@@ -4175,28 +2164,7 @@ temple = {
 
 		extra_tech_building_start = 0.2
 	}
-	#Witch Hunter Temple in Sudenburg, fort level, garrison size, prestige/piety, income and heavy infantry with 15% morale bonus
-	tp_witchhunter_samur = {
-		desc = tp_witchhunter_samur_desc
-		potential = {
-			FROM = { religion = sigmarite }
-			FROMFROM = { title = b_samur }
-		}
-		auto_add_at_year = 10
 
-		gold_cost = 1000
-		build_time = 3000
-		liege_piety = 0.20
-		liege_prestige = 0.20
-		fort_level = 2
-		garrison_size = 0.5
-		heavy_infantry = 150
-		land_morale = 0.15
-		ai_creation_factor = 97
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.1
-	}
 
 	#Temple Wall, fort level, levy size and tax income
 	tp_wall_1 = {
@@ -5334,14 +3302,12 @@ temple = {
 		desc = tp_monastery_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = asrai_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = asrai_group
+				culture = nehekharan
 			}
 		}
 		gold_cost = 150
@@ -5358,14 +3324,12 @@ temple = {
 		desc = tp_monastery_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = asrai_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = asrai_group
+				culture = nehekharan
 			}
 		}
 		prerequisites = { tp_wall_1 }
@@ -5384,14 +3348,12 @@ temple = {
 		desc = tp_monastery_1_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = asrai_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = asrai_group
+				culture = nehekharan
 			}
 		}
 		upgrades_from = tp_monastery_2
@@ -5409,14 +3371,12 @@ temple = {
 		desc = tp_monastery_2_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = asrai_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = asrai_group
+				culture = nehekharan
 			}
 		}
 		upgrades_from = tp_monastery_3
@@ -5434,14 +3394,12 @@ temple = {
 		desc = tp_monastery_2_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = asrai_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = asrai_group
+				culture = nehekharan
 			}
 		}
 		upgrades_from = tp_monastery_4
@@ -5459,14 +3417,12 @@ temple = {
 		desc = tp_monastery_2_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
 		potential = {
-			location = {
-				NOR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-					culture_group = lizardman_group
-					culture_group = asrai_group
-					culture = nehekharan
-				}
+			NOR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+				culture_group = lizardman_group
+				culture_group = asrai_group
+				culture = nehekharan
 			}
 		}
 		upgrades_from = tp_monastery_5
@@ -5485,9 +3441,7 @@ temple = {
 		desc = tp_esmerelda_temple_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-				culture_group = halfling_old_world
-			}
+			culture_group = halfling_old_world
 		}
 		replaces = tp_monastery_1
 		gold_cost = 150
@@ -5505,9 +3459,7 @@ temple = {
 		desc = tp_esmerelda_temple_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
-			location = {
-				culture_group = halfling_old_world
-			}
+			culture_group = halfling_old_world
 		}
 		replaces = tp_monastery_2
 		prerequisites = { tp_wall_1 }
@@ -5527,9 +3479,7 @@ temple = {
 		desc = tp_esmerelda_temple_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 1 }
 		potential = {
-			location = {
-				culture_group = halfling_old_world
-			}
+			culture_group = halfling_old_world
 		}
 		replaces = tp_monastery_3
 		upgrades_from = tp_esmerelda_temple_2
@@ -5548,9 +3498,7 @@ temple = {
 		desc = tp_esmerelda_temple_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		potential = {
-			location = {
-				culture_group = halfling_old_world
-			}
+			culture_group = halfling_old_world
 		}
 		replaces = tp_monastery_4
 		upgrades_from = tp_esmerelda_temple_3
@@ -5569,9 +3517,7 @@ temple = {
 		desc = tp_esmerelda_temple_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
 		potential = {
-			location = {
-				culture_group = halfling_old_world
-			}
+			culture_group = halfling_old_world
 		}
 		replaces = tp_monastery_5
 		upgrades_from = tp_esmerelda_temple_4
@@ -5590,9 +3536,7 @@ temple = {
 		desc = tp_esmerelda_temple_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
 		potential = {
-			location = {
-				culture_group = halfling_old_world
-			}
+			culture_group = halfling_old_world
 		}
 		replaces = tp_monastery_6
 		upgrades_from = tp_esmerelda_temple_5

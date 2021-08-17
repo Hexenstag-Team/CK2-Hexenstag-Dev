@@ -384,7 +384,7 @@ character_event = {
 		}
 	}
 	option = {
-		name = EVTOPTwardrobe_4B	
+		name = EVTOPTwardrobe_4B
 		character_event = { id = wardrobe.5 }
 	}
 }
@@ -463,7 +463,7 @@ character_event = {
 			limit = { is_landed = yes }
 			capital_scope = { save_event_target_as = home_capital } #For some distance checks...
 		}
-		
+
 		### AVAILABLE MISSIONS: ###
 		# Raid and loot barony. ....................... HF.25501
 		# Lose Weak Focus.............................. iwitch.20
@@ -509,7 +509,7 @@ character_event = {
 									NOT = { any_spouse = { character = ROOT } }
 									NOT = { trait = hollowed }
 									trait=creature_human
-									OR = { 
+									OR = {
 										has_character_modifier = magic_power_1
 										has_character_modifier = magic_power_2
 										has_character_modifier = magic_power_3
@@ -526,8 +526,8 @@ character_event = {
 											trait = magic_potential_2
 											learning=15
 										}
-										trait = mage_apprentice 
-									} 
+										trait = mage_apprentice
+									}
 									is_female = no
 									is_adult = yes
 								}
@@ -542,7 +542,7 @@ character_event = {
 									NOT = { any_spouse = { character = ROOT } }
 									NOT = { trait = hollowed }
 									trait=creature_human
-									OR = { 
+									OR = {
 										has_character_modifier = magic_power_1
 										has_character_modifier = magic_power_2
 										has_character_modifier = magic_power_3
@@ -559,8 +559,8 @@ character_event = {
 											trait = magic_potential_2
 											learning=15
 										}
-										trait = mage_apprentice 
-									} 
+										trait = mage_apprentice
+									}
 									is_female = no
 									is_adult = yes
 									ROOT = { capital_scope = { distance = { where = PREV distance < 1000 } } }
@@ -621,17 +621,17 @@ character_event = {
 								learning=10
 							}
 							AND={
-								has_character_flag = magic_potential_flag_2 
+								has_character_flag = magic_potential_flag_2
 								learning=12
 							}
-							has_character_flag = magic_potential_flag_3 
+							has_character_flag = magic_potential_flag_3
 							has_character_flag = magic_potential_flag_4
 						}
 					}
 				}
 				trigger = {
 			        is_playable = yes
-	    		    is_adult = yes	    
+	    		    is_adult = yes
 					OR = {
 						any_player={
 							culture_group=kislevite_group
@@ -653,14 +653,14 @@ character_event = {
 									learning=10
 								}
 								AND={
-									has_character_flag = magic_potential_flag_2 
+									has_character_flag = magic_potential_flag_2
 									learning=12
 								}
-								has_character_flag = magic_potential_flag_3 
+								has_character_flag = magic_potential_flag_3
 								has_character_flag = magic_potential_flag_4
 							}
 						}
-						top_liege={  
+						top_liege={
 							culture_group=kislevite_group
 							religion_group=old_world_group
 							any_realm_character={
@@ -686,10 +686,10 @@ character_event = {
 											learning=10
 										}
 										AND={
-											has_character_flag = magic_potential_flag_2 
+											has_character_flag = magic_potential_flag_2
 											learning=12
 										}
-										has_character_flag = magic_potential_flag_3 
+										has_character_flag = magic_potential_flag_3
 										has_character_flag = magic_potential_flag_4
 									}
 
@@ -722,10 +722,10 @@ character_event = {
 											learning=10
 										}
 										AND={
-											has_character_flag = magic_potential_flag_2 
+											has_character_flag = magic_potential_flag_2
 											learning=12
 										}
-										has_character_flag = magic_potential_flag_3 
+										has_character_flag = magic_potential_flag_3
 										has_character_flag = magic_potential_flag_4
 									}
 								}
@@ -788,7 +788,7 @@ character_event = {
 		}
 	}
 }
-#MISSION: 
+#MISSION:
 #Ping event for the mission Duel & Slay <someone>
 character_event = {
 	id = iwitch.2
@@ -836,7 +836,7 @@ society_quest_event = {
 						NOT = { any_spouse = { character = ROOT } }
 						NOT = { trait = hollowed }
 						trait=creature_human
-						OR = { 
+						OR = {
 							has_character_modifier = magic_power_1
 							has_character_modifier = magic_power_2
 							has_character_modifier = magic_power_3
@@ -849,8 +849,8 @@ society_quest_event = {
 								trait = magic_potential_3
 								learning=15
 							}
-							trait = mage_apprentice 
-						} 
+							trait = mage_apprentice
+						}
 						is_female = no
 						#is_adult = yes
 					}
@@ -863,7 +863,7 @@ society_quest_event = {
 						NOT = { any_spouse = { character = ROOT } }
 						NOT = { trait = hollowed }
 						trait=creature_human
-						OR = { 
+						OR = {
 							has_character_modifier = magic_power_1
 							has_character_modifier = magic_power_2
 							has_character_modifier = magic_power_3
@@ -880,8 +880,8 @@ society_quest_event = {
 								trait = magic_potential_2
 								learning=15
 							}
-							trait = mage_apprentice 
-						} 
+							trait = mage_apprentice
+						}
 						is_female = no
 						#is_adult = yes
 					}
@@ -908,7 +908,7 @@ society_quest_event = {
 						NOT = { any_spouse = { character = ROOT } }
 						NOT = { trait = hollowed }
 						trait=creature_human
-						OR = { 
+						OR = {
 							has_character_modifier = magic_power_1
 							has_character_modifier = magic_power_2
 							has_character_modifier = magic_power_3
@@ -925,8 +925,8 @@ society_quest_event = {
 								trait = magic_potential_2
 								learning=15
 							}
-							trait = mage_apprentice 
-						} 
+							trait = mage_apprentice
+						}
 						is_female = no
 						is_adult = yes
 						ROOT = { capital_scope = { distance = { where = PREV distance < 1000 } } }
@@ -942,7 +942,7 @@ society_quest_event = {
 						NOT = { any_spouse = { character = ROOT } }
 						NOT = { trait = hollowed }
 						trait=creature_human
-						OR = { 
+						OR = {
 							has_character_modifier = magic_power_1
 							has_character_modifier = magic_power_2
 							has_character_modifier = magic_power_3
@@ -959,8 +959,8 @@ society_quest_event = {
 								trait = magic_potential_2
 								learning=15
 							}
-							trait = mage_apprentice 
-						} 
+							trait = mage_apprentice
+						}
 						is_female = no
 						is_adult = yes
 						ROOT = { capital_scope = { distance = { where = PREV distance < 1000 } } }
@@ -972,7 +972,7 @@ society_quest_event = {
 						NOT = { any_spouse = { character = ROOT } }
 						NOT = { trait = hollowed }
 						trait=creature_human
-						OR = { 
+						OR = {
 							has_character_modifier = magic_power_1
 							has_character_modifier = magic_power_2
 							has_character_modifier = magic_power_3
@@ -989,8 +989,8 @@ society_quest_event = {
 								trait = magic_potential_2
 								learning=15
 							}
-							trait = mage_apprentice 
-						} 
+							trait = mage_apprentice
+						}
 						is_female = no
 						is_adult = yes
 						ROOT = { capital_scope = { distance = { where = PREV distance < 1000 } } }
@@ -1009,15 +1009,15 @@ society_quest_event = {
             }
 		}
 	}
-	
+
 	quest_target = event_target:male_target
-	
+
 	option = {
 		name = ACCEPT
 		set_character_flag = deadly_duel@event_target:male_target
 		event_target:male_target = {
 			show_scope_change = no
-			set_quest_target = { 
+			set_quest_target = {
 				id = quest_ice_witch_hunt
 				holder = ROOT
 			}
@@ -1044,10 +1044,10 @@ character_event = {
 
 	is_triggered_only = yes
 
-	immediate = { 
+	immediate = {
 		save_event_target_as=witch_hunter
-		FROM = { save_event_target_as=the_accused 
-		character_event = { id = magicpotential.12 days = 7 random = 7 }} 
+		FROM = { save_event_target_as=the_accused
+		character_event = { id = magicpotential.12 days = 7 random = 7 }}
 	}
 	option={name=EVTOPTAmagicpotential12}
 }
@@ -1095,7 +1095,7 @@ character_event = {
 	}
 }
 
-#MISSION: 
+#MISSION:
 #Ping event for the mission Recruit Your Child
 character_event = {
 	id = iwitch.7
@@ -1114,10 +1114,10 @@ society_quest_event = {
 	is_triggered_only = yes
 	is_in_society = yes
 	only_capable = yes
-	
+
 	trigger = {
 		is_landed = yes
-	    is_adult = yes	        		
+	    is_adult = yes
 		FROM = { is_alive = yes }
 		society_member_of = ice_witch_sisterhood
 		same_society_as = FROM
@@ -1152,10 +1152,10 @@ society_quest_event = {
 							learning=10
 						}
 						AND={
-							has_character_flag = magic_potential_flag_2 
+							has_character_flag = magic_potential_flag_2
 							learning=12
 						}
-						has_character_flag = magic_potential_flag_3 
+						has_character_flag = magic_potential_flag_3
 						has_character_flag = magic_potential_flag_4
 					}
 				}
@@ -1183,10 +1183,10 @@ society_quest_event = {
 							learning=10
 						}
 						AND={
-							has_character_flag = magic_potential_flag_2 
+							has_character_flag = magic_potential_flag_2
 							learning=12
 						}
-						has_character_flag = magic_potential_flag_3 
+						has_character_flag = magic_potential_flag_3
 						has_character_flag = magic_potential_flag_4
 					}
 				}
@@ -1196,7 +1196,7 @@ society_quest_event = {
 		}
 		if = { #1st best case (a realm character) who fits the bill...
 			limit = {
-				top_liege={  
+				top_liege={
 					culture_group=kislevite_group
 					religion_group=old_world_group
 					any_realm_character={
@@ -1223,17 +1223,17 @@ society_quest_event = {
 									learning=10
 								}
 								AND={
-									has_character_flag = magic_potential_flag_2 
+									has_character_flag = magic_potential_flag_2
 									learning=12
 								}
-								has_character_flag = magic_potential_flag_3 
+								has_character_flag = magic_potential_flag_3
 								has_character_flag = magic_potential_flag_4
 							}
 						}
 					}
 				}
 			}
-			top_liege={  
+			top_liege={
 				any_realm_character={
 					limit={
 						any_child = {
@@ -1259,10 +1259,10 @@ society_quest_event = {
 									learning=10
 								}
 								AND={
-									has_character_flag = magic_potential_flag_2 
+									has_character_flag = magic_potential_flag_2
 									learning=12
 								}
-								has_character_flag = magic_potential_flag_3 
+								has_character_flag = magic_potential_flag_3
 								has_character_flag = magic_potential_flag_4
 							}
 						}
@@ -1290,10 +1290,10 @@ society_quest_event = {
 									learning=10
 								}
 								AND={
-									has_character_flag = magic_potential_flag_2 
+									has_character_flag = magic_potential_flag_2
 									learning=12
 								}
-								has_character_flag = magic_potential_flag_3 
+								has_character_flag = magic_potential_flag_3
 								has_character_flag = magic_potential_flag_4
 							}
 						}
@@ -1309,7 +1309,7 @@ society_quest_event = {
 		}
 		if = { #2nd best case (a realm character) who fits the bill...
 			limit = {
-				top_liege={  
+				top_liege={
 					culture_group=kislevite_group
 					religion_group=old_world_group
 					any_realm_character={
@@ -1335,17 +1335,17 @@ society_quest_event = {
 									learning=10
 								}
 								AND={
-									has_character_flag = magic_potential_flag_2 
+									has_character_flag = magic_potential_flag_2
 									learning=12
 								}
-								has_character_flag = magic_potential_flag_3 
+								has_character_flag = magic_potential_flag_3
 								has_character_flag = magic_potential_flag_4
 							}
 						}
 					}
 				}
 			}
-			top_liege={  
+			top_liege={
 				any_realm_character={
 					limit={
 						any_child = {
@@ -1370,10 +1370,10 @@ society_quest_event = {
 									learning=10
 								}
 								AND={
-									has_character_flag = magic_potential_flag_2 
+									has_character_flag = magic_potential_flag_2
 									learning=12
 								}
-								has_character_flag = magic_potential_flag_3 
+								has_character_flag = magic_potential_flag_3
 								has_character_flag = magic_potential_flag_4
 							}
 						}
@@ -1400,10 +1400,10 @@ society_quest_event = {
 									learning=10
 								}
 								AND={
-									has_character_flag = magic_potential_flag_2 
+									has_character_flag = magic_potential_flag_2
 									learning=12
 								}
-								has_character_flag = magic_potential_flag_3 
+								has_character_flag = magic_potential_flag_3
 								has_character_flag = magic_potential_flag_4
 							}
 						}
@@ -1445,10 +1445,10 @@ society_quest_event = {
 									learning=10
 								}
 								AND={
-									has_character_flag = magic_potential_flag_2 
+									has_character_flag = magic_potential_flag_2
 									learning=12
 								}
-								has_character_flag = magic_potential_flag_3 
+								has_character_flag = magic_potential_flag_3
 								has_character_flag = magic_potential_flag_4
 							}
 						}
@@ -1482,10 +1482,10 @@ society_quest_event = {
 									learning=10
 								}
 								AND={
-									has_character_flag = magic_potential_flag_2 
+									has_character_flag = magic_potential_flag_2
 									learning=12
 								}
-								has_character_flag = magic_potential_flag_3 
+								has_character_flag = magic_potential_flag_3
 								has_character_flag = magic_potential_flag_4
 							}
 						}
@@ -1515,10 +1515,10 @@ society_quest_event = {
 									learning=10
 								}
 								AND={
-									has_character_flag = magic_potential_flag_2 
+									has_character_flag = magic_potential_flag_2
 									learning=12
 								}
-								has_character_flag = magic_potential_flag_3 
+								has_character_flag = magic_potential_flag_3
 								has_character_flag = magic_potential_flag_4
 							}
 						}
@@ -1545,10 +1545,10 @@ society_quest_event = {
 									learning=10
 								}
 								AND={
-									has_character_flag = magic_potential_flag_2 
+									has_character_flag = magic_potential_flag_2
 									learning=12
 								}
-								has_character_flag = magic_potential_flag_3 
+								has_character_flag = magic_potential_flag_3
 								has_character_flag = magic_potential_flag_4
 							}
 						}
@@ -1564,7 +1564,7 @@ society_quest_event = {
 		}
 	}
 
-	quest_target = event_target:recruit_to_be 
+	quest_target = event_target:recruit_to_be
 
 	option = {
 		name = ACCEPT
@@ -1722,16 +1722,15 @@ character_event = {
 	id = iwitch.12
 	desc = EVTDESCIWITCH12
 	picture = "GFX_evt_kislev_ice_witch"
-	trigger={ event_target:recruit_to_be = { not={trait=ice_witch}}}
 
 	is_triggered_only = yes
 
-	trigger={ event_target:recruit_to_be = { 
+	trigger={ event_target:recruit_to_be = {
 			not={trait=ice_witch}
-			is_alive = yes 
+			is_alive = yes
 		}
 	}
-	fail_trigger_effect = { 
+	fail_trigger_effect = {
 		event_target:recruit_to_be = {
 			if={limit={is_alive = yes}
 			remove_trait=studying_magic
@@ -1764,11 +1763,11 @@ character_event = {
 
 	trigger={
 		not={trait=ice_witch}
-		event_target:recruiter = { 
-			is_alive = yes 
+		event_target:recruiter = {
+			is_alive = yes
 		}
 	}
-	fail_trigger_effect = { 
+	fail_trigger_effect = {
 		event_target:recruit_to_be = {
 			if={limit={is_alive = yes}
 			remove_trait=studying_magic
@@ -1780,16 +1779,16 @@ character_event = {
 			}
 		}
 	}
-	option = { 
+	option = {
 		name = EVTOPTAsorcererapprentice19001
-		hidden_tooltip = { 
+		hidden_tooltip = {
 			event_target:recruiter = { character_event = { id = iwitch.12 days = 250 random = 150 } }
-			random_list = { 
-				50 = { 
-					change_learning = 1 
-					diplomacy = 1
+			random_list = {
+				50 = {
+					change_learning = 1
+					change_diplomacy = 1
 				}
-				50 = { 
+				50 = {
 					magic_learning_reduce_bad_outcome = yes
 					modifier = {
 						factor = 1.45
@@ -1814,11 +1813,11 @@ character_event = {
 	is_triggered_only = yes
 	trigger={
 		not={trait=ice_witch}
-		event_target:recruiter = { 
-			is_alive = yes 
+		event_target:recruiter = {
+			is_alive = yes
 		}
 	}
-	fail_trigger_effect = { 
+	fail_trigger_effect = {
 		event_target:recruit_to_be = {
 			if={limit={is_alive = yes}
 			remove_trait=studying_magic
@@ -1830,24 +1829,24 @@ character_event = {
 			}
 		}
 	}
-	option = { 
+	option = {
 		name = EVTOPTAsorcererapprentice19002
-		hidden_tooltip = { 
+		hidden_tooltip = {
 			event_target:recruiter = { character_event = { id = iwitch.12 days = 250 random = 150 } }
-			random_list = { 
-				20 = { 
+			random_list = {
+				20 = {
 					change_learning = 1
 					change_martial = 1
 				}
-				20 = { 
-					change_learning = 1 
+				20 = {
+					change_learning = 1
 					change_intrigue = 1
 				}
-				20 = { 
-					change_learning = 1 
+				20 = {
+					change_learning = 1
 					change_stewardship = 1
 				}
-				40 = { 
+				40 = {
 					magic_learning_reduce_bad_outcome = yes
 					modifier = {
 						factor = 1.45
@@ -1872,11 +1871,11 @@ character_event = {
 
 	trigger={
 		not={trait=ice_witch}
-		event_target:recruiter = { 
-			is_alive = yes 
+		event_target:recruiter = {
+			is_alive = yes
 		}
 	}
-	fail_trigger_effect = { 
+	fail_trigger_effect = {
 		event_target:recruit_to_be = {
 			if={limit={is_alive = yes}
 			remove_trait=studying_magic
@@ -1888,11 +1887,11 @@ character_event = {
 			}
 		}
 	}
-	option = { 
+	option = {
 		name = EVTOPTAsorcererapprentice19003
-		hidden_tooltip = { 
+		hidden_tooltip = {
 			event_target:recruiter = { character_event = { id = iwitch.12 days = 250 random = 150 } }
-			random_list = { 
+			random_list = {
 				50 = { change_learning = 1 }
 				50 = {
 					magic_learning_reduce_bad_outcome = yes
@@ -1916,7 +1915,7 @@ character_event = {
 
 	is_triggered_only = yes
 
-	option = { 
+	option = {
 		name = EVTOPTIWITCH_16
 		character_event={ id=iwitch.12 }
 	}
@@ -1928,7 +1927,7 @@ character_event = {
 
 	is_triggered_only = yes
 
-	option = { 
+	option = {
 		name = EVTOPTAintm0002 #Damn you
 		clr_quest = quest_iwitch_recruit
 		add_mission_fail_influence_effect=yes
@@ -1941,7 +1940,7 @@ character_event = {
 
 	is_triggered_only = yes
 
-	option = { 
+	option = {
 		name = EVTOPTIWITCH_16
 		clr_quest = quest_iwitch_recruit
 		add_society_currency_medium_effect=yes
@@ -1954,7 +1953,7 @@ character_event = {
 	}
 }
 ###Lose Weak Focus###
-#MISSION: 
+#MISSION:
 #Ping event for the mission Lose Weak Focus
 character_event = {
 	id = iwitch.20
@@ -1970,7 +1969,7 @@ society_quest_event = {
 	id = iwitch.21
 	desc = {
 		trigger = {
-			ROOT = { 
+			ROOT = {
 				has_character_flag = flag_renounce_focus_for_war
 			}
 		}
@@ -1978,7 +1977,7 @@ society_quest_event = {
 	}
 	desc = {
 		trigger = {
-			ROOT = { 
+			ROOT = {
 				has_character_flag = flag_renounce_focus_for_hunting
 			}
 		}
@@ -1986,7 +1985,7 @@ society_quest_event = {
 	}
 	desc = {
 		trigger = {
-			ROOT = { 
+			ROOT = {
 				has_character_flag = flag_renounce_focus_for_rulership
 			}
 		}
@@ -1994,7 +1993,7 @@ society_quest_event = {
 	}
 	desc = {
 		trigger = {
-			ROOT = { 
+			ROOT = {
 				has_character_flag = flag_renounce_focus_for_carousing
 			}
 		}
@@ -2036,28 +2035,28 @@ society_quest_event = {
 		name = ACCEPT
 		ROOT = {
 			show_scope_change = no
-			if = { 
+			if = {
 				limit = { has_character_flag = flag_renounce_focus_for_war }
 				set_quest_target = {
 					id = quest_warband_weak_focus_to_war
 					holder = ROOT
 				}
 			}
-			if = { 
+			if = {
 				limit = { has_character_flag = flag_renounce_focus_for_hunting }
 				set_quest_target = {
 					id = quest_warband_weak_focus_to_hunting
 					holder = ROOT
 				}
 			}
-			if = { 
+			if = {
 				limit = { has_character_flag = flag_renounce_focus_for_rulership }
 				set_quest_target = {
 					id = quest_warband_weak_focus_to_rulership
 					holder = ROOT
 				}
 			}
-			if = { 
+			if = {
 				limit = { has_character_flag = flag_renounce_focus_for_carousing }
 				set_quest_target = {
 					id = quest_warband_weak_focus_to_carousing
@@ -2207,7 +2206,7 @@ character_event = {
 	id = iwitch.26
 	desc = EVTDESCAHF25509
 	hide_window = yes
-	religion=old_world_group
+	religion_group = old_world_group
 	is_triggered_only = yes
 	only_women=yes
 	trigger = {
@@ -2227,8 +2226,6 @@ character_event = {
 				add_trait=lore_ice
 				magic_power_random_teach=yes
 				z_magic_xp_turnon=yes
-				add_trait=ice_witch
-				add_trait=lore_ice
 				change_diplomacy=2
 				change_learning=2
 				join_society=ice_witch_sisterhood
