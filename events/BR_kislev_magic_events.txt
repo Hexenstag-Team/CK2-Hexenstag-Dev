@@ -154,17 +154,18 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		years = 50
+	weight_multiplier = {
+		days = 1
 		modifier = {
-			factor = 0.1
+			factor = 10
 			trait = curious
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			intrigue = 4
 		}
 	}
+
 	option = {
 		name = EVTOPTwardrobe_0
 		character_event = { id = wardrobe.1 }
