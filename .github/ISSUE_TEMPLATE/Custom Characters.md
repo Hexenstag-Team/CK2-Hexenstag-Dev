@@ -25,7 +25,7 @@ Learning:
 
 
 *Misc*
-Your character can have a barony or be landless
+Your character can have a ruler or be landless
 If landless you can name who's court your in.
 
 **Screenshots**
