@@ -3757,7 +3757,7 @@ voice_of_ayyur = {
 
 voice_of_dievas = {
 	icon = 3
-	general_opinion = 10\
+	general_opinion = 10
 				is_visible = {
 		hidden_trait = yes
 	}
@@ -4029,12 +4029,10 @@ recent_induction_attempt = {
 			is_devil_worshiper_trigger = yes
             character = FROM
 		}
+		hidden_trait = yes
 	}
 	health = -0.5
 	icon = 76
-				is_visible = {
-		hidden_trait = yes
-	}
 }
 
 recently_donated_to_charity = {
@@ -4051,12 +4049,10 @@ stolen_life_minor = {
 			is_devil_worshiper_trigger = yes
             character = FROM
 		}
+		hidden_trait = yes
 	}
 	health = 1
 	icon = 41
-				is_visible = {
-		hidden_trait = yes
-	}
 }
 
 stolen_life_medium = {
@@ -4065,12 +4061,10 @@ stolen_life_medium = {
 			is_devil_worshiper_trigger = yes
             character = FROM
 		}
+		hidden_trait = yes
 	}
 	health = 2
 	icon = 41
-				is_visible = {
-		hidden_trait = yes
-	}
 }
 
 stolen_life_major = {
@@ -4079,12 +4073,10 @@ stolen_life_major = {
 			is_devil_worshiper_trigger = yes
             character = FROM
 		}
+		hidden_trait = yes
 	}
 	health = 3
 	icon = 41
-				is_visible = {
-		hidden_trait = yes
-	}
 }
 
 doing_penance = {
@@ -4132,25 +4124,25 @@ promise_of_celibacy = {
 }
 
 relic_rumor_minor = {
-	is_visible = { character = FROM }
 	icon = 4
-				is_visible = {
+	is_visible = {
+		character = FROM
 		religion_group_visible_trait = yes
 	}
 }
 
 relic_rumor_medium = {
-	is_visible = { character = FROM }
 	icon = 4
-				is_visible = {
+	is_visible = {
+		character = FROM
 		religion_group_visible_trait = yes
 	}
 }
 
 relic_rumor_major = {
-	is_visible = { character = FROM }
 	icon = 4
-				is_visible = {
+	is_visible = {
+		character = FROM
 		religion_group_visible_trait = yes
 	}
 }
@@ -4250,8 +4242,6 @@ attempting_to_blend_in = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
-	}
-				is_visible = {
 		hidden_trait = yes
 	}
 }
@@ -4264,8 +4254,6 @@ conducted_secret_ceremony = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
-	}
-				is_visible = {
 		hidden_trait = yes
 	}
 }
@@ -4278,8 +4266,6 @@ awkward_believer = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
-	}
-				is_visible = {
 		hidden_trait = yes
 	}
 }
@@ -4292,8 +4278,6 @@ great_believer = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
-	}
-				is_visible = {
 		religion_group_visible_trait = yes
 	}
 }
@@ -4306,8 +4290,6 @@ embarrassed_believer = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
-	}
-				is_visible = {
 		religion_group_visible_trait = yes
 	}
 }
@@ -4321,8 +4303,6 @@ satyric_blessing = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
-	}
-				is_visible = {
 		hidden_trait = yes
 	}
 }
@@ -4336,8 +4316,6 @@ blessing_of_lilith = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
-	}
-				is_visible = {
 		hidden_trait = yes
 	}
 }
@@ -4350,8 +4328,6 @@ blessing_of_berith = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
-	}
-				is_visible = {
 		hidden_trait = yes
 	}
 }
@@ -4371,8 +4347,6 @@ blessing_of_azazel = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
-	}
-				is_visible = {
 		hidden_trait = yes
 	}
 }
@@ -4384,9 +4358,7 @@ blessing_of_avnas = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
-				is_visible = {
 		hidden_trait = yes
-	}
 	}
 }
 blessing_of_belial = {
@@ -4397,8 +4369,6 @@ blessing_of_belial = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
-	}
-				is_visible = {
 		hidden_trait = yes
 	}
 }
@@ -4410,8 +4380,6 @@ blessing_of_mammon = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
-	}
-				is_visible = {
 		hidden_trait = yes
 	}
 }
@@ -4423,8 +4391,6 @@ blessing_of_vetis = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
-	}
-				is_visible = {
 		hidden_trait = yes
 	}
 }
@@ -4446,8 +4412,6 @@ focused_on_training = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
-	}
-				is_visible = {
 		hidden_trait = yes
 	}
 }
@@ -4479,12 +4443,10 @@ under_suspicion = {
 			is_visible_to_self_trigger = yes
 			same_society_as = FROM
 		}
+		visible_trait = yes
 	}
 	monthly_character_prestige = -0.5
 	icon = 82
-				is_visible = {
-		visible_trait = yes
-	}
 }
 
 highly_suspect = {
@@ -4601,13 +4563,11 @@ bruised_knuckles = {
 			same_society_as = FROM
             character = FROM
 		}
+		religion_visible_trait = yes
 	}
 	diplomacy = -1
 	martial = -1
 	icon = 36
-				is_visible = {
-		religion_visible_trait = yes
-	}
 }
 
 mediator = {
@@ -5342,12 +5302,10 @@ diplomatic_insight = {
 			society_member_of = the_assassins
 			character = FROM
 		}
+		hidden_trait = yes
 	}
 	icon = 3
 	diplomacy = 2
-				is_visible = {
-		hidden_trait = yes
-	}
 }
 martial_insight = {
 	is_visible = {
@@ -5355,12 +5313,10 @@ martial_insight = {
 			society_member_of = the_assassins
 			character = FROM
 		}
+		hidden_trait = yes
 	}
 	icon = 1
 	martial = 2
-				is_visible = {
-		hidden_trait = yes
-	}
 }
 intrigue_insight = {
 	is_visible = {
@@ -5368,12 +5324,10 @@ intrigue_insight = {
 			society_member_of = the_assassins
 			character = FROM
 		}
+		hidden_trait = yes
 	}
 	icon = 5
 	intrigue = 2
-				is_visible = {
-		hidden_trait = yes
-	}
 }
 learning_insight = {
 	is_visible = {
@@ -5381,12 +5335,10 @@ learning_insight = {
 			society_member_of = the_assassins
 			character = FROM
 		}
+		hidden_trait = yes
 	}
 	icon = 2
 	learning = 2
-				is_visible = {
-		hidden_trait = yes
-	}
 }
 stewardship_insight = {
 	is_visible = {
@@ -5394,12 +5346,10 @@ stewardship_insight = {
 			society_member_of = the_assassins
 			character = FROM
 		}
+		hidden_trait = yes
 	}
 	icon = 4
 	stewardship = 2
-				is_visible = {
-		hidden_trait = yes
-	}
 }
 devout_leader = {
 	icon = 18
@@ -6064,13 +6014,10 @@ cowardly_infanticide = {
 	}
 }
 aborted_child = {
-	is_visible = {
-        character = FROM
-	}
 	health = -0.5
 	fertility = -0.25
 	icon = 114
-				is_visible = {
+	is_visible = {
 		religion_group_visible_trait = yes
 	}
 }
@@ -6499,7 +6446,7 @@ luxurious_crown_modifier = {
 
 popular_modifier = {
 	general_opinion = 5
-	Diplomacy = 2
+	diplomacy = 2
 	icon = 3
 				is_visible = {
 		religion_visible_trait = yes

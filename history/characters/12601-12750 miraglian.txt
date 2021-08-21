@@ -11,6 +11,7 @@
 	stewardship = 1
 	intrigue = 9
 	learning = 1
+	father = 12623
 	add_trait = creature_human
 	add_trait = hedonist
 	add_trait = brilliant_strategist
@@ -403,4 +404,34 @@
 			}
 	2010.1.1 = {employer = 11401} #Wissenland
 	2025.7.25 = {death = yes}
+}
+
+#Cosimo, father of Fabio and maker of the Miracle of Miragliano
+12623 = {
+	name = Cosimo
+	dynasty = 42000
+	culture = miraglian
+	religion = myrmidian
+	martial = 3
+	diplomacy = 4
+	stewardship = 8
+	intrigue = 4
+	learning = 7
+	add_trait = creature_human
+	add_trait = architect
+	add_trait = fortune_builder
+	add_trait = shrewd
+	add_trait = diligent
+	add_trait = proud
+	add_trait = ambitious
+	1954.7.21 = {
+		birth = yes
+	}
+	1990.1.1 = {
+		create_bloodline = {
+			type = miragliano_miracle_bloodline
+			has_dlc = "Holy Fury"
+		}
+	}
+	2008.1.1 = {death=yes}
 }

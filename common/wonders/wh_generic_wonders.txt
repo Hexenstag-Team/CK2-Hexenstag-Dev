@@ -88,10 +88,10 @@ wonder_old_world_city = {
 	allow_coastal = yes
 	picture = GFX_wonder_strip_oldworldcity
 	potential = {
-		always = no #needs more development
+		religion_group = old_world_group #should become broader as more content is developed
 	}
 	active = {
-		religion_group = old_world_group #probably too restrictive because an Arabyan City would look pretty similar
+		trait = creature_human
 	}
 	flags = {
 		defensive
@@ -100,7 +100,7 @@ wonder_old_world_city = {
 		cost_high
 	}
 
-	allow_construction = no
+	allow_construction = yes
 
 	available_upgrades = {
 
@@ -112,9 +112,11 @@ wonder_old_world_city = {
 	upgrade_court_of_law
 	upgrade_customs_wall
 	upgrade_dwarf_quarter
+	upgrade_halfling_quarter
 	upgrade_industrial_district
 	upgrade_opera_house
 	upgrade_racetrack
+	upgrade_sewer_system
 	upgrade_sports_field
 	upgrade_streetlights
 
@@ -127,42 +129,59 @@ wonder_old_world_city = {
 	###EDUCATION###
 	upgrade_university
 	upgrade_engineering_school
-	upgrade_engineered_canals
+	upgrade_school_of_arithmetic
+	upgrade_school_of_geometry
+	upgrade_school_of_grammar
 	upgrade_school_of_history
+	upgrade_school_of_law
+	upgrade_school_of_logic
 	upgrade_school_of_medicine
+	upgrade_school_of_music
+	upgrade_school_of_navigation
+	upgrade_school_of_rhetoric
+
+	###ENGINEERING###
+	upgrade_engineered_canals
+	upgrade_engineered_defences
 
 	###MILITARY###
-	upgrade_engineered_defences
+	upgrade_great_keep
+	upgrade_great_walls
 	upgrade_gunnery_school
 	upgrade_cannon_foundry
 	upgrade_parade_grounds
 	upgrade_riding_school
 
-	###TEMPLES###
+	###PORTS&TRADE###
+	upgrade_great_port
+	upgrade_great_lighthouse
+	upgrade_dockyard_district
+	upgrade_harbour_patrol
+
+	###OLD WORLD TEMPLES###
 	upgrade_temple_quarter
 	upgrade_templar_orders
-
-		#OLD WORLD GROUP
-		upgrade_great_dazh_temple
-		upgrade_great_grail_chapel
-		upgrade_great_handrich_temple
-		upgrade_great_manann_temple
-		upgrade_great_morr_temple
-		upgrade_great_myrmidia_temple
-		upgrade_great_sigmar_temple
-		upgrade_great_shallya_temple
-		upgrade_great_taal_rhya_temple
-		#no great temple of Tor because he doesn't have much of a cult
-		upgrade_great_ulric_temple
-		upgrade_great_ursun_temple
-		upgrade_great_verena_temple
+	upgrade_great_damu_temple
+	upgrade_great_dazh_temple
+	upgrade_great_grail_chapel
+	upgrade_great_handrich_temple
+	upgrade_great_manann_temple
+	upgrade_great_morr_temple
+	upgrade_great_myrmidia_temple
+	upgrade_great_sigmar_temple
+	upgrade_great_shallya_temple
+	upgrade_great_taal_rhya_temple
+	#no great temple of Tor because he doesn't have much of a cult
+	upgrade_great_ulric_temple
+	upgrade_great_ursun_temple
+	upgrade_great_verena_temple
 
 	}
 	stage = {
 		allow = {
 			FROMFROMFROM = {
-				TECH_CITY_CONSTRUCTION = 3
-				TECH_CONSTRUCTION = 3
+				TECH_CITY_CONSTRUCTION = 1
+				TECH_CONSTRUCTION = 1
 			}
 		}
 		build_time = 150
@@ -174,8 +193,9 @@ wonder_old_world_city = {
 		restore_cost_ticking = 2
 		upgrade_slots = 3
 		local_modifier = {
-			tradevalue = 15
+			tradevalue = 5
 			garrison_size = 0.1
+			disease_defence = -0.02
 		}
 		owner_modifier = {
 
@@ -185,8 +205,8 @@ wonder_old_world_city = {
 	stage = {
 		allow = {
 			FROMFROMFROM = {
-				TECH_CITY_CONSTRUCTION = 3
-				TECH_CONSTRUCTION = 3
+				TECH_CITY_CONSTRUCTION = 1
+				TECH_CONSTRUCTION = 1
 			}
 		}
 		build_time = 175
@@ -198,8 +218,9 @@ wonder_old_world_city = {
 		restore_cost_ticking = 2
 		upgrade_slots = 3
 		local_modifier = {
-			tradevalue = 15
+			tradevalue = 5
 			garrison_size = 0.1
+			disease_defence = -0.02
 		}
 		owner_modifier = {
 
@@ -209,8 +230,8 @@ wonder_old_world_city = {
 	stage = {
 		allow = {
 			FROMFROMFROM = {
-				TECH_CITY_CONSTRUCTION = 3
-				TECH_CONSTRUCTION = 3
+				TECH_CITY_CONSTRUCTION = 2
+				TECH_CONSTRUCTION = 2
 			}
 		}
 		build_time = 200
@@ -222,8 +243,9 @@ wonder_old_world_city = {
 		restore_cost_ticking = 2
 		upgrade_slots = 3
 		local_modifier = {
-			tradevalue = 15
+			tradevalue = 5
 			garrison_size = 0.1
+			disease_defence = -0.02
 		}
 		owner_modifier = {
 
@@ -233,8 +255,8 @@ wonder_old_world_city = {
 	stage = {
 		allow = {
 			FROMFROMFROM = {
-				TECH_CITY_CONSTRUCTION = 3
-				TECH_CONSTRUCTION = 3
+				TECH_CITY_CONSTRUCTION = 2
+				TECH_CONSTRUCTION = 2
 			}
 		}
 		build_time = 225
@@ -246,8 +268,9 @@ wonder_old_world_city = {
 		restore_cost_ticking = 2
 		upgrade_slots = 3
 		local_modifier = {
-			tradevalue = 15
+			tradevalue = 5
 			garrison_size = 0.1
+			disease_defence = -0.02
 		}
 		owner_modifier = {
 
@@ -270,8 +293,9 @@ wonder_old_world_city = {
 		restore_cost_ticking = 2
 		upgrade_slots = 3
 		local_modifier = {
-			tradevalue = 15
+			tradevalue = 5
 			garrison_size = 0.1
+			disease_defence = -0.02
 		}
 		owner_modifier = {
 
@@ -281,8 +305,8 @@ wonder_old_world_city = {
 	stage = {
 		allow = {
 			FROMFROMFROM = {
-				TECH_CITY_CONSTRUCTION = 3
-				TECH_CONSTRUCTION = 3
+				TECH_CITY_CONSTRUCTION = 4
+				TECH_CONSTRUCTION = 4
 			}
 		}
 		build_time = 275
@@ -294,8 +318,9 @@ wonder_old_world_city = {
 		restore_cost_ticking = 2
 		upgrade_slots = 3
 		local_modifier = {
-			tradevalue = 15
+			tradevalue = 5
 			garrison_size = 0.1
+			disease_defence = -0.05
 		}
 		owner_modifier = {
 
@@ -305,8 +330,8 @@ wonder_old_world_city = {
 	stage = {
 		allow = {
 			FROMFROMFROM = {
-				TECH_CITY_CONSTRUCTION = 3
-				TECH_CONSTRUCTION = 3
+				TECH_CITY_CONSTRUCTION = 6
+				TECH_CONSTRUCTION = 6
 			}
 		}
 		build_time = 300
@@ -318,8 +343,9 @@ wonder_old_world_city = {
 		restore_cost_ticking = 2
 		upgrade_slots = 3
 		local_modifier = {
-			tradevalue = 15
+			tradevalue = 5
 			garrison_size = 0.1
+			disease_defence = -0.05
 		}
 		owner_modifier = {
 
@@ -329,8 +355,8 @@ wonder_old_world_city = {
 	stage = {
 		allow = {
 			FROMFROMFROM = {
-				TECH_CITY_CONSTRUCTION = 3
-				TECH_CONSTRUCTION = 3
+				TECH_CITY_CONSTRUCTION = 8
+				TECH_CONSTRUCTION = 8
 			}
 		}
 		build_time = 325
@@ -342,8 +368,9 @@ wonder_old_world_city = {
 		restore_cost_ticking = 2
 		upgrade_slots = 3
 		local_modifier = {
-			tradevalue = 15
+			tradevalue = 5
 			garrison_size = 0.1
+			disease_defence = -0.05
 		}
 		owner_modifier = {
 
@@ -359,25 +386,25 @@ wonder_dwarf_hold = {
 
   potential = {
     FROMFROMFROM = {
-			OR = {
-				culture_group = dwarf_group
-				culture_group = dawi_zharr_group
-			}
-			OR = {
-				de_jure_liege_or_above = e_darklands
-				de_jure_liege_or_above = e_karak_ankor
-				de_jure_liege_or_above = e_drak_ankor
-			}
-			NOT = { culture = servile_hobgoblin }
+		OR = {
+			culture_group = dwarf_group
+			culture_group = dawi_zharr_group
 		}
+		OR = {
+			de_jure_liege_or_above = e_darklands
+			de_jure_liege_or_above = e_karak_ankor
+			de_jure_liege_or_above = e_drak_ankor
+		}
+		NOT = { culture = servile_hobgoblin }
+	}
   }
 
   active = {
 
   }
 
-	#set to forbid new constructions, testing!
-	allow_construction = no
+	#let's try allowing construction
+	#allow_construction = no
 
   available_upgrades = {
 		# MINING #

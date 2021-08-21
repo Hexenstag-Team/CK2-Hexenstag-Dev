@@ -540,9 +540,10 @@ character_event = {
 	id = DR_dwarfs.7
 	desc = EVTDESCDR_dwarfs.7
 	picture = GFX_evt_dwarf_thinking
+	is_triggered_only = yes
 
 	only_rulers = yes
-	religion_group = dwarf_gods_group
+	culture_group = dwarf_group
 
 	trigger = {
 		religion_group = dwarf_gods_group
@@ -553,10 +554,6 @@ character_event = {
 			# trait = dwarf_slayer_king
 			trait = dwarf_oathbreaker
 		}
-	}
-
-	mean_time_to_happen = {
-		days = 5
 	}
 
 	option = {
@@ -1836,8 +1833,10 @@ character_event = {
 	id = DR_dwarfs.54
 
 	hide_window = yes
-	religion_group = dwarf_gods_group
+	is_triggered_only = yes
+
 	only_rulers = yes
+	culture_group = dwarf_group
 
 	trigger = {
 		religion_group = dwarf_gods_group
@@ -1845,10 +1844,6 @@ character_event = {
 		any_opinion_modifier_target = {
 			reverse_has_opinion_modifier = { who = ROOT modifier = opinion_dwarf_grudge }
 		}
-	}
-
-	mean_time_to_happen = {
-		days = 5
 	}
 
 	option = {
@@ -2380,17 +2375,19 @@ character_event = {
 	id = DR_dwarfs.100
 
 	hide_window = yes
+	is_triggered_only = yes
 
+
+	religion_group = dwarf_gods_group
 	min_age = 15
 	capable_only = yes
 	prisoner = no
 
-	religion_group = dwarf_gods_group
+	culture_group = dwarf_group
 
 	trigger = {
-		religion_group = dwarf_gods_group
-		trait = creature_dwarf
 		trait = dwarf_slayer
+		trait = creature_dwarf
 		in_command = no
 		is_landed = no
 		NOT = { has_character_modifier = recent_slayer_work }
@@ -2416,61 +2413,6 @@ character_event = {
 		# }
 	}
 
-	mean_time_to_happen = {
-		years = 1
-		modifier = { factor = 0.8 trait = diligent }
-		modifier = { factor = 2 trait = slothful }
-		modifier = { factor = 2 trait = wounded }
-		modifier = { factor = 2.5 trait = maimed }
-		modifier = {
-			factor = 0.9
-			liege = { NOT = { reverse_opinion = { who = ROOT value = -25 } } }
-		}
-		modifier = {
-			factor = 0.9
-			liege = { NOT = { reverse_opinion = { who = ROOT value = -50 } } }
-		}
-		modifier = {
-			factor = 0.9
-			liege = { NOT = { reverse_opinion = { who = ROOT value = -75 } } }
-		}
-		modifier = {
-			factor = 1.4
-			liege = { reverse_opinion = { who = ROOT value = 25 } }
-		}
-		modifier = {
-			factor = 1.4
-			liege = { reverse_opinion = { who = ROOT value = 50 } }
-		}
-		modifier = {
-			factor = 1.4
-			liege = { reverse_opinion = { who = ROOT value = 75 } }
-		}
-		# modifier = {
-			# factor = 4
-			# liege = { reverse_has_opinion_modifier = { who = ROOT modifier = opinion_asked_to_stay } }
-		# }
-		modifier = {
-			factor = 100
-			liege = {
-				any_demesne_province = {
-					OR = {
-						has_province_modifier = greenskin_population_bad
-						has_province_modifier = beastmen_scourging_1
-						has_province_modifier = beastmen_scourging_2
-						has_province_modifier = beastmen_scourging_3
-						has_province_modifier = beastman_herdstone
-						culture_group = beastman_group
-					}
-				}
-			}
-		}
-		# modifier = {
-			# factor = 0.5
-			# any_playable_ruler = { has_character_flag = invited_witcher }
-		# }
-	}
-
 	option = {
 		name = OK
 		liege = { character_event = { id = DR_dwarfs.102 } }
@@ -2486,11 +2428,11 @@ letter_event = {
 	prisoner = no
 
 	religion_group = dwarf_gods_group
+	culture_group = dwarf_group
 
 	trigger = {
-		religion_group = dwarf_gods_group
-		trait = creature_dwarf
 		trait = dwarf_slayer
+		trait = creature_dwarf
 		is_landed = yes
 		independent=yes
 	}
@@ -2541,12 +2483,12 @@ character_event = {
 		remove_trait=runelord
 		}
 		ai_chance={
-			factors=10
+			factor=10
 		}
 	}
 	option={
 		name=EVTOPT_SLAYERKING_NO
-	}		
+	}
 }
 # Liege - Slayer leaves
 character_event = {
@@ -3009,6 +2951,7 @@ character_event = {
 	id = DR_dwarfs.105
 
 	hide_window = yes
+	is_triggered_only = yes
 
 	min_age = 15
 	capable_only = yes
@@ -3029,16 +2972,6 @@ character_event = {
 				}
 			}
 		}
-	}
-
-	mean_time_to_happen = {
-		months = 2
-		modifier = { factor = 0.5 trait = diligent }
-		modifier = { factor = 0.8 trait = brave }
-		modifier = { factor = 1.5 trait = craven }
-		modifier = { factor = 2 trait = slothful }
-		modifier = { factor = 5 trait = wounded }
-		modifier = { factor = 6 trait = maimed }
 	}
 
 	option = {

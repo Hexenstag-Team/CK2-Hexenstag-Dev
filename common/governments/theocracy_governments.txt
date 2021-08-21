@@ -53,19 +53,10 @@ theocracy_governments = {
 			NOT = { culture_group = dawi_zharr_group }
 			NOT = {	religion = hashut }
 			NOT = { trait = vampire_mahtmasi_visible }
-			NOT = { is_government_potential = everqueen_government }
 			NOT = { is_government_potential = congregation_government }
 			NAND = {
 				higher_tier_than = BARON
 				religion = norscan_gods
-			}
-			NOR = {
-				trait = everqueen
-				trait = everqueen_heir
-			}
-			NAND = {
-				higher_tier_than = BARON
-				religion = asrai_cadai
 			}
 			NAND = { higher_tier_than = BARON
 				 religion = horned_rat }

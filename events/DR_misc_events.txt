@@ -26,335 +26,6 @@ narrative_event = {
 	}
 }
 
-# Myrmidia Incarnate Trait Gained
-character_event = {
-	id = DR_misc.2
-
-	hide_window = yes
-	only_rulers = yes
-
-	trigger = {
-		has_global_flag = ee_restored
-		has_landed_title = e_eternal_empire
-		NOT = { trait = myrmidia_incarnate }
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	option = {
-		name = OK
-		add_trait = myrmidia_incarnate
-	}
-}
-
-# Myrmidia Incarnate Trait Lost
-character_event = {
-	id = DR_misc.3
-
-	hide_window = yes
-
-	trigger = {
-		has_global_flag = ee_restored
-		trait = myrmidia_incarnate
-		NOT = { has_landed_title = e_eternal_empire }
-		is_alive = yes
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	option = {
-		name = OK
-		remove_trait = myrmidia_incarnate
-	}
-}
-
-################################################
-# MYRMIDIAN HIGH TEMPLE GRANTING
-################################################
-
-### Magritta
-
-# Magritta Re-Established
-character_event = {
-	id = DR_misc.200
-
-	hide_window = yes
-	religion = myrmidian
-	only_rulers = yes
-
-	trigger = {
-		has_landed_title = b_inquisitoria_general
-		is_theocracy = yes
-		NOT = { has_landed_title = d_high_temple_of_magritta }
-		religion = myrmidian
-		OR = {
-			independent = yes
-			top_liege = {
-				higher_real_tier_than = DUKE
-				religion = ROOT
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	immediate = {
-		any_liege = {
-			limit = { tier = EMPEROR }
-			save_event_target_as = new_liege
-		}
-		any_liege = {
-			limit = { tier = KING }
-			save_event_target_as = new_liege
-		}
-		d_high_temple_of_magritta = { grant_title = ROOT }
-		set_defacto_liege = event_target:new_liege
-		if = {
-			limit = {
-				k_cult_of_myrmidia = {
-					holder_scope = {
-							NOT = { has_landed_title = d_high_temple_of_magritta }
-							NOT = { has_landed_title = d_high_temple_of_remas }
-						}
-				}
-			}
-			any_liege = {
-				limit = { tier = EMPEROR }
-				save_event_target_as = new_liege
-			}
-			k_cult_of_myrmidia = { holder_scope = { grant_title = d_high_temple_of_magritta } }
-			k_cult_of_myrmidia = { holder_scope = { grant_title = b_inquisitoria_general } }
-			set_defacto_liege = event_target:new_liege
-		}
-	}
-}
-
-# Magritta De-Established
-character_event = {
-	id = DR_misc.201
-
-	hide_window = yes
-	only_playable = yes
-
-	trigger = {
-		has_landed_title = d_high_temple_of_magritta
-		OR = {
-			NOT = { has_landed_title = b_inquisitoria_general }
-			is_theocracy = no
-			NOT = {
-				religion = myrmidian
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	immediate = {
-		d_high_temple_of_magritta = { unsafe_destroy_landed_title = THIS }
-	}
-}
-
-### Remas
-
-# Remas Re-Established
-character_event = {
-	id = DR_misc.202
-
-	hide_window = yes
-	religion = myrmidian
-	only_rulers = yes
-
-	trigger = {
-		has_landed_title = b_matermyrmidia
-		is_theocracy = yes
-		NOT = { has_landed_title = d_high_temple_of_remas }
-		religion = myrmidian
-		OR = {
-			independent = yes
-			top_liege = {
-				higher_real_tier_than = DUKE
-				religion = ROOT
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	immediate = {
-		any_liege = {
-			limit = { tier = EMPEROR }
-			save_event_target_as = new_liege
-		}
-		any_liege = {
-			limit = { tier = KING }
-			save_event_target_as = new_liege
-		}
-		d_high_temple_of_remas = { grant_title = ROOT }
-		set_defacto_liege = event_target:new_liege
-		if = {
-			limit = {
-				k_cult_of_myrmidia = {
-					holder_scope = {
-							NOT = { has_landed_title = d_high_temple_of_magritta }
-							NOT = { has_landed_title = d_high_temple_of_remas }
-						}
-				}
-			}
-			any_liege = {
-				limit = { tier = EMPEROR }
-				save_event_target_as = new_liege
-			}
-			k_cult_of_myrmidia = { holder_scope = { grant_title = d_high_temple_of_remas } }
-			k_cult_of_myrmidia = { holder_scope = { grant_title = b_matermyrmidia } }
-			set_defacto_liege = event_target:new_liege
-		}
-	}
-
-	option = {
-		name = OK
-	}
-}
-
-# Remas De-Established
-character_event = {
-	id = DR_misc.203
-
-	hide_window = yes
-	only_playable = yes
-
-	trigger = {
-		has_landed_title = d_high_temple_of_remas
-		OR = {
-			NOT = { has_landed_title = b_matermyrmidia }
-			is_theocracy = no
-			NOT = {
-				religion = myrmidian
-			}
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 1
-	}
-
-	immediate = {
-		d_high_temple_of_remas = { unsafe_destroy_landed_title = THIS }
-	}
-
-	option = {
-		name = OK
-	}
-}
-
-
-#Miyan Eat People
-#Miyan cannibalize prisoner ( Jailor )
-character_event = {
-	id = DR_misc.500
-	desc = EVTDESC_DR_misc_miyan_eat_guy
-	picture = GFX_evt_spymaster
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTA_DR_misc_miyan_eat_guy
-			remove_opinion = { who = FROM modifier = opinion_traitor }
-			remove_opinion = { who = FROM modifier = opinion_rebel_traitor }
-			remove_opinion = { who = FROM modifier = opinion_dishonorable }
-			piety = 20
-			if = {
-				limit = {
-					NOT = { trait = zealous }
-				}
-				random = {
-					chance = 10
-					add_trait = zealous
-					}
-			}
-		hidden_tooltip = {
-			FROM = { character_event = { id = DR_misc.501 } }
-		}
-		ai_chance = { factor = 1000 }
-	}
-}
-
-#Miyan cannibalize prisoner ( Jailed )
-character_event = {
-	id = DR_misc.501
-	desc = EVTDESC_DR_misc_miyan_eaten_guy
-	picture = GFX_evt_spymaster
-
-	is_triggered_only = yes
-
-	option = {
-		name = OK
-		if = {
- limit = {
- is_invincible_trigger = yes
- }
-
-			antideath_effect = yes
-			break = yes
-}
-				death = { death_reason = death_sacrificed killer = FROM }
-				if = {
-					limit = { is_close_relative = FROM }
-					FROM = { add_trait = kinslayer }
-				}
-				if = {
-					limit = {
-						trait = khemri_tomb_king
-					}
-					character_event = { id = snehekharan.1 days = 1 }
-					break = yes
-				}
-				if = {
-					limit = {
-						has_artifact = carstein_ring
-					}
-					character_event = { id = carstein.13 days = 1 }
-					break = yes
-				}
-				hidden_tooltip = {
-					# FROM = {
-						# any_vassal = {
-							# limit = { religion = cadai }
-							# opinion = {
-									# modifier = opinion_barbaric
-									# who = FROM
-							# }
-						# }
-					# }
-					any_dynasty_member = {
-							limit = { religion_group = cytharai_group }
-								opinion = {
-									modifier = opinion_eaten_family_druchii
-									who = FROM
-								}
-					}
-					any_dynasty_member = {
-						limit = {
-							NOT = { religion_group = cytharai_group }
-						}
-								opinion = {
-									modifier = opinion_eaten_family
-									who = FROM
-								}
-					}
-				}
-	}
-}
-
 ##Other Stuff
 #Win a war ( Ambiton )
 character_event = {
@@ -639,24 +310,6 @@ character_event = {
 			}
 		}
 		if = {
-			limit = { FROM = { title = k_avelorn } }
-			FROMFROM = {
-				if = {
-					limit = { is_alive = yes }
-					remove_special_character_title = EVERKING #Wot?
-					remove_special_character_title = EVERQUEEN
-				}
-			}
-			if = {
-				limit = { is_female = no }
-				set_special_character_title = EVERKING
-			}
-			if = {
-				limit = { is_female = yes }
-				set_special_character_title = EVERQUEEN
-			}
-		}
-		if = {
 			limit = {
 				FROM = {
 					# is_theocracy = yes
@@ -785,60 +438,104 @@ character_event = {
 	id = DR_misc.1002
 	hide_window = yes
 
+	is_triggered_only = yes
+
+	has_global_flag = mists_of_albion
+
 	trigger = {
-		has_global_flag = mists_of_albion
-		ROOT = {
+		location = {
 			OR = {
-				any_army = {
-					location = { province_id = 1868 }
-				}
-				AND = {
-					NOT = { religion = old_faith }
-					NOT = { culture_group = albion_group }
-					any_army = {
-						OR = {
-							location = { province_id = 1868 }
-							location = { province_id = 1938 }
-							location = { province_id = 1912 }
-							location = { province_id = 1865 }
-							location = { province_id = 2074 }
-						}
-					}
-				}
+				province_id = 1868
+				province_id = 1938
+				province_id = 1912
+				province_id = 1865
+				province_id = 2074
+			}
+		}
+		OR = {
+			location = {
+				province_id = 1868
+			}
+			NAND = {
+				religion = old_faith
+				culture_group = albion_group
 			}
 		}
 	}
 
-	mean_time_to_happen = {
-		days = 1
-	}
-
 	immediate = {
-		ROOT = {
+		if = {
+			limit = {
+				AND = {
+					religion = old_faith
+					culture_group = albion_group
+				}
+			}
 			any_army = {
 				limit = {
-					OR = {
+					location = { province_id = 1868 }
+				}
+				troops = -1.00
+			}
+			liege = {
+				any_army = {
+					limit = {
 						location = { province_id = 1868 }
-						location = { province_id = 1938 }
-						location = { province_id = 1912 }
-						location = { province_id = 1865 }
-						location = { province_id = 2074 }
+					}
+					troops = -1.00
+				}
+			}
+		}
+		else = {
+			any_army = {
+				limit = {
+					location = {
+						OR = {
+							province_id = 1868
+							province_id = 1938
+							province_id = 1912
+							province_id = 1865
+							province_id = 2074
+						}
 					}
 				}
 				troops = -1.00
 			}
+			liege = {
+				any_army = {
+					limit = {
+						location = {
+							OR = {
+								province_id = 1868
+								province_id = 1938
+								province_id = 1912
+								province_id = 1865
+								province_id = 2074
+							}
+						}
+					}
+					troops = -1.00
+				}
+			}
 		}
 		if = {
 			limit = {
+				ai = no
 				NOT = { has_character_flag = pleasestopalbionwarning }
 			}
 			character_event = { id = DR_misc.1003 }
 		}
+		liege = {
+			if = {
+				limit = {
+					ai = no
+					NOT = { has_character_flag = pleasestopalbionwarning }
+				}
+				character_event = { id = DR_misc.1003 }
+			}
+		}
 	}
 
-	option = {
-		name = OK
-	}
 }
 
 #followup event to army owner
@@ -864,10 +561,12 @@ narrative_event = {
 	picture = GFX_evt_albion_discovered
 	title = EVTTITLE_DR_misc_mists_of_albion
 	desc = EVTDESC_DR_misc_mists_of_albion
+	is_triggered_only = yes
 
 	major = yes
 
-	only_rulers = yes
+	only_playable = yes
+	ai = no
 
 	trigger = {
 		has_global_flag = mists_of_albion
@@ -1816,7 +1515,7 @@ character_event = {
 						# random = {
 							# chance = 10
 								# modifier = {
-									
+
 									# factor = 4
 									# FROMFROM = { location = { region = world_underempire } }
 								# }

@@ -20,6 +20,27 @@ religion = grail
 terrain = farmlands
 
 #History
-1.1.1={ b_couronne= ca_couronne }
+#Bretonni are being described as "tribes" as late as 979 IC
+1050.1.1 = {
+	build_wonder = wonder_old_world_city
+	set_wonder_stage = 1
+	build_wonder_upgrade = upgrade_palace
+	build_wonder_upgrade = upgrade_great_keep
+	build_wonder_upgrade = upgrade_temple_quarter
+}
+
+1500.1.1 = {
+	set_wonder_stage = 2
+	build_wonder_upgrade = upgrade_court_of_law
+	build_wonder_upgrade = upgrade_racetrack
+	build_wonder_upgrade = upgrade_great_shallya_temple
+}
+
+1950.1.1 = {
+	set_wonder_stage = 3
+	build_wonder_upgrade = upgrade_parade_grounds
+	build_wonder_upgrade = upgrade_crypt
+	build_wonder_upgrade = upgrade_great_walls
+}
 
 2010.1.1 = { trade_post = b_couronne }

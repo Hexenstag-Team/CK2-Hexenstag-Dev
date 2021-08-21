@@ -8,7 +8,7 @@ jasmine = { #55019 Women don't seem to rule in Araby too often
 	picture = GFX_bloodlines_symbol_sunni
 	flags = { araby_bloodline historical_bloodline always_transfer }
 }
-	
+
 mulhaed = { #55200 Warhammer Muhammad?
 	monthly_character_prestige = 0.25
 	ormazd_opinion = 5
@@ -136,17 +136,6 @@ morgrim_elgidum = { #53096 victor in the War of the Beard
 #King of Kraka Drak? (Not enough history to implement yet)
 #King of the Chaos Dwarfs? (Potentially something that makes it easier to get started with chaos dwarf magic?)
 #Elves
-aenarion = { #95000 First Phoenix King
-	combat_rating = 10
-	command_modifier = {
-		morale_defence = 0.15
-	}
-	monthly_character_prestige = 0.05
-	inheritance = patrilineal
-	allow_bastards = yes
-	picture = GFX_bloodlines_symbol_lion
-	flags = { elf_bloodline historical_bloodline aenarion_bloodline }
-}
 ariel = { #60001
 	asrai_group_opinon = 10
 	asur_group_opinion = 5
@@ -156,134 +145,6 @@ ariel = { #60001
 	picture = GFX_bloodlines_symbol_romuva
 	flags = { elf_bloodline historical_bloodline always_transfer }
 }
-caledor = { #95003 first challenger to Malekith
-	asur_group_opinion = 5
-	druchi_group_opinion = -10
-	bloodline_effect_great_heroes_appear = 1
-	combat_rating = 5
-	monthly_character_piety = 0.1
-	monthly_character_prestige = 0.05
-	inheritance = patrilineal
-	allow_bastards = yes
-	picture = GFX_bloodlines_symbol_lion
-	flags = { elf_bloodline historical_bloodline }
-}
-finubar = {
-	diplomacy = 2
-	stewardship = 2
-	combat_rating = 5
-	asur_group_opinion = 20
-	monthly_character_prestige = 0.2
-	inheritance = patrilineal
-	allow_bastards = yes
-	picture = GFX_bloodlines_symbol_lion
-	flags = { elf_bloodline historical_bloodline }
-}
-hellebron = { #90531
-	druchi_group_opinion = 5
-	asur_group_opinion = -10
-	combat_rating = 5
-	bloodline_effect_murder_stalk = 1
-	inheritance = patrilineal #Matrilineal inheritance is kinda broken, so it's changed to patrinial with our own override
-	allow_bastards = no
-	picture = GFX_bloodlines_symbol_murder_war
-	flags = { elf_bloodline historical_bloodline bloodline_murder_stalk bloodline_murderous always_transfer }
-}
-
-
-burnt_by_flames_male = { 
-	bloodline_effect_leave_ulthuan = 1
-	monthly_character_piety = -0.1
-	cadai_opinion = -25
-	asur_colonial_opinion = 15 
-	phoenix_king_opinion = -20
-	bloodline_effect_ambition = 1
-	inheritance = patrilineal
-	allow_bastards = no
-	picture = GFX_bloodlines_symbol_murder_war
-	flags = { elf_bloodline burnt_by_flames bloodline_ambition }
-	active = {
-		religion = cadai
-		custom_tooltip = {
-			text = burnt_by_flames_same_dynasty_TT
-			FROM = {
-				founder = {
-					dynasty = ROOT
-				}
-			}
-		}
-		custom_tooltip = {
-			text = burnt_by_flames_same_redeemed_TT
-			NOT = {
-				any_owned_bloodline = {
-					has_bloodline_flag = burnt_by_flames_redeemed
-				}
-			}
-		}
-	}
-}
-
-burnt_by_flames_female = { 
-	bloodline_effect_leave_ulthuan = 1
-	monthly_character_piety = -0.1
-	cadai_opinion = -35	#Most Asur would disapprove of a female ruler so not suprising that they failed.
-	asur_colonial_opinion = 25
-	phoenix_king_opinion = -30
-	bloodline_effect_ambition = 1
-	inheritance = patrilineal
-	allow_bastards = no
-	picture = GFX_bloodlines_symbol_murder_war
-	flags = { elf_bloodline burnt_by_flames bloodline_ambition always_transfer }
-	active = {
-		religion = cadai
-		custom_tooltip = {
-			text = burnt_by_flames_same_dynasty_TT
-			FROM = {
-				founder = {
-					dynasty = ROOT
-				}
-			}
-		}
-		custom_tooltip = {
-			text = burnt_by_flames_same_redeemed_TT
-			NOT = {
-				any_owned_bloodline = {
-					has_bloodline_flag = burnt_by_flames_redeemed
-				}
-			}
-		}   	
-	}
-}
-
-burnt_by_flames_redeemed_male = { 
-	monthly_character_piety = 0.25
-	bloodline_effect_ambition = 1
-	cadai_opinion = 5
-	zealous_opinion = 5
-	inheritance = patrilineal
-	allow_bastards = yes
-	picture = GFX_bloodlines_symbol_generic_hero
-	flags = { elf_bloodline burnt_by_flames_redeemed bloodline_ambition }
-	active = {
-		religion = cadai
-	}
-}
-
-burnt_by_flames_redeemed_female = { 
-	monthly_character_piety = 0.25
-	bloodline_effect_ambition = 1
-	cadai_opinion = 5
-	zealous_opinion = 5
-	inheritance = patrilineal
-	allow_bastards = yes
-	picture = GFX_bloodlines_symbol_generic_hero
-	flags = { elf_bloodline burnt_by_flames_redeemed bloodline_ambition always_transfer }
-	active = {
-		religion = cadai
-	}
-}
-
-#Morathi for the Delfs?
 #Empire
 #Minor bloodlines (like Rudolf's) for the Pretenders with the Otto (Magnus the Pious) Bloodline for winning.
 magritta = { #51000
@@ -410,6 +271,22 @@ inigo_montoya = { #64000
 	picture = GFX_bloodlines_temp_symbol
 	flags = { duelist_bloodline historical_bloodline }
 }
+miragliano_miracle_bloodline = {
+	picture = GFX_bloodlines_symbol_architect
+	inheritance = patrilineal
+	allow_bastards = yes
+	town_opinion = 5
+	wonder_build_time_modifier = -0.1
+	wonder_build_cost_modifier = -0.1
+	active = {
+		NOR = {
+			is_nomadic = yes
+			is_tribal = yes
+		}
+		religion_group = old_world_group
+	}
+	flags = { historical_bloodline bloodline_miragliano }
+}
 #everyone else has zero history files going back, most are also republics, which makes things tricky
 #Tomb Kings
 #settra = {}
@@ -427,16 +304,6 @@ vlad = { #80000
 	flags = { historical_bloodline bloodline_ambition bloodline_murderous } #should make the Carstein kids more likely to plot against one another and Vlad
 	picture = GFX_bloodlines_temp_symbol_2
 }
-mad_otto = { #80034
-	monthly_character_prestige = 0.1
-	sylvanian_opinion = 5
-	impaler_opinion = 5
-	bloodline_effect_blood_building = 1
-	inheritance = patrilineal
-	allow_bastards = yes
-	flags = { historical_bloodline bloodline_blood_building }
-	picture = GFX_bloodlines_symbol_murder_builder
-}
 #Blood Dragon
 abhorash = {
 	bloodline_effect_battle_survivor = 1
@@ -447,12 +314,12 @@ abhorash = {
 	picture = GFX_bloodlines_symbol_murder_war
 }
 red_duke = { #15018
-	combat_rating = 15
+	combat_rating = 5
 	bretonnian_group_opinion = 5
 	bloodline_effect_battle_survivor = 1
 	inheritance = patrilineal
 	allow_bastards = yes
-	flags = { historical_bloodline battle_survivor_bloodline }
+	flags = { historical_bloodline battle_survivor_bloodline warhammer_bloodline_red_duke }
 	picture = GFX_bloodlines_symbol_murder_war
 }
 harkon = { #96010

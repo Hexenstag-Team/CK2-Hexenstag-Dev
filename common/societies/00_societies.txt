@@ -2222,6 +2222,9 @@ cult_of_shallya = {
 			fertility = -0.15
 			health = 0.15
 		}
+		decisions = {
+			shallyan_self_sacrifice
+		}
 	}
 
 	plots = {
@@ -3904,8 +3907,16 @@ cult_of_khorne = {
 		limit = 100
 		startup_limit = 10
 		custom_tooltip = chaos_corruption_power_tt
-		martial = 1
-		combat_rating = 3
+		modifier = {
+			is_visible = {
+				OR = {
+					society_member_of = cult_of_khorne
+					FROM = { is_society_discovered = yes }
+				}
+			}
+			martial = 1
+			combat_rating = 3
+		}
 		#Available Decision: Sacrifice Prisoner
 		#Over time, lose virtues, gain vices. A Soul Corruption-effect is on a yearly pulse (with a chance to do nothing)
 		decisions = {
@@ -4225,7 +4236,15 @@ cult_of_nurgle = {
 		limit = 100
 		startup_limit = 10
 		custom_tooltip = chaos_nurgle_corruption_power_tt
-		health = 0.25
+		modifier = {
+			is_visible = {
+				OR = {
+					society_member_of = cult_of_nurgle
+					FROM = { is_society_discovered = yes }
+				}
+			}
+			health = 0.25
+		}
 		#Available Decision: Sacrifice Prisoner
 		#Over time, lose virtues, gain vices. A Soul Corruption-effect is on a yearly pulse (with a chance to do nothing)
 		decisions = {
@@ -6021,7 +6040,7 @@ warband_of_tzeentch = {
 	    trigger = {
 			OR = {
 				ai = yes
-				trait =c hampion_tzeentch
+				trait = champion_tzeentch
 				trait = chosen_tzeentch
 				trait = prince_tzeentch
 				AND = {
@@ -7998,7 +8017,6 @@ runesmiths_society = {
 			stewardship = 2
 			church_opinion = -10
 			fertility_penalty=-0.15
-			liege_prestige=0.05
 		}
 		decisions = {
 			choose_hermetic_art # Enables you to pick/change your lifestyle trait
@@ -8015,7 +8033,6 @@ runesmiths_society = {
 			stewardship = 3
 			church_opinion = -10
 			fertility_penalty=-0.15
-			liege_prestige=0.1
 		}
 		decisions = {
 			runesmith_create_rune_of_power # Enables Creation of Greater rune of Power
@@ -8219,339 +8236,7 @@ runesmiths_society = {
 		}
 	}
 }
-daemonsmiths_society = {
-	primary_attribute = stewardship
-	opinion_to_other_members = 10
-	opinion_per_rank_above = 5
-	sound = hermetic_society_interface
-	society_ranks_gfx = secret_ranks
-	society_influence = no
-	non_interference = {
-		always = yes
-	}
 
-	active = {
-		has_dlc = "Mystics"
-		always=no
-	}
-	indestructible = yes
-
-	can_join_society = {
-		hidden_trigger = {
-			NAND = {
-				ai = yes
-				is_society_rank_full = {
-					society = daemonsmiths_society
-					rank = 1
-				}
-			}
-			OR = {
-				is_landed = yes
-				is_patrician = yes
-			}
-		}
-		religion=hashut
-		OR={
-			AND={
-			learning = 16
-			stewardship = 16
-			}
-			learning = 25
-			stewardship = 25
-			trait=daemonsmith
-			trait=chaos_dwarf_sorcerer
-		}
-		NOR = {
-			is_nomadic = yes
-			is_tribal = yes
-		}
-		hidden_trigger = { mercenary = no }
-		age = 16
-		hidden_trigger = {
-			NOT = { has_character_flag = society_join_block }
-		}
-		trigger_if = {
-			limit = { prisoner = yes }
-			prisoner = no
-		}
-	}
-
-	show_society = {
-		OR = {
-			any_neighbor_independent_ruler={religion=hashut} #can see but can't join
-			religion=hashut
-			society_member_of = runesmiths_society #Runesmiths are aware of its existance
-			society_member_of = daemonsmiths_society
-		}
-	}
-
-	potential = {
-		#If something is added here, it could break apprenticeship. Create an event if they can get kicked out. title_hermetics_apprentice
-	}
-
-	society_rank = {
-		level = 1
-		limit = 20
-		startup_limit = 2
-		modifier = {
-			church_opinion = -10
-			fertility_penalty=-0.15
-			#economy_techpoints = 0.05
-		}
-		decisions = {
-			hermetics_write_theory_paper #Remove?
-			smith_crafting #Enables Standard Item Crafting (Missions)
-		}
-	}
-
-	society_rank = {
-		level = 2
-		limit = 20
-		startup_limit = 2
-		modifier = {
-			learning = 1
-			stewardship = 1
-			church_opinion = -10
-			fertility_penalty=-0.15
-		}
-		decisions = {
-			daemonsmith_create_rune_of_power # Enables Creation of Lesser rune of Power
-			daemonsmith_become_daemonsmith # Allows taking full benefit of a daemonsmith
-			daemonsmithing # Allows Partaking in Gromril Crafting
-		}
-	}
-
-	society_rank = {
-		level = 3
-		limit = 20
-		startup_limit = 8
-		modifier = {
-			learning = 1
-			stewardship = 2
-			church_opinion = -10
-			fertility_penalty=-0.15
-			liege_prestige=0.05
-		}
-		decisions = {
-			choose_hermetic_art # Enables you to pick/change your lifestyle trait
-			runemagic_aspect # Allows Choosing Aspect of Runemagic. Valaya & Grungi & Grimnir (Morale, Defense, Damage)
-		}
-	}
-
-	society_rank = {
-		level = 4
-		limit = 13
-		startup_limit = 2
-		modifier = {
-			learning = 2
-			stewardship = 3
-			church_opinion = -10
-			fertility_penalty=-0.15
-			liege_prestige=0.1
-		}
-		decisions = {
-			daemonsmith_create_rune_of_power # Enables Creation of Greater rune of Power
-			daemonsmith_become_chaos_dwarf_sorcerer # Allows taking full benefit of a chaos_dwarf_sorcerer
-			daemonsmith_anvil # Acquire an Anvil of A Doom
-		}
-	}
-
-	plots = {
-	}
-
-	monthly_currency_gain = {
-		name = currency_name_daemonsmiths
-
-		per_attribute = {
-    		name = learning
-    		value = 0.2
-    	}
-		per_attribute = {
-    		name = stewardship
-    		value = 0.3
-    	}
-		triggered_gain = {
-    		value = -1.5
-			trigger={
-				NOR={
-					trait=daemonsmith
-					trait=chaos_dwarf_sorcerer
-				}
-			}
-    	}
-		triggered_gain = {
-    		value = -2
-			trigger={
-				OR={
-					trait=king
-					tier=emperor
-				}
-			}
-    	}
-		has_trait = {
-			value = 1
-			trait = scholar
-		}
-		has_trait = {
-			value = 1
-			trait = mystic
-		}
-		has_trait = {
-			value = 1
-			trait = erudite
-		}
-		has_trait = {
-			value = -1
-			trait = stubborn
-		}
-		has_trait = {
-			value = -1
-			trait = wroth
-		}
-		has_trait = {
-			value = 1
-			trait = patient
-		}
-		has_trait = {
-			value = 0.5
-			trait = genius
-		}
-		has_trait = {
-			value = 0.25
-			trait = quick
-		}
-		has_trait = {
-			value = 1
-			trait = shrewd
-		}
-		has_trait = {
-			value = 1
-			trait = just
-		}
-		has_trait = {
-			value = 1
-			trait = daemonsmith
-		}
-		has_trait = {
-			value = 1
-			trait = chaos_dwarf_sorcerer
-		}
-		has_trait = {
-			value = 0.5
-			trait = diligent
-		}
-		has_trait = {
-			value = -0.5
-			trait = envious
-		}
-		society_rank = {
-			rank = 4
-			value = 5
-		}
-	}
-
-	member_score_per_attribute = 2
-	member_score_per_rank = 50
-
-	member_score = {
-		value = 10
-		modifier = {
-			factor = 1.5
-			age > 200
-		}
-		modifier = {
-			factor = 1.5
-			age > 300
-		}
-		modifier = {
-			factor = 1.5
-			age > 120
-		}
-		modifier = {
-			factor = 2
-			trait = daemonsmith
-		}
-		modifier = {
-			factor = 4
-			trait = chaos_dwarf_sorcerer
-		}
-		modifier = {
-			factor = 0.2
-			NOR={
-				trait = chaos_dwarf_sorcerer
-				trait = daemonsmith
-			}
-		}
-		modifier = {
-			factor = 0.2
-			OR={
-				tier = king
-				tier = emperor
-			}
-		}
-		modifier = {
-			factor = 2
-			trait = diligent
-		}
-		modifier = {
-			factor = 1.5
-			trait = scholar
-		}
-		modifier = {
-			factor = 1.5
-			trait = mystic
-		}
-		modifier = {
-			factor = 1.5
-			trait = erudite
-		}
-		modifier = {
-			factor = 1.5
-			trait = stubborn
-		}
-		modifier = {
-			factor = 1.5
-			trait = patient
-		}
-		modifier = {
-			factor = 1.5
-			OR = {
-				trait = genius
-				trait = quick
-				trait = shrewd
-			}
-		}
-		modifier = {
-			factor = 1.5
-			trait = just
-		}
-	}
-
-	startup_populate = {
-	    trigger = {
-			is_female=no
-	    	controls_religion = no
-			age = 16
-			is_in_society = no
-			is_dumb_trigger = no
-			OR={
-				trait=creature_dwarf
-				trait=creature_chaos_dwarf
-			}
-			religion=hashut
-			OR = {
-				trait = daemonsmith
-				trait = chaos_dwarf_sorcerer
-				father_even_if_dead={
-					OR={
-					trait = daemonsmith
-					trait = chaos_dwarf_sorcerer
-					}
-				}
-			}
-		}
-	}
-}
 warriors_guild_dawi = {
 	primary_attribute = martial
 	opinion_to_other_members = 10
@@ -9223,6 +8908,7 @@ engineers_guild = {
 		}
 		decisions = {
 			engineer_masterwork
+			grandmaster_society_wonder_upgrade
 		}
 	}
 
@@ -9485,6 +9171,7 @@ mad_inventors = {
 		}
 		decisions = {
 			inventor_masterwork
+			grandmaster_society_wonder_upgrade
 		}
 	}
 

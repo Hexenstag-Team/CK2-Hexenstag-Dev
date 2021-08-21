@@ -179,7 +179,7 @@ character_event = {
 			add_artifact = dolorous_blade
 			add_artifact = shadow_steed
 			unsafe_give_minor_title = title_commander
-			character_event = { id = bretonnia.7 weeks = 24 random = 10}
+			character_event = { id = bretonnia.7 months = 6 random = 6}
 		}
 	}
 }
@@ -765,11 +765,11 @@ character_event = {
     #picture =
     border = GFX_event_normal_frame_war
 	is_triggered_only = yes
-	
+
 	trigger = {
 		is_member_of_bretonnia_trigger = yes
 	}
-	
+
 	desc = {
 		trigger = { society_rank == 1 }
 		text = EVTDESCA_bretonnia_203
@@ -786,7 +786,7 @@ character_event = {
 		clr_character_flag = has_sent_request_to_rank_up
 		remove_trait = bretonnian_knight_errant
 		add_trait = bretonnian_knight
-		
+
 	}
 
 	option = {
@@ -864,7 +864,7 @@ character_event = {
 	id = bretonnia.207
 	is_triggered_only = yes
 	hide_window = yes
-	
+
 	trigger = {
 		is_member_of_bretonnia_trigger = yes
 		OR = {
@@ -874,7 +874,7 @@ character_event = {
 		}
 		ai = yes
 	}
-	
+
 	immediate = {
 		random_list = {
 			50 = { }
@@ -2080,6 +2080,11 @@ character_event = {
 	hide_window = yes
 
 	trigger = { is_mutated_trigger = yes}
+
+	#pinged error log as neither MTTH or triggered, guessing a patch
+	mean_time_to_happn = {
+		months = 1
+	}
 
 	immediate = { set_character_flag = failed_grail_quest }
 }

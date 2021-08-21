@@ -1243,25 +1243,30 @@ rodeleros = {
 		light_infantry_morale = 0.25
 	}
 }
-#Tercio Square, pikemen and crossbows with a 25% offensive and 25% defensive bonus
+#Tercios. World-changing infantry system.
+#Recommend killing the Estalians before these guys turn up.
 terciosquare = {
 	first_type = 2
 	first_amount = 95
-	second_type = 5
+	second_type = 6
 	second_amount = 55
 
 	hire_cost = 300
 
+	special_troops = gunpowder
+
 	potential = {
 		can_use_retinue_trigger = yes
 		culture_group = estalian_group
+		TECH_INFANTRY = 7
 	}
 
 	modifier = {
-	    pikemen_offensive = 0.25
-		pikemen_defensive = 0.25
-		archers_offensive = 0.25
-		archers_defensive = 0.25
+	    pikemen_offensive = 0.5
+		pikemen_defensive = 1
+		pikemen_morale = 1
+		gunpowder_offensive = 1
+		gunpowder_defensive = 0.5
 	}
 }
 #Guardia Rela, HI and Gunpowder with a 25% morale and 50% defensive bonus

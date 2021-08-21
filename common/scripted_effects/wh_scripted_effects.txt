@@ -33,22 +33,6 @@ abort_witch_hunt_effect = {
 	clean_up_after_kow_tow_effect = yes
 }
 
-return_to_travel_tombola_effect = {
-	hidden_effect = {
-		event_target:kow_tow_traveler = {
-			subtract_variable = {
-				which = cathay_kow_tow_travel_events
-				value = 1
-			}
-			character_event = {
-				id = JD.32005
-				days = 90
-				random = 60
-			}
-		}
-	}
-}
-
 de_jure_realm_drakwald_effect = {
 	d_carroburg = { de_jure_liege = k_drakwald }
 	d_kristal = { de_jure_liege = k_drakwald }
@@ -6187,10 +6171,6 @@ antideath_effect = {
  			character_event = { id = snehekharan.1 days = 1 }
 			break = yes
 		}
-		if = { limit = { trait = malekith }
-	 		character_event = { id = snehekharan.1 days = 1 }
-			break = yes
-		}
 		if = { limit = { trait = fay_enchantress }
 		 	character_event = { id = snehekharan.1 days = 1 }
 			break = yes
@@ -7243,7 +7223,7 @@ remove_magic_effect = {
 add_lore_of_fire = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.2 day = 1 }
+		character_event = { id = magic.2 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7258,7 +7238,7 @@ add_lore_of_fire = {
 add_lore_of_beasts = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.3 day = 1 }
+		character_event = { id = magic.3 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7273,7 +7253,7 @@ add_lore_of_beasts = {
 add_lore_of_metal = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.4 day = 1 }
+		character_event = { id = magic.4 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7288,7 +7268,7 @@ add_lore_of_metal = {
 add_lore_of_light = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.5 day = 1 }
+		character_event = { id = magic.5 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7303,7 +7283,7 @@ add_lore_of_light = {
 add_lore_of_life = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.6 day = 1 }
+		character_event = { id = magic.6 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7318,7 +7298,7 @@ add_lore_of_life = {
 add_lore_of_heavens = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.7 day = 1 }
+		character_event = { id = magic.7 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7333,7 +7313,7 @@ add_lore_of_heavens = {
 add_lore_of_death = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.8 day = 1 }
+		character_event = { id = magic.8 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7348,7 +7328,7 @@ add_lore_of_death = {
 add_lore_of_shadows = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.9 day = 1 }
+		character_event = { id = magic.9 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }

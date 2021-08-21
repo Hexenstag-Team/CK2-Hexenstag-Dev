@@ -1742,3 +1742,45 @@ character_event = {
 		}
 	}
 }
+
+#Add later d'Aquitaines to Red Duke's bloodline
+character_event = {
+	id = wh_setup.200
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_save_game = no
+		dynasty = 28016
+		NOT = {
+			any_owned_bloodline = {
+				has_bloodline_flag = warhammer_bloodline_red_duke
+			}
+		}
+	}
+
+	immediate = {
+		c_2105 = {
+			random_owned_bloodline = {
+				ROOT = {
+					add_to_bloodline = PREV
+				}
+			}
+		}
+		any_child_even_if_dead = {
+			if = {
+				limit = {
+					NOT = {
+						any_owned_bloodline = {
+							has_bloodline_flag = warhammer_bloodline_red_duke
+						}
+					}
+				}
+				character_event = {
+					id = wh_setup.200
+				}
+			}
+		}
+	}
+}

@@ -57,8 +57,12 @@ narrative_event = {
 	title = EVTTITLE_wh_wonders.2
 	desc = EVTDESC_wh_wonders.2
 	picture = GFX_evt_empire_master_engineer
+	is_triggered_only = yes
 
 	trigger = {
+		NOT = {
+			has_global_flag = imperial_engineering_school
+		}
 		FROM = {
 			has_wonder_upgrade = upgrade_engineering_school
 		}
@@ -74,5 +78,276 @@ narrative_event = {
 	option = {
 		name = EVTOPT_wh_wonders.2
 		prestige = 1000
+	}
+}
+
+
+#Grandmaster upgrades
+character_event = {
+	id = wh_wonders.100
+	desc = EVTDESC_wh_wonders.100
+	picture = GFX_evt_empire_master_engineer
+	is_triggered_only = yes
+
+	### ENGINEERS ###
+
+	# # upgrade_engineered_defences # #
+	#build
+	option = {
+		name = EVTOPT_wh_wonders.100.EngED_build
+		trigger = {
+			society_member_of = engineers_guild
+			event_target:grandmaster_wonder_target = {
+				has_wonder = wonder_old_world_city
+				NOT = {
+					has_wonder_upgrade = upgrade_engineered_defences
+				}
+			}
+		}
+		change_society_currency = -10000
+		event_target:grandmaster_wonder_target = {
+			add_wonder_upgrade = upgrade_engineered_defences
+			#add_wonder_upgrade_slots = 1
+			set_wonder_flag = grandmaster_improved_upgrade_engineered_defences
+		}
+	}
+
+	option = {
+		name = EVTOPT_wh_wonders.100.EngED_improve
+		trigger = {
+			society_member_of = engineers_guild
+			event_target:grandmaster_wonder_target = {
+				has_wonder = wonder_old_world_city
+				has_wonder_upgrade = upgrade_engineered_defences
+				NOT = {
+					has_wonder_flag = grandmaster_improved_upgrade_engineered_defences
+				}
+			}
+		}
+		change_society_currency = -2000
+		event_target:grandmaster_wonder_target = {
+			add_wonder_upgrade_slots = 1
+			set_wonder_flag = grandmaster_improved_upgrade_engineered_defences
+		}
+	}
+
+	# # upgrade_engineered_canals # #
+	option = {
+		name = EVTOPT_wh_wonders.100.EngEC_build
+		trigger = {
+			society_member_of = engineers_guild
+			event_target:grandmaster_wonder_target = {
+				has_wonder = wonder_old_world_city
+				NOT = {
+					has_wonder_upgrade = upgrade_engineered_canals
+				}
+			}
+		}
+		change_society_currency = -10000
+		event_target:grandmaster_wonder_target = {
+			add_wonder_upgrade = upgrade_engineered_canals
+			#add_wonder_upgrade_slots = 1
+			set_wonder_flag = grandmaster_improved_upgrade_engineered_canals
+		}
+	}
+
+	option = {
+		name = EVTOPT_wh_wonders.100.EngEC_improve
+		trigger = {
+			society_member_of = engineers_guild
+			event_target:grandmaster_wonder_target = {
+				has_wonder = wonder_old_world_city
+				has_wonder_upgrade = upgrade_engineered_canals
+				NOT = {
+					has_wonder_flag = grandmaster_improved_upgrade_engineered_canals
+				}
+			}
+		}
+		change_society_currency = -2000
+		event_target:grandmaster_wonder_target = {
+			add_wonder_upgrade_slots = 1
+			set_wonder_flag = grandmaster_improved_upgrade_engineered_canals
+		}
+	}
+	# # upgrade_sewer_system # #
+	option = {
+		name = EVTOPT_wh_wonders.100.EngSS_build
+		trigger = {
+			society_member_of = engineers_guild
+			event_target:grandmaster_wonder_target = {
+				has_wonder = wonder_old_world_city
+				NOT = {
+					has_wonder_upgrade = upgrade_sewer_system
+				}
+			}
+		}
+		change_society_currency = -10000
+		event_target:grandmaster_wonder_target = {
+			add_wonder_upgrade = upgrade_sewer_system
+			#add_wonder_upgrade_slots = 1
+			set_wonder_flag = grandmaster_improved_upgrade_sewer_system
+		}
+	}
+
+	option = {
+		name = EVTOPT_wh_wonders.100.ENGSS_improve
+		trigger = {
+			society_member_of = engineers_guild
+			event_target:grandmaster_wonder_target = {
+				has_wonder = wonder_old_world_city
+				has_wonder_upgrade = upgrade_sewer_system
+				NOT = {
+					has_wonder_flag = grandmaster_improved_upgrade_sewer_system
+				}
+			}
+		}
+		change_society_currency = -2000
+		event_target:grandmaster_wonder_target = {
+			add_wonder_upgrade_slots = 1
+			set_wonder_flag = grandmaster_improved_upgrade_sewer_system
+		}
+	}
+
+	#upgrade_geothermal_power
+	option = {
+		name = EVTOPT_wh_wonders.100.EngGP_build
+		trigger = {
+			OR = {
+				society_member_of = engineers_guild
+				society_member_of = mad_inventors
+			}
+			event_target:grandmaster_wonder_target = {
+				has_wonder = wonder_dwarf_hold
+				NOT = {
+					has_wonder_upgrade = upgrade_geothermal_power
+				}
+			}
+		}
+		change_society_currency = -10000
+		event_target:grandmaster_wonder_target = {
+			add_wonder_upgrade = upgrade_geothermal_power
+			#add_wonder_upgrade_slots = 1
+			set_wonder_flag = grandmaster_improved_upgrade_geothermal_power
+		}
+	}
+
+	option = {
+		name = EVTOPT_wh_wonders.100.ENGGP_improve
+		trigger = {
+			OR = {
+				society_member_of = engineers_guild
+				society_member_of = mad_inventors
+			}
+			event_target:grandmaster_wonder_target = {
+				has_wonder = wonder_dwarf_hold
+				has_wonder_upgrade = upgrade_geothermal_power
+				NOT = {
+					has_wonder_flag = grandmaster_improved_upgrade_geothermal_power
+				}
+			}
+		}
+		change_society_currency = -2000
+		event_target:grandmaster_wonder_target = {
+			add_wonder_upgrade_slots = 1
+			set_wonder_flag = grandmaster_improved_upgrade_geothermal_power
+		}
+	}
+
+	#upgrade_dwarf_aerodrome
+	option = {
+		name = EVTOPT_wh_wonders.100.EngDA_build
+		trigger = {
+			OR = {
+				society_member_of = engineers_guild
+				society_member_of = mad_inventors
+			}
+			event_target:grandmaster_wonder_target = {
+				has_wonder = wonder_dwarf_hold
+				NOT = {
+					has_wonder_upgrade = upgrade_dwarf_aerodrome
+				}
+			}
+		}
+		change_society_currency = -10000
+		event_target:grandmaster_wonder_target = {
+			add_wonder_upgrade = upgrade_dwarf_aerodrome
+			#add_wonder_upgrade_slots = 1
+			set_wonder_flag = grandmaster_improved_upgrade_dwarf_aerodrome
+		}
+	}
+
+	option = {
+		name = EVTOPT_wh_wonders.100.ENGDA_improve
+		trigger = {
+			OR = {
+				society_member_of = engineers_guild
+				society_member_of = mad_inventors
+			}
+			event_target:grandmaster_wonder_target = {
+				has_wonder = wonder_dwarf_hold
+				has_wonder_upgrade = upgrade_dwarf_aerodrome
+				NOT = {
+					has_wonder_flag = grandmaster_improved_upgrade_dwarf_aerodrome
+				}
+			}
+		}
+		change_society_currency = -2000
+		event_target:grandmaster_wonder_target = {
+			add_wonder_upgrade_slots = 1
+			set_wonder_flag = grandmaster_improved_upgrade_dwarf_aerodrome
+		}
+	}
+
+	#upgrade_mining_pumps
+	option = {
+		name = EVTOPT_wh_wonders.100.EngMP_build
+		trigger = {
+			OR = {
+				society_member_of = engineers_guild
+				society_member_of = mad_inventors
+			}
+			event_target:grandmaster_wonder_target = {
+				has_wonder = wonder_dwarf_hold
+				NOT = {
+					has_wonder_upgrade = upgrade_mining_pumps
+				}
+			}
+		}
+		change_society_currency = -10000
+		event_target:grandmaster_wonder_target = {
+			add_wonder_upgrade = upgrade_mining_pumps
+			#add_wonder_upgrade_slots = 1
+			set_wonder_flag = grandmaster_improved_upgrade_mining_pumps
+		}
+	}
+
+	option = {
+		name = EVTOPT_wh_wonders.100.ENGMP_improve
+		trigger = {
+			OR = {
+				society_member_of = engineers_guild
+				society_member_of = mad_inventors
+			}
+			event_target:grandmaster_wonder_target = {
+				has_wonder = wonder_dwarf_hold
+				has_wonder_upgrade = upgrade_mining_pumps
+				NOT = {
+					has_wonder_flag = grandmaster_improved_upgrade_mining_pumps
+				}
+			}
+		}
+		change_society_currency = -2000
+		event_target:grandmaster_wonder_target = {
+			add_wonder_upgrade_slots = 1
+			set_wonder_flag = grandmaster_improved_upgrade_mining_pumps
+		}
+	}
+
+	#Cancel option. AI doesn't need this.
+	option = {
+		name = EVTOPT_wh_wonders.100_nope
+		trigger = {
+			ai = no
+		}
 	}
 }

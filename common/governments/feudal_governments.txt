@@ -76,8 +76,6 @@ feudal_governments = {
 		}
 
 		no_vassal_tax = {
-			highborn_government
-			druchii_government
 			eternal_court_government #Asrai go their own way
 			beastman_government #Beastmen do not listen
 			greenskin_government
@@ -88,7 +86,6 @@ feudal_governments = {
 			skaven_government
 		}
 		vassal_call_to_arms = {
-			highborn_government #Asur don't take orders from non-Asurs
 			eternal_court_government
 			beastman_government #Beastmen do not listen
 			greenskin_government
@@ -181,8 +178,6 @@ feudal_governments = {
 		}
 
 		no_vassal_tax = {
-			highborn_government
-			druchii_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -193,7 +188,6 @@ feudal_governments = {
 			skaven_government
 		}
 		vassal_call_to_arms = {
-			highborn_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -276,8 +270,6 @@ feudal_governments = {
 		}
 
 		no_vassal_tax = {
-			highborn_government
-			druchii_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -288,7 +280,6 @@ feudal_governments = {
 			skaven_government
 		}
 		vassal_call_to_arms = {
-			highborn_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -372,8 +363,6 @@ feudal_governments = {
 		}
 
 		no_vassal_tax = {
-			highborn_government
-			druchii_government
 			eternal_court_government
 			nehekharan_government
 			beastman_government
@@ -384,8 +373,6 @@ feudal_governments = {
 			skaven_government
 		}
 		vassal_call_to_arms = {
-			highborn_government
-			druchii_government
 			eternal_court_government
 			nehekharan_government
 			beastman_government
@@ -480,8 +467,6 @@ feudal_governments = {
 		court_size_modifier = 10
 
 		no_vassal_tax = {
-			highborn_government
-			druchii_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -491,7 +476,6 @@ feudal_governments = {
 			skaven_government
 		}
 		vassal_call_to_arms = {
-			highborn_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -583,8 +567,6 @@ feudal_governments = {
 		}
 
 		no_vassal_tax = {
-			highborn_government
-			druchii_government
 			eternal_court_government
 			nehekharan_government
 			beastman_government
@@ -595,8 +577,6 @@ feudal_governments = {
 			skaven_government
 		}
 		vassal_call_to_arms = {
-			highborn_government
-			druchii_government
 			eternal_court_government
 			nehekharan_government
 			beastman_government
@@ -693,8 +673,6 @@ feudal_governments = {
 		}
 
 		no_vassal_tax = {
-			highborn_government
-			druchii_government
 			eternal_court_government
 			nehekharan_government
 			beastman_government
@@ -705,8 +683,6 @@ feudal_governments = {
 			skaven_government
 		}
 		vassal_call_to_arms = {
-			highborn_government
-			druchii_government
 			eternal_court_government
 			nehekharan_government
 			beastman_government
@@ -795,8 +771,6 @@ feudal_governments = {
 
 		no_vassal_tax = {
 			nehekharan_government
-			highborn_government
-			druchii_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -885,8 +859,6 @@ feudal_governments = {
 
 		no_vassal_tax = {
 			nehekharan_government
-			highborn_government
-			druchii_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -914,421 +886,6 @@ feudal_governments = {
 			beastman_government
 			greenskin_government
 			hobgoblin_satrapy #efficient middle managers
-		}
-	}
-
-	# Highborn Concordate
-	highborn_government = {
-		potential = {
-			culture_group = asur_group
-			religion = cadai
-
-			NOT = { is_government_potential = pirate_government }
-		}
-
-		color = { 255 255 255 }
-		frame_suffix = "_highborn"
-
-		demesne_size = 2
-		vassal_limit = 5
-		commander_limit = 4
-
-		capital_move_delay = 1200
-
-		can_build_tribal = no
-
-		allow_title_revokation = yes
-		dukes_called_kings = yes
-		barons_need_dynasty = yes
-		can_imprison_without_reason = no
-		can_revoke_without_reason = no
-		can_demand_religious_conversion = no
-
-		preferred_holdings = {
-			CITY
-			FAMILY_PALACE
-		}
-		allowed_holdings = {
-			TRADE_POST
-			CITY
-			CASTLE
-			FAMILY_PALACE
-			FORT
-			HOSPITAL
-		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
-			CITY
-			CASTLE
-		}
-
-		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			muslim_government
-		}
-
-		free_revoke_on_governments_religion = { # Vassals of other religions can have their titles revoked for free
-			tribal_government
-			feudal_government
-			muslim_government
-			elector_count_government
-			imperial_government
-			merchant_republic_government
-			republic_government
-			dwarf_government
-			chaosdwarf_government
-		}
-		free_revoke_on_governments = { # Vassals of can have their titles revoked for free
-			greenskin_government
-			freeboota_government
-			pirate_government
-			beastman_government
-			skaven_government
-			chaos_court_government
-			chaos_horde_government
-			norscan_government
-			norscan_government_feudal
-			chaos_host_government
-			chaosdwarf_government
-		}
-
-		no_vassal_tax = {
-			druchii_government
-			eternal_court_government
-			beastman_government
-			greenskin_government
-			freeboota_government
-			pirate_government
-			lizardmen_government
-			skaven_government
-		}
-		vassal_call_to_arms = { #Can raise the other governments' levies, but has to ask for the other elves.
-			eternal_court_government
-			beastman_government
-			greenskin_government
-			freeboota_government
-			pirate_government
-			dwarf_government
-			chaosdwarf_government
-			lizardmen_government
-			skaven_government
-		}
-
-		forced_contract = { # Asurai are required to conscript their citizens
-			highborn_government
-		}
-
-		ignore_in_vassal_limit_calculation = {
-			tribal_government
-		}
-	}
-
-	# Everqueen Court
-	everqueen_government = {
-		potential = {
-			culture_group = asur_group
-			trait = creature_elf
-			religion = cadai
-			OR = {
-				trait = everqueen
-				trait = everqueen_heir
-			}
-
-			NOT = { is_government_potential = pirate_government }
-		}
-
-		color = { 255 255 255 }
-		frame_suffix = "_highborn"
-
-		demesne_size = 2
-		vassal_limit = 5
-		commander_limit = 4
-
-		capital_move_delay = 1200
-
-		can_build_tribal = no
-
-		allow_title_revokation = yes
-		dukes_called_kings = yes
-		barons_need_dynasty = yes
-		can_imprison_without_reason = no
-		can_revoke_without_reason = no
-		#can_grant_kingdoms_and_empires_to_other_government = yes
-		free_levies_in_offensive_war = yes
-		can_demand_religious_conversion = no
-
-		preferred_holdings = { TEMPLE }
-		allowed_holdings = {
-			TEMPLE
-			CASTLE
-			FORT
-			HOSPITAL
-		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
-		}
-
-		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			highborn_government
-		}
-
-		free_revoke_on_governments_religion = { # Vassals of other religions can have their titles revoked for free
-			tribal_government
-			feudal_government
-			muslim_government
-			elector_count_government
-			imperial_government
-			merchant_republic_government
-			republic_government
-			dwarf_government
-			chaosdwarf_government
-		}
-		free_revoke_on_governments = { # Vassals of can have their titles revoked for free
-			greenskin_government
-			freeboota_government
-			pirate_government
-			beastman_government
-			skaven_government
-			chaos_court_government
-			chaos_horde_government
-			norscan_government
-			norscan_government_feudal
-			chaos_host_government
-			chaosdwarf_government
-		}
-
-		no_vassal_tax = {
-			druchii_government
-			eternal_court_government #Asrai go their own way
-			beastman_government #Beastmen do not listen
-			greenskin_government
-			freeboota_government
-			pirate_government
-			lizardmen_government
-			skaven_government
-		}
-		vassal_call_to_arms = { #Can raise the other governments' levies, but has to ask for the other elves.
-			eternal_court_government #Asrai go their own way
-			beastman_government #Beastmen do not listen
-			greenskin_government
-			freeboota_government
-			pirate_government
-			dwarf_government
-			chaosdwarf_government
-			lizardmen_government
-			skaven_government
-		}
-
-		forced_contract = {
-			highborn_government
-		}
-
-		ignore_in_vassal_limit_calculation = {
-			tribal_government
-		}
-	}
-
-	# Witch Kingdom
-	malekith_government = {
-		potential = {
-			trait = malekith
-			religion_group = cytharai_group # Atharti Malekith? In MY Geheimnisnacht? That's fucking disgusting.
-
-			NOT = { has_global_flag = malekith_lost_naggaroth }
-			NOT = { is_government_potential = pirate_government } # The only thing worse than Atharti Malekith would be Pirate Lord Malekith. Nagyarrond, ahoy.
-		}
-
-		color = { 126 35 184 }
-		frame_suffix = "_druchiigov"
-
-		capital_move_delay = 1200
-
-		can_build_tribal = no
-
-		demesne_size = 1
-		vassal_limit = 7
-		commander_limit = 6
-
-		allow_title_revokation = yes
-		dukes_called_kings = yes
-		barons_need_dynasty = yes
-		can_imprison_without_reason = yes
-		can_revoke_without_reason = yes
-		can_grant_kingdoms_and_empires_to_other_government = yes
-		can_demand_religious_conversion = no
-
-		## Modifiers
-		court_size_modifier = 10
-
-		preferred_holdings = { CASTLE }
-		allowed_holdings = {
-			TRADE_POST
-			CITY
-			CASTLE
-			FORT
-			HOSPITAL
-		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			TRIBAL
-			CITY
-			CASTLE
-		}
-
-		accepts_liege_governments = { } # Malekith wouldn't really accept a liege
-
-		free_revoke_on_tiers = {
-			baron
-			count
-			duke
-			king
-		}
-		free_revoke_on_governments = { # Vassals of can have their titles revoked for free
-			greenskin_government
-			freeboota_government
-			pirate_government
-			beastman_government
-			skaven_government
-			chaos_court_government
-			chaos_horde_government
-			norscan_government
-			norscan_government_feudal
-			chaos_host_government
-			chaosdwarf_government
-		}
-
-		no_vassal_tax = {
-			highborn_government
-			eternal_court_government
-			beastman_government
-			greenskin_government
-			freeboota_government
-			pirate_government
-			lizardmen_government
-			skaven_government
-		}
-		vassal_call_to_arms = { #Can raise the other governments' levies, but has to ask for the other elves.
-			eternal_court_government
-			beastman_government
-			greenskin_government
-			freeboota_government
-			pirate_government
-			highborn_government
-			dwarf_government
-			chaosdwarf_government
-			lizardmen_government
-			skaven_government
-		}
-
-		forced_contract = { #Malekith can hold without question all the other Druchii
-			druchii_government
-			feudal_government
-			merchant_republic_government
-			republic_government
-		}
-
-		ignore_in_vassal_limit_calculation = {
-			tribal_government
-		}
-	}
-
-	# Nagarythe Ascendancy
-	druchii_government = {
-		potential = {
-			culture_group = druchi_group
-			religion_group = cytharai_group
-
-			NOT = {
-				is_government_potential = malekith_government
-				is_government_potential = pirate_government
-			}
-		}
-
-		color = { 109 35 184 }
-		frame_suffix = "_druchiigov"
-
-		demesne_size = 1
-		vassal_limit = -1
-		commander_limit = 3
-
-		capital_move_delay = 1200
-
-		can_build_tribal = no
-
-		allow_title_revokation = yes
-		dukes_called_kings = yes
-		barons_need_dynasty = yes
-		can_imprison_without_reason = yes
-		can_revoke_without_reason = no
-		can_demand_religious_conversion = no
-		#can_grant_kingdoms_and_empires_to_other_government = yes
-
-		## Modifiers
-		court_size_modifier = 10
-
-		preferred_holdings = { CASTLE }
-		allowed_holdings = {
-			TRADE_POST
-			CITY
-			CASTLE
-			FAMILY_PALACE
-			FORT
-			HOSPITAL
-		}
-		allowed_holdings_culture = { # Will not get the wrong government type penalty for tribes of the same culture
-			CITY
-			CASTLE
-		}
-
-		accepts_liege_governments = { # Gets the wrong religion modifier instead
-			malekith_government
-		}
-
-		free_revoke_on_governments_religion = { # Vassals of other religions can have their titles revoked for free
-			feudal_government
-			muslim_government
-			merchant_republic_government
-			republic_government
-		}
-		free_revoke_on_governments = { # Vassals of can have their titles revoked for free
-			greenskin_government
-			freeboota_government
-			pirate_government
-			beastman_government
-			skaven_government
-			chaos_court_government
-			chaos_horde_government
-			norscan_government
-			norscan_government_feudal
-			chaos_host_government
-			chaosdwarf_government
-		}
-
-		no_vassal_tax = {
-			highborn_government
-			eternal_court_government
-			beastman_government
-			greenskin_government
-			freeboota_government
-			pirate_government
-			#druchii_government # Doesn't make sense for vassal Druchii not to pay taxes to their liege
-			lizardmen_government
-			skaven_government
-		}
-		vassal_call_to_arms = { #Can raise the other governments' levies, but has to ask for the other elves.
-			eternal_court_government
-			beastman_government
-			greenskin_government
-			freeboota_government
-			pirate_government
-			highborn_government
-			druchii_government
-			dwarf_government
-			chaosdwarf_government
-			lizardmen_government
-			skaven_government
-		}
-
-		ignore_in_vassal_limit_calculation = {
-			tribal_government
 		}
 	}
 
@@ -1398,8 +955,6 @@ feudal_governments = {
 
 		no_vassal_tax = {
 			nehekharan_government
-			highborn_government
-			druchii_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -1410,7 +965,6 @@ feudal_governments = {
 		}
 		vassal_call_to_arms = {
 			eternal_court_government
-			highborn_government
 			beastman_government
 			greenskin_government
 			freeboota_government
@@ -1495,8 +1049,6 @@ feudal_governments = {
 		}
 
 		no_vassal_tax = {
-			highborn_government
-			druchii_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -1506,7 +1058,6 @@ feudal_governments = {
 		}
 
 		vassal_call_to_arms = {
-			highborn_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -1592,7 +1143,6 @@ feudal_governments = {
 		free_revoke_on_governments = { # Vassals of can have their titles revoked for free
 			nomadic_government
 			beastman_government
-			highborn_government #Asur don't take orders from non-Asurs
 			eternal_court_government
 			feudal_government
 			muslim_government
@@ -1618,7 +1168,6 @@ feudal_governments = {
 		no_vassal_tax = {
 			nomadic_government
 			beastman_government
-			highborn_government #Asur don't take orders from non-Asurs
 			eternal_court_government
 			feudal_government
 			muslim_government
@@ -1641,8 +1190,6 @@ feudal_governments = {
 			greenskin_government
 			freeboota_government
 			pirate_government
-			highborn_government
-			druchii_government
 			dwarf_government
 			chaosdwarf_government
 			lizardmen_government
@@ -1724,7 +1271,6 @@ feudal_governments = {
 			pirate_government
 			beastman_government
 			skaven_government
-			highborn_government
 			eternal_court_government
 			feudal_government
 			muslim_government
@@ -1734,7 +1280,6 @@ feudal_governments = {
 			imperial_government
 			congregation_government
 			lizardmen_government
-			everqueen_government
 		}
 		free_revoke_on_governments_religion = { # Tribal vassals of other religions can have their titles revoked for free
 			tribal_government
@@ -1744,8 +1289,6 @@ feudal_governments = {
 		}
 
 		no_vassal_tax = {
-			highborn_government
-			druchii_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -1755,7 +1298,6 @@ feudal_governments = {
 			skaven_government
 		}
 		vassal_call_to_arms = {
-			highborn_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -1843,7 +1385,6 @@ feudal_governments = {
 			pirate_government
 			beastman_government
 			skaven_government
-			highborn_government
 			eternal_court_government
 			feudal_government
 			muslim_government
@@ -1853,12 +1394,9 @@ feudal_governments = {
 			imperial_government
 			congregation_government
 			lizardmen_government
-			everqueen_government
 		}
 
 		no_vassal_tax = {
-			highborn_government
-			druchii_government
 			eternal_court_government #Asrai go their own way
 			beastman_government #Beastmen do not listen
 			greenskin_government
@@ -1873,7 +1411,6 @@ feudal_governments = {
 			chaos_host_government
 			norscan_government
 			norscan_government_feudal
-			highborn_government #Asur don't take orders from non-Asurs
 			eternal_court_government #Asrai go their own way
 			beastman_government #Beastmen do not listen
 			greenskin_government
@@ -1954,8 +1491,6 @@ feudal_governments = {
 		}
 
 		no_vassal_tax = {
-			highborn_government
-			druchii_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -1965,7 +1500,6 @@ feudal_governments = {
 			skaven_government
 		}
 		vassal_call_to_arms = {
-			highborn_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -1994,10 +1528,6 @@ feudal_governments = {
 				is_government_potential = strigoi_government
 				is_government_potential = dwarf_government
 				is_government_potential = chaosdwarf_government
-				is_government_potential = highborn_government
-				is_government_potential = everqueen_government
-				is_government_potential = malekith_government
-				is_government_potential = druchii_government
 				is_government_potential = nehekharan_government
 				is_government_potential = pirate_government
 				is_government_potential = skaven_government
@@ -2067,8 +1597,6 @@ feudal_governments = {
 		}
 
 		no_vassal_tax = {
-			highborn_government
-			druchii_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -2078,7 +1606,6 @@ feudal_governments = {
 			skaven_government
 		}
 		vassal_call_to_arms = {
-			highborn_government
 			eternal_court_government
 			beastman_government
 			greenskin_government
@@ -2159,7 +1686,6 @@ feudal_governments = {
 			theocracy_government
 			eternal_court_government
 			tribal_government
-			highborn_government
 			beastman_government
 			skaven_government
 			chaos_court_government
@@ -2171,8 +1697,6 @@ feudal_governments = {
 		}
 
 		no_vassal_tax = {
-			highborn_government
-			druchii_government
 			tribal_government
 			beastman_government
 			greenskin_government
@@ -2185,8 +1709,6 @@ feudal_governments = {
 			dwarf_government
 		}
 		vassal_call_to_arms = {
-			highborn_government
-			druchii_government
 			tribal_government
 			beastman_government
 			greenskin_government
