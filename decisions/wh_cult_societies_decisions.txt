@@ -184,6 +184,32 @@ targeted_decisions = {
 		}
 	}
 
+	#Shallyans: Self-Sacrifice
+	shallyan_self_sacrifice = {
+		ai_check_interval = 120
+		is_in_society = yes
+
+		filter = self
+		ai_target_filter = self
+
+		potential = {
+			has_dlc = "Mystics"
+			society_member_of = cult_of_shallya
+			society_rank == 4
+		}
+		allow = {
+			society_currency = 10000
+		}
+		effect = {
+			character_event = {
+				id = wh_cult_of_shallya_society.200
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
 	#Power: Demonic Possession
 	chaos_cult_demonic_possession = {
 		ai_check_interval = 12

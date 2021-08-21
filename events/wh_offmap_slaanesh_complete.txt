@@ -346,7 +346,7 @@ character_event = { #artifacts
 					}
 				}
 				add_artifact = axe_of_the_fallen
-			}			
+			}
 			10 = {
 				trigger = {
 					FROM = {
@@ -496,7 +496,7 @@ character_event = { #artifacts
 					}
 				}
 				add_artifact = heralds_tunic
-			}			
+			}
 		}
 	}
 }
@@ -2743,7 +2743,10 @@ character_event = {
 	border = GFX_event_normal_frame_war
 	option = {
 		name = "RSFORSLAANESH"
-		add_character_modifier = voice_slaanesh
+		add_character_modifier = {
+            name = voice_slaanesh
+            duration = -1
+        }
 	}
 }
 #[insert god here] has taken it upon themeselves to guide you, whispering in your mind paths to their favour

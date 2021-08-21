@@ -2375,12 +2375,14 @@ character_event = {
 	id = DR_dwarfs.100
 
 	hide_window = yes
+	is_triggered_only = yes
 
+
+	religion_group = dwarf_gods_group
 	min_age = 15
 	capable_only = yes
 	prisoner = no
 
-	religion_group = dwarf_gods_group
 	culture_group = dwarf_group
 
 	trigger = {

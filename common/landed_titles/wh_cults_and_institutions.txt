@@ -177,7 +177,7 @@ d_university_of_magritta = {
 		color={ 50 50 200 }
 		color2={ 220 220 0 }
 
-		capital = 553 #Magritta
+		capital = 2126 #blighted marshes
 
 		title = "ULTIMA_AQUILA"
 		title_female = "ULTIMA_AQUILA"
@@ -378,8 +378,8 @@ d_university_of_magritta = {
 				title = b_matermyrmidia
 			}
 		}
-		pentarchy = yes
 
+		landless = yes
 		religion = myrmidian
 		culture = reman
 
@@ -397,8 +397,15 @@ d_university_of_magritta = {
 		title_female = "HIGH_EAGLE"
 		# short_name = yes
 
-		pentarchy = yes
+		allow = {
+			religion = myrmidian
+			government = theocracy_government
+			primary_title = {
+				title = b_inquisitoria_general
+			}
+		}
 
+		landless = yes
 		religion = myrmidian
 		culture = astur
 
