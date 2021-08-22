@@ -1446,10 +1446,12 @@ feudal_governments = {
 		capital_move_delay = 600
 
 		can_build_tribal = no
-		character_modifier={
-		set_allow_vice_royalties = count
-		set_allow_vice_royalties = king
-		}
+
+		#set_allow_vice_royalties is a command, not a modifier. Not sure what the intent is here.
+		#character_modifier={
+		#set_allow_vice_royalties = count
+		#set_allow_vice_royalties = king
+		#}
 		## Modifiers
 		court_size_modifier = 10
 

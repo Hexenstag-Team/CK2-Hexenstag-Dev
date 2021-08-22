@@ -1063,7 +1063,7 @@ city = {
 		garrison_size = 0.05
 		ai_creation_factor = 98
 
-		extra_tech_building_start = 0.6
+		extra_tech_building_start = 0.3
 	}
 	ct_training_grounds_2 = {
 		desc = ct_training_grounds_1_desc
@@ -2575,8 +2575,9 @@ temple = {
 		build_time = 365
 		heavy_infantry = 30
 		pikemen = 15
-
 		ai_creation_factor = 95
+
+		extra_tech_building_start = 0.2
 	}
 	tp_templar_barracks_2 = {
 		desc = tp_templar_barracks_desc
@@ -2682,6 +2683,7 @@ temple = {
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
 		    religion_group = chaos_gods_group
+			NOT = { religion = hashut }
 		}
 		is_active_trigger = {
 			religion_group = FROM
@@ -2702,6 +2704,7 @@ temple = {
 		trigger = { TECH_CITY_CONSTRUCTION = 0 }
 		potential = {
 		    religion_group = chaos_gods_group
+			NOT = { religion = hashut }
 		}
 		is_active_trigger = {
 			religion_group = FROM
@@ -2722,6 +2725,7 @@ temple = {
 		trigger = { TECH_CITY_CONSTRUCTION = 2 }
 		potential = {
 		    religion_group = chaos_gods_group
+			NOT = { religion = hashut }
 		}
 		is_active_trigger = {
 			religion_group = FROM
@@ -2742,6 +2746,7 @@ temple = {
 		trigger = { TECH_CITY_CONSTRUCTION = 4 }
 		potential = {
 		    religion_group = chaos_gods_group
+			NOT = { religion = hashut }
 		}
 		is_active_trigger = {
 			religion_group = FROM
@@ -2761,6 +2766,7 @@ temple = {
 		trigger = { TECH_CITY_CONSTRUCTION = 6 }
 		potential = {
 		    religion_group = chaos_gods_group
+			NOT = { religion = hashut }
 		}
 		is_active_trigger = {
 			religion_group = FROM
@@ -2780,6 +2786,7 @@ temple = {
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
 		potential = {
 		    religion_group = chaos_gods_group
+			NOT = { religion = hashut }
 		}
 		is_active_trigger = {
 			religion_group = FROM
@@ -2969,7 +2976,7 @@ temple = {
 		war_elephants = 65
 		ai_creation_factor = 93
 
-		extra_tech_building_start = 0.2
+		extra_tech_building_start = 1.0
 	}
 
 	tp_albion_fenbeasts_4 = {
@@ -2986,7 +2993,9 @@ temple = {
 		gold_cost = 300
 		build_time = 1095
 		war_elephants = 75
-		ai_creation_factor = 0.2
+		ai_creation_factor = 92
+
+		extra_tech_building_start = 2.0
 	}
 
 	tp_albion_fenbeasts_5 = {
@@ -3125,7 +3134,7 @@ temple = {
 	}
 
 	tp_grave_guards_6 = {
-		desc = tp-tp_grave_guards_desc
+		desc = tp_grave_guards_desc
 		trigger = { TECH_CITY_CONSTRUCTION = 8 }
 		potential = {
 			religion_group = necromantic_group
@@ -3200,7 +3209,7 @@ temple = {
 		war_elephants = 65
 		ai_creation_factor = 93
 
-		extra_tech_building_start = 0.2
+		extra_tech_building_start = 1.2
 	}
 
 	tp_sons_of_stromfels_4 = {
@@ -3217,7 +3226,9 @@ temple = {
 		gold_cost = 300
 		build_time = 1095
 		war_elephants = 75
-		ai_creation_factor = 0.2
+		ai_creation_factor = 92
+
+		extra_tech_building_start = 2.0
 	}
 
 	tp_sons_of_stromfels_5 = {

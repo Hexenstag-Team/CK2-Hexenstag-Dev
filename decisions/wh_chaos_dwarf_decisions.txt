@@ -78,7 +78,7 @@ targeted_decisions = {
 	urge_son_become_daemonsmith = {
 		only_playable = yes
 		filter = close_relatives
-		ai_filter = close_relatives
+		ai_target_filter = close_relatives
 		ai_check_interval = 60
 
 		from_potential = {
@@ -139,7 +139,7 @@ targeted_decisions = {
 	urge_son_become_sorcerer = {
 		only_playable = yes
 		filter = close_relatives
-		ai_filter = close_relatives
+		ai_target_filter = close_relatives
 		ai_check_interval = 60
 
 		from_potential = {
@@ -203,7 +203,7 @@ targeted_decisions = {
 	invoke_hashut_blessing = {
 		only_playable = yes
 		filter = close_relatives
-		ai_filter = close_relatives
+		ai_target_filter = close_relatives
 		ai_check_interval = 60
 
 		from_potential = {
@@ -287,7 +287,7 @@ targeted_decisions = {
 	ordeal_of_fire = {
 		ai = no #more efficient for AI to do this by event
 		filter = close_relatives
-		ai_filter = none
+		ai_target_filter = none
 
 		from_potential = {
 			trait = creature_chaos_dwarf
