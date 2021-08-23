@@ -1,5 +1,5 @@
-#Used IDs 10951-10968
-#Free IDs 10969-11100
+#Used IDs 10951-10969
+#Free IDs 10954, 10970-11100
 
 10951 = {	#80009
 	name = Hilde
@@ -58,36 +58,9 @@
 	2044.5.29 = {death = yes}
 }
 
-10954 = {	#80013
-	name = Isabelle
-	female = yes
-	dynasty = 19002
-	dna = aefdghldfcy
-	properties = ce0c0d00000
-	culture = sylvanian
-	religion = vampiric
-	martial = 1
-	diplomacy = 9
-	stewardship = 8
-	intrigue = 0
-	learning = 1
-	add_trait = creature_human
-	add_trait = hunter
-	add_trait = indulgent_wastrel
-	add_trait = proud
-	add_trait = slow
-	add_trait = pretty
-	add_trait = chaste
-	add_trait = lunatic_1
-	1983.2.25 = {birth = yes}
-	2010.1.2 = {add_spouse = 2705
-		effect = {
-			add_lover = 2705
-			set_variable = {which = lunatic_counter value = 5}
-		}
-		}
-	2047.10.24 = {death = yes}
-}
+###########
+###10954###
+###########
 
 10955 = {	#80014
 	name = Lucian
@@ -391,4 +364,32 @@
 	add_trait = creature_human
 	1978.10.21 = { birth = yes }
 	1999.5.29 = { death = { death_reason = death_execution_burning killer = 10538 } }
+}
+
+10969 = {
+	name = Karl
+	dynasty = 23636 #Schneider
+	disallow_random_traits = yes
+	easter_egg = yes
+	culture = sylvanian
+	religion = vampiric
+	martial = 10
+	diplomacy = 1
+	stewardship = 6
+	intrigue = 3
+	learning = 10
+	father = 10968
+	add_trait = creature_human
+	add_trait = lore_necromancy
+	add_trait = brilliant_strategist
+	1994.5.5 = {
+		birth = yes
+		effect = {
+			add_character_modifier = {
+				name = magic_power_3
+				duration = -1
+			}
+		}
+	}
+	2050.1.1 = { death = yes }
 }

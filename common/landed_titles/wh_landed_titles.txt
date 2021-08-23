@@ -21959,13 +21959,11 @@ e_the_empire = {
 	k_mootland = {
 		color = { 30 140 10 }
 		color2 = { 255 255 255 }
-		is_republic = yes
 		capital = 350 # c_eicheschatten
 
 		d_auld_styrland = {
 			color = { 10 188 80 }
 			color2 = { 255 255 255 }
-			is_republic = yes
 			capital = 350 # c_eicheschatten
 			
 			c_eicheschatten = { # 350
@@ -21977,8 +21975,8 @@ e_the_empire = {
 				b_eicheschatten = {}
 				b_molberg = {}
 				b_vorchdorf = {}
-				b_brandenberry = {}
-				b_birnbaum = {}
+				b_deermeadow = {}
+				b_southmoor = {}
 				b_bogglewort = {}
 				b_heilkau = {}
 			}
@@ -21996,13 +21994,94 @@ e_the_empire = {
 				b_zwingenhude = {}
 				b_zierenscheid = {}
 			}
+			c_brandenberry = { # 1362
+				color = { 85 21 56 }
+				color2 = { 255 255 255 }
+				
+				b_brandenberry = {}
+				b_rayleafs = {}
+				b_eastburn = {}
+				b_lakehedge = {}
+				b_highview = {}
+				b_coastbeach = {}
+				b_lightvale = {}
+			}
 		}
-		d_aver_march = {
-			color = { 158 22 202 }
+		d_eastlin_aver_march = {
+			color = { 42 201 203 }
 			color2 = { 255 255 255 }
-			is_republic = yes
-			capital = 359 # c_sauerapfel
+			capital = 351 # c_greenleafs
+			
+			c_greenleafs = { # 351
+				color = { 42 201 203 }
+				color2 = { 255 255 255 }
 
+				holy_site = halfling_gods
+
+				b_gipfel = {}
+				b_raywynne = {}
+				b_haukern = {}
+				b_greenleafs = {}
+				b_fallow_hills = {}
+				b_zwingenthal = {}
+				b_rauneuwald = {}
+			}
+			c_fallenblatt = { # 1365
+				color = { 1 33 185 }
+				color2 = { 255 255 255 }
+				
+				b_fallenblatt = {}
+				b_hogearth = {}
+				b_freebluff = {}
+				b_brightbrook = {}
+				b_littlesurge = {}
+				b_mosswater = {}
+				b_glowshine = {}
+			}
+			c_thromarch = { # 1366
+				color = { 43 36 58 }
+				color2 = { 255 255 255 }
+				
+				b_thromarch = {}
+				b_leastep = {}
+				b_thorngrove = {}
+				b_silentbraid = {}
+				b_ravenbarrel = {}
+				b_thornearth = {}
+				b_deephollow = {}
+			}
+			c_birnbaum = { # 1367
+				color = { 85 39 186 }
+				color2 = { 255 255 255 }
+				
+				b_birnbaum = {}
+				b_mosswoods = {}
+				b_stoutwillow = {}
+				b_cloudgrove = {}
+				b_longbluff = {}
+				b_cindermane = {}
+				b_greatflower = {}
+			}
+		}
+		d_wastren_aver_march = {
+			color = { 42 18 208 }
+			color2 = { 255 255 255 }
+			capital = 361 # c_aver_march
+			
+			c_einsamholz = { # 361
+				color = { 42 18 208 }
+				color2 = { 255 255 255 }
+
+				holy_site = halfling_gods
+
+				b_einsamholz = {}
+				b_gruenhuegel = {}
+				b_hornsbys_ferry = {}
+				b_eberbach = {}
+				b_dreiflussen = {}
+				b_traiskirch = {}
+				b_ebreichheim = {}
+			}
 			c_sauerapfel = { # 359
 				color = { 168 12 207 }
 				color2 = { 255 255 255 }
@@ -22017,73 +22096,38 @@ e_the_empire = {
 				b_hergeismar = {}
 				b_haitarnstein = {}
 			}
-			c_aver_march = { # 361
-				color = { 42 18 208 }
+			c_vertmead = { # 1363
+				color = { 127 27 184 }
 				color2 = { 255 255 255 }
-
-				holy_site = halfling_gods
-
-				b_einsamholz = {}
-				b_gruenhuegel = {}
-				b_hornsbys_ferry = {}
-				b_eberbach = {}
-				b_dreiflussen = {}
-				b_traiskirch = {}
-				b_ebreichheim = {}
+				
+				b_vertmead = {}
+				b_byice = {}
+				b_springmallow = {}
+				b_aelhaven = {}
+				b_erimere = {}
+				b_raymill = {}
+				b_roseland = {}
 			}
-			c_greenleafs = { # 351
-				color = { 42 201 203 }
+			c_ethdale = { # 1364
+				color = { 169 30 57 }
 				color2 = { 255 255 255 }
-
-				holy_site = halfling_gods
-
-				b_gipfel = {}
-				b_fallenblatt = {}
-				b_haukern = {}
-				b_greenleafs = {}
-				b_fallow_hills = {}
-				b_zwingenthal = {}
-				b_rauneuwald = {}
-			}
-		}
-		d_achteraver = {
-			color = { 158 112 217 }
-			color2 = { 255 255 255 }
-			is_republic = yes
-			capital = 389 # c_sigmaringen
-
-			c_sigmaringen = { # 389
-				color = { 168 102 222 }
-				color2 = { 255 255 255 }
-
-				b_sigmaringen = {}
-				b_geihselhoff = {}
-				b_kaunitz = {}
-				b_steuben = {}
-				b_hardenburg = {}
-				b_fallberg = {}
-				b_landseheim = {}
-			}
-			c_schramleben = { # 388
-				color = { 126 99 94 }
-				color2 = { 255 255 255 }
-
-				b_schramleben = {}
-				b_brigstadt = {}
-				b_mittlenburg = {}
-				b_maylhof = {}
-				b_pappenheim = {}
-				b_falkenhausen = {}
-				b_clausloh = {}
+				
+				b_ethdale = {}
+				b_fallash = {}
+				b_newnesse = {}
+				b_silverdeer = {}
+				b_brightshade = {}
+				b_karathimeth = {}
+				b_aurumdale = {}
 			}
 		}
 		d_brachland = {
 			color = { 94 56 221 }
 			color2 = { 255 255 255 }
 
-			capital = 377 # c_brachland
+			capital = 377 # c_bracher
 			
-			c_brachland = { # 377
+			c_bracher = { # 377
 				color = { 84 66 216 }
 				color2 = { 255 255 255 }
 
@@ -22095,29 +22139,137 @@ e_the_empire = {
 				b_waischefeld = {}
 				b_wolffelden = {}
 			}
-			c_fennonhuegel = { # 387
+			c_amonenburg = { # 387
 				color = { 84 96 221 }
 				color2 = { 255 255 255 }
 
-				b_konradswache = {}
 				b_amonenburg = {}
 				b_aslar = {}
 				b_vladis = {}
 				b_vassel = {}
 				b_ruderuck = {}
 				b_rhattenstadt = {}
+				b_mittbach = {}
 			}
-			c_auld_ryding = { # 933
+			c_zahling = { # 1368
+				color = { 127 42 59 }
+				color2 = { 255 255 255 }
+
+				b_zahling = {}
+				b_schmiechen = {}
+				b_reundorf = {}
+				b_pleussen = {}
+				b_neudorf = {}
+				b_mohren = {}
+				b_mittelstreu = {}
+			}	
+			c_trappstadt = { # 1369
+				color = { 169 45 187 }
+				color2 = { 255 255 255 }
+
+				b_trappstadt = {}
+				b_zeegendorf = {}
+				b_unterau = {}
+				b_strahlfeld = {}
+				b_schlaifhausen = {}
+				b_rechtmehring = {}
+				b_pipinsried = {}
+			}
+		}
+		d_auld_ryding = {
+			color = { 106 58 146 }
+			color2 = { 255 255 255 }
+			capital = 933 # c_stoodhof
+
+			c_stoodhof = { # 933
 				color = { 106 58 146 }
 				color2 = { 255 255 255 }
 
 				b_stoodhof = {}
-				b_averridge = {}
+				b_gremheim = {}
 				b_gadd = {}
 				b_poysdenz = {}
 				b_oppenwald = {}
 				b_bischofbirn = {}
 				b_leonsill = {}
+			}
+			c_averridge = { # 1372
+				color = { 85 54 61 }
+				color2 = { 255 255 255 }
+
+				b_averridge = {}
+				b_forsting = {}
+				b_ellbach = {}
+				b_dorfbach = {}
+				b_dorndorf = {}
+				b_engertsham = {}
+				b_gemunda = {}
+			}
+			c_applebeam = { # 1371
+				color = { 43 51 188 }
+				color2 = { 255 255 255 }
+
+				b_applebeam = {}
+				b_nimblewood = {}
+				b_brushhand = {}
+				b_flintleaf = {}
+				b_amberflower = {}
+				b_fastcobble = {}
+				b_cloudbough = {}
+			}
+			c_deepstride = { # 1370
+				color = { 1 48 60 }
+				color2 = { 255 255 255 }
+
+				b_deepstride = {}
+				b_applebloom = {}
+				b_nightvale = {}
+				b_grasscheeks = {}
+				b_boulderflower = {}
+				b_twilightbridge = {}
+				b_tallwater = {}
+			}
+		}
+		d_achteraver = {
+			color = { 127 57 189 }
+			color2 = { 255 255 255 }
+			capital = 1373 # c_pappenheim
+			
+			c_pappenheim = { # 1373
+				color = { 127 57 189 }
+				color2 = { 255 255 255 }
+
+				b_pappenheim = {}
+				b_mittlenburg = {}
+				b_brigstadt = {}
+				b_maylhof = {}
+				b_fallberg = {}
+				b_kneiting = {}
+				b_hirschbach = {}
+			}
+			c_sigmaringen = { # 389
+				color = { 168 102 222 }
+				color2 = { 255 255 255 }
+
+				b_sigmaringen = {}
+				b_kaunitz = {}
+				b_falkenhausen = {}
+				b_steuben = {}
+				b_hardenburg = {}
+				b_marburg = {}
+				b_geihselhoff = {}
+			}
+			c_schramleben = { # 388
+				color = { 126 99 94 }
+				color2 = { 255 255 255 }
+
+				b_schramleben = {}
+				b_hutten = {}
+				b_merkershausen = {}
+				b_konigsfeld = {}
+				b_hohenried = {}
+				b_haundorf = {}
+				b_hartenstein = {}
 			}
 		}
 	}
