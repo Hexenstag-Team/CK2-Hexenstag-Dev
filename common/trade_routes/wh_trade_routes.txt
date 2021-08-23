@@ -448,23 +448,32 @@ drakenhof_road = { #
 	# Drakenhof
 	start = { 386 }
 	
-	# Drakenhof, Sumpfdorf, Wartenhof
-	path = { 386 383 384 }
+	# Drakenhof, Sumpfdorf
+	path = { 386 383 }
 	
 	#Drakenhof, Tempelhof
 	path = { 386 380 }
 
 	#Drakenhof, Nachthafen
 	path = { 386 385 }
+	
+	#Sumpfdorf, Wartenhof
+	path = { 383 384 }
 
-	#Wartenhof, Vanhaldenhof
-	path = { 384 379 }
+	#Sumpfdorf, Vanhaldenhof
+	path = { 383 379 }
 
-	#Wartenhof, Waldenhof, Zherden, Fichetal, Burgenhof, Remer
-	path = { 384 382 930 1338 1336 1166 }
+	#Wartenhof, Waldenhof
+	path = { 384 382 }
 
 	#Wartenhof, Mikaldorf
 	path = { 384 381 }
+	
+	#Waldenhof, Zherden, Fichetal, Burgenhof, Remer
+	path = { 382 930 1338 1336 1166 }
+	
+	#Waldenhof, Messinghof
+	path = { 382 1351 }
 	
 	#Remer, Muckenhof, Bechafen
 	path = { 1166 1161 366 }
@@ -474,27 +483,27 @@ drakenhof_road = { #
 
 	#Tempelhof, Sternieste
 	path = { 380 378 }
-
-	#Sternieste, Nachthafen
-	path = { 378 385 }
-
-	#Sternieste, Fennonhugel
-	path = { 378 387 }
+	
+	#Tempelhof, Naubonm, Leicheheim, Konigstein
+	path = { 380 1357 1356 376 }
 
 	#Sternieste, Siegfriedhof
 	path = { 378 375 }
 
-	#Sternieste, Konigstein
-	path = { 378 376 }
+	#Konigstein, Vierstein, Siegfriedhof
+	path = { 376 1360 375 }	
 
-	#Konigstein, Brachland
-	path = { 376 377 }
-
-	#Konigstein, Leedleton, Eicheschatten
-	path = { 376 352 350 }
+	#Konigstein, Swartzhafen
+	path = { 376 1359 }
 
 	#Konigstein, Jaegerwald
 	path = { 376 957 }
+	
+	#Swartzhafen, Leedleton, Eicheschatten
+	path = { 1359 352 350 }
+	
+	#Swartzhafen, Bylorhof, Brachland
+	path = { 1359 1358 377 }
 
 	#Jaegerwald, Leithagberge
 	path = { 957 349 }
@@ -507,6 +516,9 @@ drakenhof_road = { #
 
 	#Nachthafen, Fennonhugel
 	path = { 385 387 }
+	
+	#Nachthafen, Senkehof
+	path = { 385 1355 }
 
 	#Fennonhugel, Brachland
 	path = { 387 377 }

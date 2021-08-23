@@ -22883,7 +22883,7 @@ e_the_empire = {
 
 				b_schloss_regak = {}
 				b_regakhof = {}
-				b_messinghof = {}
+				b_messinghof2 = {}
 				b_jenzwalden = {}
 				b_heneufels = {}
 				b_grossholz = {}
@@ -23814,9 +23814,9 @@ e_the_empire = {
 		d_drakenhoehenzug = {
 			color = { 52 83 98 }
 			color2 = { 255 255 255 }
-
+			
 			capital = 386 # c_drakenhof
-
+			
 			c_drakenhof = { # 386
 				color = { 42 93 93 }
 				color2 = { 255 255 255 }
@@ -23826,8 +23826,8 @@ e_the_empire = {
 				b_schloss_drakenhof = {}
 				b_drakenhof = {}
 				b_pfaffbach = {}
-				b_senkehof = {}
-				b_schloss_senkhof = {}
+				b_erharting = {}
+				b_fohrenwinkel = {}
 				b_oberwart = {}
 				b_schresestadt = {}
 			}
@@ -23837,24 +23837,74 @@ e_the_empire = {
 
 				b_nachtschlosse = {}
 				b_nachthafen = {}
-				b_gallhof = {}
-				b_gallerschlosse = {}
+				b_frankenbrunn = {}
+				b_gernach = {}
 				b_eisenten = {}
 				b_sieggeismar = {}
 				b_sachsedorf = {}
 			}
-			c_sumpfdorf = { # 383
-				color = { 126 84 219 }
+			c_senkehof = { # 1355
+				color = { 1 3 180 }
+				color2 = { 255 255 255 }
+				
+				b_senkehof = {}
+				b_schloss_senkhof = {}
+				b_gallhof = {}
+				b_mahring = {}
+				b_konzell = {}
+				b_kondrau = {}
+				b_kleineibstadt = {}
+			}
+		}
+		d_verbogenwald = {
+			color = { 94 71 96 }
+			color2 = { 255 255 255 }
+
+			capital = 382 # c_waldenhof
+			
+			c_waldenhof = { # 382
+				color = { 84 81 91 }
 				color2 = { 255 255 255 }
 
-				b_sumpfdorf = {}
-				b_rattenburg = {}
-				b_glucksburg = {}
-				b_erfstadt = {}
-				b_grimmigmoor = {}
-				b_kereustadt = {}
-				b_altennow = {}
+				b_waldenhof = {}
+				b_hundham = {}
+				b_thyrnan = {}
+				b_egling = {}
+				b_seppel = {}
+				b_lichtenwort = {}
+				b_plettenwig = {}
 			}
+			c_wartenhof = { # 384
+				color = { 168 87 92 }
+				color2 = { 255 255 255 }
+
+				b_schloss_wartenhof = {}
+				b_wartenhof = {}
+				b_erkrath = {}
+				b_creusen = {}
+				b_lenweg = {}
+				b_gerasein = {}
+				b_lindefels = {}
+			}
+			c_messinghof = { # 1351
+				color = { 43 204 178 }
+				color2 = { 255 255 255 }
+				
+				b_messinghof = {}
+				b_zherdenschlosse = {}
+				b_zherden = {}
+				b_jenzwalden = {}
+				b_wohmbrechts = {}
+				b_weisbach = {}
+				b_wallenhausen = {}
+			}
+		}
+		d_grimmigholz = {
+			color = { 0 75 90 }
+			color2 = { 255 255 255 }
+
+			capital = 380 # c_tempelhof
+			
 			c_tempelhof = { # 380
 				color = { 0 75 90 }
 				color2 = { 255 255 255 }
@@ -23869,68 +23919,37 @@ e_the_empire = {
 				b_leonschlag = {}
 				b_lustentrenk = {}
 			}
-		}
-		d_kovasnia = {
-			color = { 136 59 94 }
-			color2 = { 255 255 255 }
-
-			capital = 378 # c_sternieste
-
-			c_sternieste = { # 378
-				color = { 126 69 89 }
+			c_sumpfdorf = { # 383
+				color = { 126 84 219 }
 				color2 = { 255 255 255 }
 
-				b_sternieste = {}
-				b_vargravia = {}
-				b_leicheberg = {}
-				b_stolpe = {}
-				b_naubonum = {}
-				b_araknos = {}
-				b_folburg = {}
+				b_sumpfdorf = {}
+				b_rattenburg = {}
+				b_glucksburg = {}
+				b_erfstadt = {}
+				b_grimmigmoor = {}
+				b_kereustadt = {}
+				b_altennow = {}
 			}
-			c_koenigstein = { # 376
-				color = { 42 63 88 }
+			c_vanhaldenhof = { # 379
+				color = { 168 72 217 }
 				color2 = { 255 255 255 }
 
-				b_koenigstein = {}
-				b_unterwold = {}
-				b_swartzhafen = {}
-				b_vierstein = {}
-				b_lichenheim = {}
-				b_arfeit = {}
-				b_bylorhof = {}
-			}
-			c_siegfriedhof = { # 375
-				color = { 0 60 215 }
-				color2 = { 255 255 255 }
-
-				b_siegfriedhof = {}
-				b_uflheim = {}
-				b_morrfen = {}
-				b_eschenstir = {}
-				b_stirfaehre = {}
-				b_eisigfurt = {}
-				b_freudenkamp = {}
+				b_vanhaldenschlosse = {}
+				b_vanhaldenhof = {}
+				b_herpersdorf = {}
+				b_gescher = {}
+				b_richtenfeld = {}
+				b_knittelberg = {}
+				b_lenestadt = {}
 			}
 		}
-		d_verbogenwald = {
-			color = { 94 71 96 }
+		d_halfann = {
+			color = { 42 78 218 }
 			color2 = { 255 255 255 }
 
-			capital = 382 # c_waldenhof
-
-			c_waldenhof = { # 382
-				color = { 84 81 91 }
-				color2 = { 255 255 255 }
-
-				b_waldenhof = {}
-				b_hundham = {}
-				b_thyrnan = {}
-				b_egling = {}
-				b_seppel = {}
-				b_lichtenwort = {}
-				b_plettenwig = {}
-			}
+			capital = 381 # c_mikaldorf
+			
 			c_mikaldorf = { # 381
 				color = { 42 78 218 }
 				color2 = { 255 255 255 }
@@ -23943,29 +23962,170 @@ e_the_empire = {
 				b_lustenkirch = {}
 				b_neunmarkt = {}
 			}
-			c_vanhaldenhof = { # 379
-				color = { 168 72 217 }
+			c_helfurt = { # 1352
+				color = { 85 207 51 }
 				color2 = { 255 255 255 }
-
-				b_vanhaldenschlosse = {}
-				b_vanhaldenhof = {}
+				
 				b_helfurt = {}
-				b_gescher = {}
-				b_richtenfeld = {}
-				b_knittelberg = {}
-				b_lenestadt = {}
+				b_waldeck = {}
+				b_veitlahm = {}
+				b_untermembach = {}
+				b_umpfenbach = {}
+				b_uengershausen = {}
+				b_steinmark = {}
 			}
-			c_wartenhof = { # 384
-				color = { 168 87 92 }
+			c_eisigfurt = { # 1353
+				color = { 127 210 179 }
+				color2 = { 255 255 255 }
+				
+				b_eisigfurt = {}
+				b_steinekirch = {}
+				b_schworsheim = {}
+				b_sainbach = {}
+				b_riedenheim = {}
+				b_ried = {}
+				b_pruppach = {}
+			}
+		}		
+		d_hungerholz = {
+			color = { 0 60 215 }
+			color2 = { 255 255 255 }
+
+			capital = 375 # c_siegfriedhof
+			
+			c_siegfriedhof = { # 375
+				color = { 0 60 215 }
 				color2 = { 255 255 255 }
 
-				b_schloss_wartenhof = {}
-				b_wartenhof = {}
-				b_erkrath = {}
-				b_creusen = {}
-				b_lenweg = {}
-				b_gerasein = {}
-				b_lindefels = {}
+				b_siegfriedhof = {}
+				b_uflheim = {}
+				b_morrfen = {}
+				b_eschenstir = {}
+				b_engelmannsreuth = {}
+				b_epfach = {}
+				b_freudenkamp = {}
+			}
+			c_stirfahre = { # 1354
+				color = { 169 0 52 }
+				color2 = { 255 255 255 }
+				
+				b_stirfahre = {}
+				b_pemfling = {}
+				b_oberzeitldorn = {}
+				b_nattenhausen = {}
+				b_michelrieth = {}
+				b_memmelsdorf = {}
+				b_mainroth = {}
+			}
+			c_vierstein = { # 1360
+				color = { 1 18 55 }
+				color2 = { 255 255 255 }
+				
+				b_vierstein = {}
+				b_rieden = {}
+				b_reuth_bei_erendorf = {}
+				b_reifenthal = {}
+				b_maxxkron = {}
+				b_marienheim = {}
+				b_machtlfing = {}
+			}
+			c_sternieste = { # 378
+				color = { 126 69 89 }
+				color2 = { 255 255 255 }
+
+				b_sternieste = {}
+				b_vargravia = {}
+				b_hammer = {}
+				b_grossenbuch = {}
+				b_grainet = {}
+				b_araknos = {}
+				b_folburg = {}
+			}
+		}
+		d_leiche = {
+			color = { 43 6 53 }
+			color2 = { 255 255 255 }
+
+			capital = 1356 # c_leicheheim
+			
+			c_leicheheim = { # 1356
+				color = { 43 6 53 }
+				color2 = { 255 255 255 }
+				
+				b_leicheheim = {}
+				b_leicheberg = {}
+				b_leichtenhaag = {}
+				b_kauernhofen = {}
+				b_hummendorf = {}
+				b_hohenreichen = {}
+				b_hasslach_bei_kronach = {}
+			}
+			c_stolpe = { # 1361
+				color = { 43 21 183 }
+				color2 = { 255 255 255 }
+				
+				b_stolpe = {}
+				b_ludenhausen = {}
+				b_lauterbach = {}
+				b_kauernburg = {}
+				b_humprechthausen = {}
+				b_huldsessen = {}
+				b_hofles = {}
+			}
+			c_naubonm = { # 1357
+				color = { 85 9 181 }
+				color2 = { 255 255 255 }
+				
+				b_naubonm = {}
+				b_happing = {}
+				b_gumpersdorf = {}
+				b_gottfrieding = {}
+				b_frechenrieden = {}
+				b_edelbach = {}
+				b_durrnhaar = {}
+			}
+		}	
+		d_bylorhofsumpf = {
+			color = { 127 12 54 }
+			color2 = { 255 255 255 }
+
+			capital = 1358 # c_bylorhof
+			
+			c_bylorhof = { # 1358
+				color = { 127 12 54 }
+				color2 = { 255 255 255 }
+				
+				b_bylorhof = {}
+				b_burgpreppach = {}
+				b_bottigheim = {}
+				b_aufsess = {}
+				b_alsleben = {}
+				b_zuegekhutte = {}
+				b_westenhausen = {}
+			}
+			c_swartzhafen = { # 1359
+				color = { 169 15 182 }
+				color2 = { 255 255 255 }
+				
+				b_swartzhafen = {}
+				b_tettenhausen = {}
+				b_stralsbach = {}
+				b_stadelschwarzach = {}
+				b_schonau = {}
+				b_rothenberg = {}
+				b_roden = {}
+			}	
+			c_koenigstein = { # 376
+				color = { 42 63 88 }
+				color2 = { 255 255 255 }
+
+				b_koenigstein = {}
+				b_unterwold = {}
+				b_alzgern = {}
+				b_bobengrun = {}
+				b_bonnhof = {}
+				b_arfeit = {}
+				b_castell = {}
 			}
 		}
 	}
