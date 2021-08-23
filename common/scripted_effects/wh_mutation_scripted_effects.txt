@@ -344,20 +344,7 @@ mutations_table = {
 			limit = {
 				NOT = { trait = breathe_fire_3 }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				breathe_fire_1 = {
-					remove_trait = breathe_fire_1
-					add_trait = breathe_fire_2
-				}
-				breathe_fire_2 = {
-					remove_trait = breathe_fire_2
-					add_trait = breathe_fire_3
-				}
-				fallback = {
-					add_trait = breathe_fire_1
-				}
-			}
+			mutation_breathe_fire_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#brightly_patterned_skin
@@ -508,91 +495,7 @@ mutations_table = {
 					trait = chaos_organ_outside_10
 				}
 			}
-			trigger_switch = {
-				on_trigger = trait
-				chaos_organ_inside_1 = {
-					remove_trait = chaos_organ_inside_1
-					add_trait = chaos_organ_inside_2
-				}
-				chaos_organ_inside_2 = {
-					remove_trait = chaos_organ_inside_2
-					add_trait = chaos_organ_inside_3
-				}
-				chaos_organ_inside_3 = {
-					remove_trait = chaos_organ_inside_3
-					add_trait = chaos_organ_inside_4
-				}
-				chaos_organ_inside_4 = {
-					remove_trait = chaos_organ_inside_4
-					add_trait = chaos_organ_inside_5
-				}
-				chaos_organ_inside_5 = {
-					remove_trait = chaos_organ_inside_5
-					add_trait = chaos_organ_inside_6
-				}
-				chaos_organ_inside_6 = {
-					remove_trait = chaos_organ_inside_6
-					add_trait = chaos_organ_inside_7
-				}
-				chaos_organ_inside_7 = {
-					remove_trait = chaos_organ_inside_7
-					add_trait = chaos_organ_inside_8
-				}
-				chaos_organ_inside_8 = {
-					remove_trait = chaos_organ_inside_8
-					add_trait = chaos_organ_inside_9
-				}
-				chaos_organ_inside_9 = {
-					remove_trait = chaos_organ_inside_9
-					add_trait = chaos_organ_inside_10
-				}
-				chaos_organ_outside_1 = {
-					remove_trait = chaos_organ_outside_1
-					add_trait = chaos_organ_outside_2
-				}
-				chaos_organ_outside_2 = {
-					remove_trait = chaos_organ_outside_2
-					add_trait = chaos_organ_outside_3
-				}
-				chaos_organ_outside_3 = {
-					remove_trait = chaos_organ_outside_3
-					add_trait = chaos_organ_outside_4
-				}
-				chaos_organ_outside_4 = {
-					remove_trait = chaos_organ_outside_4
-					add_trait = chaos_organ_outside_5
-				}
-				chaos_organ_outside_5 = {
-					remove_trait = chaos_organ_outside_5
-					add_trait = chaos_organ_outside_6
-				}
-				chaos_organ_outside_6 = {
-					remove_trait = chaos_organ_outside_6
-					add_trait = chaos_organ_outside_7
-				}
-				chaos_organ_outside_7 = {
-					remove_trait = chaos_organ_outside_7
-					add_trait = chaos_organ_outside_8
-				}
-				chaos_organ_outside_8 = {
-					remove_trait = chaos_organ_outside_8
-					add_trait = chaos_organ_outside_9
-				}
-				chaos_organ_outside_9 = {
-					remove_trait = chaos_organ_outside_9
-					add_trait = chaos_organ_outside_10
-				}
-				fallback = {
-					random_list = {
-						90 = {
-							add_trait = chaos_organ_inside_1
-						}
-						10 = {
-							add_trait = chaos_organ_outside_1
-						}
-					}
-				}
-			}
+			mutation_chaos_organ_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#chaos_spawn
@@ -772,144 +675,21 @@ mutations_table = {
 			limit = {
 				NOT = { trait = extra_mouth_10 }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				extra_mouth_1 = {
-					remove_trait = extra_mouth_1
-					add_trait = extra_mouth_2
-				}
-				extra_mouth_2 = {
-					remove_trait = extra_mouth_2
-					add_trait = extra_mouth_3
-				}
-				extra_mouth_3 = {
-					remove_trait = extra_mouth_3
-					add_trait = extra_mouth_4
-				}
-				extra_mouth_4 = {
-					remove_trait = extra_mouth_4
-					add_trait = extra_mouth_5
-				}
-				extra_mouth_5 = {
-					remove_trait = extra_mouth_5
-					add_trait = extra_mouth_6
-				}
-				extra_mouth_6 = {
-					remove_trait = extra_mouth_6
-					add_trait = extra_mouth_7
-				}
-				extra_mouth_7 = {
-					remove_trait = extra_mouth_7
-					add_trait = extra_mouth_8
-				}
-				extra_mouth_8 = {
-					remove_trait = extra_mouth_8
-					add_trait = extra_mouth_9
-				}
-				extra_mouth_9 = {
-					remove_trait = extra_mouth_9
-					add_trait = extra_mouth_10
-				}
-				fallback = {
-					add_trait = extra_mouth_1
-				}
-			}
+			mutation_extra_mouth_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#extra_ear
 			limit = {
 				NOT = { trait = extra_ear_10 }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				extra_ear_1 = {
-					remove_trait = extra_ear_1
-					add_trait = extra_ear_2
-				}
-				extra_ear_2 = {
-					remove_trait = extra_ear_2
-					add_trait = extra_ear_3
-				}
-				extra_ear_3 = {
-					remove_trait = extra_ear_3
-					add_trait = extra_ear_4
-				}
-				extra_ear_4 = {
-					remove_trait = extra_ear_4
-					add_trait = extra_ear_5
-				}
-				extra_ear_5 = {
-					remove_trait = extra_ear_5
-					add_trait = extra_ear_6
-				}
-				extra_ear_6 = {
-					remove_trait = extra_ear_6
-					add_trait = extra_ear_7
-				}
-				extra_ear_7 = {
-					remove_trait = extra_ear_7
-					add_trait = extra_ear_8
-				}
-				extra_ear_8 = {
-					remove_trait = extra_ear_8
-					add_trait = extra_ear_9
-				}
-				extra_ear_9 = {
-					remove_trait = extra_ear_9
-					add_trait = extra_ear_10
-				}
-				fallback = {
-					add_trait = extra_ear_1
-				}
-			}
+			mutation_extra_ear_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#extra_nose
 			limit = {
 				NOT = { trait = extra_nose_10 }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				extra_nose_1 = {
-					remove_trait = extra_nose_1
-					add_trait = extra_nose_2
-				}
-				extra_nose_2 = {
-					remove_trait = extra_nose_2
-					add_trait = extra_nose_3
-				}
-				extra_nose_3 = {
-					remove_trait = extra_nose_3
-					add_trait = extra_nose_4
-				}
-				extra_nose_4 = {
-					remove_trait = extra_nose_4
-					add_trait = extra_nose_5
-				}
-				extra_nose_5 = {
-					remove_trait = extra_nose_5
-					add_trait = extra_nose_6
-				}
-				extra_nose_6 = {
-					remove_trait = extra_nose_6
-					add_trait = extra_nose_7
-				}
-				extra_nose_7 = {
-					remove_trait = extra_nose_7
-					add_trait = extra_nose_8
-				}
-				extra_nose_8 = {
-					remove_trait = extra_nose_8
-					add_trait = extra_nose_9
-				}
-				extra_nose_9 = {
-					remove_trait = extra_nose_9
-					add_trait = extra_nose_10
-				}
-				fallback = {
-					add_trait = extra_nose_1
-				}
-			}
+			mutation_extra_nose_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#eyestalks
@@ -939,48 +719,7 @@ mutations_table = {
 			limit = {
 				NOT = { trait = fast_10 }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				fast_1 = {
-					remove_trait = fast_1
-					add_trait = fast_2
-				}
-				fast_2 = {
-					remove_trait = fast_2
-					add_trait = fast_3
-				}
-				fast_3 = {
-					remove_trait = fast_3
-					add_trait = fast_4
-				}
-				fast_4 = {
-					remove_trait = fast_4
-					add_trait = fast_5
-				}
-				fast_5 = {
-					remove_trait = fast_5
-					add_trait = fast_6
-				}
-				fast_6 = {
-					remove_trait = fast_6
-					add_trait = fast_7
-				}
-				fast_7 = {
-					remove_trait = fast_7
-					add_trait = fast_8
-				}
-				fast_8 = {
-					remove_trait = fast_8
-					add_trait = fast_9
-				}
-				fast_9 = {
-					remove_trait = fast_9
-					add_trait = fast_10
-				}
-				fallback = {
-					add_trait = fast_1
-				}
-			}
+			mutation_fast_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#fear_of_blood
@@ -1050,68 +789,14 @@ mutations_table = {
 			limit = {
 				NOT = { trait = grossly_fat_10 }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				grossly_fat_1 = {
-					remove_trait = grossly_fat_1
-					add_trait = grossly_fat_2
-				}
-				grossly_fat_2 = {
-					remove_trait = grossly_fat_2
-					add_trait = grossly_fat_3
-				}
-				grossly_fat_3 = {
-					remove_trait = grossly_fat_3
-					add_trait = grossly_fat_4
-				}
-				grossly_fat_4 = {
-					remove_trait = grossly_fat_4
-					add_trait = grossly_fat_5
-				}
-				grossly_fat_5 = {
-					remove_trait = grossly_fat_5
-					add_trait = grossly_fat_6
-				}
-				grossly_fat_6 = {
-					remove_trait = grossly_fat_6
-					add_trait = grossly_fat_7
-				}
-				grossly_fat_7 = {
-					remove_trait = grossly_fat_7
-					add_trait = grossly_fat_8
-				}
-				grossly_fat_8 = {
-					remove_trait = grossly_fat_8
-					add_trait = grossly_fat_9
-				}
-				grossly_fat_9 = {
-					remove_trait = grossly_fat_9
-					add_trait = grossly_fat_10
-				}
-				fallback = {
-					add_trait = grossly_fat_1
-				}
-			}
+			mutation_grossly_fat_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#growth
 			limit = {
 				NOT = { trait = growth_3 }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				growth_1 = {
-					remove_trait = growth_1
-					add_trait = growth_2
-				}
-				growth_2 = {
-					remove_trait = growth_2
-					add_trait = growth_3
-				}
-				fallback = {
-					add_trait = growth_1
-				}
-			}
+			mutation_growth_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#head_crest
@@ -1158,20 +843,7 @@ mutations_table = {
 					trait = headless
 				}
 			}
-			trigger_switch = {
-				on_trigger = trait
-				horns_1 = {
-					remove_trait = horns_1
-					add_trait = horns_2
-				}
-				horns_2 = {
-					remove_trait = horns_2
-					add_trait = horns_3
-				}
-				fallback = {
-					add_trait = horns_1
-				}
-			}
+			mutation_horns_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#host_of_maggots
@@ -1220,20 +892,7 @@ mutations_table = {
 			limit = {
 				NOT = { trait = intelligent_cyst_3 }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				intelligent_cyst_1 = {
-					remove_trait = intelligent_cyst_1
-					add_trait = intelligent_cyst_2
-				}
-				intelligent_cyst_2 = {
-					remove_trait = intelligent_cyst_2
-					add_trait = intelligent_cyst_3
-				}
-				fallback = {
-					add_trait = intelligent_cyst_1
-				}
-			}
+			mutation_intelligent_cyst_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#invisibility
@@ -1267,32 +926,7 @@ mutations_table = {
 					trait = warty_skin
 				}
 			}
-			trigger_switch = {
-				on_trigger = trait
-				iron-hard_skin_1 = {
-					remove_trait = iron-hard_skin_1
-					add_trait = iron-hard_skin_2
-				}
-				iron-hard_skin_2 = {
-					remove_trait = iron-hard_skin_2
-					add_trait = iron-hard_skin_3
-				}
-				iron-hard_skin_3 = {
-					remove_trait = iron-hard_skin_3
-					add_trait = iron-hard_skin_4
-				}
-				iron-hard_skin_4 = {
-					remove_trait = iron-hard_skin_4
-					add_trait = iron-hard_skin_5
-				}
-				iron-hard_skin_5 = {
-					remove_trait = iron-hard_skin_5
-					add_trait = iron-hard_skin_6
-				}
-				fallback = {
-					add_trait = iron-hard_skin_1
-				}
-			}
+			mutation_iron_hard_skin_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 	#	5 = {	#irrational_fear }	###CUT###
@@ -1323,48 +957,7 @@ mutations_table = {
 					trait = warty_skin
 				}
 			}
-			trigger_switch = {
-				on_trigger = trait
-				leathery_skin_1 = {
-					remove_trait = leathery_skin_1
-					add_trait = leathery_skin_2
-				}
-				leathery_skin_2 = {
-					remove_trait = leathery_skin_2
-					add_trait = leathery_skin_3
-				}
-				leathery_skin_3 = {
-					remove_trait = leathery_skin_3
-					add_trait = leathery_skin_4
-				}
-				leathery_skin_4 = {
-					remove_trait = leathery_skin_4
-					add_trait = leathery_skin_5
-				}
-				leathery_skin_5 = {
-					remove_trait = leathery_skin_5
-					add_trait = leathery_skin_6
-				}
-				leathery_skin_6 = {
-					remove_trait = leathery_skin_6
-					add_trait = leathery_skin_7
-				}
-				leathery_skin_7 = {
-					remove_trait = leathery_skin_7
-					add_trait = leathery_skin_8
-				}
-				leathery_skin_8 = {
-					remove_trait = leathery_skin_8
-					add_trait = leathery_skin_9
-				}
-				leathery_skin_9 = {
-					remove_trait = leathery_skin_9
-					add_trait = leathery_skin_10
-				}
-				fallback = {
-					add_trait = leathery_skin_1
-				}
-			}
+			mutation_leathery_skin_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#levitation
@@ -1417,23 +1010,7 @@ mutations_table = {
 			limit = {
 				NOT = { trait = lunatic_3 }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				lunatic_1 = {
-					remove_trait = lunatic_1
-					add_trait = lunatic_2
-					set_variable = { which = "lunatic_counter" value = 10 }
-				}
-				lunatic_2 = {
-					remove_trait = lunatic_2
-					add_trait = lunatic_3
-					set_variable = { which = "lunatic_counter" value = 20 }
-				}
-				fallback = {
-					add_trait = lunatic_1
-					set_variable = { which = "lunatic_counter" value = 5 }
-				}
-			}
+			mutation_madness_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#magic_immune ###Makes Tzeentch CHAOS SPAWN###
@@ -1475,29 +1052,7 @@ mutations_table = {
 					magic_resistant
 				}
 			}
-			trigger_switch = {
-				on_trigger = trait
-				magic_potential_1 = {
-					remove_trait = magic_potential_1
-					add_trait = magic_potential_2
-				}
-				magic_potential_2 = {
-					remove_trait = magic_potential_2
-					add_trait = magic_potential_3
-				}
-				magic_potential_3 = {
-					remove_trait = magic_potential_3
-					add_trait = magic_potential_4
-				}
-				magic_potential_4 = {
-					death = {
-						death_reason = death_malign_sorcerer
-					}
-				}
-				fallback = {
-					add_trait = magic_potential_1
-				}
-			}
+			mutation_malign_sorcerer_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#mane_of_hair
@@ -1839,100 +1394,7 @@ mutations_table = {
 					trait = prince_khorne
 				}
 			}
-			trigger_switch = {
-				on_trigger = true_religion
-				tzeentch = {
-					remove_trait = champion_tzeentch
-					remove_trait = chosen_tzeentch
-					culture = prince_tzeentch
-					religion = tzeentch
-					set_graphical_culture = prince_tzeentch
-					remove_race_trait = yes
-					add_trait = tzeentch_demon
-					add_trait = prince_tzeentch
-					add_trait = disinherited
-					banish = yes
-				}
-				nurgle = {
-					remove_trait = champion_nurgle
-					remove_trait = chosen_nurgle
-					culture = prince_nurgle
-					religion = nurgle
-					set_graphical_culture = prince_nurgle
-					remove_race_trait = yes
-					add_trait = nurgle_demon
-					add_trait = prince_nurgle
-					add_trait = disinherited
-					banish = yes
-				}
-				slaanesh = {
-					remove_trait = champion_slaanesh
-					remove_trait = chosen_slaanesh
-					culture = prince_slaanesh
-					religion = slaanesh
-					set_graphical_culture = prince_slaanesh
-					remove_race_trait = yes
-					add_trait = slaanesh_demon
-					add_trait = prince_slaanesh
-					add_trait = disinherited
-					banish = yes
-				}
-				khorne = {
-					remove_trait = champion_khorne
-					remove_trait = chosen_khorne
-					culture = prince_khorne
-					religion = khorne
-					set_graphical_culture = prince_khorne
-					remove_race_trait = yes
-					add_trait = khorne_demon
-					add_trait = prince_khorne
-					add_trait = disinherited
-					banish = yes
-				}
-				fallback = {
-					remove_race_trait = yes
-					random_list = {
-						25 = {
-							remove_trait = champion_tzeentch
-							remove_trait = chosen_tzeentch
-							culture = prince_tzeentch
-							religion = tzeentch
-							set_graphical_culture = prince_tzeentch
-							add_trait = tzeentch_demon
-							add_trait = prince_tzeentch
-						}
-						25 = {
-							remove_trait = champion_nurgle
-							remove_trait = chosen_nurgle
-							culture = prince_nurgle
-							religion = nurgle
-							set_graphical_culture = prince_nurgle
-							add_trait = nurgle_demon
-							add_trait = prince_nurgle
-						}
-						25 = {
-							remove_trait = champion_slaanesh
-							remove_trait = chosen_slaanesh
-							culture = prince_slaanesh
-							religion = slaanesh
-							set_graphical_culture = prince_slaanesh
-							add_trait = slaanesh_demon
-							add_trait = prince_slaanesh
-						}
-						25 = {
-							remove_trait = champion_khorne
-							remove_trait = chosen_khorne
-							culture = prince_khorne
-							religion = khorne
-							set_graphical_culture = prince_khorne
-							add_trait = khorne_demon
-							add_trait = prince_khorne
-						}
-					}
-					add_trait = disinherited
-					banish = yes
-				}
-			}
+			mutation_pseudo_daemonhood_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#puny
@@ -1956,28 +1418,7 @@ mutations_table = {
 					trait = skeleton
 				}
 			}
-			trigger_switch = {
-				on_trigger = trait
-				radiant_skin_1 = {
-					remove_trait = radiant_skin_1
-					add_trait = radiant_skin_2
-				}
-				radiant_skin_2 = {
-					remove_trait = radiant_skin_2
-					add_trait = radiant_skin_3
-				}
-				radiant_skin_3 = {
-					remove_trait = radiant_skin_3
-					add_trait = radiant_skin_4
-				}
-				radiant_skin_4 = {
-					remove_trait = radiant_skin_4
-					add_trait = radiant_skin_5
-				}
-				fallback = {
-					add_trait = radiant_skin_1
-				}
-			}
+			mutation_radiant_skin_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#rash
@@ -1999,188 +1440,21 @@ mutations_table = {
 			limit = {
 				NOT = { trait = resilient_10 }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				resilient_1 = {
-					remove_trait = resilient_1
-					add_trait = resilient_2
-				}
-				resilient_2 = {
-					remove_trait = resilient_2
-					add_trait = resilient_3
-				}
-				resilient_3 = {
-					remove_trait = resilient_3
-					add_trait = resilient_4
-				}
-				resilient_4 = {
-					remove_trait = resilient_4
-					add_trait = resilient_5
-				}
-				resilient_5 = {
-					remove_trait = resilient_5
-					add_trait = resilient_6
-				}
-				resilient_6 = {
-					remove_trait = resilient_6
-					add_trait = resilient_7
-				}
-				resilient_7 = {
-					remove_trait = resilient_7
-					add_trait = resilient_8
-				}
-				resilient_8 = {
-					remove_trait = resilient_8
-					add_trait = resilient_9
-				}
-				resilient_9 = {
-					remove_trait = resilient_9
-					add_trait = resilient_10
-				}
-				fallback = {
-					add_trait = resilient_1
-				}
-			}
+			mutation_resilient_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#rotting_flesh	###if health becomes 0 you become a chaos spawn###
 			limit = {
 				NOT = { trait = rotting_flesh_10 }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				rotting_flesh_1 = {
-					remove_trait = rotting_flesh_1
-					add_trait = rotting_flesh_2
-				}
-				rotting_flesh_2 = {
-					remove_trait = rotting_flesh_2
-					add_trait = rotting_flesh_3
-				}
-				rotting_flesh_3 = {
-					remove_trait = rotting_flesh_3
-					add_trait = rotting_flesh_4
-				}
-				rotting_flesh_4 = {
-					remove_trait = rotting_flesh_4
-					add_trait = rotting_flesh_5
-				}
-				rotting_flesh_5 = {
-					remove_trait = rotting_flesh_5
-					add_trait = rotting_flesh_6
-				}
-				rotting_flesh_6 = {
-					remove_trait = rotting_flesh_6
-					add_trait = rotting_flesh_7
-				}
-				rotting_flesh_7 = {
-					remove_trait = rotting_flesh_7
-					add_trait = rotting_flesh_8
-				}
-				rotting_flesh_8 = {
-					remove_trait = rotting_flesh_8
-					add_trait = rotting_flesh_9
-				}
-				rotting_flesh_9 = {
-					remove_trait = rotting_flesh_9
-					add_trait = rotting_flesh_10
-				}
-				fallback = {
-					add_trait = rotting_flesh_1
-				}
-			}
+			mutation_rotting_flesh_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#running_sores
 			limit = {
 				NOT = { trait = running_sores_10 }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				running_sores_1 = {
-					remove_trait = running_sores_1
-					add_trait = running_sores_2
-				}
-				running_sores_2 = {
-					remove_trait = running_sores_2
-					add_trait = running_sores_3
-				}
-				running_sores_3 = {
-					remove_trait = running_sores_3
-					add_trait = running_sores_4
-				}
-				running_sores_4 = {
-					remove_trait = running_sores_4
-					add_trait = running_sores_5
-				}
-				running_sores_5 = {
-					remove_trait = running_sores_5
-					add_trait = running_sores_6
-				}
-				running_sores_6 = {
-					remove_trait = running_sores_6
-					add_trait = running_sores_7
-				}
-				running_sores_7 = {
-					remove_trait = running_sores_7
-					add_trait = running_sores_8
-				}
-				running_sores_8 = {
-					remove_trait = running_sores_8
-					add_trait = running_sores_9
-				}
-				running_sores_9 = {
-					remove_trait = running_sores_9
-					add_trait = running_sores_10
-				}
-				fallback = {
-					add_trait = running_sores_1
-				}
-			}
-			else_if = {
-				limit = { trait = running_sores_1 }
-
-			}
-			else_if = {
-				limit = { trait = running_sores_2 }
-				remove_trait = running_sores_2
-				add_trait = running_sores_3
-			}
-			else_if = {
-				limit = { trait = running_sores_3 }
-				remove_trait = running_sores_3
-				add_trait = running_sores_4
-			}
-			else_if = {
-				limit = { trait = running_sores_4 }
-				remove_trait = running_sores_4
-				add_trait = running_sores_5
-			}
-			else_if = {
-				limit = { trait = running_sores_5 }
-				remove_trait = running_sores_5
-				add_trait = running_sores_6
-			}
-			else_if = {
-				limit = { trait = running_sores_6 }
-				remove_trait = running_sores_6
-				add_trait = running_sores_7
-			}
-			else_if = {
-				limit = { trait = running_sores_7 }
-				remove_trait = running_sores_7
-				add_trait = running_sores_8
-			}
-			else_if = {
-				limit = { trait = running_sores_8 }
-				remove_trait = running_sores_8
-				add_trait = running_sores_9
-			}
-			else_if = {
-				limit = { trait = running_sores_9 }
-				remove_trait = running_sores_9
-				add_trait = running_sores_10
-			}
+			mutation_running_sores_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#scales
@@ -2275,44 +1549,14 @@ mutations_table = {
 					trait = long_legs
 				}
 			}
-			trigger_switch = {
-				on_trigger = trait
-				short_legs_1 = {
-					remove_trait = short_legs_1
-					add_trait = short_legs_2
-				}
-				short_legs_2 = {
-					remove_trait = short_legs_2
-					add_trait = short_legs_3
-				}
-				short_legs_3 = {
-					remove_trait = short_legs_3
-					add_trait = short_legs_4
-				}
-				fallback = {
-					add_trait = short_legs_1
-				}
-			}
+			mutation_short_legs_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#shrink
 			limit = {
 				NOT = { trait = shrink_3 }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				shrink_1 = {
-					remove_trait = shrink_1
-					add_trait = shrink_2
-				}
-				shrink_2 = {
-					remove_trait = shrink_2
-					add_trait = shrink_3
-				}
-				fallback = {
-					add_trait = shrink_1
-				}
-			}
+			mutation_shrink_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#skeleton
@@ -2322,36 +1566,7 @@ mutations_table = {
 					trait = trails_of_slime
 				}
 			}
-			add_trait = skeleton
-			remove_trait = mechanoid
-			remove_trait = metal_body
-			remove_trait = metallic_skin
-			remove_trait = midnight_skin
-			remove_trait = leathery_skin_1
-			remove_trait = leathery_skin_2
-			remove_trait = leathery_skin_3
-			remove_trait = leathery_skin_4
-			remove_trait = leathery_skin_5
-			remove_trait = leathery_skin_6
-			remove_trait = leathery_skin_7
-			remove_trait = leathery_skin_8
-			remove_trait = leathery_skin_9
-			remove_trait = leathery_skin_10
-			remove_trait = iron-hard_skin_1
-			remove_trait = iron-hard_skin_2
-			remove_trait = iron-hard_skin_3
-			remove_trait = iron-hard_skin_4
-			remove_trait = iron-hard_skin_5
-			remove_trait = iron-hard_skin_6
-			remove_trait = scales
-			remove_trait = thick_fur
-			remove_trait = transparent_skin
-			remove_trait = warty_skin
-			remove_trait = radiant_skin_1
-			remove_trait = radiant_skin_2
-			remove_trait = radiant_skin_3
-			remove_trait = radiant_skin_4
-			remove_trait = radiant_skin_5
+			mutation_skeleton_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#skull_face
@@ -2411,36 +1626,7 @@ mutations_table = {
 			limit = {
 				NOT = { trait = strong }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				weak = {
-					remove_trait = weak
-					add_trait = fragile
-				}
-				fragile = {
-					remove_trait = fragile
-					add_trait = soft
-				}
-				soft = {
-					remove_trait = soft
-					add_trait = hardy
-				}
-				hardy = {
-					remove_trait = hardy
-					add_trait = robust
-				}
-				robust = {
-					remove_trait = robust
-					add_trait = tough
-				}
-				tough = {
-					remove_trait = tough
-					add_trait = strong
-				}
-				fallback = {
-					add_trait = hardy
-				}
-			}
+			mutation_strong_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#suckers
@@ -2551,31 +1737,7 @@ mutations_table = {
 					trait = skeleton
 				}
 			}
-			add_trait = trails_of_slime
-			remove_trait = mechanoid
-			remove_trait = metal_body
-			remove_trait = metallic_skin
-			remove_trait = midnight_skin
-			remove_trait = leathery_skin_1
-			remove_trait = leathery_skin_2
-			remove_trait = leathery_skin_3
-			remove_trait = leathery_skin_4
-			remove_trait = leathery_skin_5
-			remove_trait = leathery_skin_6
-			remove_trait = leathery_skin_7
-			remove_trait = leathery_skin_8
-			remove_trait = leathery_skin_9
-			remove_trait = leathery_skin_10
-			remove_trait = iron-hard_skin_1
-			remove_trait = iron-hard_skin_2
-			remove_trait = iron-hard_skin_3
-			remove_trait = iron-hard_skin_4
-			remove_trait = iron-hard_skin_5
-			remove_trait = iron-hard_skin_6
-			remove_trait = scales
-			remove_trait = thick_fur
-			remove_trait = transparent_skin
-			remove_trait = warty_skin
+			mutation_trails_of_slime_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		5 = {	#trance
@@ -2622,48 +1784,7 @@ mutations_table = {
 			limit = {
 				NOT = { trait = trunk_10 }
 			}
-			trigger_switch = {
-				on_trigger = trait
-				trunk_1 = {
-					remove_trait = trunk_1
-					add_trait = trunk_2
-				}
-				trunk_2 = {
-					remove_trait = trunk_2
-					add_trait = trunk_3
-				}
-				trunk_3 = {
-					remove_trait = trunk_3
-					add_trait = trunk_4
-				}
-				trunk_4 = {
-					remove_trait = trunk_4
-					add_trait = trunk_5
-				}
-				trunk_5 = {
-					remove_trait = trunk_5
-					add_trait = trunk_6
-				}
-				trunk_6 = {
-					remove_trait = trunk_6
-					add_trait = trunk_7
-				}
-				trunk_7 = {
-					remove_trait = trunk_7
-					add_trait = trunk_8
-				}
-				trunk_8 = {
-					remove_trait = trunk_8
-					add_trait = trunk_9
-				}
-				trunk_9 = {
-					remove_trait = trunk_9
-					add_trait = trunk_10
-				}
-				fallback = {
-					add_trait = trunk_1
-				}
-			}
+			mutation_trunk_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 	#	5 = {	turnskin }	###CUT###	###MAKES YOU IN TO A BEASTMAN###
@@ -2907,26 +2028,7 @@ mutations_table_tzeentch = {
 			limit = {
 				NOT = { trait = breathe_fire_3 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = breathe_fire_1
-						trait = breathe_fire_2
-						trait = breathe_fire_3
-					}
-				}
-				add_trait = breathe_fire_1
-			}
-			else_if = {
-				limit = { trait = breathe_fire_1 }
-				remove_trait = breathe_fire_1
-				add_trait = breathe_fire_2
-			}
-			else_if = {
-				limit = { trait = breathe_fire_2 }
-				remove_trait = breathe_fire_2
-				add_trait = breathe_fire_3
-			}
+			mutation_breathe_fire_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#burning_body
@@ -2993,204 +2095,21 @@ mutations_table_tzeentch = {
 			limit = {
 				NOT = { trait = extra_mouth_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = extra_mouth_1
-						trait = extra_mouth_2
-						trait = extra_mouth_3
-						trait = extra_mouth_4
-						trait = extra_mouth_5
-						trait = extra_mouth_6
-						trait = extra_mouth_7
-						trait = extra_mouth_8
-						trait = extra_mouth_9
-						trait = extra_mouth_10
-					}
-				}
-				add_trait = extra_mouth_1
-			}
-			else_if = {
-				limit = { trait = extra_mouth_1 }
-				remove_trait = extra_mouth_1
-				add_trait = extra_mouth_2
-			}
-			else_if = {
-				limit = { trait = extra_mouth_2 }
-				remove_trait = extra_mouth_2
-				add_trait = extra_mouth_3
-			}
-			else_if = {
-				limit = { trait = extra_mouth_3 }
-				remove_trait = extra_mouth_3
-				add_trait = extra_mouth_4
-			}
-			else_if = {
-				limit = { trait = extra_mouth_4 }
-				remove_trait = extra_mouth_4
-				add_trait = extra_mouth_5
-			}
-			else_if = {
-				limit = { trait = extra_mouth_5 }
-				remove_trait = extra_mouth_5
-				add_trait = extra_mouth_6
-			}
-			else_if = {
-				limit = { trait = extra_mouth_6 }
-				remove_trait = extra_mouth_6
-				add_trait = extra_mouth_7
-			}
-			else_if = {
-				limit = { trait = extra_mouth_7 }
-				remove_trait = extra_mouth_7
-				add_trait = extra_mouth_8
-			}
-			else_if = {
-				limit = { trait = extra_mouth_8 }
-				remove_trait = extra_mouth_8
-				add_trait = extra_mouth_9
-			}
-			else_if = {
-				limit = { trait = extra_mouth_9 }
-				remove_trait = extra_mouth_9
-				add_trait = extra_mouth_10
-			}
+			mutation_extra_mouth_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#extra_ear
 			limit = {
 				NOT = { trait = extra_ear_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = extra_ear_1
-						trait = extra_ear_2
-						trait = extra_ear_3
-						trait = extra_ear_4
-						trait = extra_ear_5
-						trait = extra_ear_6
-						trait = extra_ear_7
-						trait = extra_ear_8
-						trait = extra_ear_9
-						trait = extra_ear_10
-					}
-				}
-				add_trait = extra_ear_1
-			}
-			else_if = {
-				limit = { trait = extra_ear_1 }
-				remove_trait = extra_ear_1
-				add_trait = extra_ear_2
-			}
-			else_if = {
-				limit = { trait = extra_ear_2 }
-				remove_trait = extra_ear_2
-				add_trait = extra_ear_3
-			}
-			else_if = {
-				limit = { trait = extra_ear_3 }
-				remove_trait = extra_ear_3
-				add_trait = extra_ear_4
-			}
-			else_if = {
-				limit = { trait = extra_ear_4 }
-				remove_trait = extra_ear_4
-				add_trait = extra_ear_5
-			}
-			else_if = {
-				limit = { trait = extra_ear_5 }
-				remove_trait = extra_ear_5
-				add_trait = extra_ear_6
-			}
-			else_if = {
-				limit = { trait = extra_ear_6 }
-				remove_trait = extra_ear_6
-				add_trait = extra_ear_7
-			}
-			else_if = {
-				limit = { trait = extra_ear_7 }
-				remove_trait = extra_ear_7
-				add_trait = extra_ear_8
-			}
-			else_if = {
-				limit = { trait = extra_ear_8 }
-				remove_trait = extra_ear_8
-				add_trait = extra_ear_9
-			}
-			else_if = {
-				limit = { trait = extra_ear_9 }
-				remove_trait = extra_ear_9
-				add_trait = extra_ear_10
-			}
+			mutation_extra_ear_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#extra_nose
 			limit = {
 				NOT = { trait = extra_nose_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = extra_nose_1
-						trait = extra_nose_2
-						trait = extra_nose_3
-						trait = extra_nose_4
-						trait = extra_nose_5
-						trait = extra_nose_6
-						trait = extra_nose_7
-						trait = extra_nose_8
-						trait = extra_nose_9
-						trait = extra_nose_10
-					}
-				}
-				add_trait = extra_nose_1
-			}
-			else_if = {
-				limit = { trait = extra_nose_1 }
-				remove_trait = extra_nose_1
-				add_trait = extra_nose_2
-			}
-			else_if = {
-				limit = { trait = extra_nose_2 }
-				remove_trait = extra_nose_2
-				add_trait = extra_nose_3
-			}
-			else_if = {
-				limit = { trait = extra_nose_3 }
-				remove_trait = extra_nose_3
-				add_trait = extra_nose_4
-			}
-			else_if = {
-				limit = { trait = extra_nose_4 }
-				remove_trait = extra_nose_4
-				add_trait = extra_nose_5
-			}
-			else_if = {
-				limit = { trait = extra_nose_5 }
-				remove_trait = extra_nose_5
-				add_trait = extra_nose_6
-			}
-			else_if = {
-				limit = { trait = extra_nose_6 }
-				remove_trait = extra_nose_6
-				add_trait = extra_nose_7
-			}
-			else_if = {
-				limit = { trait = extra_nose_7 }
-				remove_trait = extra_nose_7
-				add_trait = extra_nose_8
-			}
-			else_if = {
-				limit = { trait = extra_nose_8 }
-				remove_trait = extra_nose_8
-				add_trait = extra_nose_9
-			}
-			else_if = {
-				limit = { trait = extra_nose_9 }
-				remove_trait = extra_nose_9
-				add_trait = extra_nose_10
-			}
+			mutation_extra_nose_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		2 = {	#eyestalks
@@ -3339,29 +2258,7 @@ mutations_table_tzeentch = {
 			limit = {
 				NOT = { trait = lunatic_3 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = lunatic_1
-						trait = lunatic_2
-						trait = lunatic_3
-					}
-				}
-				add_trait = lunatic_1
-				set_variable = { which = "lunatic_counter" value = 5 }
-			}
-			else_if = {
-				limit = { trait = lunatic_1 }
-				remove_trait = lunatic_1
-				add_trait = lunatic_2
-				set_variable = { which = "lunatic_counter" value = 10 }
-			}
-			else_if = {
-				limit = { trait = lunatic_2 }
-				remove_trait = lunatic_2
-				add_trait = lunatic_3
-				set_variable = { which = "lunatic_counter" value = 20 }
-			}
+			mutation_madness_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		2 = {	#malign_sorcerer
@@ -3373,37 +2270,7 @@ mutations_table_tzeentch = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = magic_potential_1
-						trait = magic_potential_2
-						trait = magic_potential_3
-						trait = magic_potential_4
-					}
-				}
-				add_trait = magic_potential_1
-			}
-			else_if = {
-				limit = { trait = magic_potential_1 }
-				remove_trait = magic_potential_1
-				add_trait = magic_potential_2
-			}
-			else_if = {
-				limit = { trait = magic_potential_2 }
-				remove_trait = magic_potential_2
-				add_trait = magic_potential_3
-			}
-			else_if = {
-				limit = { trait = magic_potential_3 }
-				remove_trait = magic_potential_3
-				add_trait = magic_potential_4
-			}
-			else_if = {
-				limit = { trait = magic_potential_4 }
-				remove_trait = magic_potential_4
-				death_reason = death_malign_sorcerer
-			}
+			mutation_malign_sorcerer_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#massive_intellect	#genius
@@ -3603,64 +2470,7 @@ mutations_table_tzeentch = {
 					trait = prince_khorne
 				}
 			}
-			if = {
-				limit = {
-					OR = {
-						NOT = { true_religion_group = chaos_gods_group }
-						true_religion = chaos
-					}
-				}
-				remove_trait = champion_khorne
-				remove_trait = champion_nurgle
-				remove_trait = champion_slaanesh
-				remove_trait = champion_tzeentch
-				remove_trait = chosen_khorne
-				remove_trait = chosen_nurgle
-				remove_trait = chosen_slaanesh
-				remove_trait = chosen_tzeentch
-				remove_trait = champion_undivided
-				remove_trait = chaos_chosen
-				set_graphical_culture = prince_undivided
-				remove_race_trait = yes
-				add_trait = undivided_demon
-				add_trait = prince_undivided
-			}
-			else_if = {
-				limit = { true_religion = tzeentch }
-				remove_trait = champion_tzeentch
-				remove_trait = chosen_tzeentch
-				set_graphical_culture = prince_tzeentch
-				remove_race_trait = yes
-				add_trait = tzeentch_demon
-				add_trait = prince_tzeentch
-			}
-			else_if = {
-				limit = { true_religion = nurgle }
-				remove_trait = champion_nurgle
-				remove_trait = chosen_nurgle
-				set_graphical_culture = prince_nurgle
-				remove_race_trait = yes
-				add_trait = nurgle_demon
-				add_trait = prince_nurgle
-			}
-			else_if = {
-				limit = { true_religion = slaanesh }
-				remove_trait = champion_slaanesh
-				remove_trait = chosen_slaanesh
-				set_graphical_culture = prince_slaanesh
-				remove_race_trait = yes
-				add_trait = slaanesh_demon
-				add_trait = prince_slaanesh
-			}
-			else_if = {
-				limit = { true_religion = khorne }
-				remove_trait = champion_khorne
-				remove_trait = chosen_khorne
-				set_graphical_culture = prince_khorne
-				remove_race_trait = yes
-				add_trait = khorne_demon
-				add_trait = prince_khorne
-			}
+			mutation_pseudo_daemonhood_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#puny
@@ -3722,58 +2532,14 @@ mutations_table_tzeentch = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = short_legs_1
-						trait = short_legs_2
-						trait = short_legs_3
-						trait = short_legs_4
-					}
-				}
-				add_trait = short_legs_1
-			}
-			else_if = {
-				limit = { trait = short_legs_1 }
-				remove_trait = short_legs_1
-				add_trait = short_legs_2
-			}
-			else_if = {
-				limit = { trait = short_legs_2 }
-				remove_trait = short_legs_2
-				add_trait = short_legs_3
-			}
-			else_if = {
-				limit = { trait = short_legs_3 }
-				remove_trait = short_legs_3
-				add_trait = short_legs_4
-			}
+			mutation_short_legs_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#shrink
 			limit = {
 				NOT = { trait = shrink_3 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = shrink_1
-						trait = shrink_2
-						trait = shrink_3
-					}
-				}
-				add_trait = shrink_1
-			}
-			else_if = {
-				limit = { trait = shrink_1 }
-				remove_trait = shrink_1
-				add_trait = shrink_2
-			}
-			else_if = {
-				limit = { trait = shrink_2 }
-				remove_trait = shrink_2
-				add_trait = shrink_3
-			}
+			mutation_shrink_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#snout
@@ -3834,68 +2600,7 @@ mutations_table_tzeentch = {
 			limit = {
 				NOT = { trait = trunk_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = trunk_1
-						trait = trunk_2
-						trait = trunk_3
-						trait = trunk_4
-						trait = trunk_5
-						trait = trunk_6
-						trait = trunk_7
-						trait = trunk_8
-						trait = trunk_9
-						trait = trunk_10
-					}
-				}
-				add_trait = trunk_1
-			}
-			else_if = {
-				limit = { trait = trunk_1 }
-				remove_trait = trunk_1
-				add_trait = trunk_2
-			}
-			else_if = {
-				limit = { trait = trunk_2 }
-				remove_trait = trunk_2
-				add_trait = trunk_3
-			}
-			else_if = {
-				limit = { trait = trunk_3 }
-				remove_trait = trunk_3
-				add_trait = trunk_4
-			}
-			else_if = {
-				limit = { trait = trunk_4 }
-				remove_trait = trunk_4
-				add_trait = trunk_5
-			}
-			else_if = {
-				limit = { trait = trunk_5 }
-				remove_trait = trunk_5
-				add_trait = trunk_6
-			}
-			else_if = {
-				limit = { trait = trunk_6 }
-				remove_trait = trunk_6
-				add_trait = trunk_7
-			}
-			else_if = {
-				limit = { trait = trunk_7 }
-				remove_trait = trunk_7
-				add_trait = trunk_8
-			}
-			else_if = {
-				limit = { trait = trunk_8 }
-				remove_trait = trunk_8
-				add_trait = trunk_9
-			}
-			else_if = {
-				limit = { trait = trunk_9 }
-				remove_trait = trunk_9
-				add_trait = trunk_10
-			}
+			mutation_trunk_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 	#	3 = {	turnskin }	###CUT###	###MAKES YOU IN TO A BEASTMAN###
@@ -4197,162 +2902,7 @@ mutations_table_nurgle = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = chaos_organ_inside_1
-						trait = chaos_organ_inside_2
-						trait = chaos_organ_inside_3
-						trait = chaos_organ_inside_4
-						trait = chaos_organ_inside_5
-						trait = chaos_organ_inside_6
-						trait = chaos_organ_inside_7
-						trait = chaos_organ_inside_8
-						trait = chaos_organ_inside_9
-						trait = chaos_organ_outside_1
-						trait = chaos_organ_outside_2
-						trait = chaos_organ_outside_3
-						trait = chaos_organ_outside_4
-						trait = chaos_organ_outside_5
-						trait = chaos_organ_outside_6
-						trait = chaos_organ_outside_7
-						trait = chaos_organ_outside_8
-						trait = chaos_organ_outside_9
-					}
-				}
-				random_list = {
-					90 = {
-						add_trait = chaos_organ_inside_1
-					}
-					10 = {
-						add_trait = chaos_organ_outside_1
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					OR = {
-						trait = chaos_organ_inside_1
-						trait = chaos_organ_inside_2
-						trait = chaos_organ_inside_3
-						trait = chaos_organ_inside_4
-						trait = chaos_organ_inside_5
-						trait = chaos_organ_inside_6
-						trait = chaos_organ_inside_7
-						trait = chaos_organ_inside_8
-						trait = chaos_organ_inside_9
-					}
-				}
-				if = {
-					if = {
-						limit = { trait = chaos_organ_inside_1 }
-						remove_trait = chaos_organ_inside_1
-						add_trait = chaos_organ_inside_2
-					}
-					else_if = {
-						limit = { trait = chaos_organ_inside_2 }
-						remove_trait = chaos_organ_inside_2
-						add_trait = chaos_organ_inside_3
-					}
-					else_if = {
-						limit = { trait = chaos_organ_inside_3 }
-						remove_trait = chaos_organ_inside_3
-						add_trait = chaos_organ_inside_4
-					}
-					else_if = {
-						limit = { trait = chaos_organ_inside_4 }
-						remove_trait = chaos_organ_inside_4
-						add_trait = chaos_organ_inside_5
-					}
-					else_if = {
-						limit = { trait = chaos_organ_inside_5 }
-						remove_trait = chaos_organ_inside_5
-						add_trait = chaos_organ_inside_6
-					}
-					else_if = {
-						limit = { trait = chaos_organ_inside_6 }
-						remove_trait = chaos_organ_inside_6
-						add_trait = chaos_organ_inside_7
-					}
-					else_if = {
-						limit = { trait = chaos_organ_inside_7 }
-						remove_trait = chaos_organ_inside_7
-						add_trait = chaos_organ_inside_8
-					}
-					else_if = {
-						limit = { trait = chaos_organ_inside_8 }
-						remove_trait = chaos_organ_inside_8
-						add_trait = chaos_organ_inside_9
-					}
-					else_if = {
-						limit = { trait = chaos_organ_inside_9 }
-						remove_trait = chaos_organ_inside_9
-						add_trait = chaos_organ_inside_10
-					}
-				}
-			}
-			if = {
-				limit = {
-					OR = {
-						trait = chaos_organ_outside_1
-						trait = chaos_organ_outside_2
-						trait = chaos_organ_outside_3
-						trait = chaos_organ_outside_4
-						trait = chaos_organ_outside_5
-						trait = chaos_organ_outside_6
-						trait = chaos_organ_outside_7
-						trait = chaos_organ_outside_8
-						trait = chaos_organ_outside_9
-					}
-				}
-				if = {
-					if = {
-						limit = { trait = chaos_organ_outside_1 }
-						remove_trait = chaos_organ_outside_1
-						add_trait = chaos_organ_outside_2
-					}
-					else_if = {
-						limit = { trait = chaos_organ_outside_2 }
-						remove_trait = chaos_organ_outside_2
-						add_trait = chaos_organ_outside_3
-					}
-					else_if = {
-						limit = { trait = chaos_organ_outside_3 }
-						remove_trait = chaos_organ_outside_3
-						add_trait = chaos_organ_outside_4
-					}
-					else_if = {
-						limit = { trait = chaos_organ_outside_4 }
-						remove_trait = chaos_organ_outside_4
-						add_trait = chaos_organ_outside_5
-					}
-					else_if = {
-						limit = { trait = chaos_organ_outside_5 }
-						remove_trait = chaos_organ_outside_5
-						add_trait = chaos_organ_outside_6
-					}
-					else_if = {
-						limit = { trait = chaos_organ_outside_6 }
-						remove_trait = chaos_organ_outside_6
-						add_trait = chaos_organ_outside_7
-					}
-					else_if = {
-						limit = { trait = chaos_organ_outside_7 }
-						remove_trait = chaos_organ_outside_7
-						add_trait = chaos_organ_outside_8
-					}
-					else_if = {
-						limit = { trait = chaos_organ_outside_8 }
-						remove_trait = chaos_organ_outside_8
-						add_trait = chaos_organ_outside_9
-					}
-					else_if = {
-						limit = { trait = chaos_organ_outside_9 }
-						remove_trait = chaos_organ_outside_9
-						add_trait = chaos_organ_outside_10
-					}
-				}
-			}
+			mutation_chaos_organ_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		2 = {	#cloud_of_flies
@@ -4406,204 +2956,21 @@ mutations_table_nurgle = {
 			limit = {
 				NOT = { trait = extra_mouth_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = extra_mouth_1
-						trait = extra_mouth_2
-						trait = extra_mouth_3
-						trait = extra_mouth_4
-						trait = extra_mouth_5
-						trait = extra_mouth_6
-						trait = extra_mouth_7
-						trait = extra_mouth_8
-						trait = extra_mouth_9
-						trait = extra_mouth_10
-					}
-				}
-				add_trait = extra_mouth_1
-			}
-			else_if = {
-				limit = { trait = extra_mouth_1 }
-				remove_trait = extra_mouth_1
-				add_trait = extra_mouth_2
-			}
-			else_if = {
-				limit = { trait = extra_mouth_2 }
-				remove_trait = extra_mouth_2
-				add_trait = extra_mouth_3
-			}
-			else_if = {
-				limit = { trait = extra_mouth_3 }
-				remove_trait = extra_mouth_3
-				add_trait = extra_mouth_4
-			}
-			else_if = {
-				limit = { trait = extra_mouth_4 }
-				remove_trait = extra_mouth_4
-				add_trait = extra_mouth_5
-			}
-			else_if = {
-				limit = { trait = extra_mouth_5 }
-				remove_trait = extra_mouth_5
-				add_trait = extra_mouth_6
-			}
-			else_if = {
-				limit = { trait = extra_mouth_6 }
-				remove_trait = extra_mouth_6
-				add_trait = extra_mouth_7
-			}
-			else_if = {
-				limit = { trait = extra_mouth_7 }
-				remove_trait = extra_mouth_7
-				add_trait = extra_mouth_8
-			}
-			else_if = {
-				limit = { trait = extra_mouth_8 }
-				remove_trait = extra_mouth_8
-				add_trait = extra_mouth_9
-			}
-			else_if = {
-				limit = { trait = extra_mouth_9 }
-				remove_trait = extra_mouth_9
-				add_trait = extra_mouth_10
-			}
+			mutation_extra_mouth_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#extra_ear
 			limit = {
 				NOT = { trait = extra_ear_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = extra_ear_1
-						trait = extra_ear_2
-						trait = extra_ear_3
-						trait = extra_ear_4
-						trait = extra_ear_5
-						trait = extra_ear_6
-						trait = extra_ear_7
-						trait = extra_ear_8
-						trait = extra_ear_9
-						trait = extra_ear_10
-					}
-				}
-				add_trait = extra_ear_1
-			}
-			else_if = {
-				limit = { trait = extra_ear_1 }
-				remove_trait = extra_ear_1
-				add_trait = extra_ear_2
-			}
-			else_if = {
-				limit = { trait = extra_ear_2 }
-				remove_trait = extra_ear_2
-				add_trait = extra_ear_3
-			}
-			else_if = {
-				limit = { trait = extra_ear_3 }
-				remove_trait = extra_ear_3
-				add_trait = extra_ear_4
-			}
-			else_if = {
-				limit = { trait = extra_ear_4 }
-				remove_trait = extra_ear_4
-				add_trait = extra_ear_5
-			}
-			else_if = {
-				limit = { trait = extra_ear_5 }
-				remove_trait = extra_ear_5
-				add_trait = extra_ear_6
-			}
-			else_if = {
-				limit = { trait = extra_ear_6 }
-				remove_trait = extra_ear_6
-				add_trait = extra_ear_7
-			}
-			else_if = {
-				limit = { trait = extra_ear_7 }
-				remove_trait = extra_ear_7
-				add_trait = extra_ear_8
-			}
-			else_if = {
-				limit = { trait = extra_ear_8 }
-				remove_trait = extra_ear_8
-				add_trait = extra_ear_9
-			}
-			else_if = {
-				limit = { trait = extra_ear_9 }
-				remove_trait = extra_ear_9
-				add_trait = extra_ear_10
-			}
+			mutation_extra_ear_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#extra_nose
 			limit = {
 				NOT = { trait = extra_nose_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = extra_nose_1
-						trait = extra_nose_2
-						trait = extra_nose_3
-						trait = extra_nose_4
-						trait = extra_nose_5
-						trait = extra_nose_6
-						trait = extra_nose_7
-						trait = extra_nose_8
-						trait = extra_nose_9
-						trait = extra_nose_10
-					}
-				}
-				add_trait = extra_nose_1
-			}
-			else_if = {
-				limit = { trait = extra_nose_1 }
-				remove_trait = extra_nose_1
-				add_trait = extra_nose_2
-			}
-			else_if = {
-				limit = { trait = extra_nose_2 }
-				remove_trait = extra_nose_2
-				add_trait = extra_nose_3
-			}
-			else_if = {
-				limit = { trait = extra_nose_3 }
-				remove_trait = extra_nose_3
-				add_trait = extra_nose_4
-			}
-			else_if = {
-				limit = { trait = extra_nose_4 }
-				remove_trait = extra_nose_4
-				add_trait = extra_nose_5
-			}
-			else_if = {
-				limit = { trait = extra_nose_5 }
-				remove_trait = extra_nose_5
-				add_trait = extra_nose_6
-			}
-			else_if = {
-				limit = { trait = extra_nose_6 }
-				remove_trait = extra_nose_6
-				add_trait = extra_nose_7
-			}
-			else_if = {
-				limit = { trait = extra_nose_7 }
-				remove_trait = extra_nose_7
-				add_trait = extra_nose_8
-			}
-			else_if = {
-				limit = { trait = extra_nose_8 }
-				remove_trait = extra_nose_8
-				add_trait = extra_nose_9
-			}
-			else_if = {
-				limit = { trait = extra_nose_9 }
-				remove_trait = extra_nose_9
-				add_trait = extra_nose_10
-			}
+			mutation_extra_nose_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		2 = {	#fits
@@ -4632,94 +2999,14 @@ mutations_table_nurgle = {
 			limit = {
 				NOT = { trait = grossly_fat_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = grossly_fat_1
-						trait = grossly_fat_2
-						trait = grossly_fat_3
-						trait = grossly_fat_4
-						trait = grossly_fat_5
-						trait = grossly_fat_6
-						trait = grossly_fat_7
-						trait = grossly_fat_8
-						trait = grossly_fat_9
-						trait = grossly_fat_10
-					}
-				}
-				add_trait = grossly_fat_1
-			}
-			else_if = {
-				limit = { trait = grossly_fat_1 }
-				remove_trait = grossly_fat_1
-				add_trait = grossly_fat_2
-			}
-			else_if = {
-				limit = { trait = grossly_fat_2 }
-				remove_trait = grossly_fat_2
-				add_trait = grossly_fat_3
-			}
-			else_if = {
-				limit = { trait = grossly_fat_3 }
-				remove_trait = grossly_fat_3
-				add_trait = grossly_fat_4
-			}
-			else_if = {
-				limit = { trait = grossly_fat_4 }
-				remove_trait = grossly_fat_4
-				add_trait = grossly_fat_5
-			}
-			else_if = {
-				limit = { trait = grossly_fat_5 }
-				remove_trait = grossly_fat_5
-				add_trait = grossly_fat_6
-			}
-			else_if = {
-				limit = { trait = grossly_fat_6 }
-				remove_trait = grossly_fat_6
-				add_trait = grossly_fat_7
-			}
-			else_if = {
-				limit = { trait = grossly_fat_7 }
-				remove_trait = grossly_fat_7
-				add_trait = grossly_fat_8
-			}
-			else_if = {
-				limit = { trait = grossly_fat_8 }
-				remove_trait = grossly_fat_8
-				add_trait = grossly_fat_9
-			}
-			else_if = {
-				limit = { trait = grossly_fat_9 }
-				remove_trait = grossly_fat_9
-				add_trait = grossly_fat_10
-			}
+			mutation_grossly_fat_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#growth
 			limit = {
 				NOT = { trait = growth_3 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = growth_1
-						trait = growth_2
-						trait = growth_3
-					}
-				}
-				add_trait = growth_1
-			}
-			else_if = {
-				limit = { trait = growth_1 }
-				remove_trait = growth_1
-				add_trait = growth_2
-			}
-			else_if = {
-				limit = { trait = growth_2 }
-				remove_trait = growth_2
-				add_trait = growth_3
-			}
+			mutation_growth_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		2 = {	#hideous_appearance
@@ -4754,26 +3041,7 @@ mutations_table_nurgle = {
 			limit = {
 				NOT = { trait = intelligent_cyst_3 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = intelligent_cyst_1
-						trait = intelligent_cyst_2
-						trait = intelligent_cyst_3
-					}
-				}
-				add_trait = intelligent_cyst_1
-			}
-			else_if = {
-				limit = { trait = intelligent_cyst_1 }
-				remove_trait = intelligent_cyst_1
-				add_trait = intelligent_cyst_2
-			}
-			else_if = {
-				limit = { trait = intelligent_cyst_2 }
-				remove_trait = intelligent_cyst_2
-				add_trait = intelligent_cyst_3
-			}
+			mutation_intelligent_cyst_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#leathery_skin
@@ -4797,68 +3065,7 @@ mutations_table_nurgle = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = leathery_skin_1
-						trait = leathery_skin_2
-						trait = leathery_skin_3
-						trait = leathery_skin_4
-						trait = leathery_skin_5
-						trait = leathery_skin_6
-						trait = leathery_skin_7
-						trait = leathery_skin_8
-						trait = leathery_skin_9
-						trait = leathery_skin_10
-					}
-				}
-				add_trait = leathery_skin_1
-			}
-			else_if = {
-				limit = { trait = leathery_skin_1 }
-				remove_trait = leathery_skin_1
-				add_trait = leathery_skin_2
-			}
-			else_if = {
-				limit = { trait = leathery_skin_2 }
-				remove_trait = leathery_skin_2
-				add_trait = leathery_skin_3
-			}
-			else_if = {
-				limit = { trait = leathery_skin_3 }
-				remove_trait = leathery_skin_3
-				add_trait = leathery_skin_4
-			}
-			else_if = {
-				limit = { trait = leathery_skin_4 }
-				remove_trait = leathery_skin_4
-				add_trait = leathery_skin_5
-			}
-			else_if = {
-				limit = { trait = leathery_skin_5 }
-				remove_trait = leathery_skin_5
-				add_trait = leathery_skin_6
-			}
-			else_if = {
-				limit = { trait = leathery_skin_6 }
-				remove_trait = leathery_skin_6
-				add_trait = leathery_skin_7
-			}
-			else_if = {
-				limit = { trait = leathery_skin_7 }
-				remove_trait = leathery_skin_7
-				add_trait = leathery_skin_8
-			}
-			else_if = {
-				limit = { trait = leathery_skin_8 }
-				remove_trait = leathery_skin_8
-				add_trait = leathery_skin_9
-			}
-			else_if = {
-				limit = { trait = leathery_skin_9 }
-				remove_trait = leathery_skin_9
-				add_trait = leathery_skin_10
-			}
+			mutation_leathery_skin_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 	#	2 = {	#limb_loss }	###CUT###
@@ -4866,29 +3073,7 @@ mutations_table_nurgle = {
 			limit = {
 				NOT = { trait = lunatic_3 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = lunatic_1
-						trait = lunatic_2
-						trait = lunatic_3
-					}
-				}
-				add_trait = lunatic_1
-				set_variable = { which = "lunatic_counter" value = 5 }
-			}
-			else_if = {
-				limit = { trait = lunatic_1 }
-				remove_trait = lunatic_1
-				add_trait = lunatic_2
-				set_variable = { which = "lunatic_counter" value = 10 }
-			}
-			else_if = {
-				limit = { trait = lunatic_2 }
-				remove_trait = lunatic_2
-				add_trait = lunatic_3
-				set_variable = { which = "lunatic_counter" value = 20 }
-			}
+			mutation_madness_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#moronic
@@ -4951,64 +3136,7 @@ mutations_table_nurgle = {
 					trait = prince_khorne
 				}
 			}
-			if = {
-				limit = {
-					OR = {
-						NOT = { true_religion_group = chaos_gods_group }
-						true_religion = chaos
-					}
-				}
-				remove_trait = champion_khorne
-				remove_trait = champion_nurgle
-				remove_trait = champion_slaanesh
-				remove_trait = champion_tzeentch
-				remove_trait = chosen_khorne
-				remove_trait = chosen_nurgle
-				remove_trait = chosen_slaanesh
-				remove_trait = chosen_tzeentch
-				remove_trait = champion_undivided
-				remove_trait = chaos_chosen
-				set_graphical_culture = prince_undivided
-				remove_race_trait = yes
-				add_trait = undivided_demon
-				add_trait = prince_undivided
-			}
-			else_if = {
-				limit = { true_religion = tzeentch }
-				remove_trait = champion_tzeentch
-				remove_trait = chosen_tzeentch
-				set_graphical_culture = prince_tzeentch
-				remove_race_trait = yes
-				add_trait = tzeentch_demon
-				add_trait = prince_tzeentch
-			}
-			else_if = {
-				limit = { true_religion = nurgle }
-				remove_trait = champion_nurgle
-				remove_trait = chosen_nurgle
-				set_graphical_culture = prince_nurgle
-				remove_race_trait = yes
-				add_trait = nurgle_demon
-				add_trait = prince_nurgle
-			}
-			else_if = {
-				limit = { true_religion = slaanesh }
-				remove_trait = champion_slaanesh
-				remove_trait = chosen_slaanesh
-				set_graphical_culture = prince_slaanesh
-				remove_race_trait = yes
-				add_trait = slaanesh_demon
-				add_trait = prince_slaanesh
-			}
-			else_if = {
-				limit = { true_religion = khorne }
-				remove_trait = champion_khorne
-				remove_trait = chosen_khorne
-				set_graphical_culture = prince_khorne
-				remove_race_trait = yes
-				add_trait = khorne_demon
-				add_trait = prince_khorne
-			}
+			mutation_pseudo_daemonhood_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		2 = {	#rash
@@ -5022,136 +3150,14 @@ mutations_table_nurgle = {
 			limit = {
 				NOT = { trait = rotting_flesh_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = rotting_flesh_1
-						trait = rotting_flesh_2
-						trait = rotting_flesh_3
-						trait = rotting_flesh_4
-						trait = rotting_flesh_5
-						trait = rotting_flesh_6
-						trait = rotting_flesh_7
-						trait = rotting_flesh_8
-						trait = rotting_flesh_9
-						trait = rotting_flesh_10
-					}
-				}
-				add_trait = rotting_flesh_1
-			}
-			else_if = {
-				limit = { trait = rotting_flesh_1 }
-				remove_trait = rotting_flesh_1
-				add_trait = rotting_flesh_2
-			}
-			else_if = {
-				limit = { trait = rotting_flesh_2 }
-				remove_trait = rotting_flesh_2
-				add_trait = rotting_flesh_3
-			}
-			else_if = {
-				limit = { trait = rotting_flesh_3 }
-				remove_trait = rotting_flesh_3
-				add_trait = rotting_flesh_4
-			}
-			else_if = {
-				limit = { trait = rotting_flesh_4 }
-				remove_trait = rotting_flesh_4
-				add_trait = rotting_flesh_5
-			}
-			else_if = {
-				limit = { trait = rotting_flesh_5 }
-				remove_trait = rotting_flesh_5
-				add_trait = rotting_flesh_6
-			}
-			else_if = {
-				limit = { trait = rotting_flesh_6 }
-				remove_trait = rotting_flesh_6
-				add_trait = rotting_flesh_7
-			}
-			else_if = {
-				limit = { trait = rotting_flesh_7 }
-				remove_trait = rotting_flesh_7
-				add_trait = rotting_flesh_8
-			}
-			else_if = {
-				limit = { trait = rotting_flesh_8 }
-				remove_trait = rotting_flesh_8
-				add_trait = rotting_flesh_9
-			}
-			else_if = {
-				limit = { trait = rotting_flesh_9 }
-				remove_trait = rotting_flesh_9
-				add_trait = rotting_flesh_10
-			}
+			mutation_rotting_flesh_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		3 = {	#running_sores
 			limit = {
 				NOT = { trait = running_sores_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = running_sores_1
-						trait = running_sores_2
-						trait = running_sores_3
-						trait = running_sores_4
-						trait = running_sores_5
-						trait = running_sores_6
-						trait = running_sores_7
-						trait = running_sores_8
-						trait = running_sores_9
-						trait = running_sores_10
-					}
-				}
-				add_trait = running_sores_1
-			}
-			else_if = {
-				limit = { trait = running_sores_1 }
-				remove_trait = running_sores_1
-				add_trait = running_sores_2
-			}
-			else_if = {
-				limit = { trait = running_sores_2 }
-				remove_trait = running_sores_2
-				add_trait = running_sores_3
-			}
-			else_if = {
-				limit = { trait = running_sores_3 }
-				remove_trait = running_sores_3
-				add_trait = running_sores_4
-			}
-			else_if = {
-				limit = { trait = running_sores_4 }
-				remove_trait = running_sores_4
-				add_trait = running_sores_5
-			}
-			else_if = {
-				limit = { trait = running_sores_5 }
-				remove_trait = running_sores_5
-				add_trait = running_sores_6
-			}
-			else_if = {
-				limit = { trait = running_sores_6 }
-				remove_trait = running_sores_6
-				add_trait = running_sores_7
-			}
-			else_if = {
-				limit = { trait = running_sores_7 }
-				remove_trait = running_sores_7
-				add_trait = running_sores_8
-			}
-			else_if = {
-				limit = { trait = running_sores_8 }
-				remove_trait = running_sores_8
-				add_trait = running_sores_9
-			}
-			else_if = {
-				limit = { trait = running_sores_9 }
-				remove_trait = running_sores_9
-				add_trait = running_sores_10
-			}
+			mutation_running_sores_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		4 = {	#sensory_loss
@@ -5236,31 +3242,7 @@ mutations_table_nurgle = {
 					trait = skeleton
 				}
 			}
-			add_trait = trails_of_slime
-			remove_trait = mechanoid
-			remove_trait = metal_body
-			remove_trait = metallic_skin
-			remove_trait = midnight_skin
-			remove_trait = leathery_skin_1
-			remove_trait = leathery_skin_2
-			remove_trait = leathery_skin_3
-			remove_trait = leathery_skin_4
-			remove_trait = leathery_skin_5
-			remove_trait = leathery_skin_6
-			remove_trait = leathery_skin_7
-			remove_trait = leathery_skin_8
-			remove_trait = leathery_skin_9
-			remove_trait = leathery_skin_10
-			remove_trait = iron-hard_skin_1
-			remove_trait = iron-hard_skin_2
-			remove_trait = iron-hard_skin_3
-			remove_trait = iron-hard_skin_4
-			remove_trait = iron-hard_skin_5
-			remove_trait = iron-hard_skin_6
-			remove_trait = scales
-			remove_trait = thick_fur
-			remove_trait = transparent_skin
-			remove_trait = warty_skin
+			mutation_trails_of_slime_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#transparent_skin
@@ -5602,272 +3584,28 @@ mutations_table_slaanesh = {
 			limit = {
 				NOT = { trait = extra_mouth_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = extra_mouth_1
-						trait = extra_mouth_2
-						trait = extra_mouth_3
-						trait = extra_mouth_4
-						trait = extra_mouth_5
-						trait = extra_mouth_6
-						trait = extra_mouth_7
-						trait = extra_mouth_8
-						trait = extra_mouth_9
-						trait = extra_mouth_10
-					}
-				}
-				add_trait = extra_mouth_1
-			}
-			else_if = {
-				limit = { trait = extra_mouth_1 }
-				remove_trait = extra_mouth_1
-				add_trait = extra_mouth_2
-			}
-			else_if = {
-				limit = { trait = extra_mouth_2 }
-				remove_trait = extra_mouth_2
-				add_trait = extra_mouth_3
-			}
-			else_if = {
-				limit = { trait = extra_mouth_3 }
-				remove_trait = extra_mouth_3
-				add_trait = extra_mouth_4
-			}
-			else_if = {
-				limit = { trait = extra_mouth_4 }
-				remove_trait = extra_mouth_4
-				add_trait = extra_mouth_5
-			}
-			else_if = {
-				limit = { trait = extra_mouth_5 }
-				remove_trait = extra_mouth_5
-				add_trait = extra_mouth_6
-			}
-			else_if = {
-				limit = { trait = extra_mouth_6 }
-				remove_trait = extra_mouth_6
-				add_trait = extra_mouth_7
-			}
-			else_if = {
-				limit = { trait = extra_mouth_7 }
-				remove_trait = extra_mouth_7
-				add_trait = extra_mouth_8
-			}
-			else_if = {
-				limit = { trait = extra_mouth_8 }
-				remove_trait = extra_mouth_8
-				add_trait = extra_mouth_9
-			}
-			else_if = {
-				limit = { trait = extra_mouth_9 }
-				remove_trait = extra_mouth_9
-				add_trait = extra_mouth_10
-			}
+			mutation_extra_mouth_effect =  = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#extra_ear
 			limit = {
 				NOT = { trait = extra_ear_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = extra_ear_1
-						trait = extra_ear_2
-						trait = extra_ear_3
-						trait = extra_ear_4
-						trait = extra_ear_5
-						trait = extra_ear_6
-						trait = extra_ear_7
-						trait = extra_ear_8
-						trait = extra_ear_9
-						trait = extra_ear_10
-					}
-				}
-				add_trait = extra_ear_1
-			}
-			else_if = {
-				limit = { trait = extra_ear_1 }
-				remove_trait = extra_ear_1
-				add_trait = extra_ear_2
-			}
-			else_if = {
-				limit = { trait = extra_ear_2 }
-				remove_trait = extra_ear_2
-				add_trait = extra_ear_3
-			}
-			else_if = {
-				limit = { trait = extra_ear_3 }
-				remove_trait = extra_ear_3
-				add_trait = extra_ear_4
-			}
-			else_if = {
-				limit = { trait = extra_ear_4 }
-				remove_trait = extra_ear_4
-				add_trait = extra_ear_5
-			}
-			else_if = {
-				limit = { trait = extra_ear_5 }
-				remove_trait = extra_ear_5
-				add_trait = extra_ear_6
-			}
-			else_if = {
-				limit = { trait = extra_ear_6 }
-				remove_trait = extra_ear_6
-				add_trait = extra_ear_7
-			}
-			else_if = {
-				limit = { trait = extra_ear_7 }
-				remove_trait = extra_ear_7
-				add_trait = extra_ear_8
-			}
-			else_if = {
-				limit = { trait = extra_ear_8 }
-				remove_trait = extra_ear_8
-				add_trait = extra_ear_9
-			}
-			else_if = {
-				limit = { trait = extra_ear_9 }
-				remove_trait = extra_ear_9
-				add_trait = extra_ear_10
-			}
+			mutation_extra_ear_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#extra_nose
 			limit = {
 				NOT = { trait = extra_nose_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = extra_nose_1
-						trait = extra_nose_2
-						trait = extra_nose_3
-						trait = extra_nose_4
-						trait = extra_nose_5
-						trait = extra_nose_6
-						trait = extra_nose_7
-						trait = extra_nose_8
-						trait = extra_nose_9
-						trait = extra_nose_10
-					}
-				}
-				add_trait = extra_nose_1
-			}
-			else_if = {
-				limit = { trait = extra_nose_1 }
-				remove_trait = extra_nose_1
-				add_trait = extra_nose_2
-			}
-			else_if = {
-				limit = { trait = extra_nose_2 }
-				remove_trait = extra_nose_2
-				add_trait = extra_nose_3
-			}
-			else_if = {
-				limit = { trait = extra_nose_3 }
-				remove_trait = extra_nose_3
-				add_trait = extra_nose_4
-			}
-			else_if = {
-				limit = { trait = extra_nose_4 }
-				remove_trait = extra_nose_4
-				add_trait = extra_nose_5
-			}
-			else_if = {
-				limit = { trait = extra_nose_5 }
-				remove_trait = extra_nose_5
-				add_trait = extra_nose_6
-			}
-			else_if = {
-				limit = { trait = extra_nose_6 }
-				remove_trait = extra_nose_6
-				add_trait = extra_nose_7
-			}
-			else_if = {
-				limit = { trait = extra_nose_7 }
-				remove_trait = extra_nose_7
-				add_trait = extra_nose_8
-			}
-			else_if = {
-				limit = { trait = extra_nose_8 }
-				remove_trait = extra_nose_8
-				add_trait = extra_nose_9
-			}
-			else_if = {
-				limit = { trait = extra_nose_9 }
-				remove_trait = extra_nose_9
-				add_trait = extra_nose_10
-			}
+			mutation_extra_nose_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		2 = {	#fast
 			limit = {
 				NOT = { trait = fast_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = fast_1
-						trait = fast_2
-						trait = fast_3
-						trait = fast_4
-						trait = fast_5
-						trait = fast_6
-						trait = fast_7
-						trait = fast_8
-						trait = fast_9
-						trait = fast_10
-					}
-				}
-				add_trait = fast_1
-			}
-			else_if = {
-				limit = { trait = fast_1 }
-				remove_trait = fast_1
-				add_trait = fast_2
-			}
-			else_if = {
-				limit = { trait = fast_2 }
-				remove_trait = fast_2
-				add_trait = fast_3
-			}
-			else_if = {
-				limit = { trait = fast_3 }
-				remove_trait = fast_3
-				add_trait = fast_4
-			}
-			else_if = {
-				limit = { trait = fast_4 }
-				remove_trait = fast_4
-				add_trait = fast_5
-			}
-			else_if = {
-				limit = { trait = fast_5 }
-				remove_trait = fast_5
-				add_trait = fast_6
-			}
-			else_if = {
-				limit = { trait = fast_6 }
-				remove_trait = fast_6
-				add_trait = fast_7
-			}
-			else_if = {
-				limit = { trait = fast_7 }
-				remove_trait = fast_7
-				add_trait = fast_8
-			}
-			else_if = {
-				limit = { trait = fast_8 }
-				remove_trait = fast_8
-				add_trait = fast_9
-			}
-			else_if = {
-				limit = { trait = fast_9 }
-				remove_trait = fast_9
-				add_trait = fast_10
-			}
+			mutation_fast_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#head_crest
@@ -5893,26 +3631,7 @@ mutations_table_slaanesh = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = horns_1
-						trait = horns_2
-						trait = horns_3
-					}
-				}
-				add_trait = horns_1
-			}
-			else_if = {
-				limit = { trait = horns_1 }
-				remove_trait = horns_1
-				add_trait = horns_2
-			}
-			else_if = {
-				limit = { trait = horns_2 }
-				remove_trait = horns_2
-				add_trait = horns_3
-			}
+			mutation_horns_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		2 = {	#hypnotic_gaze
@@ -5955,29 +3674,7 @@ mutations_table_slaanesh = {
 			limit = {
 				NOT = { trait = lunatic_3 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = lunatic_1
-						trait = lunatic_2
-						trait = lunatic_3
-					}
-				}
-				add_trait = lunatic_1
-				set_variable = { which = "lunatic_counter" value = 5 }
-			}
-			else_if = {
-				limit = { trait = lunatic_1 }
-				remove_trait = lunatic_1
-				add_trait = lunatic_2
-				set_variable = { which = "lunatic_counter" value = 10 }
-			}
-			else_if = {
-				limit = { trait = lunatic_2 }
-				remove_trait = lunatic_2
-				add_trait = lunatic_3
-				set_variable = { which = "lunatic_counter" value = 20 }
-			}
+			mutation_madness_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#manikin
@@ -6160,64 +3857,7 @@ mutations_table_slaanesh = {
 					trait = prince_khorne
 				}
 			}
-			if = {
-				limit = {
-					OR = {
-						NOT = { true_religion_group = chaos_gods_group }
-						true_religion = chaos
-					}
-				}
-				remove_trait = champion_khorne
-				remove_trait = champion_nurgle
-				remove_trait = champion_slaanesh
-				remove_trait = champion_tzeentch
-				remove_trait = chosen_khorne
-				remove_trait = chosen_nurgle
-				remove_trait = chosen_slaanesh
-				remove_trait = chosen_tzeentch
-				remove_trait = champion_undivided
-				remove_trait = chaos_chosen
-				set_graphical_culture = prince_undivided
-				remove_race_trait = yes
-				add_trait = undivided_demon
-				add_trait = prince_undivided
-			}
-			else_if = {
-				limit = { true_religion = tzeentch }
-				remove_trait = champion_tzeentch
-				remove_trait = chosen_tzeentch
-				set_graphical_culture = prince_tzeentch
-				remove_race_trait = yes
-				add_trait = tzeentch_demon
-				add_trait = prince_tzeentch
-			}
-			else_if = {
-				limit = { true_religion = nurgle }
-				remove_trait = champion_nurgle
-				remove_trait = chosen_nurgle
-				set_graphical_culture = prince_nurgle
-				remove_race_trait = yes
-				add_trait = nurgle_demon
-				add_trait = prince_nurgle
-			}
-			else_if = {
-				limit = { true_religion = slaanesh }
-				remove_trait = champion_slaanesh
-				remove_trait = chosen_slaanesh
-				set_graphical_culture = prince_slaanesh
-				remove_race_trait = yes
-				add_trait = slaanesh_demon
-				add_trait = prince_slaanesh
-			}
-			else_if = {
-				limit = { true_religion = khorne }
-				remove_trait = champion_khorne
-				remove_trait = chosen_khorne
-				set_graphical_culture = prince_khorne
-				remove_race_trait = yes
-				add_trait = khorne_demon
-				add_trait = prince_khorne
-			}
+			mutation_pseudo_daemonhood_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#radiant_skin
@@ -6227,38 +3867,7 @@ mutations_table_slaanesh = {
 					trait = skeleton
 				}
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = radiant_skin_1
-						trait = radiant_skin_2
-						trait = radiant_skin_3
-						trait = radiant_skin_4
-						trait = radiant_skin_5
-					}
-				}
-				add_trait = radiant_skin_1
-			}
-			else_if = {
-				limit = { trait = radiant_skin_1 }
-				remove_trait = radiant_skin_1
-				add_trait = radiant_skin_2
-			}
-			else_if = {
-				limit = { trait = radiant_skin_2 }
-				remove_trait = radiant_skin_2
-				add_trait = radiant_skin_3
-			}
-			else_if = {
-				limit = { trait = radiant_skin_3 }
-				remove_trait = radiant_skin_3
-				add_trait = radiant_skin_4
-			}
-			else_if = {
-				limit = { trait = radiant_skin_4 }
-				remove_trait = radiant_skin_4
-				add_trait = radiant_skin_5
-			}
+			mutation_radiant_skin_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		2 = {	#scales
@@ -6637,204 +4246,21 @@ mutations_table_khorne = {
 			limit = {
 				NOT = { trait = extra_mouth_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = extra_mouth_1
-						trait = extra_mouth_2
-						trait = extra_mouth_3
-						trait = extra_mouth_4
-						trait = extra_mouth_5
-						trait = extra_mouth_6
-						trait = extra_mouth_7
-						trait = extra_mouth_8
-						trait = extra_mouth_9
-						trait = extra_mouth_10
-					}
-				}
-				add_trait = extra_mouth_1
-			}
-			else_if = {
-				limit = { trait = extra_mouth_1 }
-				remove_trait = extra_mouth_1
-				add_trait = extra_mouth_2
-			}
-			else_if = {
-				limit = { trait = extra_mouth_2 }
-				remove_trait = extra_mouth_2
-				add_trait = extra_mouth_3
-			}
-			else_if = {
-				limit = { trait = extra_mouth_3 }
-				remove_trait = extra_mouth_3
-				add_trait = extra_mouth_4
-			}
-			else_if = {
-				limit = { trait = extra_mouth_4 }
-				remove_trait = extra_mouth_4
-				add_trait = extra_mouth_5
-			}
-			else_if = {
-				limit = { trait = extra_mouth_5 }
-				remove_trait = extra_mouth_5
-				add_trait = extra_mouth_6
-			}
-			else_if = {
-				limit = { trait = extra_mouth_6 }
-				remove_trait = extra_mouth_6
-				add_trait = extra_mouth_7
-			}
-			else_if = {
-				limit = { trait = extra_mouth_7 }
-				remove_trait = extra_mouth_7
-				add_trait = extra_mouth_8
-			}
-			else_if = {
-				limit = { trait = extra_mouth_8 }
-				remove_trait = extra_mouth_8
-				add_trait = extra_mouth_9
-			}
-			else_if = {
-				limit = { trait = extra_mouth_9 }
-				remove_trait = extra_mouth_9
-				add_trait = extra_mouth_10
-			}
+			mutation_extra_mouth_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#extra_ear
 			limit = {
 				NOT = { trait = extra_ear_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = extra_ear_1
-						trait = extra_ear_2
-						trait = extra_ear_3
-						trait = extra_ear_4
-						trait = extra_ear_5
-						trait = extra_ear_6
-						trait = extra_ear_7
-						trait = extra_ear_8
-						trait = extra_ear_9
-						trait = extra_ear_10
-					}
-				}
-				add_trait = extra_ear_1
-			}
-			else_if = {
-				limit = { trait = extra_ear_1 }
-				remove_trait = extra_ear_1
-				add_trait = extra_ear_2
-			}
-			else_if = {
-				limit = { trait = extra_ear_2 }
-				remove_trait = extra_ear_2
-				add_trait = extra_ear_3
-			}
-			else_if = {
-				limit = { trait = extra_ear_3 }
-				remove_trait = extra_ear_3
-				add_trait = extra_ear_4
-			}
-			else_if = {
-				limit = { trait = extra_ear_4 }
-				remove_trait = extra_ear_4
-				add_trait = extra_ear_5
-			}
-			else_if = {
-				limit = { trait = extra_ear_5 }
-				remove_trait = extra_ear_5
-				add_trait = extra_ear_6
-			}
-			else_if = {
-				limit = { trait = extra_ear_6 }
-				remove_trait = extra_ear_6
-				add_trait = extra_ear_7
-			}
-			else_if = {
-				limit = { trait = extra_ear_7 }
-				remove_trait = extra_ear_7
-				add_trait = extra_ear_8
-			}
-			else_if = {
-				limit = { trait = extra_ear_8 }
-				remove_trait = extra_ear_8
-				add_trait = extra_ear_9
-			}
-			else_if = {
-				limit = { trait = extra_ear_9 }
-				remove_trait = extra_ear_9
-				add_trait = extra_ear_10
-			}
+			mutation_extra_ear_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#extra_nose
 			limit = {
 				NOT = { trait = extra_nose_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = extra_nose_1
-						trait = extra_nose_2
-						trait = extra_nose_3
-						trait = extra_nose_4
-						trait = extra_nose_5
-						trait = extra_nose_6
-						trait = extra_nose_7
-						trait = extra_nose_8
-						trait = extra_nose_9
-						trait = extra_nose_10
-					}
-				}
-				add_trait = extra_nose_1
-			}
-			else_if = {
-				limit = { trait = extra_nose_1 }
-				remove_trait = extra_nose_1
-				add_trait = extra_nose_2
-			}
-			else_if = {
-				limit = { trait = extra_nose_2 }
-				remove_trait = extra_nose_2
-				add_trait = extra_nose_3
-			}
-			else_if = {
-				limit = { trait = extra_nose_3 }
-				remove_trait = extra_nose_3
-				add_trait = extra_nose_4
-			}
-			else_if = {
-				limit = { trait = extra_nose_4 }
-				remove_trait = extra_nose_4
-				add_trait = extra_nose_5
-			}
-			else_if = {
-				limit = { trait = extra_nose_5 }
-				remove_trait = extra_nose_5
-				add_trait = extra_nose_6
-			}
-			else_if = {
-				limit = { trait = extra_nose_6 }
-				remove_trait = extra_nose_6
-				add_trait = extra_nose_7
-			}
-			else_if = {
-				limit = { trait = extra_nose_7 }
-				remove_trait = extra_nose_7
-				add_trait = extra_nose_8
-			}
-			else_if = {
-				limit = { trait = extra_nose_8 }
-				remove_trait = extra_nose_8
-				add_trait = extra_nose_9
-			}
-			else_if = {
-				limit = { trait = extra_nose_9 }
-				remove_trait = extra_nose_9
-				add_trait = extra_nose_10
-			}
+			mutation_extra_nose_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		2 = {	#fangs
@@ -6865,26 +4291,7 @@ mutations_table_khorne = {
 			limit = {
 				NOT = { trait = growth_3 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = growth_1
-						trait = growth_2
-						trait = growth_3
-					}
-				}
-				add_trait = growth_1
-			}
-			else_if = {
-				limit = { trait = growth_1 }
-				remove_trait = growth_1
-				add_trait = growth_2
-			}
-			else_if = {
-				limit = { trait = growth_2 }
-				remove_trait = growth_2
-				add_trait = growth_3
-			}
+			mutation_growth_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		2 = {	#hideous_appearance
@@ -6903,26 +4310,7 @@ mutations_table_khorne = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = horns_1
-						trait = horns_2
-						trait = horns_3
-					}
-				}
-				add_trait = horns_1
-			}
-			else_if = {
-				limit = { trait = horns_1 }
-				remove_trait = horns_1
-				add_trait = horns_2
-			}
-			else_if = {
-				limit = { trait = horns_2 }
-				remove_trait = horns_2
-				add_trait = horns_3
-			}
+			mutation_horns_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#hulking_brute
@@ -6958,44 +4346,7 @@ mutations_table_khorne = {
 					}
 				}
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = iron-hard_skin_1
-						trait = iron-hard_skin_2
-						trait = iron-hard_skin_3
-						trait = iron-hard_skin_4
-						trait = iron-hard_skin_5
-						trait = iron-hard_skin_6
-					}
-				}
-				add_trait = iron-hard_skin_1
-			}
-			else_if = {
-				limit = { trait = iron-hard_skin_1 }
-				remove_trait = iron-hard_skin_1
-				add_trait = iron-hard_skin_2
-			}
-			else_if = {
-				limit = { trait = iron-hard_skin_2 }
-				remove_trait = iron-hard_skin_2
-				add_trait = iron-hard_skin_3
-			}
-			else_if = {
-				limit = { trait = iron-hard_skin_3 }
-				remove_trait = iron-hard_skin_3
-				add_trait = iron-hard_skin_4
-			}
-			else_if = {
-				limit = { trait = iron-hard_skin_4 }
-				remove_trait = iron-hard_skin_4
-				add_trait = iron-hard_skin_5
-			}
-			else_if = {
-				limit = { trait = iron-hard_skin_5 }
-				remove_trait = iron-hard_skin_5
-				add_trait = iron-hard_skin_6
-			}
+			mutation_iron_hard_skin_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 	#	3 = {	irrational_hatred }	###CUT###
@@ -7137,100 +4488,7 @@ mutations_table_khorne = {
 					trait = prince_khorne
 				}
 			}
-			if = {
-				limit = {
-					OR = {
-						NOT = { true_religion_group = chaos_gods_group }
-						true_religion = chaos
-					}
-				}
-				random_list = {
-					25 = {
-						remove_trait = champion_tzeentch
-						remove_trait = chosen_tzeentch
-						set_graphical_culture = prince_tzeentch
-						remove_race_trait = yes
-						add_trait = tzeentch_demon
-						add_trait = prince_tzeentch
-						religion = tzeentch
-						banish = yes
-					}
-					25 = {
-						remove_trait = champion_nurgle
-						remove_trait = chosen_nurgle
-						set_graphical_culture = prince_nurgle
-						remove_race_trait = yes
-						add_trait = nurgle_demon
-						add_trait = prince_nurgle
-						religion = nurgle
-						banish = yes
-					}
-					25 = {
-						remove_trait = champion_slaanesh
-						remove_trait = chosen_slaanesh
-						set_graphical_culture = prince_slaanesh
-						remove_race_trait = yes
-						add_trait = slaanesh_demon
-						add_trait = prince_slaanesh
-						religion = slaanesh
-						banish = yes
-					}
-					25 = {
-						remove_trait = champion_khorne
-						remove_trait = chosen_khorne
-						set_graphical_culture = prince_khorne
-						remove_race_trait = yes
-						add_trait = khorne_demon
-						add_trait = prince_khorne
-						religion = khorne
-						banish = yes
-					}
-				}
-			}
-			else_if = {
-				limit = { true_religion = tzeentch }
-				remove_trait = champion_tzeentch
-				remove_trait = chosen_tzeentch
-				set_graphical_culture = prince_tzeentch
-				remove_race_trait = yes
-				add_trait = tzeentch_demon
-				add_trait = prince_tzeentch
-				religion = tzeentch
-				banish = yes
-			}
-			else_if = {
-				limit = { true_religion = nurgle }
-				remove_trait = champion_nurgle
-				remove_trait = chosen_nurgle
-				set_graphical_culture = prince_nurgle
-				remove_race_trait = yes
-				add_trait = nurgle_demon
-				add_trait = prince_nurgle
-				religion = nurgle
-				banish = yes
-			}
-			else_if = {
-				limit = { true_religion = slaanesh }
-				remove_trait = champion_slaanesh
-				remove_trait = chosen_slaanesh
-				set_graphical_culture = prince_slaanesh
-				remove_race_trait = yes
-				add_trait = slaanesh_demon
-				add_trait = prince_slaanesh
-				religion = slaanesh
-				banish = yes
-			}
-			else_if = {
-				limit = { true_religion = khorne }
-				remove_trait = champion_khorne
-				remove_trait = chosen_khorne
-				set_graphical_culture = prince_khorne
-				remove_race_trait = yes
-				add_trait = khorne_demon
-				add_trait = prince_khorne
-				religion = khorne
-				banish = yes
-			}
+			mutation_pseudo_daemonhood_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		2 = {	#regeneration
@@ -7244,68 +4502,7 @@ mutations_table_khorne = {
 			limit = {
 				NOT = { trait = resilient_10 }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = resilient_1
-						trait = resilient_2
-						trait = resilient_3
-						trait = resilient_4
-						trait = resilient_5
-						trait = resilient_6
-						trait = resilient_7
-						trait = resilient_8
-						trait = resilient_9
-						trait = resilient_10
-					}
-				}
-				add_trait = resilient_1
-			}
-			else_if = {
-				limit = { trait = resilient_1 }
-				remove_trait = resilient_1
-				add_trait = resilient_2
-			}
-			else_if = {
-				limit = { trait = resilient_2 }
-				remove_trait = resilient_2
-				add_trait = resilient_3
-			}
-			else_if = {
-				limit = { trait = resilient_3 }
-				remove_trait = resilient_3
-				add_trait = resilient_4
-			}
-			else_if = {
-				limit = { trait = resilient_4 }
-				remove_trait = resilient_4
-				add_trait = resilient_5
-			}
-			else_if = {
-				limit = { trait = resilient_5 }
-				remove_trait = resilient_5
-				add_trait = resilient_6
-			}
-			else_if = {
-				limit = { trait = resilient_6 }
-				remove_trait = resilient_6
-				add_trait = resilient_7
-			}
-			else_if = {
-				limit = { trait = resilient_7 }
-				remove_trait = resilient_7
-				add_trait = resilient_8
-			}
-			else_if = {
-				limit = { trait = resilient_8 }
-				remove_trait = resilient_8
-				add_trait = resilient_9
-			}
-			else_if = {
-				limit = { trait = resilient_9 }
-				remove_trait = resilient_9
-				add_trait = resilient_10
-			}
+			mutation_resilient_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#skeleton
@@ -7315,31 +4512,7 @@ mutations_table_khorne = {
 					trait = trails_of_slime
 				}
 			}
-			add_trait = skeleton
-			remove_trait = mechanoid
-			remove_trait = metal_body
-			remove_trait = metallic_skin
-			remove_trait = midnight_skin
-			remove_trait = leathery_skin_1
-			remove_trait = leathery_skin_2
-			remove_trait = leathery_skin_3
-			remove_trait = leathery_skin_4
-			remove_trait = leathery_skin_5
-			remove_trait = leathery_skin_6
-			remove_trait = leathery_skin_7
-			remove_trait = leathery_skin_8
-			remove_trait = leathery_skin_9
-			remove_trait = leathery_skin_10
-			remove_trait = iron-hard_skin_1
-			remove_trait = iron-hard_skin_2
-			remove_trait = iron-hard_skin_3
-			remove_trait = iron-hard_skin_4
-			remove_trait = iron-hard_skin_5
-			remove_trait = iron-hard_skin_6
-			remove_trait = scales
-			remove_trait = thick_fur
-			remove_trait = transparent_skin
-			remove_trait = warty_skin
+			mutation_skeleton_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#skull_face
@@ -7367,50 +4540,7 @@ mutations_table_khorne = {
 			limit = {
 				NOT = { trait = strong }
 			}
-			if = {
-				limit = {
-					NOT = {
-						trait = weak
-						trait = fragile
-						trait = soft
-						trait = hardy
-						trait = robust
-						trait = tough
-						trait = strong
-					}
-				}
-				add_trait = hardy
-			}
-			else_if = {
-				limit = { trait = weak }
-				remove_trait = weak
-				add_trait = fragile
-			}
-			else_if = {
-				limit = { trait = fragile }
-				remove_trait = fragile
-				add_trait = soft
-			}
-			else_if = {
-				limit = { trait = soft }
-				remove_trait = soft
-				add_trait = hardy
-			}
-			else_if = {
-				limit = { trait = hardy }
-				remove_trait = hardy
-				add_trait = robust
-			}
-			else_if = {
-				limit = { trait = robust }
-				remove_trait = robust
-				add_trait = tough
-			}
-			else_if = {
-				limit = { trait = tough }
-				remove_trait = tough
-				add_trait = strong
-			}
+			mutation_strong_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		2 = {	#tail
@@ -7504,28 +4634,24 @@ mutations_table_list = {
 	else_if = {
 		limit = {
 			follower_of_tzeentch = yes
-			NOT = { trait = forsaken }
 		}
 		mutations_table_tzeentch = yes
 	}
 	else_if = {
 		limit = {
 			follower_of_nurgle = yes
-			NOT = { trait = forsaken }
 		}
 		mutations_table_nurgle = yes
 	}
 	else_if = {
 		limit = {
 			follower_of_slaanesh = yes
-			NOT = { trait = forsaken }
 		}
 		mutations_table_slaanesh = yes
 	}
 	else_if = {
 		limit = {
 			follower_of_khorne = yes
-			NOT = { trait = forsaken }
 		}
 		mutations_table_khorne = yes
 	}
@@ -7932,6 +5058,941 @@ mutation_atrophy_effect = {
 		}
 		fallback = {
 			add_trait = atrophy_1
+		}
+	}
+}
+
+mutation_breathe_fire_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		breathe_fire_1 = {
+			remove_trait = breathe_fire_1
+			add_trait = breathe_fire_2
+		}
+		breathe_fire_2 = {
+			remove_trait = breathe_fire_2
+			add_trait = breathe_fire_3
+		}
+		fallback = {
+			add_trait = breathe_fire_1
+		}
+	}
+}
+
+mutation_chaos_organ_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		chaos_organ_inside_1 = {
+			remove_trait = chaos_organ_inside_1
+			add_trait = chaos_organ_inside_2
+		}
+		chaos_organ_inside_2 = {
+			remove_trait = chaos_organ_inside_2
+			add_trait = chaos_organ_inside_3
+		}
+		chaos_organ_inside_3 = {
+			remove_trait = chaos_organ_inside_3
+			add_trait = chaos_organ_inside_4
+		}
+		chaos_organ_inside_4 = {
+			remove_trait = chaos_organ_inside_4
+			add_trait = chaos_organ_inside_5
+		}
+		chaos_organ_inside_5 = {
+			remove_trait = chaos_organ_inside_5
+			add_trait = chaos_organ_inside_6
+		}
+		chaos_organ_inside_6 = {
+			remove_trait = chaos_organ_inside_6
+			add_trait = chaos_organ_inside_7
+		}
+		chaos_organ_inside_7 = {
+			remove_trait = chaos_organ_inside_7
+			add_trait = chaos_organ_inside_8
+		}
+		chaos_organ_inside_8 = {
+			remove_trait = chaos_organ_inside_8
+			add_trait = chaos_organ_inside_9
+		}
+		chaos_organ_inside_9 = {
+			remove_trait = chaos_organ_inside_9
+			add_trait = chaos_organ_inside_10
+		}
+		chaos_organ_outside_1 = {
+			remove_trait = chaos_organ_outside_1
+			add_trait = chaos_organ_outside_2
+		}
+		chaos_organ_outside_2 = {
+			remove_trait = chaos_organ_outside_2
+			add_trait = chaos_organ_outside_3
+		}
+		chaos_organ_outside_3 = {
+			remove_trait = chaos_organ_outside_3
+			add_trait = chaos_organ_outside_4
+		}
+		chaos_organ_outside_4 = {
+			remove_trait = chaos_organ_outside_4
+			add_trait = chaos_organ_outside_5
+		}
+		chaos_organ_outside_5 = {
+			remove_trait = chaos_organ_outside_5
+			add_trait = chaos_organ_outside_6
+		}
+		chaos_organ_outside_6 = {
+			remove_trait = chaos_organ_outside_6
+			add_trait = chaos_organ_outside_7
+		}
+		chaos_organ_outside_7 = {
+			remove_trait = chaos_organ_outside_7
+			add_trait = chaos_organ_outside_8
+		}
+		chaos_organ_outside_8 = {
+			remove_trait = chaos_organ_outside_8
+			add_trait = chaos_organ_outside_9
+		}
+		chaos_organ_outside_9 = {
+			remove_trait = chaos_organ_outside_9
+			add_trait = chaos_organ_outside_10
+		}
+		fallback = {
+			random_list = {
+				90 = {
+					add_trait = chaos_organ_inside_1
+				}
+				10 = {
+					add_trait = chaos_organ_outside_1
+				}
+			}
+		}
+	}
+}
+
+mutation_extra_mouth_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		extra_mouth_1 = {
+			remove_trait = extra_mouth_1
+			add_trait = extra_mouth_2
+		}
+		extra_mouth_2 = {
+			remove_trait = extra_mouth_2
+			add_trait = extra_mouth_3
+		}
+		extra_mouth_3 = {
+			remove_trait = extra_mouth_3
+			add_trait = extra_mouth_4
+		}
+		extra_mouth_4 = {
+			remove_trait = extra_mouth_4
+			add_trait = extra_mouth_5
+		}
+		extra_mouth_5 = {
+			remove_trait = extra_mouth_5
+			add_trait = extra_mouth_6
+		}
+		extra_mouth_6 = {
+			remove_trait = extra_mouth_6
+			add_trait = extra_mouth_7
+		}
+		extra_mouth_7 = {
+			remove_trait = extra_mouth_7
+			add_trait = extra_mouth_8
+		}
+		extra_mouth_8 = {
+			remove_trait = extra_mouth_8
+			add_trait = extra_mouth_9
+		}
+		extra_mouth_9 = {
+			remove_trait = extra_mouth_9
+			add_trait = extra_mouth_10
+		}
+		fallback = {
+			add_trait = extra_mouth_1
+		}
+	}
+}
+
+mutation_extra_ear_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		extra_ear_1 = {
+			remove_trait = extra_ear_1
+			add_trait = extra_ear_2
+		}
+		extra_ear_2 = {
+			remove_trait = extra_ear_2
+			add_trait = extra_ear_3
+		}
+		extra_ear_3 = {
+			remove_trait = extra_ear_3
+			add_trait = extra_ear_4
+		}
+		extra_ear_4 = {
+			remove_trait = extra_ear_4
+			add_trait = extra_ear_5
+		}
+		extra_ear_5 = {
+			remove_trait = extra_ear_5
+			add_trait = extra_ear_6
+		}
+		extra_ear_6 = {
+			remove_trait = extra_ear_6
+			add_trait = extra_ear_7
+		}
+		extra_ear_7 = {
+			remove_trait = extra_ear_7
+			add_trait = extra_ear_8
+		}
+		extra_ear_8 = {
+			remove_trait = extra_ear_8
+			add_trait = extra_ear_9
+		}
+		extra_ear_9 = {
+			remove_trait = extra_ear_9
+			add_trait = extra_ear_10
+		}
+		fallback = {
+			add_trait = extra_ear_1
+		}
+	}
+}
+
+mutation_extra_nose_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		extra_nose_1 = {
+			remove_trait = extra_nose_1
+			add_trait = extra_nose_2
+		}
+		extra_nose_2 = {
+			remove_trait = extra_nose_2
+			add_trait = extra_nose_3
+		}
+		extra_nose_3 = {
+			remove_trait = extra_nose_3
+			add_trait = extra_nose_4
+		}
+		extra_nose_4 = {
+			remove_trait = extra_nose_4
+			add_trait = extra_nose_5
+		}
+		extra_nose_5 = {
+			remove_trait = extra_nose_5
+			add_trait = extra_nose_6
+		}
+		extra_nose_6 = {
+			remove_trait = extra_nose_6
+			add_trait = extra_nose_7
+		}
+		extra_nose_7 = {
+			remove_trait = extra_nose_7
+			add_trait = extra_nose_8
+		}
+		extra_nose_8 = {
+			remove_trait = extra_nose_8
+			add_trait = extra_nose_9
+		}
+		extra_nose_9 = {
+			remove_trait = extra_nose_9
+			add_trait = extra_nose_10
+		}
+		fallback = {
+			add_trait = extra_nose_1
+		}
+	}
+}
+
+mutation_fast_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		fast_1 = {
+			remove_trait = fast_1
+			add_trait = fast_2
+		}
+		fast_2 = {
+			remove_trait = fast_2
+			add_trait = fast_3
+		}
+		fast_3 = {
+			remove_trait = fast_3
+			add_trait = fast_4
+		}
+		fast_4 = {
+			remove_trait = fast_4
+			add_trait = fast_5
+		}
+		fast_5 = {
+			remove_trait = fast_5
+			add_trait = fast_6
+		}
+		fast_6 = {
+			remove_trait = fast_6
+			add_trait = fast_7
+		}
+		fast_7 = {
+			remove_trait = fast_7
+			add_trait = fast_8
+		}
+		fast_8 = {
+			remove_trait = fast_8
+			add_trait = fast_9
+		}
+		fast_9 = {
+			remove_trait = fast_9
+			add_trait = fast_10
+		}
+		fallback = {
+			add_trait = fast_1
+		}
+	}
+}
+
+mutation_grossly_fat_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		grossly_fat_1 = {
+			remove_trait = grossly_fat_1
+			add_trait = grossly_fat_2
+		}
+		grossly_fat_2 = {
+			remove_trait = grossly_fat_2
+			add_trait = grossly_fat_3
+		}
+		grossly_fat_3 = {
+			remove_trait = grossly_fat_3
+			add_trait = grossly_fat_4
+		}
+		grossly_fat_4 = {
+			remove_trait = grossly_fat_4
+			add_trait = grossly_fat_5
+		}
+		grossly_fat_5 = {
+			remove_trait = grossly_fat_5
+			add_trait = grossly_fat_6
+		}
+		grossly_fat_6 = {
+			remove_trait = grossly_fat_6
+			add_trait = grossly_fat_7
+		}
+		grossly_fat_7 = {
+			remove_trait = grossly_fat_7
+			add_trait = grossly_fat_8
+		}
+		grossly_fat_8 = {
+			remove_trait = grossly_fat_8
+			add_trait = grossly_fat_9
+		}
+		grossly_fat_9 = {
+			remove_trait = grossly_fat_9
+			add_trait = grossly_fat_10
+		}
+		fallback = {
+			add_trait = grossly_fat_1
+		}
+	}
+}
+
+mutation_growth_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		growth_1 = {
+			remove_trait = growth_1
+			add_trait = growth_2
+		}
+		growth_2 = {
+			remove_trait = growth_2
+			add_trait = growth_3
+		}
+		fallback = {
+			add_trait = growth_1
+		}
+	}
+}
+
+mutation_horns_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		horns_1 = {
+			remove_trait = horns_1
+			add_trait = horns_2
+		}
+		horns_2 = {
+			remove_trait = horns_2
+			add_trait = horns_3
+		}
+		fallback = {
+			add_trait = horns_1
+		}
+	}
+}
+
+mutation_intelligent_cyst_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		intelligent_cyst_1 = {
+			remove_trait = intelligent_cyst_1
+			add_trait = intelligent_cyst_2
+		}
+		intelligent_cyst_2 = {
+			remove_trait = intelligent_cyst_2
+			add_trait = intelligent_cyst_3
+		}
+		fallback = {
+			add_trait = intelligent_cyst_1
+		}
+	}
+}
+
+mutation_iron_hard_skin_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		iron-hard_skin_1 = {
+			remove_trait = iron-hard_skin_1
+			add_trait = iron-hard_skin_2
+		}
+		iron-hard_skin_2 = {
+			remove_trait = iron-hard_skin_2
+			add_trait = iron-hard_skin_3
+		}
+		iron-hard_skin_3 = {
+			remove_trait = iron-hard_skin_3
+			add_trait = iron-hard_skin_4
+		}
+		iron-hard_skin_4 = {
+			remove_trait = iron-hard_skin_4
+			add_trait = iron-hard_skin_5
+		}
+		iron-hard_skin_5 = {
+			remove_trait = iron-hard_skin_5
+			add_trait = iron-hard_skin_6
+		}
+		fallback = {
+			add_trait = iron-hard_skin_1
+		}
+	}
+}
+
+mutation_leathery_skin_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		leathery_skin_1 = {
+			remove_trait = leathery_skin_1
+			add_trait = leathery_skin_2
+		}
+		leathery_skin_2 = {
+			remove_trait = leathery_skin_2
+			add_trait = leathery_skin_3
+		}
+		leathery_skin_3 = {
+			remove_trait = leathery_skin_3
+			add_trait = leathery_skin_4
+		}
+		leathery_skin_4 = {
+			remove_trait = leathery_skin_4
+			add_trait = leathery_skin_5
+		}
+		leathery_skin_5 = {
+			remove_trait = leathery_skin_5
+			add_trait = leathery_skin_6
+		}
+		leathery_skin_6 = {
+			remove_trait = leathery_skin_6
+			add_trait = leathery_skin_7
+		}
+		leathery_skin_7 = {
+			remove_trait = leathery_skin_7
+			add_trait = leathery_skin_8
+		}
+		leathery_skin_8 = {
+			remove_trait = leathery_skin_8
+			add_trait = leathery_skin_9
+		}
+		leathery_skin_9 = {
+			remove_trait = leathery_skin_9
+			add_trait = leathery_skin_10
+		}
+		fallback = {
+			add_trait = leathery_skin_1
+		}
+	}
+}
+
+mutation_madness_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		lunatic_1 = {
+			remove_trait = lunatic_1
+			add_trait = lunatic_2
+			set_variable = { which = "lunatic_counter" value = 10 }
+		}
+		lunatic_2 = {
+			remove_trait = lunatic_2
+			add_trait = lunatic_3
+			set_variable = { which = "lunatic_counter" value = 20 }
+		}
+		fallback = {
+			add_trait = lunatic_1
+			set_variable = { which = "lunatic_counter" value = 5 }
+		}
+	}
+}
+
+mutation_malign_sorcerer_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		magic_potential_1 = {
+			remove_trait = magic_potential_1
+			add_trait = magic_potential_2
+		}
+		magic_potential_2 = {
+			remove_trait = magic_potential_2
+			add_trait = magic_potential_3
+		}
+		magic_potential_3 = {
+			remove_trait = magic_potential_3
+			add_trait = magic_potential_4
+		}
+		magic_potential_4 = {
+			death = {
+				death_reason = death_malign_sorcerer
+			}
+		}
+		fallback = {
+			add_trait = magic_potential_1
+		}
+	}
+}
+
+mutation_pseudo_daemonhood_effect = {
+	trigger_switch = {
+		on_trigger = true_religion
+		tzeentch = {
+			remove_trait = champion_tzeentch
+			remove_trait = chosen_tzeentch
+			culture = prince_tzeentch
+			religion = tzeentch
+			set_graphical_culture = prince_tzeentch
+			remove_race_trait = yes
+			add_trait = tzeentch_demon
+			add_trait = prince_tzeentch
+			add_trait = disinherited
+			banish = yes
+		}
+		nurgle = {
+			remove_trait = champion_nurgle
+			remove_trait = chosen_nurgle
+			culture = prince_nurgle
+			religion = nurgle
+			set_graphical_culture = prince_nurgle
+			remove_race_trait = yes
+			add_trait = nurgle_demon
+			add_trait = prince_nurgle
+			add_trait = disinherited
+			banish = yes
+		}
+		slaanesh = {
+			remove_trait = champion_slaanesh
+			remove_trait = chosen_slaanesh
+			culture = prince_slaanesh
+			religion = slaanesh
+			set_graphical_culture = prince_slaanesh
+			remove_race_trait = yes
+			add_trait = slaanesh_demon
+			add_trait = prince_slaanesh
+			add_trait = disinherited
+			banish = yes
+		}
+		khorne = {
+			remove_trait = champion_khorne
+			remove_trait = chosen_khorne
+			culture = prince_khorne
+			religion = khorne
+			set_graphical_culture = prince_khorne
+			remove_race_trait = yes
+			add_trait = khorne_demon
+			add_trait = prince_khorne
+			add_trait = disinherited
+			banish = yes
+		}
+		fallback = {
+			remove_race_trait = yes
+			random_list = {
+				25 = {
+					remove_trait = champion_tzeentch
+					remove_trait = chosen_tzeentch
+					culture = prince_tzeentch
+					religion = tzeentch
+					set_graphical_culture = prince_tzeentch
+					add_trait = tzeentch_demon
+					add_trait = prince_tzeentch
+				}
+				25 = {
+					remove_trait = champion_nurgle
+					remove_trait = chosen_nurgle
+					culture = prince_nurgle
+					religion = nurgle
+					set_graphical_culture = prince_nurgle
+					add_trait = nurgle_demon
+					add_trait = prince_nurgle
+				}
+				25 = {
+					remove_trait = champion_slaanesh
+					remove_trait = chosen_slaanesh
+					culture = prince_slaanesh
+					religion = slaanesh
+					set_graphical_culture = prince_slaanesh
+					add_trait = slaanesh_demon
+					add_trait = prince_slaanesh
+				}
+				25 = {
+					remove_trait = champion_khorne
+					remove_trait = chosen_khorne
+					culture = prince_khorne
+					religion = khorne
+					set_graphical_culture = prince_khorne
+					add_trait = khorne_demon
+					add_trait = prince_khorne
+				}
+			}
+			add_trait = disinherited
+			banish = yes
+		}
+	}
+}
+
+mutation_radiant_skin_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		radiant_skin_1 = {
+			remove_trait = radiant_skin_1
+			add_trait = radiant_skin_2
+		}
+		radiant_skin_2 = {
+			remove_trait = radiant_skin_2
+			add_trait = radiant_skin_3
+		}
+		radiant_skin_3 = {
+			remove_trait = radiant_skin_3
+			add_trait = radiant_skin_4
+		}
+		radiant_skin_4 = {
+			remove_trait = radiant_skin_4
+			add_trait = radiant_skin_5
+		}
+		fallback = {
+			add_trait = radiant_skin_1
+		}
+	}
+}
+
+mutation_resilient_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		resilient_1 = {
+			remove_trait = resilient_1
+			add_trait = resilient_2
+		}
+		resilient_2 = {
+			remove_trait = resilient_2
+			add_trait = resilient_3
+		}
+		resilient_3 = {
+			remove_trait = resilient_3
+			add_trait = resilient_4
+		}
+		resilient_4 = {
+			remove_trait = resilient_4
+			add_trait = resilient_5
+		}
+		resilient_5 = {
+			remove_trait = resilient_5
+			add_trait = resilient_6
+		}
+		resilient_6 = {
+			remove_trait = resilient_6
+			add_trait = resilient_7
+		}
+		resilient_7 = {
+			remove_trait = resilient_7
+			add_trait = resilient_8
+		}
+		resilient_8 = {
+			remove_trait = resilient_8
+			add_trait = resilient_9
+		}
+		resilient_9 = {
+			remove_trait = resilient_9
+			add_trait = resilient_10
+		}
+		fallback = {
+			add_trait = resilient_1
+		}
+	}
+}
+
+mutation_rotting_flesh_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		rotting_flesh_1 = {
+			remove_trait = rotting_flesh_1
+			add_trait = rotting_flesh_2
+		}
+		rotting_flesh_2 = {
+			remove_trait = rotting_flesh_2
+			add_trait = rotting_flesh_3
+		}
+		rotting_flesh_3 = {
+			remove_trait = rotting_flesh_3
+			add_trait = rotting_flesh_4
+		}
+		rotting_flesh_4 = {
+			remove_trait = rotting_flesh_4
+			add_trait = rotting_flesh_5
+		}
+		rotting_flesh_5 = {
+			remove_trait = rotting_flesh_5
+			add_trait = rotting_flesh_6
+		}
+		rotting_flesh_6 = {
+			remove_trait = rotting_flesh_6
+			add_trait = rotting_flesh_7
+		}
+		rotting_flesh_7 = {
+			remove_trait = rotting_flesh_7
+			add_trait = rotting_flesh_8
+		}
+		rotting_flesh_8 = {
+			remove_trait = rotting_flesh_8
+			add_trait = rotting_flesh_9
+		}
+		rotting_flesh_9 = {
+			remove_trait = rotting_flesh_9
+			add_trait = rotting_flesh_10
+		}
+		fallback = {
+			add_trait = rotting_flesh_1
+		}
+	}
+}
+
+mutation_running_sores_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		running_sores_1 = {
+			remove_trait = running_sores_1
+			add_trait = running_sores_2
+		}
+		running_sores_2 = {
+			remove_trait = running_sores_2
+			add_trait = running_sores_3
+		}
+		running_sores_3 = {
+			remove_trait = running_sores_3
+			add_trait = running_sores_4
+		}
+		running_sores_4 = {
+			remove_trait = running_sores_4
+			add_trait = running_sores_5
+		}
+		running_sores_5 = {
+			remove_trait = running_sores_5
+			add_trait = running_sores_6
+		}
+		running_sores_6 = {
+			remove_trait = running_sores_6
+			add_trait = running_sores_7
+		}
+		running_sores_7 = {
+			remove_trait = running_sores_7
+			add_trait = running_sores_8
+		}
+		running_sores_8 = {
+			remove_trait = running_sores_8
+			add_trait = running_sores_9
+		}
+		running_sores_9 = {
+			remove_trait = running_sores_9
+			add_trait = running_sores_10
+		}
+		fallback = {
+			add_trait = running_sores_1
+		}
+	}
+}
+
+mutation_short_legs_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		short_legs_1 = {
+			remove_trait = short_legs_1
+			add_trait = short_legs_2
+		}
+		short_legs_2 = {
+			remove_trait = short_legs_2
+			add_trait = short_legs_3
+		}
+		short_legs_3 = {
+			remove_trait = short_legs_3
+			add_trait = short_legs_4
+		}
+		fallback = {
+			add_trait = short_legs_1
+		}
+	}
+}
+
+mutation_shrink_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		shrink_1 = {
+			remove_trait = shrink_1
+			add_trait = shrink_2
+		}
+		shrink_2 = {
+			remove_trait = shrink_2
+			add_trait = shrink_3
+		}
+		fallback = {
+			add_trait = shrink_1
+		}
+	}
+}
+
+mutation_skeleton_effect = {
+	add_trait = skeleton
+	remove_trait = mechanoid
+	remove_trait = metal_body
+	remove_trait = metallic_skin
+	remove_trait = midnight_skin
+	remove_trait = leathery_skin_1
+	remove_trait = leathery_skin_2
+	remove_trait = leathery_skin_3
+	remove_trait = leathery_skin_4
+	remove_trait = leathery_skin_5
+	remove_trait = leathery_skin_6
+	remove_trait = leathery_skin_7
+	remove_trait = leathery_skin_8
+	remove_trait = leathery_skin_9
+	remove_trait = leathery_skin_10
+	remove_trait = iron-hard_skin_1
+	remove_trait = iron-hard_skin_2
+	remove_trait = iron-hard_skin_3
+	remove_trait = iron-hard_skin_4
+	remove_trait = iron-hard_skin_5
+	remove_trait = iron-hard_skin_6
+	remove_trait = scales
+	remove_trait = thick_fur
+	remove_trait = transparent_skin
+	remove_trait = warty_skin
+	remove_trait = radiant_skin_1
+	remove_trait = radiant_skin_2
+	remove_trait = radiant_skin_3
+	remove_trait = radiant_skin_4
+	remove_trait = radiant_skin_5
+}
+
+mutation_strong_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		weak = {
+			remove_trait = weak
+			add_trait = fragile
+		}
+		fragile = {
+			remove_trait = fragile
+			add_trait = soft
+		}
+		soft = {
+			remove_trait = soft
+			add_trait = hardy
+		}
+		hardy = {
+			remove_trait = hardy
+			add_trait = robust
+		}
+		robust = {
+			remove_trait = robust
+			add_trait = tough
+		}
+		tough = {
+			remove_trait = tough
+			add_trait = strong
+		}
+		fallback = {
+			add_trait = hardy
+		}
+	}
+}
+
+mutation_trails_of_slime_effect = {
+	add_trait = trails_of_slime
+	remove_trait = mechanoid
+	remove_trait = metal_body
+	remove_trait = metallic_skin
+	remove_trait = midnight_skin
+	remove_trait = leathery_skin_1
+	remove_trait = leathery_skin_2
+	remove_trait = leathery_skin_3
+	remove_trait = leathery_skin_4
+	remove_trait = leathery_skin_5
+	remove_trait = leathery_skin_6
+	remove_trait = leathery_skin_7
+	remove_trait = leathery_skin_8
+	remove_trait = leathery_skin_9
+	remove_trait = leathery_skin_10
+	remove_trait = iron-hard_skin_1
+	remove_trait = iron-hard_skin_2
+	remove_trait = iron-hard_skin_3
+	remove_trait = iron-hard_skin_4
+	remove_trait = iron-hard_skin_5
+	remove_trait = iron-hard_skin_6
+	remove_trait = scales
+	remove_trait = thick_fur
+	remove_trait = transparent_skin
+	remove_trait = warty_skin
+}
+
+mutation_trunk_effect = {
+	trigger_switch = {
+		on_trigger = trait
+		trunk_1 = {
+			remove_trait = trunk_1
+			add_trait = trunk_2
+		}
+		trunk_2 = {
+			remove_trait = trunk_2
+			add_trait = trunk_3
+		}
+		trunk_3 = {
+			remove_trait = trunk_3
+			add_trait = trunk_4
+		}
+		trunk_4 = {
+			remove_trait = trunk_4
+			add_trait = trunk_5
+		}
+		trunk_5 = {
+			remove_trait = trunk_5
+			add_trait = trunk_6
+		}
+		trunk_6 = {
+			remove_trait = trunk_6
+			add_trait = trunk_7
+		}
+		trunk_7 = {
+			remove_trait = trunk_7
+			add_trait = trunk_8
+		}
+		trunk_8 = {
+			remove_trait = trunk_8
+			add_trait = trunk_9
+		}
+		trunk_9 = {
+			remove_trait = trunk_9
+			add_trait = trunk_10
+		}
+		fallback = {
+			add_trait = trunk_1
 		}
 	}
 }
