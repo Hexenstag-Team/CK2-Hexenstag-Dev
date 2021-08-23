@@ -77,12 +77,9 @@ decisions = {
 		is_mercenary = yes
 
 		potential = {
+			religion_group = dwarf_gods_group
 			is_playable = yes
 			is_landed = yes
-			OR = {
-				religion = ancestor_gods
-				religion = norse_ancestor_gods
-			}
 			NOT = { has_character_modifier = summoned_throngs }
 		}
 
