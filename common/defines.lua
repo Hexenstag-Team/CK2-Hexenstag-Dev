@@ -1135,7 +1135,7 @@ NEconomy = {
 	FORT_CONSUMED_IN_SETTLEMENT_CONTRUCTION = 1,	-- If set to 1 then fort holdings are consumed by the construction of another holding in the province while giving a discount to the construction cost in return.
 	WONDER_ABORT_FIRST_STAGE_RETURN_FACTOR = 0.0,	-- Factor for the amount the owner of a wonder gets when they abort the first stage of a wonder construction
 	WONDER_STACKING_PENALTY = 0.4,					-- Additional cost for each consecutive wonder construction
-	WONDER_STACKING_PENALTY_SAME_TYPE = 0.8,			-- Extra penalty for construction wonders of the same type
+	WONDER_STACKING_PENALTY_SAME_TYPE = 0.2,			-- Extra penalty for construction wonders of the same type
 	BASE_COURT_LIMIT_COUNT = 16, 					-- Base amount of unlanded characters and councillors allowed to reside in your court before you need to pay upkeep.
 	BASE_COURT_LIMIT_DUKE = 20,
 	BASE_COURT_LIMIT_KING = 24,
@@ -1280,8 +1280,8 @@ NMilitary = {
 	COASTAL_SUPPLY_BONUS = 0.5,						-- Supply bonus in coastal provinces
 	PAGAN_HOME_SUPPLY_MOD = 0.12,					-- Non Pagans suffer extreme attrition in some Pagan homelands (based on province religion)
 	NAVAL_ATTRITION = 0.0,							-- Attrition taken monthly by units loaded on ships
-	ARMY_MOVEMENT_SPEED = 3,						-- Base movement speed of land units
-	NAVY_MOVEMENT_SPEED = 15,						-- Base movement speed of naval units
+	ARMY_MOVEMENT_SPEED = 5,						-- Base movement speed of land units
+	NAVY_MOVEMENT_SPEED = 25,						-- Base movement speed of naval units
 	ARMY_LOAD_MOVE_COST = 20.0,						-- Movement cost for moving armies onto fleets at sea.
 	ARMY_UNLOAD_MOVE_COST = 20.0,					-- Movement cost for moving armies off fleets at sea.
 	OVERRUN_RATIO = 25,								-- Ratio needed for total extermination of enemy units
@@ -1714,7 +1714,7 @@ NAI =
 	STATECRAFT_THREAT_THRESHOLD = 50.0,						-- If threat from realm is greater or equal to threshold then Chancellor will be assigned to Statecraft job
 	ADMINISTER_REALM_REALM_SIZE_THRESHOLD = 200,			-- If Empire and realm size is greater or equal to threshold then Steward will be assigned to Administer Realm job
 	NOMAD_ORGANIZE_ARMY_THRESHOLD = 0.75,					-- If Nomad manpower growth from Train Warriors job is greater or equal to threshold then Marshal will be assigned to Organize Army job
-	
+
 	AI_WONDER_INCOME_THRESHOLD = 40.0,						-- The AI will not consider building a wonder unless it has more monthly income than this
 	AI_WONDER_RESUME_THRESHOLD = 200.0						-- The AI will not resume halted wonder constructions unless over this current wealth
 },

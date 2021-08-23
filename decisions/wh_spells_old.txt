@@ -380,9 +380,9 @@ decisions = {
 				trait = vampire_blood_hidden
 				trait = vampire_blood_visible
 				has_character_flag = taken_hedge_wizard_decision
-				top_liege = { trait = malekith }
 				trait = hedge_wizard
 				culture_group = dwarf_group
+				culture_group = dawi_zharr_group #they have their own ways to learn magic
 			}
 			is_vampire_trigger = no
 		}
@@ -419,29 +419,6 @@ decisions = {
 					set_character_flag = learning_as_kid
 				}
 				character_event = { id = sorcererapprentice.12 } #Start studying
-				if = {
-					limit = {
-						religion_group = cadai_group
-						e_ulthuan = { holder_scope  = { religion_group = cadai_group } }
-					}
-					e_ulthuan = { holder_scope  = { opinion = { modifier = opinion_unauthorized_tutoring who = ROOT } } }
-				}
-				if = {
-					limit = {
-						religion_group = cytharai_group
-						is_female = yes
-						e_naggaroth = { holder_scope  = { trait = malekith } }
-					}
-					e_naggaroth = { holder_scope  = { opinion = { modifier = opinion_unauthorized_tutoring who = ROOT } } }
-				}
-				if = {
-					limit = {
-						trait = creature_elf
-						is_female = no
-						e_naggaroth = { holder_scope  = { trait = malekith } }
-					}
-					e_naggaroth = { holder_scope  = { opinion = { modifier = opinion_sorcerous_rival who = ROOT } } }
-				}
 			}
 		}
 
@@ -550,7 +527,6 @@ decisions = {
 				religion = khorne
 				has_character_flag = taken_hedge_wizard_decision
 				has_character_flag = taken_necromancer_decision
-				top_liege = { trait = malekith }
 				trait = king_settra
 				trait = hedge_wizard
 				trait = mage_apprentice
@@ -595,30 +571,6 @@ decisions = {
 					set_character_flag = learning_as_kid
 				}
 				character_event = { id = sorcererapprentice.15 } #Start studying
-				if = {
-					limit = {
-						religion_group = cadai_group
-						e_ulthuan = { holder_scope  = { religion_group = cadai_group } }
-					}
-					e_ulthuan = { holder_scope  = { opinion = { modifier = opinion_unauthorized_tutoring who = ROOT } } }
-				}
-				if = {
-					limit = {
-						religion_group = cytharai_group
-						is_female = yes
-						e_naggaroth = {
-						holder_scope  = { trait = malekith } }
-					}
-					e_naggaroth = { holder_scope  = { opinion = { modifier = opinion_unauthorized_tutoring who = ROOT } } }
-				}
-				if = {
-					limit = {
-						trait = creature_elf
-						is_female = no
-						e_naggaroth = { holder_scope  = { trait = malekith } }
-					}
-					e_naggaroth = { holder_scope  = { opinion = { modifier = opinion_sorcerous_rival who = ROOT } } }
-				}
 			}
 		}
 
@@ -1340,7 +1292,6 @@ targetted_decisions = {
 			is_vampire_trigger = no
 			NOT = { trait = avatar_kurnous }
 			NOT = { trait = avatar_isha }
-			NOT = { trait = everqueen }
 		}
 		allow = {
 			prisoner = yes
@@ -1518,31 +1469,6 @@ targetted_decisions = {
 				add_trait = mage_apprentice
 				set_character_flag = mage_master@FROM
 				FROM = { character_event = { id = sorcererapprentice.7 days = 5 } } #Start teaching
-				if = {
-					limit = {
-						FROM = { religion_group = cadai_group }
-						e_ulthuan = { holder_scope  = { religion_group = cadai_group } }
-					}
-					e_ulthuan = { holder_scope  = { opinion = { modifier = opinion_unauthorized_tutoring who = FROM } } }
-				}
-				if = {
-					limit = {
-						FROM = {
-							religion_group = cytharai_group
-							is_female = yes
-						}
-						e_naggaroth = { holder_scope  = { trait = malekith } }
-					}
-					e_naggaroth = { holder_scope  = { opinion = { modifier = opinion_unauthorized_tutoring who = FROM } } }
-				}
-				if = {
-					limit = {
-						trait = creature_elf
-						is_female = no
-						e_naggaroth = { holder_scope  = { trait = malekith } }
-					}
-					e_naggaroth = { holder_scope  = { opinion = { modifier = opinion_sorcerous_rival who = ROOT } } }
-				}
 			}
 		}
 

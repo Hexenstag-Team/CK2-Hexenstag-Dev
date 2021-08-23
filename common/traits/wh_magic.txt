@@ -169,7 +169,7 @@ hedge_wizard = {
 		}
 		visible_trait = yes
 	}
-	
+
 	combat_rating = 1
 	customizer = yes
 }
@@ -250,6 +250,32 @@ chaos_dwarf_sorcerer = {
 	monthly_character_prestige = 0.5
 	monthly_character_piety = 0.5
 	combat_rating = 20
+	opposites = {
+		chaos_dwarf_daemonsmith
+	}
+}
+
+chaos_dwarf_daemonsmith = {
+	is_visible = {
+		visible_trait = yes
+	}
+	potential = {
+		religion = hashut
+	}
+	customizer = yes
+	random = no
+	command_modifier = {
+		morale_offence = 0.1
+    }
+	vassal_opinion = 5
+	learning = 2
+	health = 3
+	monthly_character_prestige = 0.2
+	monthly_character_piety = 0.2
+	combat_rating = 10
+	opposites = {
+		chaos_dwarf_sorcerer
+	}
 }
 
 greenskin_shaman = {
@@ -348,7 +374,7 @@ lore_fire = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -361,7 +387,7 @@ fire_elemental = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -374,7 +400,7 @@ fire_mystical = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -387,7 +413,7 @@ fire_cardinal = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -460,7 +486,7 @@ metal_elemental = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -473,7 +499,7 @@ metal_mystical = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -486,7 +512,7 @@ metal_cardinal = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -514,7 +540,7 @@ light_elemental = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -527,7 +553,7 @@ light_mystical = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -540,7 +566,7 @@ light_cardinal = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -566,7 +592,7 @@ life_elemental = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -579,7 +605,7 @@ life_mystical = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -592,7 +618,7 @@ life_cardinal = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -618,7 +644,7 @@ heavens_elemental = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -631,7 +657,7 @@ heavens_mystical = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -644,7 +670,7 @@ heavens_cardinal = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -671,7 +697,7 @@ death_elemental = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -684,7 +710,7 @@ death_mystical = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -697,7 +723,7 @@ death_cardinal = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -723,7 +749,7 @@ shadows_elemental = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -736,7 +762,7 @@ shadows_mystical = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}
@@ -749,7 +775,7 @@ shadows_cardinal = {
 	is_visible = {
 		visible_trait = yes
 	}
-	
+
 	command_modifier = {
 		morale_offence = 0.1
 	}

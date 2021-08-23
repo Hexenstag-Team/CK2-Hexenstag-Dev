@@ -557,3 +557,134 @@ obj_slaanesh_embrace_pride = {
 		clr_character_flag = Pet_Daemonette_helped_ambition
 	}
 }
+
+obj_chaos_dwarf_become_daemonsmith = {
+	type = character
+	can_cancel = yes
+
+	potential = {
+		trait = creature_chaos_dwarf
+		learning >= 10
+
+		NOR = {
+			#Patricians represent lower-status clans
+			#also the succession mechanics don't play well together
+			is_republic = yes
+			#as far as I know bull centaurs can't become sorcerers
+			trait = chaos_dwarf_bull_centaur
+		}
+		piety = 0  #low but this is only to hedge out obviously faithless characters
+		age >= 14  #a prodigy might begin training as an apprentice, but the learning req. is going to hedge out most children
+
+		#these just to be sure
+		religion = hashut
+		culture_group = dawi_zharr_group
+		NOT = { culture = servile_hobgoblin }
+
+		#and there's no need to retread the same path
+		NOR = {
+			trait = chaos_dwarf_sorcerer
+			trait = chaos_dwarf_daemonsmith
+		}
+	}
+
+	allow = {
+		NOT = { is_inaccessible_trigger = yes }
+	}
+
+	chance = {
+		factor = 100
+
+		modifier = {
+			factor = 0
+			trait = cynical
+		}
+
+		modifier = {
+			factor = 0.5
+			NOT = {
+				trait = zealous
+			}
+		}
+
+	}
+
+	success = {
+		trait = chaos_dwarf_daemonsmith
+	}
+
+	abort = {
+		trait = chaos_dwarf_sorcerer
+		trait = incapable
+	}
+
+	abort_effect = {
+	}
+
+	effect = {
+		prestige = 100
+	}
+}
+
+	obj_chaos_dwarf_become_sorcerer = {
+		type = character
+		can_cancel = yes
+
+		potential = {
+			trait = chaos_dwarf_daemonsmith
+			trait = creature_chaos_dwarf
+			learning >= 10
+
+			#Patricians represent lower-status clans
+			#also the succession mechanics don't play well together
+			NOT = {
+				is_republic = yes
+			}
+			piety = 100 #low but this is only to hedge out obviously faithless characters
+			age >= 50 #no beardlings, thanks
+
+			#these just to be sure
+			religion = hashut
+			culture_group = dawi_zharr_group
+			NOT = { culture = servile_hobgoblin }
+
+			#and there's no need to retread the same path
+			NOT = { trait = chaos_dwarf_sorcerer }
+		}
+
+		allow = {
+			NOT = { is_inaccessible_trigger = yes }
+		}
+
+		chance = {
+			factor = 200
+
+			modifier = {
+				factor = 0
+				trait = cynical
+			}
+
+			modifier = {
+				factor = 0.5
+				NOT = {
+					trait = zealous
+				}
+			}
+
+		}
+
+		success = {
+			trait = chaos_dwarf_sorcerer
+		}
+
+		abort = {
+			trait = incapable
+		}
+
+		abort_effect = {
+		}
+
+		effect = {
+			prestige = 500
+		}
+	}

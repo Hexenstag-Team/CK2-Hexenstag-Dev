@@ -152,6 +152,7 @@ title_lady_knight_bretonnian;Damoiselle;;;;;;;;;;;;x
 #
 # DAWI DUMP
 #
+dwarf_commander_age_tt;A commander must be an adult by the standards of their culture. For Dwarfs, this means a minimum of 75 years old, though Chaos Dwarf Bull Centaurs may lead when much younger.;;;;;;;;;x
 d_the_hammerers;The Hammerers;;;;;;;;;x
 d_the_hammerers_adj;Hammerer;;;;;;;;;x
 quarrellers;Quarrellers;;;;;;;;;;;;;x
@@ -174,8 +175,20 @@ summon_defensive_throng;A throng is mustered in defense of [Root.PrimaryTitle.Ge
 #
 # DAWI ZHARR DUMP
 #
-d_cult_of_hashut;Priesthood of Hashut;;;;;;;;;;;;x
-d_cult_of_hashut_desc;Hashut Cult;;;;;;;;;;;;x
+#Titles and government
+e_hashut;Dawi Zharr;;;;;;;;;;;;x
+e_hashut_desc;Minions of Hashut;;;;;;;;;;;;x
+succ_sorcererous_conclave_elective;Sorcerous Conclave;;;;;;;;;;;;x
+succ_sorcererous_conclave_elective_desc;The rulers of the Chaos Dwarf empire are chosen by a foul cabal of Sorcerer-Priests;;;;;;;;;;;;x
+sorcerous_conclave_voting;Sorcerous Conclave;;;;;;;;;;;;x
+sorcerous_conclave_voting_descThe rulers of the Chaos Dwarf empire are chosen by a foul cabal of Sorcerer-Priests;;;;;;;;;;;;x
+#Objectives
+obj_chaos_dwarf_become_daemonsmith_title;Become a Daemonsmith;;;;;;;;;;;;x
+obj_chaos_dwarf_become_daemonsmith_desc;No magical talent runs in the blood of the Chaos Dwarfs. All of their magic comes directly from Hashut. If you are ever to ascend to the ranks of the Sorcerer-Prophets, you must beseech the Dark Father to grant you the power of a Daemonsmith.;;;;;;;;;;;;x
+obj_chaos_dwarf_become_sorcerer_title;Become a Sorcerer;;;;;;;;;;;;x
+obj_chaos_dwarf_become_sorcerer_desc;Hashut can be a fickle god, but you are sure that you deserve his favor. The time has come for you to ascend to the ranks of the Sorcerer-Prophets!;;;;;;;;;;;;x
+
+#Decisions
 sacrifice_to_hashut;Sacrifice [Root.GetTitledFirstName] to Hashut;;;;;;;;;;;;x
 sacrifice_to_hashut_desc;Hashut will surely grant you His favour by sacrificing this lesser [Root.Culture.GetName] in His great furnaces...;;;;;;;;;;;;x
 chaos_dwarf_sell_into_slavery;Sell [Root.GetTitledFirstName] into Slavery;;;;;;;;;;;;x
@@ -201,6 +214,8 @@ recently_sold_chaos_dwarfs_desc;This Chaos Dwarf has recently sold armaments, an
 chaos_dwarf_weapons;Chaos Dwarf Armament;;;;;;;;;;;;x
 chaos_dwarf_weapons_desc;The warriors of this province are armed with the best equipment from the factories and forges of the Dawi Zharr.;;;;;;;;;;;;x
 hellcannon_arrives_capital;A regiment of Doomcannons arrives in [Root.Capital.GetName];;;;;;;;;;;;x
+summon_bull_centaur;Call for a Bull Centaur guardian;;;;;;;;;;;;x
+summon_bull_centaur_desc;While the Bull Centaurs usually spend their time protecting the sacred places of Hashut, I am important enough to request that one serve me personally.;;;;;;;;;;;;x
 get_taurus_mount;Tame a Great Taurus;;;;;;;;;;;;x
 get_taurus_mount_desc;I will soar on wings of fire and smoke!;;;;;;;;;;;;x
 get_lamassu_mount;Bargain with a Lammasu;;;;;;;;;;;;x
@@ -222,10 +237,8 @@ hashut_kdaai;Hashuti K'daai;;;;;;;;;;;;x
 hashut_kdaai_desc;The K'daai Zharr - Scions of Fire - are Hashut's servants. Forged from the raging blood and metal of the Bullfather's sacrifice pits, the K'daai are half-daemon and half-raging fire, an elemental force of destruction few mortals can hope to survive.;;;;;;;;;;;;x
 hashut_demon;Daemon of Hashut;;;;;;;;;;;;x
 hashut_demon_desc;Though Hashut has fewer daemons aligned to him than the greater Chaos gods, they're still powerful entities, made to enslave and destroy all those who oppose him.;;;;;;;;;;;;x
-RET_bull_centaurs;Bull Centaurs;;;;;;;;;;;;x
-RET_infernalguard;Infernal Guard;;;;;;;;;;;;x
-RET_fireglaives;Infernal Guard with Fireglaives;;;;;;;;;;;;x
-RET_earthshaker;Earthshaker Cannons;;;;;;;;;;;;x
+# Other
+DEATH_TURNED_TO_STONE;was turned to stone by the Sorcerer's Curse;;;;;;;;;;;;x
 #
 # GOBLIN/ORC DUMP
 #
@@ -283,3 +296,7 @@ doom_high;Empowered by Chaos;;;;;;;;;;;;;
 doom_high_desc;Chaos is strong in the world and all its followers find themselves empowered.;;;;;;;;;;;;;
 doom_very_high;Empowered by Chaos;;;;;;;;;;;;;
 doom_very_high_desc;Chaos is very strong in the world and all its followers find themselves greatly empowered.;;;;;;;;;;;;;
+#
+# QOL TOOLTIPS
+#
+commander_with_magic_tt;Has magical power;;;;;;;;;;;;;x

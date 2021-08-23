@@ -39,8 +39,6 @@ character_event = {
 			NOT = { society_member_of = cult_of_pleasure  }
 		  NOT = { has_character_flag = spirituallytempted_slaanesh }
 		  NOT = { has_character_flag = physicallytempted_slaanesh }
-		  NOT = { trait = malekith }
-		  NOT = { trait = everqueen }
 		  NOT = { has_character_flag = ai_flag_refuse_conversion }
 		trait = creature_elf
 		NOT = { religion = cult_of_pleasure
@@ -145,16 +143,6 @@ character_event = {
 		modifier = {
 			factor = 0.9
 			trait = isolationist_elf
-		}
-		modifier = {
-			factor = 1.25
-			k_avelorn = { holder_scope = { trait = everqueen
-							society_member_of = cult_of_pleasure } }
-		}
-		modifier = {
-			factor = 1.5
-			k_avelorn = { holder_scope = { trait = everqueen
-							religion = cult_of_pleasure } }
 		}
 		modifier = {
 			factor = 0.75
@@ -2412,10 +2400,6 @@ character_event = {
 		ai_chance = {
 			factor = 20
 			modifier = {
-				factor = 0
-				trait = malekith
-				}
-			modifier = {
 				factor = 1.5
 				trait = lustful
 				}
@@ -2486,14 +2470,6 @@ character_event = {
 			modifier = {
 				factor = 0.95
 				trait = kind
-				}
-			modifier = {
-				factor = 0.01
-				trait = everqueen
-				}
-			modifier = {
-				factor = 0.95
-				trait = phoenix_king
 				}
 			}
 	}
@@ -3920,14 +3896,6 @@ character_event = {
 		set_variable = { which = "s_integrity" value = 1 }
       		}
        if = {
-           limit = { trait = everqueen }
-		change_variable = { which = "s_integrity" value = 9 }
-      		}
-       if = {
-           limit = { trait = phoenix_king }
-		change_variable = { which = "s_integrity" value = 7 }
-      		}
-       if = {
            limit = { trait = avatar_kurnous }
 		change_variable = { which = "s_integrity" value = 15 }
       		}
@@ -4069,22 +4037,6 @@ character_event = {
 		change_variable = { which = "s_integrity" value = 4 }
       		}
        if = {
-           limit = { trait = everqueen_heir }
-		change_variable = { which = "s_integrity" value = 3 }
-      		}
-       if = {
-           limit = { trait = malekith }
-		change_variable = { which = "s_integrity" value = 10 }
-      		}
-       if = {
-           limit = { trait = burnt_by_asuryan }
-		change_variable = { which = "s_integrity" value = 10 }
-      		}
-       if = {
-           limit = { trait = isolationist_elf }
-		change_variable = { which = "s_integrity" value = 1 }
-      		}
-       if = {
            limit = { trait = widowed }
 		change_variable = { which = "s_integrity" value = 3 }
       		}
@@ -4094,10 +4046,6 @@ character_event = {
       		}
        if = {
            limit = { trait = interventionist_elf }
-		change_variable = { which = "s_integrity" value = -1 }
-      		}
-       if = {
-           limit = { trait = asuryan_stain }
 		change_variable = { which = "s_integrity" value = -1 }
       		}
        if = {
@@ -14779,14 +14727,6 @@ character_event = {
 								FROM = { trait = avatar_kurnous }
 								}
 							modifier = {
-								factor = 0.1
-								FROM = { trait = everqueen }
-								}
-							modifier = {
-								factor = 0.25
-								FROM = { trait = malekith }
-								}
-							modifier = {
 								factor = 0.75
 								trait = hedge_wizard
 								}
@@ -14932,14 +14872,6 @@ character_event = {
 								FROM = { trait = avatar_kurnous }
 								}
 							modifier = {
-								factor = 0.1
-								FROM = { trait = everqueen }
-								}
-							modifier = {
-								factor = 0.25
-								FROM = { trait = malekith }
-								}
-							modifier = {
 								factor = 0.75
 								trait = hedge_wizard
 								}
@@ -15082,14 +15014,6 @@ character_event = {
 							modifier = {
 								factor = 0.1
 								FROM = { trait = avatar_kurnous }
-								}
-							modifier = {
-								factor = 0.1
-								FROM = { trait = everqueen }
-								}
-							modifier = {
-								factor = 0.25
-								FROM = { trait = malekith }
 								}
 							modifier = {
 								factor = 0.75
@@ -15306,14 +15230,6 @@ character_event = {
 							modifier = {
 								factor = 0.1
 								FROM = { trait = avatar_kurnous }
-								}
-							modifier = {
-								factor = 0.1
-								FROM = { trait = everqueen }
-								}
-							modifier = {
-								factor = 0.25
-								FROM = { trait = malekith }
 								}
 							modifier = {
 								factor = 0.75
@@ -15887,7 +15803,7 @@ long_character_event = {
 		set_gender = opposite
 		add_trait = transgender
 		random = {
-			chance = 50 
+			chance = 50
 			add_trait = infertile
 		}
 		if = { limit = { trait = homosexual }
@@ -15934,7 +15850,7 @@ character_event = {
 		trigger = { FROM = { NOT = { is_female = yes }
 			 OR = { trait = creature_human
 				trait = creature_halfling } } } }
-	desc = { text = EVTDESCAspleasure16905 
+	desc = { text = EVTDESCAspleasure16905
 		trigger = { FROM = { is_female = yes
 			 OR = { trait = creature_human
 				trait = creature_halfling } } } }

@@ -32,7 +32,7 @@ character_event = {
         	set_flag = block_society_progress #So progress is halted for members...
         	save_event_target_as = legendary_society
         }
-        random_province = { #Because societies cannot process events...! D: 
+        random_province = { #Because societies cannot process events...! D:
             limit = { is_land = yes }
             #log = "LEGENDARY JOURNEY: [This.GetName] is the province"
 			set_province_flag = initiating_legendary_journey
@@ -44,10 +44,10 @@ character_event = {
 
 # Sent from event_target:legendary_society (above)
 province_event = {
-    id = HF.12000 
+    id = HF.12000
     is_triggered_only = yes
     hide_window = yes
-    
+
     trigger = {
     	event_target:legendary_society = { society_has_members = yes }
     	has_province_flag = initiating_legendary_journey
@@ -98,7 +98,7 @@ province_event = {
             limit = {
                 has_province_flag = initiating_legendary_journey #It has begun...
                 #But there are not enough members at rank 4...
-                NOT = {                    
+                NOT = {
                     any_society_member = {
                         society_rank == 4
                         NOT = { is_inaccessible_trigger = yes }
@@ -107,7 +107,7 @@ province_event = {
                 }
             }
             #log = "[LEGENDARY JOURNEY]: Event HF.12000 fired, but there were not enough members. Checking back in max 265 days."
-            character_event = { id = HF.12000 days = 165 random = 100 } #Check back in a while...
+            province_event = { id = HF.12000 days = 165 random = 100 } #Check back in a while...
         }
     }
 }
@@ -222,7 +222,7 @@ character_event = {
         }
     }
 
-    option = {      
+    option = {
         name = EVTOPTA_HF_12001 #Start the whole thing
 
         show_portrait = event_target:province_holder
@@ -256,7 +256,7 @@ character_event = {
             }
         }
 
-        custom_tooltip = { text = EVTOPTA_HF_12001_TT }        
+        custom_tooltip = { text = EVTOPTA_HF_12001_TT }
         hidden_effect = { character_event = { id = HF.12003 days = 5 } } #Hidden tombola...
     }
     option = { # (AI's don't get this option)
@@ -320,7 +320,7 @@ character_event = {
         save_event_target_as = player_hero
     }
 
-    option = {      
+    option = {
         name = EVTOPTA_HF_12002 #Let's go!
         custom_tooltip = { text = EVTOPTA_HF_12002_TT }
         hidden_effect = {
@@ -375,7 +375,7 @@ character_event = {
             }
             stop_society_progress = yes # To prevent things from breaking
         }
-        
+
         trigger = {
             ai = no
         }
@@ -402,10 +402,10 @@ character_event = {
                 duration = 60
                 hidden = yes
             }
-        }   
+        }
     }
 
-    option = {      
+    option = {
         name = EVTOPTA_HF_12011
         if = {
             limit = { NOT = { trait = proud } }
@@ -418,7 +418,7 @@ character_event = {
         show_portrait = event_target:target_ruler
     }
 
-    option = {      
+    option = {
         name = EVTOPTB_HF_12011
         if = {
             limit = { NOT = { trait = humble } }
@@ -446,7 +446,7 @@ character_event = {
     }
 
     immediate = {
-        # Check if you are an "additional" player_hero or the original one? In case of outcomes? 
+        # Check if you are an "additional" player_hero or the original one? In case of outcomes?
         # Check if the other heroes are still alive?
 
         if = { #Back up, in case the ruler we are talking about is dead...
@@ -471,7 +471,7 @@ character_event = {
         # fellow_hero_2 (if applicable - can be player)
         # fellow_hero_3 (if applicable - can be player)
         # target_ruler
-        # target_title       
+        # target_title
 
         random_list = {
             10 = { #AI fakes progress (start_bracket)...
@@ -491,7 +491,7 @@ character_event = {
                 }
                 send_legendary_tombola_effect = yes #sends tombola again...
             }
-            10 = { #Receive an artifact... 
+            10 = { #Receive an artifact...
                 trigger = {
                     has_character_flag = start_bracket
                     NOT = { has_character_flag = HF_legend_artifact }
@@ -514,7 +514,7 @@ character_event = {
                 }
 
                 set_character_flag = HF_legend_artifact
-                
+
                 random_society_member = {
                     limit = {
                         ai = yes
@@ -705,7 +705,7 @@ character_event = {
                     }
                 }
                 if = { #You died, but reached the end...
-                    limit = {  
+                    limit = {
                         is_dying = yes
                         has_character_flag = call_it_a_day
                         has_killed_at_least_1_trigger = yes
@@ -753,7 +753,7 @@ character_event = {
     id = HF.12304
     is_triggered_only = yes
     hide_window = yes
-    
+
     trigger = {
         is_member_of_any_warrior_lodge_trigger = yes
         has_character_flag = call_to_legend_active
@@ -778,7 +778,7 @@ character_event = {
             }
         }
         if = { #You died, but reached the end...
-            limit = {  
+            limit = {
                 is_dying = yes
                 has_character_flag = call_it_a_day
                 has_killed_at_least_1_trigger = yes
@@ -920,32 +920,32 @@ character_event = {
         random_list = {
 #            10 = { #the least interesting choice...
 #                trigger = {
-#                    event_target:home_capital = { 
+#                    event_target:home_capital = {
 #                        persistent_event_target:local_dead_commander_target = { always = yes }
 #                    }
 #                }
 #                if = {
 #                    limit = {
-#                        event_target:home_capital = { 
+#                        event_target:home_capital = {
 #                            persistent_event_target:local_dead_commander_target = { dynasty = ROOT }
 #                        }
 #                    }
 #                    set_character_flag = kin_was_fallen_commander
 #                }
 #                else = { set_character_flag = remember_fallen_commander }
-#                event_target:home_capital = { 
+#                event_target:home_capital = {
                     #persistent_event_target:local_dead_commander_target = { save_event_target_as = target }
 #                }
 #            }
 #            50 = {
 #                trigger = {
-#                    event_target:home_capital = { 
+#                    event_target:home_capital = {
 #                        persistent_event_target:local_inspiring_commander_target = { always = yes }
 #                    }
 #                }
 #                if = {
 #                    limit = {
-#                        event_target:home_capital = { 
+#                        event_target:home_capital = {
                             #persistent_event_target:local_inspiring_commander_target = { character = ROOT }
 #                        }
 #                    }
@@ -953,20 +953,20 @@ character_event = {
 #                }
 #                else = {
 #                    set_character_flag = remember_inspiring_commander
-#                    event_target:home_capital = { 
+#                    event_target:home_capital = {
                         #persistent_event_target:local_inspiring_commander_target = { save_event_target_as = target }
 #                    }
 #                }
 #            }
             100 = { #Means people remember a ruler once decapitated an enemy here...
                 trigger = {
-                    event_target:home_capital = { 
+                    event_target:home_capital = {
                         persistent_event_target:local_fearsome_commander_target = { always = yes }
                     }
                 }
                 if = { #Means YOU did it and text should reflect that.
                     limit = {
-                        event_target:home_capital = { 
+                        event_target:home_capital = {
                             persistent_event_target:local_fearsome_commander_target = { character = ROOT }
                         }
                     }
@@ -974,7 +974,7 @@ character_event = {
                 }
                 else = {
                     set_character_flag = remember_fearsome_commander
-                    event_target:home_capital = { 
+                    event_target:home_capital = {
                         persistent_event_target:local_fearsome_commander_target = { save_event_target_as = target }
                     }
                 }
@@ -1011,7 +1011,7 @@ character_event = {
     portrait = event_target:fellow_member
 
     trigger = {
-    
+
     }
 
     immediate = {
@@ -1032,7 +1032,7 @@ character_event = {
         save_fellow_member_effect = yes
     }
 
-    option = {      
+    option = {
         name = EVTOPTA_HF_12007 #Yes!
         #custom_tooltip = { text = EVTOPTA_HF_12007_TT }
 
@@ -1052,7 +1052,7 @@ character_event = {
 
         add_2_points_to_legendary_progress_effect = yes # Great progress on journey!
     }
-    option = {      
+    option = {
         name = EVTOPTB_HF_12007 #Nah...
         #custom_tooltip = { text = EVTOPTB_HF_12007_TT }
 
@@ -1076,7 +1076,7 @@ character_event = {
     portrait = event_target:fellow_member
 
     trigger = {
-    
+
     }
 
     immediate = {
@@ -1122,10 +1122,10 @@ character_event = {
                 trait = stressed
                 trait = depressed
             }
-        }       
+        }
     }
 
-    option = {      
+    option = {
         name = EVTOPTB_HF_12008 #Nah...
         if = {
             limit = { NOT = { trait = cruel } }
@@ -1154,7 +1154,7 @@ character_event = {
     is_triggered_only = yes
 
     portrait = event_target:marshal_character
-    
+
     immediate = {
         if = {
             limit = {
@@ -1175,13 +1175,13 @@ character_event = {
         }
     }
 
-    option = {      
+    option = {
         name = EVTOPTA_HF_12012 #Brilliant idea!
         #custom_tooltip = { text = EVTOPTA_HF_12012_TT }
 
         scaled_wealth = { value = -0.4 min = -25 max = -67 }
 
-        if = { 
+        if = {
             limit = { #In case we ever add other battlefield artifacts....
                 event_target:target_artifact = { has_artifact_flag = sword }
             }
@@ -1211,11 +1211,11 @@ character_event = {
         }
         add_2_points_to_legendary_progress_effect = yes # Great progress on journey!
     }
-    option = {      
+    option = {
         name = EVTOPTA_HF_12012_diplo #Brilliant idea (for free)!
         tooltip_info = diplomacy
 
-        if = { 
+        if = {
             limit = { #In case we ever add other battlefield artifacts....
                 event_target:target_artifact = { has_artifact_flag = sword }
             }
@@ -1243,7 +1243,7 @@ character_event = {
             show_scope_change = no
             destroy_artifact = yes
         }
-       
+
         reverse_opinion = {
             who = event_target:marshal_character
             modifier = opinion_was_praised
@@ -1254,7 +1254,7 @@ character_event = {
 
         trigger = { diplomacy = 12 }
     }
-    option = {      
+    option = {
         name = EVTOPTB_HF_12012 #Give it to your marshal?
         #custom_tooltip = { text = EVTOPTB_HF_12012_TT }
 
@@ -1273,7 +1273,7 @@ character_event = {
         }
         add_1_point_to_legendary_progress_effect = yes # Good progress on journey...
     }
-    option = {      
+    option = {
         name = EVTOPTC_HF_12012
         #custom_tooltip = { text = EVTOPTB_HF_12012_TT }
         add_1_point_to_legendary_progress_effect = yes # Good progress on journey...
@@ -1318,7 +1318,7 @@ character_event = {
     }
     after = {
         add_character_modifier = { modifier = out_traveling duration = -1 }
-        
+
         if = {
             limit = { has_character_flag = i_am_special@ROOT } #set in the tombola (to make sure the other members do not get the tombola double-running)...
             clr_character_flag = i_am_special@ROOT
@@ -1406,7 +1406,7 @@ character_event = {
                             }
                             save_event_target_as = my_duel_target
                             set_character_flag = fought_duel_against@ROOT
-                            
+
                             #REQUIRED event targets for setting up duel evaluation!
                             save_event_target_as = combatant_2 #the target of the duel...
                             ROOT = { save_event_target_as = combatant_1 } #the person issuing the duel...
@@ -1420,7 +1420,7 @@ character_event = {
                             add_one_duel_experience_modifier = yes
                             save_event_target_as = my_duel_target
                             set_character_flag = fought_duel_against@ROOT
-                            
+
                             #REQUIRED event targets for setting up duel evaluation!
                             save_event_target_as = combatant_2 #the target of the duel...
                             ROOT = { save_event_target_as = combatant_1 } #the person issuing the duel...
@@ -1447,11 +1447,11 @@ character_event = {
                         limit = { ROOT = { has_character_flag = WL_desc_Z } } # Actual bear
                         spawn_creature_champion_effect = yes
                     }
-                    
+
                     event_target:invited_character = {
                         save_event_target_as = my_duel_target
                         set_character_flag = fought_duel_against@ROOT
-                        
+
                         #REQUIRED event targets for setting up duel evaluation!
                         save_event_target_as = combatant_2 #the target of the duel...
                     }
@@ -1715,7 +1715,7 @@ character_event = {
                 }
                 randomize_ABCDEF_desc_flag_effect = yes # Get a random desc
             }
-        }        
+        }
     }
 
 
@@ -1811,7 +1811,7 @@ character_event = {
         hidden_effect = {
             if = {
                 limit = {
-                    has_character_flag = WL_desc_Z    
+                    has_character_flag = WL_desc_Z
                 }
                 event_target:combatant_2 = {
                     set_graphical_culture = bear
@@ -1865,7 +1865,7 @@ character_event = {
                 show_portrait = event_target:fellow_member
             }
         }
-        
+
         prestige = -50
         add_1_point_to_legendary_progress_effect = yes # Good progress on journey...
         evaluate_legendary_progress_effect = yes
@@ -1928,9 +1928,9 @@ character_event = {
 character_event = {
     id = HF.12100
     is_triggered_only = yes
-    
+
     trigger = {
-        ai = yes    
+        ai = yes
     }
 
     hide_window = yes
@@ -2032,7 +2032,7 @@ character_event = {
     id = HF.12305
     hide_window = yes
     is_triggered_only = yes
-    
+
     trigger = {
         has_character_flag = call_to_legend_active #means you were captured somehow, while on this journey
     }
@@ -2050,11 +2050,11 @@ character_event = {
             }
             #send event to player...
             any_society_member = {
-                limit = {  
+                limit = {
                     same_society_as = ROOT
                     NOT = { character = ROOT }
                     ai = no
-                }                
+                }
                 character_event = { id = HF.12102 days = 1 } #my friend was captured (+ how)..!
             }
         }
@@ -2074,7 +2074,7 @@ character_event = {
                         }
                     }
                 }
-                stop_society_progress = yes 
+                stop_society_progress = yes
             }
         }
         set_character_flag = failed_call_to_legend
@@ -2094,7 +2094,7 @@ character_event = {
     portrait = FROM
 
     trigger = {
-        is_alive = yes        
+        is_alive = yes
     }
 
     immediate = {
@@ -2251,7 +2251,7 @@ character_event = {
     immediate = {
         set_character_flag = viewing_event_HF_12103
     }
-        
+
     option = { #How unfortunate (but there are still people left on the journey)
         name = EVTOPTA_HF_12103
         custom_tooltip = {
@@ -2275,7 +2275,7 @@ character_event = {
         custom_tooltip = { text = EVTOPTB_HF_12103_TT } #It is you! The last one!
         trigger = {
             has_character_flag = call_to_legend_active
-            society_member_of = event_target:target_society    
+            society_member_of = event_target:target_society
             NOT = {
                 event_target:target_society = {
                     any_society_member = {
@@ -2356,9 +2356,9 @@ character_event = {
     border = GFX_event_normal_frame_war
     is_triggered_only = yes
     trigger = {
-        is_alive = yes        
+        is_alive = yes
     }
-    
+
     immediate = {
 
     }
@@ -2399,7 +2399,7 @@ character_event = {
                 bad_soldier_outcome_score = yes #Increases risk, if you are bad at this...
                 bad_soldier_outcome_score = yes #Increases risk, if you are bad at this...
         	}
-        	10 = { # ONLY gives the Severely Injured trait, but no maiming...        		
+        	10 = { # ONLY gives the Severely Injured trait, but no maiming...
         		set_character_flag = severely_injured
                 bad_soldier_outcome_score = yes #Increases risk, if you are bad at this...
         	}
@@ -2545,7 +2545,7 @@ character_event = {
             current_heir = { save_event_target_as = new_story_owner } #So your heir will find out what happened and can be referred to in text...
         }
         if = {
-            limit = { multiplayer = yes }            
+            limit = { multiplayer = yes }
             if = {
                 limit = { event_target:combatant_1 = { character = ROOT } } #if you instigated this...
                 death = {
@@ -2604,7 +2604,7 @@ character_event = {
         trigger = { has_character_flag = WL_desc_Z }
     }
 
-    option = {      
+    option = {
         name = EVTOPTA_HFP_10104 #Nooooo...!
         custom_tooltip = { text = you_lose_the_duel_tt }
         if = {
@@ -2779,7 +2779,7 @@ character_event = {
             }
         }
     }
-    
+
     desc = {
         trigger = { NOR = { has_character_flag = elegant_double_KO has_character_flag = clumsy_double_KO } }
         text = EVTDESC_HFP_10102_default
@@ -2793,7 +2793,7 @@ character_event = {
         text = EVTDESC_HFP_10102_elegant
     }
 
-    option = {      
+    option = {
         name = {
             text = EVTOPTA_HFP_10102_default
             trigger = { NOR = { has_character_flag = elegant_double_KO has_character_flag = clumsy_double_KO } }
@@ -2856,7 +2856,7 @@ character_event = {
         set_winner_flags_and_save_opponent_effect = yes
     }
 
-    option = {      
+    option = {
         name = EVTOPTA_HFP_10107 # Look at them run!
         custom_tooltip = { text = you_win_the_duel_tt }
         apply_generic_duel_victory_effect = yes
@@ -2921,11 +2921,11 @@ narrative_event = {
     picture = GFX_evt_diplomatic_greeting
     border = GFX_event_narrative_frame_war
     is_triggered_only = yes
-    
+
     portrait = event_target:my_beloved
 
     trigger = {
-    
+
     }
 
     immediate = {
@@ -2951,9 +2951,9 @@ narrative_event = {
         }
     }
 
-    option = { 
+    option = {
         name = EVTOPTA_HF_12300
-        
+
         #Create a bloodline that fits your achievements...
 		found_a_legendary_bloodline_effect = yes
 
@@ -3011,7 +3011,7 @@ narrative_event = {
         }
         hidden_effect = {
             event_target:target_ruler = {
-                narrative_event = { id = HF.12303 } #News event to the target ruler...  
+                narrative_event = { id = HF.12303 } #News event to the target ruler...
             }
         }
         clean_up_after_legendary_showdown_effect = yes
@@ -3036,7 +3036,7 @@ narrative_event = {
             }
         }
     }
-    option = {      
+    option = {
         name = EVTOPTA_HF_12301
         sound_effect = bloodline_added
         event_target:bloodline_founder = {
@@ -3057,7 +3057,7 @@ narrative_event = {
     picture = GFX_evt_diplomatic_greeting
     border = GFX_event_narrative_frame_war
     is_triggered_only = yes
-    
+
     desc = {
         text = EVTDESC_HF_12302_A
         picture = GFX_evt_diplomatic_greeting
@@ -3075,7 +3075,7 @@ narrative_event = {
             }
         }
     }
-    
+
     option = {
         name = EVTOPTA_HF_12302
         add_character_modifier = {
@@ -3097,7 +3097,7 @@ narrative_event = {
     border = GFX_event_narrative_frame_war
     is_triggered_only = yes
 
-    option = {      
+    option = {
         name = EVTOPTA_HF_12303
         add_character_modifier = {
             modifier = annoyed_with_barbarians
@@ -3158,7 +3158,7 @@ character_event = {
 			name = pet_hunting_eagle
 			duration = -1
 		}
-		hidden_effect = { 
+		hidden_effect = {
             character_event = { id = HF.25631 days = 7300 random = 1500 } #Death.
 			#character_event = { id = HF.25631 days = 5 random = 1 } #Death. #Test values
 		}
@@ -3170,11 +3170,11 @@ character_event = {
     option = { # My ancestor would be approve
         name = EVTOPTB_HF_12400
         custom_tooltip = { text = EVTOPTB_HF_12400_TT }
-        add_character_modifier = {  
+        add_character_modifier = {
 			name = pet_hunting_eagle
 			duration = -1
 		}
-		hidden_effect = { 
+		hidden_effect = {
 			character_event = { id = HF.25631 days = 7300 random = 1500 } #Death.
             #character_event = { id = HF.25631 days = 5 random = 1 } #Death. #Test values
 		}
@@ -3198,7 +3198,7 @@ character_event = {
     picture = GFX_evt_hunting_scene
     border = GFX_event_normal_frame_war
     is_triggered_only = yes
-    
+
     trigger = {
     	NOT = { has_character_modifier = pet_hunting_dog }
     	any_owned_bloodline = { has_bloodline_flag = bloodline_pet_dog }
@@ -3236,11 +3236,11 @@ character_event = {
     option = { # A new friend?
         name = EVTOPTA_HF_12401
         custom_tooltip = { text = EVTOPTA_HF_12401_TT }
-        add_character_modifier = {  
+        add_character_modifier = {
 			name = pet_hunting_dog
 			duration = -1
 		}
-		hidden_effect = { 
+		hidden_effect = {
 			character_event = { id = HF.12402 days = 7300 random = 1500 } #Dog dies...
 		}
 		trigger = {
@@ -3251,11 +3251,11 @@ character_event = {
     option = { # My ancestor would be approve
         name = EVTOPTB_HF_12401
         custom_tooltip = { text = EVTOPTB_HF_12401_TT }
-        add_character_modifier = {  
+        add_character_modifier = {
 			name = pet_hunting_dog
 			duration = -1
 		}
-		hidden_effect = { 
+		hidden_effect = {
 			character_event = { id = HF.12402 days = 7300 random = 1500 } #Dog dies...
 		}
 		trigger = {
@@ -3277,19 +3277,19 @@ character_event = {
     border = GFX_event_normal_frame_war
     is_triggered_only = yes
     trigger = {
-    
+
     }
 
     immediate = {
 
     }
 
-    option = {      
+    option = {
         name = EVTOPTA_HF_12402
         custom_tooltip = { text = EVTOPTA_HF_12402_TT }
         remove_character_modifier = pet_hunting_dog
     }
-#    option = {      
+#    option = {
 #        name = EVTOPTB_HF_12402
 #        custom_tooltip = { text = EVTOPTB_HF_12402_TT }
 #        remove_character_modifier = pet_hunting_dog
@@ -3315,10 +3315,10 @@ character_event = {
 
     }
 
-    option = {      
+    option = {
         name = EVTOPTA_HF_12405
         #custom_tooltip = { text = EVTOPTA_HF_12405_TT }
-        add_character_modifier = {  
+        add_character_modifier = {
 			name = inspired_singer
 			years = 3
 		}
@@ -3326,10 +3326,9 @@ character_event = {
 	option = {
         name = EVTOPTB_HF_12405
         #custom_tooltip = { text = EVTOPTB_HF_12405_TT }
-        add_character_modifier = {  
+        add_character_modifier = {
 			name = inspired_drummer
 			years = 3
 		}
     }
 }
-

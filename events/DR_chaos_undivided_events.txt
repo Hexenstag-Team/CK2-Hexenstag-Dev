@@ -7,7 +7,7 @@ namespace = DR_chaosundivided
 character_event = {
 	id = DR_chaosundivided.1
 	desc = EVTDESCDR_chaosundivided.1
-	picture = GFX_evt_gods_unvidided
+	picture = GFX_evt_gods_undivided
 	is_triggered_only = yes
 
 	option = { #Khorne
@@ -370,7 +370,7 @@ narrative_event = {
 		controls_religion = yes # Let it happen for the Grand Theogonist. He's always around.
 		NOT = { has_global_flag = self_declared_black_crusade }
 		#e_chaos_wastes = { holder_scope = { NOT = { religion_group = chaos_gods_group } } }
-		NOR = { 
+		NOR = {
 			is_doom_very_low = yes
 			is_doom_low = yes
 			is_doom_medium = yes
@@ -1336,7 +1336,7 @@ character_event = {
 			years >= 100
 		}
 	}
-	
+
 	immediate = {
 		clr_global_flag = everchosen_died
 	}

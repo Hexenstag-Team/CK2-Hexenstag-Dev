@@ -9,14 +9,28 @@ max_settlements = 6
 b_unzkulak = temple
 b_karak_varrson = city
 b_barak_hrunzak = castle
-#b_tilid_ungor = castle
-b_barak_mundak = city
+b_tilid_ungor = castle
+#b_barak_mundak = city
 
 # Misc
 culture = dawi_zharr
 religion = hashut
 
 #History
-1.1.1={ b_unzkulak = tp_chaos_dwarf_factory_1 }
-
+1.1.1 = {
+	build_wonder = wonder_dwarf_hold
+	set_wonder_stage = 4
+	build_wonder_upgrade = upgrade_mining_layer_1
+	build_wonder_upgrade = upgrade_mining_layer_2
+	build_wonder_upgrade = upgrade_mining_layer_3
+	build_wonder_upgrade = upgrade_mining_pyrite
+	build_wonder_upgrade = upgrade_mining_coal
+	build_wonder_upgrade = upgrade_mining_magnetite
+	build_wonder_upgrade = upgrade_mining_obsidian
+	build_wonder_upgrade = upgrade_great_dwarf_port
+	build_wonder_upgrade = upgrade_great_gate
+	build_wonder_upgrade = upgrade_defensive_tunnels
+	build_wonder_upgrade = upgrade_coal_power
+	build_wonder_upgrade = upgrade_great_hashut_temple
+}
 2010.1.1 = { trade_post = b_unzkulak }

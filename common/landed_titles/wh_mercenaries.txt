@@ -3859,6 +3859,86 @@ d_bringers_of_glory = {
 	mercenary_type = d_bringers_of_glory_modifier
 }
 
+# Hashut
+
+d_daemon_engines = {
+	color={ 0.6 0.4 0.1 }
+
+	capital = 1223 #Mesch
+	
+	allow = {
+		religion_group = chaos_gods_group
+	}
+	
+	religion = hashut
+	culture = dawi_zharr
+	
+	title = "CAPTAIN"
+	title_female = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+	
+	mercenary = yes
+	landless = yes
+	primary = yes
+	independent = yes
+	
+	strength_growth_per_century = 0.05
+	
+	mercenary_type = chaos_dwarf_mercenary_artillery_modifier
+}
+
+d_guns_zharr_naggrund = {
+	color={ 136 146 44 }
+
+	capital = 478 #Zharr-Naggrund
+	
+	allow = {
+		religion_group = chaos_gods_group
+	}
+	
+	religion = hashut
+	culture = dawi_zharr
+	
+	title = "CAPTAIN"
+	title_female = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+	
+	mercenary = yes
+	landless = yes
+	primary = yes
+	independent = yes
+	
+	strength_growth_per_century = 0.05
+	
+	mercenary_type = chaos_dwarf_mercenary_artillery_modifier
+}
+
+d_uzkulak_arsenal = {
+	color={ 52 173 13 }
+
+	capital = 416 #Uzkulak
+	
+	allow = {
+		religion_group = chaos_gods_group
+	}
+	
+	religion = hashut
+	culture = dawi_zharr
+	
+	title = "CAPTAIN"
+	title_female = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+	
+	mercenary = yes
+	landless = yes
+	primary = yes
+	independent = yes
+	
+	strength_growth_per_century = 0.05
+	
+	mercenary_type = chaos_dwarf_mercenary_artillery_modifier
+}
+
 ### Stromfels ###Sartosan
 
 d_sartosa_sirens = {
@@ -4144,11 +4224,14 @@ d_throgs_hobgoblin_despoilers = {
 	capital = 448 #Iron Hills
 
 	allow = {
-		religion_group = greenskin_gods_group
+		OR = {
+			religion_group = greenskin_gods_group
+			religion = hashut
+		}
 	}
 
 	religion = greenskin_gods
-	culture = goblin_main
+	culture = servile_hobgoblin
 
 	title = "BOSS"
 	foa = "CAPTAIN_FOA"
@@ -4161,6 +4244,31 @@ d_throgs_hobgoblin_despoilers = {
 	strength_growth_per_century = 0.05
 
 	mercenary_type = d_throgs_hobgoblin_despoilers_modifier
+}
+
+d_sneaky_gits = { 
+	color = { 25 9 82 }
+	color2 = { 0 0 0 }
+	capital = 481 #Gash Kadrak
+	
+	allow = { 
+		religion = hashut
+	}
+
+	religion = hashut
+	culture = servile_hobgoblin
+
+	title = "BOSS"
+	foa = "CAPTAIN_FOA"
+	
+	mercenary = yes
+	landless = yes
+	primary = yes
+	independent = yes
+	
+	strength_growth_per_century = 0.05
+	
+	mercenary_type = d_sneaky_gits_modifier
 }
 
 d_blue_face_boyz = {

@@ -13,11 +13,11 @@ character_event = {
 	picture = GFX_evt_market
 
 	is_triggered_only = yes
-	
+
 	#Mounts
 	option = {
 		name = EVTOPTAmountshop.10
-		trigger = { 
+		trigger = {
 			can_buy_greenskin_items_trigger=no
 			NOR={
 				trait=creature_skaven
@@ -32,7 +32,7 @@ character_event = {
 	#Skaven
 	option = {
 		name = EVTOPTGmountshop.20
-		trigger = { 
+		trigger = {
 			trait=creature_skaven
 		}
 		hidden_tooltip = { character_event = { id = mountshop.12 } }
@@ -40,7 +40,7 @@ character_event = {
 	#OGRE
 	option = {
 		name = EVTOPTLAmountshop.20
-		trigger = { 
+		trigger = {
 			trait=creature_ogre
 		}
 		hidden_tooltip = { character_event = { id = mountshop.13 } }
@@ -48,7 +48,7 @@ character_event = {
 	#Lizardmen Offensive
 	option = {
 		name = EVTOPTLBmountshop.20
-		trigger = { 
+		trigger = {
 			OR={
 				trait=creature_skink
 				trait=creature_slann
@@ -60,7 +60,7 @@ character_event = {
 	#Lizardmen Defensive
 	option = {
 		name = EVTOPTGmountshop.20
-		trigger = { 
+		trigger = {
 			OR={
 				trait=creature_skink
 				trait=creature_slann
@@ -72,7 +72,7 @@ character_event = {
 	#Greenskin
 	option = {
 		name = EVTOPTGmountshop.20
-		trigger = { 
+		trigger = {
 			can_buy_greenskin_items_trigger=yes
 		}
 		hidden_tooltip = { character_event = { id = mountshop.15 } }
@@ -94,7 +94,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTSPmountshop.11
-		scaled_wealth = { value = -0.15 min=-50 max = -200 } 
+		scaled_wealth = { value = -0.15 min=-50 max = -200 }
 		piety=-100
 		add_artifact = giant_rat_mount
 		new_artifact = { save_event_target_as = mount_bought_item }
@@ -109,12 +109,12 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTWmountshop.11
-		
+
 		add_artifact = rat_ogre_mount
 		if={limit={culture=moulder}
 		scaled_wealth = { value = -3.15 min=-600 max = -1200}
 		}
-		else={scaled_wealth = { value = -3.15 min=-800 max = -1200 } 
+		else={scaled_wealth = { value = -3.15 min=-800 max = -1200 }
 		new_artifact = { save_event_target_as = mount_bought_item }
 		clr_character_flag = visiting_mount_market
 		}
@@ -134,7 +134,7 @@ character_event = {
 
 	is_triggered_only = yes
 
-	
+
 	#Standard
 	option = {
 		name = EVTOPTAmountshop.12
@@ -177,7 +177,7 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTWmountshop.13
-		
+
 		add_artifact = Stonehorn
 		scaled_wealth = { value = -3.15 min=-600 max = -1200}
 		new_artifact = { save_event_target_as = mount_bought_item }
@@ -206,7 +206,7 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTBmountshop.14
-		
+
 		add_artifact = ripperdactyl_mount
 		scaled_wealth = { value = -2.8 min=-300 max = -1200}
 		new_artifact = { save_event_target_as = mount_bought_item }
@@ -234,7 +234,7 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTBmountshop.28
-		
+
 		add_artifact = bastiladon_mount
 		scaled_wealth = { value = -3.15 min=-450 max = -1200}
 		new_artifact = { save_event_target_as = mount_bought_item }
@@ -255,7 +255,7 @@ character_event = {
 
 	is_triggered_only = yes
 
-	
+
 	#Standard
 	option = {
 		name = EVTOPTAmountshop.15
@@ -290,7 +290,7 @@ character_event = {
 	option = {
 		trigger={religion=spider_god}
 		name = EVTOPTSPmountshop.16
-		scaled_wealth = { value = -0.15 min=-50 max = -200 } 
+		scaled_wealth = { value = -0.15 min=-50 max = -200 }
 		piety=-100
 		add_artifact = spider_mount
 		new_artifact = { save_event_target_as = mount_bought_item }
@@ -300,7 +300,7 @@ character_event = {
 	option = {
 		trigger={trait=creature_goblin}
 		name = EVTOPTSmountshop.16
-		scaled_wealth = { value = -0.15 min=-50 max = -200 } 
+		scaled_wealth = { value = -0.15 min=-50 max = -200 }
 		prestige=-100
 		random_list={
 			30={add_artifact = great_cave_squig}
@@ -311,18 +311,28 @@ character_event = {
 	}
 	#Wolf
 	option = {
-		trigger={trait=creature_goblin}
+		trigger={
+			OR = {
+				trait=creature_goblin
+				trait=creature_hobgoblin
+			}
+		}
 		name = EVTOPTWmountshop.16
-		scaled_wealth = { value = -0.15 min=-80 max = -200 } 
+		scaled_wealth = { value = -0.15 min=-80 max = -200 }
 		add_artifact = wolf
 		new_artifact = { save_event_target_as = mount_bought_item }
 		clr_character_flag = visiting_mount_market
 	}
 	#Boar
 	option = {
-		trigger={NOT={trait=creature_goblin}}
+		trigger={
+			NOR={
+				trait=creature_goblin
+				trait=creature_hobgoblin
+			}
+		}
 		name = EVTOPTBmountshop.16
-		scaled_wealth = { value = -0.35 min=-120 max = -500 } 
+		scaled_wealth = { value = -0.35 min=-120 max = -500 }
 		add_artifact = boar
 		new_artifact = { save_event_target_as = mount_bought_item }
 		clr_character_flag = visiting_mount_market
@@ -343,11 +353,11 @@ character_event = {
 
 	is_triggered_only = yes
 
-	
+
 	#horse
 	option = {
 		name = EVTOPTAmountshop.20
-		trigger = { 
+		trigger = {
 			can_buy_greenskin_items_trigger=no
 			NOR={
 				trait=creature_skaven
@@ -359,7 +369,7 @@ character_event = {
 		}
 		hidden_tooltip = { character_event = { id = mountshop.21 } }
 	}
-	
+
 	#camels and elephants
 	option = {
 		trigger = {
@@ -379,10 +389,10 @@ character_event = {
 		name = EVTOPTBmountshop.20
 		hidden_tooltip = { character_event = { id = mountshop.30 } }
 	}
-	
+
 	#exotic
 	option = {
-		trigger = { 
+		trigger = {
 			AND = {
 				OR = {
 					can_buy_ind_items_trigger = yes
@@ -404,7 +414,7 @@ character_event = {
 		name = EVTOPTCmountshop.20
 		hidden_tooltip = { character_event = { id = mountshop.40 } }
 	}
-	
+
 	#back to artifact type
 	option = {
 		name = EVTOPTBACK
@@ -421,27 +431,27 @@ character_event = {
 
 	is_triggered_only = yes
 
-	
+
 	#tier 1+2
 	option = {
 		name = EVTOPTAmountshop.21
 		hidden_tooltip = { character_event = { id = mountshop.22 } }
 	}
-	
+
 	#tier 3
 	option = {
 		trigger={NOT={trait=creature_halfling}}
 		name = EVTOPTBmountshop.21
 		hidden_tooltip = { character_event = { id = mountshop.24 } }
 	}
-	
+
 	#tier 4+5
 	option = {
 		trigger={NOT={trait=creature_halfling}}
 		name = EVTOPTCmountshop.21
 		hidden_tooltip = { character_event = { id = mountshop.25 } }
 	}
-	
+
 	#back to mount types
 	option = {
 		name = EVTOPTBACK
@@ -458,7 +468,7 @@ character_event = {
 
 	is_triggered_only = yes
 
-	
+
 	#Pony
 	option = {
 		trigger={trait=creature_halfling}
@@ -477,7 +487,7 @@ character_event = {
 		new_artifact = { save_event_target_as = mount_bought_item }
 		clr_character_flag = visiting_mount_market
 	}
-	
+
 	#rouncey
 	option = {
 		trigger={NOT={trait=creature_halfling}}
@@ -487,14 +497,14 @@ character_event = {
 		new_artifact = { save_event_target_as = mount_bought_item }
 		clr_character_flag = visiting_mount_market
 	}
-	
+
 	#next to p2
 	option = {
 		trigger={NOT={trait=creature_halfling}}
 		name = EVTOPTNEXT
 		hidden_tooltip = { character_event = { id = mountshop.23 } }
 	}
-	
+
 	#back to horse quality
 	option = {
 		trigger={NOT={trait=creature_halfling}}
@@ -509,9 +519,9 @@ character_event = {
 	title = EVTTITLEmountshop.23
 	desc = EVTDESAmountshop.23
 	picture = GFX_evt_market
-	
+
 	is_triggered_only = yes
-	
+
 	#hobby
 	option = {
 		trigger = { can_buy_albion_items_trigger = yes }
@@ -523,7 +533,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#jennet
 	option = {
 		trigger = { can_buy_estalian_items_trigger = yes }
@@ -535,7 +545,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#palfry
 	option = {
 		name = EVTOPTCmountshop.23
@@ -544,7 +554,7 @@ character_event = {
 		new_artifact = { save_event_target_as = mount_bought_item }
 		clr_character_flag = visiting_mount_market
 	}
-	
+
 	#loop back to page 1
 	option = {
 		name = EVTOPTNEXT
@@ -558,7 +568,7 @@ character_event = {
 	title = EVTTITLEmountshop.24
 	desc = EVTDESAmountshop.24
 	picture = GFX_evt_market
-	
+
 	is_triggered_only = yes
 
 	#courser
@@ -572,7 +582,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#breton charger
 	option = {
 		trigger = { can_buy_breton_items_trigger = yes }
@@ -600,7 +610,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#galician horse
 	option = {
 		trigger = { can_buy_estalian_items_trigger = yes }
@@ -616,7 +626,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#back to horse quality
 	option = {
 		name = EVTOPTBACK
@@ -624,13 +634,13 @@ character_event = {
 	}
 }
 
-##tier 4+5 page 1 
+##tier 4+5 page 1
 character_event = {
 	id = mountshop.25
 	title = EVTTITLEmountshop.25
 	desc = EVTDESAmountshop.25
 	picture = GFX_evt_market
-	
+
 	is_triggered_only = yes
 
 	option = {
@@ -644,7 +654,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	option = {
 		trigger = { culture_group = druchi_group }
 		name = EVTOPTCOmountshop.25
@@ -673,8 +683,8 @@ character_event = {
 	}
 	#steppe courser
 	option = {
-		trigger = { 
-			can_buy_steppes_items_trigger = yes 
+		trigger = {
+			can_buy_steppes_items_trigger = yes
 			NOT={culture_group = druchi_group }
 		}
 		name = EVTOPTBmountshop.25
@@ -684,7 +694,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#next to p2
 	option = {
 		name = EVTOPTNEXT
@@ -711,7 +721,7 @@ character_event = {
 			else = { character_event = { id = mountshop.27 } }
 		}
 	}
-	
+
 	#back to horse quality
 	option = {
 		name = EVTOPTBACK
@@ -727,7 +737,7 @@ character_event = {
 	picture = GFX_evt_market
 
 	is_triggered_only = yes
-	
+
 	#asur courser
 	option = {
 		trigger = { can_buy_asur_items_trigger = yes }
@@ -743,7 +753,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#arabyan courser
 	option = {
 		trigger = { can_buy_arabyan_items_trigger = yes }
@@ -759,7 +769,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#arabyan charger
 	option = {
 		trigger = { can_buy_arabyan_items_trigger = yes }
@@ -775,17 +785,17 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#next or loop back to p1
 	option = {
 		name = EVTOPTNEXT
-		
-		hidden_tooltip = { 
+
+		hidden_tooltip = {
 			#check for p3
 			if = {
-				limit = { 
+				limit = {
 					OR = {
-						can_buy_steppes_items_trigger = yes 
+						can_buy_steppes_items_trigger = yes
 						can_buy_breton_items_trigger = yes
 						can_buy_arabyan_items_trigger = yes
 					}
@@ -868,7 +878,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#loop back to p1
 	option = {
 		name = EVTOPTNEXT
@@ -892,7 +902,7 @@ character_event = {
 		name = EVTOPTAmountshop.30
 		hidden_tooltip = { character_event = { id = mountshop.31 } }
 	}
-	
+
 	#Elephants
 	option = {
 		trigger = {
@@ -904,7 +914,7 @@ character_event = {
 		name = EVTOPTBmountshop.30
 		hidden_tooltip = { character_event = { id = mountshop.32 } }
 	}
-	
+
 	#back to mount types
 	option = {
 		name = EVTOPTBACK
@@ -918,7 +928,7 @@ character_event = {
 	title = EVTTITLEmountshop.31
 	desc = EVTDESAmountshop.31
 	picture = GFX_evt_market
-	
+
 	is_triggered_only = yes
 
 	#arabyan camel
@@ -948,7 +958,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#back to camels and elephants
 	option = {
 		name = EVTOPTBACK
@@ -962,7 +972,7 @@ character_event = {
 	title = EVTTITLEmountshop.32
 	desc = EVTDESAmountshop.32
 	picture = GFX_evt_market
-	
+
 	is_triggered_only = yes
 
 	#indn elephant
@@ -992,7 +1002,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#back to camels and elephants
 	option = {
 		name = EVTOPTBACK
@@ -1005,7 +1015,7 @@ character_event = {
 	title = EVTTITLEmountshop.40
 	desc = EVTDESAmountshop.40
 	picture = GFX_evt_market
-	
+
 	is_triggered_only = yes
 
 	#Lamassu
@@ -1019,7 +1029,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	#Imperial Gryphon	
+	#Imperial Gryphon
 	option = {
 		trigger={ can_buy_griffon_items_trigger = yes }
 		name = EVTOPTGmountshop.40
@@ -1030,7 +1040,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#Amazon tiger
 	option = {
 		trigger = {trait=creature_amazon}
@@ -1042,7 +1052,7 @@ character_event = {
 
 	#next to p2
 	option = {
-		trigger = { 
+		trigger = {
 			OR = {
 				can_buy_kislev_items_trigger = yes
 				can_buy_asur_items_trigger = yes
@@ -1051,7 +1061,7 @@ character_event = {
 		name = EVTOPTNEXT
 		hidden_tooltip = { character_event = { id = mountshop.41 } }
 	}
-	
+
 	#back to mount types
 	option = {
 		name = EVTOPTBACK
@@ -1065,9 +1075,9 @@ character_event = {
 	title = EVTTITLEmountshop.41
 	desc = EVTDESAmountshop.41
 	picture = GFX_evt_market
-	
+
 	is_triggered_only = yes
-	
+
 	#kislev bear
 	option = {
 		trigger = { can_buy_kislev_items_trigger = yes }
@@ -1083,7 +1093,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#Asrai Stag
 	option = {
 		trigger = { can_buy_asrai_items_trigger = yes }
@@ -1099,7 +1109,7 @@ character_event = {
 			clr_character_flag = visiting_mount_market
 		}
 	}
-	
+
 	#loop back to p1
 	option = {
 		name = EVTOPTNEXT
@@ -1110,17 +1120,17 @@ character_event = {
 #cathayan horse decision governor ping
 character_event = {
     id = mountshop.102
-	
+
     hide_window = yes
     is_triggered_only = yes
-	
+
 	immediate = { FROMFROM = { letter_event = { id = mountshop.103 days = 1 } } }
 }
 
 #give cathayan horse
 letter_event = {
     id = mountshop.103
-	
+
     desc = EVTDESAmountshop.103
     border = GFX_event_letter_frame_diplomacy
 
@@ -1130,13 +1140,13 @@ letter_event = {
         name = EVTOPTAmountshop.103
 		random_list = {
 			65 = { add_artifact = cathayan_ceromonial_horse }
-			
+
 			34 = { add_artifact = cathayan_war_horse }
-			
-			1 = { 
-				trigger = { 
-					NOR = { 
-						has_global_flag = red_hare_alive 
+
+			1 = {
+				trigger = {
+					NOR = {
+						has_global_flag = red_hare_alive
 						offmap_cathay = {
 							OR = {
 								has_status = china_famine
@@ -1173,10 +1183,10 @@ letter_event = {
 ###grant commander mount checks
 character_event = {
 	id = mountshop.105
-	
+
 	hide_window = yes
 	is_triggered_only = yes
-	
+
 	immediate = {
 		if = {
 			limit = { has_character_flag = grant_commander_mount_no_mounts }
@@ -1191,9 +1201,9 @@ character_event = {
 	id = mountshop.106
 	desc = EVTDESAmountshop.106
 	picture = GFX_evt_emissary_byzantine
-	
+
 	is_triggered_only = yes
-	
+
 	option = {
 		name = EVTOPTAmountshop.106
 		hidden_tooltip = {
@@ -1210,7 +1220,7 @@ character_event = {
 	picture = GFX_evt_emissary_byzantine
 
 	is_triggered_only = yes
-	
+
 	#courser
 	option = {
 		name = EVTOPTAmountshop.107
@@ -1222,7 +1232,7 @@ character_event = {
 			}
 			else = { add_artifact = mount_lance }
 			hidden_tooltip = { new_artifact = { set_artifact_flag = commander_addon } }
-			
+
 			add_artifact = courser
 			hidden_tooltip = {
 				new_artifact = {
@@ -1234,8 +1244,8 @@ character_event = {
 			}
 			opinion = { modifier = opinion_loyal_servant who = ROOT }
 		}
-		ai_chance = { 
-			factor = 25 
+		ai_chance = {
+			factor = 25
 			modifier = {
 				factor = 1.5
 				FROMFROM = { can_use_horse_archery_trigger = yes }
@@ -1246,7 +1256,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	#destrier
 	option = {
 		name = EVTOPTBmountshop.107
@@ -1254,10 +1264,10 @@ character_event = {
 		FROMFROM = {
 			add_artifact = mount_lance
 			hidden_tooltip = { new_artifact = { set_artifact_flag = commander_addon } }
-			
+
 			add_artifact = destrier
 			hidden_tooltip = {
-				new_artifact = { 
+				new_artifact = {
 					set_artifact_flag = commander_mount
 					decrease_mount_health_effect = yes
 				}
@@ -1268,7 +1278,7 @@ character_event = {
 		}
 		ai_chance = { factor = 25 }
 	}
-	
+
 	#charger
 	option = {
 		name = EVTOPTCmountshop.107
@@ -1276,10 +1286,10 @@ character_event = {
 		FROMFROM = {
 			add_artifact = mount_lance
 			hidden_tooltip = { new_artifact = { set_artifact_flag = commander_addon } }
-			
+
 			add_artifact = charger
 			hidden_tooltip = {
-				new_artifact = { 
+				new_artifact = {
 					set_artifact_flag = commander_mount
 					decrease_mount_health_effect = yes
 				}
@@ -1288,22 +1298,22 @@ character_event = {
 			}
 			opinion = { modifier = opinion_loyal_servant who = ROOT }
 		}
-		ai_chance = { 
-			factor = 25 
+		ai_chance = {
+			factor = 25
 			modifier = {
 				factor = 1.5
 				FROMFROM = { dynasty = ROOT }
 			}
 		}
 	}
-	
+
 	#nvm
 	option = {
 		name = EVTOPTDmountshop.107
-		
+
 		ai_chance = { factor = 0 }
 	}
-	
+
 	after = { clr_character_flag = grant_commander_mount_block }
 }
 
@@ -1316,13 +1326,13 @@ character_event = {
 	id = mountshop.211
 	desc = EVTDESAmountshop.211
 	picture = GFX_evt_horsemanship
-	
+
 	is_triggered_only = yes
-	
+
 	only_playable = yes
 	has_character_flag = has_mount
 	min_age = 16
-	
+
 	trigger = {
 		any_artifact = {
 			has_artifact_flag = mount
@@ -1337,10 +1347,10 @@ character_event = {
 			is_artifact_equipped = yes
 		}
 	}
-	
+
 	weight_multiplier = {
-		days = 1 
-		
+		days = 1
+
 		modifier = {
 			factor = 1.25
 			trait = aggressive_leader
@@ -1354,9 +1364,9 @@ character_event = {
 			trait = one_eyed
 		}
 	}
-	
+
 	immediate = { get_current_mount_effect = yes }
-	
+
 	option = {
 		name = EVTOPTAmountshop.211
 		event_target:current_mount = { decrease_mount_health_effect = yes }
@@ -1368,15 +1378,15 @@ character_event = {
 	id = mountshop.212
 	desc = EVTDESAmountshop.212
 	picture = GFX_evt_bring_out_your_dead
-	
+
 	only_playable = yes
 	has_character_flag = has_mount
-	
+
 	trigger = {
 		has_character_modifier = in_seclusion
 		capital_scope = { has_disease = yes }
 	}
-	
+
 	mean_time_to_happen = {
 		months = 9
 		modifier = {
@@ -1390,12 +1400,12 @@ character_event = {
 			multiplayer = yes
 		}
 	}
-	
+
 	immediate = {
 		get_random_mount_no_immortal_effect = yes
 		get_random_mount_no_immortal_2_effect = yes
 	}
-	
+
 	#let them into the castle
 	option = {
 		name = EVTOPTAmountshop.212
@@ -1413,8 +1423,8 @@ character_event = {
 				}
 			}
 			random_courtier = {
-				limit = { 
-					NOR = { 
+				limit = {
+					NOR = {
 						character = ROOT
 						prisoner = yes
 						is_ill = yes
@@ -1435,7 +1445,7 @@ character_event = {
 				give_epidemic_disease_effect = yes
 			}
 		}
-		
+
 		ai_chance = {
 			factor = 30
 			modifier = {
@@ -1444,7 +1454,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	#leave them outside
 	option = {
 		name = EVTOPTBmountshop.212
@@ -1484,10 +1494,10 @@ character_event = {
 
 character_event = {
 	id = mountshop.400
-	
+
 	is_triggered_only = yes
 	hide_window = yes
-	
+
 	only_playable = yes
 	only_capable = yes
 	has_character_flag = has_mount
@@ -1496,10 +1506,10 @@ character_event = {
 		NOT = { has_character_modifier = character_flavor_timer }
 		is_inaccessible_trigger = no
 	}
-	
+
 	weight_multiplier = {
 		days = 1
-		
+
 		#more likely to spend time on other stuff
 		modifier = {
 			factor = 2
@@ -1538,17 +1548,17 @@ character_event = {
 			trait = proud
 		}
 	}
-	
-	
+
+
 	immediate = {
 		add_character_modifier = { modifier = character_flavor_timer years = 4 hidden = yes }
 		check_mount_flags_effect = yes
-		
+
 		if = {
 			limit = { NOT = { has_character_flag = has_mount } }
 			break = yes
 		}
-		
+
 		random_list = {
 			###nomad's horse becomes swift from running too much
 			100 = {
@@ -1564,7 +1574,7 @@ character_event = {
 				}
 				character_event = { id = mountshop.403 }
 			}
-			
+
 			###go on a ride
 			100 = {
 				trigger = {
@@ -1586,7 +1596,7 @@ character_event = {
 	picture = GFX_evt_mongols
 
 	is_triggered_only = yes
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -1623,11 +1633,11 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = {
 		name = EVTOPTAmountshop.403
 		event_target:improved_horse = {
-			custom_tooltip = { 
+			custom_tooltip = {
 				text = EVTTOOLTIPAmountshop.403
 				set_artifact_flag = swift
 			}
@@ -1643,7 +1653,7 @@ character_event = {
 	picture = GFX_evt_hunt
 
 	is_triggered_only = yes
-	
+
 	immediate = {
 		random_artifact = {
 			limit = {
@@ -1653,7 +1663,7 @@ character_event = {
 			save_event_target_as = random_mount
 		}
 	}
-	
+
 	#ride around demesne
 	option = {
 		name = EVTOPTAmountshop.404
@@ -1693,7 +1703,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	#go hunting
 	option = {
 		name = EVTOPTBmountshop.404
@@ -1702,7 +1712,7 @@ character_event = {
 			remove_trait = depressed
 		}
 		random_list = {
-			50 = { 
+			50 = {
 				if = {
 					limit = { society_member_of = hermetics }
 					hermetic_add_animal_ingredient_effect = yes
@@ -1742,7 +1752,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	#no
 	option = {
 		name = EVTOPTCmountshop.404

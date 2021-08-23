@@ -136,7 +136,7 @@ old_world_group = {
 
 	myrmidian = {
 		graphical_culture = westerngfx
-		
+
 		interface_skin = { myrmidian_interface }
 
 		icon = 6
@@ -156,7 +156,7 @@ old_world_group = {
 		evil_god_names = {
 			GOD_THE_DARK_GODS
 		}
-		
+
 		autocephaly = yes
 		pentarchy = yes
 		priests_can_marry = no
@@ -189,7 +189,7 @@ old_world_group = {
 
 	grail = {
 		graphical_culture = westerngfx
-		
+
 		interface_skin = { bretonnian_interface }
 
 		icon = 10
@@ -247,9 +247,9 @@ old_world_group = {
 
 	false_grail = {
 		graphical_culture = westerngfx
-		
+
 		interface_skin = { bretonnian_interface }
-		
+
 		icon = 10
 		heresy_icon = 34
 
@@ -681,7 +681,7 @@ old_world_group = {
 		dynamic_cult = no
 		secret_religion = no
 	}
-	
+
 	morrian = {
 		graphical_culture = westerngfx
 
@@ -711,7 +711,7 @@ old_world_group = {
 		priests_can_inherit = no
 		can_retire_to_monastery = yes
 		investiture = yes
-			
+
 		intermarry = sigmarite
 		intermarry = myrmidian
 		intermarry = grail
@@ -1276,6 +1276,7 @@ chaos_gods_group = {
 		allow_looting = yes
 		seafarer = yes
 		female_temple_holders = yes
+		has_heir_designation = yes
 		#max_consorts = 5
 
 		dynamic_cult = no
@@ -1646,7 +1647,7 @@ dwarf_gods_group = {
 		allow_rivermovement = no
 		female_temple_holders = yes
 		feminist = yes
-		
+
 		unit_modifier = {
 			land_morale = 0.2
 			light_infantry_defensive = 0.2
@@ -2116,7 +2117,7 @@ necromantic_group = {
 
 		intermarry = vampiric
 	}
-	
+
 	drachen = {
 		graphical_culture = westerngfx
 
@@ -2357,11 +2358,11 @@ great_maw_group = {
 		unit_modifier = {
 			levy_size = 0.15
 			garrison_size = 0.05
-			
+
 			heavy_infantry_offensive = 0.2
 			heavy_infantry_morale = 0.2
 			heavy_infantry_defensive = 0.2
-			
+
 			key = "OFF_RELIGION"
 		}
 		defensive_attrition = yes
@@ -2403,7 +2404,7 @@ great_maw_group = {
 			garrison_size = 0.2
 			light_infantry_defensive = 0.4
 			heavy_infantry_defensive = 0.4
-			
+
 			key = "DEF_RELIGION_HOME_TERRITORY"
 		}
 
@@ -2414,7 +2415,7 @@ great_maw_group = {
 		priests_can_marry = yes
 		landed_kin_prestige_bonus = yes
 		attacking_same_religion_piety_loss = yes
-		
+
 		defensive_attrition = yes
 		female_temple_holders = no
 		matrilineal_marriages = no

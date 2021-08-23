@@ -1,0 +1,102 @@
+tribal_hobgoblin_building_trigger = {
+  location = {
+    culture = servile_hobgoblin
+  }
+  FROM = {
+    trait = creature_hobgoblin
+  }
+}
+
+tribal_hobgoblin_unruly_slaves_building_trigger = {
+  FROM = {
+    trait = creature_hobgoblin
+  }
+  location = {
+    NOT = { culture = servile_hobgoblin }
+  }
+}
+
+chaos_dwarf_trade_with_hobgoblins_building_trigger = {
+  culture = servile_hobgoblin
+  FROM = {
+    is_patrician = yes
+    trait = creature_chaos_dwarf
+  }
+}
+
+chaos_dwarf_building_trigger = {
+  location = {
+    culture_group = dawi_zharr_group
+    NOT = { culture = servile_hobgoblin }
+  }
+  FROM = {
+    trait = creature_chaos_dwarf
+  }
+}
+
+order_dwarf_building_trigger = {
+  location = {
+    culture_group = dwarf_group
+  }
+  FROM = {
+    trait = creature_dwarf
+  }
+}
+
+#use in potential when any_dwarf_building_trigger is being used in is_active_trigger
+weak_any_dwarf_building_trigger = {
+  FROM = {
+    OR = {
+      trait = creature_chaos_dwarf
+      trait = creature_dwarf
+    }
+  }
+  location = {
+    OR = {
+      culture_group = dwarf_group
+      culture_group = dawi_zharr_group
+    }
+    NOT = { culture = servile_hobgoblin }
+  }
+}
+
+#use in potential for either/or buildings, in is_active_trigger with weak_any_dwarf_building_trigger for buildings that should persist through conquest
+any_dwarf_building_trigger = {
+  custom_tooltip = {
+    text = any_dwarf_building_trigger_tt
+    OR = {
+      order_dwarf_building_trigger = yes
+      chaos_dwarf_building_trigger = yes
+    }
+  }
+}
+
+old_world_city_can_build_great_temple_trigger = {
+    FROMFROM = {
+        has_wonder_upgrade = upgrade_temple_quarter
+        NOR = {
+            has_wonder_upgrade = upgrade_great_dazh_temple
+            has_wonder_upgrade = upgrade_great_grail_chapel
+            has_wonder_upgrade = upgrade_great_manann_temple
+            has_wonder_upgrade = upgrade_great_morr_temple
+            has_wonder_upgrade = upgrade_great_myrmidia_temple
+            has_wonder_upgrade = upgrade_great_sigmar_temple
+            has_wonder_upgrade = upgrade_great_shallya_temple
+            has_wonder_upgrade = upgrade_great_taal_rhya_temple
+            has_wonder_upgrade = upgrade_great_ulric_temple
+            has_wonder_upgrade = upgrade_great_ursun_temple
+            has_wonder_upgrade = upgrade_great_verena_temple
+        }
+    }
+}
+
+has_city_state_special_levy_building_trigger = {
+    OR = {
+        province = 222
+        province = 274
+        province = 299
+        province = 309
+        province = 324
+        province = 655
+    }
+}

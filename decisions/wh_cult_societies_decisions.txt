@@ -184,6 +184,32 @@ targeted_decisions = {
 		}
 	}
 
+	#Shallyans: Self-Sacrifice
+	shallyan_self_sacrifice = {
+		ai_check_interval = 120
+		is_in_society = yes
+
+		filter = self
+		ai_target_filter = self
+
+		potential = {
+			has_dlc = "Mystics"
+			society_member_of = cult_of_shallya
+			society_rank == 4
+		}
+		allow = {
+			society_currency = 10000
+		}
+		effect = {
+			character_event = {
+				id = wh_cult_of_shallya_society.200
+			}
+		}
+		ai_will_do = {
+			factor = 10
+		}
+	}
+
 	#Power: Demonic Possession
 	chaos_cult_demonic_possession = {
 		ai_check_interval = 12
@@ -204,7 +230,6 @@ targeted_decisions = {
 			NOT = { character = FROM }
 			NOT = { trait = avatar_kurnous }
 			NOT = { trait = avatar_isha }
-			NOT = { trait = everqueen }
 			OR = { trait = creature_elf
 			trait = creature_chaos_dwarf
 			trait = creature_dwarf
@@ -1836,65 +1861,66 @@ society_decisions = {
 		}
 	}
 
-	hermetic_grand_debate = {
-		ai_check_interval = 6
-		only_playable = yes
-		is_high_prio = yes
-
-		potential = {
-			has_dlc = "Mystics"
-			is_playable = yes
-			is_adult = yes
-			society_member_of = cult_of_verena
-			society_rank == 4
-		}
-
-		allow = {
-			wealth = 100
-			prestige = 400
-			prisoner = no
-			NOT = { is_inaccessible_trigger = yes }
-			custom_tooltip = {
-				text = is_not_busy_trigger_tooltip
-				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
-			}
-			custom_tooltip = {
-				text = GRAND_DEBATE_HOLDING_TOOLTIP
-				OR = {
-					NOT = { has_global_flag = holding_grand_debate }
-					had_global_flag = { flag = holding_grand_debate days = 150 }
-				}
-			}
-			custom_tooltip = {
-				text = GRAND_DEBATE_COOLDOWN_TOOLTIP
-				OR = {
-					NOT = { has_global_flag = held_grand_debate }
-					had_global_flag = { flag = held_grand_debate days = 3650 }
-				}
-			}
-		}
-
-		effect = {
-			character_event = { id = DR_societies.1980 tooltip = GRAND_DEBATE_INVITE_TOOLTIP }
-			wealth = -100
-			hidden_tooltip = {
-				clr_character_flag = grand_debate_has_ended
-				set_character_flag = do_not_disturb
-				set_global_flag = holding_grand_debate
-				character_event = { id = DR_societies.1982 days = 300 } # Safety catch flag clearing
-			}
-		}
-
-		revoke_allowed = { always = no }
-
-		ai_will_do = {
-			factor = 1
-
-			modifier = {
-				factor = 0.001 # Slow down
-			}
-		}
-	}
+# Cult of Verena removed, decision might be needed for others later
+#	 hermetic_grand_debate = {
+#		ai_check_interval = 6
+#		only_playable = yes
+#		is_high_prio = yes
+#
+#		potential = {
+#			has_dlc = "Mystics"
+#			is_playable = yes
+#			is_adult = yes
+#			society_member_of = cult_of_verena
+#			society_rank == 4
+#		}
+#
+#		allow = {
+#			wealth = 100
+#			prestige = 400
+#			prisoner = no
+#			NOT = { is_inaccessible_trigger = yes }
+#			custom_tooltip = {
+#				text = is_not_busy_trigger_tooltip
+#				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+#			}
+#			custom_tooltip = {
+#				text = GRAND_DEBATE_HOLDING_TOOLTIP
+#				OR = {
+#					NOT = { has_global_flag = holding_grand_debate }
+#					had_global_flag = { flag = holding_grand_debate days = 150 }
+#				}
+#			}
+#			custom_tooltip = {
+#				text = GRAND_DEBATE_COOLDOWN_TOOLTIP
+#				OR = {
+#					NOT = { has_global_flag = held_grand_debate }
+#					had_global_flag = { flag = held_grand_debate days = 3650 }
+#				}
+#			}
+#		}
+#
+#		effect = {
+#			character_event = { id = DR_societies.1980 tooltip = GRAND_DEBATE_INVITE_TOOLTIP }
+#			wealth = -100
+#			hidden_tooltip = {
+#				clr_character_flag = grand_debate_has_ended
+#				set_character_flag = do_not_disturb
+#				set_global_flag = holding_grand_debate
+#				character_event = { id = DR_societies.1982 days = 300 } # Safety catch flag clearing
+#			}
+#		}
+#
+#		revoke_allowed = { always = no }
+#
+#		ai_will_do = {
+#			factor = 1
+#
+#			modifier = {
+#				factor = 0.001 # Slow down
+#			}
+#		}
+#	}
 
 	#Power: write Magnum Opus
 	hermetics_write_magnum_opus = {

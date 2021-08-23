@@ -20,6 +20,24 @@
 	add_trait = honest
 
 	2006.12.14 = {birth = yes}
+	2009.1.1 = {
+		effect = {
+			set_special_character_title = GRAND_BARON
+		}
+	}
+	2010.1.1 = {
+		effect = {
+			create_retinue = RETTYPE_ST_GREATSWORDS
+			create_retinue = RETTYPE_ST_GREATSWORDS
+			create_retinue = RETTYPE_ST_GREATSWORDS
+			create_retinue = RETTYPE_ST_CANNONS
+			create_retinue = RETTYPE_ST_CANNONS
+			create_retinue = RETTYPE_LONGRIFLES
+			create_retinue = RETTYPE_LONGRIFLES
+			create_retinue = RETTYPE_ST_OUTRIDER
+			create_retinue = RETTYPE_ST_KNIGHTS
+		}
+	}
 	2040.5.20 = {death = yes}
 }
 
@@ -506,4 +524,20 @@
 	2055.2.10 = {death = yes}
 }
 
-9629
+9629 = {	#82046
+	name = Erika
+	female = yes
+	dynasty = 17008 # Hochen
+	culture = hochlander
+	religion = ulrican
+	martial = 1
+	diplomacy = 3
+	stewardship = 2
+	intrigue = 5
+	learning = 3
+	add_trait = creature_human
+	add_trait = underhanded_rogue
+	add_trait = gregarious
+	1965.9.1 = {birth = yes}
+	2020.2.11 = {death = yes}
+}

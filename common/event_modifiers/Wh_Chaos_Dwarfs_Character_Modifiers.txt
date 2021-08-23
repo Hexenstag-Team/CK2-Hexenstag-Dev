@@ -4,11 +4,17 @@ hashut_blessing = {
 	martial = 3
 	stewardship = 3
 	church_opinion = 10
+		is_visible = {
+		religion_visible_trait = yes
+	}
 
 	icon = 165
 }
 recently_asked_hashut = {
 	icon = 170
+				is_visible = {
+		hidden_trait = yes
+	}
 }
 hashut_curse = {
 	monthly_character_piety = -0.25
@@ -16,6 +22,9 @@ hashut_curse = {
 	stewardship = -3
 	monthly_character_wealth = -0.25
 	same_religion_opinion = -10
+		is_visible = {
+		religion_visible_trait = yes
+	}
 
 	icon = 170
 }
@@ -23,9 +32,21 @@ must_sacrifice_hashut = {
 	vassal_opinion = -30
 	church_opinion = -50
 	monthly_character_piety = -0.5
+		is_visible = {
+		religion_visible_trait = yes
+	}
 
 	icon = 170
 }
 recently_sold_chaos_dwarfs = {
 	icon = 29
+			is_visible = {
+		hidden_trait = yes
+	}
+}
+
+#used for throttling decisions that help the children of Sorcerers into the family business
+hashut_heir_interaction = {
+	is_visible = no
+	icon = 76
 }

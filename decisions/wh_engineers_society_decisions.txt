@@ -1,0 +1,484 @@
+
+targeted_decisions = {
+  #decision to gamble on character health to gain society currency
+	engineer_experiment = {
+		is_in_society = yes
+		filter = self
+		ai_target_filter = self
+
+		is_high_prio = yes
+
+		potential = {
+			character = FROM
+			has_dlc = "Mystics"
+			society_member_of = engineers_guild
+			NOR = {
+				has_character_modifier = impractical_innovation
+				has_character_modifier = practical_innovation
+				has_character_modifier = busy_engineer
+			}
+			is_incapable = no
+			NOT = { is_inaccessible_trigger = yes }
+		}
+
+		allow = {
+			custom_tooltip = {
+				text = tooltip_not_busy
+				NOT = { has_character_flag = do_not_disturb }
+			}
+		}
+
+		effect = {
+			custom_tooltip = {
+				text = engineer_experiment_tt
+				add_character_modifier = { name = busy_engineer duration = 30 }
+				random_list = {
+					60 = { #plans complete
+            #knowledge base
+						modifier = {
+							factor = 2
+							learning >= 15
+						}
+            #experience
+						modifier = {
+							factor = 2
+							OR = {
+								trait = dwarf_engineer
+								trait = dwarf_engineer_master
+								trait = engineer
+							}
+						}
+            #"stickitude"
+						modifier = {
+							factor = 1.2
+							trait = stubborn
+						}
+						character_event = {
+							id = wh_engineers_society.10
+							days = 14
+							random = 7
+						}
+					}
+					60 = { #can't make it work
+            #lack of drive
+						modifier = {
+							factor = 1.5
+							trait = slothful
+						}
+            #knowledge base
+						modifier = {
+							factor = 0.5
+							learning >= 20
+						}
+            #drive
+						modifier = {
+							factor = 0.5
+							trait = ambitious
+						}
+            #masterwork effect
+            modifier = {
+              factor = 0.5
+              society_rank == 4
+            }
+						character_event = {
+							id = wh_engineers_society.12
+							days = 14
+							random = 7
+						}
+					}
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				OR = {
+					trait = ambitious
+					trait = proud
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					trait = genius
+					trait = brilliant
+				}
+			}
+			modifier = {
+				factor = 0.5
+				learning < 12
+			}
+			modifier = {
+				factor = 0.5
+				trait = content
+			}
+      modifier = {
+        factor = 0.1
+        has_injury_trigger = yes
+      }
+		}
+	}
+
+}
+
+
+society_decisions = {
+
+  #decision to spend society currency to gain a desirable trait (human version)
+	engineer_training = {
+		ai_check_interval = 12
+		is_high_prio = yes
+
+		potential = {
+			has_dlc = "Mystics"
+			society_rank = {
+				rank >= 2
+				society = engineers_guild
+			}
+			trait = creature_human
+			is_incapable = no
+			NOT = { trait = engineer }
+			}
+
+		allow = {
+			has_society_currency_minor_trigger = yes
+		}
+
+		effect = {
+			add_trait = engineer
+			detract_society_currency_minor_effect = yes
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				learning = 10
+			}
+		}
+	}
+
+  #decision to spend society currency to gain a desirable trait (dwarf version)
+	dwarf_engineer_training = {
+		ai_check_interval = 12
+		is_high_prio = yes
+
+		potential = {
+			has_dlc = "Mystics"
+			society_rank = {
+				rank >= 2
+				society = engineers_guild
+			}
+			trait = creature_dwarf
+			is_incapable = no
+			NOR = {
+				trait = dwarf_engineer
+				trait = dwarf_engineer_master
+			}
+		}
+
+		allow = {
+			has_society_currency_minor_trigger = yes
+		}
+
+		effect = {
+			add_trait = dwarf_engineer
+			detract_society_currency_minor_effect = yes
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				learning = 10
+			}
+		}
+	}
+
+  #decision to spend currency to upgrade a desirable trait
+  dwarf_master_engineer_training = {
+		ai_check_interval = 12
+		is_high_prio = yes
+
+		potential = {
+      trait = dwarf_engineer
+      days_in_society = 14600   #40 years - time to start looking forward to being a Master Engineer
+      has_dlc = "Mystics"
+			society_rank = {
+				rank >= 3
+				society = engineers_guild
+			}
+			trait = creature_dwarf
+			is_incapable = no
+			NOT = {
+				trait = dwarf_engineer_master
+			}
+		}
+
+		allow = {
+      days_in_society = 18250   #50 years!
+			has_society_currency_minor_trigger = yes
+		}
+
+		effect = {
+			add_trait = dwarf_engineer_master
+			detract_society_currency_minor_effect = yes
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 3
+				learning = 10
+			}
+		}
+	}
+
+
+  #decision to spend society currency to gain powerful troops
+	deploy_war_machines = {
+		ai_check_interval = 3
+		is_high_prio = yes
+		is_mercenary = yes
+		only_playable = yes
+
+		potential = {
+			has_dlc = "Mystics"
+			society_rank = {
+				rank >= 3
+				society = engineers_guild
+			}
+		}
+
+		allow = {
+			war = yes
+			has_society_currency_major_trigger = yes
+			NOT = { has_character_modifier = busy_engineer }
+			custom_tooltip = {
+				text = is_not_busy_trigger_tooltip
+				hidden_tooltip = { NOT = { has_character_flag = do_not_disturb } }
+			}
+		}
+
+		effect = {
+			custom_tooltip = { text = deploy_war_machines_tt }
+			detract_society_currency_major_effect = yes
+
+			hidden_tooltip = {
+				add_character_modifier = { name = busy_engineer duration = 180 }
+        #Masterwork effect
+        if = {
+          limit = {
+            society_rank == 4
+          }
+          capital_scope = {
+  					ROOT = {
+  						spawn_unit = {
+  							owner = ROOT
+  							home = PREV
+  							province = PREV
+  							disband_on_peace = yes
+  							maintenance_multiplier = 0.5
+  							attrition = 0.25
+
+  							troops = {
+  								siege_tanks = { 10 10 }
+  							}
+  						}
+  					}
+  				}
+        }
+        #regular
+        else = {
+  				capital_scope = {
+  					ROOT = {
+  						spawn_unit = {
+  							owner = ROOT
+  							home = PREV
+  							province = PREV
+  							disband_on_peace = yes
+  							maintenance_multiplier = 1
+  							attrition = 0.5
+
+  							troops = {
+  								siege_tanks = { 5 5 }
+  							}
+  						}
+  					}
+  				}
+        }
+			}
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				war = yes
+				factor = 2
+			}
+		}
+	}
+
+}
+
+
+title_decisions = {
+  #decision to use engineer society currency to give a short-term improvement to a county
+	economic_engineering = {
+		filter = sub_realm_owned
+		ai_target_filter = owned
+		only_playable = yes
+
+		from_potential = {
+      society_rank = { society = engineers_guild rank >= 2 }
+      war = no
+			has_dlc = "Mystics"
+			NOT = { trait = incapable }
+		}
+
+		potential = {
+			tier = COUNT
+			owner = {
+				same_realm = FROM
+			}
+		}
+
+		allow = {
+      location = {
+        NOT = { has_engineer_province_improvement_modifier = yes }
+      }
+			FROM = {
+				has_society_currency_medium_trigger = yes
+        NOT = {
+          has_character_modifier = busy_engineer
+        }
+				custom_tooltip = {
+					text = tooltip_not_busy
+					NOT = { has_character_flag = do_not_disturb }
+				}
+			}
+		}
+
+		effect = {
+			FROM = {
+				detract_society_currency_medium_effect = yes
+				add_character_modifier = { name = busy_engineer duration = 180 }
+			}
+      #masterwork effect
+      if = {
+        limit = {
+          FROM = {
+            society_rank == 4
+          }
+        }
+        location = {
+          add_province_modifier = {
+            name = engineering_economic_improvements
+            duration = 1460
+          }
+        }
+      }
+      #regular
+      else = {
+  			location = {
+  				add_province_modifier = {
+            name = engineering_economic_improvements
+            duration = 730
+          }
+  			}
+      }
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 2
+				has_society_currency_major_trigger = yes
+			}
+		}
+	}
+
+  military_engineering = {
+		filter = sub_realm_owned
+		ai_target_filter = owned
+		only_playable = yes
+
+		from_potential = {
+      society_rank = { society = engineers_guild rank >= 2 }
+      war = yes
+			has_dlc = "Mystics"
+			NOT = { trait = incapable }
+		}
+
+		potential = {
+			tier = COUNT
+			owner = {
+				same_realm = FROM
+			}
+		}
+
+		allow = {
+        location = {
+          NOT = { has_engineer_province_improvement_modifier = yes }
+        }
+    		FROM = {
+				has_society_currency_medium_trigger = yes
+        NOT = {
+          has_character_modifier = busy_engineer
+        }
+        custom_tooltip = {
+					text = tooltip_not_busy
+					NOT = { has_character_flag = do_not_disturb }
+				}
+			}
+		}
+
+		effect = {
+			FROM = {
+				detract_society_currency_medium_effect = yes
+				add_character_modifier = { name = busy_engineer duration = 180 }
+			}
+      #Masterwork effect
+      if = {
+        limit = {
+          FROM = {
+            society_rank == 4
+          }
+        }
+        location = {
+          add_province_modifier = {
+            name = engineering_military_improvements
+            duration = 1460
+          }
+        }
+      }
+      #regular
+      else = {
+  			location = {
+  				add_province_modifier = {
+            name = engineering_military_improvements
+            duration = 730
+          }
+  			}
+      }
+		}
+
+		ai_will_do = {
+			factor = 1
+      #plenty of currency
+			modifier = {
+				factor = 2
+				has_society_currency_major_trigger = yes
+			}
+      #urgency
+      modifier = {
+        factor = 10
+        location = {
+          has_siege = yes
+        }
+      }
+		}
+	}
+
+}

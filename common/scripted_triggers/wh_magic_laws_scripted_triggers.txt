@@ -199,7 +199,7 @@ check_if_mage_should_be_burned = {
 				}
 			}
 		}
-	}	
+	}
 	NOT = {  top_liege = { has_character_modifier = expelled_k_witch_hunters_order } }
 	#Peasant leaders need all the help they can get and are going to have bigger concerns with organising their realms.
 	NOT = { top_liege = {  trait = peasant_leader } }
@@ -319,25 +319,17 @@ gender_is_allowed_magic = {
 		OR = {
 			AND = {
 				is_female = yes
-				OR = {
-					AND = {
-						human_religion_that_allows_female_mages = yes
-						liege = { 
-							human_religion_that_allows_female_mages = yes
-						}
-					}
-					top_liege = { trait = malekith }
+				human_religion_that_allows_female_mages = yes
+				liege = {
+					human_religion_that_allows_female_mages = yes
 				}
 			}
 			AND = {
 				is_female = no
-				AND = {
+				human_religion_that_allows_male_mages = yes
+				liege = {
 					human_religion_that_allows_male_mages = yes
-					liege = { 
-						human_religion_that_allows_male_mages = yes
-					}
 				}
-				NOT = { top_liege = { trait = malekith } }
 			}
 			has_magic_law_any = no
 			has_magic_law_2 = yes
@@ -524,7 +516,7 @@ can_hold_title_witch_hunter = {
 	is_adult = yes
 	is_ruler = no
 	prisoner = no
-	
+
 	trait = witch_hunter
 }
 
@@ -549,25 +541,7 @@ can_grant_title_teacher_mage = {
 		AND = {
 			trait = creature_elf
 			culture_group = asur_group
-			OR = {
-				NOT = {
-					top_liege = {
-						trait = malekith
-					}
-					top_liege = {
-						has_landed_title = e_ulthuan
-					}
-				}
-				AND = {
-					independent = yes
-					NOR = {
-						has_landed_title = e_ulthuan
-						trait = malekith
-					}
-				}
-			}
 		}
-		trait = creature_amazon
 		is_daemon_prince_trigger = yes
 	}
 	NOT = { religion = khorne }

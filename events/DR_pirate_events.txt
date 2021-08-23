@@ -762,11 +762,11 @@ character_event = {
 # }
 
 character_event = {
-	id = DR_pirates.104 
+	id = DR_pirates.104
 
 	is_triggered_only = yes
 	hide_window=yes
-	trigger = { 
+	trigger = {
 		FROMFROM={primary_title={title=FROM}}
 		FROMFROM={government=pirate_government}
 		government=pirate_government
@@ -840,7 +840,7 @@ narrative_event = {
 	}
 	option = {
 		name = EVTOPTBPirates_105
-		event_target:designated_heir={	
+		event_target:designated_heir={
 			show_portrait = yes
 		}
 		ROOT={
@@ -855,7 +855,8 @@ narrative_event = {
 character_event = {
 	id = DR_pirates.106
 	hide_window = yes
-	
+	is_triggered_only = yes
+
 	trigger = {
 		government = pirate_government
 		OR = {
@@ -870,10 +871,10 @@ character_event = {
 			AND = {
 				trait = one_legged
 				NOT = { character_modifier = one_legged_pirate }
-			}	
+			}
 		}
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -911,7 +912,7 @@ character_event = {
 character_event = {
 	id = DR_pirates.107
 	hide_window = yes
-	
+
 	trigger = {
 		government = pirate_government
 		OR = {
@@ -929,7 +930,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	immediate = {
 		if = {
 			limit = {
@@ -954,5 +955,3 @@ character_event = {
 		}
 	}
 }
-
-

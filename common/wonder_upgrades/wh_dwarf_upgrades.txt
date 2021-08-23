@@ -1,0 +1,1440 @@
+### Upgrades for Dwarf Hold ###
+
+#########
+#	INDEX	#
+#########
+# NOTE: While pre-requisites for mines are included in this index, other wonder upgrades also have some prerequisites.
+#
+# MINING #
+# upgrade_mining_layer_1
+# upgrade_mining_layer_2
+# upgrade_mining_layer_3
+# upgrade_mining_layer_4
+# upgrade_mining_pumps
+# -> alluvial minerals (req. upgrade_mining_layer_1)
+# upgrade_mining_cassiterite
+# upgrade_mining_native_gold
+# upgrade_mining_pyrite
+# upgrade_mining_tetrahedrite
+# upgrade_mining_water
+# -> sedimentary minerals (req. upgrade_mining_layer_2)
+# upgrade_mining_coal
+# upgrade_mining_galena
+# upgrade_mining_hematite
+# upgrade_mining_limonite
+# upgrade_mining_magnetite
+# upgrade_mining_rubies
+# upgrade_mining_sapphires
+# -> igneous extrusive minerals (req. upgrade_mining_layer_3)
+# upgrade_mining_cinnabar
+# upgrade_mining_native_copper
+# upgrade_mining_obsidian
+# -> igneous intrusive minerals (req. upgrade_mining_layer_4)
+# upgrade_mining_diamonds
+# upgrade_mining_emeralds
+# upgrade_mining_garnierite
+# upgrade_mining_granite
+# -> metamorphic minerals (also req. upgrade_mining_layer_4)
+# upgrade_mining_marble
+# COMMERCE #
+# upgrade_great_dwarf_port
+# upgrade_tunnel_roads
+# FORTIFICATION #
+# upgrade_defensive_tunnels
+# upgrade_great_gate
+# upgrade_outer_watchposts
+# upgrade_subterranean_keep
+# INDUSTRY #
+# upgrade_coal_power
+# upgrade_geothermal_power
+# upgrade_water_power
+# MILITARY INFRASTRUCTURE #
+# upgrade_dwarf_aerodrome
+# upgrade_dwarf_shipyard
+# MILITARY TRADITIONS #
+# upgrade_artillery_tradition
+# upgrade_gunnery_tradition #Blunderbussiers, Thunderers
+# upgrade_warrior_brotherhood #e.g. Infernal Guard, Slayers
+# PRESTIGE ARCHITECTURE #
+# upgrade_dwarf_great_hall
+# upgrade_dwarf_statues
+# upgrade_dwarf_throne_room
+# TEMPLE #
+# upgrade_great_grimnir_temple
+# upgrade_great_grungni_temple
+# upgrade_great_valaya_temple
+# upgrade_great_hashut_temple
+
+# # MINING # #
+
+#Mining layers. Allow mineral upgrades to be built, add to levy and garrison size (more living space)
+
+upgrade_mining_layer_1 = {
+  picture = GFX_upgrade_icon_mining_cart
+
+  potential = { }
+  allow = {  }
+  active = {  }
+
+  flags = {  }
+
+  build_time = 60
+  gold_cost_flat = 240
+  gold_cost_ticking = 4
+
+  local_modifier = {
+    garrison_size = 0.10
+    levy_size = 0.05
+  }
+
+  owner_modifier = {  }
+}
+
+
+upgrade_mining_layer_2 = {
+  picture = GFX_upgrade_icon_mining_cart
+
+  potential = {  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  active = {  }
+  flags = {  }
+
+  build_time = 80
+  gold_cost_flat = 240
+  gold_cost_ticking = 4
+
+  local_modifier = {
+    garrison_size = 0.10
+    levy_size = 0.05
+  }
+
+  owner_modifier = {  }
+}
+
+upgrade_mining_layer_3 = {
+  picture = GFX_upgrade_icon_mining_cart
+
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+    FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+  }
+  active = {  }
+  flags = {  }
+
+  build_time = 100
+  gold_cost_flat = 240
+  gold_cost_ticking = 4
+
+  local_modifier = {
+    garrison_size = 0.10
+    levy_size = 0.05
+  }
+
+  owner_modifier = {  }
+}
+
+upgrade_mining_layer_4 = {
+  picture = GFX_upgrade_icon_mining_cart
+
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+    FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_3
+    }
+  }
+  active = {  }
+  flags = {  }
+
+  build_time = 60
+  gold_cost_flat = 240
+  gold_cost_ticking = 4
+
+  local_modifier = {
+    garrison_size = 0.10
+    levy_size = 0.05
+  }
+
+  owner_modifier = {  }
+}
+
+#Mining pumps: reduces cost and time to build wonders (and upgrades) locally
+upgrade_mining_pumps = {
+  picture = GFX_upgrade_icon_crates
+
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+  }
+  active = {  }
+  flags = {  }
+
+  build_time = 80
+  gold_cost_flat = 240
+  gold_cost_ticking = 4
+
+  local_modifier = {
+    wonder_build_cost_modifier = -0.1
+    wonder_build_time_modifier = -0.1
+  }
+
+  owner_modifier = {  }
+}
+
+#alluvial minerals - shallow mining. req. upgrade_mining_layer_1, but visible on wonder completion
+
+#Cassiterite - tin ore
+#WH Dwarfs don't seem to use bronze for military purposes, but they probably use it (and tin) for crafts
+upgrade_mining_cassiterite = {
+  picture = GFX_upgrade_icon_ingots_silver
+  potential = { }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  flags = { }
+
+  build_time = 60
+  gold_cost_flat = 120
+  gold_cost_ticking = 1
+
+  local_modifier = {
+    tax_income = 1
+  }
+
+  owner_modifier = {  }
+}
+
+#GOLD!
+#Not a common find at this level (or any level) but we assume surveying as part of setup cost
+upgrade_mining_native_gold = {
+  picture = GFX_upgrade_icon_ingots_gold
+  potential = { }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  flags = { }
+
+  build_time = 60
+  gold_cost_flat = 120
+  gold_cost_ticking = 1
+
+  local_modifier = {
+    tax_income = 2
+  }
+  owner_modifier = {  }
+}
+
+#Pyrite
+#Fool's gold is a fine source of sulfur
+upgrade_mining_pyrite = {
+  picture = GFX_upgrade_icon_brazier
+  potential = { }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  flags = { }
+
+  build_time = 60
+  gold_cost_flat = 120
+  gold_cost_ticking = 1
+
+  local_modifier = {
+    artillery_offensive = 0.50
+    gunpowder_offensive = 0.25
+  }
+}
+
+#Tetrahedrite is an ore of copper and silver
+#again, bronze doesn't seem to play a military role for WH dwarfs, so pure craft bonus
+upgrade_mining_tetrahedrite = {
+  picture = GFX_upgrade_icon_ingots_silver
+  potential = { }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  flags = { }
+
+  build_time = 60
+  gold_cost_flat = 120
+  gold_cost_ticking = 1
+
+  local_modifier = {
+    tax_income = 1.5
+  }
+  owner_modifier = {  }
+}
+
+#Artesian water supplies are typically very clean and contain important trace minerals
+upgrade_mining_water = {
+    picture = GFX_upgrade_icon_crates
+    potential = {   }
+    allow = {
+        FROMFROM = {
+            has_wonder_upgrade = upgrade_mining_layer_1
+        }
+    }
+    flags = {   }
+
+    build_time = 60
+    gold_cost_flat = 120
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        disease_defence = 0.10
+        fort_level = 0.5
+    }
+    owner_modifier = {  }
+}
+
+#sedimentary minerals - req. upgrade_mining_layer_2, but visible at upgrade_mining_layer_1
+
+#Coal. Not differentiating between heavy and light coals
+#The essential industrial mineral, so provides a heavy bonus to taxes
+upgrade_mining_coal = {
+  picture = GFX_upgrade_icon_stones
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+  }
+  flags = { }
+
+  build_time = 120
+  gold_cost_flat = 240
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    local_tax_modifier = 0.25
+  }
+  owner_modifier = {  }
+}
+
+#Galena is an ore of lead and silver.
+#Craft metals
+upgrade_mining_galena = {
+  picture = GFX_upgrade_icon_ingots_silver
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+  }
+  flags = { }
+
+  build_time = 120
+  gold_cost_flat = 240
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    tax_income = 1.5
+  }
+  owner_modifier = {  }
+}
+
+#IRON ORES. Military applications.
+#for strategic and display reasons, each ore gives a distinct bonus
+#in reality, they all have the same ultimate purpose
+
+#Hematite
+upgrade_mining_hematite = {
+  picture = GFX_upgrade_icon_equipment
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+  }
+  flags = { }
+
+  build_time = 120
+  gold_cost_flat = 240
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    heavy_infantry_defensive = 0.25
+  }
+  owner_modifier = {  }
+}
+
+#Limonite
+upgrade_mining_limonite = {
+  picture = GFX_upgrade_icon_equipment
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+  }
+  flags = { }
+
+  build_time = 120
+  gold_cost_flat = 240
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    heavy_infantry_offensive = 0.25
+  }
+  owner_modifier = {  }
+}
+
+#Magnetitie. Iron Ore.
+#Deposits of Magnetitie tend to be larger than the two other iron ores.
+upgrade_mining_magnetite = {
+  picture = GFX_upgrade_icon_equipment
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+  }
+  flags = { }
+
+  build_time = 180
+  gold_cost_flat = 300
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    heavy_infantry = 250
+  }
+  owner_modifier = {  }
+}
+
+#Rubies
+#Gems add to trade value
+upgrade_mining_rubies = {
+  picture = GFX_upgrade_icon_crates
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+  }
+  flags = { }
+
+  build_time = 120
+  gold_cost_flat = 240
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    tradevalue = 25
+  }
+  owner_modifier = {  }
+}
+
+#Sapphires
+#Gems add to trade value
+upgrade_mining_sapphires = {
+  picture = GFX_upgrade_icon_crates
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+  }
+  flags = { }
+
+  build_time = 120
+  gold_cost_flat = 240
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    tradevalue = 25
+  }
+  owner_modifier = {  }
+}
+
+#igneous extrusive minerals - req. upgrade_mining_layer_3, but visible at upgrade_mining_layer_2
+
+#Cinnabar. Ore of Mercury.
+#There are all kinds of alchemists in WH so this is a craft metal
+upgrade_mining_cinnabar = {
+  picture = GFX_upgrade_icon_crates
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_3
+    }
+  }
+  flags = { }
+
+  build_time = 240
+  gold_cost_flat = 360
+  gold_cost_ticking = 3
+
+  local_modifier = {
+    tax_income = 1
+  }
+  #could give bonuses to certain societies?
+  owner_modifier = {  }
+}
+
+#Native Copper
+#Encountered earlier but still a useful craft metal.
+upgrade_mining_native_copper = {
+  picture = GFX_upgrade_icon_ingots_bronze
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_3
+    }
+  }
+  flags = { }
+
+  build_time = 240
+  gold_cost_flat = 360
+  gold_cost_ticking = 3
+
+  local_modifier = {
+    tax_income = 1
+  }
+  owner_modifier = {  }
+}
+
+#Obsidian
+#Fit in with the gems as a trade modifier, but really here because of Chaos Dwarf buildings
+  upgrade_mining_obsidian = {
+  picture = GFX_upgrade_icon_stones
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+  }
+  allow = {
+    FROMFROM ={
+      has_wonder_upgrade = upgrade_mining_layer_3
+    }
+  }
+  flags = { }
+
+  build_time = 240
+  gold_cost_flat = 360
+  gold_cost_ticking = 3
+
+  local_modifier = {
+    tradevalue = 15
+  }
+  owner_modifier = {  }
+}
+
+#igneous intrusive minerals - req. upgrade_mining_layer_4, but visible at upgrade_mining_layer_3
+
+#Diamonds
+#Best Gem.
+upgrade_mining_diamonds = {
+  picture = GFX_upgrade_icon_crates
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_3
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_4
+    }
+  }
+  flags = { }
+
+  build_time = 300
+  gold_cost_flat = 480
+  gold_cost_ticking = 4
+
+  local_modifier = {
+    tradevalue = 40
+  }
+  owner_modifier = {  }
+}
+
+upgrade_mining_emeralds = {
+  picture = GFX_upgrade_icon_crates
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_3
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_4
+    }
+  }
+  flags = { }
+
+  build_time = 300
+  gold_cost_flat = 480
+  gold_cost_ticking = 4
+
+  local_modifier = {
+    tradevalue = 30
+  }
+  owner_modifier = {  }
+}
+
+#Garnierite. Nickel ore.
+#Craft metal.
+upgrade_mining_garnierite = {
+  picture = GFX_upgrade_icon_ingots_silver
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_3
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_4
+    }
+  }
+  flags = { }
+
+  build_time = 300
+  gold_cost_flat = 480
+  gold_cost_ticking = 4
+
+  local_modifier = {
+    tax_income = 1
+  }
+  owner_modifier = {  }
+}
+
+#Granite
+#Construction material
+upgrade_mining_granite = {
+  picture = GFX_upgrade_icon_stones
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_3
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_4
+    }
+  }
+  flags = { }
+
+  build_time = 300
+  gold_cost_flat = 480
+  gold_cost_ticking = 4
+
+  local_modifier = {
+    local_build_cost_modifier = -0.1
+    local_build_time_modifier = -0.1
+  }
+  owner_modifier = {  }
+}
+
+#Marble
+#Prestigious construction material
+upgrade_mining_marble = {
+  picture = GFX_upgrade_icon_stones
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_3
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_4
+    }
+  }
+  flags = { }
+
+  build_time = 300
+  gold_cost_flat = 480
+  gold_cost_ticking = 4
+
+  local_modifier = {
+    local_build_cost_temple_modifier = -0.2
+    local_build_time_temple_modifier = -0.2
+  }
+  owner_modifier = {  }
+}
+
+# COMMERCE #
+
+upgrade_great_dwarf_brewery = {
+  picture = GFX_upgrade_icon_crates
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+    FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+    }
+  }
+
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_dwarf_great_hall
+    }
+  }
+  active = {
+      FROMFROMFROM = {
+          culture_group = ROOT
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+      }
+  }
+  flags = { }
+
+  build_time = 60
+  gold_cost_flat = 240
+  gold_cost_ticking = 1
+
+  local_modifier = {  }
+  owner_modifier = {
+    land_morale = 0.05
+    retinuesize_perc = 0.5
+  }
+}
+
+#e.g. Barak Varr
+#adds galleys and trade value
+upgrade_great_dwarf_port = {
+  picture = GFX_upgrade_icon_anchor
+  potential = {
+    FROMFROMFROM = {
+      is_coastal = yes
+    }
+  }
+  allow = { }
+  flags = { }
+
+  build_time = 30
+  gold_cost_flat = 240
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    galleys_perc = 0.50
+    tradevalue = 20
+  }
+  owner_modifier = {  }
+}
+
+#Underway & Dawi Zharr equivalent
+#Significant bonus to local movement, adds trade value
+upgrade_tunnel_roads = {
+  picture = GFX_wonder_upgrade_delving
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+  }
+  flags = { }
+
+  build_time = 60
+  gold_cost_flat = 240
+  gold_cost_ticking = 1
+
+  local_modifier = {
+    local_movement_speed = 0.1
+    tradevalue = 10
+  }
+  owner_modifier = {  }
+}
+
+# FORTIFICATION #
+upgrade_defensive_tunnels = {
+  picture = GFX_wonder_upgrade_delving
+  potential = {  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  flags = { }
+
+  build_time = 30
+  gold_cost_flat = 120
+  gold_cost_ticking = 1
+
+  local_modifier = {
+    fort_level = 1
+  }
+  owner_modifier = {  }
+}
+
+upgrade_great_gate = {
+  picture = GFX_upgrade_icon_key
+  potential = {
+      FROMFROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+      }
+  }
+  allow = { }
+  flags = { }
+
+  build_time = 30
+  gold_cost_flat = 120
+  gold_cost_ticking = 1
+
+  local_modifier = {
+    fort_level = 2
+  }
+  owner_modifier = {  }
+}
+
+upgrade_outer_watchposts = {
+  picture = GFX_upgrade_icon_bow_and_arrows
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+    FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_defensive_tunnels
+    }
+  }
+  flags = { }
+
+  build_time = 60
+  gold_cost_flat = 240
+  gold_cost_ticking = 1
+
+  local_modifier = {
+    fort_level = 2
+    garrison_size = 0.25
+  }
+  owner_modifier = {  }
+}
+
+upgrade_subterranean_keep = {
+  picture = GFX_upgrade_icon_door
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_3
+    }
+    FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_4
+    }
+  }
+  flags = { }
+
+  build_time = 120
+  gold_cost_flat = 360
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    fort_level = 5
+    garrison_size = 0.5
+  }
+  owner_modifier = {
+    monthly_character_prestige = 0.5
+  }
+}
+
+# INDUSTRY #
+upgrade_coal_power = {
+  picture = GFX_upgrade_icon_brazier
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_coal
+    }
+  }
+  flags = { }
+
+  build_time = 24
+  gold_cost_flat = 400
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    local_tax_modifier = 0.25
+  }
+  owner_modifier = {  }
+}
+
+#early geothermal isn't really suitable for anything but heating
+upgrade_geothermal_power = {
+  picture = GFX_upgrade_icon_brazier
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_3
+    }
+    FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_4
+    }
+  }
+  active = {
+      FROMFROMFROM = {
+          culture_group = ROOT
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+      }
+  }
+  flags = { }
+
+  build_time = 60
+  gold_cost_flat = 100
+  gold_cost_ticking = 1
+
+  local_modifier = {
+    local_build_cost_city_modifier = -0.2
+    local_build_time_city_modifier = -0.2
+  }
+  owner_modifier = {  }
+}
+
+#Water power is very primitive stuff, though dwarfs do it on a bigger scale than anyone
+#Tied to castle b/c I can't help thinking about the mill and the lord
+upgrade_water_power = {
+  picture = GFX_upgrade_icon_crates
+  potential = { }
+  allow = { }
+  flags = {  }
+
+  build_time = 36
+  gold_cost_flat = 100
+  gold_cost_ticking = 1
+
+  local_modifier = {
+    local_build_cost_castle_modifier = -0.2
+    local_build_time_castle_modifier = -0.2
+  }
+  owner_modifier = {  }
+}
+
+# MILITARY INFRASTRUCTURE #
+
+#'Aerodrome' is an old-fashioned British English term for an airfield & its facilities. Synonymous with American English use of 'airport'
+upgrade_dwarf_aerodrome = {
+  picture = GFX_upgrade_icon_crates
+  potential = { }
+  allow = { }
+  flags = {  }
+
+  build_time = 60
+  gold_cost_flat = 150
+  gold_cost_ticking = 1
+
+  local_modifier = {
+    #airlifted supplies make it easier to keep armies fed and moving
+    global_movement_speed = 0.10
+    global_supply_limit = 0.50
+    upgrade_aerodrome_capital_only_effect = 1
+  }
+  owner_modifier = {  }
+}
+
+#mainly included so Barak Varr can have all the ships
+upgrade_dwarf_shipyard = {
+  picture = GFX_upgrade_icon_anchor
+  potential = {
+    FROMFROMFROM = {
+      is_coastal = yes
+      OR = {
+          culture_group = dwarf_group
+          culture_group = dawi_zharr_group
+      }
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_coal
+    }
+    OR = {
+        culture_group = dwarf_group
+        culture_group = dawi_zharr_group
+    }
+  }
+  active = {
+      FROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+          culture_group = ROOT
+      }
+  }
+
+  build_time = 60
+  gold_cost_flat= 250
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    galleys_perc = 1
+  }
+  owner_modifier = {  }
+}
+
+# MILITARY TRADITIONS  - low cost but high build time #
+upgrade_artillery_tradition = {
+  picture = GFX_upgrade_icon_crates
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+    FROMFROMFROM = {
+      OR = {
+          culture_group = dwarf_group
+          culture_group = dawi_zharr_group
+      }
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_pyrite
+    }
+  }
+  active = {
+      FROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+          culture_group = ROOT
+      }
+  }
+
+  build_time = 120
+  gold_cost_flat = 40
+  gold_cost_ticking = 1
+
+  local_modifier = {
+    artillery_offensive = 1.5
+  }
+  owner_modifier = {  }
+}
+
+#Blunderbussiers, Thunderers
+upgrade_gunnery_tradition = {
+  picture = GFX_upgrade_icon_equipment
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+      FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+      }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_pyrite
+    }
+  }
+  active = {
+      FROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+          culture_group = ROOT
+      }
+  }
+
+  build_time = 120
+  gold_cost_flat = 40
+  gold_cost_ticking = 1
+
+  #this is pretty solid but gunpowder isn't everywhere
+  local_modifier = {
+    gunpowder_offensive = 0.25
+    gunpowder_defensive = 0.5
+  }
+  owner_modifier = {  }
+}
+
+#e.g. Infernal Guard, Slayers
+upgrade_warrior_brotherhood = {
+  picture = GFX_upgrade_icon_equipment
+  potential = {
+      FROMFROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+      }
+  }
+  allow = { }
+  active = {
+      FROMFROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+          culture_group = ROOT
+      }
+  }
+
+  build_time = 120
+  gold_cost_flat = 40
+  gold_cost_ticking = 1
+
+  local_modifier = {
+    heavy_infantry = 50
+    levy_reinforce_rate = 0.25
+  }
+  owner_modifier = {  }
+}
+
+# PRESTIGE ARCHITECTURE #
+
+#Great Hall
+#a very large chamber for a crowd to hear a speech
+#mining layer req. is proxy for size of hold
+upgrade_dwarf_great_hall = {
+  picture = GFX_upgrade_icon_brazier
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_2
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_3
+    }
+  }
+
+  build_time = 60
+  gold_cost_flat = 300
+  gold_cost_ticking = 2
+
+  local_modifier = {  }
+  owner_modifier = {
+    monthly_character_prestige = 1
+  }
+}
+
+upgrade_dwarf_statues = {
+  picture = GFX_upgrade_icon_stones
+  potential = { }
+  allow = {
+    OR = {
+      #sorcerers
+      FROMFROMFROM = {
+        religion = hashut
+      }
+      FROMFROM = {
+        has_wonder_upgrade = upgrade_mining_marble
+      }
+    }
+  }
+  active = {
+      FROMFROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+          culture_group = ROOT
+      }
+  }
+
+  build_time = 24
+  gold_cost_flat = 100
+  gold_cost_ticking = 1
+
+  local_modifier = {  }
+  owner_modifier = {
+    monthly_character_prestige = 0.25
+  }
+}
+
+upgrade_dwarf_throne_room = {
+  picture = GFX_upgrade_icon_brazier
+  potential = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_layer_1
+    }
+  }
+  allow = { }
+  active = {
+      FROMFROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+          culture_group = ROOT
+      }
+  }
+
+  build_time = 120
+  gold_cost_flat = 300
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    local_revolt_risk = -0.05
+  }
+  owner_modifier = {
+    monthly_character_prestige = 1
+  }
+}
+
+# TEMPLE #
+upgrade_great_grimnir_temple = {
+  picture = GFX_upgrade_icon_equipment
+  potential = {
+    FROMFROM = {
+      NOR = {
+        has_wonder_upgrade = upgrade_great_grimnir_temple
+        has_wonder_upgrade = upgrade_great_grungni_temple
+        has_wonder_upgrade = upgrade_great_hashut_temple
+      }
+    }
+    FROMFROMFROM = {
+      religion_group = dwarf_gods_group
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_marble
+    }
+  }
+  active = {
+      religion_group = dwarf_gods_group
+      FROMFROMFROM = {
+          religion_group = dwarf_gods_group
+      }
+ }
+
+  build_time = 120
+  gold_cost_flat = 300
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    #slayer god
+    heavy_infantry_offensive = 0.5
+    heavy_infantry = 100
+  }
+  owner_modifier = {
+    monthly_character_piety = 1
+  }
+}
+
+upgrade_great_grungni_temple = {
+  picture = GFX_upgrade_icon_ingots_gold
+  potential = {
+    FROMFROM = {
+      NOR = {
+        has_wonder_upgrade = upgrade_great_grimnir_temple
+        has_wonder_upgrade = upgrade_great_grungni_temple
+        has_wonder_upgrade = upgrade_great_hashut_temple
+      }
+    }
+    FROMFROMFROM = {
+      religion_group = dwarf_gods_group
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_marble
+    }
+  }
+  active = {
+      religion_group = dwarf_gods_group
+      FROMFROMFROM = {
+          religion_group = dwarf_gods_group
+      }
+  }
+
+  build_time = 120
+  gold_cost_flat = 300
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    #God of miners and artisans
+    local_tax_modifier = 0.25
+    tradevalue = 25
+  }
+  owner_modifier = {
+    monthly_character_piety = 1
+  }
+}
+
+upgrade_great_valaya_temple = {
+  picture = GFX_upgrade_icon_key
+  potential = {
+    FROMFROM = {
+      NOR = {
+        has_wonder_upgrade = upgrade_great_grimnir_temple
+        has_wonder_upgrade = upgrade_great_grungni_temple
+        has_wonder_upgrade = upgrade_great_hashut_temple
+      }
+    }
+    FROMFROMFROM = {
+      religion_group = dwarf_gods_group
+    }
+  }
+  allow = {
+    FROMFROM = {
+      has_wonder_upgrade = upgrade_mining_marble
+    }
+  }
+  active = {
+      religion_group = dwarf_gods_group
+      FROMFROMFROM = {
+          religion_group = dwarf_gods_group
+      }
+  }
+
+  build_time = 120
+  gold_cost_flat = 300
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    #Goddess of the hearth and founder of holds
+    wonder_build_cost_modifier = -0.1
+    wonder_build_time_modifier = -0.1
+  }
+  owner_modifier = {
+    monthly_character_piety = 1
+  }
+}
+
+upgrade_great_hashut_temple = {
+  picture = GFX_upgrade_icon_brazier
+  potential = {
+    FROMFROM = {
+      NOR = {
+        has_wonder_upgrade = upgrade_great_grimnir_temple
+        has_wonder_upgrade = upgrade_great_grungni_temple
+        has_wonder_upgrade = upgrade_great_valaya_temple
+      }
+    }
+    FROMFROMFROM = {
+      religion = hashut
+    }
+  }
+  allow = {
+    FROMFROM = {
+        has_wonder_upgrade = upgrade_mining_obsidian
+    }
+  }
+  active = {
+      religion = hashut
+      FROMFROMFROM = {
+          religion = hashut
+      }
+  }
+
+  build_time = 120
+  gold_cost_flat = 300
+  gold_cost_ticking = 2
+
+  local_modifier = {
+    #Bull!
+    knights = 50
+  }
+  owner_modifier = {
+    monthly_character_piety = 1
+    upgrade_new_temple_buildings_special_effect = 1
+  }
+}

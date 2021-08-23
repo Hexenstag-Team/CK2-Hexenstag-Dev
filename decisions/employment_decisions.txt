@@ -131,8 +131,9 @@ decisions = {
 	}
 
 	summon_demon = {
-		ai_check_interval = 12
+		ai_check_interval = 30
 		potential = {
+			lore_of_shadows_trigger = yes
 			OR={
 				has_character_flag= activated_employment_decisions
 				ai=yes
@@ -140,10 +141,6 @@ decisions = {
 			is_incapacitated_trigger = no
 			NOT = { religion = asrai_cadai }
 			NOT = { has_character_modifier = magic_cooldown_summoning }
-			OR = {
-				trait = chaos_dwarf_sorcerer
-				lore_of_shadows_trigger = yes
-			}
 			OR = {
 				has_character_modifier = magic_power_1
 				has_character_modifier = magic_power_2
@@ -265,10 +262,7 @@ decisions = {
 				NOT = { religion = asrai_cadai }
 				prisoner = no
 				age = 16
-				OR = {
-					trait = chaos_dwarf_sorcerer
-					lore_of_shadows_trigger = yes
-				}
+				lore_of_shadows_trigger = yes
 				OR = {
 					has_character_modifier = magic_power_1
 					has_character_modifier = magic_power_2
@@ -309,7 +303,7 @@ decisions = {
 	}
 
 	warband_summon_commander = {
-		only_playable = yes
+		ai = no #potential block is de facto ai = no, no point in checking
 		ai_check_interval = 36 #check only once every 36 months.
 
 		potential = {
@@ -1538,7 +1532,7 @@ decisions = {
 		}
 	}
 	invite_warrior = {
-		ai_check_interval = 120
+		ai = no
 		only_playable = yes
 
 		potential = {
@@ -1592,7 +1586,7 @@ decisions = {
 							religion = root
 							trait=creature_goblin
 						}
-					
+
 					}
 					25={
 						trigger={
@@ -1741,7 +1735,7 @@ decisions = {
 		}
 	}
 	invite_schemer = {
-		ai_check_interval = 240
+	  ai = no
 		only_playable = yes
 
 		potential = {
@@ -1913,7 +1907,7 @@ decisions = {
 		}
 	}
 	invite_looter = {
-		ai_check_interval = 240
+		ai = no
 		only_playable = yes
 
 		potential = {
@@ -2088,10 +2082,10 @@ decisions = {
 		only_playable = yes
 
 		potential = {
+			trait=creature_nehekharan
+			religion_group = nehekharan_gods_group
 			NOT={has_dynasty_flag=awakening_5}
 			NOT={has_character_flag=awakening_ritual}
-			religion_group = nehekharan_gods_group
-			trait=creature_nehekharan
 			is_lowborn = no
 		}
 		allow = {
@@ -2127,21 +2121,21 @@ decisions = {
 				ai=no}}
 				piety=5000
 				prestige=5000
-			
+
 			}
 			conditional_tooltip={trigger={root={
 				has_dynasty_flag=awakening_3
 				ai=no}}
 				piety=7500
 				prestige=5000
-			
+
 			}
 			conditional_tooltip={trigger={root={
 				has_dynasty_flag=awakening_4
 				ai=no}}
 				piety=10000
 				prestige=5000
-			
+
 			}
 			NOT = { has_character_modifier = in_seclusion }
 		}
@@ -2165,27 +2159,27 @@ decisions = {
 			else_if={limit={root={ai=yes}}
 				piety=-2500
 				prestige=-1250
-			
+
 			}
 			else_if={limit={root={has_dynasty_flag=awakening_1}}
 				piety=-2500
 				prestige=-1250
-			
+
 			}
 			else_if={limit={root={has_dynasty_flag=awakening_2}}
 				piety=-5000
 				prestige=-2500
-			
+
 			}
 			else_if={limit={root={has_dynasty_flag=awakening_3}}
 				piety=-7500
 				prestige=-3250
-			
+
 			}
 			else_if={limit={root={has_dynasty_flag=awakening_4}}
 				piety=-10000
 				prestige=-5000
-			
+
 			}
 			set_character_flag=awakening_ritual
 			scaled_wealth = -1
@@ -2220,5 +2214,31 @@ decisions = {
 				}
 			}
 		}
+	}
+	summon_bull_centaur = {
+		ai = no
+
+		potential = {
+			OR = {
+				trait = chaos_dwarf_sorcerer
+				trait = chaos_dwarf_bull_centaur
+				any_owned_bloodline = {
+					has_bloodline_flag = chaos_dwarf_sorcerer_statue_bloodline
+				}
+			}
+			has_character_flag= activated_employment_decisions
+			NOT = { has_character_flag = summoned_bull_centaur_by_decision }
+		}
+
+		allow = {
+			piety = 1000
+		}
+
+		effect = {
+			piety = -1000
+			spawn_bull_centaur_effect = yes
+			set_character_flag = summoned_bull_centaur_by_decision
+		}
+
 	}
 }

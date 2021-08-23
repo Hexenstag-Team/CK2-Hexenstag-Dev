@@ -430,7 +430,7 @@ knights_of_bretonnia = {
 			combat_rating = 30
 		}
 		powers = {
-			virtue_grail_power #Grail Virtues (the one that matches the characterâ€™s Virtue of Knighthood)
+			virtue_grail_power #Grail Virtues (the one that matches the character’s Virtue of Knighthood)
 		}
 	}
 
@@ -2222,6 +2222,9 @@ cult_of_shallya = {
 			fertility = -0.15
 			health = 0.15
 		}
+		decisions = {
+			shallyan_self_sacrifice
+		}
 	}
 
 	plots = {
@@ -2403,281 +2406,9 @@ cult_of_shallya = {
 		}
 	}
 }
-#THE ORDER OF MYSTERIES
-cult_of_verena = {
-	 primary_attribute = learning
-	 society_ranks_gfx = generic_ranks
-	 opinion_to_other_members = 10
-	opinion_per_rank_above = 5
-	 sound = hermetic_society_interface
-	 is_religious = yes
-	 non_interference = {
-		always = yes
-	 }
 
-	 active = {
-		has_dlc = "Mystics"
-	 }
+#Cult of Verena removed
 
-	 indestructible = yes
-
-	 can_join_society = {
-		hidden_trigger = {
-			NAND = {
-				ai = yes
-				is_society_rank_full = {
-					society = cult_of_verena
-					rank = 1
-				}
-			}
-			is_landed = yes
-		}
-		learning = 12
-		religion_group = old_world_group
-		NOR = {
-			trait = witch_hunter
-			religion = morrian
-			religion = old_faith
-			religion = grail
-			religion = false_grail
-			religion = kislev_gods
-		}
-		NOR = {
-			is_nomadic = yes
-			is_tribal = yes
-		}
-
-		hidden_trigger = { mercenary = no }
-		age = 16
-	 }
-
-	 show_society = {
-		religion_group = old_world_group
-		NOR = {
-			religion = old_faith
-			religion = grail
-			religion = false_grail
-		}
-		NOT = {
-				trait = witch_hunter
-		}
-	 }
-
-	 potential = {
-		NOR = {
-			is_nomadic = yes
-			is_tribal = yes
-		}
-		age = 16
-		#If something else is added here, it could break apprenticeship. Create an event if they can get kicked out. title_hermetics_apprentice
-	 }
-
-	 society_rank = {
-		level = 1
-		limit = 20
-		startup_limit = 5
-		decisions = {
-			hermetics_write_theory_paper
-		}
-	 }
-
-	 society_rank = {
-		level = 2
-		limit = 15
-		startup_limit = 4
-		modifier = {
-			learning = 1
-			build_cost_modifier = -0.05
-		}
-		decisions = {
-		}
-	 }
-
-	 society_rank = {
-		level = 3
-		limit = 10
-		startup_limit = 3
-		modifier = {
-			learning = 2
-			build_cost_modifier = -0.1
-		}
-		decisions = {
-		}
-	 }
-
-	 society_rank = {
-		level = 4
-		limit = 5
-		startup_limit = 2
-		modifier = {
-			learning = 3
-			build_cost_modifier = -0.15
-		}
-		decisions = {
-			choose_hermetic_art
-			hermetics_write_magnum_opus
-			hermetic_grand_debate
-		}
-	 }
-
-	 plots = {
-	 }
-
-	 monthly_currency_gain = {
-		name = currency_name_cult_of_verena
-
-		per_attribute = {
-    		name = learning
-    		value = 0.5
-    	 }
-		has_trait = {
-			value = 2
-			trait = diligent
-		}
-		has_trait = {
-			value = 1
-			trait = scholar
-		}
-		has_trait = {
-			value = 1
-			trait = mystic
-		}
-		has_trait = {
-			value = 1
-			trait = erudite
-		}
-		has_trait = {
-			value = 1
-			trait = stubborn
-		}
-		has_trait = {
-			value = 1
-			trait = patient
-		}
-		has_trait = {
-			value = 1
-			trait = genius
-		}
-		has_trait = {
-			value = 1
-			trait = quick
-		}
-		has_trait = {
-			value = 1
-			trait = shrewd
-		}
-		has_trait = {
-			value = 1
-			trait = just
-		}
-		society_rank = {
-			rank = 4
-			value = 5
-		}
-	 }
-
-	 member_score_per_attribute = 3
-	 member_score_per_rank = 100
-
-	 member_score = {
-		value = 10
-
-		modifier = {
-			factor = 2
-			trait = diligent
-		}
-		modifier = {
-			factor = 1.5
-			trait = scholar
-		}
-		modifier = {
-			factor = 1.5
-			trait = mystic
-		}
-		modifier = {
-			factor = 1.5
-			trait = erudite
-		}
-		modifier = {
-			factor = 1.5
-			trait = stubborn
-		}
-		modifier = {
-			factor = 1.5
-			trait = patient
-		}
-		modifier = {
-			factor = 1.5
-			OR = {
-				trait = genius
-				trait = quick
-				trait = shrewd
-			}
-		}
-		modifier = {
-			factor = 1.5
-			trait = just
-		}
-	 }
-
-	 startup_populate = {
-	     trigger = {
-			ai = yes
-	    	 controls_religion = no
-			age = 16
-			is_in_society = no
-			is_dumb_trigger = no
-			OR = {
-				NOT = { is_priest = yes }
-				OR = {
-					trait = mystic
-					trait = scholar
-					trait = cynical
-				}
-			}
-			#To avoid people from far-away places ( ie. pirates in Lustria ) starting as cultists just because
-			OR = {
-				location = { region = world_old_world }
-				location = { region = world_greater_araby_araby }
-				location = { region = world_badlands_magnata }
-			}
-
-			OR = {
-				AND = {
-					is_landed = yes
-					OR = {
-						learning = 14
-						trait = scholar
-						trait = faqih
-						trait = erudite
-						trait = genius
-						trait = mystic
-					}
-				}
-				AND = {
-					learning = 18
-					OR = {
-						trait = scholar
-						trait = erudite
-						trait = genius
-						trait = mystic
-						learning = 20
-					}
-				}
-			}
-			religion_group = old_world_group
-			NOR = {
-				trait = witch_hunter
-				religion = morrian
-				religion = old_faith
-				religion = grail
-				religion = false_grail
-				religion = kislev_gods
-				culture_group = kislevite_group
-			}
-		}
-	 }
-}
 #THE HASHISHIN
 the_assassins = {
 	primary_attribute = intrigue
@@ -3033,7 +2764,7 @@ sigmar_witch_hunters = {
 		}
 	}
 
-	potential = { 
+	potential = {
 		OR  = {
 			trait = witch_hunter
 			liege = { trait = witch_hunter }
@@ -3281,7 +3012,7 @@ sigmar_witch_hunters = {
 			factor = 1.1
 		}
 		#Hypocratic Witch Hunters
-		
+
 		modifier = {
 			trait = cruel #They Get The Job Done
 			factor = 1.5
@@ -3382,7 +3113,7 @@ cult_of_slaanesh = {
 		hidden_trigger = {
 			NAND = {
 				ai = yes
-				is_society_rank_full = { 
+				is_society_rank_full = {
 					society = cult_of_slaanesh
 					rank = 1
 				}
@@ -3758,7 +3489,7 @@ cult_of_tzeentch = {
 		hidden_trigger = {
 			NAND = {
 				ai = yes
-				is_society_rank_full = { 
+				is_society_rank_full = {
 					society = cult_of_tzeentch
 					rank = 1
 				}
@@ -4118,7 +3849,7 @@ cult_of_khorne = {
 		hidden_trigger = {
 			NAND = {
 				ai = yes
-				is_society_rank_full = { 
+				is_society_rank_full = {
 					society = cult_of_khorne
 					rank = 1
 				}
@@ -4176,8 +3907,16 @@ cult_of_khorne = {
 		limit = 100
 		startup_limit = 10
 		custom_tooltip = chaos_corruption_power_tt
-		martial = 1
-		combat_rating = 3
+		modifier = {
+			is_visible = {
+				OR = {
+					society_member_of = cult_of_khorne
+					FROM = { is_society_discovered = yes }
+				}
+			}
+			martial = 1
+			combat_rating = 3
+		}
 		#Available Decision: Sacrifice Prisoner
 		#Over time, lose virtues, gain vices. A Soul Corruption-effect is on a yearly pulse (with a chance to do nothing)
 		decisions = {
@@ -4440,7 +4179,7 @@ cult_of_nurgle = {
 		hidden_trigger = {
 			NAND = {
 				ai = yes
-				is_society_rank_full = { 
+				is_society_rank_full = {
 					society = cult_of_nurgle
 					rank = 1
 				}
@@ -4497,7 +4236,15 @@ cult_of_nurgle = {
 		limit = 100
 		startup_limit = 10
 		custom_tooltip = chaos_nurgle_corruption_power_tt
-		health = 0.25
+		modifier = {
+			is_visible = {
+				OR = {
+					society_member_of = cult_of_nurgle
+					FROM = { is_society_discovered = yes }
+				}
+			}
+			health = 0.25
+		}
 		#Available Decision: Sacrifice Prisoner
 		#Over time, lose virtues, gain vices. A Soul Corruption-effect is on a yearly pulse (with a chance to do nothing)
 		decisions = {
@@ -4850,7 +4597,7 @@ cult_of_undivided = {
 		hidden_trigger = {
 			NAND = {
 				ai = yes
-				is_society_rank_full = { 
+				is_society_rank_full = {
 					society = cult_of_undivided
 					rank = 1
 				}
@@ -6293,7 +6040,7 @@ warband_of_tzeentch = {
 	    trigger = {
 			OR = {
 				ai = yes
-				trait =c hampion_tzeentch
+				trait = champion_tzeentch
 				trait = chosen_tzeentch
 				trait = prince_tzeentch
 				AND = {
@@ -6917,7 +6664,7 @@ warband_of_khorne = {
 				trait = champion_khorne
 				trait = chosen_khorne
 				trait = khorne_berserker
-				trai t= prince_khorne
+				trait= prince_khorne
 				AND = {
 					trait = chaos_knight
 					religion = khorne
@@ -8270,7 +8017,6 @@ runesmiths_society = {
 			stewardship = 2
 			church_opinion = -10
 			fertility_penalty=-0.15
-			liege_prestige=0.05
 		}
 		decisions = {
 			choose_hermetic_art # Enables you to pick/change your lifestyle trait
@@ -8287,7 +8033,6 @@ runesmiths_society = {
 			stewardship = 3
 			church_opinion = -10
 			fertility_penalty=-0.15
-			liege_prestige=0.1
 		}
 		decisions = {
 			runesmith_create_rune_of_power # Enables Creation of Greater rune of Power
@@ -8491,339 +8236,7 @@ runesmiths_society = {
 		}
 	}
 }
-daemonsmiths_society = {
-	primary_attribute = stewardship
-	opinion_to_other_members = 10
-	opinion_per_rank_above = 5
-	sound = hermetic_society_interface
-	society_ranks_gfx = secret_ranks
-	society_influence = no
-	non_interference = {
-		always = yes
-	}
 
-	active = {
-		has_dlc = "Mystics"
-		always=no
-	}
-	indestructible = yes
-
-	can_join_society = {
-		hidden_trigger = {
-			NAND = {
-				ai = yes
-				is_society_rank_full = {
-					society = daemonsmiths_society
-					rank = 1
-				}
-			}
-			OR = {
-				is_landed = yes
-				is_patrician = yes
-			}
-		}
-		religion=hashut
-		OR={
-			AND={
-			learning = 16
-			stewardship = 16
-			}
-			learning = 25
-			stewardship = 25
-			trait=daemonsmith
-			trait=chaos_dwarf_sorcerer
-		}
-		NOR = {
-			is_nomadic = yes
-			is_tribal = yes
-		}
-		hidden_trigger = { mercenary = no }
-		age = 16
-		hidden_trigger = {
-			NOT = { has_character_flag = society_join_block }
-		}
-		trigger_if = {
-			limit = { prisoner = yes }
-			prisoner = no
-		}
-	}
-
-	show_society = {
-		OR = {
-			any_neighbor_independent_ruler={religion=hashut} #can see but can't join
-			religion=hashut
-			society_member_of = runesmiths_society #Runesmiths are aware of its existance
-			society_member_of = daemonsmiths_society
-		}
-	}
-
-	potential = {
-		#If something is added here, it could break apprenticeship. Create an event if they can get kicked out. title_hermetics_apprentice
-	}
-
-	society_rank = {
-		level = 1
-		limit = 20
-		startup_limit = 2
-		modifier = {
-			church_opinion = -10
-			fertility_penalty=-0.15
-			#economy_techpoints = 0.05
-		}
-		decisions = {
-			hermetics_write_theory_paper #Remove?
-			smith_crafting #Enables Standard Item Crafting (Missions)
-		}
-	}
-
-	society_rank = {
-		level = 2
-		limit = 20
-		startup_limit = 2
-		modifier = {
-			learning = 1
-			stewardship = 1
-			church_opinion = -10
-			fertility_penalty=-0.15
-		}
-		decisions = {
-			daemonsmith_create_rune_of_power # Enables Creation of Lesser rune of Power
-			daemonsmith_become_daemonsmith # Allows taking full benefit of a daemonsmith
-			daemonsmithing # Allows Partaking in Gromril Crafting
-		}
-	}
-
-	society_rank = {
-		level = 3
-		limit = 20
-		startup_limit = 8
-		modifier = {
-			learning = 1
-			stewardship = 2
-			church_opinion = -10
-			fertility_penalty=-0.15
-			liege_prestige=0.05
-		}
-		decisions = {
-			choose_hermetic_art # Enables you to pick/change your lifestyle trait
-			runemagic_aspect # Allows Choosing Aspect of Runemagic. Valaya & Grungi & Grimnir (Morale, Defense, Damage)
-		}
-	}
-
-	society_rank = {
-		level = 4
-		limit = 13
-		startup_limit = 2
-		modifier = {
-			learning = 2
-			stewardship = 3
-			church_opinion = -10
-			fertility_penalty=-0.15
-			liege_prestige=0.1
-		}
-		decisions = {
-			daemonsmith_create_rune_of_power # Enables Creation of Greater rune of Power
-			daemonsmith_become_chaos_dwarf_sorcerer # Allows taking full benefit of a chaos_dwarf_sorcerer
-			daemonsmith_anvil # Acquire an Anvil of A Doom
-		}
-	}
-
-	plots = {
-	}
-
-	monthly_currency_gain = {
-		name = currency_name_daemonsmiths
-
-		per_attribute = {
-    		name = learning
-    		value = 0.2
-    	}
-		per_attribute = {
-    		name = stewardship
-    		value = 0.3
-    	}
-		triggered_gain = {
-    		value = -1.5
-			trigger={
-				NOR={
-					trait=daemonsmith
-					trait=chaos_dwarf_sorcerer
-				}
-			}
-    	}
-		triggered_gain = {
-    		value = -2
-			trigger={
-				OR={
-					trait=king
-					tier=emperor
-				}
-			}
-    	}
-		has_trait = {
-			value = 1
-			trait = scholar
-		}
-		has_trait = {
-			value = 1
-			trait = mystic
-		}
-		has_trait = {
-			value = 1
-			trait = erudite
-		}
-		has_trait = {
-			value = -1
-			trait = stubborn
-		}
-		has_trait = {
-			value = -1
-			trait = wroth
-		}
-		has_trait = {
-			value = 1
-			trait = patient
-		}
-		has_trait = {
-			value = 0.5
-			trait = genius
-		}
-		has_trait = {
-			value = 0.25
-			trait = quick
-		}
-		has_trait = {
-			value = 1
-			trait = shrewd
-		}
-		has_trait = {
-			value = 1
-			trait = just
-		}
-		has_trait = {
-			value = 1
-			trait = daemonsmith
-		}
-		has_trait = {
-			value = 1
-			trait = chaos_dwarf_sorcerer
-		}
-		has_trait = {
-			value = 0.5
-			trait = diligent
-		}
-		has_trait = {
-			value = -0.5
-			trait = envious
-		}
-		society_rank = {
-			rank = 4
-			value = 5
-		}
-	}
-
-	member_score_per_attribute = 2
-	member_score_per_rank = 50
-
-	member_score = {
-		value = 10
-		modifier = {
-			factor = 1.5
-			age > 200
-		}
-		modifier = {
-			factor = 1.5
-			age > 300
-		}
-		modifier = {
-			factor = 1.5
-			age > 120
-		}
-		modifier = {
-			factor = 2
-			trait = daemonsmith
-		}
-		modifier = {
-			factor = 4
-			trait = chaos_dwarf_sorcerer
-		}
-		modifier = {
-			factor = 0.2
-			NOR={
-				trait = chaos_dwarf_sorcerer
-				trait = daemonsmith
-			}
-		}
-		modifier = {
-			factor = 0.2
-			OR={
-				tier = king
-				tier = emperor
-			}
-		}
-		modifier = {
-			factor = 2
-			trait = diligent
-		}
-		modifier = {
-			factor = 1.5
-			trait = scholar
-		}
-		modifier = {
-			factor = 1.5
-			trait = mystic
-		}
-		modifier = {
-			factor = 1.5
-			trait = erudite
-		}
-		modifier = {
-			factor = 1.5
-			trait = stubborn
-		}
-		modifier = {
-			factor = 1.5
-			trait = patient
-		}
-		modifier = {
-			factor = 1.5
-			OR = {
-				trait = genius
-				trait = quick
-				trait = shrewd
-			}
-		}
-		modifier = {
-			factor = 1.5
-			trait = just
-		}
-	}
-
-	startup_populate = {
-	    trigger = {
-			is_female=no
-	    	controls_religion = no
-			age = 16
-			is_in_society = no
-			is_dumb_trigger = no
-			OR={
-				trait=creature_dwarf
-				trait=creature_chaos_dwarf
-			}
-			religion=hashut
-			OR = {
-				trait = daemonsmith
-				trait = chaos_dwarf_sorcerer
-				father_even_if_dead={
-					OR={
-					trait = daemonsmith
-					trait = chaos_dwarf_sorcerer
-					}
-				}
-			}
-		}
-	}
-}
 warriors_guild_dawi = {
 	primary_attribute = martial
 	opinion_to_other_members = 10
@@ -8862,22 +8275,17 @@ warriors_guild_dawi = {
 			limit = { prisoner = yes }
 			prisoner = no
 		}
+		#not sure why this is OR? removed chaos_dwarf eligibility anyway
 		OR = {
 			religion_group=dwarf_gods_group
-			OR={
-				trait=creature_dwarf
-				trait=creature_chaos_dwarf
-			}
+			trait=creature_dwarf
 		}
 	}
 	show_society = {
 		OR = {
 			#You are this religion: will show only this lodge (the other "show_society"'s will make sure)
 			religion_group=dwarf_gods_group
-			OR={
-				trait=creature_dwarf
-				trait=creature_chaos_dwarf
-			}
+			trait=creature_dwarf
 			#Always show if: You are already a member. Duh.
 			society_member_of = warriors_guild_dawi
 		}
@@ -9366,219 +8774,543 @@ warriors_guild_dawi = {
 	}
 }
 
-# engineers_guild = {
-	# primary_attribute = learning
-	# society_ranks_gfx = generic_ranks
-	# opinion_to_other_members = 10
-	# opinion_per_rank_above = 5
-	# sound = hermetic_society_interface
-	# non_interference = {
-		# always = yes
-	# }
-#
-	# active = {
-		# has_dlc = "Mystics"
-	# }
-	# indestructible = yes
-#
-	# can_join_society = {
-		# hidden_trigger = {
-			# NAND = {
-				# ai = yes
-				# is_society_rank_full = {
-					# society = engineers_guild
-					# rank = 1
-				# }
-			# }
-			# is_landed = yes
-		# }
-		# trait = creature_dwarf
-		# religion_group = dwarf_gods_group
-		# learning = 10
-		# NOR = {
-			# is_nomadic = yes
-			# is_tribal = yes
-		# }
-		# hidden_trigger = { mercenary = no }
-		# age = 16
-	# }
-#
-	# show_society = {
-		# trait = creature_dwarf
-		# religion_group = dwarf_gods_group
-	# }
-#
-	# potential = {
-		# trait = creature_dwarf
-		# religion_group = dwarf_gods_group
-		# age = 16
-		# #If something else is added here, it could break apprenticeship. Create an event if they can get kicked out. title_hermetics_apprentice
-	# }
-#
-	# society_rank = {
-		# level = 1
-		# limit = 200
-		# startup_limit = 10
-		# modifier = {
-			# church_opinion = -10
-			# #economy_techpoints = 0.05
-		# }
-		# decisions = {
-		# }
-	# }
-#
-	# society_rank = {
-		# level = 2
-		# limit = 100
-		# startup_limit = 6
-		# modifier = {
-			# learning = 1
-			# church_opinion = -10
-		# }
-		# decisions = {
-#
-		# }
-	# }
-#
-	# society_rank = {
-		# level = 3
-		# limit = 50
-		# startup_limit = 4
-		# modifier = {
-			# learning = 2
-			# church_opinion = -10
-		# }
-		# decisions = {
-#
-		# }
-	# }
-#
-	# society_rank = {
-		# level = 4
-		# limit = 20
-		# startup_limit = 2
-		# modifier = {
-			# learning = 3
-			# church_opinion = -10
-		# }
-		# decisions = {
-#
-		# }
-	# }
-#
-	# plots = {
-	# }
-#
-	# monthly_currency_gain = {
-		# name = currency_name_engineers_guild
-#
-		# per_attribute = {
-    		# name = learning
-    		# value = 0.5
-    	# }
-		# has_trait = {
-			# value = 2
-			# trait = diligent
-		# }
-		# has_trait = {
-			# value = 1
-			# trait = scholar
-		# }
-		# has_trait = {
-			# value = 1
-			# trait = erudite
-		# }
-		# has_trait = {
-			# value = 1
-			# trait = stubborn
-		# }
-		# has_trait = {
-			# value = 1
-			# trait = patient
-		# }
-		# has_trait = {
-			# value = 1
-			# trait = genius
-		# }
-		# has_trait = {
-			# value = 1
-			# trait = quick
-		# }
-		# has_trait = {
-			# value = 1
-			# trait = shrewd
-		# }
+engineers_guild = {
+	primary_attribute = learning
+	society_ranks_gfx = generic_ranks
+	opinion_to_other_members = +10
+	opinion_per_rank_above = +5
+	sound = hermetic_society_interface
+
+	active = {
+		has_dlc = "Mystics"
+	}
+	indestructible = yes
+
+	can_join_society = {
+		hidden_trigger = {
+			NAND = {
+				ai = yes
+				is_society_rank_full = {
+					society = engineers_guild
+					rank = 1
+				}
+			}
+			NOT = { is_vampire_visible_trigger = yes }
+		}
+		OR = {
+			culture_group = dwarf_group
+			culture_group = tilean_group
+			custom_tooltip = {
+				text = engineers_no_imperial_school_tt
+				AND = {
+					culture_group = imperial_group
+					had_global_flag = {
+						flag = imperial_engineering_school
+						months >= 12
+					}
+				}
+			}
+		}
+		learning = 10
+		NOR = {
+			is_nomadic = yes
+			is_tribal = yes
+		}
+		OR = {
+			trait = creature_dwarf
+			trait = creature_human
+		}
+		NOT ={
+			religion_group = chaos_gods_group
+		}
+		hidden_trigger = {
+			OR = {
+				culture_group = tilean_group
+				mercenary = no
+			}
+		}
+		age = 16
+	}
+
+	show_society = {
+		OR = {
+			culture_group = dwarf_group
+			culture_group = tilean_group
+			culture_group = imperial_group
+		}
+		NOT = { is_vampire_visible_trigger = yes }
+	}
+
+	potential = {
+		OR = {
+			culture_group = dwarf_group
+			culture_group = tilean_group
+			culture_group = imperial_group
+		}
+		age = 16
+		#If something else is added here, it could break apprenticeship. Create an event if they can get kicked out. title_hermetics_apprentice
+	}
+
+	society_rank = {
+		level = 1
+		limit = 80
+		startup_limit = 10
+		modifier = {
+			learning = 1
+			#church_opinion = -10
+		}
+		decisions = {
+			engineer_experiment
+		}
+	}
+
+	society_rank = {
+		level = 2
+		limit = 50
+		startup_limit = 6
+		modifier = {
+			learning = 1
+			stewardship = 1
+			#church_opinion = -10
+		}
+		decisions = {
+			engineer_training
+			economic_engineering
+			military_engineering
+		}
+	}
+
+	society_rank = {
+		level = 3
+		limit = 25
+		startup_limit = 4
+		modifier = {
+			learning = 2
+			stewardship = 1
+			#church_opinion = -10
+			build_time_modifier  = -0.10
+		}
+		decisions = {
+			deploy_war_machines
+			dwarf_master_engineer_training
+		}
+	}
+
+	society_rank = {
+		level = 4
+		limit = 10
+		startup_limit = 2
+		modifier = {
+			learning = 3
+			stewardship = 1
+			#church_opinion = -10
+			build_time_modifier = -0.25
+		}
+		decisions = {
+			engineer_masterwork
+			grandmaster_society_wonder_upgrade
+		}
+	}
+
+	plots = {
+	}
+
+	monthly_currency_gain = {
+		name = currency_name_engineers_guild
+
+		per_attribute = {
+    		name = learning
+    		value = 0.5
+    	}
+		has_trait = {
+			value = 2
+			trait = diligent
+		}
+		has_trait = {
+			value = 2
+			trait = engineer
+		}
+		has_trait = {
+			value = 2
+			trait = dwarf_engineer
+		}
+		has_trait = {
+			value = 3
+			trait = dwarf_engineer_master
+		}
+		has_trait = {
+			value = 1
+			trait = academic
+		}
+		has_trait = {
+			value = 1
+			trait = scholar
+		}
+		has_trait = {
+			value = 1
+			trait = architect
+		}
+		has_trait = {
+			value = 1
+			trait = erudite
+		}
+		has_trait = {
+			value = 1
+			trait = stubborn
+		}
+		has_trait = {
+			value = 1
+			trait = patient
+		}
+		has_trait = {
+			value = 1
+			trait = genius
+		}
+		has_trait = {
+			value = 1
+			trait = quick
+		}
+		has_trait = {
+			value = 1
+			trait = brilliant
+		}
+		has_trait = {
+			value = 1
+			trait = shrewd
+		}
 		# has_trait = {
 			# value = 1
 			# trait = just
 		# }
-		# society_rank = {
-			# rank = 4
-			# value = 10
-		# }
-	# }
-#
-	# member_score_per_attribute = 3
-	# member_score_per_rank = 100
-#
-	# member_score = {
-		# value = 10
-#
-		# modifier = {
-			# factor = 2
-			# trait = diligent
-		# }
-		# modifier = {
-			# factor = 1.5
-			# trait = scholar
-		# }
-		# modifier = {
-			# factor = 1.5
-			# trait = erudite
-		# }
-		# modifier = {
-			# factor = 1.5
-			# trait = stubborn
-		# }
-		# modifier = {
-			# factor = 1.5
-			# trait = patient
-		# }
-		# modifier = {
-			# factor = 1.5
-			# OR = {
-				# trait = genius
-				# trait = quick
-				# trait = shrewd
-			# }
-		# }
-		# modifier = {
-			# factor = 1.5
-			# trait = just
-		# }
-	# }
-#
-	# startup_populate = {
-	    # trigger = {
-			# ai = yes
-	    	# controls_religion = no
-			# age = 16
-			# is_in_society = no
-			# is_dumb_trigger = no
-			# NOT = { is_priest = yes }
-			# trait = creature_dwarf
-			# religion_group = dwarf_gods_group
-			# OR = {
-				# is_landed = yes
-				# OR = {
-					# learning = 10
-					# trait = erudite
-					# is_smart_trigger = yes
-				# }
-			# }
-		# }
-	# }
-# }
+		society_rank = {
+			rank = 4
+			value = 10
+		}
+	}
+
+	member_score_per_attribute = 3
+	member_score_per_rank = 100
+
+	member_score = {
+		value = 10
+		modifier = {
+			factor = 16
+			OR = {
+				trait = engineer
+				trait = dwarf_engineer
+				trait = dwarf_engineer_master
+			}
+		}
+		modifier = {
+			factor = 2
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.5
+			trait = scholar
+		}
+		modifier = {
+			factor = 1.5
+			trait = erudite
+		}
+		modifier = {
+			factor = 1.5
+			trait = stubborn
+		}
+		modifier = {
+			factor = 1.5
+			trait = patient
+		}
+		modifier = {
+			factor = 1.5
+			OR = {
+				trait = genius
+				trait = brilliant
+				trait = quick
+				trait = shrewd
+			}
+		}
+	}
+
+	startup_populate = {
+	    trigger = {
+			OR = {
+				trait = engineer
+				trait = dwarf_engineer
+				is_smart_trigger = yes
+			}
+			NOT = {
+				religion_group = chaos_gods_group
+				is_vampire_visible_trigger = yes
+			}
+	    controls_religion = no
+			age = 16
+			is_in_society = no
+			is_dumb_trigger = no
+			OR = {
+				culture_group = dwarf_group
+				culture_group = tilean_group
+			}
+			NOT = { is_priest = yes }
+			ai = yes
+		}
+	}
+}
+
+mad_inventors = {
+	primary_attribute = learning
+	society_ranks_gfx = generic_ranks
+	opinion_to_other_members = +10
+	opinion_per_rank_above = +5
+	sound = hermetic_society_interface
+
+	active = {
+		has_dlc = "Mystics"
+	}
+	indestructible = yes
+
+	can_join_society = {
+		hidden_trigger = {
+			NAND = {
+				ai = yes
+				is_society_rank_full = {
+					society = mad_inventors
+					rank = 1
+				}
+			}
+		}
+		OR = {
+			trait = creature_goblin
+			trait = creature_hobgoblin
+			AND = {
+				trait = creature_chaos_dwarf
+				is_tribal = no
+			}
+		}
+		learning = 10
+		NOR = {
+			is_nomadic = yes
+			mercenary = yes
+		}
+		age = 16
+	}
+
+	show_society = {
+		OR = {
+			trait = creature_chaos_dwarf
+			trait = creature_goblin
+			trait = creature_hobgoblin
+		}
+	}
+
+	potential = {
+		OR = {
+			trait = creature_chaos_dwarf
+			trait = creature_goblin
+			trait = creature_hobgoblin
+		}
+		age = 16
+		#If something else is added here, it could break apprenticeship. Create an event if they can get kicked out. title_hermetics_apprentice
+	}
+
+	society_rank = {
+		level = 1
+		limit = 80
+		startup_limit = 10
+		modifier = {
+			learning = 1
+			#church_opinion = -10
+		}
+		decisions = {
+			inventor_experiment
+		}
+	}
+
+	society_rank = {
+		level = 2
+		limit = 50
+		startup_limit = 6
+		modifier = {
+			learning = 1
+			martial = 1
+			#church_opinion = -10
+		}
+		decisions = {
+			inventor_training
+			inventor_target_practice
+			inventor_testing_range
+		}
+	}
+
+	society_rank = {
+		level = 3
+		limit = 25
+		startup_limit = 4
+		modifier = {
+			learning = 2
+			martial = 1
+			#church_opinion = -10
+			combat_rating = 5
+		}
+		decisions = {
+			unleash_war_machines
+			master_inventor_training
+			greenskin_inspiration
+		}
+	}
+
+	society_rank = {
+		level = 4
+		limit = 10
+		startup_limit = 2
+		modifier = {
+			learning = 3
+			martial = 1
+			#church_opinion = -10
+			combat_rating = 10
+		}
+		decisions = {
+			inventor_masterwork
+			grandmaster_society_wonder_upgrade
+		}
+	}
+
+	plots = {
+	}
+
+	monthly_currency_gain = {
+		name = currency_name_mad_inventors
+
+		per_attribute = {
+    		name = learning
+    		value = 0.5
+    	}
+		has_trait = {
+			value = 1
+			trait = diligent
+		}
+		has_trait = {
+			value = 1
+			trait = impaler
+		}
+		has_trait = {
+			value = 1
+			trait = mystic
+		}
+		has_trait = {
+			value = 1
+			trait = cruel
+		}
+		has_trait = {
+			value = 1
+			trait = stubborn
+		}
+		has_trait = {
+			value = 1
+			trait = ambitious
+		}
+		has_trait = {
+			value = 1
+			trait = genius
+		}
+		has_trait = {
+			value = 1
+			trait = quick
+		}
+		has_trait = {
+			value = 1
+			trait = brilliant
+		}
+		#you don't have to be crazy to work here
+		has_trait = {
+			value = 1
+			trait = lunatic_1
+		}
+		has_trait = {
+			value = 1
+			trait = lunatic_2
+		}
+		has_trait = {
+			value = 1
+			trait = lunatic_3
+		}
+		has_trait = {
+			value = 1
+			trait = possessed
+		}
+		society_rank = {
+			rank = 4
+			value = 10
+		}
+	}
+
+	member_score_per_attribute = 3
+	member_score_per_rank = 100
+
+	member_score = {
+		value = 10
+		modifier = {
+			factor = 1.5
+			trait = diligent
+		}
+		modifier = {
+			factor = 1.5
+			trait = mystic
+		}
+		modifier = {
+			factor = 1.5
+			trait = impaler
+		}
+		modifier = {
+			factor = 1.5
+			trait = stubborn
+		}
+		modifier = {
+			factor = 1.5
+			trait = ambitious
+		}
+		modifier = {
+			factor = 2
+			OR = {
+				trait = lunatic_1
+				trait = lunatic_2
+				trait = lunatic_3
+				trait = possessed
+			}
+		}
+	}
+
+	startup_populate = {
+	    trigger = {
+			ai = yes
+	    	controls_religion = no
+			age = 16
+			is_in_society = no
+			is_dumb_trigger = no
+			NOT = { is_priest = yes }
+			OR = {
+				trait = creature_chaos_dwarf
+				trait = creature_goblin
+				trait = creature_hobgoblin
+			}
+			OR = {
+				is_smart_trigger = yes
+				AND = {
+					learning = 10
+					OR = {
+						trait = lunatic_1
+						trait = lunatic_2
+						trait = lunatic_3
+						trait = possessed
+						trait = ambitious
+						trait = impaler
+						trait = cruel
+					}
+				}
+			}
+		}
+	}
+}
 
 # miners_guild = {
 	# primary_attribute = stewardship
@@ -10205,7 +9937,7 @@ warriors_guild_dawi = {
 		# hidden_trigger = {
 			# NAND = {
 				# ai = yes
-				# is_society_rank_full = { 
+				# is_society_rank_full = {
 					# society = cult_of_pleasure
 					# rank = 1
 				# }

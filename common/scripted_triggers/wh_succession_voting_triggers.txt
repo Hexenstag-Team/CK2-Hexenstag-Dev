@@ -1,21 +1,30 @@
+is_not_title_with_special_succession_trigger = {
+	NOR = {
+		title = k_shadowrealm
+		title = k_horned_church
+		title = e_bretonnia
+		title = e_hashut
+	}
+}
+
 elector_selection_is_incorrect_race = {
 	OR = {
-		FROMFROM = { 
+		FROMFROM = {
 			holder_scope = {
-				is_human = yes	
+				is_human = yes
 				is_vampire_visible_trigger = no
 			}
 			ROOT = {
 				OR = {
 					AND = {
-						is_human = no 
+						is_human = no
 						is_halfling = no
-					}				
+					}
 					is_vampire_visible_trigger = yes
 				}
 			}
 		}
-		FROMFROM = { 
+		FROMFROM = {
 			holder_scope = {
 				AND = {
 					culture_group = amazon_group
@@ -34,7 +43,7 @@ elector_selection_is_incorrect_race = {
 				}
 			}
 		}
-		FROMFROM = { 
+		FROMFROM = {
 			holder_scope = {
 				is_vampire_visible_trigger = yes
 			}
@@ -42,15 +51,15 @@ elector_selection_is_incorrect_race = {
 				is_vampire_visible_trigger = no
 			}
 		}
-		FROMFROM = { 
+		FROMFROM = {
 			holder_scope = {
-				is_elf = yes 
+				is_elf = yes
 			}
 			ROOT = {
-				is_elf = no 
+				is_elf = no
 			}
 		}
-		FROMFROM = { 
+		FROMFROM = {
 			holder_scope = {
 				culture_group = dwarf_group
 			}
@@ -58,7 +67,7 @@ elector_selection_is_incorrect_race = {
 				NOT = { culture_group = dwarf_group }
 			}
 		}
-		FROMFROM = { 
+		FROMFROM = {
 			holder_scope = {
 				culture_group = dawi_zharr_group
 			}
@@ -72,17 +81,17 @@ elector_selection_is_incorrect_race = {
 
 candidate_trigger_is_correct_race = {
 	NOR = {
-		AND = {		
+		AND = {
 			is_human = yes
 			is_vampire_visible_trigger = no
 			FROM = {
 				OR = {
-					is_human = no 
+					is_human = no
 					is_vampire_visible_trigger = yes
 				}
 			}
 		}
-		AND = {		
+		AND = {
 			AND = {
 				culture_group = amazon_group
 				is_female = yes
@@ -93,35 +102,35 @@ candidate_trigger_is_correct_race = {
 					AND = {
 						culture_group = amazon_group
 						is_female = no
-					} 
+					}
 					NOT = { culture_group = amazon_group }
 					is_vampire_visible_trigger = yes
 				}
 			}
 		}
-		AND = {		
+		AND = {
 			is_vampire_visible_trigger = yes
 			FROM = {
 				is_vampire_visible_trigger = no
 			}
 		}
-		AND = {		
-			is_elf = yes 
+		AND = {
+			is_elf = yes
 			FROM = {
-				is_elf = no 
+				is_elf = no
 			}
 		}
-		AND = {		
+		AND = {
 			culture_group = dwarf_group
 			FROM = {
 				NOT = { culture_group = dwarf_group }
 			}
 		}
-		AND = {		
+		AND = {
 			culture_group = dawi_zharr_group
 			FROM = {
 				NOT = { culture_group = dawi_zharr_group }
 			}
 		}
-	}	
+	}
 }

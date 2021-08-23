@@ -38,7 +38,7 @@ character_event = {
 		OR = {
 			religion_group = old_world_group
 			religion_group = ormazd_gods_group
-			religion = northern_gods
+			#religion = northern_gods #obsolete check, northern gods are in old_world_group now
 		}
 		NOR = {
 				religion = grail
@@ -63,7 +63,7 @@ character_event = {
 				OR = {
 					religion_group = old_world_group
 					religion_group = ormazd_gods_group
-					religion = northern_gods
+					#religion = northern_gods
 				}
 				NOR = {
 					religion = grail
@@ -91,7 +91,7 @@ character_event = {
 				OR = {
 					religion_group = old_world_group
 					religion_group = ormazd_gods_group
-					religion = northern_gods
+					#religion = northern_gods
 				}
 				NOR = {
 					religion = grail
@@ -1560,9 +1560,9 @@ character_event = {
 	immediate = {
 		father = { character_event = { id = DR_universities.34 } }
 		random_list = { 40 = { add_lore_of_fire = yes }
-				30 = { add_trait = add_lore_of_light = yes }
-				20 = { add_trait = add_lore_of_metal = yes }
-				10 = { add_trait = add_lore_of_heavens = yes }
+				30 = { add_lore_of_light = yes }
+				20 = { add_lore_of_metal = yes }
+				10 = { add_lore_of_heavens = yes }
 				 }
 		clr_character_flag = studying_educ_university
 	}

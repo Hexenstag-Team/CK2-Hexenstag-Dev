@@ -86,6 +86,9 @@ dwarf_engineer = {
 	is_visible = {
 		religion_visible_trait = yes
 	}
+	opposites = {
+		dwarf_engineer_master
+	}
 	martial = 1
 	stewardship  = 2
 	learning  = 2
@@ -100,6 +103,9 @@ dwarf_engineer = {
 dwarf_engineer_master = {
 	is_visible = {
 		religion_visible_trait = yes
+	}
+	opposites = {
+		dwarf_engineer
 	}
 	martial = 2
 	stewardship = 2
@@ -311,7 +317,10 @@ chaos_dwarf_petrification_1 = {
 	intrigue = -3
 	fertility = -50
 	sex_appeal_opinion = -25
-	vassal_opinion = -15
+	vassal_opinion = -5
+	opposites = {
+		chaos_dwarf_petrification_2
+	}
 }
 
 chaos_dwarf_petrification_2 = {
@@ -326,8 +335,11 @@ chaos_dwarf_petrification_2 = {
 	fertility = -100
 	health = -1
 	sex_appeal_opinion = -50
-	vassal_opinion = -30
-	incapacitating = yes
+	vassal_opinion = -15
+	#incapacitating = yes
+	opposites = {
+		chaos_dwarf_petrification_1
+	}
 }
 
 runesmith = {

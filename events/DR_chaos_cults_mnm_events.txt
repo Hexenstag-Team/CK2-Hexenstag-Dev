@@ -8621,7 +8621,6 @@ society_quest_event = {
 				is_adult = yes
 				NOT = { trait = avatar_kurnous }
 				NOT = { trait = avatar_isha }
-				NOT = { trait = everqueen }
 				OR = { trait = creature_elf
 				trait = creature_chaos_dwarf
 				trait = creature_dwarf
@@ -8760,12 +8759,6 @@ character_event = {
 						FROM = { has_character_modifier = magic_power_4 }
 						}
 				modifier = { factor = 2
-						FROM = { trait = malekith }
-						}
-				modifier = { factor = 2
-						FROM = { trait = phoenix_king }
-						}
-				modifier = { factor = 2
 						FROM = { trait = lore_dark_magic }
 						}
 				modifier = { factor = 2
@@ -8792,6 +8785,7 @@ character_event = {
 				is_society_member = cult_of_undivided
 				trait = lore_nurgle
 				trait = chaos_dwarf_sorcerer
+				trait = chaos_dwarf_daemonsmith
 				trait = lore_dark_magic } }
 		random_list = { 60 = {
 					modifier = {
@@ -8849,12 +8843,6 @@ character_event = {
 						}
 				modifier = { factor = 3.5
 						FROM = { has_character_modifier = magic_power_4 }
-						}
-				modifier = { factor = 2
-						FROM = { trait = malekith }
-						}
-				modifier = { factor = 2
-						FROM = { trait = phoenix_king }
 						}
 				modifier = { factor = 2
 						FROM = { trait = lore_dark_magic }
@@ -8943,12 +8931,6 @@ character_event = {
 						FROM = { has_character_modifier = magic_power_4 }
 						}
 				modifier = { factor = 2
-						FROM = { trait = malekith }
-						}
-				modifier = { factor = 2
-						FROM = { trait = phoenix_king }
-						}
-				modifier = { factor = 2
 						FROM = { trait = lore_dark_magic }
 						}
 				modifier = { factor = 2
@@ -8975,7 +8957,8 @@ character_event = {
 					trait = lore_dark_magic
 					trait = lore_tzeentch
 					trait = lore_slaanesh
-					trait = chaos_dwarf_sorcerer } }
+					trait = chaos_dwarf_sorcerer
+					trait = chaos_dwarf_daemonsmith } }
 		random_list = { 60 = {
 					modifier = {
 						factor = 0.75
@@ -9032,12 +9015,6 @@ character_event = {
 						}
 				modifier = { factor = 3.5
 						FROM = { has_character_modifier = magic_power_4 }
-						}
-				modifier = { factor = 2
-						FROM = { trait = malekith }
-						}
-				modifier = { factor = 2
-						FROM = { trait = phoenix_king }
 						}
 				modifier = { factor = 2
 						FROM = { trait = lore_dark_magic }

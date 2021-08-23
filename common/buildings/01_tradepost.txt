@@ -437,12 +437,12 @@ trade_post = {
 		potential = {
 			has_province_flag = mining_outpost_flag
 			NOT={religion=FROM}
-            FROM = {
-                is_patrician = yes
+      FROM = {
+        is_patrician = yes
 				OR={
 					religion_group=chaos_gods_group
 				}
-            }
+      }
 		}
 		desc = tr_slavepost_1_desc
 		trigger = {
@@ -460,160 +460,71 @@ trade_post = {
 		extra_tech_building_start = 10.0 # Never get at start of game
 	}
 
-	tr_slavepost_2 = {
-		potential = {
-			has_province_flag = mining_outpost_flag
-			NOT={religion=FROM}
-            FROM = {
-                is_patrician = yes
-				OR={
-					religion_group=chaos_gods_group
-				}
-            }
-		}
-		desc = tr_slavepost_2_desc
-		trigger = {
-			TECH_TRADE_PRACTICES = 1
-			TECH_CONSTRUCTION = 1
-		}
-		gold_cost = 400
-		build_time = 365
-		upgrades_from = tr_slavepost_1
-		ai_creation_factor = 95
-		light_infantry=100
+  tr_slaver_clan_hobgoblins_1 = {
+    desc = tr_slaver_clan_hobgoblins_desc
+    potential = {
+      chaos_dwarf_trade_with_hobgoblins_building_trigger = yes
+    }
+    trigger = {
+      TECH_TRADE_PRACTICES = 0
+    }
+    prestige_cost = 200
+    build_time = 730
 
-		local_tax_modifier=-0.1
-		tax_income = 8
-		tradevalue = -10
-		monthly_character_prestige = 0.5
+    fort_level = 1
+    garrison_size = 0.25
+    retinuesize = 100
 
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
+    ai_creation_factor = 97
+    extra_tech_building_start = 3
+  }
 
-	tr_slavepost_3 = {
-		potential = {
-			has_province_flag = mining_outpost_flag
-			NOT={religion=FROM}
-            FROM = {
-                is_patrician = yes
-				OR={
-					religion_group=chaos_gods_group
-				}
-            }
-		}
-		desc = tr_slave_hub_desc
-		trigger = {
-			TECH_TRADE_PRACTICES = 2
-			TECH_CONSTRUCTION = 2
-		}
-		local_tax_modifier=-0.1
-		gold_cost = 1000
-		build_time = 730
-		upgrades_from = tr_slavepost_2
-		ai_creation_factor = 95
-		light_infantry=100
-		tax_income = 12
-		tradevalue = -10
-		monthly_character_prestige = 1
+  tr_slaver_clan_hobgoblins_2 = {
+    desc = tr_slaver_clan_hobgoblins_desc
+    potential = {
+      chaos_dwarf_trade_with_hobgoblins_building_trigger = yes
+    }
+    trigger = {
+      TECH_TRADE_PRACTICES = 2
+      any_province_holding = {
+        has_building = tb_hobgoblin_slaver_clans_1
+      }
+    }
+    upgrades_from = tr_slaver_clan_hobgoblins_1
 
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	tr_slave_hub_1 = {
-		potential = {
-			has_province_flag = mining_outpost_flag
-			owner = {
-			same_realm = FROM
-			}
-            FROM = {
-                is_patrician = yes
-				OR={
-					religion_group=chaos_gods_group
-				}
-            }
-		}
-		desc = tr_slave_hub_desc
-		trigger = {
-			TECH_TRADE_PRACTICES = 1
-			TECH_CONSTRUCTION = 1
-		}
-		local_tax_modifier=0.1
-		gold_cost = 400
-		build_time = 730
-		ai_creation_factor = 95
-		light_cavalry=25
-		light_infantry=50
-		heavy_infantry=25
+    prestige_cost = 200
+    build_time = 730
 
-		tax_income = 3
-		tradevalue = 20
-		monthly_character_prestige = 1
+    fort_level = 1
+    garrison_size = 0.25
+    retinuesize = 150
 
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	tr_slave_hub_2 = {
-		potential = {
-			has_province_flag = mining_outpost_flag
-			owner = {
-			same_realm = FROM
-			}
-            FROM = {
-                is_patrician = yes
-				OR={
-					religion_group=chaos_gods_group
-				}
-            }
-		}
-		desc = tr_slave_hub_desc
-		trigger = {
-			TECH_TRADE_PRACTICES = 2
-			TECH_CONSTRUCTION = 2
-		}
-		local_tax_modifier=0.1
-		gold_cost = 800
-		build_time = 730
-		upgrades_from = tr_slave_hub_1
-		ai_creation_factor = 95
-		light_cavalry=25
-		light_infantry=50
-		heavy_infantry=25
+    ai_creation_factor = 97
+    extra_tech_building_start = 3
+  }
 
-		tax_income = 6
-		tradevalue = 20
-		monthly_character_prestige = 1
+  tr_slaver_clan_hobgoblins_3 = {
+    desc = tr_slaver_clan_hobgoblins_desc
+    potential = {
+      chaos_dwarf_trade_with_hobgoblins_building_trigger = yes
+    }
+    trigger = {
+      TECH_TRADE_PRACTICES = 4
+      any_province_holding = {
+        has_building = tb_hobgoblin_slaver_clans_2
+      }
+    }
+    upgrades_from = tr_slaver_clan_hobgoblins_2
 
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
-	tr_slave_hub_3 = {
-		potential = {
-			has_province_flag = mining_outpost_flag
-			owner = {
-			same_realm = FROM
-			}
-            FROM = {
-                is_patrician = yes
-				OR={
-					religion_group=chaos_gods_group
-				}
-            }
-		}
-		desc = tr_slavepost_3_desc
-		trigger = {
-			TECH_TRADE_PRACTICES = 3
-			TECH_CONSTRUCTION = 3
-		}
-		local_tax_modifier=0.1
-		gold_cost = 1200
-		build_time = 730
-		upgrades_from = tr_slave_hub_2
-		ai_creation_factor = 95
-		light_cavalry=25
-		light_infantry=50
-		heavy_infantry=25
-		garrison_size=0.2
-		tax_income = 9
-		tradevalue = 20
-		monthly_character_prestige = 1
+    prestige_cost = 200
+    build_time = 730
 
-		extra_tech_building_start = 10.0 # Never get at start of game
-	}
+    fort_level = 1
+    garrison_size = 0.25
+    retinuesize = 250
+
+    ai_creation_factor = 97
+    extra_tech_building_start = 3
+  }
+
 }

@@ -38,6 +38,7 @@ apply_immortal_age = {
 		creature_chaos_dwarf = { remove_trait = creature_chaos_dwarf add_trait = creature_chaos_dwarf }
 		creature_orc = { remove_trait = creature_orc add_trait = creature_orc }
 		creature_goblin = { remove_trait = creature_goblin add_trait = creature_goblin }
+		creature_hobgoblin = { remove_trait = creature_hobgoblin add_trait = creature_hobgoblin }
 		creature_snotling = { remove_trait = creature_snotling add_trait = creature_snotling }
 		creature_nehekharan = { remove_trait = creature_nehekharan add_trait = creature_nehekharan }
 		creature_forestspirit = { remove_trait = creature_forestspirit add_trait = creature_forestspirit }
@@ -61,7 +62,7 @@ new_character_effect = {
 		character_event = { id = starsigns.100 days = 5 }
 	}
 	remove_race_trait = yes
-	
+
 	if = {
 		limit = {
 			trait = rulerdesigner_magic
@@ -126,7 +127,7 @@ new_character_effect = {
 			else = {
 				add_trait = in_stock
 				add_trait = disinherited_amazon
-				set_character_flag = disinherited_by_amazon_laws				
+				set_character_flag = disinherited_by_amazon_laws
 			}
 			set_graphical_culture = amazon_main
 			break = yes
@@ -1229,6 +1230,7 @@ new_character_effect = {
 	else_if = {
 		limit = {
 			culture_group = dawi_zharr_group
+			NOT = { culture = servile_hobgoblin } #these lovable little scamps aren't dwarfs
 		}
 		add_trait = creature_chaos_dwarf
 		character_event = { id = wh_magic_law.40 days = 2 }
@@ -1256,6 +1258,15 @@ new_character_effect = {
 	}
 	else_if = {
 		limit = {
+			culture = servile_hobgoblin
+			is_female = no
+		}
+		add_trait = creature_hobgoblin
+		set_graphical_culture = hobgoblin
+		break = yes
+	}
+	else_if = {
+		limit = {
 			OR = {
 				culture_group = halfling_old_world
 				culture_group = halfling_lustrian
@@ -1277,10 +1288,11 @@ new_character_effect = {
 		break = yes
 	}
 	else_if = {
-		limit = {	
+		limit = {
 			OR = {
 				culture_group = orc_group
 				culture_group = goblin_group
+				culture = servile_hobgoblin
 			}
 			is_female = yes
 		}
@@ -1801,7 +1813,7 @@ new_character_effect = {
 				99 = {
 					modifier = {
 						factor = 0
-						liege = { 
+						liege = {
 							NOT = {
 								any_courtier = {
 									is_female = yes
@@ -1822,7 +1834,7 @@ new_character_effect = {
 			limit = {
 				NOR = {
 					mother_even_if_dead = { character = yes }
-					true_father_even_if_dead = { character = yes }				
+					true_father_even_if_dead = { character = yes }
 				}
 				is_female = no
 			}
@@ -1843,12 +1855,12 @@ new_character_effect = {
 							}
 							20 = {
 								add_trait = fimir_noble
-								if = { 
+								if = {
 									limit = {
 										liege = {
 											culture = fimir
-											NOT = { 
-												trait = fimir_noble 
+											NOT = {
+												trait = fimir_noble
 												trait = fimir_maergh
 											}
 										}

@@ -179,26 +179,6 @@ province_event = {
 			}
 		}
 		modifier = {
-			factor = 0.25
-			OR = {
-				culture = zhangzhung
-				culture = sumpa
-			}
-			owner = {
-				culture = bodpa
-				OR = {
-					any_owned_bloodline = {
-						has_bloodline_flag = bloodline_songtsen_gampo
-					}
-					top_liege = {
-						any_owned_bloodline = {
-							has_bloodline_flag = bloodline_songtsen_gampo
-						}
-					}
-				}
-			}
-		}
-		modifier = {
 			factor = 0.6
 			owner = {
 		    	any_owned_bloodline = {
@@ -208,17 +188,6 @@ province_event = {
     				}
     			}
 			}
-		}
-		modifier = { #Roman Renaissance.
-			factor = 0.5
-			has_global_flag = flag_started_roman_renaissance
-			liege = { culture = roman }
-			location = { county = { culture_group = latin } }
-		}
-		modifier = { #Greek culture is more impervious to Romanization.
-			factor = 2
-			liege = { culture = roman }
-			location = { county = { culture = greek } }
 		}
 		# Effect of wonder upgrades
 		modifier = {
@@ -473,37 +442,6 @@ province_event = {
 					value = faster_melting_pots_and_slower_normal
 				}
 			}
-		}
-		modifier = {
-			factor = 0.25
-			OR = {
-				culture = zhangzhung
-				culture = sumpa
-			}
-			owner = {
-				culture = bodpa
-				OR = {
-					any_owned_bloodline = {
-						has_bloodline_flag = bloodline_songtsen_gampo
-					}
-					top_liege = {
-						any_owned_bloodline = {
-							has_bloodline_flag = bloodline_songtsen_gampo
-						}
-					}
-				}
-			}
-		}
-		modifier = { #Roman Renaissance.
-			factor = 0.5
-			has_global_flag = flag_started_roman_renaissance
-			liege = { culture = roman }
-			location = { county = { culture_group = latin } }
-		}
-		modifier = { #Greek culture is more impervious to Romanization.
-			factor = 2
-			liege = { culture = roman }
-			location = { county = { culture = greek } }
 		}
 	}
 

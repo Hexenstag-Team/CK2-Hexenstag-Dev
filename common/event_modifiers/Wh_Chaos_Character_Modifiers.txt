@@ -2,10 +2,16 @@
 called_for_help_chaos = {
 	monthly_character_prestige = -0.03
         icon = 189
+					is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
  holding_large_druchi_feast = {
 	monthly_character_prestige = 0.05
 	icon = 7
+				is_visible = {
+		religion_group_visible_trait = yes
+	}
 }
 
 ######################## Secret Societys
@@ -16,12 +22,18 @@ secret_khorne_community = {
 	is_visible = {
 		society_member_of = cult_of_khorne
 	}
+				is_visible = {
+		hidden_trait = yes
+	}
 }
 
 secret_nurgle_community = {
 	icon = 18
 	is_visible = {
 		society_member_of = cult_of_nurgle
+	}
+				is_visible = {
+		hidden_trait = yes
 	}
 }
 
@@ -30,6 +42,9 @@ secret_tzeentch_community = {
 	is_visible = {
 		society_member_of = cult_of_tzeentch
 	}
+				is_visible = {
+		hidden_trait = yes
+	}
 }
 
 secret_slaanesh_community = {
@@ -37,11 +52,17 @@ secret_slaanesh_community = {
 	is_visible = {
 		society_member_of = cult_of_slaanesh
 	}
+				is_visible = {
+		hidden_trait = yes
+	}
 }
 
 secret_undivided_community = {
 	icon = 18
 	is_visible = {
 		society_member_of = cult_of_undivided
+	}
+				is_visible = {
+		hidden_trait = yes
 	}
 }

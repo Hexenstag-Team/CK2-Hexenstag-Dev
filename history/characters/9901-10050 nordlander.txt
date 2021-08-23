@@ -23,14 +23,14 @@
 	1996.8.12 = {add_spouse = 9931}
 	2010.1.1 = {
 		effect = {
-			create_retinue = RETTYPE_ST_SWORDSMEN
-			create_retinue = RETTYPE_ST_SWORDSMEN
-			create_retinue = RETTYPE_ST_SPEARMEN
-			create_retinue = RETTYPE_ST_SPEARMEN
-			create_retinue = RETTYPE_ST_CROSSBOWS
-			create_retinue = RETTYPE_ST_CROSSBOWS
-			create_retinue = RETTYPE_ST_HANGUNNERS
-			create_retinue = RETTYPE_ST_HANGUNNERS
+			create_retinue = RETTYPE_ST_GREATSWORDS
+			create_retinue = RETTYPE_ST_GREATSWORDS
+			create_retinue = RETTYPE_ST_GREATSWORDS
+			create_retinue = RETTYPE_ST_CANNONS
+			create_retinue = RETTYPE_ST_CANNONS
+			create_retinue = RETTYPE_ST_CANNONS
+			create_retinue = RETTYPE_ST_KNIGHTS
+			create_retinue = RETTYPE_ST_OUTRIDER
 			create_retinue = RETTYPE_NORDLANDERBESERKERS
 			create_retinue = RETTYPE_NORDLANDERBESERKERS
 		}
@@ -1469,12 +1469,22 @@
 }
 
 9984 = {
-	name = Radulf
-	dynasty = 14050
+	name = Aranka
+	female = yes
+	dynasty = 14033
+	dna = hmgmeifdick
 	culture = nordlander
 	religion = sigmarite
-	1980.4.23 = {birth = yes}
-	2060.8.2 = {death = yes}
+	martial = 2
+	diplomacy = 2
+	stewardship = 5
+	intrigue = 3
+	learning = 0
+	add_trait = creature_human
+	add_trait = underhanded_rogue
+	add_trait = content
+	1901.1.27 = {birth = yes}
+	1975.2.7 = {death = yes}
 }
 
 9985 = {

@@ -163,6 +163,7 @@ cant_love_trigger = {
 	NOR = {
 		culture_group = daemonic_group
 		trait = creature_goblin
+		trait = creature_hobgoblin
 		trait = creature_orc
 		trait = creature_skink
 		trait = creature_skaven
@@ -180,8 +181,19 @@ is_invincible_trigger = {
 		trait = khemri_tomb_king
 		trait = black_arkhan
 		trait = creature_celdragon
-		trait = malekith
 		trait = drachenfels
+		AND = {
+			trait = chaos_dwarf_sorcerer
+			NOT = { trait = chaos_dwarf_petrification_2 }
+			NAND = {
+				trait = chaos_dwarf_petrification_1
+				check_variable = {
+					which = hashut_favor
+					value <= 5
+				}
+			}
+			ai = yes
+		}
 	}
 }
 
@@ -373,9 +385,7 @@ is_incorruptible_trigger = {
 		trait = tzeentch_flamer
 		trait = avatar_kurnous
 		trait = avatar_isha
-		trait = everqueen
 		trait = fay_enchantress
-		trait = malekith
 		trait = drachenfels
 		trait = creature_forestspirit
 		trait = creature_slann
@@ -384,6 +394,7 @@ is_incorruptible_trigger = {
 		trait = creature_saurus
 		trait = creature_orc
 		trait = creature_goblin
+		trait = creature_hobgoblin
 		trait = creature_snotling
 		trait = chosen_khorne
 		trait = chosen_nurgle
@@ -428,7 +439,6 @@ cannot_marry_trigger = {
 				trait = creature_monster
 				trait = vampire_necrarch_visible
 				trait = special_char_red_duke
-				trait = everqueen_heir
 				trait = widowed
 				trait = khorne_demon
 				trait = nurgle_demon
@@ -439,7 +449,6 @@ cannot_marry_trigger = {
 				trait = nurgle_plaguebearer
 				trait = slaanesh_daemonette
 				trait = tzeentch_flamer
-				trait = everqueen
 				trait = fay_enchantress
 				trait = creature_forestspirit
 				trait = creature_slann
@@ -447,6 +456,7 @@ cannot_marry_trigger = {
 				trait = creature_saurus
 				trait = creature_orc
 				trait = creature_goblin
+				trait = creature_hobgoblin
 				trait = creature_snotling
 				trait = creature_celdragon
 				trait = mage_apprentice
@@ -488,6 +498,7 @@ is_disease_immune_race = {
 		trait = creature_saurus
 		trait = creature_orc
 		trait = creature_goblin
+		trait = creature_hobgoblin
 		trait = creature_snotling
 	}
 }
@@ -508,6 +519,7 @@ is_no_females_race = {
 		trait = creature_saurus
 		trait = creature_orc
 		trait = creature_goblin
+		trait = creature_hobgoblin
 		trait = creature_snotling
 		trait = creature_nehekharan
 		trait = creature_slann
@@ -667,6 +679,7 @@ has_magic_trigger = {
 	trait = asrai_spellsinger
 	trait = asur_mage
 	trait = chaos_dwarf_sorcerer
+	trait = chaos_dwarf_daemonsmith
 	trait = greenskin_shaman
 	trait = druchi_mage
 	trait = druchi_sorceress
@@ -1050,12 +1063,47 @@ dwarf_main_trigger = {
 			culture = dwarf_azul
 			culture = dwarf_varr
 			culture = dwarf_dum
+			culture = dwarf_vlagaar
 		}
 	}
 }
 
+is_chaos_dwarf_sorcerer_path = {
+	OR = {
+		has_ambition = obj_chaos_dwarf_become_daemonsmith
+		trait = chaos_dwarf_daemonsmith
+		trait = chaos_dwarf_sorcerer
+		#no need for become sorcerer ambition as it requires daemonsmith trait
+	}
+}
 
+has_hashut_good_trait_trigger = {
+	OR = {
+		trait = cruel
+		trait = diligent
+		trait = patient
+		trait = proud
+		trait = zealous
+	}
+}
 
+has_hashut_bad_trait_trigger = {
+	OR = {
+		trait = just
+		trait = kind
+		trait = humble
+		trait = slothful
+		trait = trusting
+		#specifically not wroth - patience is a virtue to Hashut but anger isn't a sin
+	}
+}
 
+is_hashut_good_minion_trigger = {
+	has_hashut_good_trait_trigger = yes
+	NOT = { has_hashut_bad_trait_trigger = yes }
+}
 
-
+is_hashut_bad_minion_trigger = {
+	NOT = { has_hashut_good_trait_trigger = yes }
+	has_hashut_bad_trait_trigger = yes
+}

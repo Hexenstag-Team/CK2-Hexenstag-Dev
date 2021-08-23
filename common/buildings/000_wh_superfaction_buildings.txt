@@ -1,0 +1,453 @@
+### Buildings shared across two or more factions ###
+# Use these buildings where "converting" facilities would be easier
+
+# # LIST OF CROSS-FACTION IDENTITIES # #
+# <trigger> (<faction1>, <faction2>, ...): vanilla building types replaced
+#
+# 1. weak_any_dwarf_building_trigger (Dwarfs, Chaos Dwarfs): Fortification/Wall Quality buildings
+
+castle = {
+
+  #Defensive Cannons
+  #replaces Castle Fortification
+  #cheaper but slower to build, more levels (both factions have this identity)
+  #NOTE: this building does not have an activation trigger because of its thematic simplicity
+  ca_any_dwarf_defensive_cannons_1 = {
+    desc = ca_any_dwarf_defensive_cannons_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    replaces = ca_wall_q_1
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+    gold_cost = 40
+    build_time = 365
+
+    fort_level = 0.5
+    ai_creation_factor = 80
+    extra_tech_building_start = 0.5
+  }
+
+  ca_any_dwarf_defensive_cannons_2 = {
+    desc = ca_any_dwarf_defensive_cannons_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    replaces = ca_wall_q_2
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+    upgrades_from = ca_any_dwarf_defensive_cannons_1
+    gold_cost = 40
+    build_time = 365
+
+    fort_level = 0.5
+    ai_creation_factor = 80
+    extra_tech_building_start = 1.5
+  }
+
+  ca_any_dwarf_defensive_cannons_3 = {
+    desc = ca_any_dwarf_defensive_cannons_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    replaces = ca_wall_q_3
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+    upgrades_from = ca_any_dwarf_defensive_cannons_2
+    gold_cost = 40
+    build_time = 365
+
+    fort_level = 0.5
+    ai_creation_factor = 80
+    extra_tech_building_start = 1.5
+  }
+
+  ca_any_dwarf_defensive_cannons_4 = {
+    desc = ca_any_dwarf_defensive_cannons_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    replaces = ca_wall_q_4
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
+    upgrades_from = ca_any_dwarf_defensive_cannons_3
+    gold_cost = 80
+    build_time = 730
+
+    fort_level = 1
+    ai_creation_factor = 80
+    extra_tech_building_start = 1.5
+  }
+
+  ca_any_dwarf_defensive_cannons_5 = {
+    desc = ca_any_dwarf_defensive_cannons_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    replaces = ca_wall_q_5
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+    upgrades_from = ca_any_dwarf_defensive_cannons_4
+    gold_cost = 80
+    build_time = 730
+
+    fort_level = 1
+    ai_creation_factor = 80
+    extra_tech_building_start = 1.5
+  }
+
+  ca_any_dwarf_defensive_cannons_6 = {
+    desc = ca_any_dwarf_defensive_cannons_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
+    upgrades_from = ca_any_dwarf_defensive_cannons_5
+    gold_cost = 80
+    build_time = 730
+
+    fort_level = 1
+    ai_creation_factor = 80
+    extra_tech_building_start = 1.5
+  }
+
+  ca_any_dwarf_defensive_cannons_7 = {
+    desc = ca_any_dwarf_defensive_cannons_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+    upgrades_from = ca_any_dwarf_defensive_cannons_6
+    gold_cost = 120
+    build_time = 1095
+
+    fort_level = 1.5
+    ai_creation_factor = 80
+    extra_tech_building_start = 1.5
+  }
+
+  ca_any_dwarf_defensive_cannons_8 = {
+    desc = ca_any_dwarf_defensive_cannons_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
+    upgrades_from = ca_any_dwarf_defensive_cannons_7
+    gold_cost = 120
+    build_time = 1095
+
+    fort_level = 1.5
+    ai_creation_factor = 80
+    extra_tech_building_start = 1.5
+  }
+}
+
+city = {
+
+  #Guardians of the Hearth
+  #replaces City fortifications
+  #You probably get the reference, but Fantasy lore does indicate that dwarf women are just as well-trained as their menfolk, despite law/tendency to stay in the hold
+  #Bends identity due to adding garrison_size as well as fort_level, so slower to build, more expensive, longer build times
+  #NOTE: this building does have an is_active_trigger because it's not purely infrastructure. It will persist when the holding changes hands between ancestral and chaos dwarfs, but requires the province to culture convert before it's active
+  ct_any_dwarf_hearthguard_1 = {
+    desc = ct_any_dwarf_hearthguard_desc
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    replaces = ct_wall_q_1
+    is_active_trigger = {
+      any_dwarf_building_trigger = yes
+    }
+    gold_cost = 60
+    build_time = 365
+
+    fort_level = 0.5
+    garrison_size = 0.05
+
+    ai_creation_factor = 89
+    extra_tech_building_start = 0.5
+  }
+
+  ct_any_dwarf_hearthguard_2 = {
+    desc = ct_any_dwarf_hearthguard_desc
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    upgrades_from = ct_any_dwarf_hearthguard_1
+    replaces = ct_wall_q_2
+    is_active_trigger = {
+      any_dwarf_building_trigger = yes
+    }
+    gold_cost = 60
+    build_time = 365
+
+    fort_level = 0.5
+    garrison_size = 0.05
+
+    ai_creation_factor = 89
+    extra_tech_building_start = 1.5
+  }
+
+  ct_any_dwarf_hearthguard_3 = {
+    desc = ct_any_dwarf_hearthguard_desc
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    upgrades_from = ct_any_dwarf_hearthguard_2
+    replaces = ct_wall_q_3
+    is_active_trigger = {
+      any_dwarf_building_trigger = yes
+    }
+    gold_cost = 60
+    build_time = 365
+
+    fort_level = 0.5
+    garrison_size = 0.05
+
+    ai_creation_factor = 89
+    extra_tech_building_start = 1.5
+  }
+
+  ct_any_dwarf_hearthguard_4 = {
+    desc = ct_any_dwarf_hearthguard_desc
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    upgrades_from = ct_any_dwarf_hearthguard_3
+    replaces = ct_wall_q_4
+    is_active_trigger = {
+      any_dwarf_building_trigger = yes
+    }
+    gold_cost = 120
+    build_time = 730
+
+    fort_level = 1
+    garrison_size = 0.10
+
+    ai_creation_factor = 89
+    extra_tech_building_start = 1.5
+  }
+
+  ct_any_dwarf_hearthguard_5 = {
+    desc = ct_any_dwarf_hearthguard_desc
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    upgrades_from = ct_any_dwarf_hearthguard_4
+    replaces = ct_wall_q_5
+    is_active_trigger = {
+      any_dwarf_building_trigger = yes
+    }
+    gold_cost = 120
+    build_time = 730
+
+    fort_level = 1
+    garrison_size = 0.10
+
+    ai_creation_factor = 89
+    extra_tech_building_start = 1.5
+  }
+
+  ct_any_dwarf_hearthguard_6 = {
+    desc = ct_any_dwarf_hearthguard_desc
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    upgrades_from = ct_any_dwarf_hearthguard_5
+    is_active_trigger = {
+      any_dwarf_building_trigger = yes
+    }
+    gold_cost = 120
+    build_time = 730
+
+    fort_level = 1
+    garrison_size = 0.10
+
+    ai_creation_factor = 89
+    extra_tech_building_start = 3
+  }
+
+  ct_any_dwarf_hearthguard_7 = {
+    desc = ct_any_dwarf_hearthguard_desc
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    upgrades_from = ct_any_dwarf_hearthguard_6
+    is_active_trigger = {
+      any_dwarf_building_trigger = yes
+    }
+    gold_cost = 180
+    build_time = 1095
+
+    fort_level = 1.5
+    garrison_size = 0.15
+
+    ai_creation_factor = 89
+    extra_tech_building_start = 3
+  }
+
+  ct_any_dwarf_hearthguard_8 = {
+    desc = ct_any_dwarf_hearthguard_desc
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    upgrades_from = ct_any_dwarf_hearthguard_7
+    is_active_trigger = {
+      any_dwarf_building_trigger = yes
+    }
+    gold_cost = 180
+    build_time = 1095
+
+    fort_level = 1.5
+    garrison_size = 0.15
+
+    ai_creation_factor = 89
+    extra_tech_building_start = 3
+  }
+}
+
+temple = {
+  tp_any_dwarf_dwarfwrought_walls_1 = {
+    desc = tp_any_dwarf_dwarfwrought_walls_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    replaces = tp_wall_q_1
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+    gold_cost = 40
+    build_time = 365
+
+    fort_level = 0.5
+
+    ai_creation_factor = 84
+
+    extra_tech_building_start = 0.5
+  }
+
+  tp_any_dwarf_dwarfwrought_walls_2 = {
+    desc = tp_any_dwarf_dwarfwrought_walls_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    replaces = tp_wall_q_2
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 0 }
+    upgrades_from = tp_any_dwarf_dwarfwrought_walls_1
+    gold_cost = 40
+    build_time = 365
+
+    fort_level = 0.5
+
+    ai_creation_factor = 84
+
+    extra_tech_building_start = 1.5
+  }
+
+  tp_any_dwarf_dwarfwrought_walls_3 = {
+    desc = tp_any_dwarf_dwarfwrought_walls_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    replaces = tp_wall_q_3
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 2 }
+    upgrades_from = tp_any_dwarf_dwarfwrought_walls_2
+    gold_cost = 40
+    build_time = 365
+
+    fort_level = 0.5
+
+    ai_creation_factor = 84
+
+    extra_tech_building_start = 1.5
+  }
+
+  tp_any_dwarf_dwarfwrought_walls_4 = {
+    desc = tp_any_dwarf_dwarfwrought_walls_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    replaces = tp_wall_q_4
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 4 }
+    upgrades_from = tp_any_dwarf_dwarfwrought_walls_3
+    gold_cost = 80
+    build_time = 730
+
+    fort_level = 1
+
+    ai_creation_factor = 84
+
+    extra_tech_building_start = 1.5
+  }
+
+  tp_any_dwarf_dwarfwrought_walls_5 = {
+    desc = tp_any_dwarf_dwarfwrought_walls_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    replaces = tp_wall_q_5
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 5 }
+    upgrades_from = tp_any_dwarf_dwarfwrought_walls_4
+    gold_cost = 80
+    build_time = 730
+
+    fort_level = 1
+
+    ai_creation_factor = 84
+
+    extra_tech_building_start = 1.5
+  }
+
+  tp_any_dwarf_dwarfwrought_walls_6 = {
+    desc = tp_any_dwarf_dwarfwrought_walls_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 6 }
+    upgrades_from = tp_any_dwarf_dwarfwrought_walls_5
+    gold_cost = 80
+    build_time = 730
+
+    fort_level = 1
+
+    ai_creation_factor = 84
+
+    extra_tech_building_start = 3
+  }
+
+  tp_any_dwarf_dwarfwrought_walls_7 = {
+    desc = tp_any_dwarf_dwarfwrought_walls_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 7 }
+    upgrades_from = tp_any_dwarf_dwarfwrought_walls_6
+    gold_cost = 120
+    build_time = 1095
+
+    fort_level = 1.5
+
+    ai_creation_factor = 84
+
+    extra_tech_building_start = 3
+  }
+
+  tp_any_dwarf_dwarfwrought_walls_8 = {
+    desc = tp_any_dwarf_dwarfwrought_walls_desc
+    potential = {
+      weak_any_dwarf_building_trigger = yes
+    }
+    trigger = { TECH_FORTIFICATIONS_CONSTRUCTION = 8 }
+    upgrades_from = tp_any_dwarf_dwarfwrought_walls_7
+    gold_cost = 120
+    build_time = 1095
+
+    fort_level = 1.5
+
+    ai_creation_factor = 84
+
+    extra_tech_building_start = 3
+  }
+
+}

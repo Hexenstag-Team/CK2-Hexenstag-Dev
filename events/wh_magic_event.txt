@@ -4,7 +4,8 @@ namespace = magic
 character_event = {
 	id = magic.1
 	hide_window = yes
-	
+	is_triggered_only = yes
+
 	trigger = {
 		OR = {
 			trait = lore_fire
@@ -17,7 +18,7 @@ character_event = {
 			trait = lore_shadows
 		}
 	}
-	
+
 	immediate = {
 		if = {
 			limit = { trait = lore_fire }
@@ -80,7 +81,7 @@ character_event = {
 		add_trait = fire_mystical
 		ai_chance = { factor = 1 }
 	}
-	
+
 	option = {
 		name = EVTOPTC_magic_2
 		add_trait = fire_cardinal
@@ -106,7 +107,7 @@ character_event = {
 		add_trait = beasts_mystical
 		ai_chance = { factor = 1 }
 	}
-	
+
 	option = {
 		name = EVTOPTC_magic_3
 		add_trait = beasts_cardinal
@@ -132,7 +133,7 @@ character_event = {
 		add_trait = metal_mystical
 		ai_chance = { factor = 1 }
 	}
-	
+
 	option = {
 		name = EVTOPTC_magic_4
 		add_trait = metal_cardinal
@@ -158,7 +159,7 @@ character_event = {
 		add_trait = light_mystical
 		ai_chance = { factor = 1 }
 	}
-	
+
 	option = {
 		name = EVTOPTC_magic_5
 		add_trait = light_cardinal
@@ -184,7 +185,7 @@ character_event = {
 		add_trait = life_mystical
 		ai_chance = { factor = 1 }
 	}
-	
+
 	option = {
 		name = EVTOPTC_magic_6
 		add_trait = life_cardinal
@@ -210,7 +211,7 @@ character_event = {
 		add_trait = heavens_mystical
 		ai_chance = { factor = 1 }
 	}
-	
+
 	option = {
 		name = EVTOPTC_magic_7
 		add_trait = heavens_cardinal
@@ -236,7 +237,7 @@ character_event = {
 		add_trait = death_mystical
 		ai_chance = { factor = 1 }
 	}
-	
+
 	option = {
 		name = EVTOPTC_magic_8
 		add_trait = death_cardinal
@@ -262,7 +263,7 @@ character_event = {
 		add_trait = shadows_mystical
 		ai_chance = { factor = 1 }
 	}
-	
+
 	option = {
 		name = EVTOPTB_magic_2
 		add_trait = shadows_cardinal

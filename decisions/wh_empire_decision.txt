@@ -1,12 +1,14 @@
 ##############################
 decisions = {
     renounce_imperial_throne = {
-      only_playable = yes
       ai = no
       is_high_prio = yes
       potential = {
         any_liege = {
           tier = EMPEROR
+        }
+        NOT = {
+          trait = creature_hobgoblin
         }
         NOT = {
           has_character_modifier = renounced_imperial_throne

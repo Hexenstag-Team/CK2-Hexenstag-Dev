@@ -2530,8 +2530,12 @@ diploresponse_event = {
 				FROM = { trait = creature_snotling }
 				trait = creature_goblin
 				FROM = { trait = creature_goblin }
+				trait = creature_hobgoblin
+				FROM = { trait = creature_hobgoblin }
 				trait = creature_orc
 				FROM = { trait = creature_orc }
+				trait = creature_hobgoblin
+				FROM = { trait = creature_hobgoblin }
 			}
 			OR = {
 				#Option B allows player to go crazy
@@ -2634,8 +2638,12 @@ diploresponse_event = {
 				FROM = { trait = creature_snotling }
 				trait = creature_goblin
 				FROM = { trait = creature_goblin }
+				trait = creature_hobgoblin
+				FROM = { trait = creature_hobgoblin }
 				trait = creature_orc
 				FROM = { trait = creature_orc }
+				trait = creature_hobgoblin
+				FROM = { trait = creature_hobgoblin }
 			}
 			NOR = {
 				#Option B allows player to go crazy
@@ -6180,8 +6188,8 @@ character_event = {
 	desc = "EVTDESC681"
 	picture = "GFX_evt_burning_house"
 	border = GFX_event_normal_frame_war
-	
-	is_triggered_only = yes 
+
+	is_triggered_only = yes
 
 	option = {
 		name = "EVTOPTA150"
@@ -6194,8 +6202,8 @@ character_event = {
 	desc = "EVTDESC682"
 	picture = "GFX_evt_burning_house"
 	border = GFX_event_normal_frame_war
-	
-	is_triggered_only = yes 
+
+	is_triggered_only = yes
 
 	option = {
 		name = "EVTOPTA150"
@@ -6206,8 +6214,8 @@ character_event = {
 	desc = "EVTDESC683"
 	picture = "GFX_evt_burning_house"
 	border = GFX_event_normal_frame_war
-	
-	is_triggered_only = yes 
+
+	is_triggered_only = yes
 
 	option = {
 		name = "EVTOPTA150"
@@ -6220,8 +6228,8 @@ character_event = {
 	desc = "EVTDESC684"
 	picture = "GFX_evt_burning_house"
 	border = GFX_event_normal_frame_war
-	
-	is_triggered_only = yes 
+
+	is_triggered_only = yes
 
 	option = {
 		name = "EVTOPTA150"
@@ -6231,13 +6239,13 @@ character_event = {
 character_event = {
 	id = 685
 	hide_window = yes
-	
+
 	is_triggered_only = yes
-	
+
 	trigger = {
 		trait = in_hiding
 	}
-	
+
 	immediate = {
 		remove_trait = in_hiding
 	}
@@ -6246,11 +6254,11 @@ character_event = {
 character_event = {
 	id = 689
 	hide_window = yes
-	
+
 	is_triggered_only = yes
-	
+
 	only_rulers = yes
-	
+
 	immediate = {
 		any_demesne_title = {
 			if = {

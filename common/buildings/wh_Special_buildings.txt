@@ -14,194 +14,12 @@ castle = {
 		local_revolt_risk = -0.05
 		add_number_to_name = no
 		potential = {
-			FROMFROM = { title = b_kazad_azril_karak } 
+			FROMFROM = { title = b_kazad_azril_karak }
 				OR = {religion_group = dwarf_gods_group
 					culture_group = dawi_zharr_group}
-				
+
 		}
 		extra_tech_building_start = 0.2
-	}
-	#High Elf
-	ca_white_lions_of_chrace = {
-		desc = ca_white_lions_of_chrace_desc
-
-		fort_level = 2
-		gold_cost = 1000
-		build_time = 3000
-		heavy_infantry = 550
-		ai_creation_factor = 97
-		add_number_to_name = no
-		potential = {
-			FROMFROM = { title = b_tor_achare } #
-		}
-		garrison_size = 0.30
-		extra_tech_building_start = 0.2
-	}
-	ca_shadowlands = {
-		desc = ca_shadowlands_desc
-
-		fort_level = 5
-		gold_cost = 1000
-		build_time = 3000
-		light_infantry = 500
-		archers = 350
-		ai_creation_factor = 97
-		add_number_to_name = no
-		potential = {
-			FROMFROM = { title = b_tor_anlec } #
-		}
-		garrison_size = 0.30
-		extra_tech_building_start = 0.2
-	}
-	#Chaos Dwarf
-	ca_zharr_naggrund = {
-		desc = ca_zharr_naggrund_desc
-		potential = {
-			FROMFROM = { title = b_gromthidum } #Zharr-Naggrund's castle holding
-			FROM  = {culture_group = dawi_zharr_group}
-		}
-		auto_add_at_year = 10
-
-		gold_cost = 1000
-		build_time = 3000
-		fort_level = 7
-		heavy_infantry = 500
-		artillery = 100
-		galleys = 23
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 0.50
-		extra_tech_building_start = 0.2
-
-		convert_to_temple = tp_zharr_naggrund
-	}
-	ca_tower_gorgoth = {
-		desc = ca_tower_gorgoth_desc
-		potential = {
-			FROMFROM = { title = b_hazar_gorgoth } #Gorgoth's castle holding
-			FROM  = {culture_group = dawi_zharr_group}
-		}
-		auto_add_at_year = 10
-
-		gold_cost = 1000
-		build_time = 3000
-		fort_level = 5
-		light_infantry = 600 #Slaves
-		heavy_infantry = 200
-		artillery = 10
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 0.50
-		extra_tech_building_start = 0.2
-		
-
-		convert_to_temple = tp_tower_gorgoth
-	}
-	ca_black_fortress = {
-		desc = ca_black_fortress_desc
-		potential = {
-			FROMFROM = { title = b_black_fortress } #Black Fortress' castle holding
-			FROM  = {culture_group = dawi_zharr_group}
-		}
-		auto_add_at_year = 10
-
-		gold_cost = 1000
-		build_time = 3000
-		fort_level = 9
-		#Legion of Azgorh
-		heavy_infantry = 500
-		knights = 100
-		gunpowder = 500
-		galleys = 23
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 1.00
-		extra_tech_building_start = 0.2
-
-		convert_to_temple = tp_black_fortress
-	}
-	#Lizardmen
-	ca_hexoatl = {
-		desc = ca_hexoatl_desc
-		trigger = { culture = lizardman }
-		fort_level = 5
-		gold_cost = 1000
-		build_time = 3000
-		archers = 200
-		light_infantry = 500
-		heavy_infantry = 300
-		knights = 50
-		liege_piety = 0.25
-		monthly_character_piety = 0.25
-		garrison_size = 1.00
-		ai_creation_factor = 97
-		add_number_to_name = no
-		potential = {
-			FROMFROM = { title = b_hexoatl } #
-		}
-
-		extra_tech_building_start = 0.2
-		retinuesize = 500
-	}
-	ca_itza = {
-		desc = ca_itza_desc
-		trigger = { culture = lizardman }
-		fort_level = 3
-		gold_cost = 1000
-		build_time = 3000
-		heavy_infantry = 200
-		light_infantry = 200
-		liege_prestige = 0.5
-		monthly_character_prestige = 0.5
-		monthly_character_piety = 0.25
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 0.50
-		potential = {
-			FROMFROM = { title = b_itza } #
-		}
-		extra_tech_building_start = 0.2
-		retinuesize = 500
-	}
-	ca_tlanqua = {
-		desc = ca_tlanqua_desc
-
-		gold_cost = 1000
-		build_time = 3000
-		fort_level = 4.50
-		garrison_size = 0.45
-		war_elephants = 150
-		heavy_infantry = 150
-		liege_prestige = 0.5
-		monthly_character_prestige = 0.5
-		monthly_character_piety = 0.25
-		ai_creation_factor = 97
-		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_tlanqua } #
-		}
-
-		extra_tech_building_start = 0.1
-	}
-	ca_tlaxtlan = {
-		desc = ca_tlaxtlan_desc
-		trigger = { culture = lizardman }
-		fort_level = 3
-		gold_cost = 1000
-		build_time = 3000
-		heavy_infantry = 200
-		light_infantry = 200
-		liege_piety = 0.5
-		monthly_character_piety = 0.5
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 0.50
-		potential = {
-			FROMFROM = { title = b_tlaxtlan } #
-		}
-		extra_tech_building_start = 0.2
-		retinuesize = 500
 	}
 	#Dragon Isles
 	ca_mabuya = {
@@ -323,85 +141,6 @@ castle = {
 		potential = {
 			FROMFROM = { title = b_ahtaf_zandri } #
 			FROM = {culture_group = nehekharan_group}
-		}
-
-		extra_tech_building_start = 0.2
-	}
-
-	#Dark Elf#
-	ca_naggarond = {
-		desc = ca_naggarond_desc
-
-		fort_level = 8
-		gold_cost = 1000
-		build_time = 3000
-		archers= 350
-		pikemen= 350
-		knights = 150
-		garrison_size = 0.50
-		ai_creation_factor = 97
-		add_number_to_name = no
-		local_revolt_risk = -0.05
-
-		potential = {
-			FROMFROM = { title = b_naggarond } #
-		}
-
-		extra_tech_building_start = 0.2
-	}
-	ca_hag_graef = {
-		desc = ca_hag_graef_desc
-
-		fort_level = 5
-		gold_cost = 1000
-		build_time = 3000
-		archers= 175
-		pikemen= 175
-		light_infantry = 500
-		garrison_size = 0.75
-		ai_creation_factor = 97
-		add_number_to_name = no
-		local_revolt_risk = -0.05
-
-		potential = {
-			FROMFROM = { title = b_hag_graef } #
-		}
-
-		extra_tech_building_start = 0.2
-	}
-	ca_clar_karond = {
-		desc = ca_clar_karond_desc
-
-		fort_level = 4
-		gold_cost = 1000
-		build_time = 3000
-		archers= 275
-		pikemen= 275
-		garrison_size = 0.25
-		ai_creation_factor = 97
-		local_revolt_risk = -0.05
-		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_clar_karond } #
-		}
-
-		extra_tech_building_start = 0.2
-	}
-	ca_har_ganeth = {
-		desc = ca_har_ganeth_desc
-
-		fort_level = 4
-		gold_cost = 1000
-		build_time = 3000
-		heavy_infantry = 550
-		garrison_size = 0.25
-		ai_creation_factor = 97
-		local_revolt_risk = -0.05
-		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_har_ganeth } #
 		}
 
 		extra_tech_building_start = 0.2
@@ -554,65 +293,6 @@ castle = {
 		local_revolt_risk = -0.75
 		add_number_to_name = no
 	}
-	#lustria
-	ca_skeggi = {
-
-		desc = ca_skeggi_desc
-
-
-		gold_cost = 1000
-
-		build_time = 3000
-
-		light_infantry = 105
-		archers = 75
-		galleys = 15
-
-		garrison_size = 0.2
-		levy_size = 0.0 #This should help Skeggi survive for a bit.
-
-		ai_creation_factor = 97
-
-		potential = {
-			FROMFROM = { title = b_tuzamol } #
-		}
-
-		extra_tech_building_start = 0.2
-	}
-	ca_vampire_cove = {
-		desc = ca_vampire_cove_desc
-		potential = {
-			FROMFROM = { title = b_huatl } #
-		}
-
-		gold_cost = 1000
-		build_time = 3000
-		fort_level = 3
-		archers = 35
-		light_infantry = 60
-		pikemen = 30
-		light_cavalry = 20
-		galleys = 15
-		garrison_size = 0.27
-		levy_size = 0.1 #Undead and pirates fill this holding
-		ai_creation_factor = 97
-		extra_tech_building_start = 0.2
-	}
-	ca_al_aliman = {
-		desc = ca_al_aliman_desc
-		potential = {
-			FROMFROM = { title = b_xizoh } #
-		}
-		gold_cost = 1000
-		build_time = 3000
-		light_cavalry = 75
-		light_infantry = 50
-		galleys = 15
-		garrison_size = 0.22
-		levy_size = 0.02
-		ai_creation_factor = 97
-		extra_tech_building_start = 0.2
-	}
 
 	ca_college_of_magic = {
 		desc = ca_college_of_magic_desc
@@ -621,7 +301,7 @@ castle = {
 				AND = {
 					has_province_flag = houses_college_of_magic
 					FROMFROM = { is_capital = yes }
-					is_capital = yes	
+					is_capital = yes
 				}
 				has_building = ca_college_of_magic
 			}
@@ -631,7 +311,7 @@ castle = {
 				religion_group = old_world_group
 			}
 		}
-		trigger = { 
+		trigger = {
 			always = yes
 		}
 		gold_cost = 1
@@ -642,13 +322,13 @@ castle = {
 		ai_republic_modifier = 1000
 		extra_tech_building_start = 0
 	}
-	
+
 	ca_college_of_magic_local = {
 		desc = ca_college_of_magic_local_desc
 		potential = {
 			AND = {
 				has_province_flag = houses_college_of_magic_local
-				FROMFROM = { is_capital = yes }		
+				FROMFROM = { is_capital = yes }
 			}
 		}
 		is_active_trigger = {
@@ -656,7 +336,7 @@ castle = {
 				religion_group = old_world_group
 			}
 		}
-		trigger = { 
+		trigger = {
 			always = yes
 		}
 		gold_cost = 1
@@ -665,170 +345,13 @@ castle = {
 		garrison_size = 0.05
 		ai_creation_factor = 1000
 		ai_republic_modifier = 1000
-		
+
 		extra_tech_building_start = 0
 	}
 }
 
 city = {
 
-	#High Elf
-	ct_lothern_seaguard = {
-		desc = ca_lothern_seaguard_desc
-
-		fort_level = 8
-		gold_cost = 1000
-		build_time = 3000
-		archers = 1000
-		light_infantry = 500
-		pikemen = 300
-		garrison_size = 1.00
-		ai_creation_factor = 97
-		add_number_to_name = no
-		potential = {
-			FROMFROM = { title = b_lothern } #
-		}
-
-		extra_tech_building_start = 0.2
-	}
-	ct_caledor_dragonprinces = {
-		desc = ca_caledor_dragonprinces_desc
-
-		fort_level = 5
-		gold_cost = 1000
-		build_time = 3000
-		knights = 500
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 0.50
-		potential = {
-			FROMFROM = { title = b_summersong } #
-		}
-		extra_tech_building_start = 0.2
-	}
-	ct_tor_anroc = {
-		desc = ca_tor_anroc_desc
-
-		fort_level = 4
-		gold_cost = 1000
-		build_time = 3000
-		chariots = 500
-		galleys = 50
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 0.50
-		potential = {
-			FROMFROM = { title = b_tor_anroc } #
-		}
-
-		extra_tech_building_start = 0.2
-	}
-	ct_cothique = {
-		desc = ca_cothique_desc
-
-		fort_level = 4
-		gold_cost = 1000
-		build_time = 3000
-		light_infantry = 600
-		galleys = 100
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 0.50
-		potential = {
-			FROMFROM = { title = b_tor_dynal } #
-		}
-
-		extra_tech_building_start = 0.2
-	}
-	ct_tor_yvresse = {
-		desc = ca_tor_yvresse_desc
-
-		fort_level = 5
-		gold_cost = 1000
-		build_time = 3000
-		light_infantry = 250
-		archers = 250
-		pikemen = 250
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 0.50
-		potential = {
-			FROMFROM = { title = b_tor_yvraine } #
-		}
-
-		extra_tech_building_start = 0.2
-	}
-	ct_ellyrion_reavers = {
-		desc = ca_ellyrion_reavers_desc
-
-		fort_level = 4
-		gold_cost = 1000
-		build_time = 3000
-		light_cavalry = 600
-		ai_creation_factor = 97
-		add_number_to_name = no
-		potential = {
-			FROMFROM = { title = b_tor_elyr } #
-		}
-		garrison_size = 0.50
-		extra_tech_building_start = 0.2
-	}
-	ct_white_tower = {
-		desc = ca_white_tower_desc
-
-		fort_level = 6
-		gold_cost = 1000
-		build_time = 3000
-		heavy_infantry = 850
-		ai_creation_factor = 97
-		add_number_to_name = no
-		potential = {
-			FROMFROM = { title = b_tor_hoeth } #
-		}
-		garrison_size = 0.50
-		extra_tech_building_start = 0.2
-	}
-	# Druchii
-	ct_karond_kar = {
-		desc = ct_karond_kar_desc
-
-		fort_level = 5
-		gold_cost = 1000
-		build_time = 3000
-		heavy_infantry = 250
-		knights = 225
-		war_elephants = 125
-		garrison_size = 0.50
-		ai_creation_factor = 97
-		local_revolt_risk = -0.05
-		add_number_to_name = no
-
-		potential = {
-			FROMFROM = { title = b_karond_kar } #
-		}
-
-		extra_tech_building_start = 0.2
-	}
-	#Lizardmen
-	ct_xlanhuapec = {
-		desc = ct_xlanhuapec_desc
-		trigger = { culture = lizardman }
-		fort_level = 8
-		gold_cost = 1000
-		build_time = 3000
-		heavy_infantry = 200
-		light_infantry = 200
-		liege_piety = 0.25
-		monthly_character_piety = 0.25
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 1.50
-		potential = {
-			FROMFROM = { title = b_xlanhuapec } #
-		}
-		extra_tech_building_start = 0.2
-		retinuesize = 500
-	}
 	#Dragon Isles
 	ct_mabuya = {
 
@@ -870,7 +393,7 @@ city = {
 		local_revolt_risk = -0.75
 		add_number_to_name = no
 	}
-	
+
 	ct_college_of_magic = {
 		desc = ca_college_of_magic_desc
 		potential = {
@@ -878,7 +401,7 @@ city = {
 				AND = {
 					has_province_flag = houses_college_of_magic
 					FROMFROM = { is_capital = yes }
-					is_capital = yes	
+					is_capital = yes
 				}
 				has_building = ct_college_of_magic
 			}
@@ -888,7 +411,7 @@ city = {
 				religion_group = old_world_group
 			}
 		}
-		trigger = { 
+		trigger = {
 			always = yes
 		}
 		gold_cost = 1
@@ -897,16 +420,16 @@ city = {
 		garrison_size = 0.40
 		ai_creation_factor = 1000
 		ai_republic_modifier = 1000
-		
+
 		extra_tech_building_start = 0
 	}
-	
+
 	ct_college_of_magic_local = {
 		desc = ca_college_of_magic_local_desc
 		potential = {
 			AND = {
 				has_province_flag = houses_college_of_magic_local
-				FROMFROM = { is_capital = yes }		
+				FROMFROM = { is_capital = yes }
 			}
 		}
 		is_active_trigger = {
@@ -914,7 +437,7 @@ city = {
 				religion_group = old_world_group
 			}
 		}
-		trigger = { 
+		trigger = {
 			always = yes
 		}
 		gold_cost = 1
@@ -924,48 +447,13 @@ city = {
 
 		ai_creation_factor = 1000
 		ai_republic_modifier = 1000
-		
+
 		extra_tech_building_start = 0
 	}
 }
 
 temple = {
-	#High Elf
-	tp_court_of_everqueen = {
-		desc = tp_court_of_everqueen_desc
-
-		fort_level = 4
-		gold_cost = 1000
-		build_time = 3000
-		light_infantry = 850
-		ai_creation_factor = 97
-		add_number_to_name = no
-		potential = {
-			FROMFROM = { title = b_gaen_tor } #
-		}
-
-		extra_tech_building_start = 0.2
-	}
 	#Chaos Dwarf
-	tp_zharr_naggrund = {
-		desc = ca_zharr_naggrund_desc
-		potential = {
-			FROMFROM = { title = b_gromthidum }
-			FROM = {culture_group = dawi_zharr_group}
-		}
-		auto_add_at_year = 10
-
-		gold_cost = 1000
-		build_time = 3000
-		fort_level = 7
-		heavy_infantry = 500
-		artillery = 100
-		galleys = 20
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 0.50
-		extra_tech_building_start = 0.2
-	}
 	tp_barak_mazur = {
 		desc = tp_barak_mazur_desc
 		potential = {
@@ -986,46 +474,6 @@ temple = {
 		add_number_to_name = no
 		garrison_size = 0.05
 		levy_size = 0.05
-		extra_tech_building_start = 0.2
-	}
-	tp_tower_gorgoth = {
-		desc = ca_tower_gorgoth_desc
-		potential = {
-			FROMFROM = { title = b_hazar_gorgoth } #Gorgoth's castle holding
-				FROM = {culture_group = dawi_zharr_group}
-		}
-		auto_add_at_year = 10
-
-		gold_cost = 1000
-		build_time = 3000
-		fort_level = 5
-		light_infantry = 600 #Slaves
-		heavy_infantry = 200
-		artillery = 10
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 0.50
-		extra_tech_building_start = 0.2
-	}
-	tp_black_fortress = {
-		desc = ca_black_fortress_desc
-		potential = {
-			FROMFROM = { title = b_black_fortress } #Black Fortress' castle holding
-			FROM = {culture_group = dawi_zharr_group}
-		}
-		auto_add_at_year = 10
-
-		gold_cost = 1000
-		build_time = 3000
-		fort_level = 9
-		#Legion of Azgorh
-		heavy_infantry = 500
-		knights = 100
-		gunpowder = 500
-		galleys = 23
-		ai_creation_factor = 97
-		add_number_to_name = no
-		garrison_size = 1.00
 		extra_tech_building_start = 0.2
 	}
 	#Wood Elf
@@ -1078,7 +526,6 @@ temple = {
 		local_revolt_risk = -0.75
 		add_number_to_name = no
 	}
-
 }
 
 tribal = {
@@ -1194,41 +641,6 @@ tribal = {
 		add_number_to_name = no
 		convert_to_castle = ca_mabuya
 		convert_to_city = ct_mabuya
-		extra_tech_building_start = 0.2
-	}
-	#New World
-	tb_quittax = {
-		desc = tb_quittax_desc
-		potential = {
-			FROMFROM = { title = b_quittax } #
-		}
-		gold_cost = 1000
-		build_time = 3000
-		fort_level = 3
-		archers = 130
-		light_infantry = 75
-		heavy_infantry = 10
-		garrison_size = 0.15
-		levy_size = 0.01
-		ai_creation_factor = 97
-		add_number_to_name = no
-		extra_tech_building_start = 0.2
-	}
-	tb_ganaina = {
-		desc = tb_ganaina_desc
-		potential = {
-			FROMFROM = { title = b_ganaina } #
-		}
-		gold_cost = 1000
-		build_time = 3000
-		fort_level = 2
-		light_infantry = 85
-		heavy_infantry = 75
-		archers = 35
-		garrison_size = 0.15
-		levy_size = 0.03
-		ai_creation_factor = 97
-		add_number_to_name = no
 		extra_tech_building_start = 0.2
 	}
 

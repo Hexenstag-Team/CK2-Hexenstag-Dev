@@ -1405,19 +1405,12 @@ can_be_spiritual_trigger = {
 		trait = creature_slann
 	}
 	NOT = { trait = in_hiding }
-	liege = { religion = ROOT }
 	OR = {
 		AND = {
 			is_adult = yes
 			OR = {
 				is_female = no
-				trait = everqueen
-				trait = everqueen_heir
 				religion_allows_female_temple_holders = yes
-				AND = {
-					is_female = yes
-					liege = { religion = amazon }
-				}
 			}
 		}
 		has_character_flag = special_spiritual
@@ -1435,122 +1428,117 @@ can_be_spiritual_trigger = {
 			NOT = {
 				trait = creature_skink
 			}
-                	FROM = {
-                		NOR = {
-	                		trait = creature_slann
-        	        		trait = creature_skink
-                		}
-	                }
+        	FROM = {
+        		NOR = {
+            		trait = creature_slann
+	        		trait = creature_skink
+        		}
+            }
 		}
 		AND = {
 			OR = {
-	            		trait = skink_priest
-            			trait = creature_slann
-        	    	}
-                	FROM = {
-                		OR = {
-		                	trait = creature_slann
-		                	trait = creature_skink
-                		}
-	                }
+        		trait = skink_priest
+    			trait = creature_slann
+	    	}
+        	FROM = {
+        		OR = {
+                	trait = creature_slann
+                	trait = creature_skink
+        		}
+            }
 		}
-        }
-        OR = {
-			AND = {
-				NOT = { culture_group = beastman_group }
-				NOT = {
-					FROM = { culture_group = beastman_group }
-				}
-			}
-			AND = {
-				culture_group = beastman_group
-				FROM = { culture_group = beastman_group }
-			}
-        }
-        OR = {
-            AND = {
-		NOT = { trait = creature_skaven }
-                NOT = { FROM = { trait = creature_skaven } }
+    }
+	#Beastmen
+    OR = {
+		NOR = {
+			culture_group = beastman_group
+			FROM = { culture_group = beastman_group }
+		}
+		AND = {
+			culture_group = beastman_group
+			FROM = { culture_group = beastman_group }
+		}
+    }
+	#Skaven
+    OR = {
+        NOR = {
+			trait = creature_skaven
+            FROM = { trait = creature_skaven }
 	    }
-            AND = {
-				trait = grey_seer
-                FROM = { trait = creature_skaven }
-			}
-        }
-        religion_group = FROM
-		OR = {
-			is_theocracy = yes
-			AND = {
-				liege = { is_tribal = yes }
-				is_ruler = no
-			}
-			liege = {
+        AND = {
+			trait = grey_seer
+            FROM = { trait = creature_skaven }
+		}
+    }
+	#
+	OR = {
+		is_theocracy = yes
+		AND = {
+			liege = { is_tribal = yes }
+			is_ruler = no
+		}
+		liege = {
+			OR = {
 				religion = ormazd
-			}
-			liege = {
 				religion = kitabid
 			}
-			AND = {
-				clan = yes
-				liege = {
-					is_nomadic = yes
-				}
-			}
-			AND = {
-				has_autocephaly = no
-				is_ruler = no
-			}
-			AND = {
-				has_autocephaly = yes
-				is_ruler = no
-				NOT = {
-					any_vassal = { is_theocracy = yes }
-				}
+		}
+		AND = {
+			clan = yes
+			liege = {
+				is_nomadic = yes
 			}
 		}
+		AND = {
+			has_autocephaly = no
+			is_ruler = no
+		}
+		AND = {
+			has_autocephaly = yes
+			is_ruler = no
+			NOT = {
+				any_vassal = { is_theocracy = yes }
+			}
+		}
+	}
 
-		OR = {
-			#NOT = { religion_group = muslim }
-			#NOT = { liege = { religion_group = muslim } }
-			trait = grey_seer
-			trait = creature_slann
-			trait = khemri_liche_priest
-			trait = detached_priest
-			trait = martial_cleric
-			trait = scholarly_theologian
-			trait = mastermind_theologian
-			trait = skink_priest
-		}
-		OR = {
-		   AND = {
-				NOT = {
-					OR = {
-						culture_group = orc_group
-						culture_group = goblin_group
-					}
-				}
-				NOT = {
-						FROM = {
-							OR = {
-							culture_group = orc_group
-							culture_group = goblin_group
-						}
-					}
-				}
-			}
-		   AND = {
+	OR = {
+		#NOT = { religion_group = muslim }
+		#NOT = { liege = { religion_group = muslim } }
+		trait = grey_seer
+		trait = creature_slann
+		trait = khemri_liche_priest
+		trait = detached_priest
+		trait = martial_cleric
+		trait = scholarly_theologian
+		trait = mastermind_theologian
+		trait = skink_priest
+	}
+	#Greenskin
+	OR = {
+		NOR = {
+			culture_group = orc_group
+			culture_group = goblin_group
+			FROM = {
 				OR = {
 					culture_group = orc_group
 					culture_group = goblin_group
 				}
-				FROM = {
-						OR = {
-							culture_group = orc_group
-							culture_group = goblin_group
-						}
+			}
+		}
+	   AND = {
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+			FROM = {
+				OR = {
+					culture_group = orc_group
+					culture_group = goblin_group
 				}
 			}
 		}
+	}
 }
 
 can_be_witch_hunter_trigger = {
@@ -1998,8 +1986,6 @@ block_general_event_trigger = {
 
 gender_equality_trigger = {
 	OR = {
-		religion = cathar
-		religion = messalian
 		has_religion_feature = religion_equal
 		has_religion_feature = religion_feature_bon
 		AND = {
@@ -3785,12 +3771,12 @@ has_assassins_prerequisites = {
 		}
 	}
 	conditional_tooltip = { #showing interest via interface
-		trigger = { 
+		trigger = {
 			FROM = { NOR = {
-				society_member_of = the_assassins 
+				society_member_of = the_assassins
 				society_member_of = eshin_society
-				} 
-			} 
+				}
+			}
 		}
 		#OR = {
 			religion_group = ormazd_gods_group
@@ -5517,7 +5503,7 @@ cathay_offmap_tribute_decisions_enabled_trigger = {
 cathay_offmap_decisions_enabled_trigger = {
 
 	conditional_tooltip = {
-		trigger = { 
+		trigger = {
 			FROM = {
 				trait=isolationist_elf
 			}
@@ -5528,11 +5514,11 @@ cathay_offmap_decisions_enabled_trigger = {
 		}
 	}
 	conditional_tooltip = {
-		trigger = { 
+		trigger = {
 			FROM = {
 				AND={
 					religion=draconite
-					OR = { 
+					OR = {
 						has_dynasty_flag = link_with_cathay
 						top_liege = { has_dynasty_flag = link_with_cathay }
 					}
@@ -5561,7 +5547,7 @@ cathay_offmap_decisions_enabled_trigger = {
 				has_character_modifier=cathayan_link
 				AND={
 					religion=draconite
-					OR = { 
+					OR = {
 						has_dynasty_flag = link_with_cathay
 						top_liege = { has_dynasty_flag = link_with_cathay }
 					}
@@ -5573,7 +5559,7 @@ cathay_offmap_decisions_enabled_trigger = {
 		OR={
 			PREV={
 				OR={
-					has_artifact = dark_crystal 
+					has_artifact = dark_crystal
 					religion=draconite
 				}
 			}

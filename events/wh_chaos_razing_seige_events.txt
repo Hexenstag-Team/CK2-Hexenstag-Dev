@@ -599,7 +599,8 @@ narrative_event = {
 			if={limit={ROOT={NOT={religion=hashut}}}
 			add_trait = adventurer}
 			random_list={
-				20={add_trait = chaos_dwarf_sorcerer}
+				10={add_trait = chaos_dwarf_sorcerer}
+        10 = { add_trait = chaos_dwarf_daemonsmith }
 				10={add_trait = ambitious}
 				10={
 					add_trait = shrewd
@@ -2093,6 +2094,7 @@ character_event = {
 	id = chaosr.1514
 
 	hide_window = yes
+    is_triggered_only = yes
 
 	trigger = {
 		war = no
@@ -2103,7 +2105,6 @@ character_event = {
 			has_character_modifier = zealous_sacking
 		}
 	}
-	mean_time_to_happen = { days = 1 }
 	immediate = {
 		remove_character_modifier = more_sacking
 		remove_character_modifier = normal_sacking
@@ -2183,9 +2184,9 @@ character_event = {
 	hide_window = yes
 
 	only_playable = yes
-	
+
 	is_triggered_only = yes
-	
+
 	trigger = {
 		has_dlc = "Horse Lords"
 		independent = yes
@@ -2198,7 +2199,7 @@ character_event = {
 		#	}
 		#}
 	}
-	
+
 	immediate = {
 		current_heir = {
 		  save_event_target_as = nomadic_heir
@@ -2241,7 +2242,7 @@ character_event = {
 	capable_only = yes
 	prisoner = no
 	min_age = 16
-	
+
 	is_triggered_only = yes
 
 	trigger = {
@@ -2254,7 +2255,7 @@ character_event = {
 		in_revolt = no
 		independent = no
 	}
-	
+
 	option = {
 		name = EVTOPTA_GR_11 # Remain a vassal
 		ai_chance = {
@@ -2307,7 +2308,7 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTB_GR_11 # Go independent
-		
+
 		ai_chance = {
 			factor = 50
 			modifier = {
@@ -2367,11 +2368,11 @@ character_event = {
 				trait = ambitious
 			}
 		}
-		
+
 		hidden_tooltip = {
 			event_target:nomadic_heir = { character_event = { id = chaosr.502 days = 1 } }
 		}
-		
+
 		if = {
 			limit = {
 				is_nomadic = yes
@@ -2383,7 +2384,7 @@ character_event = {
 				add_claim = event_target:nomadic_heir
 			}
 		}
-		
+
 		if = {
 			limit = {
 				is_nomadic = no
@@ -2406,7 +2407,7 @@ character_event = {
 				}
 			}
 		}
-		
+
 		liege = {
 			any_vassal = {
 				limit = {
@@ -2414,14 +2415,14 @@ character_event = {
 					any_war = {
 						defender = { character = ROOT }
 						attacker = {
-							character = THIS			
+							character = THIS
 						}
 					}
 				}
 				set_defacto_liege = THIS
 			}
 		}
-		
+
 		set_defacto_liege = THIS
 	}
 }
@@ -2433,13 +2434,13 @@ character_event = {
 	picture = GFX_evt_emissary
 
 	is_triggered_only = yes
-	
+
 	notification = yes
-	
+
 	option = {
 		name = EVTOPTA_GR_12
 	}
-	
+
 }
 character_event = {
 	id = chaosr.503
@@ -2522,7 +2523,7 @@ character_event = {
 		any_realm_province = {
 			NOT = {
 				any_province_holding = {
-					 holding_type = nomad 
+					 holding_type = nomad
 				}
 			}
 			duchy={NOT={title=event_target:capital_duchy}}
@@ -2541,7 +2542,7 @@ character_event = {
 			limit={
 				NOT = {
 					any_province_holding = {
-						 holding_type = nomad 
+						 holding_type = nomad
 					}
 				}
 				duchy={NOT={title=event_target:capital_duchy}}
@@ -2571,7 +2572,7 @@ character_event = {
 character_event = {
 	id = chaosr.504
 	hide_window = yes
-	
+
 	is_triggered_only = yes
 	immediate={
 		if={limit={event_target:target_duchy={ owner={ character= event_target:nomadic_heir}}}
@@ -2822,7 +2823,7 @@ character_event = {
 				limit={
 					NOT = {
 						any_province_holding = {
-							 holding_type = nomad 
+							 holding_type = nomad
 						}
 					}
 					duchy={title=event_target:target_duchy}
@@ -2849,7 +2850,7 @@ character_event = {
 	picture = GFX_evt_emissary
 
 	is_triggered_only = yes
-	
+
 	notification = yes
 	trigger={is_nomadic=yes}
 	fail_trigger_effect={
@@ -2874,7 +2875,7 @@ character_event = {
 			}
 			any_title_under={
 				limit = { tier = emperor }
-				owner = { 
+				owner = {
 					opinion = {
 						modifier = opinion_subjugated
 						who = ROOT
@@ -2903,7 +2904,7 @@ character_event = {
 	picture = GFX_evt_emissary
 
 	is_triggered_only = yes
-	
+
 	notification = yes
 	trigger={is_nomadic=yes}
 	fail_trigger_effect={
@@ -2928,7 +2929,7 @@ character_event = {
 			}
 			any_title_under={
 				limit = { tier = emperor }
-				owner = { 
+				owner = {
 					opinion = {
 						modifier = opinion_subjugated
 						who = ROOT
@@ -2955,7 +2956,7 @@ character_event = {
 	id = chaosr.507
 	hide_window=yes
 	is_triggered_only = yes
-	
+
 	notification = yes
 	immediate={
 		clr_character_flag=breakaway_chaos_warlord
@@ -2963,7 +2964,7 @@ character_event = {
 	option = {
 		name = OK
 	}
-	
+
 }
 character_event = {
 	id = chaosr.508
@@ -3022,7 +3023,7 @@ character_event = {
 		any_realm_province = {
 			NOT = {
 				any_province_holding = {
-					 holding_type = nomad 
+					 holding_type = nomad
 				}
 			}
 			kingdom={NOT={title=event_target:capital_kingdom}}
@@ -3041,7 +3042,7 @@ character_event = {
 			limit={
 				NOT = {
 					any_province_holding = {
-						 holding_type = nomad 
+						 holding_type = nomad
 					}
 				}
 				kingdom={NOT={title=event_target:capital_kingdom}}
@@ -3071,7 +3072,7 @@ character_event = {
 character_event = {
 	id = chaosr.509
 	hide_window = yes
-	
+
 	is_triggered_only = yes
 	immediate={
 		if={limit={event_target:target_duchy={ owner={ character= event_target:nomadic_heir}}}
@@ -3322,7 +3323,7 @@ character_event = {
 				limit={
 					NOT = {
 						any_province_holding = {
-							 holding_type = nomad 
+							 holding_type = nomad
 						}
 					}
 					duchy={title=event_target:target_duchy}

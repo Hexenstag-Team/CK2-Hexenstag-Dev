@@ -84,9 +84,9 @@ character_event = {
 		ai_chance = { factor = 50 }
 	} #closesoption
 
-	option = { 
+	option = {
 		name = EVTOPTBswhunters20001
-		ai_chance = { 
+		ai_chance = {
 			factor = 50
 			modifier = {
 				factor = 0.5
@@ -459,11 +459,11 @@ character_event = {
 #Verdict given to the Grand Master
 character_event = {
 	id = swhunters.3
-	desc = { 
+	desc = {
 		text = EVTDESCAswhunters3
 		trigger = { FROM = { check_variable = { which = witch_hunter_investigation_proof value = 6 } } }
 	}
-	desc = { 
+	desc = {
 		text = EVTDESCBswhunters3
 		trigger = { NOT = { FROM = { check_variable = { which = witch_hunter_investigation_proof value = 6 } } } }
 	}
@@ -471,11 +471,11 @@ character_event = {
 
 	is_triggered_only = yes
 
-	option = { 
+	option = {
 		name = EVTOPTAswhunters3 #Kill
-		trigger = { 
+		trigger = {
 			FROM = { check_variable = { which = witch_hunter_investigation_proof value = 6 } }
-			NOT = { character = FROM } 
+			NOT = { character = FROM }
 		}
 		FROM = { character_event = { id = swhunters.33 } }
 		FROMFROMFROM = { character_event = { id = swhunters.35 } }
@@ -485,32 +485,32 @@ character_event = {
 		trigger = { FROM = { check_variable = { which = witch_hunter_investigation_proof value = 6 } } }
 		FROM = { character_event = { id = swhunters.34 } }
 		FROMFROMFROM = { character_event = { id = swhunters.36 } }
-		ai_chance = { 
+		ai_chance = {
 			factor = 50
-			modifier = { 
+			modifier = {
 				factor = 0
 				FROM = {
-					OR = { 
+					OR = {
 						trait = lunatic_3
 						NOT = { trait = witch_hunter }
 						trait = possessed
 						trait = leper
 						trait = dwarf
-						trait = has_nurgles_rot 
-					} 
-				} 
+						trait = has_nurgles_rot
+					}
+				}
 			}
 			modifier = {
 				factor = 0.5
-				trait = cruel 
+				trait = cruel
 			}
-			modifier = { 
+			modifier = {
 				factor = 0.5
-				trait = paranoid 
+				trait = paranoid
 			}
-			modifier = { 
+			modifier = {
 				factor = 0.5
-				trait = zealous 
+				trait = zealous
 			}
 		}
 	}
@@ -540,7 +540,7 @@ character_event = {
 		}
 		add_trait = staked
 		death = { death_reason = death_execution_burning killer = FROM }
-	} 
+	}
 }
 
 #Exiled for bad conduct
@@ -556,10 +556,10 @@ character_event = {
 		set_variable = { which = witch_hunter_investigation_proof value = 0 }
 		clr_character_flag = witch_hunter_accusation
 		if = { limit = { NOT = { has_landed_title = k_witch_hunters_order } }
-			character_event = { id = shunters.1 } 
+			character_event = { id = shunters.1 }
 		}
 		if = { limit = { has_landed_title = k_witch_hunters_order }
-			character_event = { id = shunters.20002 } 
+			character_event = { id = shunters.20002 }
 		}
 		random_independent_ruler = {
 			limit = { religion_group = ROOT }
@@ -582,7 +582,7 @@ character_event = {
 	option = { name = EVTOPTAswhunters_35
 		piety = 250
 		clr_character_flag = witch_hunter_accusation
-	} 
+	}
 }
 
 #Exiled for bad conduct - Notify Accuser
@@ -616,10 +616,10 @@ character_event = {
 			modifier = opinion_accused_me
 			months = 36
 		}
-		add_character_modifier = { 
+		add_character_modifier = {
 			name = accused_recently
 			duration = 900
-			hidden = yes 
+			hidden = yes
 		}
 	}
 }
@@ -920,9 +920,9 @@ letter_event = {
 		FROM = { letter_event = { id = swhunters.68 } }
 		ai_chance = {
 			factor = 70
-			modifier = { 
+			modifier = {
 				factor = 1.75
-				trait = trusting 
+				trait = trusting
 			}
 		}
 	}
@@ -932,9 +932,9 @@ letter_event = {
 		FROM = { opinion = { who = ROOT modifier = opinion_refused_loan } }
 		ai_chance = {
 			factor = 30
-			modifier = { 
+			modifier = {
 				factor = 1.75
-				trait = paranoid 
+				trait = paranoid
 			}
 		}
 	}
@@ -1015,10 +1015,10 @@ character_event = {
 		any_title_under = {
 			limit = {
 				tier = BARON
-				location = { owner = { 
-						OR = { 
+				location = { owner = {
+						OR = {
 							character = FROM
-							is_liege_or_above = FROM 
+							is_liege_or_above = FROM
 						}
 					}
 				}
@@ -1079,16 +1079,16 @@ letter_event = {
 		name = EXCELLENT
 		FROM = { letter_event = { id = swhunters.81 } }
 		random_courtier = {
-			limit = { 
+			limit = {
 				is_ruler = no
-				trait = witch_hunter 
+				trait = witch_hunter
 			}
 			move_character = FROM
 			random_courtier = {
 				limit = {
 					is_ruler = no
 					trait = witch_hunter
-					NOT = { character = PREV } 
+					NOT = { character = PREV }
 				}
 				move_character = FROM
 			}
@@ -1157,7 +1157,7 @@ character_event = {
 				trait = vampire_necrarch_visible
 				trait = vampire_mahtmasi_visible
 				trait = vampire_jade_visible
-				is_mutated_trigger = yes 
+				is_mutated_trigger = yes
 			}
 		}
 		has_dlc = "Sons of Abraham"
@@ -1486,7 +1486,7 @@ character_event = {
 
 		any_demesne_province = {
 			has_empty_holding = yes
-			region = world_old_world 
+			region = world_old_world
 		}
 		has_dlc = "Sons of Abraham"
 
@@ -1512,9 +1512,9 @@ character_event = {
 
 	immediate = {
 		random_demesne_province = {
-			limit = { 
+			limit = {
 				has_empty_holding = yes
-				region = world_old_world 
+				region = world_old_world
 			}
 			province_event = { id = swhunters.16 }
 		}
@@ -1624,13 +1624,13 @@ letter_event = {
 
 	option = {
 		name = EVTOPTAswhunters21
-		FROM = { 
+		FROM = {
 			add_trait = celibate	#He'll lose them once and if he becomes a Witch Hunter
 			add_trait = disinherited
 			move_character = FROMFROMFROM
-			
+
 		}
-		FROM = { 
+		FROM = {
 			IF={limit={FROMFROMFROM={society_member_of=sigmar_witch_hunters}}
 				join_society=sigmar_witch_hunters
 			}
@@ -1640,11 +1640,11 @@ letter_event = {
 			factor = 50
 			modifier = { factor = 2.5
 				has_character_modifier = borrowed_from_k_witch_hunters_order
-				NOT = { wealth = 500 } 
+				NOT = { wealth = 500 }
 			}
 			modifier = { factor = 0
 				has_character_modifier = borrowed_from_k_witch_hunters_order
-				wealth = 500 
+				wealth = 500
 			}
 			modifier = { factor = 2.5
 				has_character_modifier = borrowed_from_k_witch_hunters_order
@@ -1712,7 +1712,7 @@ letter_event = {
 		name = EVTOPTBswhunters21
 		trigger = {
 			has_character_modifier = borrowed_from_k_witch_hunters_order
-			wealth = 500 
+			wealth = 500
 		}
 		FROMFROMFROM = { letter_event = { id = swhunters.21002 } }
 		wealth = -500
@@ -1752,20 +1752,20 @@ letter_event = {
 		name = EVTOPTCswhunters21
 		increase_visibility_minor_effect = yes
 		if = { limit = { religion = sigmarite }
-			piety = -1000 
+			piety = -1000
 		}
-		if = { limit = { 
+		if = { limit = {
 				NOT = { religion = sigmarite }
-				religion_group = old_world_group 
+				religion_group = old_world_group
 			}
-			piety = -500 
+			piety = -500
 		}
 		if = { limit = { NOT = { religion_group = old_world_group }
 			NOT = { religion_group = chaos_gods_group } }
-			piety = -250 
+			piety = -250
 		}
 		if = { limit = { religion_group = chaos_gods_group }
-			piety = 150 
+			piety = 150
 		}
 		FROMFROMFROM = { letter_event = { id = swhunters.21003 } }
 		ai_chance = { factor = 50
@@ -1776,7 +1776,7 @@ letter_event = {
 				religion_group = chaos_gods_group
 			}
 			modifier = { factor = 1.5
-				OR = { 
+				OR = {
 					has_character_modifier = magic_power_1
 					has_character_modifier = magic_power_2
 					has_character_modifier = magic_power_3
@@ -1884,21 +1884,21 @@ letter_event = {
 
 	option = {
 		name = EVTOPTAswhunters23
-		FROM = { 
+		FROM = {
 			build_holding = {
 				type = castle
-		 		holder = FROMFROMFROM 
-			} 
+		 		holder = FROMFROMFROM
+			}
 		}
 		FROMFROMFROM = { letter_event = { id = swhunters.23001 } }
 		ai_chance = { factor = 50
 			modifier = { factor = 2.5
 				has_character_modifier = borrowed_from_k_witch_hunters_order
-				NOT = { wealth = 500 } 
+				NOT = { wealth = 500 }
 			}
 			modifier = { factor = 0
 				has_character_modifier = borrowed_from_k_witch_hunters_order
-				wealth = 500 
+				wealth = 500
 			}
 			modifier = { factor = 2.5
 				has_character_modifier = borrowed_from_k_witch_hunters_order
@@ -2008,7 +2008,7 @@ letter_event = {
 				religion_group = chaos_gods_group
 			}
 			modifier = { factor = 1.5
-				OR = { 
+				OR = {
 					has_character_modifier = magic_power_1
 					has_character_modifier = magic_power_2
 					has_character_modifier = magic_power_3
@@ -2047,7 +2047,7 @@ letter_event = {
 					society_member_of = cult_of_tzeentch
 					society_member_of = cult_of_tzeentch2
 					society_member_of = cult_of_tzeentch3
-					is_mutated_trigger = yes 
+					is_mutated_trigger = yes
 				}
 			}
 		}
@@ -2141,7 +2141,7 @@ letter_event = {
 		opinion = {
 			modifier = opinion_asked_assistance
 			who = FROM
-			years = 15 
+			years = 15
 		}
 		FROM = { letter_event = { id = swhunters.24 days = 1 } }
 		ai_chance = {
@@ -2173,12 +2173,12 @@ letter_event = {
 			modifier = {
 				factor = 0.15
 				FROM = {
-					OR = { 
+					OR = {
 						has_character_modifier = magic_power_1
 						has_character_modifier = magic_power_2
 						has_character_modifier = magic_power_3
-						has_character_modifier = magic_power_4 
-					} 
+						has_character_modifier = magic_power_4
+					}
 				}
 			}
 		}
@@ -2276,10 +2276,10 @@ province_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	immediate = { 
+	immediate = {
 		FROMFROM={save_event_target_as=chapter_master}
 		save_event_target_as=target_province
-		owner = { letter_event = { id = swhunters.27 } } 
+		owner = { letter_event = { id = swhunters.27 } }
 	}
 }
 
@@ -2296,7 +2296,7 @@ letter_event = {
 		event_target:chapter_master={
 			society={
 				any_society_member ={
-					limit = { 
+					limit = {
 						is_ruler = no
 						NOT={distance={ who = event_target:chapter_master value=500}}
 						NOT = { trait = on_witch_hunt }
@@ -2332,7 +2332,7 @@ letter_event = {
 					liege={
 						save_event_target_as=original_liege
 					}
-					save_persistent_event_target{name=my_chapter_master scope=event_target:original_liege}
+					save_persistent_event_target = { name=my_chapter_master scope=event_target:original_liege}
 					letter_event = { id = swhunters.28 }
 					move_character = ROOT
 				}
@@ -2342,11 +2342,11 @@ letter_event = {
 		ai_chance = { factor = 50
 			modifier = { factor = 2.5
 				has_character_modifier = borrowed_from_k_witch_hunters_order
-				NOT = { wealth = 500 } 
+				NOT = { wealth = 500 }
 			}
 			modifier = { factor = 0
 				has_character_modifier = borrowed_from_k_witch_hunters_order
-				wealth = 500 
+				wealth = 500
 			}
 			modifier = { factor = 2.5
 				has_character_modifier = borrowed_from_k_witch_hunters_order
@@ -2397,9 +2397,9 @@ letter_event = {
 	}
 	option = {
 		name = EVTOPTBswhunters27
-		trigger = { 
+		trigger = {
 			has_character_modifier = borrowed_from_k_witch_hunters_order
-			wealth = 500 
+			wealth = 500
 		}
 		FROMFROMFROM = { letter_event = { id = swhunters.27002 } }
 		wealth = -500
@@ -2450,7 +2450,7 @@ letter_event = {
 		if = { limit = { religion_group = chaos_gods_group }
 			piety = 150 }
 				FROMFROMFROM = { letter_event = { id = swhunters.27003 } }
-		ai_chance = { 
+		ai_chance = {
 			factor = 25
 			modifier = { factor = 1.85
 				NOT = { religion_group = old_world_group }
@@ -2503,7 +2503,7 @@ letter_event = {
 					society_member_of = cult_of_tzeentch
 					society_member_of = cult_of_tzeentch2
 					society_member_of = cult_of_tzeentch3
-					is_mutated_trigger = yes 
+					is_mutated_trigger = yes
 				}
 			}
 		}
@@ -2565,94 +2565,94 @@ letter_event = {
 
 	option = {
 		name = EVTOPTAswhunters28
-		random_list = { 
-			60 = { 
+		random_list = {
+			60 = {
 				modifier = { factor = 1.5
-					trait = paranoid 
+					trait = paranoid
 				}
 				modifier = { factor = 0.5
-					NOT = { intrigue = 10 } 
+					NOT = { intrigue = 10 }
 				}
 				modifier = { factor = 1.5
-					intrigue = 15 
+					intrigue = 15
 				}
 				modifier = { factor = 1.5
-					intrigue = 20 
+					intrigue = 20
 				}
 				modifier = { factor = 1.5
-					learning = 10 
+					learning = 10
 				}
 				modifier = { factor = 1.5
 					learning = 15
 				}
 				modifier = { factor = 1.5
-					learning = 20 
+					learning = 20
 				}
 				modifier = { factor = 1.5
-					trait = bright 
+					trait = bright
 				}
 				modifier = { factor = 1.65
-					trait = smart 
+					trait = smart
 				}
 				modifier = { factor = 1.75
-					trait = quick 
+					trait = quick
 				}
 				modifier = { factor = 1.85
-					trait = brilliant 
+					trait = brilliant
 				}
 				modifier = { factor = 1.95
 					trait = genius
 				}
 				modifier = { factor = 0.95
-					trait = dim 
+					trait = dim
 				}
 				modifier = { factor = 0.85
-					trait = dumb 
+					trait = dumb
 				}
 				modifier = { factor = 0.75
-					trait = slow 
+					trait = slow
 				}
 				modifier = { factor = 0.65
-					trait = idiot 
+					trait = idiot
 				}
 				modifier = { factor = 0.5
-					trait = imbecile 
+					trait = imbecile
 				}
 				modifier = { factor = 0.5
-					trait = trusting 
+					trait = trusting
 				}
 				modifier = { factor = 0.85
-					trait = just 
+					trait = just
 				}
 				modifier = { factor = 0.85
 					trait = lunatic_1
 				}
 				modifier = { factor = 0.75
-					trait = lunatic_2 
+					trait = lunatic_2
 				}
 				modifier = { factor = 0.5
-					trait = lunatic_3 
+					trait = lunatic_3
 				}
 				piety = 150
 				prestige = 50
 				event_target:chapter_master = { letter_event = { id = swhunters.28002 days = 60 } }
 			}
-			40 = { 
-				modifier = { 
+			40 = {
+				modifier = {
 					factor = 0
-					location = { 
-						NOR = { 
+					location = {
+						NOR = {
 							has_province_modifier = nurgle_province_disease
 							has_province_modifier = beastmen_unrest
 							has_province_modifier = warpdust_traces
 							has_province_modifier = slaanesh_hedonism
 							has_province_modifier = warpstone_meteor
-							has_province_modifier = lahmian_presence 
-						} 
+							has_province_modifier = lahmian_presence
+						}
 					}
 					location = {
-						owner = { 
-							NOR = { 
+						owner = {
+							NOR = {
 								society_member_of = cult_of_khorne
 								society_member_of = cult_of_khorne2
 								society_member_of = cult_of_khorne3
@@ -2664,9 +2664,9 @@ letter_event = {
 								society_member_of = cult_of_slaanesh3
 								society_member_of = cult_of_tzeentch
 								society_member_of = cult_of_tzeentch2
-								society_member_of = cult_of_tzeentch3 
-							} 
-						} 
+								society_member_of = cult_of_tzeentch3
+							}
+						}
 					}
 				}
 				if = {
@@ -2689,28 +2689,28 @@ province_event = {
 	desc = EVTDESCswhunters28001
 	picture = GFX_evt_witch_hunters
 
-	trigger = { 
-		OR = { 
+	trigger = {
+		OR = {
 			has_province_modifier = nurgle_province_disease
 			has_province_modifier = beastmen_unrest
 			has_province_modifier = warpdust_traces
 			has_province_modifier = slaanesh_hedonism
 			has_province_modifier = warpstone_meteor
-			has_province_modifier = lahmian_presence 
-		} 
+			has_province_modifier = lahmian_presence
+		}
 	}
 	is_triggered_only = yes
 
 	option = {
 		event_target:witch_hunter={set_character_flag=cleansed_province}
 		name = EVTOPTAswhunters28001
-		hidden_tooltip = { 
+		hidden_tooltip = {
 			remove_province_modifier = nurgle_province_disease
 			remove_province_modifier = beastmen_unrest
 			remove_province_modifier = warpdust_traces
 			remove_province_modifier = slaanesh_hedonism
 			remove_province_modifier = warpstone_meteor
-			remove_province_modifier = lahmian_presence 
+			remove_province_modifier = lahmian_presence
 		}
 	}
 }
@@ -2727,11 +2727,11 @@ letter_event = {
 
 	option = { #Find and burn any heretic and corrupt in the province
 		name = EVTOPTAswhunters28002
-		hidden_tooltip = { 
+		hidden_tooltip = {
 			character_event = { id = swhunters.31 days = 70 }
-			FROM = { 
+			FROM = {
 				liege = { character_event = { id = swhunters.29 days = 200 random = 30 }
-					any_courtier = { character_event = { id = swhunters.29 days = 200 random = 30 } } 
+					any_courtier = { character_event = { id = swhunters.29 days = 200 random = 30 } }
 				}
 			}
 		}
@@ -2740,17 +2740,17 @@ letter_event = {
 		name = EVTOPTAwhuntersCleanse
 		trigger={event_target:witch_hunter={NOT={has_character_flag=cleansed_province}}
 			event_target:target_province = {
-				OR = { 
+				OR = {
 					has_province_modifier = nurgle_province_disease
 					has_province_modifier = beastmen_unrest
 					has_province_modifier = warpdust_traces
 					has_province_modifier = slaanesh_hedonism
 					has_province_modifier = warpstone_meteor
-					has_province_modifier = lahmian_presence 
-				} 
+					has_province_modifier = lahmian_presence
+				}
 			}
 		}
-		hidden_tooltip = { 
+		hidden_tooltip = {
 			random_list={
 				33={
 					modifier={
@@ -2763,8 +2763,8 @@ letter_event = {
 						}
 					}
 					repeat_event = { id = swhunters.28002 days = 360 }
-					event_target:target_province = { 
-						province_event = { id = swhunters.28001 days = 360 } 
+					event_target:target_province = {
+						province_event = { id = swhunters.28001 days = 360 }
 						add_province_modifier = { name = witch_hunter_purge_in_progress duration = 720 stacking=yes }
 					}
 				}
@@ -2779,15 +2779,15 @@ letter_event = {
 						}
 					}
 					repeat_event = { id = swhunters.28002 days = 120 }
-					event_target:target_province = { 
-						province_event = { id = swhunters.28001 days = 120 } 
+					event_target:target_province = {
+						province_event = { id = swhunters.28001 days = 120 }
 						add_province_modifier = { name = witch_hunter_purge_in_progress duration = 200 stacking=yes }
 					}
 				}
 				33={
 					repeat_event = { id = swhunters.28002 days = 359 }
-					event_target:target_province = { 
-						province_event = { id = swhunters.28001 days = 360 } 
+					event_target:target_province = {
+						province_event = { id = swhunters.28001 days = 360 }
 						add_province_modifier = { name = witch_hunter_purge_in_progress duration = 360 stacking=yes }
 					}
 				}
@@ -2804,11 +2804,11 @@ letter_event = {
 	}
 	option = { #Find and catch any heretic and corrupt in the province
 		name = EVTOPTBswhunters28002
-		hidden_tooltip = { 
+		hidden_tooltip = {
 			character_event = { id = swhunters.90 days = 70 }
-			FROM = { 
+			FROM = {
 				liege = { character_event = { id = swhunters.30 days = 200 random = 30 }
-					any_courtier = { character_event = { id = swhunters.30 days = 200 random = 30 } } 
+					any_courtier = { character_event = { id = swhunters.30 days = 200 random = 30 } }
 				}
 			}
 		}
@@ -2828,17 +2828,17 @@ letter_event = {
 					same_society_as=event_target:chapter_master
 				}
 			}
-			FROM = { 
+			FROM = {
 				move_character = event_target:original_liege
 				remove_title=title_court_state_witchhunter
-				remove_trait = on_witch_hunt 
+				remove_trait = on_witch_hunt
 			}
 		}
 		else={
-			FROM = { 
+			FROM = {
 				move_character = ROOT
 				remove_title=title_court_state_witchhunter
-				remove_trait = on_witch_hunt 
+				remove_trait = on_witch_hunt
 			}
 		}
 		if={event_target:witch_hunter={has_character_flag=cleansed_province}
@@ -2871,13 +2871,13 @@ letter_event = {
 			from={not={has_character_modifier=witch_hunter_politicking_cooldown}}
 			event_target:original_liege={NOT={character=event_target:chapter_master}}
 			OR={
-				society_currency >= 500 
+				society_currency >= 500
 				event_target:original_liege={is_state_witch_hunter_trigger=no}
 			}
 		}
 		if={
 			limit={event_target:original_liege={is_state_witch_hunter_trigger=no}}
-			FROM = { 
+			FROM = {
 				move_character = ROOT
 				remove_trait = on_witch_hunt
 				clr_character_flag=desires_a_mission
@@ -2890,12 +2890,12 @@ letter_event = {
 				months = 24
 			}
 			change_society_currency = -500
-			FROM = { 
+			FROM = {
 				move_character = ROOT
 				remove_trait = on_witch_hunt
 				remove_title=title_court_state_witchhunter
 			}
-		
+
 		}
 		if={event_target:witch_hunter={has_character_flag=cleansed_province}
 			custom_tooltip = { text = cleansed_the_province_TT }
@@ -2913,7 +2913,7 @@ letter_event = {
 		}
 		ai_chance={
 			factor=25
-			
+
 		}
 	}
 }
@@ -2939,11 +2939,11 @@ character_event = {
 	id = swhunters.29
 	hide_window = yes
 
-	trigger = {  
+	trigger = {
 		NOT = { character = FROM }
 		NOT = { character = FROMFROM }
 		FROMFROM = { is_alive = yes }
-		OR = { 		
+		OR = {
 			trait = magic_potential_1
 			trait = magic_potential_2
 			trait = magic_potential_3
@@ -2999,7 +2999,7 @@ character_event = {
 			society_member_of = cult_of_tzeentch
 			society_member_of = cult_of_undivided
 			is_mutated_trigger = yes
-		} 
+		}
 	}
 
 	is_triggered_only = yes
@@ -3026,9 +3026,9 @@ character_event = {
 					break = yes
 				}
 				add_trait = staked
-				death = { 
+				death = {
 					death_reason = death_execution_burning
-					killer = FROM 
+					killer = FROM
 				}
 				if = {
 					limit = {
@@ -3042,8 +3042,8 @@ character_event = {
 						set_discovered_society = yes
 					}
 				}
-				liege = { 
-					opinion = { 
+				liege = {
+					opinion = {
 						modifier = opinion_meddling_hunters
 						who = FROM
 						years = 3
@@ -3076,7 +3076,7 @@ character_event = {
 					OR = {
 						has_character_modifier = magic_power_3
 						has_character_modifier = magic_power_4
-					} 
+					}
 				}
 				modifier = { factor = 1.75
 					trait = genius
@@ -3088,13 +3088,13 @@ character_event = {
 					trait = drunkard
 				}
 				modifier = { factor = 0.5
-					trait = addict 
+					trait = addict
 				}
 				modifier = { factor = 0.5
-					trait = imbecile 
+					trait = imbecile
 				}
 				modifier = { factor = 0.5
-					trait = gregarious 
+					trait = gregarious
 				}
 			}
 		}
@@ -3106,11 +3106,11 @@ character_event = {
 	id = swhunters.30
 	hide_window = yes
 
-	trigger = {  
+	trigger = {
 		NOT = { character = FROM }
 		NOT = { character = FROMFROM }
 		FROMFROM = { is_alive = yes }
-		OR = { 		
+		OR = {
 			trait = magic_potential_1
 			trait = magic_potential_2
 			trait = magic_potential_3
@@ -3173,13 +3173,13 @@ character_event = {
 			society_member_of = cult_of_tzeentch2
 			society_member_of = cult_of_tzeentch3
 			is_mutated_trigger = yes
-		} 
+		}
 	}
 
 	is_triggered_only = yes
 
-	immediate = { 
-		random_list = { 
+	immediate = {
+		random_list = {
 			40 = {
 				modifier = {
 					factor = 5
@@ -3200,14 +3200,14 @@ character_event = {
 				 opinion = { modifier = opinion_meddling_hunters
 						who = FROMFROM
 						years = 5 }
-				liege = { 
+				liege = {
 					opinion = { modifier = opinion_meddling_hunters
 						who = FROM
-						years = 3 
+						years = 3
 					}
 					opinion = { modifier = opinion_meddling_hunters
 						who = FROMFROM
-						years = 5 
+						years = 5
 					}
 				}
 			}
@@ -3226,13 +3226,13 @@ character_event = {
 						trait = vampire_necrarch_hidden
 						trait = vampire_strigoi_hidden
 						trait = vampire_mahtmasi_hidden
-						trait = vampire_jade_hidden 
-					} 
+						trait = vampire_jade_hidden
+					}
 				}
 				modifier = { factor = 1.75
-					OR = { 
+					OR = {
 						has_character_modifier = magic_power_3
-						has_character_modifier = magic_power_4 
+						has_character_modifier = magic_power_4
 					}
 				}
 				modifier = { factor = 1.75
@@ -3251,7 +3251,7 @@ character_event = {
 					trait = imbecile
 				}
 				modifier = { factor = 0.5
-					trait = gregarious 
+					trait = gregarious
 				}
 			}
 		}
@@ -3275,17 +3275,17 @@ character_event = {
 					same_society_as=event_target:chapter_master
 				}
 			}
-			FROM = { 
+			FROM = {
 				move_character = event_target:original_liege
 				remove_title=title_court_state_witchhunter
-				remove_trait = on_witch_hunt 
+				remove_trait = on_witch_hunt
 			}
 		}
 		else={
-			FROM = { 
+			FROM = {
 				move_character = ROOT
 				remove_title=title_court_state_witchhunter
-				remove_trait = on_witch_hunt 
+				remove_trait = on_witch_hunt
 			}
 		}
 		change_society_currency=25
@@ -3297,7 +3297,7 @@ character_event = {
 			custom_tooltip = { text = burned_a_witch_TT }
 			change_society_currency=100
 		}
-		FROMFROM = { 
+		FROMFROM = {
 			change_society_currency=50
 			piety = 50
 			set_character_flag=recently_returned
@@ -3315,13 +3315,13 @@ character_event = {
 			from={not={has_character_modifier=witch_hunter_politicking_cooldown}}
 			event_target:original_liege={NOT={character=event_target:chapter_master}}
 			OR={
-				society_currency >= 500 
+				society_currency >= 500
 				event_target:original_liege={is_state_witch_hunter_trigger=no}
 			}
 		}
 		if={
 			limit={event_target:original_liege={is_state_witch_hunter_trigger=no}}
-			FROM = { 
+			FROM = {
 				move_character = ROOT
 				remove_trait = on_witch_hunt
 				clr_character_flag=desires_a_mission
@@ -3334,12 +3334,12 @@ character_event = {
 				months = 24
 			}
 			change_society_currency = -500
-			FROM = { 
+			FROM = {
 				move_character = ROOT
 				remove_trait = on_witch_hunt
 				remove_title=title_court_state_witchhunter
 			}
-		
+
 		}
 		change_society_currency=25
 		change_society_currency=25
@@ -3352,7 +3352,7 @@ character_event = {
 			custom_tooltip = { text = burned_a_witch_TT }
 			change_society_currency=100
 		}
-		FROMFROM = { 
+		FROMFROM = {
 			change_society_currency=50
 			piety = 50
 			set_character_flag=recently_returned
@@ -3362,7 +3362,7 @@ character_event = {
 		}
 		ai_chance={
 			factor=25
-			
+
 		}
 	}
 }
@@ -3385,17 +3385,17 @@ character_event = {
 					same_society_as=event_target:chapter_master
 				}
 			}
-			FROM = { 
+			FROM = {
 				move_character = event_target:original_liege
 				remove_title=title_court_state_witchhunter
-				remove_trait = on_witch_hunt 
+				remove_trait = on_witch_hunt
 			}
 		}
 		else={
-			FROM = { 
+			FROM = {
 				move_character = ROOT
 				remove_title=title_court_state_witchhunter
-				remove_trait = on_witch_hunt 
+				remove_trait = on_witch_hunt
 			}
 		}
 		if={event_target:witch_hunter={has_character_flag=burned_a_witch}
@@ -3422,13 +3422,13 @@ character_event = {
 			from={not={has_character_modifier=witch_hunter_politicking_cooldown}}
 			event_target:original_liege={NOT={character=event_target:chapter_master}}
 			OR={
-				society_currency >= 500 
+				society_currency >= 500
 				event_target:original_liege={is_state_witch_hunter_trigger=no}
 			}
 		}
 		if={
 			limit={event_target:original_liege={is_state_witch_hunter_trigger=no}}
-			FROM = { 
+			FROM = {
 				move_character = ROOT
 				remove_trait = on_witch_hunt
 				clr_character_flag=desires_a_mission
@@ -3441,12 +3441,12 @@ character_event = {
 				months = 24
 			}
 			change_society_currency = -500
-			FROM = { 
+			FROM = {
 				move_character = ROOT
 				remove_trait = on_witch_hunt
 				remove_title=title_court_state_witchhunter
 			}
-		
+
 		}
 		change_society_currency=25
 		piety = -10
@@ -3458,7 +3458,7 @@ character_event = {
 			custom_tooltip = { text = burned_a_witch_TT }
 			change_society_currency=100
 		}
-		FROMFROM = { 
+		FROMFROM = {
 			change_society_currency=50
 			piety = 50
 			set_character_flag=recently_returned
@@ -3474,7 +3474,7 @@ character_event = {
 		}
 		ai_chance={
 			factor=25
-			
+
 		}
 	}
 }
@@ -3497,7 +3497,7 @@ character_event = {
 			has_minor_title=title_court_state_witchhunter
 		}
 		top_liege = { NOT = { has_character_modifier = expelled_k_witch_hunters_order } }
-		any_courtier = { 
+		any_courtier = {
 			NOT = { trait = in_hiding }
 			NOT = { trait = incapable }
 			NOT = { trait = khorne_demon }
@@ -3506,17 +3506,17 @@ character_event = {
 			NOT = { trait = tzeentch_demon }
 			NOT = { trait = hashut_kdaai }
 			check_if_mage_should_be_burned = yes
-			OR = { 
+			OR = {
 				has_character_modifier = magic_power_1
 				has_character_modifier = magic_power_2
 				has_character_modifier = magic_power_3
 				has_character_modifier = magic_power_4
-				has_magic_potential = yes					
-			} 
+				has_magic_potential = yes
+			}
 		}
 	}
 
-	mean_time_to_happen = { 
+	mean_time_to_happen = {
 		months = 9
 		modifier = {
 			factor = 0.8 #Slow Down Fella
@@ -3535,7 +3535,7 @@ character_event = {
 				NOT = { trait = in_hiding }
 				NOT = { trait = incapable }
 				check_if_mage_should_be_burned = yes
-				OR = { 
+				OR = {
 					has_character_modifier = magic_power_1
 					has_character_modifier = magic_power_2
 					has_character_modifier = magic_power_3
@@ -3689,7 +3689,7 @@ character_event = {
 			limit = { is_landed = yes }
 			capital_scope = { save_event_target_as = home_capital } #For some distance checks...
 		}
-		
+
 		### AVAILABLE MISSIONS: ###
 		# Raid and loot barony. ....................... WB.25501
 		# Lose Weak Focus.............................. WB.25504
@@ -3698,9 +3698,9 @@ character_event = {
 		# Wage war against someone! ................... WB.10512
 		# Recruit child into warrior lodge! ........... WB.10520
 
-		random_list = { 
+		random_list = {
 			20 = {
-				trigger = { 
+				trigger = {
 					has_dlc = "Way of Life"
 					is_landed = yes
 					NOR = {
@@ -3715,13 +3715,13 @@ character_event = {
 				}
 			}
 			20 = {
-				trigger = { 
+				trigger = {
 					has_dlc = "Way of Life"
 					is_landed = no
 				}
 				set_character_flag=desires_a_mission
 			}
-			
+
 			20 = {
 				trigger = {
 					age = 16
@@ -3852,7 +3852,7 @@ character_event = {
 		}
 	}
 }
-#MISSION: 
+#MISSION:
 #Ping event for the mission Duel & Slay <someone>
 character_event = {
 	id = swhunters.51
@@ -3897,7 +3897,7 @@ society_quest_event = {
 					NOT = { has_character_modifier = accused_recently }
 					OR={
 						any_neighbor_independent_ruler={ character=event_target:lodge_hero }
-						same_realm=character=event_target:lodge_hero
+						any_realm_character= { character=event_target:lodge_hero }
 					}
 	           		NOT = { same_society_as = ROOT }
 					NOR={
@@ -3920,7 +3920,7 @@ society_quest_event = {
 					NOT = { has_character_modifier = accused_recently }
 					OR={
 						any_neighbor_independent_ruler={ character=event_target:lodge_hero }
-						same_realm=character=event_target:lodge_hero
+						any_realm_character = { character=event_target:lodge_hero }
 					}
 	           		NOT = { same_society_as = ROOT }
 					NOR={
@@ -3951,7 +3951,7 @@ society_quest_event = {
 	            }
 				save_event_target_as = investigate_target
 				break = yes
-            }	
+            }
 		}
 		if = { #2nd best case (a rival) - PCS is second prio...
 			limit = {
@@ -4158,7 +4158,7 @@ society_quest_event = {
             }
 		}
 	}
-	
+
 	quest_target = event_target:investigate_target
 
 	option = {
@@ -4169,7 +4169,7 @@ society_quest_event = {
 				id = quest_inquisitorial_investigation
 				holder = ROOT
 			}
-			add_character_modifier = { 
+			add_character_modifier = {
 				name = accused_recently
 				duration = 360
 				hidden = yes
@@ -4203,7 +4203,7 @@ letter_event = {
 	is_triggered_only = yes
 	immediate={
 		event_target:investigate_target={character_event={id=witchhunter.28 days=7}}
-	
+
 	}
 }
 letter_event = {
@@ -4415,8 +4415,8 @@ character_event = {
 						}
 						NOT={has_character_flag=busted_courtiers}
 					}
-					event_target:investigate_target = { 
-						any_courtier = { character_event = { id = swhunters.29 days = 50 random = 30 } } 
+					event_target:investigate_target = {
+						any_courtier = { character_event = { id = swhunters.29 days = 50 random = 30 } }
 					}
 					repeat_event={ id = swhunters.55 days=30}
 					change_variable = {
@@ -4453,7 +4453,7 @@ character_event = {
 							value == 1
 						}
 					}
-					event_target:investigate_target = { 
+					event_target:investigate_target = {
 						character_event = { id = witchhunter.9 }
 					}
 					set_character_flag=mission_hunt
@@ -4502,7 +4502,7 @@ character_event = {
 						which=witch_hunter_investigation_proof
 						which=witch_hunter_investigation_proof_negative
 					}
-					event_target:investigate_target = { 
+					event_target:investigate_target = {
 						if={
 							limit={intrigue=12}
 							character_event = { id = swhunters.61 } #Try to stop the Witch Hunter
@@ -4785,10 +4785,10 @@ character_event = {
 					}
 				}
 				save_event_target_as = person_questioned
-				add_character_modifier = { 
+				add_character_modifier = {
 					name = accused_recently
 					duration = 90
-					hidden = yes 
+					hidden = yes
 				}
 			}
 			random_courtier_or_vassal = { #Select someone you sort of care about at least...!
@@ -4817,10 +4817,10 @@ character_event = {
 						}
 					}
 				}
-				add_character_modifier = { 
+				add_character_modifier = {
 					name = accused_recently
 					duration = 90
-					hidden = yes 
+					hidden = yes
 				}
 				save_event_target_as = person_questioned_2
 			}
@@ -5180,7 +5180,7 @@ character_event = {
     picture = GFX_evt_carriage_default
     border = GFX_event_normal_frame_diplomacy
     is_triggered_only = yes
-	
+
     option = { #Burn this meddle some Witch Hunter
         name = EVTOPTA_swhunters_58
 		trigger={character=event_target:investigate_target}
@@ -5462,7 +5462,7 @@ character_event = {
 			}
 		}
     }
-    option = { #Shall Follow 
+    option = { #Shall Follow
         name = EVTOPTB_swhunters_59
 		event_target:investigate_target={
 			show_portrait=yes
@@ -5768,28 +5768,28 @@ character_event = {
 	}
     desc = {
 		text = EVTDESCswhunters_60A #Target Is Found quilty
-		trigger = { 
+		trigger = {
 			event_target:witch_hunter = {check_variable={which = witch_hunter_investigation_proof value = 1 }}
 			character=event_target:witch_hunter
 		}
 	}
     desc = {
 		text = EVTDESCswhunters_60B #Target Is Found Not Quilty
-		trigger = { 
+		trigger = {
 			event_target:witch_hunter = {check_variable={which = witch_hunter_investigation_proof value < 1 }}
 			character=event_target:witch_hunter
 		}
 	}
     desc = {
 		text = EVTDESCBswhunters_60A #Target Is Found quilty
-		trigger = { 
+		trigger = {
 			event_target:witch_hunter = {check_variable={which = witch_hunter_investigation_proof value = 1 }}
 			NOT={character=event_target:witch_hunter}
 		}
 	}
     desc = {
 		text = EVTDESCBswhunters_60B #Target Is Found Not Quilty
-		trigger = { 
+		trigger = {
 			event_target:witch_hunter = {check_variable={which = witch_hunter_investigation_proof value < 1 }}
 			NOT={character=event_target:witch_hunter}
 		}
@@ -5943,7 +5943,7 @@ character_event = {
     is_triggered_only = yes
     desc = {
 		text = EVTDESCAswhunters_61 #Target Does not know
-		trigger = { 
+		trigger = {
 			OR={
 				event_target:witch_hunter = {check_variable={which = witch_hunter_investigation_proof value < 0 }}
 				NOT={intrigue=15}
@@ -5952,7 +5952,7 @@ character_event = {
 	}
     desc = {
 		text = EVTDESCBswhunters_61 #Target Is Found quilty
-		trigger = { 
+		trigger = {
 			event_target:witch_hunter = {check_variable={which = witch_hunter_investigation_proof value = 1 }}
 			intrigue=15
 		}
@@ -6158,7 +6158,7 @@ character_event = {
 					factor = 1.5
 					trait=just
 				}
-				event_target:witch_hunter={ 
+				event_target:witch_hunter={
 					imprison = event_target:investigate_target
 				}
 				if={limit={event_target:witch_hunter = {check_variable={which = witch_hunter_investigation_proof value = 1 }}}
@@ -6247,7 +6247,7 @@ character_event = {
 					factor = 1.5
 					trait=just
 				}
-				event_target:witch_hunter={ 
+				event_target:witch_hunter={
 					imprison = event_target:investigate_target
 				}
 				if={limit={event_target:witch_hunter = {check_variable={which = witch_hunter_investigation_proof value = 1 }}}
@@ -6292,7 +6292,7 @@ character_event = {
 					factor = 1.5
 					trait=schemer
 				}
-				event_target:witch_hunter={ 
+				event_target:witch_hunter={
 					subtract_variable = {
 						which = witch_hunter_investigation_proof
 						value = 1
@@ -6301,7 +6301,7 @@ character_event = {
 			}
 			15={
 				custom_tooltip={text=great_success_tip}
-				event_target:witch_hunter={ 
+				event_target:witch_hunter={
 					subtract_variable = {
 						which = witch_hunter_investigation_proof
 						value = 2

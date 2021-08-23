@@ -33,22 +33,6 @@ abort_witch_hunt_effect = {
 	clean_up_after_kow_tow_effect = yes
 }
 
-return_to_travel_tombola_effect = {
-	hidden_effect = {
-		event_target:kow_tow_traveler = {
-			subtract_variable = {
-				which = cathay_kow_tow_travel_events
-				value = 1
-			}
-			character_event = {
-				id = JD.32005
-				days = 90
-				random = 60
-			}
-		}
-	}
-}
-
 de_jure_realm_drakwald_effect = {
 	d_carroburg = { de_jure_liege = k_drakwald }
 	d_middenmoor = { de_jure_liege = k_drakwald }
@@ -6192,12 +6176,24 @@ antideath_effect = {
  			character_event = { id = snehekharan.1 days = 1 }
 			break = yes
 		}
-		if = { limit = { trait = malekith }
-	 		character_event = { id = snehekharan.1 days = 1 }
-			break = yes
-		}
 		if = { limit = { trait = fay_enchantress }
 		 	character_event = { id = snehekharan.1 days = 1 }
+			break = yes
+		}
+		if = {
+			limit = {
+				trait = chaos_dwarf_sorcerer
+				NOT = { trait = chaos_dwarf_petrification_2 }
+				NAND = {
+					trait = chaos_dwarf_petrification_1
+					check_variable = {
+						which = hashut_favor
+						value <= 5
+					}
+				}
+				ai = yes
+			}
+			character_event = { id = wh_chaos_dwarf.140 days = 1 }
 			break = yes
 		}
 }
@@ -6810,7 +6806,7 @@ create_cultists_crossing_border = {
 		limit = {
 			event_target:the_target = {
 				character = no
-			}			
+			}
 		}
 		break = yes
 	}
@@ -6827,11 +6823,11 @@ create_cultists_crossing_border = {
 				which = cultists_to_move
 				value = 1
 			}
-			random_realm_character = {	
+			random_realm_character = {
 				limit = {
 					is_human = yes
 					is_adult = yes
-					open_follower_of_any_chaos_gods = yes 
+					open_follower_of_any_chaos_gods = yes
 					is_unimportant_trigger = yes
 					is_chaos_champion_chosen_or_prince_trigger = no
 					is_in_society = no
@@ -6844,7 +6840,7 @@ create_cultists_crossing_border = {
 					is_smart_trigger = yes
 					is_strong_trigger = yes
 				}
-				set_character_flag = chaos_cult_from@event_target:chaos_ruler	
+				set_character_flag = chaos_cult_from@event_target:chaos_ruler
 				save_event_target_as = chosen_cultist
 				event_target:the_target = {
 					random_realm_lord = {
@@ -6864,12 +6860,12 @@ create_cultists_crossing_border = {
 							NOT = { secret_religion_group = chaos_gods_group }
 						}
 						event_target:chosen_cultist = {
-							move_character = PREV	
+							move_character = PREV
 							religion = PREV
 							culture = PREV
 							try_join_random_society = yes
 						}
-					}		
+					}
 				}
 				clear_event_target = chosen_cultist
 			}
@@ -7101,7 +7097,7 @@ set_amazon_male_to_female = {
 			}
 		}
 		set_gender = female
-		culture = amazon_main 
+		culture = amazon_main
 		religion = amazon
 		remove_trait = in_stock
 		remove_trait = disinherited_amazon
@@ -7232,7 +7228,7 @@ remove_magic_effect = {
 add_lore_of_fire = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.2 day = 1 }
+		character_event = { id = magic.2 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7247,7 +7243,7 @@ add_lore_of_fire = {
 add_lore_of_beasts = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.3 day = 1 }
+		character_event = { id = magic.3 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7262,7 +7258,7 @@ add_lore_of_beasts = {
 add_lore_of_metal = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.4 day = 1 }
+		character_event = { id = magic.4 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7277,7 +7273,7 @@ add_lore_of_metal = {
 add_lore_of_light = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.5 day = 1 }
+		character_event = { id = magic.5 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7292,7 +7288,7 @@ add_lore_of_light = {
 add_lore_of_life = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.6 day = 1 }
+		character_event = { id = magic.6 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7307,7 +7303,7 @@ add_lore_of_life = {
 add_lore_of_heavens = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.7 day = 1 }
+		character_event = { id = magic.7 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7322,7 +7318,7 @@ add_lore_of_heavens = {
 add_lore_of_death = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.8 day = 1 }
+		character_event = { id = magic.8 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7337,7 +7333,7 @@ add_lore_of_death = {
 add_lore_of_shadows = {
 	if = {
 		limit = { ai = no }
-		character_event = { id = magic.9 day = 1 }
+		character_event = { id = magic.9 days = 1 }
 	}
 	else_if = {
 		limit = { ai = yes }
@@ -7409,9 +7405,239 @@ spell_casting_4 = {
 	}
 }
 
+create_random_satrap_effect = {
+	create_character = {
+		age = 25
+		culture = servile_hobgoblin
+		religion = hashut
+		female = no
+		dynasty = random
+		random_trait = yes
+		add_trait = creature_hobgoblin
+	}
+	new_character = {
+		#dither age
+		random_list = {
+			10 = {
+				add_age = -3
+			}
+			10 = {
+				add_age = -2
+			}
+			20 = {
+				add_age = -1
+			}
+			20 = {
+				#no change
+			}
+			20 = {
+				add_age = 1
+			}
+			10 = {
+				add_age = 2
+			}
+			10 = {
+				add_age = 3
+			}
+		}
+	}
+}
+
+hashut_favor_trivial_penalty_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = -1
+	}
+}
+
+hashut_favor_small_penalty_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = -2
+	}
+}
+
+hashut_favor_medium_penalty_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = -5
+	}
+}
+
+hashut_favor_major_penalty_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = -10
+	}
+}
+
+hashut_favor_trivial_bonus_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = 1
+	}
+}
+
+hashut_favor_small_bonus_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = 2
+	}
+}
+
+hashut_favor_medium_bonus_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = 5
+	}
+}
+
+hashut_favor_major_bonus_effect = {
+	change_variable = {
+		which = hashut_favor
+		value = 10
+	}
+}
 
 
+spawn_bull_centaur_effect = {
+	create_random_soldier = {
+		random_traits = yes
+		dynasty = random
+		female = no
+		religion = hashut
+		culture = dawi_zharr
+		attributes = {
+			diplomacy = 3
+			learning = 3
+			stewardship = 3
+			intrigue = 3
+			martial = 9
+		}
+	}
+	new_character = {
+		remove_trait = soft
+		remove_trait = fragile
+		remove_trait = weak
+		remove_trait = feeble
+		remove_trait = slow
+		remove_trait = imbecile
+		remove_trait = dull
+		remove_trait = dim
+		remove_trait = dumb
+		remove_trait = idiot
+		remove_trait = dwarf
+		remove_trait = giant
+		remove_trait = hunchback
+		remove_trait = clubfooted
+		remove_trait = craven
 
+		remove_trait = mystic
+		remove_trait = socializer
+		remove_trait = gamer
+		remove_trait = hedonist
+		remove_trait = duelist
+		remove_trait = hunter
+		remove_trait = strategist
+		remove_trait = administrator
+		remove_trait = architect
+		remove_trait = gardener
+		remove_trait = schemer
+		remove_trait = impaler
+		remove_trait = seducer
+		remove_trait = seductress
+		remove_trait = theologian
+		remove_trait = scholar
 
+		remove_trait = misguided_warrior
+		remove_trait = tough_soldier
+		remove_trait = skilled_tactician
+		remove_trait = brilliant_strategist
 
+		add_trait = creature_chaos_dwarf
+		add_trait = chaos_dwarf_bull_centaur
 
+		#guarantee that Bull Centaur is old enough to be a commander
+		add_age = 40
+
+		random_list = {
+			5 = { add_trait = misguided_warrior }
+			10 = { add_trait = tough_soldier }
+			20 = { add_trait = skilled_tactician }
+			30 = { add_trait = brilliant_strategist }
+		}
+
+		random_list = { # Flavor Randomization
+			35 = {
+				# Nothing
+			}
+			15 = {
+				change_martial = 2
+			}
+			10 = {
+				add_trait = robust
+			}
+			10 = {
+				add_trait = duelist
+			}
+			10 = {
+				add_trait = hunter
+			}
+			5 = {
+				add_trait = strategist
+			}
+			5 = {
+				change_martial = 4
+			}
+			5 = {
+				if = {
+					limit = {
+						has_dlc = "Reapers"
+					}
+					add_trait = one_eyed
+				}
+			}
+			5 = {
+				add_trait = shrewd
+			}
+			1 = {
+				add_trait = giant
+			}
+		}
+		random_list = {
+			50 = {
+				#Nothing
+			}
+			10 = {
+				add_trait = narrow_flank_leader
+			}
+			10 = {
+				add_trait = defensive_leader
+			}
+			10 = {
+				add_trait = experimenter
+			}
+			10 = {
+				add_trait = flanker
+			}
+			10 = {
+				add_trait = cavalry_leader
+			}
+			10 = {
+				add_trait = inspiring_leader
+			}
+			10 = {
+				add_trait = organizer
+			}
+			10 = {
+				add_trait = siege_leader
+			}
+			10 = {
+				add_trait = trickster
+			}
+			10 = {
+				add_trait = aggressive_leader
+			}
+		}
+	}
+}

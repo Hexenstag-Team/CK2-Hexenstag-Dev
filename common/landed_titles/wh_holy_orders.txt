@@ -728,6 +728,9 @@ d_knights_of_our_lady_of_battle = {
 ##########
 # Dwarfs #
 ##########
+
+# # Ancestor Gods # #
+
 d_dragon_company = {
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
@@ -783,6 +786,38 @@ d_slayer_legion = {
 	monthly_income = 3
 
 	mercenary_type = d_slayer_legion_modifier
+}
+
+# # Hashut # #
+
+d_acolytes_of_hashut = {
+	color={ 0.6 0.4 0.1 }
+	color2 = { 255 255 255 }
+
+	capital = 478 #Zharr-Naggrund
+	
+	allow = {
+		religion = hashut
+	}
+	
+	religion = hashut
+	culture = dawi_zharr
+	
+	#probably should be Adept
+	title = "CAPTAIN"
+	title_female = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+	
+	holy_order = yes
+	landless = yes
+	primary = yes
+	independent = yes
+	
+	monthly_income = 1
+	
+	strength_growth_per_century = 0.05
+	
+	mercenary_type = chaos_dwarf_acolytes_hashut_modifier
 }
 
 #Vampires

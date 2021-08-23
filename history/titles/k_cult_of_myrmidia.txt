@@ -1,6 +1,13 @@
-1000.1.1={
-law=enatic_succession
-}
 2002.5.2={
-holder=7671
+	holder=7671
+	effect = {
+		holder_scope = {
+			set_government_type = theocracy_government
+			PREV = {
+				succession = succ_catholic_bishopric
+			}
+			recalc_succession = yes
+		}
+	}
+	law = true_cognatic_succession
 }
