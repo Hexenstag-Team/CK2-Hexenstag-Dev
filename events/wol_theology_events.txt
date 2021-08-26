@@ -37,14 +37,9 @@ character_event = {
 		trigger = {
 			OR = {
 				religion = myrmidian
-				religion = shallyan
 				religion = cadai
 				religion = hashut
-				religion = sigmarite
-				religion = ulrican
-				religion = taalite
-				religion = morrian
-				religion = manannite
+				religion = imperial_pantheon
 				religion = grail
 				religion = ancestor_gods
 				religion = cytharai
@@ -77,7 +72,6 @@ character_event = {
 				religion = greenskin_gods
 				religion = spider_god
 				religion = horned_rat
-				religion = halfling_gods
 				religion = akghan
 				religion = atruhayid
 				religion = vampiric
@@ -99,14 +93,9 @@ character_event = {
 		trigger = {
 			OR = {
 				religion = myrmidian
-				religion = shallyan
 				religion = cadai
 				religion = hashut
-				religion = sigmarite
-				religion = ulrican
-				religion = taalite
-				religion = morrian
-				religion = manannite
+				religion = imperial_pantheon
 				religion = grail
 				religion = ancestor_gods
 				religion = cytharai
@@ -141,7 +130,6 @@ character_event = {
 				religion = greenskin_gods
 				religion = spider_god
 				religion = horned_rat
-				religion = halfling_gods
 				religion = akghan
 				religion = atruhayid
 				religion = vampiric
@@ -178,14 +166,9 @@ character_event = {
 		trigger = {
 			OR = {
 				religion = myrmidian
-				religion = shallyan
 				religion = cadai
 				religion = hashut
-				religion = sigmarite
-				religion = ulrican
-				religion = taalite
-				religion = morrian
-				religion = manannite
+				religion = imperial_pantheon
 				religion = grail
 				religion = ancestor_gods
 				religion = cytharai
@@ -218,7 +201,6 @@ character_event = {
 				religion = greenskin_gods
 				religion = spider_god
 				religion = horned_rat
-				religion = halfling_gods
 				religion = akghan
 				religion = atruhayid
 				religion = vampiric
@@ -236,14 +218,9 @@ character_event = {
 		trigger = {
 			OR = {
 				religion = myrmidian
-				religion = shallyan
 				religion = cadai
 				religion = hashut
-				religion = sigmarite
-				religion = ulrican
-				religion = taalite
-				religion = morrian
-				religion = manannite
+				religion = imperial_pantheon
 				religion = ancestor_gods
 				religion = grail
 				religion = cytharai
@@ -307,7 +284,6 @@ character_event = {
 					religion = greenskin_gods
 					religion = spider_god
 					religion = horned_rat
-					religion = halfling_gods
 					religion = akghan
 					religion = atruhayid
 					religion = vampiric
@@ -656,7 +632,6 @@ character_event = {
 			religion_group = cadai_group
 			religion_group = cytharai_group
 			religion_group = dwarf_gods_group
-			religion_group = halfling_gods_group
 			religion_group = oriental_gods_group
 		}
 		has_focus = focus_theology
@@ -667,7 +642,7 @@ character_event = {
 		NOT = { trait = sympathy_cadai_group }
 		NOT = { trait = sympathy_cytharai_group }
 		NOT = { trait = sympathy_dwarf_gods_group }
-		NOT = { trait = sympathy_halfling_gods_group }
+
 		NOT = { trait = sympathy_oriental_gods_group }
 		NOT = { has_character_flag = wol_theology_view_other_religions }
 		any_realm_character = {
@@ -677,7 +652,6 @@ character_event = {
 			religion_group = cadai_group
 			religion_group = cytharai_group
 			religion_group = dwarf_gods_group
-			religion_group = halfling_gods_group
 			religion_group = oriental_gods_group
 		}
 			NOT = { religion_group = ROOT }
@@ -737,7 +711,6 @@ character_event = {
 				cadai_group = { ROOT = { add_trait = sympathy_cadai_group } }
 				cytharai_group = { ROOT = { add_trait = sympathy_cytharai_group } }
 				dwarf_gods_group = { ROOT = { add_trait = sympathy_dwarf_gods_group } }
-				halfling_gods_group = { ROOT = { add_trait = sympathy_halfling_gods_group } }
 				oriental_gods_group = { ROOT = { add_trait = sympathy_oriental_gods_group } }
 			}
 		}
@@ -770,14 +743,9 @@ character_event = {
 		NOT = { trait = cynical }
 		OR = {
 			religion = myrmidian
-			religion = shallyan
 			religion = cadai
 			religion = hashut
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-			religion = manannite
+			religion = imperial_pantheon
 			religion = ancestor_gods
 			religion = grail
 			religion = cytharai

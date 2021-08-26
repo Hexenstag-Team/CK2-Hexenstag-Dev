@@ -115,10 +115,6 @@ character_event = {
 						trait = sympathy_dwarf_gods_group
 						ROOT = { NOT = { religion_group = dwarf_gods_group } }
 					}
-					event_target:potential_antagonized = {
-						trait = sympathy_halfling_gods_group
-						ROOT = { NOT = { religion_group = halfling_gods_group } }
-					}
 				}
 			}
 			#Trait compatibility modifiers - Already so much in common, why fight?
@@ -464,10 +460,6 @@ character_event = {
 					AND = {
 						ROOT = { trait = sympathy_dwarf_gods_group }
 						religion_group = dwarf_gods_group
-					}
-					AND = {
-						ROOT = { trait = sympathy_halfling_gods_group }
-						religion_group = halfling_gods_group
 					}
 				}
 				NOR = {
@@ -7026,10 +7018,6 @@ character_event = {
 						FROM = { religion_group = dwarf_gods_group }
 						NOT = { trait = sympathy_dwarf_gods_group }
 					}
-					AND = {
-						FROM = { religion_group = halfling_gods_group }
-						NOT = { trait = sympathy_halfling_gods_group }
-					}
 				}
 			}
 			custom_tooltip = { text = tooltip_21076_sympathy }
@@ -7182,15 +7170,6 @@ character_event = {
 				FROM = { has_character_flag = flag_appease_kind_religion }
 			}
 			random = { chance = 30 add_trait = sympathy_dwarf_gods_group }
-		}
-		if = {
-			limit = {
-				NOT = { religion_group = FROM }
-				NOT = { trait = sympathy_halfling_gods_group }
-				FROM = { religion_group = halfling_gods_group }
-				FROM = { has_character_flag = flag_appease_kind_religion }
-			}
-			random = { chance = 30 add_trait = sympathy_halfling_gods_group }
 		}
 		if = {
 			limit = {
@@ -7440,14 +7419,6 @@ character_event = {
 				FROM = { religion_group = dwarf_gods_group }
 			}
 			random = { chance = 30 add_trait = sympathy_dwarf_gods_group }
-		}
-		if = {
-			limit = {
-				NOT = { religion_group = FROM }
-				NOT = { trait = sympathy_halfling_gods_group }
-				FROM = { religion_group = halfling_gods_group }
-			}
-			random = { chance = 30 add_trait = sympathy_halfling_gods_group }
 		}
 		clr_character_flag = flag_appease_kind_approach
 		clr_character_flag = flag_appease_kind_health

@@ -845,7 +845,7 @@ witch_hunter_elective = {
 			}
 			learning = 8
 			NOT = { learning = 10 }
-			religion = sigmarite
+			religion = imperial_pantheon
 		}
 		additive_modifier = { #Romans love their orations...
 			value = 15
@@ -858,7 +858,7 @@ witch_hunter_elective = {
 			}
 			learning = 10
 			NOT = { learning = 12 }
-			religion = sigmarite
+			religion = imperial_pantheon
 		}
 		additive_modifier = { #Romans love their orations...
 			value = 20
@@ -871,7 +871,7 @@ witch_hunter_elective = {
 			}
 			learning = 12
 			NOT = { learning = 14 }
-			religion = sigmarite
+			religion = imperial_pantheon
 		}
 		additive_modifier = { #Romans love their orations...
 			value = 25
@@ -884,7 +884,7 @@ witch_hunter_elective = {
 			}
 			learning = 14
 			NOT = { learning = 16 }
-			religion = sigmarite
+			religion = imperial_pantheon
 		}
 		additive_modifier = { #Romans love their orations...
 			value = 30
@@ -897,7 +897,7 @@ witch_hunter_elective = {
 			}
 			learning = 16
 			NOT = { learning = 18 }
-			religion = sigmarite
+			religion = imperial_pantheon
 		}
 		additive_modifier = { #Romans love their orations...
 			value = 35
@@ -922,7 +922,7 @@ witch_hunter_elective = {
 				}
 			}
 			learning = 20
-			religion = sigmarite
+			religion = imperial_pantheon
 		}
 	}
 	candidate_vote_score = {
@@ -2327,7 +2327,7 @@ witch_hunter_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = {
 				trait = lustful
-				religion = ulrican
+				trait = patron_ulric
 			}
 			NOT = { trait = chaste }
 			FROM = {
@@ -2432,7 +2432,7 @@ witch_hunter_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = {
 				religion = grail
-				religion = sigmarite
+				religion = imperial_pantheon
 			}
 			NOR = {
 				trait = proud
@@ -2447,7 +2447,7 @@ witch_hunter_elective = {
 			localisation_key = tooltip_feudal_elector_vote_humble_negative
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = {
-				religion = ulrican
+				trait = patron_ulric
 				trait = proud
 				trait = envious
 			}
@@ -2485,7 +2485,7 @@ witch_hunter_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = {
 				religion = grail
-				religion = sigmarite
+				religion = imperial_pantheon
 				religion = myrmidian
 			}
 			OR = {
@@ -2551,7 +2551,7 @@ witch_hunter_elective = {
 			value = 15
 			localisation_key = tooltip_feudal_elector_vote_proud_positive
 			NOT = { character = FROM } #Do not judge yourself.
-			religion = ulrican
+			trait = patron_ulric
 			NOT = {
 				trait = humble
 			}
@@ -2579,7 +2579,7 @@ witch_hunter_elective = {
 			value = 5
 			localisation_key = tooltip_feudal_elector_vote_ambitious_positive
 			NOT = { character = FROM } #Do not judge yourself.
-			religion = ulrican
+			trait = patron_ulric
 			NOT = {
 				trait = content
 			}
@@ -2667,7 +2667,7 @@ witch_hunter_elective = {
 			value = -5
 			localisation_key = tooltip_feudal_elector_vote_content_negative
 			NOT = { character = FROM } #Do not judge yourself.
-			religion = ulrican
+			trait = patron_ulric
 			NOT = {
 				trait = content
 			}
@@ -2721,7 +2721,7 @@ witch_hunter_elective = {
 			}
 			OR = {
 				is_reformed_religion = yes
-				NOT = { religion = ulrican }
+				NOT = { trait = patron_ulric }
 			}
 			FROM = {
 				trait = cynical

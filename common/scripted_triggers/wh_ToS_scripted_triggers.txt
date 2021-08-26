@@ -8,9 +8,11 @@ is_cult_of_morr_trigger = {
 } 
 
 wild_religion_empire_trigger = {
-	OR = {
-		religion = ulrican
-		religion = taalite
+	Father = {
+		OR = {
+			trait = patron_taal_rhya
+			trait = patron_ulric
+		}
 	}
 }
 ToS_is_starving = {

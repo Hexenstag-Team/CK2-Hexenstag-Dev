@@ -224,13 +224,7 @@ character_event = {
 				OR = {
 					higher_tier_than = BARON
 					has_minor_title = title_lector
-					has_landed_title = d_arch_lectory_talabheim
-					has_landed_title = d_arch_lectory_nuln
 				}
-				NOT = { has_landed_title = k_cult_of_sigmar }
-				NOT = { has_landed_title = k_cult_of_ulric }
-				NOT = { has_landed_title = k_cult_of_taal_and_rhya }
-				NOT = { has_landed_title = k_cult_of_morr }
 			}
 		}
 		custom_tooltip = { text = EVTTOOLTIPBHF20200 }
@@ -269,23 +263,11 @@ character_event = {
 				OR = {
 					higher_tier_than = BARON
 					has_minor_title = title_lector
-					has_landed_title = d_arch_lectory_talabheim
-					has_landed_title = d_arch_lectory_nuln
 				}
-				NOT = { has_landed_title = k_cult_of_sigmar }
-				NOT = { has_landed_title = k_cult_of_ulric }
-				NOT = { has_landed_title = k_cult_of_taal_and_rhya }
-				NOT = { has_landed_title = k_cult_of_morr }
 			}
- 			preferred_limit = {
- 				has_landed_title = d_arch_lectory_nuln
- 			}
 			preferred_limit = {
 				has_minor_title = title_lector
 			}
- 			preferred_limit = {
- 				has_landed_title = d_arch_lectory_talabheim
- 			}
 			hidden_tooltip = { letter_event = { id = HF.20201 days = 30 random = 5 } }
 			break = yes
 		}
@@ -303,7 +285,7 @@ character_event = {
 				lower_tier_than = EMPEROR
 				OR = {
 					primary_title = { has_law = investiture_law_1 }
-					NOT = { religion = sigmarite }
+					NOT = { religion = imperial_pantheon }
 				}
 			}
 			any_realm_character = {
@@ -312,14 +294,8 @@ character_event = {
 				lower_tier_than = COUNT
 				religion = ROOT
 				NOR = {
-					has_landed_title = k_cult_of_sigmar
-					has_landed_title = k_cult_of_ulric
-					has_landed_title = k_cult_of_taal_and_rhya
-					has_landed_title = k_cult_of_morr
 					higher_real_tier_than = BARON
 					has_minor_title = title_lector
-					has_landed_title = d_arch_lectory_talabheim
-					has_landed_title = d_arch_lectory_nuln
 				}
 			}
 		}
@@ -369,13 +345,7 @@ character_event = {
 					OR = {
 						higher_real_tier_than = BARON
 						has_minor_title = title_lector
-						has_landed_title = d_arch_lectory_talabheim
-						has_landed_title = d_arch_lectory_nuln
 					}
-					NOT = { has_landed_title = k_cult_of_sigmar }
-					NOT = { has_landed_title = k_cult_of_ulric }
-					NOT = { has_landed_title = k_cult_of_taal_and_rhya }
-					NOT = { has_landed_title = k_cult_of_morr }
 				}
 			}
 			custom_tooltip = { text = scorned_powerful_theocrats }
@@ -388,14 +358,7 @@ character_event = {
 						NOT = { block_general_event_trigger = yes }
 						OR = {
 							higher_real_tier_than = BARON
-							has_minor_title = title_lector
-							has_landed_title = d_arch_lectory_talabheim
-							has_landed_title = d_arch_lectory_nuln
 						}
-						NOT = { has_landed_title = k_cult_of_sigmar }
-						NOT = { has_landed_title = k_cult_of_ulric }
-						NOT = { has_landed_title = k_cult_of_taal_and_rhya }
-						NOT = { has_landed_title = k_cult_of_morr }
 					}
 					opinion = {
 						modifier = opinion_offended
@@ -413,14 +376,8 @@ character_event = {
 				any_liege = { character = ROOT }
 				NOT = { block_general_event_trigger = yes }
 				NOR = {
-					has_landed_title = k_cult_of_sigmar
-					has_landed_title = k_cult_of_ulric
-					has_landed_title = k_cult_of_taal_and_rhya
-					has_landed_title = k_cult_of_morr 
 					higher_real_tier_than = BARON
 					has_minor_title = title_lector
-					has_landed_title = d_arch_lectory_talabheim
-					has_landed_title = d_arch_lectory_nuln
 				}
 			}
 			preferred_limit = {
@@ -489,12 +446,7 @@ letter_event = {
 	trigger = {
 		FROM = {
 			religion = ROOT
-			OR = {
-				religion = sigmarite
-				religion = ulrican
-				religion = taalite
-				religion = morrian
-			}
+			religion = imperial_pantheon
 		}
 	}
 
@@ -502,14 +454,8 @@ letter_event = {
 		name = EVTOPTAHF20201
 		trigger = {
 			NOR = {
- 				has_landed_title = k_cult_of_sigmar
-				has_landed_title = k_cult_of_ulric
-				has_landed_title = k_cult_of_taal_and_rhya
-				has_landed_title = k_cult_of_morr
 				higher_real_tier_than = BARON
 				has_minor_title = title_lector
-				has_landed_title = d_arch_lectory_talabheim
-				has_landed_title = d_arch_lectory_nuln
 			}
 		}
 		random_list = {
@@ -631,8 +577,6 @@ letter_event = {
 				has_landed_title = k_cult_of_sigmar
 				higher_real_tier_than = BARON
 				has_minor_title = title_lector
-				has_landed_title = d_arch_lectory_talabheim
-				has_landed_title = d_arch_lectory_nuln
 			}
 		}
 		random_list = {
@@ -1143,7 +1087,7 @@ letter_event = {
 					NOT = {
 						FROM = {
 							any_artifact = {
-								has_artifact_flag = sigmarite
+								has_artifact_flag = imperial_pantheon
 								NOR = {
 									has_artifact_flag = rare
 									has_artifact_flag = very_rare
@@ -1183,104 +1127,6 @@ letter_event = {
 			}
 		}
 		random_list = {
-#			80 = {
-#				modifier = {
-#					factor = 0
-#					NOT = { vassal_of = FROM }
-#				}
-#				modifier = {
-#					factor = 2
-#					has_opinion_modifier = { #Opinion modifier keeps track of the Pope's previous decision, should the player deny his first request and then attempt to ask again immediately after for a different result.
-#						who = FROM
-#						modifier = opinion_requested_independence
-#					}
-#				}
-#				modifier = {
-#					factor = 1.5
-#					has_landed_title = k_papal_state
-#				}
-#				modifier = {
-#					factor = 2
-#					NOT = {
-#						opinion = {
-#							who = FROM
-#							value = -100
-#						}
-#					}
-#				}
-#				modifier = {
-#					factor = 1.75
-#					NOT = {
-#						opinion = {
-#							who = FROM
-#							value = -80
-#						}
-#					}
-#				}
-#				modifier = {
-#					factor = 1.75
-#					NOT = {
-#						opinion = {
-#							who = FROM
-#							value = -60
-#						}
-#					}
-#				}
-#				modifier = {
-#					factor = 1.75
-#					NOT = {
-#						opinion = {
-#							who = FROM
-#							value = -40
-#						}
-#					}
-#				}
-#				modifier = {
-#					factor = 1.5
-#					NOT = {
-#						opinion = {
-#							who = FROM
-#							value = -20
-#						}
-#					}
-#				}
-#				modifier = {
-#					factor = 0.9
-#					opinion = {
-#						who = FROM
-#						value = 20
-#					}
-#				}
-#				modifier = {
-#					factor = 0.8
-#					opinion = {
-#						who = FROM
-#						value = 40
-#					}
-#				}
-#				modifier = {
-#					factor = 0.7
-#					opinion = {
-#						who = FROM
-#						value = 60
-#					}
-#				}
-#				modifier = {
-#					factor = 0.6
-#					opinion = {
-#						who = FROM
-#						value = 80
-#					}
-#				}
-#				modifier = {
-#					factor = 0.5
-#					opinion = {
-#						who = FROM
-#						value = 100
-#					}
-#				}
-#				FROM = { letter_event = { id = HF.20211 } } #I want to be independent.
-#			}
 			20 = {
 				modifier = {
 					factor = 0.5
@@ -1917,7 +1763,7 @@ letter_event = {
 					NOT = {
 						FROM = {
 							any_artifact = {
-								has_artifact_flag = sigmarite
+								has_artifact_flag = imperial_pantheon
 								OR = {
 									has_artifact_flag = rare
 									has_artifact_flag = very_rare
@@ -2140,12 +1986,7 @@ letter_event = {
 	desc = EVTDESCHFA20202
 	border = GFX_event_letter_frame_religion
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 
 	is_triggered_only = yes
@@ -2185,12 +2026,7 @@ letter_event = {
 	border = GFX_event_letter_frame_religion
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 	is_triggered_only = yes
 
@@ -2231,12 +2067,7 @@ letter_event = {
 	border = GFX_event_letter_frame_religion
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 
 	is_triggered_only = yes
@@ -2278,12 +2109,7 @@ letter_event = {
 	border = GFX_event_letter_frame_religion
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 	is_triggered_only = yes
 
@@ -2324,12 +2150,7 @@ letter_event = {
 	border = GFX_event_letter_frame_religion
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 	is_triggered_only = yes
 	immediate = {
@@ -2401,12 +2222,7 @@ letter_event = {
 	border = GFX_event_letter_frame_religion
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 	is_triggered_only = yes
 
@@ -2491,12 +2307,7 @@ letter_event = {
 	border = GFX_event_letter_frame_religion
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 	is_triggered_only = yes
 
@@ -2574,12 +2385,7 @@ letter_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 	option = {
 		name = EVTOPTAHF20209
@@ -2625,12 +2431,7 @@ letter_event = {
 	border = GFX_event_letter_frame_religion
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 	is_triggered_only = yes
 
@@ -2662,62 +2463,6 @@ letter_event = {
 	}
 }
 
-##King: Pope wants to be independent
-#letter_event = {
-#	id = HF.20211
-#	desc = EVTDESCHFA20211
-#	border = GFX_event_letter_frame_religion
-#
-#	trigger = {
-#		OR = {
-#			religion = catholic
-#			religion = fraticelli
-#		}
-#	}
-#	is_triggered_only = yes
-#
-#	option = {
-#		name = EVTOPTAHF20211
-#		set_character_flag = flag_crowned_by_pope
-#		custom_tooltip = { text = TT_EVTOPTAHF20211 }
-#		FROM = { save_event_target_as = coronation_priest
-#				show_scope_change = no
-#			opinion = {
-#				modifier = opinion_supposed_to_crown
-#				months = 1
-#				who = ROOT
-#			}
-#			reverse_opinion = {
-#				modifier = opinion_supposed_to_crown
-#				months = 1
-#				who = ROOT
-#			}
-#		}
-#		hidden_tooltip = {
-#       		FROM = {
-#       			character_event = { id = HF.20234 }
-#       		}
-#       	}
-#		hidden_tooltip = { character_event = { id = HF.20300 } } #Go to budget event
-#		ai_chance = { factor = 100 }
-#	}
-#	option = {	#End of the line
-#		name = EVTOPTBHF20211
-#		custom_tooltip = { text = coronation_canceled }
-#		#clr_character_flag = flag_preparing_coronation #Replaced by timed modifier
-#			 # The Pope remembers what he wants, cheaty spammy player.
-#		FROM = {
-#				show_scope_change = no
-#			opinion = {
-#				modifier = opinion_requested_independence
-#				years = 10
-#				who = ROOT
-#			}
-#		}
-#		ai_chance = { factor = 0 }
-#	}
-#}
-
 #King: Grand Theoginist wants gold.
 letter_event = {
 	id = HF.20212
@@ -2725,12 +2470,7 @@ letter_event = {
 	border = GFX_event_letter_frame_religion
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 	is_triggered_only = yes
 
@@ -4474,12 +4214,7 @@ letter_event = {
 	border = GFX_event_letter_frame_religion
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 	is_triggered_only = yes
 
@@ -6598,12 +6333,7 @@ letter_event = {
 	border = GFX_event_letter_frame_religion
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 	is_triggered_only = yes
 
@@ -7032,19 +6762,14 @@ letter_event = {
 	border = GFX_event_letter_frame_religion
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 	is_triggered_only = yes
 
 	immediate = {
 		random_artifact = {
 			limit = {
-				has_artifact_flag = sigmarite
+				has_artifact_flag = imperial_pantheon
 				NOT = { has_artifact_flag = rare }
 				NOT = { has_artifact_flag = very_rare }
 				NOT = { has_artifact_flag = flag_considering_donation }
@@ -7100,19 +6825,14 @@ letter_event = {
 	border = GFX_event_letter_frame_religion
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 	is_triggered_only = yes
 
 	immediate = {
 		random_artifact = {
 			limit = {
-				has_artifact_flag = sigmarite
+				has_artifact_flag = imperial_pantheon
 				OR = {
 					has_artifact_flag = very_rare
 					has_artifact_flag = rare
@@ -7206,12 +6926,7 @@ character_event = {
 	border = GFX_event_normal_frame_religion
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 	is_triggered_only = yes
 
@@ -7616,12 +7331,7 @@ letter_event = {
 	desc = EVTDESCHF20303
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 		OR = {
 			has_character_flag = flag_crowned_by_priest
 			has_character_flag = flag_crowned_by_bishop
@@ -7642,12 +7352,7 @@ letter_event = {
 	desc = EVTDESCHF20304
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 		OR = {
 			has_character_flag = flag_crowned_by_priest
 			has_character_flag = flag_crowned_by_bishop
@@ -7700,12 +7405,7 @@ character_event = {
 	border = GFX_event_normal_frame_religion
 
 	trigger = {
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 		OR = {
 			has_character_flag = flag_crowned_by_priest
 			has_character_flag = flag_crowned_by_bishop
@@ -11363,12 +11063,7 @@ character_event = {
 
 	trigger = {
 		event_target:coronation_ruler = {
-			OR = {
-				religion = sigmarite
-				religion = ulrican
-				religion = taalite
-				religion = morrian
-			}
+			religion = imperial_pantheon
 			OR = {
 				has_character_flag = flag_crowned_by_priest
 				has_character_flag = flag_crowned_by_bishop
@@ -11575,12 +11270,7 @@ character_event = {
 	trigger = {
 		NOT = { has_character_flag = flag_being_coronated }
 		event_target:coronation_ruler = {
-			OR = {
-				religion = sigmarite
-				religion = ulrican
-				religion = taalite
-				religion = morrian
-			}
+			religion = imperial_pantheon
 			OR = {
 				has_character_flag = flag_crowned_by_priest
 				has_character_flag = flag_crowned_by_bishop
@@ -12379,12 +12069,7 @@ character_event = {
 		any_playable_ruler = {
 			limit = {
 				age = 16
-				OR = {
-					religion = sigmarite
-					religion = ulrican
-					religion = taalite
-					religion = morrian
-				}
+				religion = imperial_pantheon
 				is_feudal = yes
 				NOT = { government = order_government }
 				higher_real_tier_than = DUKE
@@ -12475,14 +12160,7 @@ character_event = {
 								OR = {
 									higher_real_tier_than = BARON
 									has_minor_title = title_lector
-									has_landed_title = d_arch_lectory_nuln
-									has_landed_title = d_arch_lectory_talabheim
 								}
-								NOR = {
-									has_landed_title = k_cult_of_sigmar
-									has_landed_title = k_cult_of_ulric
-									has_landed_title = k_cult_of_taal_and_rhya
-							 	}
 							}
 						}
 					}
@@ -12506,14 +12184,7 @@ character_event = {
 							OR = {
 								higher_real_tier_than = BARON
 								has_minor_title = title_lector
-								has_landed_title = d_arch_lectory_nuln
-								has_landed_title = d_arch_lectory_talabheim
 							}
-							NOR = {
-								has_landed_title = k_cult_of_sigmar
-								has_landed_title = k_cult_of_ulric
-								has_landed_title = k_cult_of_taal_and_rhya
-							 }
 						}
 					}
 					add_trait = crowned_by_priest
@@ -12566,20 +12237,13 @@ character_event = {
 	immediate = {
 		random_realm_character = {
 			limit = {
-			is_theocracy = yes
-			religion = ROOT
-			OR = {
-				higher_real_tier_than = BARON
-				has_minor_title = title_lector
-				has_landed_title = d_arch_lectory_nuln
-				has_landed_title = d_arch_lectory_talabheim
+				is_theocracy = yes
+				religion = ROOT
+				OR = {
+					higher_real_tier_than = BARON
+					has_minor_title = title_lector
 				}
-			NOR = {
-				has_landed_title = k_cult_of_sigmar
-				has_landed_title = k_cult_of_ulric
-				has_landed_title = k_cult_of_taal_and_rhya
-			 }
-			}
+				}
 			ROOT = { save_persistent_event_target = { name = coronation_priest_per scope = PREV } }
 		}
 		add_trait = crowned_by_bishop
@@ -12597,12 +12261,7 @@ character_event = {
 
 	trigger = {
 		higher_real_tier_than = DUKE
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 		NOR =  {
 			trait = crowned_by_priest
 			trait = crowned_by_bishop
@@ -12631,12 +12290,7 @@ character_event = {
 		is_feudal = yes
 		higher_real_tier_than = DUKE
 		ruled_years = 5
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 		NOR =  {
 			trait = crowned_by_priest
 			trait = crowned_by_bishop
@@ -12675,12 +12329,7 @@ character_event = {
 				modifier = {
 					factor = 0
 					spouse = {
-						NOR = {
-							religion = sigmarite
-							religion = ulrican
-							religion = taalite
-							religion = morrian
-						}
+						religion = imperial_pantheon
 					}
 				}
 				modifier = {
@@ -12843,12 +12492,7 @@ character_event = {
 			trait = crowned_by_pope
 			trait = crowned_by_myself
 		}
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 		capital_scope = { religion = ROOT }
 		higher_real_tier_than = DUKE
 	}
@@ -12888,12 +12532,7 @@ character_event = {
 			trait = crowned_by_pope
 			trait = crowned_by_myself
 		}
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 		higher_real_tier_than = DUKE
 	}
 
@@ -12966,12 +12605,7 @@ character_event = {
 				trait = crowned_by_pope
 				trait = crowned_by_myself
 			}
-			OR = {
-				religion = sigmarite
-				religion = ulrican
-				religion = taalite
-				religion = morrian
-			}
+			religion = imperial_pantheon
 			higher_real_tier_than = DUKE
 		}
 	}
@@ -13279,12 +12913,7 @@ character_event = {
 				trait = crowned_by_pope
 				trait = crowned_by_myself
 			}
-			OR = {
-				religion = sigmarite
-				religion = ulrican
-				religion = taalite
-				religion = morrian
-			}
+			religion = imperial_pantheon
 			higher_real_tier_than = DUKE
 		}
 	}
@@ -13361,12 +12990,7 @@ character_event = {
 				trait = crowned_by_pope
 				trait = crowned_by_myself
 			}
-			OR = {
-				religion = sigmarite
-				religion = ulrican
-				religion = taalite
-				religion = morrian
-			}
+			religion = imperial_pantheon
 			higher_real_tier_than = DUKE
 		}
 	}
@@ -14445,12 +14069,7 @@ character_event = {
 		is_vice_royalty = no
 		NOT = { government = order_government }
 		higher_real_tier_than = DUKE
-		OR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 		NOT = { check_variable = { which = uncrowned_count value = 30 } } #Stop at minus thirty.
 		NOR =  {
 			trait = crowned_by_priest
@@ -14899,23 +14518,13 @@ character_event = {
 	desc = {
 		text = EVTDESCHFA20408
 		trigger = {
-			NOR = {
-				religion = sigmarite
-				religion = ulrican
-				religion = taalite
-				religion = morrian
-			}
+			religion = imperial_pantheon
 		}
 	}
 	desc = {
 		text = EVTDESCHFB20408
 		trigger = {
-			OR = {
-				religion = sigmarite
-				religion = ulrican
-				religion = taalite
-				religion = morrian
-			}
+			religion = imperial_pantheon
 		}
 	}
 
@@ -14940,12 +14549,7 @@ character_event = {
 
 		#Previous religion
 		FROM = {
-			OR = {
-				religion = sigmarite
-				religion = ulrican
-				religion = taalite
-				religion = morrian
-			}
+			religion = imperial_pantheon
 		}
 	}
 
@@ -14962,23 +14566,13 @@ character_event = {
 		name = {
 			text = EVTOPTAHF20408
 			trigger = {
-				NOR = {
-					religion = sigmarite
-					religion = ulrican
-					religion = taalite
-					religion = morrian
-				}
+				religion = imperial_pantheon
 			}
 		}
 		name = {
 			text = EVTOPTAHF20058
 			trigger = {
-				OR = {
-					religion = sigmarite
-					religion = ulrican
-					religion = taalite
-					religion = morrian
-				}
+				religion = imperial_pantheon
 			}
 		}
 		hidden_tooltip = { remove_trait = travelling }
@@ -16182,12 +15776,7 @@ character_event = {
 
 	trigger = {
 		has_character_modifier = uncrowned_modifier
-		NOR = {
-			religion = sigmarite
-			religion = ulrican
-			religion = taalite
-			religion = morrian
-		}
+		religion = imperial_pantheon
 	}
 
 	immediate = {

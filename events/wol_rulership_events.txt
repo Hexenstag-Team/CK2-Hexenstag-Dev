@@ -31,7 +31,7 @@ character_event = {
 			limit = {
 				NOT = {
 					AND = {
-						NOT = { religion = shallyan }
+						NOT = { trait = patron_shallya }
 						trait = administrator
 					}
 				}
@@ -119,7 +119,7 @@ character_event = {
 			AND = {
 				lifestyle_traits = 1
 				has_character_modifier = wol_steward_2
-				NOT = { religion = shallyan }
+				NOT = { trait = patron_shallya }
 			}
 			has_character_modifier = wol_raja_dharma
 		}
@@ -162,7 +162,7 @@ character_event = {
 		if = {
 			limit = {
 				trait = administrator
-				religion = shallyan
+				trait = patron_shallya
 			}
 			add_character_modifier = {
 				modifier = wol_raja_dharma

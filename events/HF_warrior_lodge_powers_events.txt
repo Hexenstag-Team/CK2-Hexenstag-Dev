@@ -4739,7 +4739,7 @@ character_event = {
 			factor = 1
 			modifier = {
 				factor = 1.5
-				religion=morrian
+				trait = patron_morr
 			}
 		}
 	}
@@ -4829,7 +4829,9 @@ character_event = {
 	}
 	option = {
 		name ="EVTOPT_dedication_knight_of_black_rose" # The world is ever changing, and everyone conspires against you, Tzeentch offers assistance against the growing tide.
-		trigger={ religion = morrian}
+		trigger = {
+			trait = patron_morr
+		}
 		add_character_modifier = {
 			name = knight_of_black_rose
 			duration = -1
@@ -4844,7 +4846,12 @@ character_event = {
 	}
 	option = {
 		name ="EVTOPT_dedication_knight_of_righeous_spear" # The world is ever changing, and everyone conspires against you, Tzeentch offers assistance against the growing tide.
-		trigger={ religion = myrmidian}
+		trigger = {
+			OR = {
+				religion = myrmidian
+				trait = patron_myrmidia
+			}
+		}
 		add_character_modifier = {
 			name = knight_of_righeous_spear
 			duration = -1
@@ -4859,7 +4866,9 @@ character_event = {
 	}
 	option = {
 		name ="EVTOPT_dedication_knight_of_hammer_of_sigmar" # The world is ever changing, and everyone conspires against you, Tzeentch offers assistance against the growing tide.
-		trigger={religion = sigmarite}
+		trigger = {
+			trait = patron_sigmar
+		}
 		add_character_modifier = {
 			name = knight_of_hammer_of_sigmar
 			duration = -1
@@ -4867,7 +4876,9 @@ character_event = {
 	}
 	option = {
 		name ="EVTOPT_dedication_knight_of_taals_fury" # The world is ever changing, and everyone conspires against you, Tzeentch offers assistance against the growing tide.
-		trigger={religion = taalite}
+		trigger = {
+			trait = patron_taal_rhya
+		}
 		add_character_modifier = {
 			name = knight_of_taals_fury
 			duration = -1
@@ -4882,7 +4893,9 @@ character_event = {
 	}
 	option = {
 		name ="EVTOPT_dedication_knight_of_mariner" # The world is ever changing, and everyone conspires against you, Tzeentch offers assistance against the growing tide.
-		trigger={religion = manannite}
+		trigger = {
+			trait = patron_manann
+		}
 		add_character_modifier = {
 			name = knight_of_mariner
 			duration = -1
@@ -4890,7 +4903,9 @@ character_event = {
 	}
 	option = {
 		name =EVTOPT_dedication_knight_of_white_wolf # The world is ever changing, and everyone conspires against you, Tzeentch offers assistance against the growing tide.
-		trigger={religion = ulrican}
+		trigger = {
+			trait = patron_ulric
+		}
 		add_character_modifier = {
 			name = knight_of_white_wolf
 			duration = -1

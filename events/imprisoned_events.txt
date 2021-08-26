@@ -406,7 +406,7 @@ character_event = {
 	option = {
 		name = EVTOPTB50010 # Oil up the rack!
 		if = {
-			limit = { NOT = { religion = shallyan } }
+			limit = { NOT = { trait = patron_shallya } }
 			piety = -10
 		}
 		pacifists_lose_piety_effect = yes

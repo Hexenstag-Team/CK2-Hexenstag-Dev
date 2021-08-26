@@ -9,7 +9,7 @@
 #
 
 # UNIQUE RELIGIOUS REGIMENTS
-#Flagellants, sigmarite, light infantry with a 150% morale bonus
+#Flagellants, patron_sigmar, light infantry with a 150% morale bonus
 RETTYPE_SIGMARMONKS = {
 	first_type = 0
 	first_amount = 150
@@ -20,14 +20,14 @@ RETTYPE_SIGMARMONKS = {
 
 	potential = {
 		can_use_retinue_trigger = yes
-		religion = sigmarite
+		trait = patron_sigmar
 	}
 
 	modifier = {
 		light_infantry_morale = 1.5
 	}
 }
-#Wolves of Ulric, ulrican, heavy infantry with a 100% offensive and 50% morale bonus
+#Wolves of Ulric, patron_ulric, heavy infantry with a 100% offensive and 50% morale bonus
 RETTYPE_WOLFULRIC = {
 	first_type = 1
 	first_amount = 50
@@ -36,14 +36,14 @@ RETTYPE_WOLFULRIC = {
 
 	potential = {
 		can_use_retinue_trigger = yes
-		religion = ulrican
+		trait = patron_ulric
 	}
 	modifier = {
 		heavy_infantry_offensive = 1.0
 		heavy_infantry_morale = 0.50
 	}
 }
-#Company of the Green Hat, taalite, archers with a 100% offensive and 50% defensive bonus
+#Company of the Green Hat, patron_taal_rhya, archers with a 100% offensive and 50% defensive bonus
 RETTYPE_GREENHATS = {
 	first_type = 5
 	first_amount = 100
@@ -52,7 +52,7 @@ RETTYPE_GREENHATS = {
 
 	potential = {
 		can_use_retinue_trigger = yes
-		religion = taalite
+		trait = patron_taal_rhya
 	}
 	modifier = {
 		archers_offensive = 1.0
@@ -75,7 +75,7 @@ RETTYPE_DRUIDS = {
 		light_infantry_morale = 0.50
 	}
 }
-#Knight of Morr, morrian, Knight with a 100% offensive and 50% defensive bonus
+#Knight of Morr, patron_morr, Knight with a 100% offensive and 50% defensive bonus
 RETTYPE_KNIGHTMORR = {
 	first_type = 4
 	first_amount = 100
@@ -84,14 +84,14 @@ RETTYPE_KNIGHTMORR = {
 
 	potential = {
 		can_use_retinue_trigger = yes
-		religion = morrian
+		trait = patron_morr
 	}
 	modifier = {
 		knights_offensive = 1.0
 		knights_defensive = 0.5
 	}
 }
-#Stormguard, manannite, heavy infantry with a 50% offensive/defensive and morale bonus
+#Stormguard, patron_manann, heavy infantry with a 50% offensive/defensive and morale bonus
 RETTYPE_STORMGUARD = {
 	first_type = 1
 	first_amount = 50
@@ -100,7 +100,7 @@ RETTYPE_STORMGUARD = {
 
 	potential = {
 		can_use_retinue_trigger = yes
-		religion = manannite
+		trait = patron_manann
 	}
 	modifier = {
 		heavy_infantry_offensive = 0.50
@@ -154,7 +154,11 @@ RETTYPE_MYRMIDONS = {
 
 	potential = {
 		can_use_retinue_trigger = yes
-		religion = myrmidian
+		OR = {
+			religion = myrmidian
+			trait = patron_myrmidia
+		}
+		
 	}
 
 	modifier = {

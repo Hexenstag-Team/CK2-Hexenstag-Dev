@@ -184,7 +184,7 @@ has_wrong_religion = {
 		}
 		AND = {
 			culture = mootlander
-			NOT = { religion = halfling_gods }
+			NOT = { religion = imperial_pantheon }
 		}
 		AND = {
 			culture_group = orc_group
@@ -229,7 +229,6 @@ has_wrong_religion = {
 			is_human = yes
 			OR = {
 				religion = hashut
-				religion_group = halfling_gods_group
 				religion_group = dwarf_gods_group
 				religion_group = greenskin_gods_group
 				religion_group = cadai_group
@@ -290,7 +289,7 @@ is_female_led_random_ruler = {
 			controls_religion = no
 			OR = {
 				religion = myrmidian
-				religion = shallyan
+				religion = imperial_pantheon
 				religion = amazon
 			}
 		}

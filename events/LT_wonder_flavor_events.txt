@@ -3388,11 +3388,6 @@ character_event = {
 		picture = GFX_evt_bad_news
 	}
 	desc = {
-		trigger = { religion_group = halfling_gods_group }
-		text = EVTDESC_LT_20510_jewish
-		picture = GFX_evt_bad_news
-	}
-	desc = {
 		trigger = { religion_group = nehekharan_gods_group }
 		text = EVTDESC_LT_20510_indian
 		picture = GFX_evt_bad_news
@@ -3502,7 +3497,6 @@ character_event = {
 		trigger = {
 			OR = {
 				religion_group = old_world_group
-				religion_group = halfling_gods_group
 				religion_group = dwarf_gods_group
 				religion_group = cadai_group
 				religion_group = cytharai_group
@@ -3551,7 +3545,6 @@ character_event = {
 			trigger = {
 				OR = {
 					religion_group = old_world_group
-					religion_group = halfling_gods_group
 					religion_group = dwarf_gods_group
 					religion_group = cadai_group
 					religion_group = cytharai_group

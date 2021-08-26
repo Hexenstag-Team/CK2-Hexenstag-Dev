@@ -30,10 +30,6 @@ character_event = {
 		NOT = { trait = incapable }
 		OR = { #Must qualify for at least one of the special options.
 			AND = {
-				society_member_of = the_satanists
-				has_society_currency_medium_trigger = yes
-			}
-			AND = {
 				NOT = { trait = excommunicated }
 				spouse = { NOT = { trait = excommunicated } }
 				religion_head = {
@@ -64,10 +60,6 @@ character_event = {
 						has_landed_title = k_cult_of_the_lady
 						has_landed_title = k_cult_of_morr
 						higher_real_tier_than = BARON
-						#has_minor_title = title_lector
-						#has_minor_title = title_fraticelli_cardinal
-						#any_claim = { title = k_papal_state } #Antipope
-						#any_claim = { title = d_fraticelli } #Antipope
 					}
 				}
 			}
@@ -90,76 +82,12 @@ character_event = {
 		FROM = { save_event_target_as = baptizing_child }
 		set_character_flag = flag_baptizing_child #Avoid using both the event and the targetted decision at the same time.
 		hidden_tooltip = {
-#			if = {
-#				limit = {
-#					OR = {
-#						religion = sigmarite
-#						religion = ulrican
-#						religion = taalite
-#						religion = grail
-#						religion = morrian
-#					}
-#					rightful_religious_head_scope = {
-#						OR = {
-#							has_landed_title = k_cult_of_sigmar
-#							has_landed_title = k_cult_of_ulric
-#							has_landed_title = k_cult_of_taal_and_rhya
-#							has_landed_title = k_cult_of_the_lady
-#							has_landed_title = k_cult_of_morr
-#						}
-#					}
-#				}
-			if = {
-				limit = {
-				religion = sigmarite
-				rightful_religious_head_scope = { has_landed_title = k_cult_of_sigmar }
-				}
-			rightful_religious_head_scope = { save_event_target_as = scoped_pope }
-			}
-			if = {
-				limit = {
-				religion = ulrican
-				rightful_religious_head_scope = { has_landed_title = k_cult_of_ulric }
-				}
-			rightful_religious_head_scope = { save_event_target_as = scoped_pope }
-			}	
-			if = {
-				limit = {
-				religion = taalite
-				rightful_religious_head_scope = { has_landed_title = k_cult_of_taal_and_rhya }
-				}
-			rightful_religious_head_scope = { save_event_target_as = scoped_pope }
-			}	
 			if = {
 				limit = {
 				religion = grail
 				rightful_religious_head_scope = { has_landed_title = k_cult_of_the_lady }
 				}
 			rightful_religious_head_scope = { save_event_target_as = scoped_pope }
-			}
-			if = {
-				limit = {
-				religion = morrian
-				rightful_religious_head_scope = { has_landed_title = k_cult_of_morr }
-				}
-			rightful_religious_head_scope = { save_event_target_as = scoped_pope }
-			}
-#				rightful_religious_head_scope = { save_event_target_as = scoped_pope }
-#			}
-			if = {
-				limit = {
-					society_member_of = the_satanists
-					has_society_currency_medium_trigger = yes
-				}
-				random_society_member = {
-					limit = {
-						society_rank = {
-							rank == 4
-							society = the_satanists
-						}
-					}
-					save_event_target_as = scoped_satanist
-				}
 			}
 			if = {
 				limit = {
@@ -176,10 +104,6 @@ character_event = {
 							has_landed_title = k_cult_of_the_lady
 							has_landed_title = k_cult_of_morr
 							higher_real_tier_than = BARON
-							#has_minor_title = title_lector
-							#has_minor_title = title_fraticelli_cardinal
-							#any_claim = { title = k_papal_state } #Antipope
-							#any_claim = { title = d_fraticelli } #Antipope
 						}
 					}
 				}
@@ -197,10 +121,6 @@ character_event = {
 							has_landed_title = k_cult_of_the_lady
 							has_landed_title = k_cult_of_morr
 							higher_real_tier_than = BARON
-							#has_minor_title = title_lector
-							#has_minor_title = title_fraticelli_cardinal
-							#any_claim = { title = k_papal_state } #Antipope
-							#any_claim = { title = d_fraticelli } #Antipope
 						}
 					}
 					save_event_target_as = scoped_bishop

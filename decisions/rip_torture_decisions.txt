@@ -1143,16 +1143,6 @@ targetted_decisions = {
 								limit = {
 									ROOT = {
 										controls_religion = yes
-										religion_group = halfling_gods_group
-									}
-									NOT = { religion_group = ROOT }
-								}
-									set_character_flag = non_kosher
-							}
-							if = {
-								limit = {
-									ROOT = {
-										controls_religion = yes
 										religion_group = oriental_gods_group
 									}
 									NOT = { religion_group = ROOT }

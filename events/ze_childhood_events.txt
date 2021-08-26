@@ -408,7 +408,7 @@ character_event = {
 						AND = {
 							trait = creature_halfling
 							OR = {
-								religion = halfling_gods
+								culture = mootlander
 								religion = kukaili
 							}
 						}
@@ -539,7 +539,7 @@ character_event = {
 								}
 								NOT = {
 									AND = {
-										religion = shallyan
+										trait = patron_shallya
 										trait = zealous
 									}
 								}
@@ -561,7 +561,7 @@ character_event = {
 							}
 							NOT = {
 								AND = {
-									religion = shallyan
+									trait = patron_shallya
 									trait = zealous
 								}
 							}
@@ -7761,7 +7761,7 @@ character_event = {
 			factor = 70
 		}
 		if = {
-			limit = { religion = shallyan }
+			limit = { trait = patron_shallya }
 			piety = -15
 		}
 		prestige = 30
@@ -7827,7 +7827,7 @@ character_event = {
 			factor = 40
 		}
 		if = {
-			limit = { religion = shallyan }
+			limit = { trait = patron_shallya }
 			piety = -15
 		}
 		FROM = {

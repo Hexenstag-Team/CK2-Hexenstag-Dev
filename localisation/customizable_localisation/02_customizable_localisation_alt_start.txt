@@ -297,44 +297,6 @@ defined_text = {
 }
 
 defined_text = {
-	name = GetJewsName
-
-	text = {
-		trigger = {
-			NOT = {
-				has_alternate_start_parameter = { key = religion_names value = random }
-			}
-		}
-		localisation_key = string_jews
-	}
-	text = {
-		trigger = {
-			has_alternate_start_parameter = { key = religion_names value = random }
-		}
-		localisation_key = string_random_jews_name
-	}
-}
-
-defined_text = {
-	name = GetJewryName
-
-	text = {
-		trigger = {
-			NOT = {
-				has_alternate_start_parameter = { key = religion_names value = random }
-			}
-		}
-		localisation_key = string_jewry
-	}
-	text = {
-		trigger = {
-			has_alternate_start_parameter = { key = religion_names value = random }
-		}
-		localisation_key = string_random_jews_name
-	}
-}
-
-defined_text = {
 	name = GetReligiousCommunityName_catholic
 	text = { trigger = { has_alternate_start_parameter = { key = religion_names value = random } }
 		localisation_key = alt_start_community_name_catholic

@@ -852,7 +852,6 @@ character_event = {
 					cadai_group			= { FROM = { add_trait = sympathy_cadai_group } }
 					cytharai_group 		= { FROM = { add_trait = sympathy_cytharai_group } }
 					dwarf_gods_group 	= { FROM = { add_trait = sympathy_dwarf_gods_group } }
-					halfling_gods_group = { FROM = { add_trait = sympathy_halfling_gods_group } }
 					oriental_gods_group = { FROM = { add_trait = sympathy_oriental_gods_group } }
 				}
 			}
@@ -972,12 +971,6 @@ character_event = {
 								}
 							}
 							AND = {
-								religion_group = halfling_gods_group
-								ROOT = {
-									trait = sympathy_halfling_gods_group
-								}
-							}
-							AND = {
 								religion_group = oriental_gods_group
 								ROOT = {
 									trait = sympathy_oriental_gods_group
@@ -1047,7 +1040,6 @@ character_event = {
 							if = { limit = { trait = sympathy_cadai_group } remove_trait = sympathy_cadai_group }
 							if = { limit = { trait = sympathy_cytharai_group } remove_trait = sympathy_cytharai_group }
 							if = { limit = { trait = sympathy_dwarf_gods_group } remove_trait = sympathy_dwarf_gods_group }
-							if = { limit = { trait = sympathy_halfling_gods_group } remove_trait = sympathy_halfling_gods_group }
 							if = { limit = { trait = sympathy_oriental_gods_group } remove_trait = sympathy_oriental_gods_group }
 						}
 						random_list = {
@@ -1061,7 +1053,6 @@ character_event = {
 										cadai_group			= { ROOT = { add_trait = sympathy_cadai_group } }
 										cytharai_group 		= { ROOT = { add_trait = sympathy_cytharai_group } }
 										dwarf_gods_group 	= { ROOT = { add_trait = sympathy_dwarf_gods_group } }
-										halfling_gods_group = { ROOT = { add_trait = sympathy_halfling_gods_group } }
 										oriental_gods_group = { ROOT = { add_trait = sympathy_oriental_gods_group } }
 									}
 								}

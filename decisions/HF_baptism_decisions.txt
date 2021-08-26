@@ -456,8 +456,6 @@ targetted_decisions = {
 										NOT = { block_general_event_trigger = yes }
 										OR = {
 											higher_tier_than = BARON
-											has_landed_title = d_arch_lectory_talabheim
-											has_landed_title = d_arch_lectory_nuln
 											has_minor_title = title_lector
 										}
 									}
@@ -1051,21 +1049,6 @@ decisions = {
 					higher_real_tier_than = DUKE
 					is_within_diplo_range = ROOT
 					religion_group = dwarf_gods_group
-					NOT = { lower_tier_than = ROOT }
-				}
-			}
-			modifier = {
-				factor = 7
-				trait = sympathy_halfling_gods_group
-				any_neighbor_independent_ruler = {
-					NOT = { religion = ROOT }
-					war = no
-					is_tribal = no
-					is_nomadic = no
-					higher_real_tier_than = DUKE
-					is_within_diplo_range = ROOT
-					religion_group = halfling_gods_group
-					is_reformed_religion = yes
 					NOT = { lower_tier_than = ROOT }
 				}
 			}

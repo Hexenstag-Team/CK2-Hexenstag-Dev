@@ -449,12 +449,7 @@ dejure_duchy_claim = { # New1
 
 		hidden_tooltip = {
 			check_war_effect = yes
-			FROM = {
-				landless_pope_effect = yes
-			}
 		}
-
-
 	}
 
 	on_fail_title = {
@@ -514,12 +509,7 @@ dejure_duchy_claim = { # New1
 			has_dlc = "Holy Fury"
 			ROOT = {
 				is_feudal = yes
-				OR = {
-					religion = sigmarite
-					religion = ulrican
-					religion = taalite
-					religion = morrian
-				}
+				religion = imperial_pantheon
 				NOR = {
 					trait = crowned_by_priest
 					trait = crowned_by_bishop
@@ -713,9 +703,6 @@ force_vassalization = { # New2
 
 		hidden_tooltip = {
 			check_if_reconquista_finished_effect = yes
-			FROM = {
-				landless_pope_effect = yes
-			}
 		}
 	}
 
@@ -771,12 +758,7 @@ force_vassalization = { # New2
 			has_dlc = "Holy Fury"
 			ROOT = {
 				is_feudal = yes
-				OR = {
-					religion = sigmarite
-					religion = ulrican
-					religion = taalite
-					religion = morrian
-				}
+				religion = imperial_pantheon
 				NOR = {
 					trait = crowned_by_priest
 					trait = crowned_by_bishop
@@ -998,9 +980,6 @@ great_realm_conflict = { # New3
 
 		hidden_tooltip = {
 			check_if_reconquista_finished_effect = yes
-			FROM = {
-				landless_pope_effect = yes
-			}
 		}
 	}
 
@@ -1063,12 +1042,7 @@ great_realm_conflict = { # New3
 			has_dlc = "Holy Fury"
 			ROOT = {
 				is_feudal = yes
-				OR = {
-					religion = sigmarite
-					religion = ulrican
-					religion = taalite
-					religion = morrian
-				}
+				religion = imperial_pantheon
 				NOR = {
 					trait = crowned_by_priest
 					trait = crowned_by_bishop
@@ -1284,9 +1258,6 @@ ducal_county_conquest = { # New4
 
 		hidden_tooltip = {
 			check_war_effect = yes
-			FROM = {
-				landless_pope_effect = yes
-			}
 		}
 	}
 
@@ -1354,12 +1325,7 @@ ducal_county_conquest = { # New4
 			has_dlc = "Holy Fury"
 			ROOT = {
 				is_feudal = yes
-				OR = {
-					religion = sigmarite
-					religion = ulrican
-					religion = taalite
-					religion = morrian
-				}
+				religion = imperial_pantheon
 				NOR = {
 					trait = crowned_by_priest
 					trait = crowned_by_bishop
@@ -2121,9 +2087,6 @@ liberate_religion = { # New6
 
 		hidden_tooltip = {
 			check_if_reconquista_finished_effect = yes
-			FROM = {
-				landless_pope_effect = yes
-			}
 		}
 	}
 
@@ -2252,12 +2215,7 @@ liberate_religion = { # New6
 			has_dlc = "Holy Fury"
 			ROOT = {
 				is_feudal = yes
-				OR = {
-					religion = sigmarite
-					religion = ulrican
-					religion = taalite
-					religion = morrian
-				}
+				religion = imperial_pantheon
 				NOR = {
 					trait = crowned_by_priest
 					trait = crowned_by_bishop
@@ -3002,9 +2960,6 @@ unjust_conquest = { # New7
 
 		hidden_tooltip = {
 			check_war_effect = yes
-			FROM = {
-				landless_pope_effect = yes
-			}
 		}
 	}
 
@@ -3069,12 +3024,7 @@ unjust_conquest = { # New7
 			has_dlc = "Holy Fury"
 			ROOT = {
 				is_feudal = yes
-				OR = {
-					religion = sigmarite
-					religion = ulrican
-					religion = taalite
-					religion = morrian
-				}
+				religion = imperial_pantheon
 				NOR = {
 					trait = crowned_by_priest
 					trait = crowned_by_bishop

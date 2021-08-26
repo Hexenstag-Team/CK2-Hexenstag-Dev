@@ -272,17 +272,8 @@ character_event = {
 								add_trait = mutazilite
 							}
 							
-							random_list = { #Chance of being Manannite or Stromfels
-								40 = {
-								}
-								30 = {
-									modifier = {
-										factor = 0
-										NOT = {
-											religion_group = old_world_group
-										}
-									}
-									religion = manannite
+							random_list = { #Chance of being Stromfels
+								70 = {
 								}
 								30 = {
 									modifier = {
@@ -3070,7 +3061,7 @@ character_event = {
 					}
 				}
 				create_character = {
-					religion = shallyan
+					religion = imperial_pantheon
 					culture = ROOT
 					dynasty = none
 					age = 41
@@ -3085,6 +3076,7 @@ character_event = {
 					trait = nun
 					trait = physician
 					trait = kind
+					trait = patron_shallya
 					flag = is_court_physician
 					flag = physician_pus_sucking_nun
 					flag = ai_flag_refuse_conversion

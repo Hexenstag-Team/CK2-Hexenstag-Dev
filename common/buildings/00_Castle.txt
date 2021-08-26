@@ -41,56 +41,6 @@ castle = {
 			}
 		}
 	}
-	#Halflings
-	#Grand Moot, reduces short reign penalty up to 10 years
-	ca_grandmoot = {
-		desc = ca_grandmoot_desc
-		potential = {
-			FROMFROM = { title = b_eicheschatten }
-				AND = {religion_group = halfling_gods_group}
-		}
-		gold_cost = 500
-		build_time = 1095
-		garrison_size = 0.50
-		heavy_infantry = 20
-		archers = 100
-		short_reign_length = -10
-		ai_creation_factor = 93
-		add_number_to_name = no
-		extra_tech_building_start = 0.2
-	}
-	#Three Smoke Rings, garrison size, tax income, local revolt risk reduction
-	ca_three_smoke_rings = {
-		desc = ca_three_smoke_rings_desc
-		potential = {
-			FROMFROM = { title = b_gipfel }
-				AND = {religion_group = halfling_gods_group}
-		}
-		gold_cost = 200
-		build_time = 510
-		garrison_size = 0.50
-		local_revolt_risk = -0.25
-		ai_creation_factor = 93
-		add_number_to_name = no
-		extra_tech_building_start = 0.2
-	}
-	#Sauerapfel, tax income, tech growth, levy size
-	ca_sauerapfel = {
-		desc = ca_sauerapfel_desc
-		potential = {
-			FROMFROM = { title = b_sauerapfel }
-				AND = {religion_group = halfling_gods_group}
-		}
-		gold_cost = 500
-		build_time = 1095
-		garrison_size = 0.50
-		#Adventurers
-		tech_growth_modifier = 0.05
-		levy_size = 0.20
-		ai_creation_factor = 91
-		add_number_to_name = no
-		extra_tech_building_start = 0.2
-	}
 	#Antoch, commander limit, tax income, light cavalry, knights
 	ca_antoch = {
 		desc = ca_antoch_desc

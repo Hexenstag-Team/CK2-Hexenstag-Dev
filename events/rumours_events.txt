@@ -1277,7 +1277,7 @@ character_event = {
 		clr_character_flag = suspected_of_incest
 		if = {
 			limit = {
-				religion = sigmarite
+				religion = imperial_pantheon
 			}
 			random = {
 				chance = 25
@@ -1287,14 +1287,6 @@ character_event = {
 					tooltip = EVTTOOLTIP69017
 				}
 			}
-		}
-		if = {
-			limit = {
-				NOT = {
-					religion = catholic
-				}
-			}
-			piety = -10
 		}
 	}
 }
@@ -4079,45 +4071,6 @@ character_event = {
 		clr_character_flag = flag_unchristian
 		change_learning = 1
 		change_intrigue = -1
-	}
-}
-
-### Legate from the pope ###
-character_event = {
-	id = 69065
-	desc = EVTDESC69065
-	picture = GFX_evt_bishop
-
-	only_rulers = yes
-	capable_only = yes
-	prisoner = no
-	has_character_flag = flag_unchristian
-	religion = sigmarite
-
-	trigger = {
-		NOT = {
-			piety = 100
-		}
-	}
-
-	mean_time_to_happen = {
-		months = 60
-	}
-
-	option = {
-		name = EVTOPTA69065
-		scaled_wealth = -0.2
-		clr_character_flag = flag_unchristian
-	}
-	option = {
-		name = EVTOPTB69065
-		piety = -10
-		clr_character_flag = flag_unchristian
-	}
-	option = {
-		name = EVTOPTC69065
-		prestige = -10
-		clr_character_flag = flag_unchristian
 	}
 }
 

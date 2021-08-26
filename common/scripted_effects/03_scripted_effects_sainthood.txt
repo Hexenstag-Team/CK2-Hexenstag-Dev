@@ -34,43 +34,13 @@ deciding_upon_saint_effect = {
             factor = 0.8
             trait = cynical
         }
-        # Reduced chance for Religious Heads
-        modifier = {
-            factor = 0.4
-            OR = {
-                has_landed_title = k_cult_of_sigmar
-                has_landed_title = k_cult_of_ulric
-				has_landed_title = k_cult_of_taal_and_rhyaa
-				has_landed_title = k_cult_of_morr
-            }
-        }
 
         #Have to be a Imperial with a potential Religious head, and have been singled out for Beatification
         modifier = {
             factor = 0
             NOR = {
-                NAND = {
-                    event_target:saint_person = {
-                        religion = sigmarite
-                    }
-                    event_target:saint_person = {
-                        religion = ulrican
-                    }
-                    event_target:saint_person = {
-                        religion = taalite
-                    }
-                    event_target:saint_person = {
-                        religion = shallyan
-                    }
-                    event_target:saint_person = {
-                        religion = manannite
-                    }
-		    event_target:saint_person = {
-                        religion = morrian
-                    }
-                    event_target:saint_person = {
-                        has_religion_feature = religion_beatification
-                    }
+                event_target:saint_person = {
+                    has_religion_feature = religion_beatification
                 }
                 NOR = {
                     event_target:saint_person = {
@@ -96,24 +66,6 @@ deciding_upon_saint_effect = {
             factor = 1.5
             has_any_opinion_modifier = opinion_baptism_sponsor_target
         }
-        #Manannites, Ulricans, Taalites, and Morrian have a slightly lower chance of becoming Saints
-        modifier = {
-            factor = 0.8
-            OR = {
-                event_target:saint_person = {
-                    religion = manannite
-                }
-                event_target:saint_person = {
-                    religion = ulrican
-                }
-                event_target:saint_person = {
-                    religion = taalite
-                }
-		event_target:saint_person = {
-                        religion = morrian
-                   }
-            }
-        }
         #Players who don't have a saintly bloodline have a higher chance of becoming a Saint
         modifier = {
             factor = 2
@@ -128,7 +80,6 @@ deciding_upon_saint_effect = {
                             has_bloodline_flag = monastic_saintly_bloodline
                             has_bloodline_flag = cultural_saintly_bloodline
                             has_bloodline_flag = inquisitional_saintly_bloodline
-                            has_bloodline_flag = jewish_saintly_bloodline
                             has_bloodline_flag = theologian_saintly_bloodline
                         }
                     }
@@ -200,7 +151,6 @@ deciding_upon_saint_effect = {
                         has_bloodline_flag = monastic_saintly_bloodline
                         has_bloodline_flag = cultural_saintly_bloodline
                         has_bloodline_flag = inquisitional_saintly_bloodline
-                        has_bloodline_flag = jewish_saintly_bloodline
                         has_bloodline_flag = theologian_saintly_bloodline
                     }
                 }
@@ -283,62 +233,10 @@ deciding_upon_saint_effect = {
             factor = 1.2
             piety = 10000
         }
-        #First Saint of a Religion is easier
-        modifier = {
-            factor = 3
-            OR = {
-                AND = {
-                    religion = sigmarite
-                    NOT = {
-                        has_global_flag = catholic_saint
-                    }
-                }
-                AND = {
-                    religion = ulrican
-                    NOT = {
-                        has_global_flag = fraticelli_saint
-                    }
-                }
-                AND = {
-                    religion = taalite
-                    NOT = {
-                        has_global_flag = orthodox_saint
-                    }
-                }
-                AND = {
-                    religion = shallyan
-                    NOT = {
-                        has_global_flag = iconoclast_saint
-                    }
-                }
-                AND = {
-                    religion = manannite
-                    NOT = {
-                        has_global_flag = paulician_saint
-                    }
-                }
-		AND = {
-                    religion = morrian
-                    NOT = {
-                        has_global_flag = monothelite_saint
-                    }
-                }
-				
-            }
-        }
         random_realm_province = {
             province_event = { id = HF.40010 }
         }
         change_variable = { which = global_saint_number value = 1 }
-        trigger_switch = {
-            on_trigger = religion
-            sigmarite = { set_global_flag = catholic_saint }
-            ulrican = { set_global_flag = fraticelli_saint }
-            taalite = { set_global_flag = orthodox_saint }
-            shallyan = { set_global_flag = iconoclast_saint }
-            manannite = { set_global_flag = paulician_saint }
-			morrian = { set_global_flag = monothelite_saint }
-        }
     }
 }
 

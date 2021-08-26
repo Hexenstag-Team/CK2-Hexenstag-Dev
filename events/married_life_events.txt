@@ -179,7 +179,7 @@ character_event = {
 
 	trigger = {
 		OR = {
-			religion = sigmarite
+			religion = imperial_pantheon
 			religion = myrmidian
 		}
 		num_of_children = 1
@@ -2329,10 +2329,10 @@ character_event = {
 	portrait = event_target:my_spouse
 
 	trigger = {
-		NOT = { religion = shallyan }
+		NOT = { trait = patron_shallya }
 		any_spouse = {
 			NOT = { trait = incapable }
-			NOT = { religion = shallyan }
+			NOT = { trait = patron_shallya }
 			prisoner = no
 			is_alive = yes
 			is_abroad = no
@@ -2353,7 +2353,7 @@ character_event = {
 		random_spouse = {
 			limit = {
 				NOT = { trait = incapable }
-				NOT = { religion = shallyan }
+				NOT = { trait = patron_shallya }
 				prisoner = no
 				is_alive = yes
 				is_abroad = no
@@ -4459,7 +4459,7 @@ character_event = {
 	option = {
 		name = "EVTOPTC30088"
 		trigger = {
-			NOT = { religion = shallyan }
+			NOT = { trait = patron_shallya }
 			NOT = {
 				has_character_flag = failed_hunt
 				has_character_flag = perfect_hunt

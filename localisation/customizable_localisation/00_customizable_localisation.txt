@@ -2295,7 +2295,10 @@ defined_text = {
 
 	text = {
 		localisation_key = GetHouseOfWorship_old_world_group
-		trigger = { religion_group = old_world_group }
+		trigger = {
+			religion_group = old_world_group
+			NOT = { culture = mootlander }
+		}
 	}
 	text = {
 		localisation_key = GetHouseOfWorship_ormazd_gods_group
@@ -2307,7 +2310,10 @@ defined_text = {
 	}
 	text = {
 		localisation_key = GetHouseOfWorship_halfling_gods_group
-		trigger = { religion_group = halfling_gods_group }
+		trigger = {
+			religion_group = old_world_group
+			culture = mootlander
+		}
 	}
 	text = {
 		localisation_key = GetHouseOfWorship_dwarf_gods_group
@@ -2356,7 +2362,10 @@ defined_text = {
 
 	text = {
 		localisation_key = string_Temple
-		trigger = { religion_group = old_world_group }
+		trigger = {
+			religion_group = old_world_group
+			NOT = { culture = mootlander }
+		}
 	}
 	text = {
 		localisation_key = string_Temple
@@ -2368,7 +2377,10 @@ defined_text = {
 	}
 	text = {
 		localisation_key = string_Temple
-		trigger = { religion_group = halfling_gods_group }
+		trigger = {
+			religion_group = old_world_group
+			culture = mootlander
+		}
 	}
 	text = {
 		localisation_key = string_Temple
@@ -2421,7 +2433,10 @@ defined_text = {
 
 	text = {
 		localisation_key = String_prayer
-		trigger = { religion_group = old_world_group }
+		trigger = {
+			religion_group = old_world_group
+			NOT = { culture = mootlander }
+		}
 	}
 	text = {
 		localisation_key = String_prayer
@@ -2433,7 +2448,10 @@ defined_text = {
 	}
 	text = {
 		localisation_key = String_prayer
-		trigger = { religion_group =  halfling_gods_group  }
+		trigger = {
+			religion_group = old_world_group
+			culture = mootlander
+		}
 	}
 	text = {
 		localisation_key = String_venerate
@@ -2895,14 +2913,6 @@ defined_text = {
 	text = {
 		localisation_key = String_Zoroastrians
 		trigger = { true_religion_group_zoroastrian_group_trigger = yes
-			NOT = {
-				has_alternate_start_parameter = { key = religion_names value = random }
-			}
-		}
-	}
-	text = {
-		localisation_key = String_Jews
-		trigger = { true_religion_group_jewish_group_trigger = yes
 			NOT = {
 				has_alternate_start_parameter = { key = religion_names value = random }
 			}
@@ -3747,139 +3757,6 @@ defined_text = {
 	}
 }
 
-#defined_text = {
-#	name = GetTrueReligionHighGod # OBSOLETE
-#
-#	text = {
-#		localisation_key = GOD_GOD
-#		trigger = {
-#			true_religion_group_christian_trigger = yes
-#		}
-#	}
-#	text = {
-#		localisation_key = GOD_ALLAH
-#		trigger = {
-#			true_religion_group_muslim_trigger = yes
-#			NOT = { true_religion_yazidi_trigger = yes }
-#		}
-#	}
-#	text = {
-#		localisation_key = GOD_SHAYTAN
-#		trigger = { true_religion_yazidi_trigger = yes }
-#	}
-#	text = {
-#		localisation_key = GOD_GOD
-#		trigger = { true_religion_group_jewish_group_trigger = yes }
-#	}
-#	text = {
-#		localisation_key = GOD_AHURA_MAZDA
-#		trigger = {
-#			true_religion_group_zoroastrian_group_trigger = yes
-#			NOT = { true_religion_manichean_trigger = yes }
-#		}
-#	}
-#	text = {
-#		localisation_key = GOD_ZURVAN
-#		trigger = { true_religion_manichean_trigger = yes }
-#	}
-#	text = {
-#		localisation_key = GOD_BRAHMA
-#		trigger = { true_religion_hindu_trigger = yes }
-#	}
-#	text = {
-#		localisation_key = GOD_BRAHMA
-#		trigger = { true_religion_buddhist_trigger = yes }
-#	}
-#	text = {
-#		localisation_key = GOD_THE_TIRTHANKARAS
-#		trigger = { true_religion_jain_trigger = yes }
-#	}
-#	text = {
-#		localisation_key = GOD_ODIN
-#		trigger = {
-#			OR = {
-#				true_religion_norse_pagan_reformed_trigger = yes
-#				true_religion_norse_pagan_trigger = yes
-#			}
-#		}
-#	}
-#	text = {
-#		localisation_key = GOD_PERUN
-#		trigger = {
-#			OR = {
-#				true_religion_slavic_pagan_reformed_trigger = yes
-#				true_religion_slavic_pagan_trigger = yes
-#			}
-#		}
-#	}
-#	text = {
-#		localisation_key = GOD_TENGRI
-#		trigger = {
-#			OR = {
-#				true_religion_tengri_pagan_reformed_trigger = yes
-#				true_religion_tengri_pagan_trigger = yes
-#			}
-#		}
-#	}
-#	 text = {
-#		localisation_key = GOD_DIEVAS
-#		trigger = {
-#			OR = {
-#				true_religion_baltic_pagan_reformed_trigger = yes
-#				true_religion_baltic_pagan_trigger = yes
-#			}
-#		}
-#	}
-#	 text = {
-#		localisation_key = GOD_UKKO
-#		trigger = {
-#			OR = {
-#				true_religion_finnish_pagan_reformed_trigger = yes
-#				true_religion_finnish_pagan_trigger = yes
-#			}
-#		}
-#	}
-#	 text = {
-#		localisation_key = GOD_THE_CREATOR
-#		trigger = {
-#			OR = {
-#				true_religion_west_african_pagan_reformed_trigger = yes
-#				true_religion_west_african_pagan_trigger = yes
-#			}
-#		}
-#	}
-#	text = {
-#		localisation_key = GOD_ZUN
-#		trigger = {
-#			OR = {
-#				true_religion_zun_pagan_reformed_trigger = yes
-#				true_religion_zun_pagan_trigger = yes
-#			}
-#		}
-#	}
-#	text = {
-#		localisation_key = GOD_HUITZILOPOCHTLI
-#		trigger = {
-#			OR = {
-#				true_religion_aztec_reformed_trigger = yes
-#				true_religion_aztec_trigger = yes
-#			}
-#		}
-#	}
-#	text = {
-#		localisation_key = GOD_ZARVANA
-#		trigger = { true_religion_khurmazta_trigger = yes }
-#	}
-#	text = {
-#		localisation_key = GOD_SANGPO_BUMTRI
-#		trigger = { true_religion_bon_trigger = yes }
-#	}
-#	text = {
-#		localisation_key = GOD_HEAVENLY_ORDER
-#		trigger = { true_religion_taoist_trigger = yes }
-#	}
-#}
-
 defined_text = {
 	name = GetTrueReligionScriptureName
     text = {
@@ -3908,10 +3785,6 @@ defined_text = {
     text = {
         localisation_key = String_Epistles_of_Wisdom
         trigger = { true_religion_druze_trigger = yes }
-    }
-    text = {
-        localisation_key = String_Torah
-        trigger = { true_religion_group_jewish_group_trigger = yes }
     }
     text = {
         localisation_key = String_Gathas
@@ -4005,14 +3878,6 @@ defined_text = {
 	text = {
 		localisation_key = String_Muslim
 		trigger = { true_religion_group_muslim_trigger = yes
-			NOT = {
-				has_alternate_start_parameter = { key = religion_names value = random }
-			}
-		}
-	}
-	text = {
-		localisation_key = String_Jew
-		trigger = { true_religion_group_jewish_group_trigger = yes
 			NOT = {
 				has_alternate_start_parameter = { key = religion_names value = random }
 			}
@@ -15137,53 +15002,6 @@ defined_text = {
 }
 
 defined_text = {
-	name = GoldOwedToJews
-
-	text = {
-		trigger = {
-			any_owned_bloodline = {
-	    		has_bloodline_flag = jewish_saintly_bloodline
-	    	}
-		}
-		localisation_key = string_friendly_jewish_amount
-	}
-
-	text = {
-		trigger = {
-			NOT = {
-		    	any_owned_bloodline = {
-	    			has_bloodline_flag = jewish_saintly_bloodline
-	    		}
-			}
-		}
-		localisation_key = string_unfriendly_jewish_amount
-	}
-}
-
-defined_text = {
-	name = JewishGoldInterests
-
-	text = {
-		trigger = {
-			any_owned_bloodline = {
-				has_bloodline_flag = jewish_saintly_bloodline
-			}
-		}
-		localisation_key = string_friendly_jewish_interest
-	}
-
-	text = {
-		trigger = {
-			NOT = {
-				any_owned_bloodline = {
-					has_bloodline_flag = jewish_saintly_bloodline
-				}
-			}
-		}
-		localisation_key = string_unfriendly_jewish_interest
-	}
-}
-defined_text = {
 	name = GetMiracleShort
 
 	text = {
@@ -16046,7 +15864,7 @@ defined_text = {
 		trigger = {
 		culture = norse
 		}
-		localisation_key = random_mythological_creature_jörmungandr
+		localisation_key = random_mythological_creature_jï¿½rmungandr
 	}
 	text = {
 		trigger = {

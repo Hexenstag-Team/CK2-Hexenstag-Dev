@@ -52,9 +52,9 @@ character_event = {
 	option = {
 		name = EVTOPTA_SoA_5011
 		trigger = {
-			religion = sigmarite
+			trait = patron_sigmar
 		}
-		set_character_flag = pilgrimage_to_jerusalem #AVERHEIM - SIGMAR'S EXODUS - SIGMARITE
+		set_character_flag = pilgrimage_to_jerusalem #AVERHEIM - SIGMAR'S EXODUS - patron_sigmar
 		hidden_tooltip = {
 			character_event = { id = SoA.5022 days = 15 }
 		}
@@ -63,9 +63,9 @@ character_event = {
 	option = {
 		name = EVTOPTB_SoA_5011
 		trigger = {
-			religion = ulrican
+			trait = patron_ulric
 		}
-		set_character_flag = pilgrimage_to_constantinople #MIDDENHEIM - FLAME OF ULRIC - ULRICAN
+		set_character_flag = pilgrimage_to_constantinople #MIDDENHEIM - FLAME OF ULRIC - patron_ulric
 		hidden_tooltip = {
 			character_event = { id = SoA.5094 days = 15 }
 		}
@@ -80,9 +80,12 @@ character_event = {
 			}
 		}
 		trigger = {
-			religion = myrmidian
+			OR = {
+				religion = myrmidian
+				trait = patron_myrmidia
+			}
 		}
-		set_character_flag = pilgrimage_to_antioch  #REMAS - PILGRIMAGE OF THE SOLDIER - MYRMIDIAN
+		set_character_flag = pilgrimage_to_antioch  #REMAS - PILGRIMAGE OF THE SOLDIER - patron_myrmidia
 		hidden_tooltip = {
 			character_event = { id = SoA.5096 days = 15 }
 		}
@@ -97,9 +100,12 @@ character_event = {
 			}
 		}
 		trigger = {
-			religion = myrmidian
+			OR = {
+				religion = myrmidian
+				trait = patron_myrmidia
+			}
 		}
-		set_character_flag = pilgrimage_to_axum #MAGRITTA - PILGRIMAGE OF THE SOLDIER - MYRMIDIAN
+		set_character_flag = pilgrimage_to_axum #MAGRITTA - PILGRIMAGE OF THE SOLDIER - patron_myrmidia
 		hidden_tooltip = {
 			character_event = { id = SoA.5095 days = 15 }
 		}
@@ -108,26 +114,26 @@ character_event = {
 	option = {
 		name = EVTOPTA_SoA_5019
 		trigger = {
-			religion = manannite
+			trait = patron_manann
 		}
-		set_character_flag = pilgrimage_to_canterbury #KRUGENHEIM - JOURNEY TO THE SEA - MANANNITE
+		set_character_flag = pilgrimage_to_canterbury #KRUGENHEIM - JOURNEY TO THE SEA - patron_manann
 		hidden_tooltip = { character_event = { id = SoA.5021 days = 15 } }
 	}
 	option = {
 		name = EVTOPTB_SoA_5019
 		trigger = {
-			religion = taalite
+			trait = patron_taal_rhya
 		}
-		set_character_flag = pilgrimage_to_koln #TALABECLAND - PILGRIMAGE OF THE STONES - TAALITE
+		set_character_flag = pilgrimage_to_koln #TALABECLAND - PILGRIMAGE OF THE STONES - patron_taal_rhya
 		hidden_tooltip = { character_event = { id = SoA.5023 days = 15 } }
 	}
 
 	option = {
 		name = EVTOPTC_SoA_5019
 		trigger = {
-			religion = shallyan
+			trait = patron_shallya
 		}
-		set_character_flag = pilgrimage_to_santiago #COURONNE - PILGRIMAGE TO THE TEMPLE OF SHALLYA - SHALLYAN
+		set_character_flag = pilgrimage_to_santiago #COURONNE - PILGRIMAGE TO THE TEMPLE OF SHALLYA - patron_shallya
 		hidden_tooltip = { character_event = { id = SoA.5025 days = 15 } }
 	}
 

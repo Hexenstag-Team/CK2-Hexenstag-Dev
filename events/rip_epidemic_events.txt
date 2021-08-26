@@ -52,9 +52,6 @@ character_event = {
 						has_character_modifier = expelled_strigany
 						religion_group = necromantic_group
 						any_realm_province = { religion_group = necromantic_group }
-						any_owned_bloodline = {
-							has_bloodline_flag = jewish_saintly_bloodline
-						}
 						has_alternate_start_parameter = {
 							key = religion_names
 							value = random
@@ -2720,7 +2717,7 @@ character_event = {
 
 		trigger = {
 			NOT = {
-				religion = shallyan
+				trait = patron_shallya
 			}
 		}
 	}

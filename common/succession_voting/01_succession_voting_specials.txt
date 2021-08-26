@@ -4848,14 +4848,12 @@ hre_feudal_elective = {
 			localisation_key = tooltip_hre_vote_strength_theocracy
 			is_theocracy = yes
 			ROOT = { has_landed_title = k_cult_of_sigmar}
-			d_arch_lectory_talabheim = { has_holder = no }
 			value = 1
 		}
 		additive_modifier = {
 			localisation_key = tooltip_hre_vote_strength_theocracy
 			is_theocracy = yes
 			ROOT = { has_landed_title = k_cult_of_sigmar}
-			d_arch_lectory_nuln = { has_holder = no }
 			value = 1
 		}
 	}
@@ -4885,8 +4883,6 @@ hre_feudal_elective = {
 			value = 50
 			OR = {
 				has_landed_title = k_cult_of_sigmar
-				has_landed_title = d_arch_lectory_talabheim
-				has_landed_title = d_arch_lectory_nuln
 				has_landed_title = k_cult_of_ulric
 				has_landed_title = k_reikland
 				has_landed_title = k_averland
@@ -5317,10 +5313,6 @@ hre_feudal_elective = {
 					FROM = { religion_group = dwarf_gods_group }
 				}
 				AND = {
-					trait = sympathy_halfling_gods_group
-					FROM = { religion_group = halfling_gods_group }
-				}
-				AND = {
 					trait = sympathy_oriental_gods_group
 					FROM = { religion_group = oriental_gods_group }
 				}
@@ -5335,7 +5327,6 @@ hre_feudal_elective = {
 			localisation_key = tooltip_feudal_elector_vote_heretic
 			NOT = { has_religion_feature = religion_cosmopolitan }
 			NOT = { has_religion_feature = religion_dogmatic }
-			#NOT = { religion_group = indian_group }
 			FROM = { is_heresy_of = ROOT }
 		}
 		additive_modifier = { #Dogmatics will hardly ever pick an infidel.
@@ -5668,7 +5659,7 @@ hre_feudal_elective = {
 			localisation_key = tooltip_feudal_elector_vote_drunkard
 			NOT = { character = FROM } #Do not judge yourself.
 			NOR = {
-				religion_group = halfling_gods_group
+				culture = mootlander
 				religion_group = ormazd_gods_group
 			}
 			FROM = {
@@ -6443,7 +6434,6 @@ hre_feudal_elective = {
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
-				religion_group = halfling_gods_group
 			}
 			NOT = { trait = gluttonous }
 			FROM = {
@@ -6457,7 +6447,7 @@ hre_feudal_elective = {
 			OR = {
 				trait = gluttonous
 				religion = norscan_gods
-				religion = ulrican
+				trait = patron_ulric
 			}
 			NOT = { trait = temperate }
 			FROM = {
@@ -6471,7 +6461,6 @@ hre_feudal_elective = {
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
-				religion_group = halfling_gods_group
 			}
 			NOT = { trait = greedy }
 			FROM = {
@@ -6554,7 +6543,6 @@ hre_feudal_elective = {
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
-				religion_group = halfling_gods_group
 			}
 			NOR = {
 				trait = proud
@@ -6597,7 +6585,6 @@ hre_feudal_elective = {
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
-				religion_group = halfling_gods_group
 			}
 			OR = {
 				trait = arbitrary #No need for consistency
@@ -6617,7 +6604,7 @@ hre_feudal_elective = {
 			OR = {
 				AND = {
 					religion = norscan_gods
-					religion_group = halfling_gods_group
+					culture = mootlander
 				}
 				trait = gluttonous
 				trait = hedonist
@@ -6630,7 +6617,7 @@ hre_feudal_elective = {
 			value = -15
 			localisation_key = tooltip_feudal_elector_vote_gluttonous_negative
 			NOT = { character = FROM } #Do not judge yourself.
-			NOT = { religion_group = halfling_gods_group }
+			NOT = { culture = mootlander }
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
@@ -6665,7 +6652,6 @@ hre_feudal_elective = {
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
-				religion_group = halfling_gods_group
 			}
 			OR = {
 				trait = arbitrary #No need for consistency
@@ -6743,7 +6729,6 @@ hre_feudal_elective = {
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
-				religion_group = halfling_gods_group
 			}
 			OR = {
 				trait = arbitrary #No need for consistency
@@ -6774,7 +6759,6 @@ hre_feudal_elective = {
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
-				religion_group = halfling_gods_group
 			}
 			OR = {
 				trait = arbitrary #No need for consistency
@@ -6840,7 +6824,7 @@ hre_feudal_elective = {
 			localisation_key = tooltip_feudal_elector_vote_content_positive
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = {
-				religion_group = halfling_gods_group
+				culture = mootlander
 				pacifist = yes
 			}
 			FROM = {
@@ -7168,7 +7152,7 @@ hre_feudal_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			this_is_warrior_culture_trigger = no
 			NOT = {
-				religion = ulrican
+				trait = patron_ulric
 			}
 			FROM = {
 				trait = blinded
@@ -7180,7 +7164,7 @@ hre_feudal_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			this_is_warrior_culture_trigger = yes
 			NOT = {
-				religion = ulrican
+				trait = patron_ulric
 			}
 			FROM = {
 				trait = blinded
@@ -7190,7 +7174,7 @@ hre_feudal_elective = {
 			value = -75
 			localisation_key = tooltip_feudal_elector_vote_blinded_negative_byzantine
 			NOT = { character = FROM } #Do not judge yourself.
-			religion = ulrican
+			trait = patron_ulric
 			FROM = {
 				trait = blinded
 			}
@@ -7202,7 +7186,7 @@ hre_feudal_elective = {
 			this_is_warrior_culture_trigger = no
 			NOT = {
 				#culture_group = byzantine
-				religion = ulrican
+				trait = patron_ulric
 			}
 			FROM = {
 				trait = eunuch
@@ -7214,8 +7198,7 @@ hre_feudal_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			this_is_warrior_culture_trigger = yes
 			NOT = {
-				#culture_group = byzantine
-				religion = ulrican
+				trait = patron_ulric
 			}
 			FROM = {
 				trait = eunuch
@@ -7226,8 +7209,7 @@ hre_feudal_elective = {
 			localisation_key = tooltip_feudal_elector_vote_eunuch_negative_byzantine
 			NOT = { character = FROM } #Do not judge yourself.
 			#OR = {
-				#culture_group = byzantine
-				religion = ulrican
+				trait = patron_ulric
 			#}
 			FROM = {
 				trait = eunuch
@@ -7479,10 +7461,7 @@ hre_feudal_elective = {
 			value = -10
 			localisation_key = tooltip_feudal_elector_vote_lefthanded_negative
 			NOT = { character = FROM } #Do not judge yourself.
-			OR = {
-				religion_group = old_world_group
-				religion_group = halfling_gods_group
-			}
+			religion_group = old_world_group
 			FROM = {
 				trait = lefthanded
 			}
@@ -7491,7 +7470,7 @@ hre_feudal_elective = {
 			value = -10
 			localisation_key = tooltip_feudal_elector_vote_shape_negative
 			NOT = { character = FROM } #Do not judge yourself.
-			NOT = { religion_group = halfling_gods_group }
+			NOT = { culture = mootlanderp }
 			this_is_warrior_culture_trigger = yes
 			FROM = {
 				OR = {
@@ -7504,10 +7483,7 @@ hre_feudal_elective = {
 			value = 5
 			localisation_key = tooltip_feudal_elector_vote_baptized_by_bishop
 			NOT = { character = FROM } #Do not judge yourself.
-			OR = {
-				religion_group = old_world_group
-				religion_group = halfling_gods_group
-			}
+			religion_group = old_world_group
 			FROM = {
 				trait = baptized_by_bishop
 			}
@@ -7516,10 +7492,7 @@ hre_feudal_elective = {
 			value = 10
 			localisation_key = tooltip_feudal_elector_vote_baptized_by_pope
 			NOT = { character = FROM } #Do not judge yourself.
-			OR = {
-				religion_group = old_world_group
-				religion_group = halfling_gods_group
-			}
+			religion_group = old_world_group
 			religion = FROM
 			FROM = {
 				trait = baptized_by_pope
@@ -8453,10 +8426,6 @@ bretonnia_feudal_elective = {
 					FROM = { religion_group = dwarf_gods_group }
 				}
 				AND = {
-					trait = sympathy_halfling_gods_group
-					FROM = { religion_group = halfling_gods_group }
-				}
-				AND = {
 					trait = sympathy_oriental_gods_group
 					FROM = { religion_group = oriental_gods_group }
 				}
@@ -8804,7 +8773,7 @@ bretonnia_feudal_elective = {
 			localisation_key = tooltip_feudal_elector_vote_drunkard
 			NOT = { character = FROM } #Do not judge yourself.
 			NOR = {
-				religion_group = halfling_gods_group
+				culture = mootlander
 				religion_group = ormazd_gods_group
 			}
 			FROM = {
@@ -9579,7 +9548,6 @@ bretonnia_feudal_elective = {
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
-				religion_group = halfling_gods_group
 			}
 			NOT = { trait = gluttonous }
 			FROM = {
@@ -9593,7 +9561,7 @@ bretonnia_feudal_elective = {
 			OR = {
 				trait = gluttonous
 				religion = norscan_gods
-				religion = ulrican
+				trait = patron_ulric
 			}
 			NOT = { trait = temperate }
 			FROM = {
@@ -9607,7 +9575,6 @@ bretonnia_feudal_elective = {
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
-				religion_group = halfling_gods_group
 			}
 			NOT = { trait = greedy }
 			FROM = {
@@ -9690,7 +9657,6 @@ bretonnia_feudal_elective = {
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
-				religion_group = halfling_gods_group
 			}
 			NOR = {
 				trait = proud
@@ -9733,7 +9699,6 @@ bretonnia_feudal_elective = {
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
-				religion_group = halfling_gods_group
 			}
 			OR = {
 				trait = arbitrary #No need for consistency
@@ -9753,7 +9718,7 @@ bretonnia_feudal_elective = {
 			OR = {
 				AND = {
 					religion = norscan_gods
-					religion_group = halfling_gods_group
+					culture = mootlander
 				}
 				trait = gluttonous
 				trait = hedonist
@@ -9766,7 +9731,7 @@ bretonnia_feudal_elective = {
 			value = -15
 			localisation_key = tooltip_feudal_elector_vote_gluttonous_negative
 			NOT = { character = FROM } #Do not judge yourself.
-			NOT = { religion_group = halfling_gods_group }
+			NOT = { culture = mootlander }
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
@@ -9801,7 +9766,6 @@ bretonnia_feudal_elective = {
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
-				religion_group = halfling_gods_group
 			}
 			OR = {
 				trait = arbitrary #No need for consistency
@@ -9879,7 +9843,6 @@ bretonnia_feudal_elective = {
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
-				religion_group = halfling_gods_group
 			}
 			OR = {
 				trait = arbitrary #No need for consistency
@@ -9910,7 +9873,6 @@ bretonnia_feudal_elective = {
 			OR = {
 				religion_group = old_world_group
 				religion_group = ormazd_gods_group
-				religion_group = halfling_gods_group
 			}
 			OR = {
 				trait = arbitrary #No need for consistency
@@ -9976,7 +9938,7 @@ bretonnia_feudal_elective = {
 			localisation_key = tooltip_feudal_elector_vote_content_positive
 			NOT = { character = FROM } #Do not judge yourself.
 			OR = {
-				religion_group = halfling_gods_group
+				culture = mootlander
 				pacifist = yes
 			}
 			FROM = {
@@ -10304,7 +10266,7 @@ bretonnia_feudal_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			this_is_warrior_culture_trigger = no
 			NOT = {
-				religion = ulrican
+				trait = patron_ulric
 			}
 			FROM = {
 				trait = blinded
@@ -10316,7 +10278,7 @@ bretonnia_feudal_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			this_is_warrior_culture_trigger = yes
 			NOT = {
-				religion = ulrican
+				trait = patron_ulric
 			}
 			FROM = {
 				trait = blinded
@@ -10326,7 +10288,7 @@ bretonnia_feudal_elective = {
 			value = -75
 			localisation_key = tooltip_feudal_elector_vote_blinded_negative_byzantine
 			NOT = { character = FROM } #Do not judge yourself.
-			religion = ulrican
+			trait = patron_ulric
 			FROM = {
 				trait = blinded
 			}
@@ -10338,7 +10300,7 @@ bretonnia_feudal_elective = {
 			this_is_warrior_culture_trigger = no
 			NOT = {
 				#culture_group = byzantine
-				religion = ulrican
+				trait = patron_ulric
 			}
 			FROM = {
 				trait = eunuch
@@ -10351,7 +10313,7 @@ bretonnia_feudal_elective = {
 			this_is_warrior_culture_trigger = yes
 			NOT = {
 				#culture_group = byzantine
-				religion = ulrican
+				trait = patron_ulric
 			}
 			FROM = {
 				trait = eunuch
@@ -10363,7 +10325,7 @@ bretonnia_feudal_elective = {
 			NOT = { character = FROM } #Do not judge yourself.
 			#OR = {
 				#culture_group = byzantine
-				religion = ulrican
+				trait = patron_ulric
 			#}
 			FROM = {
 				trait = eunuch
@@ -10615,10 +10577,7 @@ bretonnia_feudal_elective = {
 			value = -10
 			localisation_key = tooltip_feudal_elector_vote_lefthanded_negative
 			NOT = { character = FROM } #Do not judge yourself.
-			OR = {
-				religion_group = old_world_group
-				religion_group = halfling_gods_group
-			}
+			religion_group = old_world_group
 			FROM = {
 				trait = lefthanded
 			}
@@ -10627,7 +10586,7 @@ bretonnia_feudal_elective = {
 			value = -10
 			localisation_key = tooltip_feudal_elector_vote_shape_negative
 			NOT = { character = FROM } #Do not judge yourself.
-			NOT = { religion_group = halfling_gods_group }
+			NOT = { culture = mootlander }
 			this_is_warrior_culture_trigger = yes
 			FROM = {
 				OR = {
@@ -10640,10 +10599,7 @@ bretonnia_feudal_elective = {
 			value = 5
 			localisation_key = tooltip_feudal_elector_vote_baptized_by_bishop
 			NOT = { character = FROM } #Do not judge yourself.
-			OR = {
-				religion_group = old_world_group
-				religion_group = halfling_gods_group
-			}
+			religion_group = old_world_group
 			FROM = {
 				trait = baptized_by_bishop
 			}
@@ -10652,10 +10608,7 @@ bretonnia_feudal_elective = {
 			value = 10
 			localisation_key = tooltip_feudal_elector_vote_baptized_by_pope
 			NOT = { character = FROM } #Do not judge yourself.
-			OR = {
-				religion_group = old_world_group
-				religion_group = halfling_gods_group
-			}
+			religion_group = old_world_group
 			religion = FROM
 			FROM = {
 				trait = baptized_by_pope

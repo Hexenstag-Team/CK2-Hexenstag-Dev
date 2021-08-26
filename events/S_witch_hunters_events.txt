@@ -649,7 +649,7 @@ character_event = {
 	max_age = 45
 	only_capable = yes
 	prisoner = no
-	religion = sigmarite
+	religion = imperial_pantheon
 
 	trigger = {
 		NOT = { trait = witch_hunter }
@@ -866,7 +866,7 @@ character_event = {
 					add_trait = witch_hunter
 					join_society=sigmar_witch_hunters
 					culture = witchhunter_culture
-					religion = sigmarite
+					religion = imperial_pantheon
 					any_spouse = { remove_spouse = PREV }
 					if = {
 						limit = { trait = in_hiding }
@@ -904,105 +904,6 @@ character_event = {
 	}
 }
 
-# A ruler asks for a loan.
-letter_event = {
-	id = swhunters.5
-	desc = EVTDESCswhunters5
-	#picture = GFX_evt_witch_hunters
-	border = GFX_event_letter_frame_religion
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAswhunters5
-		trigger = { wealth = 500 }
-		wealth = -500
-		FROM = { letter_event = { id = swhunters.68 } }
-		ai_chance = {
-			factor = 70
-			modifier = {
-				factor = 1.75
-				trait = trusting
-			}
-		}
-	}
-	option = {
-		name = EVTOPTBswhunters5
-		FROM = { letter_event = { id = swhunters.69 } }
-		FROM = { opinion = { who = ROOT modifier = opinion_refused_loan } }
-		ai_chance = {
-			factor = 30
-			modifier = {
-				factor = 1.75
-				trait = paranoid
-			}
-		}
-	}
-}
-
-# Notification event when borrowing money from the Witch Hunters
-letter_event = {
-	id = swhunters.68
-	desc = EVTDESCswhunters_51
-	border = GFX_event_letter_frame_religion
-
-	is_triggered_only = yes
-
-	option = {
-		name = EXCELLENT
-		wealth = 500
-		add_character_modifier = {
-			name = borrowed_from_k_witch_hunters_order
-			duration = -1
-			inherit = yes
-		}
-
-	}
-}
-# Notification the loan was refused.
-letter_event = {
-	id = swhunters.69
-	desc = EVTDESCswhunters_69
-	border = GFX_event_letter_frame_religion
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAswhunters_69
-	}
-}
-
-#Received donation
-character_event = {
-	id = swhunters.6
-	desc = EVTDESCswhunters6
-	notification = yes
-
-	is_triggered_only = yes
-
-	immediate = {
-		wealth = 500
-		opinion = { who = FROM modifier = opinion_generous_donation }
-		FROM = { letter_event = { id = swhunters.60001 } }
-	}
-	option = {
-	}
-}
-
-# Notification Witch Hunters received payment
-letter_event = {
-	id = swhunters.60001
-	desc = EVTDESCswhunters60001
-	border = GFX_event_letter_frame_religion
-
-	is_triggered_only = yes
-
-	option = {
-		name = EXCELLENT
-	}
-}
-
-
 # Ping event when expelling Witch Hunters from a Realm
 character_event = {
 	id = swhunters.7
@@ -1034,36 +935,20 @@ character_event = {
 		FROM = { letter_event = { id = swhunters.71 } }
 
 		opinion = { who = FROM modifier = opinion_expelled_from_realm }
-	}
-}
-
-# Answer from the Witch Hunters Order
-letter_event = {
-	id = swhunters.71
-	desc = EVTDESCswhunters_71
-	border = GFX_event_letter_frame_religion
-
-	is_triggered_only = yes
-
-	immediate = {
-		remove_character_modifier = donated_to_holy_order
-	}
-
-	option = {
-		name = EVTOPTAswhunters_71
-	}
-}
-
-# Notification event when the Order has been expelled from a province
-letter_event = {
-	id = swhunters.72
-	desc = EVTDESCswhunters_72
-	border = GFX_event_letter_frame_religion
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAswhunters_72
+		
+		unsafe_destroy_landed_title = k_witch_hunters_order
+		unsafe_destroy_landed_title = d_witch_hunter_seat_1
+		unsafe_destroy_landed_title = d_witch_hunter_seat_2
+		unsafe_destroy_landed_title = d_witch_hunter_seat_3
+		unsafe_destroy_landed_title = d_witch_hunter_seat_4
+		unsafe_destroy_landed_title = d_witch_hunter_seat_5
+		unsafe_destroy_landed_title = d_witch_hunter_seat_6
+		unsafe_destroy_landed_title = d_witch_hunter_seat_7
+		unsafe_destroy_landed_title = d_witch_hunter_seat_8
+		unsafe_destroy_landed_title = d_witch_hunter_seat_9
+		unsafe_destroy_landed_title = d_witch_hunter_seat_10
+		unsafe_destroy_landed_title = d_witch_hunter_seat_11
+		unsafe_destroy_landed_title = d_witch_hunter_seat_12
 	}
 }
 
@@ -1121,12 +1006,8 @@ character_event = {
 
 	trigger = {
 		OR = {
-			religion = sigmarite
+			religion = imperial_pantheon
 			religion = myrmidian
-			religion = ulrican
-			religion = taalite
-			religion = shallyan
-			religion = manannite
 		}
 		is_heretic = no
 		has_character_modifier = borrowed_from_k_witch_hunters_order
@@ -1260,7 +1141,7 @@ letter_event = {
 					}
 					add_trait = witch_hunter
 					culture = witchhunter_culture
-					religion = sigmarite
+					religion = imperial_pantheon
 					any_spouse = { remove_spouse = PREV }
 					if = {
 						limit = { trait = in_hiding }
@@ -1316,12 +1197,8 @@ character_event = {
 
 	trigger = {
 		OR = {
-			religion = sigmarite
+			religion = imperial_pantheon
 			religion = myrmidian
-			religion = ulrican
-			religion = taalite
-			religion = shallyan
-			religion = manannite
 		}
 		is_heretic = no
 
@@ -1467,12 +1344,10 @@ character_event = {
 	religion_group = old_world_group
 
 	trigger = {
-		OR = { religion = sigmarite
+		OR = {
+			religion = imperial_pantheon
 			religion = myrmidian
-			religion = ulrican
-			religion = taalite
-			religion = shallyan
-			religion = manannite }
+		}
 		is_heretic = no
 
 		k_witch_hunters_order = {
@@ -1658,8 +1533,9 @@ letter_event = {
 			modifier = { factor = 1.25
 				trait = shy
 			}
-			modifier = { factor = 1.5
-				religion = sigmarite
+			modifier = {
+				factor = 1.5
+				religion = imperial_pantheon
 			}
 			modifier = { factor = 1.5
 				religion_group = old_world_group
@@ -1751,11 +1627,15 @@ letter_event = {
 	option = {
 		name = EVTOPTCswhunters21
 		increase_visibility_minor_effect = yes
-		if = { limit = { religion = sigmarite }
+		if = {
+			limit = {
+				religion = imperial_pantheon
+			}
 			piety = -1000
 		}
-		if = { limit = {
-				NOT = { religion = sigmarite }
+		if = {
+			limit = {
+				NOT = { religion = imperial_pantheon }
 				religion_group = old_world_group
 			}
 			piety = -500
@@ -1912,8 +1792,9 @@ letter_event = {
 			modifier = { factor = 1.25
 				trait = shy
 			}
-			modifier = { factor = 1.5
-				religion = sigmarite
+			modifier = {
+				factor = 1.5
+				religion = imperial_pantheon
 			}
 			modifier = { factor = 1.5
 				religion_group = old_world_group
@@ -1989,9 +1870,16 @@ letter_event = {
 	option = {
 		name = EVTOPTCswhunters23
 				increase_visibility_minor_effect = yes
-				if = { limit = { religion = sigmarite }
+				if = {
+					limit = {
+						religion = imperial_pantheon
+					}
 					piety = -1000 }
-				if = { limit = { NOT = { religion = sigmarite }
+				if = {
+					limit = {
+						NOT = {
+							religion = imperial_pantheon
+						}
 						religion_group = old_world_group }
 					piety = -500 }
 				if = { limit = { NOT = { religion_group = old_world_group }
@@ -2168,7 +2056,7 @@ letter_event = {
 			}
 			modifier = {
 				factor = 0.5
-				FROM = { NOT = { religion = sigmarite } }
+				FROM = { NOT = { religion = imperial_pantheon } }
 			}
 			modifier = {
 				factor = 0.15
@@ -2361,7 +2249,7 @@ letter_event = {
 					trait = shy
 			}
 			modifier = { factor = 1.5
-				religion = sigmarite
+				religion = imperial_pantheon
 			}
 			modifier = { factor = 1.5
 				religion_group = old_world_group
@@ -2439,9 +2327,9 @@ letter_event = {
 		if={limit={religion_group=old_world_group}
 			increase_visibility_minor_effect = yes
 		}
-		if = { limit = { religion = sigmarite }
+		if = { limit = { religion = imperial_pantheon }
 			piety = -500 }
-		if = { limit = { NOT = { religion = sigmarite }
+		if = { limit = { NOT = { religion = imperial_pantheon }
 				religion_group = old_world_group }
 			piety = -250 }
 		if = { limit = { NOT = { religion_group = old_world_group }
@@ -2459,7 +2347,7 @@ letter_event = {
 				religion_group = chaos_gods_group
 			}
 			modifier = { factor = 0.35
-				religion = sigmarite
+				religion = imperial_pantheon
 			}
 			modifier = { factor = 1.35
 				trait = schemer

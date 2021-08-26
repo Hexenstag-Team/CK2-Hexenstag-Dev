@@ -26,11 +26,11 @@ old_world_group = {
 
 	male_names = {
 		Mannslieb Seiger Sigfried Sieghard Siegschild Sigismund Sigmarsen Sigmund Sighast Sighelden Sigslieb Talbert Talecht Ulrich Wolf Wolfgang Wolfram
-			}
+	}
 
 	female_names = {
 		Sigismunda Signe Sigourney Sigrid Ulrica Vera Verena
-			}
+	}
 	
 	imperial_pantheon = {
 		graphical_culture = westerngfx
@@ -41,13 +41,13 @@ old_world_group = {
 		color = { 0.7 0.7 0.7 }
 
 		crusade_name = CRUSADE
-		scripture_name = THE_DEEDS_OF_SIGMAR
+		scripture_name = THE_DEEDS_OF_SIGMAR	#Fine something more else
 		priest_title = ABBOT
 
 		high_god_name = GOD_SIGMAR
 
 		god_names = {
-			GOD_SIGMAR GOD_LORD_SIGMAR
+			GOD_SIGMAR GOD_TAAL GOD_RHYA GOD_MANANN GOD_ULRIC GOD_MORR GOD_VERENA GOD_MYRMIDIA GOD_SHALLYA GOD_RANALD
 		}
 
 		evil_god_names = {
@@ -56,8 +56,8 @@ old_world_group = {
 
 		priests_can_marry = no
 		allow_rivermovement = no
-		female_temple_holders = no
-		investiture = yes
+		female_temple_holders = yes
+		investiture = no
 		can_excommunicate = yes
 		can_grant_divorce = yes
 		can_grant_claim = yes
@@ -66,66 +66,10 @@ old_world_group = {
 		intermarry = myrmidian
 		intermarry = grail
 		intermarry = false_grail
-		intermarry = ulrican
-		intermarry = taalite
 		intermarry = kislev_gods
 		intermarry = northern_gods
-		intermarry = shallyan
 		intermarry = old_faith
-		intermarry = manannite
 		intermarry = stromfels
-		intermarry = morrian
-
-		religious_clothing_head = 22
-		religious_clothing_priest = 12
-
-		dynamic_cult = no
-		secret_religion = no
-	}
-	
-	sigmarite = {
-		graphical_culture = westerngfx
-
-		icon = 5
-		heresy_icon = 39
-
-		color = { 0.8 0.3 0.1 }
-
-		crusade_name = CRUSADE
-		scripture_name = THE_DEEDS_OF_SIGMAR
-		priest_title = ABBOT
-
-		high_god_name = GOD_SIGMAR
-
-		god_names = {
-			GOD_SIGMAR GOD_LORD_SIGMAR
-		}
-
-		evil_god_names = {
-			GOD_THE_DARK_GODS
-		}
-
-		priests_can_marry = no
-		allow_rivermovement = no
-		female_temple_holders = no
-		investiture = yes
-		can_excommunicate = yes
-		can_grant_divorce = yes
-		can_grant_claim = yes
-		priests_can_inherit = no
-
-		intermarry = myrmidian
-		intermarry = grail
-		intermarry = false_grail
-		intermarry = ulrican
-		intermarry = taalite
-		intermarry = kislev_gods
-		intermarry = northern_gods
-		intermarry = shallyan
-		intermarry = old_faith
-		intermarry = manannite
-		intermarry = stromfels
-		intermarry = morrian
 
 		religious_clothing_head = 22
 		religious_clothing_priest = 12
@@ -167,18 +111,13 @@ old_world_group = {
 		priests_can_inherit = no
 		feminist = yes
 
-		intermarry = sigmarite
+		intermarry = imperial_pantheon
 		intermarry = grail
 		intermarry = false_grail
-		intermarry = ulrican
-		intermarry = taalite
 		intermarry = kislev_gods
 		intermarry = northern_gods
-		intermarry = shallyan
 		intermarry = old_faith
-		intermarry = manannite
 		intermarry = stromfels
-		intermarry = morrian
 
 		religious_clothing_head = 23
 		religious_clothing_priest = 19
@@ -225,18 +164,14 @@ old_world_group = {
 		female_temple_holders = yes
 		can_call_crusade = yes
 
+		intermarry = imperial_pantheon
 		intermarry = myrmidian
-		intermarry = sigmarite
 		intermarry = false_grail
-		intermarry = ulrican
-		intermarry = taalite
 		intermarry = kislev_gods
 		intermarry = northern_gods
-		intermarry = shallyan
 		intermarry = old_faith
-		intermarry = manannite
+
 		intermarry = stromfels
-		intermarry = morrian
 
 		religious_clothing_head = 24
 		religious_clothing_priest = 13
@@ -285,114 +220,16 @@ old_world_group = {
 		female_temple_holders = yes
 		can_call_crusade = yes
 
+		intermarry = imperial_pantheon
 		intermarry = myrmidian
 		intermarry = grail
-		intermarry = sigmarite
-		intermarry = ulrican
-		intermarry = taalite
 		intermarry = kislev_gods
 		intermarry = northern_gods
-		intermarry = shallyan
 		intermarry = old_faith
-		intermarry = manannite
 		intermarry = stromfels
-		intermarry = morrian
 
 		religious_clothing_head = 24
 		religious_clothing_priest = 13
-
-		dynamic_cult = no
-		secret_religion = no
-	}
-
-	ulrican = {
-		graphical_culture = westerngfx
-
-		icon = 7
-		heresy_icon = 40
-		color = { 0.1 0.1 0.6 }
-
-		high_god_name = GOD_ULRIC
-
-		crusade_name = CRUSADE
-		scripture_name = THE_LIBER_LUPUS
-		priest_title = WOLF_PRIEST
-
-		god_names = {
-			GOD_ULRIC
-		}
-
-		evil_god_names = {
-			GOD_THE_DARK_GODS
-		}
-
-		priests_can_marry = no
-		priests_can_inherit = no
-		allow_rivermovement = no
-		female_temple_holders = no
-
-		intermarry = myrmidian
-		intermarry = grail
-		intermarry = false_grail
-		intermarry = sigmarite
-		intermarry = taalite
-		intermarry = kislev_gods
-		intermarry = northern_gods
-		intermarry = shallyan
-		intermarry = old_faith
-		intermarry = manannite
-		intermarry = stromfels
-		intermarry = morrian
-
-		religious_clothing_head = 11
-		religious_clothing_priest = 11
-
-		dynamic_cult = no
-		secret_religion = no
-	}
-
-	taalite = {
-		graphical_culture = westerngfx
-
-		icon = 28
-		heresy_icon = 41
-		color = { 0.3 0.7 0.3 }
-
-		crusade_name = CRUSADE
-		scripture_name = THE_BOOK_OF_GREEN
-		priest_title = PRIEST
-
-		high_god_name = GOD_TAAL
-
-		god_names = {
-			GOD_TAAL GOD_RHYA
-		}
-
-		evil_god_names = {
-			GOD_THE_DARK_GODS
-		}
-
-		investiture = yes
-		priests_can_marry = yes
-		allow_rivermovement = no
-		female_temple_holders = yes
-		feminist = yes
-
-		intermarry = myrmidian
-		intermarry = grail
-		intermarry = false_grail
-		intermarry = ulrican
-		intermarry = sigmarite
-		intermarry = kislev_gods
-		intermarry = northern_gods
-		intermarry = shallyan
-		intermarry = old_faith
-		intermarry = manannite
-		intermarry = stromfels
-		intermarry = morrian
-
-		religious_clothing_head = 15
-		religious_clothing_priest = 15
 
 		dynamic_cult = no
 		secret_religion = no
@@ -424,18 +261,13 @@ old_world_group = {
 		female_temple_holders = no
 		feminist = yes
 
+		intermarry = imperial_pantheon
 		intermarry = myrmidian
 		intermarry = grail
 		intermarry = false_grail
-		intermarry = ulrican
-		intermarry = taalite
-		intermarry = sigmarite
 		intermarry = northern_gods
-		intermarry = shallyan
 		intermarry = old_faith
-		intermarry = manannite
 		intermarry = stromfels
-		intermarry = morrian
 
 		religious_clothing_head = 21
 		religious_clothing_priest = 21
@@ -496,72 +328,15 @@ old_world_group = {
 		female_temple_holders = yes
 		max_consorts = 3
 
-		intermarry = myrmidian
+		intermarry = imperial_pantheon
 		intermarry = grail
 		intermarry = false_grail
-		intermarry = ulrican
-		intermarry = taalite
 		intermarry = kislev_gods
-		intermarry = sigmarite
-		intermarry = shallyan
 		intermarry = old_faith
-		intermarry = manannite
 		intermarry = stromfels
-		intermarry = morrian
 
 		religious_clothing_head = 6
 		religious_clothing_priest = 6
-
-		dynamic_cult = no
-		secret_religion = no
-	}
-
-	shallyan = {
-		graphical_culture = westerngfx
-
-		icon = 30
-		color = { 0.9 0.9 0.9 }
-
-		crusade_name = CRUSADE
-		scripture_name = THE_BOOK_OF_SUFFERINGS
-		priest_title = HEART_SISTER
-
-		high_god_name = GOD_SHALLYA
-
-		god_names = {
-			GOD_SHALLYA
-		}
-
-		evil_god_names = {
-			GOD_THE_DARK_GODS
-		}
-
-		investiture = yes
-		priests_can_marry = yes
-		allow_rivermovement = no
-		female_temple_holders = yes
-		aggression = 0.5
-		peace_piety_gain = 1.0
-		feminist = yes
-		pacifist = yes
-		can_grant_divorce = yes
-		short_reign_opinion_year_mult = 0
-
-		intermarry = myrmidian
-		intermarry = grail
-		intermarry = false_grail
-		intermarry = ulrican
-		intermarry = taalite
-		intermarry = kislev_gods
-		intermarry = northern_gods
-		intermarry = sigmarite
-		intermarry = old_faith
-		intermarry = manannite
-		intermarry = stromfels
-		intermarry = morrian
-
-		religious_clothing_head = 17
-		religious_clothing_priest = 17
 
 		dynamic_cult = no
 		secret_religion = no
@@ -617,112 +392,12 @@ old_world_group = {
 		feminist = yes
 
 
+		intermarry = imperial_pantheon
 		intermarry = myrmidian
 		intermarry = grail
 		intermarry = false_grail
-		intermarry = ulrican
-		intermarry = taalite
 		intermarry = kislev_gods
 		intermarry = northern_gods
-		intermarry = shallyan
-		intermarry = sigmarite
-		intermarry = manannite
-		intermarry = stromfels
-		intermarry = morrian
-
-		religious_clothing_head = 3
-		religious_clothing_priest = 3
-
-		dynamic_cult = no
-		secret_religion = no
-	}
-
-	manannite = {
-		graphical_culture = westerngfx
-
-		icon = 32
-		color = { 0.3 0.5 0.7 }
-
-		crusade_name = "CRUSADE"
-		scripture_name = LIBER_MANANN
-		priest_title = PRIEST
-
-		high_god_name = GOD_MANANN
-
-		god_names = {
-			GOD_MANANN
-		}
-
-		evil_god_names = {
-			GOD_STROMFELS GOD_THE_DARK_GODS
-		}
-
-		investiture = yes
-		priests_can_marry = yes
-		aggression = 1.0
-		allow_rivermovement = yes
-		female_temple_holders = yes
-
-		intermarry = myrmidian
-		intermarry = grail
-		intermarry = false_grail
-		intermarry = ulrican
-		intermarry = taalite
-		intermarry = kislev_gods
-		intermarry = northern_gods
-		intermarry = shallyan
-		intermarry = old_faith
-		intermarry = sigmarite
-		intermarry = morrian
-
-		religious_clothing_head = 20
-		religious_clothing_priest = 20
-
-		dynamic_cult = no
-		secret_religion = no
-	}
-
-	morrian = {
-		graphical_culture = westerngfx
-
-		icon = 49
-		heresy_icon = 49
-
-		color = { 0.4 0.4 1.0 }
-
-		crusade_name = CRUSADE
-		scripture_name = LIBRO_DEI_MORTI
-		priest_title = AUGUR
-
-		high_god_name = GOD_MORR
-
-		god_names = {
-			GOD_MORR
-		}
-
-		evil_god_names = {
-			GOD_THE_DARK_GODS
-		}
-
-		investiture = yes
-		can_excommunicate = yes
-		can_grant_divorce = yes
-		can_grant_claim = yes
-		priests_can_inherit = no
-		can_retire_to_monastery = yes
-		investiture = yes
-
-		intermarry = sigmarite
-		intermarry = myrmidian
-		intermarry = grail
-		intermarry = false_grail
-		intermarry = ulrican
-		intermarry = taalite
-		intermarry = kislev_gods
-		intermarry = northern_gods
-		intermarry = shallyan
-		intermarry = old_faith
-		intermarry = manannite
 		intermarry = stromfels
 
 		religious_clothing_head = 3
@@ -731,6 +406,7 @@ old_world_group = {
 		dynamic_cult = no
 		secret_religion = no
 	}
+
 }
 stormfels_group={
 	has_coa_on_barony_only = yes
@@ -769,56 +445,15 @@ stormfels_group={
 		allow_rivermovement = yes
 		female_temple_holders = yes
 
+		intermarry = imperial_pantheon
 		intermarry = myrmidian
 		intermarry = grail
 		intermarry = false_grail
-		intermarry = ulrican
-		intermarry = taalite
 		intermarry = kislev_gods
 		intermarry = northern_gods
-		intermarry = shallyan
 		intermarry = old_faith
-		intermarry = sigmarite
 		intermarry = norscan_gods
-		intermarry = morrian
 
-		dynamic_cult = no
-		secret_religion = no
-	}
-}
-halfling_gods_group = {
-	has_coa_on_barony_only = yes
-	graphical_culture = westerngfx
-	playable = yes
-
-	color = { 0.3 0.6 0.3 }
-
-	interface_skin = { halfling_interface }
-
-	halfling_gods = {
-		graphical_culture = westerngfx
-
-		icon = 16
-		color = { 0.3 0.6 0.3 }
-
-		high_god_name = GOD_ESMERELDA
-
-		god_names = {
-			GOD_ESMERELDA GOD_GANGEE GOD_FIDOL GOD_LANDRANI GOD_PRASEEDA GOD_SAMORTHA
-		}
-
-		evil_god_names = {
-			GOD_THE_DARK_GODS
-		}
-
-		crusade_name = "HOLY_WAR"
-		scripture_name = THE_POT
-		priest_title = HEARTH_BROTHER
-
-		priests_can_marry = yes
-		allow_rivermovement = no
-		female_temple_holders = yes
-		feminist = yes
 		dynamic_cult = no
 		secret_religion = no
 	}

@@ -391,32 +391,22 @@ targetted_decisions = {
 				limit = {
 					has_dlc = "Mystics"
 					is_in_society = no
-					OR = {
-						religion = sigmarite
-						AND = {
-							is_heretic = no
-							OR = {
-								religion = ulrican
-								religion = taalite
-								religion = morrian
-							}
-						}
-					}
+					religion = imperial_pantheon
 				}
 				custom_tooltip = { text = tooltip_vows_monk_joins_society }
 				hidden_tooltip = {
-					random_list = {
-						50 = {
-							trigger = { religion = sigmarite }
-							join_society = monastic_order_benedictine
-						}
-						50 = { join_society = monastic_order_dominican }
+					50 = {
+						trigger = { trait = patron_shallya }
+						join_society = cult_of_shallya
 					}
 				}
 			}
 			if = {
 				limit = {
-					any_realm_lord = { is_theocracy = yes religion = ROOT }
+					any_realm_lord = {
+						is_theocracy = yes
+						religion = ROOT
+					}
 				}
 				custom_tooltip = { text = tooltip_vows_monk_goes_to_theocracy }
 				hidden_tooltip = {

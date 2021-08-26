@@ -423,7 +423,7 @@ character_event = {
 	option = {
 		name = "EVTOPTA5023"
 		trigger = {
-			NOT = { religion = shallyan }
+			NOT = { trait = patron_shallya }
 		}
 		prestige = 20
 		clr_character_flag = red_rose
@@ -1054,7 +1054,7 @@ character_event = {
 
 	trigger = {
 		in_command = no
-		NOT = { religion = shallyan }
+		NOT = { trait = patron_shallya }
 		NOT = {
 			lifestyle_traits = 1
 		}
@@ -1358,7 +1358,7 @@ character_event = {
 	prisoner = no
 
 	trigger = {
-		NOT = { religion = shallyan }
+		NOT = { trait = patron_shallya }
 		in_command = no
 		NOT = {
 			has_character_flag = LE_ST

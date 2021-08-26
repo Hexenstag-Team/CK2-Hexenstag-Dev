@@ -148,7 +148,7 @@ has_religion_matching_joined_warrior_society_trigger = {
 			}
 			AND = {
 				OR={
-					religion = ulrican
+					trait = patron_ulric
 					trait=norscan_patron_ulric
 				}
 				society_member_of = warriors_of_ulric
@@ -165,7 +165,7 @@ has_religion_matching_available_warrior_lodge_trigger = {
 	OR = {
 		AND = {
 			OR={
-				religion = ulrican
+				trait = patron_ulric
 				trait=norscan_patron_ulric
 			}
 			warriors_of_ulric = { society_has_members = yes }
@@ -181,7 +181,7 @@ has_religion_matching_warrior_lodge_in_need_of_members_trigger = {
 	OR = {
 		AND = {
 			OR={
-				religion = ulrican
+				trait = patron_ulric
 				trait=norscan_patron_ulric
 			}
 			warriors_of_ulric = { num_of_society_members < 30 }
@@ -204,7 +204,7 @@ has_religion_matching_empty_warrior_lodge_trigger = {
 	OR = {
 		AND = {
 			OR={
-				religion = ulrican
+				trait = patron_ulric
 				trait=norscan_patron_ulric
 			}
 			NOT = { warriors_of_ulric = { society_has_members = yes } }
@@ -263,7 +263,7 @@ has_religion_matching_any_warrior_lodge_trigger = {
 	OR = {
 		religion_openly_norse_or_reformed_trigger = yes
 		OR={
-			religion = ulrican
+			trait = patron_ulric
 			trait=norscan_patron_ulric
 		}
 		religion_openly_tengri_or_reformed_trigger = yes
@@ -281,7 +281,7 @@ has_religion_matching_warrior_lodge_to_revive_trigger = {
 	OR = {
 		AND = {
 			or={
-			religion = ulrican
+				trait = patron_ulric
 			trait=norscan_patron_ulric
 			}
 			event_target:warrior_lodge_to_revive = {
@@ -309,9 +309,9 @@ special_join_warrior_lodge_trigger = {
 						NOT={ religion=norscan_gods }
 						OR = {
 							#You have neighbors, etc, of the correct religion...
-							any_vassal = {religion = ulrican}
-							any_liege = {religion = ulrican}
-							any_neighbor_independent_ruler = { religion = ulrican }
+							any_vassal = {trait = patron_ulric}
+							any_liege = {trait = patron_ulric}
+							any_neighbor_independent_ruler = { trait = patron_ulric }
 						}
 					}
 				}

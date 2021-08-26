@@ -604,10 +604,7 @@ title_court_jester = {
 				tier = emperor
 			}
 		}
-		OR = {
-			religion_group = old_world_group
-			religion_group = halfling_gods_group
-		}
+		religion_group = old_world_group
 	}
 
 	gain_effect = {
@@ -732,7 +729,7 @@ title_master_of_the_hunt = {
 		}
 		NOT = { has_character_flag = guru }
 		is_incapable = no
-		NOT = { religion = shallyan }
+		NOT = { trait = patron_shallya }
 	}
 
 	allowed_to_grant = {
@@ -740,11 +737,8 @@ title_master_of_the_hunt = {
 			is_feudal = yes
 			is_tribal = yes
 		}
-		OR = {
-				religion_group = old_world_group
-				religion_group = halfling_gods_group
-		}
-		NOT = { religion = shallyan }
+		religion_group = old_world_group
+		NOT = { trait = patron_shallya }
 	}
 
 	gain_effect = {
@@ -828,7 +822,6 @@ title_cupbearer = {
 		}
 		OR = {
 			religion_group = old_world_group
-			religion_group = halfling_gods_group
 			religion_group = cadai_group
 		}
 	}
@@ -880,7 +873,6 @@ title_seneschal = {
 		}
 		OR = {
 				religion_group = old_world_group
-				religion_group = halfling_gods_group
 				religion_group = oriental_gods_group
 		}
 	}
@@ -3215,7 +3207,6 @@ title_court_physician = {
 				AND = {
 					OR = {
 						religion = myrmidian
-						religion = shallyan
 						religion = amazon
 					}
 					liege = { religion = ROOT }

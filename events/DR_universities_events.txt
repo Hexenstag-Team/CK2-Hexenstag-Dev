@@ -855,16 +855,14 @@ character_event = {
 		new_character = {
 			add_spouse = FROM
 			if = {
-				limit = { FROM = { location = { region = world_old_world_empire } } }
-				random_list = {
-					50 = { religion = sigmarite }
-					5 = { religion = myrmidian }
-					5 = { religion = shallyan }
-					10 = { religion = ulrican }
-					10 = { religion = taalite }
-					10 = { religion = manannite }
-					5 = { religion = morrian }
+				limit = {
+					FROM = {
+						location = {
+							region = world_old_world_empire
+						}
+					}
 				}
+				religion = imperial_pantheon
 				random_list = {
 					30 = { culture = reiklander }
 					10 = { culture = wissenlander }
@@ -879,9 +877,8 @@ character_event = {
 			if = {
 				limit = { FROM = { location = { region = world_old_world_kislev } } }
 				random_list = {
-					50 = { religion = kislev_gods }
-					30 = { religion = northern_gods }
-					20 = { religion = ulrican }
+					60 = { religion = kislev_gods }
+					40 = { religion = northern_gods }
 				}
 				random_list = {
 					50 = { culture = gospodar }
@@ -891,11 +888,7 @@ character_event = {
 			}
 			if = {
 				limit = { FROM = { location = { region = world_old_world_tilea } } }
-				random_list = {
-					90 = { religion = myrmidian }
-					5 = { religion = taalite }
-					5 = { religion = shallyan }
-				}
+				religion = myrmidian
 				random_list = {
 					30 = { culture = reman }
 					30 = { culture = miraglian }
@@ -907,10 +900,7 @@ character_event = {
 			}
 			if = {
 				limit = { FROM = { location = { region = world_old_world_estalia } } }
-				random_list = {
-					90 = { religion = myrmidian }
-					10 = { religion = shallyan }
-				}
+				religion = myrmidian
 				random_list = {
 					30 = { culture = astur }
 					30 = { culture = tigarrese }
@@ -953,16 +943,14 @@ character_event = {
 		new_character = {
 			add_spouse_matrilineal = FROM
 			if = {
-				limit = { FROM = { location = { region = world_old_world_empire } } }
-				random_list = {
-					50 = { religion = sigmarite }
-					5 = { religion = myrmidian }
-					5 = { religion = shallyan }
-					10 = { religion = ulrican }
-					10 = { religion = taalite }
-					10 = { religion = manannite }
-					5 = { religion = morrian }
+				limit = {
+					FROM = {
+						location = {
+							region = world_old_world_empire
+						}
+					}
 				}
+				religion = imperial_pantheon
 				random_list = {
 					30 = { culture = reiklander }
 					10 = { culture = wissenlander }
@@ -977,9 +965,8 @@ character_event = {
 			if = {
 				limit = { FROM = { location = { region = world_old_world_kislev } } }
 				random_list = {
-					50 = { religion = kislev_gods }
-					30 = { religion = northern_gods }
-					20 = { religion = ulrican }
+					60 = { religion = kislev_gods }
+					40 = { religion = northern_gods }
 				}
 				random_list = {
 					50 = { culture = gospodar }
@@ -989,11 +976,7 @@ character_event = {
 			}
 			if = {
 				limit = { FROM = { location = { region = world_old_world_tilea } } }
-				random_list = {
-					90 = { religion = myrmidian }
-					5 = { religion = taalite }
-					5 = { religion = shallyan }
-				}
+				religion = myrmidian
 				random_list = {
 					30 = { culture = reman }
 					30 = { culture = miraglian }
@@ -1005,10 +988,7 @@ character_event = {
 			}
 			if = {
 				limit = { FROM = { location = { region = world_old_world_estalia } } }
-				random_list = {
-					90 = { religion = myrmidian }
-					10 = { religion = shallyan }
-				}
+				religion = myrmidian
 				random_list = {
 					30 = { culture = astur }
 					30 = { culture = tigarrese }

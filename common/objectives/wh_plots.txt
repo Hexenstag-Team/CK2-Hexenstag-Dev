@@ -380,7 +380,7 @@ plot_hunt_character = {
 				# Purge the unclean
 				trait = witch_hunter
 				trait = vampire_hunter
-				AND = { religion = sigmarite
+				AND = { religion = imperial_pantheon
 					trait = zealous }
 				AND = { religion = grail
 					trait = zealous }
@@ -539,7 +539,7 @@ plot_hunt_character = {
 		modifier = {
 			factor = 0.15
 			FROM = { NOT = { wealth = 250 }
-				NOT = { religion = sigmarite }
+				NOT = { religion = imperial_pantheon }
 				NOT = { trait = witch_hunter }
 				NOT = { trait = vampire_hunter }
 				NOT = { any_courtier = { trait = witch_hunter } } }
@@ -672,7 +672,7 @@ plot_hunt_character = {
 					FROM = { trait = witch_hunter }
 					FROM = { trait = vampire_hunter }
 					FROM = { trait = brave }
-					FROM = { religion = sigmarite }
+					FROM = { religion = imperial_pantheon }
 				}
 			}
 		}

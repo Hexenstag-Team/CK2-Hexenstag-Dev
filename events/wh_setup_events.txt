@@ -363,10 +363,6 @@ character_event = {
 	trigger = {
 		NOT = { has_character_flag = aborted_religion_fix }
 		has_wrong_religion = yes
-		has_game_rule = {
-			name = warhammer_interracial_conv
-			value = off
-		}
 	}
 
 	immediate = {
@@ -504,7 +500,7 @@ character_event = {
 			limit = {
 				culture = mootlander
 			}
-			religion = halfling_gods
+			religion = imperial_pantheon
 		}
 		else_if = {
 			limit = {
@@ -713,109 +709,9 @@ character_event = {
 			}
 			else_if = {
 				limit = {
-					OR = {
-						culture = ostlander
-						culture = middenlander
-						culture = hochlander
-					}
-				}
-				random_list = {
-					85 = {
-						religion = ulrican
-					}
-					10 = {
-						religion = sigmarite
-					}
-					5 = {
-						religion = morrian
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					OR = {
-						culture = talabeclander
-						culture = ostermarker
-					}
-				}
-				random_list = {
-					85 = {
-						religion = taalite
-					}
-					10 = {
-						religion = sigmarite
-					}
-					5 = {
-						religion = morrian
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					culture = westerlander
-				}
-				random_list = {
-					55 = {
-						religion = sigmarite
-					}
-					40 = {
-						religion = manannite
-					}
-					5 = {
-						religion = morrian
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					culture = nordlander
-				}
-				random_list = {
-					55 = {
-						religion = ulrican
-					}
-					30 = {
-						religion = manannite
-					}
-					10 = {
-						religion = sigmarite
-					}
-					5 = {
-						religion = morrian
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					culture = sylvanian
-				}
-				random_list = {
-					40 = {
-						religion = sigmarite
-					}
-					40 = {
-						religion = taalite
-					}
-					20 = {
-						religion = morrian
-					}
-				}
-			}
-			else_if = {
-				limit = {
 					culture_group = imperial_group
-					NOR = {
-						culture = nordlander
-						culture = westerlander
-						culture = talabeclander
-						culture = ostermarker
-						culture = ostlander
-						culture = middenlander
-						culture = hochlander
-						culture = sylvanian
-					}
 				}
-				religion = sigmarite
+				religion = imperial_pantheon
 			}
 			else_if = {
 				limit = {
@@ -824,17 +720,7 @@ character_event = {
 						culture_group = tilean_group
 					}
 				}
-				random_list = {
-					80 = {
-						religion = myrmidian
-					}
-					10 = {
-						religion = shallyan
-					}
-					10 = {
-						religion = morrian
-					}
-				}
+				religion = myrmidian
 			}
 			else_if = {
 				limit = {
@@ -844,13 +730,14 @@ character_event = {
 					95 = {
 						religion = grail
 					}
-					5 = {
-						religion = shallyan
-						modifier = {
-							factor = 10
-							trait = peasant_leader
-						}
-					}
+					#5 = {
+					#	religion = bretonnian_pantheon
+					#	add_trait = patron_shallya
+					#	modifier = {
+					#		factor = 10
+					#		trait = peasant_leader
+					#	}
+					#}
 				}
 			}
 			else_if = {
@@ -1113,48 +1000,13 @@ character_event = {
 		religion = nagashi
 	}
 
-	option = { # sigmarite
-		name = "Sigmarite"
+	option = { # imperial_pantheon
+		name = "Omperial Pantheon"
 		trigger = {
 			has_character_flag = choosing_old_world_gods
 			culture_group = imperial_group
 		}
-		religion = sigmarite
-	}
-	option = { # ulrican
-		name = "Ulrican"
-		trigger = {
-			has_character_flag = choosing_old_world_gods
-			OR = {
-				culture = ostlander
-				culture = middenlander
-				culture = hochlander
-				culture = nordlander
-			}
-		}
-		religion = ulrican
-	}
-	option = { # taalite
-		name = "Taalite"
-		trigger = {
-			has_character_flag = choosing_old_world_gods
-			OR = {
-				culture = talabeclander
-				culture = ostermarker
-			}
-		}
-		religion = taalite
-	}
-	option = { # manannite
-		name = "Manannite"
-		trigger = {
-			has_character_flag = choosing_old_world_gods
-			OR = {
-				culture = nordlander
-				culture = westerlander
-			}
-		}
-		religion = manannite
+		religion = imperial_pantheon
 	}
 
 	option = { # myrmidian
@@ -1167,19 +1019,6 @@ character_event = {
 			}
 		}
 		religion = myrmidian
-	}
-
-	option = { # shallyan
-		name = "Shallyan"
-		trigger = {
-			has_character_flag = choosing_old_world_gods
-			OR = {
-				culture_group = bretonnian_group
-				culture_group = estalian_group
-				culture_group = tilean_group
-			}
-		}
-		religion = shallyan
 	}
 
 	option = { # grail
@@ -1710,13 +1549,13 @@ character_event = {
 
 	is_triggered_only = yes
 
-	religion = sigmarite
+	religion = grail
 
 	trigger = {
 		NOT = {
 			has_global_flag = wh_wonder_names_and_descriptions_set
 		}
-		has_landed_title = k_cult_of_sigmar
+		has_landed_title = k_cult_of_the_lady
 	}
 
 	immediate = {

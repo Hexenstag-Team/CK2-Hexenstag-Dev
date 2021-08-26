@@ -3740,7 +3740,6 @@ character_event = {
 						trait = sympathy_cadai_group
 						trait = sympathy_cytharai_group
 						trait = sympathy_dwarf_gods_group
-						trait = sympathy_halfling_gods_group
 						trait = sympathy_oriental_gods_group
 					}
 				}
@@ -3844,22 +3843,6 @@ character_event = {
 					}
 				}
 				10 = {
-					set_character_flag = add_sympathy_halfling_gods_group
-					modifier = {
-						factor = 0
-						religion_group = halfling_gods_group
-					}
-					modifier = {
-						factor = 0
-						NOR = {
-							educator = { religion_group = halfling_gods_group }
-							location = { religion_group = halfling_gods_group }
-							any_friend = { religion_group = halfling_gods_group }
-							any_sibling = { religion_group = halfling_gods_group }
-						}
-					}
-				}
-				10 = {
 						set_character_flag = add_sympathy_oriental_gods_group
 						modifier = {
 							factor = 0
@@ -3898,7 +3881,6 @@ character_event = {
 						trait = sympathy_cadai_group
 						trait = sympathy_cytharai_group
 						trait = sympathy_dwarf_gods_group
-						trait = sympathy_halfling_gods_group
 						trait = sympathy_oriental_gods_group
 					}
 					OR = {

@@ -336,7 +336,7 @@ character_event = {
 	trigger = {
 		NOT = {	religion_group = ormazd_gods_group	}
 		NOT = {	religion = draconite	}
-		NOT = {	religion = shallyan	}
+		NOT = {	trait = patron_shallya	}
 		trait = stressed
 		learning = 2
 		NOT = {
@@ -1842,7 +1842,7 @@ character_event = {
 		name = EVTOPTC65049	#God cures me!
 		trigger = {
 			NOT = { religion = draconite }
-			NOT = { religion = shallyan }
+			NOT = { trait = patron_shallya }
 		}
 		piety = 5
 		change_learning = 1
@@ -1892,7 +1892,7 @@ character_event = {
 		trigger = {
 			NOT = {	religion_group = ormazd_gods_group	}
 			NOT = {	religion = draconite }
-			NOT = {	religion = shallyan }
+			NOT = {	trait = patron_shallya }
 		}
 		piety = 5
 		health = -0.5

@@ -77,11 +77,8 @@ clergy = {
 		noble
 		peasant
 	}
-
 	caste_tier = 3
-
 	monthly_character_piety = 0.1
-
 	customizer = no
 	random = no
 }
@@ -97,11 +94,8 @@ noble = {
 		clergy
 		peasant
 	}
-
 	caste_tier = 2
-
 	monthly_character_prestige = 0.1
-
 	customizer = no
 	random = no
 }
@@ -117,11 +111,8 @@ peasant = {
 		clergy
 		noble
 	}
-
 	caste_tier = 1
-
 	monthly_character_wealth = 0.03
-
 	customizer = no
 	random = no
 }
@@ -304,7 +295,6 @@ norscan_patron_ulric = {
 	learning = -1
 	religious = yes
 	tolerates_old_world_group = yes
-	ulrican_opinion = 5
 	opposites = {
 		norscan_patron_tchar
 		norscan_patron_kharneth
@@ -411,22 +401,6 @@ sympathy_dwarf_gods_group = {
 	random = no
 }
 
-sympathy_halfling_gods_group = {
-	is_visible = {
-		visible_trait = yes
-	}
-	opposites =  {
-		zealous
-	}
-	potential = {
-		NOT = { religion_group = halfling_gods_group }
-	}
-	tolerates_halfling_gods_group = yes
-	same_opinion_if_same_religion = 10
-	customizer = yes
-	random = no
-}
-
 sympathy_oriental_gods_group = {
 	is_visible = {
 		visible_trait = yes
@@ -459,3 +433,145 @@ vampire_hunter = {
 	martial = 2
 	combat_rating = 10
 }
+
+############################
+###imperial_pantheon Gods###
+############################
+
+patron_sigmar = {
+	is_visible = {
+		visible_trait = yes
+	}
+	potential = {
+		religion = imperial_pantheon
+	}
+	opposites = {
+		###PUT ALL OTHER GODS HERE###
+	}
+	customizer = yes
+}
+
+patron_taal_rhya = {
+	is_visible = {
+		visible_trait = yes
+	}
+	potential = {
+		religion = imperial_pantheon
+	}
+	opposites = {
+		###PUT ALL OTHER GODS HERE###
+	}
+	customizer = yes
+}
+
+patron_ulric = {
+	is_visible = {
+		visible_trait = yes
+	}
+	potential = {
+		religion = imperial_pantheon
+	}
+	opposites = {
+		###PUT ALL OTHER GODS HERE###
+	}
+	customizer = yes
+}
+
+###BOTH IMERIAL AND SOUTHERN PANTHEON###
+
+patron_manann = {
+	is_visible = {
+		visible_trait = yes
+	}
+	potential = {
+		#OR = { Placeholder
+			religion = imperial_pantheon
+			#religion = southern_pantheon
+		#}
+	}
+	opposites = {
+		###PUT ALL OTHER GODS HERE###
+	}
+	customizer = yes
+}
+
+patron_morr = {
+	is_visible = {
+		visible_trait = yes
+	}
+	potential = {
+		#OR = { Placeholder
+			religion = imperial_pantheon
+			#religion = southern_pantheon
+		#}
+	}
+	opposites = {
+		###PUT ALL OTHER GODS HERE###
+	}
+	customizer = yes
+}
+
+patron_verena = {
+	is_visible = {
+		visible_trait = yes
+	}
+	potential = {
+		#OR = { Placeholder
+			religion = imperial_pantheon
+			#religion = southern_pantheon
+		#}
+	}
+	opposites = {
+		###PUT ALL OTHER GODS HERE###
+	}
+	customizer = yes
+}
+
+patron_myrmidia = {
+	is_visible = {
+		visible_trait = yes
+	}
+	potential = {
+		#OR = { Placeholder
+			religion = imperial_pantheon
+			#religion = southern_pantheon
+		#}
+	}
+	opposites = {
+		###PUT ALL OTHER GODS HERE###
+	}
+	customizer = yes
+}
+
+patron_shallya = {
+	is_visible = {
+		visible_trait = yes
+	}
+	potential = {
+		#OR = { Placeholder
+			religion = imperial_pantheon
+			#religion = southern_pantheon
+		#}
+	}
+	opposites = {
+		###PUT ALL OTHER GODS HERE###
+	}
+	customizer = yes
+}
+
+patron_ranald = {
+	is_visible = {
+		visible_trait = yes
+	}
+	potential = {
+		#OR = { Placeholder
+			religion = imperial_pantheon
+			#religion = southern_pantheon
+		#}
+	}
+	opposites = {
+		###PUT ALL OTHER GODS HERE###
+	}
+	customizer = yes
+}
+

@@ -19,32 +19,31 @@ character_event = {
 		prisoner = no
 		higher_tier_than = COUNT
 		trait = creature_human
-		NOT = { any_courtier = { OR = { has_character_modifier = magic_power_1
-						has_character_modifier = magic_power_2
-						has_character_modifier = magic_power_3
-						has_character_modifier = magic_power_4
-						 } } }
-		NOT = { religion = taalite }
-		NOT = { religion = ulrican }
-		NOT = { religion = manannite }
-		NOT = { religion = shallyan }
+		NOT = {
+			any_courtier = {
+				OR = {
+					has_character_modifier = magic_power_1
+					has_character_modifier = magic_power_2
+					has_character_modifier = magic_power_3
+					has_character_modifier = magic_power_4
+				}
+			}
+		}
 		NOT = { religion = myrmidian }
 		NOT = { religion = grail }
-		NOT = { religion = sigmarite }
-		OR = { religion = kislev_gods
+		NOT = { religion = imperial_pantheon }
+		OR = {
+			religion = kislev_gods
 			religion_group = chaos_gods_group
 			religion_group = old_gods_group
-			religion_group = ormazd_gods_group }
+			religion_group = ormazd_gods_group
+		}
 		OR = {
 			independent = yes
-			liege = {  
-				NOT = { religion = taalite }
-				NOT = { religion = ulrican }
-				NOT = { religion = manannite }
-				NOT = { religion = shallyan }
+			liege = {
 				NOT = { religion = myrmidian }
 				NOT = { religion = grail }
-				NOT = { religion = sigmarite } 
+				NOT = { religion = imperial_pantheon } 
 			} 
 		}
 	}
@@ -1463,8 +1462,8 @@ character_event = {
 			}
 		modifier = {
 			factor = 0.75
-			religion = sigmarite
-			}
+			religion = imperial_pantheon
+		}
 		modifier = {
 			factor = 1.25
 			religion_group = old_gods_group

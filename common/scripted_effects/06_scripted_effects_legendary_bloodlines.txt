@@ -826,7 +826,7 @@ send_new_dog_event_effect = {
 
 spawn_old_duelist_effect = {
 	if = {
-		limit = { religion = ulrican }
+		limit = { religion = imperial_pantheon }
 		create_random_soldier = {
 			random_traits = yes
 			dynasty = actually_culture
@@ -839,95 +839,38 @@ spawn_old_duelist_effect = {
 				martial = 12
 			}
 		}
-		new_character={
-			add_character_modifier = {
-				name = knight_of_white_wolf
-				duration = -1
-			}
-		}
-	}
-	else_if = {
-		limit = { religion = sigmarite }
-		create_random_soldier = {
-			random_traits = yes
-			dynasty = actually_culture
-			age = 60
-			attributes = {
-				diplomacy = 6
-				learning = 6
-				stewardship = 6
-				intrigue = 9
-				martial = 12
-			}
-		}
-		new_character={
-			add_character_modifier = {
-				name = knight_of_hammer_of_sigmar
-				duration = -1
-			}
-		}
-	}
-	else_if = {
-		limit = { religion = taalite }
-		create_random_soldier = {
-			random_traits = yes
-			dynasty = actually_culture
-			female = yes
-			age = 60
-			attributes = {
-				diplomacy = 6
-				learning = 6
-				stewardship = 6
-				intrigue = 9
-				martial = 12
-			}
-		}
-		new_character={
-			add_character_modifier = {
-				name = knight_of_panther
-				duration = -1
-			}
-		}
-	}
-	else_if = {
-		limit = { religion = morrian }
-		create_random_soldier = {
-			random_traits = yes
-			dynasty = actually_culture
-			age = 60
-			attributes = {
-				diplomacy = 6
-				learning = 6
-				stewardship = 6
-				intrigue = 9
-				martial = 12
-			}
-		}
-		new_character={
-			add_character_modifier = {
-				name = knight_of_black_rose
-				duration = -1
-			}
-		}
-	}
-	else_if = {
-		limit = { religion = manannite }
-		create_random_soldier = {
-			random_traits = yes
-			dynasty = actually_culture
-			age = 60
-			attributes = {
-				diplomacy = 3
-				learning = 3
-				stewardship = 6
-				intrigue = 9
-				martial = 14
-			}
-		}
-		new_character={
-			add_character_modifier = {
-				name = knight_of_mariner
-				duration = -1
+		new_character = {
+			random_list = {
+				10 = {
+					add_character_modifier = {
+						name = knight_of_white_wolf
+						duration = -1
+					}
+				}
+				10 = {
+					add_character_modifier = {
+						name = knight_of_hammer_of_sigmar
+						duration = -1
+					}
+				}
+				10 = {
+					add_character_modifier = {
+						name = knight_of_panther
+						duration = -1
+					}
+				}
+				10 = {
+					add_character_modifier = {
+						name = knight_of_black_rose
+						duration = -1
+					}
+				}
+				10 = {
+					add_character_modifier = {
+						name = knight_of_mariner
+						duration = -1
+					}
+				}
 			}
 		}
 	}
@@ -1309,7 +1252,7 @@ spawn_old_duelist_effect = {
 }
 spawn_giant_duelist_effect = {
 	if = {
-		limit = { religion = ulrican }
+		limit = { religion = imperial_pantheon }
 		create_random_soldier = {
 			random_traits = yes
 			dynasty = actually_culture
@@ -1322,31 +1265,38 @@ spawn_giant_duelist_effect = {
 				martial = 20
 			}
 		}
-		new_character={
-			add_character_modifier = {
-				name = knight_of_white_wolf
-				duration = -1
-			}
-		}
-	}
-	else_if = {
-		limit = { religion = sigmarite }
-		create_random_soldier = {
-			random_traits = yes
-			dynasty = actually_culture
-			age = 30
-			attributes = {
-				diplomacy = 6
-				learning = 6
-				stewardship = 6
-				intrigue = 9
-				martial = 20
-			}
-		}
-		new_character={
-			add_character_modifier = {
-				name = knight_of_hammer_of_sigmar
-				duration = -1
+		new_character = {
+			random_list = {
+				10 = {
+					add_character_modifier = {
+						name = knight_of_white_wolf
+						duration = -1
+					}
+				}
+				10 = {
+					add_character_modifier = {
+						name = knight_of_hammer_of_sigmar
+						duration = -1
+					}
+				}
+				10 = {
+					add_character_modifier = {
+						name = knight_of_panther
+						duration = -1
+					}
+				}
+				10 = {
+					add_character_modifier = {
+						name = knight_of_black_rose
+						duration = -1
+					}
+				}
+				10 = {
+					add_character_modifier = {
+						name = knight_of_mariner
+						duration = -1
+					}
+				}
 			}
 		}
 	}
@@ -1391,70 +1341,6 @@ spawn_giant_duelist_effect = {
 		}
 		new_character={
 			add_trait=ironbreaker
-		}
-	}
-	else_if = {
-		limit = { religion = taalite }
-		create_random_soldier = {
-			random_traits = yes
-			dynasty = actually_culture
-			age = 34
-			attributes = {
-				diplomacy = 6
-				learning = 6
-				stewardship = 6
-				intrigue = 9
-				martial = 24
-			}
-		}
-		new_character={
-			add_character_modifier = {
-				name = knight_of_panther
-				duration = -1
-			}
-		}
-	}
-	else_if = {
-		limit = { religion = morrian }
-		create_random_soldier = {
-			random_traits = yes
-			dynasty = actually_culture
-			age = 34
-			attributes = {
-				diplomacy = 6
-				learning = 6
-				stewardship = 6
-				intrigue = 9
-				martial = 22
-			}
-		}
-		new_character={
-			add_character_modifier = {
-				name = knight_of_black_rose
-				duration = -1
-			}
-		}
-	}
-	else_if = {
-		limit = { religion = manannite }
-		create_random_soldier = {
-			random_traits = yes
-			dynasty = actually_culture
-			female = yes
-			age = 36
-			attributes = {
-				diplomacy = 3
-				learning = 3
-				stewardship = 6
-				intrigue = 9
-				martial = 20
-			}
-		}
-		new_character={
-			add_character_modifier = {
-				name = knight_of_mariner
-				duration = -1
-			}
 		}
 	}
 	else_if = {

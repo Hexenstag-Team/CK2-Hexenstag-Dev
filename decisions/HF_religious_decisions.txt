@@ -453,7 +453,6 @@ decisions = {
 				trait = sympathy_cadai_group
 				trait = sympathy_cytharai_group
 				trait = sympathy_dwarf_gods_group
-				trait = sympathy_halfling_gods_group
 				trait = sympathy_old_gods_group
 				trait = sympathy_old_world_group
 				trait = sympathy_oriental_gods_group
@@ -871,71 +870,6 @@ decisions = {
 									}
 									any_demesne_province = {
 										religion_group = dwarf_gods_group
-									}
-								}
-							}
-						}
-						100 = {
-							add_trait = sympathy_halfling_gods_group
-
-							modifier = {
-								factor = 0
-								religion_group = halfling_gods_group
-							}
-							modifier = { # Prioritize getting a sympathy trait that is useful
-								factor = 100
-								OR = {
-									any_demesne_province = {
-										religion_group = halfling_gods_group
-									}
-									any_vassal = {
-										religion_group = halfling_gods_group
-									}
-								}
-							}
-							modifier = { # Otherwise try to emulate your liege
-								factor = 5
-								NOR = {
-									any_demesne_province = {
-										NOT = { religion_group = halfling_gods_group }
-									}
-									any_vassal = {
-										NOT = { religion_group = halfling_gods_group }
-									}
-								}
-								any_liege = {
-									OR = {
-										AND = {
-											trait = sympathy_halfling_gods_group
-											religion = ROOT
-										}
-										religion_group = halfling_gods_group
-									}
-								}
-							}
-							modifier = {
-								factor = 0
-								NOR = {
-									any_liege = {
-										OR = {
-											AND = {
-												trait = sympathy_halfling_gods_group
-												religion = ROOT
-											}
-											religion_group = halfling_gods_group
-										}
-									}
-									spouse = {
-										religion_group = halfling_gods_group
-									}
-									any_courtier_or_vassal = {
-										religion_group = halfling_gods_group
-									}
-									any_neighbor_independent_ruler = {
-										religion_group = halfling_gods_group
-									}
-									any_demesne_province = {
-										religion_group = halfling_gods_group
 									}
 								}
 							}

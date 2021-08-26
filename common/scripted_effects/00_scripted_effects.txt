@@ -9288,13 +9288,6 @@ add_sympathy_for_prevs_true_religion_effect = {
 	}
 	if = {
 		limit = {
-			PREV = { true_religion_group_jewish_group_trigger = yes }
-			NOT = { religion_group = halfling_gods_group }
-		}
-		add_trait = sympathy_halfling_gods_group
-	}
-	if = {
-		limit = {
 			PREV = { true_religion_group_indian_group_trigger = yes }
 			NOT = { religion_group = oriental_gods_group }
 		}
@@ -9330,13 +9323,6 @@ add_sympathy_for_prevs_open_religion_effect = {
 			NOT = { religion_group = dwarf_gods_group }
 		}
 		add_trait = sympathy_dwarf_gods_group
-	}
-	if = {
-		limit = {
-			PREV = { religion_group = halfling_gods_group }
-			NOT = { religion_group = halfling_gods_group }
-		}
-		add_trait = sympathy_halfling_gods_group
 	}
 	if = {
 		limit = {
@@ -24319,7 +24305,7 @@ child_of_destiny_journey_resume_effect = {
 pacifists_lose_piety_effect = {
 	if = {
 		limit = {
-			religion = shallyan
+			trait = patron_shallya
 			NOT = {
 				has_alternate_start_parameter = { key = religion_names value = random }
 			}
@@ -27585,36 +27571,6 @@ add_same_commander_trait_as_FROM = {
 		#}
 #	}
 }
-
-landless_pope_effect = {
-	if = {
-		limit = {
-			has_landed_title = k_cult_of_sigmar
-			NOT = {
-				sigmarite = {
-					is_name_randomized = yes
-				}
-			}
-		}
-		if = {
-			limit = {
-				NOR = {
-					any_demesne_province = {
-						always = yes
-					}
-					any_realm_lord = {
-						any_demesne_province = {
-							always = yes
-						}
-					}
-				}
-			}
-			character_event = { id = HFP.40034 }
-			character_event = { id = HFP.40035 }
-		}
-	}
-}
-
 # Used for rains in African regions...
 remove_rain_modifiers_effect = {
 	remove_province_modifier = africa_heavy_rain

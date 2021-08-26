@@ -1122,7 +1122,7 @@ knights_of_old_world = {
 		}
 		modifier = {
 			NOR={
-				religion = ulrican
+				trait = patron_ulric
 				trait = norscan_patron_ulric
 			}
 			factor = 0.9
@@ -1181,12 +1181,11 @@ knights_of_old_world = {
 				religion = false_grail
 				religion = stromfels
 				religion = kislev_gods
-				religion = morrian
 			}
 			NOT = { trait = witch_hunter }
 			OR = {
 				has_landed_title = d_knights_of_the_white_wolf
-				NOT = {religion = ulrican}
+				NOT = {trait = patron_ulric}
 			}
 			is_feudal = yes
 			is_adult = yes
@@ -1254,7 +1253,7 @@ warriors_of_ulric = {
 			prisoner = no
 		}
 		OR = {
-			religion = ulrican
+			religion = imperial_pantheon
 			trait = norscan_patron_ulric
 			AND = {
 				trait = creature_human
@@ -1273,7 +1272,7 @@ warriors_of_ulric = {
 	show_society = {
 		OR = {
 			#You are this religion: will show only this lodge (the other "show_society"'s will make sure)
-			religion = ulrican
+			religion = imperial_pantheon
 			trait = norscan_patron_ulric
 			AND = {
 				trait = creature_human
@@ -1282,10 +1281,10 @@ warriors_of_ulric = {
 				NOT = { religion = norscan_gods }
 				OR = {
 					#You have neighbors, etc, of the correct religion...
-					any_vassal = {religion = ulrican}
-					any_liege = {religion = ulrican}
+					any_vassal = {religion = imperial_pantheon}
+					any_liege = {religion = imperial_pantheon}
 					any_neighbor_independent_ruler = {
-						religion = ulrican
+						religion = imperial_pantheon
 					}
 				}
 				religion_group = old_world_group
@@ -1297,11 +1296,11 @@ warriors_of_ulric = {
 
 	potential = { #if you change religion or become zealous while NOT pagan, you are kicked out
 		OR = {
-			religion = ulrican
+			religion = imperial_pantheon
 			trait = norscan_patron_ulric
 			AND = {
 				NOR = {
-					religion = ulrican
+					religion = imperial_pantheon
 					trait = norscan_patron_ulric
 				}
 				NOT = { trait = zealous }
@@ -1565,7 +1564,7 @@ warriors_of_ulric = {
 		triggered_gain = {
 			trigger={
 			NOR={
-				religion = ulrican
+				trait = patron_ulric
 				trait = norscan_patron_ulric
 			}
 			}
@@ -1605,7 +1604,7 @@ warriors_of_ulric = {
 				province = 274
 			}
 			OR={
-				religion = ulrican
+				trait = patron_ulric
 				trait = norscan_patron_ulric
 			}
 			factor = 1.8
@@ -1776,7 +1775,7 @@ warriors_of_ulric = {
 		}
 		modifier = {
 			NOR={
-				religion = ulrican
+				trait = patron_ulric
 				trait = norscan_patron_ulric
 			}
 			factor = 0.9
@@ -1834,11 +1833,11 @@ warriors_of_ulric = {
 			NOT = { has_landed_title = d_knights_of_the_white_wolf }
 			controls_religion = no
 			OR = {
-				religion = ulrican
+				trait = patron_ulric
 				trait = norscan_patron_ulric
 				AND = {
 					culture = nordlander
-					religion = sigmarite
+					religion = imperial_pantheon
 				}
 			}
 			OR = {
@@ -1849,7 +1848,6 @@ warriors_of_ulric = {
 				}
 				martial = 10
 			}
-			NOT = { religion = morrian }
 			is_adult = yes
 			is_in_society = no
 			is_vampire_trigger = no
@@ -1932,7 +1930,6 @@ cult_of_morr = {
 			combat_rating = 5
 		}
 		decisions = {
-			convert_to_morrian
 		}
 	}
 
@@ -2043,7 +2040,7 @@ cult_of_morr = {
 			factor = 10
 		}
 		modifier = {
-			religion = morrian
+			trait = patron_morr
 			factor = 1.5
 		}
 		modifier = {
@@ -2088,14 +2085,11 @@ cult_of_morr = {
 	    trigger = {
 			ai = yes
 			controls_religion = no
-
-		  	religion = morrian
-
-			NOR = {
-				religion = old_faith
-				religion = kislev_gods
-			}
-
+			#R = { Placeholder
+				religion = imperial_pantheon
+			#	religion = southern_pantheon
+			#}
+		  	trait = patron_morr
 			#To avoid people from far-away places ( ie. pirates in Lustria ) starting as cultists just because
 			OR = {
 				location = { region = world_old_world }
@@ -2758,7 +2752,7 @@ sigmar_witch_hunters = {
 
 	show_society = {
 		OR = {
-			religion = sigmarite
+			religion = imperial_pantheon
 			trait = witch_hunter
 			is_state_witch_hunter_trigger = yes
 		}
@@ -2974,10 +2968,6 @@ sigmar_witch_hunters = {
 		modifier = {
 			primary_title = { title = d_witch_hunter_seat_1 }
 			factor = 4
-		}
-		modifier = {
-			NOT = {religion = sigmarite}
-			factor = 0.8
 		}
 		modifier = {
 			trait = strong
@@ -3437,7 +3427,6 @@ cult_of_slaanesh = {
 				trait = honest
 				trait = just
 				trait = gardener
-				religion = morrian
 				religion = grail
 				religion = false_grail
 				religion = kislev_gods
@@ -3797,7 +3786,6 @@ cult_of_tzeentch = {
 				trait = just
 				trait = honest
 				trait = hedonist
-				religion = morrian
 				religion = grail
 				religion = false_grail
 				religion = kislev_gods
@@ -4128,7 +4116,6 @@ cult_of_khorne = {
 				trait = honest
 				trait = just
 				trait = hedonist
-				religion = morrian
 				religion = grail
 				religion = false_grail
 				religion = kislev_gods
@@ -4549,7 +4536,6 @@ cult_of_nurgle = {
 				trait = just
 				trait = honest
 				TRAIT = hedonist
-				religion = morrian
 				religion = grail
 				religion = false_grail
 				religion = kislev_gods
@@ -4958,7 +4944,6 @@ cult_of_undivided = {
 				trait = just
 				trait = kind
 				trait = honest
-				religion = morrian
 				religion = grail
 				religion = false_grail
 				religion = kislev_gods
@@ -7030,7 +7015,7 @@ warband_gork = {
 		triggered_gain = {
 			trigger={
 			NOR={
-				religion = ulrican
+				trait = patron_ulric
 				trait = norscan_patron_ulric
 			}
 			}
@@ -7070,7 +7055,7 @@ warband_gork = {
 				province = 274
 			}
 			OR={
-				religion = ulrican
+				trait = patron_ulric
 				trait = norscan_patron_ulric
 			}
 			factor = 1.8
@@ -8689,7 +8674,7 @@ warriors_guild_dawi = {
 		}
 		modifier = {
 			NOR={
-				religion = ulrican
+				trait = patron_ulric
 				trait = norscan_patron_ulric
 			}
 			factor = 0.9

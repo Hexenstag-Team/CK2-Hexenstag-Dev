@@ -1,55 +1,12 @@
 holy_order_check_active_trigger = {
 	FROM = {
-		OR = {
-			AND = {
-				religion = sigmarite
-				OR = {
-					is_title_active = d_knights_of_sigmars_blood
-					is_title_active = d_knights_of_the_broken_sword
-					is_title_active = d_knights_of_the_cleansing_flame
-					is_title_active = d_knights_of_the_fiery_heart
-					is_title_active = d_knights_panther
-					is_title_active = d_sisters_of_sigmar
-				}
-			}
-			AND = {
-				religion = ulrican
-				OR = {
-					is_title_active = d_knights_of_the_white_wolf
-					is_title_active = d_order_of_the_howling_wolf
-					is_title_active = d_order_of_the_winter_throne
-					is_title_active = d_ragnarhalt
-				}
-			}
-			AND = {
-				religion = taalite
-				OR = {
-					is_title_active = d_longshanks
-					is_title_active = d_knights_of_taals_fury
-				}
-			}
-			AND = {
-				religion = manannite
-				OR = {
-					is_title_active = d_knights_mariner
-					is_title_active = d_sons_of_manann
-				}
-			}
-			AND = {
-				religion = myrmidian
-				OR = {
-					is_title_active = d_knights_of_the_blazing_sun
-					is_title_active = d_knights_of_the_gold_lion
-					is_title_active = d_knights_of_the_everlasting_light
-					is_title_active = d_order_of_sword_and_scale
-				}
-			}
-			AND = {
-				religion = morrian
-				OR = {
-					is_title_active = d_knights_of_the_black_rose
-					is_title_active = d_order_of_the_raven
-				}
+		AND = {
+			religion = myrmidian
+			OR = {
+				is_title_active = d_knights_of_the_blazing_sun
+				is_title_active = d_knights_of_the_gold_lion
+				is_title_active = d_knights_of_the_everlasting_light
+				is_title_active = d_order_of_sword_and_scale
 			}
 		}
 	}

@@ -3263,7 +3263,7 @@ character_event = {
 		is_inaccessible_trigger = no
 		NOT = { culture_group = daemonic_group }
 		NOT = { trait = s_target_trait }
-		religion = sigmarite
+		religion = imperial_pantheon
 		trait = zealous
 		NOT = {
 			num_of_friends = 2
@@ -4022,7 +4022,7 @@ character_event = {
 		NOT = {
 			num_of_rivals = 5
 		}
-		religion = sigmarite
+		religion = imperial_pantheon
 		host = {
 			any_courtier = {
 				is_inaccessible_trigger = no
@@ -4034,7 +4034,7 @@ character_event = {
 				war = yes
 				at_location = ROOT
 				trait = crusader
-				religion = sigmarite
+				religion = imperial_pantheon
 				NOT = {
 					sibling = ROOT
 				}
@@ -4068,7 +4068,7 @@ character_event = {
 					war = yes
 					at_location = ROOT
 					trait = crusader
-					religion = sigmarite
+					religion = imperial_pantheon
 					NOT = {
 						sibling = ROOT
 					}
@@ -9340,7 +9340,7 @@ character_event = {
 		in_command = no
 		independent = no
 		NOR = {
-			religion = shallyan
+			trait = patron_shallya
 			trait = wounded
 			is_maimed_trigger = yes
 			is_inaccessible_trigger = yes

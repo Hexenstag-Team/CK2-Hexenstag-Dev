@@ -13,12 +13,7 @@ decisions = {
 			higher_real_tier_than = DUKE
 			NOT = { trait = incapable }
 			is_vice_royalty = no
-			OR = {
-				religion = sigmarite
-				religion = ulrican
-				religion = taalite
-				religion = morrian
-			}
+			religion = imperial_pantheon
 			NOT = { trait = crowned_by_priest }
 			NOT = { trait = crowned_by_bishop }
 			NOT = { trait = crowned_by_pope }
@@ -39,14 +34,14 @@ decisions = {
 					trait = excommunicated
 					OR = { 
 						has_law = investiture_law_0
-						NOT = { religion = sigmarite }
+						NOT = { religion = imperial_pantheon }
 					}
 				}
 				OR = {
 					NOT = { trait = excommunicated }
 					OR = {
 						has_law = investiture_law_1
-						NOT = { religion = sigmarite }
+						NOT = { religion = imperial_pantheon }
 					}
 					hidden_tooltip = { lower_real_tier_than = EMPEROR }
 				}
@@ -165,7 +160,7 @@ decisions = {
 					tier = EMPEROR
 					OR = {
 						primary_title = { has_law = investiture_law_1 }
-						NOT = { religion = sigmarite }
+						NOT = { religion = imperial_pantheon }
 					}
 					custom_tooltip = {
 						text = TT_CORONATION_VASSAL_PRIEST

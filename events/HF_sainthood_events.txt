@@ -175,7 +175,7 @@ province_event = {
         		limit = {
         			has_global_flag = only_papal_saints
         			event_target:saint_person = {
-        				religion = sigmarite
+        				religion = imperial_pantheon
         			}
         		}
         		rightful_religious_head_scope = {
@@ -495,7 +495,7 @@ character_event = {
     desc = {
         trigger = {
             event_target:saint_person = {
-	    	NOT = { religion = ulrican }
+	    	NOT = { trait = patron_ulric }
                 religion_group = old_world_group
             }
         }
@@ -504,7 +504,7 @@ character_event = {
     desc = {
         trigger = {
             event_target:saint_person = {
-                religion = ulrican
+                trait = patron_ulric
             }
         }
         text = EVTDESC_HF_40020_B
@@ -522,7 +522,7 @@ character_event = {
 
         if = {
             limit = {
-	    	NOT = { religion = ulrican }
+	    	NOT = { trait = patron_ulric }
                 religion_group = old_world_group
             }
             custom_tooltip = {
@@ -531,7 +531,7 @@ character_event = {
         }
         else_if = {
             limit = {
-                religion = ulrican
+                trait = patron_ulric
             }
             custom_tooltip = {
                 text = pagan_pope_cannonize_choice_TT
@@ -543,7 +543,7 @@ character_event = {
             if = {
                 limit = {
                     event_target:saint_person = {
-		   	 NOT = { religion = ulrican }
+		   	 NOT = { trait = patron_ulric }
                         religion_group = old_world_group
                     }
                 }
@@ -710,7 +710,7 @@ character_event = {
             if = {
                 limit = {
                     event_target:saint_person = {
-                        religion = ulrican
+                        trait = patron_ulric
                         OR = {
                             has_nickname = no
                             has_nickname = nick_the_blessed
@@ -817,7 +817,7 @@ character_event = {
             event_target:saint_person = {
                 if = {
                     limit = {
-		    	NOT = { religion = ulrican }
+		    	NOT = { trait = patron_ulric }
                         religion_group = old_world_group
                     }
                     remove_trait = beatified
@@ -834,7 +834,7 @@ character_event = {
                 }
                 else_if = {
                     limit = {
-                        religion = ulrican
+                        trait = patron_ulric
                     }
                     add_trait = blessed_ancestor
                     set_special_character_title = BLESSED_TITLE
@@ -943,14 +943,7 @@ character_event = {
                     event_target:saint_person = {
                         if = {
                             limit = {
-                                OR = {
-                                    religion = sigmarite
-                                    religion = ulrican
-                                    religion = taalite
-                                    religion = manaanite
-				    religion = morrian
-				    religion = shallyan
-                                }
+                                religion = imperial_pantheon
                             }
                             create_bloodline = {
                                 type = saintly_bloodline_orthodox_01
@@ -2981,7 +2974,7 @@ character_event = {
         log = "Only Papal Beatifications, declared by [Root.GetTitledName]"
     	any_playable_ruler = {
     		limit = {
-    			religion = sigmarite
+    			religion = imperial_pantheon
     		}
     		narrative_event = { id = HF.40060 }
     	}
@@ -3167,7 +3160,7 @@ character_event = {
                 }
     		}
     	}
-    	religion = sigmarite
+    	religion = imperial_pantheon
     	NOT = {
     		trait = excommunicated
     	}
