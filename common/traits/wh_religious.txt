@@ -446,8 +446,10 @@ patron_sigmar = {
 		religion = imperial_pantheon
 	}
 	opposites = {
-		###PUT ALL OTHER GODS HERE###
+		patron_taal_rhya
+		patron_ulric
 	}
+	opposite_opinion = -50
 	customizer = yes
 }
 
@@ -459,8 +461,10 @@ patron_taal_rhya = {
 		religion = imperial_pantheon
 	}
 	opposites = {
-		###PUT ALL OTHER GODS HERE###
+		patron_sigmar
+		patron_ulric
 	}
+	opposite_opinion = -50
 	customizer = yes
 }
 
@@ -472,12 +476,61 @@ patron_ulric = {
 		religion = imperial_pantheon
 	}
 	opposites = {
-		###PUT ALL OTHER GODS HERE###
+		patron_sigmar
+		patron_taal_rhya
 	}
+	opposite_opinion = -50
 	customizer = yes
 }
 
-###BOTH IMERIAL AND SOUTHERN PANTHEON###
+#imperial_pantheon gods after united_empire
+
+patron_sigmar_united = {
+	is_visible = {
+		visible_trait = yes
+	}
+	potential = {
+		religion = imperial_pantheon
+	}
+	opposites = {
+		patron_taal_rhya_united
+		patron_ulric_united
+	}
+	opposite_opinion = -10
+	customizer = yes
+}
+
+patron_taal_rhya_united = {
+	is_visible = {
+		visible_trait = yes
+	}
+	potential = {
+		religion = imperial_pantheon
+	}
+	opposites = {
+		patron_sigmar_united
+		patron_ulric_united
+	}
+	opposite_opinion = -10
+	customizer = yes
+}
+
+patron_ulric_united = {
+	is_visible = {
+		visible_trait = yes
+	}
+	potential = {
+		religion = imperial_pantheon
+	}
+	opposites = {
+		patron_sigmar_united
+		patron_taal_rhya_united
+	}
+	opposite_opinion = -10
+	customizer = yes
+}
+
+###both imperial_pantheon and southern_pantheon gods###
 
 patron_manann = {
 	is_visible = {
@@ -488,9 +541,6 @@ patron_manann = {
 			religion = imperial_pantheon
 			#religion = southern_pantheon
 		#}
-	}
-	opposites = {
-		###PUT ALL OTHER GODS HERE###
 	}
 	customizer = yes
 }
@@ -505,9 +555,6 @@ patron_morr = {
 			#religion = southern_pantheon
 		#}
 	}
-	opposites = {
-		###PUT ALL OTHER GODS HERE###
-	}
 	customizer = yes
 }
 
@@ -520,9 +567,6 @@ patron_verena = {
 			religion = imperial_pantheon
 			#religion = southern_pantheon
 		#}
-	}
-	opposites = {
-		###PUT ALL OTHER GODS HERE###
 	}
 	customizer = yes
 }
@@ -537,9 +581,6 @@ patron_myrmidia = {
 			#religion = southern_pantheon
 		#}
 	}
-	opposites = {
-		###PUT ALL OTHER GODS HERE###
-	}
 	customizer = yes
 }
 
@@ -553,9 +594,6 @@ patron_shallya = {
 			#religion = southern_pantheon
 		#}
 	}
-	opposites = {
-		###PUT ALL OTHER GODS HERE###
-	}
 	customizer = yes
 }
 
@@ -568,9 +606,6 @@ patron_ranald = {
 			religion = imperial_pantheon
 			#religion = southern_pantheon
 		#}
-	}
-	opposites = {
-		###PUT ALL OTHER GODS HERE###
 	}
 	customizer = yes
 }

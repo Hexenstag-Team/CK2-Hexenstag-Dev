@@ -234,34 +234,37 @@ is_immortal_trigger = {
 }
 
 is_incapacitated_trigger = {
-	OR = {
-		prisoner = yes
-		trait = incapable
-		trait = incapacitated
-		trait = studying_magic
-		trait = questing
-		trait = blood_questing
-		trait = monster_hunting
-		trait = on_witch_hunt
-		trait = on_dark_elf_raid
-		trait = searching_underground
-		trait = studying_mechanics
-		trait = on_lahmian_mission
-		trait = lizardman_sleepingslann
-		trait = sold_into_slavery
-		trait = on_grail_quest
-		trait = on_errantry_quest
-		trait = retired_with_harem
-		trait = hard_pregnancy
-		trait = troubled_pregnancy
-		trait = resting
-		trait = staked
-		trait = pregnancy_finishing
-		trait = in_stock
-		trait = on_pilgrimage
-		trait = creature_celdragon
-		trait = hollowed
-		has_virtue_quest = yes
+	custom_tooltip = {
+		text = IS_NOT_INCAPACITATED
+		OR = {
+			prisoner = yes
+			trait = incapable
+			trait = incapacitated
+			trait = studying_magic
+			trait = questing
+			trait = blood_questing
+			trait = monster_hunting
+			trait = on_witch_hunt
+			trait = on_dark_elf_raid
+			trait = searching_underground
+			trait = studying_mechanics
+			trait = on_lahmian_mission
+			trait = lizardman_sleepingslann
+			trait = sold_into_slavery
+			trait = on_grail_quest
+			trait = on_errantry_quest
+			trait = retired_with_harem
+			trait = hard_pregnancy
+			trait = troubled_pregnancy
+			trait = resting
+			trait = staked
+			trait = pregnancy_finishing
+			trait = in_stock
+			trait = on_pilgrimage
+			trait = creature_celdragon
+			trait = hollowed
+			has_virtue_quest = yes
+		}
 	}
 }
 
@@ -1106,4 +1109,23 @@ is_hashut_good_minion_trigger = {
 is_hashut_bad_minion_trigger = {
 	NOT = { has_hashut_good_trait_trigger = yes }
 	has_hashut_bad_trait_trigger = yes
+}
+
+has_patron_trigger = {
+	custom_tooltip = {
+		text = has_patron_trigger_tt
+		OR = {
+			#imperial_pantheon Gods
+			trait = patron_sigmar
+			trait = patron_taal_rhya
+			trait = patron_ulric
+			#both imperial_pantheon and southern_pantheon gods
+			trait = patron_manann
+			trait = patron_morr
+			trait = patron_verena
+			trait = patron_myrmidia
+			trait = patron_shallya
+			trait = patron_ranald
+		}
+	}
 }

@@ -579,3 +579,211 @@ narrative_event = {
 		}
 	}
 }
+
+namespace = wh_empire_events
+
+character_event = {
+	id = wh_empire_events.100
+	desc = EVTDESC_WH_EMPIRE_EVENTS_100
+	picture = GFX_evt_runestone_raising_oldgods
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {	#Sigmar, Taal&Rhya, Ulric
+		name = EVTOPTA_WH_EMPIRE_EVENTS_100A
+		trigger = {
+			NOT = {
+				has_global_flag = imperial_churches_unified_taal_rhya
+			}
+		}
+		if = {
+			limit = {
+				NOR = {
+					has_global_flag = imperial_churches_unified_sigmar
+					has_global_flag = imperial_churches_unified_ulric
+					has_global_flag = imperial_churches_unified
+				}
+			}
+			character_event = { id = wh_empire_events.101 }
+		}
+		else_if = {
+			limit = {
+				OR = {
+					has_global_flag = imperial_churches_unified_sigmar
+					has_global_flag = imperial_churches_unified_ulric
+					has_global_flag = imperial_churches_unified
+				}
+				character_event = { id = wh_empire_events.104 }
+			}
+		}
+	}
+	
+	option = {	#Taal&Rhya, Ulric
+		name = EVTOPTA_WH_EMPIRE_EVENTS_100D
+		trigger = {
+			has_global_flag = imperial_churches_unified_taal_rhya
+		}
+		character_event = { id = wh_empire_events.105 }
+	}
+	
+	option = {	#Manann, Morr, Verena
+		name = EVTOPTA_WH_EMPIRE_EVENTS_100B
+		character_event = { id = wh_empire_events.102 }
+	}
+	
+	option = {	#Myrmidia, Shallya, Ranald
+		name = EVTOPTA_WH_EMPIRE_EVENTS_100C
+		character_event = { id = wh_empire_events.103 }
+	}
+}
+
+character_event = {
+	id = wh_empire_events.101
+	desc = EVTDESC_WH_EMPIRE_EVENTS_101
+	picture = GFX_evt_runestone_raising_oldgods
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {	#Sigmar
+		name = EVTOPTA_WH_EMPIRE_EVENTS_101A
+		add_trait = patron_sigmar
+	}
+	
+	option = {	#Taal&Rhya
+		name = EVTOPTA_WH_EMPIRE_EVENTS_101B
+		add_trait = patron_taal_rhya
+	}
+	
+	option = {	#Ulric
+		name = EVTOPTA_WH_EMPIRE_EVENTS_101C
+		add_trait = patron_ulric
+	}
+	
+	option = {	#Back to Master list
+		name = EVTOPTA_WH_EMPIRE_EVENTS_101D
+		character_event = { id = wh_empire_events.100 }
+	}
+}
+
+character_event = {
+	id = wh_empire_events.102
+	desc = EVTDESC_WH_EMPIRE_EVENTS_102
+	picture = GFX_evt_runestone_raising_oldgods
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {	#Manann
+		name = EVTOPTA_WH_EMPIRE_EVENTS_102A
+		add_trait = patron_manann
+	}
+	
+	option = {	#Morr
+		name = EVTOPTA_WH_EMPIRE_EVENTS_102B
+		add_trait = patron_morr
+	}
+	
+	option = {	#Verena
+		name = EVTOPTA_WH_EMPIRE_EVENTS_102C
+		add_trait = patron_verena
+	}
+	
+	option = {	#Back to Master list
+		name = EVTOPTA_WH_EMPIRE_EVENTS_102D
+		character_event = { id = wh_empire_events.100 }
+	}
+}
+
+character_event = {
+	id = wh_empire_events.103
+	desc = EVTDESC_WH_EMPIRE_EVENTS_103
+	picture = GFX_evt_runestone_raising_oldgods
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {	#Myrmidia
+		name = EVTOPTA_WH_EMPIRE_EVENTS_103A
+		add_trait = patron_myrmidia
+	}
+	
+	option = {	#Shallya
+		name = EVTOPTA_WH_EMPIRE_EVENTS_103B
+		add_trait = patron_shallya
+	}
+	
+	option = {	#Ranald
+		name = EVTOPTA_WH_EMPIRE_EVENTS_103C
+		add_trait = patron_ranald
+	}
+	
+	option = {	#Back to Master list
+		name = EVTOPTA_WH_EMPIRE_EVENTS_103D
+		character_event = { id = wh_empire_events.100 }
+	}
+}
+
+character_event = {
+	id = wh_empire_events.104
+	desc = EVTDESC_WH_EMPIRE_EVENTS_104
+	picture = GFX_evt_runestone_raising_oldgods
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {	#Sigmar
+		name = EVTOPTA_WH_EMPIRE_EVENTS_104A
+		add_trait = patron_sigmar_united
+	}
+	
+	option = {	#Taal&Rhya
+		name = EVTOPTA_WH_EMPIRE_EVENTS_104B
+		add_trait = patron_taal_rhya_united
+	}
+	
+	option = {	#Ulric
+		name = EVTOPTA_WH_EMPIRE_EVENTS_104C
+		add_trait = patron_ulric_united
+	}
+	
+	option = {	#Back to Master list
+		name = EVTOPTA_WH_EMPIRE_EVENTS_104D
+		character_event = { id = wh_empire_events.100 }
+	}
+}
+
+character_event = {
+	id = wh_empire_events.105
+	desc = EVTDESC_WH_EMPIRE_EVENTS_105
+	picture = GFX_evt_runestone_raising_oldgods
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {	#Taal&Rhya
+		name = EVTOPTA_WH_EMPIRE_EVENTS_105A
+		add_trait = patron_taal_rhya_united
+	}
+	
+	option = {	#Ulric
+		name = EVTOPTA_WH_EMPIRE_EVENTS_105B
+		add_trait = patron_ulric_united
+	}
+	
+	option = {	#Back to Master list
+		name = EVTOPTA_WH_EMPIRE_EVENTS_105C
+		character_event = { id = wh_empire_events.100 }
+	}
+}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

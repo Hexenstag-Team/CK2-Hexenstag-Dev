@@ -53,15 +53,16 @@ old_world_group = {
 		evil_god_names = {
 			GOD_THE_DARK_GODS
 		}
-
+		
+		autocephaly = yes
+		#pentarchy = yes
 		priests_can_marry = no
 		allow_rivermovement = no
 		female_temple_holders = yes
-		investiture = no
-		can_excommunicate = yes
 		can_grant_divorce = yes
-		can_grant_claim = yes
+		can_excommunicate = yes
 		priests_can_inherit = no
+		feminist = yes
 
 		intermarry = myrmidian
 		intermarry = grail
@@ -1210,7 +1211,7 @@ dwarf_gods_group = {
 	ai_convert_other_group = 0	# never try to convert
 	ai_fabricate_claims = no
 
-	color = { 0.7 0.7 0.7 }
+	color = { 0.0 0.3 0.6 }
 
 	interface_skin = { dawi_interface }
 
@@ -1218,7 +1219,7 @@ dwarf_gods_group = {
 		graphical_culture = norsegfx
 
 		icon = 14
-		color = { 0.7 0.7 0.7 }
+		color = { 0.0 0.3 0.6 }
 		high_god_name = GOD_GRUNGNI
 		god_names = {
 			GOD_THE_SPIRITS GOD_THE_ANCESTORS GOD_THE_ANCESTOR_GODS GOD_GRUNGNI GOD_VALAYA GOD_GRIMNIR GOD_GAZUL GOD_SMEDNIR GOD_THUNGNI GOD_MORGRIM
@@ -1262,7 +1263,7 @@ dwarf_gods_group = {
 		graphical_culture = norsegfx
 
 		icon = 29
-		color = { 0.9 0.9 0.9 }
+		color = { 0.0 0.2 0.4 }
 		high_god_name = GOD_GRIMNIR
 		scripture_name = BOOK_OF_GRUDGES
 		priest_title = RUNEMASTER

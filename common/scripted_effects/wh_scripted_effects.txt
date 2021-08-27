@@ -6406,7 +6406,6 @@ send_duel_result_tournament_effect = {
 			}
 }
 
-
 flag_new_colony_lords = {
 	any_realm_lord = {
 		set_character_flag = NewColonyLord
@@ -7499,7 +7498,6 @@ hashut_favor_major_bonus_effect = {
 	}
 }
 
-
 spawn_bull_centaur_effect = {
 	create_random_soldier = {
 		random_traits = yes
@@ -7638,6 +7636,263 @@ spawn_bull_centaur_effect = {
 			10 = {
 				add_trait = aggressive_leader
 			}
+		}
+	}
+}
+
+patron_imperial_pantheon_effect = {
+	random_list = {
+		#imperial_pantheon Gods
+		10 = {	#Sigmar
+			trigger = {
+				OR = {
+					culture = witchhunter_culture
+					NOR = {
+						top_liege = {
+							has_landed_title = e_talabecland
+						}
+						has_global_flag = imperial_churches_unified_taal_rhya
+					}
+				}
+			}
+			modifier = {
+				factor = 100
+				culture = witchhunter_culture
+			}
+			modifier = {
+				factor = 10
+				has_landed_title = e_reikland
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					culture = reiklander
+					culture = wissenlander
+					culture = sollander
+					culture = averlander
+					culture = sudenburger
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					culture = westerlander
+					culture = nordlander
+					culture = stirlander
+					culture = neueslander
+					culture = sylvanian
+				}
+			}
+			modifier = {
+				factor = 0.5
+				NOT = { culture_group = imperial }
+			}
+			if = {
+				limit = {
+					NOR = {
+						has_global_flag = imperial_churches_unified_sigmar
+						has_global_flag = imperial_churches_unified_taal_rhya
+						has_global_flag = imperial_churches_unified_ulric
+						has_global_flag = imperial_churches_unified
+					}
+				}
+				add_trait = patron_sigmar
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_global_flag = imperial_churches_unified_sigmar
+						has_global_flag = imperial_churches_unified_ulric
+						has_global_flag = imperial_churches_unified
+					}
+				}
+				add_trait = patron_sigmar_united
+			}
+		}
+		10 = {	#Taal&Rhya
+			modifier = {
+				factor = 10
+				has_landed_title = e_talabecland
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					culture = talabeclander
+					culture = ostermarker
+					culture = ostlander
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					culture_group = kislevite_group
+					culture_group = norscan_group
+					culture = nordlander
+					culture = middenlander
+					culture = hochlander
+					culture = drakwalder
+				}
+			}
+			if = {
+				limit = {
+					NOR = {
+						has_global_flag = imperial_churches_unified_sigmar
+						has_global_flag = imperial_churches_unified_taal_rhya
+						has_global_flag = imperial_churches_unified_ulric
+						has_global_flag = imperial_churches_unified
+					}
+				}
+				add_trait = patron_taal_rhya
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_global_flag = imperial_churches_unified_sigmar
+						has_global_flag = imperial_churches_unified_taal_rhya
+						has_global_flag = imperial_churches_unified_ulric
+						has_global_flag = imperial_churches_unified
+					}
+				}
+				add_trait = patron_taal_rhya_united
+			}
+		}
+		10 = {	#Ulric
+			modifier = {
+				factor = 10
+				has_landed_title = e_middenland
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					culture_group = norscan_group
+					culture = middenlander
+					culture = drakwalder
+					culture = hochlander
+					culture = ostlander
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					culture_group = kislevite_group
+					culture = talabeclander
+					culture = ostermarker
+					culture = nordlander
+				}
+			}
+			if = {
+				limit = {
+					NOR = {
+						has_global_flag = imperial_churches_unified_sigmar
+						has_global_flag = imperial_churches_unified_taal_rhya
+						has_global_flag = imperial_churches_unified_ulric
+						has_global_flag = imperial_churches_unified
+					}
+				}
+				add_trait = patron_ulric
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_global_flag = imperial_churches_unified_sigmar
+						has_global_flag = imperial_churches_unified_taal_rhya
+						has_global_flag = imperial_churches_unified_ulric
+						has_global_flag = imperial_churches_unified
+					}
+				}
+				add_trait = patron_ulric_united
+			}
+		}
+		#both imperial_pantheon and southern_pantheon gods
+		5 = {	#Manann
+			modifier = {
+				factor = 10
+				culture = westerlander
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					culture_group = norscan_group
+					culture_group = sartosan_group
+				}
+			}
+			add_trait = patron_manann
+		}
+		5 = {	#Morr
+			modifier = {
+				factor = 10
+				culture = sylvanian
+			}
+			add_trait = patron_morr
+		}
+		5 = {	#Verena
+			modifier = {
+				factor = 5
+				OR = {
+					learning > 15
+					diplomacy > 15
+					stewardship > 15
+					trait = grey_eminence
+					trait = midas_touched
+					is_learned_trigger = yes
+					
+				}
+			}
+			modifier = {
+				factor = 2.5
+				OR = {
+					trait = charismatic_negotiator
+					trait = brilliant_strategist
+					trait = fortune_builder
+					trait = elusive_shadow
+					trait = martial_cleric
+					is_smart_trigger = yes
+				}
+			}
+			add_trait = patron_verena
+		}
+		5 = {	#Myrmidia
+			modifier = {
+				factor = 10
+				OR = {
+					culture_group = tilean_group
+					culture_group = estalian_group
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					trait = brilliant_strategist
+					has_lifestyle_martial_trigger = yes
+				}
+			}
+			add_trait = patron_myrmidia
+		}
+		5 = {	#Shallya
+			modifier = {
+				factor = 10
+				is_lowborn = yes
+				NOT = { trait = peasant_leader }
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					trait = monk
+					trait = nun
+				}
+			}
+			add_trait = patron_shallya
+		}
+		5 = {	#Ranald
+			modifier = {
+				factor = 5
+				culture = westerlander
+			}
+			modifier = {
+				factor = 5
+				trait = midas_touched
+			}
+			add_trait = patron_ranald
 		}
 	}
 }
