@@ -1,0 +1,280 @@
+### Upgrades for greenskins adapting dwarf holds
+
+#############
+#	INDEX	#
+#############
+#Cave Squig farm
+#Squigball Arena
+#Fighting Pits
+#Fungal Forest
+#Kunnin' trapz
+#Rock Troll Colony
+#Warboss Hall
+#Warchanter grotto
+
+upgrade_cave_squigs = {
+    picture = GFX_upgrade_icon_gs_beast
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        is_plural
+    }
+
+    build_time = 120
+    gold_cost_flat = 20
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        tribal_levy_size = 0.5
+    }
+}
+
+upgrade_squigball_arena = {
+    picture = GFX_upgrade_icon_gs_beast
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+        FROMFROM = {
+            has_wonder_upgrade = upgrade_cave_squigs
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        is_plural
+    }
+
+    build_time = 24
+    gold_cost_flat = 200
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        light_infantry_offensive = 0.25
+        light_infantry_defensive = 0.25
+    }
+}
+
+upgrade_greenskin_fighting_pits = {
+    picture = GFX_upgrade_icon_gs_armoury
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+
+    build_time = 24
+    gold_cost_flat = 200
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        tribal_levy_size = -0.5
+        heavy_infantry = 100
+        heavy_infantry_offensive = 0.5
+    }
+}
+
+upgrade_greenskin_fungal_forest = {
+    picture = GFX_upgrade_icon_caves
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+
+    build_time = 120
+    gold_cost_flat = 20
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        local_build_time_tribal_modifier = -0.10
+        local_build_cost_tribal_modifier = -0.10
+    }
+}
+
+upgrade_greenskin_kunnin_traps = {
+    picture = GFX_upgrade_icon_gs_goblin_workshop
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    build_time = 24
+    gold_cost_flat = 200
+    gold_cost_ticking = 1
+
+    local_modifier = [
+        fort_level = 1.5
+        garrison_size = 0.25
+    ]
+}
+
+upgrade_rock_troll_colony = {
+    picture = GFX_upgrade_icon_gs_hive
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    build_time = 120
+    gold_cost_flat = 20
+    gold_cost_ticking = 1
+
+    #NOTE: modifiers tbd - depends on greenskin buildings
+}
+
+upgrade_warboss_hall = {
+    picture = GFX_upgrade_icon_gs_armoury
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+
+    build_time = 24
+    gold_cost_flat = 200
+    gold_cost_ticking = 1
+
+    owner_modifier = {
+        monthly_character_prestige = 1
+    }
+}
+
+upgrade_warchanter_grotto = {
+    picture = GFX_upgrade_icon_caves
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+
+    build_time = 60
+    gold_cost_flat = 100
+    gold_cost_ticking = 1
+
+    owner_modifier = {
+        light_infantry_morale = 0.25
+        heavy_infantry_morale = 0.25
+    }
+}

@@ -1,8 +1,8 @@
 ### Upgrades for Dwarf Hold ###
 
-#########
+#############
 #	INDEX	#
-#########
+#############
 # NOTE: While pre-requisites for mines are included in this index, other wonder upgrades also have some prerequisites.
 #
 # MINING #
@@ -197,7 +197,16 @@ upgrade_mining_pumps = {
       has_wonder_upgrade = upgrade_mining_layer_2
     }
   }
-  active = {  }
+  #technical equipment, requires dwarf-like population to keep in operation
+  active = {
+      FROMFROMFROM = {
+          culture_group = ROOT
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+      }
+  }
   flags = {  }
 
   build_time = 80
@@ -938,6 +947,17 @@ upgrade_coal_power = {
       has_wonder_upgrade = upgrade_mining_coal
     }
   }
+  #technical equipment, requires dwarf-like population to keep in operation
+  active = {
+      FROMFROMFROM = {
+          culture_group = ROOT
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+      }
+  }
+
   flags = { }
 
   build_time = 24
@@ -969,6 +989,7 @@ upgrade_geothermal_power = {
       has_wonder_upgrade = upgrade_mining_layer_4
     }
   }
+  #technical equipment, requires dwarf-like population to keep in operation
   active = {
       FROMFROMFROM = {
           culture_group = ROOT
@@ -978,6 +999,7 @@ upgrade_geothermal_power = {
           }
       }
   }
+
   flags = { }
 
   build_time = 60
@@ -1015,9 +1037,26 @@ upgrade_water_power = {
 #'Aerodrome' is an old-fashioned British English term for an airfield & its facilities. Synonymous with American English use of 'airport'
 upgrade_dwarf_aerodrome = {
   picture = GFX_upgrade_icon_crates
-  potential = { }
+  potential = {
+      FROMFROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+      }
+  }
   allow = { }
   flags = {  }
+  #technical equipment, requires dwarf-like population to keep in operation
+  active = {
+      FROMFROMFROM = {
+          culture_group = ROOT
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+      }
+  }
 
   build_time = 60
   gold_cost_flat = 150

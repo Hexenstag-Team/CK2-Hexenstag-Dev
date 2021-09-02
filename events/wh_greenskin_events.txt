@@ -1,0 +1,283 @@
+namespace = wh_greenskins
+
+#Greenskin growth
+
+#reserve some space for setup
+
+#decade pulse event
+character_event = {
+    id = wh_greenskins.10
+    hide_window = yes
+    is_triggered_only = yes
+
+    religion_group = greenskin_gods_group
+
+    trigger = {
+        prestige = 100
+        OR = {
+            trait = creature_orc
+            trait = creature_goblin
+        }
+    }
+
+    #run logic for growth, then grow ai greenskins and send notification to growing players
+    immediate = {
+        trigger_switch = {
+            on_trigger = trait
+            goblin_small = {
+                if = {
+                    limit = {
+                        #a boss in the next size up bash greenskins so they don't grow (bigger bosses don't feel threatened)
+                        NOT = {
+                            liege = {
+                                trait = goblin_average
+                            }
+                        }
+                    }
+                    if = {
+                        limit = {
+                            ai = yes
+                        }
+                        add_trait = goblin_average
+                    }
+                    else = {
+                        character_event = {
+                            id = wh_greenskins.11
+                        }
+                    }
+                }
+            }
+            goblin_average = {
+                if = {
+                    limit = {
+                        NOT = {
+                            liege = {
+                                trait = goblin_large
+                            }
+                        }
+                        prestige = 250
+                        OR = {
+                            martial = 12
+                            has_focus = focus_war
+                        }
+                    }
+                    if = {
+                        limit = {
+                            ai = yes
+                        }
+                        add_trait = goblin_large
+                    }
+                    else = {
+                        character_event = {
+                            id = wh_greenskins.11
+                        }
+                    }
+                }
+            }
+            goblin_large = {
+                if = {
+                    limit = {
+                        NOT = {
+                            liege = {
+                                trait = goblin_huge
+                            }
+                        }
+                        prestige = 500
+                        martial = 12
+                        OR = {
+                            martial = 18
+                            has_focus = focus_war
+                        }
+                    }
+                    if = {
+                        limit = {
+                            ai = yes
+                        }
+                        add_trait = goblin_huge
+                    }
+                    else = {
+                        character_event = {
+                            id = wh_greenskins.11
+                        }
+                    }
+                }
+            }
+            #this is a "win more" mechanic but that is how greenskins work
+            goblin_huge = {
+                if = {
+                    limit = {
+                        independent = yes
+                        has_focus = focus_war
+                        prestige = 2500
+                    }
+                    if = {
+                        limit = {
+                            ai = yes
+                        }
+                        change_martial = 1
+                    }
+                    else = {
+                        character_event = {
+                            id = wh_greenskins.11
+                        }
+                    }
+                }
+            }
+            orc_small = {
+                if = {
+                    limit = {
+                        NOT = {
+                            liege = {
+                                trait = orc_average
+                            }
+                        }
+                    }
+                    if = {
+                        limit = {
+                            ai = yes
+                        }
+                        add_trait = orc_average
+                    }
+                    else = {
+                        character_event = {
+                            id = wh_greenskins.11
+                        }
+                    }
+                }
+            }
+            orc_average = {
+                if = {
+                    limit = {
+                        NOT = {
+                            liege = {
+                                trait = orc_large
+                            }
+                        }
+                        prestige = 250
+                        OR = {
+                            martial = 12
+                            has_focus = focus_war
+                        }
+                    }
+                    add_trait = orc_large
+                }
+            }
+            orc_large = {
+                if = {
+                    limit = {
+                        NOT = {
+                            liege = {
+                                trait = orc_huge
+                            }
+                        }
+                        prestige = 500
+                        martial = 12
+                        OR = {
+                            martial = 18
+                            has_focus = focus_war
+                        }
+                    }
+                    if = {
+                        limit = {
+                            ai = yes
+                        }
+                        add_trait = orc_huge
+                    }
+                    else = {
+                        character_event = {
+                            id = wh_greenskins.11
+                        }
+                    }
+                }
+            }
+            orc_huge = {
+                if = {
+                    limit = {
+                        independent = yes
+                        has_focus = focus_war
+                        prestige = 2500
+                    }
+                    if = {
+                        limit = {
+                            ai = yes
+                        }
+                        change_martial = 1
+                    }
+                    else = {
+                        character_event = {
+                            id = wh_greenskins.11
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+character_event = {
+    id = wh_greenskins.11
+    desc = EVTDESC_wh_greenskins.11
+    picture = GFX_evt_greenskinanimosity
+    is_triggered_only = yes
+
+    #safety
+    ai = no
+
+    option = {
+        name = WAAAGH
+        trigger = {
+            trait = goblin_small
+        }
+        add_trait = goblin_average
+    }
+
+    option = {
+        name = WAAAGH
+        trigger = {
+            trait = goblin_average
+        }
+        add_trait = goblin_large
+    }
+
+    option = {
+        name = WAAAGH
+        trigger = {
+            trait = goblin_large
+        }
+        add_trait = goblin_huge
+    }
+
+    option = {
+        name = WAAAGH
+        trigger = {
+            trait = orc_small
+        }
+        add_trait = orc_average
+    }
+
+    option = {
+        name = WAAAGH
+        trigger = {
+            trait = orc_average
+        }
+        add_trait = orc_large
+    }
+
+    option = {
+        name = WAAAGH
+        trigger = {
+            trait = orc_large
+        }
+        add_trait = orc_huge
+    }
+
+    option = {
+        name = WAAAGH
+        trigger = {
+            OR = {
+                trait = orc_huge
+                trait = goblin_huge
+            }
+        }
+    }
+}
