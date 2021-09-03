@@ -1300,6 +1300,7 @@ tribal = {
 
 	#Black Orc Mobs
 	#Black & Regular Orc
+	#HI/morale
 	tb_culture_black_orc_1 = {
 		desc = tb_culture_black_orc_desc
 		potential = {
@@ -1404,6 +1405,7 @@ tribal = {
 	}
 
 	#Savage Orc Mobs
+	#HI/defensive
 	tb_savage_orc_mobs_1 = {
 		desc = tb_savage_orc_mobs_desc
 		potential = {
@@ -1495,9 +1497,102 @@ tribal = {
 		extra_tech_building_start = 0.8
 	}
 
-	#orc_freeboota	??? No lore on these guys
+	#Green Sea Mobs
+	#HI/offensive
+	#There's little or no lore on these guys but I guess we're stuck with them
+	tb_green_sea_mobs_1 = {
+		desc = tb_green_sea_mobs_desc
+		potential = {
+			culture = orc_freeboota
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 250
+			}
+		}
+		piety_cost = 100
+		build_time = 30
+		heavy_infantry = 20
+		heavy_infantry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_green_sea_mobs_2 = {
+		desc = tb_green_sea_mobs_desc
+		potential = {
+			culture = orc_freeboota
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 500
+			}
+		}
+		upgrades_from = tb_green_sea_mobs_1
+		piety_cost = 100
+		build_time = 30
+		heavy_infantry = 25
+		heavy_infantry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_green_sea_mobs_3 = {
+		desc = tb_green_sea_mobs_desc
+		potential = {
+			culture = orc_freeboota
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 1000
+			}
+		}
+		upgrades_from = tb_green_sea_mobs_2
+		piety_cost = 100
+		build_time = 30
+		heavy_infantry = 30
+		heavy_infantry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_green_sea_mobs_4 = {
+		desc = tb_green_sea_mobs_desc
+		potential = {
+			culture = orc_freeboota
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 2000
+			}
+		}
+		upgrades_from = tb_green_sea_mobs_3
+		piety_cost = 100
+		build_time = 30
+		heavy_infantry = 35
+		heavy_infantry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
 
 	#Nasty Skulkers
+	#LI/offensive
 	tb_nasty_skulker_mobs_1 = {
 		desc = tb_nasty_skulker_mobs_desc
 		potential = {
@@ -1588,11 +1683,383 @@ tribal = {
 
 		extra_tech_building_start = 0.8
 	}
-	#goblin_forest	SPIDERS - warbeast offense
-	#goblin_night	fanatics - light infantry morale
-	#goblin_hill	Great Goblins - light infantry defense
-	#goblin_seagit	ARRRchers
 
+	#Spider Cult
+	#LC/offensive
+	#It's tempting to do warbeast things here but Arachnaroks and Gigantic Spiders are pretty rare
+	#Also getting a LC upgrade is probably more of a benefit
+	tb_spider_cult_1 = {
+		desc = tb_spider_cult_desc
+		potential = {
+			culture = goblin_forest
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 250
+			}
+		}
+		piety_cost = 100
+		build_time = 30
+		light_cavalry = 20
+		light_cavalry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_spider_cult_2 = {
+		desc = tb_spider_cult_desc
+		potential = {
+			culture = goblin_forest
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 500
+			}
+		}
+		upgrades_from = tb_spider_cult_1
+		piety_cost = 100
+		build_time = 30
+		light_cavalry = 25
+		light_cavalry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_spider_cult_3 = {
+		desc = tb_spider_cult_desc
+		potential = {
+			culture = goblin_forest
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 1000
+			}
+		}
+		upgrades_from = tb_spider_cult_2
+		piety_cost = 100
+		build_time = 30
+		light_cavalry = 30
+		light_cavalry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_spider_cult_4 = {
+		desc = tb_spider_cult_desc
+		potential = {
+			culture = goblin_forest
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 2000
+			}
+		}
+		upgrades_from = tb_spider_cult_3
+		piety_cost = 100
+		build_time = 30
+		light_cavalry = 35
+		light_cavalry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	#Goblin Fanatics
+	#LI/morale
+	#This isn't perfect but it's a good obnus for goblins
+	tb_goblin_fanatics_1 = {
+		desc = tb_goblin_fanatics_desc
+		potential = {
+			culture = goblin_night
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 250
+			}
+		}
+		piety_cost = 100
+		build_time = 30
+		light_infantry = 80
+		light_infantry_morale = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_goblin_fanatics_2 = {
+		desc = tb_goblin_fanatics_desc
+		potential = {
+			culture = goblin_night
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 500
+			}
+		}
+		upgrades_from = tb_goblin_fanatics_1
+		piety_cost = 100
+		build_time = 30
+		light_infantry = 100
+		light_infantry_morale = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_goblin_fanatics_3 = {
+		desc = tb_goblin_fanatics_desc
+		potential = {
+			culture = goblin_night
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 1000
+			}
+		}
+		upgrades_from = tb_goblin_fanatics_2
+		piety_cost = 100
+		build_time = 30
+		light_infantry = 120
+		light_infantry_morale = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_goblin_fanatics_4 = {
+		desc = tb_goblin_fanatics_desc
+		potential = {
+			culture = goblin_night
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 2000
+			}
+		}
+		upgrades_from = tb_nasty_skulker_mobs_3
+		piety_cost = 100
+		build_time = 30
+		light_infantry = 140
+		light_infantry_morale = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	#Great Goblin mobs
+	#LI/D
+	#Hill goblins are really niche and probably didn't need to be in the mod, but the combination was free
+	tb_great_goblin_mobs_1 = {
+		desc = tb_great_goblin_mobs_desc
+		potential = {
+			culture = goblin_hill
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 250
+			}
+		}
+		piety_cost = 100
+		build_time = 30
+		light_infantry = 80
+		light_infantry_defensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_great_goblin_mobs_2 = {
+		desc = tb_great_goblin_mobs_desc
+		potential = {
+			culture = goblin_hill
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 500
+			}
+		}
+		upgrades_from = tb_great_goblin_mobs_1
+		piety_cost = 100
+		build_time = 30
+		light_infantry = 100
+		light_infantry_defensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_great_goblin_mobs_3 = {
+		desc = tb_great_goblin_mobs_desc
+		potential = {
+			culture = goblin_hill
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 1000
+			}
+		}
+		upgrades_from = tb_great_goblin_mobs_2
+		piety_cost = 100
+		build_time = 30
+		light_infantry = 120
+		light_infantry_defensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_great_goblin_mobs_4 = {
+		desc = tb_great_goblin_mobs_desc
+		potential = {
+			culture = goblin_hill
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 2000
+			}
+		}
+		upgrades_from = tb_nasty_skulker_mobs_3
+		piety_cost = 100
+		build_time = 30
+		light_infantry = 140
+		light_infantry_defensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	#Seagit Snipers
+	#Archers/Off
+	#Another legacy group with very little lore. At least they're easy enough to write for.
+	tb_seagit_snipers_1 = {
+		desc = tb_seagit_snipers_desc
+		potential = {
+			culture = goblin_seagit
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 250
+			}
+		}
+		piety_cost = 100
+		build_time = 30
+		archers = 30
+		archers_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_seagit_snipers_2 = {
+		desc = tb_seagit_snipers_desc
+		potential = {
+			culture = goblin_seagit
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 500
+			}
+		}
+		upgrades_from = tb_seagit_snipers_1
+		piety_cost = 100
+		build_time = 30
+		archers = 40
+		archers_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_seagit_snipers_3 = {
+		desc = tb_seagit_snipers_desc
+		potential = {
+			culture = goblin_seagit
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 1000
+			}
+		}
+		upgrades_from = tb_seagit_snipers_2
+		piety_cost = 100
+		build_time = 30
+		archers = 50
+		archers_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_seagit_snipers_4 = {
+		desc = tb_seagit_snipers_desc
+		potential = {
+			culture = goblin_seagit
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 2000
+			}
+		}
+		upgrades_from = tb_nasty_skulker_mobs_3
+		piety_cost = 100
+		build_time = 30
+		archers = 60
+		archers_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
 }
 
 nomad = {

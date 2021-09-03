@@ -4,11 +4,11 @@
 title = c_azril_ungol
 
 # Settlements
-max_settlements = 7
+max_settlements = 5
 
 b_khazad_azril_ungol = tribal
 #b_barak_bringrong = city
-b_khazazril = temple
+#b_khazazril = temple
 #b_ekrunruk = castle
 #b_undzar_ungol = city
 #b_drakkungron = temple
@@ -20,7 +20,24 @@ religion = greenskin_gods
 terrain = mountain
 #History
 1.1.1= {
-	build_wonder = wonder_karak_eightpeaks
-	set_wonder_stage = 1
-    set_wonder_damaged = yes
+	build_wonder = wonder_dwarf_hold
+	set_wonder_stage = 6
+    build_wonder_upgrade = upgrade_mining_layer_1
+    build_wonder_upgrade = upgrade_mining_layer_2
+    build_wonder_upgrade = upgrade_mining_layer_3
+    build_wonder_upgrade = upgrade_mining_layer_4		
+	build_wonder_upgrade = upgrade_mining_native_gold
+	build_wonder_upgrade = upgrade_mining_emeralds
+	build_wonder_upgrade = upgrade_mining_galena
+    build_wonder_upgrade = upgrade_mining_rubies
+    build_wonder_upgrade = upgrade_defensive_tunnels
+    build_wonder_upgrade = upgrade_great_gate
+    build_wonder_upgrade = upgrade_warchanter_grotto
+    build_wonder_upgrade = upgrade_warboss_hall
+    build_wonder_upgrade = upgrade_rock_troll_colony
+    build_wonder_upgrade = upgrade_greenskin_kunnin_traps
+    build_wonder_upgrade = upgrade_greenskin_fungal_forest
+    build_wonder_upgrade = upgrade_greenskin_fighting_pits
+    build_wonder_upgrade = upgrade_squigball_arena
+    build_wonder_upgrade = upgrade_cave_squigs
 }

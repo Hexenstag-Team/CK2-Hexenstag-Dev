@@ -175,18 +175,22 @@ upgrade_greenskin_kunnin_traps = {
             culture_group = ROOT
         }
     }
+
+    flags = {   }
+
     build_time = 24
     gold_cost_flat = 200
     gold_cost_ticking = 1
 
-    local_modifier = [
+    local_modifier = {
         fort_level = 1.5
-        garrison_size = 0.25
-    ]
+        garrison_size = -0.25
+    }
+    owner_modifier = {  }
 }
 
 upgrade_rock_troll_colony = {
-    picture = GFX_upgrade_icon_gs_hive
+    picture = GFX_upgrade_icon_caves
     potential = {
         OR = {
             culture_group = goblin_group
@@ -207,11 +211,16 @@ upgrade_rock_troll_colony = {
             culture_group = ROOT
         }
     }
+
     build_time = 120
-    gold_cost_flat = 20
+    gold_cost_flat = 100
     gold_cost_ticking = 1
 
-    #NOTE: modifiers tbd - depends on greenskin buildings
+    local_modifier = {
+        war_elephants = 50
+        war_elephants_defensive = 0.5
+    }
+    owner_modifier = {  }
 }
 
 upgrade_warboss_hall = {
@@ -241,6 +250,7 @@ upgrade_warboss_hall = {
     gold_cost_flat = 200
     gold_cost_ticking = 1
 
+    local_modifier = {  }
     owner_modifier = {
         monthly_character_prestige = 1
     }
@@ -273,7 +283,7 @@ upgrade_warchanter_grotto = {
     gold_cost_flat = 100
     gold_cost_ticking = 1
 
-    owner_modifier = {
+    local_modifier = {
         light_infantry_morale = 0.25
         heavy_infantry_morale = 0.25
     }

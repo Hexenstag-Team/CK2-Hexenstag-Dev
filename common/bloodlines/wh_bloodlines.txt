@@ -132,6 +132,17 @@ morgrim_elgidum = { #53096 victor in the War of the Beard
 	picture = GFX_bloodlines_symbol_teutonic
 	flags = { dwarf_bloodline historical_bloodline bloodline_artisan_craftsmen }
 }
+skalf_bloodline = {
+	command_modifier = {
+		archers = 0.05
+	}
+	dwarf_group_opinion = 5
+	bloodline_effect_family_treasure = 1
+	inheritance = patrilineal
+	allow_bastards = yes
+	picture = GFX_bloodlines_symbol_bon_candle
+	flags = { dwarf_bloodline historical_bloodline bloodline_family_treasure }
+}
 
 #King of Kraka Drak? (Not enough history to implement yet)
 #King of the Chaos Dwarfs? (Potentially something that makes it easier to get started with chaos dwarf magic?)
@@ -270,6 +281,18 @@ inigo_montoya = { #64000
 	allow_bastards = yes
 	picture = GFX_bloodlines_temp_symbol
 	flags = { duelist_bloodline historical_bloodline }
+}
+marco_colombo_bloodline = {
+	picture = GFX_bloodlines_symbol_longship
+	allow_bastards = yes
+	bloodline_effect_family_treasure = 1
+	old_ones_group_opinion = 5 #befriended the lizardmen
+	command_modifier = {
+		siege = 0.05
+	}
+	inheritance = patrilineal
+	allow_bastards = yes
+	flags = { historical_bloodline bloodline_family_treasure }
 }
 miragliano_miracle_bloodline = {
 	picture = GFX_bloodlines_symbol_architect

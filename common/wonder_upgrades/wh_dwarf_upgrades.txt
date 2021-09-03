@@ -191,6 +191,12 @@ upgrade_mining_pumps = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_1
     }
+    FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+    }
   }
   allow = {
     FROMFROM = {
@@ -463,7 +469,7 @@ upgrade_mining_magnetite = {
   gold_cost_ticking = 2
 
   local_modifier = {
-    heavy_infantry = 250
+    heavy_infantry = 100
   }
   owner_modifier = {  }
 }
@@ -783,9 +789,17 @@ upgrade_great_dwarf_port = {
   potential = {
     FROMFROMFROM = {
       is_coastal = yes
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+        ROOT = {
+            culture_group = PREV
+        }
     }
   }
-  allow = { }
+  allow = {
+  }
   flags = { }
 
   build_time = 30
@@ -941,6 +955,13 @@ upgrade_coal_power = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_1
     }
+    FROMFROMFROM = {
+        culture_group = ROOT
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+    }
   }
   allow = {
     FROMFROM = {
@@ -982,6 +1003,7 @@ upgrade_geothermal_power = {
             culture_group = dwarf_group
             culture_group = dawi_zharr_group
         }
+        culture_group = ROOT
     }
   }
   allow = {
@@ -1017,7 +1039,9 @@ upgrade_geothermal_power = {
 #Tied to castle b/c I can't help thinking about the mill and the lord
 upgrade_water_power = {
   picture = GFX_upgrade_icon_crates
-  potential = { }
+  potential = {
+      is_tribal = no
+  }
   allow = { }
   flags = {  }
 
@@ -1255,7 +1279,15 @@ upgrade_dwarf_great_hall = {
 
 upgrade_dwarf_statues = {
   picture = GFX_upgrade_icon_stones
-  potential = { }
+  potential = {
+      FROMFROMFROM = {
+          OR = {
+              culture_group = dwarf_group
+              culture_group = dawi_zharr_group
+          }
+          culture_group = ROOT
+      }
+  }
   allow = {
     OR = {
       #sorcerers
@@ -1292,6 +1324,13 @@ upgrade_dwarf_throne_room = {
   potential = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_1
+    }
+    FROMFROMFROM = {
+        OR = {
+            culture_group = dwarf_group
+            culture_group = dawi_zharr_group
+        }
+        culture_group = ROOT
     }
   }
   allow = { }

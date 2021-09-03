@@ -1783,7 +1783,7 @@ character_event = {
 				}
 			}
 		}
-		any_child_even_if_dead = {
+		any_close_relative = {
 			if = {
 				limit = {
 					NOT = {
@@ -1794,6 +1794,73 @@ character_event = {
 				}
 				character_event = {
 					id = wh_setup.200
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_setup.201
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	only_playable = yes #filtering, so this is faster than going straight to is_patrician
+	is_patrician = yes
+
+	trigger = {
+		is_save_game = no
+		trait = creature_human
+	}
+
+	immediate = {
+		random = {
+			chance = 2
+			#note: if we rework Tilea to have a whole lot of Patricians, this might need to be lowered
+			mult_modifier = {
+				factor = 3
+				culture_group = tilean_group
+			}
+			mult_modifier = {
+				factor = 1.5
+				religion_group = old_world_group
+			}
+			mult_modifier = {
+				factor = 2
+				religion = myrmidian
+			}
+			mult_modifier = {
+				factor = 0.5
+				religion_group = chaos_gods_group
+			}
+			c_8551 = {
+				random_owned_bloodline = {
+					ROOT = {
+						add_to_bloodline = PREV
+					}
+				}
+			}
+			any_dynasty_member_even_if_dead = {
+				character_event = {
+					id = wh_setup.202
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_setup.202
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		c_8551 = {
+			random_owned_bloodline = {
+				ROOT = {
+					add_to_bloodline = PREV
 				}
 			}
 		}
