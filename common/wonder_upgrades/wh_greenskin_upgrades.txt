@@ -35,7 +35,8 @@ upgrade_cave_squigs = {
         }
     }
     flags = {
-        is_plural
+        is_singular
+        greenskin_culture_wonder_upgrade
     }
 
     build_time = 120
@@ -74,6 +75,7 @@ upgrade_squigball_arena = {
     }
     flags = {
         is_plural
+        greenskin_culture_wonder_upgrade
     }
 
     build_time = 24
@@ -107,6 +109,9 @@ upgrade_greenskin_fighting_pits = {
         FROMFROMFROM = {
             culture_group = ROOT
         }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
     }
 
     build_time = 24
@@ -142,6 +147,9 @@ upgrade_greenskin_fungal_forest = {
             culture_group = ROOT
         }
     }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
 
     build_time = 120
     gold_cost_flat = 20
@@ -175,8 +183,9 @@ upgrade_greenskin_kunnin_traps = {
             culture_group = ROOT
         }
     }
-
-    flags = {   }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
 
     build_time = 24
     gold_cost_flat = 200
@@ -185,6 +194,46 @@ upgrade_greenskin_kunnin_traps = {
     local_modifier = {
         fort_level = 1.5
         garrison_size = -0.25
+    }
+    owner_modifier = {  }
+}
+
+upgrade_river_troll_colony = {
+    picture = GFX_upgrade_icon_anchor
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            is_coastal = yes
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 120
+    gold_cost_flat = 100
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        war_elephants = 50
+        war_elephants_offensive = 0.5
     }
     owner_modifier = {  }
 }
@@ -210,6 +259,9 @@ upgrade_rock_troll_colony = {
         FROMFROMFROM = {
             culture_group = ROOT
         }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
     }
 
     build_time = 120
@@ -245,6 +297,9 @@ upgrade_warboss_hall = {
             culture_group = ROOT
         }
     }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
 
     build_time = 24
     gold_cost_flat = 200
@@ -277,6 +332,9 @@ upgrade_warchanter_grotto = {
         FROMFROMFROM = {
             culture_group = ROOT
         }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
     }
 
     build_time = 60

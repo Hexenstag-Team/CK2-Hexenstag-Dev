@@ -1800,13 +1800,15 @@ character_event = {
 	}
 }
 
+#sprinkle Marco Colombo bloodline through human patricians
 character_event = {
 	id = wh_setup.201
 	hide_window = yes
 
 	is_triggered_only = yes
 
-	only_playable = yes #filtering, so this is faster than going straight to is_patrician
+	only_playable = yes #filtering, so this is faster than going straight to is_patrician fast trigger
+	has_dlc = "Holy Fury"
 	is_patrician = yes
 
 	trigger = {
@@ -1815,36 +1817,48 @@ character_event = {
 	}
 
 	immediate = {
-		random = {
-			chance = 2
-			#note: if we rework Tilea to have a whole lot of Patricians, this might need to be lowered
-			mult_modifier = {
-				factor = 3
-				culture_group = tilean_group
+		if = {
+			limit = {
+				ai = yes
 			}
-			mult_modifier = {
-				factor = 1.5
-				religion_group = old_world_group
-			}
-			mult_modifier = {
-				factor = 2
-				religion = myrmidian
-			}
-			mult_modifier = {
-				factor = 0.5
-				religion_group = chaos_gods_group
-			}
-			c_8551 = {
-				random_owned_bloodline = {
-					ROOT = {
-						add_to_bloodline = PREV
+			random = {
+				chance = 2
+				#note: if we rework Tilea to have a whole lot of Patricians, this might need to be lowered
+				mult_modifier = {
+					factor = 3
+					culture_group = tilean_group
+				}
+				mult_modifier = {
+					factor = 1.5
+					religion_group = old_world_group
+				}
+				mult_modifier = {
+					factor = 2
+					religion = myrmidian
+				}
+				mult_modifier = {
+					factor = 0.5
+					religion_group = chaos_gods_group
+				}
+				c_8551 = {
+					random_owned_bloodline = {
+						ROOT = {
+							add_to_bloodline = PREV
+						}
+					}
+				}
+				any_dynasty_member_even_if_dead = {
+					character_event = {
+						id = wh_setup.202
 					}
 				}
 			}
-			any_dynasty_member_even_if_dead = {
-				character_event = {
-					id = wh_setup.202
-				}
+		}
+		#permit players to do a "Marco Colombo" run
+		else = {
+			character_event = {
+				id = wh_setup.203
+				days = 2
 			}
 		}
 	}
@@ -1865,4 +1879,38 @@ character_event = {
 			}
 		}
 	}
+}
+
+#player event for Marco Colombo bloodline
+#because patricians can't matri-marry and the bloodline is distributed randomly, we need this to allow players to have their Marco run without the console
+character_event = {
+	id = wh_setup.203
+	desc = EVTDESC_wh_setup.203
+	picture = GFX_evt_merchant_ship_at_sea_republic
+	is_triggered_only = yes
+
+	#take Marco bloodline
+	option = {
+		name = EVTOPTA_wh_setup.203
+		custom_tooltip = {
+			text = wh_setup_marco_colombo_bloodline_tt
+			c_8551 = {
+				random_owned_bloodline = {
+					ROOT = {
+						add_to_bloodline = PREV
+					}
+				}
+			}
+			any_dynasty_member_even_if_dead = {
+				character_event = {
+					id = wh_setup.202
+				}
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPB_wh_setup.203
+	}
+
 }

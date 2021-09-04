@@ -5128,6 +5128,16 @@ character_event = {
 									}
 									destroy_settlement = THIS
 								}
+								wonder = {
+									any_upgrade_on_wonder = {
+										limit = {
+											OR = {
+												has_wonder_upgrade_flag = dawi_culture_wonder_upgrade
+												has_wonder_upgrade_flag = human_culture_wonder_upgrade
+											}
+										}
+									}
+								}
 							}
 						}
 					}
@@ -6107,10 +6117,22 @@ character_event = {
 	option = {
 		name = EVTOPTA_greenskins_cleansing_success
 			hidden_tooltip = {
-				FROMFROM = { location = { remove_province_modifier = minimal_greenskin_population } }
-				FROMFROM = { location = { remove_province_modifier = medium_greenskin_population } }
-				FROMFROM = { location = { remove_province_modifier = large_greenskin_population } }
-				FROMFROM = { location = { remove_province_modifier = greenskin_population_bad } }
+				FROMFROM = {
+					location = {
+						remove_province_modifier = minimal_greenskin_population
+						remove_province_modifier = medium_greenskin_population
+						remove_province_modifier = large_greenskin_population
+						remove_province_modifier = greenskin_population_bad
+						wonder = {
+							any_upgrade_on_wonder = {
+								limit = {
+									has_wonder_upgrade_flag = greenskin_culture_wonder_upgrade
+								}
+								destroy_wonder_upgrade = yes
+							}
+						}
+					}
+				}
 				FROMFROM = { refill_holding_levy = yes }
 				if = {
 					limit = {
@@ -6134,6 +6156,7 @@ character_event = {
 						}
 					}
 				}
+
 			}
 			hidden_tooltip = {
 				if = {

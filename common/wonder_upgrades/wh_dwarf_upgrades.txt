@@ -213,7 +213,9 @@ upgrade_mining_pumps = {
           }
       }
   }
-  flags = {  }
+  flags = {
+      dawi_culture_wonder_upgrade
+  }
 
   build_time = 80
   gold_cost_flat = 240
@@ -979,7 +981,9 @@ upgrade_coal_power = {
       }
   }
 
-  flags = { }
+  flags = {
+      dawi_culture_wonder_upgrade
+  }
 
   build_time = 24
   gold_cost_flat = 400
@@ -1022,7 +1026,9 @@ upgrade_geothermal_power = {
       }
   }
 
-  flags = { }
+  flags = {
+      dawi_culture_wonder_upgrade
+  }
 
   build_time = 60
   gold_cost_flat = 100
@@ -1043,7 +1049,9 @@ upgrade_water_power = {
       is_tribal = no
   }
   allow = { }
-  flags = {  }
+  flags = {
+      dawi_culture_wonder_upgrade
+  }
 
   build_time = 36
   gold_cost_flat = 100
@@ -1070,7 +1078,9 @@ upgrade_dwarf_aerodrome = {
       }
   }
   allow = { }
-  flags = {  }
+  flags = {
+      dawi_culture_wonder_upgrade
+  }
   #technical equipment, requires dwarf-like population to keep in operation
   active = {
       FROMFROMFROM = {
@@ -1125,6 +1135,9 @@ upgrade_dwarf_shipyard = {
           culture_group = ROOT
       }
   }
+  flags = {
+      dawi_culture_wonder_upgrade
+  }
 
   build_time = 60
   gold_cost_flat= 250
@@ -1163,6 +1176,9 @@ upgrade_artillery_tradition = {
           }
           culture_group = ROOT
       }
+  }
+  flags = {
+      dawi_culture_wonder_upgrade
   }
 
   build_time = 120
@@ -1203,6 +1219,9 @@ upgrade_gunnery_tradition = {
           culture_group = ROOT
       }
   }
+  flags = {
+      dawi_culture_wonder_upgrade
+  }
 
   build_time = 120
   gold_cost_flat = 40
@@ -1237,6 +1256,9 @@ upgrade_warrior_brotherhood = {
           culture_group = ROOT
       }
   }
+  flags = {
+      dawi_culture_wonder_upgrade
+  }
 
   build_time = 120
   gold_cost_flat = 40
@@ -1265,6 +1287,9 @@ upgrade_dwarf_great_hall = {
     FROMFROM = {
       has_wonder_upgrade = upgrade_mining_layer_3
     }
+  }
+  flags = {
+      dawi_culture_wonder_upgrade
   }
 
   build_time = 60
@@ -1308,6 +1333,9 @@ upgrade_dwarf_statues = {
           culture_group = ROOT
       }
   }
+  flags = {
+      dawi_culture_wonder_upgrade
+  }
 
   build_time = 24
   gold_cost_flat = 100
@@ -1342,6 +1370,9 @@ upgrade_dwarf_throne_room = {
           }
           culture_group = ROOT
       }
+  }
+  flags = {
+      dawi_culture_wonder_upgrade
   }
 
   build_time = 120
@@ -1381,6 +1412,9 @@ upgrade_great_grimnir_temple = {
       FROMFROMFROM = {
           religion_group = dwarf_gods_group
       }
+ }
+ flags = {
+     dawi_culture_wonder_upgrade
  }
 
   build_time = 120
@@ -1422,6 +1456,9 @@ upgrade_great_grungni_temple = {
           religion_group = dwarf_gods_group
       }
   }
+  flags = {
+      dawi_culture_wonder_upgrade
+  }
 
   build_time = 120
   gold_cost_flat = 300
@@ -1462,6 +1499,9 @@ upgrade_great_valaya_temple = {
           religion_group = dwarf_gods_group
       }
   }
+  flags = {
+      dawi_culture_wonder_upgrade
+  }
 
   build_time = 120
   gold_cost_flat = 300
@@ -1501,6 +1541,9 @@ upgrade_great_hashut_temple = {
       FROMFROMFROM = {
           religion = hashut
       }
+  }
+  flags = {
+      dawi_culture_wonder_upgrade
   }
 
   build_time = 120
