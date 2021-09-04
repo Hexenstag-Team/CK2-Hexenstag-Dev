@@ -1542,6 +1542,117 @@ character_event = {
 	}
 }
 
+character_event = {
+	id = wh_setup.22
+	hide_window = yes
+	is_triggered_only = yes
+	is_theocracy = yes
+	
+	trigger = {
+		is_theocracy = yes
+		culture = mootlander
+		religion = imperial_pantheon
+	}
+
+	immediate = {
+		random_list = {
+			10 = {
+				create_random_priest = {
+					random_traits = yes
+					religion = imperial_pantheon
+					culture = reiklander
+					dynasty = none
+					age = 30
+				}
+			}
+			10 = {
+				create_random_priest = {
+					random_traits = yes
+					religion = imperial_pantheon
+					culture = reiklander
+					dynasty = none
+					age = 35
+				}
+			}
+			10 = {
+				create_random_priest = {
+					random_traits = yes
+					religion = imperial_pantheon
+					culture = reiklander
+					dynasty = none
+					age = 40
+				}
+			}
+			20 = {
+				create_random_priest = {
+					random_traits = yes
+					religion = imperial_pantheon
+					culture = reiklander
+					dynasty = none
+					age = 45
+				}
+			}
+			20 = {
+				create_random_priest = {
+					random_traits = yes
+					religion = imperial_pantheon
+					culture = reiklander
+					dynasty = none
+					age = 50
+				}
+			}
+			20 = {
+				create_random_priest = {
+					random_traits = yes
+					religion = imperial_pantheon
+					culture = reiklander
+					dynasty = none
+					age = 55
+				}
+			}
+			10 = {
+				create_random_priest = {
+					random_traits = yes
+					religion = imperial_pantheon
+					culture = reiklander
+					dynasty = none
+					age = 60
+				}
+			}
+		}
+		e_realm_of_undivided = {
+			holder_scope = {
+				save_event_target_as = courtier_migration
+			}
+		}
+		FROMFROM = {
+			any_courtier = {
+				set_character_flag = courtier_migration
+				force_host = event_target:courtier_migration
+			}
+		}
+		new_character = {
+			ROOT = {
+				abdicate_to = PREV
+				e_realm_of_undivided = {
+					holder_scope = {
+						any_courtier = {
+							limit = {
+								has_character_flag = courtier_migration
+							}
+							force_host = PREVPREVPREVPREV
+							clr_character_flag = courtier_migration
+						}
+					}
+				}
+				transfer_scaled_wealth = {
+					to = PREV
+					value = all
+				}
+			}
+		}
+	}
+}
 #Set up wonder names, descriptions
 character_event = {
 	id = wh_setup.100

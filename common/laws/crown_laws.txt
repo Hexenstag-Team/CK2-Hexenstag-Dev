@@ -1097,95 +1097,96 @@ de_jure_laws = {
         temple_vassal_min_levy = 0.4
     }
 
-# INVESTITURE
 
-	# Papal Investiture
-	investiture_law_0 = {
-		show_as_title = yes
-		group = investiture_law
-		default = yes
-		potential = {
-			holder_scope = {
-				religion = imperial_pantheon
-				is_tribal = no
-				is_nomadic = no
-				NOT = {
-					rightful_religious_head_scope = {
-						character = ROOT
-					}
-				}
-			}
-		}
-		allow = {
-			year = 1000
-		}
-		revoke_allowed = {
-			always = no
-		}
-		ai_will_do = {
-			factor = 0
-		}
-		ai_will_revoke = {
-			factor = 0
-		}
-		effect = {
-			hidden_tooltip = {
-				revoke_law = investiture_law_0
-				revoke_law = investiture_law_1
-			}
-			set_investiture = head
-		}
-	}
+### INVESTITURE	#We don't use them
 
-	# Free Investiture
-	investiture_law_1 = {
-		show_as_title = yes
-		rel_head_opinion = -30
-		free_invest_vassal_opinion = 10 # vassals with bishops will appreciate this law
-		temple_all_opinion = 10 # Bishops will tend to be more loyal to the Crown
-		group = investiture_law
-		potential = {
-			holder_scope = {
-				religion = imperial_pantheon
-				is_tribal = no
-				is_nomadic = no
-				NOT = {
-					rightful_religious_head_scope = {
-						character = ROOT
-					}
-				}
-			}
-		}
-		allow = {
-			holy_order = no
-		}
-		revoke_allowed = {
-			always = no
-		}
-		ai_will_do = {
-			factor = 1
-			modifier = {
-				factor = 0.002 # Rare to do this
-			}
-			modifier = {
-				factor = 0
-				OR = {
-					holder_scope = {
-						NOT = { trait = cynical }
-					}
-					NOT = { has_law = investiture_law_0 }
-				}
-			}
-		}
-		ai_will_revoke = {
-			factor = 0
-		}
-		effect = {
-			hidden_tooltip = {
-				revoke_law = investiture_law_0
-				revoke_law = investiture_law_1
-			}
-			set_investiture = any
-		}
-	}
+# Papal Investiture
+	# investiture_law_0 = {
+		# show_as_title = yes
+		# group = investiture_law
+		# default = yes
+		# potential = {
+			# holder_scope = {
+				# religion = XXX
+				# is_tribal = no
+				# is_nomadic = no
+				# NOT = {
+					# rightful_religious_head_scope = {
+						# character = ROOT
+					# }
+				# }
+			# }
+		# }
+		# allow = {
+			# year = 1000
+		# }
+		# revoke_allowed = {
+			# always = no
+		# }
+		# ai_will_do = {
+			# factor = 0
+		# }
+		# ai_will_revoke = {
+			# factor = 0
+		# }
+		# effect = {
+			# hidden_tooltip = {
+				# revoke_law = investiture_law_0
+				# revoke_law = investiture_law_1
+			# }
+			# set_investiture = head
+		# }
+	# }
+	
+# Free Investiture
+	# investiture_law_1 = {
+		# show_as_title = yes
+		# rel_head_opinion = -30
+		# free_invest_vassal_opinion = 10 # vassals with bishops will appreciate this law
+		# temple_all_opinion = 10 # Bishops will tend to be more loyal to the Crown
+		# group = investiture_law
+		# potential = {
+			# holder_scope = {
+				# religion = XXX
+				# is_tribal = no
+				# is_nomadic = no
+				# NOT = {
+					# rightful_religious_head_scope = {
+						# character = ROOT
+					# }
+				# }
+			# }
+		# }
+		# allow = {
+			# holy_order = no
+		# }
+		# revoke_allowed = {
+			# always = no
+		# }
+		# ai_will_do = {
+			# factor = 1
+			# modifier = {
+				# factor = 0.002 # Rare to do this
+			# }
+			# modifier = {
+				# factor = 0
+				# OR = {
+					# holder_scope = {
+						# NOT = { trait = cynical }
+					# }
+					# NOT = { has_law = investiture_law_0 }
+				# }
+			# }
+		# }
+		# ai_will_revoke = {
+			# factor = 0
+		# }
+		# effect = {
+			# hidden_tooltip = {
+				# revoke_law = investiture_law_0
+				# revoke_law = investiture_law_1
+			# }
+			# set_investiture = any
+		# }
+	# }
 }
