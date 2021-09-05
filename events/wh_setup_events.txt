@@ -1813,12 +1813,28 @@ character_event = {
 
 	trigger = {
 		is_save_game = no
+		year >= 1600
+		OR = {
+			has_game_rule = {
+				name = warhammer_plausible_bloodlines
+				value = static
+			}
+			has_game_rule = {
+				name = warhammer_plausible_bloodlines
+				value = dynamic
+			}
+		}
 		trait = creature_human
+		year_of_birth >= 1550
 	}
 
 	immediate = {
 		if = {
 			limit = {
+				has_game_rule = {
+					name = warhammer_plausible_bloodlines
+					value = dynamic
+				}
 				ai = yes
 			}
 			random = {
@@ -1854,8 +1870,43 @@ character_event = {
 				}
 			}
 		}
+		else_if = {
+			limit = {
+				has_game_rule = {
+					name = warhammer_plausible_bloodlines
+					value = static
+				}
+				#limit by dynasty - slightly more robust than character id
+				OR = {
+					dynasty = 10090 #Ruggbroder
+					dynasty = 13531 #Ravensberg
+					dynasty = 35000 #Espronceda
+					dynasty = 43001 #Di Sorrento
+					dynasty = 45101 #Biagi
+				}
+			}
+			c_8551 = {
+				random_owned_bloodline = {
+					ROOT = {
+						add_to_bloodline = PREV
+					}
+				}
+			}
+			any_dynasty_member_even_if_dead = {
+				character_event = {
+					id = wh_setup.202
+				}
+			}
+		}
 		#permit players to do a "Marco Colombo" run
-		else = {
+		else_if = {
+			limit = {
+				ai = no
+				has_game_rule = {
+					name = warhammer_plausible_bloodlines
+					value = dynamic
+				}
+			}
 			character_event = {
 				id = wh_setup.203
 				days = 2

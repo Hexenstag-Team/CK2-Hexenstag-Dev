@@ -81,6 +81,35 @@ narrative_event = {
 	}
 }
 
+narrative_event = {
+	id = wh_wonders.3
+	title = EVTTITLE_wh_wonders.3
+	desc = EVTDESC_wh_wonders.3
+	picture = GFX_evt_empire_master_engineer
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			has_global_flag = tilean_engineering_school
+		}
+		FROM = {
+			has_wonder_upgrade = upgrade_engineering_school
+		}
+		FROMFROMFROM = {
+			de_jure_liege_or_above = e_estalia
+		}
+	}
+
+	immediate = {
+		set_global_flag = imperial_engineering_school
+	}
+
+	option = {
+		name = EVTOPT_wh_wonders.2
+		prestige = 1000
+	}
+}
+
 
 #Grandmaster upgrades
 character_event = {

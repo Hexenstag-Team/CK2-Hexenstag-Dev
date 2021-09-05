@@ -8810,6 +8810,16 @@ engineers_guild = {
 					}
 				}
 			}
+			custom_tooltip = {
+				text = engineers_no_estalian_school_tt
+				AND = {
+					culture_group = estalian_group
+					had_global_flag = {
+						flag = tilean_engineering_school
+						months >= 12
+					}
+				}
+			}
 		}
 		learning = 10
 		NOR = {
