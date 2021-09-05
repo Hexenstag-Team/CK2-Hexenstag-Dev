@@ -44,25 +44,6 @@ ask_for_excommunication_chance = {
 		}
 		FROMFROM = { is_theocracy = yes }
 	}
-	#The Papacy will tend to excommunicate bad priests.
-#	additive_modifier = {
-#		value = 15
-#		#No loc needed, it's just for the Pope.
-#		character = FROM
-#		FROMFROM = {
-#			higher_real_tier_than = BARON
-#			is_theocracy = yes
-#
-#	OR = {
-#		trait = bad_priest_christian
-#		trait = bad_priest_muslim
-#		trait = bad_priest_norse
-#		trait = bad_priest_tengri
-#		trait = bad_priest_zoroastrian
-#		trait = bad_priest_aztec
-#	}
-#		}
-#	}
 	#Saintly Bloodline boost.
 	additive_modifier = {
 		value = 5
@@ -99,26 +80,6 @@ ask_for_excommunication_chance = {
 		value = -1000
 		localisation_key = POPE_AIREASON_MODIFIER_IS_EXCOMMUNICATED
 		excommunicated_for = FROM
-	}
-	additive_modifier = {
-		value = 5
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_CHILD
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		NOT = { persistent_event_target:baptizing_pope_per = { character = FROM } }
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		persistent_event_target:baptizing_pope_per = { character = FROM } #Ruler asking was baptized by this very same Pope.
 	}
 	additive_modifier = {
 		value = -100
@@ -842,28 +803,6 @@ ask_for_excommunication_chance = {
 				has_character_modifier = known_satanist
 				has_character_modifier = known_witch
 			}
-		}
-	}
-	additive_modifier = {
-		value = -5
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_CHILD_TARGET
-		FROMFROM = {
-			OR = {
-				trait = baptized_by_pope
-				trait = baptized_by_patriarch
-			}
-			NOT = { persistent_event_target:baptizing_pope_per = { character = ROOT_FROM } }
-		}
-	}
-	additive_modifier = {
-		value = -10
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME_TARGET
-		FROMFROM = {
-			OR = {
-				trait = baptized_by_pope
-				trait = baptized_by_patriarch
-			}
-			persistent_event_target:baptizing_pope_per = { character = ROOT_FROM } #Ruler asking was baptized by this very same Pope.
 		}
 	}
 	additive_modifier = {
@@ -1737,26 +1676,6 @@ ask_for_invasion_chance = {
 		}
 	}
 	additive_modifier = {
-		value = 5
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_CHILD
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		NOT = { persistent_event_target:baptizing_pope_per = { character = FROM } }
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		persistent_event_target:baptizing_pope_per = { character = FROM } #Ruler asking was baptized by this very same Pope.
-	}
-	additive_modifier = {
 		value = -100
 		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER
 		NOT = { character = FROM } #Not on yourself, dirty Pope.
@@ -2475,28 +2394,6 @@ ask_for_invasion_chance = {
 				has_character_modifier = known_satanist
 				has_character_modifier = known_witch
 			}
-		}
-	}
-	additive_modifier = {
-		value = -5
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_CHILD_TARGET
-		FROMFROM = {
-			OR = {
-				trait = baptized_by_pope
-				trait = baptized_by_patriarch
-			}
-			NOT = { persistent_event_target:baptizing_pope_per = { character = ROOT_FROM } }
-		}
-	}
-	additive_modifier = {
-		value = -10
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME_TARGET
-		FROMFROM = {
-			OR = {
-				trait = baptized_by_pope
-				trait = baptized_by_patriarch
-			}
-			persistent_event_target:baptizing_pope_per = { character = ROOT_FROM } #Ruler asking was baptized by this very same Pope.
 		}
 	}
 	additive_modifier = {
@@ -3292,26 +3189,6 @@ ask_for_divorce_chance = {
 		excommunicated_for = FROM
 	}
 	additive_modifier = {
-		value = 5
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_CHILD
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		NOT = { persistent_event_target:baptizing_pope_per = { character = FROM } }
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		persistent_event_target:baptizing_pope_per = { character = FROM } #Ruler asking was baptized by this very same Pope.
-	}
-	additive_modifier = {
 		value = -100
 		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER
 		NOT = { character = FROM } #Not on yourself, dirty Pope.
@@ -4019,28 +3896,6 @@ ask_for_divorce_chance = {
 				has_character_modifier = known_satanist
 				has_character_modifier = known_witch
 			}
-		}
-	}
-	additive_modifier = {
-		value = -5
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_CHILD_TARGET
-		FROMFROM = {
-			OR = {
-				trait = baptized_by_pope
-				trait = baptized_by_patriarch
-			}
-			NOT = { persistent_event_target:baptizing_pope_per = { character = ROOT_FROM } }
-		}
-	}
-	additive_modifier = {
-		value = -10
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME_TARGET
-		FROMFROM = {
-			OR = {
-				trait = baptized_by_pope
-				trait = baptized_by_patriarch
-			}
-			persistent_event_target:baptizing_pope_per = { character = ROOT_FROM } #Ruler asking was baptized by this very same Pope.
 		}
 	}
 	additive_modifier = {
@@ -4766,26 +4621,6 @@ ask_to_lift_excommunication_chance = {
 		}
 	}
 	additive_modifier = {
-		value = 5
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_CHILD
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		NOT = { persistent_event_target:baptizing_pope_per = { character = FROM } }
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		persistent_event_target:baptizing_pope_per = { character = FROM } #Ruler asking was baptized by this very same Pope.
-	}
-	additive_modifier = {
 		value = -100
 		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER
 		NOT = { character = FROM } #Not on yourself, dirty Pope.
@@ -5481,30 +5316,6 @@ ask_to_lift_excommunication_chance = {
 				has_bloodline_flag = saintly_bloodline
 				NOT = { has_bloodline_flag = wicked_saint }
 			}
-		}
-	}
-	additive_modifier = {
-		value = 5
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_CHILD_TARGET
-		FROMFROM = {
-			NOT = { character = ROOT } # Don't check against yourself, silly AI.
-			OR = {
-				trait = baptized_by_pope
-				trait = baptized_by_patriarch
-			}
-			NOT = { persistent_event_target:baptizing_pope_per = { character = ROOT_FROM } }
-		}
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME_TARGET
-		FROMFROM = {
-			NOT = { character = ROOT } # Don't check against yourself, silly AI.
-			OR = {
-				trait = baptized_by_pope
-				trait = baptized_by_patriarch
-			}
-			persistent_event_target:baptizing_pope_per = { character = ROOT_FROM } #Ruler asking was baptized by this very same Pope.
 		}
 	}
 	additive_modifier = {
@@ -6343,26 +6154,6 @@ ask_for_money_chance = {
 		}
 	}
 	additive_modifier = {
-		value = 5
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_CHILD
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		NOT = { persistent_event_target:baptizing_pope_per = { character = FROM } }
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		persistent_event_target:baptizing_pope_per = { character = FROM } #Ruler asking was baptized by this very same Pope.
-	}
-	additive_modifier = {
 		value = -100
 		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER
 		NOT = { character = FROM } #Not on yourself, dirty Pope.
@@ -7175,26 +6966,6 @@ ask_for_crusade_chance = {
 		value = 30
 		localisation_key = POPE_AIREASON_MODIFIER_FAITH_THREATENED_FORREALS
 		NOT = { religion_authority = 2.5 }
-	}
-	additive_modifier = {
-		value = 5
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_CHILD
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		NOT = { persistent_event_target:baptizing_pope_per = { character = FROM } }
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		persistent_event_target:baptizing_pope_per = { character = FROM } #Ruler asking was baptized by this very same Pope.
 	}
 	additive_modifier = {
 		value = -100
@@ -8091,26 +7862,6 @@ ask_for_claim_chance = {
 		excommunicated_for = FROM
 	}
 	additive_modifier = {
-		value = 5
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_CHILD
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		NOT = { persistent_event_target:baptizing_pope_per = { character = FROM } }
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		persistent_event_target:baptizing_pope_per = { character = FROM } #Ruler asking was baptized by this very same Pope.
-	}
-	additive_modifier = {
 		value = -100
 		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER
 		NOT = { character = FROM } #Not on yourself, dirty Pope.
@@ -8823,28 +8574,6 @@ ask_for_claim_chance = {
 				has_character_modifier = known_satanist
 				has_character_modifier = known_witch
 			}
-		}
-	}
-	additive_modifier = {
-		value = -5
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_CHILD_TARGET
-		FROMFROM = {
-			OR = {
-				trait = baptized_by_pope
-				trait = baptized_by_patriarch
-			}
-			NOT = { persistent_event_target:baptizing_pope_per = { character = ROOT_FROM } }
-		}
-	}
-	additive_modifier = {
-		value = -10
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME_TARGET
-		FROMFROM = {
-			OR = {
-				trait = baptized_by_pope
-				trait = baptized_by_patriarch
-			}
-			persistent_event_target:baptizing_pope_per = { character = ROOT_FROM } #Ruler asking was baptized by this very same Pope.
 		}
 	}
 	additive_modifier = {
@@ -9588,26 +9317,6 @@ nominate_bishop_chance = {
 		}
 	}
 	additive_modifier = {
-		value = 5
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_CHILD
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		NOT = { persistent_event_target:baptizing_pope_per = { character = FROM } }
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		OR = {
-			trait = baptized_by_pope
-			trait = baptized_by_patriarch
-		}
-		persistent_event_target:baptizing_pope_per = { character = FROM } #Ruler asking was baptized by this very same Pope.
-	}
-	additive_modifier = {
 		value = -100
 		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER
 		NOT = { character = FROM } #Not on yourself, dirty Pope.
@@ -10315,28 +10024,6 @@ nominate_bishop_chance = {
 				has_character_modifier = known_satanist
 				has_character_modifier = known_witch
 			}
-		}
-	}
-	additive_modifier = {
-		value = 5
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_CHILD_TARGET
-		FROMFROM = {
-			OR = {
-				trait = baptized_by_pope
-				trait = baptized_by_patriarch
-			}
-			NOT = { persistent_event_target:baptizing_pope_per = { character = ROOT_FROM } }
-		}
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_BAPTIZED_BY_ME_TARGET
-		FROMFROM = {
-			OR = {
-				trait = baptized_by_pope
-				trait = baptized_by_patriarch
-			}
-			persistent_event_target:baptizing_pope_per = { character = ROOT_FROM } #Ruler asking was baptized by this very same Pope.
 		}
 	}
 	additive_modifier = {

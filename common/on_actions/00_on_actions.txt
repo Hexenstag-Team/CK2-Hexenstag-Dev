@@ -1935,10 +1935,6 @@ on_death = {
 		JD.10080 # Your Chinese Prince/Princess has died (for children or spouse - must be read before JD.60310!)
 		JD.60310 # Courtier from China dies
 		JD.10022 # Chinese councilor visiting dies and cancels visit
-		HF.20014 	# On death of sponsor before baptism
-		HF.20016 	# On death of converter before baptism
-		HF.20022	# On death of sponsor after baptism
-		HF.20095	# On death of converter after baptism
 		HF.20034	# True believer vassal dies before ceremony, heir chooses what to do
 		GR.14 # Lose disconnected exclaves if not at war (Limited)
 		GR.15 # Lose disconnected exclaves if not at war (Significant)
@@ -2983,18 +2979,13 @@ on_character_convert_religion = {
 		671 #set rival conversion flag if eligible
 		63105
 		TOG.7101 #Removes main deity for defensive pagans
-		#39804 # Remove Bön patron dieties
+		#39804 # Remove Bï¿½n patron dieties
 		#39805 # Remove Kurmazta patron dieties
 		#39806 # Remove Taoist Schools
 
 		# If switched religion then trait is gone and we need to clean up modifiers for zoroastrian pets
 		ZP.6
 
-		# Baptism - Mass Conversion checks
-		HF.20012 	# On conversion of sponsor during baptism
-		HF.20018 	# On conversion of converter after baptism
-		HF.20020	# On conversion of sponsor after baptism
-		HF.20027	# On baptism of deceitful player, maintain previous faith
 		HF.20408	# Ruler has converted in the middle of coronation, stop everything.
 		HF.20416	# Cleanup uncrowned modifiers when converting away from Catholicism/Fraticelli.
 		HF.23033	# Acquire Pagan religious branch when converting to a religion that has No Head.

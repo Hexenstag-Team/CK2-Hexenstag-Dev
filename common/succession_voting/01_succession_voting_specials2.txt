@@ -3158,36 +3158,6 @@ witch_hunter_elective = {
 				}
 			}
 		}
-		additive_modifier = { #Praised for being baptized by Bishop
-			value = 5
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_bishop
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = old_world_group
-			religion = FROM
-			FROM = {
-				trait = baptized_by_bishop
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Pope
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_pope
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = old_world_group
-			religion = FROM
-			FROM = {
-				trait = baptized_by_pope
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Patriarch
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_patriarch
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = old_world_group
-			religion = FROM
-			FROM = {
-				trait = baptized_by_patriarch
-			}
-		}
 		additive_modifier = { #Shunned for being unproved courtier in the shadow of the ruler.
 			value = -10
 			localisation_key = tooltip_feudal_elector_vote_spoiled_courtier
@@ -5120,36 +5090,6 @@ sorcerous_conclave_voting = {
 					trait = is_fat
 					trait = is_malnourished
 				}
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Bishop
-			value = 5
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_bishop
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = old_world_group
-			religion = FROM
-			FROM = {
-				trait = baptized_by_bishop
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Pope
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_pope
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = old_world_group
-			religion = FROM
-			FROM = {
-				trait = baptized_by_pope
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Patriarch
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_patriarch
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = old_world_group
-			religion = FROM
-			FROM = {
-				trait = baptized_by_patriarch
 			}
 		}
 		additive_modifier = { #Shunned for being unproved courtier in the shadow of the ruler.

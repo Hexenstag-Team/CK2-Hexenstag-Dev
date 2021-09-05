@@ -4299,38 +4299,6 @@ byzantine_elective = {
 				}
 			}
 		}
-		additive_modifier = { #Praised for being baptized by Bishop
-			value = 5
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_bishop
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = christian
-			FROM = {
-				trait = baptized_by_bishop
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Pope
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_pope
-			NOT = { character = FROM } #Do not judge yourself.
-			OR = {
-				religion = catholic
-				religion = fraticelli
-			}
-			religion = FROM
-			FROM = {
-				trait = baptized_by_pope
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Patriarch
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_patriarch
-			NOT = { character = FROM } #Do not judge yourself.
-			religion = orthodox
-			religion = FROM
-			FROM = {
-				trait = baptized_by_patriarch
-			}
-		}
 		additive_modifier = { #Shunned for being of opposite pagan branch.
 			value = -25
 			localisation_key = tooltip_feudal_elector_vote_pagan_branch_negative
@@ -7470,32 +7438,13 @@ hre_feudal_elective = {
 			value = -10
 			localisation_key = tooltip_feudal_elector_vote_shape_negative
 			NOT = { character = FROM } #Do not judge yourself.
-			NOT = { culture = mootlanderp }
+			NOT = { culture = mootlander }
 			this_is_warrior_culture_trigger = yes
 			FROM = {
 				OR = {
 					trait = is_fat
 					trait = is_malnourished
 				}
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Bishop
-			value = 5
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_bishop
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = old_world_group
-			FROM = {
-				trait = baptized_by_bishop
-			}
-		}
-		additive_modifier = { #Praised for being baptized by grand theoginist
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_pope
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = old_world_group
-			religion = FROM
-			FROM = {
-				trait = baptized_by_pope
 			}
 		}
 		additive_modifier = { #Shunned for being unproved courtier in the shadow of the ruler.
@@ -10593,25 +10542,6 @@ bretonnia_feudal_elective = {
 					trait = is_fat
 					trait = is_malnourished
 				}
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Bishop
-			value = 5
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_bishop
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = old_world_group
-			FROM = {
-				trait = baptized_by_bishop
-			}
-		}
-		additive_modifier = { #Praised for being baptized by grand theoginist
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_pope
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = old_world_group
-			religion = FROM
-			FROM = {
-				trait = baptized_by_pope
 			}
 		}
 		additive_modifier = { #Shunned for being unproved courtier in the shadow of the ruler.

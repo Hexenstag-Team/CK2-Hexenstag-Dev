@@ -2991,38 +2991,6 @@ feudal_elective = {
 				}
 			}
 		}
-		additive_modifier = { #Praised for being baptized by Bishop
-			value = 5
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_bishop
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = christian
-			FROM = {
-				trait = baptized_by_bishop
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Pope
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_pope
-			NOT = { character = FROM } #Do not judge yourself.
-			OR = {
-				religion = catholic
-				religion = fraticelli
-			}
-			religion = FROM
-			FROM = {
-				trait = baptized_by_pope
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Patriarch
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_patriarch
-			NOT = { character = FROM } #Do not judge yourself.
-			religion = orthodox
-			religion = FROM
-			FROM = {
-				trait = baptized_by_patriarch
-			}
-		}
 		additive_modifier = { #Shunned for being of opposite pagan branch.
 			value = -25
 			localisation_key = tooltip_feudal_elector_vote_pagan_branch_negative
@@ -6359,38 +6327,6 @@ tanistry = {
 				}
 			}
 		}
-		additive_modifier = { #Praised for being baptized by Bishop
-			value = 5
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_bishop
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = christian
-			FROM = {
-				trait = baptized_by_bishop
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Pope
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_pope
-			NOT = { character = FROM } #Do not judge yourself.
-			OR = {
-				religion = catholic
-				religion = fraticelli
-			}
-			religion = FROM
-			FROM = {
-				trait = baptized_by_pope
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Patriarch
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_patriarch
-			NOT = { character = FROM } #Do not judge yourself.
-			religion = orthodox
-			religion = FROM
-			FROM = {
-				trait = baptized_by_patriarch
-			}
-		}
 		additive_modifier = { #Shunned for being of opposite pagan branch.
 			value = -15
 			localisation_key = tooltip_feudal_elector_vote_pagan_branch_negative
@@ -9704,38 +9640,6 @@ elective_gavelkind = {
 					trait = is_fat
 					trait = is_malnourished
 				}
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Bishop
-			value = 5
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_bishop
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = christian
-			FROM = {
-				trait = baptized_by_bishop
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Pope
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_pope
-			NOT = { character = FROM } #Do not judge yourself.
-			OR = {
-				religion = catholic
-				religion = fraticelli
-			}
-			religion = FROM
-			FROM = {
-				trait = baptized_by_pope
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Patriarch
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_patriarch
-			NOT = { character = FROM } #Do not judge yourself.
-			religion = orthodox
-			religion = FROM
-			FROM = {
-				trait = baptized_by_patriarch
 			}
 		}
 		additive_modifier = { #Shunned for being of opposite pagan branch.
@@ -13409,47 +13313,6 @@ eldership_rules = {
 				holder_scope = { character = ROOT }
 			}
 		}
-		additive_modifier = { #Praised for being baptized by Bishop
-			value = 5
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_bishop
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = christian
-			FROM = {
-				trait = baptized_by_bishop
-			}
-			FROMFROM = {
-				holder_scope = { character = ROOT }
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Pope
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_pope
-			NOT = { character = FROM } #Do not judge yourself.
-			OR = {
-				religion = catholic
-				religion = fraticelli
-			}
-			religion = FROM
-			FROM = {
-				trait = baptized_by_pope
-			}
-			FROMFROM = {
-				holder_scope = { character = ROOT }
-			}
-		}
-		additive_modifier = { #Praised for being baptized by Patriarch
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_patriarch
-			NOT = { character = FROM } #Do not judge yourself.
-			religion = orthodox
-			religion = FROM
-			FROM = {
-				trait = baptized_by_patriarch
-			}
-			FROMFROM = {
-				holder_scope = { character = ROOT }
-			}
-		}
 		additive_modifier = { #Shunned for being of opposite pagan branch.
 			value = -15
 			localisation_key = tooltip_feudal_elector_vote_pagan_branch_negative
@@ -16329,41 +16192,6 @@ eldership_rules = {
 					trait = is_fat
 					trait = is_malnourished
 				}
-			}
-			has_elector_stance = { stance = elder_pleased title = FROMFROM }
-		}
-		additive_modifier = { #Praised for being baptized by Bishop
-			value = 5
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_bishop
-			NOT = { character = FROM } #Do not judge yourself.
-			religion_group = christian
-			FROM = {
-				trait = baptized_by_bishop
-			}
-			has_elector_stance = { stance = elder_pleased title = FROMFROM }
-		}
-		additive_modifier = { #Praised for being baptized by Pope
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_pope
-			NOT = { character = FROM } #Do not judge yourself.
-			OR = {
-				religion = catholic
-				religion = fraticelli
-			}
-			religion = FROM
-			FROM = {
-				trait = baptized_by_pope
-			}
-			has_elector_stance = { stance = elder_pleased title = FROMFROM }
-		}
-		additive_modifier = { #Praised for being baptized by Patriarch
-			value = 10
-			localisation_key = tooltip_feudal_elector_vote_baptized_by_patriarch
-			NOT = { character = FROM } #Do not judge yourself.
-			religion = orthodox
-			religion = FROM
-			FROM = {
-				trait = baptized_by_patriarch
 			}
 			has_elector_stance = { stance = elder_pleased title = FROMFROM }
 		}
