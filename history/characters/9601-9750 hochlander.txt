@@ -393,10 +393,6 @@
 
 	1984.3.2 = {
 		birth = yes
-		create_bloodline = {
-			type = cherusen_blood
-			has_dlc = "Holy Fury"
-		}
 	}
 	2003.1.1 = {
 		effect = {
@@ -476,7 +472,13 @@
 	add_trait = tough_soldier
 	add_trait = content
 
-	1952.1.1 = {birth = yes}
+	1952.1.1 = {
+		birth = yes
+		create_bloodline = {
+			type = cherusen_blood
+			has_dlc = "Holy Fury"
+		}
+	}
 	2003.1.1 = {death = yes}
 }
 

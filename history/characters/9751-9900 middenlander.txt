@@ -24,10 +24,6 @@
 	add_trait = one_eyed
 	1971.3.7 = {
 		birth = yes
-		create_bloodline = {
-			type = teutogen_blood
-			has_dlc = "Holy Fury"
-		}
 	}
 	2000.1.1 = {
 		effect = {
@@ -435,7 +431,13 @@
 	add_trait = proud
 	add_trait = ambitious
 	add_trait = patient
-	1953.3.20 = {birth = yes}
+	1953.3.20 = {
+		birth = yes
+		create_bloodline = {
+			type = teutogen_blood
+			has_dlc = "Holy Fury"
+		}
+	}
 	1972.10.4 = {add_spouse = 81054}
 	2009.2.14 = {death = yes}
 }

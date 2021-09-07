@@ -718,7 +718,7 @@
 	stewardship=9
 	intrigue=7
 	learning=5
-	add_trait=creature_orc
+	add_trait = creature_orc
 	add_trait=mystic
 	add_trait=amateurish_plotter
 	add_trait=patient
@@ -2311,4 +2311,37 @@
 	father = 1602
 	1790.10.1 = {birth = yes}
 	2352.7.2={death = yes}
+}
+
+1604 = {
+	name = Rogguc
+	dynasty = 90170
+	culture = orc_main
+	religion = greenskin_gods
+	stewardship = 15
+	add_trait = creature_orc
+	add_trait = orc_large
+	1920.1.1 = {
+		birth = yes
+	}
+	2300.1.1 = {
+		death = yes
+	}
+}
+
+1605 = {
+	name = Rigog
+	dynasty = 90170
+	culture = orc_main
+	religion = greenskin_gods
+	stewardship = 18
+	father = 1604
+	add_trait = creature_orc
+	add_trait = orc_small
+	1950.1.1 = {
+		birth = yes
+	}
+	2300.1.1 = {
+		death = yes
+	}
 }

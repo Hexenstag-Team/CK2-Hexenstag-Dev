@@ -20356,8 +20356,7 @@ e_the_empire = {
 	color = { 210 210 210 }
 	color2 = { 255 255 20 }
 
-	capital = 299 # c_altdorf #Traditionally Altdorf, But the empire does not have an Set capital, Could Probably make event to set it where ever the capital of elector count is upon succession
-	#set_preferred_capital = 35/b_oudenaarde/c_brugge/d_normandy/k_brittany/e_italy
+	capital = 299 # c_altdorf #Traditionally Altdorf
 	short_name = yes
 
 	title = EMPEROR
@@ -20789,7 +20788,7 @@ e_the_empire = {
 		old_imperial = "Brigundia"
 
 		d_averheim = {
-			color = { 94 252 211 }
+			color = { 84 6 206 }
 			color2 = { 255 255 255 }
 
 			capital = 357 # c_averheim
@@ -20806,18 +20805,6 @@ e_the_empire = {
 				b_hemmor = {}
 				b_tannfeld = {}
 			}
-			c_heideck = { # 934
-				color = { 85 210 221 }
-				color2 = { 255 255 255 }
-
-				b_heideck = {}
-				b_thurndorf = {}
-				b_pressath = {}
-				b_grettstadt = {}
-				b_heinzstadt = {}
-				b_wolfsbirge = {}
-				b_lental = {}
-			}
 			c_streissen = { # 355
 				color = { 0 0 205 }
 				color2 = { 255 255 255 }
@@ -20830,13 +20817,37 @@ e_the_empire = {
 				b_eisenholder = {}
 				b_saaldenz = {}
 			}
+			c_bieswang = { # 1408
+				color = { 127 162 79 }
+				color2 = { 255 255 255 }
+
+				b_bieswang = {}
+				b_billafingen = {}
+				b_winterspuren = {}
+				b_pleutersbach = {}
+				b_noggenschwiel = {}
+				b_gruntal = {}
+				b_dorf = {}
+			}
+			c_malsburg = { # 1394
+				color = { 169 120 72 }
+				color2 = { 255 255 255 }
+
+				b_malsburg = {}
+				b_buttenhausen = {}
+				b_deisendorf = {}
+				b_friedenweiler = {}
+				b_glatt = {}
+				b_hof_und_lembach = {}
+				b_seissen_steigziegelhutte = {}
+			}
 		}
 		d_martig = {
-			color = { 116 217 199 }
+			color = { 126 207 204 }
 			color2 = { 255 255 255 }
 
 			capital = 353 # c_lengenfeld
-
+			
 			c_lengenfeld = { # 353
 				color = { 126 207 204 }
 				color2 = { 255 255 255 }
@@ -20849,61 +20860,37 @@ e_the_empire = {
 				b_mautal = {}
 				b_grossweil = {}
 			}
-			c_bernloch = { # 365
-				color = { 0 30 210 }
+			c_gnadental = { # 1405
+				color = { 1 153 205 }
 				color2 = { 255 255 255 }
 
-				b_bernloch = {}
-				b_garding = {}
-				b_fehman = {}
-				b_donzdorf = {}
-				b_leneruck = {}
-				b_vilseberg = {}
-				b_terbuehel = {}
+				b_gnadental = {}
+				b_bambergen = {}
+				b_durrenbuchig = {}
+				b_heudorf_bei_mengen = {}
+				b_hutten = {}
+				b_lautenbach = {}
+				b_horvelsingen = {}
 			}
-			c_colmfaehre = { # 354
-				color = { 168 210 77 }
+			c_ollingen = { # 1400
+				color = { 1 138 75 }
 				color2 = { 255 255 255 }
 
-				b_colmfaehre = {}
-				b_baruth = {}
-				b_gruensfeld = {}
-				b_volsbach = {}
-				b_thann = {}
-				b_krneuzing = {}
-				b_hollalach = {}
-			}
-			c_longingbruck = { # 358
-				color = { 126 9 79 }
-				color2 = { 255 255 255 }
-
-				b_longingbruck = {}
-				b_agbeiten = {}
-				b_hammelburg = {}
-				b_geseke = {}
-				b_grossenwagen = {}
-				b_knittelzing = {}
-				b_voelkheim = {}
-			}
-			c_wuppertal = { # 356
-				color = { 42 3 78 }
-				color2 = { 255 255 255 }
-
-				b_wuppertal = {}
-				b_rhens = {}
-				b_sehnde = {}
-				b_vellberg = {}
-				b_muhlfeld = {}
-				b_dorntetten = {}
-				b_allbach = {}
+				b_ollingen = {}
+				b_konigsheim = {}
+				b_neutrauchburg = {}
+				b_pfronstetten = {}
+				b_schwabhausen = {}
+				b_yach = {}
+				b_althausen = {}
 			}
 		}
 		d_pferdmark = {
-			color = { 136 14 214 }
+			color = { 126 24 209 }
 			color2 = { 255 255 255 }
 
 			capital = 363 # c_pfungzig
-
+			
 			c_pfungzig = { # 363
 				color = { 126 24 209 }
 				color2 = { 255 255 255 }
@@ -20916,6 +20903,123 @@ e_the_empire = {
 				b_trolach = {}
 				b_zierenlug = {}
 			}
+			c_uberberg = { # 1406
+				color = { 43 156 78 }
+				color2 = { 255 255 255 }
+
+				b_uberberg = {}
+				b_hohenstadt = {}
+				b_gerichtstetten = {}
+				b_eglofs = {}
+				b_urphar = {}
+				b_ruschweiler = {}
+				b_honau = {}
+			}
+			c_reutin = { # 1402
+				color = { 85 144 76 }
+				color2 = { 255 255 255 }
+
+				b_reutin = {}
+				b_berolzheim = {}
+				b_gebrazhofen = {}
+				b_hefigkofen = {}
+				b_justingen = {}
+				b_reichenbach = {}
+				b_hochsal = {}
+			}
+		}
+		d_ostoggel = {
+			color = { 1 63 190 }
+			color2 = { 255 255 255 }
+
+			capital = 1375 # c_merfeld
+			
+			c_merfeld = { # 1375
+				color = { 1 63 190 }
+				color2 = { 255 255 255 }
+
+				b_merfeld = {}
+				b_ettlenschiess = {}
+				b_beiningen = {}
+				b_morsbach = {}
+				b_kalbertshausen = {}
+				b_hard = {}
+				b_binau_bahnhof = {}
+			}
+			c_lachweiler = { # 1385
+				color = { 1 93 195 }
+				color2 = { 255 255 255 }
+
+				b_lachweiler = {}
+				b_engelswies = {}
+				b_flinsbach = {}
+				b_guttenbach = {}
+				b_harthausen = {}
+				b_krumbach = {}
+				b_unterentersbach = {}
+			}
+			c_zipplingen = { # 1374
+				color = { 169 60 62 }
+				color2 = { 255 255 255 }
+
+				b_zipplingen = {}
+				b_kammgarnspinnerei = {}
+				b_oberaspach = {}
+				b_hottingen = {}
+				b_tabingen = {}
+				b_haberschlacht = {}
+				b_ummenhofen = {}
+			}
+		}
+		d_obererblauereichweite = {
+			color = { 43 66 63 }
+			color2 = { 255 255 255 }
+
+			capital = 1376 # c_essing
+			
+			c_essing = { # 1376
+				color = { 43 66 63 }
+				color2 = { 255 255 255 }
+
+				b_essing = {}
+				b_blansingen = {}
+				b_eggenrot = {}
+				b_bad_niedernau = {}
+				b_hart = {}
+				b_wellendingen = {}
+				b_hofendorf = {}
+			}
+			c_riedlingen = { # 1379
+				color = { 169 75 192 }
+				color2 = { 255 255 255 }
+
+				b_riedlingen = {}
+				b_oberlengenhardt = {}
+				b_neuhauser = {}
+				b_mullen = {}
+				b_horenhausen = {}
+				b_grauelsbaum = {}
+				b_hausen = {}
+			}
+			c_wagenschwend = { # 1377
+				color = { 85 69 191 }
+				color2 = { 255 255 255 }
+
+				b_wagenschwend = {}
+				b_waldhausen = {}
+				b_neckarmuhlbach = {}
+				b_oberreichenbach = {}
+				b_marbach = {}
+				b_kappishausern = {}
+				b_hohenstein = {}
+			}
+		}
+		d_grenzsradt = {
+			color = { 84 21 81 }
+			color2 = { 255 255 255 }
+
+			capital = 362 # c_grenzstadt
+			
 			c_grenzstadt = { # 362
 				color = { 84 21 81 }
 				color2 = { 255 255 255 }
@@ -20940,7 +21044,81 @@ e_the_empire = {
 				b_freikreis = {}
 				b_brussestadt = {}
 			}
-			c_niebelwald = { # 364
+			c_tiefenbach = { # 1378
+				color = { 127 72 64 }
+				color2 = { 255 255 255 }
+
+				b_tiefenbach = {}
+				b_zwerenberg = {}
+				b_waldstetten = {}
+				b_steinenkirch = {}
+				b_odenwaldstetten = {}
+				b_neuhauser = {}
+				b_lombach = {}
+			}
+			c_osterhofen = { # 1380
+				color = { 1 78 65 }
+				color2 = { 255 255 255 }
+
+				b_osterhofen = {}
+				b_hopfau = {}
+				b_bickelsberg = {}
+				b_aufen = {}
+				b_wieslet = {}
+				b_schienen = {}
+				b_offnadingen = {}
+			}
+		}		
+		d_moosbrunn = {
+			color = { 85 84 66 }
+			color2 = { 255 255 255 }
+
+			capital = 1382 # c_moosbrunn	
+			
+			c_moosbrunn = { # 1382
+				color = { 85 84 66 }
+				color2 = { 255 255 255 }
+
+				b_moosbrunn = {}
+				b_obereggenen = {}
+				b_reichenhofen = {}
+				b_schonbrunn = {}
+				b_ochsenberg = {}
+				b_untermettingen = {}
+				b_weiler = {}
+			}
+			c_ittendorf = { # 1384
+				color = { 169 90 67 }
+				color2 = { 255 255 255 }
+
+				b_ittendorf = {}
+				b_oberschwarzach = {}
+				b_sonderbuch = {}
+				b_utzenfeld = {}
+				b_wittenweier = {}
+				b_bissingen = {}
+				b_bronnen = {}
+			}
+			c_kirchenkirnberg = { # 1383
+				color = { 127 87 194 }
+				color2 = { 255 255 255 }
+
+				b_kirchenkirnberg = {}
+				b_obermusbach = {}
+				b_ruchsen = {}
+				b_schweinhausen = {}
+				b_unterschwarzach = {}
+				b_wittelbach = {}
+				b_ballendorf = {}
+			}
+		}
+		d_niebelwald = {
+			color = { 168 27 82 }
+			color2 = { 255 255 255 }
+
+			capital = 364 # c_ingelfingen	
+			
+			c_ingelfingen = { # 364
 				color = { 168 27 82 }
 				color2 = { 255 255 255 }
 
@@ -20951,6 +21129,331 @@ e_the_empire = {
 				b_schrebensheim = {}
 				b_kufsill = {}
 				b_bereefeld = {}
+			}
+			c_rosenharz = { # 1389
+				color = { 169 105 197 }
+				color2 = { 255 255 255 }
+
+				b_rosenharz = {}
+				b_brigach = {}
+				b_ehrstadt = {}
+				b_hanweiler = {}
+				b_killer = {}
+				b_hurbel = {}
+				b_twielfeld = {}
+			}
+			c_remetschwiel = { # 1388
+				color = { 127 102 69 }
+				color2 = { 255 255 255 }
+
+				b_remetschwiel = {}
+				b_baiereck = {}
+				b_ebershardt = {}
+				b_helmhof = {}
+				b_isingen = {}
+				b_hosskirch = {}
+				b_ohrnberg = {}
+			}
+		}	
+		d_bernloch = {
+			color = { 0 30 210 }
+			color2 = { 255 255 255 }
+
+			capital = 365 # c_bernloch	
+			
+			c_bernloch = { # 365
+				color = { 0 30 210 }
+				color2 = { 255 255 255 }
+
+				b_bernloch = {}
+				b_garding = {}
+				b_fehman = {}
+				b_donzdorf = {}
+				b_leneruck = {}
+				b_vilseberg = {}
+				b_terbuehel = {}
+			}
+			c_oberbrand = { # 1387
+				color = { 85 99 196 }
+				color2 = { 255 255 255 }
+
+				b_oberbrand = {}
+				b_hulen = {}
+				b_ochsenburg = {}
+				b_rauenberg = {}
+				b_temmenhausen = {}
+				b_zwingenberg = {}
+				b_altheim = {}
+			}
+			c_veringendorf = { # 1390
+				color = { 1 108 70 }
+				color2 = { 255 255 255 }
+
+				b_veringendorf = {}
+				b_eutendorf = {}
+				b_hondingen = {}
+				b_leibertingen = {}
+				b_mauchen = {}
+				b_oberbruch = {}
+				b_uissigheim = {}
+			}
+		}	
+		d_longingbruck = {
+			color = { 126 9 79 }
+			color2 = { 255 255 255 }
+
+			capital = 358 # c_longingbruck	
+			
+			c_longingbruck = { # 358
+				color = { 126 9 79 }
+				color2 = { 255 255 255 }
+
+				b_longingbruck = {}
+				b_agbeiten = {}
+				b_hammelburg = {}
+				b_geseke = {}
+				b_grossenwagen = {}
+				b_knittelzing = {}
+				b_voelkheim = {}
+			}
+			c_nellingsheim = { # 1386
+				color = { 43 96 68 }
+				color2 = { 255 255 255 }
+
+				b_nellingsheim = {}
+				b_hohenstadt = {}
+				b_michelwinnaden = {}
+				b_oberspeltach = {}
+				b_thalheim = {}
+				b_wimmental = {}
+				b_adrazhofen = {}
+			}
+			c_ahbeiten = { # 1381
+				color = { 43 81 193 }
+				color2 = { 255 255 255 }
+
+				b_ahbeiten = {}
+				b_hettigenbeuern = {}
+				b_aspenhau_siedlung = {}
+				b_sindeldorf = {}
+				b_oberwittstadt = {}
+				b_reute = {}
+				b_vorderdorf = {}
+			}
+		}	
+		d_heideck = {
+			color = { 85 210 221 }
+			color2 = { 255 255 255 }
+
+			capital = 934 # c_heideck	
+			
+			c_heideck = { # 934
+				color = { 85 210 221 }
+				color2 = { 255 255 255 }
+
+				b_heideck = {}
+				b_thurndorf = {}
+				b_pressath = {}
+				b_grettstadt = {}
+				b_heinzstadt = {}
+				b_wolfsbirge = {}
+				b_lental = {}
+			}
+			c_neusatz = { # 1392
+				color = { 85 114 71 }
+				color2 = { 255 255 255 }
+
+				b_neusatz = {}
+				b_weiler_ob_helfenstein = {}
+				b_aulfingen = {}
+				b_bruch = {}
+				b_meidelstetten = {}
+				b_rutesheim_bahnhof = {}
+				b_unterzeil = {}
+			}
+			c_huzenbach = { # 1393
+				color = { 127 117 199 }
+				color2 = { 255 255 255 }
+
+				b_huzenbach = {}
+				b_zimmerbach = {}
+				b_bad_imnau = {}
+				b_daugendorf = {}
+				b_michelau = {}
+				b_st_nikolaus = {}
+				b_ziegelbach = {}
+			}
+		}			
+		d_hoppetenzell = {
+			color = { 1 123 200 }
+			color2 = { 255 255 255 }
+
+			capital = 1395 # c_hoppetenzell		
+			
+			c_hoppetenzell = { # 1395
+				color = { 1 123 200 }
+				color2 = { 255 255 255 }
+
+				b_hoppetenzell = {}
+				b_eglingen = {}
+				b_friesenhofen = {}
+				b_hertingen = {}
+				b_leinstetten = {}
+				b_neukirch = {}
+				b_rotzel = {}
+			}
+			c_neuenburg = { # 1396
+				color = { 43 126 73 }
+				color2 = { 255 255 255 }
+
+				b_neuenburg = {}
+				b_hengstfeld = {}
+				b_maitis = {}
+				b_neipperg = {}
+				b_holzen = {}
+				b_reiselfingen = {}
+				b_tannhausen = {}
+			}
+			c_zepfenhan = { # 1391
+				color = { 43 111 198 }
+				color2 = { 255 255 255 }
+
+				b_zepfenhan = {}
+				b_walbertsweiler = {}
+				b_adersbach = {}
+				b_bottingen = {}
+				b_horben = {}
+				b_reichenbuch = {}
+				b_unterdigisheim = {}
+			}
+		}
+		d_wuppertal = {
+			color = { 42 3 78 }
+			color2 = { 255 255 255 }
+
+			capital = 356 # c_wuppertal		
+			
+			c_wuppertal = { # 356
+				color = { 42 3 78 }
+				color2 = { 255 255 255 }
+
+				b_wuppertal = {}
+				b_rhens = {}
+				b_sehnde = {}
+				b_vellberg = {}
+				b_muhlfeld = {}
+				b_dorntetten = {}
+				b_allbach = {}
+			}
+			c_hirrweiler = { # 1397
+				color = { 85 129 201 }
+				color2 = { 255 255 255 }
+
+				b_hirrweiler = {}
+				b_westernhausen = {}
+				b_ammertsweiler = {}
+				b_bittelbronn = {}
+				b_ettishofen = {}
+				b_feldberg = {}
+				b_hodingen = {}
+			}
+			c_oberschwandorf = { # 1398
+				color = { 127 132 74 }
+				color2 = { 255 255 255 }
+
+				b_oberschwandorf = {}
+				b_worndorf = {}
+				b_auernheim = {}
+				b_burg = {}
+				b_durrweiler = {}
+				b_grunholz = {}
+				b_husingen = {}
+			}
+		}
+		d_colmfaehre = {
+			color = { 168 210 77 }
+			color2 = { 255 255 255 }
+
+			capital = 354 # c_colmfaehre		
+			
+			c_colmfaehre = { # 354
+				color = { 168 210 77 }
+				color2 = { 255 255 255 }
+
+				b_colmfaehre = {}
+				b_baruth = {}
+				b_gruensfeld = {}
+				b_volsbach = {}
+				b_thann = {}
+				b_krneuzing = {}
+				b_hollalach = {}
+			}
+			c_heppenschwand = { # 1399
+				color = { 169 135 202 }
+				color2 = { 255 255 255 }
+
+				b_heppenschwand = {}
+				b_duchtlingen = {}
+				b_ellwangen = {}
+				b_freiolsheim = {}
+				b_hardtbuck = {}
+				b_kniebis = {}
+				b_lackendorf = {}
+			}
+			c_gutenstein = { # 1403
+				color = { 127 147 204 }
+				color2 = { 255 255 255 }
+
+				b_gutenstein = {}
+				b_trailfingen = {}
+				b_untergimpern = {}
+				b_steinhausen_an_der_rottum = {}
+				b_wangen = {}
+				b_amrichshausen = {}
+				b_boxtal = {}
+			}
+		}
+		d_heiligenbronn = {
+			color = { 43 141 203 }
+			color2 = { 255 255 255 }
+
+			capital = 1401 # c_heiligenbronn	
+			
+			c_heiligenbronn = { # 1401
+				color = { 43 141 203 }
+				color2 = { 255 255 255 }
+
+				b_heiligenbronn = {}
+				b_niedereggenen = {}
+				b_streichen = {}
+				b_zimmern = {}
+				b_bad_griesbach = {}
+				b_hepbach = {}
+				b_steinbach = {}
+			}
+			c_ettenheimweiler = { # 1407
+				color = { 85 159 206 }
+				color2 = { 255 255 255 }
+
+				b_ettenheimweiler = {}
+				b_bischoffingen = {}
+				b_waldmuhlbach = {}
+				b_schweighausen = {}
+				b_riedhausen = {}
+				b_hochstetten = {}
+				b_dietingen = {}
+			}
+			c_sachsenhausen = { # 1404
+				color = { 169 150 77 }
+				color2 = { 255 255 255 }
+
+				b_sachsenhausen = {}
+				b_auendorf = {}
+				b_bellamont = {}
+				b_dettensee = {}
+				b_gundelwangen = {}
+				b_hohebach = {}
+				b_muckental = {}
 			}
 		}
 	}
