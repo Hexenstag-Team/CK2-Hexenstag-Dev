@@ -233,6 +233,13 @@ decisions = {
 				value  = 0.4
 				trait = zealous
 			}
+			additive_modifier = {
+				value  = 0.9
+				OR = {
+					government = theocracy_government
+					government = congregation_government
+				}
+			}
 			modifier = {
 				factor = 0
 				trait = cynical
