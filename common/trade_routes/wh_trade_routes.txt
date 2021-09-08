@@ -90,23 +90,29 @@ old_dwarf_road = { #
 	# Karaz-a-Karak
 	start = { 451 }
 	
-	# Karaz-a-Karak, Kazad Urkbavak, Deiter, Kalk, Akendorf, Munzig, Haz-Drazh Kadrin, Booming Peak, Grenzstadt, Hocheleben, Longingbruck
-	path = { 451 452 692 691 690 688 440 439 362 360 358 }
+	# Karaz-a-Karak, Kazad Urkbavak, Deiter, Kalk, Akendorf, Munzig, Haz-Drazh Kadrin, Booming Peak, Grenzstadt
+	path = { 451 452 692 691 690 688 440 439 362 }
 	
-	# Longingbruck, Wuppertal
-	path = { 358 356 }
+	# Grenzstadt, Hocheleben
+	path = { 362 360 }
 	
-	# Longingbruck, Bernloch, Heideck, Averheim
-	path = { 358 365 934 357 }
+	# Hocheleben, Moosbrunn, Agheiten
+	path = { 360 1382 1381 }
 	
-	# Averheim, Wordenern, Wurtbad
+	# Agheiten, Bernloch, Neusatz, Heideck, Malsburg, Averheim
+	path = { 1381 365 1392 934 1394 357 }
+	
+	# Agheiten, Nellingsheim, Longingbruck, Hoppetenzell, Wuppertal
+	path = { 1381 1386 358 1395 356 }
+	
+	# Averheim, Wordern, Wurtbad
 	path = { 357 348 343 }
 	
-	# Averheim, Sauerapfe, Einsamholz
-	path = { 357 359 361 }
-	
-	#Averheim, Streissen
+	# Averheim, Streissen
 	path = { 357 355 }
+	
+	# Averheim, Bieswang, Sauerapfel, Einsamholz
+	path = {357 1408 359 361 }
 }
 old_forest_road = { #
 
@@ -355,8 +361,11 @@ Pfeildorf_road = { #
 	# Staig, Pforzen
 	path = { 318 319 }
 	
-	# Staig, Steingart, Grenzstadt
-	path = { 318 323 362 }
+	# Staig, Steingart, Merfeld, Lachweiler, Hocheleben
+	path = { 318 323 1375 1385 360 }
+	
+	# Hocheleben, Grenzstadt
+	path = { 360 362 }
 	
 	# Sexau, Wittenhausen
 	path = { 317 320 }
@@ -407,8 +416,8 @@ nuln_road = { #
 	# Teichel, Gostahof
 	path = { 342 332}
 	
-	# Nuln, Grotchen, Lengenfeld, Stirhugel, Wordern, Wurtbad
-	path = { 309 1270 353 347 348 343 }
+	# Nuln, Grotchen, Gnadental, Lengenfeld, Stirhugel, Wordern, Wurtbad
+	path = { 309 1270 1405 353 347 348 343 }
 }
 bechafen_road = { #
 

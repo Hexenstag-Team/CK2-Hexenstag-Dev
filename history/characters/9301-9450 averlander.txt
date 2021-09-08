@@ -1,8 +1,8 @@
-#Used IDs 9301-9383
+#Used IDs 9301-9382
 #Free IDs 9384-9450
 
 9301 = {	#83000
-	name = Engelbrecht	#Seiger's Brother
+	name = Engelbrecht	#Achim's Brother
 	dynasty = 12109
 	culture = averlander
 	religion = imperial_pantheon
@@ -248,7 +248,13 @@
 	add_trait = mastermind_theologian
 	add_trait = diligent
 	add_trait = proud
-	1958.3.19 = {birth = yes}
+	1958.3.19 = {
+		birth = yes
+		create_bloodline = {
+			type = brigundian_blood
+			has_dlc = "Holy Fury"
+		}
+	}
 	2042.3.27 = {death = yes}
 }
 
@@ -374,510 +380,9 @@
 	2038.1.28 = {death = yes}
 }
 
-9320 = {	#83019
-	name = Lothar
-	dynasty = 12020
-	culture = averlander
-	religion = imperial_pantheon
-	martial = 10
-	diplomacy = 6
-	stewardship = 0
-	intrigue = 8
-	learning = 4
-	add_trait = creature_human
-	add_trait = celibate
-	add_trait = skilled_tactician
-	add_trait = tall
-	2007.12.28 = {birth = yes}
-	2034.1.26 = {death = yes}
-}
-
-#Emperors from Averland
-#######################
-9321 = {	#83020
-	name = Agold
-	dynasty = 12024
-	culture = averlander
-	religion = imperial_pantheon
-	martial = 10
-	diplomacy = 6
-	stewardship = 0
-	intrigue = 8
-	learning = 4
-	add_trait = creature_human
-	add_trait = celibate
-	add_trait = skilled_tactician
-	add_trait = tall
-
-	father = 15305
-
-	170.12.28 = {birth = yes}
-	238.1.26 = {death = yes}
-}
-
-9322 = {	#83022
-	name = Lutbert
-	dynasty = 12025
-	culture = averlander
-	religion = imperial_pantheon
-	martial = 8
-	diplomacy = 4
-	stewardship = 3
-	intrigue = 6
-	learning = 7
-	add_trait = creature_human
-	add_trait = scholar
-	add_trait = grey_eminence
-
-	mother = 9326
-
-	610.11.22 = {birth = yes}
-	677.4.28 = {death = yes}
-}
-
-9323 = {	#83023
-	name = Beatrice
-	female = yes
-	dynasty = 12027 #von Flusstor
-	culture = averlander
-	religion = imperial_pantheon
-	add_trait = creature_human
-	1240.4.1 = {birth = yes}
-	1302.1.25 = {death = yes}
-}
-
-9324 = {	#83024
-	name = Rudolf
-	dynasty = 12027
-	culture = averlander
-	religion = imperial_pantheon
-	martial = 5
-	diplomacy = 4
-	stewardship = 5
-	intrigue = 5
-	learning = 1
-	add_trait = creature_human
-	add_trait = poet
-	add_trait = tough_soldier
-	add_trait = shy
-	add_trait = cynical
-	father = 9343
-
-	1350.3.22 = {birth = yes}
-	1401.10.11 = {death = yes}
-}
-
-#Elector Counts of Averland
-#####################
-9325 = {	#83036
-	name = Marius
-	dynasty = 12024 #Siggurdsunu
-	culture = averlander
-	religion = imperial_pantheon
-	father = 15312
-
-	add_trait = creature_human
-
-	559.7.16 = {birth = yes}
-	632.1.17 = {death = yes}
-}
-
-9326 = {	#83037
-	name = Herleva
-	female = yes
-	dynasty = 12024 #Siggurdsunu
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9325
-
-	add_trait = creature_human
-
-	587.6.11 = {birth = yes}
-	637.6.23 = {death = yes}
-}
-
-9327 = {	#83038
-	name = Anders
-	dynasty = 12025 #Reiter
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9322
-
-	add_trait = creature_human
-
-	658.2.4 = {birth = yes}
-	709.5.21 = {death = yes}
-}
-
-9328 = {	#83039
-	name = Matthias
-	dynasty = 12025 #Reiter
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9327
-
-	add_trait = creature_human
-
-	692.3.4 = {birth = yes}
-	734.6.23 = {death = yes}
-}
-
-9329 = {	#83040
-	name = Ludmilla
-	female = yes
-	dynasty = 12025 #Reiter
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9328
-	add_trait = creature_human
-
-	708.8.17 = {birth = yes}
-	787.4.10 = {death = yes}
-}
-
-9330 = {	#83041
-	name = Alberich
-	dynasty = 12025 #Reiter
-	culture = averlander
-	religion = imperial_pantheon
-	mother = 9329
-	add_trait = creature_human
-
-	763.7.1 = {birth = yes}
-	821.10.19 = {death = yes}
-}
-
-9331 = {	#83042
-	name = Boris
-	dynasty = 12025 #Reiter
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9330
-
-	add_trait = creature_human
-
-	798.6.19 = {birth = yes}
-	875.8.13 = {death = yes}
-}
-
-9332 = {	#83043
-	name = Sigmund
-	dynasty = 12025 #Reiter
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9331
-
-	add_trait = creature_human
-
-	854.11.3 = {birth = yes}
-	908.3.13 = {death = yes}
-}
-
-9333 = {	#83044
-	name = Ralf
-	dynasty = 12025 #Reiter
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9332
-
-	add_trait = creature_human
-
-	883.9.2 = {birth = yes}
-	967.12.22 = {death = yes}
-}
-
-9334 = {	#83045
-	name = Carmilla
-	female = yes
-	dynasty = 12025 #Reiter
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9333
-
-	add_trait = creature_human
-
-	937.2.10 = {birth = yes}
-	1002.7.15 = {death = yes}
-}
-
-9335 = {	#83046
-	name = Ulli
-	dynasty = 12026 #Blutig-Reichte
-	culture = averlander
-	religion = imperial_pantheon
-	mother = 9334
-
-	add_trait = creature_human
-
-	976.2.5 = {birth = yes}
-	1060.1.26 = {death = yes}
-}
-
-9336 = {	#83047
-	name = Mannslieb
-	dynasty = 12026 #Blutig-Reichte
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9335
-
-	add_trait = creature_human
-
-	1032.5.16 = {birth = yes}
-	1114.3.24 = {death = yes}
-}
-
-9337 = {	#83048
-	name = Selena
-	female = yes
-	dynasty = 12026 #Blutig-Reichte
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9336
-
-	add_trait = creature_human
-
-	1069.3.19 = {birth = yes}
-	1153.9.18 = {death = yes}
-}
-
-9338 = {	#83049
-	name = Sigismund
-	dynasty = 12026 #Blutig-Reichte
-	culture = averlander
-	religion = imperial_pantheon
-	mother = 9337
-
-	add_trait = creature_human
-
-	1137.3.24 = {birth = yes}
-	1172.9.2 = {death = yes}
-}
-
-9339 = {	#83050
-	name = Wertha
-	female = yes
-	dynasty = 12026 #Blutig-Reichte
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9338
-
-	add_trait = creature_human
-
-	1155.2.3 = {birth = yes}
-	1200.12.1 = {death = yes}
-}
-
-9340 = {	#83051
-	name = Seiger
-	dynasty = 12026 #Blutig-Reichte
-	culture = averlander
-	religion = imperial_pantheon
-	mother = 9339
-
-	add_trait = creature_human
-
-	1186.9.23 = {birth = yes}
-	1269.12.15 = {death = yes}
-}
-
-9341 = {	#83052
-	name = Mannfred
-	dynasty = 12027 #von Flusstor
-	culture = averlander
-	religion = imperial_pantheon
-	mother = 9323
-
-	add_trait = creature_human
-
-	1270.8.15 = {birth = yes}
-	1334.11.15 = {death = yes}
-}
-
-9342 = {	#83053
-	name = Wolfgang
-	dynasty = 12027 #von Flusstor
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9341
-
-	add_trait = creature_human
-
-	1306.5.18 = {birth = yes}
-	1352.7.8 = {death = yes}
-}
-
-9343 = {	#83054
-	name = Rudiger
-	dynasty = 12027 #von Flusstor
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9342
-
-	add_trait = creature_human
-
-	1331.9.28 = {birth = yes}
-	1368.3.4 = {death = yes}
-}
-
-9344 = {	#83055
-	name = Ralf
-	dynasty = 12027 #von Flusstor
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9324
-
-	add_trait = creature_human
-
-	1374.7.12 = {birth = yes
-			effect = {set_character_flag = magic_potential_flag_1}
-			}
-	1447.5.13 = {death = yes}
-}
-
-9345 = {	#83056
-	name = Klaus
-	dynasty = 12027 #von Flusstor
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9344
-
-	add_trait = creature_human
-
-	1399.3.26 = {birth = yes}
-	1475.11.22 = {death = yes}
-}
-
-9346 = {	#83057
-	name = Kurt
-	dynasty = 12027 #von Flusstor
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9345
-
-	add_trait = creature_human
-
-	1457.8.21 = {birth = yes}
-	1510.9.15 = {death = yes}
-}
-
-9347 = {	#83058
-	name = Selena
-	female = yes
-	dynasty = 12027 #von Flusstor
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9346
-
-	add_trait = creature_human
-
-	1494.2.24 = {birth = yes}
-	1573.12.9 = {death = yes}
-}
-
-9348 = {	#83059
-	name = Gustav
-	dynasty = 12109
-	culture = averlander
-	religion = imperial_pantheon
-	mother = 9347
-
-	add_trait = creature_human
-
-	1532.11.14 = {birth = yes}
-	1622.8.4 = {death = yes}
-}
-
-9349 = {	#83060
-	name = Marius
-	dynasty = 12109
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9348
-
-	add_trait = creature_human
-
-	1602.7.15 = {birth = yes}
-	1676.8.20 = {death = yes}
-}
-
-9350 = {	#83061
-	name = Brutus
-	dynasty = 12109
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9349
-
-	add_trait = creature_human
-
-	1648.2.16 = {birth = yes}
-	1729.8.14 = {death = yes}
-}
-
-9351 = {	#83062
-	name = Otto
-	dynasty = 12109
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9350
-
-	add_trait = creature_human
-
-	1706.11.19 = {birth = yes}
-	1793.6.12 = {death = yes}
-}
-
-9352 = {	#83063
-	name = Felix
-	dynasty = 12109
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9351
-
-	add_trait = creature_human
-
-	1759.8.12 = {birth = yes}
-	1814.1.20 = {death = yes}
-}
-
-9353 = {	#83064
-	name = Siegfried
-	dynasty = 12109
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9352
-
-	add_trait = creature_human
-
-	1797.11.22 = {birth = yes}
-	1881.9.16 = {death = yes}
-}
-
-9354 = {	#83065
-	name = Waldemar
-	dynasty = 12109
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9353
-
-	add_trait = creature_human
-
-	1854.5.23 = {birth = yes}
-	1926.8.10 = {death = yes}
-}
-
-9355 = {	#83066
-	name = Talima
-	female = yes
-	dynasty = 12109
-	culture = averlander
-	religion = imperial_pantheon
-	father = 9354
-
-	add_trait = creature_human
-
-	1911.4.3 = {birth = yes}
-	1978.8.18 = {death = yes}
-}
+###############
+###9320-9355###
+###############
 
 9356 = {	#83067
 	name = Albrecht
@@ -893,7 +398,7 @@
 }
 
 9357 = {	#83068
-	name = Seiger	#Graf Seiger II of Averland, secret Chaos worshipper
+	name = Achim	#Grand Count of Averland
 	dynasty = 12109
 	culture = averlander
 	religion = imperial_pantheon
@@ -920,15 +425,6 @@
 	}
 	1990.1.1 = {give_nickname = nick_the_kind}
 	1992.4.6 = {add_spouse = 9359}
-	2000.1.1 = {
-		effect = {
-			join_society = cult_of_tzeentch
-			society_rank_up = {
-				society = cult_of_tzeentch
-				rank = 2
-			}
-		}
-	}
 	2010.1.1 = {
 		effect = {
 			create_retinue = RETTYPE_ST_GREATSWORDS
@@ -945,20 +441,13 @@
 		raise_levies = {
 			location = 357
 			force_mult = 1.0
-	}
-	}
-	2015.3.7 = {
-		raise_levies = {
-			dismiss = yes
-			location = 357
-			force_mult = 1.0
-	}
+		}
 	}
 	2051.5.11 = {death = yes}
 }
 
 9359 = {	#83085
-	name = Runa	#Seiger's Wife
+	name = Runa	#Achim's Wife
 	female = yes
 	dynasty = 12036
 	culture = averlander
@@ -978,7 +467,7 @@
 }
 
 9360 = {	#83086
-	name = Helen #Seiger's Daughter
+	name = Helen #Achim's Daughter
 	female = yes
 	dynasty = 12109
 	culture = averlander
@@ -1000,7 +489,7 @@
 }
 
 9361 = {	#83087
-	name = Claus	#Seiger's Bastard
+	name = Claus	#Achim's Bastard
 	dynasty = 12109
 	culture = averlander
 	religion = imperial_pantheon
@@ -1021,7 +510,7 @@
 }
 
 9362 = {	#83088
-	name = Ulli	#Seiger's Son
+	name = Ulli	#Achim's Son
 	dynasty = 12109
 	culture = averlander
 	religion = imperial_pantheon
@@ -1073,8 +562,6 @@
 	intrigue = 5
 	learning = 5
 	add_trait = creature_human
-	father = 9375
-	mother = 9383
 
 	1933.5.7 = {birth = yes}
 	1952.7.16 = {add_spouse = 9363}
@@ -1247,23 +734,9 @@
 	2044.7.1 = {death = yes}
 }
 
-9375 = {	#83101
-	name = Gotthard
-	dynasty = 12063
-	culture = averlander
-	religion = imperial_pantheon
-	martial = 5
-	diplomacy = 5
-	stewardship = 5
-	intrigue = 5
-	learning = 5
-	add_trait = creature_human
-	add_trait = temperate
-	add_trait = paranoid
-	1889.1.17 = {birth = yes}
-	1921.8.13 = {add_spouse = 9383}
-	1966.5.7 = {death = yes}
-}
+##########
+###9375###
+##########
 
 9376 = {	#83102
 	name = Olfin
@@ -1393,7 +866,7 @@
 }
 
 9382 = {	#9358
-	name = Elfrida	#Seiger's Mom
+	name = Elfrida	#Achim's Mom
 	female = yes
 	dynasty = 12054
 	culture = averlander
@@ -1409,22 +882,4 @@
 	add_trait = creature_human
 	1952.1.23 = {birth = yes}
 	2007.12.9 = {death = yes}
-}
-
-9383 = {	#9374
-	name = Serhilda
-	female = yes
-	dynasty = 12109
-	culture = averlander
-	religion = imperial_pantheon
-	martial = 5
-	diplomacy = 5
-	stewardship = 5
-	intrigue = 5
-	learning = 5
-	father = 9354
-	add_trait = creature_human
-	1904.1.8 = {birth = yes}
-	1921.8.13 = {add_spouse = 9375}
-	1957.2.18 = {death = yes}
 }

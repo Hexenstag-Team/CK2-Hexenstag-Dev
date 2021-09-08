@@ -201,12 +201,13 @@ decisions = {
     }
 
 	patron_imperial_pantheon = {
-		ai_check_interval = 12
+		ai_check_interval = 60
 		only_rulers = yes
 		potential = {
 			religion = imperial_pantheon
 			has_patron_trigger = no
 			age = 16
+			trait = creature_human
 		}
 		allow = {
 			is_incapacitated_trigger = no
@@ -215,20 +216,27 @@ decisions = {
 			if = {
 				limit = {
 					ai = yes
-					trait = creature_human
 				}
 				patron_imperial_pantheon_effect = yes
 			}
 			else_if = {
 				limit = {
 					ai = no
-					trait = creature_human
 				}
 				character_event = { id = wh_empire_events.100 }
 			}
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0.1
+			
+			additive_modifier = {
+				value  = 0.4
+				trait = zealous
+			}
+			modifier = {
+				factor = 0
+				trait = cynical
+			}
 		}
 	}
 }
