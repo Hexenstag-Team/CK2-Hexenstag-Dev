@@ -21,9 +21,22 @@ sea_zones = { 1819 2065 }
 sea_zones = { 2066 2081 }
 sea_zones = { 2170 2179 }
 sea_zones = { 2180 2206 }
+sea_zones = { 1416 1417 } #Uzkulak Canal
+
+
+
+
 sea_zones = { 2429 } #Mirrormoor
 
-###
+major_rivers = { 1416 1417 }
+
+externals = {
+	2422
+	2159
+	2160
+	2161
+	2162
+}
 
 #sea_zones = {  }
 
@@ -59,7 +72,7 @@ sea_zones = { 2429 } #Mirrormoor
 ###
 
 ocean_region = {	# Main Ocean
-	sea_zones = { 1 }
+	sea_zones = { 1 5 }
 }
 
 ocean_region = {	# Lakes
@@ -67,7 +80,7 @@ ocean_region = {	# Lakes
 }
 
 ocean_region = {	# Second Ocean
-	sea_zones = { 4 }
+	sea_zones = { 4 5 }
 }
 
 # Define which indices in trees.bmp palette which should count as trees for automatic terrain assignment
