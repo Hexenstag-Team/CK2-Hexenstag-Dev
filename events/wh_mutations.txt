@@ -5,133 +5,209 @@ namespace = wh_mutation
 character_event = {
     id = wh_mutation.1
     hide_window = yes
+    is_triggered_only = yes
 
     trigger = { able_to_get_mutation_trigger = yes }
 
-    mean_time_to_happen = {
-        years = 50
-
-        #Doom counter
-		modifier = {
+    weight_multiplier = {
+        days = 1
+        # # DOOM # #
+        #Very Low Doom - Law God strong enough to hold back the winds
+        modifier = {
+            factor = 0.5
+            has_global_flag = doom_very_low
+        }
+        #Low Doom - Law God only shields Araby
+        #Medium Doom - Winds blowing more strongly
+        modifier = {
+            factor = 1.25
+            has_global_flag = doom_medium
+        }
+        #High Doom - Chaos ascending
+        modifier = {
+            factor = 2
+            has_global_flag = doom_high
+        }
+        #Very High Doom - Terrible Signs seen throughout the Old World
+        modifier = {
+            factor = 5
+            has_global_flag = doom_very_high
+        }
+        # # Location: by region # #
+        # Araby - under the light of Alluminas!
+        modifier = {
+            factor = 0
+            location = {
+                region = world_greater_araby
+            }
+        }
+        # Albion - with Mists
+        modifier = {
+            factor = 0.5
+            location = {
+                region = world_albion
+            }
+            has_global_flag = mists_of_albion
+        }
+        # Southlands - far from the poles
+        modifier = {
+            factor = 0.5
+            location = {
+                OR = {
+                    region = world_nehekhara
+                    region = world_old_world_tilea
+                    region = world_old_world_estalia
+                }
+            }
+        }
+        #Albion loses its modifier when the Mists clear. Badlands, Borderlands, Bretonnia, the Empire, and the PLain of Bones (southern but polluted) have no modifier
+        #Karaz Ankor - exposed to strange minerals (dwarfs are immune anyway)
+        modifier = {
+            factor = 1.25
+            location = {
+                region = world_karaz_ankor
+            }
+        }
+        #Mountains of Mourn & Blasted Wastes - quite polluted
+        modifier = {
+            factor = 1.5
+            location = {
+                OR = {
+                    region = world_darklands_blasted_wastes
+                    region = world_mountains_of_mourn
+                }
+            }
+        }
+        #Ankor-Naggrund. Makes you long for the clean air of Beijing
+        modifier = {
+            factor = 2
+            location = {
+                region = world_darklands_ankor_naggrund
+            }
+        }
+        #Kislev and Norsca. Largely pristine wilderness but very close to the pole
+        modifier = {
+            factor = 2
+            location = {
+                OR = {
+                    region = world_old_world_kislev
+                    region = world_norsca
+                }
+            }
+        }
+        #Chaos Wastes. You're just asking for it.
+        modifier = {
+            factor = 5
+            location = {
+                region = world_chaos_wastes
+            }
+        }
+        # # Location: province modifiers # #
+        #Shallyans here?
+        #Warpdust traces
+        modifier = {
+            factor = 1.5
+            location = {
+                has_province_modifier = warpdust_traces
+            }
+        }
+        #Warpstone Meteor
+        modifier = {
+            factor = 2
+            location = {
+                has_province_modifier = warpstone_meteor
+            }
+        }
+        modifier = {
+            factor = 3
+            location = {
+                has_province_modifier = warpstone_meteor
+            }
+        }
+        # # Religion # #
+        #The gods bless their own
+        modifier = {
+            factor = 2
+            true_religion_group = chaos_gods_group
+        }
+        #dial back mutations for people who are merely "Chaos-adjacent"
+        #NOTE: as norscan_gods is in chaos_gods_group, this adjusts the above to a 1.5 modifier
+        modifier = {
+            factor = 0.75
+            religion = norscan_gods
+        }
+        #Northern Gods might be daemons
+        modifier = {
             factor = 1.2
-			is_doom_very_low = yes
-			NOR = {
-				location = { region = world_chaos_wastes }
-				location = { has_province_modifier = warpdust_traces }
-				location = { has_province_modifier = warpstone_meteor }
-				location = { has_province_modifier = warpstone_vein }
-			}
+            religion = northern_gods
         }
+        #The God blesses its own
         modifier = {
-            factor = 1.1
-            is_doom_low = yes
-			NOR = {
-				location = { region = world_chaos_wastes }
-				location = { has_province_modifier = warpdust_traces }
-				location = { has_province_modifier = warpstone_meteor }
-				location = { has_province_modifier = warpstone_vein }
-			}
+            factor = 0.25
+            true_religion_group = ormazd_gods_group
         }
+        # # Magic - touched by the Winds # #
+        #somewhat affected
         modifier = {
-            factor = 1
-			OR = {
-				is_doom_medium = yes
-				AND = {
-					location = { region = world_old_world_kislev }
-					is_doom_high = no
-					is_doom_very_high = no
-				}
-				location = { has_province_modifier = warpdust_traces }
-			}
-			NOR = {
-				location = { region = world_chaos_wastes }
-				location = { has_province_modifier = warpstone_meteor }
-				location = { has_province_modifier = warpstone_vein }
-			}
+            factor = 1.5
+            OR = {
+                trait = magic_potential_1
+                trait = magic_potential_2
+            }
         }
+        #greatly affected
         modifier = {
-            factor = 0.9
-			OR = {
-				is_doom_high = yes
-				AND = {
-					location = { region = world_norsca }
-					is_doom_very_high = no
-				}
-				location = { has_province_modifier = warpstone_meteor }
-			}
-			NOR = {
-				location = { region = world_chaos_wastes }
-				location = { has_province_modifier = warpstone_vein }
-			}
+            factor = 2
+            OR = {
+                trait = magic_potential_3
+                trait = magic_potential_4
+            }
         }
+        #studying magic is extremely dangerous
         modifier = {
-            factor = 0.8
-			OR = {
-				is_doom_very_high = yes
-				location = { region = world_chaos_wastes }
-				location = { has_province_modifier = warpstone_vein }
-			}
+            factor = 5
+            trait = studying_magic
         }
-		#Magic
-		modifier = {
-			factor = 0.9
-			trait = magic_potential_1
-		}
-		modifier = {
-			factor = 0.8
-			trait = magic_potential_2
-		}
-		modifier = {
-			factor = 0.7
-			trait = magic_potential_3
-		}
-		modifier = {
-			factor = 0.6
-			trait = magic_potential_4
-		}
-		modifier = {
-			factor = 10
-			trait = hollowed
-		}
-		modifier = {
-			factor = 0.9
-			trait = studying_magic
-		}
-		modifier = {
-			factor = 0.8
-			OR = {
+        #unregulated magic is hazardous, though those who survive their learning phases aren't in as much danger as is generally believed
+        modifier = {
+            factor = 1.5
+            OR = {
 				trait = hedge_wizard
 				trait = witch
 				trait = warlock
-			}
-		}
-		#Religion
-        modifier = {
-            factor = 0.9
-                true_religion_group = chaos_gods_group
+            }
         }
-		#Race
+        # # Creature Types # #
+        # Beastmen are notoriously malleable
         modifier = {
             factor = 2
-			OR = {
-				trait = creature_chaos_dwarf
-				trait = creature_dwarf
-				trait = creature_skaven
-				trait = creature_elf
-			}
+            trait = creature_beastman
         }
-		modifier = {
-			factor = 1.5
-			OR = {
-				race = gospodar
-				race = kislevite
-				race = ropsmann
-				race = ungol
-			}
-		}
+        # # Societies # #
+        #Knights of Bretonnia - the Lady's Blessing
+        modifier = {
+            factor = 0.5
+            society_member_of = knights_of_bretonnia
+        }
+        #Order of the Bleeding Heart - Shallya's Mercy
+        modifier = {
+            factor = 0.5
+            society_member_of = cult_of_shallya
+        }
+        #Engineers Guild - why are you touching THAT?
+        modifier = {
+            factor = 1.1
+            society_member_of = engineers_guild
+        }
     }
+
 	immediate = {
-		mutation_toughness_test_effect = yes
+        #rather than go straight to the effect, we apply a long random delay to give the appearance of more frequent random checks
+        character_event = {
+            id = wh_mutation.2
+            days = 5
+            random = 360
+        }
 	}
 }
 

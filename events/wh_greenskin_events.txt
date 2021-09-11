@@ -281,3 +281,567 @@ character_event = {
         }
     }
 }
+
+# # wild greenskins - basic version # #
+# a more sophisticated version would include some of the greenskin infestations in other parts of the old world and give ways for civilized folk to beat them down
+# but for "Make it Green" we just need to make the Badlands, Darklands, and Karaz Ankor a bit more dangerous
+
+#control event
+#we want a bi-yearly pulse but can't do that to provinces, so the Fay Enchantress helps out
+character_event = {
+    id = wh_greenskins.100
+    hide_window = yes
+    is_triggered_only = yes
+
+    only_playable = yes
+
+    trigger = {
+        has_landed_title = k_cult_of_the_lady
+    }
+
+    immediate = {
+        any_province = {
+            limit = {
+                OR = {
+                    #main greenskin homelands
+                    region = world_badlands
+                    region = world_karaz_ankor
+                    region = world_darklands
+                    #other greenskin zones
+                    region = world_old_world_empire_north_drakwald
+                    region = world_troll_country
+                    de_jure_liege_or_above = d_marche_orcale
+                    region = world_chaos_wastes_eastern_steppes
+                }
+                #testing dynamic exemption for Chaos Dwarfs - if they have their satrapies working, the greenskins aren't a problem
+                NOR = {
+                    culture = dawi_zharr
+                    culture = servile_hobgoblin
+                }
+            }
+            #high randomness so that "orc season" isn't the same time everywhere
+            province_event = {
+                id = wh_greenskins.101
+                days = 30
+                random = 240
+            }
+        }
+    }
+}
+
+#
+province_event = {
+    id = wh_greenskins.101
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        #if necessary, apply effects for strong wild greenskins
+        if = {
+            limit = {
+                check_variable = {
+                    which = wild_greenskin_power
+                    value = 20
+                }
+            }
+            if = {
+                limit = {
+                    owner = {
+                        NAND = {
+                            religion_group = greenskin_gods_group
+                            #i.e. ai = no will always get revolts, though these are arguably an advantage
+                            ai = yes
+                        }
+                    }
+                }
+                #revolt
+                province_event = {
+                    id = DR_greenskins.171
+                }
+            }
+            else = {
+                #help for AI Greenskin rulers
+                #if province is colonized, add a mob building
+                if = {
+                    limit = {
+                        has_tribal = yes
+                        OR = {
+                            culture_group = goblin_group
+                            culture_group = orc_group
+                        }
+                    }
+                    province_event = {
+                        id = wh_greenskins.110
+                    }
+                }
+                #otherwise add troops
+                else = {
+                    owner = {
+                        character_event = {
+                            id = DR_greenskins.193
+                        }
+                    }
+                    change_variable = {
+                        which = wild_greenskin_power
+                        value = -10
+                    }
+                }
+            }
+
+        }
+        #otherwise increase wild_greenskin_power
+        #Zharr Naggrund gets a special exemption here, as revolts in this county usually kill the Chaos Dwarfs. (They will have trouble with revolts elsewhere but RNG-fragging an AI Empire seems silly.)
+        else = {
+            random_list = {
+                25 = {  }
+                50 = {
+                    change_variable = {
+                        which = wild_greenskin_power
+                        value = 5
+                    }
+                }
+                25 = {
+                    change_variable = {
+                        which = wild_greenskin_power
+                        value = 12
+                    }
+                }
+            }
+            #"population control" effects go here
+        }
+    }
+}
+
+province_event = {
+    id = wh_greenskins.110
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        capital_holding = {
+            limit = {
+                holding_type = tribal
+            }
+            random_list = {
+                #add troops
+                30 = {
+                    owner = {
+                        character_event = {
+                            id = DR_greenskins.193
+                        }
+                    }
+                    ROOT = {
+                        change_variable = {
+                            which = wild_greenskin_power
+                            value = -15
+                        }
+                    }
+                }
+                #goblin mobz
+                30 = {
+                    trigger = {
+                        NOT = { has_building = tb_goblin_mobs_6 }
+                    }
+                    trigger_switch = {
+                        on_trigger = has_building
+                        tb_goblin_mobs_5 = {
+                            add_building = tb_goblin_mobs_6
+                        }
+                        tb_goblin_mobs_4 = {
+                            add_building = tb_goblin_mobs_5
+                        }
+                        tb_goblin_mobs_3 = {
+                            add_building = tb_goblin_mobs_4
+                        }
+                        tb_goblin_mobs_2 = {
+                            add_building = tb_goblin_mobs_3
+                        }
+                        tb_goblin_mobs_1 = {
+                            add_building = tb_goblin_mobs_2
+                        }
+                        fallback = {
+                            add_building = tb_goblin_mobs_1
+                        }
+                    }
+                }
+                #orc mobz
+                20 = {
+                    trigger = {
+                        NOR = {
+                            ROOT = {
+                                culture_group = goblin_group
+                            }
+                            has_building = tb_orc_mobs_6
+                        }
+                    }
+                    trigger_switch = {
+                        on_trigger = has_building
+                        tb_orc_mobs_5 = {
+                            add_building = tb_orc_mobs_6
+                        }
+                        tb_orc_mobs_4 = {
+                            add_building = tb_orc_mobs_5
+                        }
+                        tb_orc_mobs_3 = {
+                            add_building = tb_orc_mobs_4
+                        }
+                        tb_orc_mobs_2 = {
+                            add_building = tb_orc_mobs_3
+                        }
+                        tb_orc_mobs_1 = {
+                            add_building = tb_orc_mobs_2
+                        }
+                        fallback = {
+                            add_building = tb_orc_mobs_1
+                        }
+                    }
+                    ROOT = {
+                        change_variable = {
+                            which = wild_greenskin_power
+                            value = -15
+                        }
+                    }
+                }
+                #goblin wolfrydaz
+                20 = {
+                    trigger = {
+                        NOR = {
+                            ROOT = {
+                                culture_group = orc_group
+                            }
+                            has_building = tb_goblin_cavalry_mobs_6
+                        }
+                    }
+                    trigger_switch = {
+                        on_trigger = has_building
+                        tb_goblin_cavalry_mobs_5 = {
+                            add_building = tb_goblin_cavalry_mobs_6
+                        }
+                        tb_goblin_cavalry_mobs_4 = {
+                            add_building = tb_goblin_cavalry_mobs_5
+                        }
+                        tb_goblin_cavalry_mobs_3 = {
+                            add_building = tb_goblin_cavalry_mobs_4
+                        }
+                        tb_goblin_cavalry_mobs_2 = {
+                            add_building = tb_goblin_cavalry_mobs_3
+                        }
+                        tb_goblin_cavalry_mobs_1 = {
+                            add_building = tb_goblin_cavalry_mobs_2
+                        }
+                        fallback = {
+                            add_building = tb_goblin_cavalry_mobs_1
+                        }
+                    }
+                    ROOT = {
+                        change_variable = {
+                            which = wild_greenskin_power
+                            value = -15
+                        }
+                    }
+                }
+                ## Culture Troops ##
+                #black orc mobz
+                15 = {
+                    trigger = {
+                        ROOT = {
+                            OR = {
+                                culture = orc_main
+                                culture = orc_black
+                            }
+                        }
+                        NOT = {
+                            has_building = tb_culture_black_orc_4
+                        }
+                    }
+                    trigger_switch = {
+                        on_trigger = has_building
+                        tb_culture_black_orc_3 = {
+                            add_building = tb_culture_black_orc_4
+                        }
+                        tb_culture_black_orc_2 = {
+                            add_building = tb_culture_black_orc_3
+                        }
+                        tb_culture_black_orc_1 = {
+                            add_building = tb_culture_black_orc_2
+                        }
+                        fallback = {
+                            add_building = tb_culture_black_orc_1
+                        }
+                    }
+                    ROOT = {
+                        change_variable = {
+                            which = wild_greenskin_power
+                            value = -15
+                        }
+                    }
+                }
+                #savage orc mobz (more likely to be wandering around)
+                25 = {
+                    trigger = {
+                        ROOT = {
+                            culture = orc_savage
+                        }
+                        NOT = {
+                            has_building = tb_savage_orc_mobs_4
+                        }
+                    }
+                    trigger_switch = {
+                        on_trigger = has_building
+                        tb_savage_orc_mobs_3 = {
+                            add_building = tb_savage_orc_mobs_4
+                        }
+                        tb_savage_orc_mobs_2 = {
+                            add_building = tb_savage_orc_mobs_3
+                        }
+                        tb_savage_orc_mobs_1 = {
+                            add_building = tb_savage_orc_mobs_2
+                        }
+                        fallback = {
+                            add_building = tb_savage_orc_mobs_1
+                        }
+                    }
+                    ROOT = {
+                        change_variable = {
+                            which = wild_greenskin_power
+                            value = -10
+                        }
+                    }
+                }
+                #green sea mobz
+                20 = {
+                    trigger = {
+                        ROOT = {
+                            culture = orc_freeboota
+                        }
+                        NOT = {
+                            has_building = tb_green_sea_mobs_4
+                        }
+                    }
+                    trigger_switch = {
+                        on_trigger = has_building
+                        tb_green_sea_mobs_3 = {
+                            add_building = tb_green_sea_mobs_4
+                        }
+                        tb_green_sea_mobs_2 = {
+                            add_building = tb_green_sea_mobs_3
+                        }
+                        tb_green_sea_mobs_1 = {
+                            add_building = tb_green_sea_mobs_2
+                        }
+                        fallback = {
+                            add_building = tb_green_sea_mobs_1
+                        }
+                    }
+                    ROOT = {
+                        change_variable = {
+                            which = wild_greenskin_power
+                            value = -15
+                        }
+                    }
+                }
+                #nasty Skulkers
+                25 = {
+                    trigger = {
+                        ROOT = {
+                            culture = goblin_main
+                        }
+                        NOT = {
+                            has_building = tb_nasty_skulker_mobs_4
+                        }
+                    }
+                    trigger_switch = {
+                        on_trigger = has_building
+                        tb_nasty_skulker_mobs_3 = {
+                            add_building = tb_nasty_skulker_mobs_4
+                        }
+                        tb_nasty_skulker_mobs_2 = {
+                            add_building = tb_nasty_skulker_mobs_3
+                        }
+                        tb_nasty_skulker_mobs_1 = {
+                            add_building = tb_nasty_skulker_mobs_2
+                        }
+                        fallback = {
+                            add_building = tb_nasty_skulker_mobs_1
+                        }
+                    }
+                    ROOT = {
+                        change_variable = {
+                            which = wild_greenskin_power
+                            value = -10
+                        }
+                    }
+                }
+                #Spider Cult
+                25 = {
+                    trigger = {
+                        ROOT = {
+                            culture = goblin_forest
+                        }
+                        NOT = {
+                            has_building = tb_spider_cult_4
+                        }
+                    }
+                    trigger_switch = {
+                        on_trigger = has_building
+                        tb_spider_cult_3 = {
+                            add_building = tb_spider_cult_4
+                        }
+                        tb_spider_cult_2 = {
+                            add_building = tb_spider_cult_3
+                        }
+                        tb_spider_cult_1 = {
+                            add_building = tb_spider_cult_2
+                        }
+                        fallback = {
+                            add_building = tb_spider_cult_1
+                        }
+                    }
+                    ROOT = {
+                        change_variable = {
+                            which = wild_greenskin_power
+                            value = -10
+                        }
+                    }
+                }
+                #nasty Skulkers
+                25 = {
+                    trigger = {
+                        ROOT = {
+                            culture = goblin_night
+                        }
+                        NOT = {
+                            has_building = tb_goblin_fanatics_4
+                        }
+                    }
+                    trigger_switch = {
+                        on_trigger = has_building
+                        tb_goblin_fanatics_3 = {
+                            add_building = tb_goblin_fanatics_4
+                        }
+                        tb_goblin_fanatics_2 = {
+                            add_building = tb_goblin_fanatics_3
+                        }
+                        tb_goblin_fanatics_1 = {
+                            add_building = tb_goblin_fanatics_2
+                        }
+                        fallback = {
+                            add_building = tb_goblin_fanatics_1
+                        }
+                    }
+                    ROOT = {
+                        change_variable = {
+                            which = wild_greenskin_power
+                            value = -10
+                        }
+                    }
+                }
+                #nasty Skulkers
+                25 = {
+                    trigger = {
+                        ROOT = {
+                            culture = goblin_hill
+                        }
+                        NOT = {
+                            has_building = tb_great_goblin_mobs_4
+                        }
+                    }
+                    trigger_switch = {
+                        on_trigger = has_building
+                        tb_great_goblin_mobs_3 = {
+                            add_building = tb_great_goblin_mobs_4
+                        }
+                        tb_great_goblin_mobs_2 = {
+                            add_building = tb_great_goblin_mobs_3
+                        }
+                        tb_great_goblin_mobs_1 = {
+                            add_building = tb_great_goblin_mobs_2
+                        }
+                        fallback = {
+                            add_building = tb_great_goblin_mobs_1
+                        }
+                    }
+                    ROOT = {
+                        change_variable = {
+                            which = wild_greenskin_power
+                            value = -10
+                        }
+                    }
+                }
+                #nasty Skulkers
+                25 = {
+                    trigger = {
+                        ROOT = {
+                            culture = goblin_seagit
+                        }
+                        NOT = {
+                            has_building = tb_seagit_snipers_4
+                        }
+                    }
+                    trigger_switch = {
+                        on_trigger = has_building
+                        tb_seagit_snipers_3 = {
+                            add_building = tb_seagit_snipers_4
+                        }
+                        tb_seagit_snipers_2 = {
+                            add_building = tb_seagit_snipers_3
+                        }
+                        tb_seagit_snipers_1 = {
+                            add_building = tb_seagit_snipers_2
+                        }
+                        fallback = {
+                            add_building = tb_seagit_snipers_1
+                        }
+                    }
+                    ROOT = {
+                        change_variable = {
+                            which = wild_greenskin_power
+                            value = -10
+                        }
+                    }
+                }
+                #Waaagh!  -semi-fallback
+                5 = {
+                    trigger = {
+                        NOT = {
+                            has_building = tb_greenskin_waaagh_4
+                        }
+                    }
+                    trigger_switch = {
+                        on_trigger = has_building
+                        tb_greenskin_waaagh_3 = {
+                            add_building = tb_greenskin_waaagh_4
+                        }
+                        tb_greenskin_waaagh_2 = {
+                            add_building = tb_greenskin_waaagh_3
+                        }
+                        tb_greenskin_waaagh_1 = {
+                            add_building = tb_greenskin_waaagh_2
+                        }
+                        fallback = {
+                            add_building = tb_greenskin_waaagh_1
+                        }
+                    }
+                    ROOT = {
+                        change_variable = {
+                            which = wild_greenskin_power
+                            value = -15
+                        }
+                    }
+                }
+                #total fallback - boost prestige to activate more buildings
+                1 = {
+                    owner = {
+                        prestige = 100
+                    }
+                    ROOT = {
+                        change_variable = {
+                            which = wild_greenskin_power
+                            value = -5
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

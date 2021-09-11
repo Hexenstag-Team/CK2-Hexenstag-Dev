@@ -116,6 +116,7 @@ on_bi_yearly_pulse = {
 		slunacy.39 #Umbrella event for Vampiric Lunacy
 		norscan.8
 		schaos.107
+		wh_greenskins.100 #wild greenskins effect
 	}
 
 	random_events = {
@@ -152,6 +153,12 @@ on_bi_yearly_pulse = {
 		150 = WAAGH.30 #Skaven wants a County
 		150 = selfmarriage.50 #AI Elf courtier/baron courting - Cadai
 		150 = selfmarriage.51 #AI Elf courtier/baron courting - Cytharai
+		mutation_check = {
+		#NOTE: any other events in this block will alter the odds of mutations occurring
+			25 = wh_mutation.1
+			975 = 0
+		}
+
 	}
 }
 

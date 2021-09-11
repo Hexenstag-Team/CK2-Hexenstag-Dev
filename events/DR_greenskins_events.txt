@@ -2228,12 +2228,10 @@ province_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		OR = {
-			has_province_modifier = greenskin_population_bad
-			has_province_flag = greenskin_horde_inv
-		}
-		NOT = { owner = { trait = vampire_mahtmasi_visible
-				has_landed_title = k_shadowrealm } }
+		#OR = {
+		#	has_province_modifier = greenskin_population_bad
+		#	has_province_flag = greenskin_horde_inv
+		#}
 		NOT = {
 			owner = {
 				OR = {
@@ -2261,6 +2259,10 @@ province_event = {
 		add_province_modifier = {
 			name = recent_county_uprising
 			duration = 1825
+		}
+		change_variable = {
+			which = wild_greenskin_power
+			value = -20
 		}
 		if = {
 			limit = {
@@ -11091,20 +11093,8 @@ character_event = {
     }
     option = { # No interest in these lands after all
     	name = EVTOPTC_WAAGH_50
-    	if = {
-			limit = {
-				any_owned_bloodline = {
-					has_bloodline_flag = waaagh_warlord_bloodline_flag
-					bloodline_is_active_for = PREV
-				}
-			}
-			prestige = 300
-			wealth = 100
-		}
-		else = {
-			prestige = 500
-			wealth = 300
-		}
+		prestige = 500
+		wealth = 300
 
     	ai_chance = {
     		factor = 0

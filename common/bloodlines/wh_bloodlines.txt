@@ -316,26 +316,7 @@ miragliano_miracle_bloodline = {
 #arkhan = {}
 #khalida = {}
 #Vampires - Opportunity to represent the vampiric bloodlines as bloodlines instead of traits, probably harder to implement
-#Carsteins
-vlad = { #80000
-	combat_rating = 10
-	sylvanian_opinion = 10
-	bloodline_effect_ambition = 1
-	monthly_character_prestige = 0.25
-	inheritance = patrilineal
-	allow_bastards = yes
-	flags = { historical_bloodline bloodline_ambition bloodline_murderous } #should make the Carstein kids more likely to plot against one another and Vlad
-	picture = GFX_bloodlines_temp_symbol_2
-}
 #Blood Dragon
-abhorash = {
-	bloodline_effect_battle_survivor = 1
-	#more to be added
-	inheritance = patrilineal
-	allow_bastards = yes
-	flags = { historical_bloodline battle_survivor_bloodline }
-	picture = GFX_bloodlines_symbol_murder_war
-}
 red_duke = { #15018
 	combat_rating = 5
 	bretonnian_group_opinion = 5
@@ -345,44 +326,6 @@ red_duke = { #15018
 	flags = { historical_bloodline battle_survivor_bloodline warhammer_bloodline_red_duke }
 	picture = GFX_bloodlines_symbol_murder_war
 }
-harkon = { #96010
-	combat_rating = 5
-	sartosan_group_opinion = 5
-	pirate_opinon = 10
-	bloodline_effect_battle_bards = 1 #insane vampire pirate singing sea shanties
-	inheritance = patrilineal
-	allow_bastards = yes
-	picture = GFX_bloodlines_symbol_murder_jester
-	flags = { historical_bloodline }
-}
-#Lahmia
-neferata = { #15025
-	seductress_opinon = 10
-	schemer_opinion = 10
-	plot_power_modifier = 0.1
-	bloodline_effect_endearing = 1
-	inheritance = patrilineal #Matrilineal inheritance is kinda broken, so it's changed to patrinial with our own override
-	allow_bastards = yes
-	picture = GFX_bloodlines_symbol_murder_rose
-	flags = { historical_bloodline bloodline_endearing always_transfer }
-}
-#Strigoi
-ushoran = { #15000
-	strigany_opinion = 10
-	combat_rating = 10
-	intrigue = 1 #was the spymaster also strigoi are scary
-	inheritance = patrilineal
-	allow_bastards = yes
-}
-#Necrarch
-wsoran = { #15007
-	nagashi_opinion = 10 #he to vampires is the best necromacer thats not nagash
-	learning = 2 #mage is smart
-	defensive_plot_power_modifier = 0.3 #hard to kill someone who never leaves there house
-	inheritance = patrilineal
-	allow_bastards = yes
-}
-
 
 #Chaos Crusader
 

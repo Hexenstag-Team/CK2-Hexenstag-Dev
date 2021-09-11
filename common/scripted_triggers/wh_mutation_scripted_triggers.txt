@@ -47,10 +47,11 @@ able_to_get_mutation_trigger = {
 	OR = {
 		is_living_human_trigger = yes
 		is_daemon_trigger = yes
-		trait = creature_skaven
+		trait = creature_beastman
+		#trait = creature_skaven
 	}
 	NOT = { trait = lore_ice }
-	NOT = {
+	NAND = {
 		society_rank == 4
 		society_member_of = knights_of_bretonnia
 	}
