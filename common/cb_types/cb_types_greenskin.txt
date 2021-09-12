@@ -404,9 +404,9 @@ waaagh_invasion = {
 		ROOT = {
 			has_opinion_modifier = { who = FROM modifier = preparing_waaagh_invasion_opinion }
 			OR = {
+				religion_group = greenskin_gods_group
 				trait = creature_orc
 				trait = creature_goblin
-				religion_group = greenskin_gods_group
 			}
 			NOT = { religion_group = FROM }	#Not against other Greenskins
 		}
@@ -1321,15 +1321,7 @@ greenskin_migration = {
 			}
 			#independent = yes
 			higher_tier_than = BARON
-			OR={
-				lower_tier_than = KING
-				AND={
-					government=greenskin_waagh_government
-					NOT = {
-						ROOT = { primary_title = { num_of_realm_counties = { value = 5 title = PREV } } }
-					}
-				}
-			}
+			lower_tier_than = KING
 		}
 		FROM = {
 			OR={

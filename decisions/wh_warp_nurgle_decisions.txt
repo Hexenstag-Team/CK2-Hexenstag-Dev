@@ -555,8 +555,12 @@ offmap_decisions = {
 		effect = {
 			FROM = {
 				show_scope_change = no
-
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 				if = {
 					limit = { follower_of_nurgle = yes increased_boon_cost = no }
@@ -651,8 +655,12 @@ offmap_decisions = {
 			FROM = {
 				has_secret_religion = no
 				show_scope_change = no
-
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 
 				if = {
@@ -740,8 +748,12 @@ offmap_decisions = {
 		effect = {
 			FROM = {
 				show_scope_change = no
-
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 
 				if = {
@@ -832,8 +844,12 @@ offmap_decisions = {
 		effect = {
 			FROM = {
 				show_scope_change = no
-
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 				add_artifact = nurgle_fly
 				if = {
@@ -920,8 +936,12 @@ offmap_decisions = {
 		effect = {
 			FROM = {
 				show_scope_change = no
-
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 
 				if = {
@@ -1044,7 +1064,12 @@ offmap_decisions = {
 		}
 		effect = {
 			FROM = {
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 				make_random_lore_mage = yes
 				if = {

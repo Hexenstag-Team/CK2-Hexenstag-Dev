@@ -559,8 +559,12 @@ offmap_decisions = {
 		effect = {
 			FROM = {
 				show_scope_change = no
-
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 				if = {
 					limit = { follower_of_khorne = yes increased_boon_cost = no }
@@ -655,7 +659,12 @@ offmap_decisions = {
 			FROM = {
 				show_scope_change = no
 
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 
 				if = {
@@ -742,8 +751,12 @@ offmap_decisions = {
 		effect = {
 			FROM = {
 				show_scope_change = no
-
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 
 				if = {
@@ -833,8 +846,12 @@ offmap_decisions = {
 		effect = {
 			FROM = {
 				show_scope_change = no
-
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 				add_artifact = khorne_juggernaut
 				if = {
@@ -920,8 +937,12 @@ offmap_decisions = {
 		effect = {
 			FROM = {
 				show_scope_change = no
-
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 
 				if = {
@@ -1042,7 +1063,12 @@ offmap_decisions = {
 		}
 		effect = {
 			FROM = {
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 				add_trait = khorne_berserker
 				if = {

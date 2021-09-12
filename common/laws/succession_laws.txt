@@ -25,9 +25,12 @@ succession_laws = {
 				NOT = { religion_group = ormazd_gods_group }
 				NOT = { religion_group = necromantic_group }
 				NOT = { culture_group = lizardman_group }
-				NOT = { religion_group = greenskin_gods}
 				NOT = { culture = cathayan }
-				NOT = { trait = creature_beastman }
+				NOR = {
+					trait = creature_beastman
+					trait = creature_goblin
+					trait = creature_orc
+				}
 				NOT = { trait = in_matriheritage }
 				NOR = {
 					trait = vampire_lahmian_visible
@@ -171,9 +174,11 @@ succession_laws = {
 				NOT = { religion_group = ormazd_gods_group }
 				NOT = { culture_group = lizardman_group }
 				NOT = { culture_group = skaven_group }
-				NOT = { trait = creature_nehekharan }
-				NOT = { trait = creature_orc }
-				NOT = { trait = creature_goblin }
+				NOR = {
+					trait = creature_nehekharan
+					trait = creature_orc
+					trait = creature_goblin
+				}
 				NOT = { culture = cathayan }
 				NOT = { trait = in_matriheritage }
 				is_merchant_republic = no
@@ -405,10 +410,12 @@ succession_laws = {
 				NOT = { religion_group = necromantic_group }
 				NOT = { culture_group = lizardman_group }
 				NOT = { culture_group = skaven_group }
-				NOT = { trait = creature_beastman }
-				NOT = { trait = creature_nehekharan }
-				NOT = { trait = creature_orc }
-				NOT = { trait = creature_goblin }
+				NOR = {
+					trait = creature_beastman
+					trait = creature_nehekharan
+					trait = creature_orc
+					trait = creature_goblin
+				}
 				NOT = { trait = in_matriheritage }
 				OR = {
 					is_republic = no
@@ -562,10 +569,12 @@ succession_laws = {
 				NOT = { religion_group = ormazd_gods_group }
 				NOT = { culture_group = lizardman_group }
 				NOT = { culture_group = skaven_group }
-				NOT = { trait = creature_beastman }
-				NOT = { trait = creature_nehekharan }
-				NOT = { trait = creature_orc }
-				NOT = { trait = creature_goblin }
+				NOR = {
+					trait = creature_beastman
+					trait = creature_nehekharan
+					trait = creature_orc
+					trait = creature_goblin
+				}
 				is_merchant_republic = no
 				is_patrician = no
 			}
@@ -759,10 +768,12 @@ succession_laws = {
 				NOT = { religion_group = ormazd_gods_group }
 				NOT = { culture_group = skaven_group }
 				NOT = { culture_group = lizardman_group }
-				NOT = { trait = creature_beastman }
-				NOT = { trait = creature_nehekharan }
-				NOT = { trait = creature_orc }
-				NOT = { trait = creature_goblin }
+				NOR = {
+					trait = creature_beastman
+					trait = creature_nehekharan
+					trait = creature_orc
+					trait = creature_goblin
+				}
 				NOT = { culture = cathayan }
 				NOT = { trait = in_matriheritage }
 				is_merchant_republic = no
@@ -1275,15 +1286,18 @@ succession_laws = {
 			holder_scope = {
 				NOT = { culture_group = lizardman_group }
 				NOT = { culture_group = skaven_group }
-				NOT = { trait = creature_beastman }
-				NOT = { trait = creature_nehekharan }
+				NOR = {
+					trait = creature_beastman
+					trait = creature_nehekharan
+					trait = creature_goblin
+					trait = creature_hobgoblin
+					trait = creature_orc
+				}
 				NOT = { culture = cathayan }
 				NOT = { trait = in_matriheritage }
 				OR = {
 					religion_group = necromantic_group
 					religion_group = ormazd_gods_group
-					trait = creature_orc
-					trait = creature_goblin
 					AND = {
 						has_religion_feature = religion_patriarchal
 						is_theocracy = no
@@ -1385,13 +1399,24 @@ succession_laws = {
 			}
 			NOT = { title = e_realm_of_brayherd }
 			is_not_title_with_special_succession_trigger = yes
-			NAND = { NOT = { title = k_horned_church }
-				holder_scope = { culture_group = skaven_group } }
-			NAND = { independent = no
-				has_law = succ_appointment } #Do not allow lizardmen vassals to turn back
+			NAND = {
+				independent = no
+				has_law = succ_appointment
+			} #Do not allow lizardmen vassals to turn back
 			temporary = no
-			OR = { title = k_horned_church
-				holder_scope = { culture_group = lizardman_group }
+			OR = {
+				AND = {
+					holder_scope = { culture_group = skaven_group }
+					title = k_horned_church
+				}
+				holder_scope = {
+					OR = {
+						culture_group = lizardman_group
+						trait = creature_goblin
+						trait = creature_orc
+						trait = creature_hobgoblin
+					}
+				}
 				is_primary_type_title = yes
 				holy_order = yes
 				AND = {
@@ -1420,7 +1445,12 @@ succession_laws = {
 			}
 			OR = {
 				is_theocracy = yes
-				holder_scope = { culture_group = lizardman_group }
+				holder_scope = {
+					culture_group = lizardman_group
+					trait = creature_orc
+					trait = creature_goblin
+					trait = creature_hobgoblin
+				}
 				AND = {
 					is_landless_type_title = yes
 					holder_scope = {

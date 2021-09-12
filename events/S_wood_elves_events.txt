@@ -1532,9 +1532,9 @@ character_event = {
 	desc = EVTDESCasrai41
 	is_triggered_only = yes
 	trigger = { prisoner = no
-		OR = { 
+		OR = {
 			trait = creature_elf
-			trait = creature_treekin 
+			trait = creature_treekin
 		}
 		NOT = { any_courtier = { trait = creature_forestspirit
 					count = 2 } }
@@ -2235,7 +2235,7 @@ character_event = {
 	option = { name = EVTOPTAasrai50
 		prestige = 50
 		hidden_tooltip = { ROOT = { character_event = { id = asrai.52 days = 170 random = 30 } } }
-		hidden_tooltip = { 
+		hidden_tooltip = {
 			random_list = { 25 = {
 				create_character = {
 					random_traits = yes
@@ -2411,5 +2411,106 @@ character_event = {
           	  siege = { morale = -0.1
 		            troops = -0.25 }
        		 }
+	}
+}
+
+#Maintenance events
+#Athel Loren avatar things
+character_event = {
+	id = asrai.100
+	hide_window = yes
+
+	only_playable = yes
+
+	trigger = {
+		has_landed_title = e_athel_loren
+		trait = creature_elf
+	}
+
+	#fire every month
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		#maintenance for not_avatar modifier
+		#wax on
+		if = {
+			limit = {
+				NOR = {
+					trait = avatar_isha
+					trait = avatar_kurnous
+					has_character_modifier = not_avatar
+				}
+			}
+			add_character_modifier = {
+				name = not_avatar
+				duration = -1
+			}
+		}
+		#wax off
+		else_if = {
+			limit = {
+				has_character_modifier = not_avatar
+				OR = {
+					trait = avatar_isha
+					trait = avatar_kurnous
+				}
+			}
+			remove_character_modifier = not_avatar
+		}
+		#Avatars check. This is a little ugly because we're constantly adding and removing modifiers, but the alternative is worse
+		#NOTE: it's tempting to try a 'no' on is_alive but remember that we're scoping to all characters, alive and dead, with these indexed traits, so is_alive (no) will return true just in case some character with that trait is dead.
+		if = {
+			limit = {
+				NOR = {
+					avatar_isha = { is_alive = yes }
+					trait = avatar_isha
+					avatar_kurnous = { is_alive = yes }
+					trait = avatar_kurnous
+				}
+			}
+			add_character_modifier = {
+				name = without_avatars
+				duration = -1
+			}
+			remove_character_modifier = without_isha
+			remove_character_modifier = without_kurnous
+		}
+		#NOTE: in these else cases, CK2 has already confirmed that at least one avatar is alive, so we just need to work out if one is missing
+		else_if = {
+			limit = {
+				NOR = {
+					trait = avatar_kurnous
+					avatar_kurnous = { is_alive = yes }
+				}
+			}
+			add_character_modifier = {
+				name = without_kurnous
+				duration = -1
+			}
+			remove_character_modifier = without_avatars
+			remove_character_modifier = without_isha
+		}
+		else_if = {
+			limit = {
+				NOR = {
+					trait = avatar_isha
+					avatar_isha = { is_alive = yes }
+				}
+			}
+			add_character_modifier = {
+				name = without_isha
+				duration = -1
+			}
+			remove_character_modifier = without_avatars
+			remove_character_modifier = without_kurnous
+		}
+		#NOTE: because we've now checked that at least one avatar is alive (first IF), and that neither Kurnous nor Isha is dead (2nd & 3rd ifs), we don't need any further limits
+		else = {
+			remove_character_modifier = without_avatars
+			remove_character_modifier = without_isha
+			remove_character_modifier = without_kurnous
+		}
 	}
 }
