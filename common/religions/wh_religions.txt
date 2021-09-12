@@ -64,16 +64,63 @@ old_world_group = {
 		priests_can_inherit = no
 		feminist = yes
 
-		intermarry = myrmidian
+		intermarry = classical_pantheon
 		intermarry = grail
 		intermarry = false_grail
 		intermarry = kislev_gods
 		intermarry = northern_gods
 		intermarry = old_faith
-		intermarry = stromfels
 
 		religious_clothing_head = 22
 		religious_clothing_priest = 12
+
+		dynamic_cult = no
+		secret_religion = no
+	}
+	
+	classical_pantheon = {
+		graphical_culture = westerngfx
+		
+		interface_skin = { myrmidian_interface }
+
+		icon = 51
+		heresy_icon = 51
+
+		color = { 0.7 0.7 0.7 }
+
+		crusade_name = CRUSADE
+		scripture_name = THE_BELLONA_MYRMIDIA	#Fine something more else
+		priest_title = PRIEST
+
+		high_god_name = GOD_MYRMIDIA
+
+		god_names = {
+			GOD_MYRMIDIA GOD_TAAL GOD_RHYA GOD_MANANN GOD_ULRIC GOD_MORR GOD_VERENA GOD_SHALLYA GOD_RANALD
+		}
+
+		evil_god_names = {
+			GOD_THE_DARK_GODS
+		}
+		
+		autocephaly = yes
+		#pentarchy = yes
+		priests_can_marry = no
+		allow_rivermovement = no
+		female_temple_holders = yes
+		can_grant_divorce = yes
+		can_excommunicate = yes
+		priests_can_inherit = no
+		feminist = yes
+
+		intermarry = imperial_pantheon
+		intermarry = grail
+		intermarry = false_grail
+		intermarry = kislev_gods
+		intermarry = northern_gods
+		intermarry = old_faith
+
+		religious_clothing_head = 23
+		religious_clothing_priest = 19
 
 		dynamic_cult = no
 		secret_religion = no

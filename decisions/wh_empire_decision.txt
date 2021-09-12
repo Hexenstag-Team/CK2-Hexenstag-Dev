@@ -78,12 +78,22 @@ decisions = {
 			}
 			if = {
 				limit = {
-					NOT = { has_landed_title = k_middenland }
+					NOR = {
+						has_landed_title = k_middenland
+						has_landed_title = k_carroburg_middenland
+						has_landed_title = k_middenheim
+					}
 					has_artifact = legbiter
 				}
 				unsafe_destroy_artifact = legbiter
 				any_vassal = {
-					limit = { has_landed_title = k_middenland }
+					limit = {
+						OR = {
+							has_landed_title = k_middenland
+							has_landed_title = k_carroburg_middenland
+							has_landed_title = k_middenheim
+						}
+					}
 					NOT = { has_artifact = legbiter }
 					add_artifact = legbiter
 				}
@@ -186,12 +196,23 @@ decisions = {
 			}
 			if = {
 				limit = {
-					NOT = { has_landed_title = k_drakwald }
+					NOR = {
+						has_landed_title = k_drakwald
+						has_landed_title = k_carroburg_middenland
+						has_minor_title = title_empire_champion
+						
+					}
 					has_artifact = beast_slayer
 				}
 				unsafe_destroy_artifact = beast_slayer
 				any_vassal = {
-					limit = { has_landed_title = k_drakwald }
+					limit = {
+						OR = {
+							has_landed_title = k_drakwald
+							has_landed_title = k_carroburg_middenland
+							has_minor_title = title_empire_champion
+						}
+					}
 					NOT = { has_artifact = beast_slayer }
 					add_artifact = beast_slayer
 			    }

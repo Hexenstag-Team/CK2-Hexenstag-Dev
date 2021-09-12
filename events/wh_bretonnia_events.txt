@@ -2004,54 +2004,23 @@ character_event = {
 
 	option = {
 		name = EVTOPTBRETONNIA.26.a # Well met, Sir Knight! I am ready for the challenge!
-		set_character_flag = defeated_green_knight
-		save_event_target_as = combatant_1
-		set_character_flag = duel
-		set_character_flag = flag_duel_no_draws
-		set_character_flag = deadly_duel@event_target:combatant_2
-		# THE START
-		#Create the character to fight with
-		create_random_soldier = {
-			name = "The Green Knight"
-			random_traits = yes
-			dynasty = none
-			religion = grail
-			culture = old_breton
-			female = no
-			age = 30
+		if = {
+			limit = {
+				NOT = {
+					has_character_flag = failed_grail_quest
+				}
+			}
+			character_event = { id = bretonnia.506 days = 30 random = 5 }
+			set_character_flag = defeated_green_knight
 		}
-		#scope to character we created and send him duel init event
-		new_character = {
-			change_martial = 10
-			save_event_target_as = combatant_2
-			set_character_flag = flag_duel_no_draws
-			set_character_flag = flag_duel_no_backsies
-			add_trait = noble
-			add_trait = green_knight
-			add_trait = brave
-			character_event = { id = bretonnia.505 days = 30 }
-			character_event = {id = HFP.10095 days = 1}
+		if = {
+			limit = {
+				has_character_flag = failed_grail_quest
+			}
+			death = {
+				death_reason = death_duel
+			}
 		}
-		#Trigger the event to finish the quest - auto cancelled if character is dead.
-		character_event = { id = bretonnia.506 days = 30 random = 5 }
-		# THE END
-	}
-}
-
-#Despawn the Green Knight
-character_event = {
-	id = bretonnia.505
-
-	hide_window = yes
-
-	is_triggered_only = yes
-
-	immediate = {
-		death = { death_reason = death_vanished }
-	}
-
-	option = {
-		name = BEST_DAY_EVER
 	}
 }
 
@@ -2073,18 +2042,4 @@ character_event = {
 		remove_trait = bretonnian_knight
 		add_trait = grail_knight
 	}
-}
-
-character_event = {
-	id = bretonnia.507
-	hide_window = yes
-
-	trigger = { is_mutated_trigger = yes}
-
-	#pinged error log as neither MTTH or triggered, guessing a patch
-	mean_time_to_happen = {
-		months = 1
-	}
-
-	immediate = { set_character_flag = failed_grail_quest }
 }
