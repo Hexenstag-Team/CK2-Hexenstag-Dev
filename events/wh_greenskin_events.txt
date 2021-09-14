@@ -319,11 +319,10 @@ character_event = {
                     culture = servile_hobgoblin
                 }
             }
-            #high randomness so that "orc season" isn't the same time everywhere
             province_event = {
                 id = wh_greenskins.101
-                days = 30
-                random = 240
+                days = 5
+                random = 15
             }
         }
     }
@@ -354,9 +353,36 @@ province_event = {
                         }
                     }
                 }
-                #revolt
-                province_event = {
-                    id = DR_greenskins.171
+                #revolt - needs randomness to spread these guys out because we want more of a cascade and less of a "bomb"
+                random_list = {
+                    10 = {
+                        province_event = {
+                            id = DR_greenskins.171
+                            days = 15
+                            random = 45
+                        }
+                    }
+                    30 = {
+                        province_event = {
+                            id = DR_greenskins.171
+                            days = 45
+                            random = 75
+                        }
+                    }
+                    30 = {
+                        province_event = {
+                            id = DR_greenskins.171
+                            days = 75
+                            random = 165
+                        }
+                    }
+                    10 = {
+                        province_event = {
+                            id = DR_greenskins.171
+                            days = 165
+                            random = 315
+                        }
+                    }
                 }
             }
             else = {
@@ -390,7 +416,6 @@ province_event = {
 
         }
         #otherwise increase wild_greenskin_power
-        #Zharr Naggrund gets a special exemption here, as revolts in this county usually kill the Chaos Dwarfs. (They will have trouble with revolts elsewhere but RNG-fragging an AI Empire seems silly.)
         else = {
             random_list = {
                 25 = {  }

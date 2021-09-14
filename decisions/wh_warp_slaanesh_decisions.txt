@@ -108,8 +108,8 @@ offmap_decisions = {
 		third_party_potential = {
 			#show_only_failed_conditions = yes
 			FROMFROM = {
-				host = { character = ROOT_FROM }
 				show_scope_change = no
+				host = { character = ROOT_FROM }
 				prisoner = yes
 				is_invincible_trigger = no
 				NOT = { is_heir = yes }
@@ -632,8 +632,8 @@ offmap_decisions = {
 			#slaanesh_offmap_decisions_enabled_trigger = yes
 
 			FROM = {
-				has_secret_religion = no
 				show_scope_change = no
+				has_secret_religion = no
 				OR = {
 					AND = {
 						follower_of_slaanesh = yes
@@ -723,12 +723,12 @@ offmap_decisions = {
 			#slaanesh_offmap_decisions_enabled_trigger = yes
 
 			FROM = {
+				show_scope_change = no
 				OR={
-				trait = chosen_slaanesh
-				trait = slaanesh_demon
+					trait = chosen_slaanesh
+					trait = slaanesh_demon
 				}
 				has_secret_religion = no
-				show_scope_change = no
 				OR = {
 					AND = {
 						follower_of_slaanesh = yes
@@ -917,8 +917,8 @@ offmap_decisions = {
 			#slaanesh_offmap_decisions_enabled_trigger = yes
 
 			FROM = {
-				has_secret_religion = no
 				show_scope_change = no
+				has_secret_religion = no
 				OR = {
 					AND = {
 						follower_of_slaanesh = yes
@@ -1042,8 +1042,8 @@ offmap_decisions = {
 			#slaanesh_offmap_decisions_enabled_trigger = yes
 
 			FROM = {
-				has_secret_religion = no
 				show_scope_change = no
+				has_secret_religion = no
 				is_trained_mage = no
 				OR = {
 					AND = {
@@ -1119,9 +1119,9 @@ offmap_decisions = {
 			#slaanesh_offmap_decisions_enabled_trigger = yes
 
 			FROM = {
+				show_scope_change = no
 				has_secret_religion = no
 				follower_of_slaanesh = yes
-				show_scope_change = no
 				prestige = 2500
 				has_offmap_currency = { offmap = slaanesh_warp value = 1000 }
 				prisoner = no
@@ -1186,9 +1186,9 @@ offmap_decisions = {
 			#slaanesh_offmap_decisions_enabled_trigger = yes
 
 			FROM = {
+				show_scope_change = no
 				has_secret_religion = no
 				follower_of_slaanesh = yes
-				show_scope_change = no
 				prestige = 5000
 				has_offmap_currency = { offmap = slaanesh_warp value = 1500 }
 				prisoner = no
@@ -1254,9 +1254,9 @@ offmap_decisions = {
 			#slaanesh_offmap_decisions_enabled_trigger = yes
 
 			FROM = {
+				show_scope_change = no
 				has_secret_religion = no
 				follower_of_slaanesh = yes
-				show_scope_change = no
 				prestige = 10000
 				has_offmap_currency = { offmap = slaanesh_warp value = 2000 }
 				prisoner = no

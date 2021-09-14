@@ -2514,3 +2514,39 @@ character_event = {
 		}
 	}
 }
+
+province_event = {
+	id = asrai.101
+	hide_window = yes
+
+	trigger = {
+		region = world_athel_loren
+	}
+
+	#fire every month
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				owner = {
+					NAND = {
+						piety = 0
+						religion = asrai_cadai
+					}
+				}
+			}
+			add_province_modifier = {
+				name = restless_spirits
+				duration = -1
+			}
+		}
+		#we exploit else here to avoid an extra check
+		else = {
+			remove_province_modifier = restless_spirits
+		}
+	}
+
+}

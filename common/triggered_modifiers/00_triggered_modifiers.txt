@@ -124,20 +124,3 @@ negative_money = {
 
 	active = no
 }
-
-#Wood Elf things. These need workarounds
-
-restless_spirits = {	#if the holder doesn't revere the forest
-		potential = {
-			capital_scope = { empire = { title = e_athel_loren } }
-			OR = { NOT = { piety = 0 }
-				NOT = { religion = asrai_cadai } }
-			}
-		trigger = { is_ruler = yes
-			capital_scope = { empire = { title = e_athel_loren } }
-			OR = { NOT = { piety = 0 }
-				NOT = { religion = asrai_cadai } }
-			}
-	land_morale = -10
-	icon = 26
-}

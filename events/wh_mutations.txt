@@ -61,11 +61,12 @@ character_event = {
             }
         }
         #Albion loses its modifier when the Mists clear. Badlands, Borderlands, Bretonnia, the Empire, and the PLain of Bones (southern but polluted) have no modifier
-        #Karaz Ankor - exposed to strange minerals (dwarfs are immune anyway)
+        #Drak Ankor & Karaz Ankor - exposed to strange minerals (dwarfs are immune anyway)
         modifier = {
             factor = 1.25
             location = {
                 region = world_karaz_ankor
+                region = world_drak_ankor
             }
         }
         #Mountains of Mourn & Blasted Wastes - quite polluted
@@ -80,14 +81,14 @@ character_event = {
         }
         #Ankor-Naggrund. Makes you long for the clean air of Beijing
         modifier = {
-            factor = 2
+            factor = 3
             location = {
                 region = world_darklands_ankor_naggrund
             }
         }
         #Kislev and Norsca. Largely pristine wilderness but very close to the pole
         modifier = {
-            factor = 2
+            factor = 3
             location = {
                 OR = {
                     region = world_old_world_kislev
@@ -97,7 +98,7 @@ character_event = {
         }
         #Chaos Wastes. You're just asking for it.
         modifier = {
-            factor = 5
+            factor = 10
             location = {
                 region = world_chaos_wastes
             }
@@ -118,10 +119,29 @@ character_event = {
                 has_province_modifier = warpstone_meteor
             }
         }
+        #Warpstone Vein
         modifier = {
             factor = 3
             location = {
-                has_province_modifier = warpstone_meteor
+                has_province_modifier = warpstone_vein
+            }
+        }
+        #Disease defence
+        #living somewhere naaasty (this will often be cumulative with warpstone province modifiers, but not always)
+        modifier = {
+            factor = 1.5
+            location = {
+                NOT = {
+                    disease_defence = 1
+                }
+            }
+        }
+        #living somewhere very healthy
+        #NOTE: this will very occasionally benefit characters who are in a county affected by disease. But they're either being exposed to that disease (its own problem) or isolating (which also keeps them away from potential sources of mutation)
+        modifier = {
+            factor = 0.75
+            location = {
+                disease_defence = 1.5
             }
         }
         # # Religion # #
@@ -135,6 +155,12 @@ character_event = {
         modifier = {
             factor = 0.75
             religion = norscan_gods
+        }
+        #Tzeentch isn't called "The Keeping-Things-the-Samer of Ways"
+        #NOTE: this is cumulative with the modifier for chaos_gods_group
+        modifier = {
+            factor = 2
+            true_religion = tzeentch
         }
         #Northern Gods might be daemons
         modifier = {
@@ -222,6 +248,39 @@ character_event = {
 	}
 }
 
+character_event = {
+    id = wh_mutation.100
+    hide_window = yes
+    is_triggered_only = yes
+
+	trigger = {
+        #we check this later for both types but it's cheaper to exclude people who aren't very mutated at this stage and then investigate them in immediate
+        check_variable = { which = mutation_counter value = 3 }
+    }
+
+    immediate = {
+        if = {
+            limit = {
+                become_chaos_spawn_trigger = yes
+            }
+            character_event = {
+                id = wh_mutation.101
+                days = 5
+                random = 360
+            }
+        }
+        else_if = {
+            limit = {
+                become_forsaken_trigger = yes
+            }
+            character_event = {
+                id = wh_mutation.102
+                days = 5
+                random = 360
+            }
+        }
+    }
+}
 
 #become a spawn of chaos
 character_event = {
@@ -229,10 +288,7 @@ character_event = {
     desc = "EVTDESC_MUTATION_1010"	###MAKE NEW ONES
     picture = GFX_evt_chaos_spawn
 
-    # things which exclude mutation
-	trigger = { become_chaos_spawn_trigger = yes}
-
-    mean_time_to_happen = { months = 12 random = 100 }
+    is_triggered_only = yes
 
     option = {
 		name = EVTDESC_MUTATION_1010A	###MAKE NEW ONES
@@ -245,9 +301,7 @@ character_event = {
     desc = "EVTDESC_MUTATION_1009"###MAKE NEW ONES
     picture = GFX_evt_lunatic
 
-	trigger = { become_forsaken_trigger = yes }
-
-     mean_time_to_happen = { months = 12 random = 100 }
+    is_triggered_only = yes
 
     option = {
 		name = EVTDESC_MUTATION_1009A	###MAKE NEW ONES

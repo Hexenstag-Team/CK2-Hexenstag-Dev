@@ -109,8 +109,8 @@ offmap_decisions = {
 		third_party_potential = {
 			#show_only_failed_conditions = yes
 			FROMFROM = {
-				host = { character = ROOT_FROM }
 				show_scope_change = no
+				host = { character = ROOT_FROM }
 				prisoner = yes
 				is_invincible_trigger = no
 				NOT = { is_heir = yes }
@@ -653,8 +653,8 @@ offmap_decisions = {
 
 		effect = {
 			FROM = {
-				has_secret_religion = no
 				show_scope_change = no
+				has_secret_religion = no
 				custom_tooltip = {
 					text = warp_powers_mutation_risk_tt
 					character_event = {
@@ -724,12 +724,12 @@ offmap_decisions = {
 			#nurgle_offmap_decisions_enabled_trigger = yes
 
 			FROM = {
+				show_scope_change = no
 				OR={
-				trait = chosen_nurgle
-				trait = nurgle_demon
+					trait = chosen_nurgle
+					trait = nurgle_demon
 				}
 				has_secret_religion = no
-				show_scope_change = no
 				OR = {
 					AND = {
 						follower_of_nurgle = yes
@@ -822,8 +822,8 @@ offmap_decisions = {
 			#nurgle_offmap_decisions_enabled_trigger = yes
 
 			FROM = {
-				has_secret_religion = no
 				show_scope_change = no
+				has_secret_religion = no
 				OR = {
 					AND = {
 						follower_of_nurgle = yes
@@ -915,8 +915,8 @@ offmap_decisions = {
 			#nurgle_offmap_decisions_enabled_trigger = yes
 
 			FROM = {
-				has_secret_religion = no
 				show_scope_change = no
+				has_secret_religion = no
 				OR = {
 					AND = {
 						follower_of_nurgle = yes
@@ -1040,8 +1040,8 @@ offmap_decisions = {
 			#nurgle_offmap_decisions_enabled_trigger = yes
 
 			FROM = {
-				has_secret_religion = no
 				show_scope_change = no
+				has_secret_religion = no
 				is_trained_mage = no
 				OR = {
 					AND = {
@@ -1119,9 +1119,9 @@ offmap_decisions = {
 			#nurgle_offmap_decisions_enabled_trigger = yes
 
 			FROM = {
+				show_scope_change = no
 				has_secret_religion = no
 				follower_of_nurgle = yes
-				show_scope_change = no
 				prestige = 2500
 				has_offmap_currency = { offmap = nurgle_warp value = 1000 }
 				prisoner = no
@@ -1186,9 +1186,9 @@ offmap_decisions = {
 			#nurgle_offmap_decisions_enabled_trigger = yes
 
 			FROM = {
+				show_scope_change = no
 				has_secret_religion = no
 				follower_of_nurgle = yes
-				show_scope_change = no
 				prestige = 5000
 				has_offmap_currency = { offmap = nurgle_warp value = 1500 }
 				prisoner = no
@@ -1253,9 +1253,9 @@ offmap_decisions = {
 			#nurgle_offmap_decisions_enabled_trigger = yes
 
 			FROM = {
+				show_scope_change = no
 				has_secret_religion = no
 				follower_of_nurgle = yes
-				show_scope_change = no
 				prestige = 10000
 				has_offmap_currency = { offmap = nurgle_warp value = 2000 }
 				prisoner = no
