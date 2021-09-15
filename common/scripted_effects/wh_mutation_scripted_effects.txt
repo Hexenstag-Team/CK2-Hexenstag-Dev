@@ -1393,6 +1393,17 @@ mutations_table = {
 					trait = prince_slaanesh
 					trait = prince_khorne
 				}
+				#added restrictions to reduce number of daemon princes
+				#NOTE: FRP table is designed for PCs who will tend to meet the requirements below
+				OR = {
+					is_smart_trigger = yes
+					is_strong_trigger = yes
+					diplomacy = 15
+					martial = 15
+					intrigue = 15
+					stewardship = 15
+					learning = 15
+				}
 			}
 			mutation_pseudo_daemonhood_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
@@ -2469,6 +2480,16 @@ mutations_table_tzeentch = {
 					trait = prince_slaanesh
 					trait = prince_khorne
 				}
+				#NOTE: FRP table is designed for PCs who will tend to meet the requirements below
+				OR = {
+					is_smart_trigger = yes
+					is_strong_trigger = yes
+					diplomacy = 20
+					martial = 20
+					intrigue = 20
+					stewardship = 20
+					learning = 20
+				}
 			}
 			mutation_pseudo_daemonhood_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
@@ -3134,6 +3155,16 @@ mutations_table_nurgle = {
 					trait = prince_nurgle
 					trait = prince_slaanesh
 					trait = prince_khorne
+				}
+				#NOTE: FRP table is designed for PCs who will tend to meet the requirements below
+				OR = {
+					is_smart_trigger = yes
+					is_strong_trigger = yes
+					diplomacy = 20
+					martial = 20
+					intrigue = 20
+					stewardship = 20
+					learning = 20
 				}
 			}
 			mutation_pseudo_daemonhood_effect = yes
@@ -3856,6 +3887,16 @@ mutations_table_slaanesh = {
 					trait = prince_slaanesh
 					trait = prince_khorne
 				}
+				#NOTE: FRP table is designed for PCs who will tend to meet the requirements below
+				OR = {
+					is_smart_trigger = yes
+					is_strong_trigger = yes
+					diplomacy = 20
+					martial = 20
+					intrigue = 20
+					stewardship = 20
+					learning = 20
+				}
 			}
 			mutation_pseudo_daemonhood_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
@@ -4487,6 +4528,16 @@ mutations_table_khorne = {
 					trait = prince_slaanesh
 					trait = prince_khorne
 				}
+				#NOTE: FRP table is designed for PCs who will tend to meet the requirements below
+				OR = {
+					is_smart_trigger = yes
+					is_strong_trigger = yes
+					diplomacy = 20
+					martial = 20
+					intrigue = 20
+					stewardship = 20
+					learning = 20
+				}
 			}
 			mutation_pseudo_daemonhood_effect = yes
 			change_variable = { which = "mutation_counter" value = 1 }
@@ -4861,6 +4912,12 @@ chaos_spawn_effect = {
 		mutations_table = yes
 		mutations_table = yes
 		mutations_table = yes
+		random = {
+			chance = 50
+			death = {
+				death_reason = death_mutation_chaos_spawn
+			}
+		}
 	}
 }
 

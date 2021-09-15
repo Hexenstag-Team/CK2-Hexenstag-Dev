@@ -30,7 +30,7 @@ character_event = {
         }
         #Very High Doom - Terrible Signs seen throughout the Old World
         modifier = {
-            factor = 5
+            factor = 4
             has_global_flag = doom_very_high
         }
         # # Location: by region # #
@@ -56,11 +56,11 @@ character_event = {
                 OR = {
                     region = world_nehekhara
                     region = world_old_world_tilea
-                    region = world_old_world_estalia
+                    region = world_old_world_border_princes
                 }
             }
         }
-        #Albion loses its modifier when the Mists clear. Badlands, Borderlands, Bretonnia, the Empire, and the PLain of Bones (southern but polluted) have no modifier
+        #Albion loses its modifier when the Mists clear. Badlands (southern but nasty), Bretonnia, the Empire, Estalia, and the PLain of Bones (southern but polluted) have no modifier
         #Drak Ankor & Karaz Ankor - exposed to strange minerals (dwarfs are immune anyway)
         modifier = {
             factor = 1.25
@@ -98,7 +98,7 @@ character_event = {
         }
         #Chaos Wastes. You're just asking for it.
         modifier = {
-            factor = 10
+            factor = 6
             location = {
                 region = world_chaos_wastes
             }
@@ -154,18 +154,18 @@ character_event = {
         #NOTE: as norscan_gods is in chaos_gods_group, this adjusts the above to a 1.5 modifier
         modifier = {
             factor = 0.75
-            religion = norscan_gods
+            true_religion = norscan_gods
         }
         #Tzeentch isn't called "The Keeping-Things-the-Samer of Ways"
         #NOTE: this is cumulative with the modifier for chaos_gods_group
         modifier = {
-            factor = 2
+            factor = 1.5
             true_religion = tzeentch
         }
         #Northern Gods might be daemons
         modifier = {
             factor = 1.2
-            religion = northern_gods
+            true_religion = northern_gods
         }
         #The God blesses its own
         modifier = {
@@ -173,21 +173,21 @@ character_event = {
             true_religion_group = ormazd_gods_group
         }
         # # Magic - touched by the Winds # #
-        #somewhat affected
         modifier = {
-            factor = 1.5
-            OR = {
-                trait = magic_potential_1
-                trait = magic_potential_2
-            }
+            factor = 1.1
+            trait = magic_potential_1
         }
-        #greatly affected
         modifier = {
-            factor = 2
-            OR = {
-                trait = magic_potential_3
-                trait = magic_potential_4
-            }
+            factor = 1.2
+            trait = magic_potential_2
+        }
+        modifier = {
+            factor = 1.3
+            trait = magic_potential_3
+        }
+        modifier = {
+            factor = 1.4
+            trait = magic_potential_4
         }
         #studying magic is extremely dangerous
         modifier = {
@@ -196,11 +196,25 @@ character_event = {
         }
         #unregulated magic is hazardous, though those who survive their learning phases aren't in as much danger as is generally believed
         modifier = {
-            factor = 1.5
+            factor = 1.25
             OR = {
 				trait = hedge_wizard
 				trait = witch
 				trait = warlock
+            }
+        }
+        #the ice witches of Kislev do a pretty good job of protecting girls with magic potential
+        modifier = {
+            factor = 0.3
+            age < 16
+            is_female = yes
+            OR = {
+                mother = {
+                    trait = ice_witch
+                }
+                guardian = {
+                    trait = ice_witch
+                }
             }
         }
         # # Creature Types # #
