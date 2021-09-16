@@ -773,7 +773,8 @@ character_event = {
     id = vampire.21 #rivalry w/  vampire father - I HATE YOU VAMPIRE DAD!
     desc = EVTDESCVAMPIRE.21 #
     picture = "GFX_evt_vampire_kiss"
-	min_age = 16
+    is_triggered_only = yes
+	min_age = 50
 	capable_only = yes
 
 	religion_group = necromantic_group
@@ -788,6 +789,7 @@ character_event = {
 				# trait = vampire_mahtmasi_visible
 			}
 			father = {
+                is_alive = yes
 				OR = {
 					trait = vampire_carstein_visible
 					trait = vampire_blood_visible
@@ -796,140 +798,139 @@ character_event = {
 					trait = vampire_jade_visible
 					# trait = vampire_mahtmasi_visible
 				}
-				is_alive = yes
 				NOT = { is_rival = ROOT }
 				NOT = { is_lover = ROOT }
 				NOT = { is_friend = ROOT }
 			}
 	}
-	mean_time_to_happen = {
-		years = 250
+	weight_multiplier = {
+		days = 1
 
 		#Rank
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			primary_title = { higher_real_tier_than = baron }
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			primary_title = { higher_real_tier_than = count }
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			primary_title = { higher_real_tier_than = duke }
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			primary_title = { higher_real_tier_than = king }
 		}
 		#Prestige
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			prestige = 250
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			prestige = 500
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			prestige = 750
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			prestige = 1000
 		}
 		#Traits
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = ambitious
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			trait = vampire_carstein_visible
 		}
 		#Stats
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			father = {
 				NOT = { martial = ROOT }
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			father = {
 				NOT = { diplomacy = ROOT }
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			father = {
 				NOT = { stewardship = ROOT }
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			father = {
 				NOT = { intrigue = ROOT }
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			father = {
 				NOT = { learning = ROOT }
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			father = { martial = ROOT }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			father = { diplomacy = ROOT }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			father = { stewardship = ROOT }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			father = { intrigue = ROOT }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			father = { learning = ROOT }
 		}
 		#Opinion
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			opinion = { who = father value = -100 }
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			opinion = { who = father value = -75 }
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			opinion = { who = father value = -50 }
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			opinion = { who = father value = -25 }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			opinion = { who = father value = 25 }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			opinion = { who = father value = 50 }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			opinion = { who = father value = 75 }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			opinion = { who = father value = 100 }
 		}
 	}
@@ -945,7 +946,8 @@ character_event = {
     id = vampire.22 #rivalry w/  mother mother
     desc = EVTDESCVAMPIRE.22 #
     picture = "GFX_evt_vampire_kiss"
-	min_age = 16
+    is_triggered_only = yes
+	min_age = 50
 	capable_only = yes
 
 	religion_group = necromantic_group
@@ -974,134 +976,134 @@ character_event = {
 				NOT = { is_friend = ROOT }
 			}
 	}
-	mean_time_to_happen = {
-		years = 250
+    weight_multiplier = {
+		days = 1
 
 		#Rank
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			primary_title = { higher_real_tier_than = baron }
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			primary_title = { higher_real_tier_than = count }
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			primary_title = { higher_real_tier_than = duke }
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			primary_title = { higher_real_tier_than = king }
 		}
 		#Prestige
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			prestige = 250
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			prestige = 500
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			prestige = 750
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			prestige = 1000
 		}
 		#Traits
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = ambitious
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			trait = vampire_carstein_visible
 		}
 		#Stats
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			mother = {
 				NOT = { martial = ROOT }
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			mother = {
 				NOT = { diplomacy = ROOT }
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			mother = {
 				NOT = { stewardship = ROOT }
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			mother = {
 				NOT = { intrigue = ROOT }
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			mother = {
 				NOT = { learning = ROOT }
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			mother = { martial = ROOT }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			mother = { diplomacy = ROOT }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			mother = { stewardship = ROOT }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			mother = { intrigue = ROOT }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			mother = { learning = ROOT }
 		}
 		#Opinion
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			opinion = { who = mother value = -100 }
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			opinion = { who = mother value = -75 }
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			opinion = { who = mother value = -50 }
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			opinion = { who = mother value = -25 }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			opinion = { who = mother value = 25 }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			opinion = { who = mother value = 50 }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			opinion = { who = mother value = 75 }
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			opinion = { who = mother value = 100 }
 		}
 	}

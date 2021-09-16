@@ -1,7 +1,7 @@
 namespace = norscan
 
 # Wolf Hunt
-	character_event = {
+character_event = {
 	id = norscan.1
 	title = WOLF_HUNT # Wolf Hunt
 	desc = EVTDESCNORSCAN.1 # Word has reached you that wolves have begun terrorizing a local village, as their leader, it is your duty to stop them.
@@ -21,652 +21,614 @@ namespace = norscan
 
 
 	option = {
-	name = READY_MY_HUNTERS # Yes, Ready my hunters!
-	random_list = {
-	98 = {
-	prestige = 100
-	piety = 25
-		}
-	2 = {
-		if = {
- limit = {
- is_invincible_trigger = yes
- }
+		name = READY_MY_HUNTERS # Yes, Ready my hunters!
+		random_list = {
+			98 = {
+				prestige = 100
+				piety = 25
+			}
+			2 = {
+				if = {
+					 limit = {
+					 	is_invincible_trigger = yes
+					 }
 
-			antideath_effect = yes
-			break = yes
-}
-death = {
-		death_reason = death_battle
+					antideath_effect = yes
+					break = yes
 				}
-	}
-	}
-	}
-
-	option = {
-	name = I_DO_THIS_ALONE # I will do this alone!
-	trigger = {
-	OR = {
-	ai = no
-	trait = brave
-	trait = lunatic_3
-	trait = lunatic_2
-	trait = lunatic_1
-	trait = wroth
-	trait = proud
-	}
-	}
-	random_list = {
-	90= {
-	prestige = 175
-	piety = 25
-	add_trait = diligent
-	}
-	10 = {
-		if = {
- limit = {
- is_invincible_trigger = yes
- }
-
-			antideath_effect = yes
-			break = yes
-}
-death = {
-        death_reason = death_battle
-                }
-	}
-	}
-	}
-
-	option = {
-	name = LET_THEM_HANDLE_IT # No, let them handle it.
-	trigger = {
-	OR = {
-	ai = no
-	NOT = { trait = brave }
-	NOT = { trait = diligent }
-	NOT = { trait = just }
-	NOT = { trait = kind }
-	NOT = { trait = hunter }
-	NOT = { trait = lunatic_3 }
-	NOT = { trait = lunatic_2 }
-	NOT = { trait = proud }
-	trait = slothful
-	trait = cruel
-	trait = arbitrary
-	}
-	}
-	prestige = -50
-	piety = -35
+				death = {
+					death_reason = death_battle
+				}
+			}
 		}
-
 	}
-		##TCHAR COMES TO YOU##
+
+	option = {
+		name = I_DO_THIS_ALONE # I will do this alone!
+		trigger = {
+			OR = {
+				ai = no
+				trait = brave
+				trait = lunatic_3
+				trait = lunatic_2
+				trait = lunatic_1
+				trait = wroth
+				trait = proud
+			}
+		}
+		random_list = {
+			90= {
+				prestige = 175
+				piety = 25
+				add_trait = diligent
+			}
+			10 = {
+				if = {
+					 limit = {
+					 	is_invincible_trigger = yes
+					 }
+					antideath_effect = yes
+					break = yes
+				}
+				death = {
+	        		death_reason = death_battle
+	            }
+			}
+		}
+	}
+
+	option = {
+		name = LET_THEM_HANDLE_IT # No, let them handle it.
+		trigger = {
+			OR = {
+				ai = no
+				NOT = { trait = brave }
+				NOT = { trait = diligent }
+				NOT = { trait = just }
+				NOT = { trait = kind }
+				NOT = { trait = hunter }
+				NOT = { trait = lunatic_3 }
+				NOT = { trait = lunatic_2 }
+				NOT = { trait = proud }
+				trait = slothful
+				trait = cruel
+				trait = arbitrary
+			}
+		}
+		prestige = -50
+		piety = -35
+	}
+}
+
+#events triggered in the norscan_gods_corruption_by_chaos_check block of decade pulse
+
+##TCHAR COMES TO YOU##
 character_event = {
     id = norscan.2
 	title = STRANGE_TIDINGS #Strange Tidings
     desc = EVTDESC_TCHAR #"Early in the morning, you and a band of close warriors are hunting a stag, when you come across an idol to Tchar, your warriors wander ahead of you, when the Idol begins to speak to you... Promising you great power if you forgo the others"
     picture = "GFX_evt_tzeentch"
-    min_age = 16
+	is_triggered_only = yes
+
+	religion = norscan_gods
+	min_age = 16
     capable_only = yes
 
-	only_rulers = yes
-	religion_group = old_gods_group
-
-   trigger = {
+	trigger = {
         trait = creature_human
-		religion_group = old_gods_group
-		NOT = { religion = stromfels }
 		NOR = {
 			trait = norscan_patron_ulric
 			trait = norscan_patron_ursun
-		}
-        NOT = {
-            OR = {
-                religion_group = chaos_gods_group
-				has_character_flag = refusedcallofchaos
-				#undead are not tempted by chaos
-				trait = creature_nehekharan
-				trait = vampire_lahmian_visible
-				trait = vampire_carstein_visible
-				trait = vampire_blood_visible
-				trait = vampire_strigoi_visible
-				trait = vampire_necrarch_visible
-				trait = vampire_jade_visible
-				trait = vampire_mahtmasi_visible
-            }
+			has_character_flag = refusedcallofchaos
+			#undead are not tempted by chaos
+			trait = creature_nehekharan
+			trait = vampire_lahmian_visible
+			trait = vampire_carstein_visible
+			trait = vampire_blood_visible
+			trait = vampire_strigoi_visible
+			trait = vampire_necrarch_visible
+			trait = vampire_jade_visible
+			trait = vampire_mahtmasi_visible
         }
 	}
 
-   mean_time_to_happen = {
-		years = 125
-
-        # Virtue dependent modifers
-        modifier = {
-            factor = 0.8
-            trait = envious
-        }
-        modifier = {
-            factor = 0.6
-            trait = patient
-        }
-        modifier = {
-            factor = 0.8
-            trait = diligent
-        }
+	weight_multiplier = {
+		days = 1
+		#virtues
 		modifier = {
-            factor = 1.2
-            trait = kind
-        }
-
-        # Personality dependent modifiers
-        modifier = {
-            factor = 0.7
-            trait = ambitious
-        }
-        modifier = {
-            factor = 0.5
-            trait = deceitful
-        }
-        modifier = {
-            factor = 1.2
-            trait = just
-        }
-        modifier = {
-            factor = 0.9
-            trait = arbitrary
-        }
-        modifier = {
-            factor = 0.9
-            trait = cynical
-        }
-        modifier = {
-            factor = 1.4
-            trait = honest
-        }
-        modifier = {
-            factor = 1.4
-            trait = brave
-        }
+			factor = 1.25
+			trait = envious
+		}
 		modifier = {
-            factor = 0.7
-            trait = cruel
-        }
-        # mutations
-        modifier = {
-            factor = 0.2
-            is_mutated_trigger = yes
-        }
+			factor = 1.8
+			trait = patient
+		}
+		modifier = {
+			factor = 1.25
+			trait = diligent
+		}
+		modifier = {
+			factor = 0.8
+			trait = kind
+		}
+		#other personality traits
+		modifier = {
+			factor = 1.3
+			trait = ambitious
+		}
+		modifier = {
+			factor = 2
+			trait = deceitful
+		}
+		modifier = {
+			factor = 0.8
+			trait = just
+		}
+		modifier = {
+			factor = 2
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 1.1
+			trait = cynical
+		}
+		modifier = {
+			factor = 0.6
+			trait = honest
+		}
+		modifier = {
+			factor = 0.6
+			trait = brave
+		}
+		modifier = {
+			factor = 1.3
+			trait = cruel
+		}
+		# mutations
+		modifier = {
+			factor = 5
+			is_mutated_trigger = yes
+		}
 		# Tzeenth favors magic power
-        modifier = {
-            factor = 0.6
-            OR = {
-                trait = magic_potential_1
-                trait = magic_potential_2
-                trait = magic_potential_3
-                trait = magic_potential_4
-            }
-        }
-        # And intellect
-        modifier = {
-            factor = 0.8
-            OR = {
-                learning = 10
-                intrigue = 10
-            }
-        }
-        modifier = {
-            factor = 0.8
-            OR = {
-                learning = 15
-                intrigue = 15
-            }
-        }
+		modifier = {
+			factor = 1.4
+			OR = {
+				trait = magic_potential_1
+				trait = magic_potential_2
+				trait = magic_potential_3
+				trait = magic_potential_4
+			}
+		}
+		# And intellect
+		modifier = {
+			factor = 1.2
+			OR = {
+				learning = 10
+				intrigue = 10
+			}
+		}
+		modifier = {
+			factor = 1.2
+			OR = {
+				learning = 15
+				intrigue = 15
+			}
+		}
 		#Tzeentch's Favoured WoL Focuses
 		modifier = {
-            factor = 0.5
+			factor = 2
 			OR = {
 				has_focus = focus_scholarship
 				has_focus = focus_intrigue
 			}
 		}
-
 		#Patron of Tchar
 		modifier = {
-            factor = 0.3
+			factor = 3
 			trait = norscan_patron_tchar
 		}
-    }
+	}
 
 	option = {
-	name = EVTOPT_TCHARNO #"It's just my imagination..."
-	set_character_flag = refusedcallofchaos
-	prestige = -50
-	piety = 50
-   ai_chance = {
-      factor = 75
-      modifier = {
-         factor = 2.0
-         trait = brave
-      }
-      modifier = {
-         factor = 4.0
-         trait = zealous
-      }
-      modifier = {
-         factor = 2.0
-         is_strong_trigger = yes
-      }
-      modifier = {
-         factor = 2.0
-         trait = just
-      }
-      modifier = {
-         factor = 2.0
-         trait = content
-      }
-      modifier = {
-         factor = 2.0
-         trait = diligent
-      }
-   }
-
-}
+		name = EVTOPT_TCHARNO #"It's just my imagination..."
+		set_character_flag = refusedcallofchaos
+		prestige = -50
+		piety = 50
+		ai_chance = {
+      		factor = 75
+		      modifier = {
+		         factor = 2.0
+		         trait = brave
+		      }
+		      modifier = {
+		         factor = 4.0
+		         trait = zealous
+		      }
+		      modifier = {
+		         factor = 2.0
+		         is_strong_trigger = yes
+		      }
+		      modifier = {
+		         factor = 2.0
+		         trait = just
+		      }
+		      modifier = {
+		         factor = 2.0
+		         trait = content
+		      }
+		      modifier = {
+		         factor = 2.0
+		         trait = diligent
+		      }
+   		}
+	}
 
 	option = {
-	name = EVTOPT_TCHARYES #"I shall be a willing servant of Tzeentch, Changer of ways!"
-	religion = tzeentch
-	prestige = 50
-	piety = -50
-   ai_chance = {
-      factor = 50
-      modifier = {
-         factor = 2.0
-         trait = ambitious
-      }
-      modifier = {
-         factor = 2.0
-         trait = arbitrary
-      }
-      modifier = {
-         factor = 2.0
-         trait = mystic
-      }
-      modifier = {
-         factor = 2.0
-         trait = deceitful
-      }
-      modifier = {
-         factor = 2.0
-         trait = cynical
-      }
-      modifier = {
-         factor = 2.0
-         trait = lunatic_1
-      }
-      modifier = {
-         factor = 3.0
-         trait = lunatic_2
-      }
-      modifier = {
-         factor = 4.0
-         trait = lunatic_3
-      }
-   }
+		name = EVTOPT_TCHARYES #"I shall be a willing servant of Tzeentch, Changer of ways!"
+		religion = tzeentch
+		prestige = 50
+		piety = -50
+		ai_chance = {
+			factor = 50
+	      modifier = {
+	         factor = 2.0
+	         trait = ambitious
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = arbitrary
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = mystic
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = deceitful
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = cynical
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = lunatic_1
+	      }
+	      modifier = {
+	         factor = 3.0
+	         trait = lunatic_2
+	      }
+	      modifier = {
+	         factor = 4.0
+	         trait = lunatic_3
+	      }
+   		}
+	}
 
 }
 
-}
-
-		##KHARNETH CALLS TO YOU##
+##KHARNETH CALLS TO YOU##
 character_event = {
     id = norscan.3
 	title = BLOODY_VISIONS #Bloody Visions
     desc = EVTDESC_KHARNETH #"Lately, you've noticed yourself becoming more and more aggressive, and constantly craving for battle and glory. Your slumber is disturbed when Kharneth, the Blood god, demands that you join his ranks, and forever live in glory"
     picture = "GFX_evt_khorne"
-    min_age = 16
+	is_triggered_only = yes
+
+	religion = norscan_gods
+	min_age = 16
     capable_only = yes
 
-	only_rulers = yes
-	religion_group = old_gods_group
-   trigger = {
+	trigger = {
         trait = creature_human
-		religion_group = old_gods_group
-		NOT = { religion = stromfels }
 		NOR = {
 			trait = norscan_patron_ulric
 			trait = norscan_patron_ursun
-		}
-        NOT = {
-            OR = {
-                religion_group = chaos_gods_group
-				has_character_flag = refusedcallofchaos
-				#Khorne Hates Magic users
-				trait = magic_potential_1
-                trait = magic_potential_2
-                trait = magic_potential_3
-                trait = magic_potential_4
-				#undead are not tempted by chaos
-				trait = creature_nehekharan
-				trait = vampire_lahmian_visible
-				trait = vampire_carstein_visible
-				trait = vampire_blood_visible
-				trait = vampire_strigoi_visible
-				trait = vampire_necrarch_visible
-				trait = vampire_jade_visible
-				trait = vampire_mahtmasi_visible
-            }
+			has_character_flag = refusedcallofchaos
+			#undead are not tempted by chaos
+			trait = creature_nehekharan
+			trait = vampire_lahmian_visible
+			trait = vampire_carstein_visible
+			trait = vampire_blood_visible
+			trait = vampire_strigoi_visible
+			trait = vampire_necrarch_visible
+			trait = vampire_jade_visible
+			trait = vampire_mahtmasi_visible
         }
-			}
+	}
 
-   mean_time_to_happen = {
-        years = 125
-
-        # Virtue dependent modifers
+	weight_multiplier = {
+		days = 1
+		# Virtue dependent modifers
         modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = envious
         }
         modifier = {
-            factor = 0.8
+            factor = 1.25
             trait = proud
         }
         modifier = {
-            factor = 0.5
+            factor = 2
             trait = wroth
         }
 		modifier = {
-            factor = 1.5
+            factor = 0.6
             trait = patient
         }
-
-        # Personality dependent modifiers
-        modifier = {
-            factor = 0.9
-            trait = ambitious
-        }
-        modifier = {
-            factor = 0.6
-            trait = brave
-        }
-        modifier = {
-            factor = 0.6
-            trait = cruel
-        }
-        modifier = {
-            factor = 1.4
-            trait = kind
-        }
-        modifier = {
-            factor = 0.8
-            trait = cynical
-        }
-        modifier = {
-            factor = 1.1
-            trait = temperate
-        }
-        modifier = {
-            factor = 0.9
-            trait = arbitrary
-        }
+		# Personality dependent modifiers
 		modifier = {
-            factor = 1.2
-            trait = just
-        }
-	    modifier = {
-            factor = 1.4
-            trait = craven
-        }
+			factor = 1.1
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.8
+			trait = brave
+		}
+		modifier = {
+			factor = 1.8
+			trait = cruel
+		}
+		modifier = {
+			factor = 0.7
+			trait = kind
+		}
+		modifier = {
+			factor = 1.2
+			trait = cynical
+		}
+		modifier = {
+			factor = 0.9
+			trait = temperate
+		}
+		modifier = {
+			factor = 1.1
+			trait = arbitrary
+		}
+		modifier = {
+			factor = 0.8
+			trait = just
+		}
+		modifier = {
+			factor = 0.6
+			trait = craven
+		}
 		# Lifestyle dependent modifier
-        #modifier = {
-        #    factor = 0.8
-        #    trait = monster_hunter
-        #}
-        modifier = {
-            factor = 0.8
-            trait = hunter
-        }
-        modifier = {
-            factor = 0.7
-            trait = duelist
-        }
-        modifier = {
-            factor = 0.6
-            trait = impaler
-        }
-        modifier = {
-            factor = 1.1
-            trait = gardener
-        }
-        # mutations
-        modifier = {
-            factor = 0.3
-            is_mutated_trigger = yes
-        }
-        # Khorne like warriors
-        modifier = {
-            factor = 0.8
-            martial = 8
-        }
-        modifier = {
-            factor = 0.8
-            martial = 14
-        }
 		modifier = {
-            factor = 0.8
-            martial = 20
-        }
+			factor = 1.2
+			trait = hunter
+		}
+		modifier = {
+			factor = 1.4
+			trait = duelist
+		}
+		modifier = {
+			factor = 1.8
+			trait = impaler
+		}
+		modifier = {
+			factor = 0.9
+			trait = gardener
+		}
+		# mutations
+		modifier = {
+			factor = 4
+			is_mutated_trigger = yes
+		}
+		# Khorne like warriors
+		modifier = {
+			factor = 1.2
+			martial = 8
+		}
+		modifier = {
+			factor = 1.2
+			martial = 14
+		}
+		modifier = {
+			factor = 1.2
+			martial = 20
+		}
 		#Khorne's Favoured WoL Focuses
 		modifier = {
-            factor = 0.5
+			factor = 2
 			OR = {
-            has_focus = focus_hunting
-			has_focus = focus_war
-        }
+				has_focus = focus_hunting
+				has_focus = focus_war
+			}
 		}
 		#Patron of Karneth/Kjorn
 		modifier = {
-            factor = 0.3
+			factor = 3
 			trait = norscan_patron_kharneth
 		}
-    }
+	}
 
 	option = {
-	name = EVTOPT_KHARNETHNO #"It's just my imagination..."
-	set_character_flag = refusedcallofchaos
-	prestige = -50
-	piety = 50
-   ai_chance = {
-      factor = 75
-      modifier = {
-         factor = 2.0
-         trait = brave
-      }
-      modifier = {
-         factor = 4.0
-         trait = zealous
-      }
-      modifier = {
-         factor = 2.0
-         trait = just
-      }
-      modifier = {
-         factor = 2.0
-         trait = content
-      }
-      modifier = {
-         factor = 2.0
-         trait = diligent
-      }
-   }
-
-}
+		name = EVTOPT_KHARNETHNO #"It's just my imagination..."
+		set_character_flag = refusedcallofchaos
+		prestige = -50
+		piety = 50
+	   ai_chance = {
+	      factor = 75
+	      modifier = {
+	         factor = 2.0
+	         trait = brave
+	      }
+	      modifier = {
+	         factor = 4.0
+	         trait = zealous
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = just
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = content
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = diligent
+	      }
+   		}
+	}
 
 	option = {
-	name = EVTOPT_KHARNETHYES #"I shall be a willing servant of Khorne, God of Rage!"
-	religion = khorne
-	prestige = 50
-	piety = -50
-   ai_chance = {
-      factor = 50
-      modifier = {
-         factor = 2.0
-         trait = ambitious
-      }
-      modifier = {
-         factor = 2.0
-         trait = impaler
-      }
-      modifier = {
-         factor = 2.0
-         trait = cruel
-      }
-      modifier = {
-         factor = 2.0
-         is_strong_trigger = yes
-      }
-   }
+		name = EVTOPT_KHARNETHYES #"I shall be a willing servant of Khorne, God of Rage!"
+		religion = khorne
+		prestige = 50
+		piety = -50
+	   ai_chance = {
+	      factor = 50
+	      modifier = {
+	         factor = 2.0
+	         trait = ambitious
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = impaler
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = cruel
+	      }
+	      modifier = {
+	         factor = 2.0
+	         is_strong_trigger = yes
+	      }
+	   }
+	}
 
 }
 
-}
-
-		##SHORNAAL CALLS TO YOU##
+##SHORNAAL CALLS TO YOU##
 character_event = {
     id = norscan.4
 	title = BEAUTIFUL_VOICES #Beautiful voices
     desc = EVTDESC_SHORNAAL #"You are walking through your hall during a slow day. After having finished a gigantic feast that would make an emperor blush, you still feel empty inside, like something is missing. Soon, you begin hearing voices, beautiful ones, calling to you, asking you to give yourself to Shornaal so that you may be satisfied..."
     picture = "GFX_evt_slaanesh"
-    min_age = 16
+	is_triggered_only = yes
+
+	religion = norscan_gods
+	min_age = 16
     capable_only = yes
 
-	only_rulers = yes
-	religion_group = old_gods_group
-   trigger = {
+	trigger = {
         trait = creature_human
-		religion_group = old_gods_group
-		NOT = { religion = stromfels }
 		NOR = {
 			trait = norscan_patron_ulric
 			trait = norscan_patron_ursun
-		}
-        NOT = {
-            OR = {
-                religion_group = chaos_gods_group
-				has_character_flag = refusedcallofchaos
-				#undead are not tempted by chaos
-				trait = creature_nehekharan
-				trait = vampire_lahmian_visible
-				trait = vampire_carstein_visible
-				trait = vampire_blood_visible
-				trait = vampire_strigoi_visible
-				trait = vampire_necrarch_visible
-				trait = vampire_jade_visible
-				trait = vampire_mahtmasi_visible
-            }
+			has_character_flag = refusedcallofchaos
+			#undead are not tempted by chaos
+			trait = creature_nehekharan
+			trait = vampire_lahmian_visible
+			trait = vampire_carstein_visible
+			trait = vampire_blood_visible
+			trait = vampire_strigoi_visible
+			trait = vampire_necrarch_visible
+			trait = vampire_jade_visible
+			trait = vampire_mahtmasi_visible
         }
-			}
+	}
 
-   mean_time_to_happen = {
-        years = 125
-
+   weight_multiplier = {
+	   	days = 1
         # Virtue dependent modifers
         modifier = {
-            factor = 0.4
+            factor = 2.5
             trait = lustful
         }
         modifier = {
-            factor = 1.4
+            factor = 0.7
             trait = chaste
         }
         modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = envious
         }
 		modifier = {
-            factor = 0.7
+            factor = 1.4
             trait = proud
         }
 		modifier = {
-            factor = 0.6
+            factor = 1.8
             trait = gluttonous
         }
 		modifier = {
-            factor = 1.3
+            factor = 0.7
             trait = temperate
         }
 		modifier = {
-            factor = 1.3
+            factor = 0.7
             trait = humble
         }
-
         # Personality dependent modifiers
         modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = ambitious
         }
         modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = brave
         }
         modifier = {
-            factor = 0.7
+            factor = 1.4
             trait = cruel
         }
         modifier = {
-            factor = 1.2
+            factor = 0.8
             trait = kind
         }
         modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = cynical
         }
         modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = deceitful
         }
         modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = arbitrary
         }
 		# Lifestyle dependent modifier
         modifier = {
-            factor = 0.6
+            factor = 1.8
             trait = hedonist
         }
         modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = poet
         }
         modifier = {
-            factor = 1.2
+            factor = 0.8
             trait = just
         }
         modifier = {
-            factor = 0.8
+            factor = 1.2
             trait = impaler
         }
         modifier = {
-            factor = 1.8
+            factor = 0.6
             trait = celibate
         }
         # mutations
         modifier = {
-            factor = 0.3
+            factor = 4
             is_mutated_trigger = yes
         }
        # Slaanesh favors beauty
         modifier = {
-            factor = 0.7
+            factor = 1.4
             trait = fair
         }
         modifier = {
-            factor = 1.3
+            factor = 0.7
             trait = ugly
         }
 		# magic users more likely to fall
         modifier = {
-            factor = 0.8
+            factor = 1.2
             OR = {
                 trait = magic_potential_1
                 trait = magic_potential_2
@@ -676,212 +638,203 @@ character_event = {
         }
 		#Slaanesh's Favoured WoL Focuses
 		modifier = {
-            factor = 0.5
+            factor =2
 			OR = {
-            has_focus = focus_carousing
-			has_focus = focus_seduction
-        }
+	            has_focus = focus_carousing
+				has_focus = focus_seduction
+	        }
 		}
 		#Patron of Loash/Shornaal
 		modifier = {
-            factor = 0.3
+            factor = 4
 			trait = norscan_patron_shornaal
 		}
     }
 
 	option = {
-	name = EVTOPT_SHORNAALNO #"It's just my imagination..."
-	set_character_flag = refusedcallofchaos
-	prestige = -50
-	piety = 50
-   ai_chance = {
-      factor = 75
-      modifier = {
-         factor = 2.0
-         trait = brave
-      }
-      modifier = {
-         factor = 4.0
-         trait = zealous
-      }
-      modifier = {
-         factor = 2.0
-         trait = just
-      }
-      modifier = {
-         factor = 2.0
-         trait = content
-      }
-      modifier = {
-         factor = 2.0
-         trait = diligent
-      }
-	     modifier = {
-         factor = 2.0
-         is_strong_trigger = yes
-      }
-	    modifier = {
-         factor = 2.0
-         trait = chaste
-      }
-   }
-
-}
+		name = EVTOPT_SHORNAALNO #"It's just my imagination..."
+		set_character_flag = refusedcallofchaos
+		prestige = -50
+		piety = 50
+		ai_chance = {
+	      factor = 75
+	      modifier = {
+	         factor = 2.0
+	         trait = brave
+	      }
+	      modifier = {
+	         factor = 4.0
+	         trait = zealous
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = just
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = content
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = diligent
+	      }
+		     modifier = {
+	         factor = 2.0
+	         is_strong_trigger = yes
+	      }
+		  modifier = {
+	         factor = 2.0
+	         trait = chaste
+	      }
+	   }
+	}
 
 	option = {
-	name = EVTOPT_SHORNAALYES #"I shall be a willing servant of Slaanesh, Lord of Excess!"
-	religion = slaanesh
-	prestige = 50
-	piety = -50
-   ai_chance = {
-      factor = 50
-      modifier = {
-         factor = 2.0
-         trait = craven
-      }
-      modifier = {
-         factor = 2.0
-         trait = weak
-      }
-      modifier = {
-         factor = 2.0
-         trait = arbitrary
-      }
-      modifier = {
-         factor = 2.0
-         trait = cynical
-      }
-	  modifier = {
-         factor = 2.0
-         trait = lustful
-      }
-	  modifier = {
-         factor = 2.0
-         trait = deceitful
-      }
-	  modifier = {
-         factor = 2.0
-         trait = hedonist
-      }
-      modifier = {
-         factor = 2.0
-         trait = lunatic_1
-      }
-      modifier = {
-         factor = 3.0
-         trait = lunatic_2
-      }
-      modifier = {
-         factor = 4.0
-         trait = lunatic_3
-      }
-   }
-
+		name = EVTOPT_SHORNAALYES #"I shall be a willing servant of Slaanesh, Lord of Excess!"
+		religion = slaanesh
+		prestige = 50
+		piety = -50
+	   ai_chance = {
+	      factor = 50
+	      modifier = {
+	         factor = 2.0
+	         trait = craven
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = weak
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = arbitrary
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = cynical
+	      }
+		  modifier = {
+	         factor = 2.0
+	         trait = lustful
+	      }
+		  modifier = {
+	         factor = 2.0
+	         trait = deceitful
+	      }
+		  modifier = {
+	         factor = 2.0
+	         trait = hedonist
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = lunatic_1
+	      }
+	      modifier = {
+	         factor = 3.0
+	         trait = lunatic_2
+	      }
+	      modifier = {
+	         factor = 4.0
+	         trait = lunatic_3
+	      }
+	   }
+	}
 }
 
-}
-		##NURGLETH CALLS TO YOU##
+##NURGLETH CALLS TO YOU##
 character_event = {
     id = norscan.5
 	title = DECAY_AND_RUIN #Decay and Ruin
     desc = EVTDESC_NURGLETH #"In your dreams Nurgleth, Lord of Death and Decay calls to you... 'The world is falling, it is corrupt, dying... embrace it, my child... embrace your destiny...' you hear a voice calling, and maggots crawl up from the ground, greeting you..."
     picture = "GFX_evt_nurgle"
-    min_age = 16
+	is_triggered_only = yes
+
+	religion = norscan_gods
+	min_age = 16
     capable_only = yes
 
-	only_rulers = yes
-	religion_group = old_gods_group
-   trigger = {
+	trigger = {
         trait = creature_human
-		religion_group = old_gods_group
-		NOT = { religion = stromfels }
 		NOR = {
 			trait = norscan_patron_ulric
 			trait = norscan_patron_ursun
-		}
-        NOT = {
-            OR = {
-                religion_group = chaos_gods_group
-				has_character_flag = refusedcallofchaos
-				#undead are not tempted by chaos
-				trait = creature_nehekharan
-				trait = vampire_lahmian_visible
-				trait = vampire_carstein_visible
-				trait = vampire_blood_visible
-				trait = vampire_strigoi_visible
-				trait = vampire_necrarch_visible
-				trait = vampire_jade_visible
-				trait = vampire_mahtmasi_visible
-            }
+			has_character_flag = refusedcallofchaos
+			#undead are not tempted by chaos
+			trait = creature_nehekharan
+			trait = vampire_lahmian_visible
+			trait = vampire_carstein_visible
+			trait = vampire_blood_visible
+			trait = vampire_strigoi_visible
+			trait = vampire_necrarch_visible
+			trait = vampire_jade_visible
+			trait = vampire_mahtmasi_visible
         }
-			}
+	}
 
-   mean_time_to_happen = {
-       years = 125
-
-        # Virtue dependent modifers
+   weight_multiplier = {
+	  	days = 1
+    	# Virtue dependent modifers
         modifier = {
-            factor = 0.8
+            factor = 1.2
             trait = envious
         }
         modifier = {
-            factor = 0.7
+            factor = 1.4
             trait = slothful
         }
         modifier = {
-            factor = 1.3
+            factor = 0.7
             trait = diligent
         }
         modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = greedy
         }
         modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = gluttonous
         }
 		modifier = {
-            factor = 0.7
+            factor = 1.4
             trait = kind
         }
 
         # Personality dependent modifiers
         modifier = {
-            factor = 0.8
+            factor = 1.2
             trait = content
         }
         modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = deceitful
         }
         modifier = {
-            factor = 1.2
+            factor = 0.8
             trait = just
         }
         modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = arbitrary
         }
         modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = cynical
         }
         modifier = {
-            factor = 0.6
+            factor = 1.8
             trait = craven
         }
         modifier = {
-            factor = 1.4
+            factor = 0.7
             trait = brave
         }
         # mutations, Tzeentch like mutation more than others
         modifier = {
-            factor = 0.3
+            factor = 4
             is_mutated_trigger = yes
         }
         # situation dependent ill characters are Nurgle's favourites
         modifier = {
-            factor = 0.2
+            factor = 5
             OR = {
                 trait = pneumonic
                 trait = syphilitic
@@ -900,16 +853,16 @@ character_event = {
             }
         }
         modifier = {
-            factor = 0.05
+            factor = 20
             trait = has_nurgles_rot
         }
         modifier = {
-            factor = 1.2
+            factor = 0.8
             health = 5
         }
 		# magic users more likely to fall
         modifier = {
-            factor = 0.8
+            factor = 1.2
             OR = {
                 trait = magic_potential_1
                 trait = magic_potential_2
@@ -919,7 +872,7 @@ character_event = {
         }
         # Nurgle favors weakness
         modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = weak
             trait = ill
             trait = wounded
@@ -928,7 +881,7 @@ character_event = {
         }
 		#Nurgle's Favoured WoL Focuses
 		modifier = {
-            factor = 0.5
+            factor = 2
 			OR = {
             has_focus = focus_business
 			has_focus = focus_family
@@ -936,201 +889,193 @@ character_event = {
 		}
 		#Patron of Nierg/Nurgleth
 		modifier = {
-            factor = 0.3
+            factor = 4
 			trait = norscan_patron_nurgleth
 		}
     }
 
 	option = {
-	name = EVTOPT_NURGLETHNO #"It's just my imagination..."
-	set_character_flag = refusedcallofchaos
-	prestige = -50
-	piety = 100
-   ai_chance = {
-      factor = 75
-      modifier = {
-         factor = 2.0
-         trait = brave
-      }
-      modifier = {
-         factor = 4.0
-         trait = zealous
-      }
-      modifier = {
-         factor = 2.0
-         is_strong_trigger = yes
-      }
-      modifier = {
-         factor = 2.0
-         trait = just
-      }
-      modifier = {
-         factor = 2.0
-         trait = content
-      }
-      modifier = {
-         factor = 2.0
-         trait = diligent
-      }
-   }
+		name = EVTOPT_NURGLETHNO #"It's just my imagination..."
+		set_character_flag = refusedcallofchaos
+		prestige = -50
+		piety = 100
+	   ai_chance = {
+	      factor = 75
+	      modifier = {
+	         factor = 2.0
+	         trait = brave
+	      }
+	      modifier = {
+	         factor = 4.0
+	         trait = zealous
+	      }
+	      modifier = {
+	         factor = 2.0
+	         is_strong_trigger = yes
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = just
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = content
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = diligent
+	      }
+	   }
 
-}
+	}
 
 	option = {
-	name = EVTOPT_NURGLETHYES #"I shall be a willing servant of the Dark Gods!"
-	religion = nurgle
-	prestige = 50
-	piety = -50
-   ai_chance = {
-	  factor = 50
-      modifier = {
-         factor = 2.0
-         trait = craven
-      }
-      modifier = {
-         factor = 2.0
-         trait = arbitrary
-      }
-      modifier = {
-         factor = 2.0
-         trait = weak
-      }
-      modifier = {
-         factor = 2.0
-         trait = deceitful
-      }
-      modifier = {
-         factor = 2.0
-         trait = cynical
-      }
-      modifier = {
-         factor = 2.0
-         trait = lunatic_1
-      }
-      modifier = {
-         factor = 3.0
-         trait = lunatic_2
-      }
-      modifier = {
-         factor = 4.0
-         trait = lunatic_3
-      }
-   }
-
+		name = EVTOPT_NURGLETHYES #"I shall be a willing servant of the Dark Gods!"
+		religion = nurgle
+		prestige = 50
+		piety = -50
+	   ai_chance = {
+		  factor = 50
+	      modifier = {
+	         factor = 2.0
+	         trait = craven
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = arbitrary
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = weak
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = deceitful
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = cynical
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = lunatic_1
+	      }
+	      modifier = {
+	         factor = 3.0
+	         trait = lunatic_2
+	      }
+	      modifier = {
+	         factor = 4.0
+	         trait = lunatic_3
+	      }
+	   }
+	}
 }
 
-}
-		##THE DARK GODS CALLS TO YOU##
+##THE DARK GODS CALLS TO YOU##
 character_event = {
     id = norscan.6
 	title = TRUE_EVIL #True Evil
     desc = EVTDESC_DARKGODS #"In your dreams, daemons of all shapes and forms come to you... They tell you of the true state of the world and of the lies you have been told about the gods. The Offer you unimaginable power of you renounce what you know and serve the true gods of the world: Khorne, Nurgle, Tzeentch, & Slaanesh."
     picture = "GFX_evt_khorne"
-    min_age = 16
+	is_triggered_only = yes
+	
+	religion = norscan_gods
+	min_age = 16
     capable_only = yes
 
-	only_rulers = yes
-	religion_group = old_gods_group
-   trigger = {
+	trigger = {
         trait = creature_human
-		religion_group = old_gods_group
-		NOT = { religion = stromfels }
 		NOR = {
 			trait = norscan_patron_ulric
 			trait = norscan_patron_ursun
-		}
-        NOT = {
-            OR = {
-                religion_group = chaos_gods_group
-				has_character_flag = refusedcallofchaos
-				#undead are not tempted by chaos
-				trait = creature_nehekharan
-				trait = vampire_lahmian_visible
-				trait = vampire_carstein_visible
-				trait = vampire_blood_visible
-				trait = vampire_strigoi_visible
-				trait = vampire_necrarch_visible
-				trait = vampire_jade_visible
-				trait = vampire_mahtmasi_visible
-            }
+			has_character_flag = refusedcallofchaos
+			#undead are not tempted by chaos
+			trait = creature_nehekharan
+			trait = vampire_lahmian_visible
+			trait = vampire_carstein_visible
+			trait = vampire_blood_visible
+			trait = vampire_strigoi_visible
+			trait = vampire_necrarch_visible
+			trait = vampire_jade_visible
+			trait = vampire_mahtmasi_visible
         }
-			}
+	}
 
-   mean_time_to_happen = {
-       years = 125
-
+   weight_multiplier = {
+      	days = 1
         # Virtue dependent modifers
         modifier = {
-            factor = 0.8
+            factor = 1.2
             trait = envious
         }
         modifier = {
-            factor = 0.7
+            factor = 1.4
             trait = slothful
         }
         modifier = {
-            factor = 1.3
+            factor = 0.7
             trait = diligent
         }
 		modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = greedy
         }
 		modifier = {
-            factor = 0.9
+            factor = 1.1
             trait = gluttonous
         }
 		modifier = {
-            factor = 1.3
+            factor = 0.7
             trait = kind
 		}
 
         # Personality dependent modifiers
         modifier = {
-            factor = 0.5
+            factor = 2
             trait = ambitious
         }
         modifier = {
-            factor = 0.5
+            factor = 2
             trait = cruel
         }
         modifier = {
-            factor = 0.5
+            factor = 2
             trait = deceitful
         }
         modifier = {
-            factor = 1.2
+            factor = 0.8
             trait = honest
         }
         modifier = {
-            factor = 0.5
+            factor = 2
             trait = arbitrary
         }
         modifier = {
-            factor = 1.2
+            factor = 0.8
             trait = just
         }
         modifier = {
-            factor = 0.5
+            factor = 2
             trait = cynical
         }
 		# Lifestyle dependent modifier
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			trait = scholar
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			trait = mystic
 		}
         # mutations
         modifier = {
-            factor = 0.3
+            factor = 4
             is_mutated_trigger = yes
         }
 		# magic users more likely to fall
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			OR = {
 				trait = magic_potential_1
 				trait = magic_potential_2
@@ -1140,81 +1085,81 @@ character_event = {
 		}
 		#Undivided's Favoured WoL Focuses
 		modifier = {
-            factor = 0.5
+            factor = 2
 			OR = {
-            has_focus = focus_theology
-			has_focus = focus_rulership
-        }
+	            has_focus = focus_theology
+				has_focus = focus_rulership
+	        }
 		}
 	}
 
 	option = {
-	name = EVTOPT_DARKGODSNO #"It's just my imagination..."
-	set_character_flag = refusedcallofchaos
-	prestige = -50
-	piety = 50
-   ai_chance = {
-      factor = 75
-      modifier = {
-         factor = 2.0
-         trait = brave
-      }
-      modifier = {
-         factor = 4.0
-         trait = zealous
-      }
-      modifier = {
-         factor = 2.0
-         trait = just
-      }
-      modifier = {
-         factor = 2.0
-         trait = content
-      }
-      modifier = {
-         factor = 2.0
-         trait = diligent
-      }
-   }
-}
+		name = EVTOPT_DARKGODSNO #"It's just my imagination..."
+		set_character_flag = refusedcallofchaos
+		prestige = -50
+		piety = 50
+	   ai_chance = {
+	      factor = 75
+	      modifier = {
+	         factor = 2.0
+	         trait = brave
+	      }
+	      modifier = {
+	         factor = 4.0
+	         trait = zealous
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = just
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = content
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = diligent
+	      }
+	   }
+	}
 
 	option = {
-	name = EVTOPT_DARKGODSYES #"I shall be a willing servant of the Dark Gods!"
-	religion = chaos
-	prestige = 50
-	piety = -50
-   ai_chance = {
-      factor = 50
-      modifier = {
-         factor = 2.0
-         trait = ambitious
-      }
-      modifier = {
-         factor = 2.0
-         trait = arbitrary
-      }
-      modifier = {
-         factor = 2.0
-         trait = weak
-      }
-      modifier = {
-         factor = 2.0
-         trait = deceitful
-      }
-	  modifier = {
-         factor = 2.0
-         trait = cynical
-      }
-	  modifier = {
-         factor = 2.0
-         trait = cruel
-      }
-	  modifier = {
-         factor = 2.0
-         trait = impaler
-      }
-   }
-}
+		name = EVTOPT_DARKGODSYES #"I shall be a willing servant of the Dark Gods!"
+		religion = chaos
+		prestige = 50
+		piety = -50
+	   ai_chance = {
+	      factor = 50
+	      modifier = {
+	         factor = 2.0
+	         trait = ambitious
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = arbitrary
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = weak
+	      }
+	      modifier = {
+	         factor = 2.0
+	         trait = deceitful
+	      }
+		  modifier = {
+	         factor = 2.0
+	         trait = cynical
+	      }
+		  modifier = {
+	         factor = 2.0
+	         trait = cruel
+	      }
+		  modifier = {
+	         factor = 2.0
+	         trait = impaler
+	      }
+	   }
+	}
 }
 
 #Norscan and Wasterlander realms collapse if the ruler is weak
@@ -1260,11 +1205,10 @@ character_event = {
 	}
 
 	is_triggered_only = yes
-	only_rulers = yes
+	only_playable = yes
 
 	trigger = {
 		is_nomadic = no
-		higher_tier_than = COUNT
 		AND = {
 			OR = {
 				culture_group = norscan_group
@@ -1520,7 +1464,7 @@ character_event = {
 			}
 	}
 
-	only_rulers = yes
+	only_playable = yes
 	ai = no
 
 	is_triggered_only = yes

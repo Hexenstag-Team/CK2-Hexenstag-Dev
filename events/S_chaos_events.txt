@@ -131,25 +131,26 @@ character_event = {
 	id = schaos.3
 	desc = EVTDESCschaos3
 	picture = GFX_evt_chaos_hordes
+	only_playable = yes
 	min_age = 16
 	max_age = 250
 	capable_only = yes
-	only_rulers = yes
 	prisoner = no
-	religion_group = chaos_gods_group
 
-	trigger = { capital_scope = { region = world_chaos_wastes
+	trigger = {
+		capital_scope = {
+			region = world_chaos_wastes
 			OR = {
 				is_tribal = yes
 				is_nomadic = yes
-				} }
-			 piety = 200
-			war = yes
-			trait = creature_human
-			NOT = { trait = incapable }
-			NOT = { trait = infirm }
-			age = 16
+				}
 		}
+		religion_group = chaos_gods_group
+		piety = 200
+		war = yes
+		trait = creature_human
+		NOT = { trait = infirm }
+	}
 
 
 	mean_time_to_happen = { years = 75

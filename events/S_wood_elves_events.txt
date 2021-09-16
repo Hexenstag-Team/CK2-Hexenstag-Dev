@@ -116,12 +116,17 @@ character_event = {
 				trait = creature_forestspirit } }
 		 }
 
-		trigger = { OR = { trait = avatar_isha
+		 religion = asrai_cadai
+
+		trigger = {
+			OR = { trait = avatar_isha
 				trait = avatar_kurnous
 				trait = creature_treekin
-				trait = creature_forestspirit }
-				month = 8
-				NOT = { trait = resting } }
+				trait = creature_forestspirit
+			}
+			month = 8
+			NOT = { trait = resting }
+		}
 
 	mean_time_to_happen = {
 		months = 1

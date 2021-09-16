@@ -590,21 +590,24 @@ character_event = {
 	id = beastmen.2
 	hide_window = yes
 
-	#is_triggered_only = yes
+	is_triggered_only = yes
 
-	trigger = { capital_scope = { province_id = 2296 } 	#c_anaereth
-			NOT = { morghur = { is_alive = yes } } }
+	trigger = {
+		capital_scope = { province_id = 2296 } 	#c_anaereth
+		NOT = { morghur = { is_alive = yes } }
+	}
 
-	mean_time_to_happen = { years = 150
-				modifier = {
-					factor = 0.75
-					is_doom_high = yes
-					}
-				modifier = {
-					factor = 0.75
-					is_doom_very_high = yes
-					}
-				 }
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.5
+			is_doom_high = yes
+		}
+		modifier = {
+			factor = 2
+			is_doom_very_high = yes
+		}
+	}
 
 	immediate = {
 	capital_scope = { province_event = { id = beastmen.3 } }
