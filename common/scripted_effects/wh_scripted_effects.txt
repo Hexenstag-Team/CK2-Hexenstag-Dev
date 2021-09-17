@@ -7803,11 +7803,14 @@ patron_imperial_pantheon_effect = {
 				add_trait = patron_ulric_united
 			}
 		}
-		#both imperial_pantheon and southern_pantheon gods
 		5 = {	#Manann
 			modifier = {
 				factor = 10
 				culture = westerlander
+			}
+			modifier = {
+				factor = 10
+				government = merchant_republic_government
 			}
 			modifier = {
 				factor = 5
@@ -7849,6 +7852,10 @@ patron_imperial_pantheon_effect = {
 					is_smart_trigger = yes
 				}
 			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
 			add_trait = patron_verena
 		}
 		5 = {	#Myrmidia
@@ -7876,6 +7883,10 @@ patron_imperial_pantheon_effect = {
 			}
 			modifier = {
 				factor = 5
+				is_female = yes
+			}
+			modifier = {
+				factor = 5
 				OR = {
 					trait = monk
 					trait = nun
@@ -7885,6 +7896,10 @@ patron_imperial_pantheon_effect = {
 		}
 		5 = {	#Ranald
 			modifier = {
+				factor = 10
+				government = merchant_republic_government
+			}
+			modifier = {
 				factor = 5
 				culture = westerlander
 			}
@@ -7893,6 +7908,412 @@ patron_imperial_pantheon_effect = {
 				trait = midas_touched
 			}
 			add_trait = patron_ranald
+		}
+		
+	###Minor Gods###
+		
+		#Minor Reiklander Gods
+		20 = {	#Dyrath
+			trigger = {
+				culture = reiklander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_dyrath
+		}
+		20 = {	#Borchband
+			trigger = {
+				culture = reiklander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_borchband
+		}
+		20 = {	#Katya
+			trigger = {
+				culture = reiklander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_katya
+		}
+		#Minor Middenlander Gods
+		20 = {	#Artho
+			trigger = {
+				culture = middenlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_artho
+		}
+		20 = {	#Rudric
+			trigger = {
+				culture = middenlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_rudric
+		}
+		20 = {	#Dark Helgis
+			trigger = {
+				culture = middenlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_dark_helgis
+		}
+		#Minor Westerlander Gods
+		20 = {	#Tharveg
+			trigger = {
+				culture = westerlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_tharveg
+		}
+		20 = {	#Shaback
+			trigger = {
+				culture = westerlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_shaback
+		}
+		20 = {	#Haleth
+			trigger = {
+				culture = westerlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_haleth
+		}
+		#Minor Talabeclander Gods
+		20 = {	#Toar
+			trigger = {
+				culture = talabeclander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_toar
+		}
+		20 = {	#Renbaeth
+			trigger = {
+				culture = talabeclander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_renbaeth
+		}
+		20 = {	#Shadreth
+			trigger = {
+				culture = talabeclander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_shadreth
+		}
+		#Minor Wissenlander Gods
+		20 = {	#Mittlmund
+			trigger = {
+				culture = wissenlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_mittlmund
+		}
+		20 = {	#Wendred
+			trigger = {
+				culture = wissenlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_wendred
+		}
+		20 = {	#Gargali
+			trigger = {
+				culture = wissenlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_gargali
+		}
+		#Minor Sollander Gods
+		20 = {	#Ahalt
+			trigger = {
+				culture = sollander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_ahalt
+		}
+		20 = {	#Söll
+			trigger = {
+				culture = sollander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_soll
+		}
+		20 = {	#Khirreth
+			trigger = {
+				culture = sollander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_khirreth
+		}
+		#Minor Averlander Gods
+		20 = {	#Margileo
+			trigger = {
+				culture = averlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_margileo
+		}
+		20 = {	#Sheirrich
+			trigger = {
+				culture = averlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_sheirrich
+		}
+		20 = {	#Hyssron
+			trigger = {
+				culture = averlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_hyssron
+		}
+		#Minor Stirlander Gods
+		20 = {	#Narvorga
+			trigger = {
+				culture = stirlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_narvorga
+		}
+		20 = {	#Seppel
+			trigger = {
+				culture = stirlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_seppel
+		}
+		20 = {	#Gadd
+			trigger = {
+				culture = stirlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_gadd
+		}
+		#Minor Nordlander Gods
+		20 = {	#Karog
+			trigger = {
+				culture = nordlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_karog
+		}
+		20 = {	#Vallich
+			trigger = {
+				culture = nordlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_vallich
+		}
+		20 = {	#Stovarok
+			trigger = {
+				culture = nordlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_stovarok
+		}
+		#Minor Hochlander Gods
+		20 = {	#Oboroch
+			trigger = {
+				culture = hochlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_oboroch
+		}
+		20 = {	#Ahltler
+			trigger = {
+				culture = hochlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_ahltler
+		}
+		20 = {	#Lupos
+			trigger = {
+				culture = hochlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_lupos
+		}
+		#Minor Drakwalder Gods
+		20 = {	#Uutann
+			trigger = {
+				culture = drakwalder
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_uutann
+		}
+		20 = {	#Haleth
+			trigger = {
+				culture = drakwalder
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_haleth
+		}
+		20 = {	#Drak
+			trigger = {
+				culture = drakwalder
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_drak
+		}
+		#Minor Ostlander Gods
+		20 = {	#Ursash
+			trigger = {
+				culture = ostlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_ursash
+		}
+		20 = {	#Skalor
+			trigger = {
+				culture = ostlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_skalor
+		}
+		20 = {	#Narlog
+			trigger = {
+				culture = ostlander
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_narlog
+		}
+		#Minor Ostermarker Gods
+		20 = {	#Kavarich
+			trigger = {
+				culture = ostermarker
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_kavarich
+		}
+		20 = {	#Styriss
+			trigger = {
+				culture = ostermarker
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_styriss
+		}
+		20 = {	#Arvala
+			trigger = {
+				culture = ostermarker
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_arvala
 		}
 	}
 }

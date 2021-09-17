@@ -636,6 +636,20 @@ character_event = {
 		name = EVTOPTA_WH_EMPIRE_EVENTS_100C
 		character_event = { id = wh_empire_events.103 }
 	}
+	
+	option = {	#Miror Gods
+		trigger = {
+			culture_group = imperial_group
+			NOR = {
+				culture = neueslander
+				culture = old_imperial
+				culture = witchhunter_culture
+				culture = sudenburger
+			}
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_100D
+		character_event = { id = wh_empire_events.106 }
+	}
 }
 
 character_event = {
@@ -777,7 +791,358 @@ character_event = {
 		character_event = { id = wh_empire_events.100 }
 	}
 }
+
+character_event = {
+	id = wh_empire_events.106
+	desc = EVTDESC_WH_EMPIRE_EVENTS_106
+	picture = GFX_evt_runestone_raising_oldgods
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
 	
+	#Minor Reiklander Gods
+	
+	option = {	#Dyrath
+		trigger = {
+			culture = reiklander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_DYRATH
+		add_trait = patron_dyrath
+	}
+	
+	option = {	#Borchband
+		trigger = {
+			culture = reiklander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_BORCHBAND
+		add_trait = patron_borchband
+	}
+	
+	option = {	#Katya
+		trigger = {
+			culture = reiklander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_KATYA
+		add_trait = patron_katya
+	}
+	
+	#Minor Middenlander Gods
+	
+	option = {	#Artho
+		trigger = {
+			culture = middenlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_ARTHO
+		add_trait = patron_artho
+	}
+	
+	option = {	#Rduric
+		trigger = {
+			culture = middenlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_RUDRIC
+		add_trait = patron_rudric
+	}
+	
+	option = {	#Dark Helgis
+		trigger = {
+			culture = middenlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_DARK_HELGIS
+		add_trait = patron_dark_helgis
+	}
+	
+	#Minor Westerlander Gods
+	
+	option = {	#Tharveg
+		trigger = {
+			culture = westerlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_THARVEG
+		add_trait = patron_tharveg
+	}
+	
+	option = {	#Shaback
+		trigger = {
+			culture = westerlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_SHABACK
+		add_trait = patron_shaback
+	}
+	
+	option = {	#Haleth
+		trigger = {
+			culture = westerlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_HALETH
+		add_trait = patron_haleth
+	}
+	
+	#Minor Talabeclander Gods
+	
+	option = {	#Toar
+		trigger = {
+			culture = talabeclander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_TOAR
+		add_trait = patron_toar
+	}
+	
+	option = {	#Renbaeth
+		trigger = {
+			culture = talabeclander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_RENBAETH
+		add_trait = patron_renbaeth
+	}
+	
+	option = {	#Shadreth
+		trigger = {
+			culture = talabeclander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_SHADRETH
+		add_trait = patron_shadreth
+	}
+	
+	#Minor Wissenlander Gods
+	
+	option = {	#Mittlmund
+		trigger = {
+			culture = wissenlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_MITTLMUND
+		add_trait = patron_mittlmund
+	}
+	
+	option = {	#Wendred
+		trigger = {
+			culture = wissenlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_WENDRED
+		add_trait = patron_wendred
+	}
+	
+	option = {	#Gargali
+		trigger = {
+			culture = wissenlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_GARGALI
+		add_trait = patron_gargali
+	}
+	
+	#Minor Sollander Gods
+	
+	option = {	#Ahalt
+		trigger = {
+			culture = sollander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_AHALT
+		add_trait = patron_ahalt
+	}
+	
+	option = {	#Söll
+		trigger = {
+			culture = sollander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_SOLL
+		add_trait = patron_soll
+	}
+	
+	option = {	#Khirreth
+		trigger = {
+			culture = sollander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_KHIRRETH
+		add_trait = patron_khirreth
+	}
+	
+	#Minor Averlander Gods
+	
+	option = {	#Margileo
+		trigger = {
+			culture = averlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_MARGILEO
+		add_trait = patron_margileo
+	}
+	
+	option = {	#Sheirrich
+		trigger = {
+			culture = averlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_SHEIRRICH
+		add_trait = patron_sheirrich
+	}
+	
+	option = {	#Hyssron
+		trigger = {
+			culture = averlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_HYSSRON
+		add_trait = patron_hyssron
+	}
+	
+	#Minor Stirlander Gods
+	
+	option = {	#Narvorga
+		trigger = {
+			culture = stirlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_NARVORGA
+		add_trait = patron_narvorga
+	}
+	
+	option = {	#Seppel
+		trigger = {
+			culture = stirlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_SEPPEL
+		add_trait = patron_seppel
+	}
+	
+	option = {	#Gadd
+		trigger = {
+			culture = stirlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_GADD
+		add_trait = patron_gadd
+	}
+	
+	#Minor Nordlander Gods
+	
+	option = {	#Karog
+		trigger = {
+			culture = nordlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_KAROG
+		add_trait = patron_karog
+	}
+	
+	option = {	#Vallich
+		trigger = {
+			culture = nordlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_VALLICH
+		add_trait = patron_vallich
+	}
+	
+	option = {	#Stovarok
+		trigger = {
+			culture = nordlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_STOVAROK
+		add_trait = patron_stovarok
+	}
+	
+	#Minor Hochlander Gods
+	
+	option = {	#Oboroch
+		trigger = {
+			culture = hochlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_OBOROCH
+		add_trait = patron_oboroch
+	}
+	
+	option = {	#Ahltler
+		trigger = {
+			culture = hochlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_AHLTLER
+		add_trait = patron_ahltler
+	}
+	
+	option = {	#Lupos
+		trigger = {
+			culture = hochlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_LUPOS
+		add_trait = patron_lupos
+	}
+	
+	#Minor Drakwalder Gods
+	
+	option = {	#Uutann
+		trigger = {
+			culture = drakwalder
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_UUTANN
+		add_trait = patron_uutann
+	}
+	
+	option = {	#Haleth
+		trigger = {
+			culture = drakwalder
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_HALETH
+		add_trait = patron_haleth
+	}
+	
+	option = {	#Drak
+		trigger = {
+			culture = drakwalder
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_DRAK
+		add_trait = patron_drak
+	}
+	
+	#Minor Ostlander Gods
+	
+	option = {	#Ursash
+		trigger = {
+			culture = ostlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_URSASH
+		add_trait = patron_ursash
+	}
+	
+	option = {	#Skalor
+		trigger = {
+			culture = ostlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_SKALOR
+		add_trait = patron_skalor
+	}
+	
+	option = {	#Narlog
+		trigger = {
+			culture = ostlander
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_NARLOG
+		add_trait = patron_narlog
+	}
+	
+	#Minor Ostermarker Gods
+	
+	option = {	#Kavarich
+		trigger = {
+			culture = ostermarker
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_KAVARICH
+		add_trait = patron_kavarich
+	}
+	
+	option = {	#Styriss
+		trigger = {
+			culture = ostermarker
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_STYRISS
+		add_trait = patron_styriss
+	}
+	
+	option = {	#Arvala
+		trigger = {
+			culture = ostermarker
+		}
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106_ARVALA
+		add_trait = patron_arvala
+	}
+	
+	option = {	#Back to Master list
+		name = EVTOPTA_WH_EMPIRE_EVENTS_106D
+		character_event = { id = wh_empire_events.100 }
+	}
+}
 	
 	
 	

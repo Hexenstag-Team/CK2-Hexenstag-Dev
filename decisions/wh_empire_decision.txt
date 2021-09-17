@@ -234,18 +234,18 @@ decisions = {
 			is_incapacitated_trigger = no
 		}
 		effect = {
-			if = {
-				limit = {
-					ai = yes
-				}
+		#	if = {
+		#		limit = {
+		#			ai = yes
+		#		}
 				patron_imperial_pantheon_effect = yes
-			}
-			else_if = {
-				limit = {
-					ai = no
-				}
-				character_event = { id = wh_empire_events.100 }
-			}
+		#	}
+		#	else_if = {
+		#		limit = {
+		#			ai = no
+		#		}
+		#		character_event = { id = wh_empire_events.100 }
+		#	}
 		}
 		ai_will_do = {
 			factor = 0.1
