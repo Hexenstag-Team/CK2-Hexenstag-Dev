@@ -1110,22 +1110,3 @@ is_hashut_bad_minion_trigger = {
 	NOT = { has_hashut_good_trait_trigger = yes }
 	has_hashut_bad_trait_trigger = yes
 }
-
-has_patron_trigger = {
-	custom_tooltip = {
-		text = has_patron_trigger_tt
-		OR = {
-			#imperial_pantheon Gods
-			trait = patron_sigmar
-			trait = patron_taal_rhya
-			trait = patron_ulric
-			#both imperial_pantheon and southern_pantheon gods
-			trait = patron_manann
-			trait = patron_morr
-			trait = patron_verena
-			trait = patron_myrmidia
-			trait = patron_shallya
-			trait = patron_ranald
-		}
-	}
-}

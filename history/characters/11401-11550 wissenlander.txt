@@ -22,7 +22,9 @@
 	father = 11429
 	mother = 11428
 
-	1961.7.1 = {birth = yes}
+	1961.7.1 = {
+		birth = yes
+	}
 	1980.5.25 = {add_spouse = 11430}
 	1984.12.5 = {add_spouse = 11431}
 	1987.1.1 = {
@@ -632,7 +634,13 @@
 	culture = wissenlander
 	religion = imperial_pantheon
 	add_trait = creature_human
-	1930.1.1 = {birth = yes}
+	1930.1.1 = {
+		birth = yes
+		create_bloodline = {
+			type = merogen_blood
+			has_dlc = "Holy Fury"
+		}
+	}
 	1954.1.1 = {add_spouse = 11428}
 	1985.1.1 = {death = yes}
 }

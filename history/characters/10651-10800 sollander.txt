@@ -425,7 +425,13 @@
 	culture = sollander
 	religion = imperial_pantheon
 	add_trait = creature_human
-	1980.7.5 = {birth = yes}
+	1980.7.5 = {
+		birth = yes
+		create_bloodline = {
+			type = menogoth_blood
+			has_dlc = "Holy Fury"
+		}
+	}
 	2030.1.1 = {death = yes}
 }
 

@@ -222,49 +222,21 @@ decisions = {
     }
 
 	patron_imperial_pantheon = {
-		ai_check_interval = 60
-		only_rulers = yes
+		ai = no
+		
 		potential = {
 			religion = imperial_pantheon
-			has_patron_trigger = no
-			age = 16
+			NOT = { has_character_flag = has_patron }
 			trait = creature_human
 		}
 		allow = {
+			age = 16
 			is_incapacitated_trigger = no
 		}
 		effect = {
-		#	if = {
-		#		limit = {
-		#			ai = yes
-		#		}
-				patron_imperial_pantheon_effect = yes
-		#	}
-		#	else_if = {
-		#		limit = {
-		#			ai = no
-		#		}
-		#		character_event = { id = wh_empire_events.100 }
-		#	}
-		}
-		ai_will_do = {
-			factor = 0.1
-			
-			additive_modifier = {
-				value  = 0.4
-				trait = zealous
-			}
-			additive_modifier = {
-				value  = 0.9
-				OR = {
-					government = theocracy_government
-					government = congregation_government
-				}
-			}
-			modifier = {
-				factor = 0
-				trait = cynical
-			}
+			patron_imperial_pantheon_effect = yes
+			#character_event = { id = wh_empire_events.100 }
+			set_character_flag = has_patron
 		}
 	}
 }
