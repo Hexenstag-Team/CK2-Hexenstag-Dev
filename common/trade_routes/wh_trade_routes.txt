@@ -215,11 +215,11 @@ great_reik_road = {	#
 	# Eidelwiss, Nuln
 	path = { 1269 309 }
 	
-	# Eidelwiss, Wissenburg
-	path = { 1269 310 }
-	
-	# Eidelwiss, Grissenwald
+	# Eidelwiss, Rohrhausen
 	path = { 1269 308 }
+	
+	# Nuln, Fursthausen Wissenburg
+	path = { 309 1271 310 }
 }
 grimway = { #
 
@@ -376,8 +376,8 @@ Pfeildorf_road = { #
 	# Waldbach, Pnahl
 	path = { 1420 1422 }
 	
-	# Pnahl, Sochtenau, Rohrhof
-	path = { 1422 321 1425 }
+	# Pnahl, Sochtenau, Rohrhof, Meissen, Kelgard, Karak Norn
+	path = { 1422 321 1425 1432 313 650 }
 	
 	# Pnahl, Kolbugel, Hornfurt
 	path = { 1422 1421 1423 }
@@ -394,8 +394,8 @@ Pfeildorf_road = { #
 	# Kell, Sonnefurt, Tierhügel
 	path = { 1415 315 1414 }
 	
-	# Kell, Wusterberg
-	path = { 1415 314 }
+	# Kell, Wusterberg, Nehren
+	path = { 1415 314 1431 }
 	
 	# Tierhügel, Karak Grentaz, Karak Hirn
 	path = { 1414 652 653 }
@@ -435,8 +435,8 @@ nuln_road = { #
 	# Nuln
 	start = { 309 }
 	
-	# Nuln, Hinterland, Ramsau
-	path = { 309 1271 345 }
+	# Nuln, Ramsau
+	path = { 309 345 }
 	
 	# Ramsau, Zaya, Teichel
 	path = { 345 346 342 }
@@ -450,8 +450,11 @@ nuln_road = { #
 	# Teichel, Gostahof
 	path = { 342 332}
 	
-	# Nuln, Grotchen, Gnadental, Lengenfeld, Stirhugel, Wordern, Wurtbad
-	path = { 309 1270 1405 353 347 348 343 }
+	# Nuln, Grotchen, Gnadental, Lengenfeld, Stirhugel, Wordern
+	path = { 309 1270 1405 353 347 348 }
+	
+	# Wordern, Wurtbad
+	path = { 348 343 }
 }
 bechafen_road = { #
 

@@ -25906,7 +25906,7 @@ e_the_empire = {
 		color = { 125 125 125 }
 		color2 = { 255 255 255 }
 
-		capital = 309 # c_nuln
+		capital = 310 # c_wissenburg
 		chaos = 3800
 		tzeentch = 3800
 		nurgle = 3800
@@ -25914,12 +25914,13 @@ e_the_empire = {
 		khorne = 3800
 		old_imperial = "Menogoth"
 
+		
 		d_nuln = {
 			color = { 158 85 177 }
 			color2 = { 255 255 255 }
-
+			
 			capital = 309 # c_nuln
-
+			
 			c_nuln = { # 309
 				color = { 168 75 182 }
 				color2 = { 255 255 255 }
@@ -25930,9 +25931,7 @@ e_the_empire = {
 				b_faulestadt = {}
 				b_der_halbinsel = {}
 				b_altestadt = {}
-				b_tempel_quarter = {
-					#pentarchy = imperial_pantheon
-				}
+				b_tempel_quarter = {}
 				b_neuestadt = {}
 				b_westdorf = {}
 			}
@@ -25948,6 +25947,18 @@ e_the_empire = {
 				b_kotzenheim = {}
 				b_zecher = {}
 			}
+			c_fursthausen = { # 1271
+				color = { 43 192 163 }
+				color2 = { 255 255 255 }
+
+				b_fursthausen = {}
+				b_brandstadt = {}
+				b_mattersheim = {}
+				b_eschedorf = {}
+				b_wurstheim = {}
+				b_walsstein = {}
+				b_neuding = {}
+			}
 			c_groetchen = { # 1270
 				color = { 1 189 35 }
 				color2 = { 255 255 255 }
@@ -25960,48 +25971,24 @@ e_the_empire = {
 				b_spreitensoix = {}
 				b_gerashofen = {}
 			}
-			c_hinterland = { # 1271
-				color = { 43 192 163 }
-				color2 = { 255 255 255 }
-
-				b_fursthausen = {}
-				b_brandstadt = {}
-				b_mattersheim = {}
-				b_eschedorf = {}
-				b_wurstheim = {}
-				b_walsstein = {}
-				b_neuding = {}
-			}
 		}
 		d_meissen = {
 			color = { 94 74 61 }
 			color2 = { 255 255 255 }
-
+			
 			capital = 312 # c_wurmgrube
-
-			c_wurmgrube = { # 312
-				color = { 84 84 56 }
+			
+			c_meissen = { # 1432
+				color = { 85 21 91 }
 				color2 = { 255 255 255 }
 
-				b_wurmgrube = {}
 				b_meissen = {}
-				b_auggen = {}
-				b_heisenberg = {}
-				b_beeskow = {}
-				b_albrechtsburg = {}
-				b_marktsten = {}
-			}
-			c_durbheim = { # 311
-				color = { 42 81 183 }
-				color2 = { 255 255 255 }
-
-				b_durbheim = {}
-				b_hinkend = {}
-				b_beilngries = {}
-				b_bendorf = {}
-				b_niedernsten = {}
-				b_marchkreis = {}
-				b_stuehgries = {}
+				b_spalt2 = {}
+				b_neuhaus = {}
+				b_burgsinn = {}
+				b_strass = {}
+				b_windach = {}
+				b_ohu = {}
 			}
 			c_kelgard = { # 313
 				color = { 126 87 184 }
@@ -26010,18 +25997,30 @@ e_the_empire = {
 				b_kelgard = {}
 				b_trulben = {}
 				b_salmfahre = {}
-				b_nehren = {}
+				b_kreuzwertheim = {}
 				b_rankding = {}
 				b_klagenkreis = {}
 				b_traisding = {}
+			}
+			c_wurmgrube = { # 312
+				color = { 84 84 56 }
+				color2 = { 255 255 255 }
+
+				b_wurmgrube = {}
+				b_reisbach = {}
+				b_auggen = {}
+				b_heisenberg = {}
+				b_beeskow = {}
+				b_albrechtsburg = {}
+				b_marktsten = {}
 			}
 		}
 		d_wissenburg = {
 			color = { 10 68 60 }
 			color2 = { 255 255 255 }
-
+			
 			capital = 310 # c_wissenburg
-
+			
 			c_wissenburg = { # 310
 				color = { 0 78 55 }
 				color2 = { 255 255 255 }
@@ -26030,29 +26029,55 @@ e_the_empire = {
 				b_maselhof = {}
 				b_weningen = {}
 				b_dotternbach = {}
-				b_halgerbach = {}
+				b_hollfeld = {}
 				b_liebenzall = {}
 				b_krauthof = {}
 			}
-			c_grissenwald = { # 308
+			c_rohrhausen = { # 308
 				color = { 126 72 54 }
 				color2 = { 255 255 255 }
 
-				b_grissenwald = {}
+				
 				b_rohrhausen = {}
+				b_grissenwald = {}
 				b_grund = {}
 				b_iburg = {}
 				b_arnedorf = {}
 				b_koneheim = {}
 				b_arring = {}
+				
+			}
+			c_halgerbach = { # 1433
+				color = { 127 24 219 }
+				color2 = { 255 255 255 }
+
+				b_halgerbach = {}
+				b_heideck2 = {}
+				b_muhlhausen = {}
+				b_edenstetten = {}
+				b_hahnbach = {}
+				b_buxheim = {}
+				b_hambach = {}
+			}
+			c_geldersheim = { # 1434
+				color = { 86 174 186 }
+				color2 = { 255 255 255 }
+
+				b_geldersheim = {}
+				b_barbing = {}
+				b_pyrbaum = {}
+				b_parkstetten = {}
+				b_altenstadt = {}
+				b_kemmern = {}
+				b_schwindegg = {}
 			}
 		}
 		d_wissetal = {
 			color = { 178 80 62 }
 			color2 = { 255 255 255 }
-
-			capital = 314 # c_wusterberg
-
+			
+			capital = 314 # c_wusterberg	
+			
 			c_wusterberg = { # 314
 				color = { 168 90 57 }
 				color2 = { 255 255 255 }
@@ -26064,6 +26089,116 @@ e_the_empire = {
 				b_rauenbueren = {}
 				b_kulmaistein = {}
 				b_rackerheim = {}
+			}
+			c_weilerberg = { # 1430
+				color = { 1 15 90 }
+				color2 = { 255 255 255 }
+
+				b_weilerberg = {}
+				b_alling = {}
+				b_tussling = {}
+				b_rennertshofen = {}
+				b_holzheim = {}
+				b_strasskirchen = {}
+				b_pfeffenhausen = {}
+			}
+			c_nehren = { # 1431
+				color = { 43 18 218 }
+				color2 = { 255 255 255 }
+
+				b_nehren = {}
+				b_teisendorf = {}
+				b_hegge = {}
+				b_eckersmuhlen = {}
+				b_seeshaupt = {}
+				b_nesselwang = {}
+				b_thungersheim = {}
+			}
+		}
+		d_durbheim = {
+			color = { 42 81 183 }
+			color2 = { 255 255 255 }
+			
+			capital = 311 # c_durbheim
+			
+			c_durbheim = { # 311
+				color = { 42 81 183 }
+				color2 = { 255 255 255 }
+
+				b_durbheim = {}
+				b_sendelbach = {}
+				b_beilngries = {}
+				b_bendorf = {}
+				b_niedernsten = {}
+				b_marchkreis = {}
+				b_stuehgries = {}
+			}
+			c_scheidegg = { # 1435
+				color = { 128 177 59 }
+				color2 = { 255 255 255 }
+
+				b_scheidegg = {}
+				b_wasserlos = {}
+				b_rottenbach = {}
+				b_polling = {}
+				b_burgheim = {}
+				b_riedenburg = {}
+				b_waldbrunn = {}
+			}
+			c_eslarn = { # 1436
+				color = { 170 180 187 }
+				color2 = { 255 255 255 }
+
+				b_eslarn = {}
+				b_schwangau = {}
+				b_eschau = {}
+				b_diespeck = {}
+				b_unterpleichfeld = {}
+				b_weiherhammer = {}
+				b_memmingerberg = {}
+			}
+		}
+		d_hinkend = {
+			color = { 2 183 60 }
+			color2 = { 255 255 255 }
+			
+			capital = 1437 # c_hinkend
+			
+			c_hinkend = { # 1437
+				color = { 2 183 60 }
+				color2 = { 255 255 255 }
+
+				b_hinkend = {}
+				b_marktrodach = {}
+				b_sailauf = {}
+				b_gendorf = {}
+				b_hutthurm = {}
+				b_ebelsbach = {}
+				b_stockheim = {}
+			}
+			c_gerlenhofen = { # 1439
+				color = { 86 189 61 }
+				color2 = { 255 255 255 }
+
+				b_gerlenhofen = {}
+				b_moosinning = {}
+				b_bechhofen = {}
+				b_steinheim = {}
+				b_grosshabersdorf = {}
+				b_zusmarshausen = {}
+				b_sonnefeld = {}
+			}
+			c_weismain = { # 1438
+				color = { 44 186 188 }
+				color2 = { 255 255 255 }
+
+				b_weismain = {}
+				b_langenbach = {}
+				b_hart2 = {}
+				b_mainleus = {}
+				b_siegenburg = {}
+				b_oerlenbach = {}
+				b_berching = {}
 			}
 		}
 		#Solland
@@ -26192,7 +26327,7 @@ e_the_empire = {
 				b_schauenstein = {}
 				b_grosskollnbach = {}
 				b_rannungen = {}
-				b_muhlhausen = {}
+				b_muhlhausen2 = {}
 				b_markt_einersheim = {}
 			}
 			c_osterzell = {	#1409
@@ -26253,7 +26388,7 @@ e_the_empire = {
 			c_pforzen = { # 319
 				color = { 168 105 187 }
 				color2 = { 255 255 255 }
-
+				
 				b_pforzen = {}
 				b_gerolsbach = {}
 				b_moasach = {}
