@@ -105,8 +105,17 @@ old_dwarf_road = { #
 	# Agheiten, Nellingsheim, Longingbruck, Hoppetenzell, Wuppertal
 	path = { 1381 1386 358 1395 356 }
 	
-	# Averheim, Wordern, Wurtbad
-	path = { 357 348 343 }
+	# Averheim, Vigaun
+	path = { 357 1446 }
+	
+	# Wordern, Potting
+	path = { 348 1448 }
+	
+	# Potting, Wurtbad
+	path = { 1448 343 }
+	
+	# Vigaun, Wordern
+	path = { 1446 348 }
 	
 	# Averheim, Streissen
 	path = { 357 355 }
@@ -435,26 +444,26 @@ nuln_road = { #
 	# Nuln
 	start = { 309 }
 	
-	# Nuln, Ramsau
-	path = { 309 345 }
+	# Nuln, Kirchham
+	path = { 309 1452 }
 	
-	# Ramsau, Zaya, Teichel
-	path = { 345 346 342 }
+	# Nuln, Grotchen, Gnadental, Lengenfeld, Wolfsbach, Russbach, Vigaun
+	path = { 309 1270 1405 353 347 1447 1446 }
 	
-	# Ramsau, Nattern, Kemperbad
-	path = { 345 341 328 }
+	# Kirchham, Blutdorf, Ramsau, Flensburg, Lochen, Purgg, Potting
+	path = { 1452 1451 345 346 1450 342 1448}
 	
-	# Teichel, Wurtbad
-	path = { 342 343 }
+	# Kirchham, Zeven, Imsweiler, Kemperbad
+	path = { 1452 341 1456 328 }
 	
-	# Teichel, Gostahof
-	path = { 342 332}
+	# Vigaun, Wordern
+	path = { 1446 348 }
 	
-	# Nuln, Grotchen, Gnadental, Lengenfeld, Stirhugel, Wordern
-	path = { 309 1270 1405 353 347 348 }
+	# Wordern, Potting
+	path = { 348 1448 }
 	
-	# Wordern, Wurtbad
-	path = { 348 343 }
+	# Potting, Wurtbad
+	path = { 1448 343 }
 }
 bechafen_road = { #
 
@@ -542,7 +551,7 @@ drakenhof_road = { #
 	#Konigstein, Swartzhafen
 	path = { 376 1359 }
 
-	#Konigstein, Jaegerwald
+	#Konigstein, Fort Oberstyre
 	path = { 376 957 }
 	
 	#Swartzhafen, Leedleton, Eicheschatten
@@ -553,15 +562,21 @@ drakenhof_road = { #
 	
 	#Bylorhof, Bracher
 	path = { 1358 377 }
-
-	#Jaegerwald, Leithagberge
+	
+	#Fort Oberstyre, Raab
 	path = { 957 349 }
+	
+	#Fort Oberstyre, Zipf, Marburg
+	path = { 957 1441 929 }
+	
+	#Raab, Tenneck, Halstedt, Wordern
+	path = { 349 1444 1443 348 }
 
-	#Leithagberge, Oehling, Hundsheimerwald
-	path = { 349 344 929 }
-
-	#Leithagberge, Wordern, Wurtbad
-	path = { 349 348 343 }
+	#Wordern, Potting
+	path = { 348 1448 }
+	
+	#Potting, Wurtbad
+	path = { 1448 343 }
 
 	#Nachthafen, Fennonhugel
 	path = { 385 387 }

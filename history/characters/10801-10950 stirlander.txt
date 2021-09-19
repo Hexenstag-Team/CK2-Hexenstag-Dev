@@ -130,7 +130,7 @@
 	stewardship = 9
 	intrigue = 9
 	learning = 2
-	add_trait = creature_human
+	add_trait = creature_human10809
 	add_trait = hunter
 	add_trait = scholarly_theologian
 	add_trait = weak
@@ -442,8 +442,8 @@
 	add_trait = flamboyant_schemer
 	add_trait = zealous
 	add_trait = greedy
-	2006.7.21 = {birth = 2006.7.21}
-	2054.4.30 = {death = 2054.4.30}
+	1987.7.21 = {birth = yes}
+	2054.4.30 = {death = yes}
 }
 
 10823 = {	#79019
@@ -461,236 +461,13 @@
 	add_trait = falconer
 	add_trait = detached_priest
 	add_trait = weak
-	1982.2.18 = {birth = 1982.2.18}
-	2037.8.9 = {death = 2037.8.9}
+	1982.2.18 = {birth = yes}
+	2037.8.9 = {death = yes}
 }
 
-#Emperors from stirland
-#######################
-10824 = {	#79020
-	name = Uta
-	female = yes
-	dynasty = 20017
-	culture = stirlander
-	religion = imperial_pantheon
-	martial = 1
-	diplomacy = 10
-	stewardship = 11
-	intrigue = 4
-	learning = 3
-	add_trait = creature_human
-	add_trait = poet
-	add_trait = brilliant_strategist
-	add_trait = lisp
-	324.9.4 = {birth = 324.9.4}
-	391.4.11 = {death = 391.4.11}
-}
-
-10825 = {	#79021
-	name = Natalia
-	female = yes
-	dynasty = 20018 #10825 & 10826 same Dynasty
-	culture = stirlander
-	religion = imperial_pantheon
-	martial = 9
-	diplomacy = 1
-	stewardship = 1
-	intrigue = 4
-	learning = 4
-	add_trait = creature_human
-	add_trait = poet
-	add_trait = intricate_webweaver
-	552.5.27 = {birth = 552.5.27
-			effect = {set_character_flag = magic_potential_flag_1}
-			}
-	581.9.25 = {death = 581.9.25}
-}
-
-10826 = {	#79022
-	name = Natalia
-	female = yes
-	dynasty = 20018 #10825 & 10826 same Dynasty
-	culture = stirlander
-	religion = imperial_pantheon
-	martial = 9
-	diplomacy = 8
-	stewardship = 6
-	intrigue = 5
-	learning = 2
-	add_trait = creature_human
-	add_trait = impaler
-	add_trait = charismatic_negotiator
-	add_trait = diligent
-	add_trait = envious
-	add_trait = proud
-	mother = 10825
-
-	573.4.14 = {birth = 573.4.14}
-	637.7.17 = {death = 637.7.17}
-}
-
-10827 = {	#666
-	name = Aelise
-	female = yes
-	dynasty = 20018 #10825 & 10826 same Dynasty
-	culture = stirlander
-	religion = imperial_pantheon
-	martial = 9
-	diplomacy = 8
-	stewardship = 6
-	intrigue = 5
-	learning = 2
-	add_trait = creature_human
-	add_trait = impaler
-	add_trait = charismatic_negotiator
-	add_trait = diligent
-	add_trait = envious
-	add_trait = proud
-	mother = 10826
-	635.4.14 = {birth = yes}
-	712.7.17 = {death = yes}
-}
-
-10828 = {	#79023
-	name = Natalia
-	female = yes
-	dynasty = 20018 #10828 & 10829 same dynasty
-	culture = stirlander
-	religion = imperial_pantheon
-	mother = 999
-	martial = 2
-	diplomacy = 1
-	stewardship = 7
-	intrigue = 7
-	learning = 3
-	add_trait = creature_human
-	add_trait = falconer
-	add_trait = indulgent_wastrel
-	add_trait = slothful
-	add_trait = fair
-	add_trait = patient
-	711.12.15 = {birth = 711.12.15}
-	754.8.14 = {death = 754.8.14}
-}
-
-10829 = {	#79024
-	name = Natalia
-	female = yes
-	dynasty = 20018 #10828 & 10829 same dynasty
-	culture = stirlander
-	religion = imperial_pantheon
-	martial = 6
-	diplomacy = 0
-	stewardship = 5
-	intrigue = 5
-	learning = 8
-	add_trait = creature_human
-	add_trait = mastermind_theologian
-	add_trait = ambitious
-	add_trait = strong
-	add_trait = shy
-	mother = 10828
-
-	742.9.8 = {birth = 742.9.8}
-	791.4.5 = {death = 791.4.5}
-}
-
-10830 = {	#79025
-	name = Gerhard
-	dynasty = 20019
-	culture = stirlander
-	religion = imperial_pantheon
-	martial = 6
-	diplomacy = 7
-	stewardship = 6
-	intrigue = 8
-	learning = 1
-	add_trait = creature_human
-	add_trait = hunter
-	add_trait = martial_cleric
-	add_trait = cynical
-	add_trait = just
-	924.8.22 = {birth = 924.8.22}
-	970.3.9 = {death = 970.3.9}
-}
-
-10831 = {	#79026
-	name = Otto
-	dynasty = 20020
-	culture = stirlander
-	religion = imperial_pantheon
-	martial = 5
-	diplomacy = 1
-	stewardship = 4
-	intrigue = 3
-	learning = 6
-	add_trait = creature_human
-	add_trait = mystic
-	add_trait = fortune_builder
-	add_trait = paranoid
-	add_trait = kind
-	add_trait = honest
-	1344.8.20 = {birth = 1344.8.20}
-	1395.1.21 = {death = 1395.1.21}
-}
-
-10832 = {	#79027
-	name = Gerhard
-	dynasty = 20021
-	culture = stirlander
-	religion = imperial_pantheon
-	martial = 3
-	diplomacy = 7
-	stewardship = 6
-	intrigue = 0
-	learning = 5
-	add_trait = creature_human
-	add_trait = mystic
-	add_trait = thrifty_clerk
-	add_trait = gregarious
-	add_trait = craven
-	father = 10833
-	1773.11.29 = {birth = 1773.11.29}
-	1856.1.13 = {death = 1856.1.13}
-}
-
-10833 = {	#79031
-	name = Eckhardt
-	dynasty = 20021 #Emperor Eckhardt I Strassenbauer
-	culture = stirlander
-	religion = imperial_pantheon
-	martial = 5
-	diplomacy = 3
-	stewardship = 7
-	intrigue = 9
-	learning = 6
-	add_trait = creature_human
-	add_trait = poet
-	add_trait = indulgent_wastrel
-	add_trait = strong
-	add_trait = diligent
-	1739.7.22 = {birth = yes}
-	1784.4.4 = {death = yes}
-}
-
-10834 = {	#79032
-	name = Eckhardt
-	dynasty = 20021 #Emperor Eckhardt II Strassenbauer
-	culture = stirlander
-	father = 10833
-	religion = imperial_pantheon
-	martial = 5
-	diplomacy = 3
-	stewardship = 7
-	intrigue = 9
-	learning = 6
-	add_trait = creature_human
-	add_trait = poet
-	add_trait = misguided_warrior
-	add_trait = weak
-	1755.1.26 = {birth = 1755.1.26}
-	1794.8.13 = {death = 1794.8.13}
-}
+#################
+###10824-10834###
+#################
 
 10835 = {	#12909
 	name = Volkhaur

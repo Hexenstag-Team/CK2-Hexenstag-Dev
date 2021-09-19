@@ -28,24 +28,6 @@ decisions = {
 				war = no
 				custom_tooltip = { text = tooltip_maxed_uncrowned check_variable = { which = uncrowned_count value = 30 } }
 			}
-			conditional_tooltip = {
-				trigger = {
-					real_tier = EMPEROR
-					trait = excommunicated
-					OR = { 
-						has_law = investiture_law_0
-						NOT = { religion = imperial_pantheon }
-					}
-				}
-				OR = {
-					NOT = { trait = excommunicated }
-					OR = {
-						has_law = investiture_law_1
-						NOT = { religion = imperial_pantheon }
-					}
-					hidden_tooltip = { lower_real_tier_than = EMPEROR }
-				}
-			}
 			custom_tooltip = {
 				text = inaccessible_tooltip
 				hidden_tooltip = {
@@ -130,20 +112,8 @@ decisions = {
 					NOT = { has_character_flag = flag_pepin_for_coronation }
 				}
 			}
-			OR = { #Either Grand Theoginist exists, Any Lector is your vassal, or you have a theocratic vassal.
-				custom_tooltip = {
-					text = TT_CORONATION_RELIGIOUS_HEAD_POPE
-					religion_head = {
-						religion = ROOT
-						OR = {
-							has_landed_title = k_cult_of_sigmar
-							has_landed_title = k_cult_of_ulric
-							has_landed_title = k_cult_of_taal_and_rhya
-							has_landed_title = k_cult_of_morr
-						}
-						NOT = { block_general_event_trigger = yes }
-					}
-				}
+			OR = {
+
 				AND = {
 					NOT = { tier = EMPEROR }
 					custom_tooltip = {
