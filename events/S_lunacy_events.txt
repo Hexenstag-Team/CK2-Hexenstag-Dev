@@ -851,47 +851,55 @@ character_event = {
 	id = slunacy.16
 	desc = EVTDESCslunacy16
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
-	trigger = { prisoner = no
-			age = 16
-			trait = lunatic_3
-			has_character_modifier = bloodthirsty
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated }
-			NOT = { trait = studying_magic }
-			NOT = { trait = crafting_magic_item }
-			liege = { any_courtier = { NOT = { is_ruler = yes }
-					NOT = { trait = avatar_isha }
-					NOT = { trait = avatar_kurnous }
-					NOT = { trait = creature_treekin }
-					NOT = { trait = creature_forestspirit }
-					NOT = { trait = creature_nehekharan }
-					NOT = { trait = tzeentch_demon }
-					NOT = { trait = slaanesh_demon }
-					NOT = { trait = nurgle_demon }
-					NOT = { trait = khorne_demon }
-			NOT = { trait = vampire_lahmian_visible }
-			NOT = { trait = vampire_carstein_visible }
-			NOT = { trait = vampire_blood_visible }
-			NOT = { trait = vampire_strigoi_visible }
-			NOT = { trait = vampire_necrarch_visible }
-			NOT = { trait = vampire_jade_visible }
-			NOT = { trait = vampire_mahtmasi_visible }
-			NOT = { trait = vampire_lahmian_hidden }
-			NOT = { trait = vampire_carstein_hidden }
-			NOT = { trait = vampire_blood_hidden }
-			NOT = { trait = vampire_strigoi_hidden }
-			NOT = { trait = vampire_necrarch_hidden }
-			NOT = { trait = vampire_jade_hidden }
-			NOT = { trait = vampire_mahtmasi_hidden }
-					NOT = { has_character_modifier = magic_power_1 }
-					NOT = { has_character_modifier = magic_power_2 }
-					NOT = { has_character_modifier = magic_power_3 }
-					NOT = { has_character_modifier = magic_power_4 } } }
+	min_age = 16
+	only_capable = yes
+	prisoner = no
+
+	trigger = {
+		has_character_modifier = bloodthirsty
+		trait = lunatic_3
+		NOT = { trait = resting }
+		NOT = { trait = incapacitated }
+		NOT = { trait = studying_magic }
+		NOT = { trait = crafting_magic_item }
+		liege = {
+			any_courtier = {
+				NOR = {
+					is_ruler = yes
+					has_character_modifier = magic_power_1
+					has_character_modifier = magic_power_2
+					has_character_modifier = magic_power_3
+					has_character_modifier = magic_power_4
+					trait = creature_nehekharan
+					trait = tzeentch_demon
+					trait = slaanesh_demon
+					trait = nurgle_demon
+					trait = khorne_demon
+					trait = creature_treekin
+					trait = creature_forestspirit
+					trait = vampire_lahmian_visible
+					trait = vampire_carstein_visible
+					trait = vampire_blood_visible
+					trait = vampire_strigoi_visible
+					trait = vampire_necrarch_visible
+					trait = vampire_jade_visible
+					trait = vampire_mahtmasi_visible
+					trait = vampire_lahmian_hidden
+					trait = vampire_carstein_hidden
+					trait = vampire_blood_hidden
+					trait = vampire_strigoi_hidden
+					trait = vampire_necrarch_hidden
+					trait = vampire_jade_hidden
+					trait = vampire_mahtmasi_hidden
+					trait = avatar_isha
+					trait = avatar_kurnous
+				}
 			}
+		}
+	}
 
-	mean_time_to_happen = { years = 10}
 
 	option = {
 		name = EVTOPTAslunacy16
@@ -941,13 +949,13 @@ character_event = {
 
 	immediate = {
 		if = {
- limit = {
- is_invincible_trigger = yes
- }
+		 limit = {
+		 	is_invincible_trigger = yes
+		 }
 
 			antideath_effect = yes
 			break = yes
-}
+		}
 			death = { death_reason = death_murder
 				killer = FROM }
 			any_dynasty_member = {
@@ -988,21 +996,21 @@ character_event = {
 	id = slunacy.19
 	desc = EVTDESCslunacy19
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
-	trigger = { prisoner = no
-			age = 16
-			trait = lunatic_3
-			is_ruler = yes
-			has_character_modifier = bloodthirsty
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated }
-			NOT = { trait = studying_magic }
-			NOT = { trait = crafting_magic_item }
-			any_demesne_province = { NOT = { has_province_modifier = bloodthirsty_rampage } }
-			}
+	only_rulers = yes
+	min_age = 16
+	prisoner = no
+	capable_only = yes
 
-	mean_time_to_happen = { years = 10}
+	trigger = {
+		has_character_modifier = bloodthirsty
+		trait = lunatic_3
+		NOT = { trait = resting }
+		NOT = { trait = studying_magic }
+		NOT = { trait = crafting_magic_item }
+		any_demesne_province = { NOT = { has_province_modifier = bloodthirsty_rampage } }
+	}
 
 	option = {
 		name = EVTOPTAslunacy19
@@ -1019,15 +1027,17 @@ character_event = {
 	id = slunacy.20
 	desc = EVTDESCslunacy20
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
-	trigger = { prisoner = no
-			age = 16
+	only_rulers = yes
+	min_age = 16
+	prisoner = no
+	capable_only = yes
+
+	trigger = {
 			trait = lunatic_3
-			is_ruler = yes
 			has_character_modifier = bloodthirsty
 			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated }
 			NOT = { trait = studying_magic }
 			NOT = { trait = crafting_magic_item }
 			OR = { has_character_modifier = magic_power_1
@@ -1035,8 +1045,6 @@ character_event = {
 				has_character_modifier = magic_power_3
 				has_character_modifier = magic_power_4 }
 			}
-
-	mean_time_to_happen = { years = 10}
 
 	option = {
 		name = EVTOPTAslunacy20
@@ -1052,10 +1060,9 @@ character_event = {
 	id = slunacy.21
 	desc = EVTDESCslunacy21
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
 	trigger = { NOT = { character = FROM } }
-
-	is_triggered_only = yes
 
 	option = {
 		name = EVTOPTAslunacy21
@@ -1070,15 +1077,16 @@ character_event = {
 	id = slunacy.22
 	desc = EVTDESCslunacy22
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
-	trigger = { has_character_modifier = blind_virtue
-			trait = lunatic_2
-			age = 12
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated } }
+	min_age = 12
+	capable_only = yes
 
-	mean_time_to_happen = { years = 10}
+	trigger = {
+		has_character_modifier = blind_virtue
+		trait = lunatic_2
+		NOT = { trait = resting }
+	}
 
 	option = {
 		name = EVTOPTAslunacy22
@@ -1091,19 +1099,17 @@ character_event = {
 	id = slunacy.23
 	desc = EVTDESCslunacy23
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
 	min_age = 16
 	only_capable = yes
 
-
-	trigger = { has_character_modifier = blind_virtue
-			trait = lunatic_2
-			trait = cruel
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated } }
-
-	mean_time_to_happen = { years = 10}
+	trigger = {
+		has_character_modifier = blind_virtue
+		trait = lunatic_2
+		trait = cruel
+		NOT = { trait = resting }
+	}
 
 	option = {
 		name = EVTOPTAslunacy23
@@ -1117,18 +1123,21 @@ character_event = {
 	id = slunacy.24
 	desc = EVTDESCslunacy24
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
+	only_rulers = yes
 	min_age = 16
 	only_capable = yes
-	only_rulers = yes
 
-	trigger = { has_character_modifier = blind_virtue
-			trait = lunatic_2
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated }
-			any_courtier = { host = { character = ROOT }
-					prisoner = yes } }
+	trigger = {
+		has_character_modifier = blind_virtue
+		trait = lunatic_2
+		NOT = { trait = resting }
+		any_courtier = {
+			host = { character = ROOT }
+			prisoner = yes
+		}
+	}
 
 	mean_time_to_happen = { years = 10}
 
@@ -1145,6 +1154,7 @@ character_event = {
 	id = slunacy.25
 	desc = EVTDESCslunacy25
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
 	min_age = 16
 	only_capable = yes
@@ -1153,14 +1163,10 @@ character_event = {
 	trigger = { has_character_modifier = fake_mage
 			trait = lunatic_2
 			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated }
 			OR = { has_character_modifier = magic_power_1
 				has_character_modifier = magic_power_2
 				has_character_modifier = magic_power_3
 				has_character_modifier = magic_power_4 } }
-
-	mean_time_to_happen = { years = 1}
 
 	option = {
 		name = EVTOPTAslunacy25
@@ -1174,6 +1180,7 @@ character_event = {
 	id = slunacy.26
 	desc = EVTDESCslunacy26
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
 	min_age = 16
 	only_capable = yes
@@ -1183,10 +1190,7 @@ character_event = {
 			trait = lunatic_2
 			NOT = { trait = wounded }
 			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated } }
-
-	mean_time_to_happen = { years = 10}
+		}
 
 	option = {
 		name = EVTOPTAslunacy26
@@ -1199,29 +1203,34 @@ character_event = {
 character_event = {
 	id = slunacy.27
 	hide_window = yes
+	is_triggered_only = yes
 
 	min_age = 16
 	only_capable = yes
 
-	trigger = { has_character_modifier = despairing_laughter
+	trigger = {
+		has_character_modifier = despairing_laughter
 			trait = lunatic_2
-			NOT = { trait = wounded }
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated }
-
-			liege = { any_courtier = {
-					NOT = { trait = incapable }
-					NOT = { trait = incapacitated }
-					NOT = { trait = tzeentch_demon }
-					NOT = { trait = slaanesh_demon }
-					NOT = { trait = nurgle_demon }
-					NOT = { trait = khorne_demon }
-					NOT = { trait = hashut_kdaai }
-					OR = { trait = infirm
+			NOR = {
+				trait = wounded
+				trait = resting
+			}
+			liege = {
+				any_courtier = {
+					NOR = {
+						trait = incapable
+						trait = incapacitated
+						trait = tzeentch_demon
+						trait = slaanesh_demon
+						trait = nurgle_demon
+						trait = khorne_demon
+						trait = hashut_kdaai
+					}
+					OR = {
 						trait = wounded
 						trait = maimed
 						trait = disfigured
+						trait = infirm
 						trait = burnt_by_asuryan
 						trait = is_fat
 						trait = is_malnourished
@@ -1232,7 +1241,10 @@ character_event = {
 						trait = troubled_pregnancy
 						trait = hard_pregnancy
 						is_mutated_trigger = yes
-						trait = lunatic_3 } } }
+						trait = lunatic_3
+					}
+				}
+			}
 		 }
 
 	mean_time_to_happen = { years = 6}
@@ -1365,22 +1377,22 @@ character_event = {
 	}
 }
 
-# Maniac - Unfeeling - Loses craven
+# Maniac - Unfeeling - "Loses craven" (becomes brave)
 character_event = {
 	id = slunacy.30
 	desc = EVTDESCslunacy30
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
-	trigger = { has_character_modifier = unfeeling
-			trait = lunatic_2
-			age = 12
-			OR = { trait = craven
-				NOT = { trait = brave } }
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated } }
+	min_age = 12
+	only_capable = yes
 
-	mean_time_to_happen = { years = 10}
+	trigger = {
+		has_character_modifier = unfeeling
+		trait = lunatic_2
+		NOT = { trait = brave }
+		NOT = { trait = resting }
+	}
 
 	option = {
 		name = EVTOPTAslunacy30
@@ -1395,16 +1407,17 @@ character_event = {
 	id = slunacy.31
 	desc = EVTDESCslunacy31
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
-	trigger = { has_character_modifier = unfeeling
-			trait = lunatic_2
-			age = 12
-			trait = paranoid
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated } }
+	min_age = 12
+	capable_only = yes
 
-	mean_time_to_happen = { years = 10}
+	trigger = {
+		has_character_modifier = unfeeling
+		trait = lunatic_2
+		trait = paranoid
+		NOT = { trait = resting }
+	}
 
 	option = {
 		name = EVTOPTAslunacy31
@@ -1418,16 +1431,17 @@ character_event = {
 	id = slunacy.32
 	desc = EVTDESCslunacy32
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
-	trigger = { has_character_modifier = unfeeling
-			trait = lunatic_2
-			age = 12
-			NOT = { trait = craven }
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated } }
+	min_age = 12
+	capable_only = yes
 
-	mean_time_to_happen = { years = 10}
+	trigger = {
+		has_character_modifier = unfeeling
+		trait = lunatic_2
+		NOT = { trait = craven }
+		NOT = { trait = resting }
+	}
 
 	option = {
 		name = EVTOPTAslunacy32
@@ -1457,34 +1471,37 @@ character_event = {
 		trigger = { is_female = yes }
 		 }
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
-	trigger = { prisoner = no
-			age = 16
-			trait = lunatic_3
-			is_ruler = yes
-			has_character_modifier = god_delusion
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated }
-			NOT = { trait = studying_magic }
-			NOT = { trait = crafting_magic_item }
-			}
+	only_rulers = yes
+	min_age = 16
+	prisoner = no
+	capable_only = yes
 
-	mean_time_to_happen = { years = 10
-        			modifier = { factor = 0.75
-						trait = immortal
-						}
-        			modifier = { factor = 0.75
-						trait = immortal
-						}
-				}
+	trigger = {
+		has_character_modifier = god_delusion
+		trait = lunatic_3
+		NOR = {
+			trait = resting
+			trait = studying_magic
+			trait = crafting_magic_item
+		}
+	}
+
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.5
+			trait = immortal
+		}
+	}
 
 	option = {
 		name = EVTOPTAslunacy33
 		hidden_tooltip = { character_event = { id = wh_mutation.200 } } #lunacy counter
-			prestige = 350
-			piety = -400
-			}
+		prestige = 350
+		piety = -400
+	}
 }
 
 # Lunatic - God delusional becomes Chaos Undivided (worship himself)
@@ -1497,17 +1514,19 @@ character_event = {
 		trigger = { NOT = { religion = sigmarite } }
 		 }
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
-	trigger = { prisoner = no
-			age = 16
+	only_rulers = yes
+	prisoner = no
+	min_age = 16
+	capable_only = yes
+
+	trigger = {
+		has_character_modifier = god_delusion
 			trait = lunatic_3
-			is_ruler = yes
-			has_character_modifier = god_delusion
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated }
 			NOR = {
 				religion_group = chaos_gods_group
+				trait = resting
 			}
 			is_undead_trigger = no
 			OR = {
@@ -1519,14 +1538,13 @@ character_event = {
 			}
 		}
 
-	mean_time_to_happen = { years = 10
-        			modifier = { factor = 0.75
-						trait = immortal
-						}
-        			modifier = { factor = 0.75
-						trait = immortal
-						}
-				}
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.5
+			trait = immortal
+		}
+	}
 
 	option = {
 		name = EVTOPTAslunacy34
@@ -1545,18 +1563,18 @@ character_event = {
 	id = slunacy.35
 	desc = EVTDESCslunacy35
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
-	trigger = { prisoner = no
-			age = 16
-			trait = lunatic_2
-			has_character_modifier = unfeeling
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated }
-			has_lover = yes
-			}
+	min_age = 16
+	prisoner = no
+	capable_only = yes
 
-	mean_time_to_happen = { years = 10}
+	trigger = {
+		has_character_modifier = unfeeling
+		has_lover = yes
+		trait = lunatic_2
+		NOT = { trait = resting }
+	}
 
 	option = {
 		name = EVTOPTAslunacy35
@@ -1587,18 +1605,19 @@ character_event = {
 	id = slunacy.36
 	desc = EVTDESCslunacy36
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
-	trigger = { prisoner = no
-			age = 16
-			trait = lunatic_2
-			has_character_modifier = unfeeling
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated }
-			any_rival = { is_alive = yes }
-			}
+	rivals = yes
+	min_age = 16
+	prisoner = no
+	capable_only = yes
 
-	mean_time_to_happen = { years = 10}
+
+	trigger = {
+		has_character_modifier = unfeeling
+		trait = lunatic_2
+		NOT = { trait = resting }
+	}
 
 	option = {
 		name = EVTOPTAslunacy36
@@ -1629,18 +1648,18 @@ character_event = {
 	id = slunacy.37
 	desc = EVTDESCslunacy37
 	picture = GFX_evt_lunatic
+	is_triggered_only = yes
 
-	trigger = { prisoner = no
-			age = 16
-			trait = lunatic_2
-			has_character_modifier = unfeeling
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated }
-			any_friend = { is_alive = yes }
-			}
+	friends = yes
+	min_age =  16
+	prisoner = no
+	capable_only = yes
 
-	mean_time_to_happen = { years = 10}
+	trigger = {
+		trait = lunatic_2
+		has_character_modifier = unfeeling
+		NOT = { trait = resting }
+	}
 
 	option = {
 		name = EVTOPTAslunacy37
@@ -1674,46 +1693,51 @@ character_event = {
 character_event = {
     id = slunacy.38
     hide_window = yes
+	is_triggered_only = yes
+
+	religion_group = necromantic_group
 
 	min_age = 75
 	capable_only = yes
 
 	trigger = {
-		OR = { trait = vampire_lahmian_visible
+		OR = {
+			trait = vampire_lahmian_visible
 			trait = vampire_carstein_visible
 			trait = vampire_blood_visible
 			trait = vampire_strigoi_visible
 			trait = vampire_necrarch_visible
 			trait = vampire_jade_visible
-			trait = vampire_mahtmasi_visible }
+			trait = vampire_mahtmasi_visible
+		}
 	}
 
-	mean_time_to_happen = {
-		years = 66
-            	modifier = { factor = 0.9
+	weight_multiplier = {
+		days = 1
+            	modifier = { factor = 1.1
 				age = 150
 			 }
-            	modifier = { factor = 0.9
+            	modifier = { factor = 1.1
 				age = 250
 			 }
-            	modifier = { factor = 0.9
+            	modifier = { factor = 1.1
 				age = 400
 			 }
-            	modifier = { factor = 0.9
+            	modifier = { factor = 1.1
 				age = 600
 			 }
-            	modifier = { factor = 0.8
+            	modifier = { factor = 1.1
 				age = 1000
 			 }
-            	modifier = { factor = 0.7
+            	modifier = { factor = 1.6
 				OR = { trait = vampire_strigoi_visible
 					trait = vampire_strigoi_hidden }
 			 }
-            	modifier = { factor = 0.8
+            	modifier = { factor = 1.2
 				OR = { trait = vampire_necrarch_visible
 					trait = vampire_necrarch_hidden }
 			 }
-            	modifier = { factor = 0.9
+            	modifier = { factor = 1.1
 				OR = { graphical_culture = lahmianeverkidgfx
 					graphical_culture = carsteineverkidgfx }
 			 }
@@ -2452,16 +2476,18 @@ character_event = {
 					graphical_culture = carsteineverkidgfx } } }
 		}
 	picture = GFX_evt_vampire_politics
-
-	trigger = { has_character_modifier = everchild_syndrome
-			trait = lunatic_2
-			mother = { is_alive = yes }
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated } }
+	is_triggered_only = yes
 
 	min_age = 75
-	mean_time_to_happen = { years = 33}
+	prisoner = yes
+	capable_only = yes
+
+	trigger = {
+		has_character_modifier = everchild_syndrome
+		trait = lunatic_2
+		mother = { is_alive = yes }
+		NOT = { trait = resting }
+	}
 
 	option = {
 		name = EVTOPTAslunacy43
@@ -2664,49 +2690,57 @@ character_event = {
 character_event = {
 	id = slunacy.44
 	desc = { text = EVTDESCAslunacy44
-		trigger = { NOR = { trait = vampire_lahmian_visible
-					trait = vampire_carstein_visible
-					trait = vampire_blood_visible
-					trait = vampire_strigoi_visible
-					trait = vampire_necrarch_visible
-					trait = vampire_jade_visible
-					trait = vampire_mahtmasi_visible
-					trait = vampire_lahmian_hidden
-					trait = vampire_carstein_hidden
-					trait = vampire_blood_hidden
-					trait = vampire_strigoi_hidden
-					trait = vampire_necrarch_hidden
-					trait = vampire_jade_hidden
-					trait = vampire_mahtmasi_hidden } }
+		trigger = {
+			NOR = {
+				trait = vampire_lahmian_visible
+				trait = vampire_carstein_visible
+				trait = vampire_blood_visible
+				trait = vampire_strigoi_visible
+				trait = vampire_necrarch_visible
+				trait = vampire_jade_visible
+				trait = vampire_mahtmasi_visible
+				trait = vampire_lahmian_hidden
+				trait = vampire_carstein_hidden
+				trait = vampire_blood_hidden
+				trait = vampire_strigoi_hidden
+				trait = vampire_necrarch_hidden
+				trait = vampire_jade_hidden
+				trait = vampire_mahtmasi_hidden
+			}
 		}
+	}
 	desc = { text = EVTDESCBslunacy44
-		trigger = { OR = { trait = vampire_lahmian_visible
-					trait = vampire_carstein_visible
-					trait = vampire_blood_visible
-					trait = vampire_strigoi_visible
-					trait = vampire_necrarch_visible
-					trait = vampire_jade_visible
-					trait = vampire_mahtmasi_visible
-					trait = vampire_lahmian_hidden
-					trait = vampire_carstein_hidden
-					trait = vampire_blood_hidden
-					trait = vampire_strigoi_hidden
-					trait = vampire_necrarch_hidden
-					trait = vampire_jade_hidden
-					trait = vampire_mahtmasi_hidden } }
+		trigger = {
+			OR = {
+				trait = vampire_lahmian_visible
+				trait = vampire_carstein_visible
+				trait = vampire_blood_visible
+				trait = vampire_strigoi_visible
+				trait = vampire_necrarch_visible
+				trait = vampire_jade_visible
+				trait = vampire_mahtmasi_visible
+				trait = vampire_lahmian_hidden
+				trait = vampire_carstein_hidden
+				trait = vampire_blood_hidden
+				trait = vampire_strigoi_hidden
+				trait = vampire_necrarch_hidden
+				trait = vampire_jade_hidden
+				trait = vampire_mahtmasi_hidden
+			}
 		}
+	}
 	picture = GFX_evt_vampire_politics
+	is_triggered_only = yes
+
 	min_age = 16
+	prisoner = yes
+	only_capable = yes
 
 	trigger = { OR = { any_spouse = { has_character_modifier = everchild_syndrome }
 				any_lover = { has_character_modifier = everchild_syndrome } }
 			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated }
 		NOR = { graphical_culture = lahmianeverkidgfx
 			graphical_culture = carsteineverkidgfx } }
-
-	mean_time_to_happen = { years = 10}
 
 	option = { #Don't love it anymore
 		name = EVTOPTAslunacy44
@@ -2831,16 +2865,16 @@ character_event = {
 	id = slunacy.45
 	desc = EVTDESCslunacy45
 	picture = GFX_evt_vampire_politics
+	is_triggered_only = yes
 
 	min_age = 75
+	only_capable = yes
 
-	trigger = { has_character_modifier = exquisite_agonies
-			NOT = { trait = hedonist }
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated } }
-
-	mean_time_to_happen = { years = 10}
+	trigger = {
+		has_character_modifier = exquisite_agonies
+		NOT = { trait = hedonist }
+		NOT = { trait = resting }
+	}
 
 	option = {
 		name = EVTOPTAslunacy45
@@ -2854,16 +2888,17 @@ character_event = {
 	id = slunacy.46
 	desc = EVTDESCslunacy46
 	picture = GFX_evt_vampire_politics
+	is_triggered_only = yes
 
 	min_age = 75
+	only_capable = yes
+	prisoner = no
 
-	trigger = { has_character_modifier = exquisite_agonies
-			trait = hedonist
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated } }
-
-	mean_time_to_happen = { years = 10}
+	trigger = {
+		has_character_modifier = exquisite_agonies
+		trait = hedonist
+		NOT = { trait = resting }
+	}
 
 	option = { #cutting
 		name = EVTOPTAslunacy46
@@ -2934,10 +2969,12 @@ character_event = {
 	desc = EVTDESCslunacy46002
 	picture = GFX_evt_feral_vampire
 
-	trigger = { has_character_modifier = exquisite_agonies
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated } }
+	trigger = {
+		has_character_modifier = exquisite_agonies
+		NOT = { trait = resting }
+		NOT = { trait = incapable }
+		NOT = { trait = incapacitated }
+	}
 
 	is_triggered_only = yes
 
@@ -3249,14 +3286,14 @@ character_event = {
 		health = -1
 		random = { chance = 10
 		if = {
- limit = {
- is_invincible_trigger = yes
- }
+			limit = {
+				is_invincible_trigger = yes
+			}
 
 			antideath_effect = yes
 			break = yes
-}
-			death = { death_reason = death_accident } }
+		}
+		death = { death_reason = death_accident } }
 	}
 }
 
@@ -3265,16 +3302,18 @@ character_event = {
 	id = slunacy.48
 	desc = EVTDESCslunacy48
 	picture = GFX_evt_feral_vampire
+	is_triggered_only = yes
 
 	min_age = 75
+	only_capable = yes
 
-	trigger = { has_character_modifier = heart_of_melancholy
-			NOT = { trait = depressed }
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated } }
-
-	mean_time_to_happen = { years = 10}
+	trigger = {
+		has_character_modifier = heart_of_melancholy
+		NOR = {
+			trait = depressed
+			trait = resting
+		}
+	}
 
 	option = {
 		name = EVTOPTAslunacy48
@@ -3290,21 +3329,20 @@ character_event = {
 	picture = GFX_evt_feral_vampire
 
 	min_age = 75
+	only_capable = yes
 
-	trigger = { has_character_modifier = heart_of_melancholy
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated } }
-
-	mean_time_to_happen = { years = 10}
+	trigger = {
+		has_character_modifier = heart_of_melancholy
+		NOT = { trait = resting }
+	}
 
 	option = {
 		name = EVTOPTAslunacy49
 		hidden_tooltip = { character_event = { id = wh_mutation.200 } } #lunacy counter
 		prestige = -50
-
 	}
 }
+
 # Heart of Melancholy - Goes into hibernation
 character_event = {
 	id = slunacy.49001
