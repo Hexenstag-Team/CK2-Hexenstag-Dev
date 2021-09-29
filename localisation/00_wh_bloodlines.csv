@@ -1,8 +1,22 @@
-# LAST EDIT: 2021/04/11 - SUPERNOVA
-##########
-# TRAITS #
-##########
+##############
+# BLOODLINES #
+##############
 ###ÄNSI
+#
+# BLOODLINE RULES
+#
+RULE_WARHAMMER_PLAUSIBLE_BLOODLINES;§KWarhammer:§!Plausible Bloodlines;;;;;;;;;;;;;x
+RULE_STATIC_WARHAMMER_PLAUSIBLE_BLOODLINES;Static;;;;;;;;;;;;;x
+RULE_STATIC_WARHAMMER_PLAUSIBLE_BLOODLINES_DESC;Bloodlines which probably continued into this era will be represented by characters created or chosen by the developers.;;;;;;;;;;;;;x
+RULE_DYNAMIC_WARHAMMER_PLAUSIBLE_BLOODLINES;Dynamic;;;;;;;;;;;;;x
+RULE_DYNAMIC_WARHAMMER_PLAUSIBLE_BLOODLINES_DESC;Bloodlines which probably exist in the era will be randomly assigned to plausible candidates on game start.;;;;;;;;;;;;;x
+RULE_NO_WARHAMMER_PLAUSIBLE_BLOODLINES;None;;;;;;;;;;;;;x
+RULE_NO_WARHAMMER_PLAUSIBLE_BLOODLINES_DESC;These bloodlines will not be represented in the era.;;;;;;;;;;;;;x
+#
+# BLOODLINE EFFECTS
+#
+bloodline_effect_bull_centaurs_appear;Bull Centaurs take a special interest in this dynasty.;;;;;;;;;;;;;x
+bloodline_effect_family_treasure;This founder of this bloodline accumulated a huge treasure and their descendants are still benefitting.;;;;;;;;;;;;;x
 #
 # ARABYAN BLOODLINES
 #
@@ -43,18 +57,45 @@ lunn;Blood of [This.GetFirstNameWithNick];Sang de [This.GetFirstNameWithNick];Bl
 lunn_desc;The last King of Eight Peaks, he fell with his ironbreakers against invading hordes of Skaven and Greenskins. His descendants have long fought to restore his honor.;;;;;;;;;;;;;x
 morgrim_elgidum;Blood of [This.GetFirstNameWithNick];Sang de [This.GetFirstNameWithNick];Blut von [This.GetFirstNameWithNick];;Sangre de [This.GetFirstNameWithNick];;;;;x
 morgrim_elgidum_desc;The so-called Doom of the Elves, he brought incredible violence upon elf-kind for their perfidy. Alongside his uncle, King Gotrek Starbreaker, he settled the War of Vengeance.;;;;;;;;;;;;;x
+skalf_bloodline;Blood of the Dragonslayer;;;;;;;;;;;;x
+skalf_bloodline_desc;Skalf Drakendrengi slew the terrible dragon Graug and won back the lost dwarf hold, Karak Azgal.;;;;;;;;;;;;x
 #
 # DAWI ZHARR BLOODLINES
 #
 chaos_dwarf_sorcerer_statue_bloodline;Stone Blood of [This.GetFirstNameWithNick];;;;;;;;;;;;;x
 chaos_dwarf_sorcerer_statue_bloodline_desc;[This.GetFirstName] was once a mighty Sorcerer-Prophet, until the Sorcerer's Curse transformed [This.GetHerHim] into a lifeless statue of black stone.;;;;;;;;;;;;;x
-bloodline_effect_bull_centaurs_appear;Bull Centaurs take a special interest in this dynasty.;;;;;;;;;;;;;x
 #
 # ESTALIAN/TILEAN BLOODLINES
 #
 inigo_montoya;Blood of [This.GetDynName];Sang de [This.GetDynName];Blut von [This.GetDynName];;Sangre de [This.GetDynName];;;;;x
 inigo_montoya_desc;A byword for skillful swordsmanship, he became quite possibly the greatest living duelist in his pursuit of revenge.;;;;;;;;;;;;;x
+marco_colombo_bloodline;Blood of the Navigator;;;;;;;;;;;;;x
+marco_colombo_bloodline_desc;Marco Colombo was a well-traveled merchant and mercenary captain, famed for making contact with the lizardmen of Lustria.;;;;;;;;;;;;;x
 miragliano_miracle_bloodline;Miracle of Miragliano;;;;;;;;;;;;;x
 miragliano_miracle_bloodline_desc;Together, Prince Cosimo and the inventor Leonardo developed the first rational urban plan in Tilea;;;;;;;;;;;;;x
 myrmidian_emperor;Blood of [This.GetTitledFirstNameWithNick ];Sang de [This.GetTitledFirstNameWithNick ];Blut von [This.GetTitledFirstNameWithNick ];;Sangre de [This.GetTitledFirstNameWithNick ];;;;;x
 myrmidian_emperor_desc:;;;;;;;;;;;;;x
+#
+#
+####################
+# BLOODLINE EVENTS #
+####################
+#
+# GENERIC RESPONSES
+#
+DONATETREASURE;Put it on display;;;;;;;;;;;;;x
+SELLTREASURE;Sell it;;;;;;;;;;;;;x
+KEEPTREASURE;Keep it!;;;;;;;;;;;;;x
+#
+# EVENT DESCRIPTIONS
+#
+EVTDESC_wh_bloodline.2_dwarf;Sad news. A distant relative has passed away. At least they willed a little something to you: a charming bone carving that has been in the dynasty for centuries. What will you do with this little treasure?;;;;;;;;;;;;;x
+EVTDESC_wh_bloodline.2_human;Sad news. A distant relative has passed away. At least they willed a little something to you: a charming bone carving that has been in the dynasty for centuries. What will you do with this little treasure?;;;;;;;;;;;;;x
+EVTDESC_wh_bloodline.3_dwarf;While reorganizing your clan's storage, you come across an old, unfaimiliar chest bearing the mark of the [Root.GetOnlyDynastyName]. You open it up to discover a [family_treasure.GetName]!\nWhat will you do with this treasure?;;;;;;;;;;;;;x
+EVTDESC_wh_bloodline.3_human;You are surprised to receive a letter from a priest in a nearby town, claiming to have an object that belongs to your family. After a little wrangling you arrange for the [family_treasure.GetName] to be retrieved - but what will you do with it?;;;;;;;;;;;;;x
+EVTDESC_wh_bloodline.4_dwarf;While reorganizing your clan's storage, you come across an old, unfaimiliar chest bearing the mark of the [Root.GetOnlyDynastyName]. You open it up to discover a [family_treasure.GetName]!\nWhat will you do with this treasure?;;;;;;;;;;;;;x
+EVTDESC_wh_bloodline.4_human;You are surprised to receive a letter from a priest in a nearby town, claiming to have an object that belongs to your family. After a little wrangling you arrange for the [family_treasure.GetName] to be retrieved - but what will you do with it?;;;;;;;;;;;;;x
+EVTDESC_wh_setup.203;The great navigator Marco Colombo traveled most of the Old World and even made it to Lustria. While the Colombo line died out, many merchant families claim him as an ancestor. Is House [Root.GetOnlyDynastyName] among them?;;;;;;;;;;;;;x
+EVTOPTA_wh_setup.203;We are true heirs of Colombo;;;;;;;;;;;;;x
+EVTOPB_wh_setup.203;We are of true [Root.Culture.GetName] blood;;;;;;;;;;;;;x
+wh_setup_marco_colombo_bloodline_tt;All members of your dynasty will gain the Blood of the Navigator bloodline;;;;;;;;;;;;;x

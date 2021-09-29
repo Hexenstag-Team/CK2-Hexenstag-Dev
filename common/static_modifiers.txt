@@ -817,8 +817,8 @@ capital_empire = {
 }
 
 # Applied to your holdings not in the dejure empire your capital is in
+# NOTE: This doesn't work very well, especially with patricians who get the modifier for their family palaces no matter what
 outside_capital_empire = {
-	levy_size = -0.1
 }
 
 ###WARHAMMER RACE MODIIERS
@@ -851,8 +851,6 @@ halflings_culture_modifier = {
 # BRETONNIA
 bretonnian_marcheur_culture_modifier = {
 	land_morale = 0.2
-	knights=-10
-	pikemen=20
 	heavy_infantry=150
 	levy_size=0.2
 	garrison_size=0.3
@@ -863,9 +861,6 @@ bretonnian_marcheur_culture_modifier = {
 	heavy_infantry_offensive=0.1
 }
 bretonnian_mousillonian_culture_modifier = {
-	heavy_infantry=75
-	knights=-35
-	light_cavalry=30
 	levy_size=0.2
 	garrison_size=0.1
 	undead_horde_offensive = 0.3
@@ -1005,13 +1000,6 @@ goblin_culture_modifier = {
 	light_infantry_offensive = 0.15
 	land_organisation = 0.2
 }
-night_goblin_culture_modifier = {
-	levy_size = 0.5
-	levy_reinforce_rate = 0.15
-	heavy_infantry_defensive = -0.1
-	light_infantry_defensive = -0.1
-	land_organisation = 0.2
-}
 
 orc_culture_modifier = {
 	levy_reinforce_rate = 0.2
@@ -1024,8 +1012,6 @@ orc_culture_modifier = {
 
 ogres_culture_modifier = {
 	land_morale = 0.3
-	light_cavalry=6
-	archers=6
 	knights_offensive = 0.2
 	war_elephants_offensive = 0.2
 	gunpowder_offensive = 0.3
@@ -1034,10 +1020,6 @@ ogres_culture_modifier = {
 }
 chaosogre_culture_modifier = {
 	land_morale = 0.1
-	light_infantry=-40
-	heavy_infantry=25
-	light_cavalry=-5
-	knights=2
 	heavy_infantry_offensive = 0.1
 	heavy_infantry_defensive = 0.1
 	knights_defensive = 0.1
@@ -1048,8 +1030,6 @@ chaosogre_culture_modifier = {
 }
 firegut_culture_modifier = {
 	land_morale = 0.1
-	light_infantry=-40
-	pikemen=25
 	war_elephants_offensive = 0.2
 	pikemen_offensive = 0.2
 	pikemen_defensive = 0.1

@@ -6753,7 +6753,7 @@ warband_gork = {
 		limit = 25
 		startup_limit = 4
 		modifier = {
-			monthly_character_prestige = 0.25
+			monthly_character_piety = 0.25
 		}
 		powers = {
 			warrior_lodge_duel #Passive Power: Unlocks Duel
@@ -6767,7 +6767,7 @@ warband_gork = {
 		limit = 16
 		startup_limit = 6
 		modifier = {
-			monthly_character_prestige = 0.5
+			monthly_character_piety = 0.5
 			combat_rating = 6
 			martial = 2
 		}
@@ -6783,7 +6783,7 @@ warband_gork = {
 		limit = 12
 		startup_limit = 6
 		modifier = {
-			monthly_character_prestige = 0.75
+			monthly_character_piety = 0.75
 			combat_rating = 12
 			martial = 3
 			diplomacy = 1
@@ -6800,7 +6800,7 @@ warband_gork = {
 		limit = 6
 		startup_limit = 2
 		modifier = {
-			monthly_character_prestige = 1
+			monthly_character_piety = 1
 			combat_rating = 20
 			martial = 4
 			diplomacy = 2
@@ -6996,36 +6996,6 @@ warband_gork = {
 			trait = hunchback
 			value = -1
 		}
-		triggered_gain = {
-			trigger={culture = skaeling}
-			value = 1
-		}
-		triggered_gain = {
-			trigger={
-			OR={
-			culture = middenlander
-			culture = nordlander
-			}
-			}
-			value = 1
-		}
-		triggered_gain = {
-			trigger={culture = sarl}
-			value = 0.5
-		}
-		triggered_gain = {
-			trigger={culture = ostlander}
-			value = 0.5
-		}
-		triggered_gain = {
-			trigger={
-			NOR={
-				religion = ulrican
-				trait = norscan_patron_ulric
-			}
-			}
-			value = -1
-		}
 	}
 
 	member_score_per_attribute = 3
@@ -7039,51 +7009,13 @@ warband_gork = {
 			trait = hunter
 			factor = 1.3
 		}
-		modifier = {
-			primary_title = { title = d_knights_of_the_white_wolf }
-			factor = 1.5
-		}
-		modifier = {
-			primary_title = { title = d_order_of_the_howling_wolf }
-			factor = 1.5
-		}
-		modifier = {
-			primary_title = { title = d_order_of_the_winter_throne }
-			factor = 1.5
-		}
-		modifier = {
-			primary_title = { title = d_ragnarhalt }
-			factor = 2
-		}
-		modifier = {
-			capital_scope = {
-				province = 274
-			}
-			OR={
-				religion = ulrican
-				trait = norscan_patron_ulric
-			}
-			factor = 1.8
-		}
-    	modifier = {
-			primary_title = {
-				holy_order = yes
-			}
-			factor = 1.5
-		}
-    	modifier = {
-			primary_title = {
-				mercenary = yes
-			}
-			factor = 1.2
-		}
     	modifier = {
 			trait = vampire_blood_hidden
 			value = 1
 		}
 		modifier = {
 			trait = strategist
-			factor = 1.5
+			factor = 1.1
 		}
 		modifier = {
 			trait = duelist
@@ -7107,10 +7039,6 @@ warband_gork = {
 		}
     	modifier = {
 			trait = scarred
-			factor = 1.1
-		}
-		modifier = {
-			trait = one_eyed
 			factor = 1.1
 		}
 		modifier = {
@@ -7394,7 +7322,7 @@ warband_mork = {
 		limit = 25
 		startup_limit = 4
 		modifier = {
-			monthly_character_prestige = 0.25
+			monthly_character_piety = 0.25
 		}
 		powers = {
 			warrior_lodge_duel #Passive Power: Unlocks Duel
@@ -7408,7 +7336,7 @@ warband_mork = {
 		limit = 16
 		startup_limit = 6
 		modifier = {
-			monthly_character_prestige = 0.5
+			monthly_character_piety = 0.5
 			combat_rating = 10
 			martial = 1
 		}
@@ -7425,7 +7353,7 @@ warband_mork = {
 		limit = 12
 		startup_limit = 6
 		modifier = {
-			monthly_character_prestige = 0.75
+			monthly_character_piety = 0.75
 			combat_rating = 16
 			martial = 2
 			intrigue = 1
@@ -7441,7 +7369,7 @@ warband_mork = {
 		limit = 6
 		startup_limit = 2
 		modifier = {
-			monthly_character_prestige = 1
+			monthly_character_piety = 1
 			combat_rating = 25
 			martial = 3
 			intrigue = 2
@@ -7679,7 +7607,7 @@ warband_mork = {
 		}
 		modifier = {
 			trait = strategist
-			factor = 1.5
+			factor = 1.1
 		}
 		modifier = {
 			trait = duelist
@@ -7703,10 +7631,6 @@ warband_mork = {
 		}
     	modifier = {
 			trait = scarred
-			factor = 1.1
-		}
-		modifier = {
-			trait = one_eyed
 			factor = 1.1
 		}
 		modifier = {
@@ -8800,6 +8724,16 @@ engineers_guild = {
 					}
 				}
 			}
+			custom_tooltip = {
+				text = engineers_no_estalian_school_tt
+				AND = {
+					culture_group = estalian_group
+					had_global_flag = {
+						flag = tilean_engineering_school
+						months >= 12
+					}
+				}
+			}
 		}
 		learning = 10
 		NOR = {
@@ -8972,6 +8906,13 @@ engineers_guild = {
 			# value = 1
 			# trait = just
 		# }
+		triggered_gain = {
+			desc = eng_school_sponsor
+			trigger = {
+				has_wonder_upgrade = upgrade_engineering_school
+			}
+			value = 1
+		}
 		society_rank = {
 			rank = 4
 			value = 10

@@ -4,7 +4,7 @@
 title = c_red_eye_mountain
 
 # Settlements
-max_settlements = 7
+max_settlements = 5
 
 b_karak_ungor = tribal
 #b_ungor_ungol = city
@@ -23,17 +23,22 @@ terrain = mountain
 # b_barak_ungor = tb_red_eye
 }
 1.1.1= {
-	build_wonder = wonder_dawi_karak_ungor
-	set_wonder_stage = 2
-	build_wonder_upgrade = upgrade_delving_hold
-    #set_wonder_damaged = yes
+	build_wonder = wonder_dwarf_hold
+	set_wonder_stage = 5
+    build_wonder_upgrade = upgrade_mining_layer_1
+    build_wonder_upgrade = upgrade_mining_layer_2
+    build_wonder_upgrade = upgrade_mining_layer_3
+    build_wonder_upgrade = upgrade_mining_layer_4
+	build_wonder_upgrade = upgrade_mining_limonite
+	build_wonder_upgrade = upgrade_great_gate
+	build_wonder_upgrade = upgrade_mining_granite
+	build_wonder_upgrade = upgrade_mining_sapphires
+	build_wonder_upgrade = upgrade_mining_diamonds
+	build_wonder_upgrade = upgrade_mining_marble
+	build_wonder_upgrade = upgrade_warboss_hall
+	build_wonder_upgrade = upgrade_greenskin_fungal_forest
+	build_wonder_upgrade = upgrade_greenskin_kunnin_traps
+	build_wonder_upgrade = upgrade_cave_squigs #
+	build_wonder_upgrade = upgrade_warchanter_grotto
 }
 
-1230.1.1= {
-	set_wonder_stage = 3
-	build_wonder_upgrade = upgrade_caves_natural
-	build_wonder_upgrade = upgrade_greenskin_beast_lairz
-	build_wonder_upgrade = upgrade_goblin_workshop
-	build_wonder_upgrade = upgrade_greenskin_shaman_hut
-    #set_wonder_damaged = yes
-}

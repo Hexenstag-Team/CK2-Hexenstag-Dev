@@ -11,23 +11,23 @@ character_event = {
 	id = SJDwarfevents.1
 	desc = SJDwarfevents.1.desc
 	picture = GFX_evt_feast   #<-- insert picture here
+	is_triggered_only = yes
 
-
-	min_age = 16
+	only_playable = yes
+	min_age = 25
 	prisoner = no
-	only_rulers = yes
 	capable_only = yes
 
 	trigger = {
 		culture_group = dwarf_group
 		NOT = { trait = temperate }
-		}
+	}
 
-	mean_time_to_happen = {
-		years = 75
+	weight_multiplier = {
+		days = 1
 
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = drunkard
 		}
 	}
@@ -613,9 +613,10 @@ character_event = {
 	id = SJDwarfevents.20
 	desc = SJDwarfevents.20.desc
 	picture = GFX_evt_spymaster #<-- insert picture name here
+	is_triggered_only = yes
 
 	#Your rival deserves to feel pain and what better way to make him feel pain than to destroy what he loves, like his statues...
-
+	rivals = yes
 	prisoner = no
 	min_age = 16
 	capable_only = yes
@@ -629,11 +630,11 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		years = 100
+	weight_multiplier = {
+		days = 1
 
 		modifier = {
-			factor = 0.75
+			factor = 1.5
 			trait = envious
 		}
 	}
@@ -944,11 +945,12 @@ character_event = {
 	id = SJDwarfevents.25
 	desc = SJDwarfevents.25.desc
 	picture = GFX_evt_spymaster #<-- insert picture name here
+	is_triggered_only = yes
 
-	min_age = 16
+	religion_group = dwarf_gods_group
+	min_age = 25
 	capable_only = yes
 	prisoner = no
-	religion_group = dwarf_gods_group
 
 	trigger = {
 		OR = {
@@ -960,12 +962,12 @@ character_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		years = 150
+	weight_multiplier = {
+		days = 1
 
 
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = deceitful
 		}
 	}
@@ -1421,9 +1423,10 @@ character_event = {
 	id = SJDwarfevents.36
 	desc = SJDwarfevents.36.desc
 	picture = GFX_evt_feast #<-- insert picture name here
+	is_triggered_only = yes
 
-	only_rulers = yes
-	min_age = 16
+	only_playable = yes
+	min_age = 25
 	capable_only = yes
 	prisoner = no
 	only_men = yes
@@ -1445,19 +1448,19 @@ character_event = {
 		war = no
 	}
 
-	mean_time_to_happen = {
-		years = 25
+	weight_multiplier = {
+		days = 1
 
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = drunkard
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = gluttonous
 		}
 		modifier = {
-			factor = 10
+			factor = 0.1
 			trait = temperate
 		}
 	}
@@ -1738,20 +1741,21 @@ character_event = {
 	id = SJDwarfevents.40
 	desc = SJDwarfevents.40.desc
 	picture = GFX_evt_feast #<-- insert picture name here
+	is_triggered_only = yes
 
-	min_age = 40
-	max_age = 400
+	religion_group = dwarf_gods_group
+	min_age = 50
 	culture_group = dwarf_group
 
 	trigger = {
-		culture_group = dwarf_group
+		trait = creature_dwarf
 	}
 
-	mean_time_to_happen = {
-		years = 150
+	weight_multiplier = {
+		days = 1
 
 		modifier = {
-			factor = 0.8
+			factor = 1.2
 			trait = envious
 		}
 	}
@@ -3835,6 +3839,8 @@ character_event = {
 			}
 		}
 	}
+
+	religion_group = dwarf_gods_group
 	min_age = 250
 
 	trigger = {

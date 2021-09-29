@@ -47,10 +47,11 @@ able_to_get_mutation_trigger = {
 	OR = {
 		is_living_human_trigger = yes
 		is_daemon_trigger = yes
-		trait = creature_skaven
+		trait = creature_beastman
+		#trait = creature_skaven
 	}
 	NOT = { trait = lore_ice }
-	NOT = {
+	NAND = {
 		society_rank == 4
 		society_member_of = knights_of_bretonnia
 	}
@@ -77,17 +78,17 @@ has_massive_mutation_trigger = {
 }
 
 become_chaos_spawn_trigger = {
-	champion_chosen_trigger = no
-	is_daemon_trigger = no
 	check_variable = { which = mutation_counter value = 3 }
 	mutation_counter_trigger = yes
+	champion_chosen_trigger = no
+	is_daemon_trigger = no
 }
 
 become_forsaken_trigger = {	#chosen of chaos who has to many mutation
 	champion_chosen_trigger = yes
-	is_daemon_trigger = no
 	check_variable = { which = mutation_counter value = 3 }
 	mutation_counter_trigger = yes
+	is_daemon_trigger = no
 }
 
 champion_chosen_trigger = {
