@@ -182,7 +182,9 @@ greenskin_gods_gork = {
 	opposites = {
 		greenskin_gods_mork
 	}
-	opposite_opinion = -30
+	command_modifier = {
+		center = 0.05
+	}
 	potential = { religion = greenskin_gods }
 	religious_branch = greenskin_gods
 	random = no
@@ -198,7 +200,9 @@ greenskin_gods_mork = {
 	opposites = {
 		greenskin_gods_gork
 	}
-	opposite_opinion = -30
+	command_modifier = {
+		flank = 0.05
+	}
 	potential = { religion = greenskin_gods }
 	religious_branch = greenskin_gods
 	random = no

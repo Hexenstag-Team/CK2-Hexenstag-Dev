@@ -58,28 +58,6 @@ teiyogtei_khagan = { #2026
 	flags = { historical_bloodline battle_survivor_bloodline bloodline_orc }
 	picture = GFX_bloodlines_symbol_kurgan
 }
-cormac_bloodaxe = { #21018/21009
-	combat_rating = 8
-	martial=1
-	aesling_opinion = 5
-	kurgan_group_opinion = -5
-	imperial_group_opinion = -25
-	monthly_character_prestige = 0.1
-	defensive_plot_power_modifier = 0.1
-	command_modifier={
-		damage = 0.04
-	}
-	active={
-		OR={
-			religion=khorne
-			trait=norscan_patron_kharneth
-		}
-	}
-	inheritance = patrilineal
-	allow_bastards = yes
-	flags = { historical_bloodline bloodline_chaos }
-	picture = GFX_bloodlines_symbol_khorne
-}
 
 #Hashut
 chaos_dwarf_sorcerer_statue_bloodline = {
@@ -95,5 +73,5 @@ chaos_dwarf_sorcerer_statue_bloodline = {
 		religion = hashut
 	}
 	flags = { chaos_dwarf_sorcerer_statue_bloodline }
-	picture = GFX_bloodlines_symbol_bull
+	picture = GFX_bloodlines_chaos_dwarf_petrified
 }

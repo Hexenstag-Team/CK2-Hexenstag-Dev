@@ -271,17 +271,15 @@ character_event = {
     id = orcs.11
     desc = EVTDESCORCS.11 #After doing your daily drops, you notice a Goblin attempting to make away with a Heavy, double bladed Choppa
     picture = "GFX_evt_orcs"
+	is_triggered_only = yes
 
-	religion_group = greenskin_gods_group
+	only_playable = yes
 	min_age = 16
 	culture_group = orc_group
 
 	trigger = {
-		is_landed = yes
+		religion_group = greenskin_gods_group
 		prisoner = no
-	}
-	mean_time_to_happen = {
-		years = 15
 	}
 
 	option = {

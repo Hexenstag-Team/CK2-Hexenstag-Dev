@@ -2680,57 +2680,6 @@ blackorcs = {
     }
 }
 #Main
-orc_boyz = {
-    first_type = 0
-    first_amount = 170
-	second_type = 1
-	second_amount = 80
-	hire_cost = 150
-	costs_prestige = yes
-	potential = {
-		can_use_retinue_trigger = yes
-		culture_group=orc_group
-		NOT={culture=orc_savage}
-	}
-    modifier = {
-        light_infantry_defensive = 0.3
-        light_infantry_offensive = 0.25
-		heavy_infantry_defensive=0.1
-		heavy_infantry_offensive=0.1
-    }
-}
-
-orc_arrer_boyz = {
-    first_type = 5
-    first_amount = 250
-	hire_cost = 150
-	costs_prestige = yes
-	potential = {
-		can_use_retinue_trigger = yes
-		culture_group=orc_group
-	}
-    modifier = {
-        archers_offensive = 0.15
-        archers_defensive = 0.15
-        heavy_infantry_morale = 0.1
-    }
-}
-orc_boar_boyz = {
-    first_type = 4
-    first_amount = 100
-	hire_cost = 280
-	costs_prestige = yes
-	potential = {
-		can_use_retinue_trigger = yes
-		culture_group=orc_group
-		NOT={culture=orc_savage}
-	}
-    modifier = {
-        knights_defensive = 0.3
-        knights_offensive = 0.3
-        knights_morale = 0.25
-    }
-}
 orc_boar_chariots = {
     first_type = 6
     first_amount = 25
@@ -2747,23 +2696,6 @@ orc_boar_chariots = {
     }
 }
 #savage
-orc_savage_boyz = {
-    first_type = 0
-    first_amount = 225
-	second_type = 1
-	second_amount = 25
-	hire_cost = 125
-	costs_prestige = yes
-	potential = {
-		can_use_retinue_trigger = yes
-		culture = orc_savage
-	}
-    modifier = {
-        light_infantry_defensive = 0.6
-        light_infantry_offensive = 0.6
-		light_infantry_morale = 0.8
-    }
-}
 orc_savage_boar_boyz = {
     first_type = 4
     first_amount = 125
@@ -2834,62 +2766,6 @@ goblin_wolf_chariots = {
        chariots_morale = 0.25
     }
 }
-
-goblin_boyz = {
-    first_type = 0
-    first_amount = 175
-	second_type = 2
-	second_amount = 75
-	hire_cost=100
-	costs_prestige=yes
-	potential = {
-		can_use_retinue_trigger = yes
-		culture_group=goblin_group
-	}
-    modifier = {
-        light_infantry_defensive = 0.2
-        light_infantry_offensive = 0.4
-		light_infantry_morale = -0.1
-        pikemen_defensive = 0.2
-        pikemen_offensive = 0.4
-		pikemen_morale = -0.1
-    }
-}
-goblin_arrer_boyz = {
-    first_type = 5
-    first_amount = 250
-	hire_cost=100
-	costs_prestige=yes
-	potential = {
-		can_use_retinue_trigger = yes
-		culture_group=goblin_group
-	}
-    modifier = {
-        archers_offensive = 0.25
-        archers_defensive = 0.2
-        archers_morale = -0.1
-    }
-}
-goblin_nasty_skulker = {
-    first_type = 0
-    first_amount = 125
-    second_type = 1
-    second_amount = 125
-	hire_cost=500
-	costs_prestige=yes
-	potential = {
-		can_use_retinue_trigger = yes
-		culture_group = goblin_group
-	}
-    modifier = {
-        heavy_infantry_defensive = 0.4
-        heavy_infantry_offensive = 0.8
-        heavy_infantry_morale = 0.5
-        light_infantry_defensive = 0.4
-        light_infantry_offensive = 0.8
-        light_infantry_morale = 0.5
-    }
-}
 snotling_swarm = {
     first_type = 6
     first_amount = 250
@@ -2910,27 +2786,6 @@ snotling_swarm = {
         critter_offensive = 0.3
         critter_defensive = 0.1
         critter_morale = -0.1
-    }
-}
-rogue_idolz = {
-    first_type = 6
-    first_amount = 10
-	special_troops = siege_tanks
-
-	hire_cost = 800
-	costs_piety=yes
-	maintenance_multiplier = 2.50
-
-	potential = {
-		ai = no
-		OR={
-			culture_group = goblin_group
-			culture_group = orc_group
-		}
-	}
-    modifier = {
-        siege_tanks_offensive = 0.3
-		siege_tanks_defensive = 0.1
     }
 }
 greenskin_lobbers = {

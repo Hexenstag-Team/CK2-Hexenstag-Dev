@@ -1,621 +1,3 @@
-
-#############################
-###### Tier 1 ######
-#############################
-foal = {
-	active = { always = yes }
-	allowed_gift = { always = no }
-	
-	quality = 1
-	flags = { alive curse mount horse foal_age_0}
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_foal"
-}
-pony = {
-	combat_rating = 3
-	monthly_character_prestige = 0.1
-	active = { 
-		trait = creature_halfling
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 1
-	flags = { alive curse mount horse tier_1 mount_health_5}
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_foal"
-	slot = mount
-}
-dray_horse = { #pack horse
-	days_of_supply = 12
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 1
-	flags = { alive curse mount horse tier_1 mount_health_5 courser }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_courser"
-	slot = mount
-}
-rouncey = { #general purpose horse
-	combat_rating = 3
-	monthly_character_prestige = 0.1
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 1
-	flags = { alive curse mount horse tier_1 mount_health_5 courser }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_courser"
-	slot = mount
-}
-
-#############################
-###### Tier 2 ######
-#############################
-hobby = {
-	combat_rating = 6
-	monthly_character_prestige = 0.2
-	martial = 1
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 2
-	flags = { alive curse mount horse tier_2 irish mount_health_5 courser }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_courser"
-	slot = mount
-}
-
-jennet = { #estalian horse
-	combat_rating = 6
-	monthly_character_prestige = 0.2
-	martial = 1
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 2
-	flags = { alive curse mount horse tier_2 estalian mount_health_5 courser }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_courser"
-	slot = mount
-}
-
-palfry = { #ceromonial horse
-	combat_rating = 6
-	monthly_character_prestige = 0.2
-	martial = 1
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 2
-	flags = { alive curse mount horse tier_2 mount_health_5 destrier }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_destrier"
-	slot = mount
-}
-
-#############################
-###### Tier 2 ######
-#############################
-courser = {
-	combat_rating = 6
-	monthly_character_prestige = 0.2
-	martial = 1
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 2
-	flags = { alive curse mount horse tier_3 mount_health_5 courser }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_courser"
-	slot = mount
-}
-
-destrier = {
-	combat_rating = 6
-	monthly_character_prestige = 0.2
-	martial = 1
-	allowed_gift = { always = no }
-	
-	quality = 2
-	flags = { alive curse mount horse tier_3 mount_health_5 destrier }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_destrier"
-	slot = mount
-}
-
-irrana_mountain_horse = { 
-	combat_rating = 6
-	monthly_character_prestige = 0.2
-	martial = 1
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 2
-	flags = { alive curse mount horse tier_3 estalian mount_health_5 destrier }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_destrier"
-	slot = mount
-}
-
-
-cathayan_ceromonial_horse = { #Cathay interaction?
-	combat_rating = 6
-	monthly_character_prestige = 0.2
-	martial = 1
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 2
-	flags = { alive curse mount horse tier_3 cathayan mount_health_5 destrier }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_cathayan_horse"
-	slot = mount
-}
-#############################
-###### Tier 4 ######
-#############################
-
-bretonnian_charger = {
-	combat_rating = 12
-	monthly_character_prestige = 0.4
-	martial = 2
-	quality = 4
-	active = {
-		is_adult = yes
-	}
-	flags = { alive curse mount mount_health_5 }
-	stacking = yes
-	picture = "GFX_charger"
-	slot = mount
-}
-charger = {
-	combat_rating = 12
-	monthly_character_prestige = 0.4
-	martial = 2
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 4
-	flags = { alive curse mount horse tier_4 mount_health_5 charger }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_charger"
-	slot = mount
-}
-
-druchii_destrier = { #druchii only
-	combat_rating = 12
-	monthly_character_prestige = 0.4
-	martial = 2
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 4
-	flags = { alive curse mount horse tier_3 barbary mount_health_6 destrier breeding_only }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_destrier"
-	slot = mount
-}
-cathayan_war_horse = {
-	combat_rating = 12
-	monthly_character_prestige = 0.4
-	martial = 2
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 4
-	flags = { alive curse mount horse tier_4 cathayan mount_health_6 charger }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_cathayan_horse"
-	slot = mount
-}
-
-steppe_courser = {
-	combat_rating = 12
-	monthly_character_prestige = 0.4
-	martial = 2
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 4
-	flags = { alive curse mount horse tier_4 wastes mount_health_5 courser }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_courser"
-	slot = mount
-}
-
-arabyan_courser = {
-	combat_rating = 12
-	monthly_character_prestige = 0.4
-	martial = 2
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 4
-	flags = { alive curse mount horse tier_4 arabyan mount_health_6 courser }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_courser"
-	slot = mount
-}
-
-asur_courser = {
-	combat_rating = 12
-	monthly_character_prestige = 0.4
-	martial = 2
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 4
-	flags = { alive curse mount horse tier_4 asur mount_health_5 courser }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_courser"
-	slot = mount
-}
-
-teverian_horse = {
-	combat_rating = 12
-	monthly_character_prestige = 0.4
-	martial = 2
-	active = {
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 4
-	flags = { alive curse mount horse tier_4 teveran mount_health_5 destrier }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_destrier"
-	slot = mount
-}
-#steed
-chaos_destrier = {
-	combat_rating = 12
-	monthly_character_prestige = 0.4
-	martial = 2
-	active = {
-		is_adult = yes
-		OR = {
-			open_follower_of_any_chaos_gods = yes
-			secret_religion_group = chaos_gods_group
-		}
-	}
-	quality = 4
-	flags = { no_inherit mount daemonic khorne religious cannot_gift_to_warp }
-	picture = "GFX_dorghar"
-	slot = mount
-}
-#############################
-###### Tier 5 ######
-#############################
-tong_steppe_horse = {
-	combat_rating = 15
-	monthly_character_prestige = 0.5
-	martial = 2
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 5
-	flags = { alive curse mount horse tier_5 jurchen mount_health_6 destrier }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_destrier"
-	slot = mount
-}
-
-chaos_wastes_war_horse = {
-	combat_rating = 15
-	monthly_character_prestige = 0.5
-	martial = 2
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 5
-	flags = { alive curse mount horse tier_5 mongol mount_health_6 charger }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_dorghar"
-	slot = mount
-}
-
-arabyan_charger = {
-	combat_rating = 15
-	monthly_character_prestige = 0.5
-	martial = 2
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 5
-	flags = { alive curse mount horse tier_5 arabyan mount_health_5 charger }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_charger"
-	slot = mount
-}
-
-bretonnian_warhorse_mount = {
-	combat_rating = 15
-	monthly_character_prestige = 0.5
-	martial = 2
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 5
-	flags = { alive curse mount horse tier_5 frankish mount_health_5 charger }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_bretonnian_warhorse"
-	slot = mount
-}
-#############################
-###### Camels ######
-#############################
-arabyan_camel = {
-	combat_rating = 12
-	monthly_character_prestige = 0.4
-	martial = 2
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 4
-	flags = { alive curse mount camel tier_3 arabyan mount_health_6 }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_arabyan_camel"
-	slot = mount
-}
-
-cophic_camel = {
-	combat_rating = 12
-	monthly_character_prestige = 0.4
-	martial = 2
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 4
-	flags = { alive curse mount camel tier_3 cophic mount_health_6 }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_cophic_camel"
-	slot = mount
-}
-#############################
-###### Elephants ######
-#############################
-ind_elephant = {
-	combat_rating = 15
-	monthly_character_prestige = 0.5
-	martial = 2
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 5
-	flags = { alive curse mount elephant tier_4 indn mount_health_6 }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_ind_elephant"
-	slot = mount
-}
-southlander_elephant = {
-	combat_rating = 15
-	monthly_character_prestige = 0.5
-	martial = 2
-	active = { 
-		is_adult = yes 
-		hidden_tooltip = {
-			OR = {
-				ai = no
-				NOT = { has_character_flag = ai_recalc_equipped_mount }
-			}
-		}
-	}
-	allowed_gift = { always = no }
-	
-	quality = 5
-	flags = { alive curse mount elephant tier_4 southlander mount_health_6 }
-	indestructible = yes
-	stacking = yes
-	picture = "GFX_southlander_elephant"
-	slot = mount
-}
 #############################
 ###### Misc ######
 #############################
@@ -623,8 +5,8 @@ lamassu_mount = {
 	combat_rating = 15
 	monthly_character_prestige = 0.5
 	martial = 2
-	active = { 
-		is_adult = yes 
+	active = {
+		is_adult = yes
 		hidden_tooltip = {
 			OR = {
 				ai = no
@@ -633,7 +15,7 @@ lamassu_mount = {
 		}
 	}
 	allowed_gift = { always = no }
-	
+
 	quality = 5
 	flags = { curse mount yak exotic tier_4 tibetan mount_health_5 }
 	indestructible = yes
@@ -645,8 +27,8 @@ wolf = {
 	combat_rating = 15
 	monthly_character_prestige = 0.5
 	martial = 2
-	active = { 
-		is_adult = yes 
+	active = {
+		is_adult = yes
 		hidden_tooltip = {
 			OR = {
 				ai = no
@@ -655,25 +37,12 @@ wolf = {
 		}
 	}
 	allowed_gift = { always = no }
-	
+
 	quality = 5
 	flags = { alive curse mount wolf exotic tier_4 mount_health_5 }
 	indestructible = yes
 	stacking = yes
 	picture = "GFX_wolf"
-	slot = mount
-}
-squig = {
-	combat_rating = 6
-	monthly_character_prestige = 0.2
-	martial = 1
-	quality = 2
-	active = {
-		is_adult = yes
-	}
-	flags = { alive curse mount mount_health_8 }
-	stacking = yes
-	picture = "GFX_squig"
 	slot = mount
 }
 
@@ -873,8 +242,8 @@ amazon_tiger = {
 	combat_rating = 12
 	monthly_character_prestige = 0.4
 	martial = 2
-	active = { 
-		is_adult = yes 
+	active = {
+		is_adult = yes
 		hidden_tooltip = {
 			OR = {
 				ai = no
@@ -883,7 +252,7 @@ amazon_tiger = {
 		}
 	}
 	allowed_gift = { always = no }
-	
+
 	quality = 4
 	flags = { alive curse mount tiger exotic tier_4 indn mount_health_5 }
 	indestructible = yes
@@ -896,8 +265,8 @@ war_bear_mount = {
 	combat_rating = 12
 	monthly_character_prestige = 0.4
 	martial = 2
-	active = { 
-		is_adult = yes 
+	active = {
+		is_adult = yes
 		hidden_tooltip = {
 			OR = {
 				ai = no
@@ -906,7 +275,7 @@ war_bear_mount = {
 		}
 	}
 	allowed_gift = { always = no }
-	
+
 	quality = 4
 	flags = { alive curse mount bear exotic tier_4 kislev mount_health_6 }
 	indestructible = yes
@@ -919,8 +288,8 @@ asrai_stag = {
 	combat_rating = 9
 	monthly_character_prestige = 0.3
 	martial = 1
-	active = { 
-		is_adult = yes 
+	active = {
+		is_adult = yes
 		hidden_tooltip = {
 			OR = {
 				ai = no
@@ -929,7 +298,7 @@ asrai_stag = {
 		}
 	}
 	allowed_gift = { always = no }
-	
+
 	quality = 3
 	flags = { alive curse mount reindeer exotic tier_4 mount_health_5 }
 	indestructible = yes
@@ -1013,4 +382,3 @@ chariot_mount = {
 	picture = "GFX_chariot"
 	slot = mount
 }
-

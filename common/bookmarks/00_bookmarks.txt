@@ -1,3 +1,187 @@
+bm_make_it_green = {
+	name = "BM_MAKE_IT_GREEN"
+	desc = "BM_MAKE_IT_GREEN_DESC"
+	date = 2010.7.1
+
+	era = yes
+	picture = GFX_pick_era_image_5
+	custom_start = yes
+
+	selectable_character = {
+		id = 1662
+		age = 78
+		name = ERA_CHAR_NAME_KNUBS_BLADETWISTER
+		title = d_varnan
+		title_name = d_varnan
+
+		character = {
+			dna="izfjhrqtyf"
+			properties="ha0chd"
+			religion=greenskin_gods
+			culture=goblin_night
+			government=greenskin_government
+			dynasty=92501
+		}
+	}
+
+	selectable_character = {
+		id = 1651 #Brak Red Eye
+		age = 73
+		name = ERA_CHAR_NAME_BRAK_RED_EYE
+		title = d_karak_ungor
+		title_name = d_karak_ungor
+
+		character = {
+			dna="srpceiatjyj"
+			properties="hb0dbd"
+			religion=greenskin_gods
+			culture=goblin_night
+			government=greenskin_government
+			dynasty=91207
+		}
+	}
+
+	selectable_character = {
+		id = 1503 #Gurk Megaboss
+		age = 39
+		name = ERA_CHAR_NAME_GURK_MEGABOSS
+		title = k_black_crag
+		title_name = k_black_crag
+
+		character = {
+			dna="kucbgoyfucm"
+			properties="hocack"
+			religion=greenskin_gods
+			culture=orc_black
+			government = greenskin_government
+			dynasty=90328
+		}
+	}
+
+	selectable_character = {
+		id = 14472 #Grimand Drakendrengi
+		age = 333
+		name = ERA_CHAR_NAME_GRIMAND_DRAKENDRENGI
+		title = d_karak_azgalzul
+		title_name = d_karak_azgalzul
+
+		character = {
+			dna="uvokzdrqznh"
+			properties="cj0ckd"
+			religion=ancestor_gods
+			culture=dwarf_azul
+			government=dwarf_government
+			dynasty=75072
+		}
+	}
+
+	selectable_character = {
+		id = 13066
+		age = 27
+		name = ERA_CHAR_NAME_CESARE_DI_SORRENTO
+		title = k_remas
+		title_name = k_remas
+
+		character = {
+			dna="caqepvalpnp"
+			properties="wo0alh"
+			religion = myrmidian
+			culture = reman
+			government = merchant_republic_government
+			dynasty = 43001
+		}
+	}
+}
+
+bm_new_013 = {
+	name = "BM_NEW_013"
+	desc = "BM_NEW_013_DESC"
+	date = 2010.7.1
+
+	era = yes
+	picture = GFX_pick_era_image_6
+
+	selectable_character = {
+		id = 15005	#Astragoth
+		age = 2800
+		name = ERA_CHAR_NAME_ASTRAGOTH
+		title = e_hashut
+		title_name = e_hashut
+		character = {
+			dna="bbgampibakm"
+			properties="aa0aic00000000"
+			religion="hashut"
+			culture="dawi_zharr_old"
+			government = chaosdwarf_government
+			dynasty=78100
+		}
+	}
+
+	selectable_character = {
+		id = 12601 #Fabio Di Miragliano
+		age = 18
+		name = ERA_CHAR_NAME_FABIO_DI_MIRAGLIANO
+		title = k_miragliano
+		title_name = k_miragliano
+		character = {
+			dna = "kyfobtpetsr"
+			properties="wo0bjb00000000"
+			religion = "myrmidian"
+			culture = "miraglian"
+			government = feudal_government
+			dynasty = 42000
+		}
+	}
+
+	selectable_character = {
+		id = 14950 #Olek Vlaggarad
+		age = 130
+		name = ERA_CHAR_NAME_OLEK_VLAGGARAD
+		title = d_vlagaar
+		title_name = d_vlagaar
+		character = {
+			dna = "dxxwosjiqji"
+			properties="cezehd00000000"
+			religion = "ancestor_gods"
+			culture = "dawi_vlagaar"
+			government = dwarf_government
+			dynasty = 77500
+		}
+	}
+
+	selectable_character = {
+		id = 7652 #Diego de Aguilar
+		age = 38
+		name = ERA_CHAR_NAME_DIEGO_DE_AGUILAR
+		title = k_astarios
+		title_name = k_astarios
+		character = {
+			dna = "mrwbwribinz"
+			properties = "wb0bic00000000"
+			religion = "myrmidian"
+			culture = "astur"
+			government = feudal_government
+			dynasty = 39001
+		}
+	}
+
+	selectable_character = {
+		id = 1723
+		age = 29
+		name = ERA_CHAR_NAME_ODDBLUM_SKULL_CRAG
+		title = d_karag_shathur
+		title_name = d_karag_shathur
+		character = {
+			dna = "dzhyollpngp"
+			properties = "cgjefd"
+			religion = "greenskin_gods"
+			culture = "goblin_night"
+			government = greenskin_government
+			dynasty = 92508
+		}
+	}
+}
+
 bm_vampire_wars = {
 	name = "BM_VAMPIRE_WARS"
 	desc = "BM_VAMPIRE_DESC"
@@ -176,67 +360,6 @@ bm_realms_chaos = {
 	}
 }
 
-bm_ancient_races = {
-	name = "BM_ANCIENTS"
-	desc = "BM_ANCIENTS_DESC"
-	date = 2010.7.1
-
-	era = yes						## Will be shown on Era screen.
-	picture = GFX_pick_era_image_3
-
-	selectable_character = {
-		id = 5702 #Ariel of Athel Loren
-		age = 1910
-		name = ERA_CHAR_NAME_ARIEL
-		title = e_athel_loren
-		title_name = e_athel_loren
-
-		character = {
-			female = yes
-			dna="dhmhjuaecco"
-			properties="ac00c000000000"
-			religion="asrai_cadai"
-			culture="loren"
-			government = eternal_court_government
-			dynasty=94502
-		}
-	}
-
-	selectable_character = {
-		id = 14372 #High King Alrik
-		age = 186
-		name = ERA_CHAR_NAME_ALRIK
-		title = k_everpeak
-		title_name = k_everpeak
-
-		character = {
-			dna="cliagubdabs"
-			properties="ag00eb00000000"
-			religion="ancestor_gods"
-			culture="dwarf_old"
-			government = dwarf_government
-			dynasty=75000
-		}
-	}
-
-	selectable_character = {
-		id = 15005 #High Priest Astragoth
-		age = 290
-		name = ERA_CHAR_NAME_ASTRAGOTH
-		title = e_hashut
-		title_name = e_hashut
-
-		character = {
-			dna="bbgampibakm"
-			properties="aa0aic00000000"
-			religion="hashut"
-			culture="dawi_zharr_old"
-			government = chaosdwarf_government
-			dynasty=78100
-		}
-	}
-}
-
 bm_legacy_nagash = {
 	name = "BM_NAGASH"
 	desc = "BM_NAGASH_DESC"
@@ -311,85 +434,6 @@ bm_legacy_nagash = {
 			culture="nehekharan"
 			government = nehekharan_government
 			dynasty=72005
-		}
-	}
-}
-
-bm_beasts = {
-	name = "BM_BEASTS"
-	desc = "BM_BEASTS_DESC"
-	date = 2010.7.1
-
-	era = yes						## Will be shown on Era screen.
-	picture = GFX_pick_era_image_5
-
-	selectable_character = {
-		id = 1744 #Warboss Aggro Nizni
-		age = 34
-		name = ERA_CHAR_NAME_GOBLIN
-		title = k_azril_ankor
-		title_name = k_azril_ankor
-		coa_dynasty = yes
-
-		character = {
-			dna="ajikgrmzwog"
-			properties="ad0aha00b00000"
-			religion="greenskin_gods"
-			culture="goblin_night"
-			government = greenskin_government
-			dynasty=92502
-		}
-	}
-
-	selectable_character = {
-		id = 1052 #Beastlord Cygath Foulspawn
-		age = 19
-		name = ERA_CHAR_NAME_GOAT
-		title = d_snaegr
-		title_name = d_snaegr
-		coa_dynasty = yes
-
-		character = {
-			dna="ednmdpyjnoj"
-			properties="fj0aj00000h000"
-			religion="chaos"
-			culture="beastman_main"
-			government = beastman_government
-			dynasty=7115
-		}
-	}
-
-	selectable_character = {
-		id = 453 #Tyrant Nerggret
-		age = 38
-		name = ERA_CHAR_NAME_OGRE
-		title = d_highgrasp
-		title_name = d_highgrasp
-
-		character = {
-			dna="uohchjpfmbm"
-			properties="fn0ab00c000000"
-			religion=great_maw
-			culture=ogre_main
-			government = tribal_government
-			dynasty=93002
-		}
-	}
-
-	selectable_character = {
-		id = 1587 #Warboss Azbang of Iron Rock
-		age = 32
-		name = ERA_CHAR_NAME_ORC
-		title = k_iron_rock
-		title_name = k_iron_rock
-
-		character = {
-			dna="rwetujhvfui"
-			properties="cmkbnc"
-			religion=greenskin_gods
-			culture=orc_main
-			government = greenskin_government
-			dynasty=90328
 		}
 	}
 }

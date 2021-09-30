@@ -2641,28 +2641,37 @@ character_event = { #artifacts
 			}
 			#Horn Upgrades
 			10 = {
-				trigger = {trait = horns_none}
-				change_variable = { which = "mutation_counter" value = 1}
-				remove_trait = horns_none
-				add_trait = horns_small
-			}
-			10 = {
-				trigger = {trait = horns_small}
-				change_variable = { which = "mutation_counter" value = 1}
-				remove_trait = horns_small
-				add_trait = horns_average
-			}
-			10 = {
-				trigger = {trait = horns_average}
-				change_variable = { which = "mutation_counter" value = 1}
-				remove_trait = horns_average
-				add_trait = horns_big
-			}
-			5 = {
-				trigger = {trait = horns_big}
-				change_variable = { which = "mutation_counter" value = 1}
-				remove_trait = horns_big
-				add_trait = mut_crown_of_horns
+				trigger = {
+					NOT = {
+						trait = mut_crown_of_horns
+					}
+				}
+				change_variable = {
+					which = "mutation_counter"
+					value = 1
+				}
+				trigger_switch = {
+					on_trigger = trait
+					horns_big = {
+						random = {
+							chance = 50
+							remove_trait = horns_big
+							add_trait = mut_crown_of_horns
+						}
+					}
+					horns_average = {
+						remove_trait = horns_average
+						add_trait = horns_big
+					}
+					horns_small = {
+						remove_trait = horns_small
+						add_trait = horns_average
+					}
+					horns_none = {
+						remove_trait = horns_none
+						add_trait = horns_small
+					}
+				}
 			}
 			20 = {
 			change_variable = { which = "mutation_counter" value = 1}

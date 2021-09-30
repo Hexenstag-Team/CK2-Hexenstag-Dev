@@ -1,3 +1,11 @@
+### Orcs and Goblins ###
+# Faction identity:
+# WAAAAGH!
+# In the lore, greenskin hordes rapidly snowball when led by a powerful and successful leader
+# Building potential makes heavy use of prestige, so greenskin armies can catastrophically collapse
+# Most costs are low and paid with piety (would use prestige but this doesn't work with previous)
+# Short or nominal build times
+
 city = {
 	ct_greenskin_wreckage = {
 		desc = ca_greenskin_wreckage_desc
@@ -115,7 +123,7 @@ city = {
 		archers = 50
 		heavy_infantry = 25
 		tax_income = 3 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		
+
 		economy_techpoints = 0.01
 		military_techpoints = 0.01
 		ai_creation_factor = 97
@@ -145,7 +153,7 @@ city = {
 		archers = 50
 		heavy_infantry = 25
 		tax_income = 3 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		
+
 		economy_techpoints = 0.01
 		military_techpoints = 0.01
 		ai_creation_factor = 97
@@ -179,7 +187,7 @@ city = {
 		light_infantry_defensive=-0.05
 		archers_morale=-0.05
 		archers_defensive=-0.05
-		
+
 		economy_techpoints = 0.02
 		culture_techpoints = 0.01
 		military_techpoints = 0.02
@@ -211,12 +219,12 @@ city = {
 		archers = 75
 		light_cavalry = 5
 		tax_income = 2 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		
+
 		light_infantry_morale=-0.1
 		light_infantry_defensive=-0.05
 		archers_morale=-0.05
 		archers_defensive=-0.05
-		
+
 		economy_techpoints = 0.02
 		culture_techpoints = 0.01
 		military_techpoints = 0.02
@@ -253,7 +261,7 @@ city = {
 		light_infantry_defensive=-0.05
 		archers_morale=-0.05
 		archers_defensive=-0.05
-		
+
 		economy_techpoints = 0.02
 		culture_techpoints = 0.01
 		military_techpoints = 0.02
@@ -264,1736 +272,1781 @@ city = {
 	}
 }
 tribal = {
-	tb_greenskin_camp_1 = {
-		desc = tb_greenskin_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		gold_cost = 50
-		build_time = 365
-
+	#ramshackle fort
+	#replacement for tribal hillfort
+	#normalized faction identity
+	#no retinue because this makes greenskin armies too permanent, instead adds levy size
+	#no wealth gain (not very useful for greenskins anyway) and instead adds Waaagh! energy
+	tb_greenskin_fort_1 = {
+		desc = tb_greenskin_fort_desc
 		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		retinuesize=50
-		levy_size = 0.05
-		tax_income = 4 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		ai_creation_factor = 97
-		ai_feudal_modifier = 10
-		ai_republic_modifier = -10
-
-		extra_tech_building_start = 0
-	}
-
-	tb_greenskin_camp_2 = {
-		desc = tb_greenskin_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_greenskin_camp_1
-		gold_cost = 100
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		retinuesize=50
-		levy_size = 0.05
-		ai_creation_factor = 98
-		tax_income = 4# To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-
-		extra_tech_building_start = 1
-	}
-
-	tb_greenskin_camp_3 = {
-		desc = tb_greenskin_camp_desc
-		trigger = { TECH_INFANTRY = 1 }
-		upgrades_from = tb_greenskin_camp_2
-		gold_cost = 100
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-
-		retinuesize=50
-		fort_level = 0.25
-		levy_size = 0.05
-		tax_income = 4 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-
-		extra_tech_building_start = 10.0
-	}
-
-	tb_greenskin_camp_4 = {
-		desc = tb_greenskin_camp_desc
-		trigger = { TECH_INFANTRY = 1 }
-		upgrades_from = tb_greenskin_camp_3
-		gold_cost = 100
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		retinuesize=50
-		fort_level = 0.25
-		levy_size = 0.05
-		ai_creation_factor = 100
-		tax_income = 4 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-
-		extra_tech_building_start = 10.0
-	}
-	tb_orc_warcamp_1 = {
-		desc = tb_orc_warcamp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		gold_cost = 40
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				NOT={has_law = greenskin_purity_laws_2}
-			}
-		}
-		fort_level = 0.1
-		light_infantry = 70 #Boyz
-		heavy_infantry = 5 #Boyz
-		light_infantry_morale=-0.05
-		light_infantry_offensive=-0.05
-		archers_morale=-0.05
-		archers_offensive=-0.05
-		tax_income = 1 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		ai_creation_factor = 97
-		ai_feudal_modifier = 10
-		ai_republic_modifier = -10
-
-		extra_tech_building_start = 0
-	}
-	tb_orc_warcamp_2 = {
-		desc = tb_orc_warcamp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_orc_warcamp_1
-		gold_cost = 80
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				NOT={has_law = greenskin_purity_laws_2}
-			}
-		}
-		fort_level = 0.1
-		ai_creation_factor = 98
-		light_infantry = 70 #Boyz
-		heavy_infantry = 5 #Boyz
-		light_infantry_morale=-0.05
-		light_infantry_offensive=-0.05
-		archers_morale=-0.05
-		archers_offensive=-0.05
-		tax_income = 1# To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		extra_tech_building_start = 1
-	}
-
-	tb_orc_warcamp_3 = {
-		desc = tb_orc_warcamp_desc
-		trigger = { TECH_INFANTRY = 1 }
-		upgrades_from = tb_orc_warcamp_2
-		gold_cost = 120
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				NOT={has_law = greenskin_purity_laws_2}
-			}
-		}
-		fort_level = 0.1
-		light_infantry_morale=-0.05
-		light_infantry_offensive=-0.05
-		archers_morale=-0.05
-		archers_offensive=-0.05
-		light_infantry = 70 #Boyz
-		heavy_infantry = 5 #Boyz
-		tax_income = 1 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		light_infantry_offensive=-0.05
-		archers_offensive=-0.05
-		extra_tech_building_start = 10.0
-	}
-
-	tb_orc_warcamp_4 = {
-		desc = tb_orc_warcamp_desc
-		trigger = { TECH_INFANTRY = 1 }
-		upgrades_from = tb_orc_warcamp_3
-		gold_cost = 160
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				NOT={has_law = greenskin_purity_laws_2}
-			}
-		}
-		fort_level = 0.1
-		light_infantry_morale=-0.05
-		light_infantry_offensive=-0.05
-		archers_morale=-0.05
-		archers_offensive=-0.05
-		ai_creation_factor = 100
-		light_infantry = 70 #Boyz
-		heavy_infantry = 5 #Boyz
-		tax_income = 1 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		extra_tech_building_start = 10.0
-	}
-	tb_orc_warcamp_pure_1 = {
-		desc = tb_orc_warcamp_pure_desc
-		trigger = { TECH_INFANTRY = 0 }
-		gold_cost = 50
-		build_time = 365
-
-		potential = {
-			FROM = {
-				culture_group = orc_group
-				has_law = greenskin_purity_laws_2
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				has_law = greenskin_purity_laws_2
-			}
-		}
-		fort_level = 0.2
-		light_infantry = 125 #Boyz
-		heavy_infantry = 15 #Boyz
-		light_infantry_morale=0.05
-		light_infantry_offensive=0.05
-		archers_morale=0.05
-		archers_offensive=-0.05
-		replaces = tb_orc_warcamp_1
-		tax_income = 2 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		ai_creation_factor = 97
-		ai_feudal_modifier = 10
-		ai_republic_modifier = -10
-
-		extra_tech_building_start = 0
-	}
-	tb_orc_warcamp_pure_2 = {
-		desc = tb_orc_warcamp_pure_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_orc_warcamp_pure_1
-		gold_cost = 125
-		build_time = 365
-
-		potential = {
-			FROM = {
-				culture_group = orc_group
-				has_law = greenskin_purity_laws_2
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				has_law = greenskin_purity_laws_2
-			}
-		}
-		fort_level = 0.2
-		ai_creation_factor = 98
-		light_infantry = 125 #Boyz
-		heavy_infantry = 15 #Boyz
-		archers_offensive=-0.05
-		replaces = tb_orc_warcamp_2
-		tax_income = 2# To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		extra_tech_building_start = 1
-	}
-
-	tb_orc_warcamp_pure_3 = {
-		desc = tb_orc_warcamp_pure_desc
-		trigger = { TECH_INFANTRY = 1 }
-		upgrades_from = tb_orc_warcamp_pure_2
-		gold_cost = 250
-		build_time = 365
-
-		potential = {
-			FROM = {
-				culture_group = orc_group
-				has_law = greenskin_purity_laws_2
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				has_law = greenskin_purity_laws_2
-			}
-		}
-		fort_level = 0.2
-		archers_offensive=-0.05
-		light_infantry = 125 #Boyz
-		heavy_infantry = 15 #Boyz
-		light_infantry_morale=0.05
-		light_infantry_offensive=0.05
-		archers_morale=0.05
-		replaces = tb_orc_warcamp_3
-		tax_income = 2 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		light_infantry_offensive=-0.05
-		archers_offensive=-0.05
-		extra_tech_building_start = 10.0
-	}
-
-	tb_orc_warcamp_pure_4 = {
-		desc = tb_orc_warcamp_pure_desc
-		trigger = { TECH_INFANTRY = 1 }
-		upgrades_from = tb_orc_warcamp_pure_3
-		gold_cost = 400
-		build_time = 365
-
-		potential = {
-			FROM = {
-				culture_group = orc_group
-				has_law = greenskin_purity_laws_2
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				has_law = greenskin_purity_laws_2
-			}
-		}
-		fort_level = 0.2
-		archers_offensive=-0.05
-		ai_creation_factor = 100
-		light_infantry = 125 #Boyz
-		heavy_infantry = 15 #Boyz
-		replaces = tb_orc_warcamp_4
-		tax_income = 2 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		extra_tech_building_start = 10.0
-	}
-	tb_goblin_warcamp_1 = {
-		desc = tb_goblin_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		gold_cost = 40
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				NOT={has_law = greenskin_purity_laws_2}
-			}
-		}
-		fort_level = 0.1
-		light_infantry = 75 #Boyz
-		tax_income = 1 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		
-		light_infantry_morale=-0.1
-		light_infantry_defensive=-0.05
-		archers_morale=-0.05
-		archers_defensive=-0.05
-		ai_creation_factor = 97
-		ai_feudal_modifier = 10
-		ai_republic_modifier = -10
-
-		extra_tech_building_start = 0
-	}
-
-	tb_goblin_warcamp_2 = {
-		desc = tb_goblin_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_goblin_warcamp_1
-		gold_cost = 60
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				NOT={has_law = greenskin_purity_laws_2}
-			}
-		}
-		fort_level = 0.1
-		ai_creation_factor = 98
-		light_infantry = 75 #Boyz
-		tax_income = 1# To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-
-		light_infantry_morale=-0.05
-		light_infantry_defensive=-0.05
-		archers_morale=-0.05
-		archers_defensive=-0.05
-		extra_tech_building_start = 1
-	}
-
-	tb_goblin_warcamp_3 = {
-		desc = tb_goblin_camp_desc
-		trigger = { TECH_INFANTRY = 1 }
-		upgrades_from = tb_goblin_warcamp_2
-		gold_cost = 120
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				NOT={has_law = greenskin_purity_laws_2}
-			}
-		}
-		fort_level = 0.1
-		light_infantry = 75 #Boyz
-		tax_income = 1 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-
-		light_infantry_defensive=-0.05
-		archers_defensive=-0.05
-		extra_tech_building_start = 10.0
-	}
-
-	tb_goblin_warcamp_4 = {
-		desc = tb_goblin_camp_desc
-		trigger = { TECH_INFANTRY = 1 }
-		upgrades_from = tb_goblin_warcamp_3
-		gold_cost = 160
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				NOT={has_law = greenskin_purity_laws_2}
-			}
-		}
-		fort_level = 0.1
-		ai_creation_factor = 100
-		light_infantry = 135 #Boyz
-		archers = 10 #Arrers
-		heavy_infantry = 5 #Boyz
-		tax_income = 1 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-
-		light_infantry_morale=-0.05
-		light_infantry_defensive=-0.05
-		archers_morale=-0.05
-		archers_defensive=-0.05
-		extra_tech_building_start = 10.0
-	}
-	tb_goblin_warcamp_pure_1 = {
-		desc = tb_goblin_warcamp_pure_desc
-		trigger = { TECH_INFANTRY = 0 }
-		replaces=tb_goblin_warcamp_1
-		gold_cost = 50
-		build_time = 365
-		potential = {
-			FROM = {
+			OR = {
 				culture_group = goblin_group
-				has_law = greenskin_purity_laws_2
+				culture_group = orc_group
 			}
 		}
-		is_active_trigger = {
-			FROM = {
-				has_law = greenskin_purity_laws_2
-			}
-		}
-		fort_level = 0.2
-		light_infantry = 135 #Boyz
-		archers = 10 #Arrers
-		heavy_infantry = 5 #Boyz
-		tax_income = 2 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		
-		light_infantry_morale=-0.05
-		light_infantry_defensive=0.05
-		archers_defensive=0.05
-		archers_morale=-0.05
-		ai_creation_factor = 97
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_hillfort_1
+		piety_cost = 80
+		build_time = 182
+
+		fort_level = 0.25
+		levy_size = 0.15
+		liege_piety = 0.25
+
+		ai_creation_factor = 102
 		ai_feudal_modifier = 10
 		ai_republic_modifier = -10
 
 		extra_tech_building_start = 0
 	}
 
-	tb_goblin_warcamp_pure_2 = {
-		desc = tb_goblin_warcamp_pure_desc
+	tb_greenskin_fort_2 = {
+		desc = tb_greenskin_fort_desc
+		potential = {
+			OR = {
+				culture_group = goblin_group
+				culture_group = orc_group
+			}
+		}
 		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_goblin_warcamp_pure_1
-		replaces=tb_goblin_warcamp_2
-		gold_cost = 100
-		build_time = 365
-		potential = {
-			FROM = {
-				culture_group = goblin_group
-				has_law = greenskin_purity_laws_2
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				has_law = greenskin_purity_laws_2
-			}
-		}
-		fort_level = 0.2
-		ai_creation_factor = 98
-		light_infantry = 135 #Boyz
-		archers = 10 #Arrers
-		heavy_infantry = 5 #Boyz
-		tax_income = 2# To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		extra_tech_building_start = 1
+		replaces = tb_hillfort_2
+		upgrades_from = tb_greenskin_fort_1
+		piety_cost = 100
+		build_time = 182
+
+		fort_level = 0.25
+		levy_size = 0.15
+		liege_piety = 0.25
+
+		ai_creation_factor = 99
+		ai_feudal_modifier = 10
+		ai_republic_modifier = -10
+
+		extra_tech_building_start = 0.8
 	}
 
-	tb_goblin_warcamp_pure_3 = {
-		desc = tb_goblin_warcamp_pure_desc
-		trigger = { TECH_INFANTRY = 1 }
-		upgrades_from = tb_goblin_warcamp_pure_2
-		replaces=tb_goblin_warcamp_3
-		gold_cost = 250
-		build_time = 365
-
+	tb_greenskin_fort_3 = {
+		desc = tb_greenskin_fort_desc
 		potential = {
-			FROM = {
+			OR = {
 				culture_group = goblin_group
-				has_law = greenskin_purity_laws_2
+				culture_group = orc_group
 			}
 		}
-		is_active_trigger = {
-			FROM = {
-				has_law = greenskin_purity_laws_2
-			}
-		}
-		fort_level = 0.2
-		light_infantry = 135 #Boyz
-		archers = 10 #Arrers
-		heavy_infantry = 5 #Boyz
-		tax_income = 2 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		light_infantry_defensive=0.05
-		archers_defensive=0.05
-		extra_tech_building_start = 10.0
-	}
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_hillfort_3
+		upgrades_from = tb_greenskin_fort_2
+		piety_cost = 120
+		build_time = 182
 
-	tb_goblin_warcamp_pure_4 = {
-		desc = tb_goblin_warcamp_pure_desc
-		trigger = { TECH_INFANTRY = 1 }
-		upgrades_from = tb_goblin_warcamp_pure_3
-		replaces=tb_goblin_warcamp_4
-		gold_cost = 400
-		build_time = 365
-		potential = {
-			FROM = {
-				has_law = greenskin_purity_laws_2
-				culture_group = goblin_group
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				has_law = greenskin_purity_laws_2
-			}
-		}
-		fort_level = 0.2
-		ai_creation_factor = 100
-		light_infantry = 135 #Boyz
-		archers = 10 #Arrers
-		heavy_infantry = 5 #Boyz
-		tax_income = 2 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-		extra_tech_building_start = 10.0
-	}
-	tb_greenskin_shoota_range_1 = {
-		desc = tb_greenskin_shoota_range_desc
-		trigger = { TECH_SKIRMISH = 0 }
-		gold_cost = 50
-		build_time = 365
+		fort_level = 0.25
+		levy_size = 0.15
+		liege_piety = 0.25
 
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		archers = 25 #Arrers
 		ai_creation_factor = 97
 		ai_feudal_modifier = 10
 		ai_republic_modifier = -10
 
-		extra_tech_building_start = 0
+		extra_tech_building_start = 2.3
 	}
 
-	tb_greenskin_shoota_range_2 = {
-		desc = tb_greenskin_shoota_range_desc
-		trigger = { TECH_SKIRMISH = 0 }
-		upgrades_from = tb_greenskin_shoota_range_1
-		gold_cost = 100
-		build_time = 365
-
+	tb_greenskin_fort_4 = {
+		desc = tb_greenskin_fort_desc
 		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
+			OR = {
+				culture_group = goblin_group
+				culture_group = orc_group
 			}
 		}
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_hillfort_4
+		upgrades_from = tb_greenskin_fort_3
+		piety_cost = 150
+		build_time = 182
+
+		fort_level = 0.25
+		levy_size = 0.15
+		liege_piety = 0.25
+
+		ai_creation_factor = 97
+		ai_feudal_modifier = 10
+		ai_republic_modifier = -10
+
+		extra_tech_building_start = 3.5
+	}
+	#goblin trading post
+	#greenskin replacement for market town
+	#this is where goblin caravans are bullied into making fair trades
+	#relatively "normal" building, doesn't have the boom & bust character of the military buildings
+	tb_goblin_trading_post_1 = {
+		desc = tb_goblin_trading_post_desc
+		potential = {
+			OR = {
+				culture_group = goblin_group
+				culture_group = orc_group
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_market_town_1
+		piety_cost = 80
+		build_time = 182
+
+		tax_income = 0.5
+		retinuesize = 30
+
+		ai_creation_factor = 97
+		ai_feudal_modifier = -10
+		ai_republic_modifier = 10
+
+		extra_tech_building_start = 0.3
+	}
+
+	tb_goblin_trading_post_2 = {
+		desc = tb_goblin_trading_post_desc
+		potential = {
+			OR = {
+				culture_group = goblin_group
+				culture_group = orc_group
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_market_town_2
+		upgrades_from = tb_goblin_trading_post_1
+		piety_cost = 80
+		build_time = 182
+
+		tax_income = 0.5
+		retinuesize = 30
 		ai_creation_factor = 98
-		archers = 25 #Arrers
-		extra_tech_building_start = 1
-	}
+		ai_feudal_modifier = -10
+		ai_republic_modifier = 10
 
-	tb_greenskin_shoota_range_3 = {
-		desc = tb_greenskin_shoota_range_desc
-		trigger = { TECH_SKIRMISH = 1 }
-		upgrades_from = tb_greenskin_shoota_range_2
-		gold_cost = 100
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		archers = 35 #Arrers
-		extra_tech_building_start = 10.0
-	}
-
-	tb_greenskin_shoota_range_4 = {
-		desc = tb_greenskin_shoota_range_desc
-		trigger = { TECH_SKIRMISH = 1 }
-		upgrades_from = tb_greenskin_shoota_range_3
-		gold_cost = 100
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		ai_creation_factor = 100
-		archers = 50 #Arrers
-		extra_tech_building_start = 10.0
-	}
-
-	tb_big_uns_1 = {
-		desc = tb_big_uns_desc
-		trigger = { 
-			OR={
-				TECH_INFANTRY = 1 
-				FROM={
-					tier=DUKE
-					TECH_INFANTRY = 0
-				}
-			}
-		}
-		gold_cost = 100
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		ai_creation_factor = 100
-		heavy_infantry = 15
-		heavy_infantry_morale=0.1
-		retinuesize=25
-		liege_prestige=0.01
-		tax_income = -1
-		extra_tech_building_start = 0.1
-	}
-	tb_big_uns_2 = {
-		desc = tb_big_uns_desc
-		trigger = { TECH_INFANTRY = 1 }
-		upgrades_from=tb_big_uns_1
-		gold_cost = 100
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		ai_creation_factor = 100
-		heavy_infantry = 15
-		retinuesize=25
-		liege_prestige=0.01
-		tax_income = -1
-		extra_tech_building_start = 3.0
-	}
-	tb_big_uns_3 = {
-		desc = tb_big_uns_desc
-		trigger = { TECH_INFANTRY = 1 }
-		upgrades_from=tb_big_uns_2
-		gold_cost = 100
-		build_time = 365
-
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		ai_creation_factor = 100
-		heavy_infantry = 15
-		retinuesize=25
-		liege_prestige=0.01
-		tax_income = -1
-		extra_tech_building_start = 3.0
-	}
-	tb_effigy_gork= {
-		desc = tb_effigy_gork_desc
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-			FROMFROM={NOT={has_building=tb_effigy_mork}}
-		}
-		prerequisites = { tb_greenskin_camp_2 }
-		gold_cost = 50
-		archers_offensive=0.1
-		light_cavalry_offensive=0.1
-		light_infantry_offensive=0.1
-		heavy_infantry_offensive=0.1
-		knights_offensive=0.1
-		liege_piety=0.1
-		build_time = 182
-		ai_creation_factor = 8
-		trigger = { TECH_RELIGIOUS_CUSTOMS = 1 }
-		extra_tech_building_start = 2.0
-	}
-	tb_effigy_mork= {
-		desc = tb_effigy_mork_desc
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-			FROMFROM={NOT={has_building=tb_effigy_gork}}
-		}
-		prerequisites = { tb_greenskin_camp_2 }
-		archers_defensive=0.1
-		light_cavalry_defensive=0.1
-		light_infantry_defensive=0.1
-		heavy_infantry_defensive=0.1
-		knights_defensive=0.1
-		liege_piety=0.1
-		gold_cost = 50
-		build_time = 182
-		ai_creation_factor = 8
-		trigger = { TECH_RELIGIOUS_CUSTOMS = 1 }
-		extra_tech_building_start = 2.0
-	}
-
-	tb_greenskin_palisades_0 = {
-		desc = tb_greenskin_palisades_desc
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		prerequisites = { tb_greenskin_camp_1 }
-		gold_cost = 100
-		build_time = 365
-		fort_level = 0.25
-		ai_creation_factor = 9
-
-		trigger = { TECH_INFANTRY = 0 }
-		extra_tech_building_start = 1
-	}
-
-	tb_greenskin_palisades_1 = {
-		desc = tb_greenskin_palisades_desc
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		prerequisites = { tb_greenskin_camp_2 }
-		upgrades_from = tb_greenskin_palisades_0
-		gold_cost = 50
-		build_time = 182
-		fort_level = 0.25
-		ai_creation_factor = 8
-		trigger = { TECH_INFANTRY = 0 }
-		extra_tech_building_start = 10.0
-	}
-
-	tb_greenskin_palisades_2 = {
-		desc = tb_greenskin_palisades_desc
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		prerequisites = { tb_greenskin_camp_3 }
-		upgrades_from = tb_greenskin_palisades_1
-		gold_cost = 50
-		build_time = 182
-		fort_level = 0.25
-		ai_creation_factor = 7
-		trigger = { TECH_INFANTRY = 0 }
-		extra_tech_building_start = 10.0
-	}
-
-	tb_greenskin_palisades_3 = {
-		desc = tb_greenskin_palisades_desc
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		prerequisites = { tb_greenskin_camp_4 }
-		upgrades_from = tb_greenskin_palisades_2
-		gold_cost = 100
-		build_time = 182
-		fort_level = 0.25
-		ai_creation_factor = 6
-		trigger = { TECH_INFANTRY = 0 }
-		extra_tech_building_start = 10.0
-	}
-
-	tb_greenskin_palisades_4 = {
-		desc = tb_greenskin_palisades_desc
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-		}
-		prerequisites = { tb_greenskin_camp_4 }
-		upgrades_from = tb_greenskin_palisades_3
-		gold_cost = 100
-		build_time = 182
-		fort_level = 0.25
-		ai_creation_factor = 5
-		trigger = { TECH_INFANTRY = 0 }
-		extra_tech_building_start = 10.0
-	}
-
-	tb_orc_boar_pit_1 = {
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-			culture_group = orc_group
-		}
-		desc = tb_orc_boar_pit_desc
-		trigger = { TECH_INFANTRY = 0 }
-		prestige_cost = 300
-		build_time = 365
-		light_cavalry=-25
-		light_cavalry_offensive=-0.1
-		knights = 35
-		ai_creation_factor = 95
-		extra_tech_building_start = 1
-
-	}
-
-	tb_orc_boar_pit_2 = {
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-			culture_group = orc_group
-		}
-		desc = tb_orc_boar_pit_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_orc_boar_pit_1
-		prestige_cost = 400
-		build_time = 547
-		light_cavalry_offensive=-0.1
-		light_cavalry=-25
-		knights = 45
-		ai_creation_factor = 94
-		extra_tech_building_start = 10.0
-	}
-
-	tb_orc_boar_pit_3 = {
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-			culture_group = orc_group
-		}
-		desc = tb_orc_boar_pit_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_orc_boar_pit_2
-		prestige_cost = 500
-		build_time = 730
-		knights = 55
-		light_cavalry_offensive=-0.1
-		light_cavalry=-25
-		ai_creation_factor = 93
-		extra_tech_building_start = 10.0
-	}
-
-	tb_orc_boar_pit_4 = {
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-			culture_group = orc_group
-		}
-		desc = tb_orc_boar_pit_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_orc_boar_pit_3
-		prestige_cost = 600
-		build_time = 1095
-		knights = 65
-		light_cavalry_offensive=-0.1
-		light_cavalry=-25
-		ai_creation_factor = 92
-		extra_tech_building_start = 10.0
-
-	}
-
-	tb_goblin_wolfpit_1 = {
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-				NOT={has_law=greenskin_purity_laws_2}
-			}
-			NOR={
-				culture = goblin_main
-				culture = goblin_hill
-			}
-		}
-		desc = tb_goblin_wolf_pit_desc
-		trigger = { TECH_INFANTRY = 0 }
-		not_if_x_exists = { tb_troll_pen_1 tb_troll_pen_2 tb_troll_pen_3 tb_troll_pen_4 }
-		prestige_cost = 300
-		build_time = 365
-		light_cavalry = 40
-		knights_offensive=-0.1
-		knights = -25
-		ai_creation_factor = 95
-		extra_tech_building_start = 1
-
-
-	}
-
-	tb_goblin_wolfpit_2 = {
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-				NOT={has_law=greenskin_purity_laws_2}
-			}
-			NOR={
-				culture = goblin_main
-				culture = goblin_hill
-			}
-		}
-		desc = tb_goblin_wolf_pit_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_goblin_wolfpit_1
-		not_if_x_exists = { tb_troll_pen_1 tb_troll_pen_2 tb_troll_pen_3 tb_troll_pen_4 }
-		prestige_cost = 400
-		build_time = 547
-		light_cavalry = 55
-		knights_offensive=-0.1
-		knights = -25
-		ai_creation_factor = 94
-		extra_tech_building_start = 10.0
-
-	}
-
-	tb_goblin_wolfpit_3 = {
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-				NOT={has_law=greenskin_purity_laws_2}
-			}
-			NOR={
-				culture = goblin_main
-				culture = goblin_hill
-			}
-		}
-		desc = tb_goblin_wolf_pit_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_goblin_wolfpit_2
-		not_if_x_exists = { tb_troll_pen_1 tb_troll_pen_2 tb_troll_pen_3 tb_troll_pen_4 }
-		prestige_cost = 500
-		build_time = 730
-		knights_offensive=-0.1
-		light_cavalry = 65
-		knights = -25
-		ai_creation_factor = 93
-		extra_tech_building_start = 10.0
-
-	}
-
-	tb_goblin_wolfpit_4 = {
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-				NOT={has_law=greenskin_purity_laws_2}
-			}
-			NOR={
-				culture = goblin_main
-				culture = goblin_hill
-			}
-		}
-		desc = tb_goblin_wolf_pit_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_goblin_wolfpit_3
-		not_if_x_exists = { tb_troll_pen_1 tb_troll_pen_2 tb_troll_pen_3 tb_troll_pen_4 }
-		prestige_cost = 600
-		build_time = 1095
-		knights_offensive=-0.1
-		light_cavalry = 75
-		knights = -25
-		ai_creation_factor = 92
-		extra_tech_building_start = 10.0
-
-	}
-
-	tb_goblin_wolf_pit_1 = {
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-			culture = goblin_main
-		}
-		desc = tb_goblin_wolf_pit_desc
-		trigger = { TECH_INFANTRY = 0 }
-		not_if_x_exists = { tb_troll_pen_1 tb_troll_pen_2 tb_troll_pen_3 tb_troll_pen_4 }
-		prestige_cost = 300
-		build_time = 365
-		light_cavalry = 40
-		horse_archers = 30
-		ai_creation_factor = 95
-		extra_tech_building_start = 1
-
-
-	}
-
-	tb_goblin_wolf_pit_2 = {
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-			culture = goblin_main
-		}
-		desc = tb_goblin_wolf_pit_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_goblin_wolf_pit_1
-		not_if_x_exists = { tb_troll_pen_1 tb_troll_pen_2 tb_troll_pen_3 tb_troll_pen_4 }
-		prestige_cost = 400
-		build_time = 547
-		light_cavalry = 55
-		horse_archers = 45
-		ai_creation_factor = 94
-		extra_tech_building_start = 10.0
-
-	}
-
-	tb_goblin_wolf_pit_3 = {
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-			culture = goblin_main
-		}
-		desc = tb_goblin_wolf_pit_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_goblin_wolf_pit_2
-		not_if_x_exists = { tb_troll_pen_1 tb_troll_pen_2 tb_troll_pen_3 tb_troll_pen_4 }
-		prestige_cost = 500
-		build_time = 730
-		light_cavalry = 65
-		horse_archers = 55
-		ai_creation_factor = 93
-		extra_tech_building_start = 10.0
-
-	}
-
-	tb_goblin_wolf_pit_4 = {
-		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture_group = goblin_group
-				}
-			}
-			culture = goblin_main
-		}
-		desc = tb_goblin_wolf_pit_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_goblin_wolf_pit_3
-		not_if_x_exists = { tb_troll_pen_1 tb_troll_pen_2 tb_troll_pen_3 tb_troll_pen_4 }
-		prestige_cost = 600
-		build_time = 1095
-		light_cavalry = 75
-		horse_archers = 65
-		ai_creation_factor = 92
-		extra_tech_building_start = 10.0
-
-	}
-
-	tb_black_orc_camp_1 = {
-		potential = {
-			FROM = {
-				OR={
-				culture = orc_main
-				culture = orc_black
-				}
-			}
-			OR={
-				culture = orc_main
-				culture = orc_black
-			}
-			# #Dark Lands
-			# OR = {
-				# empire  = {
-					# title = e_ankor_naggrund
-				# }
-				# kingdom = {
-					# OR = {
-						# title = k_vorag
-						# title = k_ashenfels
-						# title = k_kurnugi
-						# title = k_urkar
-					# }
-				# }
-			# }
-		}
-		desc = tb_black_orc_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		prestige_cost = 300
-		build_time = 365
-		heavy_infantry = 35
-		heavy_infantry_offensive = 0.05
-		light_infantry_offensive = 0.05
-		land_morale = 0.1
-		light_infantry = 30
-		archers = 35
-		ai_creation_factor = 95
 		extra_tech_building_start = 1.5
-
 	}
 
-	tb_black_orc_camp_2 = {
+	tb_goblin_trading_post_3 = {
+		desc = tb_goblin_trading_post_desc
 		potential = {
-			FROM = {
-				OR={
-				culture = orc_main
-				culture = orc_black
-				}
-			}
-			OR={
-				culture = orc_main
-				culture = orc_black
+			OR = {
+				culture_group = goblin_group
+				culture_group = orc_group
 			}
 		}
-		desc = tb_black_orc_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_black_orc_camp_1
-		prestige_cost = 400
-		build_time = 547
-		heavy_infantry = 55
-		light_infantry = 15
-		heavy_infantry_offensive = 0.01
-		light_infantry_offensive = 0.01
-		archers = 30
-		ai_creation_factor = 94
-		extra_tech_building_start = 10.0
+		trigger = { TECH_INFANTRY = 2 }
+		replaces = tb_market_town_3
+		upgrades_from = tb_goblin_trading_post_2
+		piety_cost = 120
+		build_time = 182
+
+		tax_income = 0.75
+		retinuesize = 50
+		ai_creation_factor = 98
+		ai_feudal_modifier = -10
+		ai_republic_modifier = 10
+
+		extra_tech_building_start = 1.5
 	}
 
-	tb_black_orc_camp_3 = {
+	tb_goblin_trading_post_4 = {
+		desc = tb_goblin_trading_post_desc
 		potential = {
-			FROM = {
-				OR={
-				culture = orc_main
-				culture = orc_black
-				}
-			}
-			OR={
-				culture = orc_main
-				culture = orc_black
+			OR = {
+				culture_group = goblin_group
+				culture_group = orc_group
 			}
 		}
-		desc = tb_black_orc_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_black_orc_camp_2
-		prestige_cost = 500
-		build_time = 730
-		heavy_infantry = 85
-		heavy_infantry_offensive = 0.01
-		light_infantry_offensive = 0.01
-		land_morale = 0.1
-		archers = 25
-		ai_creation_factor = 93
-		extra_tech_building_start = 10.0
+		trigger = { TECH_INFANTRY = 2 }
+		replaces = tb_market_town_4
+		upgrades_from = tb_goblin_trading_post_3
+		piety_cost = 120
+		build_time = 182
+
+		tax_income = 0.75
+		retinuesize = 50
+		ai_creation_factor = 98
+		ai_feudal_modifier = -10
+		ai_republic_modifier = 10
+
+		extra_tech_building_start = 2.5
 	}
 
-	tb_black_orc_camp_4 = {
+	#Goblin workshops
+	#replaces tribal fortifications
+	#same "normalized" faction identity as the trading post
+	#somewhat stronger than its vanilla equivalent but gaining piety isn't trivial in this game
+	tb_goblin_workshops_1 = {
+		desc = tb_goblin_workshops_desc
 		potential = {
-			FROM = {
-				OR={
-				culture = orc_main
-				culture = orc_black
-				}
-			}
-			OR={
-				culture = orc_main
-				culture = orc_black
+			OR = {
+				culture_group = goblin_group
+				culture_group = orc_group
 			}
 		}
-		desc = tb_black_orc_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_black_orc_camp_3
-		prestige_cost = 600
-		build_time = 1095
-		heavy_infantry = 105
-		heavy_infantry_offensive = 0.01
-		light_infantry_offensive = 0.01
-		archers = 20
-		ai_creation_factor = 92
-		extra_tech_building_start = 10.0
+		trigger = { TECH_CONSTRUCTION = 0 }
+		replaces = tb_defensive_fortifications_1
+		piety_cost = 80
+		build_time = 182
 
+		fort_level = 0.25
+		garrison_size = 0.2
+		archers = 15
+
+		ai_creation_factor = 99
+		ai_feudal_modifier = -10
+		ai_republic_modifier = 10
+
+		extra_tech_building_start = 0
 	}
 
-	tb_troll_pen_1 = {
+	tb_goblin_workshops_2 = {
+		desc = tb_goblin_workshops_desc
 		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture = goblin_main
-					culture = goblin_night
-				}
+			OR = {
+				culture_group = goblin_group
+				culture_group = orc_group
 			}
+		}
+		trigger = { TECH_CONSTRUCTION = 0 }
+		replaces = tb_defensive_fortifications_2
+		upgrades_from = tb_goblin_workshops_1
+		piety_cost = 80
+		build_time = 182
+
+		fort_level = 0.25
+		garrison_size = 0.2
+		archers = 15
+
+		ai_creation_factor = 97
+		ai_feudal_modifier = -10
+		ai_republic_modifier = 10
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_goblin_workshops_3 = {
+		desc = tb_goblin_workshops_desc
+		potential = {
+			OR = {
+				culture_group = goblin_group
+				culture_group = orc_group
+			}
+		}
+		trigger = { TECH_CONSTRUCTION = 0 }
+		replaces = tb_defensive_fortifications_3
+		upgrades_from = tb_goblin_workshops_2
+		piety_cost = 80
+		build_time = 182
+
+		fort_level = 0.25
+		garrison_size = 0.2
+		archers = 15
+
+		ai_creation_factor = 97
+		ai_feudal_modifier = -10
+		ai_republic_modifier = 10
+
+		extra_tech_building_start = 1.5
+	}
+
+	tb_goblin_workshops_4 = {
+		desc = tb_goblin_workshops_desc
+		potential = {
+			OR = {
+				culture_group = goblin_group
+				culture_group = orc_group
+			}
+		}
+		trigger = { TECH_CONSTRUCTION = 0 }
+		replaces = tb_defensive_fortifications_4
+		upgrades_from = tb_goblin_workshops_3
+		piety_cost = 80
+		build_time = 182
+
+		fort_level = 0.25
+		garrison_size = 0.2
+		archers = 15
+
+		ai_creation_factor = 97
+		ai_feudal_modifier = -10
+		ai_republic_modifier = 10
+
+		extra_tech_building_start = 3.5
+	}
+
+	#Goblin mobs.
+	#Replace Training Grounds - greenskins don't drill!
+	#effectively an extra barracks building
+	tb_goblin_mobs_1 = {
+		desc = tb_goblin_mobs_desc
+		potential = {
 			OR = {
 				culture_group = orc_group
-				culture = goblin_main
-				culture = goblin_night
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
 			}
 		}
-		desc = tb_troll_pen_desc
 		trigger = { TECH_INFANTRY = 0 }
-		prestige_cost = 300
-		build_time = 365
-		war_elephants = 3
-		not_if_x_exists = { tb_goblin_wolf_pit_1 tb_goblin_wolf_pit_2 tb_goblin_wolf_pit_3 tb_goblin_wolf_pit_4 }
+		replaces = tb_training_grounds_1
+		piety_cost = 30
+		build_time = 30
+		light_infantry = 25
+		archers = 5
+		ai_creation_factor = 122
+
+		extra_tech_building_start = 0.3
+	}
+
+	tb_goblin_mobs_2 = {
+		desc = tb_goblin_mobs_desc
+		potential = {
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_training_grounds_2
+		upgrades_from = tb_goblin_mobs_1
+		piety_cost = 30
+		build_time = 30
+		light_infantry = 25
+		archers = 5
+		ai_creation_factor = 111
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_goblin_mobs_3 = {
+		desc = tb_goblin_mobs_desc
+		potential = {
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 250
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_training_grounds_3
+		upgrades_from = tb_goblin_mobs_2
+		piety_cost = 40
+		build_time = 30
+		light_infantry = 25
+		archers = 5
 		ai_creation_factor = 95
-		extra_tech_building_start = 2
 
+		extra_tech_building_start = 1.5
 	}
 
-	tb_troll_pen_2 = {
+	tb_goblin_mobs_4 = {
+		desc = tb_goblin_mobs_desc
 		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture = goblin_main
-					culture = goblin_night
-				}
-			}
 			OR = {
 				culture_group = orc_group
-				culture = goblin_main
-				culture = goblin_night
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
 			}
 		}
-		desc = tb_troll_pen_desc
+		is_active_trigger = {
+			FROM = {
+				prestige = 500
+			}
+		}
 		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_troll_pen_1
-		prestige_cost = 400
-		build_time = 547
-		war_elephants = 6
-		not_if_x_exists = { tb_goblin_wolf_pit_1 tb_goblin_wolf_pit_2 tb_goblin_wolf_pit_3 tb_goblin_wolf_pit_4 }
-		extra_tech_building_start = 10.0
+		replaces = tb_training_grounds_4
+		upgrades_from = tb_goblin_mobs_3
+		piety_cost = 40
+		build_time = 30
+		light_infantry = 25
+		archers = 5
+		ai_creation_factor = 94
+
+		extra_tech_building_start = 2.5
 	}
 
-	tb_troll_pen_3 = {
+	tb_goblin_mobs_5 = {
+		desc = tb_goblin_mobs_desc
 		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture = goblin_main
-					culture = goblin_night
-				}
-			}
 			OR = {
 				culture_group = orc_group
-				culture = goblin_main
-				culture = goblin_night
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
 			}
 		}
-		desc = tb_troll_pen_desc
+		is_active_trigger = {
+			FROM = {
+				prestige = 1000
+			}
+		}
 		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_troll_pen_2
-		prestige_cost = 500
-		build_time = 730
-		war_elephants = 10
-		not_if_x_exists = { tb_goblin_wolf_pit_1 tb_goblin_wolf_pit_2 tb_goblin_wolf_pit_3 tb_goblin_wolf_pit_4 }
+		upgrades_from = tb_goblin_mobs_4
+		piety_cost = 50
+		build_time = 30
+		light_infantry = 25
+		archers = 5
 		ai_creation_factor = 93
-		extra_tech_building_start = 10.0
+
+		extra_tech_building_start = 3.5
 	}
 
-	tb_troll_pen_4 = {
+	tb_goblin_mobs_6 = {
+		desc = tb_goblin_mobs_desc
 		potential = {
-			FROM = {
-				OR = {
-					culture_group = orc_group
-					culture = goblin_main
-					culture = goblin_night
-				}
-			}
 			OR = {
 				culture_group = orc_group
-				culture = goblin_main
-				culture = goblin_night
+				culture_group = goblin_group
 			}
-		}
-		desc = tb_troll_pen_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_troll_pen_3
-		prestige_cost = 600
-		build_time = 1095
-		war_elephants = 22
-		not_if_x_exists = { tb_goblin_wolf_pit_1 tb_goblin_wolf_pit_2 tb_goblin_wolf_pit_3 tb_goblin_wolf_pit_4 }
-		ai_creation_factor = 92
-		extra_tech_building_start = 10.0
-
-	}
-	tb_night_goblin_camp_1 = {
-		potential = {
 			FROM = {
-				culture = goblin_night
+				religion_group = greenskin_gods_group
 			}
-			culture = goblin_night
 		}
-		desc = tb_night_goblin_camp_desc
+		is_active_trigger = {
+			FROM = {
+				prestige = 2000
+			}
+		}
 		trigger = { TECH_INFANTRY = 0 }
-		prestige_cost = 300
-		build_time = 365
-		light_infantry = 150
-		light_cavalry = 75
+		upgrades_from = tb_goblin_mobs_5
+		piety_cost = 50
+		build_time = 30
+		light_infantry = 25
+		archers = 5
+		ai_creation_factor = 92
+
+		extra_tech_building_start = 5
+	}
+
+	#Orc mobs
+	#Replaces War Camp
+	#"Boom and Bust" faction identity in full effect
+	tb_orc_mobs_1 = {
+		desc = tb_orc_mobs_desc
+		potential = {
+			culture_group = orc_group
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_war_camp_1
+		piety_cost = 30
+		build_time = 30
+		#adjust levy away from A&LI (goblins) towards HI (orcs)
+		archers = -15
+		light_infantry = -60
+		heavy_infantry = 45
+		ai_creation_factor = 122
+
+		extra_tech_building_start = 0.3
+	}
+
+	tb_orc_mobs_2 = {
+		desc = tb_orc_mobs_desc
+		potential = {
+			culture_group = orc_group
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_war_camp_2
+		upgrades_from = tb_orc_mobs_1
+		piety_cost = 30
+		build_time = 30
+		heavy_infantry = 10
+		ai_creation_factor = 111
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_orc_mobs_3 = {
+		desc = tb_orc_mobs_desc
+		potential = {
+			culture_group = orc_group
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 250
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_war_camp_3
+		upgrades_from = tb_orc_mobs_2
+		piety_cost = 40
+		build_time = 30
+		heavy_infantry = 10
+		ai_creation_factor = 95
+
+		extra_tech_building_start = 1.5
+	}
+
+	tb_orc_mobs_4 = {
+		desc = tb_orc_mobs_desc
+		potential = {
+			culture_group = orc_group
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 500
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_war_camp_4
+		upgrades_from = tb_orc_mobs_3
+		piety_cost = 40
+		build_time = 30
+		heavy_infantry = 10
+		ai_creation_factor = 94
+
+		extra_tech_building_start = 2.5
+	}
+
+	tb_orc_mobs_5 = {
+		desc = tb_orc_mobs_desc
+		potential = {
+			culture_group = orc_group
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 1000
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		upgrades_from = tb_orc_mobs_4
+		piety_cost = 40
+		build_time = 30
+		heavy_infantry = 10
+		ai_creation_factor = 93
+
+		extra_tech_building_start = 3.5
+	}
+
+	tb_orc_mobs_6 = {
+		desc = tb_orc_mobs_desc
+		potential = {
+			culture_group = orc_group
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 2000
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		upgrades_from = tb_orc_mobs_5
+		piety_cost = 50
+		build_time = 30
+		heavy_infantry = 10
+		ai_creation_factor = 92
+
+		extra_tech_building_start = 5
+	}
+
+	#Goblin Cavalry
+	#Replaces War Camp
+	#"Boom and bust"
+	tb_goblin_cavalry_mobs_1 = {
+		desc = tb_goblin_cavalry_mobs_desc
+		potential = {
+			culture_group = goblin_group
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		trigger = { TECH_CAVALRY = 0 }
+		replaces = tb_war_camp_1
+		piety_cost = 30
+		build_time = 30
+		heavy_infantry = -5
+		light_cavalry = 15
+		ai_creation_factor = 122
+
+		extra_tech_building_start = 0.3
+	}
+
+	tb_goblin_cavalry_mobs_2 = {
+		desc = tb_goblin_cavalry_mobs_desc
+		potential = {
+			culture_group = goblin_group
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		trigger = { TECH_CAVALRY = 0 }
+		replaces = tb_war_camp_2
+		upgrades_from = tb_goblin_cavalry_mobs_1
+		piety_cost = 30
+		build_time = 30
+		light_cavalry = 10
+		ai_creation_factor = 111
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_goblin_cavalry_mobs_3 = {
+		desc = tb_goblin_cavalry_mobs_desc
+		potential = {
+			culture_group = goblin_group
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 250
+			}
+		}
+		trigger = { TECH_CAVALRY = 0 }
+		replaces = tb_war_camp_3
+		upgrades_from = tb_goblin_cavalry_mobs_2
+		piety_cost = 40
+		build_time = 30
+		light_cavalry = 10
+		ai_creation_factor = 95
+
+		extra_tech_building_start = 2.5
+	}
+
+	tb_goblin_cavalry_mobs_4 = {
+		desc = tb_goblin_cavalry_mobs_desc
+		potential = {
+			culture_group = goblin_group
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 500
+			}
+		}
+		trigger = { TECH_CAVALRY = 0 }
+		replaces = tb_war_camp_4
+		upgrades_from = tb_goblin_cavalry_mobs_3
+		piety_cost = 40
+		build_time = 30
+		light_cavalry = 10
+		ai_creation_factor = 94
+
+		extra_tech_building_start = 2.5
+	}
+
+	tb_goblin_cavalry_mobs_5 = {
+		desc = tb_goblin_cavalry_mobs_desc
+		potential = {
+			culture_group = goblin_group
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 1000
+			}
+		}
+		trigger = { TECH_CAVALRY = 0 }
+		upgrades_from = tb_goblin_cavalry_mobs_4
+		piety_cost = 50
+		build_time = 30
+		light_cavalry = 10
+		ai_creation_factor = 93
+
+		extra_tech_building_start = 3.5
+	}
+
+	tb_goblin_cavalry_mobs_6 = {
+		desc = tb_goblin_cavalry_mobs_desc
+		potential = {
+			culture_group = goblin_group
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 2000
+			}
+		}
+		trigger = { TECH_CAVALRY = 0 }
+		upgrades_from = tb_goblin_cavalry_mobs_5
+		piety_cost = 50
+		build_time = 30
+		light_cavalry = 10
+		ai_creation_factor = 92
+
+		extra_tech_building_start = 5
+	}
+
+	#Troll scavengers
+	#Replaces Practice Range
+	#Trolls aren't a core choice for greenskin armies but they are an "iconic" choice
+	tb_troll_scavengers_1 = {
+		desc = tb_troll_scavengers_desc
+		potential = {
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_practice_range_1
+		piety_cost = 30
+		build_time = 30
+		war_elephants = 5
+		ai_creation_factor = 115
+
+		extra_tech_building_start = 0.3
+	}
+
+	tb_troll_scavengers_2 = {
+		desc = tb_troll_scavengers_desc
+		potential = {
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 100
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_practice_range_2
+		upgrades_from = tb_troll_scavengers_1
+		piety_cost = 30
+		build_time = 30
+		war_elephants = 5
+		ai_creation_factor = 107
+
+		extra_tech_building_start = 1.5
+	}
+
+	tb_troll_scavengers_3 = {
+		desc = tb_troll_scavengers_desc
+		potential = {
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 250
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_practice_range_3
+		upgrades_from = tb_troll_scavengers_2
+		piety_cost = 40
+		build_time = 30
+		war_elephants = 5
+		ai_creation_factor = 94
+
+		extra_tech_building_start = 2.5
+	}
+
+	tb_troll_scavengers_4 = {
+		desc = tb_troll_scavengers_desc
+		potential = {
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 500
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		replaces = tb_practice_range_4
+		upgrades_from = tb_troll_scavengers_3
+		piety_cost = 40
+		build_time = 30
+		war_elephants = 5
+		ai_creation_factor = 93
+
+		extra_tech_building_start = 2.5
+	}
+
+	tb_troll_scavengers_5 = {
+		desc = tb_troll_scavengers_desc
+		potential = {
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 1000
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		upgrades_from = tb_troll_scavengers_4
+		piety_cost = 50
+		build_time = 30
+		war_elephants = 5
+		ai_creation_factor = 92
+
+		extra_tech_building_start = 3.5
+	}
+
+	tb_troll_scavengers_6 = {
+		desc = tb_troll_scavengers_desc
+		potential = {
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 2000
+			}
+		}
+		trigger = { TECH_INFANTRY = 0 }
+		upgrades_from = tb_troll_scavengers_5
+		piety_cost = 50
+		build_time = 30
+		war_elephants = 5
+		ai_creation_factor = 91
+
+		extra_tech_building_start = 5
+	}
+
+	#WAAAGH!
+	#replaces tb_arsenal (weaponsmith)
+	#follows faction identity for cost & time
+	#and extra cheap because these buildings die if your prestige falls too low
+	#no morale improvement but significant reinforce improvement
+	tb_greenskin_waaagh_1 = {
+		desc = tb_greenskin_waaagh_desc
+		potential = {
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 100
+			}
+		}
+		trigger = { TECH_RECRUITMENT = 0 }
+		replaces = tb_arsenal_1
+		piety_cost = 30
+		build_time = 30
+		levy_reinforce_rate = 0.25
+		levy_size = 0.25
+
+		ai_creation = 98
+
+		extra_tech_building_start = 0.3
+	}
+
+	tb_greenskin_waaagh_2 = {
+		desc = tb_greenskin_waaagh_desc
+		potential = {
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 250
+			}
+		}
+		trigger = { TECH_RECRUITMENT = 0 }
+		replaces = tb_arsenal_2
+		upgrades_from = tb_greenskin_waaagh_1
+		piety_cost = 30
+		build_time = 30
+		levy_reinforce_rate = 0.25
+		levy_size = 0.25
+
+		ai_creation = 97
+
+		extra_tech_building_start = 0.3
+	}
+
+	tb_greenskin_waaagh_3 = {
+		desc = tb_greenskin_waaagh_desc
+		potential = {
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 500
+			}
+		}
+		trigger = { TECH_RECRUITMENT = 0 }
+		replaces = tb_arsenal_3
+		upgrades_from = tb_greenskin_waaagh_2
+		piety_cost = 40
+		build_time = 30
+		levy_reinforce_rate = 0.25
+		levy_size = 0.25
+
+		ai_creation = 96
+
+		extra_tech_building_start = 0.3
+	}
+
+	tb_greenskin_waaagh_4 = {
+		desc = tb_greenskin_waaagh_desc
+		potential = {
+			OR = {
+				culture_group = orc_group
+				culture_group = goblin_group
+			}
+			FROM = {
+				religion_group = greenskin_gods_group
+			}
+		}
+		is_active_trigger = {
+			FROM = {
+				prestige = 1000
+			}
+		}
+		trigger = { TECH_RECRUITMENT = 0 }
+		replaces = tb_arsenal_4
+		upgrades_from = tb_greenskin_waaagh_3
+		piety_cost = 40
+		build_time = 30
+		levy_reinforce_rate = 0.25
+		levy_size = 0.25
+
+		ai_creation = 95
+
+		extra_tech_building_start = 0.3
+	}
+
+	# # Cultural Buildings # #
+
+	#Black Orc Mobs
+	#Black & Regular Orc
+	#HI/morale
+	tb_culture_black_orc_1 = {
+		desc = tb_culture_black_orc_desc
+		potential = {
+			OR = {
+				culture = orc_main
+				culture = orc_black
+			}
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 250
+			}
+		}
+		piety_cost = 80
+		build_time = 30
+		heavy_infantry = 20
+		heavy_infantry_morale = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_culture_black_orc_2 = {
+		desc = tb_culture_black_orc_desc
+		potential = {
+			OR = {
+				culture = orc_main
+				culture = orc_black
+			}
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 500
+			}
+		}
+		upgrades_from = tb_culture_black_orc_1
+		piety_cost = 80
+		build_time = 30
+		heavy_infantry = 25
+		heavy_infantry_morale = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 1.5
+	}
+
+	tb_culture_black_orc_3 = {
+		desc = tb_culture_black_orc_desc
+		potential = {
+			OR = {
+				culture = orc_main
+				culture = orc_black
+			}
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 1000
+			}
+		}
+		upgrades_from = tb_culture_black_orc_2
+		piety_cost = 80
+		build_time = 30
+		heavy_infantry = 30
+		heavy_infantry_morale = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 2.5
+	}
+
+	tb_culture_black_orc_4 = {
+		desc = tb_culture_black_orc_desc
+		potential = {
+			OR = {
+				culture = orc_main
+				culture = orc_black
+			}
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 2000
+			}
+		}
+		upgrades_from = tb_culture_black_orc_3
+		piety_cost = 80
+		build_time = 30
+		heavy_infantry = 35
+		heavy_infantry_morale = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 5
+	}
+
+	#Savage Orc Mobs
+	#HI/defensive
+	tb_savage_orc_mobs_1 = {
+		desc = tb_savage_orc_mobs_desc
+		potential = {
+			culture = orc_savage
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 250
+			}
+		}
+		piety_cost = 80
+		build_time = 30
+		heavy_infantry = 20
+		heavy_infantry_defensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_savage_orc_mobs_2 = {
+		desc = tb_savage_orc_mobs_desc
+		potential = {
+			culture = orc_savage
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 500
+			}
+		}
+		upgrades_from = tb_savage_orc_mobs_1
+		piety_cost = 80
+		build_time = 30
+		heavy_infantry = 25
+		heavy_infantry_defensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_savage_orc_mobs_3 = {
+		desc = tb_savage_orc_mobs_desc
+		potential = {
+			culture = orc_savage
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 1000
+			}
+		}
+		upgrades_from = tb_savage_orc_mobs_2
+		piety_cost = 80
+		build_time = 30
+		heavy_infantry = 30
+		heavy_infantry_defensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_savage_orc_mobs_4 = {
+		desc = tb_savage_orc_mobs_desc
+		potential = {
+			culture = orc_savage
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 2000
+			}
+		}
+		upgrades_from = tb_savage_orc_mobs_3
+		piety_cost = 80
+		build_time = 30
+		heavy_infantry = 35
+		heavy_infantry_defensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	#Green Sea Mobs
+	#HI/offensive
+	#There's little or no lore on these guys but I guess we're stuck with them
+	tb_green_sea_mobs_1 = {
+		desc = tb_green_sea_mobs_desc
+		potential = {
+			culture = orc_freeboota
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 250
+			}
+		}
+		piety_cost = 80
+		build_time = 30
+		heavy_infantry = 20
+		heavy_infantry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_green_sea_mobs_2 = {
+		desc = tb_green_sea_mobs_desc
+		potential = {
+			culture = orc_freeboota
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 500
+			}
+		}
+		upgrades_from = tb_green_sea_mobs_1
+		piety_cost = 80
+		build_time = 30
+		heavy_infantry = 25
+		heavy_infantry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_green_sea_mobs_3 = {
+		desc = tb_green_sea_mobs_desc
+		potential = {
+			culture = orc_freeboota
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 1000
+			}
+		}
+		upgrades_from = tb_green_sea_mobs_2
+		piety_cost = 80
+		build_time = 30
+		heavy_infantry = 30
+		heavy_infantry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_green_sea_mobs_4 = {
+		desc = tb_green_sea_mobs_desc
+		potential = {
+			culture = orc_freeboota
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 2000
+			}
+		}
+		upgrades_from = tb_green_sea_mobs_3
+		piety_cost = 80
+		build_time = 30
+		heavy_infantry = 35
+		heavy_infantry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	#Nasty Skulkers
+	#LI/offensive
+	tb_nasty_skulker_mobs_1 = {
+		desc = tb_nasty_skulker_mobs_desc
+		potential = {
+			culture = goblin_main
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 250
+			}
+		}
+		piety_cost = 80
+		build_time = 30
+		light_infantry = 80
+		light_infantry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_nasty_skulker_mobs_2 = {
+		desc = tb_nasty_skulker_mobs_desc
+		potential = {
+			culture = goblin_main
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 500
+			}
+		}
+		upgrades_from = tb_nasty_skulker_mobs_1
+		piety_cost = 80
+		build_time = 30
+		light_infantry = 100
+		light_infantry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_nasty_skulker_mobs_3 = {
+		desc = tb_nasty_skulker_mobs_desc
+		potential = {
+			culture = goblin_main
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 1000
+			}
+		}
+		upgrades_from = tb_nasty_skulker_mobs_2
+		piety_cost = 80
+		build_time = 30
+		light_infantry = 120
+		light_infantry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_nasty_skulker_mobs_4 = {
+		desc = tb_nasty_skulker_mobs_desc
+		potential = {
+			culture = goblin_main
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 2000
+			}
+		}
+		upgrades_from = tb_nasty_skulker_mobs_3
+		piety_cost = 80
+		build_time = 30
+		light_infantry = 140
+		light_infantry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	#Spider Cult
+	#LC/offensive
+	#It's tempting to do warbeast things here but Arachnaroks and Gigantic Spiders are pretty rare
+	#Also getting a LC upgrade is probably more of a benefit
+	tb_spider_cult_1 = {
+		desc = tb_spider_cult_desc
+		potential = {
+			culture = goblin_forest
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 250
+			}
+		}
+		piety_cost = 80
+		build_time = 30
+		light_cavalry = 20
 		light_cavalry_offensive = 0.15
-		light_infantry_defensive = 0.05
-		ai_creation_factor = 95
-		extra_tech_building_start = 1
 
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
 	}
 
-	tb_night_goblin_camp_2 = {
+	tb_spider_cult_2 = {
+		desc = tb_spider_cult_desc
 		potential = {
-			FROM = {
-				culture = goblin_night
-			}
-			culture = goblin_night
-		}
-		desc = tb_night_goblin_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_night_goblin_camp_1
-		prestige_cost = 400
-		build_time = 547
-		light_infantry = 200
-		light_cavalry = 85
-		light_cavalry_offensive = 0.02
-		light_infantry_defensive = 0.02
-		ai_creation_factor = 94
-		extra_tech_building_start = 10.0
-	}
-
-	tb_night_goblin_camp_3 = {
-		potential = {
-			FROM = {
-				culture = goblin_night
-			}
-			culture = goblin_night
-		}
-		desc = tb_night_goblin_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_night_goblin_camp_2
-		prestige_cost = 500
-		build_time = 730
-		light_infantry = 250
-		light_cavalry = 105
-		light_cavalry_offensive = 0.02
-		light_infantry_defensive = 0.02
-		ai_creation_factor = 93
-		extra_tech_building_start = 10.0
-	}
-
-	tb_night_goblin_camp_4 = {
-		potential = {
-			FROM = {
-				culture = goblin_night
-			}
-			culture = goblin_night
-		}
-		desc = tb_night_goblin_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_night_goblin_camp_3
-		prestige_cost = 600
-		build_time = 1095
-		light_infantry = 325
-		light_cavalry = 125
-		light_cavalry_offensive = 0.02
-		light_infantry_defensive = 0.02
-		ai_creation_factor = 92
-		extra_tech_building_start = 10.0
-
-	}
-	tb_forest_goblin_camp_1 = {
-		potential = {
-			FROM = {
-				culture = goblin_forest
-			}
 			culture = goblin_forest
 		}
-		desc = tb_forest_goblin_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		prestige_cost = 300
-		build_time = 365
-		archers = 250
-		light_cavalry = 80
-		archers_offensive = 0.15
-		light_cavalry_offensive = 0.15
-		ai_creation_factor = 95
-		extra_tech_building_start = 1
-
-	}
-
-	tb_forest_goblin_camp_2 = {
-		potential = {
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
 			FROM = {
-				culture = goblin_forest
+				prestige = 500
 			}
-			culture = goblin_forest
 		}
-		desc = tb_forest_goblin_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_forest_goblin_camp_1
-		prestige_cost = 400
-		build_time = 547
-		archers = 300
-		light_cavalry = 100
-		ai_creation_factor = 94
-		extra_tech_building_start = 10.0
-	}
-
-	tb_forest_goblin_camp_3 = {
-		potential = {
-			FROM = {
-				culture = goblin_forest
-			}
-			culture = goblin_forest
-		}
-		desc = tb_forest_goblin_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_forest_goblin_camp_2
-		prestige_cost = 500
-		build_time = 730
-		archers = 400
-		light_cavalry = 120
-		ai_creation_factor = 93
-		extra_tech_building_start = 10.0
-	}
-
-	tb_forest_goblin_camp_4 = {
-		potential = {
-			FROM = {
-				culture = goblin_forest
-			}
-			culture = goblin_forest
-		}
-		desc = tb_forest_goblin_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_forest_goblin_camp_3
-		prestige_cost = 600
-		build_time = 1095
-		archers = 400
-		light_cavalry = 140
-		ai_creation_factor = 92
-		extra_tech_building_start = 10.0
-
-	}
-
-	tb_arachnarok_pen_1 = {
-		potential = {
-			FROM = {
-				culture = goblin_forest
-			}
-			culture = goblin_forest
-		}
-		desc = tb_arachnarok_pen_desc
-		trigger = { TECH_INFANTRY = 0 }
-		prestige_cost = 300
-		build_time = 365
-		war_elephants = 3
+		upgrades_from = tb_spider_cult_1
+		piety_cost = 80
+		build_time = 30
 		light_cavalry = 25
+		light_cavalry_offensive = 0.15
 
-		ai_creation_factor = 95
-		extra_tech_building_start = 2
+		ai_creation_factor = 101
 
+		extra_tech_building_start = 0.8
 	}
 
-	tb_arachnarok_pen_2 = {
+	tb_spider_cult_3 = {
+		desc = tb_spider_cult_desc
 		potential = {
-			FROM = {
-				culture = goblin_forest
-			}
 			culture = goblin_forest
 		}
-		desc = tb_arachnarok_pen_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_arachnarok_pen_1
-		prestige_cost = 400
-		build_time = 547
-		war_elephants = 3
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 1000
+			}
+		}
+		upgrades_from = tb_spider_cult_2
+		piety_cost = 80
+		build_time = 30
+		light_cavalry = 30
+		light_cavalry_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_spider_cult_4 = {
+		desc = tb_spider_cult_desc
+		potential = {
+			culture = goblin_forest
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 2000
+			}
+		}
+		upgrades_from = tb_spider_cult_3
+		piety_cost = 80
+		build_time = 30
 		light_cavalry = 35
+		light_cavalry_offensive = 0.15
 
-		extra_tech_building_start = 10.0
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
 	}
 
-	tb_arachnarok_pen_3 = {
+	#Goblin Fanatics
+	#LI/morale
+	#This isn't perfect but it's a good obnus for goblins
+	tb_goblin_fanatics_1 = {
+		desc = tb_goblin_fanatics_desc
 		potential = {
-			FROM = {
-				culture = goblin_forest
-			}
-			culture = goblin_forest
+			culture = goblin_night
 		}
-		desc = tb_arachnarok_pen_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_arachnarok_pen_2
-		prestige_cost = 500
-		build_time = 730
-		war_elephants = 5
-		light_cavalry = 45
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 250
+			}
+		}
+		piety_cost = 80
+		build_time = 30
+		light_infantry = 80
+		light_infantry_morale = 0.15
 
-		ai_creation_factor = 93
-		extra_tech_building_start = 10.0
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
 	}
 
-	tb_arachnarok_pen_4 = {
+	tb_goblin_fanatics_2 = {
+		desc = tb_goblin_fanatics_desc
 		potential = {
-			FROM = {
-				culture = goblin_forest
-			}
-			culture = goblin_forest
+			culture = goblin_night
 		}
-		desc = tb_arachnarok_pen_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_arachnarok_pen_3
-		prestige_cost = 600
-		build_time = 1095
-		war_elephants = 5
-		light_cavalry = 55
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 500
+			}
+		}
+		upgrades_from = tb_goblin_fanatics_1
+		piety_cost = 80
+		build_time = 30
+		light_infantry = 100
+		light_infantry_morale = 0.15
 
-		ai_creation_factor = 92
-		extra_tech_building_start = 10.0
+		ai_creation_factor = 101
 
+		extra_tech_building_start = 0.8
 	}
 
-	tb_savage_orc_camp_1 = {
+	tb_goblin_fanatics_3 = {
+		desc = tb_goblin_fanatics_desc
 		potential = {
-			FROM = {
-				culture = orc_savage
-			}
-			culture = orc_savage
+			culture = goblin_night
 		}
-		desc = tb_savage_orc_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		prestige_cost = 300
-		build_time = 365
-		light_infantry = 80 #Boyz
-		archers = 40 #Arrers
-		light_infantry_offensive = 0.1
-		light_infantry_defensive = -0.15
-		archers_defensive = -0.15
-		land_morale = 0.1
-		ai_creation_factor = 95
-		extra_tech_building_start = 1
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 1000
+			}
+		}
+		upgrades_from = tb_goblin_fanatics_2
+		piety_cost = 80
+		build_time = 30
+		light_infantry = 120
+		light_infantry_morale = 0.15
 
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
 	}
 
-	tb_savage_orc_camp_2 = {
+	tb_goblin_fanatics_4 = {
+		desc = tb_goblin_fanatics_desc
 		potential = {
-			FROM = {
-				culture = orc_savage
-			}
-			culture = orc_savage
+			culture = goblin_night
 		}
-		desc = tb_savage_orc_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_savage_orc_camp_1
-		prestige_cost = 400
-		build_time = 547
-		light_infantry = 120 #Boyz
-		light_infantry_offensive = 0.02
-		archers_offensive=0.01
-		light_infantry_defensive = -0.03
-		archers_defensive = -0.03
-		archers = 60 #Arrers
-		ai_creation_factor = 94
-		extra_tech_building_start = 10.0
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 2000
+			}
+		}
+		upgrades_from = tb_nasty_skulker_mobs_3
+		piety_cost = 80
+		build_time = 30
+		light_infantry = 140
+		light_infantry_morale = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
 	}
 
-	tb_savage_orc_camp_3 = {
+	#Great Goblin mobs
+	#LI/D
+	#Hill goblins are really niche and probably didn't need to be in the mod, but the combination was free
+	tb_great_goblin_mobs_1 = {
+		desc = tb_great_goblin_mobs_desc
 		potential = {
-			FROM = {
-				culture = orc_savage
-			}
-			culture = orc_savage
+			culture = goblin_hill
 		}
-		desc = tb_savage_orc_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_savage_orc_camp_2
-		prestige_cost = 500
-		build_time = 730
-		light_infantry = 140 #Boyz
-		archers = 80 #Arrers
-		light_infantry_offensive = 0.02
-		archers_offensive=0.01
-		light_infantry_defensive = -0.03
-		archers_defensive = -0.03
-		ai_creation_factor = 93
-		extra_tech_building_start = 10.0
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 250
+			}
+		}
+		piety_cost = 80
+		build_time = 30
+		light_infantry = 80
+		light_infantry_defensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
 	}
 
-	tb_savage_orc_camp_4 = {
+	tb_great_goblin_mobs_2 = {
+		desc = tb_great_goblin_mobs_desc
 		potential = {
-			FROM = {
-				culture = orc_savage
-			}
-			culture = orc_savage
+			culture = goblin_hill
 		}
-		desc = tb_savage_orc_camp_desc
-		trigger = { TECH_INFANTRY = 0 }
-		upgrades_from = tb_savage_orc_camp_3
-		prestige_cost = 600
-		build_time = 1095
-		light_infantry = 180 #Boyz
-		archers = 100 #Arrers
-		light_infantry_offensive = 0.02
-		archers_offensive=0.01
-		light_infantry_defensive = -0.03
-		archers_defensive = -0.03
-		ai_creation_factor = 92
-		extra_tech_building_start = 10.0
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 500
+			}
+		}
+		upgrades_from = tb_great_goblin_mobs_1
+		piety_cost = 80
+		build_time = 30
+		light_infantry = 100
+		light_infantry_defensive = 0.15
 
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
 	}
 
+	tb_great_goblin_mobs_3 = {
+		desc = tb_great_goblin_mobs_desc
+		potential = {
+			culture = goblin_hill
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 1000
+			}
+		}
+		upgrades_from = tb_great_goblin_mobs_2
+		piety_cost = 80
+		build_time = 30
+		light_infantry = 120
+		light_infantry_defensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_great_goblin_mobs_4 = {
+		desc = tb_great_goblin_mobs_desc
+		potential = {
+			culture = goblin_hill
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 2000
+			}
+		}
+		upgrades_from = tb_nasty_skulker_mobs_3
+		piety_cost = 80
+		build_time = 30
+		light_infantry = 140
+		light_infantry_defensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	#Seagit Snipers
+	#Archers/Off
+	#Another legacy group with very little lore. At least they're easy enough to write for.
+	tb_seagit_snipers_1 = {
+		desc = tb_seagit_snipers_desc
+		potential = {
+			culture = goblin_seagit
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 250
+			}
+		}
+		piety_cost = 80
+		build_time = 30
+		archers = 30
+		archers_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_seagit_snipers_2 = {
+		desc = tb_seagit_snipers_desc
+		potential = {
+			culture = goblin_seagit
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 500
+			}
+		}
+		upgrades_from = tb_seagit_snipers_1
+		piety_cost = 80
+		build_time = 30
+		archers = 40
+		archers_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_seagit_snipers_3 = {
+		desc = tb_seagit_snipers_desc
+		potential = {
+			culture = goblin_seagit
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 1000
+			}
+		}
+		upgrades_from = tb_seagit_snipers_2
+		piety_cost = 80
+		build_time = 30
+		archers = 50
+		archers_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
+
+	tb_seagit_snipers_4 = {
+		desc = tb_seagit_snipers_desc
+		potential = {
+			culture = goblin_seagit
+		}
+		trigger = { TECH_MELEE = 0 }
+		is_active_trigger = {
+			culture_group = FROM
+			FROM = {
+				prestige = 2000
+			}
+		}
+		upgrades_from = tb_nasty_skulker_mobs_3
+		piety_cost = 80
+		build_time = 30
+		archers = 60
+		archers_offensive = 0.15
+
+		ai_creation_factor = 101
+
+		extra_tech_building_start = 0.8
+	}
 }
+
 nomad = {
 	no_greenskin_camp_1 = {
 		desc = tb_greenskin_camp_desc
@@ -2012,7 +2065,7 @@ nomad = {
 		convert_to_tribal=tb_greenskin_camp_1
 		levy_size = 0.75
 		ai_creation_factor = 97
-		
+
 		tax_income = 8# To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
 
 		max_population = 3000
@@ -2095,7 +2148,7 @@ nomad = {
 		levy_size = 0.1
 		ai_creation_factor = 100
 		tax_income = 8 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-	
+
 		max_population = 3000
 		max_manpower = 500
 		nomad_tax_modifier = 0.08
@@ -2121,7 +2174,7 @@ nomad = {
 		levy_size = 0.1
 		ai_creation_factor = 100
 		tax_income = 8 # To balance out the fact that they're stuck with Tribal holdings and can't build the Market building
-	
+
 		max_population = 3000
 		max_manpower = 500
 		nomad_tax_modifier = 0.08
@@ -2929,9 +2982,9 @@ nomad = {
 
 	no_big_uns_1 = {
 		desc = tb_big_uns_desc
-		trigger = { 
+		trigger = {
 			OR={
-				TECH_INFANTRY = 1 
+				TECH_INFANTRY = 1
 				FROM={
 					tier=DUKE
 					TECH_INFANTRY = 0
@@ -4145,9 +4198,9 @@ nomad = {
 	no_squig_1 = {
 		desc = no_squig_desc
 		trigger = { FROM = { TECH_CITY_CONSTRUCTION = 0 } }
-		potential = { 
+		potential = {
 			FROM = {
-				OR = { 
+				OR = {
 					culture_group = orc_group
 					culture_group = goblin_group
 				}
@@ -4164,9 +4217,9 @@ nomad = {
 	no_squig_2 = {
 		desc = no_squig_desc
 		trigger = { FROM = { TECH_CITY_CONSTRUCTION = 0 } }
-		potential = { 
+		potential = {
 			FROM = {
-				OR = { 
+				OR = {
 					culture_group = orc_group
 					culture_group = goblin_group
 				}
@@ -4184,9 +4237,9 @@ nomad = {
 	no_squig_3 = {
 		desc = no_squig_desc
 		trigger = { FROM = { TECH_CITY_CONSTRUCTION = 1 } }
-		potential = { 
+		potential = {
 			FROM = {
-				OR = { 
+				OR = {
 					culture_group = orc_group
 					culture_group = goblin_group
 				}
@@ -4204,9 +4257,9 @@ nomad = {
 	no_squig_4 = {
 		desc = no_squig_desc
 		trigger = { FROM = { TECH_CITY_CONSTRUCTION = 1 } }
-		potential = { 
+		potential = {
 			FROM = {
-				OR = { 
+				OR = {
 					culture_group = orc_group
 					culture_group = goblin_group
 				}
@@ -4224,9 +4277,9 @@ nomad = {
 	no_squig_5 = {
 		desc = no_squig_desc
 		trigger = { FROM = { TECH_CITY_CONSTRUCTION = 2 } }
-		potential = { 
+		potential = {
 			FROM = {
-				OR = { 
+				OR = {
 					culture_group = orc_group
 					culture_group = goblin_group
 				}
@@ -4244,9 +4297,9 @@ nomad = {
 	no_squig_6 = {
 		desc = no_squig_desc
 		trigger = { FROM = { TECH_CITY_CONSTRUCTION = 2 } }
-		potential = { 
+		potential = {
 			FROM = {
-				OR = { 
+				OR = {
 					culture_group = orc_group
 					culture_group = goblin_group
 				}

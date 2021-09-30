@@ -1,0 +1,587 @@
+### Upgrades for greenskins adapting great works of other races
+
+#############
+#	INDEX	#
+#############
+#Cave Squig farm
+#Squigball Arena
+#Fighting Pits
+#Fungal Forest
+#Kunnin' trapz
+#Night Goblin Brewery
+#Orc Brute Mobs
+#River Troll Colony
+#River Troll Hag Coven
+#Stone Troll Colony
+#Totem of Gork (or Mork?)
+#Totem of Mork (or Gork?)
+#Warboss Hall
+#Goblin Jester
+#Warchanter grotto
+
+upgrade_cave_squigs = {
+    picture = GFX_upgrade_icon_gs_beast
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        is_singular
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 120
+    gold_cost_flat = 20
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        levy_reinforce_rate = 0.5
+    }
+}
+
+upgrade_squigball_arena = {
+    picture = GFX_upgrade_icon_gs_beast
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+        FROMFROM = {
+            has_wonder_upgrade = upgrade_cave_squigs
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        is_plural
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 24
+    gold_cost_flat = 200
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        light_infantry_offensive = 0.25
+        light_infantry_defensive = 0.25
+    }
+}
+
+upgrade_greenskin_fighting_pits = {
+    picture = GFX_upgrade_icon_gs_armoury
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 24
+    gold_cost_flat = 200
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        heavy_infantry = 50
+        heavy_infantry_offensive = 0.5
+    }
+}
+
+upgrade_greenskin_fungal_forest = {
+    picture = GFX_upgrade_icon_caves
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 120
+    gold_cost_flat = 20
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        local_build_time_tribal_modifier = -0.10
+        local_build_cost_tribal_modifier = -0.10
+    }
+}
+
+upgrade_greenskin_kunnin_traps = {
+    picture = GFX_upgrade_icon_gs_goblin_workshop
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 24
+    gold_cost_flat = 200
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        fort_level = 1.5
+        garrison_size = -0.25
+    }
+    owner_modifier = {  }
+}
+
+upgrade_night_goblin_brewery = {
+    picture =  GFX_upgrade_icon_crates
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROM = {
+            has_wonder_upgrade = upgrade_greenskin_fungal_forest
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 24
+    gold_cost_flat = 250
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        light_infantry_morale = 0.5
+    }
+}
+
+upgrade_orc_brute_mobs = {
+    picture = GFX_upgrade_icon_gs_armoury
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+        FROMFROM = {
+            has_wonder_upgrade = upgrade_warboss_hall
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
+    build_time = 30
+    gold_cost_flat = 250
+    gold_cost_ticking = 1
+    local_modifier = {
+        heavy_infantry = 50
+        heavy_infantry_offensive = 0.25
+    }
+}
+
+upgrade_river_troll_colony = {
+    picture = GFX_upgrade_icon_anchor
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            OR = {
+                is_coastal = yes
+                terrain = marsh
+                borders_major_river = yes
+                borders_lake = yes
+            }
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 120
+    gold_cost_flat = 100
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        war_elephants = 50
+        war_elephants_offensive = 0.5
+    }
+    owner_modifier = {  }
+}
+
+upgrade_river_troll_hag_coven = {
+    picture = GFX_upgrade_icon_anchor
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROM = {
+            has_wonder_upgrade = upgrade_river_troll_colony
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 120
+    gold_cost_flat = 100
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        war_elephants = 25
+        war_elephants_offensive = 0.25
+        war_elephants_defensive = 0.25
+    }
+    owner_modifier = {  }
+}
+
+upgrade_rock_troll_colony = {
+    picture = GFX_upgrade_icon_caves
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 120
+    gold_cost_flat = 100
+    gold_cost_ticking = 1
+
+    local_modifier = {
+        war_elephants = 50
+        war_elephants_defensive = 0.5
+    }
+    owner_modifier = {  }
+}
+
+upgrade_totem_gork = {
+    picture = GFX_upgrade_icon_stones
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 24
+    gold_cost_flat = 200
+    gold_cost_ticking = 1
+
+    local_modifier = {  }
+    owner_modifier = {
+        monthly_character_piety = 0.5
+    }
+}
+
+upgrade_totem_mork = {
+    picture = GFX_upgrade_icon_stones
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 24
+    gold_cost_flat = 200
+    gold_cost_ticking = 1
+
+    local_modifier = {  }
+    owner_modifier = {
+        monthly_character_piety = 0.5
+    }
+}
+
+
+upgrade_warboss_hall = {
+    picture = GFX_upgrade_icon_gs_armoury
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 24
+    gold_cost_flat = 200
+    gold_cost_ticking = 1
+
+    local_modifier = {  }
+    owner_modifier = {
+        monthly_character_prestige = 1
+    }
+}
+
+upgrade_goblin_jesters = {
+    picture = GFX_upgrade_icon_gs_goblin_workshop
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+        FROMFROM = {
+            has_wonder_upgrade = upgrade_warboss_hall
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 24
+    gold_cost_flat = 200
+    gold_cost_ticking = 1
+
+    local_modifier = {  }
+    owner_modifier = {
+        monthly_character_prestige = 0.5
+    }
+}
+
+upgrade_warchanter_grotto = {
+    picture = GFX_upgrade_icon_caves
+    potential = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+    }
+    allow = {
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    active = {
+        OR = {
+            culture_group = goblin_group
+            culture_group = orc_group
+        }
+        FROMFROMFROM = {
+            culture_group = ROOT
+        }
+    }
+    flags = {
+        greenskin_culture_wonder_upgrade
+    }
+
+    build_time = 60
+    gold_cost_flat = 100
+    gold_cost_ticking = 1
+
+    local_modifier = {    }
+    owner_modifier = {
+        monthly_character_piety = 0.5
+    }
+}

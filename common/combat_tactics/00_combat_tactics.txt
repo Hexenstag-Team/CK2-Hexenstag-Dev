@@ -4207,43 +4207,6 @@ daemonic_countercharge_tactic = {
 
 }
 
-#special tactic when Asur are being invaded by Druchii
-asuryan_defense = {
-	days = 12
-	sprite = 15
-	group = charge
-
-	trigger = {
-		phase = melee
-		enemy = { leader = { religion_group = cytharai_group } }
-		leader = {
-			culture_group = asur_group
-			# top_liege = { any_war = { any_attacker = { using_cb = ulthuan_invasion } } #I don't think this works inside combat tactics triggers
-			# has_landed_title = e_ulthuan
-		}
-	}
-
-	mean_time_to_happen = {
-		days = 5
-		modifier = {
-			factor = 3
-			flank_has_leader = yes
-			leader = {
-				martial = 12
-				}
-			}
-	}
-
-	knights_offensive = 1.2
-	light_cavalry_offensive = 1.2
-	heavy_infantry_offensive = 1.2
-	heavy_infantry_defensive = 1.5
-	pikemen_offensive = 1.6
-	light_infantry_offensive = 1.25
-	light_infantry_defensive = 2.5
-	pikemen_defensive = 2.75
-
-}
 
 
 

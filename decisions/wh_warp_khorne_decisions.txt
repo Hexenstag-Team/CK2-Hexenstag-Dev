@@ -107,8 +107,8 @@ offmap_decisions = {
 		third_party_potential = {
 			#show_only_failed_conditions = yes
 			FROMFROM = {
-				host = { character = ROOT_FROM }
 				show_scope_change = no
+				host = { character = ROOT_FROM }
 				prisoner = yes
 				is_invincible_trigger = no
 				NOT = { is_heir = yes }
@@ -559,8 +559,12 @@ offmap_decisions = {
 		effect = {
 			FROM = {
 				show_scope_change = no
-
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 				if = {
 					limit = { follower_of_khorne = yes increased_boon_cost = no }
@@ -633,8 +637,8 @@ offmap_decisions = {
 			#show_only_failed_conditions = yes
 			#khorne_offmap_decisions_enabled_trigger = yes
 			FROM = {
-				has_secret_religion = no
 				show_scope_change = no
+				has_secret_religion = no
 				OR = {
 					AND = {
 						follower_of_khorne = yes
@@ -655,7 +659,12 @@ offmap_decisions = {
 			FROM = {
 				show_scope_change = no
 
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 
 				if = {
@@ -718,12 +727,12 @@ offmap_decisions = {
 			#show_only_failed_conditions = yes
 			#khorne_offmap_decisions_enabled_trigger = yes
 			FROM = {
+				show_scope_change = no
 				OR={
-				trait = chosen_khorne
-				trait = khorne_demon
+					trait = chosen_khorne
+					trait = khorne_demon
 				}
 				has_secret_religion = no
-				show_scope_change = no
 				OR = {
 					AND = {
 						follower_of_khorne = yes
@@ -742,8 +751,12 @@ offmap_decisions = {
 		effect = {
 			FROM = {
 				show_scope_change = no
-
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 
 				if = {
@@ -811,8 +824,8 @@ offmap_decisions = {
 			#show_only_failed_conditions = yes
 			#khorne_offmap_decisions_enabled_trigger = yes
 			FROM = {
-				has_secret_religion = no
 				show_scope_change = no
+				has_secret_religion = no
 				OR = {
 					AND = {
 						follower_of_khorne = yes
@@ -833,8 +846,12 @@ offmap_decisions = {
 		effect = {
 			FROM = {
 				show_scope_change = no
-
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 				add_artifact = khorne_juggernaut
 				if = {
@@ -899,8 +916,8 @@ offmap_decisions = {
 			#show_only_failed_conditions = yes
 			#khorne_offmap_decisions_enabled_trigger = yes
 			FROM = {
-				has_secret_religion = no
 				show_scope_change = no
+				has_secret_religion = no
 				OR = {
 					AND = {
 						follower_of_khorne = yes
@@ -920,8 +937,12 @@ offmap_decisions = {
 		effect = {
 			FROM = {
 				show_scope_change = no
-
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 
 				if = {
@@ -1019,8 +1040,8 @@ offmap_decisions = {
 			#show_only_failed_conditions = yes
 			#khorne_offmap_decisions_enabled_trigger = yes
 			FROM = {
-				has_secret_religion = no
 				show_scope_change = no
+				has_secret_religion = no
 				OR = {
 					AND = {
 						follower_of_khorne = yes
@@ -1042,7 +1063,12 @@ offmap_decisions = {
 		}
 		effect = {
 			FROM = {
-				mutation_toughness_test_effect = yes
+				custom_tooltip = {
+					text = warp_powers_mutation_risk_tt
+					character_event = {
+						id = wh_mutation.2
+					}
+				}
 				sound_effect = china_grace_spend
 				add_trait = khorne_berserker
 				if = {

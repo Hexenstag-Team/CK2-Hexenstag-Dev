@@ -131,25 +131,26 @@ character_event = {
 	id = schaos.3
 	desc = EVTDESCschaos3
 	picture = GFX_evt_chaos_hordes
+	only_playable = yes
 	min_age = 16
 	max_age = 250
 	capable_only = yes
-	only_rulers = yes
 	prisoner = no
-	religion_group = chaos_gods_group
 
-	trigger = { capital_scope = { region = world_chaos_wastes
+	trigger = {
+		capital_scope = {
+			region = world_chaos_wastes
 			OR = {
 				is_tribal = yes
 				is_nomadic = yes
-				} }
-			 piety = 200
-			war = yes
-			trait = creature_human
-			NOT = { trait = incapable }
-			NOT = { trait = infirm }
-			age = 16
+				}
 		}
+		religion_group = chaos_gods_group
+		piety = 200
+		war = yes
+		trait = creature_human
+		NOT = { trait = infirm }
+	}
 
 
 	mean_time_to_happen = { years = 75
@@ -9800,5 +9801,141 @@ character_event = {
 	}
 	option = {
 		name = EXCELLENT
+	}
+}
+
+### maintenance ###
+
+#daemon pet modifiers
+character_event = {
+	id = schaos.200
+	hide_window = yes
+
+	only_playable = yes
+
+	#check every month
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		#check for friends, if none then clearly no daemon pet modifiers
+		#NOTE: it's important to run this check first so that we don't apply the more complicated logic below to so many characters
+		if = {
+			limit = {
+				NOT = {
+					num_of_friends = 1
+				}
+			}
+			remove_character_modifier = khornate_pet
+			remove_character_modifier = nurglite_pet
+			remove_character_modifier = slaaneshi_pet
+			remove_character_modifier = tzeentchian_pet
+		}
+		#we can't do an else_if chain here because of edge cases in which an undivided summoner has daemons of more than one kind
+		else = {
+			#check for khorne friends
+			if = {
+				limit = {
+					any_friend = { trait = khorne_demon }
+				}
+				add_character_modifier = {
+					name = khornate_pet
+					duration = -1
+				}
+			}
+			else = {
+				remove_character_modifier = khornate_pet
+			}
+			#check for nurgle friends
+			if = {
+				limit = {
+					any_friend = { trait = nurgle_demon }
+				}
+				add_character_modifier = {
+					name = nurglite_pet
+					duration = -1
+				}
+			}
+			else = {
+				remove_character_modifier = nurglite_pet
+			}
+			#check for slaaneshi friends
+			if = {
+				limit = {
+					any_friend = { trait = slaanesh_demon }
+				}
+				add_character_modifier = {
+					name = slaaneshi_pet
+					duration = -1
+				}
+			}
+			else = {
+				remove_character_modifier = slaaneshi_pet
+			}
+			#check for tzeentchian friends
+			if = {
+				limit = {
+					any_friend = { trait = tzeentch_demon }
+				}
+				add_character_modifier = {
+					name = tzeentchian_pet
+					duration = -1
+				}
+			}
+			else = {
+				remove_character_modifier = tzeentchian_pet
+			}
+		}
+	}
+
+}
+
+#doom modifiers
+character_event = {
+	id = schaos.201
+	hide_window = yes
+
+	only_playable = yes
+	religion_group = chaos_gods_group
+
+	trigger = {
+		OR = {
+			religion = chaos
+			religion = khorne
+			religion = nurgle
+			religion = slaanesh
+			religion = tzeentch
+			trait = norscan_patron_kharneth
+			trait = norscan_patron_nurgleth
+			trait = norscan_patron_shornaal
+			trait = norscan_patron_tchar
+		}
+	}
+
+	#check every month
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_global_flag = doom_very_high
+			}
+			add_trait = doom_very_high
+			remove_trait = doom_high
+		}
+		else_if = {
+			limit = {
+				has_global_flag = doom_high
+			}
+			add_trait = doom_high
+			remove_trait = doom_very_high
+		}
+		else = {
+			remove_trait = doom_very_high
+			remove_trait = doom_high
+		}
 	}
 }

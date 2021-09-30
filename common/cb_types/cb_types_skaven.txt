@@ -11,6 +11,8 @@ skaven_tributary_cb = {
 	battle_warscore_mult = 0.75	#Skaven stubborness
 
 	can_use = {
+		#no Skaven right now, so disable this
+		always = no
 		has_dlc = "Horse Lords"
 
 		ROOT = {
@@ -377,6 +379,8 @@ skaven_county_conquest = {
 	battle_warscore_mult = 0.3	#Skaven stubborness
 
 	can_use = {
+		#no Skaven right now, so disable this
+		always = no
 		ROOT = {
 			culture_group = skaven_group
 			mercenary = no
@@ -616,6 +620,8 @@ skaven_foreignconquest = {
 	check_de_jure_tier = DUKE # this scans all dejure duchies for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
 
 	can_use = {
+		#no Skaven right now, so disable this
+		always = no
 		#Skaven are barred from using most usual CBs
 		ROOT = {
 			culture_group = skaven_group
@@ -658,16 +664,16 @@ skaven_foreignconquest = {
 			NOT = { same_realm = FROM }
 		}
 	}
-	
+
 	can_use_gui = {
 		ROOT = {
 			OR = {
 				higher_tier_than = DUKE
 				prestige = 1500
-			}		
+			}
 		}
 	}
-	
+
 	on_add = {
 		ROOT = {
 			if = {
@@ -678,7 +684,7 @@ skaven_foreignconquest = {
 			}
 		}
 	}
-	
+
 	can_use_title = {
 		NAND = {
 			location = { region = world_albion }
@@ -890,6 +896,8 @@ underempire_conquest = {
 	battle_warscore_mult = 0.05	#Skaven stubborness
 
 	can_use = {
+		#no Underempire right now, so disable this
+		always = no
 		ROOT = {
 			OR = {
 				trait = creature_dwarf
