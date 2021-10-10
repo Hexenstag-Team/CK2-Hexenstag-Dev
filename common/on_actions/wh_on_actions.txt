@@ -146,6 +146,7 @@ on_bi_yearly_pulse = {
 		slunacy.39 #Umbrella event for Vampiric Lunacy
 		norscan.8
 		schaos.107
+		slaaneshbless.4
 		wh_greenskins.100 #wild greenskins effect
 	}
 
@@ -251,6 +252,7 @@ on_decade_pulse = {
 	random_events = {
 		1000 = 0
 		250 = DR_cults.60000 # Cultist cross to nearby realm
+		250 = berserker.8 #Berserker berserks in court
 		100 = lizardman.280 #Spoils of the jungle (lizardmen only)
 		100 = SJDwarfevents.1 #dwarfen drinking
 		100 = SJDwarfevents.20 #smash rival's statues
@@ -283,6 +285,11 @@ on_decade_pulse = {
 			3 = norscan.5
 			3 = norscan.6
 			85 = 0
+		}
+		rise_of_ormazdic_caliphate_check = {
+			delay = 18
+			3 = ormazdian.3
+			97 = 0
 		}
 	}
 }

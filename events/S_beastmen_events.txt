@@ -1517,11 +1517,14 @@ character_event = {
 	picture = GFX_evt_beastmen_mist
 	border = GFX_event_normal_frame_war
 
+	religion_group = chaos_gods_group
+	has_job_title = yes
+	culture_group = beastman_group
 	capable_only = yes
 	prisoner = no
-	culture_group = beastman_group
 
 	trigger = {
+		has_job_action = action_despoil_land
 		liege = {
 			#is_adult = yes
 			prisoner = no
@@ -1531,7 +1534,6 @@ character_event = {
 				had_character_flag = { flag = tribal_organize_raid_troops days = 650 }
 			}
 		}
-		has_job_action = action_despoil_land
 		location = {
 			NOT = { has_province_modifier = province_scourged }
 			county = {
@@ -1702,18 +1704,20 @@ character_event = {
 	picture = GFX_evt_beastmen_mist
 	border = GFX_event_normal_frame_war
 
+	religion_group = chaos_gods_group
+	has_job_title = yes
+	culture_group = beastman_group
 	capable_only = yes
 	prisoner = no
-	culture_group = beastman_group
 
 	trigger = {
+		has_job_action = action_despoil_land
 		liege = {
 			#is_adult = yes
 			prisoner = no
 			NOT = { trait = incapable }
 			has_character_flag = tribal_organize_raid_troops
 			}
-		has_job_action = action_despoil_land
 		location = { county = { is_occupied = no }
 			NOT = { has_province_modifier = province_scourged } }
 	}
@@ -2171,17 +2175,19 @@ character_event = {
 	picture = GFX_evt_beastmen_mist
 	border = GFX_event_normal_frame_war
 
+	religion_group = chaos_gods_group
+	has_job_title = yes
+	culture_group = beastman_group
 	capable_only = yes
 	prisoner = no
-	culture_group = beastman_group
 
 	trigger = {
+		has_job_action = action_spread_chaos
 		liege = {
 			#is_adult = yes
 			prisoner = no
 			NOT = { trait = incapable }
 		}
-		has_job_action = action_spread_chaos
 		location = {
 			NOT = { has_province_modifier = province_scourged }
 			county = {
@@ -2307,18 +2313,21 @@ character_event = {
 	picture = GFX_evt_beastmen_mist
 	border = GFX_event_normal_frame_war
 
+	religion_group = chaos_gods_group
+	has_job_title = yes
+	culture_group = beastman_group
 	capable_only = yes
 	prisoner = no
-	culture_group = beastman_group
+
 
 	trigger = {
+		has_job_action = action_despoil_land
 		liege = {
 			#is_adult = yes
 			prisoner = no
 			NOT = { trait = incapable }
 			has_character_flag = tribal_organize_raid_troops
 			}
-		has_job_action = action_despoil_land
 		location = {
 			NOT = { has_province_modifier = province_scourged }
 			county = { is_occupied = no } }
@@ -2559,18 +2568,20 @@ character_event = {
 	picture = GFX_evt_beastmen_mist
 	border = GFX_event_normal_frame_war
 
+	religion_group = chaos_gods_group
+	has_job_title = yes
+	culture_group = beastman_group
 	capable_only = yes
 	prisoner = no
-	culture_group = beastman_group
 
 	trigger = {
+		has_job_action = action_spread_chaos
 		liege = {
 			#is_adult = yes
 			prisoner = no
 			trait = creature_beastman
 			NOT = { trait = incapable }
 		}
-		has_job_action = action_spread_chaos
 
 		location = {
 			#NOT = { has_province_modifier = province_scourged }
@@ -2759,9 +2770,11 @@ character_event = {
 	picture = GFX_evt_beastmen_mist
 	border = GFX_event_normal_frame_war
 
+	religion_group = chaos_gods_group
+	has_job_title = yes
+	culture_group = beastman_group
 	capable_only = yes
 	prisoner = no
-	culture_group = beastman_group
 
 	trigger = {
 		liege = {
@@ -2909,10 +2922,12 @@ character_event = {
 	picture = GFX_evt_beastmen_mist
 	border = GFX_event_normal_frame_war
 
+	has_job_title = yes
 	capable_only = yes
 	prisoner = no
 
 	trigger = {
+		has_job_action = action_assist_arrest
 		liege = {
 			#is_adult = yes
 			prisoner = no
@@ -2920,7 +2935,6 @@ character_event = {
 			NOT = { trait = creature_beastman }
 			NOT = { trait = incapable }
 		}
-		has_job_action = action_assist_arrest
 		location = {
 			OR = { has_province_modifier = beastman_herdstone
 				culture_group = beastman_group }
