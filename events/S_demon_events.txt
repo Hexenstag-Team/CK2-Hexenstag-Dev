@@ -31,9 +31,9 @@ character_event = {
 	id = sdemons.2
 	desc = EVTDESCsdemons2
 	picture = GFX_evt_tzeentch
-	capable_only = yes
-	min_age = 666
 	religion_group = chaos_gods_group
+	min_age = 666
+	capable_only = yes
 
 	trigger = { OR = { trait = khorne_demon
 			trait = nurgle_demon
@@ -44,11 +44,6 @@ character_event = {
 	}
 
 	is_triggered_only = yes
-
-	#mean_time_to_happen = {
-	#		months = 50
-	#} #Now directly as an on_action
-
 
 	option = {
 		name = EVTOPTAsdemons2
@@ -61,63 +56,76 @@ character_event = {
 	id = sdemons.3
 	desc = EVTDESCsdemons3
 	picture = GFX_evt_tzeentch
-	capable_only = yes
-	min_age = 666
-	religion_group = chaos_gods_group
+	is_triggered_only = yes
 
-	trigger = { OR = { trait = khorne_demon
+	religion_group = chaos_gods_group
+	min_age = 666
+	capable_only = yes
+
+	trigger = {
+		OR = {
+			trait = khorne_demon
 			trait = nurgle_demon
 			trait = slaanesh_demon
 			trait = tzeentch_demon
-			trait = hashut_kdaai}
-		NOT = { num_of_friends = 1 } }
+			trait = hashut_kdaai
+		}
+		NOT = { num_of_friends = 1 }
+	}
 
-	mean_time_to_happen = {
-			years = 4
-		modifier = { factor = 0.75
-				trait = khorne_demon
-			 }
-		modifier = { factor = 0.85
-				trait = tzeentch_demon
-			 }
-		modifier = { factor = 0.95
-				trait = slaanesh_demon
-			 }
-		modifier = { factor = 1.25
-				trait = nurgle_demon
-			 }
-
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.33
+			trait = khorne_demon
+		}
+		modifier = {
+			factor = 1.15
+			trait = tzeentch_demon
+		}
+		modifier = {
+			factor = 1.05
+			trait = slaanesh_demon
+		}
+		modifier = {
+			factor = 0.8
+			trait = nurgle_demon
+		}
 	}
 	option = {
 		name = EVTOPTAsdemons3
-		random_courtier = { limit = { is_ruler = no
-					NOT = { trait = khorne_demon }
-					NOT = { trait = nurgle_demon }
-					NOT = { trait = slaanesh_demon }
-					NOT = { trait = tzeentch_demon }
-					NOT = { trait = hashut_kdaai }
-					NOT = { trait = creature_nehekharan }
-					NOT = { trait = creature_slann }
-					NOT = { trait = avatar_kurnous }
-					NOT = { trait = avatar_isha }
-					NOT = { has_artifact = carstein_ring }
-					NOT = { has_character_modifier = magic_power_1 }
-					NOT = { has_character_modifier = magic_power_2 }
-					NOT = { has_character_modifier = magic_power_3 }
-					NOT = { has_character_modifier = magic_power_4 } }
-		if = {
- limit = {
- is_invincible_trigger = yes
- }
-
-			antideath_effect = yes
-			break = yes
-}
-					death = { death_reason = death_murder
-						killer = ROOT } }
-				if = { limit = { liege = { NOT = { religion_group = chaos_gods_group } } }
-					liege = { opinion = { modifier = opinion_demon_havoc
-								who = ROOT } } }
+		random_courtier = {
+			limit = { is_ruler = no
+			NOT = { trait = khorne_demon }
+			NOT = { trait = nurgle_demon }
+			NOT = { trait = slaanesh_demon }
+			NOT = { trait = tzeentch_demon }
+			NOT = { trait = hashut_kdaai }
+			NOT = { trait = creature_nehekharan }
+			NOT = { trait = creature_slann }
+			NOT = { trait = avatar_kurnous }
+			NOT = { trait = avatar_isha }
+			NOT = { has_artifact = carstein_ring }
+			NOT = { has_character_modifier = magic_power_1 }
+			NOT = { has_character_modifier = magic_power_2 }
+			NOT = { has_character_modifier = magic_power_3 }
+			NOT = { has_character_modifier = magic_power_4 } }
+			if = {
+				 limit = {
+				 	is_invincible_trigger = yes
+				 }
+				antideath_effect = yes
+				break = yes
+			}
+			death = {
+				death_reason = death_murder
+				killer = ROOT
+			}
+		}
+		if = { limit = { liege = { NOT = { religion_group = chaos_gods_group } } }
+						liege = { opinion = { modifier = opinion_demon_havoc
+									who = ROOT } }
+		}
 	}
 }
 
@@ -213,9 +221,9 @@ character_event = {
 		prestige = 150
 		 FROM = {
 		if = {
- limit = {
- is_invincible_trigger = yes
- }
+		 limit = {
+		 is_invincible_trigger = yes
+		 }
 
 			antideath_effect = yes
 			break = yes
@@ -243,53 +251,62 @@ character_event = {
 	id = sdemons.5
 	desc = EVTDESCsdemons5
 	picture = GFX_evt_tzeentch
-	capable_only = yes
-	min_age = 666
-	religion_group = chaos_gods_group
+	is_triggered_only = yes
 
-	trigger = { OR = { trait = khorne_bloodletter
+	religion_group = chaos_gods_group
+	min_age = 666
+	capable_only = yes
+
+	trigger = {
+		OR = { trait = khorne_bloodletter
 			trait = slaanesh_daemonette
 			trait = tzeentch_flamer
 			trait = hashut_kdaai}
-			any_courtier = { 	NOT = { trait = khorne_demon }
-						NOT = { trait = nurgle_demon }
-						NOT = { trait = slaanesh_demon }
-						NOT = { trait = tzeentch_demon }
-						NOT = { any_friend = { character = ROOT } }
-						NOT = { trait = creature_nehekharan }
-						NOT = { trait = creature_slann }
-						NOT = { trait = avatar_kurnous }
-						NOT = { trait = avatar_isha }
-						NOT = { has_artifact = carstein_ring }
-						NOT = { has_character_modifier = magic_power_1 }
-						NOT = { has_character_modifier = magic_power_2 }
-						NOT = { has_character_modifier = magic_power_3 }
-						NOT = { has_character_modifier = magic_power_4 }
-				any_courtier = { NOT = { character = PREV }
-						NOT = { trait = khorne_demon }
-						NOT = { trait = nurgle_demon }
-						NOT = { trait = slaanesh_demon }
-						NOT = { trait = tzeentch_demon }
-						NOT = { any_friend = { character = ROOT } }
-						NOT = { trait = creature_nehekharan }
-						NOT = { trait = creature_slann }
-						NOT = { trait = avatar_kurnous }
-						NOT = { trait = avatar_isha }
-						NOT = { has_artifact = carstein_ring }
-						NOT = { has_character_modifier = magic_power_1 }
-						NOT = { has_character_modifier = magic_power_2 }
-						NOT = { has_character_modifier = magic_power_3 }
-						NOT = { has_character_modifier = magic_power_4 } } }
+			any_courtier = {
+				NOT = { trait = khorne_demon }
+				NOT = { trait = nurgle_demon }
+				NOT = { trait = slaanesh_demon }
+				NOT = { trait = tzeentch_demon }
+				NOT = { any_friend = { character = ROOT } }
+				NOT = { trait = creature_nehekharan }
+				NOT = { trait = creature_slann }
+				NOT = { trait = avatar_kurnous }
+				NOT = { trait = avatar_isha }
+				NOT = { has_artifact = carstein_ring }
+				NOT = { has_character_modifier = magic_power_1 }
+				NOT = { has_character_modifier = magic_power_2 }
+				NOT = { has_character_modifier = magic_power_3 }
+				NOT = { has_character_modifier = magic_power_4 }
+				any_courtier = {
+					NOT = { character = PREV }
+					NOT = { trait = khorne_demon }
+					NOT = { trait = nurgle_demon }
+					NOT = { trait = slaanesh_demon }
+					NOT = { trait = tzeentch_demon }
+					NOT = { any_friend = { character = ROOT } }
+					NOT = { trait = creature_nehekharan }
+					NOT = { trait = creature_slann }
+					NOT = { trait = avatar_kurnous }
+					NOT = { trait = avatar_isha }
+					NOT = { has_artifact = carstein_ring }
+					NOT = { has_character_modifier = magic_power_1 }
+					NOT = { has_character_modifier = magic_power_2 }
+					NOT = { has_character_modifier = magic_power_3 }
+					NOT = { has_character_modifier = magic_power_4 }
+				}
 			}
+		}
 
-	mean_time_to_happen = {
-			years = 4
-		modifier = { factor = 0.85
-				trait = khorne_demon
-			 }
-		modifier = { factor = 0.65
-				trait = tzeentch_demon
-			 }
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.15
+			trait = khorne_demon
+		}
+		modifier = {
+			factor = 1.5
+			trait = tzeentch_demon
+		}
 	}
 	option = {
 		name = EVTOPTAsdemons5
@@ -352,9 +369,11 @@ character_event = {
 	id = sdemons.6
 	desc = EVTDESCsdemons6
 	picture = GFX_evt_tzeentch
-	capable_only = yes
+	is_triggered_only = yes
+
+	religion = nurgle
 	min_age = 777
-	religion_group = chaos_gods_group
+	capable_only = yes
 
 	trigger = { trait = nurgle_plaguebearer
 			any_courtier = { 	NOT = { trait = khorne_demon }
@@ -390,9 +409,6 @@ character_event = {
 						NOT = { has_character_modifier = magic_power_4 } } }
 			}
 
-	mean_time_to_happen = {
-			years = 41
-	}
 	option = {
 		name = EVTOPTAsdemons6
 		random_courtier = { limit = { is_ill = no
@@ -528,9 +544,11 @@ character_event = {
 	id = sdemons.7
 	desc = EVTDESCsdemons7
 	picture = GFX_evt_tzeentch
-	capable_only = yes
+	is_triggered_only = yes
+
+	religion = slaanesh
 	min_age = 666
-	religion_group = chaos_gods_group
+	capable_only = yes
 
 	trigger = { trait = slaanesh_daemonette
 			any_courtier = { 	NOT = { trait = khorne_demon }
@@ -557,9 +575,6 @@ character_event = {
 				}
 			}
 
-	mean_time_to_happen = {
-			years = 41
-	}
 	option = {
 		name = EVTOPTAsdemons7
 			random_courtier = { limit = { NOT = { trait = khorne_demon }
@@ -610,29 +625,35 @@ character_event = {
 	id = sdemons.8
 	desc = EVTDESCsdemons8
 	picture = GFX_evt_tzeentch
-	capable_only = yes
-	min_age = 666
-	religion_group = chaos_gods_group
+	is_triggered_only = yes
 
-	trigger = { OR = { trait = khorne_demon
+	only_rulers = yes
+	min_age = 666
+	capable_only = yes
+
+	trigger = {
+		religion_group = chaos_gods_group
+		OR = {
+			trait = khorne_demon
 			trait = nurgle_demon
 			trait = slaanesh_demon
 			trait = tzeentch_demon
-			trait = hashut_kdaai			}
-		is_ruler = yes }
+			trait = hashut_kdaai
+		}
+	}
 
-	mean_time_to_happen = {
-			years = 4
-		modifier = { factor = 0.75
+	weight_multiplier = {
+		days = 1
+		modifier = { factor = 1.33
 				trait = khorne_demon
 			 }
-		modifier = { factor = 0.85
+		modifier = { factor = 1.15
 				trait = tzeentch_demon
 			 }
-		modifier = { factor = 0.95
+		modifier = { factor = 1.05
 				trait = slaanesh_demon
 			 }
-		modifier = { factor = 0.95
+		modifier = { factor = 1.05
 				trait = nurgle_demon
 			 }
 	}
