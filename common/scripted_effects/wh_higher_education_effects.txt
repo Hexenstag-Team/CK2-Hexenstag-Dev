@@ -1,0 +1,1388 @@
+education_interest_imperial_pantheon_effect = {
+    random_list = {
+        #not interested
+        40 = {
+            modifier = {
+                factor = 0.5
+                trait = ambitious
+            }
+            modifier = {
+                factor = 2
+                trait = content
+            }
+            modifier = {
+                factor = 0.5
+                is_smart_trigger = yes
+            }
+            modifier = {
+                factor = 2
+                is_dumb_trigger = yes
+            }
+            modifier = {
+                factor = 2
+                trait = drunkard
+            }
+            modifier = {
+                factor = 3
+                trait = slothful
+            }
+            #no effect
+        }
+        #academic interest
+        20 = {
+            modifier = {
+                factor = 0.75
+                has_global_flag = imperial_engineering_school
+            }
+            modifier = {
+                factor = 1.5
+                learning = 10
+            }
+            modifier = {
+                factor = 2
+                trait = erudite
+            }
+            set_character_flag = seeks_further_education_academic
+        }
+        #engineering interest - only availble if imperial engineering school has been founded
+        5 = {
+            trigger = {
+                has_global_flag = imperial_engineering_school
+            }
+            modifier = {
+                factor = 1.5
+                stewardship = 8
+                learning = 8
+            }
+            set_character_flag = seeks_further_education_engineering
+        }
+        #military interest
+        20 = {
+            modifier = {
+                factor = 1.5
+                martial = 10
+            }
+            modifier = {
+                factor = 2
+                trait = brave
+            }
+            modifier = {
+                factor = 0.25
+                trait = craven
+            }
+            modifier = {
+                factor = 0.5
+                is_female = yes
+            }
+            modifier = {
+                factor = 0
+                is_maimed_trigger = yes
+            }
+            set_character_flag = seeks_further_education_military
+        }
+        #religious interest
+        20 = {
+            modifier = {
+                factor = 5
+                trait = zealous
+            }
+            modifier = {
+                factor = 0.1
+                trait = cynical
+            }
+            modifier = {
+                factor = 2
+                trait = chaste
+            }
+            modifier = {
+                factor = 0.25
+                trait = lustful
+            }
+            modifier = {
+                factor = 2
+                is_unattractive_trigger = yes
+            }
+            set_character_flag = seeks_further_education_religious
+        }
+    }
+}
+
+education_interest_classical_pantheon_effect = {
+    random_list = {
+        #not interested
+        40 = {
+            modifier = {
+                factor = 0.5
+                trait = ambitious
+            }
+            modifier = {
+                factor = 2
+                trait = content
+            }
+            modifier = {
+                factor = 0.5
+                is_smart_trigger = yes
+            }
+            modifier = {
+                factor = 2
+                is_dumb_trigger = yes
+            }
+            modifier = {
+                factor = 2
+                trait = drunkard
+            }
+            modifier = {
+                factor = 3
+                trait = slothful
+            }
+            #no effect
+        }
+        #academic interest
+        15 = {
+            modifier = {
+                factor = 1.5
+                learning = 10
+            }
+            modifier = {
+                factor = 2
+                trait = erudite
+            }
+            set_character_flag = seeks_further_education_academic
+        }
+        #engineering interest
+        10 = {
+            modifier = {
+                factor = 1.5
+                stewardship = 8
+                learning = 8
+            }
+            set_character_flag = seeks_further_education_engineering
+        }
+        #military interest
+        15 = {
+            modifier = {
+                factor = 1.5
+                martial = 10
+            }
+            modifier = {
+                factor = 2
+                trait = brave
+            }
+            modifier = {
+                factor = 0.25
+                trait = craven
+            }
+            modifier = {
+                factor = 0.5
+                is_female = yes
+            }
+            modifier = {
+                factor = 0
+                is_maimed_trigger = yes
+            }
+            set_character_flag = seeks_further_education_military
+        }
+        #religious interest
+        20 = {
+            modifier = {
+                factor = 5
+                trait = zealous
+            }
+            modifier = {
+                factor = 0.1
+                trait = cynical
+            }
+            modifier = {
+                factor = 2
+                trait = chaste
+            }
+            modifier = {
+                factor = 0.25
+                trait = lustful
+            }
+            modifier = {
+                factor = 2
+                is_unattractive_trigger = yes
+            }
+            set_character_flag = seeks_further_education_religious
+        }
+    }
+}
+
+find_close_university_effect = {
+    if = {
+        limit = {
+            capital_scope = {
+                wonder = {
+                    has_wonder_upgrade = upgrade_university
+                }
+            }
+        }
+        capital_scope = {
+            save_event_target_as = close_university_candidate
+        }
+    }
+    else_if = {
+        limit = {
+            any_demesne_wonder_upgrade = upgrade_university
+        }
+        random_demesne_wonder_upgrade = {
+            limit = {
+                has_wonder_upgrade = upgrade_university
+            }
+            location = {
+                save_event_target_as = close_university_candidate
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            any_realm_wonder_upgrade = upgrade_university
+        }
+        random_realm_wonder_upgrade = {
+            limit = {
+                has_wonder_upgrade = upgrade_university
+            }
+            location = {
+                save_event_target_as = close_university_candidate
+            }
+        }
+    }
+    else = {
+        random_wonder_upgrade = {
+            limit = {
+                has_wonder_upgrade = upgrade_university
+            }
+            location = {
+                save_event_target_as = close_university_candidate
+            }
+        }
+    }
+}
+
+find_further_university_effect = {
+    if = {
+        limit = {
+            any_demesne_wonder_upgrade = upgrade_university
+            NOT = { province = event_target:close_university_candidate }
+        }
+        random_demesne_wonder_upgrade = {
+            limit = {
+                has_wonder_upgrade = upgrade_university
+                NOT = { province = event_target:close_university_candidate }
+            }
+            location = {
+                save_event_target_as = further_university_candidate
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            any_realm_wonder_upgrade = upgrade_university
+            NOT = { province = event_target:close_university_candidate }
+        }
+        random_realm_wonder_upgrade = {
+            limit = {
+                has_wonder_upgrade = upgrade_university
+                NOT = { province = event_target:close_university_candidate }
+            }
+            location = {
+                save_event_target_as = further_university_candidate
+            }
+        }
+    }
+    else = {
+        random_wonder_upgrade = {
+            limit = {
+                has_wonder_upgrade = upgrade_university
+                NOT = { province = event_target:close_university_candidate }
+            }
+            location = {
+                save_event_target_as = further_university_candidate
+            }
+        }
+    }
+}
+
+find_exotic_university_effect = {
+    random_wonder_upgrade = {
+        limit = {
+            has_wonder_upgrade = upgrade_university
+            NOR = {
+                province = event_target:close_university_candidate
+                province = event_target:further_university_candidate
+            }
+        }
+        location = {
+            save_event_target_as = exotic_university_candidate
+        }
+    }
+}
+
+degraded_by_further_education_effect = {
+    random_list = {
+        #no problems
+        90 = {
+            #all good
+        }
+        #mental strain
+        5 = {
+            modifier = {
+                factor = 0.5
+                trait = content
+            }
+            modifier = {
+                factor = 2
+                is_weak_trigger = yes
+            }
+            modifier = {
+                factor = 2
+                trait = stressed
+            }
+            modifier = {
+                factor = 5
+                trait = depressed
+            }
+            trigger_switch = {
+                on_trigger = trait
+                stressed = {
+                    add_trait = depressed
+                }
+                depressed = {
+                    random = {
+                        chance = 10
+                        death = {
+                            death_reason = death_suicide
+                        }
+                    }
+                }
+                fallback = {
+                    add_trait = stressed
+                }
+            }
+        }
+        #physical strain
+        5 = {
+            modifier = {
+                factor = 2
+                trait = diligent
+            }
+            modifier = {
+                factor = 2
+                trait = ambitious
+            }
+            health = -0.25
+        }
+    }
+}
+
+#improvement effects
+#each random change amounts to approx. 65% chance of gaining 1 point over three years, so we'd expect something like 2-3 stat points for students at elite institutions
+improved_by_further_education_academic_effect = {
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_school_of_arithmetic
+            }
+        }
+        random = {
+            chance = 30
+            change_stewardship = 1
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_school_of_medicine
+            }
+        }
+        random = {
+            chance = 30
+            change_learning = 1
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_school_of_grammar
+            }
+        }
+        random = {
+            chance = 30
+            change_diplomacy = 1
+        }
+    }
+    random = {
+        chance = 30
+        change_learning = 1
+    }
+}
+
+improved_by_further_education_engineering_effect = {
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_school_of_arithmetic
+            }
+        }
+        random = {
+            chance = 30
+            change_stewardship = 1
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_school_of_geometry
+            }
+        }
+        random = {
+            chance = 30
+            change_learning = 1
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_school_of_navigation
+            }
+        }
+        random = {
+            chance = 30
+            change_stewardship = 1
+        }
+    }
+    random = {
+        chance = 30
+        change_learning = 1
+    }
+}
+
+improved_by_further_education_military_effect = {
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_school_of_history
+            }
+        }
+        random = {
+            chance = 30
+            change_martial = 1
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_school_of_rhetoric
+            }
+        }
+        random = {
+            chance = 30
+            change_diplomacy = 1
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_school_of_rhetoric
+            }
+        }
+        random = {
+            chance = 30
+            change_diplomacy = 1
+        }
+    }
+    random = {
+        chance = 30
+        change_martial = 1
+    }
+}
+
+improved_by_further_education_religious_effect = {
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_school_of_law
+            }
+        }
+        random = {
+            chance = 30
+            change_learning = 1
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_school_of_logic
+            }
+        }
+        random = {
+            chance = 30
+            change_learning = 1
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_school_of_music
+            }
+        }
+        random = {
+            chance = 30
+            change_diplomacy = 1
+        }
+    }
+    random = {
+        chance = 30
+        change_learning = 1
+    }
+}
+
+#graduation effects
+#note that better institutions (with more school upgrades) implicitly have a lower chance of failure
+graduation_from_education_academic_effect = {
+    random_list = {
+        #fail
+        20 = {
+            modifier = {
+                factor = 2
+                trait = slothful
+            }
+            modifier = {
+                factor = 0.5
+                trait = diligent
+            }
+            modifier = {
+                factor = 0.25
+                trait = ambitious
+            }
+            modifier = {
+                factor = 3
+                is_dumb_trigger = yes
+            }
+            modifier = {
+                factor = 0.5
+                is_smart_trigger = yes
+            }
+            modifier = {
+                factor = 2
+                trait = drunkard
+            }
+            modifier = {
+                factor = 2
+                trait = stressed
+            }
+            modifier = {
+                factor = 3
+                trait = depressed
+            }
+            #compensates for not being eligible for beneficial outcomes
+            modifier = {
+                factor = 0.5
+                has_any_lifestyle_trait = 0.5
+            }
+            add_character_flag = failed_academic
+        }
+        #trained as a physician
+        10 = {
+            trigger = {
+                NOT = { trait = physician }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_medicine
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = kind
+            }
+            modifier = {
+                factor = 0.1
+                trait = cruel
+            }
+            add_trait = physician
+        }
+        #trained as an architect
+        10 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_geometry
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = shy
+            }
+            modifier = {
+                factor = 2
+                stewardship = 10
+            }
+            add_trait = architect
+        }
+        #trained as a poet
+        10 = {
+            trigger = {
+                NOT = { trait = poet }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_grammar
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = gregarious
+            }
+            modifier = {
+                factor = 0.25
+                trait = shy
+            }
+            modifier = {
+                factor = 1.5
+                trait = lustful
+            }
+        }
+        #trained as an historian
+        10 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_history
+                }
+            }
+            modifier = {
+                factor = 3
+                trait = erudite
+            }
+            modifier = {
+                factor = 2
+                trait = patient
+            }
+            modifier = {
+                factor = 2
+                learning = 10
+            }
+            add_trait = scholar
+        }
+        #trained as a logician
+        10 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_logic
+                }
+            }
+            modifier = {
+                factor = 3
+                trait = erudite
+            }
+            modifier = {
+                factor = 2
+                learning = 10
+            }
+            add_trait = theologian
+        }
+        #trained as a navigator
+        10 = {
+            trigger = {
+                NOT = { trait = naval_expert }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_navigation
+                }
+            }
+            modifier = {
+                factor = 2
+                health = 6
+            }
+            modifier = {
+                factor = 0.5
+                learning = 10
+            }
+        }
+        #trained as a musician
+        10 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_music
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = gregarious
+            }
+            modifier = {
+                factor = 2
+                trait = proud
+            }
+            add_trait = socializer
+        }
+        #trained as a rhetoritician
+        10 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_rhetoric
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = just
+            }
+            modifier = {
+                factor = 2
+                trait = arbitrary
+            }
+            modifier = {
+                factor = 2
+                learning = 10
+            }
+            add_trait = socializer
+        }
+        #achieved a good all-round education
+        60 = {
+            change_learning = 1
+        }
+    }
+}
+
+graduation_from_further_education_engineering_effect = {
+    random_list = {
+        #fail
+        20 = {
+            modifier = {
+                factor = 2
+                trait = slothful
+            }
+            modifier = {
+                factor = 0.5
+                trait = diligent
+            }
+            modifier = {
+                factor = 0.25
+                trait = ambitious
+            }
+            modifier = {
+                factor = 3
+                is_dumb_trigger = yes
+            }
+            modifier = {
+                factor = 0.5
+                is_smart_trigger = yes
+            }
+            modifier = {
+                factor = 2
+                trait = drunkard
+            }
+            modifier = {
+                factor = 2
+                trait = stressed
+            }
+            modifier = {
+                factor = 3
+                trait = depressed
+            }
+            #compensates for not being eligible for beneficial outcomes
+            modifier = {
+                factor = 0.5
+                has_any_lifestyle_trait = 0.5
+            }
+            add_character_flag = failed_academic
+        }
+        #trained as a physician
+        5 = {
+            trigger = {
+                NOT = { trait = physician }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_medicine
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = kind
+            }
+            modifier = {
+                factor = 0.1
+                trait = cruel
+            }
+            add_trait = physician
+        }
+        #trained as an engineer
+        30 = {
+            trigger = {
+                NOT = { trait = engineer }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_engineering_school
+                }
+            }
+            modifier = {
+                factor = 1.5
+                trait = diligent
+            }
+            modifier = {
+                factor = 1.5
+                trait = ambitious
+            }
+            modifier = {
+                factor = 2
+                is_smart_trigger = yes
+            }
+            add_trait = engineer
+        }
+        #trained as an architect
+        20 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_geometry
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = shy
+            }
+            modifier = {
+                factor = 2
+                stewardship = 10
+            }
+            add_trait = architect
+        }
+        #trained as a poet
+        5 = {
+            trigger = {
+                NOT = { trait = poet }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_grammar
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = gregarious
+            }
+            modifier = {
+                factor = 0.25
+                trait = shy
+            }
+            modifier = {
+                factor = 1.5
+                trait = lustful
+            }
+        }
+        #trained as an historian
+        5 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_history
+                }
+            }
+            modifier = {
+                factor = 3
+                trait = erudite
+            }
+            modifier = {
+                factor = 2
+                trait = patient
+            }
+            modifier = {
+                factor = 2
+                learning = 10
+            }
+            add_trait = scholar
+        }
+        #trained as a logician
+        10 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_logic
+                }
+            }
+            modifier = {
+                factor = 3
+                trait = erudite
+            }
+            modifier = {
+                factor = 2
+                learning = 10
+            }
+            add_trait = theologian
+        }
+        #trained as a navigator
+        5 = {
+            trigger = {
+                NOT = { trait = naval_expert }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_navigation
+                }
+            }
+            modifier = {
+                factor = 2
+                health = 6
+            }
+            modifier = {
+                factor = 0.5
+                learning = 10
+            }
+        }
+        #trained as a musician
+        5 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_music
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = gregarious
+            }
+            modifier = {
+                factor = 2
+                trait = proud
+            }
+            add_trait = socializer
+        }
+        #trained as a rhetoritician
+        5 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_rhetoric
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = just
+            }
+            modifier = {
+                factor = 2
+                trait = arbitrary
+            }
+            modifier = {
+                factor = 2
+                learning = 10
+            }
+            add_trait = socializer
+        }
+        #achieved a good all-round education
+        50 = {
+            change_learning = 1
+        }
+    }
+}
+
+graduation_from_further_education_military_effect = {
+    random_list = {
+        #fail
+        20 = {
+            modifier = {
+                factor = 2
+                trait = slothful
+            }
+            modifier = {
+                factor = 0.5
+                trait = diligent
+            }
+            modifier = {
+                factor = 0.25
+                trait = ambitious
+            }
+            modifier = {
+                factor = 3
+                is_dumb_trigger = yes
+            }
+            modifier = {
+                factor = 0.5
+                is_smart_trigger = yes
+            }
+            modifier = {
+                factor = 2
+                trait = drunkard
+            }
+            modifier = {
+                factor = 2
+                trait = stressed
+            }
+            modifier = {
+                factor = 3
+                trait = depressed
+            }
+            #compensates for not being eligible for beneficial outcomes
+            modifier = {
+                factor = 0.5
+                has_any_lifestyle_trait = 0.5
+            }
+            add_character_flag = failed_academic
+        }
+        #trained as a physician
+        10 = {
+            trigger = {
+                NOT = { trait = physician }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_medicine
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = kind
+            }
+            modifier = {
+                factor = 0.1
+                trait = cruel
+            }
+            add_trait = physician
+        }
+        #trained as an architect
+        10 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_geometry
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = shy
+            }
+            modifier = {
+                factor = 2
+                stewardship = 10
+            }
+            add_trait = architect
+        }
+        #trained as a poet
+        5 = {
+            trigger = {
+                NOT = { trait = poet }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_grammar
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = gregarious
+            }
+            modifier = {
+                factor = 0.25
+                trait = shy
+            }
+            modifier = {
+                factor = 1.5
+                trait = lustful
+            }
+        }
+        #trained as an historian
+        10 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_history
+                }
+            }
+            modifier = {
+                factor = 3
+                trait = erudite
+            }
+            modifier = {
+                factor = 2
+                trait = patient
+            }
+            modifier = {
+                factor = 2
+                learning = 10
+            }
+            add_trait = scholar
+        }
+        #trained as a logician
+        5 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_logic
+                }
+            }
+            modifier = {
+                factor = 3
+                trait = erudite
+            }
+            modifier = {
+                factor = 2
+                learning = 10
+            }
+            add_trait = theologian
+        }
+        #trained as a navigator
+        15 = {
+            trigger = {
+                NOT = { trait = naval_expert }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_navigation
+                }
+            }
+            modifier = {
+                factor = 2
+                health = 6
+            }
+            modifier = {
+                factor = 0.5
+                learning = 10
+            }
+        }
+        #trained as a musician
+        5 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_music
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = gregarious
+            }
+            modifier = {
+                factor = 2
+                trait = proud
+            }
+            add_trait = socializer
+        }
+        #trained as a rhetoritician
+        5 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_rhetoric
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = just
+            }
+            modifier = {
+                factor = 2
+                trait = arbitrary
+            }
+            modifier = {
+                factor = 2
+                learning = 10
+            }
+            add_trait = socializer
+        }
+        #achieved a military education
+        30 = {
+            trigger = { has_any_lifestyle_trait = yes }
+            modifier = {
+                factor = 1.5
+                trait = brave
+            }
+            add_trait = strategist
+        }
+        #achieved a good all-round education
+        20 = {
+            change_learning = 1
+        }
+    }
+}
+
+graduation_from_further_education_religious_effect = {
+    random_list = {
+        #fail
+        20 = {
+            modifier = {
+                factor = 2
+                trait = slothful
+            }
+            modifier = {
+                factor = 0.5
+                trait = diligent
+            }
+            modifier = {
+                factor = 0.25
+                trait = ambitious
+            }
+            modifier = {
+                factor = 3
+                is_dumb_trigger = yes
+            }
+            modifier = {
+                factor = 0.5
+                is_smart_trigger = yes
+            }
+            modifier = {
+                factor = 2
+                trait = drunkard
+            }
+            modifier = {
+                factor = 2
+                trait = stressed
+            }
+            modifier = {
+                factor = 3
+                trait = depressed
+            }
+            #compensates for not being eligible for beneficial outcomes
+            modifier = {
+                factor = 0.5
+                has_any_lifestyle_trait = 0.5
+            }
+            add_character_flag = failed_academic
+        }
+        #trained as a physician
+        15 = {
+            trigger = {
+                NOT = { trait = physician }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_medicine
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = kind
+            }
+            modifier = {
+                factor = 0.1
+                trait = cruel
+            }
+            add_trait = physician
+        }
+        #trained as an architect
+        5 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_geometry
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = shy
+            }
+            modifier = {
+                factor = 2
+                stewardship = 10
+            }
+            add_trait = architect
+        }
+        #trained as a poet
+        5 = {
+            trigger = {
+                NOT = { trait = poet }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_grammar
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = gregarious
+            }
+            modifier = {
+                factor = 0.25
+                trait = shy
+            }
+            modifier = {
+                factor = 1.5
+                trait = lustful
+            }
+        }
+        #trained as an historian
+        10 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_history
+                }
+            }
+            modifier = {
+                factor = 3
+                trait = erudite
+            }
+            modifier = {
+                factor = 2
+                trait = patient
+            }
+            modifier = {
+                factor = 2
+                learning = 10
+            }
+            add_trait = scholar
+        }
+        #trained as a logician
+        25 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_logic
+                }
+            }
+            modifier = {
+                factor = 3
+                trait = erudite
+            }
+            modifier = {
+                factor = 2
+                learning = 10
+            }
+            add_trait = theologian
+        }
+        #trained as a navigator
+        5 = {
+            trigger = {
+                NOT = { trait = naval_expert }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_navigation
+                }
+            }
+            modifier = {
+                factor = 2
+                health = 6
+            }
+            modifier = {
+                factor = 0.5
+                learning = 10
+            }
+        }
+        #trained as a musician
+        5 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_music
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = gregarious
+            }
+            modifier = {
+                factor = 2
+                trait = proud
+            }
+            add_trait = socializer
+        }
+        #trained as a rhetoritician
+        5 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_rhetoric
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = just
+            }
+            modifier = {
+                factor = 2
+                trait = arbitrary
+            }
+            modifier = {
+                factor = 2
+                learning = 10
+            }
+            add_trait = socializer
+        }
+        #achieved a good all-round education
+        60 = {
+            change_learning = 1
+        }
+    }
+}

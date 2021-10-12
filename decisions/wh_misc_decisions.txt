@@ -657,9 +657,9 @@ targetted_decisions = {
 
 	send_son_to_university = {
 		filter = close_relatives
-		ai_target_filter = close_relatives
-		ai_check_interval = 12
-		only_playable = yes #barons aren't that important
+		ai_target_filter = none
+		ai_check_interval = 1200
+		ai = no #ai uses its own method to access this feature
 		from_potential = {
 			trait = creature_human
 			OR = {
@@ -668,8 +668,8 @@ targetted_decisions = {
 			}
 			#this next condition is probably wrong - Brettonian merchants might send their sons to a university
 			NOR = {
-				religion = grail
-				religion = false_grail
+				trait = noble
+				trait = clergy
 			}
 			OR = {
 				location = { region = world_old_world }
@@ -710,8 +710,8 @@ targetted_decisions = {
 						religion = kitabid } } }
 			NOT = { trait = witch_hunter }
 			NOR = {
-				religion = grail
-				religion = false_grail
+				trait = noble
+				trait = clergy
 			}
 			trait = creature_human
 			OR = {
