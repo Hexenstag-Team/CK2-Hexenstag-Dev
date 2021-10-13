@@ -343,21 +343,62 @@ degraded_by_further_education_effect = {
                 factor = 5
                 trait = depressed
             }
-            trigger_switch = {
-                on_trigger = trait
-                stressed = {
-                    add_trait = depressed
+            if = {
+                limit = {
+                    ai = no
                 }
-                depressed = {
-                    random = {
-                        chance = 10
-                        death = {
-                            death_reason = death_suicide
+                trigger_switch = {
+                    on_trigger = trait
+                    stressed = {
+                        random_list = {
+                            #fall into depression
+                            40 = {
+                                character_event = {
+                                    id = wh_higher_education.172
+                                    days = 2
+                                }
+                            }
+                            #find solace in drink
+                            40 = {
+                                character_event = {
+                                    id = wh_higher_education.173
+                                    days = 2
+                                }
+                            }
+                            #find solace in substance abuse
+                            20 = {
+                                character_event = {
+                                    id = wh_higher_education.174
+                                    days = 2
+                                }
+                            }
+                        }
+                    }
+                    fallback = {
+                        character_event = {
+                            id = wh_higher_education.171
+                            days = 2
                         }
                     }
                 }
-                fallback = {
-                    add_trait = stressed
+            }
+            else = {
+                trigger_switch = {
+                    on_trigger = trait
+                    stressed = {
+                        add_trait = depressed
+                    }
+                    depressed = {
+                        random = {
+                            chance = 10
+                            death = {
+                                death_reason = death_suicide
+                            }
+                        }
+                    }
+                    fallback = {
+                        add_trait = stressed
+                    }
                 }
             }
         }
@@ -371,7 +412,18 @@ degraded_by_further_education_effect = {
                 factor = 2
                 trait = ambitious
             }
-            health = -0.25
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.170
+                    days = 2
+                }
+            }
+            else = {
+                health = -0.25
+            }
         }
     }
 }
@@ -387,7 +439,18 @@ improved_by_further_education_academic_effect = {
         }
         random = {
             chance = 30
-            change_stewardship = 1
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.182
+                    days = 3
+                }
+            }
+            else = {
+                change_stewardship = 1
+            }
         }
     }
     if = {
@@ -398,7 +461,18 @@ improved_by_further_education_academic_effect = {
         }
         random = {
             chance = 30
-            change_learning = 1
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.188
+                    days = 3
+                }
+            }
+            else = {
+                change_learning = 1
+            }
         }
     }
     if = {
@@ -409,12 +483,35 @@ improved_by_further_education_academic_effect = {
         }
         random = {
             chance = 30
-            change_diplomacy = 1
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.184
+                    days = 3
+                }
+            }
+            else = {
+                change_diplomacy = 1
+            }
         }
     }
+    #basic university bonus
     random = {
         chance = 30
-        change_learning = 1
+        if = {
+            limit = {
+                ai = no
+            }
+            character_event = {
+                id = wh_higher_education.180
+                days = 3
+            }
+        }
+        else = {
+            change_learning = 1
+        }
     }
 }
 
@@ -427,7 +524,18 @@ improved_by_further_education_engineering_effect = {
         }
         random = {
             chance = 30
-            change_stewardship = 1
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.182
+                    days = 3
+                }
+            }
+            else = {
+                change_stewardship = 1
+            }
         }
     }
     if = {
@@ -438,7 +546,18 @@ improved_by_further_education_engineering_effect = {
         }
         random = {
             chance = 30
-            change_learning = 1
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.183
+                    days = 3
+                }
+            }
+            else = {
+                change_learning = 1
+            }
         }
     }
     if = {
@@ -449,12 +568,35 @@ improved_by_further_education_engineering_effect = {
         }
         random = {
             chance = 30
-            change_stewardship = 1
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.190
+                    days = 3
+                }
+            }
+            else = {
+                change_stewardship = 1
+            }
         }
     }
+    #basic university bonus
     random = {
         chance = 30
-        change_learning = 1
+        if = {
+            limit = {
+                ai = no
+            }
+            character_event = {
+                id = wh_higher_education.180
+                days = 3
+            }
+        }
+        else = {
+            change_learning = 1
+        }
     }
 }
 
@@ -467,7 +609,18 @@ improved_by_further_education_military_effect = {
         }
         random = {
             chance = 30
-            change_martial = 1
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.185
+                    days = 3
+                }
+            }
+            else = {
+                change_martial = 1
+            }
         }
     }
     if = {
@@ -478,23 +631,35 @@ improved_by_further_education_military_effect = {
         }
         random = {
             chance = 30
-            change_diplomacy = 1
-        }
-    }
-    if = {
-        limit = {
-            persistent_event_target:alma_mater = {
-                has_wonder_upgrade = upgrade_school_of_rhetoric
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.191
+                    days = 3
+                }
+            }
+            else = {
+                change_diplomacy = 1
             }
         }
-        random = {
-            chance = 30
-            change_diplomacy = 1
-        }
     }
+    #basic university bonus - martial education
     random = {
         chance = 30
-        change_martial = 1
+        if = {
+            limit = {
+                ai = no
+            }
+            character_event = {
+                id = wh_higher_education.181
+                days = 3
+            }
+        }
+        else = {
+            change_martial = 1
+        }
     }
 }
 
@@ -507,7 +672,18 @@ improved_by_further_education_religious_effect = {
         }
         random = {
             chance = 30
-            change_learning = 1
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.186
+                    days = 3
+                }
+            }
+            else = {
+                change_learning = 1
+            }
         }
     }
     if = {
@@ -518,7 +694,18 @@ improved_by_further_education_religious_effect = {
         }
         random = {
             chance = 30
-            change_learning = 1
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.187
+                    days = 3
+                }
+            }
+            else = {
+                change_learning = 1
+            }
         }
     }
     if = {
@@ -529,12 +716,35 @@ improved_by_further_education_religious_effect = {
         }
         random = {
             chance = 30
-            change_diplomacy = 1
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.189
+                    days = 3
+                }
+            }
+            else = {
+                change_diplomacy = 1
+            }
         }
     }
+    #basic university bonus
     random = {
         chance = 30
-        change_learning = 1
+        if = {
+            limit = {
+                ai = no
+            }
+            character_event = {
+                id = wh_higher_education.180
+                days = 3
+            }
+        }
+        else = {
+            change_learning = 1
+        }
     }
 }
 
@@ -599,7 +809,39 @@ graduation_from_education_academic_effect = {
                 factor = 0.1
                 trait = cruel
             }
-            add_trait = physician
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.211
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = physician
+            }
+        }
+        #trained as a mathematician
+        10 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_arithmetic
+                }
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.205
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = scholar
+            }
         }
         #trained as an architect
         10 = {
@@ -617,7 +859,18 @@ graduation_from_education_academic_effect = {
                 factor = 2
                 stewardship = 10
             }
-            add_trait = architect
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.206
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = architect
+            }
         }
         #trained as a poet
         10 = {
@@ -638,6 +891,18 @@ graduation_from_education_academic_effect = {
             modifier = {
                 factor = 1.5
                 trait = lustful
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.207
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = poet
             }
         }
         #trained as an historian
@@ -660,7 +925,39 @@ graduation_from_education_academic_effect = {
                 factor = 2
                 learning = 10
             }
-            add_trait = scholar
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.208
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = scholar
+            }
+        }
+        #trained as a lawyer
+        10 = {
+            trigger = {
+                NOT = { trait = shrewd }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_law
+                }
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.209
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = shrewd
+            }
         }
         #trained as a logician
         10 = {
@@ -678,7 +975,18 @@ graduation_from_education_academic_effect = {
                 factor = 2
                 learning = 10
             }
-            add_trait = theologian
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.210
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = theologian
+            }
         }
         #trained as a navigator
         10 = {
@@ -695,6 +1003,18 @@ graduation_from_education_academic_effect = {
             modifier = {
                 factor = 0.5
                 learning = 10
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.213
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = naval_expert
             }
         }
         #trained as a musician
@@ -713,7 +1033,18 @@ graduation_from_education_academic_effect = {
                 factor = 2
                 trait = proud
             }
-            add_trait = socializer
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.212
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = socializer
+            }
         }
         #trained as a rhetoritician
         10 = {
@@ -735,11 +1066,31 @@ graduation_from_education_academic_effect = {
                 factor = 2
                 learning = 10
             }
-            add_trait = socializer
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.214
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = socializer
+            }
         }
         #achieved a good all-round education
         60 = {
-            change_learning = 1
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.202
+                    days = 14
+                }
+            }
+            else = { change_learning = 1 }
         }
     }
 }
@@ -803,7 +1154,18 @@ graduation_from_further_education_engineering_effect = {
                 factor = 0.1
                 trait = cruel
             }
-            add_trait = physician
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.211
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = physician
+            }
         }
         #trained as an engineer
         30 = {
@@ -827,6 +1189,27 @@ graduation_from_further_education_engineering_effect = {
             }
             add_trait = engineer
         }
+        #trained as a mathematician
+        20 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_arithmetic
+                }
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.205
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = scholar
+            }
+        }
         #trained as an architect
         20 = {
             trigger = {
@@ -843,7 +1226,18 @@ graduation_from_further_education_engineering_effect = {
                 factor = 2
                 stewardship = 10
             }
-            add_trait = architect
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.206
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = architect
+            }
         }
         #trained as a poet
         5 = {
@@ -864,6 +1258,18 @@ graduation_from_further_education_engineering_effect = {
             modifier = {
                 factor = 1.5
                 trait = lustful
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.207
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = poet
             }
         }
         #trained as an historian
@@ -886,7 +1292,39 @@ graduation_from_further_education_engineering_effect = {
                 factor = 2
                 learning = 10
             }
-            add_trait = scholar
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.208
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = scholar
+            }
+        }
+        #trained as a lawyer
+        5 = {
+            trigger = {
+                NOT = { trait = shrewd }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_law
+                }
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.209
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = shrewd
+            }
         }
         #trained as a logician
         10 = {
@@ -904,7 +1342,18 @@ graduation_from_further_education_engineering_effect = {
                 factor = 2
                 learning = 10
             }
-            add_trait = theologian
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.210
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = theologian
+            }
         }
         #trained as a navigator
         5 = {
@@ -921,6 +1370,18 @@ graduation_from_further_education_engineering_effect = {
             modifier = {
                 factor = 0.5
                 learning = 10
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.213
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = naval_expert
             }
         }
         #trained as a musician
@@ -939,7 +1400,18 @@ graduation_from_further_education_engineering_effect = {
                 factor = 2
                 trait = proud
             }
-            add_trait = socializer
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.212
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = socializer
+            }
         }
         #trained as a rhetoritician
         5 = {
@@ -961,11 +1433,31 @@ graduation_from_further_education_engineering_effect = {
                 factor = 2
                 learning = 10
             }
-            add_trait = socializer
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.214
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = socializer
+            }
         }
         #achieved a good all-round education
         50 = {
-            change_learning = 1
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.202
+                    days = 14
+                }
+            }
+            else = { change_learning = 1 }
         }
     }
 }
@@ -1029,7 +1521,39 @@ graduation_from_further_education_military_effect = {
                 factor = 0.1
                 trait = cruel
             }
-            add_trait = physician
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.211
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = physician
+            }
+        }
+        #trained as a mathematician
+        5 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_arithmetic
+                }
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.205
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = scholar
+            }
         }
         #trained as an architect
         10 = {
@@ -1047,7 +1571,18 @@ graduation_from_further_education_military_effect = {
                 factor = 2
                 stewardship = 10
             }
-            add_trait = architect
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.206
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = architect
+            }
         }
         #trained as a poet
         5 = {
@@ -1068,6 +1603,18 @@ graduation_from_further_education_military_effect = {
             modifier = {
                 factor = 1.5
                 trait = lustful
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.207
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = poet
             }
         }
         #trained as an historian
@@ -1090,7 +1637,39 @@ graduation_from_further_education_military_effect = {
                 factor = 2
                 learning = 10
             }
-            add_trait = scholar
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.208
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = scholar
+            }
+        }
+        #trained as a lawyer
+        5 = {
+            trigger = {
+                NOT = { trait = shrewd }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_law
+                }
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.209
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = shrewd
+            }
         }
         #trained as a logician
         5 = {
@@ -1108,7 +1687,18 @@ graduation_from_further_education_military_effect = {
                 factor = 2
                 learning = 10
             }
-            add_trait = theologian
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.210
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = theologian
+            }
         }
         #trained as a navigator
         15 = {
@@ -1125,6 +1715,18 @@ graduation_from_further_education_military_effect = {
             modifier = {
                 factor = 0.5
                 learning = 10
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.213
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = naval_expert
             }
         }
         #trained as a musician
@@ -1143,7 +1745,18 @@ graduation_from_further_education_military_effect = {
                 factor = 2
                 trait = proud
             }
-            add_trait = socializer
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.212
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = socializer
+            }
         }
         #trained as a rhetoritician
         5 = {
@@ -1165,20 +1778,51 @@ graduation_from_further_education_military_effect = {
                 factor = 2
                 learning = 10
             }
-            add_trait = socializer
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.214
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = socializer
+            }
         }
-        #achieved a military education
+        #achieved a fine military education
         30 = {
-            trigger = { has_any_lifestyle_trait = yes }
+            trigger = { NOT = { has_any_lifestyle_trait = yes } }
             modifier = {
                 factor = 1.5
                 trait = brave
             }
-            add_trait = strategist
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.204
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = strategist
+            }
         }
         #achieved a good all-round education
         20 = {
-            change_learning = 1
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.202
+                    days = 14
+                }
+            }
+            else = { change_learning = 1 }
         }
     }
 }
@@ -1242,7 +1886,39 @@ graduation_from_further_education_religious_effect = {
                 factor = 0.1
                 trait = cruel
             }
-            add_trait = physician
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.211
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = physician
+            }
+        }
+        #trained as a mathematician
+        5 = {
+            trigger = {
+                NOT = { has_any_lifestyle_trait = yes }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_arithmetic
+                }
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.205
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = scholar
+            }
         }
         #trained as an architect
         5 = {
@@ -1260,7 +1936,18 @@ graduation_from_further_education_religious_effect = {
                 factor = 2
                 stewardship = 10
             }
-            add_trait = architect
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.206
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = architect
+            }
         }
         #trained as a poet
         5 = {
@@ -1281,6 +1968,18 @@ graduation_from_further_education_religious_effect = {
             modifier = {
                 factor = 1.5
                 trait = lustful
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.207
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = poet
             }
         }
         #trained as an historian
@@ -1303,7 +2002,39 @@ graduation_from_further_education_religious_effect = {
                 factor = 2
                 learning = 10
             }
-            add_trait = scholar
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.208
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = scholar
+            }
+        }
+        #trained as a lawyer
+        10 = {
+            trigger = {
+                NOT = { trait = shrewd }
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_school_of_law
+                }
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.209
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = shrewd
+            }
         }
         #trained as a logician
         25 = {
@@ -1321,7 +2052,18 @@ graduation_from_further_education_religious_effect = {
                 factor = 2
                 learning = 10
             }
-            add_trait = theologian
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.210
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = theologian
+            }
         }
         #trained as a navigator
         5 = {
@@ -1338,6 +2080,18 @@ graduation_from_further_education_religious_effect = {
             modifier = {
                 factor = 0.5
                 learning = 10
+            }
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.213
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = naval_expert
             }
         }
         #trained as a musician
@@ -1356,7 +2110,18 @@ graduation_from_further_education_religious_effect = {
                 factor = 2
                 trait = proud
             }
-            add_trait = socializer
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.212
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = socializer
+            }
         }
         #trained as a rhetoritician
         5 = {
@@ -1378,11 +2143,31 @@ graduation_from_further_education_religious_effect = {
                 factor = 2
                 learning = 10
             }
-            add_trait = socializer
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.214
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = socializer
+            }
         }
         #achieved a good all-round education
         60 = {
-            change_learning = 1
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.202
+                    days = 14
+                }
+            }
+            else = { change_learning = 1 }
         }
     }
 }

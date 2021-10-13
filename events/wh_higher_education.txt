@@ -532,10 +532,225 @@ character_event = {
     }
 }
 
-#yearly progress & graduation, player version?
-#alternative would be adding notification events to the improve/degrade effects
+#EDUCATION DEGRADATION NOTIFICATIONS
+#these are all player-only - the ai never reads my descs anywya
+#weary
+character_event = {
+    id = wh_higher_education.170
+    desc = EVTDESCwh_higher_education.170
+    picture = GFX_evt_stressed_ruler
+    is_triggered_only = yes
 
-#yearly progress & graduation, AI version
+    option = {
+        name = NOS_HABEBIT_HUMUS
+        health = -0.25
+    }
+}
+
+#stressed
+character_event = {
+    id = wh_higher_education.171
+    desc = EVTDESCwh_higher_education.171
+    picture = GFX_evt_stressed_ruler
+    is_triggered_only = yes
+
+    option = {
+        name = NOS_HABEBIT_HUMUS
+        add_trait = stressed
+    }
+}
+
+#depressed
+character_event = {
+    id = wh_higher_education.172
+    desc = EVTDESCwh_higher_education.172
+    picture = GFX_evt_stressed_ruler
+    is_triggered_only = yes
+
+    option = {
+        name = NOS_HABEBIT_HUMUS
+        add_trait = depressed
+    }
+}
+
+#drunkard
+character_event = {
+    id = wh_higher_education.173
+    desc = EVTDESCwh_higher_education.173
+    picture = GFX_evt_stressed_ruler
+    is_triggered_only = yes
+
+    option = {
+        name = NOS_HABEBIT_HUMUS
+        add_trait = drunkard
+        remove_trait = stressed
+    }
+}
+
+#addict
+character_event = {
+    id = wh_higher_education.174
+    desc = EVTDESCwh_higher_education.174
+    picture = GFX_evt_stressed_ruler
+    is_triggered_only = yes
+
+    option = {
+        name = NOS_HABEBIT_HUMUS
+        add_trait = addict
+        remove_trait = stressed
+    }
+}
+
+#EDUCATION PROGRESS NOTIFICATIONS
+#these are all player-only - the ai never reads my descs anywya
+
+#university learning
+character_event = {
+    id = wh_higher_education.180
+    desc = EVTDESCwh_higher_education.180
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_learning = 1
+    }
+}
+#university martial
+character_event = {
+    id = wh_higher_education.181
+    desc = EVTDESCwh_higher_education.181
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_martial = 1
+    }
+}
+#school of arithmetic
+character_event = {
+    id = wh_higher_education.182
+    desc = EVTDESCwh_higher_education.182
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_stewardship = 1
+    }
+}
+#school of geometry
+character_event = {
+    id = wh_higher_education.183
+    desc = EVTDESCwh_higher_education.183
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_learning = 1
+    }
+}
+#school of grammar
+character_event = {
+    id = wh_higher_education.184
+    desc = EVTDESCwh_higher_education.184
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_diplomacy = 1
+    }
+}
+#school of history
+character_event = {
+    id = wh_higher_education.185
+    desc = EVTDESCwh_higher_education.185
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_martial = 1
+    }
+}
+#school of law
+character_event = {
+    id = wh_higher_education.186
+    desc = EVTDESCwh_higher_education.186
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_learning = 1
+    }
+}
+#school of logic
+character_event = {
+    id = wh_higher_education.187
+    desc = EVTDESCwh_higher_education.187
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_learning = 1
+    }
+}
+#school of medicine
+character_event = {
+    id = wh_higher_education.188
+    desc = EVTDESCwh_higher_education.188
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_learning = 1
+    }
+}
+#school of music
+character_event = {
+    id = wh_higher_education.189
+    desc = EVTDESCwh_higher_education.189
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_diplomacy = 1
+    }
+}
+#school of navigation
+character_event = {
+    id = wh_higher_education.190
+    desc = EVTDESCwh_higher_education.190
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_stewardship = 1
+    }
+}
+#schoolf of rhetoric
+character_event = {
+    id = wh_higher_education.191
+    desc = EVTDESCwh_higher_education.191
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_diplomacy = 1
+    }
+}
+
+
+#yearly progress & graduation
 character_event = {
     id = wh_higher_education.201
     hide_window = yes
@@ -566,8 +781,44 @@ character_event = {
         #wear and tear
         degraded_by_further_education_effect = yes
         #check for graduation
-        #NOTE: could put in player's graduation check here
+        #player - might expand this to be flashier later
         if = {
+            limit = {
+                ai = no
+                check_variable = {
+                    which = years_of_study
+                    value = 3
+                }
+            }
+            #graduation logic
+            remove_trait = studying_academia
+            trigger_switch = {
+                on_trigger = has_character_flag
+                seeks_further_education_academic = {
+                    graduation_from_education_academic_effect = yes
+                }
+                seeks_further_education_engineering = {
+                    graduation_from_further_education_engineering_effect = yes
+                }
+                seeks_further_education_military = {
+                    graduation_from_further_education_military_effect = yes
+                }
+                seeks_further_education_religious = {
+                    graduation_from_further_education_religious_effect = yes
+                }
+            }
+            if = {
+                limit = {
+                    has_character_flag = failed_academic
+                }
+                character_event = {
+                    id = wh_higher_education.203
+                    days = 14
+                }
+            }
+        }
+        #ai path
+        else_if = {
             #this could be fancier but there's really no point in doing it for the AI
             limit = {
                 check_variable = {
@@ -601,5 +852,176 @@ character_event = {
                 add_trait = academic
             }
         }
+    }
+}
+
+#NOTIFICATIONS FOR COMPLETED EDUCATION
+#notify player of graduation
+character_event = {
+    id = wh_higher_education.202
+    desc = EVTDESCwh_higher_education.202
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = EVTOPTAwh_higher_education.202
+        add_trait = academic
+        change_learning = 1
+    }
+}
+
+#tell the player that they failed
+character_event = {
+    id = wh_higher_education.203
+    desc = EVTDESCwh_higher_education.203
+    picture = GFX_evt_stressed_ruler
+    is_triggered_only = yes
+
+    option = {
+        name = EVTOPTAwh_higher_education.203
+    }
+}
+
+#university martial
+character_event = {
+    id = wh_higher_education.204
+    desc = EVTDESCwh_higher_education.204
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        add_trait = strategist
+        add_trait = academic
+    }
+}
+#school of arithmetic
+character_event = {
+    id = wh_higher_education.205
+    desc = EVTDESCwh_higher_education.205
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        add_trait = scholar
+        add_trait = academic
+    }
+}
+#school of geometry
+character_event = {
+    id = wh_higher_education.206
+    desc = EVTDESCwh_higher_education.206
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        add_trait = architect
+        add_trait = academic
+    }
+}
+#school of grammar
+character_event = {
+    id = wh_higher_education.207
+    desc = EVTDESCwh_higher_education.207
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        add_trait = poet
+        add_trait = academic
+    }
+}
+#school of history
+character_event = {
+    id = wh_higher_education.208
+    desc = EVTDESCwh_higher_education.208
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        add_trait = scholar
+        add_trait = academic
+    }
+}
+#school of law
+character_event = {
+    id = wh_higher_education.209
+    desc = EVTDESCwh_higher_education.209
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        add_trait = shrewd
+        add_trait = academic
+    }
+}
+#school of logic
+character_event = {
+    id = wh_higher_education.210
+    desc = EVTDESCwh_higher_education.210
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        add_trait = theologian
+        add_trait = academic
+    }
+}
+#school of medicine
+character_event = {
+    id = wh_higher_education.211
+    desc = EVTDESCwh_higher_education.211
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        add_trait = physician
+        add_trait = academic
+    }
+}
+#school of music
+character_event = {
+    id = wh_higher_education.212
+    desc = EVTDESCwh_higher_education.212
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        add_trait = socializer
+        add_trait = academic
+    }
+}
+#school of navigation
+character_event = {
+    id = wh_higher_education.213
+    desc = EVTDESCwh_higher_education.213
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        add_trait = naval_expert
+        add_trait = academic
+    }
+}
+#schoolf of rhetoric
+character_event = {
+    id = wh_higher_education.214
+    desc = EVTDESCwh_higher_education.214
+    picture = GFX_evt_library
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        add_trait = socializer
+        add_trait = academic
     }
 }
