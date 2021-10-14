@@ -138,18 +138,39 @@ old_forest_road = { #
 	
 	# Wurtbad
 	start = { 343 }
-
-	# Wurtbad, Ossino, Farlichberge, Talagaad
-	path = { 343 334 327 325 }
+	
+	# Wurtbad, Hermdorf
+	path = { 343 1474 }
+	
+	# Hermdorf, Lieske
+	path = { 1474 1467 }
+	
+	# Lieske, Obelheim
+	path = { 1467 1481 }
+	
+	# Lieske, Radische
+	path = { 1467 1476 }
+	
+	# Obelheim, Uckrofurt
+	path = { 1481 1480 }
+	
+	# Obelheim, Wiedebach, Zurin, Sarno, Ravenstein
+	path = { 1481 1485 1486 1487 1488 }
+	
+	# Uckrofurt, Dreetz
+	path = { 1480 1477 }
+	
+	# Uckrofurt, Teupitz
+	path = { 1480 1478 }
+	
+	# Uckrofurt, Talagaad
+	path = { 1480 325 }
 	
 	# Talagaad, Talabheim
 	path = { 325 324 }
 	
-	# Talagaad, Volgen, Holtdorf, Bad Hohne
-	path = { 325 326 279 278 }
-	
 	# Talagaad, Ostlichrand
-	path = { 325 336 }
+	path = { 325 336}
 	
 	# Ostlichrand, Hergig
 	path = { 336 292 }
@@ -157,11 +178,15 @@ old_forest_road = { #
 	# Hergig, Gruyden
 	path = { 292 288 }
 	
-	# Gruyden, Tussenhof, Ahlenhof, Middenstag, Malstedt, Gruhentreich, Suderende, Middenheim
-	path = { 288 1047 287 276 275 1056 272 274 }
+	# Gruyden, Tussenhof, Ahlenhof, Middenstag, Malstedt
+	path = { 288 1047 287 276 275 }
 	
 	# Gruyden, Fort Denkh, Gerzen, Heedenhof, Bergendorf, Garssen, Krudenwald, Sokh, Middenheim
 	path = { 288 1061 1062 284 283 1074 282 1031 274 }
+	
+	# Malstedt, Gruhentreich, Suderende, Middenheim
+	path = { 275 1056 272 274 }
+	
 }
 great_reik_road = {	#
 
@@ -182,11 +207,11 @@ great_reik_road = {	#
 	# Altdorf, Aussenstadt
 	path = { 299 1318 }
 	
-	# Altdorf, Lichtungsmarkt, Torpin
-	path = { 299 1333 330 }
+	# Altdorf, Kella, Werder, Torpin, Volgen, Bad Hohne
+	path = { 299 1333 1493 330 326 278 }
 	
 	# Aussenstadt, Grunburg, Wittgendorf
-	path = { 1318 305 307   }
+	path = { 1318 305 307 }
 	
 	# Aussenstadt, Furdienst, Bogenhafen, Osburg
 	path = { 1318 298 296 297 }
@@ -227,7 +252,7 @@ great_reik_road = {	#
 	# Eidelwiss, Rohrhausen
 	path = { 1269 308 }
 	
-	# Nuln, Fursthausen Wissenburg
+	# Nuln, Fursthausen, Wissenburg
 	path = { 309 1271 310 }
 }
 grimway = { #
@@ -248,24 +273,54 @@ grimway = { #
 	
 	# Talabheim, Talagaad
 	path = { 324 325 }
-
-	# Talagaad, Farlichberge, Ossino, Krugenheim, Bissendorf, Kiel, Menshenfresserhoffen, Taakweg, Bechafen
-	path = { 325 327 334 333 1632 1159 339 1158 366 }
 	
 	# Talagaad, Ostlichrand
 	path = { 325 336 }
 	
-	# Ostlichrand, Kusel, Bek
+	# Talagaad, Uckrofurt
+	path = { 325 1480 }
+	
+	# Uckrofurt, Obelheim
+	path = { 1480 1481 }
+	
+	# Obelheim, Lieske
+	path = { 1481 1467 }
+	
+	# Lieske, Hermdorf
+	path = { 1467 1474 }
+	
+	# Hermdorf, Ossino, Dohna, Gersdorf, Krugenheim, Tauer, Bissendorf, Wiesbach, Menshenfresserhoffen, Taakweg, Bechafen
+	path = { 1474 334 1466 1465 333 919 1632 1159 339 1158 366 }
+
+	# Ostlichrand, Kuesel, Bek
 	path = { 336 335 337 }
 	
-	# Ostlichrand, Hergig, Vodf, Ristedt, Wolfenburg
-	path = { 336 292 290 253 254 }
+	# Ostlichrand, Hergig
+	path = { 336 292 }
+	
+	# Bek, Stratenheim, Vienau, Ahlbeck
+	path = { 337 1460 1459 1458 }
+	
+	# Bek, Ertburg, Bruheim, Kappelburg
+	path = { 337 958 1462 932 }
+	
+	# Hergig, Vodf, Ristedt, Wolfenburg
+	path = { 292 290 253 254 }
 	
 	# Wolfenburg, Dassel, Hasselhund, Ferlangen
 	path = { 254 251 1133 247 }
 	
 	# Wolfenburg, Levudaldorf, Vandengart, Grenzburg
 	path = { 254 1128 252 255 }
+	
+	# Ferlangen, Rotaboda, Salkalten
+	path = { 247 1143 243 }
+
+	#Salkalten, Norden
+	path = { 243 240 }
+
+	#Salkalten, Verborgenbucht, Rossin, Gauschdorf, Erengrad
+	path = { 243 1142 246 249 175 }
 	
 	# Grenzburg, Selonian Hills, Borkrum, Gross Selon, Rugenbuttle, Bechafen
 	path = { 255 258 338 1153 340 366 }
@@ -276,17 +331,9 @@ grimway = { #
 	# Ptorsk, Zabow, Inkodevna, Kislev
 	path = {  204 201 673 202 }
 	
-	#Ptorsk, Blotno, Wizna, Plowce, Erengrad
+	# Ptorsk, Blotno, Wizna, Plowce, Erengrad
 	path = { 204 200 199 197 175 }
 	
-	# Ferlangen, Rotaboda, Salkalten
-	path = { 247 1143 243 }
-
-	#Salkalten, Norden
-	path = { 243 240 }
-
-	#Salkalten, Verborgenbucht, Rossin, Gauschdorf, Erengrad
-	path = { 243 1142 246 249 175 }
 }
 altdorf_middenheim_road = { #
 
@@ -450,11 +497,17 @@ nuln_road = { #
 	# Nuln, Grotchen, Gnadental, Lengenfeld, Wolfsbach, Russbach, Vigaun
 	path = { 309 1270 1405 353 347 1447 1446 }
 	
-	# Kirchham, Blutdorf, Ramsau, Flensburg, Lochen, Purgg, Potting
-	path = { 1452 1451 345 346 1450 342 1448}
+	# Kirchham, Blutdorf, Ramsau, Flensburg, Lochen, Purgg
+	path = { 1452 1451 345 346 1450 342 }
 	
 	# Kirchham, Zeven, Imsweiler, Kemperbad
 	path = { 1452 341 1456 328 }
+	
+	# Purgg, Pramet, Welleborn, Missen, Gostahof, Rangenhof
+	path = { 342 1454 1483 1482 332 1475 }
+	
+	# Purgg, Potting
+	path = { 342 1448 }
 	
 	# Vigaun, Wordern
 	path = { 1446 348 }
