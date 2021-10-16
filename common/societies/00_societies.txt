@@ -8697,6 +8697,7 @@ engineers_guild = {
 			NOT = { is_vampire_visible_trigger = yes }
 		}
 		OR = {
+			trait = engineer
 			culture_group = dwarf_group
 			culture_group = tilean_group
 			custom_tooltip = {
@@ -8714,7 +8715,7 @@ engineers_guild = {
 				AND = {
 					culture_group = estalian_group
 					had_global_flag = {
-						flag = tilean_engineering_school
+						flag = estalian_engineering_school
 						months >= 12
 					}
 				}

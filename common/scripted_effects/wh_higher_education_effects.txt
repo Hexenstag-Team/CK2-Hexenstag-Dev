@@ -1,7 +1,7 @@
 education_interest_imperial_pantheon_effect = {
     random_list = {
         #not interested
-        40 = {
+        90 = {
             modifier = {
                 factor = 0.5
                 trait = ambitious
@@ -29,11 +29,7 @@ education_interest_imperial_pantheon_effect = {
             #no effect
         }
         #academic interest
-        20 = {
-            modifier = {
-                factor = 0.75
-                has_global_flag = imperial_engineering_school
-            }
+        15 = {
             modifier = {
                 factor = 1.5
                 learning = 10
@@ -44,11 +40,8 @@ education_interest_imperial_pantheon_effect = {
             }
             set_character_flag = seeks_further_education_academic
         }
-        #engineering interest - only availble if imperial engineering school has been founded
-        5 = {
-            trigger = {
-                has_global_flag = imperial_engineering_school
-            }
+        #engineering interest
+        15 = {
             modifier = {
                 factor = 1.5
                 stewardship = 8
@@ -57,7 +50,7 @@ education_interest_imperial_pantheon_effect = {
             set_character_flag = seeks_further_education_engineering
         }
         #military interest
-        20 = {
+        15 = {
             modifier = {
                 factor = 1.5
                 martial = 10
@@ -81,7 +74,7 @@ education_interest_imperial_pantheon_effect = {
             set_character_flag = seeks_further_education_military
         }
         #religious interest
-        20 = {
+        15 = {
             modifier = {
                 factor = 5
                 trait = zealous
@@ -110,7 +103,7 @@ education_interest_imperial_pantheon_effect = {
 education_interest_classical_pantheon_effect = {
     random_list = {
         #not interested
-        40 = {
+        90 = {
             modifier = {
                 factor = 0.5
                 trait = ambitious
@@ -209,6 +202,210 @@ education_interest_classical_pantheon_effect = {
     }
 }
 
+education_interest_bretonnian_effect = {
+    random_list = {
+        #not interested
+        90 = {
+            modifier = {
+                factor = 0.5
+                trait = ambitious
+            }
+            modifier = {
+                factor = 2
+                trait = content
+            }
+            modifier = {
+                factor = 0.5
+                is_smart_trigger = yes
+            }
+            modifier = {
+                factor = 2
+                is_dumb_trigger = yes
+            }
+            modifier = {
+                factor = 2
+                trait = drunkard
+            }
+            modifier = {
+                factor = 3
+                trait = slothful
+            }
+            #no effect
+        }
+        #academic interest
+        25 = {
+            modifier = {
+                factor = 1.5
+                learning = 10
+            }
+            modifier = {
+                factor = 2
+                trait = erudite
+            }
+            set_character_flag = seeks_further_education_academic
+        }
+        #engineering interest
+        15 = {
+            modifier = {
+                factor = 1.5
+                stewardship = 8
+                learning = 8
+            }
+            set_character_flag = seeks_further_education_engineering
+        }
+        #military interest
+        5 = {
+            modifier = {
+                factor = 1.5
+                martial = 10
+            }
+            modifier = {
+                factor = 2
+                trait = brave
+            }
+            modifier = {
+                factor = 0.25
+                trait = craven
+            }
+            modifier = {
+                factor = 0.5
+                is_female = yes
+            }
+            modifier = {
+                factor = 0
+                is_maimed_trigger = yes
+            }
+            set_character_flag = seeks_further_education_military
+        }
+        #religious interest
+        15 = {
+            modifier = {
+                factor = 5
+                trait = zealous
+            }
+            modifier = {
+                factor = 0.1
+                trait = cynical
+            }
+            modifier = {
+                factor = 2
+                trait = chaste
+            }
+            modifier = {
+                factor = 0.25
+                trait = lustful
+            }
+            modifier = {
+                factor = 2
+                is_unattractive_trigger = yes
+            }
+            set_character_flag = seeks_further_education_religious
+        }
+    }
+}
+
+education_interest_kislev_gods_effect = {
+    random_list = {
+        #not interested
+        90 = {
+            modifier = {
+                factor = 0.5
+                trait = ambitious
+            }
+            modifier = {
+                factor = 2
+                trait = content
+            }
+            modifier = {
+                factor = 0.5
+                is_smart_trigger = yes
+            }
+            modifier = {
+                factor = 2
+                is_dumb_trigger = yes
+            }
+            modifier = {
+                factor = 2
+                trait = drunkard
+            }
+            modifier = {
+                factor = 3
+                trait = slothful
+            }
+            #no effect
+        }
+        #academic interest
+        5 = {
+            modifier = {
+                factor = 1.5
+                learning = 10
+            }
+            modifier = {
+                factor = 2
+                trait = erudite
+            }
+            set_character_flag = seeks_further_education_academic
+        }
+        #engineering interest - only availble if imperial engineering school has been founded
+        5 = {
+            modifier = {
+                factor = 1.5
+                stewardship = 8
+                learning = 8
+            }
+            set_character_flag = seeks_further_education_engineering
+        }
+        #military interest
+        25 = {
+            modifier = {
+                factor = 1.5
+                martial = 10
+            }
+            modifier = {
+                factor = 2
+                trait = brave
+            }
+            modifier = {
+                factor = 0.25
+                trait = craven
+            }
+            modifier = {
+                factor = 0.5
+                is_female = yes
+            }
+            modifier = {
+                factor = 0
+                is_maimed_trigger = yes
+            }
+            set_character_flag = seeks_further_education_military
+        }
+        #religious interest
+        25 = {
+            modifier = {
+                factor = 5
+                trait = zealous
+            }
+            modifier = {
+                factor = 0.1
+                trait = cynical
+            }
+            modifier = {
+                factor = 2
+                trait = chaste
+            }
+            modifier = {
+                factor = 0.25
+                trait = lustful
+            }
+            modifier = {
+                factor = 2
+                is_unattractive_trigger = yes
+            }
+            set_character_flag = seeks_further_education_religious
+        }
+    }
+}
+
 find_close_university_effect = {
     if = {
         limit = {
@@ -224,9 +421,11 @@ find_close_university_effect = {
     }
     else_if = {
         limit = {
-            any_demesne_wonder_upgrade = upgrade_university
+            any_realm_wonder = {
+                has_wonder_upgrade = upgrade_university
+            }
         }
-        random_demesne_wonder_upgrade = {
+        random_realm_wonder = {
             limit = {
                 has_wonder_upgrade = upgrade_university
             }
@@ -237,9 +436,25 @@ find_close_university_effect = {
     }
     else_if = {
         limit = {
-            any_realm_wonder_upgrade = upgrade_university
+            top_liege = {
+                any_realm_wonder = {
+                    has_wonder_upgrade = upgrade_university
+                }
+            }
         }
-        random_realm_wonder_upgrade = {
+        top_liege = {
+            random_realm_wonder = {
+                limit = {
+                    has_wonder_upgrade = upgrade_university
+                }
+                location = {
+                    save_event_target_as = close_university_candidate
+                }
+            }
+        }
+    }
+    else = {
+        random_wonder = {
             limit = {
                 has_wonder_upgrade = upgrade_university
             }
@@ -248,10 +463,59 @@ find_close_university_effect = {
             }
         }
     }
-    else = {
-        random_wonder_upgrade = {
+}
+
+find_close_engineer_school_effect = {
+    if = {
+        limit = {
+            capital_scope = {
+                wonder = {
+                    has_wonder_upgrade = upgrade_engineering_school
+                }
+            }
+        }
+        capital_scope = {
+            save_event_target_as = close_university_candidate
+        }
+    }
+    else_if = {
+        limit = {
+            any_realm_wonder = {
+                has_wonder_upgrade = upgrade_engineering_school
+            }
+        }
+        random_realm_wonder = {
             limit = {
-                has_wonder_upgrade = upgrade_university
+                has_wonder_upgrade = upgrade_engineering_school
+            }
+            location = {
+                save_event_target_as = close_university_candidate
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            top_liege = {
+                any_realm_wonder = {
+                    has_wonder_upgrade = upgrade_engineering_school
+                }
+            }
+        }
+        top_liege = {
+            random_realm_wonder = {
+                limit = {
+                    has_wonder_upgrade = upgrade_engineering_school
+                }
+                location = {
+                    save_event_target_as = close_university_candidate
+                }
+            }
+        }
+    }
+    else = {
+        random_wonder = {
+            limit = {
+                has_wonder_upgrade = upgrade_engineering_school
             }
             location = {
                 save_event_target_as = close_university_candidate
@@ -263,13 +527,23 @@ find_close_university_effect = {
 find_further_university_effect = {
     if = {
         limit = {
-            any_demesne_wonder_upgrade = upgrade_university
-            NOT = { province = event_target:close_university_candidate }
+            any_realm_wonder = {
+                has_wonder_upgrade = upgrade_university
+                NOT = {
+                    location = {
+                        province = event_target:close_university_candidate
+                    }
+                }
+            }
         }
-        random_demesne_wonder_upgrade = {
+        random_realm_wonder = {
             limit = {
                 has_wonder_upgrade = upgrade_university
-                NOT = { province = event_target:close_university_candidate }
+                NOT = {
+                    location = {
+                        province = event_target:close_university_candidate
+                    }
+                }
             }
             location = {
                 save_event_target_as = further_university_candidate
@@ -278,24 +552,42 @@ find_further_university_effect = {
     }
     else_if = {
         limit = {
-            any_realm_wonder_upgrade = upgrade_university
-            NOT = { province = event_target:close_university_candidate }
-        }
-        random_realm_wonder_upgrade = {
-            limit = {
-                has_wonder_upgrade = upgrade_university
-                NOT = { province = event_target:close_university_candidate }
+            top_liege = {
+                any_realm_wonder = {
+                    has_wonder_upgrade = upgrade_university
+                    NOT = {
+                        location = {
+                            province = event_target:close_university_candidate
+                        }
+                    }
+                }
             }
-            location = {
-                save_event_target_as = further_university_candidate
+        }
+        top_liege = {
+            random_realm_wonder = {
+                limit = {
+                    has_wonder_upgrade = upgrade_university
+                    NOT = {
+                        location = {
+                            province = event_target:close_university_candidate
+                        }
+                    }
+                }
+                location = {
+                    save_event_target_as = further_university_candidate
+                }
             }
         }
     }
     else = {
-        random_wonder_upgrade = {
+        random_wonder = {
             limit = {
                 has_wonder_upgrade = upgrade_university
-                NOT = { province = event_target:close_university_candidate }
+                NOT = {
+                    location = {
+                        province = event_target:close_university_candidate
+                    }
+                }
             }
             location = {
                 save_event_target_as = further_university_candidate
@@ -305,12 +597,31 @@ find_further_university_effect = {
 }
 
 find_exotic_university_effect = {
-    random_wonder_upgrade = {
+    random_wonder = {
         limit = {
             has_wonder_upgrade = upgrade_university
-            NOR = {
-                province = event_target:close_university_candidate
-                province = event_target:further_university_candidate
+            location = {
+                NOR = {
+                    province = event_target:close_university_candidate
+                    province = event_target:further_university_candidate
+                }
+            }
+        }
+        location = {
+            save_event_target_as = exotic_university_candidate
+        }
+    }
+}
+
+find_exotic_engineer_school_effect = {
+    random_wonder = {
+        limit = {
+            has_wonder_upgrade = upgrade_engineering_school
+            location = {
+                NOR = {
+                    province = event_target:close_university_candidate
+                    province = event_target:further_university_candidate
+                }
             }
         }
         location = {

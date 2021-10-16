@@ -5,6 +5,43 @@ namespace = wh_higher_education
 #############################################################################
 
 # Player's version, triggered by decision
+character_event = {
+    id = wh_higher_education.1
+    desc = EVTDESCwh_higher_education.1
+    picture = GFX_evt_dream_Hexenstag
+
+    is_triggered_only = yes
+
+    immediate = {
+        save_event_target_as = aspiring_student
+        save_event_target_as = education_sponsor
+    }
+
+    option = {
+        name = EVTOPTA_wh_higher_education.1
+        set_character_flag = seeks_further_education_academic
+    }
+    option = {
+        name = EVTOPTB_wh_higher_education.1
+        set_character_flag = seeks_further_education_military
+    }
+    option = {
+        name = EVTOPTC_wh_higher_education.1
+        set_character_flag = seeks_further_education_religious
+    }
+    option = {
+        name = EVTOPTD_wh_higher_education.1
+        set_character_flag = seeks_further_education_engineering
+    }
+
+    after = {
+        character_event = {
+            id = wh_higher_education.100
+            days = 2
+        }
+    }
+}
+
 
 # Player's relative - triggered by decision
 character_event = {
@@ -18,10 +55,11 @@ character_event = {
         trigger_switch = {
             on_trigger = religion
             imperial_pantheon = { education_interest_imperial_pantheon_effect = yes }
-            classical_pantheon = { education_interest_classical_pantheon_effect = yes }
-        }
-        FROM = {
-            save_event_target_as = education_sponsor
+            myrmidian = { education_interest_classical_pantheon_effect = yes }
+            grail = { education_interest_bretonnian_effect = yes }
+            false_grail = { education_interest_bretonnian_effect = yes }
+            kislev_gods = { education_interest_kislev_gods_effect = yes }
+            #no fallback because we'd like this to fail if it's somehow triggered for a courtier outside the eligible groups
         }
         if = {
             #we set these flags in the education_interest_imperial_pantheon_effect
@@ -33,7 +71,6 @@ character_event = {
                     has_character_flag = seeks_further_education_religious
                 }
             }
-            save_event_target_as = aspiring_student
             random_list = {
                 20 = {
                     modifier = {
@@ -83,7 +120,7 @@ character_event = {
     }
 }
 
-# AI versions, triggered on_action
+# AI starting points, triggered on_action
 # Imperial Pantheon
 character_event = {
     id = wh_higher_education.3
@@ -99,21 +136,26 @@ character_event = {
             father = {
                 is_ruler = yes
                 is_alive = yes
-                religion = imperial_pantheon
+                religion_group = old_world_group
                 is_liege_of = ROOT
-                ai = yes
             }
             mother = {
                 is_ruler = yes
                 is_alive = yes
-                religion = imperial_pantheon
+                religion_group = old_world_group
                 is_liege_of = ROOT
-                ai = yes
             }
         }
         OR = {
             trait = creature_human
             trait = creature_halfling
+        }
+        #if one parent or this character is being played, we leave it to the player to decide what happens
+        father = {
+            ai = yes
+        }
+        mother = {
+            ai = yes
         }
         ai = yes
     }
@@ -126,7 +168,7 @@ character_event = {
                 father = {
                     is_ruler = yes
                     is_alive = yes
-                    religion = imperial_pantheon
+                    religion_group = old_world_group
                     is_liege_of = ROOT
                     ai = yes
                 }
@@ -140,7 +182,7 @@ character_event = {
                 mother = {
                     is_ruler = yes
                     is_alive = yes
-                    religion = imperial_pantheon
+                    religion_group = old_world_group
                     is_liege_of = ROOT
                     ai = yes
                 }
@@ -213,14 +255,14 @@ character_event = {
     }
 }
 
-# Classical Pantheon
+# Classical Pantheon (currently written with myrmidian)
 character_event = {
-    id = wh_higher_education.3
+    id = wh_higher_education.4
 
     hide_window = yes
     is_triggered_only = yes
 
-    religion = classical_pantheon
+    religion = myrmidian
 
     trigger = {
         OR = {
@@ -228,21 +270,26 @@ character_event = {
             father = {
                 is_ruler = yes
                 is_alive = yes
-                religion = classical_pantheon
+                religion_group = old_world_group
                 is_liege_of = ROOT
-                ai = yes
             }
             mother = {
                 is_ruler = yes
                 is_alive = yes
-                religion = classical_pantheon
+                religion_group = old_world_group
                 is_liege_of = ROOT
-                ai = yes
             }
         }
         OR = {
             trait = creature_human
             trait = creature_halfling
+        }
+        #if one parent or this character is being played, we leave it to the player to decide what happens
+        father = {
+            ai = yes
+        }
+        mother = {
+            ai = yes
         }
         ai = yes
     }
@@ -255,7 +302,7 @@ character_event = {
                 father = {
                     is_ruler = yes
                     is_alive = yes
-                    religion = classical_pantheon
+                    religion_group = old_world_group
                     is_liege_of = ROOT
                     ai = yes
                 }
@@ -269,7 +316,411 @@ character_event = {
                 mother = {
                     is_ruler = yes
                     is_alive = yes
-                    religion = classical_pantheon
+                    religion_group = old_world_group
+                    is_liege_of = ROOT
+                    ai = yes
+                }
+            }
+            mother = {
+                save_event_target_as = education_sponsor
+            }
+        }
+        else = {
+            save_event_target_as = education_sponsor
+        }
+        #now, if the kid wants to study, how urgent is that desire?
+        if = {
+            #we set these flags in the education_interest_imperial_pantheon_effect
+            limit = {
+                OR = {
+                    has_character_flag = seeks_further_education_academic
+                    has_character_flag = seeks_further_education_engineering
+                    has_character_flag = seeks_further_education_military
+                    has_character_flag = seeks_further_education_religious
+                }
+            }
+            save_event_target_as = aspiring_student
+            random_list = {
+                20 = {
+                    modifier = {
+                        factor = 3
+                        trait = ambitious
+                    }
+                    modifier = {
+                        factor = 2
+                        trait = arbitrary
+                    }
+                    event_target:education_sponsor = {
+                        character_event = {
+                            id = wh_higher_education.101
+                            days = 3
+                            random = 7
+                        }
+                    }
+                }
+                20 = {
+                    modifier = {
+                        factor = 3
+                        trait = patient
+                    }
+                    event_target:education_sponsor = {
+                        character_event = {
+                            id = wh_higher_education.101
+                            days = 90
+                            random = 90
+                        }
+                    }
+                }
+                20 = {
+                    modifier = {
+                        factor = 5
+                        trait = content
+                    }
+                    event_target:education_sponsor = {
+                        character_event = {
+                            id = wh_higher_education.101
+                            days = 270
+                            random = 270
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+# Bretonnian Peasants
+character_event = {
+    id = wh_higher_education.5
+
+    hide_window = yes
+    is_triggered_only = yes
+
+    religion = grail
+
+    trigger = {
+        trait = peasant
+        OR = {
+            is_ruler = yes
+            father = {
+                is_ruler = yes
+                is_alive = yes
+                religion_group = old_world_group
+                is_liege_of = ROOT
+            }
+            mother = {
+                is_ruler = yes
+                is_alive = yes
+                religion_group = old_world_group
+                is_liege_of = ROOT
+            }
+        }
+        OR = {
+            trait = creature_human
+            trait = creature_halfling
+        }
+        #if one parent or this character is being played, we leave it to the player to decide what happens
+        father = {
+            ai = yes
+        }
+        mother = {
+            ai = yes
+        }
+        ai = yes
+    }
+
+    immediate = {
+        #determine educational interest, set appropriate flag
+        education_interest_bretonnian_effect = yes
+        if = {
+            limit = {
+                father = {
+                    is_ruler = yes
+                    is_alive = yes
+                    religion_group = old_world_group
+                    is_liege_of = ROOT
+                    ai = yes
+                }
+            }
+            father = {
+                save_event_target_as = education_sponsor
+            }
+        }
+        else_if = {
+            limit = {
+                mother = {
+                    is_ruler = yes
+                    is_alive = yes
+                    religion_group = old_world_group
+                    is_liege_of = ROOT
+                    ai = yes
+                }
+            }
+            mother = {
+                save_event_target_as = education_sponsor
+            }
+        }
+        else = {
+            save_event_target_as = education_sponsor
+        }
+        #now, if the kid wants to study, how urgent is that desire?
+        if = {
+            #we set these flags in the education_interest_imperial_pantheon_effect
+            limit = {
+                OR = {
+                    has_character_flag = seeks_further_education_academic
+                    has_character_flag = seeks_further_education_engineering
+                    has_character_flag = seeks_further_education_military
+                    has_character_flag = seeks_further_education_religious
+                }
+            }
+            save_event_target_as = aspiring_student
+            random_list = {
+                20 = {
+                    modifier = {
+                        factor = 3
+                        trait = ambitious
+                    }
+                    modifier = {
+                        factor = 2
+                        trait = arbitrary
+                    }
+                    event_target:education_sponsor = {
+                        character_event = {
+                            id = wh_higher_education.101
+                            days = 3
+                            random = 7
+                        }
+                    }
+                }
+                20 = {
+                    modifier = {
+                        factor = 3
+                        trait = patient
+                    }
+                    event_target:education_sponsor = {
+                        character_event = {
+                            id = wh_higher_education.101
+                            days = 90
+                            random = 90
+                        }
+                    }
+                }
+                20 = {
+                    modifier = {
+                        factor = 5
+                        trait = content
+                    }
+                    event_target:education_sponsor = {
+                        character_event = {
+                            id = wh_higher_education.101
+                            days = 270
+                            random = 270
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#more peasants
+character_event = {
+    id = wh_higher_education.5
+
+    hide_window = yes
+    is_triggered_only = yes
+
+    religion = false_grail
+
+    trigger = {
+        trait = peasant
+        OR = {
+            is_ruler = yes
+            father = {
+                is_ruler = yes
+                is_alive = yes
+                religion_group = old_world_group
+                is_liege_of = ROOT
+            }
+            mother = {
+                is_ruler = yes
+                is_alive = yes
+                religion_group = old_world_group
+                is_liege_of = ROOT
+            }
+        }
+        OR = {
+            trait = creature_human
+            trait = creature_halfling
+        }
+        #if one parent or this character is being played, we leave it to the player to decide what happens
+        father = {
+            ai = yes
+        }
+        mother = {
+            ai = yes
+        }
+        ai = yes
+    }
+
+    immediate = {
+        #determine educational interest, set appropriate flag
+        education_interest_bretonnian_effect = yes
+        if = {
+            limit = {
+                father = {
+                    is_ruler = yes
+                    is_alive = yes
+                    religion_group = old_world_group
+                    is_liege_of = ROOT
+                    ai = yes
+                }
+            }
+            father = {
+                save_event_target_as = education_sponsor
+            }
+        }
+        else_if = {
+            limit = {
+                mother = {
+                    is_ruler = yes
+                    is_alive = yes
+                    religion_group = old_world_group
+                    is_liege_of = ROOT
+                    ai = yes
+                }
+            }
+            mother = {
+                save_event_target_as = education_sponsor
+            }
+        }
+        else = {
+            save_event_target_as = education_sponsor
+        }
+        #now, if the kid wants to study, how urgent is that desire?
+        if = {
+            #we set these flags in the education_interest_imperial_pantheon_effect
+            limit = {
+                OR = {
+                    has_character_flag = seeks_further_education_academic
+                    has_character_flag = seeks_further_education_engineering
+                    has_character_flag = seeks_further_education_military
+                    has_character_flag = seeks_further_education_religious
+                }
+            }
+            save_event_target_as = aspiring_student
+            random_list = {
+                20 = {
+                    modifier = {
+                        factor = 3
+                        trait = ambitious
+                    }
+                    modifier = {
+                        factor = 2
+                        trait = arbitrary
+                    }
+                    event_target:education_sponsor = {
+                        character_event = {
+                            id = wh_higher_education.101
+                            days = 3
+                            random = 7
+                        }
+                    }
+                }
+                20 = {
+                    modifier = {
+                        factor = 3
+                        trait = patient
+                    }
+                    event_target:education_sponsor = {
+                        character_event = {
+                            id = wh_higher_education.101
+                            days = 90
+                            random = 90
+                        }
+                    }
+                }
+                20 = {
+                    modifier = {
+                        factor = 5
+                        trait = content
+                    }
+                    event_target:education_sponsor = {
+                        character_event = {
+                            id = wh_higher_education.101
+                            days = 270
+                            random = 270
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#Kislev Gods
+character_event = {
+    id = wh_higher_education.6
+
+    hide_window = yes
+    is_triggered_only = yes
+
+    religion = kislev_gods
+
+    trigger = {
+        OR = {
+            is_ruler = yes
+            father = {
+                is_ruler = yes
+                is_alive = yes
+                religion_group = old_world_group
+                is_liege_of = ROOT
+            }
+            mother = {
+                is_ruler = yes
+                is_alive = yes
+                religion_group = old_world_group
+                is_liege_of = ROOT
+            }
+        }
+        OR = {
+            trait = creature_human
+            trait = creature_halfling
+        }
+        #if one parent or this character is being played, we leave it to the player to decide what happens
+        father = {
+            ai = yes
+        }
+        mother = {
+            ai = yes
+        }
+        ai = yes
+    }
+
+    immediate = {
+        #determine educational interest, set appropriate flag
+        education_interest_kislev_gods_effect = yes
+        if = {
+            limit = {
+                father = {
+                    is_ruler = yes
+                    is_alive = yes
+                    religion_group = old_world_group
+                    is_liege_of = ROOT
+                    ai = yes
+                }
+            }
+            father = {
+                save_event_target_as = education_sponsor
+            }
+        }
+        else_if = {
+            limit = {
+                mother = {
+                    is_ruler = yes
+                    is_alive = yes
+                    religion_group = old_world_group
                     is_liege_of = ROOT
                     ai = yes
                 }
@@ -354,7 +805,7 @@ character_event = {
             }
         }
         text = EVTDESCwh_higher_education.100_R
-        picture = GFX_evt_library
+        picture = GFX_evt_dream_Hexenstag
     }
     #dynamic block for when the player sends another courtier to study
     desc = {
@@ -372,90 +823,79 @@ character_event = {
         #find university options
         find_close_university_effect = yes
         find_further_university_effect = yes
-        find_exotic_university_effect = yes
+        if = {
+            limit = {
+                event_target:aspiring_student = {
+                    has_character_flag = seeks_further_education_engineering
+                }
+            }
+            find_exotic_engineer_school_effect = yes
+        }
+        else = {
+            find_exotic_university_effect = yes
+        }
     }
 
     #send to close university
     option = {
-        name = EVTOPA_wh_higher_education.100
+        name = EVTOPTA_wh_higher_education.100
+        scaled_wealth = {
+            value = 0.1
+            max = 5
+        }
         event_target:aspiring_student = {
             add_trait = studying_academia
             save_persistent_event_target = {
                 name = alma_mater
                 scope = event_target:close_university_candidate
             }
-            if = {
-                limit = {
-                    ai = yes
-                }
-                character_event = {
-                    id = wh_higher_education.201
-                    days = 365
-                }
-            }
-            else = {
-                character_event = {
-                    id = wh_higher_education.200
-                    days = 365
-                }
+            character_event = {
+                id = wh_higher_education.200
+                days = 365
             }
         }
     }
     #send to more distant university
     option = {
-        name = EVTOPB_wh_higher_education.100
+        name = EVTOPTB_wh_higher_education.100
+        scaled_wealth = {
+            value = 0.15
+            max = 15
+        }
         event_target:aspiring_student = {
             add_trait = studying_academia
             save_persistent_event_target = {
                 name = alma_mater
                 scope = event_target:further_university_candidate
             }
-            if = {
-                limit = {
-                    ai = yes
-                }
-                character_event = {
-                    id = wh_higher_education.201
-                    days = 365
-                }
-            }
-            else = {
-                character_event = {
-                    id = wh_higher_education.200
-                    days = 365
-                }
+            character_event = {
+                id = wh_higher_education.200
+                days = 365
             }
         }
     }
     #send to exotic university
     option = {
-        name = EVTOPB_wh_higher_education.100
+        name = EVTOPTC_wh_higher_education.100
+        scaled_wealth = {
+            value = 0.25
+            max = 50
+        }
         event_target:aspiring_student = {
             add_trait = studying_academia
             save_persistent_event_target = {
                 name = alma_mater
                 scope = event_target:exotic_university_candidate
             }
-            if = {
-                limit = {
-                    ai = yes
-                }
-                character_event = {
-                    id = wh_higher_education.201
-                    days = 365
-                }
-            }
-            else = {
-                character_event = {
-                    id = wh_higher_education.200
-                    days = 365
-                }
+            character_event = {
+                id = wh_higher_education.200
+                days = 365
             }
         }
     }
     #change of heart
     option = {
-        name = EVTOPD_wh_higher_education.100
+        name = EVTOPTD_wh_higher_education.100
     }
 }
 
@@ -467,10 +907,23 @@ character_event = {
 
     immediate = {
         #as this is the ai version, we can skimp on the logic
-        find_close_university_effect = yes
+        if = {
+            limit = {
+                event_target:aspiring_student = {
+                    has_character_flag = seeks_further_education_engineering
+                }
+            }
+            find_close_engineer_school_effect = yes
+        }
+        else = {
+            find_close_university_effect = yes
+        }
+    }
+
+    after = {
         random_list = {
             #jerk sponsor, won't help
-            40 = {
+            60 = {
                 modifier = {
                     factor = 2
                     trait = charitable
@@ -490,7 +943,7 @@ character_event = {
                 #nope
             }
             #nice sponsor, helps
-            60 = {
+            40 = {
                 modifier = {
                     factor = 1.5
                     trait = academic
@@ -511,7 +964,7 @@ character_event = {
                     factor = 3
                     trait = scholar
                 }
-                #be nice to the AI
+                #be nice to the AI, it's not set up to pick for maximum benefit
                 scaled_wealth = {
                     value = 0.1
                     max = 5
@@ -523,7 +976,7 @@ character_event = {
                         scope = event_target:close_university_candidate
                     }
                     character_event = {
-                        id = wh_higher_education.201
+                        id = wh_higher_education.200
                         days = 365
                     }
                 }
@@ -608,7 +1061,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.180
     desc = EVTDESCwh_higher_education.180
-    picture = GFX_evt_library
+    picture = GFX_evt_man_writing_Hexenstag
     is_triggered_only = yes
 
     option = {
@@ -620,7 +1073,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.181
     desc = EVTDESCwh_higher_education.181
-    picture = GFX_evt_library
+    picture = GFX_evt_man_writing_Hexenstag
     is_triggered_only = yes
 
     option = {
@@ -632,7 +1085,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.182
     desc = EVTDESCwh_higher_education.182
-    picture = GFX_evt_library
+    picture = GFX_evt_man_writing_Hexenstag
     is_triggered_only = yes
 
     option = {
@@ -644,7 +1097,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.183
     desc = EVTDESCwh_higher_education.183
-    picture = GFX_evt_library
+    picture = GFX_evt_man_writing_Hexenstag
     is_triggered_only = yes
 
     option = {
@@ -656,7 +1109,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.184
     desc = EVTDESCwh_higher_education.184
-    picture = GFX_evt_library
+    picture = GFX_evt_man_writing_Hexenstag
     is_triggered_only = yes
 
     option = {
@@ -668,7 +1121,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.185
     desc = EVTDESCwh_higher_education.185
-    picture = GFX_evt_library
+    picture = GFX_evt_man_writing_Hexenstag
     is_triggered_only = yes
 
     option = {
@@ -680,7 +1133,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.186
     desc = EVTDESCwh_higher_education.186
-    picture = GFX_evt_library
+    picture = GFX_evt_man_writing_Hexenstag
     is_triggered_only = yes
 
     option = {
@@ -692,7 +1145,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.187
     desc = EVTDESCwh_higher_education.187
-    picture = GFX_evt_library
+    picture = GFX_evt_man_writing_Hexenstag
     is_triggered_only = yes
 
     option = {
@@ -704,7 +1157,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.188
     desc = EVTDESCwh_higher_education.188
-    picture = GFX_evt_library
+    picture = GFX_evt_man_writing_Hexenstag
     is_triggered_only = yes
 
     option = {
@@ -716,7 +1169,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.189
     desc = EVTDESCwh_higher_education.189
-    picture = GFX_evt_library
+    picture = GFX_evt_man_writing_Hexenstag
     is_triggered_only = yes
 
     option = {
@@ -728,7 +1181,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.190
     desc = EVTDESCwh_higher_education.190
-    picture = GFX_evt_library
+    picture = GFX_evt_man_writing_Hexenstag
     is_triggered_only = yes
 
     option = {
@@ -740,7 +1193,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.191
     desc = EVTDESCwh_higher_education.191
-    picture = GFX_evt_library
+    picture = GFX_evt_man_writing_Hexenstag
     is_triggered_only = yes
 
     option = {
@@ -752,7 +1205,7 @@ character_event = {
 
 #yearly progress & graduation
 character_event = {
-    id = wh_higher_education.201
+    id = wh_higher_education.200
     hide_window = yes
     is_triggered_only = yes
 
@@ -780,8 +1233,7 @@ character_event = {
         }
         #wear and tear
         degraded_by_further_education_effect = yes
-        #check for graduation
-        #player - might expand this to be flashier later
+        #is player eligible for graduation?
         if = {
             limit = {
                 ai = no
@@ -817,7 +1269,7 @@ character_event = {
                 }
             }
         }
-        #ai path
+        #is ai eligible for graduation?
         else_if = {
             #this could be fancier but there's really no point in doing it for the AI
             limit = {
@@ -850,8 +1302,51 @@ character_event = {
                     }
                 }
                 add_trait = academic
+                event_target:education_sponsor = {
+                    if = {
+                        limit = {
+                            ai = no
+                        }
+                        character_event = {
+                            id = wh_higher_education.220
+                            days = 3
+                        }
+                    }
+                }
+            }
+            else = {
+                event_target:education_sponsor = {
+                    if = {
+                        limit = {
+                            ai = no
+                        }
+                        character_event = {
+                            id = wh_higher_education.221
+                            days = 3
+                        }
+                    }
+                }
             }
         }
+        #otherwise keep studying - loop back to this event in another year
+        else = {
+            character_event = {
+                id = wh_higher_education.200
+                days = 365
+            }
+        }
+    }
+}
+
+#NOTIFY PLAYER THAT THEIR STUDIES ARE OVER
+character_event = {
+    id = wh_higher_education.201
+    desc = EVTDESCwh_higher_education.201
+    picture = GFX_evt_council_agreement
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
     }
 }
 
@@ -860,11 +1355,11 @@ character_event = {
 character_event = {
     id = wh_higher_education.202
     desc = EVTDESCwh_higher_education.202
-    picture = GFX_evt_library
+    picture = GFX_evt_pleasing_letter
     is_triggered_only = yes
 
     option = {
-        name = EVTOPTAwh_higher_education.202
+        name = GAUDEAMUS_IGITUR
         add_trait = academic
         change_learning = 1
     }
@@ -878,7 +1373,8 @@ character_event = {
     is_triggered_only = yes
 
     option = {
-        name = EVTOPTAwh_higher_education.203
+        name = NOS_HABEBIT_HUMUS
+        prestige = -100
     }
 }
 
@@ -886,7 +1382,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.204
     desc = EVTDESCwh_higher_education.204
-    picture = GFX_evt_library
+    picture = GFX_evt_pleasing_letter
     is_triggered_only = yes
 
     option = {
@@ -899,7 +1395,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.205
     desc = EVTDESCwh_higher_education.205
-    picture = GFX_evt_library
+    picture = GFX_evt_pleasing_letter
     is_triggered_only = yes
 
     option = {
@@ -912,7 +1408,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.206
     desc = EVTDESCwh_higher_education.206
-    picture = GFX_evt_library
+    picture = GFX_evt_pleasing_letter
     is_triggered_only = yes
 
     option = {
@@ -925,7 +1421,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.207
     desc = EVTDESCwh_higher_education.207
-    picture = GFX_evt_library
+    picture = GFX_evt_pleasing_letter
     is_triggered_only = yes
 
     option = {
@@ -938,7 +1434,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.208
     desc = EVTDESCwh_higher_education.208
-    picture = GFX_evt_library
+    picture = GFX_evt_pleasing_letter
     is_triggered_only = yes
 
     option = {
@@ -951,7 +1447,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.209
     desc = EVTDESCwh_higher_education.209
-    picture = GFX_evt_library
+    picture = GFX_evt_pleasing_letter
     is_triggered_only = yes
 
     option = {
@@ -964,7 +1460,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.210
     desc = EVTDESCwh_higher_education.210
-    picture = GFX_evt_library
+    picture = GFX_evt_pleasing_letter
     is_triggered_only = yes
 
     option = {
@@ -977,7 +1473,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.211
     desc = EVTDESCwh_higher_education.211
-    picture = GFX_evt_library
+    picture = GFX_evt_pleasing_letter
     is_triggered_only = yes
 
     option = {
@@ -990,7 +1486,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.212
     desc = EVTDESCwh_higher_education.212
-    picture = GFX_evt_library
+    picture = GFX_evt_pleasing_letter
     is_triggered_only = yes
 
     option = {
@@ -1003,7 +1499,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.213
     desc = EVTDESCwh_higher_education.213
-    picture = GFX_evt_library
+    picture = GFX_evt_pleasing_letter
     is_triggered_only = yes
 
     option = {
@@ -1016,12 +1512,36 @@ character_event = {
 character_event = {
     id = wh_higher_education.214
     desc = EVTDESCwh_higher_education.214
-    picture = GFX_evt_library
+    picture = GFX_evt_pleasing_letter
     is_triggered_only = yes
 
     option = {
         name = GAUDEAMUS_IGITUR
         add_trait = socializer
         add_trait = academic
+    }
+}
+
+#notify player that their relative has succeeded at their studies
+character_event = {
+    id = wh_higher_education.220
+    desc = EVTDESCwh_higher_education.220
+    picture = GFX_evt_pleasing_letter
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+    }
+}
+
+#notify player that their relative has failed their exams
+character_event = {
+    id = wh_higher_education.221
+    desc = EVTDESCwh_higher_education.221
+    picture = GFX_evt_scandal
+    is_triggered_only = yes
+
+    option = {
+        name = NOS_HABEBIT_HUMUS
     }
 }
