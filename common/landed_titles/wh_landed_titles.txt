@@ -5868,19 +5868,17 @@ e_bretonnia = {
 				b_vashisk = {}
 				b_geshtis = {}
 			}
-			c_fays = { # 925
-				color = { 127 30 99 }
+			c_gristle_valley = { # 2285
+				color = { 155 36 76 }
 				color2 = { 255 255 255 }
 
-				holy_site = grail
-
-				b_fays_la_chapelle = {}
-				b_bois_des_fays = {}
-				b_quimpieu = {}
-				b_kaiserzona = {}
-				b_walenborn = {}
-				b_laugarten = {}
-				b_beaume = {}
+				b_blacksaw = {}
+				b_gak = {}
+				b_ciegs = {}
+				b_malkzel = {}
+				b_vasr = {}
+				b_quicktooth = {}
+				b_haskstisk = {}
 			}
 		}
 		d_beaumont = {
@@ -5913,6 +5911,18 @@ e_bretonnia = {
 				b_herschwil = {}
 				b_cheime = {}
 			}
+			c_siessz = { # 2267
+				color = { 179 124 243 }
+				color2 = { 255 255 255 }
+
+				b_siessz = {}
+				b_hautebad = {}
+				b_sdrak = {}
+				b_mynythmire = {}
+				b_rattrisk = {}
+				b_azhskabak = {}
+				b_wapkagut = {}
+			}
 		}
 		d_nar = {
 			color = { 179 20 7 }
@@ -5932,17 +5942,19 @@ e_bretonnia = {
 				b_egges = {}
 				b_carcavin = {}
 			}
-			c_blood_keep = { # 906
-				color = { 169 75 137 }
+			c_fays = { # 925
+				color = { 127 30 99 }
 				color2 = { 255 255 255 }
 
-				b_blood_keep = {}
-				b_la_maisontaal = {}
-				b_vitrosart = {}
-				b_vene = {}
-				b_arhofen = {}
-				b_werdenfeld = {}
-				b_dieppe = {}
+				holy_site = grail
+
+				b_fays_la_chapelle = {}
+				b_bois_des_fays = {}
+				b_quimpieu = {}
+				b_kaiserzona = {}
+				b_walenborn = {}
+				b_laugarten = {}
+				b_beaume = {}
 			}
 		}
 	}
@@ -13702,62 +13714,6 @@ e_karak_ankor = {
 				b_kazad_wutroth = {}
 			}
 		}
-		d_drachen_corridor = {
-			color = { 165 26 81 }
-			color2 = { 255 255 255 }
-
-			capital = 854 # c_drachenberg
-			holy_site = drachen
-
-			c_drachenberg = { # 854
-				color = { 169 90 12 }
-				color2 = { 255 255 255 }
-
-				b_drachenfels = {}
-				b_schwachhof = {}
-				b_graumarschlosse = {}
-				b_lautenbachzell = {}
-				b_elmstedt = {}
-				b_waledorf = {}
-				b_lenefeld = {}
-			}
-			c_gristle_valley = { # 2285
-				color = { 155 36 76 }
-				color2 = { 255 255 255 }
-
-				b_blacksaw = {}
-				b_gak = {}
-				b_ciegs = {}
-				b_malkzel = {}
-				b_vasr = {}
-				b_quicktooth = {}
-				b_haskstisk = {}
-			}
-			c_helspire = { # 2233
-				color = { 155 67 167 }
-				color2 = { 255 255 255 }
-
-				b_helspire_fortress = {}
-				b_lugduf = {}
-				b_zarr = {}
-				b_touzuhm = {}
-				b_arzeeng = {}
-				b_bogensee= {}
-				b_durlitch = {}
-			}
-			c_siessz = { # 2267
-				color = { 179 124 243 }
-				color2 = { 255 255 255 }
-
-				b_siessz = {}
-				b_hautebad = {}
-				b_sdrak = {}
-				b_mynythmire = {}
-				b_rattrisk = {}
-				b_azhskabak = {}
-				b_wapkagut = {}
-			}
-		}
 		d_zifilibar = {
 			color = { 52 26 158 }
 			color2 = { 255 255 255 }
@@ -20405,9 +20361,9 @@ e_the_empire = {
 		d_altdorf = {
 			color = { 53 71 143 }
 			color2 = { 255 255 255 }
-
+			
 			capital = 299 # c_altdorf
-
+			
 			c_altdorf = { # 299
 				color = { 43 81 138 }
 				color2 = { 255 255 255 }
@@ -20430,18 +20386,6 @@ e_the_empire = {
 				b_reikinseldorf = {}
 				b_nordpark = {}
 			}
-			c_aussenstadt = { # 1318
-				color = { 127 120 59 }
-				color2 = { 255 255 255 }
-
-				b_heiligen = {}
-				b_gluckshalt = {}
-				b_rechtlich = {}
-				b_autler = {}
-				b_teufelfeuer = {}
-				b_blutroch = {}
-				b_geiselnau = {}
-			}
 			c_geringwald = { # 1317
 				color = { 85 117 186 }
 				color2 = { 255 255 255 }
@@ -20454,13 +20398,37 @@ e_the_empire = {
 				b_geldrecht = {}
 				b_braunwurt = {}
 			}
+			c_fielbach = { # 1318
+				color = { 127 120 59 }
+				color2 = { 255 255 255 }
+
+				b_fielbach= {}
+				b_gluckshalt = {}
+				b_rechtlich = {}
+				b_autler = {}
+				b_teufelfeuer = {}
+				b_blutroch = {}
+				b_geiselnau = {}
+			}
+			c_bruckthin = { # 1529
+				color = { 85 84 216 }
+				color2 = { 255 255 255 }
+
+				b_bruckthin = {}
+				b_aegidienberg = {}
+				b_bad_munstereifel = {}
+				b_nordkirchen = {}
+				b_bedesheim = {}
+				b_berrendorf = {}
+				b_mastholte = {}
+			}
 		}
 		d_blitzfelsen = {
 			color = { 52 56 58 }
 			color2 = { 255 255 255 }
-
+			
 			capital = 306 # c_dunkelburg
-
+			
 			c_dunkelburg = { # 306
 				color = { 42 66 53 }
 				color2 = { 255 255 255 }
@@ -20473,25 +20441,49 @@ e_the_empire = {
 				b_schopfenfels = {}
 				b_rozenstein = {}
 			}
-			c_stimmigen = { # 931
-				color = { 170 48 2 }
+			c_konigsdorf = { # 1518
+				color = { 1 90 25 }
 				color2 = { 255 255 255 }
 
-				b_stimmigen = {}
-				b_lilahalle = {}
-				b_holgau = {}
-				b_pfeiffer = {}
-				b_markersbruck = {}
-				b_runseruck = {}
-				b_tronitz = {}
+				b_konigsdorf = {}
+				b_ruppichteroth = {}
+				b_durscheid = {}
+				b_niederndorf = {}
+				b_runderoth = {}
+				b_eisbergen = {}
+				b_rinkerode = {}
+			}
+			c_grissenwald = { # 1519
+				color = { 127 54 19 }
+				color2 = { 255 255 255 }
+
+				b_grissenwald = {}
+				b_winnekendonk = {}
+				b_buisdorf = {}
+				b_luchtringen = {}
+				b_monschau = {}
+				b_willebadessen = {}
+				b_dorentrup = {}
+			}
+			c_blood_keep = { # 906
+				color = { 169 75 137 }
+				color2 = { 255 255 255 }
+
+				b_blood_keep = {}
+				b_la_maisontaal = {}
+				b_vitrosart = {}
+				b_vene = {}
+				b_arhofen = {}
+				b_werdenfeld = {}
+				b_dieppe = {}
 			}
 		}
-		d_reikdahl = {
-			color = { 235 8 83 }
+		d_kemperbad = {
+			color = { 255 28 53 }
 			color2 = { 255 255 255 }
-
+			
 			capital = 328 # c_kemperbad
-
+			
 			c_kemperbad = { # 328
 				color = { 225 18 78 }
 				color2 = { 255 255 255 }
@@ -20504,100 +20496,37 @@ e_the_empire = {
 				b_stockhausen = {}
 				b_richtenbrueck = {}
 			}
-			c_reikgard = { # 302
-				color = { 84 54 51 }
+			c_oberonl = { # 1524
+				color = { 127 84 24 }
 				color2 = { 255 255 255 }
 
-				b_heiligefeuer = {}
-				b_schloss_reikgard = {}
-				b_langewiessen = {}
-				b_leun = {}
-				b_hofheim = {}
-				b_nadjagard = {}
-				b_schwitmund = {}
+				b_oberonl = {}
+				b_ottmarsbocholt = {}
+				b_grossbullesheim = {}
+				b_blankenheim = {}
+				b_enniger = {}
+				b_niederntudorf = {}
+				b_ramsdorf = {}
 			}
-		}
-		d_reikwald = {
-			color = { 10 53 185 }
-			color2 = { 255 255 255 }
-
-			capital = 305 # c_grunburg
-
-			c_grunburg = { # 305
-				color = { 0 63 180 }
+			c_diesdorf = { # 1525
+				color = { 169 87 152 }
 				color2 = { 255 255 255 }
 
-				b_grunburg = {}
-				b_woerlitz = {}
 				b_diesdorf = {}
-				b_ausser = {}
-				b_silberwurt = {}
-				b_eisenbach = {}
-				b_gmunkirch = {}
-			}
-			c_hagercrybs = { # 300
-				color = { 0 48 50 }
-				color2 = { 255 255 255 }
-
-				b_wetzler = {}
-				b_wiehl = {}
-				b_marktlehuen = {}
-				b_brumaibruck = {}
-				b_rankstadt = {}
-				b_schmalmold = {}
-				b_ummerfurt = {}
-			}
-			c_wittgendorf = { # 307
-				color = { 84 69 181 }
-				color2 = { 255 255 255 }
-
-				b_wittgenstein = {}
-				b_wittgendorf = {}
-				b_brackenheim = {}
-				b_gandersheim = {}
-				b_menebach = {}
-				b_allzach = {}
-				b_oderholz = {}
-			}
-		}
-		d_saponatheim = {
-			color = { 52 26 53 }
-			color2 = { 255 255 255 }
-
-			capital = 296 # c_boegenhafen
-
-			c_boegenhafen = { # 296
-				color = { 42 36 48 }
-				color2 = { 255 255 255 }
-				holy_site = drachen
-
-				b_boegenhafen = {}
-				b_grauenburg = {}
-				b_finsterbad = {}
-				b_lieberose = {}
-				b_olsberg = {}
-				b_ardlich = {}
-				b_herzhald = {}
-			}
-			c_furdienst = { # 298
-				color = { 126 42 49 }
-				color2 = { 255 255 255 }
-
-				b_weissbruck = {}
-				b_rahden = {}
-				b_teuchern = {}
-				b_velten = {}
-				b_drachleen = {}
-				b_dorloopen = {}
-				b_enkwarden = {}
+				b_sudkirchen = {}
+				b_voiswinkel = {}
+				b_buderich = {}
+				b_lovenich = {}
+				b_zons = {}
+				b_westhofen = {}
 			}
 		}
 		d_uebersreik = {
 			color = { 178 50 57 }
 			color2 = { 255 255 255 }
-
+			
 			capital = 304 # c_uebersreik
-
+			
 			c_uebersreik = { # 304
 				color = { 168 60 52 }
 				color2 = { 255 255 255 }
@@ -20611,18 +20540,6 @@ e_the_empire = {
 				b_hupeberg = {}
 				b_benestein = {}
 			}
-			c_auerswald = { # 303
-				color = { 126 57 179 }
-				color2 = { 255 255 255 }
-
-				b_auerswald = {}
-				b_rottfurt = {}
-				b_freyburg = {}
-				b_unstrut = {}
-				b_stromdorf = {}
-				b_fuerstenweg = {}
-				b_neuling = {}
-			}
 			c_grey_lady_pass = { # 889
 				color = { 85 24 1 }
 				color2 = { 255 255 255 }
@@ -20635,48 +20552,72 @@ e_the_empire = {
 				b_deledrisio = {}
 				b_aters = {}
 			}
+			c_steirlich = { # 1526
+				color = { 43 93 153 }
+				color2 = { 255 255 255 }
+
+				b_steirlich = {}
+				b_deuz = {}
+				b_wilgersdorf = {}
+				b_siersdorf = {}
+				b_flamersheim = {}
+				b_bosingfeld = {}
+				b_gruiten = {}
+			}
+			c_haal = { # 1520
+				color = { 85 96 26 }
+				color2 = { 255 255 255 }
+
+				b_haal = {}
+				b_blankenhagen = {}
+				b_erle = {}
+				b_merken = {}
+				b_borth = {}
+				b_grefrath = {}
+				b_wormersdorf = {}
+			}
 		}
 		d_uhland = {
 			color = { 178 20 52 }
 			color2 = { 255 255 255 }
 
-			capital = 294 # c_schilderheim
-
-			c_schilderheim = { # 294
-				color = { 168 30 47 }
-				color2 = { 255 255 255 }
-
-				b_schilderheim = {}
-				b_reinsfeld = {}
-				b_koenigsee = {}
-				b_garmdek = {}
-				b_uslar = {}
-				b_brederen = {}
-				b_tilstadt = {}
-			}
-			c_holthusen = { # 295
-				color = { 0 33 175 }
-				color2 = { 255 255 255 }
-
-				b_holthusen = {}
-				b_skaggerdorf = {}
-				b_verl = {}
-				b_neresheim = {}
-				b_prie = {}
-				b_hoogemeer = {}
-				b_helhout = {}
-			}
-			c_merxheim = { # 293
+			capital = 293 # c_uhland
+			
+			c_uhland = { # 293
 				color = { 126 27 174 }
 				color2 = { 255 255 255 }
 
-				b_merxheim = {}
 				b_uhland = {}
+				b_merxheim = {}
 				b_lemgo = {}
 				b_weinheim = {}
 				b_blokdoorn = {}
 				b_ravenmaar = {}
 				b_middelnep = {}
+			}
+			c_lussen = { # 1471
+				color = { 170 72 77 }
+				color2 = { 255 255 255 }
+
+				b_lussen = {}
+				b_gemund = {}
+				b_bussleben = {}
+				b_mosbach = {}
+				b_effelder = {}
+				b_gefell = {}
+				b_kleinschmalkalden = {}
+			}
+			c_schadelheim = { # 1504
+				color = { 43 51 83 }
+				color2 = { 255 255 255 }
+
+				b_schadelheim = {}
+				b_marlishausen = {}
+				b_schwarza = {}
+				b_muhlberg = {}
+				b_krolpa = {}
+				b_langenfeld = {}
+				b_niederdorla = {}
 			}
 		}
 		d_vorbergland = {
@@ -20720,11 +20661,99 @@ e_the_empire = {
 				b_frailsefels = {}
 				b_boizenkirchen = {}
 			}
-			c_moerlenfurt = { # 301
+			c_hallt = { # 1507
+				color = { 43 36 208 }
+				color2 = { 255 255 255 }
+
+				b_hallt = {}
+				b_mohlsdorf = {}
+				b_langenleuba = {}
+				b_probstzella = {}
+				b_rothenstein = {}
+				b_obermassfeld = {}
+				b_lehesten = {}
+			}
+		}
+		d_drachen_corridor = {
+			color = { 165 26 81 }
+			color2 = { 255 255 255 }
+
+			capital = 2233 # c_drackenfels
+			
+			c_drackenfels = { # 2233
+				color = { 155 67 167 }
+				color2 = { 255 255 255 }
+				holy_site = drachen
+
+				b_castle_drackenfels = {}
+				b_helspire_fortress = {}
+				b_lugduf = {}
+				b_touzuhm = {}
+				b_arzeeng = {}
+				b_trupbach = {}
+				b_durlitch = {}
+			}
+			c_drackenburg = { # 854
+				color = { 169 90 12 }
+				color2 = { 255 255 255 }
+
+				b_drackenburg = {}
+				b_gerderath = {}
+				b_graumarschlosse = {}
+				b_lautenbachzell = {}
+				b_elmstedt = {}
+				b_waledorf = {}
+				b_lenefeld = {}
+			}
+			c_bogensee = { # 1514
+				color = { 85 51 146 }
+				color2 = { 255 255 255 }
+
+				b_bogensee = {}
+				b_steinheid = {}
+				b_taubach = {}
+				b_dippach = {}
+				b_uckerath = {}
+				b_frohlinde = {}
+				b_seppenrade = {}
+			}
+		}
+		d_boegenhafen = {
+			color = { 142 232 192 }
+			color2 = { 255 255 255 }
+			
+			capital = 296 #Bogenhafen
+			
+			c_boegenhafen = { # 296
+				color = { 42 36 48 }
+				color2 = { 255 255 255 }
+				holy_site = drachen
+
+				b_boegenhafen = {}
+				b_grauenburg = {}
+				b_finsterbad = {}
+				b_lieberose = {}
+				b_olsberg = {}
+				b_ardlich = {}
+				b_herzhald = {}
+			}
+			c_kalegan = { # 298
+				color = { 126 42 49 }
+				color2 = { 255 255 255 }
+
+				b_kalegan = {}
+				b_rahden = {}
+				b_teuchern = {}
+				b_velten = {}
+				b_drachleen = {}
+				b_dorloopen = {}
+				b_enkwarden = {}
+			}
+			c_amchensee = { # 301
 				color = { 42 51 178 }
 				color2 = { 255 255 255 }
 
-				b_moerlenfurt = {}
+				b_amchensee = {}
 				b_geissbach = {}
 				b_memmingen = {}
 				b_meppen = {}
@@ -20732,17 +20761,373 @@ e_the_empire = {
 				b_rankmarkt = {}
 				b_wolfnau = {}
 			}
-			c_osburg = { # 297
+			c_wheburg = { # 297
 				color = { 84 39 176 }
 				color2 = { 255 255 255 }
 
-				b_osburg = {}
+				b_wheburg = {}
 				b_ussingen = {}
 				b_plaue = {}
 				b_revenstein = {}
 				b_schaertetten = {}
 				b_heidestadt = {}
 				b_alsstedt = {}
+			}
+		}
+		d_skaag_hugel = {
+			color = { 85 66 21 }
+			color2 = { 255 255 255 }
+
+			capital = 1512 # c_skaggerdorf
+			
+			c_skaggerdorf = { # 1512
+				color = { 85 66 21 }
+				color2 = { 255 255 255 }
+
+				b_skaggerdorf = {}
+				b_judenbach = {}
+				b_grossfurra = {}
+				b_tiefthal = {}
+				b_erndtebruck = {}
+				b_lienen = {}
+				b_karken = {}
+			}
+			c_weissbruck = { # 1513
+				color = { 127 99 154 }
+				color2 = { 255 255 255 }
+
+				b_weissbruck = {}
+				b_salomonsborn = {}
+				b_niederrossla = {}
+				b_bernterode = {}
+				b_rommerskirchen = {}
+				b_keilbeck = {}
+				b_rauschendorf = {}
+			}
+			c_gerlbach = { # 1511
+				color = { 169 72 22 }
+				color2 = { 255 255 255 }
+
+				b_gerlbach = {}
+				b_numbrecht = {}
+				b_seebergen = {}
+				b_orlamunde = {}
+				b_klettbach = {}
+				b_schlossvippach = {}
+				b_dietzhausen = {}
+			}
+		}
+		d_grunburg = {
+			color = { 0 63 180 }
+			color2 = { 255 255 255 }
+
+			capital = 305 # c_grunburg
+			
+			c_grunburg = { # 305
+				color = { 0 63 180 }
+				color2 = { 255 255 255 }
+
+				b_grunburg = {}
+				b_woerlitz = {}
+				b_weseke = {}
+				b_ausser = {}
+				b_silberwurt = {}
+				b_eisenbach = {}
+				b_gmunkirch = {}
+			}
+			c_reikgard = { # 302
+				color = { 84 54 51 }
+				color2 = { 255 255 255 }
+
+				b_heiligefeuer = {}
+				b_schloss_reikgard = {}
+				b_langewiessen = {}
+				b_leun = {}
+				b_hofheim = {}
+				b_nadjagard = {}
+				b_schwitmund = {}
+			}
+			c_prieze = { # 1528
+				color = { 43 81 88 }
+				color2 = { 255 255 255 }
+
+				b_prieze = {}
+				b_sechtem = {}
+				b_holsen = {}
+				b_dingden = {}
+				b_schoppingen = {}
+				b_hilgen = {}
+				b_alpen = {}
+			}
+		}
+		d_stimmigen = {
+			color = { 170 48 2 }
+			color2 = { 255 255 255 }
+
+			capital = 931 # c_stimmigen
+			
+			c_stimmigen = { # 931
+				color = { 170 48 2 }
+				color2 = { 255 255 255 }
+
+				b_stimmigen = {}
+				b_baerl = {}
+				b_holgau = {}
+				b_pfeiffer = {}
+				b_markersbruck = {}
+				b_runseruck = {}
+				b_tronitz = {}
+			}
+			c_nupeberg = { # 1521
+				color = { 169 57 147 }
+				color2 = { 255 255 255 }
+
+				b_nupeberg = {}
+				b_schlich = {}
+				b_kinzweiler = {}
+				b_sichtigvor = {}
+				b_wusten = {}
+				b_koslar = {}
+				b_holtwick = {}
+			}
+			c_lilahalle = { # 1522
+				color = { 127 69 149 }
+				color2 = { 255 255 255 }
+
+				b_lilahalle = {}
+				b_nieheim = {}
+				b_doveren = {}
+				b_schmidt = {}
+				b_marienloh = {}
+				b_nideggen = {}
+				b_kuckelheim = {}
+			}
+		}
+		d_auerswald = {
+			color = { 126 57 179 }
+			color2 = { 255 255 255 }
+
+			capital = 303 # c_auerswald
+			
+			c_auerswald = { # 303
+				color = { 126 57 179 }
+				color2 = { 255 255 255 }
+
+				b_auerswald = {}
+				b_rottfurt = {}
+				b_freyburg = {}
+				b_unstrut = {}
+				b_stromdorf = {}
+				b_fuerstenweg = {}
+				b_neuling = {}
+			}
+			c_wittgendorf = { # 307
+				color = { 84 69 181 }
+				color2 = { 255 255 255 }
+
+				b_wittgenstein = {}
+				b_wittgendorf = {}
+				b_brackenheim = {}
+				b_gandersheim = {}
+				b_menebach = {}
+				b_allzach = {}
+				b_oderholz = {}
+			}
+			c_achern = { # 1531
+				color = { 85 54 211 }
+				color2 = { 255 255 255 }
+
+				b_achern = {}
+				b_wachtendonk = {}
+				b_sudlohn = {}
+				b_ladbergen = {}
+				b_walberberg = {}
+				b_herscheid = {}
+				b_hennen = {}
+			}
+		}
+		d_hagercry = {
+			color = { 1 78 215 }
+			color2 = { 255 255 255 }
+
+			capital = 1527 # c_waldenhof2
+
+			c_waldenhof2 = { # 1527
+				color = { 1 78 215 }
+				color2 = { 255 255 255 }
+
+				b_waldenhof2 = {}
+				b_amern = {}
+				b_balve = {}
+				b_herkenrath = {}
+				b_wadersloh = {}
+				b_kreuzau = {}
+				b_pfalzdorf = {}
+			}
+			c_wetzler = { # 300
+				color = { 0 48 50 }
+				color2 = { 255 255 255 }
+
+				b_wetzler = {}
+				b_wiehl = {}
+				b_marktlehuen = {}
+				b_brumaibruck = {}
+				b_rankstadt = {}
+				b_schmalmold = {}
+				b_ummerfurt = {}
+			}
+			c_friemar = { # 1530
+				color = { 169 75 87 }
+				color2 = { 255 255 255 }
+
+				b_friemar = {}
+				b_bedburg = {}
+				b_langschede = {}
+				b_clarholz = {}
+				b_borgholzhausen = {}
+				b_polsum = {}
+				b_medebach = {}
+			}
+		}
+		d_fluss_tahme = {
+			color = { 1 60 20 }
+			color2 = { 255 255 255 }
+
+			capital = 1517 # c_tahme
+			
+			c_tahme = { # 1517
+				color = { 1 60 20 }
+				color2 = { 255 255 255 }
+
+				b_tahme = {}
+				b_villip = {}
+				b_arnoldsweiler = {}
+				b_sythen = {}
+				b_kierdorf = {}
+				b_hunsborn = {}
+				b_beyenburg = {}
+			}
+			c_schrabwald = { # 1516
+				color = { 1 45 145 }
+				color2 = { 255 255 255 }
+
+				b_schrabwald = {}
+				b_kruckel = {}
+				b_osterwick = {}
+				b_frielingsdorf = {}
+				b_bliesheim = {}
+				b_wilnsdorf = {}
+				b_buschhoven = {}
+			}
+			c_schwachhof = { # 1515
+				color = { 43 48 18 }
+				color2 = { 255 255 255 }
+
+				b_schwachhof = {}
+				b_schleiden = {}
+				b_hachen = {}
+				b_blatzheim = {}
+				b_millingen = {}
+				b_schieder = {}
+				b_oeding = {}
+			}
+		}
+		d_schilderheim = {
+			color = { 168 30 47 }
+			color2 = { 255 255 255 }
+
+			capital = 294 # c_schilderheim
+			
+			c_schilderheim = { # 294
+				color = { 168 30 47 }
+				color2 = { 255 255 255 }
+
+				b_schilderheim = {}
+				b_reinsfeld = {}
+				b_koenigsee = {}
+				b_garmdek = {}
+				b_uslar = {}
+				b_brederen = {}
+				b_tilstadt = {}
+			}
+			c_essel = { # 1510
+				color = { 43 63 148 }
+				color2 = { 255 255 255 }
+
+				b_essel = {}
+				b_schkolen = {}
+				b_mellingen = {}
+				b_kuhnhausen = {}
+				b_dollstadt = {}
+				b_orlishausen = {}
+				b_beuren = {}
+			}
+			c_ohlhofen = { # 1505
+				color = { 85 39 81 }
+				color2 = { 255 255 255 }
+
+				b_ohlhofen = {}
+				b_foritz = {}
+				b_ammern = {}
+				b_windischleuba = {}
+				b_rauenstein = {}
+				b_ossmannstedt = {}
+				b_dreissigacker = {}
+			}
+			c_holthusen = { # 295
+				color = { 0 33 175 }
+				color2 = { 255 255 255 }
+
+				b_holthusen = {}
+				b_engelskirchen = {}
+				b_verl = {}
+				b_neresheim = {}
+				b_prie = {}
+				b_hoogemeer = {}
+				b_helhout = {}
+			}
+		}
+		d_garmek = {
+			color = { 1 48 210 }
+			color2 = { 255 255 255 }
+
+			capital = 1506 # c_garmek
+			
+			c_garmek = { # 1506
+				color = { 1 48 210 }
+				color2 = { 255 255 255 }
+
+				b_garmek = {}
+				b_untermassfeld = {}
+				b_grossbodungen = {}
+				b_wingerode = {}
+				b_luisenthal = {}
+				b_hotzelsroda = {}
+				b_albrechts = {}
+			}
+			c_mellekfelden = { # 1508
+				color = { 1 33 80 }
+				color2 = { 255 255 255 }
+
+				b_mellekfelden = {}
+				b_bielen = {}
+				b_elgersburg = {}
+				b_schonstedt = {}
+				b_berlingerode = {}
+				b_catterfeld = {}
+				b_bischofferode = {}
+			}
+			c_zahnstadt = { # 1509
+				color = { 127 39 144 }
+				color2 = { 255 255 255 }
+
+				b_zahnstadt = {}
+				b_marksuhl = {}
+				b_wogau = {}
+				b_hundeshagen = {}
+				b_berlstedt = {}
+				b_polzig = {}
+				b_ifta = {}
 			}
 		}
 	}
@@ -21556,12 +21941,12 @@ e_the_empire = {
 				b_folkendange = {}
 				b_bischenrech = {}
 			}
-			c_nagem = { # 1063
+			c_hochdorf_assenheim = { # 1063
 				color = { 85 12 146 }
 				color2 = { 255 255 255 }
 				
-				b_nagem = {}
-				b_girst = {}
+				b_hochdorf_assenheim = {}
+				b_oppau = {}
 				b_eisenborn = {}
 				b_vesquenhaff = {}
 				b_machum = {}
@@ -25706,7 +26091,7 @@ e_the_empire = {
 				b_werder = {}
 				b_urnshausen = {}
 				b_molschleben = {}
-				b_friemar = {}
+				b_appelhulsen = {}
 				b_tautenhain = {}
 				b_herpf = {}
 				b_grosswechsungen = {}
@@ -25768,7 +26153,7 @@ e_the_empire = {
 			}
 		}
 		d_fluss_kolpin = {
-			color = { 80 80 70 }
+			color = { 90 75 65 }
 			color2 = { 255 255 255 }
 
 			capital = 1483 # c_welleborn
@@ -26904,7 +27289,7 @@ e_the_empire = {
 
 				
 				b_rohrhausen = {}
-				b_grissenwald = {}
+				b_alstatte = {}
 				b_grund = {}
 				b_iburg = {}
 				b_arnedorf = {}

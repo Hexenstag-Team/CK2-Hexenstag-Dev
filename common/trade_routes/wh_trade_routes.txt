@@ -204,56 +204,84 @@ great_reik_road = {	#
 	# Altdorf
 	start = { 299 }
 
-	# Altdorf, Aussenstadt
+	# Altdorf, Bruckthin
+	path = { 299 1529 }
+	
+	# Altdorf, Fielbach
 	path = { 299 1318 }
 	
-	# Altdorf, Kella, Werder, Torpin, Volgen, Bad Hohne
-	path = { 299 1333 1493 330 326 278 }
+	# Bruckthin, Tahme, Bogenhafen
+	path = { 1529 1517 296 }
 	
-	# Aussenstadt, Grunburg, Wittgendorf
-	path = { 1318 305 307 }
+	# Fielbach, Prieze, Grunburg
+	path = { 1318 1528 305 }
 	
-	# Aussenstadt, Furdienst, Bogenhafen, Osburg
-	path = { 1318 298 296 297 }
+	# Bogenhafen, Wheburg, Eilhart
+	path = { 296 297 935 }
 	
-	# Osburg, Eilhart, Schilderheim
-	path = { 297 935 294 }
+	# Bogenhafen, Schrabwald
+	path = { 296 1516 }
 	
-	# Osburg, Holthusen, Schilderheim
-	path = { 297 295 294 }
+	# Bogenhafen, Tahme, Bruckthin
+	path = { 296 1517 1529 }
 	
-	# Schilderheim, Merxheim, Kalkaat, Halsdorph, Klessen, Lehmburg, Marienburg
-	path = { 294 293 221 968 223 936 222 }
+	# Schrabwald, Schwachhof
+	path = { 1516 1515 }
 	
-	# Wittgendorf, Dunkelburg, Eidelwiss
-	path = { 307 306 1269 }
+	# Schrabwald, Bogenhafen
+	path = { 1516 296 }
 	
-	# Wittgendorf, Stimmigen
-	path = { 307 931 }
+	# Schwachhof, Ubersreik
+	path = { 1515 304 }
 	
-	# Wittgendorf, Auerswald
-	path = { 307 303 }
+	# Schwachhof, Schrabwald
+	path = { 1515 1516 }
 	
-	# Wittgendorf, Kemperbad
-	path = { 307 328 }
+	# Eilhart, Holthusen
+	path = { 935 295 }
 	
-	# Auerswald, Ubersreik
-	path = { 303 304 }
+	# Holthusen, Schilderheim
+	path = { 295 294 }
 	
-	# Auerswald, Stimmigen
-	path = { 303 931 }
+	# Holthusen, Ohlhofen, Schadelheim, Uhland, Kalkaat, Halsdorph
+	path = { 295 1505 1504 293 221 968 }
 	
-	# Stimmigen, Ubersreik
-	path = { 931 304 }
+	# Halsdorph, Klessen, Lehmburg
+	path = { 968 223 936}
 	
-	# Eidelwiss, Nuln
-	path = { 1269 309 }
+	# Lehmburg, Marienburg
+	path = { 936 222 }
 	
-	# Eidelwiss, Rohrhausen
-	path = { 1269 308 }
+	# Ubersreik, Haal, Auerswald
+	path = { 304 1520 303 }
 	
-	# Nuln, Fursthausen, Wissenburg
-	path = { 309 1271 310 }
+	# Ubersreik, Schwachhof
+	path = { 304 1515 }
+	
+	# Grunburg, Diesdorf, Kemperbad
+	path = { 305 1525 328 }
+	
+	# Grunburg, Reikgard
+	path = { 305 302 }
+	
+	# Grunburg, Prieze, Fielbach
+	path = { 305 1528 1318 }
+	
+	# Auerswald, Haal, Ubersreik
+	path = { 303 1520 304 }
+	
+	# Auerswald, Stimmigen, Dunkelburg, Konigsdorf, Eidelwiss, Nuln
+	path = { 303 931 306 1518 1269 309 }
+	
+	# Auerswald, Wittgendorf, Oberonl, Kemperbad
+	path = { 303 307 1524 328 }
+	
+	# Kemperbad, Diesdorf, Grunburg
+	path = { 328 1525 305 }
+	
+	# Kemperbad, Oberonl, Wittgendorf, Auerswald
+	path = { 328 1524 307 303 }
+	
 }
 grimway = { #
 
@@ -373,7 +401,6 @@ grey_lady_pass = { #
 		icon = 4
 		local_tax_modifier = 0.03
 		tech_growth_modifier = 0.025
-	 	
 	}
 	trade_post_display_trigger = {
 		silk_road_trade_post_trigger = yes
@@ -382,11 +409,29 @@ grey_lady_pass = { #
 	# Parravon, Bögenhafen
 	start = { 886 296 }
 
-	# Parravon, Grey Lady Pass, Übersreik
-	path = { 886 889 304 }
+	# Parravon, Grey Lady Pass
+	path = { 886 889 }
 	
-	# Bögenhafen, Mörlengurt Übersreik
-	path = { 296 301 304 }
+	# Grey Lady Pass, Übersreik
+	path = { 889 304 }
+	
+	# Übersreik, Grey Lady Pass
+	path = { 304 889 }
+	
+	# Übersreik, Schwachhof
+	path = { 304 1515 }
+	
+	# Bögenhafen, Schrabwald
+	path = { 296 1516 }
+	
+	# Schrabwald, Schwachhof
+	path = { 1516 1515 }
+	
+	# Schwachhof, Schrabwald
+	path = { 1515 1516 }
+	
+	# Schwachhof, Übersreik
+	path = { 1515 304 }
 	
 }
 Pfeildorf_road = { #
@@ -1210,8 +1255,14 @@ axe_bite_pass = { #
 	# Montfort
 	start = { 855 }
 
-	# Montfort, Beaix, Helmgart, Osburg, Bogenhafen
-	path = { 855 852 885 297 296 }
+	# Montfort, Beaix
+	path = { 855 852 }
+	
+	# Beaix, Helmgart, Eilhart
+	path = { 852 885 935 }
+	
+	# Eilhart, Wheburg, Bogenhafen
+	path = { 935 297 296 }
 	
 }
 gisoreux_road = { #
@@ -1221,8 +1272,6 @@ gisoreux_road = { #
 		icon = 4
 		local_tax_modifier = 0.048
 		tech_growth_modifier = 0.024
-		
-	 	
 	}
 	trade_post_display_trigger = {
 		silk_road_trade_post_trigger = yes
@@ -1231,8 +1280,11 @@ gisoreux_road = { #
 	# Gisoreux
 	start = { 833 }
 
-	# Gisoreux, Gisoreux Gap, Gruyon, Ois Gap, Halsdorph, Terborg, Halsdorph, Klessen, Lehmburg, Marienburg
-	path = { 833 914 910 913 969 968 223 936 222 }
+	# Gisoreux, Gisoreux Gap, Gruyon, Ois Gap, Terborg, Halsdorph
+	path = { 833 914 910 913 969 968 }
+	
+	# Halsdorph, Klessen, Lehmburg, Marienburg
+	path = { 968 223 936 222 }
 }
 old_coast_road = { #
 
@@ -1313,15 +1365,18 @@ bretonnian_road = { #
 	path = { 844 841 914 }
 
 ### Montfort
-	# Montfort, Beaix, Fume, Beaumont, Parravon
-	path = { 855 852 888 887 886 }
+	# Montfort, Beaix
+	path = { 855 852 }
+	
+	# Beaix, Fume, Beaumont, Parravon
+	path = { 852 888 887 886 }
 	
 ### Parravon
 	# Parravon, Blarry, Perrache, Quenelles
 	path = { 886 875 883 884 }
 	
-	# Parravon, Brabillon, Blood Keep
-	path = { 886 891 906 }
+	# Parravon, Brabillon
+	path = { 886 891 }
 	
 	# Parravon, Fays
 	path = { 886 925 }
