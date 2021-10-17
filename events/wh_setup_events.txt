@@ -312,6 +312,7 @@ character_event = {
 		}
 	}
 }
+
 character_event = {
 	id = wh_setup.5
 	hide_window = yes
@@ -719,7 +720,7 @@ character_event = {
 						culture_group = tilean_group
 					}
 				}
-				religion = myrmidian
+				religion = classical_pantheon
 			}
 			else_if = {
 				limit = {
@@ -1000,7 +1001,7 @@ character_event = {
 	}
 
 	option = { # imperial_pantheon
-		name = "Omperial Pantheon"
+		name = "Imperial Pantheon"
 		trigger = {
 			has_character_flag = choosing_old_world_gods
 			culture_group = imperial_group
@@ -1008,8 +1009,8 @@ character_event = {
 		religion = imperial_pantheon
 	}
 
-	option = { # myrmidian
-		name = "Myrmidian"
+	option = { # classical_pantheon
+		name = "Classical Pantheon"
 		trigger = {
 			has_character_flag = choosing_old_world_gods
 			OR = {
@@ -1017,7 +1018,7 @@ character_event = {
 				culture_group = tilean_group
 			}
 		}
-		religion = myrmidian
+		religion = classical_pantheon
 	}
 
 	option = { # grail
@@ -1799,7 +1800,7 @@ character_event = {
 				}
 				mult_modifier = {
 					factor = 2
-					religion = myrmidian
+					religion = classical_pantheon
 				}
 				mult_modifier = {
 					factor = 0.5

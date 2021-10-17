@@ -448,13 +448,13 @@ imperial_reconquest = {
             # piety = -100
             # prestige = -100
 #
-            # # we don't have reformed religions
+            # # we don't have reFROMed religions
             # #if = {
             # #    limit = {
-            # #        is_reformed_religion = ROOT
+            # #        is_reFROMed_religion = ROOT
             # #        controls_religion = no
             # #    }
-            # #    religion = ROOT # Reformed pagans are forced to convert back
+            # #    religion = ROOT # ReFROMed pagans are forced to convert back
             # #}
         # }
     # }
@@ -700,13 +700,13 @@ vlad_subjugation = {
 					months = 120
 				}
 			}
-			# we don't have reformed religions
+			# we don't have reFROMed religions
 			#if = {
 			#    limit = {
-			#        is_reformed_religion = ROOT
+			#        is_reFROMed_religion = ROOT
 			#        controls_religion = no
 			#    }
-			#    religion = ROOT # Reformed pagans are forced to convert back
+			#    religion = ROOT # ReFROMed pagans are forced to convert back
 			#}
 		}
     }
@@ -979,7 +979,7 @@ vlad_subjugation = {
     # }
 # }
 
-##Imperial Reconquest for Emperors - THIS IS FOR THE CIVIL WAR ERA, IT WILL BE INVALIDATED ONCE THE TITULAR TITLES DISAPPEAR AS THE EMPIRE IS REFORMED##
+##Imperial Reconquest for Emperors - THIS IS FOR THE CIVIL WAR ERA, IT WILL BE INVALIDATED ONCE THE TITULAR TITLES DISAPPEAR AS THE EMPIRE IS REFROMED##
 imperial_reconquest2 = {
     name = CB_NAME_IMPERIAL
     war_name = WAR_NAME_IMPERIAL
@@ -2727,6 +2727,225 @@ cathayan_subjugation = {
         }
 		any_defender = {
 			set_character_flag = imperial_hero
+		}
+    }
+
+    attacker_ai_victory_worth = {
+        factor = 200
+    }
+
+    attacker_ai_defeat_worth = {
+        factor = 100
+    }
+
+    defender_ai_victory_worth = {
+        factor = -1 # always accept
+    }
+
+    defender_ai_defeat_worth = {
+        factor = 100
+    }
+}
+
+reiklander_nulnian_war_cb = {
+    name = CB_NAME_REIKLANDER_NULNIAN_WAR_CB
+    war_name = WAR_NAME_REIKLANDER_NULNIAN_WAR_CB
+    sprite = 1
+    truce_days = 3650
+    hostile_against_others = yes
+    is_permanent = yes
+	battle_warscore_mult = 0.1
+	max_attacker_battle_score = 100
+	defender_unoccupied_warscore = yes
+
+    can_use = {
+		ROOT = {
+			c_10501
+			has_landed_title = e_reikland
+		}
+		FROM = {
+			c_11251
+			has_landed_title = e_nuln
+		}
+    }
+
+	can_use_title = {
+		ROOT = {
+			primary_title = {
+				has_landed_title = e_reikland
+			}
+		}
+		FROM = {
+			primary_title = {
+				has_landed_title = e_nuln
+			}
+		}
+    }
+	
+	is_valid = {
+		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
+		FROM = {
+			NOT = {
+				any_war = {
+					using_cb = new_crusade
+				}
+			}
+		}
+		ROOT = {
+			primary_title = { higher_tier_than = KING }
+		}
+		FROM = {
+			primary_title = { higher_tier_than = KING }
+		}
+	}
+	
+	is_valid_title = {
+		FROM = {
+			has_landed_title = e_nuln
+		}
+		ROOT = {
+			has_landed_title = e_reikland
+		}
+	}
+	
+    on_success = {
+        ROOT = {
+            prestige = 1000
+        }
+        any_attacker = {
+            limit = {
+				character = ROOT
+			}
+            participation_scaled_prestige = 1000
+        }
+        any_attacker = {
+            limit = {
+				NOT = {
+					character = ROOT
+				}
+			}
+            hidden_tooltip = {
+				participation_scaled_prestige = 100
+			}
+        }
+        FROM = {
+            prestige = -1000
+			any_vassal = {
+				if = {
+					limit = {
+						primary_title = {
+							higher_tier_than = DUKE
+						}
+					}
+					set_defacto_liege = ROOT
+					hidden_tooltip = {
+						opinion = {
+							modifier = opinion_traitor
+							who = ROOT
+							months = 160
+						}
+					}
+				}
+			}
+			primary_title = {
+				if = {
+					limit = {
+						higher_tier_than = KING
+					}
+					destroy_landed_title = THIS
+				}
+			}
+			set_defacto_liege = ROOT
+			hidden_tooltip = {
+				opinion = {
+					modifier = opinion_regicide_traitor
+					who = ROOT
+					months = 1200
+				}
+			}
+		}
+    }
+
+    on_fail = {
+        FROM = {
+            prestige = 500
+        }
+        any_defender = {
+            limit = {
+				character = FROM
+			}
+            participation_scaled_prestige = 500
+        }
+        any_defender = {
+            limit = {
+				NOT = {
+					character = FROM
+				}
+			}
+            hidden_tooltip = {
+				participation_scaled_prestige = 500
+			}
+        }
+        ROOT = {
+            prestige = -500
+        }
+    }
+
+    on_reverse_demand = {
+		FROM = {
+            prestige = 1000
+        }
+        any_defender = {
+            limit = {
+				character = FROM
+			}
+            participation_scaled_prestige = 1000
+        }
+        any_defender = {
+            limit = {
+				NOT = {
+					character = FROM
+				}
+			}
+            hidden_tooltip = {
+				participation_scaled_prestige = 100
+			}
+        }
+        ROOT = {
+            prestige = -1000
+			any_vassal = {
+				if = {
+					limit = {
+						primary_title = {
+							higher_tier_than = DUKE
+						}
+					}
+					set_defacto_liege = FROM
+					hidden_tooltip = {
+						opinion = {
+							modifier = opinion_traitor
+							who = FROM
+							months = 160
+						}
+					}
+				}
+			}
+			primary_title = {
+				if = {
+					limit = {
+						higher_tier_than = KING
+					}
+					destroy_landed_title = THIS
+				}
+			}
+			set_defacto_liege = FROM
+			hidden_tooltip = {
+				opinion = {
+					modifier = opinion_regicide_traitor
+					who = FROM
+					months = 1200
+				}
+			}
 		}
     }
 

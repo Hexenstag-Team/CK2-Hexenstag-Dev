@@ -2221,8 +2221,6 @@ e_borderlands = {
 				color = { 84 54 156 }
 				color2 = { 255 255 255 }
 
-				holy_site = myrmidian
-
 				b_heraclaia = {}
 				b_myrmidens = {}
 				b_port_piratea = {}
@@ -4838,12 +4836,11 @@ e_bretonnia = {
 				color = { 0 87 5 }
 				color2 = { 255 255 255 }
 
-				holy_site = grail
-				holy_site = myrmidian
+				
 
 				b_couronne = {}
 				b_hauteville = {}
-				b_grand_chapel = {}
+				b_grand_chapel = {holy_site = grail}
 				b_verena_capitularium = {
 					nortagnese = "The Springs of Shallya"
 					bourgon = "The Springs of Shallya"
@@ -4854,7 +4851,9 @@ e_bretonnia = {
 					gisoren = "The Springs of Shallya"
 					marcheur = "The Springs of Shallya"
 					carcassian = "The Springs of Shallya"
-					pentarchy = myrmidian
+					#pentarchy = classical_pantheon
+					holy_site = imperial_pantheon
+					holy_site = classical_pantheon
 				}
 				b_castel_le_vicomte = {}
 				b_corlun = {}
@@ -10940,11 +10939,11 @@ e_estalia = {
 				color = { 126 168 204 }
 				color2 = { 255 255 255 }
 
-				holy_site = myrmidian
+				holy_site = classical_pantheon
 
 				b_magritta = {}
 				b_castillo_de_magritta = {}
-				b_inquisitoria_general = { pentarchy = myrmidian }
+				b_inquisitoria_general = { #pentarchy = classical_pantheon }
 				b_san_carlos = {}
 				b_san_sebastiano = {}
 				b_televaro = {}
@@ -11746,6 +11745,8 @@ e_estalia = {
 			c_bilbali = { # 520
 				color = { 0 69 60 }
 				color2 = { 255 255 255 }
+				
+				holy_site = classical_pantheon
 
 				b_bilbali = {}
 				b_san_juan = {}
@@ -20374,7 +20375,7 @@ e_the_empire = {
 				b_kaiserliche_palast = {}
 				b_domplatz_bezirk = {
 					#pentarchy = imperial_pantheon
-					pentarchy = myrmidian
+					#pentarchy = classical_pantheon
 				}
 				b_reikmarkt = {}
 				b_werksviertel = {}
@@ -26265,7 +26266,6 @@ e_the_empire = {
 				color2 = { 255 255 255 }
 
 				holy_site = stromfels
-				holy_site = imperial_pantheon
 
 				b_rijkers_isle = {}
 				b_winkelmarkt = {}
@@ -27909,11 +27909,11 @@ e_tilea = {
 				color = { 0 96 0 }
 				color2 = { 255 255 255 }
 
-				holy_site = myrmidian
+				holy_site = classical_pantheon
 
 				b_remas = {}
 				b_ostio = {}
-				b_matermyrmidia = { pentarchy = myrmidian }
+				b_matermyrmidia = { #pentarchy = classical_pantheon }
 				b_iulio = {}
 				b_pompeio = {}
 				b_crasso = {}
@@ -28007,6 +28007,8 @@ e_tilea = {
 			c_luccini = { # 614
 				color = { 168 138 7 }
 				color2 = { 255 255 255 }
+				
+				holy_site = classical_pantheon
 
 				b_luccini = {}
 				b_nopali = {}
@@ -28457,7 +28459,6 @@ e_tilea = {
 				color2 = { 255 255 255 }
 				
 				holy_site = stromfels
-				holy_site = myrmidian
 				holy_site = ormazd
 				holy_site = atruhayid
 
