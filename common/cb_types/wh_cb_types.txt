@@ -2754,17 +2754,16 @@ reiklander_nulnian_war_cb = {
     truce_days = 3650
     hostile_against_others = yes
     is_permanent = yes
-	battle_warscore_mult = 0.1
+	battle_warscore_mult = 2.5
 	max_attacker_battle_score = 100
+	allow_whitepeace = no
 	defender_unoccupied_warscore = yes
 
     can_use = {
 		ROOT = {
-			c_10501
 			has_landed_title = e_reikland
 		}
 		FROM = {
-			c_11251
 			has_landed_title = e_nuln
 		}
     }
@@ -2864,6 +2863,7 @@ reiklander_nulnian_war_cb = {
 				}
 			}
 		}
+		set_global_flag = reiklander_nulnian_war_reikland
     }
 
     on_fail = {
@@ -2947,10 +2947,11 @@ reiklander_nulnian_war_cb = {
 				}
 			}
 		}
+		set_global_flag = reiklander_nulnian_war_nuln
     }
-
+	
     attacker_ai_victory_worth = {
-        factor = 200
+        factor = -1 # always accept
     }
 
     attacker_ai_defeat_worth = {
