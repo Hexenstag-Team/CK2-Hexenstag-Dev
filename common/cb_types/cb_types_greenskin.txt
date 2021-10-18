@@ -762,15 +762,17 @@ greenskin_uprising = {
 	on_fail_title = {
 		FROM = {
 			prestige = 10
-			hidden_tooltip = {
-				opinion = {
-					modifier = opinion_savage_invader
-					who = ROOT
-					months = 1200
-				}
-			}
 		}
 		ROOT = {
+			any_host_courtier = {
+				limit = {
+					religion_group = greenskin_gods_group
+				}
+				death = {
+					death_reason = death_execution
+					killer = FROM
+				}
+			}
 			death = {
 				death_reason = death_execution
 				killer = FROM
@@ -782,11 +784,6 @@ greenskin_uprising = {
 		FROM = {
 			prestige = 20
 			hidden_tooltip = {
-				opinion = {
-					modifier = opinion_savage_invader
-					who = ROOT
-					months = 1200
-				}
 				add_character_modifier = {
 					name = scattered_greenskins
 					days = 730
@@ -794,6 +791,15 @@ greenskin_uprising = {
 			}
 		}
 		ROOT = {
+			any_host_courtier = {
+				limit = {
+					religion_group = greenskin_gods_group
+				}
+				death = {
+					death_reason = death_execution
+					killer = FROM
+				}
+			}
 			death = {
 				death_reason = death_execution
 				killer = FROM

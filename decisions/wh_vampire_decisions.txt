@@ -306,6 +306,7 @@ targetted_decisions = {
 		}
 	}
 	makeavampireheir = {
+		only_rulers = yes
 		ai_check_interval = 12
 		filter = realm
 		ai_target_filter = realm
@@ -413,6 +414,7 @@ targetted_decisions = {
 	}
 
 	askvampliegedynasty = {
+		only_rulers = yes
 		ai_check_interval = 12
 		is_high_prio = yes
 		filter = realm
@@ -1317,7 +1319,7 @@ decisions = {
 
 	increase_bloodorder_size = {
 		ai_check_interval = 12
-		only_rulers = yes
+		only_playable = yes
 		potential = {
 			trait = vampire_blood_visible
 			primary_title = {
@@ -1743,7 +1745,7 @@ decisions = {
 
 	strigoi_hibernate = {
 		ai_check_interval = 24
-		only_rulers = yes
+		only_playable = yes
 		potential = {
 			trait = vampire_strigoi_visible
 			age = 16
@@ -1816,7 +1818,7 @@ decisions = {
 
 	strigoi_hibernate_stop = {
 		ai_check_interval = 12
-		only_rulers = yes
+		only_playable = yes
 		potential = {
 			trait = resting
 			trait = vampire_strigoi_visible

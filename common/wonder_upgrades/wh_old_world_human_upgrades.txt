@@ -22,9 +22,31 @@
 #	EDUCATION
 #	upgrade_university
 #	upgrade_engineering_school
+#	upgrade_school_of_arithmetic
+#	upgrade_school_of_geometry
+#	upgrade_school_of_grammar
+#	upgrade_school_of_history
+#	upgrade_school_of_law
+#	upgrade_school_of_logic
+#	upgrade_school_of_medicine
+#	upgrade_school_of_music
+#	upgrade_school_of_navigation
+#	upgrade_school_of_rhetoric
+#	MAGIC
+#	upgrade_magical_academy
+#	upgrade_magical_precinct
+#	upgrade_lore_of_light_college
+#	upgrade_lore_of_heavens_college
+#	upgrade_lore_of_metal_college
+#	upgrade_lore_of_life_college
+#	upgrade_lore_of_beasts_college
+#	upgrade_lore_of_fire_college
+#	upgrade_lore_of_shadows_college
+#	upgrade_lore_of_death_college
+#	ENGINEERING
 #	upgrade_engineered_canals
-#	MILITARY
 #	upgrade_engineered_defences
+#	MILITARY
 #	upgrade_gunnery_school
 #	upgrade_cannon_foundry
 #	upgrade_parade_grounds
@@ -881,6 +903,388 @@ upgrade_school_of_rhetoric = {
 	local_modifier = {
 		city_tax_modifier = 0.2
 		culture_techpoints = 0.05
+	}
+}
+
+upgrade_magical_academy = {
+	picture = GFX_upgrade_icon_written_paper
+	potential = {
+		FROMFROMFROM = {
+			TECH_CULTURE_FLEX = 2
+		}
+	}
+	allow = {
+		FROMFROMFROM = {
+			TECH_CULTURE_FLEX = 4
+		}
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	active = {
+		trait = creature_human
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	flags = {
+		is_singular
+		human_culture_wonder_upgrade
+	}
+	build_time = 120
+	gold_cost_flat = 600
+	gold_cost_ticking = 2
+	local_modifier = {
+		fort_level = 1.5
+		siege_defence = 0.1
+	}
+	owner_modifier = {
+	}
+}
+
+upgrade_magical_precinct = {
+	picture = GFX_upgrade_icon_key
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_academy
+		}
+	}
+	allow = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_university
+		}
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	active = {
+		trait = creature_human
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	flags = {
+		is_singular
+		human_culture_wonder_upgrade
+	}
+	build_time = 60
+	gold_cost_flat = 300
+	gold_cost_ticking = 1
+	local_modifier = {
+		fort_level = 3
+		siege_defence = 0.15
+	}
+	owner_modifier = {
+	}
+}
+
+upgrade_lore_of_light_college = {
+	picture = GFX_upgrade_icon_book_beige
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_academy
+		}
+	}
+	allow = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_precinct
+		}
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	active = {
+		trait = creature_human
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	flags = {
+		is_singular
+		human_culture_wonder_upgrade
+	}
+	build_time = 60
+	gold_cost_flat = 300
+	gold_cost_ticking = 1
+	local_modifier = {
+		levy_reinforce_rate = 0.10
+		disease_defence = 0.05
+	}
+	owner_modifier = {
+	}
+}
+
+upgrade_lore_of_heavens_college = {
+	picture = GFX_upgrade_icon_book_blue
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_academy
+		}
+	}
+	allow = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_precinct
+		}
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	active = {
+		trait = creature_human
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	flags = {
+		is_singular
+		human_culture_wonder_upgrade
+	}
+	build_time = 60
+	gold_cost_flat = 300
+	gold_cost_ticking = 1
+	local_modifier = {
+		tradevalue = 15
+	}
+	owner_modifier = {
+		defensive_plot_power_modifier = 0.10
+	}
+}
+
+upgrade_lore_of_metal_college = {
+	picture = GFX_upgrade_icon_book_beige
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_academy
+		}
+	}
+	allow = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_precinct
+		}
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	active = {
+		trait = creature_human
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	flags = {
+		is_singular
+		human_culture_wonder_upgrade
+	}
+	build_time = 60
+	gold_cost_flat = 300
+	gold_cost_ticking = 1
+	local_modifier = {
+		tax_income = 1.5
+	}
+	owner_modifier = {
+	}
+}
+
+upgrade_lore_of_life_college = {
+	picture = GFX_upgrade_icon_book_greem
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_academy
+		}
+	}
+	allow = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_precinct
+		}
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	active = {
+		trait = creature_human
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	flags = {
+		is_singular
+		human_culture_wonder_upgrade
+	}
+	build_time = 60
+	gold_cost_flat = 300
+	gold_cost_ticking = 1
+	local_modifier = {
+		garrison_size = 0.10
+		levy_reinforce_rate = 0.10
+	}
+	owner_modifier = {
+	}
+}
+
+upgrade_lore_of_beasts_college = {
+	picture = GFX_upgrade_icon_book_red
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_academy
+		}
+	}
+	allow = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_precinct
+		}
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	active = {
+		trait = creature_human
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	flags = {
+		is_singular
+		human_culture_wonder_upgrade
+	}
+	build_time = 60
+	gold_cost_flat = 300
+	gold_cost_ticking = 1
+	local_modifier = {
+		horse_archers_defensive = 0.25
+		light_cavalry_defensive = 0.25
+		knights_defensive = 0.25
+	}
+	owner_modifier = {
+	}
+}
+
+upgrade_lore_of_fire_college = {
+	picture = GFX_upgrade_icon_book_red
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_academy
+		}
+	}
+	allow = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_precinct
+		}
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	active = {
+		trait = creature_human
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	flags = {
+		is_singular
+		human_culture_wonder_upgrade
+	}
+	build_time = 60
+	gold_cost_flat = 300
+	gold_cost_ticking = 1
+	local_modifier = {
+		archers_offensive = 0.25
+		gunpowder_offensive = 0.25
+		artillery_offensive = 0.25
+	}
+	owner_modifier = {
+	}
+}
+
+upgrade_lore_of_shadows_college = {
+	picture = GFX_upgrade_icon_book_beige
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_academy
+		}
+	}
+	allow = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_precinct
+		}
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	active = {
+		trait = creature_human
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	flags = {
+		is_singular
+		human_culture_wonder_upgrade
+	}
+	build_time = 60
+	gold_cost_flat = 300
+	gold_cost_ticking = 1
+	local_modifier = {
+		fort_level = 0.5
+	}
+	owner_modifier = {
+		plot_power_modifier = 0.05
+	}
+}
+
+upgrade_lore_of_death_college = {
+	picture = GFX_upgrade_icon_book_beige
+	potential = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_academy
+		}
+	}
+	allow = {
+		FROMFROM = {
+			has_wonder_upgrade = upgrade_magical_precinct
+		}
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	active = {
+		trait = creature_human
+		OR = {
+			has_law = magic_law_2
+			has_law = magic_law_3
+		}
+	}
+	flags = {
+		is_singular
+		human_culture_wonder_upgrade
+	}
+	build_time = 60
+	gold_cost_flat = 300
+	gold_cost_ticking = 1
+	local_modifier = {
+		heavy_infantry_defensive = 0.25
+		light_infantry_defensive = 0.25
+		pikemen_defensive = 0.25
+	}
+	owner_modifier = {
 	}
 }
 

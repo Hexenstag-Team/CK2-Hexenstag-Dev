@@ -297,15 +297,6 @@ de_jure_laws = {
 			modifier = {
 				factor = 0.005
             	}
-            		modifier = {
-                		factor = 0.001
-					NOT = { has_law = crown_authority_3 }
-					capital_scope = { empire = { title = e_ulthuan } }
-					holder_scope = {
-					trait = creature_elf
-					religion = cadai
-				}
-			}
 			modifier = {
 				factor = 0
 				OR = {
@@ -335,31 +326,6 @@ de_jure_laws = {
 							who = ROOT
 							modifier = opinion_increased_authority
 							months = 60
-						}
-					}
-				}
-				#Ulthuan Princes dislike CA
-
-                if = {
-                    limit = {
-                        has_law = crown_authority_2
-						capital_scope = { empire = { title = e_ulthuan } }
-						holder_scope = {
-							trait = creature_elf
-							religion = cadai
-						}
-                    }
-                    any_de_jure_vassal = {
-                        limit = {
-                            OR = {
-                                religion = ROOT
-                                is_liege_or_above = ROOT
-                            }
-                        }
-                        opinion = {
-                            who = ROOT
-                            modifier = opinion_asur_tyrant
-                            months = 240	#elves
 						}
 					}
 				}
@@ -442,14 +408,6 @@ de_jure_laws = {
 				holder_scope = { NOT = { religion = cytharai } }
 				holder_scope = { NOT = { religion = old_ones } }
             }
-            modifier = {
-                factor = 0
-				capital_scope = { empire = { title = e_ulthuan } }
-				holder_scope = {
-					trait = creature_elf
-					religion = cadai
-				}
-			}
 		}
 
 		ai_will_revoke = {
@@ -473,31 +431,6 @@ de_jure_laws = {
 							who = ROOT
 							modifier = opinion_increased_authority
 							months = 60
-						}
-					}
-				}
-				#Ulthuan Princes dislike CA
-                if = {
-                    limit = {
-                        has_law = crown_authority_3
-						capital_scope = { empire = { title = e_ulthuan } }
-						holder_scope = {
-							trait = creature_elf
-							religion = cadai
-						}
-
-                    }
-                    any_de_jure_vassal = {
-                        limit = {
-                            OR = {
-                                religion = ROOT
-                                is_liege_or_above = ROOT
-                          	  }
-                       	 }
-                        opinion = {
-                            who = ROOT
-                            modifier = opinion_asur_tyrant
-                            months = 240	#elves
 						}
 					}
 				}
@@ -864,13 +797,6 @@ de_jure_laws = {
                 factor = 0.005
             }
             modifier = {
-                factor = 0.001
-                    NOT = { has_law = imperial_crown_authority_3 }
-		capital_scope = { empire = { title = e_ulthuan } }
-		holder_scope = { trait = creature_elf
-				religion = cadai }
-            }
-            modifier = {
                 factor = 0
                 OR = {
                     NOT = { has_law = imperial_crown_authority_2 }
@@ -899,30 +825,6 @@ de_jure_laws = {
                             who = ROOT
                             modifier = opinion_increased_authority
                             months = 60
-                        }
-                    }
-                }
-		#Ulthuan Princes dislike CA
-
-                if = {
-                    limit = {
-                        has_law = imperial_crown_authority_2
-		capital_scope = { empire = { title = e_ulthuan } }
-		holder_scope = { trait = creature_elf
-				religion = cadai }
-
-                    }
-                    any_de_jure_vassal = {
-                        limit = {
-                            OR = {
-                                religion = ROOT
-                                is_liege_or_above = ROOT
-                            }
-                        }
-                        opinion = {
-                            who = ROOT
-                            modifier = opinion_asur_tyrant
-                            months = 240	#elves
                         }
                     }
                 }
@@ -1009,12 +911,6 @@ de_jure_laws = {
             }
             modifier = {
                 factor = 0
-		capital_scope = { empire = { title = e_ulthuan } }
-		holder_scope = { trait = creature_elf
-				religion = cadai }
-            }
-            modifier = {
-                factor = 0
                 OR = {
                     NOT = { has_law = imperial_crown_authority_3 }
                     NOT = { ruled_years = 20 }
@@ -1048,30 +944,6 @@ de_jure_laws = {
                     }
                 }
             }
-		#Ulthuan Princes dislike CA
-
-                if = {
-                    limit = {
-                        has_law = imperial_crown_authority_3
-		capital_scope = { empire = { title = e_ulthuan } }
-		holder_scope = { trait = creature_elf
-				religion = cadai }
-
-                    }
-                    any_de_jure_vassal = {
-                        limit = {
-                            OR = {
-                                religion = ROOT
-                                is_liege_or_above = ROOT
-                          	  }
-                       	 }
-                        opinion = {
-                            who = ROOT
-                            modifier = opinion_asur_tyrant
-                            months = 240	#elves
-                       		 }
-                   	 }
-               	 }
         }
 
         effect = {
@@ -1137,7 +1009,7 @@ de_jure_laws = {
 			# set_investiture = head
 		# }
 	# }
-	
+
 # Free Investiture
 	# investiture_law_1 = {
 		# show_as_title = yes
