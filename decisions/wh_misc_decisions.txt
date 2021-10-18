@@ -767,6 +767,12 @@ targetted_decisions = {
 			}
 		}
 		allow = {
+			NOT = {
+				has_opinion_modifier = {
+					who = FROM
+					name = opinion_annoyed
+				}
+			}
 			host = {
 				character = FROM
 			}
@@ -774,10 +780,6 @@ targetted_decisions = {
 		}
 		effect = {
 			hidden_tooltip = {
-		        FROM = {
-		            save_event_target_as = education_sponsor
-		        }
-	            save_event_target_as = aspiring_student
 				character_event = { id = wh_higher_education.2 }
 			}
 		}

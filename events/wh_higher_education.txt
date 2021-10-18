@@ -51,6 +51,13 @@ character_event = {
     is_triggered_only = yes
 
     immediate = {
+        random_player = {
+            limit = {
+                is_parent_of = ROOT
+            }
+            save_event_target_as = education_sponsor
+        }
+        save_event_target_as = aspiring_student
         #use switch to pick the correct interest effect
         trigger_switch = {
             on_trigger = religion
@@ -840,8 +847,8 @@ character_event = {
     option = {
         name = EVTOPTA_wh_higher_education.100
         scaled_wealth = {
-            value = 0.1
-            max = 5
+            value = -0.1
+            min = -5
         }
         event_target:aspiring_student = {
             add_trait = studying_academia
@@ -859,8 +866,8 @@ character_event = {
     option = {
         name = EVTOPTB_wh_higher_education.100
         scaled_wealth = {
-            value = 0.15
-            max = 15
+            value = -0.15
+            min = -15
         }
         event_target:aspiring_student = {
             add_trait = studying_academia
@@ -878,8 +885,8 @@ character_event = {
     option = {
         name = EVTOPTC_wh_higher_education.100
         scaled_wealth = {
-            value = 0.25
-            max = 50
+            value = -0.25
+            min = -50
         }
         event_target:aspiring_student = {
             add_trait = studying_academia
@@ -966,8 +973,8 @@ character_event = {
                 }
                 #be nice to the AI, it's not set up to pick for maximum benefit
                 scaled_wealth = {
-                    value = 0.1
-                    max = 5
+                    value = -0.1
+                    max = -5
                 }
                 event_target:aspiring_student = {
                     add_trait = studying_academia
@@ -1243,7 +1250,9 @@ character_event = {
                 }
             }
             #graduation logic
-            remove_trait = studying_academia
+            character_event = {
+                id = wh_higher_education.201
+            }
             trigger_switch = {
                 on_trigger = has_character_flag
                 seeks_further_education_academic = {
@@ -1347,6 +1356,7 @@ character_event = {
 
     option = {
         name = GAUDEAMUS_IGITUR
+        remove_trait = studying_academia
     }
 }
 
@@ -1508,7 +1518,7 @@ character_event = {
         add_trait = academic
     }
 }
-#schoolf of rhetoric
+#school of rhetoric
 character_event = {
     id = wh_higher_education.214
     desc = EVTDESCwh_higher_education.214
@@ -1518,6 +1528,19 @@ character_event = {
     option = {
         name = GAUDEAMUS_IGITUR
         add_trait = socializer
+        add_trait = academic
+    }
+}
+
+character_event = {
+    id = wh_higher_education.215
+    desc = EVTDESCwh_higher_education.215
+    picture = GFX_evt_pleasing_letter
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        add_trait = engineer
         add_trait = academic
     }
 }
@@ -1544,4 +1567,675 @@ character_event = {
     option = {
         name = NOS_HABEBIT_HUMUS
     }
+}
+
+#Academic Tutor bonus - adapted from the vanilla events for monastic tutors
+character_event = {
+	id = wh_higher_education.1000
+
+	is_triggered_only = yes #triggered from on_childhood_pulse
+	hide_window = yes
+
+	trigger = {
+		educator = {
+			trait = academic
+		}
+		NOT = { check_variable = { which = "academic_education_event" value = 3 } }
+	}
+
+	immediate = {
+		change_variable = { which = "academic_education_event" value = 1 }
+		random = {
+			chance = 30
+			educator = { character_event = { id = wh_higher_education.1001 days = 5 } }
+		}
+	}
+}
+#How do you try and nudge your ward
+character_event = {
+	id = wh_higher_education.1001
+	desc = {
+		text = EVT_DESCA_wh_higher_education_1001
+		picture = GFX_evt_the_tutor_Hexenstag
+		trigger = {
+			FROM = {
+				age = 6
+				NOT = { age = 8 }
+			}
+		}
+	}
+	desc = {
+		text = EVT_DESCB_wh_higher_education_1001
+		picture = GFX_evt_the_tutor_Hexenstag
+		trigger = {
+			FROM = {
+				age = 8
+				NOT = { age = 10 }
+			}
+		}
+	}
+	desc = {
+		text = EVT_DESCC_wh_higher_education_1001
+		picture = GFX_evt_candelight_instruction_Hexenstag
+		trigger = {
+			FROM = {
+				age = 10
+			}
+		}
+	}
+	picture = GFX_evt_candelight_instruction_Hexenstag
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = { #If no stat over 8 no extra bonues
+			limit = {
+				NOR = {
+					diplomacy = 8
+					martial = 8
+					stewardship = 8
+					intrigue = 8
+				}
+			}
+			set_character_flag = academic_education_learning
+			break = yes
+		}
+		#Else mark a random stat over 8
+		random_list = {
+			1 = {
+				trigger = { diplomacy = 8 }
+				set_character_flag = academic_education_diplomacy
+			}
+			1 = {
+				trigger = { martial = 8 }
+				set_character_flag = academic_education_martial
+			}
+			1 = {
+				trigger = { stewardship = 8 }
+				set_character_flag = academic_education_stewardship
+			}
+			1 = {
+				trigger = { intrigue = 8 }
+				set_character_flag = academic_education_intrigue
+			}
+		}
+	}
+
+	option = { #No other stat bonus
+		name = EVT_OPTA_wh_higher_education_1001
+		trigger = { has_character_flag = academic_education_learning }
+		random_list = {
+			30 = {
+				modifier = {
+					factor = 0.9
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 1
+				}
+			}
+			50 = {
+				modifier = {
+					factor = 0.5
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 2
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					FROM = { is_smart_trigger = yes }
+				}
+				modifier = {
+					factor = 1.1
+					learning = 12
+				}
+				modifier = {
+					factor = 1.1
+					learning = 14
+				}
+				modifier = {
+					factor = 1.1
+					learning = 16
+				}
+				modifier = {
+					factor = 1.1
+					learning = 18
+				}
+				modifier = {
+					factor = 1.1
+					learning = 20
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 3
+				}
+			}
+		}
+	}
+	option = { #Diplomacy
+		name = EVT_OPTA_wh_higher_education_1001
+		trigger = { has_character_flag = academic_education_diplomacy }
+		random_list = {
+			30 = {
+				modifier = {
+					factor = 0.9
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 1
+				}
+			}
+			50 = {
+				modifier = {
+					factor = 0.5
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 2
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					FROM = { is_smart_trigger = yes }
+				}
+				modifier = {
+					factor = 1.1
+					learning = 12
+				}
+				modifier = {
+					factor = 1.1
+					learning = 14
+				}
+				modifier = {
+					factor = 1.1
+					learning = 16
+				}
+				modifier = {
+					factor = 1.1
+					learning = 18
+				}
+				modifier = {
+					factor = 1.1
+					learning = 20
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 3
+				}
+			}
+		}
+		random_list = {
+			30 = {
+				modifier = {
+					factor = 0.9
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_diplomacy = 1
+				}
+			}
+			50 = {
+				modifier = {
+					factor = 0.5
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_diplomacy = 2
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					FROM = { is_smart_trigger = yes }
+				}
+				modifier = {
+					factor = 1.1
+					learning = 12
+				}
+				modifier = {
+					factor = 1.1
+					learning = 14
+				}
+				modifier = {
+					factor = 1.1
+					learning = 16
+				}
+				modifier = {
+					factor = 1.1
+					learning = 18
+				}
+				modifier = {
+					factor = 1.1
+					learning = 20
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_diplomacy = 3
+				}
+			}
+		}
+	}
+	option = { #Martial
+		name = EVT_OPTA_wh_higher_education_1001
+		trigger = { has_character_flag = academic_education_martial }
+		random_list = {
+			30 = {
+				modifier = {
+					factor = 0.9
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 1
+				}
+			}
+			50 = {
+				modifier = {
+					factor = 0.5
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 2
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					FROM = { is_smart_trigger = yes }
+				}
+				modifier = {
+					factor = 1.1
+					learning = 12
+				}
+				modifier = {
+					factor = 1.1
+					learning = 14
+				}
+				modifier = {
+					factor = 1.1
+					learning = 16
+				}
+				modifier = {
+					factor = 1.1
+					learning = 18
+				}
+				modifier = {
+					factor = 1.1
+					learning = 20
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 3
+				}
+			}
+		}
+		random_list = {
+			30 = {
+				modifier = {
+					factor = 0.9
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_martial = 1
+				}
+			}
+			50 = {
+				modifier = {
+					factor = 0.5
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_martial = 2
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					FROM = { is_smart_trigger = yes }
+				}
+				modifier = {
+					factor = 1.1
+					learning = 12
+				}
+				modifier = {
+					factor = 1.1
+					learning = 14
+				}
+				modifier = {
+					factor = 1.1
+					learning = 16
+				}
+				modifier = {
+					factor = 1.1
+					learning = 18
+				}
+				modifier = {
+					factor = 1.1
+					learning = 20
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_martial = 3
+				}
+			}
+		}
+	}
+	option = { #Stewardship
+		name = EVT_OPTA_wh_higher_education_1001
+		trigger = { has_character_flag = academic_education_stewardship }
+		random_list = {
+			30 = {
+				modifier = {
+					factor = 0.9
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 1
+				}
+			}
+			50 = {
+				modifier = {
+					factor = 0.5
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 2
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					FROM = { is_smart_trigger = yes }
+				}
+				modifier = {
+					factor = 1.1
+					learning = 12
+				}
+				modifier = {
+					factor = 1.1
+					learning = 14
+				}
+				modifier = {
+					factor = 1.1
+					learning = 16
+				}
+				modifier = {
+					factor = 1.1
+					learning = 18
+				}
+				modifier = {
+					factor = 1.1
+					learning = 20
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 3
+				}
+			}
+		}
+		random_list = {
+			30 = {
+				modifier = {
+					factor = 0.9
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_stewardship = 1
+				}
+			}
+			50 = {
+				modifier = {
+					factor = 0.5
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_stewardship = 2
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					FROM = { is_smart_trigger = yes }
+				}
+				modifier = {
+					factor = 1.1
+					learning = 12
+				}
+				modifier = {
+					factor = 1.1
+					learning = 14
+				}
+				modifier = {
+					factor = 1.1
+					learning = 16
+				}
+				modifier = {
+					factor = 1.1
+					learning = 18
+				}
+				modifier = {
+					factor = 1.1
+					learning = 20
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_stewardship = 3
+				}
+			}
+		}
+	}
+	option = { #Intrigue
+		name = EVT_OPTA_wh_higher_education_1001
+		trigger = { has_character_flag = academic_education_intrigue }
+		random_list = {
+			30 = {
+				modifier = {
+					factor = 0.9
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 1
+				}
+			}
+			50 = {
+				modifier = {
+					factor = 0.5
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 2
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					FROM = { is_smart_trigger = yes }
+				}
+				modifier = {
+					factor = 1.1
+					learning = 12
+				}
+				modifier = {
+					factor = 1.1
+					learning = 14
+				}
+				modifier = {
+					factor = 1.1
+					learning = 16
+				}
+				modifier = {
+					factor = 1.1
+					learning = 18
+				}
+				modifier = {
+					factor = 1.1
+					learning = 20
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_learning = 3
+				}
+			}
+		}
+		random_list = {
+			30 = {
+				modifier = {
+					factor = 0.9
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_intrigue = 1
+				}
+			}
+			50 = {
+				modifier = {
+					factor = 0.5
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_intrigue = 2
+				}
+			}
+			20 = {
+				modifier = {
+					factor = 0
+					FROM = { is_dumb_trigger = yes }
+				}
+				modifier = {
+					factor = 2
+					FROM = { is_smart_trigger = yes }
+				}
+				modifier = {
+					factor = 1.1
+					learning = 12
+				}
+				modifier = {
+					factor = 1.1
+					learning = 14
+				}
+				modifier = {
+					factor = 1.1
+					learning = 16
+				}
+				modifier = {
+					factor = 1.1
+					learning = 18
+				}
+				modifier = {
+					factor = 1.1
+					learning = 20
+				}
+				modifier = {
+					factor = 2
+					is_learned_trigger = yes
+				}
+				FROM = {
+					change_intrigue = 3
+				}
+			}
+		}
+	}
+	after = {
+		clr_character_flag = academic_education_learning
+		clr_character_flag = academic_education_diplomacy
+		clr_character_flag = academic_education_martial
+		clr_character_flag = academic_education_stewardship
+		clr_character_flag = academic_education_intrigue
+	}
 }

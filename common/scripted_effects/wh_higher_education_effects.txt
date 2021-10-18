@@ -26,7 +26,11 @@ education_interest_imperial_pantheon_effect = {
                 factor = 3
                 trait = slothful
             }
-            #no effect
+            opinion = {
+                modifier = opinion_annoyed
+                who = event_target:education_sponsor
+                months = 6
+            }
         }
         #academic interest
         15 = {
@@ -128,7 +132,11 @@ education_interest_classical_pantheon_effect = {
                 factor = 3
                 trait = slothful
             }
-            #no effect
+            opinion = {
+                modifier = opinion_annoyed
+                who = event_target:education_sponsor
+                months = 6
+            }
         }
         #academic interest
         15 = {
@@ -230,7 +238,11 @@ education_interest_bretonnian_effect = {
                 factor = 3
                 trait = slothful
             }
-            #no effect
+            opinion = {
+                modifier = opinion_annoyed
+                who = event_target:education_sponsor
+                months = 6
+            }
         }
         #academic interest
         25 = {
@@ -332,7 +344,11 @@ education_interest_kislev_gods_effect = {
                 factor = 3
                 trait = slothful
             }
-            #no effect
+            opinion = {
+                modifier = opinion_annoyed
+                who = event_target:education_sponsor
+                months = 6
+            }
         }
         #academic interest
         5 = {
@@ -1498,7 +1514,18 @@ graduation_from_further_education_engineering_effect = {
                 factor = 2
                 is_smart_trigger = yes
             }
-            add_trait = engineer
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.215
+                    days = 14
+                }
+            }
+            else = {
+                add_trait = engineer
+            }
         }
         #trained as a mathematician
         20 = {

@@ -2228,10 +2228,14 @@ province_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		#OR = {
-		#	has_province_modifier = greenskin_population_bad
-		#	has_province_flag = greenskin_horde_inv
-		#}
+		OR = {
+			check_variable = {
+				which = wild_greenskin_power
+				value = 20
+			}
+			has_province_modifier = greenskin_population_bad
+			has_province_flag = greenskin_horde_inv
+		}
 		NOT = {
 			owner = {
 				OR = {
@@ -2263,6 +2267,16 @@ province_event = {
 		change_variable = {
 			which = wild_greenskin_power
 			value = -20
+		}
+		owner = {
+			top_liege = {
+				if = {
+					limit = {
+						is_nomadic = yes
+					}
+					save_event_target_as = province_nomad_leader
+				}
+			}
 		}
 		if = {
 			limit = {
@@ -2323,8 +2337,7 @@ province_event = {
 						}
 				}
 		}
-
-		if = {
+		else_if = {
 			limit = {
 				region = world_karaz_ankor
 			}
@@ -2378,20 +2391,8 @@ province_event = {
 						}
 				}
 		}
-
-		if = {
-			limit = {
-				NOT = {
-					OR = {
-						region = world_old_world_empire_north_drakwald
-						region = world_old_world_empire_south_great_forest
-						region = world_athel_loren
-						region = world_old_world_border_princes_stygian_woods
-						region = world_karaz_ankor
-					}
-				}
-			}
-		random_list = {
+		else = {
+			random_list = {
 				20 = {
 					create_character = {
 							random_traits = yes
@@ -2493,12 +2494,10 @@ province_event = {
 					duration = -1
 				}
 			}
-
 			if = {
 				limit =  {
 					culture = orc_main
 				}
-
 				create_title = {
 					tier = DUKE
 					landless = yes
@@ -2508,395 +2507,805 @@ province_event = {
 					name = "GREENSKIN_HORDE"
 					holder = THIS
 				}
-
-			random_list = {
-				17 = {
-					spawn_unit = {
-						province = ROOT
-						home = ROOT
-						owner = THIS
-						leader = THIS
-						scaled_by_biggest_garrison = 0.90
-						troops = {
-							archers = { 6 6 }
-   							light_infantry = { 10 10 }
-  							heavy_infantry = { 4 4 }
-						}
-						attrition = 1.0
-					}
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 30
-						trait = creature_orc
-						trait = tough_soldier
-					}
-					new_character = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = PREV
-							scaled_by_biggest_garrison = 0.90
-							troops = {
-								archers = { 6 6 }
-   							light_infantry = { 10 10 }
-  							heavy_infantry = { 4 4 }
-							}
-							attrition = 1.0
-							disband_on_peace = yes
+				if = {
+					limit = {
+						event_target:province_nomad_leader = {
+							is_nomadic = yes
 						}
 					}
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 31
-						trait = creature_orc
-						trait = tough_soldier
-					}
-					new_character = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = PREV
-							scaled_by_biggest_garrison = 0.90
-							troops = {
-								archers = { 6 6 }
-   							light_infantry = { 10 10 }
-  							heavy_infantry = { 4 4 }
+					random_list = {
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+									heavy_infantry = { 4 4 }
+								}
+								attrition = 1.0
 							}
-							attrition = 1.0
-							disband_on_peace = yes
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+									heavy_infantry = { 4 4 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						16 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+									heavy_infantry = { 4 4 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.80
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+									heavy_infantry = { 4 4 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						16 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 14 14 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 14 14 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
 						}
 					}
 				}
-				17 = {
-					spawn_unit = {
-						province = ROOT
-						home = ROOT
-						owner = THIS
-						leader = THIS
-						scaled_by_biggest_garrison = 0.5
-						troops = {
-							archers = { 6 6 }
-   							light_infantry = { 10 10 }
-  							heavy_infantry = { 4 4 }
-						}
-						attrition = 1.0
-					}
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 30
-						trait = creature_orc
-						trait = tough_soldier
-					}
-					new_character = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = PREV
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-   							light_infantry = { 10 10 }
-  							heavy_infantry = { 4 4 }
+				else = {
+					random_list = {
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_by_biggest_garrison = 0.90
+								troops = {
+									archers = { 6 6 }
+		   							light_infantry = { 10 10 }
+		  							heavy_infantry = { 4 4 }
+								}
+								attrition = 1.0
 							}
-							attrition = 1.0
-							disband_on_peace = yes
-						}
-					}
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 31
-						trait = creature_orc
-						trait = tough_soldier
-					}
-					new_character = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = PREV
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-   							light_infantry = { 10 10 }
-  							heavy_infantry = { 4 4 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
 							}
-							attrition = 1.0
-							disband_on_peace = yes
-						}
-					}
-				}
-				16 = {
-					spawn_unit = {
-						province = ROOT
-						home = ROOT
-						owner = THIS
-						leader = THIS
-						scaled_by_biggest_garrison = 0.80
-						troops = {
-							archers = { 6 6 }
-   							light_infantry = { 10 10 }
-  							heavy_infantry = { 4 4 }
-						}
-						attrition = 1.0
-					}
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 30
-						trait = creature_orc
-						trait = tough_soldier
-					}
-					new_character = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = PREV
-							scaled_by_biggest_garrison = 0.80
-							troops = {
-								archers = { 6 6 }
-   							light_infantry = { 10 10 }
-  							heavy_infantry = { 4 4 }
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.90
+									troops = {
+										archers = { 6 6 }
+		   							light_infantry = { 10 10 }
+		  							heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
-							attrition = 1.0
-							disband_on_peace = yes
-						}
-					}
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 31
-						trait = creature_orc
-						trait = tough_soldier
-					}
-					new_character = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = PREV
-							scaled_by_biggest_garrison = 0.80
-							troops = {
-								archers = { 6 6 }
-   							light_infantry = { 10 10 }
-  							heavy_infantry = { 4 4 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
 							}
-							attrition = 1.0
-							disband_on_peace = yes
-						}
-					}
-				}
-				17 = {
-					spawn_unit = {
-						province = ROOT
-						home = ROOT
-						owner = THIS
-						leader = THIS
-						scaled_by_biggest_garrison = 0.5
-						troops = {
-							archers = { 6 6 }
-   							light_infantry = { 10 10 }
-  							heavy_infantry = { 4 4 }
-						}
-						attrition = 1.0
-					}
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 30
-						trait = creature_orc
-						trait = tough_soldier
-					}
-					new_character = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = PREV
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-   							light_infantry = { 10 10 }
-  							heavy_infantry = { 4 4 }
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.90
+									troops = {
+										archers = { 6 6 }
+		   							light_infantry = { 10 10 }
+		  							heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
-							attrition = 1.0
-							disband_on_peace = yes
 						}
-					}
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 31
-						trait = creature_orc
-						trait = tough_soldier
-					}
-					new_character = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = PREV
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-   							light_infantry = { 10 10 }
-  							heavy_infantry = { 4 4 }
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_by_biggest_garrison = 0.5
+								troops = {
+									archers = { 6 6 }
+		   							light_infantry = { 10 10 }
+		  							heavy_infantry = { 4 4 }
+								}
+								attrition = 1.0
 							}
-							attrition = 1.0
-							disband_on_peace = yes
-						}
-					}
-				}
-				16 = {
-					spawn_unit = {
-						province = ROOT
-						home = ROOT
-						owner = THIS
-						leader = THIS
-						scaled_by_biggest_garrison = 0.75
-						troops = {
-							archers = { 6 6 }
-							light_infantry = { 14 14 }
-						}
-						attrition = 1.0
-					}
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 30
-						trait = creature_orc
-						trait = tough_soldier
-					}
-					new_character = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = PREV
-							scaled_by_biggest_garrison = 0.75
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 14 14 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
 							}
-							attrition = 1.0
-							disband_on_peace = yes
-						}
-					}
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 31
-						trait = creature_orc
-						trait = tough_soldier
-					}
-					new_character = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = PREV
-							scaled_by_biggest_garrison = 0.75
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 14 14 }
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+		   							light_infantry = { 10 10 }
+		  							heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
-							attrition = 1.0
-							disband_on_peace = yes
-						}
-					}
-				}
-				17 = {
-					spawn_unit = {
-						province = ROOT
-						home = ROOT
-						owner = THIS
-						leader = THIS
-						scaled_by_biggest_garrison = 0.5
-						troops = {
-							archers = { 6 6 }
-							light_infantry = { 14 14 }
-						}
-						attrition = 1.0
-					}
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 30
-						trait = creature_orc
-						trait = tough_soldier
-					}
-					new_character = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = PREV
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 14 14 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
 							}
-							attrition = 1.0
-							disband_on_peace = yes
-						}
-					}
-					create_character = {
-						random_traits = yes
-						dynasty = none
-						religion = THIS
-						culture = THIS
-						female = no
-						age = 31
-						trait = creature_orc
-						trait = tough_soldier
-					}
-					new_character = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = PREV
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 14 14 }
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+		   							light_infantry = { 10 10 }
+		  							heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
-							attrition = 1.0
-							disband_on_peace = yes
+						}
+						16 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_by_biggest_garrison = 0.80
+								troops = {
+									archers = { 6 6 }
+		   							light_infantry = { 10 10 }
+		  							heavy_infantry = { 4 4 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.80
+									troops = {
+										archers = { 6 6 }
+		   							light_infantry = { 10 10 }
+		  							heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.80
+									troops = {
+										archers = { 6 6 }
+		   							light_infantry = { 10 10 }
+		  							heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_by_biggest_garrison = 0.5
+								troops = {
+									archers = { 6 6 }
+		   							light_infantry = { 10 10 }
+		  							heavy_infantry = { 4 4 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+		   							light_infantry = { 10 10 }
+		  							heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+		   							light_infantry = { 10 10 }
+		  							heavy_infantry = { 4 4 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						16 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_by_biggest_garrison = 0.75
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 14 14 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.75
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.75
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_by_biggest_garrison = 0.5
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 14 14 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
 						}
 					}
 				}
 			}
-			}
-
 			if = {
 				limit =  {
 					culture = goblin_main
@@ -2910,383 +3319,782 @@ province_event = {
 					name = "GOBLIN_HORDE"
 					holder = THIS
 				}
+				if = {
+					limit = {
+						event_target:province_nomad_leader = {
+							is_nomadic = yes
+						}
+					}
 					random_list = {
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 1.00
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						17 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.90
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
 								troops = {
 									archers = { 6 6 }
-								light_infantry = { 10 10 }
+									light_infantry = { 10 10 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						17 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.90
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
 								troops = {
 									archers = { 6 6 }
-								light_infantry = { 10 10 }
+									light_infantry = { 10 10 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						16 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						16 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 14 14 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 14 14 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
 					}
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+				}
+				else = {
+					random_list = {
+						17 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
+								scaled_by_biggest_garrison = 1.00
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.90
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.90
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.5
 								troops = {
 									archers = { 6 6 }
-								light_infantry = { 10 10 }
+									light_infantry = { 10 10 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						16 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
+								scaled_by_biggest_garrison = 0.95
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.90
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.90
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.5
 								troops = {
 									archers = { 6 6 }
-								light_infantry = { 10 10 }
+									light_infantry = { 10 10 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
-					}
-					16 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.95
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						16 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.90
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
-								}
-								attrition = 1.0
-								disband_on_peace = yes
-							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.90
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
-								}
-								attrition = 1.0
-								disband_on_peace = yes
-							}
-						}
-					}
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.5
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
-								}
-								attrition = 1.0
-								disband_on_peace = yes
-							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.5
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
-								}
-								attrition = 1.0
-								disband_on_peace = yes
-							}
-						}
-					}
-					16 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.75
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 14 14 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.75
 								troops = {
 									archers = { 6 6 }
 									light_infantry = { 14 14 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
 							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.75
-								troops = {
-									archers = { 6 6 }
-									light_infantry = { 14 14 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.75
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
 								}
-								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.75
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
-					}
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 14 14 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						17 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.5
 								troops = {
 									archers = { 6 6 }
 									light_infantry = { 14 14 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
 							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.5
-								troops = {
-									archers = { 6 6 }
-									light_infantry = { 14 14 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
 								}
-								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
 					}
 				}
 			}
-
-
 			if = {
 				limit =  {
 					culture = goblin_night
@@ -3300,384 +4108,784 @@ province_event = {
 					name = "NIGHT_GOBLIN_HORDE"
 					holder = THIS
 				}
+				if = {
+					limit = {
+						event_target:province_nomad_leader = {
+							is_nomadic = yes
+						}
+					}
 					random_list = {
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 1.00
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						17 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.90
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
 								troops = {
 									archers = { 6 6 }
-								light_infantry = { 10 10 }
+									light_infantry = { 10 10 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						17 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.90
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
 								troops = {
 									archers = { 6 6 }
-								light_infantry = { 10 10 }
+									light_infantry = { 10 10 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						16 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						16 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 14 14 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 14 14 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
 					}
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+				}
+				else = {
+					random_list = {
+						17 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
+								scaled_by_biggest_garrison = 1.00
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.90
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.90
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.5
 								troops = {
 									archers = { 6 6 }
-								light_infantry = { 10 10 }
+									light_infantry = { 10 10 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						16 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
+								scaled_by_biggest_garrison = 0.95
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.90
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.90
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.5
 								troops = {
 									archers = { 6 6 }
-								light_infantry = { 10 10 }
+									light_infantry = { 10 10 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
-					}
-					16 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.95
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						16 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.90
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
-								}
-								attrition = 1.0
-								disband_on_peace = yes
-							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.90
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
-								}
-								attrition = 1.0
-								disband_on_peace = yes
-							}
-						}
-					}
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.5
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
-								}
-								attrition = 1.0
-								disband_on_peace = yes
-							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.5
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
-								}
-								attrition = 1.0
-								disband_on_peace = yes
-							}
-						}
-					}
-					16 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.75
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 14 14 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.75
 								troops = {
 									archers = { 6 6 }
 									light_infantry = { 14 14 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
 							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.75
-								troops = {
-									archers = { 6 6 }
-									light_infantry = { 14 14 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.75
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
 								}
-								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.75
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
-					}
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 14 14 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						17 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.5
 								troops = {
 									archers = { 6 6 }
 									light_infantry = { 14 14 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
 							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.5
-								troops = {
-									archers = { 6 6 }
-									light_infantry = { 14 14 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
 								}
-								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
 					}
 				}
 			}
-
 			if = {
-			limit =  {
+				limit =  {
 					culture = goblin_forest
 					religion = spider_god
 				}
@@ -3690,387 +4898,799 @@ province_event = {
 					name = "FOREST_GOBLIN_HORDE"
 					holder = THIS
 				}
+				if = {
+					limit = {
+						event_target:province_nomad_leader = {
+							is_nomadic = yes
+						}
+					}
 					random_list = {
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 1.00
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						17 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.90
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
 								troops = {
 									archers = { 6 6 }
-								light_infantry = { 10 10 }
+									light_infantry = { 10 10 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
 
 								}
 								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						16 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						16 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 14 14 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 14 14 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+					}
+				}
+				else = {
+					random_list = {
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_by_biggest_garrison = 1.00
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.90
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.95
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_by_biggest_garrison = 0.5
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						16 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.95
 								troops = {
 									archers = { 6 6 }
-								light_infantry = { 10 10 }
+									light_infantry = { 10 10 }
 
 								}
 								attrition = 1.0
-								disband_on_peace = yes
 							}
-						}
-					}
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.95
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
 
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
-							attrition = 1.0
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.95
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
 						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						17 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.5
 								troops = {
 									archers = { 6 6 }
-								light_infantry = { 10 10 }
+									light_infantry = { 10 10 }
 
 								}
 								attrition = 1.0
-								disband_on_peace = yes
 							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.5
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
 
+									}
+									attrition = 1.0
+									disband_on_peace = yes
 								}
-								attrition = 1.0
-								disband_on_peace = yes
 							}
-						}
-					}
-					16 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.95
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
-
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
 							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.95
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
 
+									}
+									attrition = 1.0
+									disband_on_peace = yes
 								}
-								attrition = 1.0
-								disband_on_peace = yes
 							}
 						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						16 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.95
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
-
-								}
-								attrition = 1.0
-								disband_on_peace = yes
-							}
-						}
-					}
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
-
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.5
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
-
-								}
-								attrition = 1.0
-								disband_on_peace = yes
-							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.5
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
-
-								}
-								attrition = 1.0
-								disband_on_peace = yes
-							}
-						}
-					}
-					16 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.75
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 14 14 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.75
 								troops = {
 									archers = { 6 6 }
 									light_infantry = { 14 14 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
 							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.75
-								troops = {
-									archers = { 6 6 }
-									light_infantry = { 14 14 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.75
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
 								}
-								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.75
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
-					}
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 14 14 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
+						17 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.5
 								troops = {
 									archers = { 6 6 }
 									light_infantry = { 14 14 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
 							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_goblin
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.5
-								troops = {
-									archers = { 6 6 }
-									light_infantry = { 14 14 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
 								}
-								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_goblin
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
 					}
@@ -4090,387 +5710,799 @@ province_event = {
 					name = "SAVAGE_ORC_HORDE"
 					holder = THIS
 				}
+				if = {
+					limit = {
+						event_target:province_nomad_leader = {
+							is_nomadic = yes
+						}
+					}
 					random_list = {
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 1.00
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_orc
-							trait = tough_soldier
-						}
-						new_character = {
+						17 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.90
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
 								troops = {
 									archers = { 6 6 }
-								light_infantry = { 10 10 }
+									light_infantry = { 10 10 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
 
 								}
 								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_orc
-							trait = tough_soldier
-						}
-						new_character = {
+						16 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						16 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 14 14 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_with_population_of = event_target:province_nomad_leader
+								for_population = 10000
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 14 14 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_with_population_of = event_target:province_nomad_leader
+									for_population = 10000
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+					}
+				}
+				else = {
+					random_list = {
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_by_biggest_garrison = 1.00
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.90
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.95
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						17 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
+								scaled_by_biggest_garrison = 0.5
+								troops = {
+									archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+								}
+								attrition = 1.0
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
+						}
+						16 = {
+							spawn_unit = {
+								province = ROOT
+								home = ROOT
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.95
 								troops = {
 									archers = { 6 6 }
-								light_infantry = { 10 10 }
+									light_infantry = { 10 10 }
 
 								}
 								attrition = 1.0
-								disband_on_peace = yes
 							}
-						}
-					}
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.95
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
 
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
-							attrition = 1.0
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.95
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
+
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
+							}
 						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_orc
-							trait = tough_soldier
-						}
-						new_character = {
+						17 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.5
 								troops = {
 									archers = { 6 6 }
-								light_infantry = { 10 10 }
+									light_infantry = { 10 10 }
 
 								}
 								attrition = 1.0
-								disband_on_peace = yes
 							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_orc
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.5
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
 
+									}
+									attrition = 1.0
+									disband_on_peace = yes
 								}
-								attrition = 1.0
-								disband_on_peace = yes
 							}
-						}
-					}
-					16 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.95
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
-
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
 							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_orc
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.95
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+									light_infantry = { 10 10 }
 
+									}
+									attrition = 1.0
+									disband_on_peace = yes
 								}
-								attrition = 1.0
-								disband_on_peace = yes
 							}
 						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_orc
-							trait = tough_soldier
-						}
-						new_character = {
+						16 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.95
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
-
-								}
-								attrition = 1.0
-								disband_on_peace = yes
-							}
-						}
-					}
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 10 10 }
-
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_orc
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.5
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
-
-								}
-								attrition = 1.0
-								disband_on_peace = yes
-							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_orc
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.5
-								troops = {
-									archers = { 6 6 }
-								light_infantry = { 10 10 }
-
-								}
-								attrition = 1.0
-								disband_on_peace = yes
-							}
-						}
-					}
-					16 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.75
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 14 14 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_orc
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.75
 								troops = {
 									archers = { 6 6 }
 									light_infantry = { 14 14 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
 							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_orc
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.75
-								troops = {
-									archers = { 6 6 }
-									light_infantry = { 14 14 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.75
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
 								}
-								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.75
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
-					}
-					17 = {
-						spawn_unit = {
-							province = ROOT
-							home = ROOT
-							owner = THIS
-							leader = THIS
-							scaled_by_biggest_garrison = 0.5
-							troops = {
-								archers = { 6 6 }
-								light_infantry = { 14 14 }
-							}
-							attrition = 1.0
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 30
-							trait = creature_orc
-							trait = tough_soldier
-						}
-						new_character = {
+						17 = {
 							spawn_unit = {
 								province = ROOT
 								home = ROOT
-								owner = PREV
+								owner = THIS
+								leader = THIS
 								scaled_by_biggest_garrison = 0.5
 								troops = {
 									archers = { 6 6 }
 									light_infantry = { 14 14 }
 								}
 								attrition = 1.0
-								disband_on_peace = yes
 							}
-						}
-						create_character = {
-							random_traits = yes
-							dynasty = none
-							religion = THIS
-							culture = THIS
-							female = no
-							age = 31
-							trait = creature_orc
-							trait = tough_soldier
-						}
-						new_character = {
-							spawn_unit = {
-								province = ROOT
-								home = ROOT
-								owner = PREV
-								scaled_by_biggest_garrison = 0.5
-								troops = {
-									archers = { 6 6 }
-									light_infantry = { 14 14 }
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 30
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
 								}
-								attrition = 1.0
-								disband_on_peace = yes
+							}
+							create_character = {
+								random_traits = yes
+								dynasty = none
+								religion = THIS
+								culture = THIS
+								female = no
+								age = 31
+								trait = creature_orc
+								trait = tough_soldier
+							}
+							new_character = {
+								spawn_unit = {
+									province = ROOT
+									home = ROOT
+									owner = PREV
+									scaled_by_biggest_garrison = 0.5
+									troops = {
+										archers = { 6 6 }
+										light_infantry = { 14 14 }
+									}
+									attrition = 1.0
+									disband_on_peace = yes
+								}
 							}
 						}
 					}
