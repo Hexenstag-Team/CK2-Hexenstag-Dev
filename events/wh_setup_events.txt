@@ -1686,12 +1686,39 @@ character_event = {	#Reiklander-Nulnian War start on war_exhaustion_modifier eve
 	}
 
 	immediate = {
-		long_character_event = { id = wh_setup.25 }
-		any_realm_character = {
+		if = {
 			limit = {
-				is_ruler = yes
+				NOT = {
+					has_global_flag = reiklander_nulnian_war
+				}
 			}
 			long_character_event = { id = wh_setup.25 }
+			any_realm_character = {
+				limit = {
+					is_ruler = yes
+				}
+				long_character_event = { id = wh_setup.25 }
+			}
+		}
+		else_if = {
+			limit = {
+				has_global_flag = reiklander_nulnian_war
+			}
+			add_character_modifier = {
+				name = war_exhaustion_modifier
+				months = -1
+				stacking = yes
+			}
+			any_realm_character = {
+				limit = {
+					is_ruler = yes
+				}
+				add_character_modifier = {
+					name = war_exhaustion_modifier
+					months = -1
+					stacking = yes
+				}
+			}
 		}
 	}
 }

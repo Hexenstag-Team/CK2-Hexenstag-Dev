@@ -61,39 +61,6 @@ d_tilean_inquisition = {
 	mercenary_type = d_tilean_inquisition_modifier
 }
 
-
-d_reiksguard = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	capital = 299 #Altdorf
-
-	allow = {
-		OR = {
-			#any_liege = c_altdorf
-			has_landed_title = c_altdorf
-		}
-		religion_group = old_world_group
-	}
-
-	religion = imperial_pantheon
-	culture = reiklander
-
-	title = "CAPTAIN"
-	title_female = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	mercenary = yes
-	landless = yes
-	primary = yes
-	independent = yes
-
-	strength_growth_per_century = 0.05
-
-	mercenary_type = d_reiksguard_modifier
-}
-
-
 d_mercy_killers = {
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
@@ -1744,7 +1711,7 @@ d_peoples_band = {
 	allow = {
 		trait = patron_shallya
 	}
-	religion = imperial_pantheon
+	religion = classical_pantheon
 	culture = astur
 
 	title = "CAPTAIN"
@@ -1771,7 +1738,7 @@ d_free_company = {
 		has_landed_title = e_communards
 		trait = patron_shallya
 	}
-	religion = imperial_pantheon
+	religion = classical_pantheon
 	culture = astur
 
 	title = "CAPTAIN"
@@ -5490,41 +5457,7 @@ d_marcheur_mercenary = {
 	mercenary_type = d_breto_mercenary_modifier
 }
 
-###Holy Orders turned Mercenaries for 0.2
-
-###Sigmar
-d_knights_of_sigmars_blood = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	#graphical_culture = holygfx
-
-	capital = 958 #Ertburg
-	
-	allow = {
-		religion = imperial_pantheon
-	}
-
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
-
-	# Always exists
-	landless = yes
-
-	mercenary = yes
-	mercenary_type = d_knights_of_sigmars_blood_composition
-
-	# Parent Religion
-	religion = imperial_pantheon
-	culture = reiklander
-
-	# Cannot be held as a secondary title
-	primary = yes
-
-	# Extra income due to donations, etc
-	monthly_income = 6 # (Must be an integer between 1 and 512)
-}
+###Mercenaries for 0.2
 
 d_knights_of_the_broken_sword = {
 	color = { 160 160 160 }
@@ -5532,7 +5465,7 @@ d_knights_of_the_broken_sword = {
 
 	#graphical_culture = holygfx
 
-	capital = 357 #Averheim
+	capital = 357 #Kreutzhofen
 	
 	allow = {
 		religion = imperial_pantheon
@@ -5559,104 +5492,11 @@ d_knights_of_the_broken_sword = {
 	monthly_income = 3 #(Must be an integer between 1 and 512)
 }
 
-d_knights_of_the_cleansing_flame = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
 
-	#graphical_culture = holygfx
 
-	capital = 304 #Ubersreik
-	
-	allow = {
-		religion = imperial_pantheon
-	}
 
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
 
-	# Always exists
-	landless = yes
 
-	mercenary = yes
-	mercenary_type = d_knights_of_the_cleansing_flame_composition
-
-	# Parent Religion
-	religion = imperial_pantheon
-	culture = averlander
-
-	# Cannot be held as a secondary title
-	primary = yes
-
-	# Extra income due to donations, etc
-	monthly_income = 4 #(Must be an integer between 1 and 512)
-}
-
-d_knights_of_the_fiery_heart = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	#graphical_culture = holygfx
-
-	capital = 333 # c_krugenheim
-	
-	allow = {
-		religion = imperial_pantheon
-	}
-
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
-
-	# Always exists
-	landless = yes
-
-	mercenary = yes
-	mercenary_type = d_knights_of_the_fiery_heart_composition
-
-	# Parent Religion
-	religion = imperial_pantheon
-	culture = talabeclander
-
-	# Cannot be held as a secondary title
-	primary = yes
-
-	# Extra income due to donations, etc
-	monthly_income = 3 #(Must be an integer between 1 and 512)
-}
-
-d_knights_panther = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	#graphical_culture = holygfx
-
-	capital = 324 #Talabecland
-	
-	allow = {
-		religion = imperial_pantheon
-	}
-
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
-
-	# Always exists
-	landless = yes
-
-	mercenary = yes
-	mercenary_type = d_knights_panther_composition
-
-	# Parent Religion
-	religion = imperial_pantheon
-	culture = talabeclander
-
-	# Cannot be held as a secondary title
-	primary = yes
-
-	# Extra income due to donations, etc
-	monthly_income = 8 #(Must be an integer between 1 and 512)
-}
 
 ###Ulric
 d_knights_of_the_white_wolf = {

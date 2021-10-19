@@ -7661,7 +7661,12 @@ patron_imperial_pantheon_effect = {
 			}
 			modifier = {
 				factor = 10
-				has_landed_title = e_reikland
+				OR = {
+					has_landed_title = e_reikland
+					has_landed_title = k_cult_of_sigmar
+					has_landed_title = d_arch_lectory_talabheim
+					has_landed_title = d_arch_lectory_nuln
+				}
 			}
 			modifier = {
 				factor = 10
@@ -7712,7 +7717,10 @@ patron_imperial_pantheon_effect = {
 		10 = {	#Taal&Rhya
 			modifier = {
 				factor = 10
-				has_landed_title = e_talabecland
+				OR = {
+					has_landed_title = e_talabecland
+					has_landed_title = k_cult_of_taal_and_rhya
+				}
 			}
 			modifier = {
 				factor = 10
@@ -7759,7 +7767,10 @@ patron_imperial_pantheon_effect = {
 		10 = {	#Ulric
 			modifier = {
 				factor = 10
-				has_landed_title = e_middenland
+				OR = {
+					has_landed_title = e_middenland
+					has_landed_title = k_cult_of_ulric
+				}
 			}
 			modifier = {
 				factor = 10
@@ -7830,6 +7841,9 @@ patron_imperial_pantheon_effect = {
 				factor = 10
 				culture = sylvanian
 			}
+			modifier = {
+				has_landed_title = k_cult_of_morr
+			}
 			add_trait = patron_morr
 		}
 		5 = {	#Verena
@@ -7871,6 +7885,14 @@ patron_imperial_pantheon_effect = {
 				}
 			}
 			modifier = {
+				factor = 10
+				OR = {
+					has_landed_title = k_cult_of_myrmidia
+					has_landed_title = d_high_temple_of_remas
+					has_landed_title = d_high_temple_of_magritta
+				}
+			}
+			modifier = {
 				factor = 5
 				OR = {
 					trait = brilliant_strategist
@@ -7884,6 +7906,10 @@ patron_imperial_pantheon_effect = {
 				factor = 10
 				is_lowborn = yes
 				NOT = { trait = peasant_leader }
+			}
+			modifier = {
+				factor = 10
+				has_landed_title = k_cult_of_shallya
 			}
 			modifier = {
 				factor = 5

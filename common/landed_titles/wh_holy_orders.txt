@@ -1,11 +1,10 @@
 #################
 ## Holy Orders ##
 #################
-#  THE EMPIRE   #
-#################
 
-###Myrmidia
-d_knights_of_the_blazing_sun = {
+###Imperial Pantheon
+
+d_knights_of_the_blazing_sun = {	#Myrmidia
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -24,7 +23,7 @@ d_knights_of_the_blazing_sun = {
 	mercenary_type = d_knights_of_the_blazing_sun_composition
 
 	# Parent Religion
-	religion = classical_pantheon
+	religion = imperial_pantheon
 	culture = talabeclander
 
 	# Cannot be held as a secondary title
@@ -33,8 +32,138 @@ d_knights_of_the_blazing_sun = {
 	# Extra income due to donations, etc
 	monthly_income = 5 #(Must be an integer between 1 and 512)
 }
+d_knights_of_the_everlasting_light = {	#Verena
+	color = { 160 160 160 }
+	color2 = { 255 255 255 }
 
-d_order_of_the_righteous_spear = {
+	#graphical_culture = holygfx
+
+	capital = 299 #Altdorf
+
+	title = "GRANDMASTER"
+	title_female = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	mercenary_type = d_knights_of_the_everlasting_light_composition
+
+	# Parent Religion
+	religion = imperial_pantheon
+	culture = reiklander
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 3 #(Must be an integer between 1 and 512)
+}
+d_knights_of_sigmars_blood = {	#Sigmar
+	color = { 160 160 160 }
+	color2 = { 255 255 255 }
+
+	#graphical_culture = holygfx
+
+	capital = 958 #Ertburg
+	
+	allow = {
+		religion = imperial_pantheon
+	}
+
+	title = "GRANDMASTER"
+	title_female = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	mercenary_type = d_knights_of_sigmars_blood_composition
+
+	# Parent Religion
+	religion = imperial_pantheon
+	culture = talabeclander
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 6 # (Must be an integer between 1 and 512)
+}
+d_knights_of_the_cleansing_flame = {	#Sigmar
+	color = { 160 160 160 }
+	color2 = { 255 255 255 }
+
+	#graphical_culture = holygfx
+
+	capital = 304 #Ubersreik
+	
+	allow = {
+		religion = imperial_pantheon
+	}
+
+	title = "GRANDMASTER"
+	title_female = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	mercenary_type = d_knights_of_the_cleansing_flame_composition
+
+	# Parent Religion
+	religion = imperial_pantheon
+	culture = reiklander
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 4 #(Must be an integer between 1 and 512)
+}
+d_knights_panther = {	#Secular
+	color = { 160 160 160 }
+	color2 = { 255 255 255 }
+
+	#graphical_culture = holygfx
+
+	capital = 324 #Carroburg
+	
+	allow = {
+		religion = imperial_pantheon
+	}
+
+	title = "GRANDMASTER"
+	title_female = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	mercenary_type = d_knights_panther_composition
+
+	# Parent Religion
+	religion = imperial_pantheon
+	culture = middenlander
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 8 #(Must be an integer between 1 and 512)
+}
+
+
+
+
+
+###Classical Pantheon
+
+d_order_of_the_righteous_spear = {	#Myrmidia
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -62,8 +191,7 @@ d_order_of_the_righteous_spear = {
 	# Extra income due to donations, etc
 	monthly_income = 3 #(Must be an integer between 1 and 512)
 }
-
-d_order_of_fury = {
+d_order_of_fury = {	#Myrmidia
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -92,92 +220,16 @@ d_order_of_fury = {
 	monthly_income = 2 #(Must be an integer between 1 and 512)
 }
 
-d_knights_of_the_gold_lion = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
 
-	#graphical_culture = holygfx
 
-	capital = 309 #Nuln
 
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
 
-	# Always exists
-	landless = yes
 
-	holy_order = yes
-	mercenary_type = d_knights_of_the_gold_lion_composition
 
-	# Parent Religion
-	religion = classical_pantheon
-	culture = wissenlander
 
-	# Cannot be held as a secondary title
-	primary = yes
 
-	# Extra income due to donations, etc
-	monthly_income = 4 #(Must be an integer between 1 and 512)
-}
 
-d_knights_of_the_everlasting_light = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
 
-	#graphical_culture = holygfx
-
-	capital = 357 #Averheim
-
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
-
-	# Always exists
-	landless = yes
-
-	holy_order = yes
-	mercenary_type = d_knights_of_the_everlasting_light_composition
-
-	# Parent Religion
-	religion = classical_pantheon
-	culture = ostermarker
-
-	# Cannot be held as a secondary title
-	primary = yes
-
-	# Extra income due to donations, etc
-	monthly_income = 3 #(Must be an integer between 1 and 512)
-}
-
-d_order_of_sword_and_scale = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	#graphical_culture = holygfx
-
-	capital = 357 #Averheim
-
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
-
-	# Always exists
-	landless = yes
-
-	holy_order = yes
-	mercenary_type = d_order_of_sword_and_scale_composition
-
-	# Parent Religion
-	religion = classical_pantheon
-	culture = astur
-
-	# Cannot be held as a secondary title
-	primary = yes
-
-	# Extra income due to donations, etc
-	monthly_income = 3 #(Must be an integer between 1 and 512)
-}
 
 ###############
 #  BRETTONIA  #
@@ -281,7 +333,7 @@ d_dragon_company = {
 	title_female = "CAPTAIN"
 	foa = "CAPTAIN_FOA"
 
-	mercenary = yes
+	holy_order = yes
 	landless = yes
 	primary = yes
 	independent = yes
@@ -309,7 +361,7 @@ d_slayer_legion = {
 	title_female = "CAPTAIN"
 	foa = "CAPTAIN_FOA"
 
-	mercenary = yes
+	holy_order = yes
 	landless = yes
 	primary = yes
 	independent = yes
