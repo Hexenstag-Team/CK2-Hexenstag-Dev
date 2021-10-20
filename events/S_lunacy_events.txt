@@ -6,17 +6,20 @@ character_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-    # things which exclude lunacy
+	min_age = 12
+
 	trigger = {
+		OR = {
+			trait = lunatic_1
+			trait = lunatic_2
+			trait = lunatic_3
+		}
+		# things which exclude lunacy
 		NOT = { trait = creature_forestspirit }
 		NOT = { trait = creature_treekin }
 		NOT = { trait = creature_nehekharan }
 		NOT = { trait = creature_chaosspawn }
 		is_vampire_trigger = no
-
-		OR = { trait = lunatic_1
-			trait = lunatic_2
-			trait = lunatic_3 }
 	}
 
 	weight_multiplier = { factor = 1

@@ -10,7 +10,9 @@ character_event = {
 	ai = no
 
 	trigger = {
-		FROM = e_the_empire
+		FROM = {
+			title = e_the_empire
+		}
 		NOT = {
 			has_global_flag = achievement_united_the_empire
 		}

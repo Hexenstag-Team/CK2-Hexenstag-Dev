@@ -4,7 +4,7 @@ namespace = wh_higher_education
 # Index events, determine young adult's inclination to be educated
 #############################################################################
 
-# Player's version, triggered by decision
+# Player's version of going to university, triggered by decision
 character_event = {
     id = wh_higher_education.1
     desc = EVTDESCwh_higher_education.1
@@ -42,8 +42,7 @@ character_event = {
     }
 }
 
-
-# Player's relative - triggered by decision
+# Player's relative's version of going to university - triggered by decision
 character_event = {
     id = wh_higher_education.2
 
@@ -122,6 +121,13 @@ character_event = {
                         }
                     }
                 }
+            }
+        }
+        else = {
+            opinion = {
+                modifier = opinion_annoyed
+                who = event_target:education_sponsor
+                months = 6
             }
         }
     }
@@ -210,6 +216,7 @@ character_event = {
                     has_character_flag = seeks_further_education_engineering
                     has_character_flag = seeks_further_education_military
                     has_character_flag = seeks_further_education_religious
+                    has_character_flag = seeks_further_education_magical
                 }
             }
             save_event_target_as = aspiring_student
@@ -344,6 +351,7 @@ character_event = {
                     has_character_flag = seeks_further_education_engineering
                     has_character_flag = seeks_further_education_military
                     has_character_flag = seeks_further_education_religious
+                    has_character_flag = seeks_further_education_magical
                 }
             }
             save_event_target_as = aspiring_student
@@ -479,6 +487,7 @@ character_event = {
                     has_character_flag = seeks_further_education_engineering
                     has_character_flag = seeks_further_education_military
                     has_character_flag = seeks_further_education_religious
+                    has_character_flag = seeks_further_education_magical
                 }
             }
             save_event_target_as = aspiring_student
@@ -533,7 +542,7 @@ character_event = {
 
 #more peasants
 character_event = {
-    id = wh_higher_education.5
+    id = wh_higher_education.6
 
     hide_window = yes
     is_triggered_only = yes
@@ -614,6 +623,7 @@ character_event = {
                     has_character_flag = seeks_further_education_engineering
                     has_character_flag = seeks_further_education_military
                     has_character_flag = seeks_further_education_religious
+                    has_character_flag = seeks_further_education_magical
                 }
             }
             save_event_target_as = aspiring_student
@@ -668,7 +678,7 @@ character_event = {
 
 #Kislev Gods
 character_event = {
-    id = wh_higher_education.6
+    id = wh_higher_education.7
 
     hide_window = yes
     is_triggered_only = yes
@@ -748,6 +758,7 @@ character_event = {
                     has_character_flag = seeks_further_education_engineering
                     has_character_flag = seeks_further_education_military
                     has_character_flag = seeks_further_education_religious
+                    has_character_flag = seeks_further_education_magical
                 }
             }
             save_event_target_as = aspiring_student
@@ -800,6 +811,32 @@ character_event = {
     }
 }
 
+# Player's version of going to magical academy, triggered by decision
+character_event = {
+    id = wh_higher_education.8
+    desc = EVTDESCwh_higher_education.8
+    picture = GFX_evt_dream_Hexenstag
+
+    is_triggered_only = yes
+
+    immediate = {
+        save_event_target_as = aspiring_student
+        save_event_target_as = education_sponsor
+    }
+
+    option = {
+        name = EVTOPTA_wh_higher_education.8
+        set_character_flag = seeks_further_education_magical
+    }
+
+    after = {
+        character_event = {
+            id = wh_higher_education.100
+            days = 2
+        }
+    }
+}
+
 #secure sponsor agreement, find institution. Player version.
 character_event = {
     id = wh_higher_education.100
@@ -838,6 +875,9 @@ character_event = {
             }
             find_exotic_engineer_school_effect = yes
         }
+        else_if = {
+            find_exotic_magical_academy_effect = yes
+        }
         else = {
             find_exotic_university_effect = yes
         }
@@ -846,6 +886,11 @@ character_event = {
     #send to close university
     option = {
         name = EVTOPTA_wh_higher_education.100
+        trigger = {
+            NOT = {
+                has_character_flag = seeks_further_education_magical
+            }
+        }
         scaled_wealth = {
             value = -0.1
             min = -5
@@ -865,6 +910,11 @@ character_event = {
     #send to more distant university
     option = {
         name = EVTOPTB_wh_higher_education.100
+        trigger = {
+            NOT = {
+                has_character_flag = seeks_further_education_magical
+            }
+        }
         scaled_wealth = {
             value = -0.15
             min = -15
@@ -922,6 +972,14 @@ character_event = {
             }
             find_close_engineer_school_effect = yes
         }
+        else_if = {
+            limit = {
+                event_target:aspiring_student = {
+                    has_character_flag = seeks_further_education_magical
+                }
+            }
+            find_close_magical_academy_effect = yes
+        }
         else = {
             find_close_university_effect = yes
         }
@@ -946,6 +1004,18 @@ character_event = {
                 modifier = {
                     factor = 0.5
                     trait = cruel
+                }
+                modifier = {
+                    factor = 0.5
+                    event_target:aspiring_student = {
+                        has_character_flag = seeks_further_education_magical
+                    }
+                    host = {
+                        OR = {
+                            has_law = magic_law_0
+                            has_law = magic_law_1
+                        }
+                    }
                 }
                 #nope
             }
@@ -989,6 +1059,137 @@ character_event = {
                 }
             }
         }
+    }
+}
+
+#MAGICAL EDUCATION PROGRESS NOTIFICATIONS
+#academy
+character_event = {
+    id = wh_higher_education.160
+    desc = EVTDESCwh_higher_education.160
+    picture = GFX_evt_mage_choose_lore
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_learning = 1
+    }
+}
+
+#precinct
+character_event = {
+    id = wh_higher_education.161
+    desc = EVTDESCwh_higher_education.161
+    picture = GFX_evt_mage_choose_lore
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_learning = 1
+    }
+}
+
+#lore of light
+character_event = {
+    id = wh_higher_education.162
+    desc = EVTDESCwh_higher_education.162
+    picture = GFX_evt_mage_lore_light
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_learning = 1
+    }
+}
+
+#lore of heavens
+character_event = {
+    id = wh_higher_education.163
+    desc = EVTDESCwh_higher_education.163
+    picture = GFX_evt_mage_lore_heavens
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_learning = 1
+    }
+}
+
+#lore of metal
+character_event = {
+    id = wh_higher_education.164
+    desc = EVTDESCwh_higher_education.164
+    picture = GFX_evt_mage_lore_metal
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_stewardship = 1
+    }
+}
+
+#lore of life
+character_event = {
+    id = wh_higher_education.165
+    desc = EVTDESCwh_higher_education.165
+    picture = GFX_evt_mage_lore_life
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_stewardship = 1
+    }
+}
+
+#lore of beasts
+character_event = {
+    id = wh_higher_education.166
+    desc = EVTDESCwh_higher_education.166
+    picture = GFX_evt_mage_lore_beasts
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_martial = 1
+    }
+}
+
+#lore of fire
+character_event = {
+    id = wh_higher_education.167
+    desc = EVTDESCwh_higher_education.167
+    picture = GFX_evt_mage_lore_fire
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_martial = 1
+    }
+}
+
+#lore of shadows
+character_event = {
+    id = wh_higher_education.168
+    desc = EVTDESCwh_higher_education.168
+    picture = GFX_evt_mage_lore_shadow
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_intrigue = 1
+    }
+}
+
+#lore of death
+character_event = {
+    id = wh_higher_education.169
+    desc = EVTDESCwh_higher_education.169
+    picture = GFX_evt_mage_lore_death
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        change_intrigue = 1
     }
 }
 
@@ -1237,6 +1438,9 @@ character_event = {
             seeks_further_education_religious = {
                 improved_by_further_education_religious_effect = yes
             }
+            seeks_further_education_magical = {
+                improved_by_further_education_magical_effect = yes
+            }
         }
         #wear and tear
         degraded_by_further_education_effect = yes
@@ -1266,6 +1470,9 @@ character_event = {
                 }
                 seeks_further_education_religious = {
                     graduation_from_further_education_religious_effect = yes
+                }
+                seeks_further_education_magical = {
+                    graduation_from_further_education_magical_effect = yes
                 }
             }
             if = {
@@ -1303,6 +1510,9 @@ character_event = {
                 seeks_further_education_religious = {
                     graduation_from_further_education_religious_effect = yes
                 }
+                seeks_further_education_magical = {
+                    graduation_from_further_education_magical_effect = yes
+                }
             }
             if = {
                 limit = {
@@ -1310,7 +1520,14 @@ character_event = {
                         has_character_flag = failed_academic
                     }
                 }
-                add_trait = academic
+                if = {
+                    limit = {
+                        NOT = {
+                            has_character_flag = seeks_further_education_magical
+                        }
+                    }
+                    add_trait = academic
+                }
                 event_target:education_sponsor = {
                     if = {
                         limit = {
@@ -1545,6 +1762,19 @@ character_event = {
     }
 }
 
+#partial success, became hedge wizard
+character_event = {
+    id = wh_higher_education.216
+    desc = EVTDESCwh_higher_education.216
+    picture = GFX_evt_pleasing_letter
+    is_triggered_only = yes
+
+    option = {
+        name = GAUDEAMUS_IGITUR
+        add_trait = hedge_wizard
+    }
+}
+
 #notify player that their relative has succeeded at their studies
 character_event = {
     id = wh_higher_education.220
@@ -1569,6 +1799,9 @@ character_event = {
     }
 }
 
+#NOTIFICATIONS FOR MAGICAL EDUCATION
+
+
 #Academic Tutor bonus - adapted from the vanilla events for monastic tutors
 character_event = {
 	id = wh_higher_education.1000
@@ -1591,6 +1824,7 @@ character_event = {
 		}
 	}
 }
+
 #How do you try and nudge your ward
 character_event = {
 	id = wh_higher_education.1001

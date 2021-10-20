@@ -26,10 +26,9 @@ education_interest_imperial_pantheon_effect = {
                 factor = 3
                 trait = slothful
             }
-            opinion = {
-                modifier = opinion_annoyed
-                who = event_target:education_sponsor
-                months = 6
+            modifier = {
+                factor = 5
+                trait = mage_apprentice
             }
         }
         #academic interest
@@ -101,6 +100,38 @@ education_interest_imperial_pantheon_effect = {
             }
             set_character_flag = seeks_further_education_religious
         }
+        #magical interest
+        30 = {
+            trigger = {
+                has_magic_potential = yes
+            }
+            modifier = {
+                factor = 0.1
+                host = {
+                    OR = {
+                        has_law = magic_law_0
+                        has_law = magic_law_1
+                    }
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = ambitious
+            }
+            modifier = {
+                factor = 0.8
+                trait = zealous
+            }
+            modifier = {
+                factor = 0.5
+                trait = magic_potential_1
+            }
+            modifier = {
+                factor = 2
+                trait = magic_potential_4
+            }
+            set_character_flag = seeks_further_education_magical
+        }
     }
 }
 
@@ -132,10 +163,9 @@ education_interest_classical_pantheon_effect = {
                 factor = 3
                 trait = slothful
             }
-            opinion = {
-                modifier = opinion_annoyed
-                who = event_target:education_sponsor
-                months = 6
+            modifier = {
+                factor = 5
+                trait = mage_apprentice
             }
         }
         #academic interest
@@ -156,6 +186,10 @@ education_interest_classical_pantheon_effect = {
                 factor = 1.5
                 stewardship = 8
                 learning = 8
+            }
+            modifier = {
+                factor = 2
+                culture_group = tilean_group
             }
             set_character_flag = seeks_further_education_engineering
         }
@@ -207,6 +241,38 @@ education_interest_classical_pantheon_effect = {
             }
             set_character_flag = seeks_further_education_religious
         }
+        #magical interest
+        30 = {
+            trigger = {
+                has_magic_potential = yes
+            }
+            modifier = {
+                factor = 0.1
+                host = {
+                    OR = {
+                        has_law = magic_law_0
+                        has_law = magic_law_1
+                    }
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = ambitious
+            }
+            modifier = {
+                factor = 0.8
+                trait = zealous
+            }
+            modifier = {
+                factor = 0.5
+                trait = magic_potential_1
+            }
+            modifier = {
+                factor = 2
+                trait = magic_potential_4
+            }
+            set_character_flag = seeks_further_education_magical
+        }
     }
 }
 
@@ -238,10 +304,9 @@ education_interest_bretonnian_effect = {
                 factor = 3
                 trait = slothful
             }
-            opinion = {
-                modifier = opinion_annoyed
-                who = event_target:education_sponsor
-                months = 6
+            modifier = {
+                factor = 5
+                trait = mage_apprentice
             }
         }
         #academic interest
@@ -313,6 +378,38 @@ education_interest_bretonnian_effect = {
             }
             set_character_flag = seeks_further_education_religious
         }
+        #magical interest
+        30 = {
+            trigger = {
+                has_magic_potential = yes
+            }
+            modifier = {
+                factor = 0.1
+                host = {
+                    OR = {
+                        has_law = magic_law_0
+                        has_law = magic_law_1
+                    }
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = ambitious
+            }
+            modifier = {
+                factor = 0.8
+                trait = zealous
+            }
+            modifier = {
+                factor = 0.5
+                trait = magic_potential_1
+            }
+            modifier = {
+                factor = 2
+                trait = magic_potential_4
+            }
+            set_character_flag = seeks_further_education_magical
+        }
     }
 }
 
@@ -344,10 +441,9 @@ education_interest_kislev_gods_effect = {
                 factor = 3
                 trait = slothful
             }
-            opinion = {
-                modifier = opinion_annoyed
-                who = event_target:education_sponsor
-                months = 6
+            modifier = {
+                factor = 5
+                trait = mage_apprentice
             }
         }
         #academic interest
@@ -418,6 +514,39 @@ education_interest_kislev_gods_effect = {
                 is_unattractive_trigger = yes
             }
             set_character_flag = seeks_further_education_religious
+        }
+        #magical interest - not used for ice witches
+        30 = {
+            trigger = {
+                has_magic_potential = yes
+                is_female = no
+            }
+            modifier = {
+                factor = 0.1
+                host = {
+                    OR = {
+                        has_law = magic_law_0
+                        has_law = magic_law_1
+                    }
+                }
+            }
+            modifier = {
+                factor = 2
+                trait = ambitious
+            }
+            modifier = {
+                factor = 0.8
+                trait = zealous
+            }
+            modifier = {
+                factor = 0.5
+                trait = magic_potential_1
+            }
+            modifier = {
+                factor = 2
+                trait = magic_potential_4
+            }
+            set_character_flag = seeks_further_education_magical
         }
     }
 }
@@ -540,6 +669,65 @@ find_close_engineer_school_effect = {
     }
 }
 
+find_close_magical_academy_effect = {
+    if = {
+        limit = {
+            capital_scope = {
+                wonder = {
+                    has_wonder_upgrade = upgrade_magical_academy
+                }
+            }
+        }
+        capital_scope = {
+            save_event_target_as = close_university_candidate
+        }
+    }
+    else_if = {
+        limit = {
+            any_realm_wonder = {
+                has_wonder_upgrade = upgrade_magical_academy
+            }
+        }
+        random_realm_wonder = {
+            limit = {
+                has_wonder_upgrade = upgrade_magical_academy
+            }
+            location = {
+                save_event_target_as = close_university_candidate
+            }
+        }
+    }
+    else_if = {
+        limit = {
+            top_liege = {
+                any_realm_wonder = {
+                    has_wonder_upgrade = upgrade_magical_academy
+                }
+            }
+        }
+        top_liege = {
+            random_realm_wonder = {
+                limit = {
+                    has_wonder_upgrade = upgrade_magical_academy
+                }
+                location = {
+                    save_event_target_as = close_university_candidate
+                }
+            }
+        }
+    }
+    else = {
+        random_wonder = {
+            limit = {
+                has_wonder_upgrade = upgrade_magical_academy
+            }
+            location = {
+                save_event_target_as = close_university_candidate
+            }
+        }
+    }
+}
+
 find_further_university_effect = {
     if = {
         limit = {
@@ -639,6 +827,38 @@ find_exotic_engineer_school_effect = {
                     province = event_target:further_university_candidate
                 }
             }
+        }
+        location = {
+            save_event_target_as = exotic_university_candidate
+        }
+    }
+}
+
+find_exotic_magical_academy_effect = {
+    random_wonder = {
+        limit = {
+            has_wonder_upgrade = upgrade_magical_academy
+            location = {
+                NOR = {
+                    province = event_target:close_university_candidate
+                    province = event_target:further_university_candidate
+                }
+            }
+        }
+        preferred_limit = {
+            OR = {
+                has_wonder_upgrade = upgrade_lore_of_light_college
+                has_wonder_upgrade = upgrade_lore_of_heavens_college
+                has_wonder_upgrade = upgrade_lore_of_metal_college
+                has_wonder_upgrade = upgrade_lore_of_life_college
+                has_wonder_upgrade = upgrade_lore_of_beasts_college
+                has_wonder_upgrade = upgrade_lore_of_fire_college
+                has_wonder_upgrade = upgrade_lore_of_shadows_college
+                has_wonder_upgrade = upgrade_lore_of_death_college
+            }
+        }
+        preferred_limit = {
+            has_wonder_upgrade = upgrade_magical_precinct
         }
         location = {
             save_event_target_as = exotic_university_candidate
@@ -1075,6 +1295,238 @@ improved_by_further_education_religious_effect = {
     }
 }
 
+improved_by_further_education_magical_effect = {
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_magical_academy
+            }
+        }
+        random = {
+            chance = 25
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.160
+                    days = 3
+                }
+            }
+            else = {
+                change_learning = 1
+            }
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_magical_precinct
+            }
+        }
+        random = {
+            chance = 25
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.161
+                    days = 5
+                    random = 5
+                }
+            }
+            else = {
+                change_learning = 1
+            }
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_lore_of_light_college
+            }
+        }
+        random = {
+            chance = 25
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.162
+                    days = 7
+                    random = 7
+                }
+            }
+            else = {
+                change_learning = 1
+            }
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_lore_of_heavens_college
+            }
+        }
+        random = {
+            chance = 25
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.163
+                    days = 8
+                    random = 8
+                }
+            }
+            else = {
+                change_learning = 1
+            }
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_lore_of_metal_college
+            }
+        }
+        random = {
+            chance = 25
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.164
+                    days = 9
+                    random = 9
+                }
+            }
+            else = {
+                change_stewardship = 1
+            }
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_lore_of_life_college
+            }
+        }
+        random = {
+            chance = 25
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.165
+                    days = 10
+                    random = 10
+                }
+            }
+            else = {
+                change_stewardship = 1
+            }
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_lore_of_beasts_college
+            }
+        }
+        random = {
+            chance = 25
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.166
+                    days = 11
+                    random = 11
+                }
+            }
+            else = {
+                change_martial = 1
+            }
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_lore_of_fire_college
+            }
+        }
+        random = {
+            chance = 25
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.167
+                    days = 12
+                    random = 12
+                }
+            }
+            else = {
+                change_martial = 1
+            }
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_lore_of_shadows_college
+            }
+        }
+        random = {
+            chance = 25
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.168
+                    days = 13
+                    random = 13
+                }
+            }
+            else = {
+                change_intrigue = 1
+            }
+        }
+    }
+    if = {
+        limit = {
+            persistent_event_target:alma_mater = {
+                has_wonder_upgrade = upgrade_lore_of_death_college
+            }
+        }
+        random = {
+            chance = 25
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.169
+                    days = 14
+                    random = 14
+                }
+            }
+            else = {
+                change_intrigue = 1
+            }
+        }
+    }
+}
+
 #graduation effects
 #note that better institutions (with more school upgrades) implicitly have a lower chance of failure
 graduation_from_education_academic_effect = {
@@ -1118,7 +1570,7 @@ graduation_from_education_academic_effect = {
                 factor = 0.5
                 has_any_lifestyle_trait = 0.5
             }
-            add_character_flag = failed_academic
+            set_character_flag = failed_academic
         }
         #trained as a physician
         10 = {
@@ -1463,7 +1915,7 @@ graduation_from_further_education_engineering_effect = {
                 factor = 0.5
                 has_any_lifestyle_trait = 0.5
             }
-            add_character_flag = failed_academic
+            set_character_flag = failed_academic
         }
         #trained as a physician
         5 = {
@@ -1841,7 +2293,7 @@ graduation_from_further_education_military_effect = {
                 factor = 0.5
                 has_any_lifestyle_trait = 0.5
             }
-            add_character_flag = failed_academic
+            set_character_flag = failed_academic
         }
         #trained as a physician
         10 = {
@@ -2206,7 +2658,7 @@ graduation_from_further_education_religious_effect = {
                 factor = 0.5
                 has_any_lifestyle_trait = 0.5
             }
-            add_character_flag = failed_academic
+            set_character_flag = failed_academic
         }
         #trained as a physician
         15 = {
@@ -2506,6 +2958,212 @@ graduation_from_further_education_religious_effect = {
                 }
             }
             else = { change_learning = 1 }
+        }
+    }
+}
+
+graduation_from_further_education_magical_effect = {
+    random_list = {
+        #fail
+        60 = {
+            modifier = {
+                factor = 2
+                trait = slothful
+            }
+            modifier = {
+                factor = 0.5
+                trait = diligent
+            }
+            modifier = {
+                factor = 0.25
+                trait = ambitious
+            }
+            modifier = {
+                factor = 3
+                is_dumb_trigger = yes
+            }
+            modifier = {
+                factor = 0.5
+                is_smart_trigger = yes
+            }
+            modifier = {
+                factor = 2
+                trait = drunkard
+            }
+            modifier = {
+                factor = 2
+                trait = stressed
+            }
+            modifier = {
+                factor = 3
+                trait = depressed
+            }
+            modifier = {
+                factor = 0.5
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_magical_precinct
+                }
+            }
+            set_character_flag = failed_academic
+        }
+        #qualified failure - picked up a few things
+        60 = {
+            if = {
+                limit = {
+                    ai = no
+                }
+                character_event = {
+                    id = wh_higher_education.216
+                    days = 1
+                }
+            }
+            else = {
+                add_trait = hedge_wizard
+            }
+        }
+        #lore of light
+        5 = {
+            modifier = {
+                factor = 2
+                learning = 15
+            }
+            modifier = {
+                factor = 2
+                has_focus = focus_theology
+            }
+            modifier = {
+                factor = 5
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_lore_of_light_college
+                }
+            }
+            add_lore_of_light = yes
+        }
+        #lore of the heavens
+        5 = {
+            modifier = {
+                factor = 2
+                learning = 15
+            }
+            modifier = {
+                factor = 2
+                has_focus = focus_scholarship
+            }
+            modifier = {
+                factor = 5
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_lore_of_heavens_college
+                }
+            }
+            add_lore_of_heavens = yes
+        }
+        #lore of metal
+        5 = {
+            modifier = {
+                factor = 2
+                stewardship = 15
+            }
+            modifier = {
+                factor = 2
+                has_focus = focus_business
+            }
+            modifier = {
+                factor = 5
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_lore_of_metal_college
+                }
+            }
+            add_lore_of_metal = yes
+        }
+        #lore of life
+        5 = {
+            modifier = {
+                factor = 2
+                stewardship = 15
+            }
+            modifier = {
+                factor = 2
+                has_focus = focus_rulership
+            }
+            modifier = {
+                factor = 5
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_lore_of_life_college
+                }
+            }
+            add_lore_of_life = yes
+        }
+        #lore of beasts
+        5 = {
+            modifier = {
+                factor = 2
+                martial = 15
+            }
+            modifier = {
+                factor = 2
+                has_focus = focus_hunting
+            }
+            modifier = {
+                factor = 5
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_lore_of_beasts_college
+                }
+            }
+            add_lore_of_beasts = yes
+        }
+        #lore of fire
+        5 = {
+            modifier = {
+                factor = 2
+                martial = 15
+            }
+            modifier = {
+                factor = 2
+                has_focus = focus_war
+            }
+            modifier = {
+                factor = 5
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_lore_of_fire_college
+                }
+            }
+            add_lore_of_fire = yes
+        }
+        #lore of shadows
+        5 = {
+            modifier = {
+                factor = 2
+                intrigue = 15
+            }
+            modifier = {
+                factor = 2
+                has_focus = focus_seduction
+            }
+            modifier = {
+                factor = 5
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_lore_of_shadows_college
+                }
+            }
+            add_lore_of_shadows = yes
+        }
+        #lore of death
+        5 = {
+            modifier = {
+                factor = 2
+                intrigue = 15
+            }
+            modifier = {
+                factor = 2
+                has_focus = focus_intrigue
+            }
+            modifier = {
+                factor = 5
+                persistent_event_target:alma_mater = {
+                    has_wonder_upgrade = upgrade_lore_of_death_college
+                }
+            }
+            add_lore_of_death = yes
         }
     }
 }

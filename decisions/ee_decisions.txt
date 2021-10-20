@@ -6,7 +6,8 @@ decisions = {
 	de_jure_realm_drakwald = {
 		is_high_prio = yes
 		only_playable = yes
-		
+		ai_check_interval = 24
+
 		potential = {
 			NOT = { has_global_flag = de_jure_realm_drakwald_formed }
 			capital_scope = {
@@ -14,7 +15,7 @@ decisions = {
 			}
 			culture_group = imperial_group
 		}
-		
+
 		allow = {
 			completely_controls = d_carroburg
 			calc_true_if = {
@@ -31,7 +32,7 @@ decisions = {
 			}
 			prestige = 2000
 		}
-		
+
 		effect = {
 			custom_tooltip = {
 				text = DE_JURE_REALM_DRAKWALD_CT
@@ -45,27 +46,28 @@ decisions = {
 			}
 		}
 	}
-	
+
 	#Solland
 	de_jure_realm_solland = {
 		is_high_prio = yes
 		only_playable = yes
-		
+		ai_check_interval = 24
+
 		potential = {
 			culture = sollander
 			NOT = { has_global_flag = de_jure_realm_solland_formed }
 		}
-		
+
 		allow = {
 			completely_controls = d_soell
 			completely_controls = d_pfeildorf
 			completely_controls = d_sudenland
 			prestige = 2000
 		}
-		
+
 		effect = {
 			custom_tooltip = {
-				text = DE_JURE_REALM_SOLLAND_CT 
+				text = DE_JURE_REALM_SOLLAND_CT
 				narrative_event = { id = ee.3 }
 				any_player = {
 					limit = { NOT = {character=ROOT }}

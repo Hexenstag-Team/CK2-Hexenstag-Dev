@@ -9,7 +9,7 @@ character_event = {
 
 	is_triggered_only = yes
 
-	only_rulers = yes
+	only_playable = yes
 
 	capable_only = yes
 	min_age = 12
@@ -1879,7 +1879,7 @@ character_event = {
 
 	immediate = {
 			if = { limit = { religion = tzeentch
-	}
+			}
 					random_list = { 60 = { FROM = { character_event = { id = sorcererapprentice.90007 } }
 								modifier = {
 									factor = 0

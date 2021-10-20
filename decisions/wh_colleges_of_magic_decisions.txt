@@ -2,9 +2,10 @@ decisions = {
 
 	found_the_imperial_collages_of_magic = {
 		is_high_prio = yes
-		only_independent = yes
+		ai = no #only_independent = yes
 		ai_check_interval = 24
 		potential = {
+			always = no
 			NOT = { has_global_flag = college_of_magic_imperial_active}
 			higher_tier_than = DUKE
 			culture_group = imperial_group
@@ -160,9 +161,10 @@ decisions = {
 
 	found_new_collages_of_magic = {
 		is_high_prio = yes
-		only_independent = yes
+		ai = no #only_independent = yes
 		ai_check_interval = 24
 		potential = {
+			always = no
 			independent = yes
 			higher_tier_than = DUKE
 			NAND = {

@@ -687,6 +687,7 @@ targetted_decisions = {
 				has_character_flag = seeks_further_education_engineering
 				has_character_flag = seeks_further_education_military
 				has_character_flag = seeks_further_education_religious
+				has_character_flag = seeks_further_education_magical
 			}
 		}
 		potential = {	}
@@ -781,6 +782,66 @@ targetted_decisions = {
 		effect = {
 			hidden_tooltip = {
 				character_event = { id = wh_higher_education.2 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+			# modifier = {
+				# factor = 0.005 # Slow it down
+			# }
+		}
+	}
+
+	go_to_magical_academy = {
+		ai = no
+		filter = self
+		ai_target_filter = none
+		ai_check_interval = 1200
+		from_potential = {
+			has_magic_potential = yes
+			trait = creature_human
+			religion_group = old_world_group
+			NOR = {
+				trait = noble
+				trait = clergy
+				religion = old_faith
+			}
+			#ice witches do their own thing
+			NAND = {
+				religion = kislev_gods
+				is_female = yes
+			}
+			NOT = { is_tribal = yes }
+			NOT = { is_nomadic = yes }
+			prisoner = no
+			NOT = { trait = witch_hunter }
+			NOT = {
+				trait = incapable
+			}
+			age = 16
+			NOT = {
+				age = 25
+			}
+			NOR = {
+				has_character_flag = seeks_further_education_academic
+				has_character_flag = seeks_further_education_engineering
+				has_character_flag = seeks_further_education_military
+				has_character_flag = seeks_further_education_religious
+				has_character_flag = seeks_further_education_magical
+			}
+		}
+		potential = {	}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = {
+					id = wh_higher_education.8
+				}
 			}
 		}
 		revoke_allowed = {

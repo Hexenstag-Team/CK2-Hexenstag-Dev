@@ -369,7 +369,6 @@ decisions = {
 					}
 				}
 			}
-			is_incapacitated_trigger = no
 			age = 12
 			is_trained_mage = no
 			is_incapable = no
@@ -1963,6 +1962,8 @@ settlement_decisions = {
 	flashcook_settlement = {
 		ai_check_interval = 3
 		only_playable = yes
+		filter = owned
+		ai_target_filter = owned
 		from_potential = {
 			has_character_modifier = flashcook_flag
 
@@ -1997,6 +1998,8 @@ settlement_decisions = {
 	cure_blight_settlement = {
 		ai_check_interval = 3
 		only_playable = yes
+		filter = owned
+		ai_target_filter = owned
 		from_potential = {
 			has_character_modifier = cure_blight_flag
 		}
@@ -2030,6 +2033,8 @@ settlement_decisions = {
 	light_of_purity_settlement = {
 		ai_check_interval = 3
 		only_playable = yes
+		filter = owned
+		ai_target_filter = owned
 		from_potential = {
 			has_character_modifier = light_of_purity_flag
 		}
@@ -2063,6 +2068,8 @@ settlement_decisions = {
 	stoke_the_forge_settlement = {
 		ai_check_interval = 3
 		only_playable = yes
+		filter = owned
+		ai_target_filter = owned
 		from_potential = {
 			has_character_modifier = stoke_the_forge_flag
 		}

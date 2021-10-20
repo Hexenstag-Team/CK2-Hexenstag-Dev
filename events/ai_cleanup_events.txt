@@ -420,84 +420,6 @@ character_event = {
 		 }
 }
 
-#On_death. The holder of the university of Martek is always a scholar.
-character_event = {
-	id = aicleanup.028
-	hide_window = yes
-	is_triggered_only = yes
-
-	trigger = { has_landed_title = d_university_of_martek }
-
-	immediate = {  random_list = { 25 = {
-					create_character = {
-							random_traits = yes
-							dynasty = RANDOM
-							religion = ROOT
-							culture = ROOT
-							female = no
-							age = 48
-							}
-						}
-					25 = {
-					create_character = {
-							random_traits = yes
-							dynasty = RANDOM
-							religion = ROOT
-							culture = ROOT
-							female = no
-							age = 53
-							}
-						}
-					25 = {
-					create_character = {
-							random_traits = yes
-							dynasty = RANDOM
-							religion = ROOT
-							culture = ROOT
-							female = no
-							age = 65
-							}
-						}
-					25 = {
-					create_character = {
-							random_traits = yes
-							dynasty = RANDOM
-							religion = ROOT
-							culture = ROOT
-							female = no
-							age = 70
-							}
-						}
-				}
-				new_character = {
-					add_trait = creature_human
-					add_trait = celibate
-					add_trait = arabyan_scholar
-					random_list = {
-						25 = {
-							add_lore_of_light = yes
-						}
-						25 = {
-							add_lore_of_fire = yes
-						}
-						25 = {
-							add_lore_of_metal = yes
-						}
-						25 = {
-							add_lore_of_life = yes
-						}
-					}
-					random_list = { 50 = { add_trait = magic_potential_1 }
-							30 = { add_trait = magic_potential_2 }
-							15 = { add_trait = magic_potential_3 }
-							5 = { add_trait = magic_potential_4 }
-							 }
-					z_magic_power_random = yes
-					character_event = { id = aicleanup.002 }
-					}
-		 }
-}
-
 #on_adolescence, elves receive the youngling trait, preventing them from wasting away themselves in lowborn marriages.
 character_event = {
 	id = aicleanup.030
@@ -635,7 +557,7 @@ character_event = {
 	id = aicleanup.034
 	hide_window = yes
 	is_triggered_only = yes
-	
+
 	trigger = {
 		NOT = { has_global_flag = united_middenland }
 		has_landed_title = k_middenland
