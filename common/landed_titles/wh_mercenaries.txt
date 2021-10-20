@@ -1,95 +1,10 @@
 
 ######Mercenaries
 ###ÄNSI
-## Bodyguards and Private Armies
-
-d_estalian_inquisition = {
-	color = { 230 230 230 }
-	color2 = { 255 255 255 }
-
-	capital = 554 #Magritta
-
-	allow = {
-		has_landed_title = k_cult_of_myrmidia
-		culture_group = estalian_group
-		religion_group = old_world_group
-	}
-
-	religion = classical_pantheon
-	culture = reman
-
-	title = "GRAND_INQUISITOR"
-	title_female = "GRAND_INQUISITOR"
-	foa = "GRAND_INQUISITOR_FOA"
-
-	mercenary = yes
-	landless = yes
-	primary = yes
-	independent = yes
-
-	strength_growth_per_century = 0.05
-
-	mercenary_type = d_estalian_inquisition_modifier
-}
-
-d_tilean_inquisition = {
-	color = { 230 230 230 }
-	color2 = { 255 255 255 }
-
-	capital = 600 #Remas
-
-	allow = {
-		has_landed_title = k_cult_of_myrmidia
-		culture_group = tilean_group
-		religion_group = old_world_group
-	}
-
-	religion = classical_pantheon
-	culture = reman
-
-	title = "GRAND_INQUISITOR"
-	title_female = "GRAND_INQUISITOR"
-	foa = "GRAND_INQUISITOR_FOA"
-
-	mercenary = yes
-	landless = yes
-	primary = yes
-	independent = yes
-
-	strength_growth_per_century = 0.05
-
-	mercenary_type = d_tilean_inquisition_modifier
-}
-
-d_mercy_killers = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	capital = 810 #Couronne
-
-	allow = {
-		trait = patron_shallya
-	}
-	religion = imperial_pantheon
-	culture = breton
-
-	title = "CAPTAIN"
-	title_female = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	mercenary = yes
-	landless = yes
-	primary = yes
-	independent = yes
-
-	strength_growth_per_century = 0.05
-
-	mercenary_type = d_mercy_killers_modifier
-}
 
 ###Imperial
 
-d_ragged_company = {
+d_ragged_company = {	#Lore but not right time
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -129,7 +44,7 @@ d_ragged_company = {
 	mercenary_type = swordsmen_modifier
 }
 
-d_scarlet_company = {
+d_scarlet_company = {	#Not lore
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -169,7 +84,7 @@ d_scarlet_company = {
 	mercenary_type = crossbowmen_modifier
 }
 
-d_hammershields_of_black_tower = {
+d_hammershields_of_black_tower = {	#Not lore
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -209,7 +124,7 @@ d_hammershields_of_black_tower = {
 	mercenary_type = halberdier_modifier
 }
 
-d_schwarzspears = {
+d_schwarzspears = {	#Not lore
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -249,7 +164,7 @@ d_schwarzspears = {
 	mercenary_type = halberdier_modifier
 }
 
-d_swords_of_nuln = {
+d_swords_of_nuln = {	#Not lore
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -289,7 +204,7 @@ d_swords_of_nuln = {
 	mercenary_type = swordsmen_modifier
 }
 
-d_sea_devils = {
+d_sea_devils = {	#Not lore
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -321,7 +236,7 @@ d_sea_devils = {
 	mercenary_type = d_sea_devils_modifier
 }
 
-d_guard_of_the_golden_cross = {
+d_guard_of_the_golden_cross = {	#Not lore
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -361,7 +276,7 @@ d_guard_of_the_golden_cross = {
 	mercenary_type = halberdier_modifier
 }
 
-d_regiment_of_foot = {
+d_regiment_of_foot = {	#Not lore
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -393,7 +308,7 @@ d_regiment_of_foot = {
 	mercenary_type = d_regiment_of_foot_modifier
 }
 
-d_altdorf_blackbolts = {
+d_altdorf_blackbolts = {	#Not lore
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -433,7 +348,7 @@ d_altdorf_blackbolts = {
 	mercenary_type = crossbowmen_modifier
 }
 
-d_carroburg_greatswords = {
+d_carroburg_greatswords = {	#lore
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -473,7 +388,7 @@ d_carroburg_greatswords = {
 	mercenary_type = greatsword_modifier
 }
 
-d_swords_of_ulric = {
+d_swords_of_ulric = {	#Lore
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -513,47 +428,7 @@ d_swords_of_ulric = {
 	mercenary_type = swordsmen_modifier
 }
 
-d_star_of_victory = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	capital = 357 #Carroburg
-
-	allow = {
-		OR = {
-			religion_group = old_world_group
-		}
-		OR = {
-			d_star_of_victory = {
-				owner = { same_realm = ROOT }
-			}
-			d_star_of_victory = {
-				owner = { independent = yes }
-			}
-		}
-		NOT = {
-			religion = grail
-		}
-	}
-
-	religion = imperial_pantheon
-	culture = averlander
-
-	title = "CAPTAIN"
-	title_female = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	mercenary = yes
-	landless = yes
-	primary = yes
-	independent = yes
-
-	strength_growth_per_century = 0
-
-	mercenary_type = greatsword_modifier
-}
-
-d_black_fire_defenders = {
+d_black_fire_defenders = {	#Not lore
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -593,7 +468,7 @@ d_black_fire_defenders = {
 	mercenary_type = halberdier_modifier
 }
 
-d_deathjacks = {
+d_deathjacks = {	#Lore
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -633,7 +508,7 @@ d_deathjacks = {
 	mercenary_type = halberdier_modifier
 }
 
-d_grundels_defenders = {
+d_grundels_defenders = {	#Lore but not right time
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -673,7 +548,7 @@ d_grundels_defenders = {
 	mercenary_type = artillery_modifier
 }
 
-d_riders_of_the_mark = {
+d_riders_of_the_mark = {	#Not lore
 	color={ 160 160 160 }
 	color2={ 255 255 255 }
 
@@ -709,7 +584,7 @@ d_riders_of_the_mark = {
 	mercenary_type = pistolier_modifier
 }
 
-d_nordsee_marines = {
+d_nordsee_marines = {	#Not lore
 	color={ 160 160 160 }
 	color2={ 255 255 255 }
 
@@ -745,7 +620,7 @@ d_nordsee_marines = {
 	mercenary_type = crossbowmen_modifier
 }
 
-d_fireloques_of_ferlangen = {
+d_fireloques_of_ferlangen = {	#Lore
 	color={ 160 160 160 }
 	color2={ 255 255 255 }
 
@@ -781,7 +656,7 @@ d_fireloques_of_ferlangen = {
 	mercenary_type = handgunner_modifier
 }
 
-d_drakwald_patrol = {
+d_drakwald_patrol = {	#Lore
 	color={ 160 160 160 }
 	color2={ 255 255 255 }
 
@@ -816,7 +691,7 @@ d_drakwald_patrol = {
 	mercenary_type = handgunner_modifier
 }
 
-d_stir_river_patrol = {
+d_stir_river_patrol = {	#Lore
 	color={ 160 160 160 }
 	color2={ 255 255 255 }
 
@@ -1049,7 +924,7 @@ d_red_redemption = {
 	mercenary_type = d_red_redemption_modifier
 }
 
-d_morrs_heralds = {
+d_morrs_heralds = {	#Not lore
 	color={ 160 160 160 }
 	color2={ 255 255 255 }
 
@@ -1327,99 +1202,6 @@ d_birdmen_of_catrazza = {
 	mercenary_type = d_birdmen_of_catrazza_modifier
 }
 
-d_red_company = {
-	color={ 160 160 160 }
-	color2={ 255 255 255 }
-
-	capital = 600 #Remas
-
-	allow = {
-		OR = {
-			religion_group = old_world_group
-		}
-		NOT = {
-			religion = grail
-		}
-	}
-	religion = classical_pantheon
-	culture = reman
-
-	title = "CAPTAIN"
-	title_female = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	mercenary = yes
-	landless = yes
-	primary = yes
-	independent = yes
-
-	strength_growth_per_century = 0.05
-
-	mercenary_type = d_red_company_modifier
-}
-
-d_black_gulf_guard_company = {
-	color={ 160 160 160 }
-	color2={ 255 255 255 }
-
-	capital = 657 #Myrmidens
-
-	allow = {
-		OR = {
-			religion_group = old_world_group
-		}
-		NOT = {
-			religion = grail
-		}
-	}
-	religion = classical_pantheon
-	culture = myken
-
-	title = "CAPTAIN"
-	title_female = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	mercenary = yes
-	landless = yes
-	primary = yes
-	independent = yes
-
-	strength_growth_per_century = 0.05
-
-	mercenary_type = d_black_gulf_guard_company_modifier
-}
-
-d_badlands_company = {
-	color={ 160 160 160 }
-	color2={ 255 255 255 }
-
-	capital = 703 #Levrellian
-
-	allow = {
-		OR = {
-			religion_group = old_world_group
-		}
-		NOT = {
-			religion = grail
-		}
-	}
-	religion = classical_pantheon
-	culture = oltremari
-
-	title = "CAPTAIN"
-	title_female = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	mercenary = yes
-	landless = yes
-	primary = yes
-	independent = yes
-
-	strength_growth_per_century = 0.05
-
-	mercenary_type = d_badlands_company_modifier
-}
-
 d_circle_of_the_fair_maiden = {
 	color={ 160 160 160 }
 	color2={ 255 255 255 }
@@ -1450,6 +1232,47 @@ d_circle_of_the_fair_maiden = {
 
 	mercenary_type = d_circle_of_the_fair_maiden_modifier
 }
+
+d_star_of_victory = {	#Lore
+	color = { 160 160 160 }
+	color2 = { 255 255 255 }
+
+	capital = 614 #Luccini
+
+	allow = {
+		OR = {
+			religion_group = old_world_group
+		}
+		OR = {
+			d_star_of_victory = {
+				owner = { same_realm = ROOT }
+			}
+			d_star_of_victory = {
+				owner = { independent = yes }
+			}
+		}
+		NOT = {
+			religion = grail
+		}
+	}
+
+	religion = classical_pantheon
+	culture = lucian
+
+	title = "CAPTAIN"
+	title_female = "CAPTAIN"
+	foa = "CAPTAIN_FOA"
+
+	mercenary = yes
+	landless = yes
+	primary = yes
+	independent = yes
+
+	strength_growth_per_century = 0
+
+	mercenary_type = greatsword_modifier
+}
+
 ### Estalian
 
 d_pirazzos_lost_legion = {
@@ -1669,117 +1492,6 @@ d_santa_clair_sellswords = {
 	mercenary_type = d_santa_clair_sellswords_modifier
 }
 
-d_finterra_tercios = {
-	color={ 160 160 160 }
-	color2={ 255 255 255 }
-
-	capital = 542 #Finterra
-
-	allow = {
-		OR = {
-			religion_group = old_world_group
-		}
-		NOT = {
-			religion = grail
-		}
-	}
-	religion = classical_pantheon
-	culture = avilian
-
-	title = "CAPTAIN"
-	title_female = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	mercenary = yes
-	landless = yes
-	primary = yes
-	independent = yes
-
-	strength_growth_per_century = 0.05
-
-	mercenary_type = d_finterra_tercios_modifier
-}
-
-###Shallyan
-
-d_peoples_band = {
-	color={ 160 160 160 }
-	color2={ 255 255 255 }
-
-	capital = 554 #Magritta
-
-	allow = {
-		trait = patron_shallya
-	}
-	religion = classical_pantheon
-	culture = astur
-
-	title = "CAPTAIN"
-	title_female = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	mercenary = yes
-	landless = yes
-	primary = yes
-	independent = yes
-
-	strength_growth_per_century = 0.05
-
-	mercenary_type = d_peoples_band_modifier
-}
-
-d_free_company = {
-	color={ 160 160 160 }
-	color2={ 255 255 255 }
-
-	capital = 554 #Magritta
-
-	allow = {
-		has_landed_title = e_communards
-		trait = patron_shallya
-	}
-	religion = classical_pantheon
-	culture = astur
-
-	title = "CAPTAIN"
-	title_female = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	mercenary = yes
-	landless = yes
-	primary = yes
-	independent = yes
-
-	strength_growth_per_century = 0.05
-
-	mercenary_type = d_free_company_modifier
-}
-
-d_bretonnian_band = {
-	color={ 160 160 160 }
-	color2={ 255 255 255 }
-
-	capital = 844 #Bastonne
-
-	allow = {
-		religion_group = old_world_group
-	}
-	religion = grail
-	culture = breton
-
-	title = "CAPTAIN"
-	title_female = "CAPTAIN"
-	foa = "CAPTAIN_FOA"
-
-	mercenary = yes
-	landless = yes
-	primary = yes
-	independent = yes
-
-	strength_growth_per_century = 0.05
-
-	mercenary_type = d_bretonnian_band_modifier
-}
 ###Norscan
 
 d_vanaheim_marauders = {
@@ -2165,6 +1877,42 @@ d_gianthome_wildmen = {
 
 	mercenary_type = d_gianthome_wildmen_modifier
 }
+
+d_order_of_the_winter_throne = {
+	color = { 160 160 160 }
+	color2 = { 255 255 255 }
+
+	#graphical_culture = holygfx
+
+	capital = 70 #Olricstaad
+	
+	allow = {
+		OR = {
+			religion = imperial_pantheon
+			religion = norscan_gods
+		}
+	}
+
+	religion = norscan_gods
+	culture = skaeling
+
+	title = "ULRICSSON"
+	title_female = "ULRICSSON"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	mercenary = yes
+	mercenary_type = d_order_of_the_winter_throne_composition
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 3 #(Must be an integer between 1 and 512)
+}
+
 ### Kislevite
 
 d_gryphon_legion = {
@@ -5491,14 +5239,6 @@ d_knights_of_the_broken_sword = {
 	# Extra income due to donations, etc
 	monthly_income = 3 #(Must be an integer between 1 and 512)
 }
-
-
-
-
-
-
-
-###Ulric
 d_knights_of_the_white_wolf = {
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
@@ -5531,108 +5271,7 @@ d_knights_of_the_white_wolf = {
 	# Extra income due to donations, etc
 	monthly_income = 7 #(Must be an integer between 1 and 512)
 }
-
-d_order_of_the_howling_wolf = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	#graphical_culture = holygfx
-
-	capital = 274 #Middenheim
-	
-	allow = {
-		religion = imperial_pantheon
-	}
-
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
-
-	# Always exists
-	landless = yes
-
-	mercenary = yes
-	mercenary_type = d_order_of_the_howling_wolf_composition
-
-	# Parent Religion
-	religion = imperial_pantheon
-	culture = middenlander
-
-	# Cannot be held as a secondary title
-	primary = yes
-
-	# Extra income due to donations, etc
-	monthly_income = 3 #(Must be an integer between 1 and 512)
-}
-
-d_order_of_the_winter_throne = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	#graphical_culture = holygfx
-
-	capital = 274 #Middenheim
-	
-	allow = {
-		religion = imperial_pantheon
-	}
-
-	religion = imperial_pantheon
-	culture = middenlander
-
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
-
-	# Always exists
-	landless = yes
-
-	mercenary = yes
-	mercenary_type = d_order_of_the_winter_throne_composition
-
-	# Cannot be held as a secondary title
-	primary = yes
-
-	# Extra income due to donations, etc
-	monthly_income = 3 #(Must be an integer between 1 and 512)
-}
-
-d_ragnarhalt = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	#graphical_culture = holygfx
-
-	capital = 70 #Olricstaad
-	
-	allow = {
-		religion = imperial_pantheon
-	}
-
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
-
-	# Always exists
-	landless = yes
-
-	mercenary = yes
-	mercenary_type = d_ragnarhalt_composition
-
-	# Parent Religion
-	religion = imperial_pantheon
-	culture = nordlander
-
-	# Cannot be held as a secondary title
-	primary = yes
-	independent = yes
-
-	# Extra income due to donations, etc
-	monthly_income = 5 #(Must be an integer between 1 and 512)
-}
-
-###Taal
-d_longshanks = {
+d_longshanks = {	#Taal&Rhya
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -5664,42 +5303,7 @@ d_longshanks = {
 	# Extra income due to donations, etc
 	monthly_income = 4 #(Must be an integer between 1 and 512)
 }
-
-d_knights_of_taals_fury = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	#graphical_culture = holygfx
-
-	capital = 366 #Bechafen
-	
-	allow = {
-		religion = imperial_pantheon
-	}
-
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
-
-	# Always exists
-	landless = yes
-
-	mercenary = yes
-	mercenary_type = d_knights_of_taals_fury_composition
-
-	# Parent Religion
-	religion = imperial_pantheon
-	culture = stirlander
-
-	# Cannot be held as a secondary title
-	primary = yes
-
-	# Extra income due to donations, etc
-	monthly_income = 3 #(Must be an integer between 1 and 512)
-}
-
-###Manann
-d_knights_mariner = {
+d_knights_mariner = {	#Manann
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -5731,14 +5335,13 @@ d_knights_mariner = {
 	# Extra income due to donations, etc
 	monthly_income = 7 #(Must be an integer between 1 and 512)
 }
-
-d_sons_of_manann = {
+d_sons_of_manann = {	#Manann
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
 	#graphical_culture = holygfx
 
-	capital = 222 #Marienburg
+	capital = 243 #Salkalten
 	
 	allow = {
 		religion = imperial_pantheon
@@ -5764,9 +5367,7 @@ d_sons_of_manann = {
 	# Extra income due to donations, etc
 	monthly_income = 4 #(Must be an integer between 1 and 512)
 }
-
-#Morr
-d_knights_of_the_black_rose = {
+d_knights_of_the_black_rose = {	#Morr
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
@@ -5798,18 +5399,13 @@ d_knights_of_the_black_rose = {
 	# Extra income due to donations, etc
 	monthly_income = 3 #(Must be an integer between 1 and 512)
 }
-
-d_order_of_the_raven = {
+d_knights_of_the_blazing_sun = {	#Myrmidia
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
 
 	#graphical_culture = holygfx
 
-	capital = 375 # Siegfriedhof
-	
-	allow = {
-		religion = imperial_pantheon
-	}
+	capital = 324 # c_talabheim
 
 	title = "GRANDMASTER"
 	title_female = "GRANDMASTER"
@@ -5819,47 +5415,11 @@ d_order_of_the_raven = {
 	landless = yes
 
 	mercenary = yes
-	mercenary_type = d_order_of_the_raven_composition
+	mercenary_type = d_knights_of_the_blazing_sun_composition
 
 	# Parent Religion
 	religion = imperial_pantheon
-	culture = sylvanian
-
-	# Cannot be held as a secondary title
-	primary = yes
-
-	# Extra income due to donations, etc
-	monthly_income = 2 #(Must be an integer between 1 and 512)
-}
-
-d_knights_of_morr = {
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	#graphical_culture = holygfx
-
-	capital = 614 #Luccini
-	
-	allow = {
-		OR = {
-			religion = imperial_pantheon
-			religion = classical_pantheon
-		}
-	}
-
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
-
-	# Always exists
-	landless = yes
-
-	mercenary = yes
-	mercenary_type = d_knights_of_morr_composition
-
-	# Parent Religion
-	religion = imperial_pantheon	#Thier Morrians will be chagned when Tilean religion reworks happens
-	culture = lucian
+	culture = talabeclander
 
 	# Cannot be held as a secondary title
 	primary = yes
@@ -5867,3 +5427,33 @@ d_knights_of_morr = {
 	# Extra income due to donations, etc
 	monthly_income = 5 #(Must be an integer between 1 and 512)
 }
+d_knights_of_sigmars_blood = {	#Sigmar
+	color = { 160 160 160 }
+	color2 = { 255 255 255 }
+
+	#graphical_culture = holygfx
+
+	capital = 958 #Ertburg
+
+	title = "GRANDMASTER"
+	title_female = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	mercenary = yes
+	mercenary_type = d_knights_of_sigmars_blood_composition
+
+	# Parent Religion
+	religion = imperial_pantheon
+	culture = talabeclander
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	monthly_income = 6 # (Must be an integer between 1 and 512)
+}
+
+

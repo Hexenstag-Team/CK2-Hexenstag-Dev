@@ -4,94 +4,6 @@
 
 ###Imperial Pantheon
 
-d_knights_of_the_blazing_sun = {	#Myrmidia
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	#graphical_culture = holygfx
-
-	capital = 324 # c_talabheim
-
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
-
-	# Always exists
-	landless = yes
-
-	holy_order = yes
-	mercenary_type = d_knights_of_the_blazing_sun_composition
-
-	# Parent Religion
-	religion = imperial_pantheon
-	culture = talabeclander
-
-	# Cannot be held as a secondary title
-	primary = yes
-
-	# Extra income due to donations, etc
-	monthly_income = 5 #(Must be an integer between 1 and 512)
-}
-d_knights_of_the_everlasting_light = {	#Verena
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	#graphical_culture = holygfx
-
-	capital = 299 #Altdorf
-
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
-
-	# Always exists
-	landless = yes
-
-	holy_order = yes
-	mercenary_type = d_knights_of_the_everlasting_light_composition
-
-	# Parent Religion
-	religion = imperial_pantheon
-	culture = reiklander
-
-	# Cannot be held as a secondary title
-	primary = yes
-
-	# Extra income due to donations, etc
-	monthly_income = 3 #(Must be an integer between 1 and 512)
-}
-d_knights_of_sigmars_blood = {	#Sigmar
-	color = { 160 160 160 }
-	color2 = { 255 255 255 }
-
-	#graphical_culture = holygfx
-
-	capital = 958 #Ertburg
-	
-	allow = {
-		religion = imperial_pantheon
-	}
-
-	title = "GRANDMASTER"
-	title_female = "GRANDMASTER"
-	foa = "GRANDMASTER_FOA"
-
-	# Always exists
-	landless = yes
-
-	holy_order = yes
-	mercenary_type = d_knights_of_sigmars_blood_composition
-
-	# Parent Religion
-	religion = imperial_pantheon
-	culture = talabeclander
-
-	# Cannot be held as a secondary title
-	primary = yes
-
-	# Extra income due to donations, etc
-	monthly_income = 6 # (Must be an integer between 1 and 512)
-}
 d_knights_of_the_cleansing_flame = {	#Sigmar
 	color = { 160 160 160 }
 	color2 = { 255 255 255 }
@@ -99,10 +11,6 @@ d_knights_of_the_cleansing_flame = {	#Sigmar
 	#graphical_culture = holygfx
 
 	capital = 304 #Ubersreik
-	
-	allow = {
-		religion = imperial_pantheon
-	}
 
 	title = "GRANDMASTER"
 	title_female = "GRANDMASTER"
@@ -122,6 +30,7 @@ d_knights_of_the_cleansing_flame = {	#Sigmar
 	primary = yes
 
 	# Extra income due to donations, etc
+	strength_growth_per_century = 0.05
 	monthly_income = 4 #(Must be an integer between 1 and 512)
 }
 d_knights_panther = {	#Secular
@@ -131,10 +40,6 @@ d_knights_panther = {	#Secular
 	#graphical_culture = holygfx
 
 	capital = 324 #Carroburg
-	
-	allow = {
-		religion = imperial_pantheon
-	}
 
 	title = "GRANDMASTER"
 	title_female = "GRANDMASTER"
@@ -154,10 +59,67 @@ d_knights_panther = {	#Secular
 	primary = yes
 
 	# Extra income due to donations, etc
+	strength_growth_per_century = 0.05
 	monthly_income = 8 #(Must be an integer between 1 and 512)
 }
+d_knights_of_taals_fury = {	#Taal&Rhya
+	color = { 160 160 160 }
+	color2 = { 255 255 255 }
 
+	#graphical_culture = holygfx
 
+	capital = 366 #Bechafen
+
+	title = "GRANDMASTER"
+	title_female = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	mercenary_type = d_knights_of_taals_fury_composition
+
+	# Parent Religion
+	religion = imperial_pantheon
+	culture = ostermarker
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	strength_growth_per_century = 0.05
+	monthly_income = 3 #(Must be an integer between 1 and 512)
+}
+d_order_of_the_raven = {	#Morr
+	color = { 160 160 160 }
+	color2 = { 255 255 255 }
+
+	#graphical_culture = holygfx
+
+	capital = 375 # Siegfriedhof
+
+	title = "GRANDMASTER"
+	title_female = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	mercenary_type = d_order_of_the_raven_composition
+
+	# Parent Religion
+	religion = imperial_pantheon
+	culture = sylvanian
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	strength_growth_per_century = 0.05
+	monthly_income = 2 #(Must be an integer between 1 and 512)
+}
 
 
 
@@ -189,6 +151,7 @@ d_order_of_the_righteous_spear = {	#Myrmidia
 	primary = yes
 
 	# Extra income due to donations, etc
+	strength_growth_per_century = 0.05
 	monthly_income = 3 #(Must be an integer between 1 and 512)
 }
 d_order_of_fury = {	#Myrmidia
@@ -217,11 +180,80 @@ d_order_of_fury = {	#Myrmidia
 	primary = yes
 
 	# Extra income due to donations, etc
+	strength_growth_per_century = 0.05
 	monthly_income = 2 #(Must be an integer between 1 and 512)
 }
+d_knights_of_morr = {	#Morr
+	color = { 160 160 160 }
+	color2 = { 255 255 255 }
 
+	#graphical_culture = holygfx
 
+	capital = 614 #Luccini
 
+	title = "GRANDMASTER"
+	title_female = "GRANDMASTER"
+	foa = "GRANDMASTER_FOA"
+
+	# Always exists
+	landless = yes
+
+	holy_order = yes
+	mercenary_type = d_knights_of_morr_composition
+
+	# Parent Religion
+	religion = classical_pantheon
+	culture = lucian
+
+	# Cannot be held as a secondary title
+	primary = yes
+
+	# Extra income due to donations, etc
+	strength_growth_per_century = 0.05
+	monthly_income = 5 #(Must be an integer between 1 and 512)
+}
+d_estalian_inquisition = {
+	color = { 230 230 230 }
+	color2 = { 255 255 255 }
+	
+	capital = 554 #Magritta
+	
+	title = "GRAND_INQUISITOR"
+	title_female = "GRAND_INQUISITOR"
+	foa = "GRAND_INQUISITOR_FOA"
+	
+	landless = yes
+	holy_order = yes
+	primary = yes
+	
+	religion = classical_pantheon
+	culture = astur
+	
+	mercenary_type = d_estalian_inquisition_modifier
+	strength_growth_per_century = 0.05
+	monthly_income = 5 #(Must be an integer between 1 and 512)
+}
+d_tilean_inquisition = {
+	color = { 230 230 230 }
+	color2 = { 255 255 255 }
+
+	capital = 600 #Remas
+	
+	title = "GRAND_INQUISITOR"
+	title_female = "GRAND_INQUISITOR"
+	foa = "GRAND_INQUISITOR_FOA"
+	
+	landless = yes
+	holy_order = yes
+	primary = yes
+
+	religion = classical_pantheon
+	culture = reman
+	
+	mercenary_type = d_tilean_inquisition_modifier
+	strength_growth_per_century = 0.05
+	monthly_income = 5 #(Must be an integer between 1 and 512)
+}
 
 
 

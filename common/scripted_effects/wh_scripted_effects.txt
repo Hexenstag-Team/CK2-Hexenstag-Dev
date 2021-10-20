@@ -7657,15 +7657,12 @@ patron_imperial_pantheon_effect = {
 			}
 			modifier = {
 				factor = 100
-				culture = witchhunter_culture
-			}
-			modifier = {
-				factor = 10
 				OR = {
 					has_landed_title = e_reikland
 					has_landed_title = k_cult_of_sigmar
 					has_landed_title = d_arch_lectory_talabheim
 					has_landed_title = d_arch_lectory_nuln
+					culture = witchhunter_culture
 				}
 			}
 			modifier = {
@@ -7716,10 +7713,12 @@ patron_imperial_pantheon_effect = {
 		}
 		10 = {	#Taal&Rhya
 			modifier = {
-				factor = 10
+				factor = 100
 				OR = {
 					has_landed_title = e_talabecland
 					has_landed_title = k_cult_of_taal_and_rhya
+					has_landed_title = d_longshanks
+					has_landed_title = d_knights_of_taals_fury
 				}
 			}
 			modifier = {
@@ -7766,7 +7765,7 @@ patron_imperial_pantheon_effect = {
 		}
 		10 = {	#Ulric
 			modifier = {
-				factor = 10
+				factor = 100
 				OR = {
 					has_landed_title = e_middenland
 					has_landed_title = k_cult_of_ulric
@@ -7816,6 +7815,13 @@ patron_imperial_pantheon_effect = {
 		}
 		5 = {	#Manann
 			modifier = {
+				factor = 100
+				OR = {
+					has_landed_title = d_knights_mariner
+					has_landed_title = d_sons_of_manann
+				}
+			}
+			modifier = {
 				factor = 10
 				culture = westerlander
 			}
@@ -7823,6 +7829,7 @@ patron_imperial_pantheon_effect = {
 				factor = 10
 				government = merchant_republic_government
 			}
+			
 			modifier = {
 				factor = 5
 				location = { port = yes }
@@ -7838,11 +7845,18 @@ patron_imperial_pantheon_effect = {
 		}
 		5 = {	#Morr
 			modifier = {
-				factor = 10
-				culture = sylvanian
+				factor = 100
+				OR = {
+					has_landed_title = k_cult_of_morr
+					has_landed_title = d_knights_of_the_black_rose
+					has_landed_title = d_order_of_the_raven
+					has_landed_title = d_knights_of_morr
+				}
+				
 			}
 			modifier = {
-				has_landed_title = k_cult_of_morr
+				factor = 10
+				culture = sylvanian
 			}
 			add_trait = patron_morr
 		}
@@ -7878,18 +7892,18 @@ patron_imperial_pantheon_effect = {
 		}
 		5 = {	#Myrmidia
 			modifier = {
-				factor = 10
+				factor = 100
 				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
+					has_landed_title = k_cult_of_myrmidia
+					has_landed_title = d_high_temple_of_remas
+					has_landed_title = d_high_temple_of_magritta
 				}
 			}
 			modifier = {
 				factor = 10
 				OR = {
-					has_landed_title = k_cult_of_myrmidia
-					has_landed_title = d_high_temple_of_remas
-					has_landed_title = d_high_temple_of_magritta
+					culture_group = tilean_group
+					culture_group = estalian_group
 				}
 			}
 			modifier = {
@@ -7903,13 +7917,13 @@ patron_imperial_pantheon_effect = {
 		}
 		5 = {	#Shallya
 			modifier = {
-				factor = 10
-				is_lowborn = yes
-				NOT = { trait = peasant_leader }
+				factor = 100
+				has_landed_title = k_cult_of_shallya
 			}
 			modifier = {
 				factor = 10
-				has_landed_title = k_cult_of_shallya
+				is_lowborn = yes
+				NOT = { trait = peasant_leader }
 			}
 			modifier = {
 				factor = 5

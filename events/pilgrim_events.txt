@@ -656,18 +656,6 @@ character_event = {
 				10 = {  character_event = { id = SoA.5038 days = 15 random = 7 } }
 				10 = {  character_event = { id = SoA.5039 days = 15 random = 7 } }
 			}
-			if = {
-				limit = {
-						OR = {
-							is_title_active = d_mercy_killers
-						}
-				}
-				random_list = {
-					10 = {  narrative_event = { id = SoA.5045 days = 23 random = 4 } } # Holy orders events, close to destination
-					10 = {  character_event = { id = SoA.5046 days = 23 random = 4 } }
-					10 = {  character_event = { id = SoA.5047 days = 23 random = 4 } }
-				}
-			}
 		}
 	}
 }
@@ -1414,15 +1402,6 @@ character_event = {
 				hidden_tooltip = { character_event = { id = SoA.5088 } }
 			}
 		}
-		if = {
-			limit = { #SHALLYA
-				has_character_flag = pilgrimage_to_santiago
-				is_title_active = d_mercy_killers
-			}
-			hidden_tooltip = {
-				hidden_tooltip = { character_event = { id = SoA.5089 } }
-			}
-		}
 	}
 	option = {
 		name = EVTOPTB_SoA_5047    # no
@@ -1718,43 +1697,6 @@ character_event = {
 
 	immediate = {
 		d_knights_of_the_lily = {
-			holder_scope = {
-				random_courtier = {
-					limit = {
-						is_female = no
-						prisoner = no
-						in_command = no
-						is_priest = no
-						age = 16
-						NOT = {
-							sibling = ROOT
-						}
-						NOT = {
-							is_friend = ROOT
-						}
-						NOT = {
-							is_rival = ROOT
-						}
-						NOT = { has_job_title = job_spiritual }
-					}
-					add_friend = ROOT
-					character_event = { id = SoA.5086 }
-				}
-			}
-		}
-	}
-}
-
-# Makes friend - Mercy Killer
-character_event = {
-	id = SoA.5089
-
-	hide_window = yes
-
-	is_triggered_only = yes
-
-	immediate = {
-		d_mercy_killers = {
 			holder_scope = {
 				random_courtier = {
 					limit = {
