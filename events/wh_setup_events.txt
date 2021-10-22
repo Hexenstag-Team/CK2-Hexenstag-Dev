@@ -1670,13 +1670,10 @@ character_event = {
 	}
 }
 
-character_event = {	#Reiklander-Nulnian War start on war_exhaustion_modifier event
+character_event = {	#Reiklander-Nulnian War start up event
 	id = wh_setup.23
 	hide_window = yes
-	
-	mean_time_to_happen = {
-		months = 1
-	}
+	is_triggered_only = yes
 
 	trigger = {
 		any_war = {
@@ -1686,39 +1683,13 @@ character_event = {	#Reiklander-Nulnian War start on war_exhaustion_modifier eve
 	}
 
 	immediate = {
-		if = {
+		long_character_event = { id = wh_setup.25 }
+		set_global_flag = reiklander_nulnian_war
+		any_realm_character = {
 			limit = {
-				NOT = {
-					has_global_flag = reiklander_nulnian_war
-				}
+				is_ruler = yes
 			}
 			long_character_event = { id = wh_setup.25 }
-			any_realm_character = {
-				limit = {
-					is_ruler = yes
-				}
-				long_character_event = { id = wh_setup.25 }
-			}
-		}
-		else_if = {
-			limit = {
-				has_global_flag = reiklander_nulnian_war
-			}
-			add_character_modifier = {
-				name = war_exhaustion_modifier
-				months = -1
-				stacking = yes
-			}
-			any_realm_character = {
-				limit = {
-					is_ruler = yes
-				}
-				add_character_modifier = {
-					name = war_exhaustion_modifier
-					months = -1
-					stacking = yes
-				}
-			}
 		}
 	}
 }
@@ -1726,17 +1697,14 @@ character_event = {	#Reiklander-Nulnian War start on war_exhaustion_modifier eve
 character_event = {	#Reiklander-Nulnian War war_exhaustion_modifier event
 	id = wh_setup.24
 	hide_window = yes
-	
-	mean_time_to_happen = {
-		months = 1
-	}
+	is_triggered_only = yes
 
 	trigger = {
+		has_character_modifier = war_exhaustion_modifier
 		OR = {
 			has_global_flag = reiklander_nulnian_war_reikland
 			has_global_flag = reiklander_nulnian_war_nuln
 		}
-		has_character_modifier = war_exhaustion_modifier
 	}
 
 	immediate = {
@@ -1747,11 +1715,11 @@ character_event = {	#Reiklander-Nulnian War war_exhaustion_modifier event
 	}
 }
 
-long_character_event = {	#Reiklander-Nulnian War event
+long_character_event = {	#Reiklander-Nulnian War start up war exhaustion event
 	id = wh_setup.25
 	title = "The Reiklander-Nulnian War"
 	desc = REIKLANDER_NULNIAN_WAR_DESC
-	#picture = "GFX_evt_zombies"
+	#picture = 
 	is_triggered_only = yes
 
 	option = {
@@ -1760,6 +1728,37 @@ long_character_event = {	#Reiklander-Nulnian War event
 			name = war_exhaustion_modifier
 			months = -1
 			stacking = yes
+		}
+		character_event = {
+			id = wh_setup.26
+			days = 15
+		}
+	}
+}
+
+character_event = {	#Reiklander-Nulnian War war_exhaustion_modifier event
+	id = wh_setup.26
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		NOT = {
+			OR = {
+				has_global_flag = reiklander_nulnian_war_reikland
+				has_global_flag = reiklander_nulnian_war_nuln
+			}
+		}
+	}
+
+	immediate = {
+		add_character_modifier = {
+			name = war_exhaustion_modifier
+			months = -1
+			stacking = yes
+		}
+		character_event = {
+			id = wh_setup.26
+			days = 15
 		}
 	}
 }
