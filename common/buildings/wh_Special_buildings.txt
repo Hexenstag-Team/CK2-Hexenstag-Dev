@@ -293,61 +293,6 @@ castle = {
 		local_revolt_risk = -0.75
 		add_number_to_name = no
 	}
-
-	ca_college_of_magic = {
-		desc = ca_college_of_magic_desc
-		potential = {
-			OR = {
-				AND = {
-					has_province_flag = houses_college_of_magic
-					FROMFROM = { is_capital = yes }
-					is_capital = yes
-				}
-				has_building = ca_college_of_magic
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				religion_group = old_world_group
-			}
-		}
-		trigger = {
-			always = yes
-		}
-		gold_cost = 1
-		build_time = 1
-		fort_level = 2
-		garrison_size = 0.40
-		ai_creation_factor = 1000
-		ai_republic_modifier = 1000
-		extra_tech_building_start = 0
-	}
-
-	ca_college_of_magic_local = {
-		desc = ca_college_of_magic_local_desc
-		potential = {
-			AND = {
-				has_province_flag = houses_college_of_magic_local
-				FROMFROM = { is_capital = yes }
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				religion_group = old_world_group
-			}
-		}
-		trigger = {
-			always = yes
-		}
-		gold_cost = 1
-		build_time = 1
-		fort_level = 0.5
-		garrison_size = 0.05
-		ai_creation_factor = 1000
-		ai_republic_modifier = 1000
-
-		extra_tech_building_start = 0
-	}
 }
 
 city = {
@@ -401,7 +346,7 @@ city = {
 		add_number_to_name = no
 		extra_tech_building_start = 0.2
 	}
-	
+
 	#Dragon Isles
 	ct_mabuya = {
 
@@ -442,63 +387,6 @@ city = {
 		tax_income = -2
 		local_revolt_risk = -0.75
 		add_number_to_name = no
-	}
-
-	ct_college_of_magic = {
-		desc = ca_college_of_magic_desc
-		potential = {
-			OR = {
-				AND = {
-					has_province_flag = houses_college_of_magic
-					FROMFROM = { is_capital = yes }
-					is_capital = yes
-				}
-				has_building = ct_college_of_magic
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				religion_group = old_world_group
-			}
-		}
-		trigger = {
-			always = yes
-		}
-		gold_cost = 1
-		build_time = 1
-		fort_level = 2
-		garrison_size = 0.40
-		ai_creation_factor = 1000
-		ai_republic_modifier = 1000
-
-		extra_tech_building_start = 0
-	}
-
-	ct_college_of_magic_local = {
-		desc = ca_college_of_magic_local_desc
-		potential = {
-			AND = {
-				has_province_flag = houses_college_of_magic_local
-				FROMFROM = { is_capital = yes }
-			}
-		}
-		is_active_trigger = {
-			FROM = {
-				religion_group = old_world_group
-			}
-		}
-		trigger = {
-			always = yes
-		}
-		gold_cost = 1
-		build_time = 1
-		fort_level = 0.5
-		garrison_size = 0.05
-
-		ai_creation_factor = 1000
-		ai_republic_modifier = 1000
-
-		extra_tech_building_start = 0
 	}
 }
 

@@ -1,0 +1,748 @@
+#misc maintenance events
+
+namespace = wh_maintenance
+
+#racial trait maintenance event
+#trigger on_startup, on_yearly_pulse and on_focus_pulse (the last of these means that playable characters with focuses get checked more often)
+#it's a bit of a resource hog but we need it (or a faster equivalent if anyone wants to build one)
+character_event = {
+	id = wh_maintenance.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	#there are no appropriate pre-triggers for this event
+
+	#but we can simplify the logic by using a single flag check rather than looking for all the racial traits
+	trigger = {
+		NOT = {
+			has_character_flag = has_racial_trait_flag
+		}
+		ai = yes
+	}
+
+	immediate = {
+		#check for existing racial trait
+		if = {
+			limit = {
+				has_racial_trait = yes
+			}
+			#no need for effect here, we're just clearing out the folks who have traits already
+		}
+		#check for human
+		else_if = {
+			limit = {
+				OR = {
+					graphical_culture = westerngfx
+					graphical_culture = easterngfx
+					graphical_culture = muslimgfx
+					graphical_culture = frankishgfx
+					graphical_culture = englishgfx
+					graphical_culture = germangfx
+					graphical_culture = occitangfx
+					graphical_culture = southerngfx
+					graphical_culture = celticgfx
+					graphical_culture = norsegfx
+					graphical_culture = saxongfx
+					graphical_culture = normangfx
+					graphical_culture = easternslavicgfx
+					graphical_culture = westernslavicgfx
+					graphical_culture = byzantinegfx
+					graphical_culture = ugricgfx
+					graphical_culture = arabicgfx
+					graphical_culture = turkishgfx
+					graphical_culture = mongolgfx
+					graphical_culture = africangfx
+					graphical_culture = westafricangfx
+					graphical_culture = andalusiangfx
+					graphical_culture = persiangfx
+					graphical_culture = empiregfx
+					graphical_culture = sylvaniangfx
+					graphical_culture = kurgangfx
+					graphical_culture = arabyangfx
+					graphical_culture = northempiregfx
+					graphical_culture = tileagfx
+					graphical_culture = estileangfx
+					graphical_culture = hunggfx
+					graphical_culture = southarabyangfx
+					graphical_culture = northmangfx
+					graphical_culture = nehekkagfx
+					graphical_culture = sartosantileangfx
+					graphical_culture = livinglahmiangfx
+					graphical_culture = bretonniangfx
+					# graphical_culture = ungorgfx
+					graphical_culture = cumangfx
+					graphical_culture = italiangfx
+					graphical_culture = reiklandergfx
+					graphical_culture = witchhuntergfx
+					graphical_culture = blooddragonsgfx
+					graphical_culture = striganygfx
+					graphical_culture = sartosangfx
+					graphical_culture = strygangfx
+					graphical_culture = amazongfx
+					graphical_culture = arabyansartosangfx
+					graphical_culture = cathayangfx
+					graphical_culture = livingjadegfx
+					graphical_culture = wasaigfx
+					graphical_culture = cophicgfx
+					graphical_culture = tevarigfx
+					graphical_culture = medeangfx
+					graphical_culture = wasailigfx
+					graphical_culture = westerlandergfx
+					graphical_culture = sudenburgergfx
+					graphical_culture = norscangfx
+					graphical_culture = norscansartosangfx
+					graphical_culture = kislevitegfx
+					graphical_culture = ropsmanngfx
+					graphical_culture = tileangfx
+					graphical_culture = estaliangfx
+					graphical_culture = mykengfx
+					graphical_culture = albiongfx
+				}
+				NOR = {
+					trait = creature_monster
+					trait = creature_celdragon
+				}
+			}
+			add_trait = creature_human
+			#set witch hunter?
+			if = {
+				limit = {
+					culture = witchhunter_culture
+				}
+				add_trait = witch_hunter
+			}
+			#set jade vampire?
+			if = {
+				limit = {
+					culture = living_jade
+				}
+				location = {
+					ROOT = {
+						culture = PREV
+						set_graphical_culture = PREV
+						remove_trait = creature_human
+					}
+				}
+			}
+			#set blood dragon?
+			if = {
+				limit = {
+					culture = blooddragons_culture
+				}
+				location = {
+					ROOT = {
+						culture = PREV
+						set_graphical_culture = PREV
+						remove_trait = creature_human
+					}
+				}
+			}
+			#nehekharan culture removal
+			if = {
+				limit = {
+					culture = nehekharan
+				}
+				culture = nehekka
+			}
+		}
+		#check for elf
+		else_if = {
+			limit = {
+				OR = {
+					graphical_culture = asurgfx
+					graphical_culture = nagarythiangfx
+					graphical_culture = caledoriangfx
+					graphical_culture = asraigfx
+					graphical_culture = eonirgfx
+					graphical_culture = druchiigfx
+				}
+			}
+			add_trait = creature_elf
+			#check for maiden
+			if = {
+				limit = {
+					is_female = yes
+					age = 12
+					NOT = { age = 45 }
+				}
+				add_trait = elven_maiden
+			}
+			#check for scion (use else_if because maidens cannot also be scions)
+			else_if = {
+				limit = {
+					is_female = no
+					age = 12
+					NOT = { age = 45 }
+				}
+				add_trait = elven_scion
+			}
+		}
+		#check for dwarf
+		else_if = {
+			limit = {
+	            OR = {
+					graphical_culture = dwarfgfx
+					graphical_culture = imperialdwarfgfx
+					graphical_culture = norsedwarfgfx
+					graphical_culture = olddwarfgfx
+					graphical_culture = norseolddwarfgfx
+					graphical_culture = slayerdwarfgfx
+				}
+			}
+			add_trait = creature_dwarf
+			#check for beardling
+			if = {
+				limit = {
+					NOT = { age = 75 }
+				}
+				add_trait = beardling
+			}
+			#warrior traits (use else_if because beardlings can't be warriors)
+			else_if = {
+				limit = {
+					is_female = no
+					NOR = {
+						trait = longbeard
+						trait = hammerer
+						trait = ironbreaker
+						trait = thunderer
+						trait = quarreller
+						trait = dwarf_warrior
+						trait = dwarf_slayer
+						has_character_flag = becoming_thunderer
+						has_character_flag = becoming_quarreller
+						has_character_flag = becoming_dwarf_warrior
+						has_character_flag = dwarf_did_not_become_warrior
+					}
+				}
+				random_list = {
+					15 = {
+						modifier = {
+							factor = 4
+							martial = 10
+							NOT = {
+								trait = craven
+							}
+						}
+						add_trait = dwarf_warrior
+					}
+					5 = {
+						modifier = {
+							factor = 4
+							martial = 10
+							NOT = {
+								trait = craven
+							}
+						}
+						add_trait = quarreller
+					}
+					5 = {
+						modifier = {
+							factor = 4
+							martial = 10
+							NOT = {
+								trait = craven
+							}
+						}
+							add_trait = thunderer
+					}
+					75 = {
+						modifier = {
+							factor = 0
+							martial = 10
+							NOT = {
+								trait = craven
+							}
+						}
+						set_character_flag = dwarf_did_not_become_warrior
+					}
+				}
+			}
+		}
+		#check for chaos dwarf
+		else_if = {
+			limit = {
+				OR = {
+					graphical_culture = chaosdwarfgfx
+					graphical_culture = oldchaosdwarfgfx
+				}
+			}
+			add_trait = creature_chaos_dwarf
+		}
+		#check for halfling
+		else_if = {
+			limit = {
+				OR = {
+					graphical_culture = hobbitsgfx
+					graphical_culture = miyangfx
+				}
+			}
+			add_trait = creature_halfling
+		}
+		#check for orc/snotling
+		else_if = {
+			limit = {
+				OR = {
+					graphical_culture = orcgfx
+	                graphical_culture = freebootazgfx
+					graphical_culture = savageorcgfx
+					graphical_culture = blackorcgfx
+				}
+			}
+			any_spouse = { remove_spouse = ROOT }
+			#orcs
+			if = {
+				limit = {
+					is_female = no
+				}
+				add_trait = creature_orc
+				#shaman
+				if = {
+					limit = {
+						is_theocracy = yes
+					}
+					add_trait = lore_waaagh
+				}
+				#black orc
+				if = {
+					limit = {
+						graphical_culture = blackorcgfx
+					}
+					add_trait = black_orc_trait
+				}
+			}
+			#snotling
+			else = {
+				add_trait = creature_snotling
+			}
+		}
+		#check for goblin/snotling
+		else_if = {
+			limit = {
+				OR = {
+					graphical_culture = goblingfx
+	                graphical_culture = seagitgfx
+					graphical_culture = nightgoblingfx
+					graphical_culture = forestgoblingfx
+				}
+			}
+			any_spouse = { remove_spouse = ROOT }
+			#goblins
+			if = {
+				limit = {
+					is_female = no
+				}
+				add_trait = creature_goblin
+				if = {
+					limit = {
+						is_theocracy = yes
+					}
+					add_trait = lore_waaagh
+				}
+			}
+			#snotling
+			else = {
+				add_trait = creature_snotling
+			}
+		}
+		#check for hobgoblin/snotling
+		else_if = {
+			limit = {
+				graphical_culture = hobgoblingfx
+			}
+			any_spouse = { remove_spouse = ROOT }
+			#hobgoblin
+			if = {
+				limit = {
+					is_female = no
+				}
+				add_trait = creature_hobgoblin
+			}
+			#snotling
+			else = {
+				add_trait = creature_snotling
+			}
+		}
+		#check for nehekharan
+		else_if = {
+			limit = {
+				graphical_culture = nehekharangfx
+			}
+			add_trait = creature_nehekharan
+			#tomb king
+			if = {
+				limit = {
+					is_landed = yes
+					ruled_years = 2
+					is_feudal = yes
+					NOR = {
+                        trait = khemri_tomb_king
+						trait = khemri_soldier
+						trait = khemri_liche_priest
+                    }
+				}
+				add_trait = khemri_tomb_king
+				set_government_type = nehekharan_government
+			}
+			#liche priest
+			else_if = {
+				limit = {
+					is_female = no
+					NOR = {
+						trait = khemri_tomb_king
+						trait = khemri_soldier
+						trait = khemri_liche_priest
+					}
+					OR = {
+						is_theocracy = yes
+						AND = {
+							is_landed = no
+							has_education_learning_trigger = yes
+						}
+					}
+				}
+				add_trait = khemri_liche_priest
+				set_government_type = theocracy_government
+			}
+			#soldier
+			else = {
+				add_trait = khemri_soldier
+				liege = { ROOT = { abdicate_to = PREV } }
+				any_spouse = { remove_spouse = ROOT }
+			}
+		}
+		#check for skaven
+		else_if = {
+			limit = {
+				culture_group = skaven_group
+			}
+			add_trait = creature_skaven
+			any_spouse = { remove_spouse = ROOT }
+			#skaven psychology
+			random = {
+				chance = 80
+				add_trait = craven
+			}
+        	random = {
+				chance = 80
+				add_trait = envious
+			}
+        	random = {
+				chance = 60
+				add_trait = deceitful
+			}
+        	random = {
+				chance = 40
+				add_trait = paranoid
+			}
+        	random = {
+				chance = 20
+				add_trait = ambitious
+			}
+			#rat-priests
+			if = {
+				limit = {
+					is_theocracy = yes
+				}
+				add_trait = lore_vermin
+				if = {
+					limit = {
+						culture = pestilens
+					}
+					add_trait = plaguelord
+				}
+				else = {
+					add_trait = grey_seer
+				}
+			}
+			#breeders
+			if = {
+				limit = {
+					is_female = yes
+				}
+				add_trait = skaven_breeder
+			}
+			#black & white castes
+			if = {
+				limit = {
+					graphical_culture = skavenblackgfx
+				}
+				add_trait = black_skaven
+			}
+			else_if = {
+				limit = {
+					graphical_culture = skavenwhitegfx
+				}
+				add_trait = white_skaven
+				if = {
+					limit = {
+						age = 16
+						is_female = no
+					}
+					add_trait = grey_seer
+				}
+			}
+		}
+		#check for ogre
+		else_if = {
+			limit = {
+				graphical_culture = ogresgfx
+			}
+			add_trait = creature_ogre
+		}
+		#check for lizardmen
+		else_if = {
+			limit = {
+				graphical_culture = lizardmangfx
+			}
+			any_spouse = { remove_spouse = ROOT }
+			#separate the skinks...
+			if = {
+				limit = {
+					is_female = no
+				}
+				add_trait = creature_skink
+			}
+			#...from the sauruses
+			else = {
+				add_trait = creature_saurus
+			}
+			if = {
+				limit = {
+					dynasty = 0
+				}
+				dynasty = father_bastard
+			}
+		}
+		#check for Beastmen
+		else_if = {
+			limit = {
+				graphical_culture = beastmangfx
+			}
+			add_trait = creature_beastman
+			if = {
+				limit = {
+					is_female = no
+					NOR = {
+						trait = horns_none
+						trait = horns_small
+						trait = horns_average
+						trait = horns_big
+					}
+				}
+				random_list = {
+					10 = { add_trait = horns_none }
+					40 = { add_trait = horns_small }
+					45 = { add_trait = horns_average }
+					5 = { add_trait = horns_big }
+				}
+			}
+		}
+		#undivided demons
+		else_if = {
+			limit = {
+				graphical_culture = undividedprincegfx
+			}
+			add_trait = undivided_demon
+			any_spouse = { remove_spouse = ROOT }
+		}
+		#khornate demons
+		else_if = {
+			limit = {
+				OR = {
+					graphical_culture = bloodlettergfx
+					graphical_culture = khorneprincegfx
+				}
+			}
+			add_trait = khorne_demon
+			any_spouse = { remove_spouse = ROOT }
+		}
+		#nurglite demons
+		else_if = {
+			limit = {
+				OR = {
+					graphical_culture = plaguebearergfx
+					graphical_culture = nurgleprincegfx
+				}
+			}
+			add_trait = nurgle_demon
+			any_spouse = { remove_spouse = ROOT }
+		}
+		#slaaneshi demons
+		else_if = {
+			limit = {
+				OR = {
+					graphical_culture = daemonettegfx
+					graphical_culture = slaaneshprincegfx
+				}
+			}
+			add_trait = slaanesh_demon
+			any_spouse = { remove_spouse = ROOT }
+		}
+		#tzeentchian demons
+		else_if = {
+			limit = {
+				OR = {
+					graphical_culture = flamergfx
+					graphical_culture = tzeentchprincegfx
+				}
+			}
+			add_trait = tzeentch_demon
+			any_spouse = { remove_spouse = ROOT }
+		}
+		#kdaai
+		else_if = {
+			limit = {
+				graphical_culture = kdaaigfx
+			}
+			add_trait = hashut_kdaai
+			any_spouse = { remove_spouse = ROOT }
+		}
+		#set flag to fast-block this event
+		set_character_flag = has_racial_trait_flag
+	}
+}
+
+#applies elf maid/scion traits
+#fires from yearly on_action
+character_event = {
+	id = wh_maintenance.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	min_age = 12
+	max_age = 45
+	is_married = no
+
+	trigger = {
+		trait = creature_elf
+		NOR = {
+			trait = elven_scion
+			trait = elven_maiden
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				is_female = yes
+			}
+			add_trait = elven_maiden
+		}
+		else = {
+			add_trait = elven_scion
+		}
+	}
+}
+
+#removes wrongbad ai marriages
+#fires on loading, yearly pulse & focus pulse
+character_event = {
+	id = wh_maintenance.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	is_married = yes
+
+	trigger = {
+		OR = {
+			AND = {
+				trait = creature_human
+				spouse = {
+					NOR = {
+						trait = creature_human
+						trait = creature_beastman
+					}
+					OR = {
+						ai = no
+						NOT = { has_global_flag = optionB }
+					}
+				}
+			}
+			AND = {
+				trait = creature_dwarf
+				spouse = {
+					NOT = { trait = creature_dwarf }
+					NOT = { trait = creature_chaos_dwarf }
+					OR = {
+						ai = no
+						NOT = { has_global_flag = optionB }
+					}
+				}
+			}
+			AND = {
+				trait = creature_elf
+				 spouse = {
+					NOT = { trait = creature_elf }
+					OR = { ai = no
+						NOT = { has_global_flag = optionB }
+					}
+				}
+			}
+			AND = {
+				trait = creature_halfling
+				spouse = {
+					NOT = { trait = creature_halfling }
+					OR = {
+						ai = no
+						NOT = { has_global_flag = optionB }
+					}
+				}
+			}
+			AND = {
+				trait = creature_ogre
+				spouse = {
+					NOT = { trait = creature_ogre }
+					OR = {
+						ai = no
+						NOT = { has_global_flag = optionB }
+					}
+				}
+			}
+			AND = {
+				trait = creature_skaven
+				spouse = {
+					NOT = { trait = creature_skaven }
+					OR = { ai = no
+						NOT = { has_global_flag = optionB } }
+				}
+			}
+			#these creatures shouldn't marry at all
+			trait = creature_orc
+			trait = creature_hobgoblin
+			trait = creature_goblin
+			trait = creature_saurus
+			trait = creature_skink
+			trait = creature_slann
+			trait = undivided_demon
+			trait = khorne_demon
+			trait = nurgle_demon
+			trait = slaanesh_demon
+			trait = tzeentch_demon
+		}
+		ai = yes
+	}
+
+	immediate = {
+		any_spouse = {
+			remove_spouse = ROOT
+		}
+	}
+}
+
+character_event = {  #by Achab
+	id = wh_maintenance.101 #upon title holder change clears crown_law_change title flag
+	hide_window = yes
+	is_triggered_only = yes # triggered by on_new_holder, on_new_holder_inheritance, on_new_holder_usurpation from 00_on_actions.txt
+
+	trigger = {   #only for crown law titles
+		FROM = { is_crown_law_title = yes }
+	}
+
+	immediate = {
+		FROM = {   #FROM is the newly acquired tile
+			clr_title_flag = crown_law_change
+			#set_title_flag = clawch_cleared #DEBUG
+		}
+	}
+}

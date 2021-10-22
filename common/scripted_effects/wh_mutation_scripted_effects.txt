@@ -175,9 +175,9 @@ mutations_table = {
 		}
 		5 = {	#bestial_appearance
 			trigger = {
-				NOR = {
+				NOT = {
 					trait = bestial_appearance
-					trait = turnskin
+					#trait = turnskin
 				}
 			}
 			#if = {
@@ -288,12 +288,12 @@ mutations_table = {
 					trait = blood_substitution_molten_metal
 					trait = blood_substitution_mucous
 					trait = blood_substitution_mud
-					trait = blood_substitution_protoplasm
+					#trait = blood_substitution_protoplasm
 					trait = blood_substitution_poison
 					trait = blood_substitution_small_birds
 					trait = blood_substitution_tar
 					trait = blood_substitution_vines
-					trait = blood_substitution_vomit
+					#trait = blood_substitution_vomit
 					trait = blood_substitution_wax
 					trait = blood_substitution_wind
 				}
@@ -905,7 +905,7 @@ mutations_table = {
 		5 = {	#iron-hard_skin
 			trigger = {
 				NOR = {
-					trait = iron-hard_skin_10
+					trait = iron-hard_skin_6
 					trait = leathery_skin_1
 					trait = leathery_skin_2
 					trait = leathery_skin_3
@@ -1020,7 +1020,7 @@ mutations_table = {
 			add_trait = magic_immune
 			if = {
 				limit = { follower_of_tzeentch = yes }
-				add_trait = chaos_spawn
+				add_trait = creature_chaosspawn
 				remove_trait = magic_immune
 			}
 			else_if = {
@@ -1036,7 +1036,7 @@ mutations_table = {
 			add_trait = magic_resistant
 			if = {
 				limit = { follower_of_tzeentch = yes }
-				add_trait = chaos_spawn
+				add_trait = creature_chaosspawn
 				remove_trait = magic_resistant
 			}
 			else_if = {
@@ -1048,8 +1048,8 @@ mutations_table = {
 		5 = {	#malign_sorcerer
 			trigger = {
 				NOR = {
-					magic_immune
-					magic_resistant
+					trait = magic_immune
+					trait = magic_resistant
 				}
 			}
 			mutation_malign_sorcerer_effect = yes
@@ -1951,9 +1951,9 @@ mutations_table_tzeentch = {
 		}
 		2 = {	#bestial_appearance
 			trigger = {
-				NOR = {
+				NOT = {
 					trait = bestial_appearance
-					trait = turnskin
+					#trait = turnskin
 				}
 			}
 			#if = {
@@ -2274,11 +2274,9 @@ mutations_table_tzeentch = {
 		}
 		2 = {	#malign_sorcerer
 			trigger = {
-				NOT = {
-					OR = {
-						magic_immune
-						magic_resistant
-					}
+				NOR = {
+					trait = magic_immune
+					trait = magic_resistant
 				}
 			}
 			mutation_malign_sorcerer_effect = yes
@@ -2781,7 +2779,7 @@ mutations_table_nurgle = {
 			trigger = {
 				NOT = {
 					trait = bestial_appearance
-					trait = turnskin
+					#trait = turnskin
 				}
 			}
 			#if = {
@@ -2862,12 +2860,12 @@ mutations_table_nurgle = {
 					trait = blood_substitution_molten_metal
 					trait = blood_substitution_mucous
 					trait = blood_substitution_mud
-					trait = blood_substitution_protoplasm
+					#trait = blood_substitution_protoplasm
 					trait = blood_substitution_poison
 					trait = blood_substitution_small_birds
 					trait = blood_substitution_tar
 					trait = blood_substitution_vines
-					trait = blood_substitution_vomit
+					#trait = blood_substitution_vomit
 					trait = blood_substitution_wax
 					trait = blood_substitution_wind
 				}
@@ -3200,7 +3198,6 @@ mutations_table_nurgle = {
 					trait = sensory_loss_taste
 					trait = sensory_loss_touch
 				}
-				add_trait = sensory_loss_hear
 			}
 			random_list = {
 				10 = {
@@ -3407,7 +3404,7 @@ mutations_table_slaanesh = {
 			trigger = {
 				NOT = {
 					trait = bestial_appearance
-					trait = turnskin
+					#trait = turnskin
 				}
 			}
 			if = {
@@ -3962,7 +3959,6 @@ mutations_table_slaanesh = {
 					trait = sensory_loss_taste
 					trait = sensory_loss_touch
 				}
-				add_trait = sensory_loss_hear
 			}
 			random_list = {
 				10 = {
@@ -4092,7 +4088,7 @@ mutations_table_khorne = {
 			trigger = {
 				NOT = {
 					trait = bestial_appearance
-					trait = turnskin
+					#trait = turnskin
 				}
 			}
 			if = {
@@ -4101,10 +4097,10 @@ mutations_table_khorne = {
 				}
 				add_trait = bestial_appearance
 			}
-			else_if = {
-				limit = { trait = bestial_appearance }
-				add_trait = turnskin
-			}
+			#else_if = {
+			#	limit = { trait = bestial_appearance }
+			#	add_trait = turnskin
+			#}
 			change_variable = { which = "mutation_counter" value = 1 }
 		}
 		1 = {	#beweaponed_extremities
@@ -4365,7 +4361,7 @@ mutations_table_khorne = {
 			trigger = {
 				NOT = {
 					OR = {
-						trait = iron-hard_skin_10
+						trait = iron-hard_skin_6
 						trait = leathery_skin_1
 						trait = leathery_skin_2
 						trait = leathery_skin_3
@@ -4405,7 +4401,7 @@ mutations_table_khorne = {
 			add_trait = magic_immune
 			if = {
 				limit = { follower_of_tzeentch = yes }
-				add_trait = chaos_spawn
+				add_trait = creature_chaosspawn
 				remove_trait = magic_immune
 			}
 			else_if = {
@@ -4421,7 +4417,7 @@ mutations_table_khorne = {
 			add_trait = magic_resistant
 			if = {
 				limit = { follower_of_tzeentch = yes }
-				add_trait = chaos_spawn
+				add_trait = creature_chaosspawn
 				remove_trait = magic_resistant
 			}
 			else_if = {
@@ -4862,7 +4858,7 @@ mutation_toughness_test_effect = {
 	###Health 10+###
 	else_if = {
 		limit = {
-			health_over_10_trigger = yes
+			health_10+_trigger = yes
 			champion_chosen_trigger = no
 			NOT = { is_vampire_trigger = yes }
 		}
@@ -4913,7 +4909,7 @@ chaos_spawn_effect = {
 		mutations_table = yes
 		mutations_table = yes
 		random = {
-			chance = 50
+			chance = 75
 			death = {
 				death_reason = death_mutation_chaos_spawn
 			}

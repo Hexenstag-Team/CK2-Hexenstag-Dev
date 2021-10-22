@@ -663,40 +663,40 @@ character_event = {
 	id = sinsa.1156
 	desc = EVTDESCsinsa11156
 	picture = GFX_evt_slaanesh_cult_1
+	is_triggered_only = yes
 
 	only_rulers = yes
-
 	capable_only = yes
 	prisoner = no
 
-	trigger = { in_command = no
-		NOR = { trait = temperate
-			trait = depressed
-			trait = stressed }
+	trigger = {
 		trait = is_malnourished
+		in_command = no
+		NOR = {
+			trait = temperate
+			trait = depressed
+			trait = stressed
 		}
-
-	mean_time_to_happen = { years = 10
-
-		modifier = { factor = 0.5
-				trait = gluttonous }
-				 }
+	}
 
 	option = { name = EVTOPTAsinsa1156
 		ai_chance = { factor = 40 }
-			hidden_tooltip = { random_list = {
-							40 = { remove_trait = is_malnourished }
-							40 = { remove_trait = gluttonous }
-							15 = { add_trait = temperate
-								character_event = { id = 38276 days = 10 }
-								}
-							5 = { add_trait = is_fat }
+		hidden_tooltip = {
+			random_list = {
+				40 = { remove_trait = is_malnourished }
+				40 = { remove_trait = gluttonous }
+				15 = {
+					add_trait = temperate
+					character_event = { id = 38276 days = 10 }
 							}
-					}
+				5 = { add_trait = is_fat }
 			}
-	option = { name = EVTOPTBsinsa1155
+		}
+	}
+	option = {
+		name = EVTOPTBsinsa1155
 		ai_chance = { factor = 60 }
-			}
+	}
 }
 
 ############Depressed+Fair####
@@ -970,7 +970,7 @@ character_event = {
 		}
 	}
 
-	
+
 	option = {
 		name = EVTOPTAsinsa1200
 		add_trait = disfigured

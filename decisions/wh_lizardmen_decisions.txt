@@ -42,43 +42,6 @@ targetted_decisions = {
 		} #closesaiwilldo
 	} #decision
 
-	give_province_amazon_1 = {
-		ai = no
-		filter = realm
-		ai_target_filter = self
-		from_potential = {
-			trait = creature_amazon
-			NOT = { trait = incapable }
-			is_ruler = yes
-			NOR = { any_vassal = { has_character_modifier = tagged_recipient }
-				any_courtier = { has_character_modifier = tagged_recipient }
-				 }
-		}
-
-		potential = {
-			trait = creature_amazon
-			NOT = { character = FROM }
-			liege = { character = FROM }
-					NOT = { trait = disinherited_amazon }
-			NOT = { trait = disinherited }
-			custom_tooltip = { text = IS_NOT_INCAPACITATED
-					is_incapacitated_trigger = no }
-		}
-		allow = {
-			FROM = {
-				any_demesne_title = { can_be_given_away = yes }
-			}
-		}
-		effect = {
-			add_character_modifier =  { name = tagged_recipient hidden = yes duration = 30 }
-		}
-		revoke_allowed = {
-			always = no
-		}
-		ai_will_do = {
-			factor = 0
-		} #closesaiwilldo
-	} #decision
 }
 
 	# Amazon - Exile complacent Amazon (removed)
@@ -128,54 +91,6 @@ title_decisions = {
 								if = { limit = { higher_tier_than = COUNT }
 									add_law = agnatic_succession
 									add_law = succ_open_elective } }
-							remove_character_modifier = tagged_recipient } }
-				break = yes
-				}
-		}
-
-		revoke_allowed = {
-			always = no
-		}
-
-		ai_will_do = { factor = 0 }
-	} #closestitledecision
-
-	give_province_amazon_2 = {
-		ai_check_interval = 12
-		filter = owned
-		ai_target_filter = owned
-		only_playable = yes
-
-		potential = {
-			can_be_given_away = yes
-			FROM = {
-				trait = creature_amazon
-				demesne_size = 2
-			}
-			holder_scope = {
-				character = FROM
-				ai = no
-			}
-		}
-		allow = { FROM = { OR = { any_vassal = { has_character_modifier = tagged_recipient }
-					any_courtier = { has_character_modifier = tagged_recipient } } }
-		}
-		effect = {
-			if = {
-				limit = { FROM = { any_vassal = { has_character_modifier = tagged_recipient } } }
-					FROM = { any_vassal = { limit = { has_character_modifier = tagged_recipient }
-							ROOT = { grant_title = PREV
-								if = { limit = { higher_tier_than = COUNT }
-									add_law = enatic_succession } }
-							remove_character_modifier = tagged_recipient } }
-				break = yes
-				}
-			if = {
-				limit = { FROM = { any_courtier = { has_character_modifier = tagged_recipient } } }
-					FROM = { any_courtier = { limit = { has_character_modifier = tagged_recipient }
-							ROOT = { grant_title = PREV
-								if = { limit = { higher_tier_than = COUNT }
-									add_law = enatic_succession } }
 							remove_character_modifier = tagged_recipient } }
 				break = yes
 				}

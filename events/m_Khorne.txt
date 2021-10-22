@@ -297,7 +297,7 @@ character_event = {
 		else = {
 			add_trait = berserker
 		}
-		
+
 	}
 }
 
@@ -1037,7 +1037,7 @@ character_event = {
 
 	option = {
 		name = berserker6A
-		FROMFROM = {
+		event_target:beserker_victim = {
 			add_trait = wounded
 			opinion = {
 				modifier = opinion_went_berserk
@@ -1068,49 +1068,46 @@ character_event = {
 character_event = {
 	id = berserker.8
 	hide_window = yes
+	is_triggered_only = yes
 
-	ai = yes
+	religion_group = khorne
 	min_age = 16
 	capable_only = yes
 	prisoner = no
-	religion_group = chaos_gods_group
 
 	trigger = {
-		host = {
-			character = liege
-			prisoner = no
-			trait = khorne_berserker
-			NOT = {
-				trait = incapable
-				opinion = { who = ROOT value = 10 }
-			}
-			NOT = { trait = in_hiding }
-		}
-		NOT = { trait = khorne_berserker }
-		is_primary_heir = no
-		is_pretender = no
-	}
-
-	mean_time_to_happen = {
-		years = 173
+		trait = khorne_berserker
+		is_playable = yes
 	}
 
 	immediate = {
-		liege = {
-	character_event = { id = berserker.5 }
+		random_courtier = {
+			limit = {
+				NOT = { trait = khorne_berserker }
+				is_primary_heir = no
+				is_pretender = no
+				NOR = {
+					reverse_opinion = { who = ROOT value = 10 }
+					trait = in_hiding
+					is_incapacitated_trigger = yes
+				}
+			}
+			save_event_target_as = beserker_victim
+		}
+		character_event = {
+			id = berserker.5
+			days = 15
+			random = 45
 		}
 	}
 
-	option = {
-		name = OK
-	}
 }
 
 #Favored warrior dies (ping)
 character_event = {
 	id = berserker.9
 	hide_window = yes
-	
+
 	is_triggered_only = yes
 
 	trigger = {

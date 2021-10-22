@@ -56,7 +56,7 @@ narrative_event = {
 	id = wh_wonders.2
 	title = EVTTITLE_wh_wonders.2
 	desc = EVTDESC_wh_wonders.2
-	picture = GFX_evt_empire_master_engineer
+	picture = GFX_evt_leonardo_Hexenstag
 	is_triggered_only = yes
 
 	trigger = {
@@ -85,12 +85,12 @@ narrative_event = {
 	id = wh_wonders.3
 	title = EVTTITLE_wh_wonders.3
 	desc = EVTDESC_wh_wonders.3
-	picture = GFX_evt_empire_master_engineer
+	picture = GFX_evt_leonardo_Hexenstag
 	is_triggered_only = yes
 
 	trigger = {
 		NOT = {
-			has_global_flag = tilean_engineering_school
+			has_global_flag = estalian_engineering_school
 		}
 		FROM = {
 			has_wonder_upgrade = upgrade_engineering_school
@@ -101,7 +101,7 @@ narrative_event = {
 	}
 
 	immediate = {
-		set_global_flag = imperial_engineering_school
+		set_global_flag = estalian_engineering_school
 	}
 
 	option = {

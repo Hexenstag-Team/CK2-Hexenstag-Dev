@@ -1101,20 +1101,7 @@ add_random_lore = {
 	}
 	else_if = {
 		limit = {
-			AND = {
-				is_elf = yes
-				OR = {
-					AND = {
-						is_female = no
-						NOT = {
-							top_liege = {
-								trait = malekith
-							}
-						}
-					}
-					is_female = yes
-				}
-			}
+			is_elf = yes
 		}
 		if = {
 			limit = {
@@ -1189,7 +1176,7 @@ add_random_lore = {
 	}
 	else_if = {
 		limit = {
-			culture_group = creature_skaven
+			trait = creature_skaven
 		}
 		if = {
 			limit = {

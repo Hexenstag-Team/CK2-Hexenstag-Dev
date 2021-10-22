@@ -6,17 +6,20 @@ character_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-    # things which exclude lunacy
+	min_age = 12
+
 	trigger = {
+		OR = {
+			trait = lunatic_1
+			trait = lunatic_2
+			trait = lunatic_3
+		}
+		# things which exclude lunacy
 		NOT = { trait = creature_forestspirit }
 		NOT = { trait = creature_treekin }
 		NOT = { trait = creature_nehekharan }
 		NOT = { trait = creature_chaosspawn }
 		is_vampire_trigger = no
-
-		OR = { trait = lunatic_1
-			trait = lunatic_2
-			trait = lunatic_3 }
 	}
 
 	weight_multiplier = { factor = 1
@@ -1125,7 +1128,7 @@ character_event = {
 	picture = GFX_evt_lunatic
 	is_triggered_only = yes
 
-	only_rulers = yes
+	only_playable = yes
 	min_age = 16
 	only_capable = yes
 
@@ -1138,8 +1141,6 @@ character_event = {
 			prisoner = yes
 		}
 	}
-
-	mean_time_to_happen = { years = 10}
 
 	option = {
 		name = EVTOPTAslunacy24
@@ -1246,8 +1247,6 @@ character_event = {
 				}
 			}
 		 }
-
-	mean_time_to_happen = { years = 6}
 
 	immediate = {
 		character_event = { id = wh_mutation.200 } #lunacy counter
@@ -3327,6 +3326,7 @@ character_event = {
 	id = slunacy.49
 	desc = EVTDESCslunacy49
 	picture = GFX_evt_feral_vampire
+	is_triggered_only = yes
 
 	min_age = 75
 	only_capable = yes
@@ -3348,15 +3348,16 @@ character_event = {
 	id = slunacy.49001
 	desc = EVTDESCslunacy49001
 	picture = GFX_evt_feral_vampire
+	is_triggered_only = yes
 
 	min_age = 75
+	capable_only = yes
 
-	trigger = { has_character_modifier = heart_of_melancholy
-			NOT = { trait = resting }
-			NOT = { trait = incapable }
-			NOT = { trait = incapacitated } }
-
-	mean_time_to_happen = { years = 30}
+	trigger = {
+		has_character_modifier = heart_of_melancholy
+		NOT = { trait = resting }
+		NOT = { trait = incapacitated }
+	}
 
 	option = {
 		name = EVTOPTAslunacy49001

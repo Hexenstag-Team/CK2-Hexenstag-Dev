@@ -655,42 +655,97 @@ targetted_decisions = {
 		}
 	}
 
-	send_son_to_university = {
-		filter = close_relatives
-		ai_target_filter = close_relatives
-		ai_check_interval = 12
-		only_playable = yes #barons aren't that important
+	go_to_university = {
+		ai = no
+		filter = self
+		ai_target_filter = none
+		ai_check_interval = 1200
 		from_potential = {
-			trait = creature_human
 			OR = {
-				religion_group = old_world_group
-				religion_group = ormazd_gods_group
+				trait = creature_human
+				trait = creature_halfling
 			}
-			#this next condition is probably wrong - Brettonian merchants might send their sons to a university
+			religion_group = old_world_group
 			NOR = {
-				religion = grail
-				religion = false_grail
-			}
-			OR = {
-				location = { region = world_old_world }
-				location = { region = world_greater_araby }
+				trait = noble
+				trait = clergy
+				religion = old_faith
 			}
 			NOT = { is_tribal = yes }
 			NOT = { is_nomadic = yes }
 			prisoner = no
-			is_ruler = yes
+			NOT = { trait = witch_hunter }
+			NOT = {
+				trait = incapable
+			}
+			age = 16
+			NOT = {
+				age = 25
+			}
+			NOR = {
+				has_character_flag = seeks_further_education_academic
+				has_character_flag = seeks_further_education_engineering
+				has_character_flag = seeks_further_education_military
+				has_character_flag = seeks_further_education_religious
+				has_character_flag = seeks_further_education_magical
+			}
+		}
+		potential = {	}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = {
+					id = wh_higher_education.1
+				}
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+			# modifier = {
+				# factor = 0.005 # Slow it down
+			# }
+		}
+	}
+
+	#despite the name, this urges any child to get an advanced education
+	send_son_to_university = {
+		ai = no #ai uses its own method to access this feature
+		filter = close_relatives
+		ai_target_filter = none
+		ai_check_interval = 1200
+		from_potential = {
+			OR = {
+				trait = creature_human
+				trait = creature_halfling
+			}
+			religion_group = old_world_group
+			NOR = {
+				trait = noble
+				trait = clergy
+				religion = old_faith
+			}
+			NOT = { is_tribal = yes }
+			NOT = { is_nomadic = yes }
+			prisoner = no
 			NOT = { trait = witch_hunter }
 			NOT = {
 				trait = incapable
 			}
 		}
 		potential = {
+			religion_group = old_world_group
 			age = 16
-			is_landed = no
-			in_command = no
-			prisoner = no
+			NOT = {
+				age = 25
+			}
 			is_incapacitated_trigger = no
 			OR = {
+				#character = FROM - need to write the event for this
 				father = {
 					character = FROM
 				}
@@ -699,45 +754,90 @@ targetted_decisions = {
 				}
 			}
 			NOR = {
-				has_character_flag = wants_educ_university
-				trait = academic
-				trait = arabyan_scholar
-				# has_character_flag = wants_eng_university
-				# trait = engineer
+				has_character_flag = seeks_further_education_academic
+				has_character_flag = seeks_further_education_engineering
+				has_character_flag = seeks_further_education_military
+				has_character_flag = seeks_further_education_religious
+				has_character_flag = seeks_further_education_magical
 			}
-			OR = { is_female = no
-				FROM = { NOR = { religion = ormazd
-						religion = kitabid } } }
-			NOT = { trait = witch_hunter }
 			NOR = {
-				religion = grail
-				religion = false_grail
+				trait = noble
+				trait = clergy
 			}
-			trait = creature_human
 			OR = {
-				religion_group = old_world_group
-				religion_group = ormazd_gods_group
+				trait = creature_human
+				trait = creature_halfling
 			}
 		}
 		allow = {
+			NOT = {
+				has_opinion_modifier = {
+					who = FROM
+					name = opinion_annoyed
+				}
+			}
 			host = {
 				character = FROM
 			}
-			OR = {
-				father = {
-					character = FROM
-				}
-				mother = {
-					character = FROM
-				}
-			}
+			prisoner = no
 		}
 		effect = {
 			hidden_tooltip = {
-				character_event = { id = DR_universities.31 }
-				if = {
-					limit = { FROM = {is_female = yes } }
-					set_character_flag = mother_return_university
+				character_event = { id = wh_higher_education.2 }
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+			# modifier = {
+				# factor = 0.005 # Slow it down
+			# }
+		}
+	}
+
+	go_to_magical_academy = {
+		ai = no
+		filter = self
+		ai_target_filter = none
+		ai_check_interval = 1200
+		from_potential = {
+			has_magic_potential = yes
+			trait = creature_human
+			religion_group = old_world_group
+			NOR = {
+				trait = noble
+				trait = clergy
+				religion = old_faith
+			}
+			NOT = { is_tribal = yes }
+			NOT = { is_nomadic = yes }
+			prisoner = no
+			NOT = { trait = witch_hunter }
+			NOT = {
+				trait = incapable
+			}
+			age = 16
+			NOT = {
+				age = 25
+			}
+			NOR = {
+				has_character_flag = seeks_further_education_academic
+				has_character_flag = seeks_further_education_engineering
+				has_character_flag = seeks_further_education_military
+				has_character_flag = seeks_further_education_religious
+				has_character_flag = seeks_further_education_magical
+			}
+		}
+		potential = {	}
+		allow = {
+			prisoner = no
+		}
+		effect = {
+			hidden_tooltip = {
+				character_event = {
+					id = wh_higher_education.8
 				}
 			}
 		}

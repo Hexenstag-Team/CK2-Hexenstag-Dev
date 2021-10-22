@@ -1985,11 +1985,6 @@ character_event = {
 					factor = 0.85
 					FROM = { trait = infertile }
 					}
-				modifier = { #Provincial scum
-					factor = 0.75
-					FROM = { NOT = { capital_scope = { empire = { title = e_ulthuan } } } }
-					capital_scope = { empire = { title = e_ulthuan } }
-					}
 				modifier = {
 					factor = 1.5
 					FROM = { NOT = { age = 30 } }
@@ -3206,11 +3201,6 @@ character_event = {
 				factor = 0.85
 				event_target:courted_elf = { trait = infertile }
 			}
-			modifier = { #Provincial scum
-				factor = 0.75
-				event_target:courted_elf = { capital_scope = { empire = { title = e_ulthuan } } }
-				NOT = { capital_scope = { empire = { title = e_ulthuan } } }
-			}
 			modifier = {
 				factor = 1.5
 				event_target:courted_elf = { NOT = { age = 30 } }
@@ -4234,11 +4224,6 @@ character_event = {
 			modifier = {
 				factor = 0.85
 				event_target:courted_elf = { trait = infertile }
-			}
-			modifier = { #Provincial scum
-				factor = 0.75
-				event_target:courted_elf = { capital_scope = { empire = { title = e_ulthuan } } }
-				NOT = { capital_scope = { empire = { title = e_ulthuan } } }
 			}
 			modifier = {
 				factor = 1.5

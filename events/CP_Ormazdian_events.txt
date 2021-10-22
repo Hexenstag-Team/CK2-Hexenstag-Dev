@@ -127,6 +127,7 @@ narrative_event = {
 	desc = ormazdian3desc
 	picture = GFX_evt_bishop
 	border = GFX_event_narrative_frame_religion
+	is_triggered_only = yes
 
 	major = yes
 
@@ -158,10 +159,10 @@ narrative_event = {
 		}
 	}
 
-	mean_time_to_happen = {
-		years = 233
+	weight_multiplier = {
+		days = 1
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			OR = {
 				b_al_haikk = {
 					holder_scope = {
@@ -181,31 +182,31 @@ narrative_event = {
 			}
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			NOT = { religion_authority = 0.5 }
 		}
 		modifier = {
-			factor = 4.0
+			factor = 0.25
 			NOT = { religion_authority = 0.2 }
 		}
 		modifier = {
-			factor = 2.0
+			factor = 0.5
 			year = 2100
 		}
 		modifier = {
-			factor = 2.0
+			factor = 0.5
 			year = 2200
 		}
 		modifier = {
-			factor = 2.0
+			factor = 0.5
 			year = 2300
 		}
 		modifier = {
-			factor = 4.0
+			factor = 0.25
 			year = 2400
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			ai = yes
 		}
 	}
