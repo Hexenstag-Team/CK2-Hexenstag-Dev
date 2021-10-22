@@ -313,6 +313,23 @@ character_event = {
 	}
 }
 character_event = {
+	id = wh_setup.4
+	hide_window = yes
+	is_triggered_only = yes
+	culture_group = imperial_group
+	religion_group = old_world_group
+
+	trigger = {
+		higher_tier_than = DUKE
+		is_patrician = no
+		trait = creature_human
+	}
+
+	immediate = {
+		set_government_type = elector_count_government
+	}
+}
+character_event = {
 	id = wh_setup.5
 	hide_window = yes
 
@@ -719,7 +736,7 @@ character_event = {
 						culture_group = tilean_group
 					}
 				}
-				religion = myrmidian
+				religion = classical_pantheon
 			}
 			else_if = {
 				limit = {
@@ -1000,7 +1017,7 @@ character_event = {
 	}
 
 	option = { # imperial_pantheon
-		name = "Omperial Pantheon"
+		name = "Imperial Pantheon"
 		trigger = {
 			has_character_flag = choosing_old_world_gods
 			culture_group = imperial_group
@@ -1008,8 +1025,8 @@ character_event = {
 		religion = imperial_pantheon
 	}
 
-	option = { # myrmidian
-		name = "Myrmidian"
+	option = { # classical_pantheon
+		name = "Classical Pantheon"
 		trigger = {
 			has_character_flag = choosing_old_world_gods
 			OR = {
@@ -1017,7 +1034,7 @@ character_event = {
 				culture_group = tilean_group
 			}
 		}
-		religion = myrmidian
+		religion = classical_pantheon
 	}
 
 	option = { # grail
@@ -1223,10 +1240,10 @@ character_event = {
 }
 # character_event = {
 	# id = wh_setup.13
-
+#
 	# hide_window = yes
 	# is_triggered_only = yes
-
+#
 	# immediate = {
 		# any_province =  {
 			# limit = {
@@ -1652,6 +1669,74 @@ character_event = {
 		}
 	}
 }
+
+character_event = {	#Reiklander-Nulnian War start on war_exhaustion_modifier event
+	id = wh_setup.23
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	trigger = {
+		any_war = {
+			using_cb = reiklander_nulnian_war_cb
+		}
+		has_landed_title = e_nuln
+	}
+
+	immediate = {
+		long_character_event = { id = wh_setup.25 }
+		any_realm_character = {
+			limit = {
+				is_ruler = yes
+			}
+			long_character_event = { id = wh_setup.25 }
+		}
+	}
+}
+
+character_event = {	#Reiklander-Nulnian War war_exhaustion_modifier event
+	id = wh_setup.24
+	hide_window = yes
+	
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	trigger = {
+		OR = {
+			has_global_flag = reiklander_nulnian_war_reikland
+			has_global_flag = reiklander_nulnian_war_nuln
+		}
+		has_character_modifier = war_exhaustion_modifier
+	}
+
+	immediate = {
+		remove_character_modifiers = {
+			modifier = war_exhaustion_modifier
+			amount = 1
+		}
+	}
+}
+
+long_character_event = {	#Reiklander-Nulnian War event
+	id = wh_setup.25
+	title = "The Reiklander-Nulnian War"
+	desc = REIKLANDER_NULNIAN_WAR_DESC
+	#picture = "GFX_evt_zombies"
+	is_triggered_only = yes
+
+	option = {
+		name = REIKLANDER_NULNIAN_WAR_OPTION
+		add_character_modifier = {
+			name = war_exhaustion_modifier
+			months = -1
+			stacking = yes
+		}
+	}
+}
+
 #Set up wonder names, descriptions
 character_event = {
 	id = wh_setup.100
@@ -1799,7 +1884,7 @@ character_event = {
 				}
 				mult_modifier = {
 					factor = 2
-					religion = myrmidian
+					religion = classical_pantheon
 				}
 				mult_modifier = {
 					factor = 0.5

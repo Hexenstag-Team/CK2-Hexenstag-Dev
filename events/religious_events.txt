@@ -258,7 +258,7 @@ character_event = {
 	picture = GFX_evt_heretic
 	border = GFX_event_normal_frame_religion
 
-	religion = myrmidian
+	religion = classical_pantheon
 
 	is_triggered_only = yes
 
@@ -270,7 +270,7 @@ character_event = {
 			prisoner = yes
 			demesne_size = 1
 			is_theocracy = yes
-			religion = myrmidian
+			religion = classical_pantheon
 			imprisoned_days = 100
 			host = { character = ROOT }
 		}
@@ -349,7 +349,7 @@ character_event = {
 	only_capable = yes
 	prisoner = no
 	only_men = yes
-	religion = myrmidian
+	religion = classical_pantheon
 	war = no
 
 	trigger = {
@@ -357,7 +357,7 @@ character_event = {
 		religion_authority = 0.20
 
 		any_playable_ruler = {
-			religion = myrmidian
+			religion = classical_pantheon
 			rightful_religious_head = ROOT
 			NOT = { has_character_flag = patriarch_dislikes_heathen_employed }
 			any_courtier = {
@@ -390,7 +390,7 @@ character_event = {
 		ai_chance = {	factor = 100 }
 		random_playable_ruler = {
 			limit = {
-				religion = myrmidian
+				religion = classical_pantheon
 				rightful_religious_head = ROOT
 				NOT = { has_character_flag = patriach_dislikes_heathen_employed }
 
@@ -948,7 +948,7 @@ character_event = {
 	only_playable = yes
 	prisoner = no
 	only_capable = yes
-	religion = myrmidian
+	religion = classical_pantheon
 
 	trigger = {
 		is_heretic = no
@@ -1000,7 +1000,7 @@ character_event = {
 	only_playable = yes
 	prisoner = no
 	only_capable = yes
-	religion = myrmidian
+	religion = classical_pantheon
 
 	trigger = {
 		is_heretic = no
@@ -1053,7 +1053,7 @@ character_event = {
 	only_playable = yes
 	prisoner = no
 	only_capable = yes
-	religion = myrmidian
+	religion = classical_pantheon
 
 	trigger = {
 		is_heretic = no
@@ -1106,7 +1106,7 @@ character_event = {
 	only_playable = yes
 	prisoner = no
 	only_capable = yes
-	religion = myrmidian
+	religion = classical_pantheon
 
 	trigger = {
 		is_heretic = no
@@ -1159,7 +1159,7 @@ character_event = {
 	only_playable = yes
 	prisoner = no
 	only_capable = yes
-	religion = myrmidian
+	religion = classical_pantheon
 
 	trigger = {
 		is_heretic = no

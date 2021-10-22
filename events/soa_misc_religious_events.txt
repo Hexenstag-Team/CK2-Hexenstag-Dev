@@ -578,7 +578,7 @@ character_event = {
 		in_command = no
 
 		OR = {
-			religion = myrmidian
+			religion = classical_pantheon
 			religion = imperial_pantheon
 			religion = grail
 			religion = false_grail
@@ -646,7 +646,7 @@ character_event = {
 		has_dlc = "Sons of Abraham"
 		in_command = no
 		OR = {
-			religion = myrmidian
+			religion = classical_pantheon
 			religion = imperial_pantheon
 			religion = grail
 			religion = false_grail
@@ -717,7 +717,7 @@ character_event = {
 		has_dlc = "Sons of Abraham"
 		in_command = no
 		OR = {
-			religion = myrmidian
+			religion = classical_pantheon
 			religion = imperial_pantheon
 			religion = grail
 			religion = false_grail
@@ -765,7 +765,7 @@ character_event = {
 
 		NOT = { trait = blinded }
 		OR = {
-			religion = myrmidian
+			religion = classical_pantheon
 			religion = imperial_pantheon
 			religion = grail
 			religion = false_grail
@@ -805,7 +805,7 @@ character_event = {
 
 		NOT = { trait = blinded }
 		OR = {
-			religion = myrmidian
+			religion = classical_pantheon
 			religion = imperial_pantheon
 			religion = grail
 			religion = false_grail
@@ -849,7 +849,7 @@ character_event = {
 		NOT = { has_character_modifier = in_seclusion }
 		in_command = no
 		OR = {
-			religion = myrmidian
+			religion = classical_pantheon
 			religion = imperial_pantheon
 			religion = grail
 			religion = false_grail
@@ -895,7 +895,7 @@ character_event = {
 	trigger = {
 		has_dlc = "Sons of Abraham"
 		OR = {
-			religion = myrmidian
+			religion = classical_pantheon
 			religion = imperial_pantheon
 			religion = grail
 			religion = false_grail
@@ -936,7 +936,7 @@ character_event = {
 	trigger = {
 		has_dlc = "Sons of Abraham"
 		OR = {
-			religion = myrmidian
+			religion = classical_pantheon
 			religion = imperial_pantheon
 			religion = grail
 			religion = false_grail
@@ -2382,7 +2382,7 @@ character_event = {
 		has_dlc = "Sons of Abraham"
 		has_landed_title = b_guaniar
 		is_priest = yes
-		religion = myrmidian
+		religion = classical_pantheon
 	}
 
 	mean_time_to_happen = {
@@ -2419,7 +2419,7 @@ narrative_event = {
 				religion = ROOT
 			}
 		}
-		religion = myrmidian
+		religion = classical_pantheon
 	}
 
 	mean_time_to_happen = {
@@ -2485,7 +2485,7 @@ narrative_event = {
 				religion = ROOT
 			}
 		}
-		religion = myrmidian
+		religion = classical_pantheon
 		distance = {
 			where = 571	# Durango
 			value = 300	# Not too far away
@@ -2588,7 +2588,7 @@ character_event = {
 					value = all
 				}
 				has_law = status_of_women_4
-				religion = myrmidian
+				religion = classical_pantheon
 				religion = grail
 				religion = false_grail
 		}
@@ -2598,9 +2598,9 @@ character_event = {
 		}
 		is_republic = no
 		is_priest = no
-		#This seems like a Myrmidian and Lady of the Lake Cult thing
+		#This seems like a classical_pantheon and Lady of the Lake Cult thing
 		OR = {
-			religion = myrmidian
+			religion = classical_pantheon
 			religion = grail
 			religion = false_grail
 		}

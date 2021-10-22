@@ -558,7 +558,7 @@
 #######################
 10528 = {	#88030
 	name = Sigismund
-	dynasty = 10043 #10528, 10529, 10530, & 10531 all the same dynasty
+	dynasty = 10043
 	culture = reiklander
 	religion = imperial_pantheon
 	martial = 9
@@ -579,7 +579,7 @@
 
 10529 = {	#88031
 	name = Sigismund
-	dynasty = 10043 #10528, 10529, 10530, & 10531 all the same dynasty
+	dynasty = 10043 
 	culture = reiklander
 	religion = imperial_pantheon
 	martial = 4
@@ -727,26 +727,18 @@
 	1876.10.20 = {death = yes}
 }
 
-10536 = {	#88038
-	name = Wilhelm
-	dynasty = 10000
+10536 = {
+	name = Lembert
 	culture = reiklander
 	religion = imperial_pantheon
-	martial = 6
-	diplomacy = 7
-	stewardship = 4
-	intrigue = 9
-	learning = 1
 	add_trait = creature_human
-	add_trait = hunter
-	add_trait = detached_priest
-	add_trait = weak
-	add_trait = greedy
 
-	father = 10542
-
-	1904.8.17 = {birth = yes}
-	1975.8.23 = {death = yes}
+	1987.1.1 = {
+		birth = yes
+	}
+	2050.1.1 = {
+		death = yes
+	}
 }
 
 10537 = {	#88044
@@ -809,7 +801,7 @@
 }
 
 10540 = {	#88047
-	name = Marius #Father of Emperor Siegfried I, nephew of Emperor Wilhelm
+	name = Marius #Father of Emperor Siegfried I,
 	dynasty = 10000
 	culture = reiklander
 	religion = imperial_pantheon
@@ -823,54 +815,54 @@
 	add_trait = proud
 	add_trait = ambitious
 	add_trait = strong
-	father = 10541
 	1947.12.3 = {birth = yes}
-	1980.2.6 = {
-		create_bloodline = {
-			type = marius
-			has_dlc = "Holy Fury"
-		}
-	}
 	2004.5.17 = {death = yes}
 }
 
-10541 = {	#88048
-	name = Albrecht #Brother of Emperor Wilhelm
-	dynasty = 10000
+10541 = {
+	name = Michael
+	dna = abahcqlcccd
+	properties = vb0dak00000000000000000000000000000000h
+	disallow_random_traits = yes
+	easter_egg = yes
+	dynasty = 23332
 	culture = reiklander
 	religion = imperial_pantheon
-	martial = 2
-	diplomacy = 6
-	stewardship = 4
-	intrigue = 8
-	learning = 6
+	martial = 10
+	diplomacy = 0
+	stewardship = 7
+	intrigue = 5
+	learning = 8
 	add_trait = creature_human
-	father = 10542
-	add_trait = underhanded_rogue
-	add_trait = deceitful
-	add_trait = ambitious
-	1914.7.12 = {birth = yes}
-	1968.9.14 = {death = yes}
+	add_trait = skilled_tactician
+	add_trait = proud
+	add_trait = wroth
+	add_trait = strong
+	add_trait = zealous
+	add_trait = patron_sigmar
+	1974.5.2 = {birth = yes}
+	1994.1.1 = {
+		add_spouse = 6168
+		give_nickname = nick_the_proud
+	}
+	2050.1.1 = {death = yes}
 }
 
-10542 = {	#88049
-	name = Johann #Father of Emperor Wilhelm
-	dynasty = 10000
+10542 = {
+	name = Oskar
+	dynasty = 23332
 	culture = reiklander
 	religion = imperial_pantheon
-	martial = 7
-	diplomacy = 4
-	stewardship = 4
-	intrigue = 3
-	learning = 6
+	father = 10541
+	mother = 6168
 	add_trait = creature_human
-	add_trait = grey_eminence
-	add_trait = zealous
-	add_trait = poet
-	add_trait = chaste
-	1874.7.12 = {birth = yes}
-	1922.9.14 = {death = yes}
+	2000.8.5 = {birth = yes}
+	2050.1.1 = {death = yes}
 }
+
+#################
+###10542-10542###
+#################
 
 10543 = {	#88051
 	name = Sighast #Steinhager house
@@ -1537,6 +1529,7 @@
 	dynasty = 23633
 	culture = reiklander
 	religion = imperial_pantheon
+	add_trait = creature_human
 	trait = midas_touched
 	1943.3.1 = {birth = yes}
 	1982.3.2 = {death = yes}
@@ -1547,6 +1540,7 @@
 	dynasty=23633
 	culture = reiklander
 	religion = imperial_pantheon
+	add_trait = creature_human
 	add_trait = thrifty_clerk
 	add_trait = honest
 	add_trait = beautiful
@@ -1561,6 +1555,7 @@
 	dynasty = 23633
 	culture = reiklander
 	religion = imperial_pantheon
+	add_trait = creature_human
 	add_trait = thrifty_clerk
 	add_trait = envious
 	add_trait = quick
@@ -1587,6 +1582,7 @@
 	dynasty = 23633
 	culture = reiklander
 	religion = imperial_pantheon
+	add_trait = creature_human
 	add_trait = naive_appeaser
 	add_trait = honest
 	add_trait = beautiful
@@ -1600,6 +1596,7 @@
 	dynasty = 23633
 	culture = reiklander
 	religion = imperial_pantheon
+	add_trait = creature_human
 	add_trait = midas_touched
 	add_trait = temperate
 	add_trait = tall

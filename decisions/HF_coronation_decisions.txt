@@ -112,34 +112,14 @@ decisions = {
 					NOT = { has_character_flag = flag_pepin_for_coronation }
 				}
 			}
-			OR = {
-
-				AND = {
-					NOT = { tier = EMPEROR }
-					custom_tooltip = {
-						text = TT_CORONATION_VASSAL_PRIEST
-						any_realm_character = {
-							NOT = { block_general_event_trigger = yes }
-							is_theocracy = yes
-							religion = ROOT
-							any_liege = { character = ROOT }
-						}
-					}
-				}
-				AND = {
-					tier = EMPEROR
-					OR = {
-						primary_title = { has_law = investiture_law_1 }
-						NOT = { religion = imperial_pantheon }
-					}
-					custom_tooltip = {
-						text = TT_CORONATION_VASSAL_PRIEST
-						any_realm_character = {
-							NOT = { block_general_event_trigger = yes }
-							is_theocracy = yes
-							religion = ROOT
-							any_liege = { character = ROOT }
-						}
+			AND = {
+				custom_tooltip = {
+					text = TT_CORONATION_VASSAL_PRIEST
+					any_realm_character = {
+						NOT = { block_general_event_trigger = yes }
+						is_theocracy = yes
+						religion = ROOT
+						any_liege = { character = ROOT }
 					}
 				}
 			}

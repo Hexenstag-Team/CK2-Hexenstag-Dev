@@ -10,9 +10,9 @@ succession_laws = {
 
 		potential = {
 			is_not_title_with_special_succession_trigger = yes
-			holder_scope = {
-				has_landed_title = k_horned_church
-			}
+			#holder_scope = {
+			#	has_landed_title = k_horned_church
+			#}
 			holder_scope = {
 				OR = {
 					independent = yes
@@ -1777,7 +1777,7 @@ gender_laws = {
 					religion = slaanesh
 				}
 				NOT = { has_religion_feature = religion_matriarchal }
-				NOT = { has_religion_feature = religion_equal }
+				#NOT = { has_religion_feature = religion_equal }
 				NOT = { religion = greenskin_gods }
 				NOT = { religion = spider_god }
 				NOT = { culture_group = ogre_group }
@@ -1798,15 +1798,8 @@ gender_laws = {
 					religion = amazon
 					trait = creature_amazon
 				}
-				NOT = { #no male sorcerers, ever!
-					holder_scope = {
-						trait = druchi_sorceress
-						top_liege = { trait = malekith }
-					}
-					title = k_ghrond
-				}
 				OR = {
-					NOT = { tier = BARON }
+					NOT = { tier = baron }
 					is_theocracy = yes
 					is_republic = yes
 				}
@@ -1819,51 +1812,22 @@ gender_laws = {
 					}
 					is_merchant_republic = yes
 				}
-				OR = {
-					AND = {
-						NOT = { religion_group = ormazd_gods_group }
-						#NOT = { religion = aztec }
-						has_horde_culture = no
-						#is_tribal = no
-						#is_nomadic = no
-						is_merchant_republic = no
-						#is_patrician = no
-					}
-					AND = {
-						has_dlc = "Zeus"
-						OR = {
-							ROOT = { holder_scope = { primary_title = { has_law = status_of_women_3 } } }
-							ROOT = { holder_scope = { primary_title = { has_law = status_of_women_4 } } }
-							has_game_rule = {
-								name = gender
-								value = all
-							}
-						}
-						OR = {
-							is_patrician = no
-							liege = {
-								primary_title = {
-									OR = {
-										has_law = true_cognatic_succession
-										has_law = cognatic_succession
-									}
-								}
-							}
-						}
-					}
+				AND = {
+					NOT = { religion_group = ormazd_gods_group }
+					has_horde_culture = no
+					#is_tribal = no
+					is_nomadic = no
+					is_merchant_republic = no
+					is_patrician = no
 				}
+				has_dlc = "Zeus"
 			}
-			OR={
-				holder_scope={trait=witch_hunter} #Witch hunters can elect both females and males but females don't have much favor in the elections
-				AND={
-					is_landless_type_title = no
-					is_primary_type_title = no
-				}
-			}
-
+			
+			is_landless_type_title = no
+			
 			OR = {
 				AND = {
-					tier = BARON
+					tier = baron
 					is_theocracy = no
 					is_republic = no
 				}
@@ -1872,7 +1836,8 @@ gender_laws = {
 					is_republic = no
 				}
 			}
-
+			
+			is_primary_type_title = no
 		}
 
 		effect = {
@@ -1897,11 +1862,10 @@ gender_laws = {
 					OR = {
 						culture = ungol
 						culture = ropsmann
-						}
-						is_female = no
 					}
-
+					is_female = no
 				}
+			}
 		}
 	}
 
@@ -1937,7 +1901,7 @@ gender_laws = {
 								culture = stirlander
 								culture = talabeclander
 							}
-							religion = myrmidian
+							religion = classical_pantheon
 							is_female = yes
 							prestige = 1000
 						}
@@ -2099,7 +2063,7 @@ gender_laws = {
 								culture = talabeclander
 							 }
 							 OR = {
-								 religion = myrmidian
+								 religion = classical_pantheon
 								 culture = stirlander
 								 culture = talabeclander
 							 }

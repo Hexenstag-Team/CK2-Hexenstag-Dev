@@ -1,0 +1,27 @@
+name = "Reiklander-Nulnian War"
+
+casus_belli = {
+	casus_belli = reiklander_nulnian_war_cb
+	actor = 10501
+	recipient = 11251
+	landed_title = e_nuln
+	date = 1980.2.6
+}
+
+1980.2.6 = {
+	add_attacker = 10501
+	add_defender = 11251
+}
+
+2000.1.1 = {
+	add_attacker = 9780
+	add_attacker = 301
+	add_defender = 11401
+	add_defender = 9357
+	add_defender = 10801
+}
+
+2010.6.1 = {
+	rem_attacker = 10501
+	rem_defender = 11251
+}
