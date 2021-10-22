@@ -18412,7 +18412,7 @@ add_kinslayer_trait_effect = {
 	if = { #Parents, children, direct ancestors or descendants
 		limit = {
 			NOT = { trait = kinslayer }
-			NOT = { religion_group = muslim }
+			NOT = { religion_group = chaos_gods_group }
 			OR = {
 				is_ancestor_of = event_target:kinslayer_target
 				is_descendant_of = event_target:kinslayer_target
@@ -18436,7 +18436,7 @@ add_kinslayer_trait_effect = {
 				trait = kinslayer
 				trait = familial_kinslayer
 			}
-			NOT = { religion_group = muslim }
+			NOT = { religion_group = chaos_gods_group }
 			OR = {
 				is_cousin_of = event_target:kinslayer_target
 				is_aunt_uncle_of = event_target:kinslayer_target
@@ -18461,7 +18461,7 @@ add_kinslayer_trait_effect = {
 				trait = familial_kinslayer
 				trait = dynastic_kinslayer
 			}
-			NOT = { religion_group = muslim }
+			NOT = { religion_group = chaos_gods_group }
 			is_lowborn = no
 			dynasty = event_target:kinslayer_target
 			OR = {
@@ -18484,7 +18484,7 @@ add_kinslayer_trait_effect = {
 				trait = dynastic_kinslayer
 				trait = tribal_kinslayer
 			}
-			NOT = { religion_group = muslim }
+			NOT = { religion_group = chaos_gods_group }
 			is_lowborn = no
 
 			OR = {
@@ -29571,8 +29571,8 @@ give_weaponsmith_artifacts_flag_expensive_effect = {
 
 give_smith_artifacts_flag_okay_effect = {
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_sword 
+        limit = { FROM = {
+		has_character_flag = weapon_sword
 		NOR={
 		culture_group=druchi_group
 		culture_group=asur_group
@@ -29585,7 +29585,7 @@ give_smith_artifacts_flag_okay_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
+        limit = { FROM = {
 		has_character_flag = weapon_sword
 		culture_group=druchi_group
 		} }
@@ -29597,8 +29597,8 @@ give_smith_artifacts_flag_okay_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_sword 
+        limit = { FROM = {
+		has_character_flag = weapon_sword
 		culture_group=asur_group
 		}}
 		add_artifact = sword_tier_1
@@ -29627,8 +29627,8 @@ give_smith_artifacts_flag_okay_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_lance 
+        limit = { FROM = {
+		has_character_flag = weapon_lance
 		NOT={culture_group=asur_group}
 		}}
 		add_artifact = lance_tier_1_new
@@ -29639,8 +29639,8 @@ give_smith_artifacts_flag_okay_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_lance 
+        limit = { FROM = {
+		has_character_flag = weapon_lance
 		culture_group=asur_group
 		}}
 		add_artifact = asur_silverite_spear
@@ -29651,8 +29651,8 @@ give_smith_artifacts_flag_okay_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_axe 
+        limit = { FROM = {
+		has_character_flag = weapon_axe
 		NOR={
 		culture_group=druchi_group
 		culture_group=asur_group
@@ -29666,7 +29666,7 @@ give_smith_artifacts_flag_okay_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
+        limit = { FROM = {
 		has_character_flag = weapon_axe
 		culture_group=dwarf_group
 		} }
@@ -29678,8 +29678,8 @@ give_smith_artifacts_flag_okay_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_axe 
+        limit = { FROM = {
+		has_character_flag = weapon_axe
 		culture_group=druchi_group
 		}}
 		add_artifact = druchii_draich
@@ -29690,8 +29690,8 @@ give_smith_artifacts_flag_okay_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_axe 
+        limit = { FROM = {
+		has_character_flag = weapon_axe
 		culture_group=asur_group
 		}}
 		add_artifact = asur_silverite_axe
@@ -29711,8 +29711,8 @@ give_smith_artifacts_flag_okay_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_mace 
+        limit = { FROM = {
+		has_character_flag = weapon_mace
 		NOT={culture_group=dwarf_group}
 		} }
         add_artifact = mace_tier_1_new
@@ -29723,7 +29723,7 @@ give_smith_artifacts_flag_okay_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
+        limit = { FROM = {
 		has_character_flag = weapon_mace
 		culture_group=dwarf_group
 		} }
@@ -29735,8 +29735,8 @@ give_smith_artifacts_flag_okay_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = armor_set 
+        limit = { FROM = {
+		has_character_flag = armor_set
 		NOR={
 		culture_group=druchi_group
 		culture_group=asur_group
@@ -29744,7 +29744,7 @@ give_smith_artifacts_flag_okay_effect = {
         add_artifact = armor_tier_1
     }
     if = {
-        limit = { FROM = { 
+        limit = { FROM = {
 		has_character_flag = armor_set
 		culture_group=druchi_group
 		} }
@@ -29754,8 +29754,8 @@ give_smith_artifacts_flag_okay_effect = {
 
 give_smith_artifacts_flag_good_effect = {
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_sword 
+        limit = { FROM = {
+		has_character_flag = weapon_sword
 		NOR={
 		culture_group=druchi_group
 		culture_group=asur_group
@@ -29768,7 +29768,7 @@ give_smith_artifacts_flag_good_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
+        limit = { FROM = {
 		has_character_flag = weapon_sword
 		culture_group=druchi_group
 		} }
@@ -29780,8 +29780,8 @@ give_smith_artifacts_flag_good_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_sword 
+        limit = { FROM = {
+		has_character_flag = weapon_sword
 		culture_group=asur_group
 		}}
 		add_artifact = asur_ithilmar_sword
@@ -29801,8 +29801,8 @@ give_smith_artifacts_flag_good_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_lance 
+        limit = { FROM = {
+		has_character_flag = weapon_lance
 		NOT={culture_group=asur_group}}}
         add_artifact = lance_tier_2_new
 		set_character_flag = lance_tier_2
@@ -29812,8 +29812,8 @@ give_smith_artifacts_flag_good_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_lance 
+        limit = { FROM = {
+		has_character_flag = weapon_lance
 		culture_group=asur_group
 		}}
 		add_artifact = asur_ithilmar_spear
@@ -29824,8 +29824,8 @@ give_smith_artifacts_flag_good_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_axe 
+        limit = { FROM = {
+		has_character_flag = weapon_axe
 		NOR={
 		culture_group=druchi_group
 		culture_group=asur_group
@@ -29839,7 +29839,7 @@ give_smith_artifacts_flag_good_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
+        limit = { FROM = {
 		has_character_flag = weapon_axe
 		culture_group=dwarf_group
 		NOT={culture=dwarf_drak}
@@ -29852,8 +29852,8 @@ give_smith_artifacts_flag_good_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_axe 
+        limit = { FROM = {
+		has_character_flag = weapon_axe
 		culture=dwarf_drak
 		}}
 		add_artifact = dawi_norse_battleaxe
@@ -29864,8 +29864,8 @@ give_smith_artifacts_flag_good_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_axe 
+        limit = { FROM = {
+		has_character_flag = weapon_axe
 		culture_group=druchi_group
 		}}
 		add_artifact = druchii_draich_2
@@ -29876,8 +29876,8 @@ give_smith_artifacts_flag_good_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_axe 
+        limit = { FROM = {
+		has_character_flag = weapon_axe
 		culture_group=asur_group
 		}}
 		add_artifact = asur_ithilmar_battleaxe
@@ -29888,8 +29888,8 @@ give_smith_artifacts_flag_good_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = weapon_mace 
+        limit = { FROM = {
+		has_character_flag = weapon_mace
 		NOT={culture_group=dwarf_group}
 		} }
         add_artifact = mace_tier_2_new
@@ -29900,7 +29900,7 @@ give_smith_artifacts_flag_good_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
+        limit = { FROM = {
 		has_character_flag = weapon_mace
 		culture_group=dwarf_group
 		} }
@@ -29921,8 +29921,8 @@ give_smith_artifacts_flag_good_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
-		has_character_flag = armor_set 
+        limit = { FROM = {
+		has_character_flag = armor_set
 		NOR={
 		culture_group=druchi_group
 		culture_group=asur_group
@@ -29934,7 +29934,7 @@ give_smith_artifacts_flag_good_effect = {
         }
     }
     if = {
-        limit = { FROM = { 
+        limit = { FROM = {
 		has_character_flag = armor_set
 		culture_group=druchi_group
 		} }
@@ -30107,8 +30107,8 @@ give_runesmith_artifacts_flag_expensive_option_effect = {
 		}
     }
     if = {
-        limit = { 
-			FROM = { 
+        limit = {
+			FROM = {
 				has_character_flag = armor_set
 			}
 		}
@@ -30149,8 +30149,8 @@ give_runesmith_artifacts_flag_amazing_option_effect = {
 		}
     }
     if = {
-        limit = { 
-			FROM = { 
+        limit = {
+			FROM = {
 				has_character_flag = armor_set
 			}
 		}
@@ -30191,11 +30191,11 @@ give_smith_artifacts_flag_amazing_optionA_effect = {
         add_artifact = bow_tier_4_silent_wind
     }
     if = {
-        limit = { 
-			FROM = { 
-				has_character_flag = armor_set 
+        limit = {
+			FROM = {
+				has_character_flag = armor_set
 				NOR={
-				has_character_flag = druchii_sea_dragon_cloak_flag 
+				has_character_flag = druchii_sea_dragon_cloak_flag
 				has_character_flag = druchii_meteorite_armour_flag
 				has_character_flag = asur_artifact_shadow_armour_flag
 				}
@@ -30204,27 +30204,27 @@ give_smith_artifacts_flag_amazing_optionA_effect = {
         add_artifact = armor_tier_4_guardian
     }
     if = {
-        limit = { 
-			FROM = { 
-				has_character_flag = armor_set 
-				has_character_flag = druchii_sea_dragon_cloak_flag 
+        limit = {
+			FROM = {
+				has_character_flag = armor_set
+				has_character_flag = druchii_sea_dragon_cloak_flag
 			}
 		}
         add_artifact = druchii_armour_of_fortune
     }
     if = {
-        limit = { 
-			FROM = { 
-				has_character_flag = armor_set 
+        limit = {
+			FROM = {
+				has_character_flag = armor_set
 				has_character_flag = druchii_meteorite_armour_flag
 			}
 		}
         add_artifact = druchii_armour_of_darkness
     }
     if = {
-        limit = { 
-			FROM = { 
-				has_character_flag = armor_set 
+        limit = {
+			FROM = {
+				has_character_flag = armor_set
 				has_character_flag = asur_artifact_shadow_armour_flag
 			}
 		}
@@ -30289,9 +30289,9 @@ give_smith_artifacts_flag_amazing_optionC_effect = {
         add_artifact = bow_tier_4_eagle
     }
     if = {
-        limit = { 
-			FROM = { 
-				has_character_flag = armor_set 
+        limit = {
+			FROM = {
+				has_character_flag = armor_set
 			}
 		}
         add_artifact = armor_tier_4_warden
@@ -30324,14 +30324,14 @@ give_smith_artifacts_flag_expensive_optionA_effect = {
         add_artifact = bow_tier_3_silent_wind
     }
     if = {
-        limit = { 
-			FROM = { 
-				has_character_flag = armor_set 
+        limit = {
+			FROM = {
+				has_character_flag = armor_set
 				NOR={
-				has_character_flag = druchii_sea_dragon_cloak_flag 
+				has_character_flag = druchii_sea_dragon_cloak_flag
 				has_character_flag = druchii_meteorite_armour_flag
-				has_character_flag = asur_artifact_dragon_armour_flag 
-				has_character_flag = asur_artifact_ithilmar_armour_flag 
+				has_character_flag = asur_artifact_dragon_armour_flag
+				has_character_flag = asur_artifact_ithilmar_armour_flag
 				has_character_flag = asur_artifact_shadow_armour_flag
 				}
 			}
@@ -30339,45 +30339,45 @@ give_smith_artifacts_flag_expensive_optionA_effect = {
         add_artifact = armor_tier_3_guardian
     }
     if = {
-        limit = { 
-			FROM = { 
-				has_character_flag = armor_set 
-				has_character_flag = druchii_sea_dragon_cloak_flag 
+        limit = {
+			FROM = {
+				has_character_flag = armor_set
+				has_character_flag = druchii_sea_dragon_cloak_flag
 			}
 		}
         add_artifact = druchii_sea_dragon_cloak
     }
     if = {
-        limit = { 
-			FROM = { 
-				has_character_flag = armor_set 
+        limit = {
+			FROM = {
+				has_character_flag = armor_set
 				has_character_flag = druchii_meteorite_armour_flag
 			}
 		}
         add_artifact = druchii_meteorite_armour
     }
     if = {
-        limit = { 
-			FROM = { 
-				has_character_flag = armor_set 
-				has_character_flag = asur_artifact_dragon_armour_flag 
+        limit = {
+			FROM = {
+				has_character_flag = armor_set
+				has_character_flag = asur_artifact_dragon_armour_flag
 			}
 		}
         add_artifact = asur_artifact_dragon_armour
     }
     if = {
-        limit = { 
-			FROM = { 
-				has_character_flag = armor_set 
-				has_character_flag = asur_artifact_ithilmar_armour_flag 
+        limit = {
+			FROM = {
+				has_character_flag = armor_set
+				has_character_flag = asur_artifact_ithilmar_armour_flag
 			}
 		}
         add_artifact = asur_artifact_ithilmar_armour
     }
     if = {
-        limit = { 
-			FROM = { 
-				has_character_flag = armor_set 
+        limit = {
+			FROM = {
+				has_character_flag = armor_set
 				has_character_flag = asur_artifact_shadow_armour_flag
 			}
 		}
@@ -30411,9 +30411,9 @@ give_smith_artifacts_flag_expensive_optionB_effect = {
         add_artifact = bow_tier_3_lightning
     }
     if = {
-        limit = { 
-			FROM = { 
-				has_character_flag = armor_set 
+        limit = {
+			FROM = {
+				has_character_flag = armor_set
 			}
 		}
         add_artifact = armor_tier_3_champion

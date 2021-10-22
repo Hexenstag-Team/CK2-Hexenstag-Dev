@@ -3,20 +3,19 @@ namespace = ToS
 character_event = {
 	id = ToS.100
 	hide_window = yes
-	
+
 	is_triggered_only = yes
-	
+
 	religion_group = old_world_group
-	
-	
+
+
 	immediate = {
-		if = {
-			limit = { wild_religion_empire_trigger = no }
-			character_event = { id = ToS.101 days = 5 random = 5 }
-		}
 		if = {
 			limit = { wild_religion_empire_trigger = yes }
 			character_event = { id = ToS.104 days = 5 random = 5 }
+		}
+		else = {
+			character_event = { id = ToS.101 days = 5 random = 5 }
 		}
 	}
 }
@@ -24,12 +23,12 @@ character_event = {
 character_event = {
 	id = ToS.101
 	desc = EVTDESC_ToS_101
-   #picture = 
+   #picture =
     border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only = yes
-	
-	
+
+
 	option = {
 		name = EVTOPTA_ToS_101
 		character_event = { id = ToS.103 months = 1 random = 5 }
@@ -41,11 +40,11 @@ character_event = {
 character_event = {
 	id = ToS.102
 	desc = EVTDESC_ToS_102
-	#picture = 
+	#picture =
 	border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only  = yes
-		
+
 	option = {
 		name = EVTOPTA_ToS_102
 	}
@@ -54,11 +53,11 @@ character_event = {
 character_event = {
 	id = ToS.103
 	desc = EVTDESC_ToS_103
-    #picture = 
+    #picture =
     border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only = yes
-		
+
 	option = {
 		name = EVTOPTA_ToS_103
 		custom_tooltip = {
@@ -102,11 +101,11 @@ character_event = {
 character_event = {
 	id = ToS.104
 	desc = EVTDESC_ToS_104
-	#picture = 
+	#picture =
 	border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only  = yes
-		
+
 	option = {
 		name = EVTOPTA_ToS_104
 		set_character_flag = quickening
@@ -119,13 +118,13 @@ character_event = {
 character_event = {
 	id = ToS.105
 	desc = EVTDESC_ToS_105
-	#picture = 
+	#picture =
 	border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only  = yes
-	
+
 	weight_multiplier = { days = 1 }
-	
+
 	option = {
 		name = EVTOPTA_ToS_105
 	}
@@ -134,12 +133,12 @@ character_event = {
 character_event = {
 	id = ToS.106
 	desc = EVTDESC_ToS_106
-	#picture = 
+	#picture =
 	border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only  = yes
-	
-	
+
+
 	option = {
 		name = EVTOPTA_ToS_106
 		clr_character_flag  = quickening
@@ -157,11 +156,11 @@ character_event = {
 	id = ToS.200
 	hide_window = yes
 	religion_group = old_world_group
-	
+
 	has_character_flag = quickening
-	
+
 	mean_time_to_happen = { months = 2 }
-	
+
 	immediate = {
 		If = {
 			limit = { NOT = { age = 13 } }
@@ -184,12 +183,12 @@ character_event = {
 character_event = {
 	id = ToS.201
 	desc = EVTDESC_ToS_201
-	#picture = 
+	#picture =
     border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only = yes
-	
-	
+
+
 	option = {#Get a beating
 		name = EVTOPTA_ToS_201
 		custom_tooltip = {
@@ -209,15 +208,8 @@ character_event = {
 		trigger = {
 			OR = {
 				martial > 4
-				trait = strong
-				trait = hardy
-				trait = shrewd
-				trait = robust
-				trait = bright
-				trait = smart
-				trait = quick
-				trait = brilliant
-				trait = genius
+				is_smart_trigger = yes
+				is_strong_trigger = yes
 			}
 		}
 		tooltip_info = martial
@@ -282,18 +274,16 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = {#Talk your way out
 		name = EVTOPTC_ToS_201
 		trigger = {
 			OR = {
 				diplomacy > 4
-				trait = shrewd
+				is_smart_trigger = yes
 				trait = pretty
 				trait = fair
 				trait = beautiful
-				trait = quick
-				trait = genius
 			}
 		}
 		tooltip_info = diplomacy
@@ -370,11 +360,11 @@ character_event = {
 character_event = {
 	id = ToS.202
 	desc = EVTDESC_ToS_202
-	#picture = 
+	#picture =
 	border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only  = yes
-		
+
 	option = { #Try begging for food
 		name = EVTOPTA_ToS_202
 		custom_tooltip = {
@@ -596,7 +586,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = { #Offer to guide him for food
 		name = EVTOPTC_ToS_202
 		custom_tooltip = {
@@ -707,7 +697,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = { #Rob him of his food
 		name = EVTOPTD_ToS_202
 		custom_tooltip = {
@@ -825,11 +815,11 @@ character_event = {
 character_event = {
 	id = ToS.203
 	desc = EVTDESC_ToS_203
-	#picture = 
+	#picture =
 	border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only  = yes
-		
+
 	option = { #Ask him to teach me how to hunt better
 		name = EVTOPTA_ToS_203
 		custom_tooltip = {
@@ -1051,7 +1041,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = { #Help the Lost Hunter
 		name = EVTOPTC_ToS_203
 		custom_tooltip = {
@@ -1163,7 +1153,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = { #Rob him of his food
 		name = EVTOPTD_ToS_203
 		custom_tooltip = {
@@ -1281,11 +1271,11 @@ character_event = {
 character_event = {
 	id = ToS.204
 	desc = EVTDESC_ToS_204
-	#picture = 
+	#picture =
 	border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only  = yes
-		
+
 	option = { #Try to save him
 		name = EVTOPTA_ToS_204
 		custom_tooltip = {
@@ -1395,7 +1385,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = { #Steal his food
 		name = EVTOPTB_ToS_204
 		custom_tooltip = {
@@ -1415,7 +1405,7 @@ character_event = {
 			factor = 1
 		}
 	}
-	
+
 	option = { #Rob him
 		name = EVTOPTC_ToS_204
 		custom_tooltip = {
@@ -1441,12 +1431,12 @@ character_event = {
 character_event = {
 	id = ToS.205
 	desc = EVTDESC_ToS_205
-	#picture = 
+	#picture =
 	border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only  = yes
-	
-	
+
+
 	option = { #Go hungry
 		name = EVTOPTA_ToS_205
 		hidden_tooltip = {
@@ -1456,7 +1446,7 @@ character_event = {
 			factor = 1
 		}
 	}
-	
+
 	option = { #He is food the now
 		name = EVTOPTB_ToS_205
 		hidden_tooltip = {
@@ -1472,11 +1462,11 @@ character_event = {
 character_event = {
 	id = ToS.206
 	desc = EVTDESC_ToS_206
-	#picture = 
+	#picture =
 	border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only  = yes
-		
+
 	option = { #I will try to Hunt
 		name = EVTOPTA_ToS_206
 		custom_tooltip = {
@@ -1491,7 +1481,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = { #I will try to Forage
 		name = EVTOPTB_ToS_206
 		custom_tooltip = {
@@ -1522,25 +1512,18 @@ character_event = {
 character_event = {
 	id = ToS.207
 	desc = EVTDESC_ToS_207
-	#picture = 
+	#picture =
 	border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only  = yes
-		
+
 	option = { #Craft Weapons to Hunt
 		name = EVTOPTA_ToS_207
 		trigger = {
 			OR = {
 				martial > 4
-				trait = strong
-				trait = hardy
-				trait = shrewd
-				trait = robust
-				trait = bright
-				trait = smart
-				trait = quick
-				trait = brilliant
-				trait = genius
+				is_smart_trigger = yes
+				is_strong_trigger = yes
 			}
 		}
 		tooltip_info = martial
@@ -1613,21 +1596,14 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = { #Craft Traps to Hunt
 		name = EVTOPTB_ToS_207
 		trigger = {
 			OR = {
 				martial > 4
-				trait = strong
-				trait = hardy
-				trait = shrewd
-				trait = robust
-				trait = bright
-				trait = smart
-				trait = quick
-				trait = brilliant
-				trait = genius
+				is_strong_trigger = yes
+				is_smart_trigger = yes
 			}
 		}
 		tooltip_info = martial
@@ -1700,28 +1676,24 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = { #Hunt with whatever
 		name = EVTOPTC_ToS_207
 		trigger = {
 			OR = {
 				martial < 5
-				AND = {
-					NOT = {
-						OR = {
-							trait = sturdy
-							trait = robust
-							trait = hardy
-							trait = tough
-							trait = strong
-							trait = shrewd
-							trait = bright
-							trait = smart
-							trait = quick
-							trait = brilliant
-							trait = genius
-						}
-					}
+				NOR = {
+					trait = sturdy
+					trait = robust
+					trait = hardy
+					trait = tough
+					trait = strong
+					trait = shrewd
+					trait = bright
+					trait = smart
+					trait = quick
+					trait = brilliant
+					trait = genius
 				}
 			}
 		}
@@ -1784,23 +1756,18 @@ character_event = {
 character_event = {
 	id = ToS.208
 	desc = EVTDESC_ToS_208
-	#picture = 
+	#picture =
 	border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only  = yes
-	
-	
+
+
 	option = { #Find yummy mushrooms
 		name = EVTOPTA_ToS_208
 		trigger = {
 			OR = {
 				learning > 4
-				Trait = shrewd
-				trait = bright
-				trait = smart
-				trait = quick
-				trait = brilliant
-				trait = genius
+				is_smart_trigger = yes
 			}
 		}
 		tooltip_info = learning
@@ -1868,18 +1835,13 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = { #Gather Berries
 		name = EVTOPTB_ToS_208
 		trigger = {
 			OR = {
 				learning > 4
-				Trait = shrewd
-				trait = bright
-				trait = smart
-				trait = quick
-				trait = brilliant
-				trait = genius
+				is_smart_trigger = yes
 			}
 		}
 		tooltip_info = learning
@@ -1947,7 +1909,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = { #Lovely looking Berries
 		name = EVTOPTC_ToS_208
 		trigger = {
@@ -2023,16 +1985,16 @@ character_event = {
 character_event = {
 	id = ToS.209
 	desc = EVTDESC_ToS_209
-	#picture = 
+	#picture =
 	border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only = yes
-	
+
 	trigger = {
 		trait = wounded
 	}
-	
-	
+
+
 	option = { #Just a flesh wound
 		name = EVTOPTA_ToS_209
 		trigger = {
@@ -2112,7 +2074,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = { #Nature Herbs
 		name = EVTOPTB_ToS_209
 		trigger = {
@@ -2189,7 +2151,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = { #Tis but a scratch
 		name = EVTOPTC_ToS_209
 		trigger = {
@@ -2273,7 +2235,7 @@ character_event = {
 			}
 		}
 	}
-	
+
 	option = { #Cry
 		name = EVTOPTD_ToS_209
 		custom_tooltip = {
@@ -2285,17 +2247,17 @@ character_event = {
 		}
 	}
 }
-	
+
 #Hunted be wild beast
 character_event = {
 	id = ToS.210
 	desc = EVTDESC_ToS_210
-	#picture = 
+	#picture =
 	border = GFX_event_normal_frame_war
-	
+
 	is_triggered_only = yes
-		
-	
+
+
 	option = {#Get a beating
 		name = EVTOPTA_ToS_210
 		custom_tooltip = {
@@ -2399,25 +2361,23 @@ character_event = {
 character_event = {
 	id = ToS.300
 	hide_window = yes
-	
+
 	is_triggered_only = yes
-	
+
 	religion_group = old_world_group
 	min_age = 9
-	
+
 	weight_multiplier = { days = 5 }
-	
+
 	trigger = {
-		age > 9
-		has_dooming = NO
-		NOT = { has_character_flag = no_dooming }
+		NOT = { has_character_flag = dooming_complete }
 		OR = {
 			culture_group = estalian_group
 			culture_group = imperial_group
 			culture_group = tilean_group
 		}
 	}
-	
+
 	immediate = {
 		set_dooming = yes
 	}
@@ -2427,25 +2387,24 @@ character_event = {
 	desc = EVTDESC_ToS_301
     picture = GFX_evt_morr_priests
     border = GFX_event_normal_frame_war
-	
-	religion_group = old_world_group
-	
 	is_triggered_only = yes
+
+	religion_group = old_world_group
 	min_age = 9
-	
+	max_age = 11
+
 	weight_multiplier = { days = 5 }
-	
+
 	trigger = {
-		age = 9
-		has_dooming = NO
-		NOT = { has_character_flag = no_dooming }
+		NOT = { has_character_flag = dooming_complete }
 		OR = {
 			culture_group = estalian_group
 			culture_group = imperial_group
 			culture_group = tilean_group
 		}
+		age > 9
 	}
-	
+
 	option = {
 		name = EVTOPTA_ToS_301
 		set_dooming = yes
@@ -2454,8 +2413,8 @@ character_event = {
 	option = {
 		name = EVTOPTB_ToS_301
 		hidden_tooltip = {
-			health = -1.00 
-			set_character_flag = no_dooming
+			health = -1.00
+			set_character_flag = dooming_complete
 		}
 		ai_chance = { factor = 0 }
 	}

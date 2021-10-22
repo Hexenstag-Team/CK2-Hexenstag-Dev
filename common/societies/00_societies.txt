@@ -8681,12 +8681,16 @@ engineers_guild = {
 			NOT = { is_vampire_visible_trigger = yes }
 		}
 		OR = {
+			trait = engineer #this permits anyone from the right culture groups to join via the higher education events
 			culture_group = dwarf_group
 			culture_group = tilean_group
 			custom_tooltip = {
 				text = engineers_no_imperial_school_tt
 				AND = {
-					culture_group = imperial_group
+					OR = {
+						culture_group = imperial_group
+						culture = mootlander
+					}
 					had_global_flag = {
 						flag = imperial_engineering_school
 						months >= 12
@@ -8698,7 +8702,7 @@ engineers_guild = {
 				AND = {
 					culture_group = estalian_group
 					had_global_flag = {
-						flag = tilean_engineering_school
+						flag = estalian_engineering_school
 						months >= 12
 					}
 				}
@@ -8712,6 +8716,7 @@ engineers_guild = {
 		OR = {
 			trait = creature_dwarf
 			trait = creature_human
+			trait = creature_halfling
 		}
 		NOT ={
 			religion_group = chaos_gods_group
@@ -8728,8 +8733,16 @@ engineers_guild = {
 	show_society = {
 		OR = {
 			culture_group = dwarf_group
+			culture_group = bretonnian_group
+			culture_group = estalian_group
 			culture_group = tilean_group
 			culture_group = imperial_group
+			culture_group = kislevite_group
+			culture = mootlander
+		}
+		NOR = {
+			trait = noble
+			trait = clergy
 		}
 		NOT = { is_vampire_visible_trigger = yes }
 	}
@@ -8737,8 +8750,12 @@ engineers_guild = {
 	potential = {
 		OR = {
 			culture_group = dwarf_group
+			culture_group = bretonnian_group
+			culture_group = estalian_group
 			culture_group = tilean_group
 			culture_group = imperial_group
+			culture_group = kislevite_group
+			culture = mootlander
 		}
 		age = 16
 		#If something else is added here, it could break apprenticeship. Create an event if they can get kicked out. title_hermetics_apprentice

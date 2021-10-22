@@ -159,14 +159,14 @@ claim = {
 				culture_group = goblin_group
 			}
 		}
-		#Greenskins can only be attacked using special CBs
-		FROM = {
-			NOR = {
-				religion_group = greenskin_gods_group
-				culture_group = orc_group
-				culture_group = goblin_group
-			}
-		}
+		#The old greenskin exemption from attack in claim wars makes some sense, but gets the behavior wrong. AI rulers should pursue their old claims against orcs and goblins, and the player should be able to use fabricating to "break the rules"
+		#FROM = {
+		#	NOR = {
+		#		religion_group = greenskin_gods_group
+		#		culture_group = orc_group
+		#		culture_group = goblin_group
+		#	}
+		#}
 	}
 
 	is_valid = {
@@ -524,14 +524,14 @@ other_claim = {
 				culture_group = goblin_group
 			}
 		}
-		#Greenskins can only be attacked using special CBs
-		FROM = {
-			NOR = {
-				religion_group = greenskin_gods_group
-				culture_group = orc_group
-				culture_group = goblin_group
-			}
-		}
+		#The old greenskin exemption from attack in claim wars makes some sense, but gets the behavior wrong. AI rulers should pursue their old claims against orcs and goblins, and the player should be able to use fabricating to "break the rules"
+		#FROM = {
+		#	NOR = {
+		#		religion_group = greenskin_gods_group
+		#		culture_group = orc_group
+		#		culture_group = goblin_group
+		#	}
+		#}
 	}
 
 	is_valid = {
@@ -2232,10 +2232,10 @@ claim_all = {
 			NOT = { ROOT = { has_opinion_modifier = { who = FROM modifier = preparing_to_invade_elf } } }
 
 			FROM = {
-				NOR = {
-					religion_group = greenskin_gods_group
-					culture_group = orc_group
-					culture_group = goblin_group
+				NOT = {
+					#religion_group = greenskin_gods_group
+					#culture_group = orc_group
+					#culture_group = goblin_group
 					culture_group = beastman_group
 				}
 			}
@@ -13579,12 +13579,12 @@ dejure_county_claim = {
 		}
 		FROM = {
 			NOT = {
-				OR = {
-					religion_group = greenskin_gods_group
-					culture_group = orc_group
-					culture_group = goblin_group
+				#OR = {
+				#	religion_group = greenskin_gods_group
+				#	culture_group = orc_group
+				#	culture_group = goblin_group
 					culture_group = beastman_group
-				}
+				#}
 			}
 		}
 		OR = {
@@ -14071,12 +14071,12 @@ other_dejure_county_claim = {
 		}
 		FROM = {
 			NOT = {
-				OR = {
-					religion_group = greenskin_gods_group
-					culture_group = orc_group
+				#OR = {
+				#	religion_group = greenskin_gods_group
+				#	culture_group = orc_group
 					culture_group = beastman_group
-					culture_group = goblin_group
-				}
+				#	culture_group = goblin_group
+				#}
 			}
 		}
 		NOT = {

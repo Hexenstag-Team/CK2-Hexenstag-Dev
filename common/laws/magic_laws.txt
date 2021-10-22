@@ -8,7 +8,6 @@ law_groups = {
 laws = {
 	magic_law_0 = {
 		group = magic_law
-		default = yes
 		allow = {
 			holder_scope = {
 				magic_law_0_allow = yes
@@ -17,14 +16,12 @@ laws = {
 			NOT = { has_law = magic_law_3 }
 		}
 		default_selection = {
-			factor = 1
-			modifier = {
-				value = 5
-				NOT = { has_global_flag = magic_legal_old_world_50_years }
-			}
-			modifier = {
-				value = 0
-				has_global_flag = magic_legal_old_world_50_years
+			factor = 0
+			additive_modifier = {
+				value = 10
+				holder_scope = {
+					NOT = { culture_group = tilean_group }
+				}
 			}
 		}
 		potential = {
@@ -173,15 +170,17 @@ laws = {
 			has_magic_law_any = yes
 		}
 		default_selection = {
-			factor = 1
-			modifier = {
-				value = 0
-				NOT = { has_global_flag = magic_legal_old_world_50_years }
+			factor = 0
+			additive_modifier = {
+				value = 10
+				holder_scope = {
+					culture_group = tilean_group
+				}
 			}
-			modifier = {
-				value = 5
-				has_global_flag = magic_legal_old_world_50_years
-			}
+			#modifier = {
+			#	factor = 5
+			#	has_global_flag = magic_legal_old_world_50_years
+			#}
 		}
 		potential = {
 			holder_scope = {
@@ -242,7 +241,7 @@ laws = {
 			has_global_flag = first_college_of_magic_active
 			holder_scope = {
 				magic_law_1_and_above_allow = yes
-			}	
+			}
 			has_law = magic_law_2
 			#For when no law is set, only allow them to pick basic law
 			has_magic_law_any = yes
@@ -250,11 +249,11 @@ laws = {
 		default_selection = {
 			factor = 1
 			modifier = {
-				value = 0
+				factor = 0
 				NOT = { has_global_flag = magic_legal_old_world_50_years }
 			}
 			modifier = {
-				value = 5
+				factor = 5
 				has_global_flag = magic_legal_old_world_50_years
 			}
 		}

@@ -2999,32 +2999,39 @@ character_event = {
 	id = svampires.18
 	desc = EVTDESCsvampires18
 	picture = GFX_evt_vampire_knight
+	is_triggered_only = yes
 
-	capable_only = yes
 	religion_group = necromantic_group
+	capable_only = yes
 
-	trigger = { trait = vampire_blood_visible
-			prestige = 25
-			piety = 25
-			primary_title = {
-				mercenary = yes
-				adventurer = yes
-			}
+	trigger = {
+		trait = vampire_blood_visible
+		prestige = 25
+		piety = 25
+		primary_title = {
+			mercenary = yes
+			adventurer = yes
 		}
-		mean_time_to_happen = { years = 30
-					modifier = { factor = 0.85
-						trait = ambitious
-						 }
-					modifier = { factor = 0.85
-						trait = brave
-						 }
-					modifier = { factor = 1.85
-						trait = craven
-						 }
-					modifier = { factor = 2
-						trait = content
-						 }
-				 }
+	}
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.15
+			trait = ambitious
+		}
+		modifier = {
+			factor = 1.15
+			trait = brave
+		}
+		modifier = {
+			factor = 0.55
+			trait = craven
+		}
+		modifier = {
+			factor = 0.5
+			trait = content
+		}
+	}
 	option = {
 		name = EVTOPTAsvampires18
 		prestige = 200
@@ -3338,10 +3345,10 @@ province_event = {
 	id = svampires.22
 	hide_window = yes
 
-		trigger = {
-			owner = { NOT = { trait = resting } }
-			has_province_modifier = hidden_hibernated_strigoi
-		}
+	trigger = {
+		has_province_modifier = hidden_hibernated_strigoi
+		owner = { NOT = { trait = resting } }
+	}
 
 	mean_time_to_happen = { months = 3 }
 
@@ -3356,58 +3363,71 @@ character_event = {
 	desc = EVTDESCsvampires23
 	picture = GFX_evt_ghoul
 	border = GFX_event_normal_frame_war
+	is_triggered_only = yes
 
+	only_playable = yes
 	min_age = 250		#Only old vampires
-	only_rulers = yes
 	capable_only = yes
 	prisoner = no
-	religion_group = necromantic_group
 
 	trigger = {
-			higher_tier_than = BARON
-			is_incapacitated_trigger = no
-			is_vampire_visible_trigger = yes
-		}
+		religion_group = necromantic_group
+		is_vampire_visible_trigger = yes
+		is_incapacitated_trigger = no
+	}
 
-	mean_time_to_happen = { years = 5
-			modifier = { factor = 0.75
-					trait = vampire_strigoi_visible
-				 }
-			modifier = { factor = 2.75
-					trait = vampire_blood_visible
-				 }
-			modifier = { factor = 1.5
-					trait = vampire_carstein_visible
-				 }
-			modifier = { factor = 10
-					trait = vampire_lahmian_visible
-				 }
-			modifier = { factor = 3
-					independent = no
-				 }
-			modifier = { factor = 7
-					independent = no
-					lower_tier_than = KING
-				 }
-			modifier = { factor = 1.5
-					NOT = { piety = 1000 }
-				 }
-			modifier = { factor = 1.5
-					NOT = { piety = 1500 }
-				 }
-			modifier = { factor = 1.5
-					NOT = { piety = 750 }
-				 }
-			modifier = { factor = 1.5
-					NOT = { piety = 500 }
-				 }
-			modifier = { factor = 1.5
-					NOT = { piety = 250 }
-				 }
-			modifier = { factor = 1.5
-					NOT = { piety = 100 }
-				 }
-			 }
+	weight_multiplier = {
+		days = 1
+		modifier = {
+			factor = 1.33
+			trait = vampire_strigoi_visible
+		}
+		modifier = {
+			factor = 0.4
+			trait = vampire_blood_visible
+		}
+		modifier = {
+			factor = 0.66
+			trait = vampire_carstein_visible
+		}
+		modifier = {
+			factor = 0.1
+			trait = vampire_lahmian_visible
+		}
+		modifier = {
+			factor = 0.33
+			independent = no
+		}
+		modifier = {
+			factor = 0.14
+			independent = no
+			lower_tier_than = KING
+		}
+		modifier = {
+			factor = 0.66
+			NOT = { piety = 1000 }
+		}
+		modifier = {
+			factor = 0.66
+			NOT = { piety = 1500 }
+		}
+		modifier = {
+			factor = 0.66
+			NOT = { piety = 750 }
+		}
+		modifier = {
+			factor = 0.66
+			NOT = { piety = 500 }
+		}
+		modifier = {
+			factor = 0.66
+			NOT = { piety = 250 }
+		}
+		modifier = {
+			factor = 0.66
+			NOT = { piety = 100 }
+		}
+	}
 
 
 	option = {
@@ -6878,6 +6898,7 @@ character_event = {
 	picture = GFX_evt_whispers
 	border = GFX_event_normal_frame_intrigue
 
+	is_part_of_plot = yes
 	capable_only = yes
 	prisoner = no
 
@@ -7110,6 +7131,7 @@ character_event = {
 	picture = GFX_evt_whispers
 	border = GFX_event_normal_frame_intrigue
 
+	is_part_of_plot = yes
 	capable_only = yes
 	prisoner = no
 
@@ -9468,6 +9490,7 @@ character_event = {
 	id = svampires.91
 	desc = EVTDESCsvampires91
 	picture = GFX_evt_vampire_politics
+	is_triggered_only = yes
 
 	religion_group = necromantic_group
 	capable_only = yes
@@ -9481,46 +9504,46 @@ character_event = {
 			is_vampire_trigger = yes
 			num_of_lovers = 2
 			cant_love_trigger = yes
-			}
+		}
 	}
 
-	mean_time_to_happen = {
-		years = 5
+	weight_multiplier = {
+		days = 1
 
 		modifier = {
-			factor = 0.8
+			factor = 1.25
 			trait = wroth
 		}
 		modifier = {
-			factor = 0.6
+			factor = 1.6
 			trait = vampire_lahmian_visible
 		}
 		modifier = {
-			factor = 0.7
+			factor = 1.4
 			trait = vampire_carstein_visible
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.25
 			trait = vampire_jade_visible
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = envious
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.25
 			trait = cruel
 		}
 		modifier = {
-			factor = 1.2
+			factor = 0.8
 			trait = charitable
 		}
 		modifier = {
-			factor = 1.2
+			factor = 0.8
 			trait = kind
 		}
 		modifier = {
-			factor = 1.2
+			factor = 0.8
 			trait = patient
 		}
 	}

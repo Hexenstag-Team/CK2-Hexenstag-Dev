@@ -184,7 +184,7 @@ check_if_mage_should_be_burned = {
 		AND = {
 			is_trained_mage = no
 			has_magic_potential = yes
-			NOT = { has_character_modifier = magic_potential_successfully_hidden }
+			NOT = { has_character_flag = magic_potential_successfully_hidden }
 			OR = {
 				liege = { has_magic_law_1 = yes }
 				dynasty_head = { has_magic_law_1 = yes }
@@ -211,7 +211,7 @@ check_if_mage_should_be_burned = {
 				OR = {
 					AND = {
 						has_magic_potential = yes
-						NOT = { has_character_modifier = magic_potential_successfully_hidden }
+						NOT = { has_character_flag = magic_potential_successfully_hidden }
 					}
 					is_trained_mage = yes
 				}
@@ -258,58 +258,6 @@ check_if_mage_should_be_burned = {
 			}
 		}
 		NOT = { trait = creature_elf }
-		#Liege is a university
-		NOR = {
-			liege = {
-				d_university_of_nuln = {
-					holder_scope = {
-						character = PREVPREV
-					}
-				}
-			}
-			liege = {
-				d_university_of_streissen = {
-					holder_scope = {
-						character = PREVPREV
-					}
-				}
-			}
-			liege = {
-				d_university_of_praag = {
-					holder_scope = {
-						character = PREVPREV
-					}
-				}
-			}
-			liege = {
-				d_university_of_remas = {
-					holder_scope = {
-						character = PREVPREV
-					}
-				}
-			}
-			liege = {
-				d_university_of_miragliano = {
-					holder_scope = {
-						character = PREVPREV
-					}
-				}
-			}
-			liege = {
-				d_university_of_martek = {
-					holder_scope = {
-						character = PREVPREV
-					}
-				}
-			}
-			liege = {
-				d_university_of_magritta = {
-					holder_scope = {
-						character = PREVPREV
-					}
-				}
-			}
-		}
 	}
 }
 

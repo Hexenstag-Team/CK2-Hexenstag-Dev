@@ -16444,26 +16444,31 @@ character_event = {
 	id = spleasure.175
 	# desc = EVTDESCspleasure175
 	# picture = GFX_evt_cult_of_pleasure
+	hide_window = yes
+	is_triggered_only = yes
 
 	min_age = 15
+	only_women = yes
 	capable_only = yes
 	prisoner = no
-	only_women = yes
 
-	hide_window = yes
 
 	trigger = {
-			trait = transgender
-			NOT = { trait = creature_orc }		#Infertile species
-			NOT = { trait = creature_goblin }
-			NOT = { trait = creature_snotling }
-			NOT = { trait = creature_nehekharan }
-			is_vampire_trigger = no
+		trait = transgender
+		NOT = { trait = creature_orc }		#Infertile species
+		NOT = { trait = creature_goblin }
+		NOT = { trait = creature_snotling }
+		NOT = { trait = creature_nehekharan }
+		is_vampire_trigger = no
 		NOT = { trait = celibate }
 		NOT = { trait = infertile }
-		OR = { NOT = { age = 45 }
-			AND = { NOT = { trait = creature_human }
-				NOT = { trait = creature_halfling } } }
+		OR = {
+			NOT = { age = 45 }
+			NOR = {
+				trait = creature_human
+				trait = creature_halfling
+			}
+		}
 		is_pregnant = no
 		spouse = {
 			is_female = yes
@@ -16494,337 +16499,331 @@ character_event = {
 			is_alive = yes
 			NOT = { trait = incapable }
 			NOT = { has_character_modifier = stage_progressed } #so that the consorts will cycle
-
 		}
 	}
 
-	mean_time_to_happen = {
-		years = 15
+	weight_multiplier = {
+		days = 1
 		modifier = {
-			factor = 1.5
+			factor = 0.66
 			war = yes
 		}
 		modifier = {
-			factor = 1.75
+			factor = 0.57
 			trait = creature_elf
 		}
 		modifier = {
-			factor = 45
+			factor = 0.03
 			in_command = yes
 		}
 		modifier = {
-			factor = 0.45
+			factor = 2.1
 			trait = retired_with_harem
 		}
 		modifier = {
-			factor = 0.15
+			factor = 6.66
 			has_character_modifier = horny_harem_mod
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			trait = lustful
 		}
 		modifier = {
-			factor = 4
+			factor = 0.25
 			trait = shy
 		}
 		modifier = {
-			factor = 0.9
+			factor = 1.1
 			trait = gregarious
 		}
 		modifier = {
-			factor = 0.85
+			factor = 1.15
 			trait = hedonist
 		}
 		modifier = {
-			factor = 4
+			factor = 0.25
 			trait = chaste
 		}
 		modifier = {
-			factor = 4
+			factor = 0.25
 			trait = ill
 		}
 		modifier = {
-			factor = 1.75
+			factor = 0.57
 			trait = stressed
 		}
 		modifier = {
-			factor = 2.75
+			factor = 0.35
 			trait = depressed
 		}
 		modifier = {
-			factor = 1.5
+			factor = 0.66
 			trait = kind
 		}
 		modifier = {
-			factor = 1.5
+			factor = 0.66
 			trait = just
 		}
 		modifier = {
-			factor = 0.95
+			factor = 1.06
 			trait = cruel
 		}
 		modifier = {
-			factor = 0.95
+			factor = 1.05
 			trait = arbitrary
 		}
 		modifier = {
-			factor = 1.75
+			factor = 0.57
 			trait = possessed
 		}
 		modifier = {
-			factor = 1.75
+			factor = 0.57
 			trait = hunchback
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			trait = clubfooted
 		}
 		modifier = {
-			factor = 4
+			factor = 0.25
 			trait = pneumonic
 		}
 		modifier = {
-			factor = 3.75
+			factor = 0.25
 			trait = homosexual
 		}
 		modifier = {
-			factor = 1.75
+			factor = 0.57
 			trait = dwarf
 		}
 		modifier = {
-			factor = 2.75
+			factor = 0.3
 			trait = inbred
 		}
 		modifier = {
-			factor = 0.95
+			factor = 1.05
 			is_strong_trigger = yes
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			trait = weak
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			trait = scholar
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			trait = gardener
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			trait = hunter
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			trait = duelist
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			trait = falconer
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			trait = mystic
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			trait = temperate
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			trait = charitable
 		}
 		modifier = {
-			factor = 1.5
+			factor = 0.66
 			trait = slothful
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			trait = diligent
-		}
-		modifier = {
-			factor = 1.25
-			trait = patient
-		}
-		modifier = {
-			factor = 1.15
-			trait = humble
-		}
-		modifier = {
-			factor = 1.1
-			trait = craven
-		}
-		modifier = {
-			factor = 0.9
-			trait = brave
-		}
-		modifier = {
-			factor = 1.5
-			trait = paranoid
 		}
 		modifier = {
 			factor = 0.8
-			trait = trusting
+			trait = patient
 		}
 		modifier = {
-			factor = 100
-			trait = incapable
-		}
-		modifier = {
-			factor = 10
-			trait = infirm
-		}
-		modifier = {
-			factor = 15
-			trait = leper
-		}
-		modifier = {
-			factor = 1.75
-			trait = disfigured
-		}
-		modifier = {
-			factor = 1.75
-			trait = wounded
-		}
-		modifier = {
-			factor = 1.75
-			trait = maimed
-		}
-		modifier = {
-			factor = 2
-			trait = blinded
-		}
-		modifier = {
-			factor = 1.75
-			trait = is_fat
-		}
-		modifier = {
-			factor = 1.75
-			trait = is_malnourished
+			factor = 0.85
+			trait = humble
 		}
 		modifier = {
 			factor = 0.9
+			trait = craven
+		}
+		modifier = {
+			factor = 1.1
+			trait = brave
+		}
+		modifier = {
+			factor = 0.66
+			trait = paranoid
+		}
+		modifier = {
+			factor = 1.25
+			trait = trusting
+		}
+		modifier = {
+			factor = 0.01
+			trait = incapable
+		}
+		modifier = {
+			factor = 0.1
+			trait = infirm
+		}
+		modifier = {
+			factor = 0.01
+			trait = leper
+		}
+		modifier = {
+			factor = 0.57
+			trait = disfigured
+		}
+		modifier = {
+			factor = 0.57
+			trait = wounded
+		}
+		modifier = {
+			factor = 0.57
+			trait = maimed
+		}
+		modifier = {
+			factor = 0.5
+			trait = blinded
+		}
+		modifier = {
+			factor = 0.57
+			trait = is_fat
+		}
+		modifier = {
+			factor = 0.57
+			trait = is_malnourished
+		}
+		modifier = {
+			factor = 1.1
 			trait = drunkard
 		}
 		modifier = {
-			factor = 1.2
+			factor = 0.85
 			trait = addict
 		}
 		modifier = {
-			factor = 1.5
+			factor = 0.66
 			trait = diligent
 		}
 		modifier = {
-			factor = 100
+			factor = 0.01
 			trait = creature_human
 			NOT = { fertility = 0.01 }
 		}
 		modifier = {
-			factor = 4
+			factor = 0.25
 			trait = creature_human
 			fertility = 0
 			NOT = { fertility = 0.1 }
 		}
 		modifier = {
-			factor = 2
+			factor = 0.5
 			trait = creature_human
 			fertility = 0.1
 			NOT = { fertility = 0.3 }
 		}
 		modifier = {
-			factor = 0.95
+			factor = 1.05
 			trait = creature_human
 			fertility = 0.3
 			NOT = { fertility = 0.5 }
 		}
 		modifier = {
-			factor = 0.9
+			factor = 1.1
 			trait = creature_human
 			fertility = 0.5
 			NOT = { fertility = 0.75 }
 		}
 		modifier = {
-			factor = 0.85
+			factor = 1.15
 			trait = creature_human
 			fertility = 0.75
 			NOT = { fertility = 0.9 }
 		}
 		modifier = {
-			factor = 0.8
+			factor = 1.25
 			trait = creature_human
 			fertility = 0.9
 			NOT = { fertility = 1.0 }
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			trait = creature_human
 			fertility = 1.0
 			NOT = { fertility = 1.1 }
 		}
 		modifier = {
-			factor = 0.7
+			factor = 1.4
 			trait = creature_human
 			fertility = 1.1
 			NOT = { fertility = 1.2 }
 		}
 		modifier = {
-			factor = 0.6
+			factor = 1.7
 			trait = creature_human
 			fertility = 1.2
 			NOT = { fertility = 1.4 }
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = creature_human
 			fertility = 1.4
 			NOT = { fertility = 1.6 }
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = creature_human
 			fertility = 1.6
 		}
 		modifier = {
-			factor = 1.75
+			factor = 0.57
 			trait = creature_human
 			NOT =  { age = 18 }
 		}
 		modifier = {
-			factor = 0.65
+			factor = 1.5
 			trait = creature_human
 			age = 18
 			NOT =  { age = 30 }
 		}
 		modifier = {
-			factor = 0.85
+			factor = 1.15
 			trait = creature_human
 			age = 30
 			NOT =  { age = 40 }
 		}
 		modifier = {
-			factor = 2
+			factor = 0.5
 			trait = creature_human
 			age = 40
 			NOT =  { age = 55 }
 		}
 		modifier = {
-			factor = 0.95
+			factor = 1.05
 			num_of_children = 0
 		}
 		modifier = {
-			factor = 0.85
-			num_of_children = 1
-			NOT =  { num_of_children = 5 }
-		}
-		modifier = {
-			factor = 1.25
+			factor = 0.8
 			num_of_children = 5
 			NOT =  { num_of_children = 10 }
 		}
 		modifier = {
-			factor = 2.5
+			factor = 0.4
 			num_of_children = 10
 		}
 		modifier = {
@@ -16833,57 +16832,9 @@ character_event = {
 			trait = creature_elf
 		}
 		modifier = {
-			factor = 10
+			factor = 0.1
 			trait = creature_human
 			age = 55
-		}
-		modifier = {
-			factor = 1.25
-			trait = poor_warrior
-		}
-		modifier = {
-			factor = 1.25
-			trait = trained_warrior
-		}
-		modifier = {
-			factor = 1.25
-			trait = skilled_warrior
-		}
-		modifier = {
-			factor = 1.25
-			trait = master_warrior
-		}
-		modifier = {
-			factor = 1.25
-			trait = naive_appeaser
-		}
-		modifier = {
-			factor = 1.25
-			trait = underhanded_rogue
-		}
-		modifier = {
-			factor = 1.25
-			trait = charismatic_negotiator
-		}
-		modifier = {
-			factor = 1.25
-			trait = grey_eminence
-		}
-		modifier = {
-			factor = 1.25
-			trait = misguided_warrior
-		}
-		modifier = {
-			factor = 1.25
-			trait = tough_soldier
-		}
-		modifier = {
-			factor = 1.25
-			trait = skilled_tactician
-		}
-		modifier = {
-			factor = 1.25
-			trait = brilliant_strategist
 		}
 	}
 

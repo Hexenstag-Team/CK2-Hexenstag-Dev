@@ -29,67 +29,67 @@ decisions = {
 	duel_beastman_decision = {
 		ai_check_interval = 12
 		is_high_prio = yes
-	potential = {
-		trait = creature_beastman
-		is_female = no
-		liege = {
+		potential = {
 			trait = creature_beastman
-			higher_tier_than = COUNT
+			is_female = no
+			liege = {
+				trait = creature_beastman
+				higher_tier_than = COUNT
+				age = 16
+				prisoner = no
+				has_regent = no
+				NOT = { character = ROOT }
+				NOT = { trait = incapable }
+				NOT = { trait = mut_crown_of_horns }
+			}
+			custom_tooltip = {
+				text = IS_NOT_INCAPACITATED
+				is_incapacitated_trigger = no
+			}
 			age = 16
 			prisoner = no
 			has_regent = no
-			NOT = { character = ROOT }
+			NOT = { trait = blinded }
 			NOT = { trait = incapable }
-			NOT = { trait = mut_crown_of_horns }
-		}
-		custom_tooltip = {
-			text = IS_NOT_INCAPACITATED
-			is_incapacitated_trigger = no
-		}
-		age = 16
-		prisoner = no
-		has_regent = no
-		NOT = { trait = blinded }
-		NOT = { trait = incapable }
-		OR = {
-			ai = no
-			AND = {
-				NOT = { trait = craven }
-				NOT = { trait = content }
+			OR = {
+				ai = no
+				AND = {
+					NOT = { trait = craven }
+					NOT = { trait = content }
+				}
+			}
+			OR = {
+				has_job_title = job_chancellor
+				has_job_title = job_marshal
+				has_job_title = job_treasurer
+				has_job_title = job_spymaster
+				has_job_title = job_spiritual
+				any_vassal = { character = ROOT }
+				liege = {
+					sibling = ROOT
+				} #siblings can always fight for dominance
+			} #closesor
+		} #closepotential
+
+		allow = {
+			prestige = 200
+			NOT = {	has_character_flag = duel }
+			liege = {
+					NOT = { has_character_flag = do_not_disturb }
+					NOT = { is_looting = yes }
+					NOT = { has_character_flag = duel }
+			}
+			NOT = { has_character_flag = do_not_disturb }
+			custom_tooltip = {
+					text = duel_tooltip_recent_duel
+					hidden_tooltip = {
+						liege = { NOT = { has_character_modifier = recent_duel_timer } }
+						NOT = { has_character_modifier = recent_duel_timer }
+					}
 			}
 		}
-		OR = {
-			has_job_title = job_chancellor
-			has_job_title = job_marshal
-			has_job_title = job_treasurer
-			has_job_title = job_spymaster
-			has_job_title = job_spiritual
-			any_vassal = { character = ROOT }
-			liege = {
-				sibling = ROOT
-			} #siblings can always fight for dominance
-		} #closesor
-	} #closepotential
 
-	allow = {
-		prestige = 200
-		NOT = {	has_character_flag = duel }
-		liege = {
-				NOT = { has_character_flag = do_not_disturb }
-				NOT = { is_looting = yes }
-				NOT = { has_character_flag = duel }
-		}
-		NOT = { has_character_flag = do_not_disturb }
-		custom_tooltip = {
-				text = duel_tooltip_recent_duel
-				hidden_tooltip = {
-					liege = { NOT = { has_character_modifier = recent_duel_timer } }
-					NOT = { has_character_modifier = recent_duel_timer }
-				}
-		}
-	}
-
-	effect = {
+		effect = {
 			ROOT = {
 				add_character_modifier = {
 					modifier = recent_duel_timer

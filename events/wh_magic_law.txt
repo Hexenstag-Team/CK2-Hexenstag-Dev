@@ -647,20 +647,18 @@ letter_event = {
 				faction_antimagic_revolters = { # The target (title) of the faction
 					if = {
 						limit = {
-						FROM = { has_law = magic_law_2 }
-					}
-					primary_title = {
-						add_law = {
-								law = magic_law_1
-								cooldown = no
-								opinion_effect = no
+							FROM = { has_law = magic_law_2 }
+						}
+						primary_title = {
+							add_law = {
+									law = magic_law_1
+									cooldown = no
+									opinion_effect = no
 							}
 						}
 					}
 					else_if = {
-						if = {
-							limit = { FROM = { has_law = magic_law_1 } }
-						}
+						limit = { FROM = { has_law = magic_law_1 } }
 						primary_title = {
 							add_law = {
 								law = magic_law_0
@@ -1187,7 +1185,7 @@ character_event = {
 	hide_window = yes
 	only_rulers = yes
 	trigger = {
-		independant = yes
+		independent = yes
 		has_magic_law_any = no
 		magic_law_potential = yes
 	}

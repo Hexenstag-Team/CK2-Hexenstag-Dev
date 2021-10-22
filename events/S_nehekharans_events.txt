@@ -48,22 +48,15 @@ character_event = {
 			}
 			else_if = {
 				limit = {
-					NOR = {
-					 	trait = king_settra
-					 	trait = fay_enchantress
-						trait = drachenfels
-					}
-				}
-				character_event = { id = snehekharan.2 days = 1095 random = 7300 }
-			}
-			else_if = {
-				limit = {
 					OR = {
 						trait = fay_enchantress
 						trait = drachenfels
 					}
 				}
 				character_event = { id = snehekharan.2 days = 365 }
+			}
+			else = {
+				character_event = { id = snehekharan.2 days = 1095 random = 7300 }
 			}
 		}
 	}

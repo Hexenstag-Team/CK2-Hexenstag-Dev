@@ -267,11 +267,11 @@ namespace = lahmia
 	limit = {
 	NOT = { has_character_flag = lahmian_queen }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
 	}
 	}
 	}
@@ -387,11 +387,11 @@ namespace = lahmia
 	limit = {
 	NOT = { has_character_flag = lahmian_queen }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
 	}
 	}
 	}
@@ -436,11 +436,11 @@ namespace = lahmia
 	limit = {
 	NOT = { has_character_flag = lahmian_queen }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
 	}
 	}
 	}
@@ -521,11 +521,11 @@ namespace = lahmia
 	limit = {
 	NOT = { has_character_flag = lahmian_queen }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
 	}
 	}
 	}
@@ -742,11 +742,11 @@ ai_chance = {
 	limit = {
 	NOT = { has_character_flag = lahmian_queen }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
 	}
 	}
 	}
@@ -923,11 +923,11 @@ ai_chance = {
 	limit = {
 	NOT = { has_character_flag = lahmian_queen }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
 	}
 	}
 	}
@@ -1096,11 +1096,11 @@ ai_chance = {
 	limit = {
 	NOT = { has_character_flag = lahmian_queen }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
 	}
 	}
 	}
@@ -1147,10 +1147,10 @@ ai_chance = {
 	clr_character_flag = lahmia12failed
 	clr_character_flag = return_home_lahmia
 	set_variable = { which = "seduction_progress" value = 0 }
-	any_playable_ruler = {
-	limit = { trait = lahmian_queen }
-	character_event = { id = lahmia.100 } ##100 is the failure event that the queen gets
-	}
+	lahmian_queen = {
+		limit = { is_ruler = yes }
+		character_event = { id = lahmia.100 } ##100 is the failure event that the queen gets
+		}
 	}
 
 	option = {
@@ -1314,11 +1314,11 @@ character_event = {
 	limit = {
 	NOT = { has_character_flag = lahmian_queen }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
 	}
 	}
 	}
@@ -1366,8 +1366,8 @@ character_event = {
 	clr_character_flag = lahmia12failed
 	clr_character_flag = return_home_lahmia
 	set_variable = { which = "seduction_progress" value = 0 }
-	any_playable_ruler = {
-	limit = { trait = lahmian_queen }
+	lahmian_queen = {
+	limit = { is_ruler = yes }
 	character_event = { id = lahmia.100 } ##100 is the failure event that the queen gets
 	}
 	}
@@ -1531,11 +1531,11 @@ ai_chance = {
 	limit = {
 	NOT = { has_character_flag = lahmian_queen }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
 	}
 	}
 	}
@@ -1568,10 +1568,10 @@ ai_chance = {
 	limit = {
 	NOT = { trait = lahmian_queen }
 	}
-	any_playable_ruler = {
-	limit = { trait = lahmian_queen }
-	character_event = { id = lahmia.100 } ##100 is the failure event that the queen gets
-	}
+	lahmian_queen = {
+		limit = { is_ruler = yes }
+		character_event = { id = lahmia.100 } ##100 is the failure event that the queen gets
+		}
 	}
 	}
 
@@ -1602,8 +1602,8 @@ ai_chance = {
 	limit = {
 	NOT = { trait = lahmian_queen }
 	}
-	any_playable_ruler = {
-	limit = { trait = lahmian_queen }
+	lahmian_queen = {
+	limit = { is_ruler = yes }
 	character_event = { id = lahmia.100 } ##100 is the failure event that the queen gets
 	}
 	}
@@ -1636,8 +1636,8 @@ ai_chance = {
 	limit = {
 	NOT = { trait = lahmian_queen }
 	}
-	any_playable_ruler = {
-	limit = { trait = lahmian_queen }
+	lahmian_queen = {
+	limit = { is_ruler = yes }
 	character_event = { id = lahmia.100 } ##100 is the failure event that the queen gets
 	}
 	}
@@ -1815,11 +1815,11 @@ ai_chance = {
 	limit = {
 	NOT = { trait = lahmian_queen }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.101 } #101 informs the queen the target is dead and mission is over
 	}
 	}
 	}
@@ -2091,12 +2091,12 @@ ai_chance = {
 	FROM = { tier = EMPEROR }
 	check_variable = { which = "seduction_progress" value = 50 }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 200
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 200
 	}
 	}
 	if = {
@@ -2105,12 +2105,12 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 25 }
 	NOT = { check_variable = { which = "seduction_progress" value = 50 }  }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 150
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 150
 	}
 	}
 	if = {
@@ -2119,12 +2119,12 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 10 }
 	NOT = { check_variable = { which = "seduction_progress" value = 25 } }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 100
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 100
 	}
 	}
 	if = {
@@ -2133,12 +2133,12 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 1 }
 	NOT = { check_variable = { which = "seduction_progress" value = 10 } }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 50
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 50
 	}
 	}
 
@@ -2147,12 +2147,12 @@ ai_chance = {
 	FROM = { tier = KING }
 	check_variable = { which = "seduction_progress" value = 50 }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 150
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 150
 	}
 	}
 	if = {
@@ -2161,12 +2161,12 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 25 }
 	NOT = { check_variable = { which = "seduction_progress" value = 50 } }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 100
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 100
 	}
 	}
 	if = {
@@ -2175,12 +2175,12 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 10 }
 	NOT = { check_variable = { which = "seduction_progress" value = 25 } }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 75
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 75
 	}
 	}
 	if = {
@@ -2189,12 +2189,12 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 1 }
 	NOT = { check_variable = { which = "seduction_progress" value = 10 } }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 50
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 50
 	}
 	}
 
@@ -2203,12 +2203,12 @@ ai_chance = {
 	FROM = { tier = DUKE }
 	check_variable = { which = "seduction_progress" value = 50 }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 125
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 125
 	}
 	}
 	if = {
@@ -2217,12 +2217,12 @@ ai_chance = {
  	check_variable = { which = "seduction_progress" value = 25 }
 	NOT = { check_variable = { which = "seduction_progress" value = 50 } }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 75
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 75
 	}
 	}
 	if = {
@@ -2231,12 +2231,12 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 10 }
 	NOT = { check_variable = { which = "seduction_progress" value = 25 } }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 50
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 50
 	}
 	}
 	if = {
@@ -2245,12 +2245,12 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 1 }
 	NOT = { check_variable = { which = "seduction_progress" value = 10 } }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 25
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 25
 	}
 	}
 
@@ -2259,12 +2259,12 @@ ai_chance = {
 	FROM = { lower_tier_than = DUKE }
 	check_variable = { which = "seduction_progress" value = 50 }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 50
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 50
 	}
 	}
 	if = {
@@ -2273,12 +2273,12 @@ ai_chance = {
  	check_variable = { which = "seduction_progress" value = 25 }
 	NOT = { check_variable = { which = "seduction_progress" value = 50 } }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 35
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 35
 	}
 	}
 	if = {
@@ -2287,12 +2287,12 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 10 }
 	NOT = { check_variable = { which = "seduction_progress" value = 25 } }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 20
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 20
 	}
 	}
 	if = {
@@ -2301,12 +2301,12 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 1 }
 	NOT = { check_variable = { which = "seduction_progress" value = 10 } }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
-	wealth = 10
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.102 } #102 is the event where the queen gets informed her daughters have sent her gold
+		wealth = 10
 	}
 	}
 
@@ -2315,7 +2315,7 @@ ai_chance = {
 	option = {
 	name = lahmia52B #This game continues to delight!
 	trigger = {
-	trait = lahmian_queen
+		trait = lahmian_queen
 	}
 	ROOT = { long_character_event = { id = lahmia.50 days = 365 } } ##lahmia.50 is the yearly maintenance event where you can ask for favors from your lovers
 	if = {
@@ -2490,11 +2490,11 @@ ai_chance = {
 	set_variable = { which = "seduction_progress" value = 0 }
 	if = {
 	limit = {
-	NOT = { trait = lahmian_queen }
+		NOT = { trait = lahmian_queen }
 	}
-	any_playable_ruler = {
-	limit = { trait = lahmian_queen }
-	character_event = { id = lahmia.100 } ##100 is the failure event that the queen gets
+	lahmian_queen = {
+		limit = { is_ruler = yes }
+		character_event = { id = lahmia.100 } ##100 is the failure event that the queen gets
 	}
 	}
 	}
@@ -2773,12 +2773,12 @@ ai_chance = {
 	FROM = { tier = EMPEROR }
 	check_variable = { which = "seduction_progress" value = 50 }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
-	location = {
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
+		location = {
 			ROOT = {
 				spawn_unit = {
 					province = PREV
@@ -2798,12 +2798,12 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 25 }
 	NOT = { check_variable = { which = "seduction_progress" value = 50 }  }
 	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	}
-	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
-	location = {
+	lahmian_queen = {
+		limit = {
+			is_ruler = yes
+		}
+		character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
+		location = {
 			ROOT = {
 				spawn_unit = {
 					province = PREV
@@ -2823,9 +2823,9 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 10 }
 	NOT = { check_variable = { which = "seduction_progress" value = 25 } }
 	}
-	any_playable_ruler = {
+	lahmian_queen = {
 	limit = {
-	trait = lahmian_queen
+		is_ruler = yes
 	}
 	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
 	location = {
@@ -2849,9 +2849,9 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 1 }
 	NOT = { check_variable = { which = "seduction_progress" value = 10 } }
 	}
-	any_playable_ruler = {
+	lahmian_queen = {
 	limit = {
-	trait = lahmian_queen
+		is_ruler = yes
 	}
 	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
 	location = {
@@ -2873,9 +2873,9 @@ ai_chance = {
 	FROM = { tier = KING }
 	check_variable = { which = "seduction_progress" value = 50 }
 	}
-	any_playable_ruler = {
+	lahmian_queen = {
 	limit = {
-	trait = lahmian_queen
+		is_ruler = yes
 	}
 	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
 	location = {
@@ -2898,9 +2898,9 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 25 }
 	NOT = { check_variable = { which = "seduction_progress" value = 50 } }
 	}
-	any_playable_ruler = {
+	lahmian_queen = {
 	limit = {
-	trait = lahmian_queen
+		is_ruler = yes
 	}
 	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
 	location = {
@@ -2923,9 +2923,9 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 10 }
 	NOT = { check_variable = { which = "seduction_progress" value = 25 } }
 	}
-	any_playable_ruler = {
+	lahmian_queen = {
 	limit = {
-	trait = lahmian_queen
+		is_ruler = yes
 	}
 	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
 	location = {
@@ -2947,9 +2947,9 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 1 }
 	NOT = { check_variable = { which = "seduction_progress" value = 10 } }
 	}
-	any_playable_ruler = {
+	lahmian_queen = {
 	limit = {
-	trait = lahmian_queen
+		is_ruler = yes
 	}
 	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
 	location = {
@@ -2971,9 +2971,9 @@ ai_chance = {
 	FROM = { tier = DUKE }
 	check_variable = { which = "seduction_progress" value = 50 }
 	}
-	any_playable_ruler = {
+	lahmian_queen = {
 	limit = {
-	trait = lahmian_queen
+		is_ruler = yes
 	}
 	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
 	location = {
@@ -2995,9 +2995,9 @@ ai_chance = {
  	check_variable = { which = "seduction_progress" value = 25 }
 	NOT = { check_variable = { which = "seduction_progress" value = 50 } }
 	}
-	any_playable_ruler = {
+	lahmian_queen = {
 	limit = {
-	trait = lahmian_queen
+		is_ruler = yes
 	}
 	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
 	location = {
@@ -3020,9 +3020,9 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 10 }
 	NOT = { check_variable = { which = "seduction_progress" value = 25 } }
 	}
-	any_playable_ruler = {
+	lahmian_queen = {
 	limit = {
-	trait = lahmian_queen
+		is_ruler = yes
 	}
 	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
 	location = {
@@ -3044,9 +3044,9 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 1 }
 	NOT = { check_variable = { which = "seduction_progress" value = 10 } }
 	}
-	any_playable_ruler = {
+	lahmian_queen = {
 	limit = {
-	trait = lahmian_queen
+		is_ruler = yes
 	}
 	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
 	location = {
@@ -3068,9 +3068,9 @@ ai_chance = {
 	FROM = { lower_tier_than = DUKE }
 	check_variable = { which = "seduction_progress" value = 50 }
 	}
-	any_playable_ruler = {
+	lahmian_queen = {
 	limit = {
-	trait = lahmian_queen
+		is_ruler = yes
 	}
 	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
 	location = {
@@ -3092,9 +3092,9 @@ ai_chance = {
  	check_variable = { which = "seduction_progress" value = 25 }
 	NOT = { check_variable = { which = "seduction_progress" value = 50 } }
 	}
-	any_playable_ruler = {
+	lahmian_queen = {
 	limit = {
-	trait = lahmian_queen
+		is_ruler = yes
 	}
 	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
 	location = {
@@ -3116,9 +3116,9 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 10 }
 	NOT = { check_variable = { which = "seduction_progress" value = 25 } }
 	}
-	any_playable_ruler = {
+	lahmian_queen = {
 	limit = {
-	trait = lahmian_queen
+		is_ruler = yes
 	}
 	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
 	location = {
@@ -3140,9 +3140,9 @@ ai_chance = {
 	check_variable = { which = "seduction_progress" value = 1 }
 	NOT = { check_variable = { which = "seduction_progress" value = 10 } }
 	}
-	any_playable_ruler = {
+	lahmian_queen = {
 	limit = {
-	trait = lahmian_queen
+		is_ruler = yes
 	}
 	character_event = { id = lahmia.103 } #103 is the event where the queen gets informed her daughters have sent her troops
 	location = {
@@ -3503,13 +3503,13 @@ location = {
 	clr_character_flag = return_home_lahmia
 	set_variable = { which = "seduction_progress" value = 0 }
 	if = {
-	limit = {
-	NOT = { trait = lahmian_queen }
-	}
-	any_playable_ruler = {
-	limit = { trait = lahmian_queen }
-	character_event = { id = lahmia.100 } ##100 is the failure event that the queen gets
-	}
+		limit = {
+			NOT = { trait = lahmian_queen }
+		}
+		lahmian_queen = {
+			limit = { is_ruler = yes }
+			character_event = { id = lahmia.100 } ##100 is the failure event that the queen gets
+		}
 	}
 	}
 
@@ -4103,13 +4103,13 @@ FROM = { character_event = { id = lahmia.207 } }
 	FROM = { set_mother = ROOT }
 	}
 	if = {
-	limit = {
-	NOT = { trait = lahmian_queen }
-	}
-	any_playable_ruler = {
-	limit = { trait = lahmian_queen }
-	character_event = { id = lahmia.210 }
-	}
+		limit = {
+			NOT = { trait = lahmian_queen }
+		}
+		lahmian_queen = {
+			limit = { is_ruler = yes }
+			character_event = { id = lahmia.210 }
+		}
 	}
 	}
 
@@ -4214,8 +4214,8 @@ FROM = { character_event = { id = lahmia.207 } }
 	hide_window = yes
 
 	trigger = {
-	religion_group = old_world_group
-	has_province_modifier = lahmian_presence
+		has_province_modifier = lahmian_presence
+		religion_group = old_world_group
 	}
 
 	mean_time_to_happen = {
@@ -4229,9 +4229,9 @@ FROM = { character_event = { id = lahmia.207 } }
        }
      }
 
-     any_playable_ruler = {
+     lahmian_queen = {
        limit = {
-         trait = lahmian_queen
+         is_ruler = yes
        }
 
      character_event = { id = lahmia.302 }
@@ -4244,9 +4244,9 @@ FROM = { character_event = { id = lahmia.207 } }
        has_global_flag = lahmia302
      }
 
-     any_playable_ruler = {
+     lahmian_queen = {
        limit = {
-         trait = lahmian_queen
+         is_ruler = yes
        }
 
        random_list = {
@@ -4345,17 +4345,17 @@ FROM = { character_event = { id = lahmia.207 } }
 	is_triggered_only = yes
 
 	option = {
-	name = lahmia304A #Our faith prevails again!
-	random_realm_province = {
-	remove_province_modifier = lahmian_presence
-	}
-	any_playable_ruler = {
-	limit = {
-	trait = lahmian_queen
-	NOT = { has_character_flag = lahmia305 }
-	}
-	character_event = { id = lahmia.305 }
-	}
+		name = lahmia304A #Our faith prevails again!
+		random_realm_province = {
+			remove_province_modifier = lahmian_presence
+		}
+		lahmian_queen = {
+			limit = {
+				is_ruler = yes
+				NOT = { has_character_flag = lahmia305 }
+			}
+			character_event = { id = lahmia.305 }
+		}
 	}
 
 	}

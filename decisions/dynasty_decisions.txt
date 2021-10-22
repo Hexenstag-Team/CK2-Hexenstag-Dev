@@ -360,21 +360,21 @@ targetted_decisions = {
 
 		effect = {
 			FROM = { piety = -50 }
-			add_ascetic_trait_effect = yes #Adds religion-based monk-traits.
+			#add_ascetic_trait_effect = yes #Adds religion-based monk-traits for vanilla religions
 			if = { #For pagans and Altstart
 				limit = {
-					NOT = {
+					#NOT = {
 						religion_group = old_world_group
-					}
+					#}
 					is_female = no
 				}
 				add_trait = monk
 			}
 			if = {
 				limit = {
-					NOT = {
+					#NOT = {
 						religion_group = old_world_group
-					}
+					#}
 					is_female = yes
 				}
 				add_trait = nun
@@ -391,12 +391,13 @@ targetted_decisions = {
 				limit = {
 					has_dlc = "Mystics"
 					is_in_society = no
-					religion = imperial_pantheon
+					trait = patron_shallya
+					religion_group = old_world_group
 				}
 				custom_tooltip = { text = tooltip_vows_monk_joins_society }
 				hidden_tooltip = {
-					50 = {
-						trigger = { trait = patron_shallya }
+					random = {
+						chance = 50
 						join_society = cult_of_shallya
 					}
 				}

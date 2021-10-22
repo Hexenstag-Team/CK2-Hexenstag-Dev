@@ -123,7 +123,7 @@ decisions = {
 
 	appease_spirits = {
 		ai_check_interval = 36
-		only_rulers = yes
+		only_playable = yes
 		potential = {
 			capital_scope = { empire = { title = e_athel_loren } }
 			OR = {
@@ -189,9 +189,9 @@ decisions = {
 	} #closes
 
 	restore_forest = {
-		ai_check_interval = 12
+		ai_check_interval = 24
 		is_high_prio = yes
-		only_rulers = yes
+		only_playable = yes
 		potential = {
 			religion = asrai_cadai
 			OR = {

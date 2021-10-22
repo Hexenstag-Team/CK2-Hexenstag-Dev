@@ -107,15 +107,8 @@ character_event = {
 
 	trigger = {
 		culture_group = dwarf_group
-		any_demesne_province = {
-			OR = {
-				has_building = ca_mine_1
-				has_building = ca_mine_2
-				has_building = ca_mine_3
-				has_building = ca_mine_4
-				has_building = ca_mine_5
-				has_building = ca_mine_6
-			}
+		any_demesne_wonder = {
+			has_wonder_upgrade = upgrade_mining_layer_2
 		}
 	}
 
@@ -134,20 +127,16 @@ character_event = {
 			chance = 15
 			add_trait = greedy
 		}
-		random_demesne_province = {
+
+		any_demesne_wonder = {
 			limit = {
-				OR = {
-					has_building = ca_mine_1
-					has_building = ca_mine_2
-					has_building = ca_mine_3
-					has_building = ca_mine_4
-					has_building = ca_mine_5
-					has_building = ca_mine_6
+				has_wonder_upgrade = upgrade_mining_layer_2
+			}
+			location = {
+				add_province_modifier = {
+					name = SJ_found_rich_gold_vein_as_dwarf
+					duration = 730
 				}
-			}  #rich gold vein found recently
-			add_province_modifier = {
-				name = SJ_found_rich_gold_vein_as_dwarf
-				duration = 730
 			}
 		}
 	}
@@ -1228,20 +1217,15 @@ character_event = {
 
 	option = {
 		name = SJDwarfevents.31.option1
-		random_demesne_province = {
+		any_demesne_wonder = {
 			limit = {
-				OR = {
-					has_building = ca_mine_1
-					has_building = ca_mine_2
-					has_building = ca_mine_3
-					has_building = ca_mine_4
-					has_building = ca_mine_5
-					has_building = ca_mine_6
-				}
+				has_wonder_upgrade = upgrade_mining_layer_2
 			}
-			add_province_modifier = {
-				name = SJ_improved_mining_system
-				duration = 1825
+			location = {
+				add_province_modifier = {
+					name = SJ_improved_mining_system
+					duration = 1825
+				}
 			}
 		}
 		prestige = 50
@@ -2879,15 +2863,8 @@ character_event = {
 						modifier = {
 							factor = 0
 							NOT = {
-								any_demesne_province = {
-									OR = {
-										has_building = ca_mine_1
-										has_building = ca_mine_2
-										has_building = ca_mine_3
-										has_building = ca_mine_4
-										has_building = ca_mine_5
-										has_building = ca_mine_6
-									}
+								any_demesne_wonder = {
+										has_wonder_upgrade = upgrade_mining_layer_2
 								}
 							}
 						}
@@ -2916,15 +2893,8 @@ character_event = {
 						modifier = {
 							factor = 0
 							NOT = {
-								any_demesne_province = {
-									OR = {
-										has_building = ca_mine_1
-										has_building = ca_mine_2
-										has_building = ca_mine_3
-										has_building = ca_mine_4
-										has_building = ca_mine_5
-										has_building = ca_mine_6
-									}
+								any_demesne_wonder = {
+									has_wonder_upgrade = upgrade_mining_layer_2
 								}
 							}
 						}

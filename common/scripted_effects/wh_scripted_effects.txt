@@ -7229,8 +7229,7 @@ add_lore_of_fire = {
 		limit = { ai = no }
 		character_event = { id = magic.2 days = 1 }
 	}
-	else_if = {
-		limit = { ai = yes }
+	else = {
 		random_list = {
 			33 = { add_trait = fire_elemental }
 			33 = { add_trait = fire_mystical }
@@ -7244,8 +7243,7 @@ add_lore_of_beasts = {
 		limit = { ai = no }
 		character_event = { id = magic.3 days = 1 }
 	}
-	else_if = {
-		limit = { ai = yes }
+	else = {
 		random_list = {
 			33 = { add_trait = beasts_elemental }
 			33 = { add_trait = beasts_mystical }
@@ -7259,8 +7257,7 @@ add_lore_of_metal = {
 		limit = { ai = no }
 		character_event = { id = magic.4 days = 1 }
 	}
-	else_if = {
-		limit = { ai = yes }
+	else = {
 		random_list = {
 			33 = { add_trait = metal_elemental }
 			33 = { add_trait = metal_mystical }
@@ -7274,8 +7271,7 @@ add_lore_of_light = {
 		limit = { ai = no }
 		character_event = { id = magic.5 days = 1 }
 	}
-	else_if = {
-		limit = { ai = yes }
+	else = {
 		random_list = {
 			33 = { add_trait = light_elemental }
 			33 = { add_trait = light_mystical }
@@ -7289,8 +7285,7 @@ add_lore_of_life = {
 		limit = { ai = no }
 		character_event = { id = magic.6 days = 1 }
 	}
-	else_if = {
-		limit = { ai = yes }
+	else = {
 		random_list = {
 			33 = { add_trait = life_elemental }
 			33 = { add_trait = life_mystical }
@@ -7304,8 +7299,7 @@ add_lore_of_heavens = {
 		limit = { ai = no }
 		character_event = { id = magic.7 days = 1 }
 	}
-	else_if = {
-		limit = { ai = yes }
+	else = {
 		random_list = {
 			33 = { add_trait = heavens_elemental }
 			33 = { add_trait = heavens_mystical }
@@ -7319,8 +7313,7 @@ add_lore_of_death = {
 		limit = { ai = no }
 		character_event = { id = magic.8 days = 1 }
 	}
-	else_if = {
-		limit = { ai = yes }
+	else = {
 		random_list = {
 			33 = { add_trait = death_elemental }
 			33 = { add_trait = death_mystical }
@@ -7334,8 +7327,7 @@ add_lore_of_shadows = {
 		limit = { ai = no }
 		character_event = { id = magic.9 days = 1 }
 	}
-	else_if = {
-		limit = { ai = yes }
+	else = {
 		random_list = {
 			33 = { add_trait = shadows_elemental }
 			33 = { add_trait = shadows_mystical }
@@ -7870,7 +7862,7 @@ patron_imperial_pantheon_effect = {
 					trait = grey_eminence
 					trait = midas_touched
 					is_learned_trigger = yes
-					
+
 				}
 			}
 			modifier = {
@@ -7953,9 +7945,9 @@ patron_imperial_pantheon_effect = {
 			}
 			add_trait = patron_ranald
 		}
-		
+
 	###Minor Gods###
-		
+
 		#Minor Reiklander Gods
 		20 = {	#Dyrath
 			trigger = {

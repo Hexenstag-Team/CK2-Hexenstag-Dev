@@ -308,6 +308,9 @@ character_event = {
 	id = slizardmen.1
 	desc = EVTDESCslizardmens1
 	picture = GFX_evt_lustria_jungle
+	is_triggered_only = yes
+
+	only_playable = yes
 
 	trigger = {
 		culture = lizardman
@@ -327,18 +330,18 @@ character_event = {
 			}
 		}
 	}
-	mean_time_to_happen = {
-		years = 40
+	weight_multiplier = {
+		days = 1
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			lower_tier_than = KING
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			higher_tier_than = KING
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 				NOR = {
 					AND = {
 						lore_of_heavens_trigger = yes
@@ -351,42 +354,42 @@ character_event = {
 				}
 		}
 		modifier = {
-			factor = 0.25
+			factor = 4
 			any_courtier = {
 				trait = skink_priest
 				count = 0
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			any_courtier = {
 				trait = skink_priest
 				count = 2
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			any_courtier = {
 				trait = skink_priest
 				count = 3
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			any_courtier = {
 				trait = skink_priest
 				count = 4
 			}
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			any_courtier = {
 				trait = skink_priest
 				count = 5
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			any_realm_province = {
 				any_province_holding = {
 					ROOT = { is_liege_or_above = OWNER }
@@ -399,7 +402,7 @@ character_event = {
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			any_realm_province = {
 				any_province_holding = {
 					ROOT = { is_liege_or_above = OWNER }
@@ -412,7 +415,7 @@ character_event = {
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			any_realm_province = {
 				any_province_holding = {
 					ROOT = { is_liege_or_above = OWNER }
@@ -425,7 +428,7 @@ character_event = {
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			any_realm_province = {
 				any_province_holding = {
 					ROOT = { is_liege_or_above = OWNER }
@@ -438,7 +441,7 @@ character_event = {
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			any_realm_province = {
 				any_province_holding = {
 					ROOT = { is_liege_or_above = OWNER }
@@ -451,7 +454,7 @@ character_event = {
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			any_realm_province = {
 				any_province_holding = {
 					ROOT = { is_liege_or_above = OWNER }
@@ -464,7 +467,7 @@ character_event = {
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			any_realm_province = {
 				any_province_holding = {
 					or = {
@@ -476,7 +479,7 @@ character_event = {
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			any_realm_province = {
 				any_province_holding = {
 					ROOT = { is_liege_or_above = OWNER }
@@ -489,7 +492,7 @@ character_event = {
 			}
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			any_realm_province = {
 				any_province_holding = {
 					ROOT = { is_liege_or_above = OWNER }
@@ -1027,6 +1030,7 @@ character_event = {
 	desc = EVTDESCslizardmen8
 	picture = GFX_evt_lustria_dinosaur
 
+	has_job_title = yes
 	capable_only = yes
 	prisoner = no
 
@@ -1141,6 +1145,7 @@ character_event = {
 	desc = EVTDESCslizardmen11
 	picture = GFX_evt_lizardmen_temples
 
+	has_job_title = yes
 	capable_only = yes
 	prisoner = no
 
@@ -1707,83 +1712,84 @@ character_event = {
 	id = slizardmen.21
 	desc = EVTDESCslizardmen21
 	picture = GFX_evt_lizardmen_dying
+	is_triggered_only = yes
 
+	religion = old_ones
 	only_men = yes
 	min_age = 14
 	max_age = 350
 	capable_only = yes
 	prisoner = no
-	religion = old_ones
 
 	trigger = {
+		decadence = 90
 		uses_decadence = yes
 		trait = creature_skink
 		NOT = { trait = defective }
 		higher_tier_than = BARON
-		decadence = 90
 	}
 
-	mean_time_to_happen = {
-		years = 3
+	weight_multiplier = {
+		days = 1
 
 		modifier = {
-			factor = 0.85
+			factor = 20
 			trait = indulgent_wastrel
 		}
 		modifier = {
-			factor = 0.95
+			factor = 1.05
 			trait = naive_appeaser
 		}
 		modifier = {
-			factor = 0.95
+			factor = 1.05
 			trait = amateurish_plotter
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = hedonist
 		}
 		modifier = {
-			factor = 0.95
+			factor = 1.05
 			trait = drunkard
 		}
 		modifier = {
-			factor = 0.75
+			factor = 1.33
 			trait = addict
 		}
 		modifier = {
-			factor = 0.85
+			factor = 20
 			trait = gluttonous
 		}
 		modifier = {
-			factor = 0.05
+			factor = 20
 			trait = slothful
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = cynical
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			trait = arbitrary
 		}
 		modifier = {
-			factor = 3.0
+			factor = 0.33
 			trait = just
 		}
 		modifier = {
-			factor = 15.0
+			factor = 0.066
 			trait = diligent
 		}
 		modifier = {
-			factor = 2
+			factor = 0.5
 			trait = temperate
 		}
 		modifier = {
-			factor = 1.25
+			factor = 0.8
 			trait = detached_priest
 		}
 		modifier = {
-			factor = 1.35
+			factor = 0.75
 			trait = martial_cleric
 		}
 		modifier = {
@@ -1791,19 +1797,19 @@ character_event = {
 			trait = scholarly_theologian
 		}
 		modifier = {
-			factor = 1.5
+			factor = 0.68
 			trait = mastermind_theologian
 		}
 		modifier = {
-			factor = 2
+			factor = 0.5
 			trait = skink_priest
 		}
 		modifier = {
-			factor = 0.5
+			factor = 2
 			decadence = 95
 		}
 		modifier = {
-			factor = 0.01
+			factor = 100
 			decadence = 100
 		}
 	}
@@ -1826,22 +1832,19 @@ character_event = {
 	id = slizardmen.22
 	desc = EVTDESCslizardmen22
 	picture = GFX_evt_lizardmen_dying
+	is_triggered_only = yes
 
+	religion = old_ones
 	only_men = yes
 	min_age = 14
 	max_age = 350
 	capable_only = yes
 	prisoner = no
-	only_rulers = yes
-	religion = old_ones
 
 	trigger = {
 		uses_decadence = yes
 		trait = ambitious
-	}
-
-	mean_time_to_happen = {
-		years = 100
+		is_ruler = yes
 	}
 
 	option = {
@@ -1855,22 +1858,19 @@ character_event = {
 	id = slizardmen.22001
 	desc = EVTDESCslizardmen22001
 	picture = GFX_evt_lizardmen_saurus
+	is_triggered_only = yes
 
+	religion = old_ones
 	only_men = yes
 	min_age = 14
 	max_age = 350
 	capable_only = yes
 	prisoner = no
-	only_rulers = yes
-	religion = old_ones
 
 	trigger = {
 		uses_decadence = yes
 		trait = content
-	}
-
-	mean_time_to_happen = {
-		years = 125
+		is_ruler = yes
 	}
 
 	option = {
@@ -1884,22 +1884,19 @@ character_event = {
 	id = slizardmen.22002
 	desc = EVTDESCslizardmen22002
 	picture = GFX_evt_lizardmen_dying
+	is_triggered_only = yes
 
+	religion = old_ones
 	only_men = yes
 	min_age = 14
 	max_age = 350
 	capable_only = yes
 	prisoner = no
-	only_rulers = yes
-	religion = old_ones
 
 	trigger = {
 		uses_decadence = yes
 		trait = slothful
-	}
-
-	mean_time_to_happen = {
-		years = 100
+		is_ruler = yes
 	}
 
 	option = {
@@ -1913,22 +1910,19 @@ character_event = {
 	id = slizardmen.22003
 	desc = EVTDESCslizardmen22003
 	picture = GFX_evt_lizardmen_saurus
+	is_triggered_only = yes
 
+	religion = old_ones
 	only_men = yes
 	min_age = 14
 	max_age = 350
 	capable_only = yes
 	prisoner = no
-	only_rulers = yes
-	religion = old_ones
 
 	trigger = {
 		uses_decadence = yes
 		trait = diligent
-	}
-
-	mean_time_to_happen = {
-		years = 150
+		is_ruler = yes
 	}
 
 	option = {
@@ -1942,22 +1936,19 @@ character_event = {
 	id = slizardmen.22004
 	desc = EVTDESCslizardmen22004
 	picture = GFX_evt_lizardmen_dying
+	is_triggered_only = yes
 
+	religion = old_ones
 	only_men = yes
 	min_age = 14
 	max_age = 350
 	capable_only = yes
 	prisoner = no
-	only_rulers = yes
-	religion = old_ones
 
 	trigger = {
 		uses_decadence = yes
 		trait = wroth
-	}
-
-	mean_time_to_happen = {
-		years = 100
+		is_ruler = yes
 	}
 
 	option = {
@@ -1971,22 +1962,19 @@ character_event = {
 	id = slizardmen.22005
 	desc = EVTDESCslizardmen22005
 	picture = GFX_evt_lizardmen_dying
+	is_triggered_only = yes
 
+	religion = old_ones
 	only_men = yes
 	min_age = 14
 	max_age = 350
 	capable_only = yes
 	prisoner = no
-	only_rulers = yes
-	religion = old_ones
 
 	trigger = {
 		uses_decadence = yes
 		trait = patient
-	}
-
-	mean_time_to_happen = {
-		years = 125
+		is_ruler = yes
 	}
 
 	option = {
@@ -2000,22 +1988,20 @@ character_event = {
 	id = slizardmen.22006
 	desc = EVTDESCslizardmen22006
 	picture = GFX_evt_lizardmen_saurus
+	is_triggered_only = yes
 
+	religion = old_ones
 	only_men = yes
 	min_age = 14
 	max_age = 350
 	capable_only = yes
 	prisoner = no
 	only_rulers = yes
-	religion = old_ones
 
 	trigger = {
 		uses_decadence = yes
 		trait = honest
-	}
-
-	mean_time_to_happen = {
-		years = 150
+		is_ruler = yes
 	}
 
 	option = {
@@ -2029,22 +2015,19 @@ character_event = {
 	id = slizardmen.22007
 	desc = EVTDESCslizardmen22007
 	picture = GFX_evt_lizardmen_dying
+	is_triggered_only = yes
 
+	religion = old_ones
 	only_men = yes
 	min_age = 14
 	max_age = 350
 	capable_only = yes
 	prisoner = no
-	only_rulers = yes
-	religion = old_ones
 
 	trigger = {
 		uses_decadence = yes
 		trait = deceitful
-	}
-
-	mean_time_to_happen = {
-		years = 150
+		is_ruler = yes
 	}
 
 	option = {
@@ -2058,22 +2041,19 @@ character_event = {
 	id = slizardmen.22008
 	desc = EVTDESCslizardmen22008
 	picture = GFX_evt_lizardmen_dying
+	is_triggered_only = yes
 
+	religion = old_ones
 	only_men = yes
 	min_age = 14
 	max_age = 350
 	capable_only = yes
 	prisoner = no
-	only_rulers = yes
-	religion = old_ones
 
 	trigger = {
 		uses_decadence = yes
 		trait = greedy
-	}
-
-	mean_time_to_happen = {
-		years = 125
+		is_ruler = yes
 	}
 
 	option = {
@@ -2087,22 +2067,19 @@ character_event = {
 	id = slizardmen.22009
 	desc = EVTDESCslizardmen22009
 	picture = GFX_evt_lizardmen_dying
+	is_triggered_only = yes
 
+	religion = old_ones
 	only_men = yes
 	min_age = 14
 	max_age = 350
 	capable_only = yes
 	prisoner = no
-	only_rulers = yes
-	religion = old_ones
 
 	trigger = {
 		uses_decadence = yes
 		trait = charitable
-	}
-
-	mean_time_to_happen = {
-		years = 125
+		is_ruler = yes
 	}
 
 	option = {
@@ -2116,22 +2093,19 @@ character_event = {
 	id = slizardmen.22010
 	desc = EVTDESCslizardmen22010
 	picture = GFX_evt_lizardmen_dying
+	is_triggered_only = yes
 
+	religion = old_ones
 	only_men = yes
 	min_age = 14
 	max_age = 350
 	capable_only = yes
 	prisoner = no
-	only_rulers = yes
-	religion = old_ones
 
 	trigger = {
 		uses_decadence = yes
 		trait = brave
-	}
-
-	mean_time_to_happen = {
-		years = 125
+		is_ruler = yes
 	}
 
 	option = {
@@ -2145,22 +2119,19 @@ character_event = {
 	id = slizardmen.22011
 	desc = EVTDESCslizardmen22011
 	picture = GFX_evt_lizardmen_saurus
+	is_triggered_only = yes
 
+	religion = old_ones
 	only_men = yes
 	min_age = 14
 	max_age = 350
 	capable_only = yes
 	prisoner = no
-	only_rulers = yes
-	religion = old_ones
 
 	trigger = {
 		uses_decadence = yes
 		trait = zealous
-	}
-
-	mean_time_to_happen = {
-		years = 125
+		is_ruler = yes
 	}
 
 	option = {
@@ -2174,22 +2145,19 @@ character_event = {
 	id = slizardmen.22012
 	desc = EVTDESCslizardmen22012
 	picture = GFX_evt_lizardmen_dying
+	is_triggered_only = yes
 
+	religion = old_ones
 	only_men = yes
 	min_age = 14
 	max_age = 350
 	capable_only = yes
 	prisoner = no
-	only_rulers = yes
-	religion = old_ones
 
 	trigger = {
 		uses_decadence = yes
 		trait = cynical
-	}
-
-	mean_time_to_happen = {
-		years = 125
+		is_ruler = yes
 	}
 
 	option = {
@@ -2206,46 +2174,59 @@ character_event = {
 character_event = {
 	id = slizardmen.23
 	hide_window = yes
+	is_triggered_only = yes
 
-	only_men = yes
-	min_age = 2000
 	religion = old_ones
+	min_age = 2000
+	only_men = yes
 	ai = yes
 
 	trigger = {
-		trait = creature_slann
 		trait = lizardman_sleepingslann
+		trait = creature_slann
 		independent = no
 		top_liege = {
 			culture_group = lizardman_group
 		}
 	}
 
-	mean_time_to_happen = {
-		years = 6
-	}
-
 	immediate = {
 		random_list = {
 			40 = {
 				top_liege = {
-					character_event = { id = slizardmen.24 }
+					character_event = {
+						id = slizardmen.24
+						days = 15
+						random = 75
+					}
 				}
 			}
 			# Reclined his head on a different side
 			39 = {
 				top_liege = {
-					character_event = { id = slizardmen.25 }
+					character_event = {
+						id = slizardmen.25
+						days = 15
+						random = 75
+					}
 				}
 			}	# Flies around his body
 			20 = {
 				top_liege = {
-					character_event = { id = slizardmen.26 }
+					character_event = {
+						id = slizardmen.26
+						days = 15
+						random = 75
+					}
 				}
 			}	# Snores
 			1 = {
 				top_liege = {
-					character_event = { id = slizardmen.27 }
+					character_event = {
+						id = slizardmen.27
+						days = 15
+						random = 75
+					}
 				}
 			}	# Asks for maggot soup
 		}
@@ -6616,3297 +6597,6 @@ character_event = {
 	}
 }
 
-####################
-##Add complacent trait
-
-character_event = {
-	id = slizardmen.50
-	desc = EVTDESCslizardmen50
-	picture = GFX_evt_slaanesh_tempt
-
-	only_women = yes
-	min_age = 16
-	capable_only = yes
-	prisoner = no
-	religion = amazon
-
-	trigger = {
-		num_of_dynasty_members = 3 # Does not trigger for tiny dynasties
-		uses_decadence = yes
-		NOT = { trait = complacent }
-		OR = { trait = slothful
-			trait = craven
-			trait = content
-			trait = gluttonous
-			trait = drunkard
-			trait = addict
-			trait = weak
-			trait = incapable
-			trait = infirm
-			trait = hedonist
-			trait = is_fat
-			trait = seductress }
-		biggest_realm_size_relative = {
-				NOT = { character = PREV }
-				realm_size = 3
-				}
-	}
-
-	mean_time_to_happen = {
-		years = 5
-
-		modifier = {
-			factor = 0.5
-			trait = indulgent_wastrel
-		}
-		modifier = {
-			factor = 0.75
-			trait = naive_appeaser
-		}
-		modifier = {
-			factor = 0.75
-			trait = amateurish_plotter
-		}
-		modifier = {
-			factor = 0.25
-			trait = hedonist
-		}
-		modifier = {
-			factor = 5
-			trait = homosexual
-		}
-		modifier = {
-			factor = 0.5
-			trait = gluttonous
-		}
-		modifier = {
-			factor = 0.5
-			trait = slothful
-		}
-		modifier = {
-			factor = 0.5
-			trait = content
-		}
-		modifier = {
-			factor = 0.5
-			trait = is_fat
-		}
-		modifier = {
-			factor = 0.75
-			trait = kind
-		}
-		modifier = {
-			factor = 0.75
-			NOT = { trait = homosexual }
-			trait = lustful
-		}
-		modifier = {
-			factor = 0.75
-			trait = arbitrary
-		}
-		modifier = {
-			factor = 3.0
-			trait = wroth
-		}
-		modifier = {
-			factor = 3.0
-			trait = just
-		}
-		modifier = {
-			factor = 20.0
-			trait = brave
-		}
-		modifier = {
-			factor = 10.0
-			trait = temperate
-		}
-		modifier = {
-			factor = 2.0
-			trait = misguided_warrior
-		}
-		modifier = {
-			factor = 4.0
-			trait = tough_soldier
-		}
-		modifier = {
-			factor = 8.0
-			trait = skilled_tactician
-		}
-		modifier = {
-			factor = 10.0
-			trait = brilliant_strategist
-		}
-		modifier = {
-			factor = 100
-			trait = questing
-		}
-		modifier = {
-			factor = 0.95
-			tier = BARON
-		}
-		modifier = {
-			factor = 0.75
-			tier = COUNT
-		}
-		modifier = {
-			factor = 0.5
-			tier = DUKE
-		}
-		modifier = {
-			factor = 0.15
-			any_lover = {
-					is_female = no }
-		}
-		modifier = {
-			factor = 0.5
-			highest_ranked_relative = {
-				tier = KING
-			}
-		}
-		modifier = {
-			factor = 0.5
-			highest_ranked_relative = {
-				tier = EMPEROR
-			}
-		}
-		modifier = {
-			factor = 0.5
-			biggest_realm_size_relative = {
-				realm_size = 150
-			}
-		}
-		modifier = {
-			factor = 0.5
-			biggest_realm_size_relative = {
-				realm_size = 250
-			}
-		}
-	}
-
-	option = {
-		name = EVTOPTAlizardmen50
-		add_trait = complacent
-
-		hidden_tooltip = {
-			any_dynasty_member = {
-				limit = {
-					ai = no
-				}
-				character_event = { id = slizardmen.51 days = 1 }
-			}
-		}
-	}
-}
-
-# Every 5 year pulse, increase decadency of Complacent character
-character_event = {
-	id = slizardmen.50001
-	hide_window = yes
-
-	only_women = yes
-	min_age = 14
-	max_age = 150
-	capable_only = yes
-	prisoner = no
-	religion = amazon
-
-	trigger = { trait = complacent }
-
-	is_triggered_only = yes
-
-
-	immediate = { decadence = 25
-	}
-}
-
-# Inform relative has become complacent
-character_event = {
-	id = slizardmen.51
-	desc = EVTDESCslizardmen51
-	picture = GFX_evt_slaanesh_tempt
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen51
-		piety = -25
-	}
-}
-
-# Complacent - Content
-character_event = {
-	id = slizardmen.52001
-	desc = EVTDESCslizardmen52001
-	picture = GFX_evt_slaanesh_tempt
-
-	ai = no
-	only_women = yes
-	min_age = 14
-	max_age = 150
-	capable_only = yes
-	prisoner = no
-	only_rulers = yes
-	religion = amazon
-
-	trigger = {
-		uses_decadence = yes
-		trait = content
-		trait = creature_amazon
-	}
-
-	mean_time_to_happen = {
-		years = 54
-	}
-
-	option = {
-		name = EVTOPTAslizardmen52001
-		decadence = 2
-	}
-}
-
-# Complacent - Craven
-character_event = {
-	id = slizardmen.52002
-	desc = EVTDESCslizardmen52002
-	picture = GFX_evt_slaanesh_tempt
-
-	ai = no
-	only_women = yes
-	min_age = 13
-	max_age = 120
-	capable_only = yes
-	prisoner = no
-	only_rulers = yes
-	religion = amazon
-
-	trigger = {
-		uses_decadence = yes
-		trait = craven
-		trait = creature_amazon
-	}
-
-	mean_time_to_happen = {
-		years = 54
-	}
-
-	option = {
-		name = EVTOPTAslizardmen52002
-		decadence = 3
-	}
-}
-
-# Complacent - Lustful
-character_event = {
-	id = slizardmen.52003
-	desc = EVTDESCslizardmen52003
-	picture = GFX_evt_slaanesh_tempt
-
-	ai = no
-	only_women = yes
-	min_age = 13
-	max_age = 120
-	capable_only = yes
-	prisoner = no
-	only_rulers = yes
-	religion = amazon
-
-	trigger = {
-		uses_decadence = yes
-		trait = lustful
-		trait = creature_amazon
-		NOT = { trait = homosexual }
-	}
-
-	mean_time_to_happen = {
-		years = 54
-	}
-
-	option = {
-		name = EVTOPTAslizardmen52003
-		decadence = 3
-	}
-}
-
-# Complacent - Gluttonous
-character_event = {
-	id = slizardmen.52004
-	desc = EVTDESCslizardmen52004
-	picture = GFX_evt_slaanesh_tempt
-
-	ai = no
-	only_women = yes
-	min_age = 13
-	max_age = 120
-	capable_only = yes
-	prisoner = no
-	only_rulers = yes
-	religion = amazon
-
-	trigger = {
-		uses_decadence = yes
-		OR = { trait = addict
-			trait = drunkard
-			trait = gluttonous }
-		trait = creature_amazon
-	}
-
-	mean_time_to_happen = {
-		years = 54
-	}
-
-	option = {
-		name = EVTOPTAslizardmen52004
-		decadence = 1
-		hidden_tooltip = { character_event = { id = sinsa.1147 days = 150 random = 50 } }
-	}
-}
-
-# Complacent - Slothful
-character_event = {
-	id = slizardmen.52005
-	desc = EVTDESCslizardmen52005
-	picture = GFX_evt_slaanesh_tempt
-
-	ai = no
-	only_women = yes
-	min_age = 13
-	max_age = 120
-	capable_only = yes
-	prisoner = no
-	only_rulers = yes
-	religion = amazon
-
-	trigger = {
-		uses_decadence = yes
-		trait = slothful
-		trait = creature_amazon
-	}
-
-	mean_time_to_happen = {
-		years = 54
-	}
-
-	option = {
-		name = EVTOPTAslizardmen52005
-		decadence = 2
-	}
-}
-
-# Complacent - Brave
-character_event = {
-	id = slizardmen.52006
-	desc = EVTDESCslizardmen52006
-	picture = GFX_evt_amazon_queen
-
-	ai = no
-	only_women = yes
-	min_age = 13
-	max_age = 120
-	capable_only = yes
-	prisoner = no
-	only_rulers = yes
-	religion = amazon
-
-	trigger = {
-		uses_decadence = yes
-		trait = brave
-		trait = creature_amazon
-	}
-
-	mean_time_to_happen = {
-		years = 54
-	}
-
-	option = {
-		name = EVTOPTAslizardmen52006
-		decadence = -3
-	}
-}
-
-# Complacent - Homosexual
-character_event = {
-	id = slizardmen.52007
-	desc = EVTDESCslizardmen52007
-	picture = GFX_evt_amazon_queen
-
-	ai = no
-	only_women = yes
-	min_age = 13
-	max_age = 120
-	capable_only = yes
-	prisoner = no
-	only_rulers = yes
-	religion = amazon
-
-	trigger = {
-		uses_decadence = yes
-		trait = homosexual
-		trait = creature_amazon
-	}
-
-	mean_time_to_happen = {
-		years = 62
-	}
-
-	option = {
-		name = EVTOPTAslizardmen52007
-		decadence = -5
-	}
-}
-
-# Complacent - Undernourished/Weak
-character_event = {
-	id = slizardmen.52008
-	desc = EVTDESCslizardmen52008
-	picture = GFX_evt_slaanesh_tempt
-
-	ai = no
-	only_women = yes
-	min_age = 13
-	max_age = 120
-	capable_only = yes
-	prisoner = no
-	only_rulers = yes
-	religion = amazon
-
-	trigger = {
-		uses_decadence = yes
-		OR = { trait = is_malnourished
-			 trait = weak
-			trait = soft
-			trait = fragile }
-		trait = creature_amazon
-	}
-
-	mean_time_to_happen = {
-		years = 54
-	}
-
-	option = {
-		name = EVTOPTAslizardmen52008
-		decadence = 4
-	}
-}
-
-# Complacent - Strong
-character_event = {
-	id = slizardmen.52009
-	desc = EVTDESCslizardmen52009
-	picture = GFX_evt_amazon_queen
-
-	ai = no
-	only_women = yes
-	min_age = 13
-	max_age = 120
-	capable_only = yes
-	prisoner = no
-	only_rulers = yes
-	religion = amazon
-
-	trigger = {
-		uses_decadence = yes
-		OR = { trait = strong
-			 trait = hardy
-			trait = tough }
-		trait = creature_amazon
-	}
-
-	mean_time_to_happen = {
-		years = 54
-	}
-
-	option = {
-		name = EVTOPTAslizardmen52009
-		decadence = -3
-	}
-}
-
-# Complacent - Diplomatic education
-character_event = {
-	id = slizardmen.52010
-	desc = EVTDESCslizardmen52010
-	picture = GFX_evt_slaanesh_tempt
-
-	ai = no
-	only_women = yes
-	min_age = 13
-	max_age = 120
-	capable_only = yes
-	prisoner = no
-	only_rulers = yes
-	religion = amazon
-
-	trigger = {
-		uses_decadence = yes
-		OR = { trait = naive_appeaser
-			 trait = underhanded_rogue
-			trait = charismatic_negotiator
-			trait = grey_eminence }
-		trait = creature_amazon
-	}
-
-	mean_time_to_happen = {
-		years = 54
-	}
-
-	option = {
-		name = EVTOPTAslizardmen52010
-		decadence = 1
-	}
-}
-
-# Complacent - Martial education
-character_event = {
-	id = slizardmen.52011
-	desc = EVTDESCslizardmen52011
-	picture = GFX_evt_amazon_queen
-
-	ai = no
-	only_women = yes
-	min_age = 13
-	max_age = 120
-	capable_only = yes
-	prisoner = no
-	only_rulers = yes
-	religion = amazon
-
-	trigger = {
-		uses_decadence = yes
-		OR = { trait = misguided_warrior
-			 trait = tough_soldier
-			trait = skilled_tactician
-			trait = brilliant_strategist }
-		trait = creature_amazon
-	}
-
-	mean_time_to_happen = {
-		years = 54
-	}
-
-	option = {
-		name = EVTOPTAslizardmen52011
-		decadence = -1
-	}
-}
-
-# Complacent - Fat
-character_event = {
-	id = slizardmen.52012
-	desc = EVTDESCslizardmen52012
-	picture = GFX_evt_slaanesh_tempt
-
-	ai = no
-	only_women = yes
-	min_age = 13
-	max_age = 120
-	capable_only = yes
-	prisoner = no
-	only_rulers = yes
-	religion = amazon
-
-	trigger = {
-		uses_decadence = yes
-		trait = is_fat
-		trait = creature_amazon
-	}
-
-	mean_time_to_happen = {
-		years = 54
-	}
-
-	option = {
-		name = EVTOPTAslizardmen52012
-		decadence = 4
-	}
-}
-
-# Complacent - Deformed
-character_event = {
-	id = slizardmen.52013
-	desc = EVTDESCslizardmen52013
-	picture = GFX_evt_slaanesh_tempt
-
-	ai = no
-	only_women = yes
-	min_age = 13
-	max_age = 120
-	capable_only = yes
-	prisoner = no
-	only_rulers = yes
-	religion = amazon
-
-	trigger = {
-		uses_decadence = yes
-		OR = { trait = hunchback
-			 trait = dwarf
-			trait = clubfooted
-			is_mutated_trigger = yes }
-		trait = creature_amazon
-	}
-
-	mean_time_to_happen = {
-		years = 54
-	}
-
-	option = {
-		name = EVTOPTAslizardmen52013
-		decadence = 5
-	}
-}
-
-#####Flavor events for the Amazonian Festival#####
-
-#Umbrella event for amazonian feast
-character_event = {
-	id = slizardmen.53
-	hide_window = yes
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	immediate = {
-		random_list = { 15 = { character_event = { id = slizardmen.54 } } #Drinking contest
-				5 = { character_event = { id = slizardmen.55 } } #Eating contest
-				 20 = { character_event = { id = slizardmen.56 } } #Mud Fighting
-				 4 = { character_event = { id = slizardmen.57 } } #Love
-				 10 = { modifier = { factor = 1.5
-						check_variable = { which = "drinking_count" value = 4 }
-						 }
-					modifier = { factor = 0.2
-						NOT = { check_variable = { which = "drinking_count" value = 1 } }
-						 }
-					character_event = { id = slizardmen.53001 } } #Drank too much
-				 10 = { modifier = { factor = 1.5
-						check_variable = { which = "eating_count" value = 4 }
-						 }
-					modifier = { factor = 0.2
-						NOT = { check_variable = { which = "eating_count" value = 1 } }
-						 }
-					character_event = { id = slizardmen.53002 } } #Eaten too much
-				 5 = { character_event = { id = slizardmen.53003 } } #Taken bad herbs
-				 5 = { character_event = { id = slizardmen.53004 } } #Taken good herbs
-				 5 = { character_event = { id = slizardmen.53005 } } #Fun while drunk
-				 16 = { character_event = { id = slizardmen.53006 } } #Dancing
-				 5 = { modifier = { factor = 0
-						NOT = { check_variable = { which = "drinking_count" value = 1 } }
-						NOT = { check_variable = { which = "eating_count" value = 1 } }
-						 }
-					long_character_event = { id = slizardmen.53007 } } #Passing the Snake
-				 }
-	}
-}
-
-# Drinking a lot during the festival
-character_event = {
-	id = slizardmen.53001
-	desc = EVTDESCslizardmen53001
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen53001
-		decadence = 2
-		random = { chance = 5
-			add_trait = drunkard }
-	}
-}
-
-# Eating a lot during the festival
-character_event = {
-	id = slizardmen.53002
-	desc = EVTDESCslizardmen53002
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen53002
-		decadence = 2
-		random = { chance = 5
-			add_trait = gluttonous }
-	}
-}
-
-# Taking herbs during the festival and puking
-character_event = {
-	id = slizardmen.53003
-	desc = EVTDESCslizardmen53003
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen53003
-		decadence = 2
-		random = { chance = 5
-			add_trait = addict }
-	}
-}
-
-# Taking herbs during the festival and having a vision
-character_event = {
-	id = slizardmen.53004
-	desc = EVTDESCslizardmen53004
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen53004
-		decadence = -1
-		random = { chance = 5
-			add_trait = addict }
-	}
-}
-
-# Had some good time with your Amazon Sisters while drunk
-character_event = {
-	id = slizardmen.53005
-	desc = EVTDESCslizardmen53005
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen53005
-		decadence = -1
-		prestige = 50
-	}
-}
-
-# Dancing around the fire
-character_event = {
-	id = slizardmen.53006
-	desc = EVTDESCslizardmen53006
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen53006
-		piety = 10
-	}
-}
-
-# Passing the Snake
-long_character_event = {
-	id = slizardmen.53007
-	desc = EVTDESCslizardmen53007
-	picture = GFX_evt_amazon_snake
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen53007
-		decadence = -1
-		piety = 75
-	}
-}
-
-# Drinking Contest
-character_event = {
-	id = slizardmen.54
-	hide_window = yes
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	immediate = {
-		save_event_target_as = am_drinking_1
-	if = { limit = { any_courtier = {
-					trait = creature_amazon } }
-		random_courtier = { limit = {
-					trait = creature_amazon }
-				character_event = { id = slizardmen.54001 } }
-		}
-		clr_character_flag = start_feast_contest
-	}
-}
-
-# Second Amazon: Accept drinking contest?
-character_event = {
-	id = slizardmen.54001
-	desc = EVTDESCslizardmen54001
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen54001
-		save_event_target_as = am_drinking_2
-		FROM = { character_event = { id = slizardmen.54003 } }
-		ai_chance = { factor = 75 }
-	}
-	option = {
-		name = EVTOPTBslizardmen54001
-		decadence = 3
-		FROM = { character_event = { id = slizardmen.54002 } }
-		ai_chance = { factor = 25
-			modifier = { factor = 2
-				trait = craven }
-			}
-	}
-}
-
-#Second Amazon is too cowardly
-character_event = {
-	id = slizardmen.54002
-	desc = EVTDESCslizardmen54002
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen54002
-		prestige = 25
-		clr_character_flag = feast_contest
-		FROM = { clr_character_flag = feast_contest }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Amazon takes first drink
-character_event = {
-	id = slizardmen.54003
-	desc = EVTDESCslizardmen54003
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen54003
-		hidden_tooltip = { random_list = { 90 = { #Drank fine, keep going
-							modifier = { factor = 0.65
-								trait = fragile
-								 }
-							modifier = { factor = 0.75
-								trait = weak
-								 }
-							modifier = { factor = 0.85
-								trait = soft
-								 }
-							modifier = { factor = 1.5
-								trait = hardy
-								 }
-							modifier = { factor = 1.65
-								trait = tough
-								 }
-							modifier = { factor = 1.85
-								trait = strong
-								 }
-							modifier = { factor = 0.75
-								trait = temperate
-								 }
-							modifier = { factor = 1.15
-								trait = diligent
-								 }
-							modifier = { factor = 1.5
-								trait = drunkard
-								 }
-							modifier = { factor = 1.25
-								trait = addict
-								 }
-							modifier = { factor = 1.15
-								trait = gluttonous
-								 }
-							modifier = { factor = 1.5
-								trait = is_fat
-								 }
-							modifier = { factor = 0.75
-								trait = is_malnourished
-								 }
-							modifier = { factor = 1.5
-								trait = ambitious
-								 }
-							modifier = { factor = 0.85
-								trait = content
-								 }
-							modifier = { factor = 0.85
-								check_variable = { which = "drinking_count" value = 5 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "drinking_count" value = 7 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "drinking_count" value = 10 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "drinking_count" value = 13 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "drinking_count" value = 15 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "drinking_count" value = 17 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "drinking_count" value = 20 }
-								 }
-							modifier = { factor = 0.25
-								check_variable = { which = "drinking_count" value = 23 }
-								 }
-							modifier = { factor = 0.15
-								check_variable = { which = "drinking_count" value = 25 }
-								 }
-							modifier = { factor = 0
-								check_variable = { which = "drinking_count" value = 30 }
-								 }
-							if = { limit = { event_target:am_drinking_1 = { character = ROOT } }
-								event_target:am_drinking_2 = { character_event = { id = slizardmen.54006 } } }
-							 if = { limit = { event_target:am_drinking_2 = { character = ROOT } }
-								event_target:am_drinking_1 = { character_event = { id = slizardmen.54006 } } }
-							 } #closes50
-						10 = { #Collapsed, declared victor
-							if = { limit = { event_target:am_drinking_1 = { character = ROOT } }
-								event_target:am_drinking_2 = { character_event = { id = slizardmen.54005 } } #Notify Winner
-								event_target:am_drinking_1 = { character_event = { id = slizardmen.54007 } } } #Notify Loser
-							 if = { limit = { event_target:am_drinking_2 = { character = ROOT } }
-								event_target:am_drinking_1 = { character_event = { id = slizardmen.54005 } } #Notify Winner
-								event_target:am_drinking_2 = { character_event = { id = slizardmen.54007 } } } #Notify Loser
-							 } #closes50
-						}
-				 }
-		hidden_tooltip = { change_variable = { which = "drinking_count" value = 1 } }
-		ai_chance = { factor = 75 }
-	}
-}
-
-#Other Amazon yields - Notify winner
-character_event = {
-	id = slizardmen.54004
-	desc = EVTDESCslizardmen54004
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen54004
-		prestige = 50
-		decadence = -1
-		event_target:am_drinking_1 = { clr_character_flag = feast_contest }
-		event_target:am_drinking_2 = { clr_character_flag = feast_contest }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Other Amazon has been defeated - Notify winner
-character_event = {
-	id = slizardmen.54005
-	desc = EVTDESCslizardmen54005
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen54005
-		prestige = 50
-		if = { limit = { check_variable = { which = "drinking_count" value = 5 } }
-			prestige = 50 }
-		if = { limit = { check_variable = { which = "drinking_count" value = 10 } }
-			prestige = 50 }
-		if = { limit = { check_variable = { which = "drinking_count" value = 15 } }
-			prestige = 100 }
-		if = { limit = { check_variable = { which = "drinking_count" value = 20 } }
-			decadence = -1
-			prestige = 150 }
-		decadence = -2
-		hidden_tooltip = { random = { chance = 1
-					add_trait = drunkard } }
-		event_target:am_drinking_1 = { clr_character_flag = feast_contest }
-		event_target:am_drinking_2 = { clr_character_flag = feast_contest }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Amazon takes drink after opponent
-character_event = {
-	id = slizardmen.54006
-	desc = { text = EVTDESCAslizardmen54006
-		trigger = { NOT = { check_variable = { which = "drinking_count" value = 5 } } } }
-	desc = { text = EVTDESCBslizardmen54006
-		trigger = { check_variable = { which = "drinking_count" value = 5 }
-				NOT = { check_variable = { which = "drinking_count" value = 10 } } } }
-	desc = { text = EVTDESCCslizardmen54006
-		trigger = { check_variable = { which = "drinking_count" value = 10 }
-				NOT = { check_variable = { which = "drinking_count" value = 15 } } } }
-	desc = { text = EVTDESCDslizardmen54006
-		trigger = { check_variable = { which = "drinking_count" value = 15 }
-				NOT = { check_variable = { which = "drinking_count" value = 20 } } } }
-
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen54006
-		hidden_tooltip = { random_list = { 85 = { #Drank fine, keep going
-							modifier = { factor = 0.65
-								trait = fragile
-								 }
-							modifier = { factor = 0.75
-								trait = weak
-								 }
-							modifier = { factor = 0.85
-								trait = soft
-								 }
-							modifier = { factor = 1.5
-								trait = hardy
-								 }
-							modifier = { factor = 1.65
-								trait = tough
-								 }
-							modifier = { factor = 1.85
-								trait = strong
-								 }
-							modifier = { factor = 0.75
-								trait = temperate
-								 }
-							modifier = { factor = 1.15
-								trait = diligent
-								 }
-							modifier = { factor = 1.5
-								trait = drunkard
-								 }
-							modifier = { factor = 1.25
-								trait = addict
-								 }
-							modifier = { factor = 1.15
-								trait = gluttonous
-								 }
-							modifier = { factor = 1.5
-								trait = is_fat
-								 }
-							modifier = { factor = 0.75
-								trait = is_malnourished
-								 }
-							modifier = { factor = 1.5
-								trait = ambitious
-								 }
-							modifier = { factor = 0.85
-								trait = content
-								 }
-							modifier = { factor = 0.85
-								check_variable = { which = "drinking_count" value = 5 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "drinking_count" value = 7 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "drinking_count" value = 10 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "drinking_count" value = 13 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "drinking_count" value = 15 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "drinking_count" value = 17 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "drinking_count" value = 20 }
-								 }
-							modifier = { factor = 0.25
-								check_variable = { which = "drinking_count" value = 23 }
-								 }
-							modifier = { factor = 0.15
-								check_variable = { which = "drinking_count" value = 25 }
-								 }
-							modifier = { factor = 0
-								check_variable = { which = "drinking_count" value = 30 }
-								 }
-							if = { limit = { event_target:am_drinking_1 = { character = ROOT } }
-								event_target:am_drinking_2 = { character_event = { id = slizardmen.54006 } } }
-							 if = { limit = { event_target:am_drinking_2 = { character = ROOT } }
-								event_target:am_drinking_1 = { character_event = { id = slizardmen.54006 } } }
-							 } #closes50
-						15 = { #Collapsed, declared victor
-							if = { limit = { event_target:am_drinking_1 = { character = ROOT } }
-								event_target:am_drinking_2 = { character_event = { id = slizardmen.54005 } } #Notify Winner
-								event_target:am_drinking_1 = { character_event = { id = slizardmen.54007 } } } #Notify Loser
-							 if = { limit = { event_target:am_drinking_2 = { character = ROOT } }
-								event_target:am_drinking_1 = { character_event = { id = slizardmen.54005 } } #Notify Winner
-								event_target:am_drinking_2 = { character_event = { id = slizardmen.54007 } } } #Notify Loser
-							 } #closes50
-						}
-				 }
-		hidden_tooltip = { change_variable = { which = "drinking_count" value = 1 } }
-		ai_chance = { factor = 95 }
-	}
-	option = { #Yield
-		name = EVTOPTBslizardmen54006
-		decadence = 1
-		if = { limit = { event_target:am_drinking_1 = { character = ROOT } }
-					event_target:am_drinking_2 = { character_event = { id = slizardmen.54004 } } }
-		 if = { limit = { event_target:am_drinking_2 = { character = ROOT } }
-					event_target:am_drinking_1 = { character_event = { id = slizardmen.54004 } } }
-		ai_chance = { factor = 5
-			modifier = { factor = 2
-				trait = craven }
-			modifier = { factor = 2
-				check_variable = { which = "drinking_count" value = 10 } }
-			modifier = { factor = 4
-				check_variable = { which = "drinking_count" value = 20 } }
-			}
-	}
-}
-
-#You lost
-character_event = {
-	id = slizardmen.54007
-	desc = EVTDESCslizardmen54007
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen54007
-		if = { limit = { check_variable = { which = "drinking_count" value = 5 } }
-			prestige = 50 }
-		if = { limit = { check_variable = { which = "drinking_count" value = 10 } }
-			prestige = 50 }
-		if = { limit = { check_variable = { which = "drinking_count" value = 15 } }
-			prestige = 100 }
-		if = { limit = { check_variable = { which = "drinking_count" value = 20 } }
-			decadence = -1
-			prestige = 150 }
-		decadence = 1
-		hidden_tooltip = { random = { chance = 1
-					add_trait = drunkard } }
-		event_target:am_drinking_1 = { clr_character_flag = feast_contest }
-		event_target:am_drinking_2 = { clr_character_flag = feast_contest }
-		ai_chance = { factor = 1 }
-	}
-}
-
-# Eating Contest
-character_event = {
-	id = slizardmen.55
-	hide_window = yes
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	immediate = {
-		save_event_target_as = am_eating_1
-	if = { limit = { any_courtier = {
-					trait = creature_amazon } }
-		random_courtier = { limit = {
-					trait = creature_amazon }
-				character_event = { id = slizardmen.55001 } }
-		}
-		clr_character_flag = start_feast_contest
-	}
-}
-
-# Second Amazon: Accept eating contest?
-character_event = {
-	id = slizardmen.55001
-	desc = EVTDESCslizardmen55001
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen55001
-		set_character_flag = feast_contest
-		save_event_target_as = am_eating_2
-		FROM = { character_event = { id = slizardmen.55003 } }
-		ai_chance = { factor = 75 }
-	}
-	option = {
-		name = EVTOPTBslizardmen55001
-		decadence = 3
-		FROM = { character_event = { id = slizardmen.55002 } }
-		ai_chance = { factor = 25
-			modifier = { factor = 2
-				trait = craven }
-			}
-	}
-}
-
-#Second Amazon is too cowardly
-character_event = {
-	id = slizardmen.55002
-	desc = EVTDESCslizardmen55002
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen55002
-		prestige = 25
-		clr_character_flag = feast_contest
-		FROM = { clr_character_flag = feast_contest }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Amazon takes first course
-character_event = {
-	id = slizardmen.55003
-	desc = EVTDESCslizardmen55003
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen55003
-		hidden_tooltip = { random_list = { 95 = { #Drank fine, keep going
-							modifier = { factor = 0.65
-								trait = fragile
-								 }
-							modifier = { factor = 0.75
-								trait = weak
-								 }
-							modifier = { factor = 0.85
-								trait = soft
-								 }
-							modifier = { factor = 1.5
-								trait = hardy
-								 }
-							modifier = { factor = 1.65
-								trait = tough
-								 }
-							modifier = { factor = 1.85
-								trait = strong
-								 }
-							modifier = { factor = 0.75
-								trait = temperate
-								 }
-							modifier = { factor = 1.15
-								trait = diligent
-								 }
-							modifier = { factor = 1.15
-								trait = drunkard
-								 }
-							modifier = { factor = 1.25
-								trait = addict
-								 }
-							modifier = { factor = 1.5
-								trait = gluttonous
-								 }
-							modifier = { factor = 0.75
-								trait = is_fat
-								 }
-							modifier = { factor = 1.75
-								trait = is_malnourished
-								 }
-							modifier = { factor = 1.5
-								trait = ambitious
-								 }
-							modifier = { factor = 0.85
-								trait = content
-								 }
-							modifier = { factor = 0.85
-								check_variable = { which = "eating_count" value = 1 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "eating_count" value = 2 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "eating_count" value = 3 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "eating_count" value = 4 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "eating_count" value = 5 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "eating_count" value = 6 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "eating_count" value = 7 }
-								 }
-							modifier = { factor = 0.25
-								check_variable = { which = "eating_count" value = 8 }
-								 }
-							modifier = { factor = 0.15
-								check_variable = { which = "eating_count" value = 9 }
-								 }
-							modifier = { factor = 0
-								check_variable = { which = "eating_count" value = 10 }
-								 }
-							if = { limit = { event_target:am_eating_1 = { character = ROOT } }
-								event_target:am_eating_2 = { character_event = { id = slizardmen.55006 } } }
-							 if = { limit = { event_target:am_eating_2 = { character = ROOT } }
-								event_target:am_eating_1 = { character_event = { id = slizardmen.55006 } } }
-							 } #closes50
-						5 = { #Collapsed, declared victor
-							if = { limit = { event_target:am_eating_1 = { character = ROOT } }
-								event_target:am_eating_2 = { character_event = { id = slizardmen.55005 } } #Notify Winner
-								event_target:am_eating_1 = { character_event = { id = slizardmen.55007 } } } #Notify Loser
-							 if = { limit = { event_target:am_eating_2 = { character = ROOT } }
-								event_target:am_eating_1 = { character_event = { id = slizardmen.55005 } } #Notify Winner
-								event_target:am_eating_2 = { character_event = { id = slizardmen.55007 } } } #Notify Loser
-							 } #closes50
-						}
-				 }
-		hidden_tooltip = { change_variable = { which = "eating_count" value = 1 } }
-		ai_chance = { factor = 75 }
-	}
-}
-
-#Other Amazon yields - Notify winner
-character_event = {
-	id = slizardmen.55004
-	desc = EVTDESCslizardmen55004
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen55004
-		prestige = 50
-		decadence = -1
-		event_target:am_eating_1 = { clr_character_flag = feast_contest }
-		event_target:am_eating_2 = { clr_character_flag = feast_contest }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Other Amazon has been defeated - Notify winner
-character_event = {
-	id = slizardmen.55005
-	desc = EVTDESCslizardmen55005
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen55005
-		prestige = 50
-		if = { limit = { check_variable = { which = "eating_count" value = 2 } }
-			prestige = 50 }
-		if = { limit = { check_variable = { which = "eating_count" value = 4 } }
-			prestige = 50 }
-		if = { limit = { check_variable = { which = "eating_count" value = 7 } }
-			prestige = 100 }
-		if = { limit = { check_variable = { which = "eating_count" value = 10 } }
-			decadence = -1
-			prestige = 150 }
-		decadence = -2
-		hidden_tooltip = { random = { chance = 1
-					add_trait = gluttonous } }
-		event_target:am_eating_1 = { clr_character_flag = feast_contest }
-		event_target:am_eating_2 = { clr_character_flag = feast_contest }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Amazon takes course after opponent
-character_event = {
-	id = slizardmen.55006
-	desc = { text = EVTDESCAslizardmen55006
-		trigger = { NOT = { check_variable = { which = "eating_count" value = 2 } } } }
-	desc = { text = EVTDESCBslizardmen55006
-		trigger = { check_variable = { which = "eating_count" value = 2 }
-				NOT = { check_variable = { which = "eating_count" value = 3 } } } }
-	desc = { text = EVTDESCCslizardmen55006
-		trigger = { check_variable = { which = "eating_count" value = 3 }
-				NOT = { check_variable = { which = "eating_count" value = 5 } } } }
-	desc = { text = EVTDESCDslizardmen55006
-		trigger = { check_variable = { which = "eating_count" value = 5 }
-				NOT = { check_variable = { which = "eating_count" value = 10 } } } }
-
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-
-	option = {
-		name = EVTOPTAslizardmen55006
-		hidden_tooltip = { random_list = { 85 = { #Drank fine, keep going
-							modifier = { factor = 0.65
-								trait = fragile
-								 }
-							modifier = { factor = 0.75
-								trait = weak
-								 }
-							modifier = { factor = 0.85
-								trait = soft
-								 }
-							modifier = { factor = 1.5
-								trait = hardy
-								 }
-							modifier = { factor = 1.65
-								trait = tough
-								 }
-							modifier = { factor = 1.85
-								trait = strong
-								 }
-							modifier = { factor = 0.75
-								trait = temperate
-								 }
-							modifier = { factor = 1.15
-								trait = diligent
-								 }
-							modifier = { factor = 1.15
-								trait = drunkard
-								 }
-							modifier = { factor = 1.25
-								trait = addict
-								 }
-							modifier = { factor = 1.5
-								trait = gluttonous
-								 }
-							modifier = { factor = 0.75
-								trait = is_fat
-								 }
-							modifier = { factor = 1.75
-								trait = is_malnourished
-								 }
-							modifier = { factor = 1.5
-								trait = ambitious
-								 }
-							modifier = { factor = 0.85
-								trait = content
-								 }
-							modifier = { factor = 0.85
-								check_variable = { which = "eating_count" value = 1 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "eating_count" value = 2 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "eating_count" value = 3 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "eating_count" value = 4 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "eating_count" value = 5 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "eating_count" value = 6 }
-								 }
-							modifier = { factor = 0.75
-								check_variable = { which = "eating_count" value = 7 }
-								 }
-							modifier = { factor = 0.25
-								check_variable = { which = "eating_count" value = 8 }
-								 }
-							modifier = { factor = 0.15
-								check_variable = { which = "eating_count" value = 9 }
-								 }
-							modifier = { factor = 0
-								check_variable = { which = "eating_count" value = 10 }
-								 }
-							if = { limit = { event_target:am_eating_1 = { character = ROOT } }
-								event_target:am_eating_2 = { character_event = { id = slizardmen.55006 } } }
-							 if = { limit = { event_target:am_eating_2 = { character = ROOT } }
-								event_target:am_eating_1 = { character_event = { id = slizardmen.55006 } } }
-							 } #closes50
-						15 = { #Collapsed, declared victor
-							if = { limit = { event_target:am_eating_1 = { character = ROOT } }
-								event_target:am_eating_2 = { character_event = { id = slizardmen.55005 } } #Notify Winner
-								event_target:am_eating_1 = { character_event = { id = slizardmen.55007 } } } #Notify Loser
-							 if = { limit = { event_target:am_eating_2 = { character = ROOT } }
-								event_target:am_eating_1 = { character_event = { id = slizardmen.55005 } } #Notify Winner
-								event_target:am_eating_2 = { character_event = { id = slizardmen.55007 } } } #Notify Loser
-							 } #closes50
-						}
-				 }
-		hidden_tooltip = { change_variable = { which = "eating_count" value = 1 } }
-		ai_chance = { factor = 90 }
-	}
-	option = { #Yield
-		name = EVTOPTBslizardmen55006
-		decadence = 1
-		if = { limit = { event_target:am_eating_1 = { character = ROOT } }
-					event_target:am_eating_2 = { character_event = { id = slizardmen.55004 } } }
-		 if = { limit = { event_target:am_eating_2 = { character = ROOT } }
-					event_target:am_eating_1 = { character_event = { id = slizardmen.55004 } } }
-		ai_chance = { factor = 10
-			modifier = { factor = 2
-				trait = craven }
-			modifier = { factor = 2
-				check_variable = { which = "eating_count" value = 5 } }
-			modifier = { factor = 4
-				check_variable = { which = "eating_count" value = 10 } }
-			}
-	}
-}
-
-#You lost
-character_event = {
-	id = slizardmen.55007
-	desc = EVTDESCslizardmen55007
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen55007
-		if = { limit = { check_variable = { which = "eating_count" value = 2 } }
-			prestige = 50 }
-		if = { limit = { check_variable = { which = "eating_count" value = 4 } }
-			prestige = 50 }
-		if = { limit = { check_variable = { which = "eating_count" value = 7 } }
-			prestige = 100 }
-		if = { limit = { check_variable = { which = "eating_count" value = 10 } }
-			decadence = -1
-			prestige = 150 }
-		decadence = 1
-		hidden_tooltip = { random = { chance = 1
-					add_trait = gluttonous } }
-		event_target:am_eating_1 = { clr_character_flag = feast_contest }
-		event_target:am_eating_2 = { clr_character_flag = feast_contest }
-		ai_chance = { factor = 1 }
-	}
-}
-
-# Mud Fighting
-character_event = {
-	id = slizardmen.56
-	hide_window = yes
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	immediate = {
-		save_event_target_as = am_mud_1
-	if = { limit = { any_courtier = {
-					trait = creature_amazon } }
-		random_courtier = { limit = {
-					trait = creature_amazon }
-				character_event = { id = slizardmen.56001 } }
-		}
-		clr_character_flag = start_feast_contest
-	}
-}
-
-# Second Amazon: Accept brawling?
-character_event = {
-	id = slizardmen.56001
-	desc = EVTDESCslizardmen56001
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen56001
-		save_event_target_as = am_mud_2
-		FROM = { character_event = { id = slizardmen.56102 } }
-		ai_chance = { factor = 75 }
-	}
-	option = {
-		name = EVTOPTBslizardmen56001
-		decadence = 3
-		FROM = { character_event = { id = slizardmen.56002 } }
-		ai_chance = { factor = 25
-			modifier = { factor = 2
-				trait = craven }
-			}
-	}
-}
-
-#Second Amazon is too cowardly
-character_event = {
-	id = slizardmen.56002
-	desc = EVTDESCslizardmen56002
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen56002
-		prestige = 25
-		clr_character_flag = feast_contest
-		FROM = { clr_character_flag = feast_contest }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Second Amazon responds
-character_event = {
-	id = slizardmen.56102
-	desc = EVTDESCslizardmen56102
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen56102
-		event_target:am_mud_2 = { character_event = { id = slizardmen.56003 } }
-		ai_chance = { factor = 1 }
-	}
-}
-#Hidden fighting event to determine winner
-character_event = {
-	id = slizardmen.56003
-	hide_window = yes
-
-	trigger = { trait = creature_amazon
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	immediate = {
-		hidden_tooltip = { random_list = { 50 = { #First contestant wins
-							modifier = { factor = 0.65
-								event_target:am_mud_1 = { trait = fragile }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_mud_1 = { trait = weak }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_mud_1 = { trait = soft }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_mud_1 = { trait = hardy }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_mud_1 = { trait = tough }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_mud_1 = { trait = strong }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_mud_1 = { trait = craven }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_mud_1 = { trait = diligent }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_mud_1 = { trait = drunkard }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_mud_1 = { trait = addict }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_mud_1 = { trait = brave }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_mud_1 = { trait = is_fat }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_mud_1 = { trait = is_malnourished }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_mud_1 = { trait = ambitious }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_mud_1 = { trait = content }
-								 }
-							modifier = { factor = 1.85
-								event_target:am_mud_1 = { trait = duelist }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_mud_1 = { trait = hunter }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_mud_1 = { trait = wounded }
-								 }
-							modifier = { factor = 0.25
-								event_target:am_mud_1 = { trait = maimed }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_mud_1 = { trait = infirm }
-								 }
-								event_target:am_mud_1 = { long_character_event = { id = slizardmen.56004 } }
-							 } #closes50
-						50 = { #Second contestant wins
-
-							modifier = { factor = 0.65
-								event_target:am_mud_2 = { trait = fragile }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_mud_2 = { trait = weak }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_mud_2 = { trait = soft }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_mud_2 = { trait = hardy }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_mud_2 = { trait = tough }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_mud_2 = { trait = strong }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_mud_2 = { trait = craven }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_mud_2 = { trait = diligent }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_mud_2 = { trait = drunkard }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_mud_2 = { trait = addict }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_mud_2 = { trait = brave }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_mud_2 = { trait = is_fat }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_mud_2 = { trait = is_malnourished }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_mud_2 = { trait = ambitious }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_mud_2 = { trait = content }
-								 }
-							modifier = { factor = 1.85
-								event_target:am_mud_2 = { trait = duelist }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_mud_2 = { trait = hunter }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_mud_2 = { trait = wounded }
-								 }
-							modifier = { factor = 0.25
-								event_target:am_mud_2 = { trait = maimed }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_mud_2 = { trait = infirm }
-								 }
-								event_target:am_mud_2 = { long_character_event = { id = slizardmen.56004 } }
-							 } #closes50
-						}
-				 }
-	}
-}
-
-#Other Amazon has been defeated - Notify winner
-long_character_event = {
-	id = slizardmen.56004
-	desc = EVTDESCslizardmen56004
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen56004
-		prestige = 150
-		decadence = -2
-		hidden_tooltip = { random = { chance = 1
-					add_trait = brave } }
-		event_target:am_mud_1 = { clr_character_flag = feast_contest }
-		event_target:am_mud_2 = { clr_character_flag = feast_contest }
-			#Notify Loser
-			if = { limit = { event_target:am_mud_1 = { character = ROOT } }
-					event_target:am_mud_2 = { long_character_event = { id = slizardmen.56005 } } }
-			 if = { limit = { event_target:am_mud_2 = { character = ROOT } }
-					event_target:am_mud_1 = { long_character_event = { id = slizardmen.56005 } } }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Notify Loser
-long_character_event = {
-	id = slizardmen.56005
-	desc = EVTDESCslizardmen56005
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	immediate = { random = { chance = 50
-				add_trait = wounded } }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen56005
-		prestige = -50
-		decadence = 2
-		event_target:am_mud_1 = { clr_character_flag = feast_contest }
-		event_target:am_mud_2 = { clr_character_flag = feast_contest }
-		ai_chance = { factor = 1 }
-	}
-}
-
-# Lesbian love
-character_event = {
-	id = slizardmen.57
-	hide_window = yes
-
-	trigger = { trait = creature_amazon
-			trait = homosexual
-		has_character_flag = holding_amazon_ritual }
-
-	is_triggered_only = yes
-
-	immediate = {
-	if = { limit = { any_courtier = {
-					trait = homosexual
-					NOT = { is_close_relative = ROOT }
-					trait = creature_amazon } }
-		random_courtier = { limit = {
-					trait = homosexual
-					NOT = { is_close_relative = ROOT }
-					trait = creature_amazon }
-				long_character_event = { id = slizardmen.57001 } }
-		}
-	}
-}
-
-#Scope courtier
-long_character_event = {
-	id = slizardmen.57001
-	desc = EVTDESCslizardmen57001
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen57001
-		trigger = { NOT = { any_lover = { is_female = yes
-						count = 3 } } }
-		long_character_event = { id = slizardmen.57002 }
-		ai_chance = { factor = 50 }
-	}
-	option = {
-		name = EVTOPTBslizardmen57001
-		ai_chance = { factor = 0 }
-	}
-}
-
-#A drunken Amazon kisses you
-long_character_event = {
-	id = slizardmen.57002
-	desc = EVTDESCslizardmen57002
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen57002
-		trigger = { NOT = { any_lover = { is_female = yes
-						count = 3 } } }
-		add_lover = FROM
-		FROM = { character_event = { id = slizardmen.57003 } }
-		ai_chance = { factor = 0 }
-	}
-	option = {
-		name = EVTOPTBslizardmen57002
-		FROM = { character_event = { id = slizardmen.57004 } }
-		ai_chance = { factor = 50 }
-	}
-}
-
-#New Lover
-character_event = {
-	id = slizardmen.57003
-	desc = EVTDESCslizardmen57003
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen57003
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Just one night
-character_event = {
-	id = slizardmen.57004
-	desc = EVTDESCslizardmen57004
-	picture = GFX_evt_amazon_feast
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen57004
-		ai_chance = { factor = 1 }
-	}
-}
-
-####################################################
-
-#The Amazons capture a good specimen
-# ROOT is attacker, FROM is province sieged
-character_event = {
-	id = slizardmen.60
-	desc = EVTDESCslizardmen60
-	picture = GFX_evt_amazon
-
-	is_triggered_only = yes
-
-	#only_rulers = yes
-
-	trigger = {
-		religion = amazon
-		is_female = yes
-		NOT = { location = { has_province_modifier = province_slave_raid } }
-		NOT = { location = { has_province_modifier = province_scourged } }
-		NOT = { location = { has_province_modifier = province_slave_raid_chaos_dwarf } }
-		FROM = { is_capital = yes
-			NOT = { culture = nehekharan }
-			owner = {
-			any_courtier = { is_ruler = no
-						is_female = no
-						age = 14
-				OR = { trait = creature_human
-					trait = creature_amazon
-					trait = creature_halfling }
-				NOR = { trait = creature_nehekharan
-				trait = vampire_necrarch_visible
-				trait = vampire_lahmian_visible
-				trait = vampire_carstein_visible
-				trait = vampire_jade_visible
-				trait = vampire_blood_visible
-				trait = vampire_mahtmasi_visible
-				trait = vampire_strigoi_visible } } } } #only against the living
-	}
-
-	option = { #I'll take this.
-		name = EVTOPTCslizardmen60
-		FROM = { owner = {
-			random_courtier =  { limit = { is_ruler = no
-						is_female = no
-						age = 14
-				OR = { trait = creature_human
-					trait = creature_amazon
-					trait = creature_halfling }
-				NOR = { trait = creature_nehekharan
-				trait = vampire_necrarch_visible
-				trait = vampire_lahmian_visible
-				trait = vampire_carstein_visible
-				trait = vampire_jade_visible
-				trait = vampire_blood_visible
-				trait = vampire_mahtmasi_visible
-				trait = vampire_strigoi_visible } }
-					move_character = ROOT
-					add_trait = in_stock }
-				}
-			 }
-		prestige = 25
-		decadence = 1
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 1.5
-				ROOT = { NOR = { trait = possessed
-						trait = lunatic_3
-						trait = lunatic_2 } }
-				}
-			modifier = {
-				factor = 0.7
-				trait = zealous
-				}
-			}
-	}
-	option = { #Just keep him in store for sacrifice
-		name = EVTOPTBslizardmen60
-		change_variable = { which = "sacrifical_victims" value = 1 }
-		piety = 25
-		decadence = -1
-		if = { limit = { trait = cruel }
-			random = { chance = 1
-				remove_trait = cruel }
-			}
-		ai_chance = {
-			factor = 50
-			modifier = {
-				factor = 1.2
-				ROOT = { NOR = { trait = possessed
-						trait = lunatic_3
-						trait = lunatic_2 } }
-				}
-			modifier = {
-				factor = 1.2
-				trait = kind
-				}
-			}
-	}
-}
-
-######################################################
-######################################################
-
-##Amazon Brawling Events#############
-
-#Notify Host the event will soon be prepared
-character_event = {
-	id = slizardmen.61
-	desc = EVTDESCslizardmen61
-	picture = GFX_evt_amazon
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen61
-		hidden_tooltip = { long_character_event = { id = slizardmen.62 days = 10 random = 10 } }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#General cleanup event to remove flags and other stuff after the tournament has been completed
-character_event = {
-	id = slizardmen.61900
-	desc = EVTDESCslizardmen61900
-	picture = GFX_evt_amazon
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen61900
-		remove_trait = questing
-		hidden_tooltip = {
-		set_variable = { which = "brawl_player" value = 0 }
-		diplomatic_immunity = no
-		clr_character_flag = do_not_disturb
-		clr_character_flag = brawling_participant
-		clr_character_flag = brawling_host
-		clr_character_flag = brawling_loser
-		clr_character_flag = am_fight_1
-		clr_character_flag = am_fight_2
-		clr_character_flag = am_fight_3
-		clr_character_flag = am_fight_4
-		clr_character_flag = am_fight_5
-		clr_character_flag = am_fight_6
-		clr_character_flag = am_fight_7
-		clr_character_flag = am_fight_8
-		clr_character_flag = am_fight_9
-		clr_character_flag = am_fight_10
-		clr_character_flag = am_fight_11
-		}
-	}
-}
-
-#Invitation to Brawling contest
-letter_event = {
-	id = slizardmen.61001
-	desc = EVTDESCslizardmen61001
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen61001
-		decadence = -1
-		set_character_flag = brawling_participant
-		hidden_tooltip = { FROM = { letter_event = { id = slizardmen.61002 days = 1 random = 1 } } }
-		ai_chance = { factor = 70 }
-	}
-	option = {
-		name = EVTOPTBslizardmen61001
-		decadence = 1
-		hidden_tooltip = { FROM = { letter_event = { id = slizardmen.61003 days = 1 random = 1 } } }
-		ai_chance = { factor = 30
-				modifier = { factor = 0.5
-					trait = ambitious }
-				modifier = { factor = 0.5
-					trait = brave }
-				modifier = { factor = 0.75
-					trait = wroth }
-				modifier = { factor = 0.75
-					trait = proud }
-				modifier = { factor = 2
-					trait = wounded }
-				modifier = { factor = 2.5
-					trait = maimed }
-				modifier = { factor = 2.5
-					trait = blinded }
-				modifier = { factor = 2
-					trait = craven }
-				modifier = { factor = 0.25
-					NOT = { FROM = { check_variable = { which = "brawl_player" value = 3 } } }
-					 }
-				 }
-	}
-}
-
-#Notify Host guest will participate
-letter_event = {
-	id = slizardmen.61002
-	desc = EVTDESCslizardmen61002
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen61002
-		hidden_tooltip = { change_variable = { which = "brawl_player" value = 1 } }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Notify Host guest will not participate
-letter_event = {
-	id = slizardmen.61003
-	desc = EVTDESCslizardmen61003
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen61003
-		ai_chance = { factor = 1 }
-	}
-}
-
-#The Tournament is about to start
-long_character_event = {
-	id = slizardmen.62
-	desc = { text = EVTDESCAslizardmen62
-		trigger = { check_variable = { which = "brawl_player" value = 3 } } #Make sure there's a bare minimum of challengers to start
-		 }
-	desc = { text = EVTDESCBslizardmen62
-		trigger = { NOT = { check_variable = { which = "brawl_player" value = 3 } } } #Make sure there's a bare minimum of challengers to start
-		 }
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen62
-		trigger = { check_variable = { which = "brawl_player" value = 3 } }
-		add_trait = questing
-		hidden_tooltip = {
-				set_variable = { which = "brawl_player" value = 0 }
-				any_realm_character = { limit = { NOT = { has_character_flag = brawling_host }
-								has_character_flag = brawling_participant }
-						long_character_event = { id = slizardmen.62001 } }
-		character_event = { id = slizardmen.62002 }
-			 }
-		ai_chance = { factor = 1 }
-	}
-	option = {
-		name = EVTOPTBslizardmen62
-		trigger = { NOT = { check_variable = { which = "brawl_player" value = 3 } } }
-		prestige = -250
-		hidden_tooltip = { character_event = { id = slizardmen.61900 } }
-		hidden_tooltip = {
-				set_variable = { which = "brawl_player" value = 0 }
-				any_realm_character = { limit = { NOT = { has_character_flag = brawling_host }
-								has_character_flag = brawling_participant }
-						character_event = { id = slizardmen.62005 days = 7 random = 10 } }
-			 }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#The Tournament is about to start - Notify other Amazons
-long_character_event = {
-	id = slizardmen.62001
-	desc = EVTDESCslizardmen62001
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen62001
-		add_trait = questing
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Brawl host starts with first fight
-character_event = {
-	id = slizardmen.62002
-	desc = EVTDESCslizardmen62002
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen62002
-		hidden_tooltip = { random_realm_character = { limit = { NOT = { character = ROOT }
-								has_character_flag = brawling_participant }
-						character_event = { id = slizardmen.62003 } }
-				 }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Second Amazon notified
-character_event = {
-	id = slizardmen.62003
-	desc = EVTDESCslizardmen62003
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen62003
-		hidden_tooltip = { FROM = { character_event = { id = slizardmen.62004 } } }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#First Amazon notified of who is the second Amazon
-character_event = {
-	id = slizardmen.62004
-	desc = EVTDESCslizardmen62004
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen62004
-		hidden_tooltip = { FROM = { character_event = { id = slizardmen.63 } } }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Not enough challengers, the tournament is cancelled
-character_event = {
-	id = slizardmen.62005
-	desc = EVTDESCslizardmen62005
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen62005
-		decadence = 5
-		hidden_tooltip = { character_event = { id = slizardmen.61900 } }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Hidden fighting event to determine winner
-character_event = {
-	id = slizardmen.63
-	hide_window = yes
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	immediate = {
-		save_event_target_as = am_brawler_2
-		FROM = { save_event_target_as = am_brawler_1 }
-
-		hidden_tooltip = {
-				#To give random flavour text to the fights
-				random_list = { 	15 = { set_character_flag = am_fight_1
-								FROM = { set_character_flag = am_fight_1 } }
-							15 = { set_character_flag = am_fight_2
-								FROM = { set_character_flag = am_fight_2 } }
-							15 = { set_character_flag = am_fight_3
-								FROM = { set_character_flag = am_fight_3 } }
-							15 = { set_character_flag = am_fight_4
-								FROM = { set_character_flag = am_fight_4 } }
-							15 = { set_character_flag = am_fight_5
-								FROM = { set_character_flag = am_fight_5 } }
-							15 = { set_character_flag = am_fight_6
-								FROM = { set_character_flag = am_fight_6 } }
-							10 = { set_character_flag = am_fight_7
-								FROM = { set_character_flag = am_fight_7 } }
-							10 = { set_character_flag = am_fight_8
-								FROM = { set_character_flag = am_fight_8 } }
-							10 = { set_character_flag = am_fight_9
-								FROM = { set_character_flag = am_fight_9 } }
-							10 = { set_character_flag = am_fight_10
-								FROM = { set_character_flag = am_fight_10 } }
-							10 = { set_character_flag = am_fight_11
-								FROM = { set_character_flag = am_fight_11 } }
-							 }
-			random_list = { 50 = { #First contestant wins
-							modifier = { factor = 0.65
-								event_target:am_brawler_1 = { trait = fragile }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_brawler_1 = { trait = weak }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_1 = { trait = soft }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_brawler_1 = { trait = hardy }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_brawler_1 = { trait = tough }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_brawler_1 = { trait = strong }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_brawler_1 = { trait = craven }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_1 = { trait = diligent }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_1 = { trait = drunkard }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_1 = { trait = addict }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_brawler_1 = { trait = brave }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_1 = { trait = is_fat }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_1 = { trait = is_malnourished }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_brawler_1 = { trait = ambitious }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_1 = { trait = content }
-								 }
-							modifier = { factor = 1.85
-								event_target:am_brawler_1 = { trait = duelist }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_brawler_1 = { trait = hunter }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_brawler_1 = { trait = wounded }
-								 }
-							modifier = { factor = 0.25
-								event_target:am_brawler_1 = { trait = maimed }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_brawler_1 = { trait = infirm }
-								 }
-							modifier = { factor = 0.25
-								event_target:am_brawler_1 = { trait = blinded }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_brawler_1 = { trait = tall }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_brawler_1 = { trait = dwarf }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_brawler_1 = { trait = hunchback }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_brawler_1 = { trait = clubfooted }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_1 = { NOT = { age = 18 } }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_brawler_1 = { martial = 15 }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_1 = { trait = stressed }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_brawler_1 = { trait = depressed }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_brawler_1 = { trait = dim }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_1 = { trait = dumb }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_1 = { trait = slow }
-								 }
-							modifier = { factor = 0.8
-								event_target:am_brawler_1 = { trait = idiot }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_brawler_1 = { trait = imbecile }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_1 = { trait = bright }
-								 }
-							modifier = { factor = 1.2
-								event_target:am_brawler_1 = { trait = smart }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_brawler_1 = { trait = quick }
-								 }
-							modifier = { factor = 1.3
-								event_target:am_brawler_1 = { trait = brilliant }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_brawler_1 = { trait = genius }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_1 = { trait = slothful }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_1 = { trait = kind }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_1 = { trait = humble }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_1 = { trait = shy }
-								 }
-							modifier = { factor = 1.1
-								event_target:am_brawler_1 = { trait = misguided_warrior }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_brawler_1 = { trait = tough_soldier }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_brawler_1 = { trait = skilled_tactician }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_brawler_1 = { trait = brilliant_strategist }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_brawler_1 = { trait = zealous }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_1 = { trait = cruel }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_brawler_1 = { trait = just }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_1 = { trait = complacent }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_1 = { any_child = { count = 3 } }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_1 = { any_child = { count = 5 } }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_1 = { trait = deceitful }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_brawler_1 = { trait = honest }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_1 = { trait = paranoid }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_brawler_1 = { trait = trusting }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_1 = { trait = ill }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_brawler_1 = { trait = has_nurgles_rot }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_brawler_1 = { trait = aggressive_leader }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_1 = { trait = experimenter }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_brawler_1 = { trait = trickster }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_1 = { trait = lunatic_1 }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_brawler_1 = { trait = lunatic_2 }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_1 = { trait = lunatic_3 }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_brawler_1 = { trait = disfigured }
-								 }
-							modifier = { factor = 1.65
-								event_target:am_brawler_1 = { age = 150
-												has_artifact = elixir_of_eternal_youth }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_brawler_1 = { age = 40
-												NOT = { has_artifact = elixir_of_eternal_youth } }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_brawler_1 = { trait = wroth }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_1 = { trait = patient }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_1 = { trait = strategist }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_1 = { OR = { trait = amateurish_plotter
-													trait = flamboyant_schemer
-													trait = intricate_webweaver
-													trait = elusive_shadow } }
-								 }
-							modifier = { factor = 0.8
-								event_target:am_brawler_1 = { OR = { trait = naive_appeaser
-													trait = underhanded_rogue
-													trait = charismatic_negotiator
-													trait = grey_eminence } }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_1 = { OR = { trait = indulgent_wastrel
-													trait = thrifty_clerk
-													trait = fortune_builder
-													trait = midas_touched } }
-								 }
-								event_target:am_brawler_1 = { long_character_event = { id = slizardmen.63001 } }
-							 } #closes50
-						50 = { #Second contestant wins
-
-							modifier = { factor = 0.65
-								event_target:am_brawler_2 = { trait = fragile }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_brawler_2 = { trait = weak }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_2 = { trait = soft }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_brawler_2 = { trait = hardy }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_brawler_2 = { trait = tough }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_brawler_2 = { trait = strong }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_brawler_2 = { trait = craven }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_2 = { trait = diligent }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_2 = { trait = drunkard }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_2 = { trait = addict }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_brawler_2 = { trait = brave }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_2 = { trait = is_fat }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_2 = { trait = is_malnourished }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_brawler_2 = { trait = ambitious }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_2 = { trait = content }
-								 }
-							modifier = { factor = 1.85
-								event_target:am_brawler_2 = { trait = duelist }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_brawler_2 = { trait = hunter }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_brawler_2 = { trait = wounded }
-								 }
-							modifier = { factor = 0.25
-								event_target:am_brawler_2 = { trait = maimed }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_brawler_2 = { trait = infirm }
-								 }
-							modifier = { factor = 0.25
-								event_target:am_brawler_2 = { trait = blinded }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_brawler_2 = { trait = tall }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_brawler_2 = { trait = dwarf }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_brawler_2 = { trait = hunchback }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_brawler_2 = { trait = clubfooted }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_2 = { NOT = { age = 18 } }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_brawler_2 = { martial = 15 }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_2 = { trait = stressed }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_brawler_2 = { trait = depressed }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_brawler_2 = { trait = dim }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_2 = { trait = dumb }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_2 = { trait = slow }
-								 }
-							modifier = { factor = 0.8
-								event_target:am_brawler_2 = { trait = idiot }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_brawler_2 = { trait = imbecile }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_2 = { trait = bright }
-								 }
-							modifier = { factor = 1.2
-								event_target:am_brawler_2 = { trait = smart }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_brawler_2 = { trait = quick }
-								 }
-							modifier = { factor = 1.3
-								event_target:am_brawler_2 = { trait = brilliant }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_brawler_2 = { trait = genius }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_2 = { trait = slothful }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_2 = { trait = kind }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_2 = { trait = humble }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_2 = { trait = shy }
-								 }
-							modifier = { factor = 1.1
-								event_target:am_brawler_2 = { trait = misguided_warrior }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_brawler_2 = { trait = tough_soldier }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_brawler_2 = { trait = skilled_tactician }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_brawler_2 = { trait = brilliant_strategist }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_brawler_2 = { trait = zealous }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_2 = { trait = cruel }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_brawler_2 = { trait = just }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_2 = { trait = complacent }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_2 = { any_child = { count = 3 } }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_2 = { any_child = { count = 5 } }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_2 = { trait = deceitful }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_brawler_2 = { trait = honest }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_2 = { trait = paranoid }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_brawler_2 = { trait = trusting }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_2 = { trait = ill }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_brawler_2 = { trait = has_nurgles_rot }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_brawler_2 = { trait = aggressive_leader }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_2 = { trait = experimenter }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_brawler_2 = { trait = trickster }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_2 = { trait = lunatic_1 }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_brawler_2 = { trait = lunatic_2 }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_brawler_2 = { trait = lunatic_3 }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_brawler_2 = { trait = disfigured }
-								 }
-							modifier = { factor = 1.65
-								event_target:am_brawler_2 = { age = 150
-												has_artifact = elixir_of_eternal_youth }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_brawler_2 = { age = 40
-												NOT = { has_artifact = elixir_of_eternal_youth } }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_brawler_2 = { trait = wroth }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_2 = { trait = patient }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_2 = { trait = strategist }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_brawler_2 = { OR = { trait = amateurish_plotter
-													trait = flamboyant_schemer
-													trait = intricate_webweaver
-													trait = elusive_shadow } }
-								 }
-							modifier = { factor = 0.8
-								event_target:am_brawler_2 = { OR = { trait = naive_appeaser
-													trait = underhanded_rogue
-													trait = charismatic_negotiator
-													trait = grey_eminence } }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_brawler_2 = { OR = { trait = indulgent_wastrel
-													trait = thrifty_clerk
-													trait = fortune_builder
-													trait = midas_touched } }
-								 }
-								event_target:am_brawler_2 = { long_character_event = { id = slizardmen.63001 } }
-							 } #closes50
-						}
-				 }
-	}
-}
-
-#Winning Brawler event
-long_character_event = {
-	id = slizardmen.63001
-	desc = { text = EVTDESCAslizardmen63001
-		trigger = { event_target:am_brawler_1 = { character = ROOT
-							has_character_flag = am_fight_1 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCBslizardmen63001
-		trigger = { event_target:am_brawler_1 = { character = ROOT
-							has_character_flag = am_fight_2 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCCslizardmen63001
-		trigger = { event_target:am_brawler_1 = { character = ROOT
-							has_character_flag = am_fight_3 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCDslizardmen63001
-		trigger = { event_target:am_brawler_2 = { character = ROOT
-							has_character_flag = am_fight_1 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCEslizardmen63001
-		trigger = { event_target:am_brawler_2 = { character = ROOT
-							has_character_flag = am_fight_2 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCFslizardmen63001
-		trigger = { event_target:am_brawler_2 = { character = ROOT
-							has_character_flag = am_fight_3 } } #Opponent is FROMFROM
-		 }
-
-
-	desc = { text = EVTDESCGslizardmen63001
-		trigger = { event_target:am_brawler_1 = { character = ROOT
-							has_character_flag = am_fight_4 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCHslizardmen63001
-		trigger = { event_target:am_brawler_1 = { character = ROOT
-							has_character_flag = am_fight_5 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCIslizardmen63001
-		trigger = { event_target:am_brawler_1 = { character = ROOT
-							has_character_flag = am_fight_6 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCLslizardmen63001
-		trigger = { event_target:am_brawler_1 = { character = ROOT
-							has_character_flag = am_fight_7 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCMslizardmen63001
-		trigger = { event_target:am_brawler_2 = { character = ROOT
-							has_character_flag = am_fight_4 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCNslizardmen63001
-		trigger = { event_target:am_brawler_2 = { character = ROOT
-							has_character_flag = am_fight_5 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCOslizardmen63001
-		trigger = { event_target:am_brawler_2 = { character = ROOT
-							has_character_flag = am_fight_6 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCPslizardmen63001
-		trigger = { event_target:am_brawler_2 = { character = ROOT
-							has_character_flag = am_fight_7 } } #Opponent is FROMFROM
-		 }
-
-
-
-	desc = { text = EVTDESCQslizardmen63001
-		trigger = { event_target:am_brawler_1 = { character = ROOT
-							has_character_flag = am_fight_8 } } #Opponent is FROM
-		 }
-
-	desc = { text = EVTDESCRslizardmen63001
-		trigger = { event_target:am_brawler_1 = { character = ROOT
-							has_character_flag = am_fight_9 } } #Opponent is FROM
-		 }
-
-	desc = { text = EVTDESCSslizardmen63001
-		trigger = { event_target:am_brawler_1 = { character = ROOT
-							has_character_flag = am_fight_10 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCTslizardmen63001
-		trigger = { event_target:am_brawler_1 = { character = ROOT
-							has_character_flag = am_fight_11 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCUslizardmen63001
-		trigger = { event_target:am_brawler_2 = { character = ROOT
-							has_character_flag = am_fight_8 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCVslizardmen63001
-		trigger = { event_target:am_brawler_2 = { character = ROOT
-							has_character_flag = am_fight_9 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCWslizardmen63001
-		trigger = { event_target:am_brawler_2 = { character = ROOT
-							has_character_flag = am_fight_10 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCXslizardmen63001
-		trigger = { event_target:am_brawler_2 = { character = ROOT
-							has_character_flag = am_fight_11 } } #Opponent is FROMFROM
-		 }
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	immediate = { random = { chance = 5
-				add_trait = wounded } }
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen63001
-		prestige = 25
-		hidden_tooltip = {
- 				if = { limit = { event_target:am_brawler_1 = { character = ROOT } }
-						event_target:am_brawler_2 = { long_character_event = { id = slizardmen.63002 } }
-						 }
- 				if = { limit = { event_target:am_brawler_2 = { character = ROOT } }
-						event_target:am_brawler_1 = { long_character_event = { id = slizardmen.63002 } }
-						 }
-		 }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Loser Brawler event
-long_character_event = {
-	id = slizardmen.63002
-	desc = { text = EVTDESCAslizardmen63002
-		trigger = { FROM = { has_character_flag = am_fight_1 } }
-		 }
-	desc = { text = EVTDESCBslizardmen63002
-		trigger = { FROM = { has_character_flag = am_fight_2 } }
-		 }
-	desc = { text = EVTDESCCslizardmen63002
-		trigger = { FROM = { has_character_flag = am_fight_3 } }
-		 }
-	desc = { text = EVTDESCDslizardmen63002
-		trigger = { FROM = { has_character_flag = am_fight_4 } }
-		 }
-	desc = { text = EVTDESCEslizardmen63002
-		trigger = { FROM = { has_character_flag = am_fight_5 } }
-		 }
-	desc = { text = EVTDESCFslizardmen63002
-		trigger = { FROM = { has_character_flag = am_fight_6 } }
-		 }
-	desc = { text = EVTDESCGslizardmen63002
-		trigger = { FROM = { has_character_flag = am_fight_7 } }
-		 }
-	desc = { text = EVTDESCHslizardmen63002
-		trigger = { FROM = { has_character_flag = am_fight_8 } }
-		 }
-	desc = { text = EVTDESCIslizardmen63002
-		trigger = { FROM = { has_character_flag = am_fight_9 } }
-		 }
-	desc = { text = EVTDESCLslizardmen63002
-		trigger = { FROM = { has_character_flag = am_fight_10 } }
-		 }
-	desc = { text = EVTDESCMslizardmen63002
-		trigger = { FROM = { has_character_flag = am_fight_11 } }
-		 }
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	immediate = { random = { chance = 50
-				add_trait = wounded }
-			random = { chance = 5
-				add_trait = maimed } }
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen63002
-		decadence = 2
-		clr_character_flag = brawling_participant
-		set_character_flag = brawling_loser
-		hidden_tooltip = {
- 				if = { limit = { event_target:am_brawler_2 = { character = ROOT } }
-						clear_event_target = am_brawler_2
-						FROM =  { clear_event_target = am_brawler_1 }
-						 }
- 				if = { limit = { event_target:am_brawler_1 = { character = ROOT } }
-						clear_event_target = am_brawler_1
-						FROM =  { clear_event_target = am_brawler_2 }
-						 }
-				FROM = { clr_character_flag = am_fight_1
-					clr_character_flag = am_fight_2
-					clr_character_flag = am_fight_3
-					clr_character_flag = am_fight_4
-					clr_character_flag = am_fight_5
-					clr_character_flag = am_fight_6
-					clr_character_flag = am_fight_7
-					clr_character_flag = am_fight_8
-					clr_character_flag = am_fight_9
-					clr_character_flag = am_fight_10
-					clr_character_flag = am_fight_11 }
-				clr_character_flag = am_fight_1
-				clr_character_flag = am_fight_2
-				clr_character_flag = am_fight_3
-				clr_character_flag = am_fight_4
-				clr_character_flag = am_fight_5
-				clr_character_flag = am_fight_6
-				clr_character_flag = am_fight_7
-				clr_character_flag = am_fight_8
-				clr_character_flag = am_fight_9
-				clr_character_flag = am_fight_10
-				clr_character_flag = am_fight_11
-
-				#If only FROM is left, she is the winner, inform her
- 				if = { limit = { top_liege = { any_realm_character = { NOT = { has_character_flag = brawling_loser }
-											has_character_flag = brawling_participant
-											NOT = { character = FROM }
-											NOT = { character = ROOT } }
-							 	}
-						}
-					FROM = { character_event = { id = slizardmen.63003 } }
-					break = yes
-					}
-				#If only FROM is left, she is the winner, inform her
-					FROM = { long_character_event = { id = slizardmen.64 } }
-		 }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#You won, but there are other challengers
-character_event = {
-	id = slizardmen.63003
-	desc = EVTDESCslizardmen63003
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen63003
-		decadence = -1
-		hidden_tooltip = {
- 			 random_realm_character = { limit = { has_character_flag = brawling_participant
-								NOT = { character = ROOT }
-								NOT = { has_character_flag = brawling_loser } }
-						character_event = { id = slizardmen.62003 } #scope to second Amazon
-						 }
-				}
-		ai_chance = { factor = 1 }
-	}
-}
-
-#You won the tournament
-long_character_event = {
-	id = slizardmen.64
-	desc = { text = EVTDESCAslizardmen64
-		trigger = { NOT = { has_character_flag = brawling_host } } #Winner is not the Queen
-		 }
-	desc = { text = EVTDESCBslizardmen64
-		trigger = { has_character_flag = brawling_host } #Winner is the Queen
-		 }
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen64
-		decadence = -5
-		wealth = 45
-		prestige = 750
-		piety = 250
-		hidden_tooltip = {
-				random = { chance = 50
-					remove_trait = complacent }
- 				if = { limit = { any_realm_character = { has_character_flag = brawling_host
-									NOT = { character = ROOT } }
-						 }
-					random_realm_character = { limit = { has_character_flag = brawling_host
-										NOT = { character = ROOT } }
-								long_character_event = { id = slizardmen.64001 } }
-					}
-					any_realm_character = { limit = { has_character_flag = brawling_loser
-									NOT = { character = ROOT }
-									NOT = { has_character_flag = brawling_host } }
-								long_character_event = { id = slizardmen.64002 } }
-
-				random_list = { 15 = { character_event = { id = slizardmen.65001 days = 6 random = 6 } } #Became Brave
-						6 = { character_event = { id = slizardmen.65002 days = 6 random = 6 } } #Became Stronger
-						6 = { character_event = { id = slizardmen.65003 days = 6 random = 6 } } #Became Wroth
-						72 = {  } #Nothing
-						1 = {  character_event = { id = slizardmen.65004 days = 1 random = 2 } } #Rigg's favour
-						 }
-				}
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Notify Queen who didn't win about who did win
-long_character_event = {
-	id = slizardmen.64001
-	desc = EVTDESCAslizardmen64001
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen64001
-		if = { limit = { NOT = { any_rival = { count = 4 } } }
-			random = { chance = 5
-				add_rival = FROM } }
-		prestige = 150
-		piety = 50
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Notify all the losers about who won
-long_character_event = {
-	id = slizardmen.64002
-	desc = { text = EVTDESCAslizardmen64002
-		trigger = { FROM = { NOT = { has_character_flag = brawling_host } } } #Winner is not the Queen
-		 }
-	desc = { text = EVTDESCBslizardmen64002
-		trigger = { FROM = { has_character_flag = brawling_host } } #Winner is the Queen
-		 }
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen64002
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Became brave during the tournament
-character_event = {
-	id = slizardmen.65001
-	desc = EVTDESCAslizardmen65001
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen65001
-		if = { limit = { trait = brave }
-			change_martial = 1 }
-		if = { limit = { NOT = { trait = brave } }
-			add_trait = brave }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Became stronger during the tournament
-character_event = {
-	id = slizardmen.65002
-	desc = EVTDESCAslizardmen65002
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen65002
-		if = { limit = { trait = strong }
-			change_martial = 1 }
-		if = { limit = { trait = tough }
-			remove_trait = tough
-			add_trait = strong }
-		if = { limit = { trait = hardy }
-			remove_trait = hardy
-			add_trait = tough }
-		if = { limit = { trait = soft }
-			remove_trait = soft }
-		if = { limit = { trait = fragile }
-			remove_trait = fragile
-			add_trait = soft }
-		if = { limit = { trait = weak }
-			remove_trait = weak
-			add_trait = fragile }
-		if = { limit = { NOT = { trait = fragile }
-				NOT = { trait = soft }
-				NOT = { trait = weak }
-				NOT = { trait = hardy }
-				NOT = { trait = tough }
-				NOT = { trait = strong } }
-			add_trait = hardy }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Became wroth during the tournament
-character_event = {
-	id = slizardmen.65003
-	desc = EVTDESCAslizardmen65003
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen65003
-		if = { limit = { trait = wroth }
-			change_martial = 1 }
-		if = { limit = { NOT = { trait = wroth } }
-			add_trait = wroth }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Received Rigg's favour for your prowess
-character_event = {
-	id = slizardmen.65004
-	desc = EVTDESCAslizardmen65004
-	picture = GFX_evt_amazon_fighter
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen65004
-		 add_character_modifier = { name = favour_rigg
-						duration = 1200 }
-		ai_chance = { factor = 1 }
-	}
-}
-
 ########################################################################
 ########################################################################
 ################## SEARCHING THE LOST FOUNTAIN OF YOUTH#################
@@ -11021,1243 +7711,3 @@ long_character_event = {
 		ai_chance = { factor = 1 }
 	}
 }
-
-#Lowborn debug
-character_event = {
-	id = slizardmen.81
-	hide_window = yes
-	is_triggered_only = yes
-
-	immediate = {
-			dynasty = father_bastard
-	}
-}
-
-#################################################################
-####################### AMAZON COURTIERS Bothering the Player ###
-
-#Fire for the Player, check if courtier Amazons available
-character_event = {
-	id = slizardmen.82
-	hide_window = yes
-
-	only_women = yes
-	min_age = 16
-	max_age = 350
-	capable_only = yes
-	prisoner = no
-	only_rulers = yes
-	religion = amazon
-	ai = no
-
-	trigger = { war = no
-		 trait = creature_amazon
-		NOR = { trait = complacent
-			trait = questing
-			trait = pregnant
-			trait = hard_pregnancy
-			trait = troubled_pregnancy }
-		any_courtier = { trait = creature_amazon
-				age = 16
-			NOR = { trait = complacent
-				trait = questing
-				trait = pregnant
-				trait = disinherited_amazon
-				trait = hard_pregnancy
-				trait = troubled_pregnancy
-				trait = infirm
-				trait = incapable
-				trait = maimed
-				trait = craven } }
-		}
-
-	is_triggered_only = yes
-
-	immediate = {
-		random_courtier = { limit = { trait = creature_amazon
-						age = 16
-					NOR = { trait = complacent
-						trait = questing
-						trait = pregnant
-						trait = disinherited_amazon
-						trait = hard_pregnancy
-						trait = troubled_pregnancy
-						trait = infirm
-						trait = incapable
-						trait = maimed
-						trait = craven } }
-				character_event = { id = slizardmen.82001 } }
-	}
-}
-
-#Ping Huntress
-character_event = {
-	id = slizardmen.82001
-	desc = EVTDESCAslizardmen82001
-	picture = GFX_evt_amazon_huntress
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen82001
-		decadence = -1
-		FROM = { character_event = { id = slizardmen.82002 } }
-		ai_chance = { factor = 100 }
-	}
-	option = {
-		name = EVTOPTBslizardmen82001
-		ai_chance = { factor = 0 }
-	}
-}
-
-#Want to go to hunt?
-character_event = {
-	id = slizardmen.82002
-	desc = EVTDESCAslizardmen82002
-	picture = GFX_evt_amazon_huntress
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen82002
-		trigger = { NOR = { trait = questing
-				 trait = pregnant
-				 trait = in_hiding
-				 trait = studying_magic
-				 trait = disinherited_amazon
-				 trait = hard_pregnancy
-				 trait = troubled_pregnancy
-				 trait = incapable } }
-		add_trait = questing
-		FROM = { add_trait = questing }
-		hidden_tooltip = {
-				FROM = { clr_character_flag = am_hunt_1
-					clr_character_flag = am_hunt_2
-					clr_character_flag = am_hunt_3
-					clr_character_flag = am_hunt_4
-					clr_character_flag = am_hunt_5
-					clr_character_flag = am_hunt_6
-					clr_character_flag = am_hunt_7
-					clr_character_flag = am_hunt_8
-					clr_character_flag = am_hunt_9
-					clr_character_flag = am_hunt_10
-					clr_character_flag = am_hunt_11 }
-				clr_character_flag = am_hunt_1
-				clr_character_flag = am_hunt_2
-				clr_character_flag = am_hunt_3
-				clr_character_flag = am_hunt_4
-				clr_character_flag = am_hunt_5
-				clr_character_flag = am_hunt_6
-				clr_character_flag = am_hunt_7
-				clr_character_flag = am_hunt_8
-				clr_character_flag = am_hunt_9
-				clr_character_flag = am_hunt_10
-				clr_character_flag = am_hunt_11
-
-				random_list = { 10 = { modifier = { factor = 1.5
-									trait = brave }
-							modifier = { factor = 1.5
-									trait = tough_soldier }
-							modifier = { factor = 1.65
-									trait = skilled_tactician }
-							modifier = { factor = 1.75
-									trait = brilliant_strategist }
-							modifier = { factor = 1.65
-									trait = strong }
-							modifier = { factor = 1.4
-									trait = hardy }
-							modifier = { factor = 1.5
-									trait = tough }
-							modifier = { factor = 1.25
-									trait = tall }
-							modifier = { factor = 1.5
-									trait = hunter }
-							modifier = { factor = 1.25
-									trait = duelist }
-							modifier = { factor = 1.25
-									trait = quick }
-							modifier = { factor = 1.3
-									trait = brilliant }
-							modifier = { factor = 1.5
-									trait = genius }
-							modifier = { factor = 1.25
-									trait = gregarious }
-							modifier = { factor = 1.3
-									trait = temperate }
-							modifier = { factor = 1.3
-									trait = deceitful }
-								character_event = { id = slizardmen.87 days = 13 random = 15 } } #Had great time, return home
-						 80 = { FROM = { character_event = { id = slizardmen.88 days = 13 random = 7 } } } #Challenging the other huntress
-						 10 = { modifier = { factor = 1.5
-									trait = craven }
-							modifier = { factor = 1.5
-									trait = wounded }
-							modifier = { factor = 1.75
-									trait = maimed }
-							modifier = { factor = 1.75
-									trait = blinded }
-							modifier = { factor = 1.5
-									trait = fragile }
-							modifier = { factor = 1.4
-									trait = soft }
-							modifier = { factor = 1.65
-									trait = weak }
-							modifier = { factor = 1.45
-									trait = hunchback }
-							modifier = { factor = 1.5
-									trait = dwarf }
-							modifier = { factor = 1.25
-									trait = clubfooted }
-							modifier = { factor = 1.25
-									trait = slow }
-							modifier = { factor = 1.3
-									trait = idiot }
-							modifier = { factor = 1.5
-									trait = imbecile }
-							modifier = { factor = 1.25
-									trait = shy }
-							modifier = { factor = 1.3
-									trait = is_fat }
-							modifier = { factor = 1.3
-									trait = is_malnourished }
-							modifier = { factor = 1.5
-									trait = addict }
-							modifier = { factor = 1.45
-									trait = drunkard }
-								character_event = { id = slizardmen.89 days = 13 random = 15 } } #Utter failure
-						}
-					}
-		ai_chance = { factor = 100 }
-	}
-	option = {
-		name = EVTOPTBslizardmen82002
-		decadence = 10
-		hidden_tooltip = { random_list = { 30 = { modifier = { factor = 1.5
-									trait = diligent }
-								modifier = { factor = 1.25
-									trait = wroth }
-								modifier = { factor = 1.65
-									trait = temperate }
-								modifier = { factor = 1.5
-									trait = strong }
-								modifier = { factor = 1.45
-									trait = tough }
-								modifier = { factor = 1.35
-									trait = hardy }
-								modifier = { factor = 1.45
-									in_command = yes }
-							}
-						 20 = { modifier = { factor = 1.5
-									trait = gregarious }
-							modifier = { factor = 1.5
-									trait = hedonist }
-							modifier = { factor = 1.5
-									trait = addict }
-							modifier = { factor = 0
-									trait = drunkard }
-							character_event = { id = slizardmen.83 days = 90 random = 70 } } #Drunk
-						 20 = { modifier = { factor = 1.5
-									trait = slothful }
-							modifier = { factor = 1.5
-									trait = gluttonous }
-							modifier = { factor = 0
-									trait = is_fat }
-							character_event = { id = slizardmen.84 days = 90 random = 70 } } #Fat
-						 20 = { modifier = { factor = 1.5
-									trait = paranoid }
-							modifier = { factor = 1.5
-									trait = depressed }
-							modifier = { factor = 1.5
-									trait = craven }
-							modifier = { factor = 0
-									trait = is_malnourished }
-							character_event = { id = slizardmen.85 days = 90 random = 70 } } #Undernourished
-						 10 = {
-							modifier = { factor = 0
-									NOR = { trait = slothful
-										trait = drunkard
-										trait = gluttonous
-										trait = addict
-										trait = is_fat } }
-							modifier = { factor = 0
-									trait = hedonist }
-							character_event = { id = slizardmen.86 days = 90 random = 70 } } #Hedonist
-						}
-					}
-		ai_chance = { factor = 0 }
-	}
-}
-
-#Drunkard
-character_event = {
-	id = slizardmen.83
-	desc = { text = EVTDESCAslizardmen83
-		trigger = { NOT = { trait = gregarious } } }
-	desc = { text = EVTDESCBslizardmen83
-		trigger = { trait = gregarious } }
-
-	picture = GFX_evt_slaanesh_tempt
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen83
-		decadence = 3
-		if = { limit = { NOT = { trait = gregarious } }
-			random = { chance = 60
-				add_trait = drunkard
-				decadence = 8 }
-			 }
-		if = { limit = { trait = gregarious }
-			random = { chance = 40
-				add_trait = drunkard
-				decadence = 3 }
-			 }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Fat
-character_event = {
-	id = slizardmen.84
-	desc = { text = EVTDESCAslizardmen84
-		trigger = { NOT = { trait = gluttonous } } }
-	desc = { text = EVTDESCBslizardmen84
-		trigger = { trait = gluttonous } }
-
-	picture = GFX_evt_slaanesh_tempt
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen84
-		decadence = 4
-		if = { limit = { NOT = { trait = gluttonous } }
-			random = { chance = 40
-				add_trait = gluttonous
-				decadence = 2 }
-			 }
-		if = { limit = { trait = gluttonous }
-			random = { chance = 30
-				add_trait = is_fat
-				decadence = 10 }
-			 }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Undernourished
-character_event = {
-	id = slizardmen.85
-	desc = { text = EVTDESCAslizardmen85
-		trigger = { NOT = { trait = depressed } } }
-	desc = { text = EVTDESCBslizardmen85
-		trigger = { trait = depressed } }
-
-	picture = GFX_evt_slaanesh_tempt
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen85
-		decadence = 4
-		if = { limit = { NOT = { trait = depressed } }
-			random = { chance = 30
-				add_trait = is_malnourished
-				decadence = 10 }
-			 }
-		if = { limit = { trait = depressed }
-			random = { chance = 60
-				add_trait = is_malnourished
-				decadence = 10 }
-			 }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Hedonist
-character_event = {
-	id = slizardmen.86
-	desc = { text = EVTDESCAslizardmen86
-		trigger = { NOT = { trait = gregarious } } }
-	desc = { text = EVTDESCBslizardmen86
-		trigger = { trait = gregarious } }
-
-	picture = GFX_evt_slaanesh_tempt
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen86
-		decadence = 4
-		if = { limit = { NOT = { trait = gregarious } }
-			random = { chance = 30
-				add_trait = hedonist
-				decadence = 7 }
-			 }
-		if = { limit = { trait = gregarious }
-			random = { chance = 60
-				add_trait = hedonist
-				decadence = 7 }
-			 }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Excellent hunting
-character_event = {
-	id = slizardmen.87
-	desc = EVTDESCAslizardmen87
-	picture = GFX_evt_amazon_huntress
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen87
-		decadence = -1
-		prestige = 75
-		remove_trait = questing
-		random = { chance = 30
-				add_trait = wounded }
-		FROMFROM = { character_event = { id = slizardmen.87001 } }
-	}
-}
-
-#Excellent hunting - Notify huntress
-character_event = {
-	id = slizardmen.87001
-	desc = EVTDESCAslizardmen87001
-	picture = GFX_evt_amazon_huntress
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen87001
-		decadence = -2
-		prestige = 75
-		remove_trait = questing
-		random = { chance = 30
-				add_trait = wounded }
-	}
-}
-
-#Bad hunting
-character_event = {
-	id = slizardmen.89
-	desc = EVTDESCAslizardmen89
-	picture = GFX_evt_amazon_huntress
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen89
-		decadence = -5
-		prestige = -75
-		remove_trait = questing
-		random = { chance = 60
-				add_trait = wounded }
-		random = { chance = 30
-				add_trait = maimed }
-		random = { chance = 2
-		if = {
- limit = {
- is_invincible_trigger = yes
- }
-
-			antideath_effect = yes
-			break = yes
-			}
-				death = { death_reason = death_accident } }
-		FROMFROM = { character_event = { id = slizardmen.89001 } }
-	}
-}
-
-#Bad hunting - Notify huntress
-character_event = {
-	id = slizardmen.89001
-	desc = EVTDESCAslizardmen89001
-	picture = GFX_evt_amazon_huntress
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen89001
-		decadence = 1
-		remove_trait = questing
-		random = { chance = 60
-				add_trait = wounded }
-		random = { chance = 30
-				add_trait = maimed }
-		random = { chance = 2
-		if = {
- limit = {
- is_invincible_trigger = yes
- }
-
-			antideath_effect = yes
-			break = yes
-			}
-				death = { death_reason = death_accident } }
-	}
-}
-
-#Hunting competition - Huntress event first
-character_event = {
-	id = slizardmen.88
-	desc = EVTDESCAslizardmen88
-	picture = GFX_evt_amazon_huntress
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen88
-		save_event_target_as = am_huntress_2
-		FROM = { save_event_target_as = am_huntress_1 }
-
-		hidden_tooltip = {
-				#To give random flavour text to the fights
-				random_list = { 	15 = { set_character_flag = am_hunt_1
-								FROM = { set_character_flag = am_hunt_1 } }
-							15 = { set_character_flag = am_hunt_2
-								FROM = { set_character_flag = am_hunt_2 } }
-							15 = { set_character_flag = am_hunt_3
-								FROM = { set_character_flag = am_hunt_3 } }
-							15 = { set_character_flag = am_hunt_4
-								FROM = { set_character_flag = am_hunt_4 } }
-							15 = { set_character_flag = am_hunt_5
-								FROM = { set_character_flag = am_hunt_5 } }
-							15 = { set_character_flag = am_hunt_6
-								FROM = { set_character_flag = am_hunt_6 } }
-							10 = { set_character_flag = am_hunt_7
-								FROM = { set_character_flag = am_hunt_7 } }
-							10 = { set_character_flag = am_hunt_8
-								FROM = { set_character_flag = am_hunt_8 } }
-							10 = { set_character_flag = am_hunt_9
-								FROM = { set_character_flag = am_hunt_9 } }
-							10 = { set_character_flag = am_hunt_10
-								FROM = { set_character_flag = am_hunt_10 } }
-							10 = { set_character_flag = am_hunt_11
-								FROM = { set_character_flag = am_hunt_11 } }
-							 }
-			random_list = { 50 = { #First contestant wins
-							modifier = { factor = 0.65
-								event_target:am_huntress_1 = { trait = fragile }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_huntress_1 = { trait = weak }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_1 = { trait = soft }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_huntress_1 = { trait = hardy }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_huntress_1 = { trait = tough }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_huntress_1 = { trait = strong }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_huntress_1 = { trait = craven }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_1 = { trait = diligent }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_1 = { trait = drunkard }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_1 = { trait = addict }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_huntress_1 = { trait = brave }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_1 = { trait = is_fat }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_1 = { trait = is_malnourished }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_huntress_1 = { trait = ambitious }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_1 = { trait = content }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_huntress_1 = { trait = duelist }
-								 }
-							modifier = { factor = 1.85
-								event_target:am_huntress_1 = { trait = hunter }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_huntress_1 = { trait = wounded }
-								 }
-							modifier = { factor = 0.25
-								event_target:am_huntress_1 = { trait = maimed }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_huntress_1 = { trait = infirm }
-								 }
-							modifier = { factor = 0.25
-								event_target:am_huntress_1 = { trait = blinded }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_huntress_1 = { trait = tall }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_huntress_1 = { trait = dwarf }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_huntress_1 = { trait = hunchback }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_huntress_1 = { trait = clubfooted }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_1 = { NOT = { age = 18 } }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_huntress_1 = { martial = 15 }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_1 = { trait = stressed }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_huntress_1 = { trait = depressed }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_huntress_1 = { trait = dim }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_1 = { trait = dumb }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_1 = { trait = slow }
-								 }
-							modifier = { factor = 0.8
-								event_target:am_huntress_1 = { trait = idiot }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_huntress_1 = { trait = imbecile }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_1 = { trait = bright }
-								 }
-							modifier = { factor = 1.2
-								event_target:am_huntress_1 = { trait = smart }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_huntress_1 = { trait = quick }
-								 }
-							modifier = { factor = 1.3
-								event_target:am_huntress_1 = { trait = brilliant }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_huntress_1 = { trait = genius }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_1 = { trait = slothful }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_1 = { trait = kind }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_1 = { trait = humble }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_1 = { trait = shy }
-								 }
-							modifier = { factor = 1.1
-								event_target:am_huntress_1 = { trait = misguided_warrior }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_huntress_1 = { trait = tough_soldier }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_huntress_1 = { trait = skilled_tactician }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_huntress_1 = { trait = brilliant_strategist }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_huntress_1 = { trait = zealous }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_1 = { trait = cruel }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_huntress_1 = { trait = just }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_1 = { trait = complacent }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_1 = { any_child = { count = 3 } }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_1 = { any_child = { count = 5 } }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_1 = { trait = deceitful }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_huntress_1 = { trait = honest }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_1 = { trait = paranoid }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_huntress_1 = { trait = trusting }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_1 = { trait = ill }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_huntress_1 = { trait = has_nurgles_rot }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_huntress_1 = { trait = aggressive_leader }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_1 = { trait = experimenter }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_huntress_1 = { trait = trickster }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_1 = { trait = lunatic_1 }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_huntress_1 = { trait = lunatic_2 }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_1 = { trait = lunatic_3 }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_huntress_1 = { trait = disfigured }
-								 }
-							modifier = { factor = 1.65
-								event_target:am_huntress_1 = { age = 150
-												has_artifact = elixir_of_eternal_youth }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_huntress_1 = { age = 40
-												NOT
-												=
-												{
-												has_artifact = elixir_of_eternal_youth } }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_huntress_1 = { trait = wroth }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_1 = { trait = patient }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_1 = { trait = strategist }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_1 = { OR = { trait = amateurish_plotter
-													trait = flamboyant_schemer
-													trait = intricate_webweaver
-													trait = elusive_shadow } }
-								 }
-							modifier = { factor = 0.8
-								event_target:am_huntress_1 = { OR = { trait = naive_appeaser
-													trait = underhanded_rogue
-													trait = charismatic_negotiator
-													trait = grey_eminence } }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_1 = { OR = { trait = indulgent_wastrel
-													trait = thrifty_clerk
-													trait = fortune_builder
-													trait = midas_touched } }
-								 }
-								event_target:am_huntress_1 = { long_character_event = { id = slizardmen.88001 } }
-							 } #closes50
-						50 = { #Second contestant wins
-
-							modifier = { factor = 0.65
-								event_target:am_huntress_2 = { trait = fragile }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_huntress_2 = { trait = weak }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_2 = { trait = soft }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_huntress_2 = { trait = hardy }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_huntress_2 = { trait = tough }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_huntress_2 = { trait = strong }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_huntress_2 = { trait = craven }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_2 = { trait = diligent }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_2 = { trait = drunkard }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_2 = { trait = addict }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_huntress_2 = { trait = brave }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_2 = { trait = is_fat }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_2 = { trait = is_malnourished }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_huntress_2 = { trait = ambitious }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_2 = { trait = content }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_huntress_2 = { trait = duelist }
-								 }
-							modifier = { factor = 1.95
-								event_target:am_huntress_2 = { trait = hunter }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_huntress_2 = { trait = wounded }
-								 }
-							modifier = { factor = 0.25
-								event_target:am_huntress_2 = { trait = maimed }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_huntress_2 = { trait = infirm }
-								 }
-							modifier = { factor = 0.25
-								event_target:am_huntress_2 = { trait = blinded }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_huntress_2 = { trait = tall }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_huntress_2 = { trait = dwarf }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_huntress_2 = { trait = hunchback }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_huntress_2 = { trait = clubfooted }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_2 = { NOT = { age = 18 } }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_huntress_2 = { martial = 15 }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_2 = { trait = stressed }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_huntress_2 = { trait = depressed }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_huntress_2 = { trait = dim }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_2 = { trait = dumb }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_2 = { trait = slow }
-								 }
-							modifier = { factor = 0.8
-								event_target:am_huntress_2 = { trait = idiot }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_huntress_2 = { trait = imbecile }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_2 = { trait = bright }
-								 }
-							modifier = { factor = 1.2
-								event_target:am_huntress_2 = { trait = smart }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_huntress_2 = { trait = quick }
-								 }
-							modifier = { factor = 1.3
-								event_target:am_huntress_2 = { trait = brilliant }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_huntress_2 = { trait = genius }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_2 = { trait = slothful }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_2 = { trait = kind }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_2 = { trait = humble }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_2 = { trait = shy }
-								 }
-							modifier = { factor = 1.1
-								event_target:am_huntress_2 = { trait = misguided_warrior }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_huntress_2 = { trait = tough_soldier }
-								 }
-							modifier = { factor = 1.5
-								event_target:am_huntress_2 = { trait = skilled_tactician }
-								 }
-							modifier = { factor = 1.75
-								event_target:am_huntress_2 = { trait = brilliant_strategist }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_huntress_2 = { trait = zealous }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_2 = { trait = cruel }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_huntress_2 = { trait = just }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_2 = { trait = complacent }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_2 = { any_child = { count = 3 } }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_2 = { any_child = { count = 5 } }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_2 = { trait = deceitful }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_huntress_2 = { trait = honest }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_2 = { trait = paranoid }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_huntress_2 = { trait = trusting }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_2 = { trait = ill }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_huntress_2 = { trait = has_nurgles_rot }
-								 }
-							modifier = { factor = 1.25
-								event_target:am_huntress_2 = { trait = aggressive_leader }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_2 = { trait = experimenter }
-								 }
-							modifier = { factor = 1.35
-								event_target:am_huntress_2 = { trait = trickster }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_2 = { trait = lunatic_1 }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_huntress_2 = { trait = lunatic_2 }
-								 }
-							modifier = { factor = 0.85
-								event_target:am_huntress_2 = { trait = lunatic_3 }
-								 }
-							modifier = { factor = 0.75
-								event_target:am_huntress_2 = { trait = disfigured }
-								 }
-							modifier = { factor = 1.65
-								event_target:am_huntress_2 = { age = 150
-												has_artifact = elixir_of_eternal_youth }
-								 }
-							modifier = { factor = 0.5
-								event_target:am_huntress_2 = { age = 40
-												NOT
-												=
-												{
-												has_artifact = elixir_of_eternal_youth } }
-								 }
-							modifier = { factor = 0.95
-								event_target:am_huntress_2 = { trait = wroth }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_2 = { trait = patient }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_2 = { trait = strategist }
-								 }
-							modifier = { factor = 1.15
-								event_target:am_huntress_2 = { OR = { trait = amateurish_plotter
-													trait = flamboyant_schemer
-													trait = intricate_webweaver
-													trait = elusive_shadow } }
-								 }
-							modifier = { factor = 0.8
-								event_target:am_huntress_2 = { OR = { trait = naive_appeaser
-													trait = underhanded_rogue
-													trait = charismatic_negotiator
-													trait = grey_eminence } }
-								 }
-							modifier = { factor = 0.9
-								event_target:am_huntress_2 = { OR = { trait = indulgent_wastrel
-													trait = thrifty_clerk
-													trait = fortune_builder
-													trait = midas_touched } }
-								 }
-								event_target:am_huntress_2 = { long_character_event = { id = slizardmen.88001 } }
-							 } #closes50
-						} #closesrandomlist
-				 } #closeshiddentooltip
-	}
-}
-
-#Winning Hunt event
-long_character_event = {
-	id = slizardmen.88001
-	desc = { text = EVTDESCAslizardmen88001
-		trigger = { event_target:am_huntress_1 = { character = ROOT
-							has_character_flag = am_hunt_1 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCBslizardmen88001
-		trigger = { event_target:am_huntress_1 = { character = ROOT
-							has_character_flag = am_hunt_2 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCCslizardmen88001
-		trigger = { event_target:am_huntress_1 = { character = ROOT
-							has_character_flag = am_hunt_3 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCDslizardmen88001
-		trigger = { event_target:am_huntress_2 = { character = ROOT
-							has_character_flag = am_hunt_1 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCEslizardmen88001
-		trigger = { event_target:am_huntress_2 = { character = ROOT
-							has_character_flag = am_hunt_2 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCFslizardmen88001
-		trigger = { event_target:am_huntress_2 = { character = ROOT
-							has_character_flag = am_hunt_3 } } #Opponent is FROMFROM
-		 }
-
-
-	desc = { text = EVTDESCGslizardmen88001
-		trigger = { event_target:am_huntress_1 = { character = ROOT
-							has_character_flag = am_hunt_4 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCHslizardmen88001
-		trigger = { event_target:am_huntress_1 = { character = ROOT
-							has_character_flag = am_hunt_5 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCIslizardmen88001
-		trigger = { event_target:am_huntress_1 = { character = ROOT
-							has_character_flag = am_hunt_6 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCLslizardmen88001
-		trigger = { event_target:am_huntress_1 = { character = ROOT
-							has_character_flag = am_hunt_7 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCMslizardmen88001
-		trigger = { event_target:am_huntress_2 = { character = ROOT
-							has_character_flag = am_hunt_4 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCNslizardmen88001
-		trigger = { event_target:am_huntress_2 = { character = ROOT
-							has_character_flag = am_hunt_5 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCOslizardmen88001
-		trigger = { event_target:am_huntress_2 = { character = ROOT
-							has_character_flag = am_hunt_6 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCPslizardmen88001
-		trigger = { event_target:am_huntress_2 = { character = ROOT
-							has_character_flag = am_hunt_7 } } #Opponent is FROMFROM
-		 }
-
-
-
-	desc = { text = EVTDESCQslizardmen88001
-		trigger = { event_target:am_huntress_1 = { character = ROOT
-							has_character_flag = am_hunt_8 } } #Opponent is FROM
-		 }
-
-	desc = { text = EVTDESCRslizardmen88001
-		trigger = { event_target:am_huntress_1 = { character = ROOT
-							has_character_flag = am_hunt_9 } } #Opponent is FROM
-		 }
-
-	desc = { text = EVTDESCSslizardmen88001
-		trigger = { event_target:am_huntress_1 = { character = ROOT
-							has_character_flag = am_hunt_10 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCTslizardmen88001
-		trigger = { event_target:am_huntress_1 = { character = ROOT
-							has_character_flag = am_hunt_11 } } #Opponent is FROM
-		 }
-	desc = { text = EVTDESCUslizardmen88001
-		trigger = { event_target:am_huntress_2 = { character = ROOT
-							has_character_flag = am_hunt_8 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCVslizardmen88001
-		trigger = { event_target:am_huntress_2 = { character = ROOT
-							has_character_flag = am_hunt_9 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCWslizardmen88001
-		trigger = { event_target:am_huntress_2 = { character = ROOT
-							has_character_flag = am_hunt_10 } } #Opponent is FROMFROM
-		 }
-	desc = { text = EVTDESCXslizardmen88001
-		trigger = { event_target:am_huntress_2 = { character = ROOT
-							has_character_flag = am_hunt_11 } } #Opponent is FROMFROM
-		 }
-	picture = GFX_evt_amazon_huntress
-
-	trigger = { trait = creature_amazon }
-
-	is_triggered_only = yes
-
-	immediate = { random = { chance = 30
-				add_trait = wounded }
-			random = { chance = 1
-				add_trait = maimed } }
-
-	option = {
-		name = EVTOPTAslizardmen88001
-		prestige = 75
-		hidden_tooltip = { character_event = { id = slizardmen.88003 days = 5 random = 5 } #Had great time, return home
- 				if = { limit = { event_target:am_huntress_1 = { character = ROOT } }
-						event_target:am_huntress_2 = { long_character_event = { id = slizardmen.88002 } }
-						 }
- 				if = { limit = { event_target:am_huntress_2 = { character = ROOT } }
-						event_target:am_huntress_1 = { long_character_event = { id = slizardmen.88002 } }
-						 }
-		 }
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Loser Hunter event
-long_character_event = {
-	id = slizardmen.88002
-	desc = { text = EVTDESCAslizardmen88002
-		trigger = { FROM = { has_character_flag = am_hunt_1 } }
-		 }
-	desc = { text = EVTDESCBslizardmen88002
-		trigger = { FROM = { has_character_flag = am_hunt_2 } }
-		 }
-	desc = { text = EVTDESCCslizardmen88002
-		trigger = { FROM = { has_character_flag = am_hunt_3 } }
-		 }
-	desc = { text = EVTDESCDslizardmen88002
-		trigger = { FROM = { has_character_flag = am_hunt_4 } }
-		 }
-	desc = { text = EVTDESCEslizardmen88002
-		trigger = { FROM = { has_character_flag = am_hunt_5 } }
-		 }
-	desc = { text = EVTDESCFslizardmen88002
-		trigger = { FROM = { has_character_flag = am_hunt_6 } }
-		 }
-	desc = { text = EVTDESCGslizardmen88002
-		trigger = { FROM = { has_character_flag = am_hunt_7 } }
-		 }
-	desc = { text = EVTDESCHslizardmen88002
-		trigger = { FROM = { has_character_flag = am_hunt_8 } }
-		 }
-	desc = { text = EVTDESCIslizardmen88002
-		trigger = { FROM = { has_character_flag = am_hunt_9 } }
-		 }
-	desc = { text = EVTDESCLslizardmen88002
-		trigger = { FROM = { has_character_flag = am_hunt_10 } }
-		 }
-	desc = { text = EVTDESCMslizardmen88002
-		trigger = { FROM = { has_character_flag = am_hunt_11 } }
-		 }
-	picture = GFX_evt_amazon_huntress
-
-	trigger = { trait = creature_amazon }
-
-	immediate = { random = { chance = 50
-				add_trait = wounded }
-			random = { chance = 5
-				add_trait = maimed } }
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen88002
-		decadence = 2
-		hidden_tooltip = { character_event = { id = slizardmen.88004 days = 5 random = 5 } #A little hard, return home
- 				if = { limit = { event_target:am_huntress_2 = { character = ROOT } }
-						clear_event_target = am_huntress_2
-						FROM =  { clear_event_target = am_huntress_1 }
-						 }
- 				if = { limit = { event_target:am_huntress_1 = { character = ROOT } }
-						clear_event_target = am_huntress_1
-						FROM =  { clear_event_target = am_huntress_2 }
-						 }
-				FROM = { clr_character_flag = am_hunt_1
-					clr_character_flag = am_hunt_2
-					clr_character_flag = am_hunt_3
-					clr_character_flag = am_hunt_4
-					clr_character_flag = am_hunt_5
-					clr_character_flag = am_hunt_6
-					clr_character_flag = am_hunt_7
-					clr_character_flag = am_hunt_8
-					clr_character_flag = am_hunt_9
-					clr_character_flag = am_hunt_10
-					clr_character_flag = am_hunt_11 }
-				clr_character_flag = am_hunt_1
-				clr_character_flag = am_hunt_2
-				clr_character_flag = am_hunt_3
-				clr_character_flag = am_hunt_4
-				clr_character_flag = am_hunt_5
-				clr_character_flag = am_hunt_6
-				clr_character_flag = am_hunt_7
-				clr_character_flag = am_hunt_8
-				clr_character_flag = am_hunt_9
-				clr_character_flag = am_hunt_10
-				clr_character_flag = am_hunt_11
-			}
-		ai_chance = { factor = 1 }
-	}
-}
-
-#Had a great time
-character_event = {
-	id = slizardmen.88003
-	desc = EVTDESCAslizardmen88003
-	picture = GFX_evt_amazon_huntress
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen88003
-		remove_trait = questing
-	}
-}
-
-#Not so much
-character_event = {
-	id = slizardmen.88004
-	desc = EVTDESCAslizardmen88004
-	picture = GFX_evt_amazon_huntress
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTAslizardmen88004
-		remove_trait = questing
-	}
-}
-
-namespace = gslizard

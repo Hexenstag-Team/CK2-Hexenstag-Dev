@@ -148,9 +148,9 @@ targeted_decisions = {
 
 #Give up on the Virtue of the Quest
 	give_up_on_quest_decision = {
-		is_in_society = yes
+		ai = no
 		filter = self
-		ai_target_filter = self
+		ai_target_filter = none
 		ai_check_interval = 12
 
 		potential = {
@@ -389,10 +389,10 @@ settlement_decisions = {
 		ai_target_filter = owned
 
 		from_potential = {
-			is_playable = yes
 			has_dlc = "Holy Fury"
-			higher_tier_than = BARON
 			is_member_of_bretonnia_trigger = yes
+			is_playable = yes
+			higher_tier_than = BARON
 		}
 
 		potential = {
