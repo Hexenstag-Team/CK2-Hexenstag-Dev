@@ -712,6 +712,7 @@ targetted_decisions = {
 		}
 	}
 
+	#despite the name, this urges any child to get an advanced education
 	send_son_to_university = {
 		ai = no #ai uses its own method to access this feature
 		filter = close_relatives
@@ -757,6 +758,7 @@ targetted_decisions = {
 				has_character_flag = seeks_further_education_engineering
 				has_character_flag = seeks_further_education_military
 				has_character_flag = seeks_further_education_religious
+				has_character_flag = seeks_further_education_magical
 			}
 			NOR = {
 				trait = noble
@@ -808,11 +810,6 @@ targetted_decisions = {
 				trait = noble
 				trait = clergy
 				religion = old_faith
-			}
-			#ice witches do their own thing
-			NAND = {
-				religion = kislev_gods
-				is_female = yes
 			}
 			NOT = { is_tribal = yes }
 			NOT = { is_nomadic = yes }
@@ -995,7 +992,7 @@ decisions = {
 		is_high_prio = yes
 		only_independent = yes
 		potential = {
-			religion = myrmidian
+			religion = classical_pantheon
 			OR = {
 				culture_group = estalian_group
 				culture_group = tilean_group

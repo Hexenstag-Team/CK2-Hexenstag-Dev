@@ -42,7 +42,7 @@ character_event = {
     }
 }
 
-# Player's relative's version of going to university - triggered by decision
+# Player's relative's version of going to university or magical academy - triggered by decision
 character_event = {
     id = wh_higher_education.2
 
@@ -61,7 +61,7 @@ character_event = {
         trigger_switch = {
             on_trigger = religion
             imperial_pantheon = { education_interest_imperial_pantheon_effect = yes }
-            myrmidian = { education_interest_classical_pantheon_effect = yes }
+            classical_pantheon = { education_interest_classical_pantheon_effect = yes }
             grail = { education_interest_bretonnian_effect = yes }
             false_grail = { education_interest_bretonnian_effect = yes }
             kislev_gods = { education_interest_kislev_gods_effect = yes }
@@ -269,14 +269,14 @@ character_event = {
     }
 }
 
-# Classical Pantheon (currently written with myrmidian)
+# Classical Pantheon
 character_event = {
     id = wh_higher_education.4
 
     hide_window = yes
     is_triggered_only = yes
 
-    religion = myrmidian
+    religion = classical_pantheon
 
     trigger = {
         OR = {
@@ -876,6 +876,11 @@ character_event = {
             find_exotic_engineer_school_effect = yes
         }
         else_if = {
+            limit = {
+                event_target:aspiring_student = {
+                    has_character_flag = seeks_further_education_magical
+                }
+            }
             find_exotic_magical_academy_effect = yes
         }
         else = {
@@ -934,6 +939,65 @@ character_event = {
     #send to exotic university
     option = {
         name = EVTOPTC_wh_higher_education.100
+        trigger = {
+            event_target:aspiring_student = {
+                NOR = {
+                    has_character_flag = seeks_further_education_engineering
+                    has_character_flag = seeks_further_education_magical
+                }
+            }
+        }
+        scaled_wealth = {
+            value = -0.25
+            min = -50
+        }
+        event_target:aspiring_student = {
+            add_trait = studying_academia
+            save_persistent_event_target = {
+                name = alma_mater
+                scope = event_target:exotic_university_candidate
+            }
+            character_event = {
+                id = wh_higher_education.200
+                days = 365
+            }
+        }
+    }
+    #send to exotic engineering school
+    option = {
+        name = EVTOPTC_wh_higher_education.100
+        trigger = {
+            event_target:aspiring_student = {
+                has_character_flag = seeks_further_education_engineering
+            }
+        }
+        tooltip_info_custom = higher_education_seeks_engineering_tt
+        show_trait = engineer
+        scaled_wealth = {
+            value = -0.25
+            min = -50
+        }
+        event_target:aspiring_student = {
+            add_trait = studying_academia
+            save_persistent_event_target = {
+                name = alma_mater
+                scope = event_target:exotic_university_candidate
+            }
+            character_event = {
+                id = wh_higher_education.200
+                days = 365
+            }
+        }
+    }
+    #send to exotic magical academy
+    option = {
+        name = EVTOPTC_wh_higher_education.100
+        trigger = {
+            event_target:aspiring_student = {
+                has_character_flag = seeks_further_education_magical
+            }
+        }
+        tooltip_info_custom = higher_education_seeks_magical_tt
         scaled_wealth = {
             value = -0.25
             min = -50
@@ -953,6 +1017,13 @@ character_event = {
     #change of heart
     option = {
         name = EVTOPTD_wh_higher_education.100
+        event_target:aspiring_student = {
+            clr_character_flag = seeks_further_education_academic
+            clr_character_flag = seeks_further_education_engineering
+            clr_character_flag = seeks_further_education_magical
+            clr_character_flag = seeks_further_education_military
+            clr_character_flag = seeks_further_education_religious
+        }
     }
 }
 
@@ -1446,6 +1517,7 @@ character_event = {
         degraded_by_further_education_effect = yes
         #is player eligible for graduation?
         if = {
+            #basic and functional, though elaboration to improve gameplay experience isn't a bad idea
             limit = {
                 ai = no
                 check_variable = {
@@ -1514,6 +1586,7 @@ character_event = {
                     graduation_from_further_education_magical_effect = yes
                 }
             }
+            #effects for passed exams
             if = {
                 limit = {
                     NOT = {
@@ -1540,6 +1613,7 @@ character_event = {
                     }
                 }
             }
+            #effects for failed exams
             else = {
                 event_target:education_sponsor = {
                     if = {
@@ -1569,6 +1643,15 @@ character_event = {
     id = wh_higher_education.201
     desc = EVTDESCwh_higher_education.201
     picture = GFX_evt_council_agreement
+    desc = {
+        trigger = {
+            event_target:aspiring_student = {
+                has_character_flag = seeks_further_education_magical
+            }
+        }
+        text = EVTDESCwh_higher_education.201_M
+        picture = GFX_evt_dream_Hexenstag
+    }
     is_triggered_only = yes
 
     option = {
@@ -1766,7 +1849,7 @@ character_event = {
 character_event = {
     id = wh_higher_education.216
     desc = EVTDESCwh_higher_education.216
-    picture = GFX_evt_pleasing_letter
+    picture = GFX_evt_mage_choose_lore
     is_triggered_only = yes
 
     option = {
@@ -1799,8 +1882,8 @@ character_event = {
     }
 }
 
-#NOTIFICATIONS FOR MAGICAL EDUCATION
 
+#NOTIFICATIONS FOR MAGICAL EDUCATION
 
 #Academic Tutor bonus - adapted from the vanilla events for monastic tutors
 character_event = {
@@ -1850,7 +1933,7 @@ character_event = {
 	}
 	desc = {
 		text = EVT_DESCC_wh_higher_education_1001
-		picture = GFX_evt_candelight_instruction_Hexenstag
+		picture = GFX_evt_candlelight_instruction_Hexenstag
 		trigger = {
 			FROM = {
 				age = 10
