@@ -520,7 +520,7 @@ action_assist_arrest = {
 	arrest_chance_modifier = 0.01
 	local_revolt_risk = -0.01
 
-	events = {  }
+	events = { wh_greenskins.120 wh_greenskins.122 }
 }
 
 action_organize_army = {
@@ -820,7 +820,7 @@ action_spread_chaos = {
 				}
 			}
 		}
-		OR = {		
+		OR = {
 			location = {
 				any_neighbor_province = {
 					owner = {

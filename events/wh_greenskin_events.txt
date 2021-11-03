@@ -304,14 +304,17 @@ character_event = {
             limit = {
                 OR = {
                     #main greenskin homelands
-                    region = world_badlands
                     region = world_karaz_ankor
+                    region = world_badlands
                     region = world_darklands
                     #other greenskin zones
-                    region = world_old_world_empire_north_drakwald
-                    region = world_troll_country
-                    de_jure_liege_or_above = d_marche_orcale
                     region = world_chaos_wastes_eastern_steppes
+                    region = world_old_world_border_princes
+                    region = world_troll_country
+                    region = world_old_empire_drakwald
+                    region = world_old_empire_solland
+                    de_jure_liege_or_above = d_marche_orcale
+                    de_jure_liege_or_above = d_ostlichschattenwald
                 }
                 #testing dynamic exemption for Chaos Dwarfs - if they have their satrapies working, the greenskins aren't a problem
                 NOR = {
@@ -319,10 +322,53 @@ character_event = {
                     culture = servile_hobgoblin
                 }
             }
-            province_event = {
-                id = wh_greenskins.101
-                days = 5
-                random = 15
+            random_list = {
+                10 = {
+                    trigger = {
+                        region = world_badlands
+                    }
+                    #two rounds of the event, badlands are absolutely riddled with greenskins
+                    province_event = {
+                        id = wh_greenskins.101
+                        days = 5
+                        random = 5
+                    }
+                    province_event = {
+                        id = wh_greenskins.101
+                        days = 105
+                        random = 105
+                    }
+                }
+                10 = {
+                    trigger = {
+                        OR = {
+                            region = world_badlands
+                            region = world_darklands
+                        }
+                    }
+                    province_event = {
+                        id = wh_greenskins.101
+                        days = 60
+                        random = 60
+                    }
+                }
+                10 = {
+                    province_event = {
+                        id = wh_greenskins.101
+                        days = 120
+                        random = 120
+                    }
+                }
+                10 = {
+                    province_event = {
+                        id = wh_greenskins.101
+                        days = 240
+                        random = 240
+                    }
+                }
+                10 = {
+                    #no effect
+                }
             }
         }
     }
@@ -335,6 +381,39 @@ province_event = {
     is_triggered_only = yes
 
     immediate = {
+        #regular "population control" effects go here
+        if = {
+            limit = {
+                NOT = {
+                    religion_group = greenskin_gods_group
+                }
+                has_wonder = yes
+            }
+            change_variable = {
+                which = wild_greenskin_power
+                value = -2
+            }
+        }
+        if = {
+            limit = {
+                OR = {
+                    fort_has_building = ft_greenskin_patrol
+                    #ai doesn't build forts right now so it gets this for free if appropriate
+                    NOR = {
+                        religion_group = greenskin_gods_group
+                        county = {
+                            any_defacto_liege = {
+                                ai = no
+                            }
+                        }
+                    }
+                }
+            }
+            change_variable = {
+                which = wild_greenskin_power
+                value = -2
+            }
+        }
         #if necessary, apply effects for strong wild greenskins
         if = {
             limit = {
@@ -413,26 +492,85 @@ province_event = {
                     }
                 }
             }
-
         }
         #otherwise increase wild_greenskin_power
         else = {
             random_list = {
-                25 = {  }
-                50 = {
+                20 = {
+                    #can't happen in greenskin homelands
+                    trigger = {
+                        NOT = {
+                            region = world_badlands
+                            region = world_darklands
+                        }
+                    }
+                    #no change
+                }
+                30 = {
                     change_variable = {
                         which = wild_greenskin_power
                         value = 5
                     }
                 }
-                25 = {
+                30 = {
+                    change_variable = {
+                        which = wild_greenskin_power
+                        value = 8
+                    }
+                }
+                20 = {
+                    #can't happen in the fringe greenskin regions
+                    trigger = {
+                        NOR = {
+                            region = world_chaos_wastes_eastern_steppes
+                            region = world_old_world_border_princes
+                            region = world_old_empire_solland
+                            de_jure_liege_or_above = d_ostlichschattenwald
+                        }
+                    }
                     change_variable = {
                         which = wild_greenskin_power
                         value = 12
                     }
                 }
             }
-            #"population control" effects go here
+        }
+        #finally, logic for adding and removing a warning modifier for the player if applicable
+        if = {
+            limit = {
+                owner = {
+                    OR = {
+                        AND = {
+                            ai = no
+                            is_nomadic = no
+                        }
+                        any_liege = {
+                            ai = no
+                            #no point in taunting nomad players
+                            is_nomadic = no
+                        }
+                    }
+                }
+                check_variable = {
+                    which = wild_greenskin_power
+                    value = 10
+                }
+            }
+            add_province_modifier = {
+                name = wild_greenskin_danger_province
+                duration = -1
+            }
+        }
+        else_if = {
+            limit = {
+                NOT = {
+                    check_variable = {
+                        which = wild_greenskin_power
+                        value = 10
+                    }
+                }
+            }
+            remove_province_modifier = wild_greenskin_danger_province
         }
     }
 }
@@ -868,5 +1006,198 @@ province_event = {
                 }
             }
         }
+    }
+}
+
+#Marshal suppresses greenskins
+character_event = {
+    id = wh_greenskins.120
+    title = wh_greenskins.120.t
+    desc = wh_greenskins.120.d
+    picture = GFX_evt_greenskinanimosity
+
+    has_job_title = yes
+    capable_only = yes
+    prisoner = no
+    min_age = 16
+
+    trigger  = {
+        has_job_action = action_assist_arrest
+        NOT = { religion_group = greenskin_gods_group }
+        NOT = { has_character_modifier = in_seclusion }
+		NOT = { has_character_modifier = bedridden_illness }
+        location = {
+            check_variable = {
+                which = wild_greenskin_power
+                value = 1
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 120
+
+        modifier = {
+			factor = 1.25
+			NOT = { martial = 2 }
+		}
+		modifier = {
+			factor = 1.25
+			NOT = { martial = 3 }
+		}
+		modifier = {
+			factor = 1.25
+			NOT = { martial = 4 }
+		}
+		modifier = {
+			factor = 1.25
+			NOT = { martial = 5 }
+		}
+		modifier = {
+			factor = 0.75
+			martial = 10
+		}
+		modifier = {
+			factor = 0.75
+			martial = 11
+		}
+		modifier = {
+			factor = 0.75
+			martial = 12
+		}
+		modifier = {
+			factor = 0.75
+			martial = 13
+		}
+		modifier = {
+			factor = 0.75
+			martial = 15
+		}
+		modifier = {
+			factor = 0.75
+			martial = 18
+		}
+    }
+
+    option = {
+        name = EXCELLENT
+        liege = { letter_event = { id = wh_greenskins.121 } }
+        location = {
+            change_variable = {
+                which = wild_greenskin_power
+                value = -10
+            }
+        }
+    }
+}
+
+#notify liege
+letter_event = {
+    id = wh_greenskins.121
+    desc = wh_greenskins.121.d
+    picture = GFX_evt_council
+    border = GFX_event_letter_frame_war
+
+    is_triggered_only = yes
+
+    option = {
+        name = EXCELLENT
+    }
+}
+
+#Marshal ambushed by greenskins!
+character_event = {
+    id = wh_greenskins.122
+    title = wh_greenskins.122.t
+    desc = wh_greenskins.122.d
+    picture = GFX_evt_greenskinanimosity
+
+    has_job_title = yes
+    capable_only = yes
+    prisoner = no
+    min_age = 16
+
+    trigger  = {
+        has_job_action = action_assist_arrest
+        NOT = { religion_group = greenskin_gods_group }
+        NOT = { has_character_modifier = in_seclusion }
+        NOT = { has_character_modifier = bedridden_illness }
+        location = {
+            check_variable = {
+                which = wild_greenskin_power
+                value = 5
+            }
+        }
+    }
+
+    mean_time_to_happen = {
+        months = 200
+
+        modifier = {
+            factor = 0.75
+            NOT = { martial = 2 }
+        }
+        modifier = {
+            factor = 0.75
+            NOT = { martial = 3 }
+        }
+        modifier = {
+            factor = 0.75
+            NOT = { martial = 4 }
+        }
+        modifier = {
+            factor = 0.75
+            NOT = { martial = 5 }
+        }
+        modifier = {
+            factor = 1.25
+            martial = 10
+        }
+        modifier = {
+            factor = 1.25
+            martial = 11
+        }
+        modifier = {
+            factor = 1.25
+            martial = 12
+        }
+        modifier = {
+            factor = 1.25
+            martial = 13
+        }
+        modifier = {
+            factor = 1.25
+            martial = 15
+        }
+        modifier = {
+            factor = 1.25
+            martial = 18
+        }
+    }
+
+    option = {
+        name = CURSES
+        add_trait = wounded
+        liege = { letter_event = { id = wh_greenskins.123 } }
+        location = {
+            change_variable = {
+                which = wild_greenskin_power
+                value = 5
+            }
+        }
+    }
+}
+
+#notify liege
+letter_event = {
+    id = wh_greenskins.123
+    desc = wh_greenskins.123.d
+    picture = GFX_evt_council
+    border = GFX_event_letter_frame_war
+
+    is_triggered_only = yes
+
+    option = {
+        name = CURSES
     }
 }
