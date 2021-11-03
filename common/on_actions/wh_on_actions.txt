@@ -16,8 +16,8 @@ on_startup = {
 		bretonnia.5
 		bretonnia.11
 		magic.1
-		#wh_setup.4	#Set government type to Urban Feudalism # Not needed anymore I think I fixed it 
-		wh_setup.23	#Reiklander-Nulnian War war exhaustion	
+		#wh_setup.4	#Set government type to Urban Feudalism # Not needed anymore I think I fixed it
+		wh_setup.23	#Reiklander-Nulnian War war exhaustion
 		wh_setup.100 #set names and descriptions of wonders
 		wh_setup.200 #add d'Aquitaines to Red Duke's bloodline
 		wh_setup.201 #sprinkle Marco Colombo descendants
@@ -170,7 +170,7 @@ on_bi_yearly_pulse = {
 		schaos.107
 		slaaneshbless.4
 		wh_greenskins.100 #wild greenskins effect
-		wh_setup.24	#Reiklander-Nulnian War remove war exhaustion	
+		wh_setup.24	#Reiklander-Nulnian War remove war exhaustion
 	}
 
 	random_events = {
@@ -210,8 +210,9 @@ on_bi_yearly_pulse = {
 		150 = selfmarriage.51 #AI Elf courtier/baron courting - Cytharai
 		mutation_check = {
 		#NOTE: any other events in this block will alter the odds of mutations occurring
-			25 = wh_mutation.1
-			975 = 0
+			delay = 99
+			24 = wh_mutation.1
+			976 = 0
 		}
 
 	}
