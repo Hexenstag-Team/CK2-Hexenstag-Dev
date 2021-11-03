@@ -538,11 +538,17 @@ province_event = {
         #finally, logic for adding and removing a warning modifier for the player if applicable
         if = {
             limit = {
-                county = {
-                    any_defacto_liege = {
-                        ai = no
-                        #no point in taunting nomad players
-                        is_nomadic = no
+                owner = {
+                    OR = {
+                        AND = {
+                            ai = no
+                            is_nomadic = no
+                        }
+                        any_liege = {
+                            ai = no
+                            #no point in taunting nomad players
+                            is_nomadic = no
+                        }
                     }
                 }
                 check_variable = {
@@ -551,7 +557,7 @@ province_event = {
                 }
             }
             add_province_modifier = {
-                which = wild_greenskin_danger_province
+                name = wild_greenskin_danger_province
                 duration = -1
             }
         }
@@ -1077,7 +1083,6 @@ character_event = {
         name = EXCELLENT
         liege = { letter_event = { id = wh_greenskins.121 } }
         location = {
-            save_event_target_as:victory_county
             change_variable = {
                 which = wild_greenskin_power
                 value = -10
@@ -1175,7 +1180,6 @@ character_event = {
         add_trait = wounded
         liege = { letter_event = { id = wh_greenskins.123 } }
         location = {
-            save_event_target_as:victory_county
             change_variable = {
                 which = wild_greenskin_power
                 value = 5
