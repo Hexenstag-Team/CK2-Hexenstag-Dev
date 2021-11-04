@@ -2468,7 +2468,14 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTBsorcererapprentice12
-		trigger = { culture_group = norscan_group }
+		trigger = {
+			culture_group = norscan_group
+			culture_group = estalian_group
+			culture_group = sartosan_group
+			culture = wissenlander
+			culture = middenlander
+			culture = neueslander
+		}
 		set_character_flag = learning_lore_metal
 		hidden_tooltip = { character_event = { id = sorcererapprentice.13 days = 15 } }
 	}
@@ -2480,47 +2487,92 @@ character_event = {
 	}
 	option = {
 		name = EVTOPTDsorcererapprentice12
-		trigger = { culture_group = druchi_group }
+		trigger = {
+			OR = {
+				culture_group = druchi_group
+				culture_group = tilean_group
+				culture = sollander
+				culture = sylvanian
+				culture = neueslander
+			}
+		}
 		set_character_flag = learning_lore_death
 		hidden_tooltip = { character_event = { id = sorcererapprentice.13 days = 15 } }
 	}
 	option = {
 		name = EVTOPTEsorcererapprentice12
-		trigger = { OR = { culture_group = norscan_group
-				culture_group = druchi_group } }
+		trigger = {
+			OR = {
+				culture_group = norscan_group
+				culture_group = druchi_group
+				culture_group = tilean_group
+				culture = westlander
+				culture = sylvanian
+			}
+		}
 		set_character_flag = learning_lore_shadows
 		hidden_tooltip = { character_event = { id = sorcererapprentice.13 days = 15 } }
 	}
 	option = {
 		name = EVTOPTFsorcererapprentice12
-		trigger = { OR = { culture_group = norscan_group
-				culture_group = druchi_group } }
+		trigger = {
+			OR = {
+				culture_group = norscan_group
+				culture_group = druchi_group
+				culture_group = bretonnian_group
+				culture_group = sartosan_group
+				culture_group = albion_group
+				culture = ostlander
+				culture = hochlander
+				culture = middenlander
+				culture = stirlander
+				culture = ostermarker
+			}
+		}
 		set_character_flag = learning_lore_beasts
 		hidden_tooltip = { character_event = { id = sorcererapprentice.13 days = 15 } }
 	}
 	option = {
 		name = EVTOPTGsorcererapprentice12
-		trigger = { OR = { culture_group = asur_group
-				 culture = cathayan } }
+		trigger = {
+			OR = {
+				culture_group = asur_group
+				culture_group = arabyan_group
+				culture_group = bretonnian_group
+				culture = cathayan
+				culture = westlander
+			}
+		}
 		set_character_flag = learning_lore_heavens
 		hidden_tooltip = { character_event = { id = sorcererapprentice.13 days = 15 } }
 	}
 	option = {
 		name = EVTOPTHsorcererapprentice12
-		trigger = { culture_group = asur_group }
+		trigger = {
+			OR = {
+				culture_group = asur_group
+				culture_group = arabyan_group
+				culture = reiklander
+			}
+		}
 		set_character_flag = learning_lore_light
 		hidden_tooltip = { character_event = { id = sorcererapprentice.13 days = 15 } }
 	}
 	option = {
 		name = EVTOPTIsorcererapprentice12
-		trigger = { culture_group = asur_group }
+		trigger = {
+			OR = {
+				culture_group = asur_group
+				culture_group = albion_group
+				culture = talabeclander
+				culture = reiklander
+				culture = ostlander
+				culture = hochlander
+				culture = stirlander
+				culture = ostermarker
+			}
+		}
 		set_character_flag = learning_lore_life
-		hidden_tooltip = { character_event = { id = sorcererapprentice.13 days = 15 } }
-	}
-	option = {
-		name = EVTOPTIsorcererapprentice12
-		trigger = { culture = amazon_main }
-		set_character_flag = learning_lore_beasts
 		hidden_tooltip = { character_event = { id = sorcererapprentice.13 days = 15 } }
 	}
 }
