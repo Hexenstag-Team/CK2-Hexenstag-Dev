@@ -3,6 +3,7 @@ decisions = {
 trainapegasusmount = {
 	only_playable = yes
 	ai_check_interval = 24
+
 	potential = {
 		age = 12
 		OR = {
@@ -13,29 +14,37 @@ trainapegasusmount = {
 			culture_group = tilean_group
 			culture_group = estalian_group
 		}
-		NOT = { culture = sylvanian }
-		NOT = { has_artifact = pegasus_mount }
+		NOR = {
+			culture = sylvanian
+			has_character_flag = pegasus_mount
+			has_artifact = pegasus_mount
+		}
 	}
 
 	allow = {
 		wealth = 500
 		custom_tooltip = {
-				text = IS_NOT_INCAPACITATED
-				is_incapacitated_trigger = no
+			text = IS_NOT_INCAPACITATED
+			is_incapacitated_trigger = no
 		}
 	}
 
 	effect = {
-	ROOT = { character_event = { id = mounts.0 } }
+		ROOT = {
+			character_event = {
+				id = mounts.0
+			}
 		}
+	}
 
 	ai_will_do = {
-	factor = 1
-
-	modifier = {
-            factor = 0
-            NOT = { martial = 15 }
-            }
+		factor = 1
+		modifier = {
+			factor = 0
+			NOT = {
+				martial = 15
+			}
+		}
 	}
 }
 
@@ -49,8 +58,11 @@ trainagryphonmount = {
 			culture_group = asrai_group
 			culture_group = asur_group
 		}
-		NOT = { culture = sylvanian }
-		NOT = { has_artifact = gryphon_mount }
+		NOR = {
+			culture = sylvanian
+			has_character_flag = pegasus_mount
+			has_artifact = gryphon_mount
+		}
 	}
 
 	allow = {
@@ -80,7 +92,10 @@ trainawyvernmount = {
 	potential = {
 		culture_group = orc_group
 		age = 12
-		NOT = { has_artifact = wyvern_mount }
+		NOR = {
+			has_character_flag = wyvern_mount
+			has_artifact = wyvern_mount
+		}
 	}
 
 	allow = {
@@ -110,7 +125,10 @@ trainadragonmount = {
 	potential = {
 		culture = caledori
 		age = 18
-		NOT = { has_artifact = red_dragon_mount }
+		NOR = {
+			has_character_flag = red_dragon_mount
+			has_artifact = red_dragon_mount
+		}
 	}
 
 	allow = {
@@ -146,7 +164,10 @@ buildabyssalterror = {
 						trait = vampire_mahtmasi_visible
 					}
 					age = 18
-					NOT = { has_artifact = abyssal_terror_mount }
+					NOR = {
+						has_character_flag = abyssal_terror_mount
+						has_artifact = red_dragon_mount
+					}
 			}
 
 		allow = {
@@ -181,7 +202,10 @@ searchnigthmaremount = {
 	potential = {
 		trait = vampire_blood_visible
 		age = 16
-		NOT = { has_artifact = nightmare_mount }
+		NOR = {
+			has_character_flag = nightmare_mount
+			has_artifact = nightmare_mount
+		}
 	}
 
 	allow = {
@@ -212,7 +236,10 @@ trainwarbearmount = {
 		culture_group = kislevite_group
 		is_female = no
 		age = 16
-		NOT = { has_artifact = war_bear_mount }
+		NOR = {
+			has_character_flag = war_bear_mount
+			has_artifact = war_bear_mount
+		}
 	}
 
 	allow = {
@@ -245,7 +272,10 @@ traincoldonemount = {
 			culture_group = druchi_group
 		}
 		age = 16
-		NOT = { has_artifact = cold_one_mount }
+		NOR = {
+			has_character_flag = cold_one_mount
+			has_artifact = cold_one_mount
+		}
 	}
 
 	allow = {
@@ -275,7 +305,10 @@ trainaspidermount = {
 	potential = {
 		culture_group = goblin_group
 		age = 12
-		NOT = { has_artifact = spider_mount }
+		NOR = {
+			has_character_flag = spider_mount
+			has_artifact = spider_mount
+		}
 	}
 
 	allow = {
@@ -308,7 +341,10 @@ trainamammothmount = {
 			culture_group = ogre_group
 		}
 		age = 16
-		NOT = { has_artifact = mammoth_mount }
+		NOR = {
+			has_character_flag = mammoth_mount
+			has_artifact = mammoth_mount
+		}
 	}
 
 	allow = {
@@ -336,9 +372,12 @@ buildwarchariot = {
 	only_playable = yes
 	ai_check_interval = 24
 	potential = {
-	culture_group = nehekharan_group
-	age = 12
-	NOT = { has_artifact = chariot_mount }
+		culture_group = nehekharan_group
+		age = 12
+		NOR = {
+			has_character_flag = chariot_mount
+			has_artifact = chariot_mount
+		}
 	}
 
 	allow = {

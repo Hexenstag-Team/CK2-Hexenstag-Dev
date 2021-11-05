@@ -1674,6 +1674,7 @@ character_event = {	#Reiklander-Nulnian War start up event
 	id = wh_setup.23
 	hide_window = yes
 	is_triggered_only = yes
+	is_save_game = no
 
 	trigger = {
 		any_war = {
@@ -1683,13 +1684,12 @@ character_event = {	#Reiklander-Nulnian War start up event
 	}
 
 	immediate = {
-		long_character_event = { id = wh_setup.25 }
-		set_global_flag = reiklander_nulnian_war
+		narrative_event = { id = wh_setup.25 }
 		any_realm_character = {
 			limit = {
 				is_ruler = yes
 			}
-			long_character_event = { id = wh_setup.25 }
+			narrative_event = { id = wh_setup.25 }
 		}
 	}
 }
@@ -1715,7 +1715,7 @@ character_event = {	#Reiklander-Nulnian War war_exhaustion_modifier event
 	}
 }
 
-long_character_event = {	#Reiklander-Nulnian War start up war exhaustion event
+narrative_event = {	#Reiklander-Nulnian War start up war exhaustion event
 	id = wh_setup.25
 	title = "The Reiklander-Nulnian War"
 	desc = REIKLANDER_NULNIAN_WAR_DESC
@@ -1742,11 +1742,9 @@ character_event = {	#Reiklander-Nulnian War war_exhaustion_modifier event
 	is_triggered_only = yes
 	
 	trigger = {
-		NOT = {
-			OR = {
-				has_global_flag = reiklander_nulnian_war_reikland
-				has_global_flag = reiklander_nulnian_war_nuln
-			}
+		NOR = {
+			has_global_flag = reiklander_nulnian_war_reikland
+			has_global_flag = reiklander_nulnian_war_nuln
 		}
 	}
 

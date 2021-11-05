@@ -36,73 +36,6 @@ character_event = {
 				casus_belli = vlad_subjugation
 			}
 		}
-		location = {
-			ROOT = {
-				spawn_unit = {
-					province = PREV
-					troops = {
-						vampire_knights = {
-							200 200
-						}
-					}
-					earmark = vlad_undead
-				}
-				spawn_unit = {
-					province = PREV
-					troops = {
-						vampire_knights = {
-							200 200
-						}
-					}
-					earmark = vlad_undead
-				}
-				spawn_unit = {
-					province = PREV
-					troops = {
-						vampire_knights = {
-							200 200
-						}
-					}
-					earmark = vlad_undead
-				}
-				spawn_unit = {
-					province = PREV
-					troops = {
-						undead_horde = {
-							8500 8500
-						}
-					}
-					earmark = vlad_undead
-				}
-				spawn_unit = {
-					province = PREV
-					troops = {
-						undead_horde = {
-							8500 8500
-						}
-					}
-					earmark = vlad_undead
-				}
-				spawn_unit = {
-					province = PREV
-					troops = {
-						undead_horde = {
-							8500 8500
-						}
-					}
-					earmark = vlad_undead
-				}
-				spawn_unit = {
-					province = PREV
-					troops = {
-						undead_horde = {
-							8500 8500
-						}
-					}
-					earmark = vlad_undead
-				}
-			}
-		}
 		any_playable_ruler = {
 			limit = {
 				OR = {
@@ -1032,3 +965,380 @@ character_event = {
 		set_global_flag = vampire_wars_started
 	}
 }
+
+
+
+namespace = wh_von_carstein
+
+narrative_event = {	#Vald Setup
+	id = wh_von_carstein.1
+	desc = EVTDESC_wh_von_carstein_1
+	picture = "GFX_evt_zombies"
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_landed_title = e_sylvania
+	}
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_1
+		character_event = {
+			id = wh_von_carstein.100
+			months = 5
+		}
+	}
+}
+
+character_event = {	#First Vampire War
+	id = wh_von_carstein.100
+	title = CONQUEST
+	desc = EVTDESC_wh_von_carstein_100
+	picture = "GFX_evt_zombies"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_wh_von_carstein_100
+		war = {
+			target = e_talabecland
+			casus_belli = vlad_subjugation
+		}
+		vlad_troops_effect = yes
+		e_talabecland = {
+			holder_scope = {
+				character_event = {
+					id = wh_von_carstein.101
+				}
+			}
+		}
+		k_ostermark = {
+			holder_scope = {
+				character_event = {
+					id = wh_von_carstein.102
+				}
+			}
+		}
+		k_middenheim = {
+			holder_scope = {
+				character_event = {
+					id = wh_von_carstein.103
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.101
+	desc = EVTDESC_wh_von_carstein_101
+	picture = "GFX_evt_zombies"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_wh_von_carstein_101
+		k_ostermark = {
+			holder_scope = {
+				join_defender_wars = ROOT
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.102
+	desc = EVTDESC_wh_von_carstein_102
+	picture = "GFX_evt_zombies"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_wh_von_carstein_102
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.103
+	desc = EVTDESC_wh_von_carstein_103
+	picture = "GFX_evt_zombies"
+
+	is_triggered_only = yes
+	
+	option = {	#Middenheim doen't joins war
+		name = EVTOPTA_wh_von_carstein_103
+		set_defacto_liege = THIS
+	}
+	
+	option = {	#Middenheim joins war
+		trigger = { ai = no }
+		name = EVTOPTB_wh_von_carstein_103
+		e_talabecland = {
+			holder_scope = {
+				character_event = {
+					id = wh_von_carstein.104
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.104
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		k_middenheim = {
+			holder_scope = {
+				join_defender_wars = ROOT
+			}
+		}
+	}
+}
+
+character_event = {	#Vlad takes over Talabheim
+	id = wh_von_carstein.110
+	hide_window = yes
+	
+	trigger = {
+		NOT = { has_global_flag = vlad_talabheim }
+		has_landed_title = e_talabecland
+		e_sylvania = {
+			holder_scope = {
+				controls = 324 # c_talabheim
+			}
+		}
+	}
+	
+	immediate = {
+		set_global_flag = vlad_talabheim
+		save_event_target_as = Ottilia
+		k_middenheim = {
+			holder_scope = {
+				character_event = {
+					id = wh_von_carstein.111
+				}
+			}
+		}
+		e_sylvania = {
+			holder_scope = {
+				character_event = {
+					id = wh_von_carstein.112
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.111
+	desc = EVTDESC_wh_von_carstein_111
+	picture = "GFX_evt_zombies"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_111
+		join_defender_wars = event_target:Ottilia
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.112
+	desc = EVTDESC_wh_von_carstein_112
+	picture = "GFX_evt_zombies"
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_112
+	}
+}
+
+character_event = {	#Vlad takes over Middenheim
+	id = wh_von_carstein.120
+	hide_window = yes
+	
+	trigger = {
+		NOT = { has_global_flag = vlad_middenheim }
+		has_landed_title = e_talabecland
+		e_sylvania = {
+			holder_scope = {
+				controls = 274 # c_middenheim
+			}
+		}
+	}
+	
+	immediate = {
+		set_global_flag = vlad_middenheim
+		save_event_target_as = Ottilia
+		k_hochland = {
+			holder_scope = {
+				character_event = {
+					id = wh_von_carstein.121
+				}
+			}
+		}
+		e_sylvania = {
+			holder_scope = {
+				character_event = {
+					id = wh_von_carstein.122
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.121
+	desc = EVTDESC_wh_von_carstein_121
+	picture = "GFX_evt_zombies"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_121
+		join_defender_wars = event_target:Ottilia
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.122
+	desc = EVTDESC_wh_von_carstein_122
+	picture = "GFX_evt_zombies"
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_122
+	}
+}
+
+character_event = {	#Vlad takes over Hergig
+	id = wh_von_carstein.130
+	hide_window = yes
+	
+	trigger = {
+		NOT = { has_global_flag = vlad_hergig }
+		has_landed_title = e_talabecland
+		e_sylvania = {
+			holder_scope = {
+				controls = 292 # c_hergig
+			}
+		}
+	}
+	
+	immediate = {
+		set_global_flag = vlad_hergig
+		save_event_target_as = Ottilia
+		k_ostland = {
+			holder_scope = {
+				character_event = {
+					id = wh_von_carstein.131
+				}
+			}
+		}
+		e_sylvania = {
+			holder_scope = {
+				character_event = {
+					id = wh_von_carstein.132
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.131
+	desc = EVTDESC_wh_von_carstein_131
+	picture = "GFX_evt_zombies"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_131
+		join_defender_wars = event_target:Ottilia
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.132
+	desc = EVTDESC_wh_von_carstein_132
+	picture = "GFX_evt_zombies"
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_132
+	}
+}
+
+character_event = {	#Vlad takes over Wolfenburg
+	id = wh_von_carstein.140
+	hide_window = yes
+	
+	trigger = {
+		NOT = { has_global_flag = vlad_wolfenburg }
+		has_landed_title = e_talabecland
+		e_sylvania = {
+			holder_scope = {
+				controls = 254 # c_wolfenburg
+			}
+		}
+	}
+	
+	immediate = {
+		set_global_flag = vlad_wolfenburg
+		save_event_target_as = Ottilia
+		e_reikland = {	#I may want to chagne this
+			holder_scope = {
+				character_event = {
+					id = wh_von_carstein.141
+				}
+			}
+		}
+		e_nuln = {	#I may want to chagne this
+			holder_scope = {
+				character_event = {
+					id = wh_von_carstein.141
+				}
+			}
+		}
+		e_sylvania = {
+			holder_scope = {
+				character_event = {
+					id = wh_von_carstein.142
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.141
+	desc = EVTDESC_wh_von_carstein_141
+	picture = "GFX_evt_zombies"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_141
+		join_defender_wars = event_target:Ottilia
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.142
+	desc = EVTDESC_wh_von_carstein_142
+	picture = "GFX_evt_zombies"
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_142
+	}
+}
+
+

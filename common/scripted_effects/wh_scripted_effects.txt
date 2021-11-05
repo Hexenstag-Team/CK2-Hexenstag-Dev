@@ -7632,6 +7632,101 @@ spawn_bull_centaur_effect = {
 	}
 }
 
+vlad_troops_effect = {
+	spawn_unit = {	#heavy_cavalry 1000
+		owner = ROOT
+		province = ROOT
+		home = ROOT
+		cannot_inherit = yes
+		leader = vlad_undead
+		
+		troops = {
+			heavy_cavalry = {
+				1000
+				1000
+			}
+		}
+	}
+	spawn_unit = {	#heavy_cavalry 1000
+		owner = ROOT
+		province = ROOT
+		home = ROOT
+		cannot_inherit = yes
+		
+		troops = {
+			heavy_cavalry = {
+				1000
+				1000
+			}
+		}
+	}
+	spawn_unit = {	#heavy_cavalry 1000
+		owner = ROOT
+		province = ROOT
+		home = ROOT
+		cannot_inherit = yes
+		
+		troops = {
+			heavy_cavalry = {
+				1000
+				1000
+			}
+		}
+	}
+	spawn_unit = {	#undead_horde 1000
+		owner = ROOT
+		province = ROOT
+		home = ROOT
+		cannot_inherit = yes
+		
+		troops = {
+			undead_horde = {
+				10000
+				10000
+			}
+		}
+	}
+	spawn_unit = {	#undead_horde 1000
+		owner = ROOT
+		province = ROOT
+		home = ROOT
+		cannot_inherit = yes
+		
+		troops = {
+			undead_horde = {
+				10000
+				10000
+			}
+		}
+	}
+	spawn_unit = {	#undead_horde 1000
+		owner = ROOT
+		province = ROOT
+		home = ROOT
+		cannot_inherit = yes
+		
+		troops = {
+			undead_horde = {
+				10000
+				10000
+			}
+		}
+	}
+	spawn_unit = {	#undead_horde 1000
+		owner = ROOT
+		province = ROOT
+		home = ROOT
+		cannot_inherit = yes
+		
+		troops = {
+			undead_horde = {
+				10000
+				10000
+			}
+		}
+	}
+}
+
 patron_imperial_pantheon_effect = {
 	random_list = {
 		#imperial_pantheon Gods
@@ -7651,7 +7746,7 @@ patron_imperial_pantheon_effect = {
 				factor = 100
 				OR = {
 					has_landed_title = e_reikland
-					has_landed_title = k_cult_of_sigmar
+					has_landed_title = d_cult_of_sigmar
 					has_landed_title = d_arch_lectory_talabheim
 					has_landed_title = d_arch_lectory_nuln
 					culture = witchhunter_culture
@@ -7708,7 +7803,7 @@ patron_imperial_pantheon_effect = {
 				factor = 100
 				OR = {
 					has_landed_title = e_talabecland
-					has_landed_title = k_cult_of_taal_and_rhya
+					has_landed_title = d_cult_of_taal_and_rhya
 					has_landed_title = d_longshanks
 					has_landed_title = d_knights_of_taals_fury
 				}
@@ -7760,7 +7855,7 @@ patron_imperial_pantheon_effect = {
 				factor = 100
 				OR = {
 					has_landed_title = e_middenland
-					has_landed_title = k_cult_of_ulric
+					has_landed_title = d_cult_of_ulric
 				}
 			}
 			modifier = {
@@ -7839,7 +7934,7 @@ patron_imperial_pantheon_effect = {
 			modifier = {
 				factor = 100
 				OR = {
-					has_landed_title = k_cult_of_morr
+					# has_landed_title = d_cult_of_morr
 					has_landed_title = d_knights_of_the_black_rose
 					has_landed_title = d_order_of_the_raven
 					has_landed_title = d_knights_of_morr

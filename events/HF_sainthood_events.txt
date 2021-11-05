@@ -2720,7 +2720,7 @@ character_event = {
 
     trigger = {
         rightful_religious_head_scope = {
-            has_landed_title = k_cult_of_sigmar
+            has_landed_title = d_cult_of_sigmar
         }
         NOT = {
             has_global_flag = only_papal_saints
@@ -2948,7 +2948,7 @@ province_event = {
     is_triggered_only = yes
     has_dlc = "Holy Fury"
     immediate = {
-        k_cult_of_sigmar = {
+        d_cult_of_sigmar = {
             holder_scope = {
                 character_event = { id = HF.40058 }
             }
@@ -3150,7 +3150,7 @@ character_event = {
     trigger = {
     	death_in_cathay_trigger = no
 		death_no_trace_trigger = no
-    	k_cult_of_sigmar = {
+    	d_cult_of_sigmar = {
     		holder_scope = {
     			trait = bad_priest
                 independent = yes
@@ -3167,7 +3167,7 @@ character_event = {
     	OR = {
     		AND = {
     			trait = impaler
-    			k_cult_of_sigmar = {
+    			d_cult_of_sigmar = {
     				holder_scope = {
     					trait = impaler
     				}
@@ -3175,7 +3175,7 @@ character_event = {
     		}
     		AND = {
     			trait = hedonist
-    			k_cult_of_sigmar = {
+    			d_cult_of_sigmar = {
     				holder_scope = {
     					trait = hedonist
     				}
@@ -3183,7 +3183,7 @@ character_event = {
     		}
     		AND = {
     			trait = cannibal_trait
-    			k_cult_of_sigmar = {
+    			d_cult_of_sigmar = {
     				holder_scope = {
     					trait = cannibal_trait
     				}
@@ -3195,7 +3195,7 @@ character_event = {
 					trait = lunatic_2
 					trait = lunatic_3
 				}
-    			k_cult_of_sigmar = {
+    			d_cult_of_sigmar = {
     				holder_scope = {
     					OR = {
 							trait = lunatic_1
@@ -3207,7 +3207,7 @@ character_event = {
     		}
     		AND = {
     			trait = drunkard
-    			k_cult_of_sigmar = {
+    			d_cult_of_sigmar = {
     				holder_scope = {
     					trait = drunkard
     				}
@@ -3215,7 +3215,7 @@ character_event = {
     		}
     		AND = {
     			trait = homosexual
-    			k_cult_of_sigmar = {
+    			d_cult_of_sigmar = {
     				holder_scope = {
     					trait = homosexual
     					is_lover = ROOT
@@ -3225,7 +3225,7 @@ character_event = {
     		}
     		AND = {
     			trait = lustful
-    			k_cult_of_sigmar = {
+    			d_cult_of_sigmar = {
     				is_lover = ROOT
     				trait = lustful
     				NOT = {
@@ -3238,7 +3238,7 @@ character_event = {
     				trait = seducer
     				trait = seductress
     			}
-    			k_cult_of_sigmar = {
+    			d_cult_of_sigmar = {
     				holder_scope = {
     					trait = seducer
     				}
@@ -3251,7 +3251,7 @@ character_event = {
     	save_event_target_as = saint_person
     	random = {
     		chance = 20
-    		k_cult_of_sigmar = {
+    		d_cult_of_sigmar = {
     			holder_scope = {
     				character_event = { id = HF.40091 }
     			}
@@ -3463,7 +3463,7 @@ narrative_event = {
     id = HF.40098
     desc = {
     	trigger = {
-    		k_cult_of_sigmar = {
+    		d_cult_of_sigmar = {
     			holder_scope = {
     				trait = impaler
     			}
@@ -3473,7 +3473,7 @@ narrative_event = {
     }
     desc = {
     	trigger = {
-    		k_cult_of_sigmar = {
+    		d_cult_of_sigmar = {
     			holder_scope = {
     				trait = hedonist
     			}
@@ -3483,7 +3483,7 @@ narrative_event = {
     }
     desc = {
     	trigger = {
-    		k_cult_of_sigmar = {
+    		d_cult_of_sigmar = {
     			holder_scope = {
     				trait = cannibal_trait
     			}
@@ -3493,7 +3493,7 @@ narrative_event = {
     }
     desc = {
     	trigger = {
-    		k_cult_of_sigmar = {
+    		d_cult_of_sigmar = {
     			holder_scope = {
     				OR = {
 						trait = lunatic_1
@@ -3507,7 +3507,7 @@ narrative_event = {
     }
     desc = {
     	trigger = {
-    		k_cult_of_sigmar = {
+    		d_cult_of_sigmar = {
     			holder_scope = {
     				trait = drunkard
     			}
@@ -3517,7 +3517,7 @@ narrative_event = {
     }
     desc = {
     	trigger = {
-    		k_cult_of_sigmar = {
+    		d_cult_of_sigmar = {
     			holder_scope = {
     				trait = homosexual
     			}
@@ -3527,7 +3527,7 @@ narrative_event = {
     }
     desc = {
     	trigger = {
-    		k_cult_of_sigmar = {
+    		d_cult_of_sigmar = {
     			holder_scope = {
     				trait = lustful
     				NOT = {
@@ -3540,7 +3540,7 @@ narrative_event = {
     }
     desc = {
     	trigger = {
-    		k_cult_of_sigmar = {
+    		d_cult_of_sigmar = {
     			holder_scope = {
     				trait = seducer
     			}
@@ -3668,7 +3668,7 @@ narrative_event = {
     has_dlc = "Holy Fury"
     trigger = {
         FROM = {
-            has_landed_title = k_cult_of_sigmar
+            has_landed_title = d_cult_of_sigmar
             any_war = {
                 using_cb = depose_impious_pope
                 is_primary_war_defender = yes
@@ -3816,7 +3816,7 @@ narrative_event = {
     has_dlc = "Holy Fury"
 
     immediate = {
-        k_cult_of_sigmar = {
+        d_cult_of_sigmar = {
             owner = {
                 save_event_target_as = current_pope
             }

@@ -1499,13 +1499,13 @@ ask_for_invasion_chance = {
 		localisation_key = POPE_AIREASON_MODIFIER_RULER_PROTECTS_ANTIPOPE
 		FROM = {
 			NOT = {
-				has_claim = k_cult_of_sigmar
+				has_claim = d_cult_of_sigmar
 			}
 		}
 		FROMFROM = {
 			rightful_religious_head_scope = {
 				#OR = {
-					has_claim = k_cult_of_sigmar
+					has_claim = d_cult_of_sigmar
 				#	has_claim = d_fraticelli
 				#}
 			}
@@ -6060,7 +6060,7 @@ ask_for_money_chance = {
 		in_faction = faction_antiking
 		FROM = {
 			NOT = {
-				has_claim = k_cult_of_sigmar
+				has_claim = d_cult_of_sigmar
 			}
 		}
 	}
