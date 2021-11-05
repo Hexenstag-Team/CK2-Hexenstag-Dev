@@ -574,7 +574,6 @@ imperial_reconquest = {
     # }
 # }
 
-
 vlad_subjugation = {
     name = CB_NAME_VLAD_SUBJUGATION
     war_name = WAR_NAME_VLAD_SUBJUGATION
@@ -586,36 +585,22 @@ vlad_subjugation = {
 	allow_whitepeace = no
 	can_call_vassals = no
 	can_call_allies = no
+	allow_distant = yes
 	max_attacker_battle_score = 0
 	max_attacker_occupation_score = 0
+	max_defender_battle_score = 0
+	max_defender_occupation_score = 0
 	
     can_use = {
-        ROOT = {
-            has_landed_title = e_sylvania
-            NOT = { same_realm = FROM }
-            NOT = { is_liege_or_above = FROM }
-        }
-        FROM = {
-            religion_group = old_world_group
-        }
     }
 
     can_use_title = {
-        ROOT = {
-           has_landed_title = e_sylvania
-        }
     }
 	
 	is_valid = {
-		ROOT = {
-			has_landed_title = e_sylvania
-		}
 	}
 
 	is_valid_title = {
-		FROM = {
-			has_landed_title = e_talabecland
-		}
 	}
 
     on_success = {
