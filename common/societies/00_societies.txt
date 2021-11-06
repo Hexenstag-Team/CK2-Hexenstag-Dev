@@ -637,11 +637,6 @@ knights_of_old_world = {
 	indestructible = yes
 
 	can_join_society = {
-		NOT={trait = witch_hunter}
-		OR={
-			martial = 10
-			has_education_martial_trigger = yes
-		}
 		hidden_trigger = {
 			NAND = {
 				ai = yes
@@ -651,6 +646,7 @@ knights_of_old_world = {
 				}
 			}
 		}
+		religion_group = old_world_group
 		NOR = {
 			religion = grail
 			religion = false_grail
@@ -660,39 +656,43 @@ knights_of_old_world = {
 		is_adult = yes
 		custom_tooltip = {
 			text = has_not_angered_society_tt
-			hidden_trigger = { NOT = { has_character_modifier = warband_failed_joining_cd } }
+			hidden_trigger = {
+				NOT = { has_character_modifier = warband_failed_joining_cd }
+			}
 		}
-		NOT = { has_character_modifier = warband_failed_joining_cd }
 		hidden_trigger = {
 			NOT = { has_character_flag = society_join_block }
 		}
+		is_feudal = yes
+		trait = creature_human
+		NOT = { trait = witch_hunter }
 		trigger_if = {
 			limit = { prisoner = yes }
 			prisoner = no
 		}
-		religion_group = old_world_group
-		is_feudal = yes
-		trait = creature_human
 	}
+	
 	show_society = {
-		OR = {
-			#You are this religion: will show only this lodge (the other "show_society"'s will make sure)
-			religion_group = old_world_group
-			#Always show if: You are already a member. Duh.
-			society_member_of = knights_of_old_world
+		religion_group = old_world_group
+		NOR = {
+			religion = grail
+			religion = false_grail
+			religion = stromfels
+			religion = kislev_gods
 		}
 	}
 
-	potential = { #if you change religion or become zealous while NOT pagan, you are kicked out
-		trait = creature_human
-		OR = {
-			religion_group = old_world_group
-			trait = cynical
+	potential = {
+		religion_group = old_world_group
+		NOR = {
+			religion = grail
+			religion = false_grail
+			religion = stromfels
+			religion = kislev_gods
 		}
-		NOT = { religion = stromfels }
 	}
 
-	society_rank = { #"Fledling"
+	society_rank = { #"Squire"
 		level = 1
 		limit = 200
 		startup_limit = 50
@@ -701,13 +701,12 @@ knights_of_old_world = {
 		}
 		powers = {
 			warrior_lodge_duel #Passive Power: Unlocks Duel
-			#warrior_lodge_shieldmaiden #Passive Power: Unlocks Shieldmaidens
 			warrior_lodge_survivor #Passive Power: Survivor
 			warrior_lodge_lifetime_of_war #Passive Power: A Lifetime of War
 		}
 	}
 
-	society_rank = { #"Warrior"
+	society_rank = { #"Knight"
 		level = 2
 		limit = 150
 		startup_limit = 25
@@ -725,7 +724,7 @@ knights_of_old_world = {
 		}
 	}
 
-	society_rank = { #"Veteran"
+	society_rank = { #"First Knight"
 		level = 3
 		limit = 100
 		startup_limit = 15
@@ -739,7 +738,7 @@ knights_of_old_world = {
 		}
 	}
 
-	society_rank = { #"Hero"
+	society_rank = { #"Knight of the Inner Circle"
 		level = 4
 		limit = 50
 		startup_limit = 10
@@ -1256,10 +1255,6 @@ warriors_of_ulric = {
 				custom_tooltip = {
 					text = society_has_at_least_10_members_tt
 					FROM = { num_of_society_members >= 10 }
-				}
-				custom_tooltip = {
-					text = special_join_warrior_lodge_trigger_tt
-					special_join_warrior_lodge_trigger = yes
 				}
 				NOT = { trait = zealous }
 			}
