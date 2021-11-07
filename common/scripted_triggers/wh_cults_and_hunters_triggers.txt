@@ -1,0 +1,18 @@
+cults_grace_period_trigger = {
+    OR  = {
+        ai = yes
+        total_years_played >= 5 #will cover ai = no in most cases, including the easier setting
+        #now address edge cases in first five years
+        has_game_rule = {
+            name = warhammer_cult_grace_period
+            value = hardmode
+        }
+        AND = {
+            total_years_played >= 1
+            has_game_rule = {
+                name = warhammer_cult_grace_period
+                value = default
+            }
+        }
+    }
+}

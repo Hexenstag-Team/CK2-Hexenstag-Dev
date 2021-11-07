@@ -114,7 +114,6 @@ title_court_scribe = {
 	message = yes
 }
 
-#In the long run this should be made an Empire thing
 title_court_witchhunter = {
 	is_high_prio = yes
 	dignity = 0.05
@@ -130,20 +129,15 @@ title_court_witchhunter = {
 		trait = witch_hunter
 		NOT = { trait = incapable }
 		liege = { character = FROM }
-		is_state_witch_hunter_trigger = no
 	}
 
 	allowed_to_grant = {
-		OR={
-			religion_group = old_world_group
-			religion=stromfels
-		}
-		is_state_witch_hunter_trigger = no
+		religion_group = old_world_group
+		NOT = { religion = old_faith }
 		NOR = {
 			trait = incapable
 		 	trait = witch_hunter
 		}
-		is_adult = yes
 	}
 
 	gain_effect = {
@@ -155,38 +149,6 @@ title_court_witchhunter = {
 			piety = -50
 			prestige = -50
 		}
-		remove_trait=on_witch_hunt
-	}
-
-	message = yes
-}
-title_court_state_witchhunter = {
-	is_high_prio = yes
-	dignity = 0.05
-	realm_in_name = yes
-	is_unique=yes
-	revoke_allowed=no
-	grant_limit = 5
-
-	monthly_salary = 0.5
-	monthly_prestige = 0.5
-	monthly_piety = 0.5
-
-	allowed_to_hold = {
-		is_adult = yes
-		trait = witch_hunter
-		is_state_witch_hunter_trigger = yes
-	}
-
-	allowed_to_grant = {
-		always=no
-	}
-
-	gain_effect = {
-		piety = 50
-		prestige = 50
-	}
-	lose_effect = {
 		remove_trait=on_witch_hunt
 	}
 

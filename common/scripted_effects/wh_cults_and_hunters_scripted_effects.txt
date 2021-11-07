@@ -1,0 +1,1823 @@
+create_random_hunter_effect = {
+    create_random_intriguer = {
+        min_age = 25
+        max_age = 50
+        female = 25
+        health = 6.0
+        random_traits = no
+        add_trait = witch_hunter
+    }
+    new_character = {
+        save_event_target_as = hunter_candidate
+        if = {
+            limit = {
+                ROOT = {
+                    trait = creature_human
+                }
+            }
+            add_trait = creature_human
+        }
+        #scarring
+        witch_hunter_scarring_effect = yes
+        random = {
+            chance = 60
+            add_trait = cruel
+        }
+        random = {
+            chance = 50
+            add_trait = paranoid
+        }
+    }
+}
+
+witch_hunter_scarring_effect = {
+    random_list = {
+        25 = {
+            modifier = {
+                factor = 2
+                age < 30
+            }
+            #none
+        }
+        25 = {
+            add_trait = scarred
+        }
+        25 = {
+            add_trait = scarred_mid
+        }
+        25 = {
+            modifier = {
+                factor = 2
+                age > 40
+            }
+            add_trait = scarred_high
+        }
+    }
+}
+
+create_adventurer_hunter_effect = {
+    create_random_hunter_effect = yes
+    event_target:hunter_candidate = {
+        change_intrigue = 1
+        add_trait = brave
+        random = {
+            chance = 60
+            change_intrigue = 1
+        }
+        random = {
+            chance = 70
+            add_trait = ambitious
+        }
+        random = {
+            chance = 30
+            add_trait = shrewd
+        }
+        random_list = {
+            25 = {
+                set_character_flag = army_veteran_witch_hunter
+                change_martial = 2
+                random_list = {
+                    40 = {
+                        add_trait = duelist
+                    }
+                    20 = {
+                        add_trait = strategist
+                    }
+                }
+                random = {
+                    chance = 70
+                    add_trait = robust
+                }
+                random = {
+                    chance = 40
+                    add_trait = proud
+                }
+                random = {
+                    chance = 40
+                    add_trait = uncouth
+                }
+            }
+            25 = {
+                set_character_flag = bold_scholar_witch_hunter
+                change_learning = 2
+                random_list = {
+                    20 = {
+                        add_trait = scholar
+                    }
+                    20 = {
+                        add_trait = mystic
+                    }
+                    20 = {
+                        add_trait = theologian
+                    }
+                }
+                random = {
+                    chance = 70
+                    add_trait = diligent
+                }
+                random = {
+                    chance = 40
+                    add_trait = erudite
+                }
+                random = {
+                    chance = 40
+                    add_trait = shy
+                }
+            }
+            25 = {
+                set_character_flag = crafty_spy_witch_hunter
+                change_intrigue = 1 #this is a more important stat for hunters
+                random_list = {
+                    20 = {
+                        add_trait = schemer
+                    }
+                    20 = {
+                        add_trait = socializer
+                    }
+                    20 = {
+                        add_trait = gamer
+                    }
+                }
+                random = {
+                    chance = 70
+                    add_trait = deceitful
+                }
+                random = {
+                    chance = 40
+                    add_trait = cynical
+                }
+                #in addition to regular chance to be paranoid
+                random = {
+                    chance = 40
+                    add_trait = paranoid
+                }
+            }
+        }
+    }
+}
+
+create_myrmidian_inquisitor_witch_hunter_effect = {
+    random_list = {
+        40 = {
+            create_random_intriguer = {
+                min_age = 25
+                max_age = 50
+                religion = classical_pantheon
+                culture = reman
+                female = 25
+                health = 6.0
+                random_traits = no
+                add_trait = witch_hunter
+                add_trait = creature_human
+            }
+        }
+        20 = {
+            create_random_intriguer = {
+                min_age = 25
+                max_age = 50
+                religion = classical_pantheon
+                culture = astur
+                female = 25
+                health = 6.0
+                random_traits = no
+                add_trait = witch_hunter
+                add_trait = creature_human
+            }
+        }
+    }
+    new_character = {
+        save_event_target_as = hunter_candidate
+        set_character_flag = myrmidian_inquisitor_witch_hunter
+        witch_hunter_scarring_effect = yes
+        change_martial = 1
+        change_intrigue = 2
+        change_learning = 1
+        add_trait = zealous
+        add_trait = creature_human
+        add_trait = patron_myrmidia
+        set_character_flag = has_patron
+        random = {
+            chance = 70
+            change_intrigue = 1
+        }
+        random = {
+            chance = 70
+            add_trait = diligent
+        }
+        random = {
+            chance = 70
+            add_trait = proud
+        }
+        random = {
+            chance = 50
+            add_trait = shrewd
+        }
+        random = {
+            chance = 40
+            add_trait = just
+        }
+        random = {
+            chance = 40
+            add_trait = stubborn
+        }
+        random_list = {
+            20 = {
+                add_trait = theologian
+            }
+            20 = {
+                add_trait = strategist
+            }
+            20 = {
+                add_trait = impaler
+            }
+        }
+    }
+}
+
+create_bretonnian_knight_witch_hunter_effect = {
+    create_random_intriguer = {
+        min_age = 25
+        max_age = 50
+        culture = armoric
+        religion = grail
+        female = no
+        health = 6.0
+        random_traits = no
+        add_trait = witch_hunter
+        add_trait = creature_human
+    }
+    new_character = {
+        save_event_target_as = hunter_candidate
+        set_character_flag = bretonnian_knight_witch_hunter
+        witch_hunter_scarring_effect = yes
+        change_martial = 4
+        change_intrigue = 2
+        add_trait = zealous
+        add_trait = brave
+        add_trait = bretonnian_knight
+        add_trait = creature_human
+        join_society = knights_of_bretonnia
+        random_list = {
+            10 = {
+                culture = armoric
+            }
+            10 = {
+                culture = bourgon
+            }
+            10 = {
+                culture = bourgon
+            }
+            10 = {
+                culture = carcassian
+            }
+            10 = {
+                culture = gascon
+            }
+            10 = {
+                culture = gisoren
+            }
+            10 = {
+                culture = mousillonian
+            }
+            10 = {
+                culture = nortagnese
+            }
+        }
+        random = {
+            chance = 70
+            change_intrigue = 1
+        }
+        random = {
+            chance = 70
+            add_trait = diligent
+        }
+        random = {
+            chance = 70
+            add_trait = proud
+        }
+        random = {
+            chance = 50
+            add_trait = temperate
+        }
+        random = {
+            chance = 40
+            add_trait = chaste
+        }
+        random = {
+            chance = 40
+            add_trait = shrewd
+        }
+        random_list = {
+            20 = {
+                add_trait = duelist
+            }
+            20 = {
+                add_trait = strategist
+            }
+        }
+    }
+}
+
+create_sigmarite_templar_witch_hunter_effect = {
+    create_random_intriguer = {
+        min_age = 25
+        max_age = 50
+        culture = witchhunter_culture
+        religion = imperial_pantheon
+        female = 25
+        health = 6.0
+        random_traits = no
+        add_trait = witch_hunter
+        add_trait = zealous
+        add_trait = brave
+        add_trait = creature_human
+        add_trait = patron_sigmar
+    }
+    new_character = {
+        save_event_target_as = hunter_candidate
+        set_character_flag = sigmarite_templar_witch_hunter
+        set_character_flag = has_patron
+        change_martial = 1
+        change_intrigue = 3
+        witch_hunter_scarring_effect = yes
+        random = {
+            chance = 60
+            add_trait = cruel
+        }
+        random = {
+            chance = 50
+            add_trait = paranoid
+        }
+        random = {
+            chance = 70
+            change_intrigue = 1
+        }
+        random = {
+            chance = 70
+            add_trait = stubborn
+        }
+        random = {
+            chance = 70
+            add_trait = diligent
+        }
+        random = {
+            chance = 50
+            add_trait = shrewd
+        }
+        random = {
+            chance = 40
+            add_trait = paranoid
+        }
+        random = {
+            chance = 40
+            add_trait = cruel
+        }
+        random_list = {
+            20 = {
+                add_trait = duelist
+            }
+            20 = {
+                add_trait = theologian
+            }
+            20 = {
+                add_trait = schemer
+            }
+        }
+    }
+}
+
+create_ice_witch_witch_hunter_effect = {
+    create_random_intriguer = {
+        min_age = 25
+        max_age = 50
+        religion = kislev_gods
+        culture = gospodar
+        female = yes
+        health = 6.0
+        random_traits = no
+        add_trait = witch_hunter
+        add_trait = lore_ice
+        add_trait = ice_witch
+        add_trait = creature_human
+    }
+    new_character = {
+        save_event_target_as = hunter_candidate
+        set_character_flag = ice_witch_witch_hunter
+        witch_hunter_scarring_effect = yes
+        change_diplomacy = 1
+        change_intrigue = 2
+        change_learning = 1
+        join_society = ice_witch_sisterhood
+        random_list = {
+            30 = {
+                add_trait = magic_potential_2
+            }
+            15 = {
+                add_trait = magic_potential_3
+            }
+            5 = {
+                add_trait = magic_potential_4
+            }
+        }
+        random = {
+            chance = 70
+            change_intrigue = 1
+        }
+        random = {
+            chance = 70
+            add_trait = patient
+        }
+        random = {
+            chance = 70
+            add_trait = proud
+        }
+        random = {
+            chance = 50
+            add_trait = shrewd
+        }
+        random = {
+            chance = 40
+            add_trait = chaste
+        }
+        random = {
+            chance = 40
+            add_trait = ambitious
+        }
+        random_list = {
+            20 = {
+                add_trait = mystic
+            }
+            20 = {
+                add_trait = hunter
+            }
+        }
+    }
+}
+
+create_order_of_the_shroud_witch_hunter_effect = {
+    create_random_hunter_effect = yes
+    event_target:hunter_candidate = {
+        set_character_flag = order_of_the_shroud_witch_hunter
+        change_martial = 1
+        change_intrigue = 3
+        add_trait = zealous
+        add_trait = brave
+        add_trait = patron_morr
+        set_character_flag = has_patron
+        random = {
+            chance = 70
+            change_intrigue = 1
+        }
+        random = {
+            chance = 70
+            add_trait = stubborn
+        }
+        random = {
+            chance = 70
+            add_trait = patient
+        }
+        random = {
+            chance = 50
+            add_trait = shrewd
+        }
+        random = {
+            chance = 40
+            add_trait = robust
+        }
+        random = {
+            chance = 40
+            add_trait = erudite
+        }
+        random_list = {
+            20 = {
+                add_trait = duelist
+            }
+            20 = {
+                add_trait = theologian
+            }
+            20 = {
+                add_trait = mystic
+            }
+        }
+    }
+}
+
+create_order_of_the_sword_and_scale_witch_hunter_effect = {
+    create_random_hunter_effect = yes
+    event_target:hunter_candidate = {
+        set_character_flag = order_of_the_sword_and_scale_witch_hunter
+        change_stewardship = 1
+        change_intrigue = 3
+        change_learning = 1
+        add_trait = brave
+        add_trait = patron_verena
+        set_character_flag = has_patron
+        random = {
+            chance = 70
+            change_intrigue = 1
+        }
+        random = {
+            chance = 70
+            add_trait = erudite
+        }
+        random = {
+            chance = 70
+            add_trait = just
+        }
+        random = {
+            chance = 50
+            add_trait = shrewd
+        }
+        random = {
+            chance = 40
+            add_trait = diligent
+        }
+        random = {
+            chance = 40
+            add_trait = erudite
+        }
+        random_list = {
+            20 = {
+                add_trait = scholar
+            }
+            20 = {
+                add_trait = theologian
+            }
+            20 = {
+                add_trait = mystic
+            }
+        }
+    }
+}
+
+create_temple_of_solkan_witch_hunter_effect = {
+    random_list = {
+        40 = {
+            create_random_intriguer = {
+                min_age = 25
+                max_age = 50
+                religion = classical_pantheon
+                culture = reman
+                female = 25
+                health = 6.0
+                random_traits = no
+                add_trait = witch_hunter
+                add_trait = creature_human
+            }
+        }
+        20 = {
+            create_random_intriguer = {
+                min_age = 25
+                max_age = 50
+                religion = imperial_pantheon
+                culture = sollander
+                female = 25
+                health = 6.0
+                random_traits = no
+                add_trait = witch_hunter
+                add_trait = creature_human
+            }
+        }
+    }
+    new_character = {
+        save_event_target_as = hunter_candidate
+        set_character_flag = temple_of_solkan_witch_hunter
+        witch_hunter_scarring_effect = yes
+        change_martial = 1
+        change_intrigue = 4
+        change_learning = 1
+        random = {
+            chance = 70
+            change_intrigue = 1
+        }
+        random = {
+            chance = 70
+            add_trait = cruel
+        }
+        random = {
+            chance = 70
+            add_trait = stubborn
+        }
+        random = {
+            chance = 50
+            add_trait = shrewd
+        }
+        random = {
+            chance = 40
+            add_trait = diligent
+        }
+        random = {
+            chance = 40
+            add_trait = patient
+        }
+        random_list = {
+            20 = {
+                add_trait = impaler
+            }
+            20 = {
+                add_trait = schemer
+            }
+        }
+    }
+}
+
+create_emmisary_of_order_witch_hunter_effect = {
+    create_random_intriguer = {
+        min_age = 25
+        max_age = 50
+        religion = ormazd
+        culture = cophic
+        female = no
+        health = 7.0
+        random_traits = no
+        add_trait = witch_hunter
+        add_trait = creature_human
+        add_trait = arabyan_scholar
+        add_trait = eunuch
+    }
+    new_character = {
+        save_event_target_as = hunter_candidate
+        set_character_flag = emmisary_of_order_witch_hunter
+        witch_hunter_scarring_effect = yes
+        change_diplomacy = 3
+        change_martial = 8
+        change_intrigue = 8
+        change_stewardship = 3
+        change_learning = 5
+        random_list = {
+            15 = {
+                add_trait = magic_potential_3
+            }
+            5 = {
+                add_trait = magic_potential_4
+            }
+        }
+        random_list = {
+            10 = {
+                add_trait = light_elemental
+            }
+            10 = {
+                add_trait = light_mystical
+            }
+            10 = {
+                add_trait = light_cardinal
+            }
+        }
+        random_list = {
+            10 = {
+                add_trait = quick
+            }
+            10 = {
+                add_trait = brilliant
+            }
+            10 = {
+                add_trait = genius
+            }
+        }
+        random_list = {
+            20 = {
+                add_trait = mystic
+            }
+            20 = {
+                add_trait = scholar
+            }
+        }
+        random = {
+            chance = 70
+            add_trait = robust
+        }
+        random = {
+            chance = 70
+            add_trait = patient
+        }
+        random = {
+            chance = 50
+            add_trait = diligent
+        }
+        random = {
+            chance = 40
+            add_trait = just
+        }
+        random = {
+            chance = 40
+            add_trait = holy_warrior
+        }
+    }
+}
+
+#cult leader scope
+find_starting_cultic_activity_kingdom_target_effect = {
+    random_list = {
+        #40% of the time, a Cult will start targeting their home Kingdom
+        #this means that experienced players will copme to expect certain locations to have Cult problems, but not know for sure
+        40 = {
+            location = {
+                kingdom = {
+                    save_event_target_as = target_kingdom
+                }
+            }
+        }
+        #in 40% of other cases, the Cult will start targeting a de jure Kingdom in their home Empire
+        #this result may lead them back to their home Kingdom
+        40 = {
+            location = {
+                empire = {
+                    random_direct_de_jure_vassal_title = {
+                        limit = {
+                            tier = KING
+                            is_titular = no
+                            NOT = {
+                                holder_scope = {
+                                    OR = {
+                                        religion_group = chaos_gods_group
+                                        religion_group = necromantic_group
+                                    }
+                                }
+                            }
+                        }
+                        save_event_target_as = target_kingdom
+                    }
+                }
+            }
+        }
+        #there's a 20% chance that the cult will start targetting somewhat randomly
+        #again, it's possible for this result to lead back to the home Kingdom/Empire
+        20 = {
+            #Chaos Cults - not in Bretonnia
+            if = {
+                limit = {
+                    religion_group = chaos_gods_group
+                }
+                random_landed_title = {
+                    limit = {
+                        tier = KING
+                        is_titular = no
+                        OR = {
+                            de_jure_liege_or_above = e_kislev
+                            de_jure_liege_or_above = e_the_empire
+                            de_jure_liege_or_above = e_estalia
+                            de_jure_liege_or_above = e_tilea
+                            de_jure_liege_or_above = e_borderlands
+                        }
+                        NOT = {
+                            holder_scope = {
+                                OR = {
+                                    religion_group = chaos_gods_group
+                                    religion_group = necromantic_group
+                                }
+                            }
+                        }
+                    }
+                    save_event_target_as = target_kingdom
+                }
+            }
+            #Blood Dragons - focus on Bretonnia
+            else_if = {
+                limit = {
+                    culture = blooddragons_culture
+                }
+                random_landed_title = {
+                    limit = {
+                        tier = KING
+                        is_titular = no
+                        de_jure_liege_or_above = e_bretonnia
+                        NOT = {
+                            holder_scope = {
+                                OR = {
+                                    religion_group = chaos_gods_group
+                                    religion_group = necromantic_group
+                                }
+                            }
+                        }
+                    }
+                    save_event_target_as = target_kingdom
+                }
+            }
+            #Other necromantic people - not in Tilea (Cult oF Morr's homeland)
+            else_if = {
+                limit = {
+                    religion_group = necromantic_group
+                }
+                random_landed_title = {
+                    limit = {
+                        tier = KING
+                        is_titular = no
+                        OR = {
+                            de_jure_liege_or_above = e_kislev
+                            de_jure_liege_or_above = e_the_empire
+                            de_jure_liege_or_above = e_bretonnia
+                            de_jure_liege_or_above = e_estalia
+                            de_jure_liege_or_above = e_borderlands
+                        }
+                        NOT = {
+                            holder_scope = {
+                                OR = {
+                                    religion_group = chaos_gods_group
+                                    religion_group = necromantic_group
+                                }
+                            }
+                        }
+                    }
+                    save_event_target_as = target_kingdom
+                }
+            }
+        }
+    }
+}
+
+#cult leader scope
+#NOTE: might need to be made more sophisticated
+find_new_cultic_activity_kingdom_target_effect = {
+    persistent_event_target:cultic_activity_target = {
+        save_event_target_as = current_area_of_operations
+    }
+    #Chaos Cults - not in Bretonnia
+    if = {
+        limit = {
+            religion_group = chaos_gods_group
+        }
+        random_landed_title = {
+            limit = {
+                tier = KING
+                is_titular = no
+                OR = {
+                    de_jure_liege_or_above = e_kislev
+                    de_jure_liege_or_above = e_the_empire
+                    de_jure_liege_or_above = e_estalia
+                    de_jure_liege_or_above = e_tilea
+                    de_jure_liege_or_above = e_borderlands
+                }
+                NOT = {
+                    title = event_target:current_area_of_operations
+                    holder_scope = {
+                        OR = {
+                            religion_group = chaos_gods_group
+                            religion_group = necromantic_group
+                        }
+                    }
+                }
+            }
+            save_event_target_as = target_kingdom
+        }
+    }
+    #Blood Dragons - focus on Bretonnia
+    else_if = {
+        limit = {
+            culture = blooddragons_culture
+        }
+        random_landed_title = {
+            limit = {
+                tier = KING
+                is_titular = no
+                de_jure_liege_or_above = e_bretonnia
+                NOT = {
+                    title = event_target:current_area_of_operations
+                    holder_scope = {
+                        OR = {
+                            religion_group = chaos_gods_group
+                            religion_group = necromantic_group
+                        }
+                    }
+                }
+            }
+            save_event_target_as = target_kingdom
+        }
+    }
+    #Other necromantic people - not in Tilea (Cult oF Morr's homeland)
+    else_if = {
+        limit = {
+            religion_group = necromantic_group
+        }
+        random_landed_title = {
+            limit = {
+                tier = KING
+                is_titular = no
+                OR = {
+                    de_jure_liege_or_above = e_kislev
+                    de_jure_liege_or_above = e_the_empire
+                    de_jure_liege_or_above = e_bretonnia
+                    de_jure_liege_or_above = e_estalia
+                    de_jure_liege_or_above = e_borderlands
+                }
+                NOT = {
+                    title = event_target:current_area_of_operations
+                    holder_scope = {
+                        OR = {
+                            religion_group = chaos_gods_group
+                            religion_group = necromantic_group
+                        }
+                    }
+                }
+            }
+            save_event_target_as = target_kingdom
+        }
+    }
+}
+
+#cult leader scope
+cultic_activity_leaves_clues_effect = {
+    random_province = {
+        limit = {
+            de_jure_liege_or_above = event_target:cultic_area_of_operations
+            religion_group = old_world_group
+        }
+        save_event_target_as = clue_county
+    }
+    random_list = {
+        #extortion
+        50 = {
+            modifier = {
+                factor = 3
+                OR = {
+                    has_character_flag = gathering_resources
+                    has_character_flag = building_influence
+                }
+            }
+            event_target:clue_county = {
+                random_list = {
+                    25 = {
+                        add_province_modifier = {
+                            name = clue_extortion_cultic
+                            duration = 365
+                        }
+                    }
+                    50 = {
+                        add_province_modifier = {
+                            name = clue_extortion_cultic
+                            duration = 730
+                        }
+                    }
+                    25 = {
+                        add_province_modifier = {
+                            name = clue_extortion_cultic
+                            duration = 1095
+                        }
+                    }
+                }
+            }
+        }
+        #strange rites
+        10 = {
+            modifier = {
+                factor = 5
+                religion = tzeentch
+            }
+            modifier = {
+                factor = 2
+                has_character_flag = weaving_plots
+            }
+            event_target:clue_county = {
+                random_list = {
+                    25 = {
+                        add_province_modifier = {
+                            name = clue_rituals_cultic
+                            duration = 365
+                        }
+                    }
+                    50 = {
+                        add_province_modifier = {
+                            name = clue_rituals_cultic
+                            duration = 730
+                        }
+                        random_province_character = {
+                            limit = {
+                                age > 15
+                                cults_grace_period_trigger = yes
+                                NOR = {
+                                    trait = underground_cult_member
+                                    has_character_flag = invited_to_cultic_rite
+                                }
+                            }
+                            random = {
+                                chance = 75
+                                set_character_flag = invited_to_cultic_rite
+                                character_event = {
+                                    id = wh_cults_and_hunters.251
+                                    days = 372
+                                    random = 30
+                                }
+                            }
+                        }
+                    }
+                    25 = {
+                        add_province_modifier = {
+                            name = clue_rituals_cultic
+                            duration = 1095
+                        }
+                        random_province_character = {
+                            limit = {
+                                age > 15
+                                cults_grace_period_trigger = yes
+                                NOR = {
+                                    trait = underground_cult_member
+                                    has_character_flag = invited_to_cultic_rite
+                                }
+                            }
+                            random = {
+                                chance = 75
+                                set_character_flag = invited_to_cultic_rite
+                                character_event = {
+                                    id = wh_cults_and_hunters.251
+                                    days = 372
+                                    random = 30
+                                }
+                            }
+                        }
+                        random_province_character = {
+                            limit = {
+                                age > 15
+                                cults_grace_period_trigger = yes
+                                NOR = {
+                                    trait = underground_cult_member
+                                    has_character_flag = invited_to_cultic_rite
+                                }
+                            }
+                            random = {
+                                chance = 75
+                                set_character_flag = invited_to_cultic_rite
+                                character_event = {
+                                    id = wh_cults_and_hunters.251
+                                    days = 737
+                                    random = 60
+                                }
+                            }
+                        }
+                    }
+                }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = invited_to_cultic_rite
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = invited_to_cultic_rite
+                        character_event = {
+                            id = wh_cults_and_hunters.251
+                            days = 7
+                            random = 7
+                        }
+                    }
+                }
+            }
+        }
+    #abductions
+        10 = {
+            modifier = {
+                factor = 3
+                OR = {
+                    has_character_flag = gathering_resources
+                    has_character_flag = building_influence
+                }
+            }
+            event_target:clue_county = {
+                random_list = {
+                    25 = {
+                        add_province_modifier = {
+                            name = clue_abductions_cultic
+                            duration = 365
+                        }
+                    }
+                    50 = {
+                        add_province_modifier = {
+                            name = clue_abductions_cultic
+                            duration = 730
+                        }
+                    }
+                    25 = {
+                        add_province_modifier = {
+                            name = clue_abductions_cultic
+                            duration = 1095
+                        }
+                    }
+                }
+            }
+        }
+        #murders
+        10 = {
+            modifier = {
+                factor = 5
+                religion = khorne
+            }
+            modifier = {
+                factor = 2
+                has_character_flag = inspiring_killings
+            }
+            event_target:clue_county = {
+                random_list = {
+                    25 = {
+                        add_province_modifier = {
+                            name = clue_murders_cultic
+                            duration = 365
+                        }
+                    }
+                    50 = {
+                        add_province_modifier = {
+                            name = clue_murders_cultic
+                            duration = 730
+                        }
+                        random_province_character = {
+                            limit = {
+                                age > 15
+                                cults_grace_period_trigger = yes
+                                NOR = {
+                                    trait = underground_cult_member
+                                    has_character_flag = stalked_by_cultic_killer
+                                }
+                            }
+                            random = {
+                                chance = 75
+                                set_character_flag = stalked_by_cultic_killer
+                                character_event = {
+                                    id = wh_cults_and_hunters.271
+                                    days = 372
+                                    random = 30
+                                }
+                            }
+                        }
+                    }
+                    25 = {
+                        add_province_modifier = {
+                            name = clue_murders_cultic
+                            duration = 1095
+                        }
+                        random_province_character = {
+                            limit = {
+                                age > 15
+                                cults_grace_period_trigger = yes
+                                NOR = {
+                                    trait = underground_cult_member
+                                    has_character_flag = stalked_by_cultic_killer
+                                }
+                            }
+                            random = {
+                                chance = 75
+                                set_character_flag = stalked_by_cultic_killer
+                                character_event = {
+                                    id = wh_cults_and_hunters.271
+                                    days = 372
+                                    random = 30
+                                }
+                            }
+                        }
+                        random_province_character = {
+                            limit = {
+                                age > 15
+                                cults_grace_period_trigger = yes
+                                NOR = {
+                                    trait = underground_cult_member
+                                    has_character_flag = stalked_by_cultic_killer
+                                }
+                            }
+                            random = {
+                                chance = 75
+                                set_character_flag = stalked_by_cultic_killer
+                                character_event = {
+                                    id = wh_cults_and_hunters.271
+                                    days = 737
+                                    random = 60
+                                }
+                            }
+                        }
+                    }
+                }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = stalked_by_cultic_killer
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = stalked_by_cultic_killer
+                        character_event = {
+                            id = wh_cults_and_hunters.271
+                            days = 7
+                            random = 7
+                        }
+                    }
+                }
+            }
+        }
+    #contagion
+        10 = {
+            modifier = {
+                factor = 5
+                religion = nurgle
+            }
+            modifier = {
+                factor = 2
+                has_character_flag = spawning_disease
+            }
+            random_list = {
+                25 = {
+                    event_target:clue_county = {
+                        add_province_modifier = {
+                            name = clue_contagion_cultic
+                            duration = 365
+                        }
+                    }
+                }
+                50 = {
+                    event_target:clue_county = {
+                        add_province_modifier = {
+                            name = clue_contagion_cultic
+                            duration = 730
+                        }
+                    }
+                }
+                25 = {
+                    event_target:clue_county = {
+                        add_province_modifier = {
+                            name = clue_contagion_cultic
+                            duration = 1095
+                        }
+                    }
+                }
+            }
+        }
+        #excessive celebration
+        10 = {
+            modifier = {
+                factor = 5
+                religion = slaanesh
+            }
+            modifier = {
+                factor = 2
+                has_character_flag = encouraging_decadence
+            }
+            event_target:clue_county = {
+                random_list = {
+                    25 = {
+                        add_province_modifier = {
+                            name = clue_celebration_cultic
+                            duration = 365
+                        }
+                    }
+                    50 = {
+                        add_province_modifier = {
+                            name = clue_celebration_cultic
+                            duration = 730
+                        }
+                        random_province_character = {
+                            limit = {
+                                age > 15
+                                cults_grace_period_trigger = yes
+                                NOR = {
+                                    trait = underground_cult_member
+                                    has_character_flag = invited_to_cultic_party
+                                }
+                            }
+                            random = {
+                                chance = 75
+                                set_character_flag = invited_to_cultic_party
+                                character_event = {
+                                    id = wh_cults_and_hunters.261
+                                    days = 372
+                                    random = 30
+                                }
+                            }
+                        }
+                    }
+                    25 = {
+                        add_province_modifier = {
+                            name = clue_celebration_cultic
+                            duration = 1095
+                        }
+                        random_province_character = {
+                            limit = {
+                                age > 15
+                                cults_grace_period_trigger = yes
+                                NOR = {
+                                    trait = underground_cult_member
+                                    has_character_flag = invited_to_cultic_party
+                                }
+                            }
+                            random = {
+                                chance = 75
+                                set_character_flag = invited_to_cultic_party
+                                character_event = {
+                                    id = wh_cults_and_hunters.261
+                                    days = 372
+                                    random = 30
+                                }
+                            }
+                        }
+                        random_province_character = {
+                            limit = {
+                                age > 15
+                                cults_grace_period_trigger = yes
+                                NOR = {
+                                    trait = underground_cult_member
+                                    has_character_flag = invited_to_cultic_party
+                                }
+                            }
+                            random = {
+                                chance = 75
+                                set_character_flag = invited_to_cultic_party
+                                character_event = {
+                                    id = wh_cults_and_hunters.261
+                                    days = 737
+                                    random = 60
+                                }
+                            }
+                        }
+                    }
+                }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = invited_to_cultic_party
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = invited_to_cultic_party
+                        character_event = {
+                            id = wh_cults_and_hunters.261
+                            days = 7
+                            random = 7
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#province scope
+false_clues_appear_effect = {
+    random_list = {
+        #Extortion
+        50 = {
+            add_province_modifier = {
+                name = clue_extortion_normal
+                duration = 365
+            }
+        }
+        50 = {
+            add_province_modifier = {
+                name = clue_extortion_normal
+                duration = 730
+            }
+        }
+        50 = {
+            add_province_modifier = {
+                name = clue_extortion_normal
+                duration = 1095
+            }
+        }
+        #Secret Rites
+        10 = {
+            add_province_modifier = {
+                name = clue_rituals_normal
+                duration = 365
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOR = {
+                        trait = underground_cult_member
+                        has_character_flag = invited_to_secret_rite
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = invited_to_secret_rite
+                    character_event = {
+                        id = wh_cults_and_hunters.251
+                        days = 7
+                        random = 7
+                    }
+                }
+            }
+        }
+        10 = {
+            add_province_modifier = {
+                name = clue_rituals_normal
+                duration = 730
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOR = {
+                        trait = underground_cult_member
+                        has_character_flag = invited_to_secret_rite
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = invited_to_secret_rite
+                    character_event = {
+                        id = wh_cults_and_hunters.251
+                        days = 7
+                        random = 7
+                    }
+                }
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOR = {
+                        trait = underground_cult_member
+                        has_character_flag = invited_to_secret_rite
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = invited_to_secret_rite
+                    character_event = {
+                        id = wh_cults_and_hunters.251
+                        days = 372
+                        random = 30
+                    }
+                }
+            }
+        }
+        10 = {
+            add_province_modifier = {
+                name = clue_rituals_normal
+                duration = 1095
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOR = {
+                        trait = underground_cult_member
+                        has_character_flag = invited_to_secret_rite
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = invited_to_secret_rite
+                    character_event = {
+                        id = wh_cults_and_hunters.251
+                        days = 7
+                        random = 7
+                    }
+                }
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOR = {
+                        trait = underground_cult_member
+                        has_character_flag = invited_to_secret_rite
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = invited_to_secret_rite
+                    character_event = {
+                        id = wh_cults_and_hunters.251
+                        days = 372
+                        random = 30
+                    }
+                }
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOR = {
+                        trait = underground_cult_member
+                        has_character_flag = invited_to_secret_rite
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = invited_to_secret_rite
+                    character_event = {
+                        id = wh_cults_and_hunters.251
+                        days = 737
+                        random = 60
+                    }
+                }
+            }
+        }
+    #Abductions
+        10 = {
+            add_province_modifier = {
+                name = clue_abductions_normal
+                duration = 365
+            }
+        }
+        10 = {
+            add_province_modifier = {
+                name = clue_abductions_normal
+                duration = 730
+            }
+        }
+        10 = {
+            add_province_modifier = {
+                name = clue_abductions_normal
+                duration = 1095
+            }
+        }
+        #Murders
+        10 = {
+            add_province_modifier = {
+                name = clue_murders_normal
+                duration = 365
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOR = {
+                        trait = underground_cult_member
+                        has_character_flag = stalked_by_secret_killer
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = stalked_by_secret_killer
+                    character_event = {
+                        id = wh_cults_and_hunters.271
+                        days = 7
+                        random = 7
+                    }
+                }
+            }
+        }
+        10 = {
+            add_province_modifier = {
+                name = clue_murders_normal
+                duration = 730
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOR = {
+                        trait = underground_cult_member
+                        has_character_flag = stalked_by_secret_killer
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = stalked_by_secret_killer
+                    character_event = {
+                        id = wh_cults_and_hunters.271
+                        days = 7
+                        random = 7
+                    }
+                }
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOR = {
+                        trait = underground_cult_member
+                        has_character_flag = stalked_by_secret_killer
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = stalked_by_secret_killer
+                    character_event = {
+                        id = wh_cults_and_hunters.271
+                        days = 372
+                        random = 30
+                    }
+                }
+            }
+        }
+        10 = {
+            add_province_modifier = {
+                name = clue_murders_normal
+                duration = 1095
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOR = {
+                        trait = underground_cult_member
+                        has_character_flag = stalked_by_secret_killer
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = stalked_by_secret_killer
+                    character_event = {
+                        id = wh_cults_and_hunters.271
+                        days = 7
+                        random = 7
+                    }
+                }
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOR = {
+                        trait = underground_cult_member
+                        has_character_flag = stalked_by_secret_killer
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = stalked_by_secret_killer
+                    character_event = {
+                        id = wh_cults_and_hunters.271
+                        days = 372
+                        random = 30
+                    }
+                }
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOR = {
+                        trait = underground_cult_member
+                        has_character_flag = stalked_by_secret_killer
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = stalked_by_secret_killer
+                    character_event = {
+                        id = wh_cults_and_hunters.271
+                        days = 737
+                        random = 60
+                    }
+                }
+            }
+        }
+    #Contagion
+        10 = {
+            add_province_modifier = {
+                name = clue_contagion_normal
+                duration = 365
+            }
+        }
+        10 = {
+            add_province_modifier = {
+                name = clue_contagion_normal
+                duration = 730
+            }
+        }
+        10 = {
+            add_province_modifier = {
+                name = clue_contagion_normal
+                duration = 1095
+            }
+        }
+        #Celebrations
+        10 = {
+            add_province_modifier = {
+                name = clue_celebration_normal
+                duration = 365
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOT = {
+                        has_character_flag = invited_to_secret_party
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = invited_to_secret_party
+                    character_event = {
+                        id = wh_cults_and_hunters.261
+                        days = 7
+                        random = 7
+                    }
+                }
+            }
+        }
+        10 = {
+            add_province_modifier = {
+                name = clue_celebration_normal
+                duration = 730
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOT = {
+                        has_character_flag = invited_to_secret_party
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = invited_to_secret_party
+                    character_event = {
+                        id = wh_cults_and_hunters.261
+                        days = 7
+                        random = 7
+                    }
+                }
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOT = {
+                        has_character_flag = invited_to_secret_party
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = invited_to_secret_party
+                    character_event = {
+                        id = wh_cults_and_hunters.261
+                        days = 372
+                        random = 30
+                    }
+                }
+            }
+        }
+        10 = {
+            add_province_modifier = {
+                name = clue_celebration_normal
+                duration = 1095
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOT = {
+                        has_character_flag = invited_to_secret_party
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = invited_to_secret_party
+                    character_event = {
+                        id = wh_cults_and_hunters.261
+                        days = 7
+                        random = 7
+                    }
+                }
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOT = {
+                        has_character_flag = invited_to_secret_party
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = invited_to_secret_party
+                    character_event = {
+                        id = wh_cults_and_hunters.261
+                        days = 372
+                        random = 30
+                    }
+                }
+            }
+            random_province_character = {
+                limit = {
+                    age > 15
+                    cults_grace_period_trigger = yes
+                    NOT = {
+                        has_character_flag = invited_to_secret_party
+                    }
+                }
+                random = {
+                    chance = 75
+                    set_character_flag = invited_to_secret_party
+                    character_event = {
+                        id = wh_cults_and_hunters.261
+                        days = 737
+                        random = 60
+                    }
+                }
+            }
+        }
+    }
+}
+
+#character scope
+corrupted_by_underground_cult_effect = {
+    set_character_flag = underground_cult_member #allows efficient pre-triggering
+    add_trait = underground_cult_member #allows efficient scoping, but note that it's a random_ rather than an any_
+    save_persistent_event_target = {
+        name = underground_cult_allegiance
+        scope = event_target:cult_identity
+    }
+    set_secret_religion = event_target:cult_leader
+}

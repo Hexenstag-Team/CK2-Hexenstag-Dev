@@ -402,11 +402,8 @@ character_event = {
 	trigger = {
 		trait = flu
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_flu days = 30 }
@@ -461,7 +458,7 @@ character_event = {
 		modifier = {
 			factor = 2
 			age = 100
-			AND = { 
+			AND = {
 				society_rank == 4
 				society_member_of = knights_of_bretonnia
 			}
@@ -527,11 +524,8 @@ character_event = {
 	trigger = {
 		trait = dysentery
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_dysentery days = 30 }
@@ -586,7 +580,7 @@ character_event = {
 		modifier = {
 			factor = 2
 			age = 100
-			AND = { 
+			AND = {
 				society_rank == 4
 				society_member_of = knights_of_bretonnia
 			}
@@ -653,11 +647,8 @@ character_event = {
 		trait = gout
 		health = 6
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_gout days = 2000 }
@@ -704,11 +695,8 @@ character_event = {
 	trigger = {
 		trait = food_poisoning
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_food_poisoning days = 30 }
@@ -755,11 +743,8 @@ character_event = {
 	trigger = {
 		trait = rabies
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_rabies days = 2000 }
@@ -807,11 +792,8 @@ character_event = {
 	trigger = {
 		trait = cancer
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_cancer days = 2000 }
@@ -861,11 +843,8 @@ character_event = {
 		trait = pneumonic
 		has_dlc = "Reapers"
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_pneumonia days = 30 }
@@ -932,11 +911,8 @@ character_event = {
 		health = 6
 		has_dlc = "Reapers"
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_syphilis days = 2000 }
@@ -1007,11 +983,8 @@ character_event = {
 		trait = has_tuberculosis
 		has_dlc = "Reapers"
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_tuberculosis days = 60 }
@@ -1067,7 +1040,7 @@ character_event = {
 		modifier = {
 			factor = 2
 			age = 100
-			AND = { 
+			AND = {
 				society_rank == 4
 				society_member_of = knights_of_bretonnia
 			}
@@ -1134,11 +1107,8 @@ character_event = {
 		trait = has_typhoid_fever
 		has_dlc = "Reapers"
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_typhoid_fever days = 30 }
@@ -1194,7 +1164,7 @@ character_event = {
 		modifier = {
 			factor = 2
 			age = 100
-			AND = { 
+			AND = {
 				society_rank == 4
 				society_member_of = knights_of_bretonnia
 			}
@@ -1261,11 +1231,8 @@ character_event = {
 		trait = has_typhus
 		has_dlc = "Reapers"
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_typhus days = 60 }
@@ -1321,7 +1288,7 @@ character_event = {
 		modifier = {
 			factor = 2
 			age = 100
-			AND = { 
+			AND = {
 				society_rank == 4
 				society_member_of = knights_of_bretonnia
 			}
@@ -1388,11 +1355,8 @@ character_event = {
 		trait = has_bubonic_plague
 		has_dlc = "Reapers"
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_bubonic_plague days = 30 }
@@ -1447,7 +1411,7 @@ character_event = {
 		modifier = {
 			factor = 2
 			age = 100
-			AND = { 
+			AND = {
 				society_rank == 4
 				society_member_of = knights_of_bretonnia
 			}
@@ -1520,11 +1484,8 @@ character_event = {
 		trait = has_measles
 		has_dlc = "Reapers"
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_measles days = 30 }
@@ -1580,7 +1541,7 @@ character_event = {
 		modifier = {
 			factor = 2
 			age = 100
-			AND = { 
+			AND = {
 				society_rank == 4
 				society_member_of = knights_of_bretonnia
 			}
@@ -1647,11 +1608,8 @@ character_event = {
 		trait = has_small_pox
 		has_dlc = "Reapers"
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_small_pox days = 30 }
@@ -1707,7 +1665,7 @@ character_event = {
 		modifier = {
 			factor = 2
 			age = 100
-			AND = { 
+			AND = {
 				society_rank == 4
 				society_member_of = knights_of_bretonnia
 			}
@@ -1775,11 +1733,8 @@ character_event = {
 		health = 6
 		has_dlc = "Reapers"
 		NOR = {
-			religion = nurgle
+			true_religion = nurgle
 			trait = plaguelord
-			society_member_of = cult_of_nurgle
-			society_member_of = cult_of_nurgle2
-			society_member_of = cult_of_nurgle3
 		}
 		OR = {
 			had_character_flag = { flag = manifest_aztec_disease days = 2000 }
@@ -2114,12 +2069,6 @@ character_event = {
 							opinion = { who = ROOT value = 75 }
 						}
 					}
-					modifier = {
-						factor = 0
-						FROM = {
-							society_member_of = cult_of_nurgle
-						}
-					}
 
 					random_list = {
 						#Regular treatment
@@ -2136,12 +2085,6 @@ character_event = {
 									FROM = { trait = ambitious }
 									FROM = { learning = 25 }
 									FROM = { physician_good_trigger = yes }
-								}
-							}
-							modifier = {
-								factor = 0
-								FROM = {
-								society_member_of = cult_of_nurgle
 								}
 							}
 							set_character_flag = amazing_treatment_outcome
@@ -2407,12 +2350,6 @@ character_event = {
 									FROM = { physician_good_trigger = yes }
 								}
 							}
-							modifier = {
-								factor = 0
-								FROM = {
-								society_member_of = cult_of_nurgle
-								}
-							}
 							set_character_flag = amazing_treatment_outcome
 						}
 					}
@@ -2648,12 +2585,6 @@ character_event = {
 					}
 					random_list = {
 						60 = {
-							modifier = {
-								factor = 0
-								FROM = {
-								society_member_of = cult_of_nurgle
-								}
-							}
 							set_character_flag = MYSTIC_AMAZING_OUTCOME
 						}
 						40 = {
@@ -6831,10 +6762,6 @@ character_event = {
 							FROM = {
 								NOT = { learning = 10 }
 							}
-						}
-						modifier = {
-							factor = 0
-							FROM = { society_member_of = cult_of_nurgle }
 						}
 						set_character_flag = best_symptom_treatment
 					}

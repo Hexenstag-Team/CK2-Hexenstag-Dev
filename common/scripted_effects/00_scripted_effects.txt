@@ -5168,29 +5168,6 @@ add_prolong_life_effect = {
 	}
 }
 
-join_prev_devil_worshiper_society_effect = {
-	if = {
-		limit = { PREV = { society_member_of = cult_of_khorne } }
-		join_society = cult_of_khorne
-	}
-	if = {
-		limit = { PREV = { society_member_of = cult_of_nurgle } }
-		join_society = cult_of_nurgle
-	}
-	if = {
-		limit = { PREV = { society_member_of = cult_of_tzeentch } }
-		join_society = cult_of_tzeentch
-	}
-	if = {
-		limit = { PREV = { society_member_of = cult_of_slaanesh } }
-		join_society = cult_of_slaanesh
-	}
-	if = {
-		limit = { PREV = { society_member_of = cult_of_undivided } }
-		join_society = cult_of_undivided
-	}
-}
-
 remove_education_effect = {
 	remove_trait = naive_appeaser
 	remove_trait = underhanded_rogue
@@ -15025,67 +15002,6 @@ add_western_zodiac_trait_effect = {
 	}
 	if = { limit = { is_born_under_Pisces_trigger = yes }
 		add_trait = zodiac_pisces
-	}
-}
-
-flip_secret_religious_community_provinces = {
-	trigger_switch = {
-		on_trigger = society_member_of
-		cult_of_khorne = {
-			ROOT = {
-				any_demesne_province = {
-					limit = {
-						has_province_modifier = secret_khorne_community
-					}
-					religion = khorne
-					remove_province_modifier = secret_khorne_community
-				}
-			}
-		}
-		cult_of_nurgle = {
-			ROOT = {
-				any_demesne_province = {
-					limit = {
-						has_province_modifier = secret_nurgle_community
-					}
-					religion = nurgle
-					remove_province_modifier = secret_nurgle_community
-				}
-			}
-		}
-		cult_of_tzeentch = {
-			ROOT = {
-				any_demesne_province = {
-					limit = {
-						has_province_modifier = secret_tzeentch_community
-					}
-					religion = tzeentch
-					remove_province_modifier = secret_tzeentch_community
-				}
-			}
-		}
-		cult_of_slaanesh = {
-			ROOT = {
-				any_demesne_province = {
-					limit = {
-						has_province_modifier = secret_slaanesh_community
-					}
-					religion = slaanesh
-					remove_province_modifier = secret_slaanesh_community
-				}
-			}
-		}
-		cult_of_undivided = {
-			ROOT = {
-				any_demesne_province = {
-					limit = {
-						has_province_modifier = secret_undivided_community
-					}
-					religion = khorne
-					remove_province_modifier = secret_undivided_community
-				}
-			}
-		}
 	}
 }
 

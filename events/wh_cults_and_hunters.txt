@@ -1,0 +1,1474 @@
+namespace = wh_cults_and_hunters
+
+### Setup effects ###
+#ids 0-100 reserved for setup
+#Origin event, find find cults and fire setup event sequence for them
+character_event = {
+    id = wh_cults_and_hunters.0
+    hide_window = yes
+    is_triggered_only = yes
+
+    only_playable = yes
+
+    trigger = {
+        has_landed_title = k_cult_of_the_lady
+        is_save_game = no
+    }
+
+    immediate = {
+        #find & prepare Cults
+        any_title = {
+            limit = {
+                has_title_flag = underground_cult
+            }
+            holder_scope = {
+                add_trait = underground_cult_member
+                set_character_flag = underground_cult_leader
+                save_persistent_event_target = {
+                    name = underground_cult_allegiance
+                    scope = primary_title
+                }
+                if = {
+                    limit = {
+                        ai = yes
+                    }
+                    find_starting_cultic_activity_kingdom_target_effect = yes
+                    save_persistent_event_target = {
+                        name = cultic_activity_target
+                        scope = event_target:target_kingdom
+                    }
+                    #AI simulates pre-game activity
+                    character_event = {
+                        id = wh_cults_and_hunters.1
+                    }
+                }
+            }
+        }
+        #distribute false clues
+        any_province = {
+            limit = {
+                religion_group = old_world_group
+                OR = {
+                    de_jure_liege_or_above = e_kislev
+                    de_jure_liege_or_above = e_the_empire
+                    de_jure_liege_or_above = e_bretonnia
+                    de_jure_liege_or_above = e_estalia
+                    de_jure_liege_or_above = e_tilea
+                    de_jure_liege_or_above = e_borderlands
+                }
+            }
+            if = {
+                limit = {
+                    has_wonder = yes
+                }
+                while = {
+                    count = 2
+                    random = {
+                        chance = 30
+                        false_clues_appear_effect = yes
+                    }
+                }
+            }
+            else = {
+                while = {
+                    count = 2
+                    random = {
+                        chance = 15
+                        false_clues_appear_effect = yes
+                    }
+                }
+            }
+        }
+    }
+}
+
+character_event = {
+    id = wh_cults_and_hunters.1
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        ##determine AI's pre-game moves
+        set_character_flag = making_pre_game_moves
+        #1/5th of Intrigue
+        export_to_variable = {
+            which = pre_game_cult_moves
+            value = intrigue
+        }
+        divide_variable = {
+            which = pre_game_cult_moves
+            value = 5
+        }
+        while = {
+            limit = {
+                check_variable = {
+                    which = pre_game_cult_moves
+                    value > 0
+                }
+            }
+            character_event = {
+                id = wh_cults_and_hunters.201
+            }
+            subtract_variable = {
+                which = pre_game_cult_moves
+                value = 1
+            }
+        }
+        clr_character_flag = making_pre_game_moves
+    }
+}
+
+### Cultic Activity ###
+#ids 101-500 reserved for cultic activity
+
+## AI Cultic Strategic Pulse (on_decade_pulse)
+#101
+
+## AI Cultic Tactical Pulse (on_yearly_pulse)
+character_event = {
+    id = wh_cults_and_hunters.201
+    hide_window = yes
+    is_triggered_only = yes
+
+    only_playable = yes
+    has_character_flag = underground_cult_leader
+    ai = yes
+
+    immediate = {
+        #set cult leader & cult title as event targets for downstream effects
+        save_event_target_as = cult_leader
+        primary_title = {
+            save_event_target_as = cult_identity
+        }
+        #remember our current target
+        persistent_event_target:cultic_activity_target = {
+            save_event_target_as = cultic_area_of_operations
+        }
+        ##determine number of actions
+        #starting value set by (influence + intrigue)/5
+        set_variable = {
+            which = cult_tactical_actions
+            value = intrigue
+        }
+        change_variable = {
+            which = cult_tactical_actions
+            which = cultic_influence
+        }
+        divide_variable = {
+            which = cult_tactical_actions
+            value = 10
+        }
+        #bonus moves for old vampires & those favored by chaos
+        if = {
+            limit = {
+                OR = {
+                    trait = champion_undivided
+                    trait = champion_khorne
+                    trait = champion_nurgle
+                    trait = champion_slaanesh
+                    trait = champion_tzeentch
+                    AND = {
+                        is_vampire_visible = yes
+                        age < 250
+                    }
+                }
+            }
+            change_variable = {
+                which = cult_tactical_actions
+                value = 1
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    trait = chaos_chosen
+                    trait = chosen_khorne
+                    trait = chosen_nurgle
+                    trait = chosen_slaanesh
+                    trait = chosen_tzeentch
+                }
+                AND = {
+                    is_vampire_visible = yes
+                    age < 800
+                }
+            }
+            change_variable = {
+                which = cult_tactical_actions
+                value = 2
+            }
+        }
+        else_if = {
+            limit = {
+                OR = {
+                    trait = prince_undivided
+                    trait = prince_khorne
+                    trait = prince_nurgle
+                    trait = prince_slaanesh
+                    trait = prince_tzeentch
+                    is_vampire_visible = yes #note that because of previous clauses in this if/else chain, this means a very old vampire
+                }
+            }
+            change_variable = {
+                which = cult_tactical_actions
+                value = 3
+            }
+        }
+        #if any number of consolidating influence actions took place last pulse, regain one action
+        if = {
+            limit = {
+                has_character_flag = consolidating_influence
+            }
+            change_variable = {
+                which = cult_tactical_actions
+                value = 1
+            }
+        }
+        #clean up from last year's actions
+        clr_character_flag = consolidating_influence
+        clr_character_flag = building_influence
+        clr_character_flag = gathering_resources
+        clr_character_flag = establishing_cell
+        clr_character_flag = instigating_revolt
+        clr_character_flag = inspiring_killings
+        clr_character_flag = spawning_disease
+        clr_character_flag = encouraging_decadence
+        clr_character_flag = weaving_plots
+        while = {
+            limit = {
+                check_variable = {
+                    which = cult_tactical_actions
+                    value > 0
+                }
+            }
+            #determine action
+            random_list = {
+                #consolidate
+                20 = {
+                    modifier = {
+                        factor = 2
+                        ai_ambition < -50
+                    }
+                    #gives resistance to Witch Hunter activity
+                    set_character_flag = consolidating_influence
+                    change_variable = {
+                        which = cultic_influence
+                        value = 2
+                    }
+                    #"quiet" effect so influence can build with lower risk of alerting hunters
+                    random = {
+                        chance = 15
+                        cultic_activity_leaves_clues_effect = yes
+                    }
+                }
+                #build influence - default action
+                50 = {
+                    change_variable = {
+                        which = cultic_influence
+                        value = 5
+                    }
+                    set_character_flag = building_influence
+                    random = {
+                        chance = 70
+                        cultic_activity_leaves_clues_effect = yes
+                    }
+                }
+                #gather resources
+                20 = {
+                    trigger = {
+                        check_variable = {
+                            which = cultic_influence
+                            value = 10
+                        }
+                    }
+                    modifier = {
+                        factor = 2
+                        ai_greed > 50
+                    }
+                    set_character_flag = gathering_resources
+                    wealth = 25
+                    random = {
+                        chance = 50
+                        cultic_activity_leaves_clues_effect = yes
+                    }
+                }
+                #inspire killings (khorne)
+                10 = {
+                    trigger = {
+                        OR = {
+                            religion = chaos
+                            religion = khorne
+                        }
+                        check_variable = {
+                            which = cultic_influence
+                            value = 10
+                        }
+                    }
+                    set_character_flag = inspiring_killings
+                    add_offmap_currency = {
+                        offmap = khorne_warp
+                        value = 100
+                    }
+                    random = {
+                        chance = 80
+                        cultic_activity_leaves_clues_effect = yes
+                    }
+                }
+                #spawn disease (nurgle)
+                10 = {
+                    trigger = {
+                        OR = {
+                            religion = chaos
+                            religion = nurgle
+                        }
+                        check_variable = {
+                            which = cultic_influence
+                            value = 10
+                        }
+                    }
+                    set_character_flag = spawning_disease
+                    add_offmap_currency = {
+                        offmap = nurgle_warp
+                        value = 100
+                    }
+                    random = {
+                        chance = 80
+                        cultic_activity_leaves_clues_effect = yes
+                    }
+                }
+                #encourage decadence (slaanesh)
+                10 = {
+                    trigger = {
+                        OR = {
+                            religion = chaos
+                            religion = slaanesh
+                        }
+                        check_variable = {
+                            which = cultic_influence
+                            value = 10
+                        }
+                    }
+                    set_character_flag = encouraging_decadence
+                    add_offmap_currency = {
+                        offmap = slaanesh_warp
+                        value = 100
+                    }
+                    random = {
+                        chance = 80
+                        cultic_activity_leaves_clues_effect = yes
+                    }
+                }
+                #weave plots (tzeentch)
+                10 = {
+                    trigger = {
+                        OR = {
+                            religion = chaos
+                            religion = tzeentch
+                        }
+                        check_variable = {
+                            which = cultic_influence
+                            value = 10
+                        }
+                    }
+                    set_character_flag = weaving_plots
+                    add_offmap_currency = {
+                        offmap = tzeentch_warp
+                        value = 100
+                    }
+                    random = {
+                        chance = 80
+                        cultic_activity_leaves_clues_effect = yes
+                    }
+                }
+                #TODO
+                #instigate revolt
+                #20 = {
+                #
+                #}
+                #establish cell
+                #20 = {
+                #    trigger = {
+                #        wealth = 100
+                #        check_variable = {
+                #            which = cultic_influence
+                #            value = 25
+                #        }
+                #    }
+                #    set_character_flag = establishing_cell
+                #    random = {
+                #        chance = 80
+                #        cultic_activity_leaves_clues_effect = yes
+                #    }
+                #    #trigger event for establishing cell
+                #}
+            }
+            subtract_variable = {
+                which = cult_tactical_actions
+                value = 1
+            }
+        }
+    }
+}
+
+#invited to secret rites
+character_event = {
+    id = wh_cults_and_hunters.251
+    desc = EVTDESC_wh_cults_and_hunters_251
+    picture = GFX_evt_feast
+
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                ai = yes
+            }
+            random_list = {
+                #Didn't go
+                30 = {
+                    modifier = {
+                        factor = 2
+                        trait = shy
+                    }
+                    modifier = {
+                        factor = 0.5
+                        factor = gregarious
+                    }
+                    modifier = {
+                        factor = 0.2
+                        trait = cynical
+                    }
+                    modifier = {
+                        factor = 5
+                        trait = zealous
+                    }
+                    modifier = {
+                        factor = 0.8
+                        OR = {
+                            trait = scholar
+                            trait = mystic
+                            trait = erudite
+                        }
+                    }
+                    modifier = {
+                        factor = 0.5
+                        has_law = witch_hunter_law_0
+                    }
+                    modifier = {
+                        factor = 4
+                        has_law = witch_hunter_law_3
+                    }
+                    #refer to Witch Hunter, if applicable
+                }
+                ##Outcomes for going to the rite
+                #Cultic rite: Corrupted
+                20 = {
+                    trigger = {
+                        has_character_flag = invited_to_cultic_rite
+                    }
+                    corrupted_by_underground_cult_effect = yes
+                }
+                #Non-cultic rite: may gain or lose learning
+                10 = {
+                    trigger = {
+                        NOT = {
+                            has_character_flag = invited_to_cultic_rite
+                        }
+                    }
+                    change_learning = 2
+                }
+                10 = {
+                    trigger = {
+                        NOT = {
+                            has_character_flag = invited_to_cultic_rite
+                        }
+                    }
+                    change_learning = -1
+                }
+            }
+            clr_character_flag = invited_to_secret_rite
+            clr_character_flag = invited_to_cultic_rite
+        }
+    }
+
+    option = {
+        name = OK
+        trigger = { ai = no }
+        #write ai = no narrative
+    }
+
+    option = {
+        name = NO
+        trigger = { ai = no }
+        #refer to witch hunter
+    }
+
+    #fail out for AI, just in case
+    option = {
+        name = OK
+        trigger = { ai = yes }
+    }
+}
+
+#invited to secret party
+character_event = {
+    id = wh_cults_and_hunters.261
+    desc = EVTDESC_wh_cults_and_hunters_261
+    picture = GFX_evt_feast
+
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                ai = yes
+            }
+            random_list = {
+                #Didn't go
+                30 = {
+                    modifier = {
+                        factor = 2
+                        trait = shy
+                    }
+                    modifier = {
+                        factor = 0.5
+                        factor = gregarious
+                    }
+                    modifier = {
+                        factor = 0.2
+                        trait = cynical
+                    }
+                    modifier = {
+                        factor = 5
+                        trait = zealous
+                    }
+                    modifier = {
+                        factor = 0.8
+                        OR = {
+                            trait = hedonist
+                            trait = socializer
+                            trait = seducer
+                            trait = seductress
+                        }
+                    }
+                    modifier = {
+                        factor = 0.5
+                        has_law = witch_hunter_law_0
+                    }
+                    modifier = {
+                        factor = 4
+                        has_law = witch_hunter_law_3
+                    }
+                    #refer to Witch Hunter, if applicable
+                }
+                ##Outcomes for going to the rite
+                #Cultic party: Corrupted
+                20 = {
+                    trigger = {
+                        has_character_flag = invited_to_cultic_party
+                    }
+                    corrupted_by_underground_cult_effect = yes
+                }
+                #Non-cultic party: may gain or lose diplomacy
+                10 = {
+                    trigger = {
+                        NOT = {
+                            has_character_flag = invited_to_cultic_party
+                        }
+                    }
+                    change_diplomacy = 2
+                }
+                10 = {
+                    trigger = {
+                        NOT = {
+                            has_character_flag = invited_to_cultic_rite
+                        }
+                    }
+                    change_diplomacy = -1
+                }
+            }
+            clr_character_flag = invited_to_secret_party
+            clr_character_flag = invited_to_cultic_party
+        }
+    }
+
+    option = {
+        name = OK
+        trigger = { ai = no }
+        #write ai = no narrative
+    }
+
+    option = {
+        name = NO
+        trigger = { ai = no }
+        #refer to witch hunter
+    }
+
+    #fail out for AI, just in case
+    option = {
+        name = OK
+        trigger = { ai = yes }
+    }
+}
+
+#stalked by killer
+character_event = {
+    id = wh_cults_and_hunters.271
+    desc = EVTDESC_wh_cults_and_hunters_271
+    picture = GFX_evt_whispers
+
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                ai = yes
+            }
+            random_list = {
+                #avoided contact
+                30 = {
+                    modifier = {
+                        factor = 2
+                        trait = shy
+                    }
+                    modifier = {
+                        factor = 0.5
+                        factor = gregarious
+                    }
+                    modifier = {
+                        factor = 0.8
+                        trait = socializer
+                    }
+                    modifier = {
+                        factor = 0.5
+                        has_law = witch_hunter_law_0
+                    }
+                    modifier = {
+                        factor = 4
+                        has_law = witch_hunter_law_3
+                    }
+                    #well-guarded
+                    modifier = {
+                        factor = 1.5
+                        TIER = COUNT
+                    }
+                    modifier = {
+                        factor = 2.5
+                        tier = DUKE
+                    }
+                    modifier = {
+                        factor = 4
+                        tier = KING
+                    }
+                    modifier = {
+                        factor = 6
+                        tier = EMPEROR
+                    }
+                    #refer to Witch Hunter, if applicable
+                }
+                ##Outcomes for encountering the killer
+                #Cultic killer: Ritually murdered
+                20 = {
+                    trigger = {
+                        has_character_flag = stalked_by_cultic_killer
+                    }
+                    death = {
+                        death_reason = death_murder_unknown_butchered
+                    }
+                    #notify witch hunter
+                }
+                #Non-cultic killer: straight up murdered
+                20 = {
+                    trigger = {
+                        NOT = {
+                            has_character_flag = invited_to_cultic_party
+                        }
+                    }
+                    death = {
+                        death_reason = death_murder_unknown_butchered
+                    }
+                    #notify witch hunter
+                }
+                #Attacked and fled!
+                10 = {
+                    modifier = {
+                        factor = 3
+                        trait = craven
+                    }
+                    modifier = {
+                        factor = 0.5
+                        ai_honor < 0
+                    }
+                    modifier = {
+                        factor = 3
+                        ai_rationality > 0
+                    }
+                    modifier = {
+                        factor = 0
+                        prisoner = yes
+                    }
+                    add_trait = wounded
+                    #notify witch hunter
+                }
+                #Killed the killer
+                10 = {
+                    modifier = {
+                        factor = 3
+                        combat_rating > 30
+                    }
+                    modifier = {
+                        factor = 2
+                        combat_rating > 50
+                    }
+                    modifier = {
+                        factor = 2
+                        combat_rating > 70
+                    }
+                    modifier = {
+                        factor = 0.5
+                        prisoner = yes
+                    }
+                    modifier = {
+                        factor = 0
+                        is_incapable = yes
+                    }
+                    if = {
+                        limit = {
+                            has_character_flag = stalked_by_cultic_killer
+                        }
+                        random = {
+                            chance = 70
+                            corrupted_by_underground_cult_effect = yes
+                        }
+                    }
+                    if = {
+                        limit = {
+                            NOT = {
+                                trait = underground_cult_member
+                            }
+                        }
+                        #notify witch hunter
+                    }
+                }
+            }
+            clr_character_flag = stalked_by_secret_killer
+            clr_character_flag = stalked_by_cultic_killer
+        }
+    }
+
+    #run away!
+    option = {
+        name = OK
+        trigger = { ai = no }
+        #write ai = no narrative
+    }
+
+    #fight!
+    option = {
+        name = OK
+        trigger = { ai = no }
+        #refer to witch hunter
+    }
+
+    #fail out for AI, just in case
+    option = {
+        name = OK
+        trigger = { ai = yes }
+    }
+}
+#victim of kidnapping attempt (possible brainwashing)
+#stalked by murderer (straightforward)
+#encounter with disease victim (really straightforward for ai, tricky for ai=no)
+
+### Witch Hunter Activity ###
+
+##Recruiting Special Agents
+#Initial menu
+character_event = {
+    id = wh_cults_and_hunters.501
+    desc = EVTDESC_wh_cults_and_hunters_501
+    picture = GFX_evt_council
+
+    is_triggered_only = yes
+
+    immediate = {
+        #all ai logic here
+        if = {
+            limit = {
+                ai = yes
+            }
+            random = {
+                chance = 70
+                mult_modifier = {
+                    factor = 1.3
+                    ai_zeal >= 50
+                }
+                mult_modifier = {
+                    factor = 0.7
+                    ai_zeal <= -50
+                }
+                #decide hunter type
+                random_list = {
+                    60 = {
+                        modifier = {
+                            factor = 1.5
+                            ai_rationality >= 50
+                        }
+                        create_adventurer_hunter_effect = yes
+                    }
+                    25 = {
+                        trigger = {
+                            religion = classical_pantheon
+                        }
+                        modifier = {
+                            factor = 1.5
+                            ai_zeal >= 50
+                        }
+                        create_myrmidian_inquisitor_witch_hunter_effect = yes
+                    }
+                    25 = {
+                        trigger = {
+                            religion = grail
+                        }
+                        modifier = {
+                            factor = 1.5
+                            ai_zeal >= 50
+                        }
+                        create_bretonnian_knight_witch_hunter_effect = yes
+                    }
+                    25 = {
+                        trigger = {
+                            religion = imperial_pantheon
+                        }
+                        modifier = {
+                            factor = 1.5
+                            ai_zeal >= 50
+                        }
+                        create_sigmarite_templar_witch_hunter_effect = yes
+                    }
+                    25 = {
+                        trigger = {
+                            religion = kislev_gods
+                        }
+                        modifier = {
+                            factor = 1.5
+                            ai_zeal >= 50
+                        }
+                        create_ice_witch_witch_hunter_effect = yes
+                    }
+                    15 = {
+                        create_order_of_the_shroud_witch_hunter_effect = yes
+                    }
+                    15 = {
+                        create_order_of_the_sword_and_scale_witch_hunter_effect = yes
+                    }
+                    10 = {
+                        modifier = {
+                            factor = 2
+                            is_doom_high = yes
+                        }
+                        modifier = {
+                            factor = 3
+                            is_doom_very_high = yes
+                        }
+                        create_temple_of_solkan_witch_hunter_effect = yes
+                    }
+                    5 = {
+                        trigger = {
+                            OR = {
+                                is_doom_high = yes
+                                is_doom_very_high = yes
+                            }
+                        }
+                        modifier = {
+                            factor = 2
+                            is_doom_very_high = yes
+                        }
+                        create_emmisary_of_order_witch_hunter_effect = yes
+                    }
+                }
+                event_target:hunter_candidate = {
+                    give_minor_title = title_court_witchhunter
+                }
+            }
+        }
+    }
+
+    #skilled adventurer
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_501
+        trigger = { ai = no }
+        scaled_wealth = -0.25
+        narrative_event = {
+            id = wh_cults_and_hunters.503
+            days = 14
+            random = 14
+            tooltip = witch_hunter_arrives_shortly_tt
+        }
+    }
+
+    ##religious group agents
+    #Classical Pantheon - Myrmidian Inquisitor
+    option = {
+        tooltip_info_custom = available_because_classical_pantheon
+        name = EVTOPTB_wh_cults_and_hunters_501
+        trigger = {
+            ai = no
+            religion = classical_pantheon
+        }
+        if = {
+            limit = {
+                OR = {
+                    has_law = witch_hunter_law_2
+                    has_law = witch_hunter_law_3
+                }
+            }
+            piety = 50
+        }
+        scaled_wealth = -0.25
+        narrative_event = {
+            id = wh_cults_and_hunters.504
+            days = 14
+            random = 14
+            tooltip = witch_hunter_arrives_shortly_tt
+        }
+    }
+    #Grail - Knight Errant
+    option = {
+        tooltip_info_custom = available_because_grail
+        name = EVTOPTC_wh_cults_and_hunters_501
+        trigger = {
+            ai = no
+            religion = grail
+        }
+        if = {
+            limit = {
+                OR = {
+                    has_law = witch_hunter_law_2
+                    has_law = witch_hunter_law_3
+                }
+            }
+            piety = 50
+        }
+        scaled_wealth = -0.25
+        narrative_event = {
+            id = wh_cults_and_hunters.505
+            days = 14
+            random = 14
+            tooltip = witch_hunter_arrives_shortly_tt
+        }
+    }
+    #Imperial Pantheon - Sigmarite Templar
+    option = {
+        tooltip_info_custom = available_because_imperial_pantheon
+        name = EVTOPTD_wh_cults_and_hunters_501
+        trigger = {
+            ai = no
+            religion = imperial_pantheon
+        }
+        if = {
+            limit = {
+                OR = {
+                    has_law = witch_hunter_law_2
+                    has_law = witch_hunter_law_3
+                }
+            }
+            piety = 50
+        }
+        scaled_wealth = -0.25
+        narrative_event = {
+            id = wh_cults_and_hunters.506
+            days = 14
+            random = 14
+            tooltip = witch_hunter_arrives_shortly_tt
+        }
+    }
+    #Kislev Gods - Ice Witch
+    option = {
+        tooltip_info_custom = available_because_kislev_gods
+        name = EVTOPTE_wh_cults_and_hunters_501
+        trigger = {
+            ai = no
+            religion = kislev_gods
+        }
+        if = {
+            limit = {
+                OR = {
+                    has_law = witch_hunter_law_2
+                    has_law = witch_hunter_law_3
+                }
+            }
+            piety = 50
+        }
+        scaled_wealth = -0.25
+        narrative_event = {
+            id = wh_cults_and_hunters.507
+            days = 14
+            random = 14
+            tooltip = witch_hunter_arrives_shortly_tt
+        }
+    }
+
+    #Agent of an ancient order
+    option = {
+        name = EVTOPTF_wh_cults_and_hunters_501
+        trigger = { ai = no }
+        #go to submenu
+        character_event = {
+            id = wh_cults_and_hunters.502
+        }
+    }
+
+    #pass
+    option = {
+        name = ILL_WAIT_A_BIT
+		trigger = { ai = no }
+		clr_character_flag = employing_witch_hunter
+    }
+
+    #AI fall out of event. Not sure if they need this but w/ev
+    option = {
+        name = OK
+        trigger = { ai = yes }
+    }
+}
+
+character_event = {
+    id = wh_cults_and_hunters.502
+    desc = EVTDESC_wh_cults_and_hunters_502
+    picture = GFX_evt_council
+
+    is_triggered_only = yes
+
+    #Order of the Shroud (Morr)
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_502
+        scaled_wealth = -0.25
+        if = {
+            limit = {
+                NOT = {
+                    trait = patron_morr
+                }
+            }
+            prestige = -100
+            piety = -100
+        }
+        narrative_event = {
+            id = wh_cults_and_hunters.508
+            days = 14
+            random = 14
+            tooltip = witch_hunter_arrives_shortly_tt
+        }
+    }
+    #Order of the Scale and Sword (Verena)
+    option = {
+        name = EVTOPTB_wh_cults_and_hunters_502
+        scaled_wealth = -0.25
+        if = {
+            limit = {
+                NOT = {
+                    trait = patron_verena
+                }
+            }
+            prestige = -100
+            piety = -100
+        }
+        narrative_event = {
+            id = wh_cults_and_hunters.509
+            days = 14
+            random = 14
+            tooltip = witch_hunter_arrives_shortly_tt
+        }
+    }
+    #Temple of Solkan (Law God)
+    option = {
+        name = EVTOPTC_wh_cults_and_hunters_502
+        scaled_wealth = -0.25
+        if = {
+            limit = {
+                NOT = {
+                    trait = patron_soll
+                }
+            }
+            prestige = -250
+            piety = -250
+        }
+        custom_tooltip = {
+            text = witch_hunter_arrives_shortly_tt
+            random_list = {
+                80 = {
+                    narrative_event = {
+                        id = wh_cults_and_hunters.510
+                        days = 14
+                        random = 14
+                    }
+                }
+                #if things are really bad in the Old World, the Law God may send one of its champions
+                10 = {
+                    trigger = {
+                        OR = {
+                            is_doom_high = yes
+                            is_doom_very_high = yes
+                        }
+                    }
+                    modifier = {
+                        factor = 2
+                        is_doom_very_high = yes
+                    }
+                    narrative_event = {
+                        id = wh_cults_and_hunters.511
+                        days = 14
+                        random = 14
+                    }
+                }
+            }
+        }
+    }
+    #Return to base menu
+    option = {
+        name = EVTOPTD_wh_cults_and_hunters_502
+        custom_tooltip = {
+            text = return_to_previous_menu_tt
+            character_event = { id = wh_cults_and_hunters.501 }
+        }
+    }
+}
+
+#Adventurer
+narrative_event = {
+    id = wh_cults_and_hunters.503
+    title = EVTTITLE_wh_cults_and_hunters_503
+    desc = {
+        trigger = {
+            event_target:hunter_candidate = {
+                has_character_flag = army_veteran_witch_hunter
+            }
+        }
+        text = EVTDESCA_wh_cults_and_hunters_503
+    }
+    desc = {
+        trigger = {
+            event_target:hunter_candidate = {
+                has_character_flag = bold_scholar_witch_hunter
+            }
+        }
+        text = EVTDESCB_wh_cults_and_hunters_503
+    }
+    desc = {
+        trigger = {
+            event_target:hunter_candidate = {
+                has_character_flag = crafty_spy_witch_hunter
+            }
+        }
+        text = EVTDESCC_wh_cults_and_hunters_503
+    }
+    picture = GFX_evt_witch_hunters
+
+    is_triggered_only = yes
+
+    immediate = {
+        create_adventurer_hunter_effect = yes
+    }
+
+    option = {
+        name = EXCELLENT
+        event_target:hunter_candidate = {
+            give_minor_title = title_court_witchhunter
+        }
+    }
+    option = {
+        name = EVTOPT_wh_cults_and_hunters_unwanted_hunter
+        event_target:hunter_candidate = {
+            death = { death_reason = death_missing }
+        }
+        clr_character_flag = employing_witch_hunter
+    }
+}
+
+#Myrmidian Inquisitor
+narrative_event = {
+    id = wh_cults_and_hunters.504
+    title = EVTTITLE_wh_cults_and_hunters_504
+    desc = EVTDESC_wh_cults_and_hunters_504
+    picture = GFX_evt_witch_hunters
+
+    is_triggered_only = yes
+
+    immediate = {
+        create_myrmidian_inquisitor_witch_hunter_effect = yes
+    }
+
+    option = {
+        name = EXCELLENT
+        event_target:hunter_candidate = {
+            give_minor_title = title_court_witchhunter
+        }
+    }
+    option = {
+        name = EVTOPT_wh_cults_and_hunters_unwanted_hunter
+        event_target:hunter_candidate = {
+            death = { death_reason = death_missing }
+        }
+        clr_character_flag = employing_witch_hunter
+    }
+}
+
+#Bretonnian Knight
+narrative_event = {
+    id = wh_cults_and_hunters.505
+    title = EVTTITLE_wh_cults_and_hunters_505
+    desc = EVTDESC_wh_cults_and_hunters_505
+    picture = GFX_evt_bretonnian_knight
+
+    is_triggered_only = yes
+
+    immediate = {
+        create_bretonnian_knight_witch_hunter_effect = yes
+    }
+
+    option = {
+        name = EXCELLENT
+        event_target:hunter_candidate = {
+            give_minor_title = title_court_witchhunter
+        }
+    }
+    option = {
+        name = EVTOPT_wh_cults_and_hunters_unwanted_hunter
+        event_target:hunter_candidate = {
+            death = { death_reason = death_missing }
+        }
+        clr_character_flag = employing_witch_hunter
+    }
+}
+
+#Sigmarite Templar
+narrative_event = {
+    id = wh_cults_and_hunters.506
+    title = EVTTITLE_wh_cults_and_hunters_506
+    desc = EVTDESC_wh_cults_and_hunters_506
+    picture = GFX_evt_witch_hunters
+
+    is_triggered_only = yes
+
+    immediate = {
+        create_sigmarite_templar_witch_hunter_effect = yes
+    }
+
+    option = {
+        name = EXCELLENT
+        event_target:hunter_candidate = {
+            give_minor_title = title_court_witchhunter
+        }
+    }
+    option = {
+        name = EVTOPT_wh_cults_and_hunters_unwanted_hunter
+        event_target:hunter_candidate = {
+            death = { death_reason = death_missing }
+        }
+        clr_character_flag = employing_witch_hunter
+    }
+}
+
+#Ice Witch
+narrative_event = {
+    id = wh_cults_and_hunters.507
+    title = EVTTITLE_wh_cults_and_hunters_507
+    desc = EVTDESC_wh_cults_and_hunters_507
+    picture = GFX_evt_kislev_ice_witch
+
+    is_triggered_only = yes
+
+    immediate = {
+        create_ice_witch_witch_hunter_effect = yes
+    }
+
+    option = {
+        name = EXCELLENT
+        event_target:hunter_candidate = {
+            give_minor_title = title_court_witchhunter
+        }
+    }
+    option = {
+        name = EVTOPT_wh_cults_and_hunters_unwanted_hunter
+        event_target:hunter_candidate = {
+            death = { death_reason = death_missing }
+        }
+        clr_character_flag = employing_witch_hunter
+    }
+}
+
+#Order of the Shroud
+narrative_event = {
+    id = wh_cults_and_hunters.508
+    title = EVTTITLE_wh_cults_and_hunters_508
+    desc = EVTDESC_wh_cults_and_hunters_508
+    picture = GFX_evt_morr_priests
+
+    is_triggered_only = yes
+
+    immediate = {
+        create_order_of_the_shroud_witch_hunter_effect = yes
+    }
+
+    option = {
+        name = EXCELLENT
+        event_target:hunter_candidate = {
+            give_minor_title = title_court_witchhunter
+        }
+    }
+    option = {
+        name = EVTOPT_wh_cults_and_hunters_unwanted_hunter
+        event_target:hunter_candidate = {
+            death = { death_reason = death_missing }
+        }
+        clr_character_flag = employing_witch_hunter
+    }
+}
+
+#Order of the Sword and Scale
+narrative_event = {
+    id = wh_cults_and_hunters.509
+    title = EVTTITLE_wh_cults_and_hunters_509
+    desc = EVTDESC_wh_cults_and_hunters_509
+    picture = GFX_evt_morr_priests
+
+    is_triggered_only = yes
+
+    immediate = {
+        create_order_of_the_sword_and_scale_witch_hunter_effect = yes
+    }
+
+    option = {
+        name = EXCELLENT
+        event_target:hunter_candidate = {
+            give_minor_title = title_court_witchhunter
+        }
+    }
+    option = {
+        name = EVTOPT_wh_cults_and_hunters_unwanted_hunter
+        event_target:hunter_candidate = {
+            death = { death_reason = death_missing }
+        }
+        clr_character_flag = employing_witch_hunter
+    }
+}
+
+#Temple of Solkan
+narrative_event = {
+    id = wh_cults_and_hunters.510
+    title = EVTTITLE_wh_cults_and_hunters_510
+    desc = EVTDESC_wh_cults_and_hunters_510
+    picture = GFX_evt_witch_hunters
+
+    is_triggered_only = yes
+
+    immediate = {
+        create_temple_of_solkan_witch_hunter_effect = yes
+    }
+
+    option = {
+        name = EXCELLENT
+        event_target:hunter_candidate = {
+            give_minor_title = title_court_witchhunter
+        }
+    }
+    option = {
+        name = EVTOPT_wh_cults_and_hunters_unwanted_hunter
+        event_target:hunter_candidate = {
+            death = { death_reason = death_missing }
+        }
+        clr_character_flag = employing_witch_hunter
+    }
+}
+
+#Emmisary of Order
+narrative_event = {
+    id = wh_cults_and_hunters.511
+    title = EVTTITLE_wh_cults_and_hunters_511
+    desc = EVTDESC_wh_cults_and_hunters_511
+    picture = GFX_evt_mage_lore_light
+
+    is_triggered_only = yes
+
+    immediate = {
+        create_emmisary_of_order_witch_hunter_effect = yes
+    }
+
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_511
+        tooltip_info_custom = required_because_arrow_of_law
+        event_target:hunter_candidate = {
+            give_minor_title = title_court_witchhunter
+        }
+        #should probably have some extra narrative events but that could wait for Land of the Law God
+    }
+}
+
+#Witch Hunter tactical pulse (on_yearly_pulse)
+character_event = {
+    id = wh_cults_and_hunters.601
+    hide_window = yes
+    is_triggered_only = yes
+
+    only_playable = yes
+
+    trigger = {
+        true_religion_group = old_world_group
+        NOT = { religion = old_faith }
+    }
+
+    immediate = {
+        if = {
+            limit = {
+                any_courtier_or_vassal = {
+                    has_minor_title = title_court_witchhunter
+                }
+            }
+            random_courtier_or_vassal = {
+                limit = {
+                    has_minor_title = title_court_witchhunter
+                }
+                save_event_target_as = court_witchhunter
+            }
+            #simple test of scoping
+            if  = {
+                limit = {
+                    any_realm_character = {
+                        trait = underground_cult_member
+                    }
+                }
+                random_realm_character = {
+                    limit = {
+                        trait = underground_cult_member
+                    }
+                    death = {
+                        death_reason = death_execution_burning
+                        killer = event_target:court_witchhunter
+                    }
+                }
+            }
+        }
+        else_if = {
+            limit = {
+                has_law = witch_hunter_law_0
+            }
+            #court priest conducts pseudo-hunter activity
+        }
+        #ai rulers without witch hunters typically hire one
+        else_if = {
+            limit = {
+                ai = yes
+            }
+            random = {
+                chance = 65
+                mult_modifier = {
+                    factor = 1.4
+                    has_law = witch_hunter_law_3
+                }
+                character_event = {
+                    id = wh_cults_and_hunters.501
+                }
+            }
+        }
+        #no need for else clause here - ai=no doesn't need a yearly reminder
+    }
+}

@@ -1,7 +1,7 @@
 #Used IDs 1-9 22,-40
 #Free IDs 10-21, 41-150
 
-1 = { #18000 
+1 = { #18000
 	name = "Sigmar"
 	dynasty = 9000
 	religion = imperial_pantheon
@@ -792,4 +792,42 @@
 		}
 	}
 	2050.1.1 = {death = yes}
+}
+
+40 = { #18067
+	name = "Be’la’krothrogor"
+	dynasty = 3037
+	religion = nurgle
+	culture = westerlander
+	martial = 4
+	diplomacy = 6
+	intrigue = 7
+	stewardship = 7
+	learning = 8
+	historical = yes
+	add_trait = scholarly_theologian
+	add_trait = nurgle_demon
+	add_trait = prince_nurgle
+	add_trait = lore_nurgle
+	add_trait = mark_nurgle
+	add_trait = magic_potential_1
+	add_trait = patient
+	add_trait = sturdy
+	add_trait = theologian
+	add_trait = content
+	add_trait = craven
+	#canonically alive during the Black Plague of 1111
+	957.11.18 = {
+		birth = yes
+	}
+	1184.7.4 = {
+		effect = {
+			set_graphical_culture = prince_nurgle
+			set_character_flag = magic_potential_flag_2
+			add_character_modifier = {
+				name = magic_power_1
+				duration = -1
+			}
+		}
+	}
 }

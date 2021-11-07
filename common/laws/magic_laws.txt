@@ -3,6 +3,9 @@ law_groups = {
 	magic_law = {
 		law_type = realm
 	}
+	witch_hunter_law = {
+		law_type = realm
+	}
 }
 
 laws = {
@@ -298,5 +301,259 @@ laws = {
 
 			}
 		}
+	}
+	#Traditional authority
+	witch_hunter_law_0 = {
+		group = witch_hunter_law
+		default_selection = {
+			factor = 0
+			additive_modifier = {
+				value = 10
+				holder_scope = {
+					culture_group = bretonnian_group
+				}
+			}
+		}
+		potential = {
+			holder_scope = {
+				religion_group = old_world_group
+				NOT = { religion = old_faith }
+			}
+		}
+		allow = {
+			NOR = {
+				has_law = witch_hunter_law_2
+				has_law = witch_hunter_law_3
+				is_doom_high = yes
+				is_doom_very_high = yes
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+			}
+			modifier = {
+				factor = 5
+				holder_scope = {
+					ai_greed >= 50
+				}
+			}
+			modifier = {
+				factor = 2
+				is_doom_very_low = yes
+			}
+			modifier = {
+				factor = 2
+				holder_scope = {
+					culture_group = bretonnian_group
+				}
+			}
+			modifier = {
+				factor = 0.5
+				holder_scope = {
+					culture_group = kislevite_group
+				}
+			}
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = witch_hunter_law_1
+				revoke_law = witch_hunter_law_2
+				revoke_law = witch_hunter_law_3
+			}
+		}
+		global_revolt_risk = -0.01
+	}
+	#Specialist hunters
+	witch_hunter_law_1 = {
+		group = witch_hunter_law
+		default_selection = {
+			factor = 0
+			additive_modifier = {
+				value = 10
+				holder_scope = {
+					OR = {
+						culture_group = imperial_group
+						culture_group = tilean_group
+					}
+				}
+			}
+		}
+		potential = {
+			holder_scope = {
+				religion_group = old_world_group
+				NOT = { religion = old_faith }
+			}
+		}
+		allow = {
+			NOT = {
+				has_law = witch_hunter_law_3
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+			}
+			modifier = {
+				factor = 5
+				holder_scope = {
+					ai_rationality >= 50
+				}
+			}
+			modifier = {
+				factor = 2
+				holder_scope = {
+					culture_group = bretonnian_group
+				}
+			}
+			modifier = {
+				factor = 0.5
+				holder_scope = {
+					culture_group = kislevite_group
+				}
+			}
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = witch_hunter_law_0
+				revoke_law = witch_hunter_law_2
+				revoke_law = witch_hunter_law_3
+			}
+		}
+	}
+	#State Inquisition
+	witch_hunter_law_2 = {
+		group = witch_hunter_law
+		default_selection = {
+			factor = 0
+			additive_modifier = {
+				value = 10
+				holder_scope = {
+					OR = {
+						culture_group = estalian_group
+						culture_group = kislevite_group
+					}
+				}
+			}
+		}
+		potential = {
+			holder_scope = {
+				religion_group = old_world_group
+				NOT = { religion = old_faith }
+			}
+		}
+		allow = {
+			NOT = {
+				has_law = witch_hunter_law_0
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.1
+			}
+			modifier = {
+				factor = 5
+				holder_scope = {
+					ai_zeal >= 50
+				}
+			}
+			modifier = {
+				factor = 2
+				OR = {
+					is_doom_high = yes
+					is_doom_very_high = yes
+				}
+			}
+			modifier = {
+				factor = 5
+				holder_scope = {
+					culture_group = kislevite_group
+				}
+			}
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = witch_hunter_law_0
+				revoke_law = witch_hunter_law_1
+				revoke_law = witch_hunter_law_3
+			}
+		}
+		arrest_chance_modifier = 0.05
+		vassal_limit = -5
+	}
+	#Emergency measures
+	witch_hunter_law_3 = {
+		group = witch_hunter_law
+		default_selection = {
+			factor = 0
+		}
+		potential = {
+			holder_scope = {
+				religion_group = old_world_group
+				NOT = { religion = old_faith }
+			}
+		}
+		allow = {
+			NOT = {
+				has_law = witch_hunter_law_0
+			}
+			OR = {
+				is_doom_high = yes
+				is_doom_very_high = yes
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+			}
+			modifier = {
+				factor = 0.1
+				NOT = {	is_doom_very_high = yes }
+			}
+			modifier = {
+				factor = 2
+				holder_scope = {
+					culture_group = kislevite_group
+				}
+			}
+		}
+		ai_will_revoke = {
+			factor = 0
+		}
+		effect = {
+			hidden_tooltip = {
+				revoke_law = witch_hunter_law_0
+				revoke_law = witch_hunter_law_1
+				revoke_law = witch_hunter_law_2
+			}
+		}
+		arrest_chance_modifier = 0.20
+		global_revolt_risk = 0.02
+		vassal_limit = -5
 	}
 }
