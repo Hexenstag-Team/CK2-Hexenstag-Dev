@@ -313,23 +313,6 @@ character_event = {
 	}
 }
 character_event = {
-	id = wh_setup.4
-	hide_window = yes
-	is_triggered_only = yes
-	culture_group = imperial_group
-	religion_group = old_world_group
-
-	trigger = {
-		higher_tier_than = DUKE
-		is_patrician = no
-		trait = creature_human
-	}
-
-	immediate = {
-		set_government_type = elector_count_government
-	}
-}
-character_event = {
 	id = wh_setup.5
 	hide_window = yes
 

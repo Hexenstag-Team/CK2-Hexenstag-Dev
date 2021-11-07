@@ -77,13 +77,6 @@ has_religion_matching_joined_warrior_society_trigger = {
 				society_member_of = warband_of_khorne
 			}
 			AND = {
-				OR={
-					trait = patron_ulric
-					trait=norscan_patron_ulric
-				}
-				society_member_of = warriors_of_ulric
-			}
-			AND = {
 				religion_group = old_world_group
 				society_member_of = knights_of_old_world
 			}
@@ -91,38 +84,11 @@ has_religion_matching_joined_warrior_society_trigger = {
 	}
 }
 
-has_religion_matching_available_warrior_lodge_trigger = {
-	OR = {
-		AND = {
-			OR={
-				trait = patron_ulric
-				trait=norscan_patron_ulric
-			}
-			warriors_of_ulric = { society_has_members = yes }
-		}
-		#AND = {
-		#	religion_openly_tengri_or_reformed_trigger = yes
-		#	warrior_lodge_tengri = { society_has_members = yes }
-		#}
-	}
-}
-
 has_religion_matching_warrior_lodge_in_need_of_members_trigger = {
 	OR = {
 		AND = {
-			OR={
-				trait = patron_ulric
-				trait=norscan_patron_ulric
-			}
-			warriors_of_ulric = { num_of_society_members < 30 }
-		}
-		AND = {
 			religion_group = old_world_group
 			knights_of_old_world = { num_of_society_members < 30 }
-		}
-		AND = {
-			religion_openly_finnish_or_reformed_trigger = yes
-			warrior_lodge_finnish = { num_of_society_members < 30 }
 		}
 		AND = {
 			religion_group = dwarf_gods_group
@@ -148,44 +114,6 @@ this_society_is_a_warrior_lodge_trigger = {
 	OR = {
 	    is_society = knights_of_old_world
 	    is_society = warriors_guild_dawi
-	}
-}
-
-has_religion_matching_any_warrior_lodge_trigger = {
-	OR = {
-		religion_openly_norse_or_reformed_trigger = yes
-		OR={
-			trait = patron_ulric
-			trait=norscan_patron_ulric
-		}
-		religion_openly_tengri_or_reformed_trigger = yes
-		religion_openly_baltic_or_reformed_trigger = yes
-		religion_openly_finnish_or_reformed_trigger = yes
-		religion_openly_slavic_or_reformed_trigger = yes
-		religion_openly_west_african_or_reformed_trigger = yes
-		religion_openly_zun_or_reformed_trigger = yes
-		religion_openly_bon_or_reformed_trigger = yes
-		religion_openly_hellenic_or_reformed_trigger = yes
-	}
-}
-
-has_religion_matching_warrior_lodge_to_revive_trigger = {
-	OR = {
-		AND = {
-			or={
-				trait = patron_ulric
-			trait=norscan_patron_ulric
-			}
-			event_target:warrior_lodge_to_revive = {
-				is_society = warriors_of_ulric
-			}
-		}
-		AND = {
-			religion_openly_tengri_or_reformed_trigger = yes
-			event_target:warrior_lodge_to_revive = {
-				is_society = warrior_lodge_tengri
-			}
-		}
 	}
 }
 

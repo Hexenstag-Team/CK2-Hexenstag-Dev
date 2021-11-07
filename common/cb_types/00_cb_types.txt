@@ -3547,20 +3547,6 @@ invasion = {
 
 	ai_will_do = {
 		factor = 1
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 
 		modifier = {
 			factor = 0
@@ -4012,20 +3998,6 @@ tribal_invasion = {
 
 		modifier = {
 			factor = 0.9 # Prefer using CB's without on_add costs
-		}
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
 		}
 		modifier = {
 			factor = 0
@@ -5563,36 +5535,6 @@ new_crusade = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						has_dlc = "Holy Fury"
-					}
-					if = {
-						limit = {
-							crusader_king = {
-								is_female = yes
-							}
-						}
-						crusader_king = {
-							create_bloodline = {
-								type = black_crusade_lord
-								religion = THIS
-								inheritance = matrilineal
-							}
-							set_bloodline_founder_religion_flag_effect = yes
-						}
-					}
-					else = {
-						crusader_king = {
-							create_bloodline = {
-								type = black_crusade_lord
-								religion = THIS
-								inheritance = patrilineal
-							}
-							set_bloodline_founder_religion_flag_effect = yes
-						}
-					}
-				}
 			}
 
 			# Checks if First Crusade
@@ -6489,20 +6431,6 @@ religious = {
 	ai_will_do = {
 		factor = 1
 
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 
 		modifier = {
 			factor = 0
@@ -6647,29 +6575,8 @@ excommunicated_ruler = {
 			}
 		}
 	}
-	on_invalidation = {
-		# Coronation request locks cleared on invalidation or loss, to avoid locking the player in the middle of the negotiation forever.
-		hidden_tooltip = {
-			if = {
-				limit = {
-					ROOT = { has_character_flag = flag_excommunicated_for_coronation }
-				}
-				ROOT = {
-					character_event = { id = HF.20220 } #Papal Coronation may proceed.
-				}
-			}
-		}
-	}
 
 	on_success = {
-		if = {
-			limit = {
-				ROOT = { has_character_flag = flag_excommunicated_for_coronation }
-				}
-			ROOT = {
-				character_event = { id = HF.20220 } #Papal Coronation may proceed.
-			}
-		}
 		ROOT = {
 			if = {
 				limit = {
@@ -10181,20 +10088,6 @@ embargo_cb = {
 	# ai importance placed on this CB: scope is the targeted title, ROOT is the attacking character, FROM is the defending character
 	ai_will_do = {
 		factor = 1
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 		modifier = {
 			factor = 0
 			ROOT = {
@@ -10400,20 +10293,6 @@ seize_trade_post = {
 	# ai importance placed on this CB: scope is the targeted title, ROOT is the attacking character, FROM is the defending character
 	ai_will_do = {
 		factor = 1
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 		modifier = {
 			factor = 0.25
 			ROOT = {
@@ -10885,20 +10764,6 @@ pagan_subjugation = {
 
 	ai_will_do = {
 		factor = 1
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 	}
 }
 
@@ -15101,20 +14966,6 @@ tributary_cb = {
 
 	ai_will_do = {
 		factor = 1
-			modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 		modifier = {
 			factor = 0.1 # Low prio CB
 		}
@@ -15567,20 +15418,6 @@ free_tributary_cb = {
 		modifier = {
 			factor = 1.5
 		}
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 
 		modifier = {
 			factor = 4
@@ -15905,20 +15742,6 @@ nomad_dispute = {
 
 	ai_will_do = {
 		factor = 2
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 	}
 
 }

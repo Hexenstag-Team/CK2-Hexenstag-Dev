@@ -82,43 +82,6 @@ ask_for_excommunication_chance = {
 		excommunicated_for = FROM
 	}
 	additive_modifier = {
-		value = -100
-		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_myself
-	}
-	additive_modifier = {
-		value = -15
-		localisation_key = POPE_AIREASON_MODIFIER_UNCROWNED_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		has_dlc = "Holy Fury"
-		higher_tier_than = DUKE
-		age = 16
-		religion = FROM
-		is_feudal = yes
-		religion = imperial_pantheon
-		NOR = {
-			trait = crowned_by_pope
-			trait = crowned_by_bishop
-			trait = crowned_by_priest
-			trait = crowned_by_myself
-		}
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_POPE
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		NOT = { persistent_event_target:coronation_priest_per = { character = FROM } } #Ruler asking was crowned by this very same Pope.
-	}
-	additive_modifier = {
-		value = 15
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		persistent_event_target:coronation_priest_per = { character = FROM } #Ruler asking was crowned by this very same Pope.
-	}
-	additive_modifier = {
 		value = 50
 		localisation_key = POPE_AIREASON_MODIFIER_PET_POPE
 		NOT = { character = FROM } #Not on yourself, dirty Pope.
@@ -803,48 +766,6 @@ ask_for_excommunication_chance = {
 				has_character_modifier = known_satanist
 				has_character_modifier = known_witch
 			}
-		}
-	}
-	additive_modifier = {
-		value = 100
-		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER_TARGET
-		FROMFROM = {
-			trait = crowned_by_myself
-		}
-	}
-	additive_modifier = {
-		value = 15
-		localisation_key = POPE_AIREASON_MODIFIER_UNCROWNED_RULER_TARGET
-		FROMFROM = {
-			has_dlc = "Holy Fury"
-			higher_tier_than = DUKE
-			age = 16
-			religion = ROOT_FROM
-			is_feudal = yes
-			primary_title = { holy_order = no }
-			religion = imperial_pantheon
-			NOR = {
-				trait = crowned_by_pope
-				trait = crowned_by_bishop
-				trait = crowned_by_priest
-				trait = crowned_by_myself
-			}
-		}
-	}
-	additive_modifier = {
-		value = -15
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_POPE_TARGET
-		FROMFROM = {
-			trait = crowned_by_pope
-			NOT = { persistent_event_target:coronation_priest_per = { character = ROOT_FROM } } #Ruler asking was crowned by this very same Pope.
-		}
-	}
-	additive_modifier = {
-		value = -25
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_ME_TARGET
-		FROMFROM = {
-			trait = crowned_by_pope
-			persistent_event_target:coronation_priest_per = { character = ROOT_FROM } #Ruler asking was crowned by this very same Pope.
 		}
 	}
 	additive_modifier = {
@@ -1676,43 +1597,6 @@ ask_for_invasion_chance = {
 		}
 	}
 	additive_modifier = {
-		value = -100
-		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_myself
-	}
-	additive_modifier = {
-		value = -15
-		localisation_key = POPE_AIREASON_MODIFIER_UNCROWNED_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		has_dlc = "Holy Fury"
-		higher_tier_than = DUKE
-		age = 16
-		religion = FROM
-		is_feudal = yes
-		religion = imperial_pantheon
-		NOR = {
-			trait = crowned_by_pope
-			trait = crowned_by_bishop
-			trait = crowned_by_priest
-			trait = crowned_by_myself
-		}
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_POPE
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		NOT = { persistent_event_target:coronation_priest_per = { character = FROM } } #Ruler asking was crowned by this very same Pope.
-	}
-	additive_modifier = {
-		value = 15
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		persistent_event_target:coronation_priest_per = { character = FROM } #Ruler asking was crowned by this very same Pope.
-	}
-	additive_modifier = {
 		value = 50
 		localisation_key = POPE_AIREASON_MODIFIER_PET_POPE
 		NOT = { character = FROM } #Not on yourself, dirty Pope.
@@ -2394,48 +2278,6 @@ ask_for_invasion_chance = {
 				has_character_modifier = known_satanist
 				has_character_modifier = known_witch
 			}
-		}
-	}
-	additive_modifier = {
-		value = 100
-		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER_TARGET
-		FROMFROM = {
-			trait = crowned_by_myself
-		}
-	}
-	additive_modifier = {
-		value = 15
-		localisation_key = POPE_AIREASON_MODIFIER_UNCROWNED_RULER_TARGET
-		FROMFROM = {
-			has_dlc = "Holy Fury"
-			higher_tier_than = DUKE
-			age = 16
-			religion = ROOT_FROM
-			is_feudal = yes
-			primary_title = { holy_order = no }
-			religion = imperial_pantheon
-			NOR = {
-				trait = crowned_by_pope
-				trait = crowned_by_bishop
-				trait = crowned_by_priest
-				trait = crowned_by_myself
-			}
-		}
-	}
-	additive_modifier = {
-		value = -15
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_POPE_TARGET
-		FROMFROM = {
-			trait = crowned_by_pope
-			NOT = { persistent_event_target:coronation_priest_per = { character = ROOT_FROM } } #Ruler asking was crowned by this very same Pope.
-		}
-	}
-	additive_modifier = {
-		value = -25
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_ME_TARGET
-		FROMFROM = {
-			trait = crowned_by_pope
-			persistent_event_target:coronation_priest_per = { character = ROOT_FROM } #Ruler asking was crowned by this very same Pope.
 		}
 	}
 	additive_modifier = {
@@ -3189,43 +3031,6 @@ ask_for_divorce_chance = {
 		excommunicated_for = FROM
 	}
 	additive_modifier = {
-		value = -100
-		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_myself
-	}
-	additive_modifier = {
-		value = -15
-		localisation_key = POPE_AIREASON_MODIFIER_UNCROWNED_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		has_dlc = "Holy Fury"
-		higher_tier_than = DUKE
-		age = 16
-		religion = FROM
-		is_feudal = yes
-		religion = imperial_pantheon
-		NOR = {
-			trait = crowned_by_pope
-			trait = crowned_by_bishop
-			trait = crowned_by_priest
-			trait = crowned_by_myself
-		}
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_POPE
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		NOT = { persistent_event_target:coronation_priest_per = { character = FROM } } #Ruler asking was crowned by this very same Pope.
-	}
-	additive_modifier = {
-		value = 15
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		persistent_event_target:coronation_priest_per = { character = FROM } #Ruler asking was crowned by this very same Pope.
-	}
-	additive_modifier = {
 		value = 50
 		localisation_key = POPE_AIREASON_MODIFIER_PET_POPE
 		NOT = { character = FROM } #Not on yourself, dirty Pope.
@@ -3896,48 +3701,6 @@ ask_for_divorce_chance = {
 				has_character_modifier = known_satanist
 				has_character_modifier = known_witch
 			}
-		}
-	}
-	additive_modifier = {
-		value = 100
-		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER_TARGET
-		FROMFROM = {
-			trait = crowned_by_myself
-		}
-	}
-	additive_modifier = {
-		value = 15
-		localisation_key = POPE_AIREASON_MODIFIER_UNCROWNED_RULER_TARGET
-		FROMFROM = {
-			has_dlc = "Holy Fury"
-			higher_tier_than = DUKE
-			age = 16
-			religion = ROOT_FROM
-			is_feudal = yes
-			primary_title = { holy_order = no }
-			religion = imperial_pantheon
-			NOR = {
-				trait = crowned_by_pope
-				trait = crowned_by_bishop
-				trait = crowned_by_priest
-				trait = crowned_by_myself
-			}
-		}
-	}
-	additive_modifier = {
-		value = -15
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_POPE_TARGET
-		FROMFROM = {
-			trait = crowned_by_pope
-			NOT = { persistent_event_target:coronation_priest_per = { character = ROOT_FROM } } #Ruler asking was crowned by this very same Pope.
-		}
-	}
-	additive_modifier = {
-		value = -25
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_ME_TARGET
-		FROMFROM = {
-			trait = crowned_by_pope
-			persistent_event_target:coronation_priest_per = { character = ROOT_FROM } #Ruler asking was crowned by this very same Pope.
 		}
 	}
 	additive_modifier = {
@@ -4621,43 +4384,6 @@ ask_to_lift_excommunication_chance = {
 		}
 	}
 	additive_modifier = {
-		value = -100
-		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_myself
-	}
-	additive_modifier = {
-		value = -15
-		localisation_key = POPE_AIREASON_MODIFIER_UNCROWNED_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		has_dlc = "Holy Fury"
-		higher_tier_than = DUKE
-		age = 16
-		religion = FROM
-		is_feudal = yes
-		religion = imperial_pantheon
-		NOR = {
-			trait = crowned_by_pope
-			trait = crowned_by_bishop
-			trait = crowned_by_priest
-			trait = crowned_by_myself
-		}
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_POPE
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		NOT = { persistent_event_target:coronation_priest_per = { character = FROM } } #Ruler asking was crowned by this very same Pope.
-	}
-	additive_modifier = {
-		value = 15
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		persistent_event_target:coronation_priest_per = { character = FROM } #Ruler asking was crowned by this very same Pope.
-	}
-	additive_modifier = {
 		value = 50
 		localisation_key = POPE_AIREASON_MODIFIER_PET_POPE
 		NOT = { character = FROM } #Not on yourself, dirty Pope.
@@ -5316,52 +5042,6 @@ ask_to_lift_excommunication_chance = {
 				has_bloodline_flag = saintly_bloodline
 				NOT = { has_bloodline_flag = wicked_saint }
 			}
-		}
-	}
-	additive_modifier = {
-		value = -100
-		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER_TARGET
-		FROMFROM = {
-			NOT = { character = ROOT } # Don't check against yourself, silly AI.
-			trait = crowned_by_myself
-		}
-	}
-	additive_modifier = {
-		value = -15
-		localisation_key = POPE_AIREASON_MODIFIER_UNCROWNED_RULER_TARGET
-		FROMFROM = {
-			has_dlc = "Holy Fury"
-			higher_tier_than = DUKE
-			age = 16
-			religion = ROOT_FROM
-			is_feudal = yes
-			primary_title = { holy_order = no }
-			religion = imperial_pantheon
-			NOT = { character = ROOT } # Don't check against yourself, silly AI.
-			NOR = {
-				trait = crowned_by_pope
-				trait = crowned_by_bishop
-				trait = crowned_by_priest
-				trait = crowned_by_myself
-			}
-		}
-	}
-	additive_modifier = {
-		value = 15
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_POPE_TARGET
-		FROMFROM = {
-			NOT = { character = ROOT } # Don't check against yourself, silly AI.
-			trait = crowned_by_pope
-			NOT = { persistent_event_target:coronation_priest_per = { character = ROOT_FROM } } #Ruler asking was crowned by this very same Pope.
-		}
-	}
-	additive_modifier = {
-		value = 25
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_ME_TARGET
-		FROMFROM = {
-			NOT = { character = ROOT } # Don't check against yourself, silly AI.
-			trait = crowned_by_pope
-			persistent_event_target:coronation_priest_per = { character = ROOT_FROM } #Ruler asking was crowned by this very same Pope.
 		}
 	}
 	additive_modifier = {
@@ -6154,43 +5834,6 @@ ask_for_money_chance = {
 		}
 	}
 	additive_modifier = {
-		value = -100
-		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_myself
-	}
-	additive_modifier = {
-		value = -15
-		localisation_key = POPE_AIREASON_MODIFIER_UNCROWNED_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		has_dlc = "Holy Fury"
-		higher_tier_than = DUKE
-		age = 16
-		religion = FROM
-		is_feudal = yes
-		religion = imperial_pantheon
-		NOR = {
-			trait = crowned_by_pope
-			trait = crowned_by_bishop
-			trait = crowned_by_priest
-			trait = crowned_by_myself
-		}
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_POPE
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		NOT = { persistent_event_target:coronation_priest_per = { character = FROM } } #Ruler asking was crowned by this very same Pope.
-	}
-	additive_modifier = {
-		value = 15
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		persistent_event_target:coronation_priest_per = { character = FROM } #Ruler asking was crowned by this very same Pope.
-	}
-	additive_modifier = {
 		value = 50
 		localisation_key = POPE_AIREASON_MODIFIER_PET_POPE
 		NOT = { character = FROM } #Not on yourself, dirty Pope.
@@ -6966,43 +6609,6 @@ ask_for_crusade_chance = {
 		value = 30
 		localisation_key = POPE_AIREASON_MODIFIER_FAITH_THREATENED_FORREALS
 		NOT = { religion_authority = 2.5 }
-	}
-	additive_modifier = {
-		value = -100
-		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_myself
-	}
-	additive_modifier = {
-		value = -15
-		localisation_key = POPE_AIREASON_MODIFIER_UNCROWNED_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		has_dlc = "Holy Fury"
-		higher_tier_than = DUKE
-		age = 16
-		religion = FROM
-		is_feudal = yes
-		religion = imperial_pantheon
-		NOR = {
-			trait = crowned_by_pope
-			trait = crowned_by_bishop
-			trait = crowned_by_priest
-			trait = crowned_by_myself
-		}
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_POPE
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		NOT = { persistent_event_target:coronation_priest_per = { character = FROM } } #Ruler asking was crowned by this very same Pope.
-	}
-	additive_modifier = {
-		value = 15
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		persistent_event_target:coronation_priest_per = { character = FROM } #Ruler asking was crowned by this very same Pope.
 	}
 	additive_modifier = {
 		value = 50
@@ -7862,43 +7468,6 @@ ask_for_claim_chance = {
 		excommunicated_for = FROM
 	}
 	additive_modifier = {
-		value = -100
-		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_myself
-	}
-	additive_modifier = {
-		value = -15
-		localisation_key = POPE_AIREASON_MODIFIER_UNCROWNED_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		has_dlc = "Holy Fury"
-		higher_tier_than = DUKE
-		age = 16
-		religion = FROM
-		is_feudal = yes
-		religion = imperial_pantheon
-		NOR = {
-			trait = crowned_by_pope
-			trait = crowned_by_bishop
-			trait = crowned_by_priest
-			trait = crowned_by_myself
-		}
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_POPE
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		NOT = { persistent_event_target:coronation_priest_per = { character = FROM } } #Ruler asking was crowned by this very same Pope.
-	}
-	additive_modifier = {
-		value = 15
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		persistent_event_target:coronation_priest_per = { character = FROM } #Ruler asking was crowned by this very same Pope.
-	}
-	additive_modifier = {
 		value = 50
 		localisation_key = POPE_AIREASON_MODIFIER_PET_POPE
 		NOT = { character = FROM } #Not on yourself, dirty Pope.
@@ -8574,48 +8143,6 @@ ask_for_claim_chance = {
 				has_character_modifier = known_satanist
 				has_character_modifier = known_witch
 			}
-		}
-	}
-	additive_modifier = {
-		value = 100
-		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER_TARGET
-		FROMFROM = {
-			trait = crowned_by_myself
-		}
-	}
-	additive_modifier = {
-		value = 15
-		localisation_key = POPE_AIREASON_MODIFIER_UNCROWNED_RULER_TARGET
-		FROMFROM = {
-			has_dlc = "Holy Fury"
-			higher_tier_than = DUKE
-			age = 16
-			religion = ROOT_FROM
-			is_feudal = yes
-			primary_title = { holy_order = no }
-			religion = imperial_pantheon
-			NOR = {
-				trait = crowned_by_pope
-				trait = crowned_by_bishop
-				trait = crowned_by_priest
-				trait = crowned_by_myself
-			}
-		}
-	}
-	additive_modifier = {
-		value = -15
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_POPE_TARGET
-		FROMFROM = {
-			trait = crowned_by_pope
-			NOT = { persistent_event_target:coronation_priest_per = { character = ROOT_FROM } } #Ruler asking was crowned by this very same Pope.
-		}
-	}
-	additive_modifier = {
-		value = -25
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_ME_TARGET
-		FROMFROM = {
-			trait = crowned_by_pope
-			persistent_event_target:coronation_priest_per = { character = ROOT_FROM } #Ruler asking was crowned by this very same Pope.
 		}
 	}
 	additive_modifier = {
@@ -9315,43 +8842,6 @@ nominate_bishop_chance = {
 			has_bloodline_flag = saintly_bloodline
 			NOT = { has_bloodline_flag = wicked_saint }
 		}
-	}
-	additive_modifier = {
-		value = -100
-		localisation_key = POPE_AIREASON_MODIFIER_NAPOLEON_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_myself
-	}
-	additive_modifier = {
-		value = -15
-		localisation_key = POPE_AIREASON_MODIFIER_UNCROWNED_RULER
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		has_dlc = "Holy Fury"
-		higher_tier_than = DUKE
-		age = 16
-		religion = FROM
-		is_feudal = yes
-		religion = imperial_pantheon
-		NOR = {
-			trait = crowned_by_pope
-			trait = crowned_by_bishop
-			trait = crowned_by_priest
-			trait = crowned_by_myself
-		}
-	}
-	additive_modifier = {
-		value = 10
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_POPE
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		NOT = { persistent_event_target:coronation_priest_per = { character = FROM } } #Ruler asking was crowned by this very same Pope.
-	}
-	additive_modifier = {
-		value = 15
-		localisation_key = POPE_AIREASON_MODIFIER_CROWNED_BY_ME
-		NOT = { character = FROM } #Not on yourself, dirty Pope.
-		trait = crowned_by_pope
-		persistent_event_target:coronation_priest_per = { character = FROM } #Ruler asking was crowned by this very same Pope.
 	}
 	additive_modifier = {
 		value = 50

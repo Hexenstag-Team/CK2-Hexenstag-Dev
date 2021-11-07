@@ -5793,52 +5793,6 @@ carrying_torch = {
 		hidden_trait = yes
 	}
 }
-crowned_in_barn = { #Secluded Coronation with no Pope
-	castle_opinion = -5
-	town_opinion = -5
-	church_opinion = 5
-	monthly_character_prestige = -0.05
-	icon = 25
-				is_visible = {
-		visible_trait = yes
-	}
-}
-crowned_in_war = {
-	church_opinion = -5
-	monthly_character_piety = -0.05
-	icon = 25
-				is_visible = {
-		visible_trait = yes
-	}
-}
-#regular_coronation = { #Normal coronation 5 years bonus.
-#	vassal_opinion = 5
-#	monthly_character_prestige = 0.05
-#	icon = 7
-#}
-extravagant_coronation = { #Extravagant coronation 20 years bonus.
-	vassal_opinion = 10
-	monthly_character_prestige = 0.25
-	icon = 7
-				is_visible = {
-		visible_trait = yes
-	}
-}
-uncrowned_modifier = { #On five years pulse
-	vassal_opinion = -2
-	icon = 25
-				is_visible = {
-		visible_trait = yes
-	}
-}
-chancellor_of_uncrowned = { #Applied on ruler.
-	diplomacy = -3
-
-	icon = 21
-				is_visible = {
-		visible_trait = yes
-	}
-}
 
 impressive_treasury = {
 	monthly_character_prestige = 0.5
@@ -6509,12 +6463,6 @@ justinians_insight = {
 		hidden_trait = yes
 	}
 }
-picked_pagan_branch_cooldown = {
-  icon = 1
-  is_visible = {
-    hidden_trait = yes
-  }
-}
 grieving_over_warrior_lover = {
 	icon = 19
 	fertility = -0.2
@@ -7110,14 +7058,6 @@ lodge_war_sacrifice_cooldown = {
   }
 }
 
-call_to_glory = {
-	icon = 13
-	combat_rating = 5
-	tribal_opinion = 5
-				is_visible = {
-		religion_group_visible_trait = yes
-	}
-}
 pillagers_morale = {
 	icon = 48
 	command_modifier = {
@@ -7563,42 +7503,6 @@ ritual_hunt_trophy_wolf = {
 	icon = 71
 	combat_rating = 5
 	attrition = -0.05
-				is_visible = {
-		religion_group_visible_trait = yes
-	}
-}
-ritual_hunt_trophy_eagle = {
-	icon = 111
-	combat_rating = 5
-	command_modifier = {
-		speed = 0.05
-	}
-				is_visible = {
-		religion_group_visible_trait = yes
-	}
-}
-ritual_hunt_trophy_bear = {
-	icon = 125
-	combat_rating = 5
-	days_of_supply = 20
-				is_visible = {
-		religion_group_visible_trait = yes
-	}
-}
-ritual_hunt_trophy_lion = {
-	icon = 127
-	combat_rating = 5
-	command_modifier = {
-		center = 0.05
-	}
-				is_visible = {
-		religion_group_visible_trait = yes
-	}
-}
-finnish_bear_burning = {
-	icon = 125
-	monthly_character_piety = 0.25
-	land_morale = 0.01
 				is_visible = {
 		religion_group_visible_trait = yes
 	}

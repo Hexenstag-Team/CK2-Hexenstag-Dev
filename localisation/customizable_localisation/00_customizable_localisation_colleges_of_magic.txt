@@ -206,20 +206,3 @@ defined_text = {
 		localisation_key = String_powerstones_3_desc
 	}
 }
-
-defined_text = { 
-	name = GetFounder
-
-	text = {
-		localisation_key = string_crowned_by_bishop_alive_desc
-	}
-	text = {
-		trigger = {
-			OR = {
-				is_alive = no
-				persistent_event_target:coronation_priest_per = { is_alive = no }
-			}
-		}
-		localisation_key = string_crowned_by_bishop_dead_desc
-	}
-}

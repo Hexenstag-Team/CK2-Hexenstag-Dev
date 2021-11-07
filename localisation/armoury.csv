@@ -83,78 +83,10 @@ string_ard_armour;'Ard Armor;;;;;;;;;;;;;x
 String_weapon_ax;Ax;;;;;;;;;;;;;x
 String_gnasha;Gnasha Helm;;;;;;;;;;;;;x
 artifact_name_greenskin;[GetWeaponNameGreenskin];;;;;;;;;;;;;x
-title_runesmith_apprentice;Apprentice Runesmith;;;;;;;;;;;;;x
-runesmith_quest_crafting;Craft an item for;;;;;;;;;;;;;x
-runesmith_quest_crafting_desc;Prepare crafting an item for;;;;;;;;;;;;;x
-runesmiths_society;Runesmiths Guild;;;;;;;;;;;;x
-runesmiths_society_desc;The ancient Guild of Runesmiths is one of the oldest and most respected institutions in all of Karaz Ankor. According to legend, its origins stretch back to the days of Grungni, the great Ancestor God of Mining, Master of the Forge and Lord of the Runes. The Runesmiths Guild claims descent from Grungni's son. For this reason, the Runesmiths sometimes refer to themselves as the Clan of Thungni, although they are not the only clan to claim descent from Grungni or his many sons;;;;;;;;;;;;x
-runesmiths_society_rank_4_female;Runelady;;;;;;;;;;;;x #Tempted to Just ban Women from this XD
-runesmiths_society_rank_3_female;Master Runesmith;;;;;;;;;;;;x
-runesmiths_society_rank_2_female;Journeyman Runesmith;;;;;;;;;;;;x
-runesmiths_society_rank_1_female;Apprentice;;;;;;;;;;;;x
-runesmiths_society_rank_4_male;Runelord;;;;;;;;;;;;x
-runesmiths_society_rank_3_male;Master Runesmith;;;;;;;;;;;;x
-runesmiths_society_rank_2_male;Journeyman Runesmith;;;;;;;;;;;;x
-runesmiths_society_rank_1_male;Apprentice;;;;;;;;;;;;x
-runesmiths_society_leader_desc;This person is filled with wisdom from the ancestors and has time after time proven their craft is true!
-#Powers
-smith_crafting;Smithing;;;;;;;;;;;;x
-smith_crafting_power_desc;Craft an Regular Item for fellow Dawi;;;;;;;;;;;;x
-runesmith_create_rune_of_power;Create Rune of Power;;;;;;;;;;;;x
-runesmith_create_rune_of_power_power_desc;Allows Creation of a Rune of Power;;;;;;;;;;;;x
-runesmithing;Runesmithing;;;;;;;;;;;;x
-runesmithing_power_desc;Allows Self Crafting Gromril Items;;;;;;;;;;;;x
-runesmith_become_runesmith;Become a Runesmith;;;;;;;;;;;;x
-runesmith_become_runesmith_power_desc;Become a Runesmith;;;;;;;;;;;;x
-runesmith_become_runelord;Become Runelord;;;;;;;;;;;;x
-runesmith_become_runelord_power_desc;Become Runelord;;;;;;;;;;;;x
-runesmith_anvil;Acquire Anvil of doom;;;;;;;;;;;;x
-runesmith_anvil_power_desc;Acquire one of the Ancient Anvils of Doom;;;;;;;;;;;;x
-
-currency_name_runesmiths;Ancient Knowledge;;;;;;;;;;;;x
-runemagic_aspect;Choose Aspect of Rune magic;;;;;;;;;;;;x
-runemagic_aspect_desc;Choose Aspect of Rune magic;;;;;;;;;;;;x
-runemagic_aspect_desc;Choose Aspect of Rune magic;;;;;;;;;;;;x
-runemagic_aspect_power_desc;Choose Aspect of Rune magic;;;;;;;;;;;;x
-acquire_anvil_of_doom;Acquire Anvil of Doom;;;;;;;;;;;;x
-acquire_anvil_of_doom_desc;Acquire Anvil of Doom;;;;;;;;;;;;x
-acquire_materials_decision_cooldown_timer_tt;Has NOT recently ventured to acquire materials [Root.GetMaterialCD];;;;;;;;;;;;x
-string_materials_cd; - you can Gather materials again on: §Y[This.acquire_ingredients_decision_cooldown_timer.GetExpiryDate]§!;;;;;;;;;;;;x
-dawi_acquire_ingredients_decision;Gather Materials;;;;;;;;;;;;x
-dawi_acquire_ingredients_decision_desc;Gather Materials, Salve, Gromril and metals to be used in runesmithing...;;;;;;;;;;;;x
-become_runesmith;Become a Runesmith;;;;;;;;;;;;x
-become_runesmith_desc;Become a Runesmith;;;;;;;;;;;;x
-become_runelord;Become Runelord;;;;;;;;;;;;x
-become_runelord_desc;Become Runelord;;;;;;;;;;;;x
 ##Quests
-quest_runesmith_craft;Craft an Item for;;;;;;;;;;;;;x
-quest_smith_target_tt;§Y[From.GetTitledFirstName]§! Has an Quest to craft an item for §Y[Root.GetTitledFirstName]§!;;;;;;;;;;;;;x
-quest_runesmith_craft_desc;You have been tasked with crafting an item for a dawi lord.;;;;;;;;;;;;;x
-quest_runesmith_craft_tooltip;To complete this mission you need to §Gright-click§! on the portrait of your target and choose to §YBegin Crafting§! for them. If the crafting is successful, you will receive §Y[Root.Society.GetCurrency]§!. However, if you steal or fail to craft in time you will be §Kretracted currency Massively§!, should you go on negative you will be §KDemoted§!;;;;;;;;;;;;;x
 ##Events
 dwarf_slayer_king;Slayer King;;;;;;;;;;;;;x
 EVTDESC_DWARF_SLAYER_KING_INHERITANCE;With Death of [fromfromfrom.GetTitledFirstName], unfilling his slayer oath, it has fallen to you to retake the oath...;;;;;;;;;;;;;x
-EVTDESCDAWI201_A;Hail, [Root.GetSocietyRank]! \n\nAs members of [Root.Society.GetName] we must always be ready and willing to craft for our kin. To prove your skill, your client [client_target.GetTitledFirstName] – has requested an experienced smith's assistance in crafting an item! God's Speed and good luck. You shall find [client_target.GetHerHim] in [client_target.Location.GetName].\n\nSigned, [From.GetTitledFirstName];;;;;;;;;;;;x
-EVTDESCDAWI201_B;Hail, [Root.GetSocietyRank]! \n\nAs members of [Root.Society.GetName] we must always be ready and willing to craft for our kin. To prove your skill, your client [client_target.GetTitledFirstName] – has requested an runesmith's assistance in crafting an item! God's Speed and good luck. You shall find [client_target.GetHerHim] in [client_target.Location.GetName].\n\nSigned, [From.GetTitledFirstName];;;;;;;;;;;;x
-EVTOPTC_DAWI_5115_salve_shame;An a Rune eh? shame i don't have any salve.;;;;;;;;;;;;;x
-EVTOPTC_DAWI_5115_salve;An Rune eh? i'll get right on it!;;;;;;;;;;;;;x
-EVTOPTA_DAWI_5115_metal;An Weapon eh? i'll get right on it!;;;;;;;;;;;;;x
-EVTOPTA_DAWI_5115_metal_shame;An a Weapon eh? shame i don't have any metals to work with.;;;;;;;;;;;;;x
-EVTOPTB_DAWI_5115_metal;An Armour eh? i'll get right on it!;;;;;;;;;;;;;x
-EVTOPTB_DAWI_5115_metal_shame;An a Armour eh? shame i don't have any metals to work with.;;;;;;;;;;;;;x
-EVTOPTD_DAWI_5115_gromril_shame;An Gromril Item eh? shame i don't have any metals to work with.;;;;;;;;;;;;;x
-EVTOPTD_DAWI_5115_gromril;An Gromril Item eh? i'll get right on it!;;;;;;;;;;;;;x
-EVTDESC_DAWI_210;;[Root.Society.GetName]My fellow members of [Root.Society.GetName] have long been wondering when I will choose a focus for my rune magic. There are those who live to honor Valaya, those that pride themselfs with Grungni, while others prefer the more theoretic side The Thungni... Theres also the warlike Grimnir practice...;;;;;;;;;;;;;x
-EVTOPTA_DAWI_210;School of Valaya;;;;;;;;;;;;;x
-EVTOPTB_DAWI_210;School of Grimnir;;;;;;;;;;;;;x
-EVTOPTC_DAWI_210;School of Grungni;;;;;;;;;;;;;x
-EVTOPTD_DAWI_210;School of Thungni;;;;;;;;;;;;;x
-EVTDESC_ARMS_27;You have decided you are in need of an Rune to enhance your capabilities, But which kind you would prefer?;;;;;;;;;;;;;;x
-EVTOPTA_ARMS_RUNESB;Rune Dedicated to Valaya;;;;;;;;;;;;;x
-EVTOPTB_ARMS_RUNESB;Rune Dedicated to Grimnir;;;;;;;;;;;;;x
-EVTOPTC_ARMS_RUNESB;Rune Dedicated to Grungni;;;;;;;;;;;;;x
-EVTOPTD_ARMS_RUNESB;Rune Dedicated to Thungni;;;;;;;;;;;;;x
-EVTOPTE_ARMS_RUNESB;Rune Dedicated to Morgrim;;;;;;;;;;;;;x
 EVTOPT_SLAYERKING_YES;I shall continue my ancestor's oath!;;;;;;;;;;;;;x
 EVTOPT_SLAYERKING_NO;This Petty Dream of my clan has been going on for long enough!;;;;;;;;;;;;;x
 #Traits

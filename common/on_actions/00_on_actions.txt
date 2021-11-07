@@ -9,23 +9,19 @@ on_startup = {
 		JD.60005 #Convert prosthetics event modifiers into artifacts
 		JD.50401 # Set correct value of the Silk Road
 		JD.30504 # Clean up living members of the cathayan dynasty
-		HF.20372 # Apply Crowned_by_traits
 		#686 # TODO REMOVE TEST STARTUP GENERATION OF BLOODLINES
 		HFP.30031 # Set up freckles
 		HF.1 # Set up Great Conquerors for Shattered World
 		HF.2 # Set up Primogeniture in Shattered World
 		HF.5 # Alternate Start General maintenance
 		#HF.23205 # Altstart Dogmatic/Cosmopolitan effects.
-		#HF.25057 #Give West African Grand Masters some Masks.
 		#HF.23472 #Add Irminsul special building on Charlemagne start.
 		HF.23035 #Status of Women cleanup for customized religions on Random Start.
-		#HF.25070 #Add Tattoos to landless starting Warrior Lodge members of high ranks.
 		HFP.40028 # Remove child traits
 		689 # scripted default elective token setup
 		HFP.24025 #Enable Eldership for appropriate religions/Doctrines.
 		GR.30 # Generate random families for characters without
 		HF.15099 # Setup rain in African regions
-		HF.23776 #Assign African tattoos.
 		HFP.20804 #Clear Byzantine commander variables on the Emperor.
 		HF.23778 #Setting up god-emperors on Altstart.
 		#HFP.23028 #Cleanup Monenvasia if Hellenism rule is off.
@@ -61,7 +57,6 @@ on_yearly_pulse = {
 		#bear.7 # Secret bear generation
 		#bear.1 # Secret bear discovery. Called here and in bear.7, as bear.1 can be temporarily precluded
 		GR.23 # Repeat exclave purge for AI's every year if they are at war
-		HF.20405 #Ticking negative opinion modifier for uncrowned Catholic
 		HF.21999 #Main Appease hidden event, no further pulses are required.
 		HF.22999 #Main Antagonize hidden event, no further pulses are required.
 		#LoR.46 #Augustus trait cleanup.
@@ -957,7 +952,6 @@ on_five_year_pulse = {
 		MNM.10030 # Have AI characters join societies
 		ZE.10200 #Ogre maneaters
 		JD.1000 # Muslim Adventurers targeting India
-		HF.20375 # Catholic/Fraticelli Kings/Emperors who have not been crowned will receive random negative events.
 		HFP.20604 # Hidden check for physique_variable.
 		HF.99 # Legendary warrior arrives
 		HF.10050 # Warrior Lodges: Maintenance: AIs joins available warrior lodges
@@ -1095,10 +1089,6 @@ on_five_year_pulse = {
 
 		#Zoroastrian pets
 		1 = ZP.1
-
-		#Crown events.
-		10 = HF.20399
-		10 = HF.20400
 
 		#Physical shape events.
 		5 = HFP.20605 #Character is getting fat
@@ -1546,7 +1536,6 @@ on_siege_over_winner = {
 		MNM.6222 # Assassins occupy holding
 		#MNM.7111 # Devil Worshipers desecrate holding
 		MNM.9900 # Chance to steal artifact from capital holdings
-		HF.23473 # Destroy Tribal Great Pillar
 		HFP.41084 # Piety and Prestige on siege wins
 		#60100 # Mongols sack Kiev
 		#60101 # Mongols sack Novgorod
@@ -1717,7 +1706,6 @@ on_adulthood = {
 		MNM.4302 # Monastic Order education bonus purity effect
 
 		HFP.20592 # Child of troubled pregnancy speaks to mother.
-		HF.23016 # Reformed pagans with no religious head pick their religious branch.
 		HF.300 # Child of Destiny reaches adulthood
 		HF.23775 # African adulthood rite.
 
@@ -1940,14 +1928,6 @@ on_death = {
 		GR.16 # Lose disconnected exclaves if not at war (Harsh)
 		GR.17 # Lose disconnected exclaves if not at war (Total)
 		GR.18 # Lose disconnected exclaves if not at war (Limited Naval)
-		HF.20227 # Character flag inheritance during wars for Coronation
-		HF.20228 # Character flag inheritance during wars for Coronation
-		HF.20229 # Character flag inheritance during wars for Coronation
-		HF.20231 # Notification if priest dies before the end of the Coronation Ceremony
-		HF.20374 # Set uncrowned trait to handle real uncrowned Kings not gaining a crown after death.
-		HF.20393 # On death of vassal, heir prompted to pay homage to crowned liege.
-		HF.20415 # Add hidden traits to make dead kings wear special crowns after the artifact has been transferred.
-		HF.20406 # Artifact inheritance for special crowns.
 		HF.21001 # Clear swayed target on his death.
 		HF.22119 # Clear swayed target on his death.
 		HF.40000 # Potential Beatification
@@ -2907,14 +2887,12 @@ on_new_holder_usurpation = {
 		MNM.1216 # The Hermetics Scrying Power result (for old holder)
 		#MNM.6230 # Clearing covert province quest if new owner
 		JD.60204 # Rebel General's Empire continues temple names, triggers for any title with the uses_temple_names_by_script title flag
-		HF.20414 # Hidden check to move special crowns to holder of the title they are tied to.
 		HFP.42002 # Check titular Crusader titles
 		LoR.48 # Augustus trait cleanup.
 		#HF.25510 # Clear loot province mission if province has fallen under your control.
 
 		HF.49205 # Reconquista Beneficiary
 		HFP.40033 # Romagna / Papacy check
-		HF.20417 # Clear uncrowned modifier.
 		HFP.19100 #Make sure the Varangian guard handles its inheritance if not male-lead
 	}
 	random_events = {
@@ -2985,9 +2963,6 @@ on_character_convert_religion = {
 		# If switched religion then trait is gone and we need to clean up modifiers for zoroastrian pets
 		ZP.6
 
-		HF.20408	# Ruler has converted in the middle of coronation, stop everything.
-		HF.20416	# Cleanup uncrowned modifiers when converting away from Catholicism/Fraticelli.
-		HF.23033	# Acquire Pagan religious branch when converting to a religion that has No Head.
 		HF.23034	# Acquire Gender law when converting to Matriarchal/Equal/Patriarchal religion.
 		HF.23458	# Host of Blood Games converts to non-Bloodthirsty religion in the middle of the tournament.
 
@@ -3281,7 +3256,6 @@ on_society_bi_yearly_pulse = {
 		50 = MNM.10040 # Every society: Gain rival
 		50 = MNM.10043 # Every society: Gain friend (or possibly lover...?)
 		20 = HF.25200 #Arm-wrestling during feast.
-		70 = HF.25250 #Flyting contest during feast.
 		10 = HF.25280 #Drinking games.
 		40 = HF.25600 #Warrior Lodges Ritual Hunting.
 		75 = HF.14000 #Warrior Lodges: Teaching Moment

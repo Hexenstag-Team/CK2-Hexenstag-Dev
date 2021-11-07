@@ -7858,6 +7858,10 @@ patron_imperial_pantheon_effect = {
 				}
 			}
 			modifier = {
+				factor = 20
+				any_owned_bloodline = { has_bloodline_flag = legend_bloodline_bjorn }
+			}
+			modifier = {
 				factor = 10
 				OR = {
 					culture = reiklander
@@ -7961,6 +7965,7 @@ patron_imperial_pantheon_effect = {
 				OR = {
 					has_landed_title = e_middenland
 					has_landed_title = d_cult_of_ulric
+					
 				}
 			}
 			modifier = {

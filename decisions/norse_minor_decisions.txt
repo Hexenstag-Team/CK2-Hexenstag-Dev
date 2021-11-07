@@ -50,57 +50,10 @@ targetted_decisions = {
 		}
 
 		allow = {
-			conditional_tooltip = { #For regular norse...
-				trigger = {
-					FROM = { is_member_of_any_warband_trigger = no }
-					FROM = { religion_openly_norse_or_reformed_trigger = yes }
-				}
-				martial = 10
-				custom_tooltip = {
-					text = make_shieldmaiden_custom_tooltip_1
-					hidden_tooltip = {
-						OR = {
-							trait = brave
-							trait = proud
-							trait = ambitious
-							trait = diligent
-							trait = just
-							trait = gregarious
-						}
-					}
-				}
-			}
-
-			conditional_tooltip = { #For a norse who is ALSO a warrior lodge member...
-				trigger = {
-					FROM = { is_member_of_any_warband_trigger = yes }
-					FROM = { religion_openly_norse_or_reformed_trigger = yes }
-				}
-				OR = {
-					AND = {
-						martial = 10
-						custom_tooltip = {
-							text = make_shieldmaiden_custom_tooltip_1
-							hidden_tooltip = {
-								OR = {
-									trait = brave
-									trait = proud
-									trait = ambitious
-									trait = diligent
-									trait = just
-									trait = gregarious
-								}
-							}
-						}
-					}
-					is_child_or_sibling_of_from_trigger = yes
-				}
-			}
 
 			conditional_tooltip = { #For regular warrior lodge members...
                 trigger = {
                     FROM = { is_member_of_any_warband_trigger = yes }
-                    FROM = { religion_openly_norse_or_reformed_trigger = no }
                 }
                 is_child_or_sibling_of_from_trigger = yes
             }

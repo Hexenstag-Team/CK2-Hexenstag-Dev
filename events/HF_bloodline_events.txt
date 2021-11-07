@@ -5102,7 +5102,6 @@ narrative_event = {
 				}
 			}
 		}
-		set_bloodline_founder_religion_flag_effect = yes
 		ai_chance = {
 			factor = 100
 		}
@@ -5779,7 +5778,6 @@ narrative_event = {
 				}
 			}
 		}
-		set_bloodline_founder_religion_flag_effect = yes
 		ai_chance = {
 			factor = 100
 		}
@@ -15271,7 +15269,6 @@ character_event = {
 				trait = envious
 				trait = wroth
 				trait = heresiarch
-				trait = crowned_by_myself
 				has_character_modifier = adulteress
 				has_character_modifier = incestuous_adulteress
 				has_character_modifier = modifier_witch
@@ -15298,14 +15295,6 @@ character_event = {
 			OR = {
 				is_married = yes
 				NOT = { num_of_children = 1 }
-			}
-			OR = { #Either below King-tier, or must be either a Crowned Queen or a Vicereine.
-				lower_tier_than = KING
-				is_vice_royalty = yes
-				trait = crowned_by_priest
-				trait = crowned_by_bishop
-				trait = crowned_by_pope
-				has_character_flag = flag_excommunicated_for_coronation
 			}
 		}
 		ROOT = {
