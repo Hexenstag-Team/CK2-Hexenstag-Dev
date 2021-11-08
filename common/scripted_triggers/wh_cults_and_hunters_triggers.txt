@@ -16,3 +16,19 @@ cults_grace_period_trigger = {
         }
     }
 }
+
+#used in event chains where the accused has already been identified as event_target:courtier_accused_by_witch_hunter
+accused_courtier_is_secret_chaos_worshipper_trigger = {
+    event_target:courtier_accused_by_witch_hunter = {
+        OR = {
+            true_religion_group = chaos_gods_group
+            is_mutated_trigger = yes
+        }
+    }
+}
+
+accused_courtier_is_secret_necromantic_acolyte_trigger = {
+    event_target:courtier_accused_by_witch_hunter = {
+        true_religion_group = necromantic_group
+    }
+}
