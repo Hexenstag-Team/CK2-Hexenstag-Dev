@@ -178,163 +178,187 @@ character_event = {
     ai = yes
 
     immediate = {
-        #set cult leader & cult title as event targets for downstream effects
-        save_event_target_as = cult_leader
-        primary_title = {
-            save_event_target_as = cult_identity
-        }
-        #remember our current target
-        persistent_event_target:cultic_activity_target = {
-            save_event_target_as = cultic_area_of_operations
-        }
-        ##determine number of actions
-        #starting value set by (influence + intrigue)/5
-        set_variable = {
-            which = cult_tactical_actions
-            value = intrigue
-        }
-        change_variable = {
-            which = cult_tactical_actions
-            which = cultic_influence
-        }
-        divide_variable = {
-            which = cult_tactical_actions
-            value = 10
-        }
-        #bonus moves for old vampires & those favored by chaos
-        if = {
-            limit = {
-                OR = {
-                    trait = champion_undivided
-                    trait = champion_khorne
-                    trait = champion_nurgle
-                    trait = champion_slaanesh
-                    trait = champion_tzeentch
-                    AND = {
-                        is_vampire_visible = yes
-                        age < 250
-                    }
-                }
-            }
-            change_variable = {
-                which = cult_tactical_actions
-                value = 1
-            }
-        }
-        else_if = {
-            limit = {
-                OR = {
-                    trait = chaos_chosen
-                    trait = chosen_khorne
-                    trait = chosen_nurgle
-                    trait = chosen_slaanesh
-                    trait = chosen_tzeentch
-                }
-                AND = {
-                    is_vampire_visible = yes
-                    age < 800
-                }
-            }
-            change_variable = {
-                which = cult_tactical_actions
-                value = 2
-            }
-        }
-        else_if = {
-            limit = {
-                OR = {
-                    trait = prince_undivided
-                    trait = prince_khorne
-                    trait = prince_nurgle
-                    trait = prince_slaanesh
-                    trait = prince_tzeentch
-                    is_vampire_visible = yes #note that because of previous clauses in this if/else chain, this means a very old vampire
-                }
-            }
-            change_variable = {
-                which = cult_tactical_actions
-                value = 3
-            }
-        }
-        #pity actions for failing cults
+        #check for defeat by Witch Hunters
         if = {
             limit = {
                 check_variable = {
-                    which = cult_tactical_actions
-                    value < 2
+                    which = cultic_influence
+                    value < 0
                 }
-                set_variable = {
+            }
+            #The Gods' plans are disrupted
+            reduce_doom_progress_medium_effect = yes
+            #and the Cult must find a new target
+            find_new_cultic_activity_kingdom_target_effect = yes
+            save_persistent_event_target = {
+                name = cultic_activity_target
+                scope = event_target:target_kingdom
+            }
+            set_variable = {
+                which = cultic_influence
+                value = 10
+            }
+        }
+        #otherwise, keep trying to capture it for Kay-os
+        else = {
+            #set cult leader & cult title as event targets for downstream effects
+            save_event_target_as = cult_leader
+            primary_title = {
+                save_event_target_as = cult_identity
+            }
+            #remember our current target
+            persistent_event_target:cultic_activity_target = {
+                save_event_target_as = cultic_area_of_operations
+            }
+            ##determine number of actions
+            #starting value set by (influence + intrigue)/5
+            set_variable = {
+                which = cult_tactical_actions
+                value = intrigue
+            }
+            change_variable = {
+                which = cult_tactical_actions
+                which = cultic_influence
+            }
+            divide_variable = {
+                which = cult_tactical_actions
+                value = 10
+            }
+            #bonus moves for old vampires & those favored by chaos
+            if = {
+                limit = {
+                    OR = {
+                        trait = champion_undivided
+                        trait = champion_khorne
+                        trait = champion_nurgle
+                        trait = champion_slaanesh
+                        trait = champion_tzeentch
+                        AND = {
+                            is_vampire_visible = yes
+                            age < 250
+                        }
+                    }
+                }
+                change_variable = {
+                    which = cult_tactical_actions
+                    value = 1
+                }
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        trait = chaos_chosen
+                        trait = chosen_khorne
+                        trait = chosen_nurgle
+                        trait = chosen_slaanesh
+                        trait = chosen_tzeentch
+                    }
+                    AND = {
+                        is_vampire_visible = yes
+                        age < 800
+                    }
+                }
+                change_variable = {
                     which = cult_tactical_actions
                     value = 2
                 }
             }
-        }
-        #use current doom level to throttle actions
-        trigger_switch = {
-            on_trigger = has_global_flag
-            doom_very_low = {
-                while = {
-                    count = 20
-                    limit = {
-                        check_variable = {
-                            which = cult_tactical_actions
-                            value > 0
-                        }
+            else_if = {
+                limit = {
+                    OR = {
+                        trait = prince_undivided
+                        trait = prince_khorne
+                        trait = prince_nurgle
+                        trait = prince_slaanesh
+                        trait = prince_tzeentch
+                        is_vampire_visible = yes #note that because of previous clauses in this if/else chain, this means a very old vampire
                     }
-                    #determine action
-                    cultic_tactical_action_effect = yes
+                }
+                change_variable = {
+                    which = cult_tactical_actions
+                    value = 3
                 }
             }
-            doom_low = {
-                while = {
-                    count = 25
-                    limit = {
-                        check_variable = {
-                            which = cult_tactical_actions
-                            value > 0
-                        }
+            #pity actions for failing cults
+            if = {
+                limit = {
+                    check_variable = {
+                        which = cult_tactical_actions
+                        value < 2
                     }
-                    #determine action
-                    cultic_tactical_action_effect = yes
+                    set_variable = {
+                        which = cult_tactical_actions
+                        value = 2
+                    }
                 }
             }
-            doom_medium = {
-                while = {
-                    count = 30
-                    limit = {
-                        check_variable = {
-                            which = cult_tactical_actions
-                            value > 0
+            #use current doom level to throttle actions
+            trigger_switch = {
+                on_trigger = has_global_flag
+                doom_very_low = {
+                    while = {
+                        count = 20
+                        limit = {
+                            check_variable = {
+                                which = cult_tactical_actions
+                                value > 0
+                            }
                         }
+                        #determine action
+                        cultic_tactical_action_effect = yes
                     }
-                    #determine action
-                    cultic_tactical_action_effect = yes
                 }
-            }
-            doom_high = {
-                while = {
-                    count = 40
-                    limit = {
-                        check_variable = {
-                            which = cult_tactical_actions
-                            value > 0
+                doom_low = {
+                    while = {
+                        count = 25
+                        limit = {
+                            check_variable = {
+                                which = cult_tactical_actions
+                                value > 0
+                            }
                         }
+                        #determine action
+                        cultic_tactical_action_effect = yes
                     }
-                    #determine action
-                    cultic_tactical_action_effect = yes
                 }
-            }
-            doom_very_high = {
-                while = {
-                    count = 50
-                    limit = {
-                        check_variable = {
-                            which = cult_tactical_actions
-                            value > 0
+                doom_medium = {
+                    while = {
+                        count = 30
+                        limit = {
+                            check_variable = {
+                                which = cult_tactical_actions
+                                value > 0
+                            }
                         }
+                        #determine action
+                        cultic_tactical_action_effect = yes
                     }
-                    #determine action
-                    cultic_tactical_action_effect = yes
+                }
+                doom_high = {
+                    while = {
+                        count = 40
+                        limit = {
+                            check_variable = {
+                                which = cult_tactical_actions
+                                value > 0
+                            }
+                        }
+                        #determine action
+                        cultic_tactical_action_effect = yes
+                    }
+                }
+                doom_very_high = {
+                    while = {
+                        count = 50
+                        limit = {
+                            check_variable = {
+                                which = cult_tactical_actions
+                                value > 0
+                            }
+                        }
+                        #determine action
+                        cultic_tactical_action_effect = yes
+                    }
                 }
             }
         }
@@ -559,7 +583,15 @@ character_event = {
                 #avoided contact
                 30 = {
                     modifier = {
+                        factor = 1.5
+                        trait = craven
+                    }
+                    modifier = {
                         factor = 2
+                        trait = paranoid
+                    }
+                    modifier = {
+                        factor = 1.5
                         trait = shy
                     }
                     modifier = {
@@ -612,7 +644,7 @@ character_event = {
                 20 = {
                     trigger = {
                         NOT = {
-                            has_character_flag = invited_to_cultic_party
+                            has_character_flag = stalked_by_secret_killer
                         }
                     }
                     death = {
@@ -668,7 +700,7 @@ character_event = {
                             has_character_flag = stalked_by_cultic_killer
                         }
                         random = {
-                            chance = 70
+                            chance = 60
                             corrupted_by_underground_cult_effect = yes
                         }
                     }
@@ -708,11 +740,215 @@ character_event = {
     }
 }
 #victim of kidnapping attempt (possible brainwashing)
-#281
-#stalked by murderer (straightforward)
-#291
+character_event = {
+    id = wh_cults_and_hunters.281
+    desc = EVTDESC_wh_cults_and_hunters_281
+    picture = GFX_evt_whispers
+
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                ai = yes
+            }
+            random_list = {
+                #avoided contact
+                30 = {
+                    modifier = {
+                        factor = 1.5
+                        trait = craven
+                    }
+                    modifier = {
+                        factor = 2
+                        trait = paranoid
+                    }
+                    modifier = {
+                        factor = 1.5
+                        trait = shy
+                    }
+                    modifier = {
+                        factor = 0.5
+                        factor = gregarious
+                    }
+                    modifier = {
+                        factor = 0.8
+                        trait = socializer
+                    }
+                    modifier = {
+                        factor = 0.5
+                        has_law = witch_hunter_law_0
+                    }
+                    modifier = {
+                        factor = 4
+                        has_law = witch_hunter_law_3
+                    }
+                    #well-guarded
+                    modifier = {
+                        factor = 1.5
+                        TIER = COUNT
+                    }
+                    modifier = {
+                        factor = 2.5
+                        tier = DUKE
+                    }
+                    modifier = {
+                        factor = 4
+                        tier = KING
+                    }
+                    modifier = {
+                        factor = 6
+                        tier = EMPEROR
+                    }
+                    #refer to Witch Hunter, if applicable
+                }
+                ##Outcomes for encountering the kidnappers
+                #kidnapped
+                20 = {
+                    if = {
+                        limit = {
+                            has_character_flag = stalked_by_cultic_kidnappers
+                        }
+                        random = {
+                            chance = 85
+                            corrupted_by_underground_cult_effect = yes
+                        }
+                    }
+                    #escape/ransom logic
+                    random_list = {
+                        #escape
+                        20 = {
+                            modifier = {
+                                factor = 8
+                                trait = underground_cult_member
+                            }
+                            add_trait = wounded
+                        }
+                        80 = {
+                            #pay your own ransom
+                            if = {
+                                limit = {
+                                    wealth = 10
+                                }
+                                wealth = -10
+                            }
+                            #good guy liege pays ransom - need ai=no to hvae their own answer before this
+                            else_if = {
+                                limit = {
+                                    liege = {
+                                        NOT = {
+                                            is_foe = PREV
+                                        }
+                                        OR = {
+                                            is_close_relative = PREV
+                                            is_friend = PREV
+                                            is_lover = PREV
+                                            opinion = {
+                                                who = PREV
+                                                value > 50
+                                            }
+                                        }
+                                    }
+                                }
+                                liege = {
+                                    wealth = -10
+                                }
+                            }
+                            else_if = {
+                                limit = {
+                                    has_character_flag = stalked_by_cultic_kidnappers
+                                }
+                                death = {
+                                    death_reason = death_murder_unknown_butchered
+                                }
+                            }
+                            else = {
+                                add_maimed_trait_effect = yes
+                            }
+                        }
+                    }
+                }
+                #Attacked and fled!
+                15 = {
+                    modifier = {
+                        factor = 3
+                        trait = craven
+                    }
+                    modifier = {
+                        factor = 0.5
+                        ai_honor < 0
+                    }
+                    modifier = {
+                        factor = 3
+                        ai_rationality > 0
+                    }
+                    modifier = {
+                        factor = 0
+                        prisoner = yes
+                    }
+                    add_trait = wounded
+                    #notify witch hunter
+                }
+                #Fought them off!
+                15 = {
+                    modifier = {
+                        factor = 3
+                        combat_rating > 30
+                    }
+                    modifier = {
+                        factor = 2
+                        combat_rating > 50
+                    }
+                    modifier = {
+                        factor = 2
+                        combat_rating > 70
+                    }
+                    modifier = {
+                        factor = 0.5
+                        prisoner = yes
+                    }
+                    modifier = {
+                        factor = 0
+                        is_incapable = yes
+                    }
+                    if = {
+                        limit = {
+                            NOT = {
+                                trait = underground_cult_member
+                            }
+                        }
+                        #notify witch hunter
+                    }
+                }
+            }
+            clr_character_flag = stalked_by_criminal_kidnappers
+            clr_character_flag = stalked_by_cultic_kidnappers
+        }
+    }
+
+    #run away!
+    option = {
+        name = OK
+        trigger = { ai = no }
+        #write ai = no narrative
+    }
+
+    #fight!
+    option = {
+        name = OK
+        trigger = { ai = no }
+        #refer to witch hunter
+    }
+
+    #fail out for AI, just in case
+    option = {
+        name = OK
+        trigger = { ai = yes }
+    }
+}
+
 #encounter with disease victim (really straightforward for ai, tricky for ai=no)
-#301
+#291
 
 #chaos cult instigate revolt
 province_event = {
@@ -857,9 +1093,9 @@ character_event = {
                 }
                 #decide hunter type
                 random_list = {
-                    60 = {
+                    20 = {
                         modifier = {
-                            factor = 1.5
+                            factor = 3
                             ai_rationality >= 50
                         }
                         create_adventurer_hunter_effect = yes
@@ -1524,6 +1760,7 @@ character_event = {
     }
 }
 
+#Start witch hunt
 character_event = {
     id = wh_cults_and_hunters.610
     hide_window = yes
@@ -1533,53 +1770,9 @@ character_event = {
         event_target:court_witchhunter = {
             add_trait = on_witch_hunt
         }
-        #determine how long the hunter will be busy
+        ###determine how long the hunter will be busy###
+        #Inquisitors are generally efficient
         if = {
-            limit = {
-                event_target:court_witchhunter = {
-                    has_character_flag = emmisary_of_order_witch_hunter
-                }
-                event_target:active_cult_leader = {
-                    true_religion_group = chaos_gods_group
-                }
-            }
-            character_event = {
-                id = wh_cults_and_hunters.611
-                days = 60
-                random = 60
-            }
-        }
-        else_if = {
-            limit = {
-                event_target:court_witchhunter = {
-                    has_character_flag = temple_of_solkan_witch_hunter
-                }
-                event_target:active_cult_leader = {
-                    true_religion_group = chaos_gods_group
-                }
-            }
-            character_event = {
-                id = wh_cults_and_hunters.611
-                days = 152
-                random = 60
-            }
-        }
-        else_if = {
-            limit = {
-                event_target:court_witchhunter = {
-                    has_character_flag = order_of_the_shroud_witch_hunter
-                }
-                event_target:active_cult_leader = {
-                    true_religion_group = necromantic_group
-                }
-            }
-            character_event = {
-                id = wh_cults_and_hunters.611
-                days = 152
-                random = 60
-            }
-        }
-        else_if = {
             limit = {
                 event_target:court_witchhunter = {
                     OR = {
@@ -1595,6 +1788,78 @@ character_event = {
                 random = 90
             }
         }
+        ##specialists are very effective in their specific domain##
+        #adventurers are best when there's no real cult activity
+        else_if = {
+            limit = {
+                event_target:clue_county = {
+                    NOT = {
+                        has_province_flag = cultic_activity
+                    }
+                }
+                event_target:court_witchhunter = {
+                    OR = {
+                        has_character_flag = army_veteran_witch_hunter
+                        has_character_flag = bold_scholar_witch_hunter
+                        has_character_flag = crafty_spy_witch_hunter
+                    }
+                }
+            }
+            character_event = {
+                id = wh_cults_and_hunters.611
+                days = 152
+                random = 60
+            }
+        }
+        #solkanites burn chaos
+        else_if = {
+            limit = {
+                event_target:court_witchhunter = {
+                    has_character_flag = temple_of_solkan_witch_hunter
+                }
+                event_target:active_cult_leader = {
+                    true_religion_group = chaos_gods_group
+                }
+            }
+            character_event = {
+                id = wh_cults_and_hunters.611
+                days = 152
+                random = 60
+            }
+        }
+        #order of the shroud burns necromantics
+        else_if = {
+            limit = {
+                event_target:court_witchhunter = {
+                    has_character_flag = order_of_the_shroud_witch_hunter
+                }
+                event_target:active_cult_leader = {
+                    true_religion_group = necromantic_group
+                }
+            }
+            character_event = {
+                id = wh_cults_and_hunters.611
+                days = 152
+                random = 60
+            }
+        }
+        #the Emmisary absolutely fries Chaos
+        else_if = {
+            limit = {
+                event_target:court_witchhunter = {
+                    has_character_flag = emmisary_of_order_witch_hunter
+                }
+                event_target:active_cult_leader = {
+                    true_religion_group = chaos_gods_group
+                }
+            }
+            character_event = {
+                id = wh_cults_and_hunters.611
+                days = 60
+                random = 60
+            }
+        }
+        ##now that we've picked out hunter flags with special effects, trait only picks up hunters outside their specialty##
         else_if = {
             limit = {
                 event_target:court_witchhunter = {
@@ -1647,8 +1912,7 @@ character_event = {
                     }
                 }
                 order_of_the_sword_and_scale_witch_hunter = {
-                    #good guy hunter
-                    event_target = {
+                    event_target:clue_county = {
                         add_province_modifier = {
                             name = verenan_order
                             duration = 1820
@@ -1673,18 +1937,22 @@ character_event = {
                 }
             }
             event_target:active_cult_leader = {
+                #base damage from flag/trait - honor player intuitions about hunters
                 if = {
                     limit = {
                         event_target:court_witchhunter = {
-                            has_character_flag = emmisary_of_order_witch_hunter
+                            OR = {
+                                has_character_flag = sigmarite_templar_witch_hunter
+                                has_character_flag = myrmidian_inquisitor_witch_hunter
+                                has_character_flag = ice_witch_witch_hunter
+                            }
                         }
-                        religion_group = chaos_gods_group
                     }
                     subtract_variable = {
                         which = cultic_influence
-                        value = -50
+                        value = -30
                     }
-                    wealth = -100
+                    wealth = -60
                 }
                 else_if = {
                     limit = {
@@ -1715,26 +1983,72 @@ character_event = {
                 else_if = {
                     limit = {
                         event_target:court_witchhunter = {
-                            OR = {
-                                has_character_flag = sigmarite_templar_witch_hunter
-                                has_character_flag = myrmidian_inquisitor_witch_hunter
-                                has_character_flag = ice_witch_witch_hunter
-                            }
+                            has_character_flag = emmisary_of_order_witch_hunter
                         }
-                        religion_group = necromantic_group
+                        religion_group = chaos_gods_group
                     }
                     subtract_variable = {
                         which = cultic_influence
-                        value = -30
+                        value = -50
                     }
-                    wealth = -60
+                    wealth = -100
                 }
-                else = {
+                #now that we've picked out hunter flags with special effects, we can check for the trait only
+                else_if = {
+                    limit = {
+                        event_target:court_witchhunter = {
+                            trait = witch_hunter
+                        }
+                    }
                     subtract_variable = {
                         which = cultic_influence
                         value = -25
                     }
                     wealth = -50
+                }
+                else = {
+                    subtract_variable = {
+                        which = cultic_influence
+                        value = -20
+                    }
+                    wealth = -40
+                }
+                #additional damage from high intrigue hunters - honor player intuitions about competent hunters
+                if = {
+                    limit = {
+                        event_target:court_witchhunter = {
+                            intrigue = 20
+                        }
+                    }
+                    subtract_variable = {
+                        which = cultic_influence
+                        value = -15
+                    }
+                    wealth = -30
+                }
+                else_if = {
+                    limit = {
+                        event_target:court_witchhunter = {
+                            intrigue = 15
+                        }
+                    }
+                    subtract_variable = {
+                        which = cultic_influence
+                        value = -10
+                    }
+                    wealth = -20
+                }
+                else_if = {
+                    limit = {
+                        event_target:court_witchhunter = {
+                            intrigue = 10
+                        }
+                    }
+                    subtract_variable = {
+                        which = cultic_influence
+                        value = -5
+                    }
+                    wealth = -10
                 }
             }
         }

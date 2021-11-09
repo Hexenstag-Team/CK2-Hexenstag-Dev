@@ -832,31 +832,12 @@ find_new_cultic_activity_kingdom_target_effect = {
     persistent_event_target:cultic_activity_target = {
         save_event_target_as = current_area_of_operations
     }
-    #shift targets in same de jure Empire
-    30 = {
-        trigger = {
+    random_list = {
+        #shift targets in same de jure Empire
+        30 = {
             event_target:current_area_of_operations = {
                 empire = {
-                    any_direct_de_jure_vassal_title = {
-                        tier = KING
-                        is_titular = no
-                        NOR = {
-                            title = event_target:current_area_of_operations
-                            holder_scope = {
-                                OR = {
-                                    religion_group = chaos_gods_group
-                                    religion_group = necromantic_group
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        event_target:current_area_of_operations = {
-            empire = {
-                random_direct_de_jure_vassal_title = {
-                    limit = {
+                    random_direct_de_jure_vassal_title = {
                         tier = KING
                         is_titular = no
                         NOR = {
@@ -872,107 +853,132 @@ find_new_cultic_activity_kingdom_target_effect = {
                     save_event_target_as = target_kingdom
                 }
             }
+            event_target:current_area_of_operations = {
+                empire = {
+                    random_direct_de_jure_vassal_title = {
+                        limit = {
+                            tier = KING
+                            is_titular = no
+                            NOR = {
+                                title = event_target:current_area_of_operations
+                                holder_scope = {
+                                    OR = {
+                                        religion_group = chaos_gods_group
+                                        religion_group = necromantic_group
+                                    }
+                                }
+                            }
+                        }
+                        save_event_target_as = target_kingdom
+                    }
+                }
+            }
         }
-    }
-    #return to base
-    10 = {
-        trigger = {
+        #return to base
+        10 = {
+            trigger = {
+                location = {
+                    kingdom = {
+                        NOR = {
+                            title = event_target:current_area_of_operations
+                            holder_scope = {
+                                OR = {
+                                    religion_group = choas_gods_group
+                                    religion_group = necromantic_group
+                                }
+                            }
+                        }
+                    }
+                }
+            }
             location = {
                 kingdom = {
-                    NOR = {
-                        title = event_target:current_area_of_operations
-                        holder_scope = {
-                            OR = {
-                                religion_group = choas_gods_group
-                                religion_group = necromantic_group
-                            }
-                        }
-                    }
+                    save_event_target_as = target_kingdom
                 }
             }
         }
-    }
-    #reset
-    10 = {
-        #Chaos Cults - not in Bretonnia
-        if = {
-            limit = {
-                religion_group = chaos_gods_group
-            }
-            random_landed_title = {
+        #reset
+        10 = {
+            #Chaos Cults - not in Bretonnia
+            if = {
                 limit = {
-                    tier = KING
-                    is_titular = no
-                    OR = {
-                        de_jure_liege_or_above = e_kislev
-                        de_jure_liege_or_above = e_the_empire
-                        de_jure_liege_or_above = e_estalia
-                        de_jure_liege_or_above = e_tilea
-                        de_jure_liege_or_above = e_borderlands
-                    }
-                    NOR = {
-                        title = event_target:current_area_of_operations
-                        holder_scope = {
-                            OR = {
-                                religion_group = chaos_gods_group
-                                religion_group = necromantic_group
+                    religion_group = chaos_gods_group
+                }
+                random_landed_title = {
+                    limit = {
+                        tier = KING
+                        is_titular = no
+                        OR = {
+                            de_jure_liege_or_above = e_kislev
+                            de_jure_liege_or_above = e_the_empire
+                            de_jure_liege_or_above = e_estalia
+                            de_jure_liege_or_above = e_tilea
+                            de_jure_liege_or_above = e_borderlands
+                        }
+                        NOR = {
+                            title = event_target:current_area_of_operations
+                            holder_scope = {
+                                OR = {
+                                    religion_group = chaos_gods_group
+                                    religion_group = necromantic_group
+                                }
                             }
                         }
                     }
+                    save_event_target_as = target_kingdom
                 }
-                save_event_target_as = target_kingdom
             }
-        }
-        #Blood Dragons - focus on Bretonnia
-        else_if = {
-            limit = {
-                culture = blooddragons_culture
-            }
-            random_landed_title = {
+            #Blood Dragons - focus on Bretonnia
+            else_if = {
                 limit = {
-                    tier = KING
-                    is_titular = no
-                    de_jure_liege_or_above = e_bretonnia
-                    NOR = {
-                        title = event_target:current_area_of_operations
-                        holder_scope = {
-                            OR = {
-                                religion_group = chaos_gods_group
-                                religion_group = necromantic_group
-                            }
-                        }
-                    }
+                    culture = blooddragons_culture
                 }
-                save_event_target_as = target_kingdom
-            }
-        }
-        #Other necromantic people - not in Tilea (Cult oF Morr's homeland)
-        else_if = {
-            limit = {
-                religion_group = necromantic_group
-            }
-            random_landed_title = {
-                limit = {
-                    tier = KING
-                    is_titular = no
-                    OR = {
-                        de_jure_liege_or_above = e_kislev
-                        de_jure_liege_or_above = e_the_empire
+                random_landed_title = {
+                    limit = {
+                        tier = KING
+                        is_titular = no
                         de_jure_liege_or_above = e_bretonnia
-                        de_jure_liege_or_above = e_estalia
-                        de_jure_liege_or_above = e_borderlands
-                    }
-                    NOR = {
-                        title = event_target:current_area_of_operations
-                        holder_scope = {
-                            OR = {
-                                religion_group = chaos_gods_group
-                                religion_group = necromantic_group
+                        NOR = {
+                            title = event_target:current_area_of_operations
+                            holder_scope = {
+                                OR = {
+                                    religion_group = chaos_gods_group
+                                    religion_group = necromantic_group
+                                }
                             }
                         }
                     }
+                    save_event_target_as = target_kingdom
                 }
-                save_event_target_as = target_kingdom
+            }
+            #Other necromantic people - not in Tilea (Cult oF Morr's homeland)
+            else_if = {
+                limit = {
+                    religion_group = necromantic_group
+                }
+                random_landed_title = {
+                    limit = {
+                        tier = KING
+                        is_titular = no
+                        OR = {
+                            de_jure_liege_or_above = e_kislev
+                            de_jure_liege_or_above = e_the_empire
+                            de_jure_liege_or_above = e_bretonnia
+                            de_jure_liege_or_above = e_estalia
+                            de_jure_liege_or_above = e_borderlands
+                        }
+                        NOR = {
+                            title = event_target:current_area_of_operations
+                            holder_scope = {
+                                OR = {
+                                    religion_group = chaos_gods_group
+                                    religion_group = necromantic_group
+                                }
+                            }
+                        }
+                    }
+                    save_event_target_as = target_kingdom
+                }
             }
         }
     }
@@ -1179,6 +1185,8 @@ cultic_tactical_action_effect = {
                     random = 45
                 }
             }
+            #please the Gods
+            add_doom_progress_tiny_effect = yes
             #scuttle away!
             find_new_cultic_activity_kingdom_target_effect = yes
             save_persistent_event_target = {
@@ -1385,7 +1393,7 @@ cultic_activity_leaves_clues_effect = {
                     }
                 }
             }
-                #abductions
+            #abductions
             10 = {
                 modifier = {
                     factor = 3
@@ -1407,11 +1415,87 @@ cultic_activity_leaves_clues_effect = {
                                 name = clue_abductions_cultic
                                 duration = 730
                             }
+                            random_province_character = {
+                                limit = {
+                                    age > 15
+                                    cults_grace_period_trigger = yes
+                                    NOR = {
+                                        trait = underground_cult_member
+                                        has_character_flag = stalked_by_cultic_kidnappers
+                                    }
+                                }
+                                random = {
+                                    chance = 75
+                                    set_character_flag = stalked_by_cultic_kidnappers
+                                    character_event = {
+                                        id = wh_cults_and_hunters.281
+                                        days = 372
+                                        random = 30
+                                    }
+                                }
+                            }
                         }
                         25 = {
                             add_province_modifier = {
                                 name = clue_abductions_cultic
                                 duration = 1095
+                            }
+                            random_province_character = {
+                                limit = {
+                                    age > 15
+                                    cults_grace_period_trigger = yes
+                                    NOR = {
+                                        trait = underground_cult_member
+                                        has_character_flag = stalked_by_cultic_kidnappers
+                                    }
+                                }
+                                random = {
+                                    chance = 75
+                                    set_character_flag = stalked_by_cultic_kidnappers
+                                    character_event = {
+                                        id = wh_cults_and_hunters.281
+                                        days = 372
+                                        random = 30
+                                    }
+                                }
+                            }
+                            random_province_character = {
+                                limit = {
+                                    age > 15
+                                    cults_grace_period_trigger = yes
+                                    NOR = {
+                                        trait = underground_cult_member
+                                        has_character_flag = stalked_by_cultic_kidnappers
+                                    }
+                                }
+                                random = {
+                                    chance = 75
+                                    set_character_flag = stalked_by_cultic_kidnappers
+                                    character_event = {
+                                        id = wh_cults_and_hunters.281
+                                        days = 737
+                                        random = 60
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    random_province_character = {
+                        limit = {
+                            age > 15
+                            cults_grace_period_trigger = yes
+                            NOR = {
+                                trait = underground_cult_member
+                                has_character_flag = stalked_by_cultic_kidnappers
+                            }
+                        }
+                        random = {
+                            chance = 75
+                            set_character_flag = stalked_by_cultic_kidnappers
+                            character_event = {
+                                id = wh_cults_and_hunters.281
+                                days = 7
+                                random = 7
                             }
                         }
                     }
@@ -1680,11 +1764,11 @@ cultic_activity_leaves_clues_effect = {
     }
 }
 
-#old world ruler scope
+#old world playable scope
 generate_new_false_clues_effect = {
     if = {
         limit = {
-            demesne_size = 7
+            num_of_count_titles = 7
         }
         random = {
             chance = 60
@@ -1701,7 +1785,7 @@ generate_new_false_clues_effect = {
     }
     else_if = {
         limit = {
-            demesne_size = 5
+            num_of_count_titles = 5
         }
         random = {
             chance = 45
@@ -1718,7 +1802,7 @@ generate_new_false_clues_effect = {
     }
     else_if = {
         limit = {
-            demesne_size = 3
+            num_of_count_titles = 3
         }
         random = {
             chance = 45
@@ -1901,11 +1985,30 @@ false_clues_appear_effect = {
                     }
                 }
             }
-                #Abductions
+            #Abductions
             10 = {
                 add_province_modifier = {
                     name = clue_abductions_normal
                     duration = 365
+                }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = stalked_by_criminal_kidnappers
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = stalked_by_criminal_kidnappers
+                        character_event = {
+                            id = wh_cults_and_hunters.281
+                            days = 7
+                            random = 7
+                        }
+                    }
                 }
             }
             10 = {
@@ -1913,11 +2016,106 @@ false_clues_appear_effect = {
                     name = clue_abductions_normal
                     duration = 730
                 }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = stalked_by_criminal_kidnappers
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = stalked_by_criminal_kidnappers
+                        character_event = {
+                            id = wh_cults_and_hunters.281
+                            days = 7
+                            random = 7
+                        }
+                    }
+                }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = stalked_by_criminal_kidnappers
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = stalked_by_criminal_kidnappers
+                        character_event = {
+                            id = wh_cults_and_hunters.281
+                            days = 372
+                            random = 30
+                        }
+                    }
+                }
             }
             10 = {
                 add_province_modifier = {
                     name = clue_abductions_normal
                     duration = 1095
+                }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = stalked_by_criminal_kidnappers
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = stalked_by_criminal_kidnappers
+                        character_event = {
+                            id = wh_cults_and_hunters.281
+                            days = 7
+                            random = 7
+                        }
+                    }
+                }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = stalked_by_criminal_kidnappers
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = stalked_by_criminal_kidnappers
+                        character_event = {
+                            id = wh_cults_and_hunters.281
+                            days = 372
+                            random = 30
+                        }
+                    }
+                }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = stalked_by_criminal_kidnappers
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = stalked_by_criminal_kidnappers
+                        character_event = {
+                            id = wh_cults_and_hunters.281
+                            days = 3737
+                            random = 60
+                        }
+                    }
                 }
             }
             #Murders
@@ -2574,37 +2772,23 @@ accused_by_witch_hunter_effect = {
             which = witch_hunter_evidence
             value = intrigue
         }
-        #confirmation bias effects
+        #trait modifiers
         if = {
             limit = {
-                trait = paranoid
-            }
-            change_variable = {
-                which = witch_hunter_evidence
-                value = 5
-            }
-        }
-        if = {
-            limit = {
-                trait = zealous
+                trait = diligent
             }
             change_variable = {
                 which = witch_hunter_evidence
                 value = 2
             }
         }
-        #just witch hunters may notice that some evidence contradicts a guilty verdict
         if = {
             limit = {
-                trait = just
-                NOR = {
-                    accused_courtier_is_secret_chaos_worshipper_trigger = yes
-                    accused_courtier_is_secret_necromantic_acolyte_trigger = yes
-                }
+                trait = slothful
             }
-            subract_variable = {
+            subtract_variable = {
                 which = witch_hunter_evidence
-                value = 3
+                value = 2
             }
         }
         #hunter flag advantages
@@ -2646,23 +2830,11 @@ accused_by_witch_hunter_effect = {
                     }
                 }
             }
-            #Order of the Sword and Scale never persecutes innocents
+            #Order of the Sword and Scale are masterful investigators
             order_of_the_sword_and_scale_witch_hunter = {
-                if = {
-                    limit = {
-                        NOR = {
-                            accused_courtier_is_secret_chaos_worshipper_trigger = yes
-                            accused_courtier_is_secret_necromantic_acolyte_trigger = yes
-                        }
-                    }
-                    #they sometimes make mistakes though
-                    random = {
-                        chance = 95
-                        set_variable = {
-                            which = witch_hunter_evidence
-                            value = 0
-                        }
-                    }
+                change_variable = {
+                    which = witch_hunter_evidence
+                    value = 8
                 }
             }
         }
@@ -2679,9 +2851,58 @@ accused_by_witch_hunter_effect = {
                     value > 5
                 }
             }
-            #GUILTY
+            #HUNTER DISCOVERS MUCH ABOUT THE CASE
             event_target:courtier_accused_by_witch_hunter = {
-                found_guilty_by_witch_hunter_effect = yes
+                #A successful investigation of a cultist damages the cult's influence
+                persistent_event_target:underground_cult_allegiance = {
+                    holder_scope = {
+                        subtract_variable = {
+                            which = cultic_influence
+                            value = -15
+                        }
+                    }
+                }
+                #if they're really guilty, then it's burning time
+                if = {
+                    limit = {
+                        OR = {
+                            trait = underground_cult_member
+                            is_mutated_trigger = yes
+                            has_magic_potential = yes
+                            is_foe = PREV
+                        }
+                    }
+                    found_guilty_by_witch_hunter_effect = yes
+                }
+                #if they're not guilty but it still looks bad... it depends
+                else = {
+                    random_list = {
+                        50 = {
+                            trigger = {
+                                #some hunters don't take chances when it comes to purging the guilty
+                                NOR = {
+                                    trait = paranoid
+                                    trait = cruel
+                                    trait = impaler
+                                    has_character_flag = temple_of_solkan_witch_hunter
+                                }
+                            }
+                            #benefit of the doubt
+                            #go on your way, citizen
+                        }
+                        50 = {
+                            trigger = {
+                                #some hunters don't take chances when it comes to protecting the innocent
+                                NOR = {
+                                    trait = just
+                                    has_character_flag = bretonnian_knight_witch_hunter
+                                    has_character_flag = order_of_the_sword_and_scale_witch_hunter
+                                }
+                            }
+                            found_guilty_by_witch_hunter_effect = yes
+                        }
+                    }
+                }
             }
         }
         else_if = {
@@ -2695,29 +2916,33 @@ accused_by_witch_hunter_effect = {
             #go on your way, citizen
         }
         else = {
-            #HMM
-            random_list = {
-                50 = {
-                    trigger = {
-                        NOR = {
-                            trait = paranoid
-                            trait = cruel
-                            trait = impaler
-                            has_character_flag = temple_of_solkan_witch_hunter
+            #hunter is unsure and goes with their gut
+            event_target:courtier_accused_by_witch_hunter = {
+                random_list = {
+                    50 = {
+                        trigger = {
+                            #some hunters don't take chances when it comes to purging the guilty
+                            NOR = {
+                                trait = paranoid
+                                trait = cruel
+                                trait = impaler
+                                has_character_flag = temple_of_solkan_witch_hunter
+                            }
                         }
+                        #benefit of the doubt
+                        #go on your way, citizen
                     }
-                    #benefit of the doubt
-                    #go on your way, citizen
-                }
-                50 = {
-                    trigger = {
-                        NOR = {
-                            has_character_flag = bretonnian_knight_witch_hunter
-                            has_character_flag = order_of_the_sword_and_scale_witch_hunter
+                    #TODO: intermediate result: witch hunter passes on their uncertainty to their employer
+                    50 = {
+                        trigger = {
+                            #some hunters don't take chances when it comes to protecting the innocent
+                            NOR = {
+                                trait = just
+                                has_character_flag = bretonnian_knight_witch_hunter
+                                has_character_flag = order_of_the_sword_and_scale_witch_hunter
+                            }
                         }
-                    }
-                    #guilty enough
-                    event_target:courtier_accused_by_witch_hunter = {
+                        #note that this result does not damage cult influence by itself, as the Hunter's investigation didn't reveal very much
                         found_guilty_by_witch_hunter_effect = yes
                     }
                 }
@@ -2728,14 +2953,6 @@ accused_by_witch_hunter_effect = {
 
 #accused character scope
 found_guilty_by_witch_hunter_effect = {
-    persistent_event_target:underground_cult_allegiance = {
-        holder_scope = {
-            subtract_variable = {
-                which = cultic_influence
-                value = -8
-            }
-        }
-    }
     death = {
         death_reason = death_execution_burning
         killer = event_target:court_witchhunter
