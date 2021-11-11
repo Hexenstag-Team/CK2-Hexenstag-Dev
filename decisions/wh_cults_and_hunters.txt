@@ -1,0 +1,43 @@
+title_decisions = {
+    start_county_witch_hunt = {
+        ai = no
+        filter = realm
+        ai_target_filter = none
+        ai_check_interval = 6000
+
+        from_potential = {
+            OR = {
+                has_law = witch_hunter_law_0
+                any_courtier_or_vassal = {
+                    has_minor_title = title_court_witchhunter
+                }
+            }
+        }
+
+        potential = {
+            tier = COUNT
+            location = {
+                has_possible_cultic_activity_trigger = yes
+            }
+            NOT = {
+                any_courtier_or_vassal = {
+                    trait = on_witch_hunt
+                }
+            }
+        }
+
+        allow = {
+            always = yes
+        }
+
+        effect = {
+            #start witch hunt
+        }
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+}

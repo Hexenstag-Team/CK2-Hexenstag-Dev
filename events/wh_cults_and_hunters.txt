@@ -1,5 +1,15 @@
 namespace = wh_cults_and_hunters
 
+### NOTES ###
+#
+# This is a fairly complex subsystem, so extensive comments accompany the script to guide any expansion.
+# A few general pointers:
+# The biggest technical issue in the design is preserving the information of which Underground Cult is acting on a particular object until the Witch Hunters can respond.
+# With courtiers, this is trivially achieved by the persistent_event_target.
+# However, counties are a bigger problem. Not only does persistent_event_target not work in this scope, but it wouldn't be a solution anyway because multiple cults might be acting on the county at the same time.
+# The design uses two solutions. For AI actions, the information is preserved in event_target and event chains persist from the action being taken through to the end of the response. This is somewhat rigid but most of the ai behavior in this subsystem is hidden from the player.
+# For player actions, dynamic flags are used that allow them to be identified from the affected county by using the dynamic flag as a limiter on random_/any_title scopes. This is a relatively expensive solution but allows the player to interact by decisions at the time and place of their choosing.
+
 ### Setup & Maintenance effects ###
 #ids 0-100 reserved for setup/maintenance
 #Origin event, find find cults and fire setup event sequence for them
@@ -128,6 +138,20 @@ province_event = {
     }
 }
 
+#clears influencing flags after a cult moves on
+province_event = {
+    id = wh_cults_and_hunters.3
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        save_event_target_as = clue_county
+        event_target:cult_identity = {
+            clr_title_flag = cult_is_influencing_@event_target:clue_county
+        }
+    }
+}
+
 #maintenance event to preserve Cult mechanics through inheritance
 character_event = {
     id = wh_cults_and_hunters.10
@@ -252,10 +276,10 @@ character_event = {
                         trait = chosen_nurgle
                         trait = chosen_slaanesh
                         trait = chosen_tzeentch
-                    }
-                    AND = {
-                        is_vampire_visible = yes
-                        age < 800
+                        AND = {
+                            is_vampire_visible = yes
+                            age < 800
+                        }
                     }
                 }
                 change_variable = {
@@ -286,10 +310,10 @@ character_event = {
                         which = cult_tactical_actions
                         value < 2
                     }
-                    set_variable = {
-                        which = cult_tactical_actions
-                        value = 2
-                    }
+                }
+                set_variable = {
+                    which = cult_tactical_actions
+                    value = 2
                 }
             }
             #use current doom level to throttle actions
@@ -362,6 +386,22 @@ character_event = {
                 }
             }
         }
+        #Regional effects - put here to avoid regional effects breaking Cults in pre-game
+        #Tilea: weak Winds
+        if = {
+            limit = {
+                religion_group = chaos_gods_group
+                persistent_event_target:cultic_activity_target = {
+                    empire = {
+                        title = e_tilea
+                    }
+                }
+            }
+            subtract_variable = {
+                which = cultic_influence
+                value = 5
+            }
+        }
     }
 }
 
@@ -387,7 +427,7 @@ character_event = {
                     }
                     modifier = {
                         factor = 0.5
-                        factor = gregarious
+                        trait = gregarious
                     }
                     modifier = {
                         factor = 0.2
@@ -487,7 +527,7 @@ character_event = {
                     }
                     modifier = {
                         factor = 0.5
-                        factor = gregarious
+                        trait = gregarious
                     }
                     modifier = {
                         factor = 0.2
@@ -596,7 +636,7 @@ character_event = {
                     }
                     modifier = {
                         factor = 0.5
-                        factor = gregarious
+                        trait = gregarious
                     }
                     modifier = {
                         factor = 0.8
@@ -769,7 +809,7 @@ character_event = {
                     }
                     modifier = {
                         factor = 0.5
-                        factor = gregarious
+                        trait = gregarious
                     }
                     modifier = {
                         factor = 0.8
@@ -2050,6 +2090,9 @@ character_event = {
                     }
                     wealth = -10
                 }
+            }
+            event_target:cult_identity = {
+                clr_title_flag = cult_is_influencing_@event_target:clue_county
             }
         }
         #clean up

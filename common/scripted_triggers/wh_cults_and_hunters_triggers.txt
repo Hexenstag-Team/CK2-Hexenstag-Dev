@@ -32,3 +32,20 @@ accused_courtier_is_secret_necromantic_acolyte_trigger = {
         true_religion_group = necromantic_group
     }
 }
+
+has_possible_cultic_activity_trigger = {
+    OR = {
+        has_province_modifier = clue_extortion_cultic
+        has_province_modifier = clue_extortion_normal
+        has_province_modifier = clue_rituals_cultic
+        has_province_modifier = clue_rituals_normal
+        has_province_modifier = clue_abductions_cultic
+        has_province_modifier = clue_abductions_normal
+        has_province_modifier = clue_murders_cultic
+        has_province_modifier = clue_murders_normal
+        has_province_modifier = clue_contagion_cultic
+        has_province_modifier = clue_contagion_normal
+        has_province_modifier = clue_celebration_cultic
+        has_province_modifier = clue_celebration_normal
+    }
+}

@@ -278,7 +278,6 @@ on_decade_pulse = {
 	}
 	random_events = {
 		1000 = 0
-		250 = DR_cults.60000 # Cultist cross to nearby realm
 		250 = berserker.8 #Berserker berserks in court
 		100 = lizardman.280 #Spoils of the jungle (lizardmen only)
 		100 = SJDwarfevents.1 #dwarfen drinking
@@ -784,18 +783,11 @@ on_character_ask_to_join_society = {
 
 on_society_bi_yearly_pulse = {
 	events = {
-		DR_cults.7200 # Chaos Cult quest tombola
-		DR_cults.7000 # Chaos corruption chance
 		cultofmorr.130 #Knights of Morr tombola
 		bretonnia.300 #Knighs of Bretonnia Quest Setup
 	}
 
 	random_events = {
-		100 = DR_cults.20000 # Devil Worshippers: Orgy
-		100 = DR_cults.20010 # Devil Worshippers: Night on the Town
-		# 75 = DR_cults.20030 # Devil Worshippers: Grand Summoning
-		100 = DR_cults.20040 # Devil Worshippers: Impersonating Priests
-		300 = DR_cults.20060 # Devil Worshippers: Infernal Choir (only with Rivals)
 		40 = cultofmorr.150
 		60 = cultofmorr.140
 	}

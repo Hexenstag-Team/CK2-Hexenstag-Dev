@@ -721,7 +721,7 @@ find_starting_cultic_activity_kingdom_target_effect = {
         }
         #in 40% of other cases, the Cult will start targeting a de jure Kingdom in their home Empire
         #this result may lead them back to their home Kingdom
-        40 = {
+        50 = {
             location = {
                 empire = {
                     random_direct_de_jure_vassal_title = {
@@ -744,7 +744,7 @@ find_starting_cultic_activity_kingdom_target_effect = {
         }
         #there's a 20% chance that the cult will start targetting somewhat randomly
         #again, it's possible for this result to lead back to the home Kingdom/Empire
-        20 = {
+        10 = {
             #Chaos Cults - not in Bretonnia
             if = {
                 limit = {
@@ -831,6 +831,16 @@ find_starting_cultic_activity_kingdom_target_effect = {
 find_new_cultic_activity_kingdom_target_effect = {
     persistent_event_target:cultic_activity_target = {
         save_event_target_as = current_area_of_operations
+    }
+    #clear old influencing flags - 2 year window for witch hunts to wrap up before the trail goes cold
+    any_province = {
+        limit = {
+            de_jure_liege_or_above = event_target:current_area_of_operations
+        }
+        province_event = {
+            id = wh_cults_and_hunters.3
+            days = 730
+        }
     }
     random_list = {
         #shift targets in same de jure Empire
@@ -1176,6 +1186,7 @@ cultic_tactical_action_effect = {
                     NOR = {
                         has_province_modifier = terrorized_by_witch_hunter
                         has_province_modifier = touch_of_the_law_god
+                        has_province_modifier = verenan_order
                         has_province_modifier = recent_county_uprising
                     }
                 }
@@ -1213,6 +1224,21 @@ cultic_activity_leaves_clues_effect = {
         }
         save_event_target_as = clue_county
     }
+    #hit from emergency measures
+    if = {
+        limit = {
+            event_target:clue_county = {
+                holder_scope = {
+                    has_law = witch_hunter_law_3
+                }
+            }
+        }
+        subtract_variable = {
+            which = cultic_influence
+            value = 3
+        }
+    }
+    ## Now check if action is possible ##
     #check for Law Bombs
     if = {
         limit = {
@@ -1757,6 +1783,12 @@ cultic_activity_leaves_clues_effect = {
                 }
             }
         }
+        #set up dynamic flag for player's decision-based witch hunting
+        event_target:cult_identity = {
+            #clear, then set the dynamic flag so that had_province_flag functions properly
+            clr_title_flag = cult_is_influencing_@event_target:clue_county
+            set_title_flag = cult_is_influencing_@event_target:clue_county
+        }
         event_target:clue_county = {
             set_province_flag = cultic_activity
             witch_hunter_response_to_clues_effect = yes
@@ -1830,6 +1862,7 @@ false_clues_appear_effect = {
             NOR = {
                 has_province_modifier = touch_of_the_law_god
                 has_province_modifier = terrorized_by_witch_hunter
+                has_province_modifier = verenan_order
             }
         }
         random_list = {
@@ -2486,7 +2519,7 @@ witch_hunter_response_to_clues_effect = {
 witch_hunter_looks_for_deviant_courtiers_effect = {
     random_list = {
         #cult member
-        50 = {
+        30 = {
             trigger = {
                 any_realm_character = {
                     trait = underground_cult_member
@@ -2498,6 +2531,18 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
                     trait = witch_hunter
                 }
             }
+            modifier = {
+                factor = 2
+                event_target:court_witchhunter = {
+                    intrigue = 15
+                }
+            }
+            modifier = {
+                factor = 2
+                event_target:court_witchhunter = {
+                    intrigue = 20
+                }
+            }
             random_realm_character = {
                 limit = {
                     trait = underground_cult_member
@@ -2506,7 +2551,7 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
             }
         }
         #mutant
-        50 = {
+        60 = {
             trigger = {
                 any_realm_character = {
                     is_mutated_trigger = yes
@@ -2526,7 +2571,7 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
             }
         }
         #illegal magic potential
-        25 = {
+        20 = {
             trigger = {
                 has_law = magic_law_0
                 any_realm_character = {
@@ -2561,7 +2606,7 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
             }
         }
         #Illegal magical training
-        25 = {
+        20 = {
             trigger = {
                 has_law = magic_law_1
                 any_realm_character = {
@@ -2596,7 +2641,7 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
             }
         }
         #Illegal magic - cumulative with other effects, so evil wizards are especially high priority targets
-        25 = {
+        20 = {
             trigger = {
                 any_realm_character = {
                     OR = {
@@ -2630,9 +2675,27 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
             }
         }
         #accuse innocent
-        5 = {
+        20 = {
             modifier = {
-                factor = 5
+                factor = 0.8
+                event_target:court_witchhunter = {
+                    intrigue = 15
+                }
+            }
+            modifier = {
+                factor = 0.8
+                event_target:court_witchhunter = {
+                    intrigue = 20
+                }
+            }
+            modifier = {
+                factor = 1.5
+                event_target:court_witchhunter = {
+                    trait = arbitrary
+                }
+            }
+            modifier = {
+                factor = 2
                 event_target:court_witchhunter = {
                     trait = paranoid
                 }
@@ -2648,7 +2711,7 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
             }
         }
         #grievances
-        25 = {
+        20 = {
             trigger = {
                 event_target:court_witchhunter = {
                     num_of_rivals > 0
@@ -2683,7 +2746,7 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
             }
         }
         #all clear
-        25 = {
+        20 = {
             modifier = {
                 factor = 1.5
                 event_target:court_witchhunter = {
@@ -2720,6 +2783,40 @@ accused_by_witch_hunter_effect = {
     export_to_variable = {
         which = witch_hunter_evidence
         value = intrigue
+    }
+    #the powerful are protected
+    trigger_switch = {
+        on_trigger = tier
+        BARON = {
+            change_variable = {
+                which = witch_hunter_evidence
+                value = 2
+            }
+        }
+        COUNT = {
+            change_variable = {
+                which = witch_hunter_evidence
+                value = 4
+            }
+        }
+        DUKE = {
+            change_variable = {
+                which = witch_hunter_evidence
+                value = 6
+            }
+        }
+        KING = {
+            change_variable = {
+                which = witch_hunter_evidence
+                value = 8
+            }
+        }
+        KING = {
+            change_variable = {
+                which = witch_hunter_evidence
+                value = 10
+            }
+        }
     }
     ## Mutation effects ##
     #massive mutation
