@@ -3388,7 +3388,11 @@ found_guilty_by_witch_hunter_effect = {
 
 #accused character scope
 found_guilty_by_any_liege_effect = {
-
+    imprison = event_target:witch_hunter_employer
+    character_event = {
+        id = wh_cults_and_hunters.701
+        days = 2
+    }
 }
 #accused character scope
 at_the_mercy_of_the_emissary_effect = {
