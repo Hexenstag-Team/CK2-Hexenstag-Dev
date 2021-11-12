@@ -188,7 +188,7 @@ character_event = {
 ### Cultic Activity ###
 #ids 101-500 reserved for cultic activity
 
-## AI Cultic Strategic Pulse (on_decade_pulse)
+## AI Cultist Pulse (on ??? pulse)
 #101
 
 ## AI Cultic Tactical Pulse (on_yearly_pulse)
@@ -246,7 +246,7 @@ character_event = {
             }
             divide_variable = {
                 which = cult_tactical_actions
-                value = 10
+                value = 15
             }
             #bonus moves for old vampires & those favored by chaos
             if = {
@@ -321,7 +321,7 @@ character_event = {
                 on_trigger = has_global_flag
                 doom_very_low = {
                     while = {
-                        count = 20
+                        count = 12
                         limit = {
                             check_variable = {
                                 which = cult_tactical_actions
@@ -334,7 +334,7 @@ character_event = {
                 }
                 doom_low = {
                     while = {
-                        count = 25
+                        count = 15
                         limit = {
                             check_variable = {
                                 which = cult_tactical_actions
@@ -347,7 +347,7 @@ character_event = {
                 }
                 doom_medium = {
                     while = {
-                        count = 30
+                        count = 20
                         limit = {
                             check_variable = {
                                 which = cult_tactical_actions
@@ -360,7 +360,7 @@ character_event = {
                 }
                 doom_high = {
                     while = {
-                        count = 40
+                        count = 25
                         limit = {
                             check_variable = {
                                 which = cult_tactical_actions
@@ -373,7 +373,7 @@ character_event = {
                 }
                 doom_very_high = {
                     while = {
-                        count = 50
+                        count = 35
                         limit = {
                             check_variable = {
                                 which = cult_tactical_actions
@@ -987,8 +987,268 @@ character_event = {
     }
 }
 
-#encounter with disease victim (really straightforward for ai, tricky for ai=no)
-#291
+#encounter with disease victim
+character_event = {
+    id = wh_cults_and_hunters.291
+    desc = EVTDESC_wh_cults_and_hunters_291
+    picture = GFX_evt_whispers
+
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                ai = yes
+            }
+            random_list = {
+                #avoided contact
+                30 = {
+                    modifier = {
+                        factor = 1.5
+                        trait = craven
+                    }
+                    modifier = {
+                        factor = 2
+                        trait = paranoid
+                    }
+                    modifier = {
+                        factor = 1.5
+                        trait = shy
+                    }
+                    modifier = {
+                        factor = 0.5
+                        trait = gregarious
+                    }
+                    modifier = {
+                        factor = 0.8
+                        trait = socializer
+                    }
+                    modifier = {
+                        factor = 0.5
+                        has_law = witch_hunter_law_0
+                    }
+                    modifier = {
+                        factor = 4
+                        has_law = witch_hunter_law_3
+                    }
+                    modifier = {
+                        factor = 0.5
+                        is_in_society = cult_of_shallya
+                    }
+                    #well-guarded
+                    modifier = {
+                        factor = 1.5
+                        TIER = COUNT
+                    }
+                    modifier = {
+                        factor = 2.5
+                        tier = DUKE
+                    }
+                    modifier = {
+                        factor = 4
+                        tier = KING
+                    }
+                    modifier = {
+                        factor = 6
+                        tier = EMPEROR
+                    }
+                    #refer to Witch Hunter, if applicable
+                }
+                ##Outcomes for being contacted
+                #bleeding hearts
+                60 = {
+                    trigger = {
+                        society_member_of = cult_of_shallya
+                    }
+                    if = {
+                        limit = {
+                            has_character_flag = accosted_by_contagious_cultist
+                        }
+                        random_list = {
+                            10 = {
+                                modifier = {
+                                    factor = 3
+                                    society_rank == 3
+                                }
+                                modifier = {
+                                    factor = 4
+                                    society_rank == 4
+                                }
+                                modifier = {
+                                    factor = 1.1
+                                    trait = temperate
+                                }
+                                modifier = {
+                                    factor = 1.1
+                                    trait = humble
+                                }
+                                modifier = {
+                                    factor = 1.1
+                                    trait = charitable
+                                }
+                                modifier = {
+                                    factor = 1.1
+                                    trait = kind
+                                }
+                                modifier = {
+                                    factor = 1.1
+                                    trait = patient
+                                }
+                                modifier = {
+                                    factor = 1.1
+                                    trait = diligent
+                                }
+                                modifier = {
+                                    factor = 1.1
+                                    trait = zealous
+                                }
+                                modifier = {
+                                    factor = 1.2
+                                    diplomacy > 10
+                                }
+                                modifier = {
+                                    factor = 1.5
+                                    diplomacy > 15
+                                }
+                                change_society_currency = 100
+                                event_target:cult_leader = {
+                                    subtract_variable = {
+                                        which = cultic_influence
+                                        value = 10
+                                    }
+                                }
+                                #no sickness test, fully protected by Shallya's mercy
+                            }
+                            90 = {
+                                modifier = {
+                                    factor = 1.2
+                                    diplomacy < 5
+                                }
+                                modifier = {
+                                    factor = 1.1
+                                    trait = wroth
+                                }
+                                modifier = {
+                                    factor = 1.1
+                                    trait = proud
+                                }
+                                modifier = {
+                                    factor = 1.1
+                                    trait = envious
+                                }
+                                modifier = {
+                                    factor = 1.1
+                                    trait = slothful
+                                }
+                                modifier = {
+                                    factor = 1.1
+                                    trait = greedy
+                                }
+                                modifier = {
+                                    factor = 1.1
+                                    trait = gluttonous
+                                }
+                                modifier = {
+                                    factor = 1.2
+                                    trait = cynical
+                                }
+                                #you tried
+                                change_society_currency = 10
+                                #get sick
+                            }
+                        }
+                    }
+                    else = {
+                        change_society_currency = 50
+                        random = {
+                            chance = 10
+                            add_symptom_effect = yes
+                        }
+                    }
+                }
+                #get sick
+                30 = {
+                    trigger = {
+                        NOT = {
+                            society_member_of = cult_of_shallya
+                        }
+                    }
+                    modifier = {
+                        factor = 1.5
+                        is_weak_trigger = yes
+                    }
+                    modifier = {
+                        factor = 2
+                        has_character_flag = accosted_by_contagious_cultist
+                    }
+                    add_symptom_effect = yes
+                    #might be corrupted due to illness
+                    if = {
+                        limit = {
+                            has_character_flag = accosted_by_contagious_cultist
+                        }
+                        random = {
+                            chance = 60
+                            mult_modifier = {
+                                factor = 1.5
+                                trait = craven
+                            }
+                            corrupted_by_underground_cult_effect = yes
+                        }
+                    }
+                }
+                #don't get sick
+                30 = {
+                    trigger = {
+                        NOT = {
+                            society_member_of = cult_of_shallya
+                        }
+                    }
+                    modifier = {
+                        factor = 1.5
+                        is_strong_trigger = yes
+                    }
+                    if = {
+                        limit = {
+                            has_character_flag = accosted_by_contagious_cultist
+                        }
+                        #corrupted by fear alone
+                        random = {
+                            chance = 5
+                            mult_modifier = {
+                                factor = 3
+                                trait = craven
+                            }
+                            corrupted_by_underground_cult_effect = yes
+                        }
+                    }
+                }
+            }
+            clr_character_flag = accosted_by_contagious_peasant
+            clr_character_flag = accosted_by_contagious_cultist
+        }
+    }
+
+    #run away!
+    option = {
+        name = OK
+        trigger = { ai = no }
+        #write ai = no narrative
+    }
+
+    #fight!
+    option = {
+        name = OK
+        trigger = { ai = no }
+        #refer to witch hunter
+    }
+
+    #fail out for AI, just in case
+    option = {
+        name = OK
+        trigger = { ai = yes }
+    }
+}
 
 #chaos cult instigate revolt
 province_event = {
@@ -1058,14 +1318,14 @@ province_event = {
                 }
                 doom_high = {
                     while = {
-                        count = 3
+                        count = 2
                         wealth = 25
                         spawn_heretic_army_effect = yes
                     }
                 }
                 doom_very_high = {
                     while = {
-                        count = 5
+                        count = 3
                         wealth = 25
                         spawn_heretic_army_effect = yes
                     }
@@ -1104,6 +1364,7 @@ province_event = {
         name = EVTOPTA_wh_cults_and_hunters_401
     }
 }
+
 ### Witch Hunter Activity ###
 
 ##Recruiting Special Agents
@@ -1208,7 +1469,7 @@ character_event = {
                             factor = 2
                             is_doom_very_high = yes
                         }
-                        create_emmisary_of_order_witch_hunter_effect = yes
+                        create_emissary_of_order_witch_hunter_effect = yes
                     }
                 }
                 event_target:hunter_candidate = {
@@ -1705,7 +1966,7 @@ narrative_event = {
     }
 }
 
-#Emmisary of Order
+#emissary of Order
 narrative_event = {
     id = wh_cults_and_hunters.511
     title = EVTTITLE_wh_cults_and_hunters_511
@@ -1715,7 +1976,7 @@ narrative_event = {
     is_triggered_only = yes
 
     immediate = {
-        create_emmisary_of_order_witch_hunter_effect = yes
+        create_emissary_of_order_witch_hunter_effect = yes
     }
 
     option = {
@@ -1883,11 +2144,11 @@ character_event = {
                 random = 60
             }
         }
-        #the Emmisary absolutely fries Chaos
+        #the emissary absolutely fries Chaos
         else_if = {
             limit = {
                 event_target:court_witchhunter = {
-                    has_character_flag = emmisary_of_order_witch_hunter
+                    has_character_flag = emissary_of_order_witch_hunter
                 }
                 event_target:active_cult_leader = {
                     true_religion_group = chaos_gods_group
@@ -1935,7 +2196,7 @@ character_event = {
             #check for property damage
             trigger_switch = {
                 on_trigger = has_character_flag
-                emmisary_of_order_witch_hunter = {
+                emissary_of_order_witch_hunter = {
                     event_target:clue_county = {
                         add_province_modifier = {
                             name = touch_of_the_law_god
@@ -2023,7 +2284,7 @@ character_event = {
                 else_if = {
                     limit = {
                         event_target:court_witchhunter = {
-                            has_character_flag = emmisary_of_order_witch_hunter
+                            has_character_flag = emissary_of_order_witch_hunter
                         }
                         religion_group = chaos_gods_group
                     }
@@ -2110,6 +2371,128 @@ character_event = {
             remove_province_modifier = clue_contagion_normal
             remove_province_modifier = clue_celebration_cultic
             remove_province_modifier = clue_celebration_normal
+        }
+    }
+}
+
+#Captured "cultist" events
+character_event = {
+    id = wh_cults_and_hunters.701
+    desc = EVTDESC_wh_cults_and_hunters_701
+    picture = GFX_evt_into_the_dungeon
+
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        random_list = {
+            #stress
+            50 = {
+                modifier = {
+                    factor = 0.5
+                    event_target:court_witchhunter = {
+                        OR = {
+                            trait = cruel
+                            trait = impaler
+                        }
+                    }
+                }
+                prisoner_humiliation_effect = yes
+                character_event = {
+                    id = wh_cults_and_hunters.701
+                    days = 10
+                }
+            }
+            #physical damage
+            20 = {
+                modifier = {
+                    factor = 0.5
+                    event_target:court_witchhunter = {
+                        has_character_flag = order_of_the_sword_and_scale_witch_hunter
+                    }
+                }
+                modifier = {
+                    factor = 2
+                    event_target:court_witchhunter = {
+                        OR = {
+                            trait = cruel
+                            trait = impaler
+                        }
+                    }
+                }
+                prisoner_mutilate_effect = yes
+                random = {
+                    chance = 25
+                    add_maimed_trait_effect = yes
+                }
+                character_event = {
+                    id = wh_cults_and_hunters.701
+                    days = 10
+                }
+            }
+            #psychological damage
+            10 = {
+                modifier = {
+                    factor = 1.5
+                    event_target:court_witchhunter = {
+                        OR = {
+                            trait = cruel
+                            trait = impaler
+                        }
+                    }
+                }
+                prisoner_torture_effect = yes
+                character_event = {
+                    id = wh_cults_and_hunters.701
+                    days = 10
+                }
+            }
+            #cultist breaks
+            20 = {
+                trigger = {
+                    trait = underground_cult_member
+                }
+                modifier = {
+                    factor = 1.1
+                    health < 4
+                }
+                modifier = {
+                    factor = 1.1
+                    health < 3
+                }
+                modifier = {
+                    factor = 1.2
+                    health < 2
+                }
+                modifier = {
+                    factor = 1.5
+                    trait = stressed
+                }
+                modifier = {
+                    factor = 2
+                    trait = craven
+                }
+                modifier = {
+                    factor = 0.2
+                    trait = brave
+                }
+                modifier = {
+                    factor = 0.5
+                    trait = stubborn
+                }
+                persistent_event_target:underground_cult_allegiance = {
+                    holder_scope = {
+                        subtract_variable = {
+                            which = cultic_influence
+                            value = 100
+                        }
+                    }
+                }
+                death = {
+                    death_reason = death_execution_burning
+                    killer = event_target:witch_hunter_employer
+                }
+            }
         }
     }
 }

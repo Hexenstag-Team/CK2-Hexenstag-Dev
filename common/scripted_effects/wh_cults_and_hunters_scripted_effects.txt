@@ -622,7 +622,7 @@ create_temple_of_solkan_witch_hunter_effect = {
     }
 }
 
-create_emmisary_of_order_witch_hunter_effect = {
+create_emissary_of_order_witch_hunter_effect = {
     create_random_intriguer = {
         min_age = 25
         max_age = 50
@@ -638,7 +638,7 @@ create_emmisary_of_order_witch_hunter_effect = {
     }
     new_character = {
         save_event_target_as = hunter_candidate
-        set_character_flag = emmisary_of_order_witch_hunter
+        set_character_flag = emissary_of_order_witch_hunter
         witch_hunter_scarring_effect = yes
         change_diplomacy = 3
         change_martial = 8
@@ -1205,6 +1205,41 @@ cultic_tactical_action_effect = {
                 scope = event_target:target_kingdom
             }
         }
+        #cult vs. cult
+        50 = {
+            trigger = {
+                any_title = {
+                    limit = {
+                        has_title_flag = underground_cult
+                        holder_scope = {
+                            persistent_event_target:cultic_activity_target = {
+                                title = event_target:cultic_area_of_operations
+                            }
+                        }
+                    }
+                }
+            }
+            wealth = -50
+            subtract_variable = {
+                which = cultic_influence
+                value = 50
+            }
+            random_title = {
+                limit = {
+                    has_title_flag = underground_cult
+                    holder_scope = {
+                        persistent_event_target:cultic_activity_target = {
+                            title = event_target:cultic_area_of_operations
+                        }
+                    }
+                }
+                wealth = -50
+                subtract_variable = {
+                    which = cultic_influence
+                    value = 50
+                }
+            }
+        }
         #TODO
         #undead uprising
         #blood dragon... thing?
@@ -1313,11 +1348,11 @@ cultic_activity_leaves_clues_effect = {
             #strange rites
             10 = {
                 modifier = {
-                    factor = 5
+                    factor = 2
                     religion = tzeentch
                 }
                 modifier = {
-                    factor = 2
+                    factor = 5
                     has_character_flag = weaving_plots
                 }
                 event_target:clue_county = {
@@ -1530,11 +1565,11 @@ cultic_activity_leaves_clues_effect = {
             #murders
             10 = {
                 modifier = {
-                    factor = 5
+                    factor = 2
                     religion = khorne
                 }
                 modifier = {
-                    factor = 2
+                    factor = 5
                     has_character_flag = inspiring_killings
                 }
                 event_target:clue_county = {
@@ -1636,14 +1671,14 @@ cultic_activity_leaves_clues_effect = {
                     }
                 }
             }
-                #contagion
+            #contagion
             10 = {
                 modifier = {
-                    factor = 5
+                    factor = 2
                     religion = nurgle
                 }
                 modifier = {
-                    factor = 2
+                    factor = 5
                     has_character_flag = spawning_disease
                 }
                 random_list = {
@@ -1661,6 +1696,25 @@ cultic_activity_leaves_clues_effect = {
                                 name = clue_contagion_cultic
                                 duration = 730
                             }
+                            random_province_character = {
+                                limit = {
+                                    age > 15
+                                    cults_grace_period_trigger = yes
+                                    NOR = {
+                                        trait = underground_cult_member
+                                        has_character_flag = accosted_by_contagious_cultist
+                                    }
+                                }
+                                random = {
+                                    chance = 75
+                                    set_character_flag = accosted_by_contagious_cultist
+                                    character_event = {
+                                        id = wh_cults_and_hunters.291
+                                        days = 372
+                                        random = 30
+                                    }
+                                }
+                            }
                         }
                     }
                     25 = {
@@ -1669,6 +1723,65 @@ cultic_activity_leaves_clues_effect = {
                                 name = clue_contagion_cultic
                                 duration = 1095
                             }
+                            random_province_character = {
+                                limit = {
+                                    age > 15
+                                    cults_grace_period_trigger = yes
+                                    NOR = {
+                                        trait = underground_cult_member
+                                        has_character_flag = accosted_by_contagious_cultist
+                                    }
+                                }
+                                random = {
+                                    chance = 75
+                                    set_character_flag = accosted_by_contagious_cultist
+                                    character_event = {
+                                        id = wh_cults_and_hunters.291
+                                        days = 372
+                                        random = 30
+                                    }
+                                }
+                            }
+                            random_province_character = {
+                                limit = {
+                                    age > 15
+                                    cults_grace_period_trigger = yes
+                                    NOR = {
+                                        trait = underground_cult_member
+                                        has_character_flag = accosted_by_contagious_cultist
+                                    }
+                                }
+                                random = {
+                                    chance = 75
+                                    set_character_flag = accosted_by_contagious_cultist
+                                    character_event = {
+                                        id = wh_cults_and_hunters.291
+                                        days = 737
+                                        random = 60
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                event_target:clue_county = {
+                    random_province_character = {
+                        limit = {
+                            age > 15
+                            cults_grace_period_trigger = yes
+                            NOR = {
+                                trait = underground_cult_member
+                                has_character_flag = accosted_by_contagious_cultist
+                            }
+                        }
+                        random = {
+                            chance = 75
+                            set_character_flag = accosted_by_contagious_cultist
+                            character_event = {
+                                id = wh_cults_and_hunters.291
+                                days = 7
+                                random = 7
+                            }
                         }
                     }
                 }
@@ -1676,11 +1789,11 @@ cultic_activity_leaves_clues_effect = {
             #excessive celebration
             10 = {
                 modifier = {
-                    factor = 5
+                    factor = 2
                     religion = slaanesh
                 }
                 modifier = {
-                    factor = 2
+                    factor = 5
                     has_character_flag = encouraging_decadence
                 }
                 event_target:clue_county = {
@@ -2284,11 +2397,30 @@ false_clues_appear_effect = {
                     }
                 }
             }
-                #Contagion
+            #Contagion
             10 = {
                 add_province_modifier = {
                     name = clue_contagion_normal
                     duration = 365
+                }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = accosted_by_contagious_peasant
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = accosted_by_contagious_peasant
+                        character_event = {
+                            id = wh_cults_and_hunters.291
+                            days = 7
+                            random = 7
+                        }
+                    }
                 }
             }
             10 = {
@@ -2296,11 +2428,106 @@ false_clues_appear_effect = {
                     name = clue_contagion_normal
                     duration = 730
                 }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = accosted_by_contagious_peasant
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = accosted_by_contagious_peasant
+                        character_event = {
+                            id = wh_cults_and_hunters.291
+                            days = 7
+                            random = 7
+                        }
+                    }
+                }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = accosted_by_contagious_peasant
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = accosted_by_contagious_peasant
+                        character_event = {
+                            id = wh_cults_and_hunters.291
+                            days = 372
+                            random = 30
+                        }
+                    }
+                }
             }
             10 = {
                 add_province_modifier = {
                     name = clue_contagion_normal
                     duration = 1095
+                }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = accosted_by_contagious_peasant
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = accosted_by_contagious_peasant
+                        character_event = {
+                            id = wh_cults_and_hunters.291
+                            days = 7
+                            random = 7
+                        }
+                    }
+                }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = accosted_by_contagious_peasant
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = accosted_by_contagious_peasant
+                        character_event = {
+                            id = wh_cults_and_hunters.291
+                            days = 372
+                            random = 30
+                        }
+                    }
+                }
+                random_province_character = {
+                    limit = {
+                        age > 15
+                        cults_grace_period_trigger = yes
+                        NOR = {
+                            trait = underground_cult_member
+                            has_character_flag = accosted_by_contagious_peasant
+                        }
+                    }
+                    random = {
+                        chance = 75
+                        set_character_flag = accosted_by_contagious_peasant
+                        character_event = {
+                            id = wh_cults_and_hunters.291
+                            days = 737
+                            random = 60
+                        }
+                    }
                 }
             }
             #Celebrations
@@ -2517,6 +2744,7 @@ witch_hunter_response_to_clues_effect = {
 
 #witch hunter employer scope
 witch_hunter_looks_for_deviant_courtiers_effect = {
+    save_event_target_as = witch_hunter_employer
     random_list = {
         #cult member
         30 = {
@@ -2892,7 +3120,7 @@ accused_by_witch_hunter_effect = {
         trigger_switch = {
             on_trigger = character_flag
             #champion of order
-            emmisary_of_order_witch_hunter = {
+            emissary_of_order_witch_hunter = {
                 if = {
                     limit = {
                         accused_courtier_is_secret_chaos_worshipper_trigger = yes
@@ -3050,6 +3278,135 @@ accused_by_witch_hunter_effect = {
 
 #accused character scope
 found_guilty_by_witch_hunter_effect = {
+    reverse_opinion = {
+        modifier = opinion_witch
+        who = event_target:court_witchhunter
+        years = 100
+    }
+    #judgment by liege
+    event_target:witch_hunter_employer = {
+        #the arrow of law compels you!
+        if = {
+            limit = {
+                event_target:court_witchhunter = {
+                    has_character_flag = emissary_of_order_witch_hunter
+                }
+            }
+            event_target:courtier_accused_by_witch_hunter = {
+                at_the_mercy_of_the_emissary_effect = yes
+            }
+        }
+        #untouchable
+        else_if = {
+            limit = {
+                OR = {
+                    character = event_target:courtier_accused_by_witch_hunter
+                    any_lover = {
+                        character = event_target:courtier_accused_by_witch_hunter
+                    }
+                }
+            }
+            opinion = {
+                modifier = opinion_leave
+                who = event_target:court_witchhunter
+                years = 5
+            }
+        }
+        #you had me at "your rival has been acting suspiciously"
+        else_if = {
+            limit = {
+                any_rival = {
+                    character = event_target:courtier_accused_by_witch_hunter
+                }
+            }
+            event_target:courtier_accused_by_witch_hunter = {
+                found_guilty_by_any_liege_effect = yes
+            }
+        }
+        #considers the case
+        else = {
+            random_list = {
+                80 = {
+                    modifier = {
+                        factor = 1.1
+                        event_target:court_witchhunter = {
+                            check_variable = {
+                                which = witch_hunter_evidence
+                                value > 5
+                            }
+                        }
+                    }
+                    modifier = {
+                        factor = 1.1
+                        event_target:court_witchhunter = {
+                            check_variable = {
+                                which = witch_hunter_evidence
+                                value > 10
+                            }
+                        }
+                    }
+                    modifier = {
+                        factor = 1.1
+                        event_target:court_witchhunter = {
+                            check_variable = {
+                                which = witch_hunter_evidence
+                                value > 15
+                            }
+                        }
+                    }
+                    event_target:courtier_accused_by_witch_hunter = {
+                        found_guilty_by_any_liege_effect = yes
+                    }
+                }
+                20 = {
+                    trigger = {
+                        NOR = {
+                            trait = zealous
+                            trait = cruel
+                            trait = impaler
+                        }
+                    }
+                    modifier = {
+                        factor = 1.1
+                        event_target:court_witchhunter = {
+                            check_variable = {
+                                which = witch_hunter_evidence
+                                value < 0
+                            }
+                        }
+                    }
+                    reverse_opinion = {
+                        modifier = opinion_disappointed
+                        who = event_target:court_witchhunter
+                        years = 5
+                    }
+                }
+            }
+        }
+    }
+}
+
+#accused character scope
+found_guilty_by_any_liege_effect = {
+
+}
+#accused character scope
+at_the_mercy_of_the_emissary_effect = {
+    if = {
+        limit = {
+            trait = underground_cult_member
+        }
+        #"tell me everything you know - everything!"
+        persistent_event_target:underground_cult_allegiance = {
+            holder_scope = {
+                subtract_variable = {
+                    which = cultic_influence
+                    value = 250
+                }
+            }
+        }
+    }
+    #this kills the accused courtier
     death = {
         death_reason = death_execution_burning
         killer = event_target:court_witchhunter
