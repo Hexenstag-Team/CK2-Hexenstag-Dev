@@ -210,6 +210,11 @@ character_event = {
                     value < 0
                 }
             }
+            #count number of defeats
+            change_variable = {
+                which = defeats_by_hunters
+                value = 1
+            }
             #The Gods' plans are disrupted
             reduce_doom_progress_medium_effect = yes
             #and the Cult must find a new target
@@ -399,7 +404,7 @@ character_event = {
             }
             subtract_variable = {
                 which = cultic_influence
-                value = 5
+                value = 8
             }
         }
     }
@@ -1154,7 +1159,10 @@ character_event = {
                                 }
                                 #you tried
                                 change_society_currency = 10
-                                #get sick
+                                random = {
+                                    chance = 70
+                                    add_symptom_effect = yes
+                                }
                             }
                         }
                     }
@@ -1280,6 +1288,22 @@ province_event = {
             save_persistent_event_target = {
                 name = underground_cult_allegiance
                 scope = event_target:cult_identity
+            }
+            if = {
+                limit = {
+                    NOR = {
+                        culture_group = albion_group
+                        culture_group = bretonnian_group
+                        culture_group = estalian_group
+                        culture_group = halfling_group
+                        culture_group = hung_group
+                        culture_group = imperial_group
+                        culture_group = kurgan_group
+                        culture_group = sartosan_group
+                        culture_group = tilean_group
+                    }
+                }
+                culture = event_target:active_cult_leader
             }
             create_title = {
                 tier = DUKE
@@ -2451,6 +2475,12 @@ character_event = {
             20 = {
                 trigger = {
                     trait = underground_cult_member
+                }
+                modifier = {
+                    factor = 0.2
+                    event_target:court_witchhunter = {
+                        NOT = { trait = witch_hunter }
+                    }
                 }
                 modifier = {
                     factor = 1.1

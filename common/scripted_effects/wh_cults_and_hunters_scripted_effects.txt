@@ -1178,6 +1178,11 @@ cultic_tactical_action_effect = {
                 which = cultic_influence
                 value = 5
             }
+            #count revolts
+            change_variable = {
+                which = revolts_launched
+                value = 1
+            }
             #spawn revolt
             random_province = {
                 limit = {
@@ -1273,6 +1278,20 @@ cultic_activity_leaves_clues_effect = {
             value = 3
         }
     }
+    #hit from Shallyan Prosperity
+    if = {
+        limit = {
+            event_target:clue_county = {
+                holder_scope = {
+                    has_character_modifier = shallyan_prosperity_modifier
+                }
+            }
+        }
+        subtract_variable = {
+            which = cultic_influence
+            value = 2
+        }
+    }
     ## Now check if action is possible ##
     #check for Law Bombs
     if = {
@@ -1302,7 +1321,7 @@ cultic_activity_leaves_clues_effect = {
     else_if = {
         limit = {
             event_target:clue_county = {
-                 has_province_modifier = terrorized_by_witch_hunter
+                 has_province_modifier = verenan_order
             }
         }
         subtract_variable = {
@@ -2984,7 +3003,7 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
             modifier = {
                 factor = 2
                 event_target:court_witchhunter = {
-                    trait = sloth
+                    trait = slothful
                 }
             }
             modifier = {
@@ -3118,7 +3137,7 @@ accused_by_witch_hunter_effect = {
         }
         #hunter flag advantages
         trigger_switch = {
-            on_trigger = character_flag
+            on_trigger = has_character_flag
             #champion of order
             emissary_of_order_witch_hunter = {
                 if = {

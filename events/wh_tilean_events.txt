@@ -1,0 +1,122 @@
+namespace = wh_tilea
+
+#Tilean League - detect war
+character_event = {
+    id = wh_tilea.0
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    war = yes
+
+    trigger = {
+        ROOT = {
+            independent = yes
+            culture_group = tilean_group
+            religion_group = old_world_group
+            capital_scope = {
+                empire = {
+                    title = e_tilea
+                }
+            }
+        }
+        FROM = {
+            NOR = {
+                culture_group = tilean_group
+                religion_group = old_world_group
+            }
+        }
+        NOT = {
+            e_tilea = {
+                holder_scope = {
+                    always = yes
+                }
+            }
+        }
+    }
+
+    immediate = {
+        FROM = {
+            save_event_target_as = aggressor_in_tilea
+        }
+        ROOT = {
+            character_event = {
+                id = wh_tilea.1
+                days = 1
+            }
+        }
+    }
+}
+
+#Tilean League - call to arms?
+character_event = {
+    id = wh_tilea.1
+    desc = EVTDESC_wh_tilea_1
+    picture = GFX_evt_dogs_of_war_tilean
+
+    is_triggered_only = yes
+
+    trigger = {
+    }
+
+    option = {
+        name = EVTOPTA_wh_tilea_1
+        e_tilea = {
+            any_de_jure_vassal_title = {
+                limit = {
+                    holder_scope = {
+                        independent = yes
+                        culture_group = tilean_group
+                        religion_group = old_world_group
+                        war = no
+                    }
+                }
+                holder_scope = {
+                    character_event = {
+                        id = wh_tilea.2
+                        days = 3
+                        random = 3
+                    }
+                }
+            }
+        }
+    }
+
+    option = {
+        name = EVTOPTA_wh_tilea_2
+        trigger = { ai = no }
+    }
+}
+
+character_event = {
+    id = wh_tilea.2
+    desc = EVTDESC_wh_tilea_2
+    picture = GFX_evt_dogs_of_war_tilean
+
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                likes_better_than = {
+                    who = FROM
+                    than = event_target:aggressor_in_tilea
+                }
+                ai = yes
+            }
+            prestige = 50
+            join_defender_wars = FROM
+        }
+    }
+
+    option = {
+        name = EVTOPTA_wh_tilea_2
+        trigger = { ai = no }
+        prestige = 50
+        join_defender_wars = FROM
+    }
+
+    option = {
+        name = EVTOPTB_wh_tilea_2
+    }
+}

@@ -1,67 +1,63 @@
-###########################################
-#
-# Devil worshiper decisions for Monks and Mystics
-#
-###########################################
-
-targeted_decisions = {
-
-	#Shallyans: Lay on Hands
-	shallya_healing = {
-		ai_check_interval = 12
-		is_in_society = yes
-
-		filter = self
-		ai_target_filter = self
+society_decisions = {
+	shallyan_prosperity = {
+		ai_check_interval = 36
 
 		potential = {
 			has_dlc = "Mystics"
-			society_member_of = cult_of_shallya
-			society_rank >= 3
-			NOR = {
-				has_character_flag = shallya_healing_in_effect
-				has_character_modifier = shallya_healing_recent
+			is_playable = yes
+			society_rank = {
+				rank >= 3
+				society = cult_of_shallya
+			}
+			is_incapable = no
+			prisoner = no
+			NOT = {
+				has_character_modifier = shallyan_prosperity_modifier
 			}
 		}
 
 		allow = {
-			has_society_currency_medium_trigger = yes
-			custom_tooltip = {
-				text = shallya_healing_tooltip
-				OR = {
+			has_society_currency_major_trigger = yes
+			scaled_wealth = 0.25
+		}
 
-					has_disease_trigger = yes
-					has_symptom_trigger = yes
-					has_injury_trigger = yes
-					is_maimed_trigger = yes
-					trait = infirm
-					trait = mangled
-					trait = eunuch
-					trait = blinded
-					trait = incapable
+		effect = {
+			if = {
+				limit = {
+					society_rank == 4
+				}
+				reduce_doom_progress_medium_effect = yes
+				add_character_modifier = {
+					name = shallyan_prosperity_modifier
+					years = 10
 				}
 			}
-		}
-		effect = {
-			character_event = { id = DR_societies.7118 days = 0 }
-			detract_society_currency_medium_effect = yes
-			set_character_flag = shallya_healing_in_effect
-		}
-		ai_will_do = {
-			factor = 0.5
-			modifier = {
-				OR = {
-					is_maimed_trigger = yes
-					has_disease_trigger = yes
-					trait = mangled
-					trait = infirm
-					trait = incapable
-					trait = eunuch
+			else = {
+				reduce_doom_progress_tiny_effect = yes
+				add_character_modifier = {
+					name = shallyan_prosperity_modifier
+					years = 5
 				}
+			}
+			detract_society_currency_major_effect = yes
+			scaled_wealth = -0.25
+		}
+
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0.5
+				trait = ambitious
+			}
+			modifier = {
 				factor = 2
+				trait = kind
 			}
 		}
 	}
+}
+
+targeted_decisions = {
 
 	#Shallyans: Self-Sacrifice
 	shallyan_self_sacrifice = {
@@ -73,8 +69,8 @@ targeted_decisions = {
 
 		potential = {
 			has_dlc = "Mystics"
-			society_member_of = cult_of_shallya
 			society_rank == 4
+			society_member_of = cult_of_shallya
 		}
 		allow = {
 			society_currency = 10000
