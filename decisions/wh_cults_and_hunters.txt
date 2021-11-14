@@ -1,7 +1,34 @@
+decisions = {
+    send_aid_to_underground_cult = {
+        ai = no
+        ai_check_interval = 6000
+
+        potential = {
+            trait = underground_cult_member
+            NOT = {
+                has_character_modifier = underground_cult_member_gave_aid_modifier
+            }
+        }
+
+        allow = {
+            scaled_wealth = 0.5
+        }
+
+        effect = {
+            character_event = {
+                 id = wh_cults_and_hunters.102
+            }
+        }
+		ai_will_do = {
+			factor = 0
+		}
+    }
+}
+
 title_decisions = {
     start_county_witch_hunt = {
         ai = no
-        filter = realm
+        filter = sub_realm
         ai_target_filter = none
         ai_check_interval = 6000
 
@@ -10,6 +37,11 @@ title_decisions = {
                 has_law = witch_hunter_law_0
                 any_courtier_or_vassal = {
                     has_minor_title = title_court_witchhunter
+                }
+            }
+            NOT = {
+                any_courtier_or_vassal = {
+                    trait = on_witch_hunt
                 }
             }
         }
@@ -31,7 +63,48 @@ title_decisions = {
         }
 
         effect = {
-            #start witch hunt
+            hidden_tooltip = {
+                location = {
+                    save_event_target_as = clue_county
+                    if = {
+                        limit = {
+                            has_province_flag = cultic_activity
+                        }
+                        random_title = {
+                            limit = {
+                                has_title_flag = cult_is_influencing_@event_target:clue_county
+                            }
+                            holder_scope = {
+                                save_event_target_as = active_cult_leader
+                            }
+                        }
+                    }
+                }
+                FROM = {
+                    if = {
+                        limit = {
+                            has_law = witch_hunter_law_0
+                        }
+                        random_courtier_or_vassal = {
+                            limit = {
+                                has_job_title = job_spiritual
+                            }
+                            save_event_target_as = court_witchhunter
+                        }
+                    }
+                    else = {
+                        random_courtier_or_vassal = {
+                            limit = {
+                                has_minor_title = title_court_witchhunter
+                            }
+                            save_event_target_as = court_witchhunter
+                        }
+                    }
+                    character_event = {
+                        id = wh_cults_and_hunters.610
+                    }
+                }
+            }
         }
 		revoke_allowed = {
 			always = no

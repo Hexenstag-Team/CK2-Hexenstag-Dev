@@ -2681,6 +2681,61 @@ false_clues_appear_effect = {
     }
 }
 
+#cultist scope
+underground_cultist_provides_influence_effect = {
+    trigger_switch = {
+        on_trigger = tier
+        BARON = {
+            event_target:active_cult_leader ={
+                change_variable = {
+                    which = cultic_influence
+                    value = 2
+                }
+            }
+        }
+        COUNT = {
+            event_target:active_cult_leader ={
+                change_variable = {
+                    which = cultic_influence
+                    value = 3
+                }
+            }
+        }
+        DUKE = {
+            event_target:active_cult_leader ={
+                change_variable = {
+                    which = cultic_influence
+                    value = 5
+                }
+            }
+        }
+        KING = {
+            event_target:active_cult_leader ={
+                change_variable = {
+                    which = cultic_influence
+                    value = 8
+                }
+            }
+        }
+        EMPEROR = {
+            event_target:active_cult_leader ={
+                change_variable = {
+                    which = cultic_influence
+                    value = 12
+                }
+            }
+        }
+        fallback = {
+            event_target:active_cult_leader ={
+                change_variable = {
+                    which = cultic_influence
+                    value = 1
+                }
+            }
+        }
+    }
+}
+
 #potentially-corrupted character scope
 corrupted_by_underground_cult_effect = {
     if = {
@@ -2758,6 +2813,155 @@ witch_hunter_response_to_clues_effect = {
         else = {
             #tell ai=no about happenings but don't pester them to do anything
         }
+    }
+}
+
+#witch hunter employer scope
+witch_hunt_begins_effect = {
+    #Inquisitors are generally efficient
+    if = {
+        limit = {
+            event_target:court_witchhunter = {
+                OR = {
+                    has_character_flag = sigmarite_templar_witch_hunter
+                    has_character_flag = myrmidian_inquisitor_witch_hunter
+                    has_character_flag = ice_witch_witch_hunter
+                }
+            }
+        }
+        character_event = {
+            id = wh_cults_and_hunters.611
+            days = 210
+            random = 90
+        }
+    }
+    ##specialists are very effective in their specific domain##
+    #adventurers are best when there's no real cult activity
+    else_if = {
+        limit = {
+            event_target:clue_county = {
+                NOT = {
+                    has_province_flag = cultic_activity
+                }
+            }
+            event_target:court_witchhunter = {
+                OR = {
+                    has_character_flag = army_veteran_witch_hunter
+                    has_character_flag = bold_scholar_witch_hunter
+                    has_character_flag = crafty_spy_witch_hunter
+                }
+            }
+        }
+        character_event = {
+            id = wh_cults_and_hunters.611
+            days = 152
+            random = 60
+        }
+    }
+    #solkanites burn chaos
+    else_if = {
+        limit = {
+            event_target:court_witchhunter = {
+                has_character_flag = temple_of_solkan_witch_hunter
+            }
+            event_target:active_cult_leader = {
+                true_religion_group = chaos_gods_group
+            }
+        }
+        character_event = {
+            id = wh_cults_and_hunters.611
+            days = 152
+            random = 60
+        }
+    }
+    #order of the shroud burns necromantics
+    else_if = {
+        limit = {
+            event_target:court_witchhunter = {
+                has_character_flag = order_of_the_shroud_witch_hunter
+            }
+            event_target:active_cult_leader = {
+                true_religion_group = necromantic_group
+            }
+        }
+        character_event = {
+            id = wh_cults_and_hunters.611
+            days = 152
+            random = 60
+        }
+    }
+    #the emissary absolutely fries Chaos
+    else_if = {
+        limit = {
+            event_target:court_witchhunter = {
+                has_character_flag = emissary_of_order_witch_hunter
+            }
+            event_target:active_cult_leader = {
+                true_religion_group = chaos_gods_group
+            }
+        }
+        character_event = {
+            id = wh_cults_and_hunters.611
+            days = 60
+            random = 60
+        }
+    }
+    ##now that we've picked out hunter flags with special effects, trait only picks up hunters outside their specialty##
+    else_if = {
+        limit = {
+            event_target:court_witchhunter = {
+                trait = witch_hunter
+            }
+        }
+        character_event = {
+            id = wh_cults_and_hunters.611
+            days = 275
+            random = 180
+        }
+    }
+    #the else case usually means that the court priest is doing the witch hunting
+    else = {
+        character_event = {
+            id = wh_cults_and_hunters.611
+            days = 550
+            random = 360
+        }
+    }
+}
+
+#witch hunter employer scope
+hurry_witch_hunt_effect = {
+    #find event targets
+    random_courtier_or_vassal = {
+        limit = {
+            trait = on_witch_hunt
+        }
+        save_event_target_as = court_witchhunter
+    }
+    event_target:court_witchhunter = {
+        persistent_event_target:witch_hunt_county = {
+            save_event_target_as = clue_county
+        }
+    }
+    event_target:clue_county = {
+        if = {
+            limit = {
+                has_province_flag = cultic_activity
+            }
+            random_title = {
+                limit = {
+                    has_title_flag = cult_is_influencing_@event_target:clue_county
+                }
+                holder_scope = {
+                    save_event_target_as = active_cult_leader
+                }
+            }
+        }
+    }
+    character_event = {
+        id = wh_cults_and_hunters.611
+        days = 3
+        random = 3
     }
 }
 

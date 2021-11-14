@@ -133,8 +133,9 @@ title_court_witchhunter = {
 
 	allowed_to_grant = {
 		religion_group = old_world_group
-		NOT = { religion = old_faith }
 		NOR = {
+			religion = old_faith
+			has_law = witch_hunter_law_0
 			trait = incapable
 		 	trait = witch_hunter
 		}
