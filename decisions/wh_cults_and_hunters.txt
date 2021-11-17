@@ -70,12 +70,14 @@ title_decisions = {
                         limit = {
                             has_province_flag = cultic_activity
                         }
-                        random_title = {
-                            limit = {
-                                has_title_flag = cult_is_influencing_@event_target:clue_county
-                            }
-                            holder_scope = {
-                                save_event_target_as = active_cult_leader
+                        e_realm_of_undivided = {
+                            random_direct_de_jure_vassal_title = {
+                                limit = {
+                                    has_title_flag = cult_is_influencing_@event_target:clue_county
+                                }
+                                holder_scope = {
+                                    save_event_target_as = active_cult_leader
+                                }
                             }
                         }
                     }
@@ -102,6 +104,47 @@ title_decisions = {
                     }
                     character_event = {
                         id = wh_cults_and_hunters.610
+                    }
+                }
+            }
+        }
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+    join_underground_cult = {
+        ai = no
+        ai_target_filter = none
+        ai_check_interval = 6000
+
+        from_potential = {
+            has_game_rule = {
+                name = warhammer_cult_grace_period
+                value = hardmode
+            }
+            NOT = {
+                trait = underground_cult_member
+            }
+            religion_group = old_world_group
+            has_secret_religion = no
+        }
+        potential = {
+            has_title_flag = underground_cult
+        }
+        allow = { }
+        effect = {
+            holder_scope = {
+                FROM = {
+                    set_secret_religion = PREV
+                    add_trait = underground_cult_member
+                    set_character_flag = underground_cult_member
+                    save_persistent_event_target = {
+                        name = underground_cult_allegiance
+                        scope = ROOT
                     }
                 }
             }

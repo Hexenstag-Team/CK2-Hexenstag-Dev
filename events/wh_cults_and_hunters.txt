@@ -27,29 +27,31 @@ character_event = {
 
     immediate = {
         #find & prepare Cults
-        any_title = {
-            limit = {
-                has_title_flag = underground_cult
-            }
-            holder_scope = {
-                add_trait = underground_cult_member
-                set_character_flag = underground_cult_leader
-                save_persistent_event_target = {
-                    name = underground_cult_allegiance
-                    scope = primary_title
+        e_realm_of_undivided = {
+            any_de_jure_vassal_title = {
+                limit = {
+                    has_title_flag = underground_cult
                 }
-                if = {
-                    limit = {
-                        ai = yes
-                    }
-                    find_starting_cultic_activity_kingdom_target_effect = yes
+                holder_scope = {
+                    add_trait = underground_cult_member
+                    set_character_flag = underground_cult_leader
                     save_persistent_event_target = {
-                        name = cultic_activity_target
-                        scope = event_target:target_kingdom
+                        name = underground_cult_allegiance
+                        scope = primary_title
                     }
-                    #AI simulates pre-game activity
-                    character_event = {
-                        id = wh_cults_and_hunters.1
+                    if = {
+                        limit = {
+                            ai = yes
+                        }
+                        find_starting_cultic_activity_kingdom_target_effect = yes
+                        save_persistent_event_target = {
+                            name = cultic_activity_target
+                            scope = event_target:target_kingdom
+                        }
+                        #AI simulates pre-game activity
+                        character_event = {
+                            id = wh_cults_and_hunters.1
+                        }
                     }
                 }
             }
@@ -86,6 +88,19 @@ character_event = {
                         chance = 15
                         province_event = { id = wh_cults_and_hunters.2 }
                     }
+                }
+            }
+        }
+        any_player = {
+            if = {
+                limit = {
+                    has_game_rule = {
+                        name = warhammer_cult_grace_period
+                        value = hardmode
+                    }
+                }
+                narrative_event = {
+
                 }
             }
         }
@@ -149,6 +164,20 @@ province_event = {
         event_target:cult_identity = {
             clr_title_flag = cult_is_influencing_@event_target:clue_county
         }
+    }
+}
+
+narrative_event = {
+    id = wh_cults_and_hunters.4
+    desc = EVTDESC_wh_cults_and_hunters_4
+    title = EVTTITLE_wh_cults_and_hunters_4
+    picture = GFX_evt_chaos_chosen
+    portrait = e_realm_of_undivided
+
+    is_triggered_only = yes
+
+    option = {
+        name = OK
     }
 }
 
@@ -279,7 +308,6 @@ character_event = {
         name = EVTOPTD_wh_cults_and_hunters_102
         #no effect
     }
-
 }
 
 ## AI Cultic Tactical Pulse (on_yearly_pulse)
@@ -1087,7 +1115,7 @@ character_event = {
 character_event = {
     id = wh_cults_and_hunters.291
     desc = EVTDESC_wh_cults_and_hunters_291
-    picture = GFX_evt_whispers
+    picture = GFX_evt_plague_spreading
 
     is_triggered_only = yes
 
@@ -1328,24 +1356,131 @@ character_event = {
         }
     }
 
-    #run away!
+    #kindness
     option = {
-        name = OK
-        trigger = { ai = no }
-        #write ai = no narrative
+        name = EVTOPTA_wh_cults_and_hunters_291
+        trigger = {
+            ai = no
+            is_in_society = cult_of_shallya
+        }
+        tooltip_info_custom = available_because_member_of_cult_of_shallya
+        wealth = -10
+        change_society_currency = 10
     }
 
-    #fight!
+    #try to avoid
     option = {
-        name = OK
+        name = EVTOPTB_wh_cults_and_hunters_291
         trigger = { ai = no }
-        #refer to witch hunter
+        random = {
+            chance = 50
+            add_trait = craven
+        }
+        character_event = {
+            id = wh_cults_and_hunters.292
+            days = 7
+        }
+    }
+
+    #have guards remove them
+    option = {
+        name = EVTOPTC_wh_cults_and_hunters_291
+        trigger = { ai = no }
+        random = {
+            chance = 50
+            add_trait = cruel
+        }
+        character_event = {
+            id = wh_cults_and_hunters.292
+            days = 7
+        }
     }
 
     #fail out for AI, just in case
     option = {
         name = OK
         trigger = { ai = yes }
+    }
+}
+
+#reflect on encountering dirty peasant, worry about becoming unwell
+character_event = {
+    id = wh_cults_and_hunters.292
+    desc = EVTDESC_wh_cults_and_hunters_292
+    picture = GFX_evt_lunatic
+
+    is_triggered_only = yes
+
+    #trust your physician
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_292
+        add_trait = stressed
+        add_symptom_effect = yes
+        clr_character_flag = accosted_by_contagious_peasant
+        clr_character_flag = accosted_by_contagious_cultist
+    }
+
+    #go find the peasant
+    option = {
+        name = EVTOPTB_wh_cults_and_hunters_292
+        if = {
+            limit = {
+                has_character_flag = accosted_by_contagious_cultist
+            }
+            character_event = {
+                id = wh_cults_and_hunters.293
+                days = 3
+            }
+        }
+        else = {
+            character_event = {
+                id = wh_cults_and_hunters.294
+                days = 3
+            }
+        }
+    }
+}
+
+#find infectious cultist
+character_event = {
+    id = wh_cults_and_hunters.293
+    desc = EVTDESC_wh_cults_and_hunters_293
+    picture = GFX_evt_plague_doctor
+
+    is_triggered_only = yes
+
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_293
+        corrupted_by_underground_cult_effect = yes
+        clr_character_flag = accosted_by_contagious_cultist
+    }
+}
+
+#find leper
+character_event = {
+    id = wh_cults_and_hunters.294
+    desc = EVTDESC_wh_cults_and_hunters_294
+    picture = GFX_evt_plague_doctor
+
+    is_triggered_only = yes
+
+    #don't help them
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_294
+        clr_character_flag = accosted_by_contagious_peasant
+    }
+
+    #help them
+    option = {
+        name = EVTOPTB_wh_cults_and_hunters_294
+        trigger = {
+            NOT = {
+                trait = cruel
+            }
+        }
+        wealth = -10
+        add_trait = charitable
+        clr_character_flag = accosted_by_contagious_peasant
     }
 }
 
