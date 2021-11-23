@@ -2948,12 +2948,14 @@ hurry_witch_hunt_effect = {
             limit = {
                 has_province_flag = cultic_activity
             }
-            random_title = {
-                limit = {
-                    has_title_flag = cult_is_influencing_@event_target:clue_county
-                }
-                holder_scope = {
-                    save_event_target_as = active_cult_leader
+            e_realm_of_undivided = {
+                random_direct_de_jure_vassal_title = {
+                    limit = {
+                        has_title_flag = cult_is_influencing_@event_target:clue_county
+                    }
+                    holder_scope = {
+                        save_event_target_as = active_cult_leader
+                    }
                 }
             }
         }
@@ -3508,6 +3510,7 @@ found_guilty_by_witch_hunter_effect = {
     }
     #judgment by liege
     event_target:witch_hunter_employer = {
+        #TODO: slot in initial IF clause for player
         #the arrow of law compels you!
         if = {
             limit = {
@@ -3617,25 +3620,37 @@ found_guilty_by_any_liege_effect = {
         days = 2
     }
 }
+
 #accused character scope
 at_the_mercy_of_the_emissary_effect = {
     if = {
         limit = {
-            trait = underground_cult_member
+            ai = no
         }
-        #"tell me everything you know - everything!"
-        persistent_event_target:underground_cult_allegiance = {
-            holder_scope = {
-                subtract_variable = {
-                    which = cultic_influence
-                    value = 250
+        narrative_event = {
+            id = wh_cults_and_hunters.702
+            days = 2
+        }
+    }
+    else = {
+        if = {
+            limit = {
+                trait = underground_cult_member
+            }
+            #"tell me everything you know - everything!"
+            persistent_event_target:underground_cult_allegiance = {
+                holder_scope = {
+                    subtract_variable = {
+                        which = cultic_influence
+                        value = 250
+                    }
                 }
             }
         }
-    }
-    #this kills the accused courtier
-    death = {
-        death_reason = death_execution_burning
-        killer = event_target:court_witchhunter
+        #this kills the accused courtier
+        death = {
+            death_reason = death_execution_burning
+            killer = event_target:court_witchhunter
+        }
     }
 }

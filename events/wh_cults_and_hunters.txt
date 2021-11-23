@@ -167,6 +167,7 @@ province_event = {
     }
 }
 
+#informative event for players using their option to join an Underground Cult by decision
 narrative_event = {
     id = wh_cults_and_hunters.4
     desc = EVTDESC_wh_cults_and_hunters_4
@@ -310,7 +311,7 @@ character_event = {
     }
 }
 
-## AI Cultic Tactical Pulse (on_yearly_pulse)
+## AI Cult Tactical Pulse (on_yearly_pulse)
 character_event = {
     id = wh_cults_and_hunters.201
     hide_window = yes
@@ -533,8 +534,7 @@ character_event = {
 character_event = {
     id = wh_cults_and_hunters.251
     desc = EVTDESC_wh_cults_and_hunters_251
-    picture = GFX_evt_feast
-
+    picture = GFX_evt_pleasing_letter
     is_triggered_only = yes
 
     immediate = {
@@ -543,6 +543,14 @@ character_event = {
                 ai = yes
             }
             random_list = {
+                #did Shallyan things instead
+                100 = {
+                    trigger = {
+                        society_member_of = cult_of_shallya
+                    }
+                    change_society_currency = 10
+                    reduce_doom_progress_tiny_effect = yes
+                }
                 #Didn't go
                 30 = {
                     modifier = {
@@ -610,16 +618,41 @@ character_event = {
         }
     }
 
+    #do Shallyan things instead
     option = {
-        name = OK
-        trigger = { ai = no }
-        #write ai = no narrative
+        name = EVTOPC_wh_cults_and_hunters_251
+        trigger = {
+            ai = no
+            society_member_of = cult_of_shallya
+        }
+        tooltip_info_custom = available_because_member_of_cult_of_shallya
+        prestige = -50
+        change_society_currency = 10
+        reduce_doom_progress_tiny_effect = yes
+        clr_character_flag = invited_to_secret_rite
+        clr_character_flag = invited_to_cultic_rite
     }
 
+    #go to this interesting meeting
     option = {
-        name = NO
+        name = EVTOPTA_wh_cults_and_hunters_251
         trigger = { ai = no }
-        #refer to witch hunter
+        character_event = {
+            id = wh_cults_and_hunters.252
+            days = 7
+        }
+    }
+
+    #suspicious, don't go
+    option = {
+        name = EVTOPTB_wh_cults_and_hunters_251
+        trigger = { ai = no }
+        random = {
+            chance = 30
+            add_trait = paranoid
+        }
+        clr_character_flag = invited_to_secret_rite
+        clr_character_flag = invited_to_cultic_rite
     }
 
     #fail out for AI, just in case
@@ -629,11 +662,128 @@ character_event = {
     }
 }
 
+#arrive at the event
+character_event = {
+    id = wh_cults_and_hunters.252
+    desc = EVTDESC_wh_cults_and_hunters_252
+    picture = GFX_evt_elder_council
+
+    is_triggered_only = yes
+
+    #stay anyway
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_252
+        character_event = {
+            id = wh_cults_and_hunters.253
+            days = 1
+        }
+    }
+
+    #leave
+    option = {
+        name = EVTOPTB_wh_cults_and_hunters_252
+        random = {
+            chance = 70
+            add_trait = proud
+        }
+        clr_character_flag = invited_to_cultic_rite
+        clr_character_flag = invited_to_secret_rite
+        #potentially attendees at a cultic event might be attacked for doing this
+    }
+}
+
+#participate in the rite
+character_event = {
+    id = wh_cults_and_hunters.253
+    picture = GFX_evt_ritual_scroll
+    desc = {
+        trigger = {
+            NOT = {
+                has_character_flag = invited_to_cultic_rite
+            }
+        }
+        text = EVTDESC_wh_cults_and_hunters_253
+        picture = GFX_evt_ritual_scroll
+    }
+    desc = {
+        trigger = {
+            has_character_flag = invited_to_cultic_rite
+        }
+        text = EVTDESC_wh_cults_and_hunters_253_dark_secrets
+        picture = GFX_evt_chaos_magic
+    }
+
+    is_triggered_only = yes
+
+    #secret Underground Cult rite, corrupted!
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_253
+        trigger = {
+            has_character_flag = invited_to_cultic_rite
+        }
+        corrupted_by_underground_cult_effect = yes
+    }
+
+    #secret rite, might learn something, might be a victim of disinformation
+    option = {
+        name = EVTOPTB_wh_cults_and_hunters_253
+        trigger = {
+            has_character_flag = invited_to_secret_rite
+        }
+        random_list = {
+            25 = {
+                modifier = {
+                    factor = 1.2
+                    is_smart_trigger = yes
+                }
+                modifier = {
+                    factor = 1.1
+                    trait = erudite
+                }
+                modifier = {
+                    factor = 1.1
+                    trait = scholar
+                }
+                change_learning = 2
+            }
+            50 = {
+                modifier = {
+                    factor = 1.5
+                    trait = cynical
+                }
+            }
+            25 = {
+                modifier = {
+                    factor = 1.2
+                    is_dumb_trigger = yes
+                }
+                change_learning = -1
+            }
+        }
+    }
+
+    #how did you get here?
+    option = {
+        name = EVTOPTC_wh_cults_and_hunters_253
+        trigger = {
+            NOR = {
+                has_character_flag = invited_to_cultic_rite
+                has_character_flag = invited_to_secret_rite
+            }
+        }
+    }
+
+    after = {
+        clr_character_flag = invited_to_cultic_rite
+        clr_character_flag = invited_to_secret_rite
+    }
+}
+
 #invited to secret party
 character_event = {
     id = wh_cults_and_hunters.261
     desc = EVTDESC_wh_cults_and_hunters_261
-    picture = GFX_evt_feast
+    picture = GFX_evt_pleasing_letter
 
     is_triggered_only = yes
 
@@ -643,6 +793,14 @@ character_event = {
                 ai = yes
             }
             random_list = {
+                #did Shallyan things instead
+                100 = {
+                    trigger = {
+                        society_member_of = cult_of_shallya
+                    }
+                    change_society_currency = 10
+                    reduce_doom_progress_tiny_effect = yes
+                }
                 #Didn't go
                 30 = {
                     modifier = {
@@ -711,16 +869,41 @@ character_event = {
         }
     }
 
+    #do Shallyan things instead
     option = {
-        name = OK
-        trigger = { ai = no }
-        #write ai = no narrative
+        name = EVTOPTA_wh_cults_and_hunters_261
+        trigger = {
+            ai = no
+            society_member_of = cult_of_shallya
+        }
+        tooltip_info_custom = available_because_member_of_cult_of_shallya
+        prestige = -50
+        change_society_currency = 10
+        reduce_doom_progress_tiny_effect = yes
+        clr_character_flag = invited_to_cultic_party
+        clr_character_flag = invited_to_secret_party
     }
 
+    #go to the party
     option = {
-        name = NO
+        name = EVTOPTB_wh_cults_and_hunters_261
         trigger = { ai = no }
-        #refer to witch hunter
+        character_event = {
+            id = wh_cults_and_hunters.262
+            days = 7
+        }
+    }
+
+    #dither and stay home
+    option = {
+        name = EVTOPTC_wh_cults_and_hunters_261
+        trigger = { ai = no }
+        random = {
+            chance = 30
+            add_trait = shy
+        }
+        clr_character_flag = invited_to_cultic_party
+        clr_character_flag = invited_to_secret_party
     }
 
     #fail out for AI, just in case
@@ -730,11 +913,119 @@ character_event = {
     }
 }
 
+#arrive at the party
+character_event = {
+    id = wh_cults_and_hunters.262
+    desc = EVTDESC_wh_cults_and_hunters_262
+    picture = GFX_evt_feast
+
+    is_triggered_only = yes
+
+    #stay late
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_262
+        character_event = {
+            id = wh_cults_and_hunters.263
+            days = 1
+        }
+    }
+
+    #go home early
+    option = {
+        name = EVTOPTB_wh_cults_and_hunters_262
+        random = {
+            chance = 70
+            add_trait = temperate
+        }
+        clr_character_flag = invited_to_cultic_party
+        clr_character_flag = invited_to_secret_party
+    }
+}
+
+#late at the party
+character_event = {
+    id = wh_cults_and_hunters.263
+    picture = GFX_evt_feast
+    desc = {
+        trigger = {
+            NOT = {
+                has_character_flag = invited_to_cultic_rite
+            }
+        }
+        text = EVTDESC_wh_cults_and_hunters_263
+        picture = GFX_evt_feast
+    }
+    desc = {
+        trigger = {
+            has_character_flag = invited_to_cultic_rite
+        }
+        text = EVTDESC_wh_cults_and_hunters_263_dangerous_excess
+        picture = GFX_evt_slaanesh_feast
+    }
+
+    is_triggered_only = yes
+
+    #secret Underground Cult party, corrupted!
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_263
+        trigger = {
+            has_character_flag = invited_to_cultic_party
+        }
+        corrupted_by_underground_cult_effect = yes
+    }
+
+    #secret party, might become better at socializing, might become too cliquish
+    option = {
+        name = EVTOPTB_wh_cults_and_hunters_263
+        trigger = {
+            has_character_flag = invited_to_secret_party
+        }
+        random_list = {
+            25 = {
+                modifier = {
+                    factor = 1.1
+                    trait = gregarious
+                }
+                modifier = {
+                    factor = 1.1
+                    trait = socializer
+                }
+                change_diplomacy = 2
+            }
+            50 = {
+            }
+            25 = {
+                modifier = {
+                    factor = 1.2
+                    trait = shy
+                }
+                change_diplomacy = -1
+            }
+        }
+    }
+
+    #how did you get here?
+    option = {
+        name = EVTOPTC_wh_cults_and_hunters_263
+        trigger = {
+            NOR = {
+                has_character_flag = invited_to_cultic_party
+                has_character_flag = invited_to_secret_party
+            }
+        }
+    }
+
+    after = {
+        clr_character_flag = invited_to_cultic_party
+        clr_character_flag = invited_to_secret_party
+    }
+}
+
 #stalked by killer
 character_event = {
     id = wh_cults_and_hunters.271
     desc = EVTDESC_wh_cults_and_hunters_271
-    picture = GFX_evt_whispers
+    picture = GFX_evt_outside_tavern_hf
 
     is_triggered_only = yes
 
@@ -800,7 +1091,7 @@ character_event = {
                         has_character_flag = stalked_by_cultic_killer
                     }
                     death = {
-                        death_reason = death_murder_unknown_butchered
+                        death_reason = death_sacrificed
                     }
                     #notify witch hunter
                 }
@@ -883,18 +1174,132 @@ character_event = {
         }
     }
 
+    #Shallya can't help you now
+
     #run away!
     option = {
-        name = OK
+        name = EVTOPTA_wh_cults_and_hunters_271
         trigger = { ai = no }
-        #write ai = no narrative
+        random = {
+            chance = 70
+            add_trait = craven
+        }
+        random_list = {
+            #escape!
+            40 = {
+                mult_modifier = {
+                    factor = 0.1
+                    is_maimed_trigger = yes
+                }
+                mult_modifier = {
+                    factor = 1.1
+                    trait = craven
+                }
+                mult_modifier = {
+                    factor = 1.1
+                    intrigue > 10
+                }
+                mult_modifier = {
+                    factor = 1.2
+                    intrigue > 15
+                }
+                mult_modifier = {
+                    factor = 1.3
+                    intrigue > 20
+                }
+                mult_modifier = {
+                    factor = 1.1
+                    is_smart_trigger = yes
+                }
+                custom_tooltip = {
+                    text = escape_from_abductors_tt
+                }
+            }
+            #caught and wounded
+            20 = {
+                add_trait = wounded
+                custom_tooltip = {
+                    text = escape_from_abductors_tt
+                }
+            }
+            #caught and maimed
+            20 = {
+                add_maimed_trait_effect = yes
+            }
+            #killed!
+            20 = {
+                if = {
+                    limit = {
+                        has_character_flag = stalked_by_cultic_killer
+                    }
+                    add_doom_progress_minor_effect = yes
+                }
+                death = {
+                    death_reason = death_murder_unknown_butchered
+                }
+            }
+        }
+        clr_character_flag = stalked_by_cultic_killer
+        clr_character_flag = stalked_by_secret_killer
     }
 
     #fight!
     option = {
-        name = OK
+        name = EVTOPTB_wh_cults_and_hunters_271
         trigger = { ai = no }
-        #refer to witch hunter
+        hidden_effect = {
+            random_list = {
+                #wounded while resisting
+                60 = {
+                    character_event = {
+                        id = wh_cults_and_hunters.272
+                        days = 1
+                    }
+                }
+                #killed while resisting
+                20 = {
+                    character_event = {
+                        id = wh_cults_and_hunters.273
+                        days = 1
+                    }
+                }
+                #killed the killer
+                20 = {
+                    mult_modifier = {
+                        factor = 1.5
+                        is_smart_trigger = yes
+                    }
+                    mult_modifier = {
+                        factor = 1.5
+                        is_strong_trigger = yes
+                    }
+                    mult_modifier = {
+                        factor = 1.1
+                        combat_rating > 20
+                    }
+                    mult_modifier = {
+                        factor = 1.3
+                        combat_rating > 40
+                    }
+                    mult_modifier = {
+                        factor = 1.5
+                        combat_rating > 60
+                    }
+                    mult_modifier = {
+                        factor = 1.8
+                        combat_rating > 80
+                    }
+                    mult_modifier = {
+                        factor = 2
+                        combat_rating > 100
+                    }
+                    character_event = {
+                        id = wh_cults_and_hunters.274
+                        days = 1
+                    }
+                }
+            }
+        }
     }
 
     #fail out for AI, just in case
@@ -903,11 +1308,108 @@ character_event = {
         trigger = { ai = yes }
     }
 }
+
+#wounded but held off killer, rescued by guards
+character_event = {
+    id = wh_cults_and_hunters.272
+    picture = GFX_evt_bloody_knife_hf
+    desc = EVTDESC_wh_cults_and_hunters_272
+    is_triggered_only = yes
+
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_272
+        random_list = {
+            70 = {
+                add_trait = wounded
+            }
+            30 = {
+                add_maimed_trait_effect = yes
+            }
+        }
+        add_one_duel_experience_modifier = yes
+        clr_character_flag = stalked_by_cultic_killer
+        clr_character_flag = stalked_by_secret_killer
+    }
+}
+
+#slain!
+character_event = {
+    id = wh_cults_and_hunters.273
+    picture = GFX_evt_cornered_duel_hf
+    desc = EVTDESC_wh_cults_and_hunters_273
+    is_triggered_only = yes
+
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_273
+        if = {
+            limit = {
+                has_character_flag = stalked_by_cultic_killer
+            }
+            death = {
+                death_reason = death_sacrificed
+            }
+        }
+        else = {
+            death = {
+                death_reason = death_murder
+            }
+        }
+        #no need to clear flags here
+    }
+}
+
+#killed the killer
+character_event = {
+    id = wh_cults_and_hunters.274
+    picture = GFX_evt_slit_throat_hf
+    desc = {
+        trigger = {
+            NOT = {
+                has_character_flag = stalked_by_cultic_killer
+            }
+        }
+        picture = GFX_evt_cornered_duel_hf
+        text = EVTDESC_wh_cults_and_hunters_274
+    }
+    desc = {
+        trigger = {
+            has_character_flag = stalked_by_cultic_killer
+        }
+        text = EVTDESC_wh_cults_and_hunters_274_blood_addiction
+    }
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOT = {
+                has_character_flag = stalked_by_cultic_killer
+            }
+        }
+        name = EVTOPTA_wh_cults_and_hunters_274
+        add_five_duel_experience_modifier = yes
+    }
+
+    #killed Khornate killer, the Lord of Murder is well-pleased
+    option = {
+        trigger = {
+            has_character_flag = stalked_by_cultic_killer
+        }
+        name = EVTOPTB_wh_cults_and_hunters_274
+        add_five_duel_experience_modifier = yes
+        corrupted_by_underground_cult_effect = yes
+    }
+
+    after = {
+        clr_character_flag = stalked_by_cultic_killer
+        clr_character_flag = stalked_by_secret_killer
+    }
+}
+
 #victim of kidnapping attempt (possible brainwashing)
 character_event = {
     id = wh_cults_and_hunters.281
     desc = EVTDESC_wh_cults_and_hunters_281
-    picture = GFX_evt_whispers
+    picture = GFX_evt_outside_tavern_hf
 
     is_triggered_only = yes
 
@@ -1092,22 +1594,247 @@ character_event = {
 
     #run away!
     option = {
-        name = OK
+        name = EVTOPTA_wh_cults_and_hunters_281
         trigger = { ai = no }
-        #write ai = no narrative
+        random = {
+            chance = 70
+            add_trait = craven
+        }
+        random_list = {
+            #escape!
+            40 = {
+                mult_modifier = {
+                    factor = 0.1
+                    is_maimed_trigger = yes
+                }
+                mult_modifier = {
+                    factor = 1.1
+                    trait = craven
+                }
+                mult_modifier = {
+                    factor = 1.1
+                    intrigue > 10
+                }
+                mult_modifier = {
+                    factor = 1.2
+                    intrigue > 15
+                }
+                mult_modifier = {
+                    factor = 1.3
+                    intrigue > 20
+                }
+                mult_modifier = {
+                    factor = 1.1
+                    is_smart_trigger = yes
+                }
+                custom_tooltip = {
+                    text = escape_from_abductors_tt
+                    clr_character_flag = stalked_by_criminal_kidnappers
+                    clr_character_flag = stalked_by_cultic_kidnappers
+                }
+            }
+            #escape but wounded
+            20 = {
+                custom_tooltip = {
+                    text = escape_from_abductors_tt
+                    clr_character_flag = stalked_by_criminal_kidnappers
+                    clr_character_flag = stalked_by_cultic_kidnappers
+                }
+                add_trait = wounded
+            }
+            #caught
+            20 = {
+                custom_tooltip = {
+                    text = captured_by_abductors_tt
+                    character_event = {
+                        id = wh_cults_and_hunters.282
+                        days = 1
+                    }
+                }
+            }
+            #wounded & caught
+            20 = {
+                custom_tooltip = {
+                    text = captured_by_abductors_tt
+                }
+                add_trait = wounded
+                character_event = {
+                    id = wh_cults_and_hunters.282
+                }
+            }
+        }
     }
 
     #fight!
     option = {
-        name = OK
+        name = EVTOPTB_wh_cults_and_hunters_281
         trigger = { ai = no }
-        #refer to witch hunter
+        random_list = {
+            #captured
+            20 = {
+                character_event = {
+                    id = wh_cults_and_hunters.282
+                    days = 1
+                    tooltip = captured_by_abductors_tt
+                }
+            }
+            #wounded & captured
+            30 = {
+                add_trait = wounded
+                character_event = {
+                    id = wh_cults_and_hunters.282
+                    days = 1
+                    tooltip = captured_by_abductors_tt
+                }
+            }
+            #killed while resisting
+            10 = {
+                character_event = {
+                    id = wh_cults_and_hunters.283
+                    days = 1
+                    tooltip = killed_by_abductors_tt
+                }
+            }
+            10 = {
+                add_trait = wounded
+                character_event = {
+                    id = wh_cults_and_hunters.284
+                    days = 1
+                    tooltip = fought_off_abductors_tt
+                }
+            }
+            #fought them off
+            30 = {
+                mult_modifier = {
+                    factor = 1.5
+                    is_smart_trigger = yes
+                }
+                mult_modifier = {
+                    factor = 1.5
+                    is_strong_trigger = yes
+                }
+                mult_modifier = {
+                    factor = 1.1
+                    combat_rating > 20
+                }
+                mult_modifier = {
+                    factor = 1.3
+                    combat_rating > 40
+                }
+                mult_modifier = {
+                    factor = 1.5
+                    combat_rating > 60
+                }
+                mult_modifier = {
+                    factor = 1.8
+                    combat_rating > 80
+                }
+                mult_modifier = {
+                    factor = 2
+                    combat_rating > 100
+                }
+                character_event = {
+                    id = wh_cults_and_hunters.284
+                    days = 1
+                    tooltip = fought_off_abductors_tt
+                }
+            }
+        }
     }
 
     #fail out for AI, just in case
     option = {
         name = OK
         trigger = { ai = yes }
+    }
+}
+
+#captured
+character_event = {
+    id = wh_cults_and_hunters.282
+    picture = GFX_evt_prisoner_hf
+    desc = {
+        trigger = {
+            NOT = {
+                has_character_flag = stalked_by_cultic_kidnappers
+            }
+        }
+        text = EVTDESC_wh_cults_and_hunters_282
+    }
+    desc = {
+        trigger = {
+            has_character_flag = stalked_by_cultic_kidnappers
+        }
+        text = EVTDESC_wh_cults_and_hunters_282_cult_captive
+    }
+
+    is_triggered_only = yes
+
+    #do your worst!
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_282
+        trigger = {
+            NOT = {
+                has_character_flag = stalked_by_cultic_kidnappers
+            }
+        }
+        death = {
+            death_reason = death_murder_unknown_butchered
+        }
+    }
+
+    #pay up
+    option = {
+        name = EVTOPTB_wh_cults_and_hunters_282
+        trigger = {
+            NOT = {
+                has_character_flag = stalked_by_cultic_kidnappers
+            }
+        }
+        scaled_wealth = -1
+        prestige = -100
+    }
+
+    #get with the program
+    option = {
+        name = EVTOPTC_wh_cults_and_hunters_282
+        trigger = {
+            has_character_flag = stalked_by_cultic_kidnappers
+        }
+        corrupted_by_underground_cult_effect = yes
+    }
+
+    after = {
+        clr_character_flag = stalked_by_criminal_kidnappers
+        clr_character_flag = stalked_by_cultic_kidnappers
+    }
+}
+
+#killed
+character_event = {
+    id = wh_cults_and_hunters.283
+    picture = GFX_evt_dead_body_hf
+    desc = EVTDESC_wh_cults_and_hunters_283
+
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_283
+        death = {
+            death_reason = death_murder
+        }
+    }
+}
+
+#fought off kidnappers
+character_event = {
+    id = wh_cults_and_hunters.284
+    picture = GFX_evt_cornered_duel_hf
+    desc = EVTDESC_wh_cults_and_hunters_284
+
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_284
+        add_five_duel_experience_modifier = yes
+        clr_character_flag = stalked_by_criminal_kidnappers
+        clr_character_flag = stalked_by_cultic_kidnappers
     }
 }
 
@@ -1157,7 +1884,7 @@ character_event = {
                     }
                     modifier = {
                         factor = 0.5
-                        is_in_society = cult_of_shallya
+                        society_member_of = cult_of_shallya
                     }
                     #well-guarded
                     modifier = {
@@ -1361,11 +2088,12 @@ character_event = {
         name = EVTOPTA_wh_cults_and_hunters_291
         trigger = {
             ai = no
-            is_in_society = cult_of_shallya
+            society_member_of = cult_of_shallya
         }
         tooltip_info_custom = available_because_member_of_cult_of_shallya
         wealth = -10
         change_society_currency = 10
+        reduce_doom_progress_tiny_effect = yes
     }
 
     #try to avoid
@@ -2558,124 +3286,251 @@ character_event = {
     desc = EVTDESC_wh_cults_and_hunters_701
     picture = GFX_evt_into_the_dungeon
 
-    hide_window = yes
     is_triggered_only = yes
 
+    prisoner = yes
+
     immediate = {
-        random_list = {
-            #stress
-            50 = {
-                modifier = {
-                    factor = 0.5
-                    event_target:court_witchhunter = {
-                        OR = {
-                            trait = cruel
-                            trait = impaler
+        if = {
+            limit = {
+                ai = yes
+            }
+            random_list = {
+                #stress
+                50 = {
+                    modifier = {
+                        factor = 0.5
+                        event_target:court_witchhunter = {
+                            OR = {
+                                trait = cruel
+                                trait = impaler
+                            }
                         }
                     }
-                }
-                prisoner_humiliation_effect = yes
-                character_event = {
-                    id = wh_cults_and_hunters.701
-                    days = 10
-                }
-            }
-            #physical damage
-            20 = {
-                modifier = {
-                    factor = 0.5
-                    event_target:court_witchhunter = {
-                        has_character_flag = order_of_the_sword_and_scale_witch_hunter
+                    prisoner_humiliation_effect = yes
+                    character_event = {
+                        id = wh_cults_and_hunters.701
+                        days = 10
                     }
                 }
-                modifier = {
-                    factor = 2
-                    event_target:court_witchhunter = {
-                        OR = {
-                            trait = cruel
-                            trait = impaler
+                #physical damage
+                20 = {
+                    modifier = {
+                        factor = 0.5
+                        event_target:court_witchhunter = {
+                            has_character_flag = order_of_the_sword_and_scale_witch_hunter
                         }
                     }
-                }
-                prisoner_mutilate_effect = yes
-                random = {
-                    chance = 25
-                    add_maimed_trait_effect = yes
-                }
-                character_event = {
-                    id = wh_cults_and_hunters.701
-                    days = 10
-                }
-            }
-            #psychological damage
-            10 = {
-                modifier = {
-                    factor = 1.5
-                    event_target:court_witchhunter = {
-                        OR = {
-                            trait = cruel
-                            trait = impaler
+                    modifier = {
+                        factor = 2
+                        event_target:court_witchhunter = {
+                            OR = {
+                                trait = cruel
+                                trait = impaler
+                            }
                         }
                     }
-                }
-                prisoner_torture_effect = yes
-                character_event = {
-                    id = wh_cults_and_hunters.701
-                    days = 10
-                }
-            }
-            #cultist breaks
-            20 = {
-                trigger = {
-                    trait = underground_cult_member
-                }
-                modifier = {
-                    factor = 0.2
-                    event_target:court_witchhunter = {
-                        NOT = { trait = witch_hunter }
+                    prisoner_mutilate_effect = yes
+                    random = {
+                        chance = 25
+                        add_maimed_trait_effect = yes
+                    }
+                    character_event = {
+                        id = wh_cults_and_hunters.701
+                        days = 10
                     }
                 }
-                modifier = {
-                    factor = 1.1
-                    health < 4
-                }
-                modifier = {
-                    factor = 1.1
-                    health < 3
-                }
-                modifier = {
-                    factor = 1.2
-                    health < 2
-                }
-                modifier = {
-                    factor = 1.5
-                    trait = stressed
-                }
-                modifier = {
-                    factor = 2
-                    trait = craven
-                }
-                modifier = {
-                    factor = 0.2
-                    trait = brave
-                }
-                modifier = {
-                    factor = 0.5
-                    trait = stubborn
-                }
-                persistent_event_target:underground_cult_allegiance = {
-                    holder_scope = {
-                        subtract_variable = {
-                            which = cultic_influence
-                            value = 100
+                #psychological damage
+                10 = {
+                    modifier = {
+                        factor = 1.5
+                        event_target:court_witchhunter = {
+                            OR = {
+                                trait = cruel
+                                trait = impaler
+                            }
                         }
                     }
+                    prisoner_torture_effect = yes
+                    character_event = {
+                        id = wh_cults_and_hunters.701
+                        days = 10
+                    }
                 }
-                death = {
-                    death_reason = death_execution_burning
-                    killer = event_target:witch_hunter_employer
+                #cultist breaks
+                20 = {
+                    trigger = {
+                        trait = underground_cult_member
+                    }
+                    modifier = {
+                        factor = 0.2
+                        event_target:court_witchhunter = {
+                            NOT = { trait = witch_hunter }
+                        }
+                    }
+                    modifier = {
+                        factor = 1.1
+                        health < 4
+                    }
+                    modifier = {
+                        factor = 1.1
+                        health < 3
+                    }
+                    modifier = {
+                        factor = 1.2
+                        health < 2
+                    }
+                    modifier = {
+                        factor = 1.5
+                        trait = stressed
+                    }
+                    modifier = {
+                        factor = 2
+                        trait = craven
+                    }
+                    modifier = {
+                        factor = 0.2
+                        trait = brave
+                    }
+                    modifier = {
+                        factor = 0.5
+                        trait = stubborn
+                    }
+                    persistent_event_target:underground_cult_allegiance = {
+                        holder_scope = {
+                            subtract_variable = {
+                                which = cultic_influence
+                                value = 100
+                            }
+                        }
+                    }
+                    death = {
+                        death_reason = death_execution_burning
+                        killer = event_target:witch_hunter_employer
+                    }
                 }
             }
+        }
+    }
+
+    #tell them your secrets
+    option = {
+        trigger = {
+            trait = underground_cult_member
+        }
+        name = EVTOPTA_wh_cults_and_hunters_701
+        persistent_event_target:underground_cult_allegiance = {
+            holder_scope = {
+                subtract_variable = {
+                    which = cultic_influence
+                    value = 150 #we assume that ai=no knows more than the average cultist
+                }
+            }
+        }
+        death = {
+            death_reason = death_execution_burning
+            killer = event_target:witch_hunter_employer
+        }
+    }
+
+    #Schultz it
+    option = {
+        name = EVTOPTB_wh_cults_and_hunters_701
+        prestige = -100
+        #stress
+        50 = {
+            modifier = {
+                factor = 0.5
+                event_target:court_witchhunter = {
+                    OR = {
+                        trait = cruel
+                        trait = impaler
+                    }
+                }
+            }
+            prisoner_humiliation_effect = yes
+            character_event = {
+                id = wh_cults_and_hunters.701
+                days = 10
+            }
+        }
+        #physical damage
+        20 = {
+            modifier = {
+                factor = 0.5
+                event_target:court_witchhunter = {
+                    has_character_flag = order_of_the_sword_and_scale_witch_hunter
+                }
+            }
+            modifier = {
+                factor = 2
+                event_target:court_witchhunter = {
+                    OR = {
+                        trait = cruel
+                        trait = impaler
+                    }
+                }
+            }
+            prisoner_mutilate_effect = yes
+            random = {
+                chance = 25
+                add_maimed_trait_effect = yes
+            }
+            character_event = {
+                id = wh_cults_and_hunters.701
+                days = 10
+            }
+        }
+        #psychological damage
+        10 = {
+            modifier = {
+                factor = 1.5
+                event_target:court_witchhunter = {
+                    OR = {
+                        trait = cruel
+                        trait = impaler
+                    }
+                }
+            }
+            prisoner_torture_effect = yes
+            character_event = {
+                id = wh_cults_and_hunters.701
+                days = 10
+            }
+        }
+    }
+}
+
+#At the mercy of the emissary
+narrative_event = {
+    id = wh_cults_and_hunters.702
+    title = EVTTITLE_wh_cults_and_hunters_702
+    desc = EVTDESC_wh_cults_and_hunters_702
+    picture = GFX_evt_mage_lore_light
+
+    is_triggered_only = yes
+
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_702
+        tooltip_info_custom = required_because_arrow_of_law
+        if = {
+            limit = {
+                trait = underground_cult_member
+            }
+            #"tell me everything you know - everything!"
+            persistent_event_target:underground_cult_allegiance = {
+                holder_scope = {
+                    subtract_variable = {
+                        which = cultic_influence
+                        value = 400
+                    }
+                }
+            }
+        }
+        #this kills the accused courtier
+        death = {
+            death_reason = death_execution_burning
+            killer = event_target:court_witchhunter
         }
     }
 }
