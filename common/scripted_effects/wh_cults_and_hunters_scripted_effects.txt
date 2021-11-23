@@ -3510,9 +3510,16 @@ found_guilty_by_witch_hunter_effect = {
     }
     #judgment by liege
     event_target:witch_hunter_employer = {
-        #TODO: slot in initial IF clause for player
-        #the arrow of law compels you!
         if = {
+            limit = {
+                ai = no
+            }
+            character_event = {
+                id = wh_cults_and_hunters.700
+            }
+        }
+        #the arrow of law compels you!
+        else_if = {
             limit = {
                 event_target:court_witchhunter = {
                     has_character_flag = emissary_of_order_witch_hunter

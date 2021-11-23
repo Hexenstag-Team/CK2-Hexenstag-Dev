@@ -177,6 +177,16 @@ narrative_event = {
 
     is_triggered_only = yes
 
+    ai = no
+
+    trigger = {
+        is_save_game = no
+        has_game_rule = {
+            name = warhammer_cult_grace_period
+            value = hardmode
+        }
+    }
+
     option = {
         name = OK
     }
@@ -2249,7 +2259,7 @@ province_event = {
                         culture_group = albion_group
                         culture_group = bretonnian_group
                         culture_group = estalian_group
-                        culture_group = halfling_group
+                        culture_group = halfling_old_world
                         culture_group = hung_group
                         culture_group = imperial_group
                         culture_group = kurgan_group
@@ -3280,6 +3290,60 @@ character_event = {
     }
 }
 
+#judging accused cultist
+character_event = {
+    id = wh_cults_and_hunters.700
+    desc = EVTDESC_wh_cults_and_hunters_700
+    picture = GFX_evt_catching_heretic
+
+    is_triggered_only = yes
+
+    #guilty!
+    option = {
+        trigger = {
+            event_target:court_witchhunter = {
+                NOT = {
+                    has_character_flag = emissary_of_order_witch_hunter
+                }
+            }
+        }
+        name = EVTOPTA_wh_cults_and_hunters_700
+        event_target:courtier_accused_by_witch_hunter = {
+            found_guilty_by_any_liege_effect = yes
+        }
+    }
+
+    #not guilty
+    option = {
+        trigger = {
+            event_target:court_witchhunter = {
+                NOT = {
+                    has_character_flag = emissary_of_order_witch_hunter
+                }
+            }
+        }
+        name = EVTOPTB_wh_cults_and_hunters_700
+        reverse_opinion = {
+            modifier = opinion_disappointed
+            who = event_target:court_witchhunter
+            years = 5
+        }
+    }
+
+    option = {
+        trigger = {
+            event_target:court_witchhunter = {
+                has_character_flag = emissary_of_order_witch_hunter
+            }
+        }
+        name = EVTOPTC_wh_cults_and_hunters_700
+        tooltip_info_custom = required_because_arrow_of_law
+        event_target:courtier_accused_by_witch_hunter = {
+            at_the_mercy_of_the_emissary_effect = yes
+        }
+    }
+}
+
 #Captured "cultist" events
 character_event = {
     id = wh_cults_and_hunters.701
@@ -3531,6 +3595,33 @@ narrative_event = {
         death = {
             death_reason = death_execution_burning
             killer = event_target:court_witchhunter
+        }
+    }
+}
+
+#Emergency measures repeal?
+character_event = {
+    id = wh_cults_and_hunters.800
+    desc = EVTDESC_wh_cults_and_hunters_800
+    picture = GFX_evt_council_quarrelling
+
+    is_triggered_only = yes
+
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_800
+        revoke_law = witch_hunter_law_3
+        add_law = {
+            law = witch_hunter_law_2
+            cooldown = no
+        }
+    }
+
+    option = {
+        name = EVTOPTB_wh_cults_and_hunters_800
+        prestige = -500
+        character_event = {
+            id = wh_cults_and_hunters.800
+            days = 730
         }
     }
 }
