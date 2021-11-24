@@ -2757,15 +2757,15 @@ corrupted_by_underground_cult_effect = {
 witch_hunter_response_to_clues_effect = {
     holder_scope = {
         if = {
+            limit = { ai = no }
+            #notify player that there's trouble but their hunter's busy
+        }
+        else_if = {
             limit = {
                 any_courtier_or_vassal = {
                     has_minor_title = title_court_witchhunter
                     trait = on_witch_hunt
                 }
-            }
-            if = {
-                limit = { ai = no }
-                #notify player that there's trouble but their hunter's busy
             }
         }
         else_if = {

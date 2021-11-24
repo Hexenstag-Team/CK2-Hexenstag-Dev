@@ -21,6 +21,7 @@ character_event = {
             }
         }
         FROM = {
+            in_revolt = no
             NOR = {
                 culture_group = tilean_group
                 religion_group = old_world_group
@@ -61,23 +62,19 @@ character_event = {
 
     option = {
         name = EVTOPTA_wh_tilea_1
-        e_tilea = {
-            any_de_jure_vassal_title = {
-                limit = {
-                    holder_scope = {
-                        independent = yes
-                        culture_group = tilean_group
-                        religion_group = old_world_group
-                        war = no
-                    }
+        any_independent_ruler = {
+            limit = {
+                capital_holding = {
+                    de_jure_liege_or_above e_tilea
                 }
-                holder_scope = {
-                    character_event = {
-                        id = wh_tilea.2
-                        days = 3
-                        random = 3
-                    }
-                }
+                culture_group = tilean_group
+                religion_group = old_world_group
+                war = no
+            }
+            character_event = {
+                id = wh_tilea.2
+                days = 3
+                random = 3
             }
         }
     }
