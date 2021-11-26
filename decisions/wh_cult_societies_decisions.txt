@@ -57,7 +57,38 @@ society_decisions = {
 	}
 }
 
-targeted_decisions = {
+targetted_decisions = {
+
+	#Shallyans: Commit mutant to sanitorium
+	shallyan_commit_to_sanitorium = {
+		ai = no #ai does this by event
+		filter = home_court_including_me
+		ai_target_filter = none
+
+		from_potential = {
+			has_dlc = "Mystics"
+			society_member_of = cult_of_shallya
+			NOT = {
+				has_character_modifier = shallyan_sorrow_modifier
+			}
+		}
+		potential = {
+			is_mutated_trigger = yes
+		}
+		allow = {
+			FROM = {
+				wealth = 50
+			}
+		}
+		effect = {
+			save_event_target_as = sanitorium_candidate
+			FROM = {
+				character_event = {
+					id = wh_cult_of_shallya_society.201
+				}
+			}
+		}
+	}
 
 	#Shallyans: Self-Sacrifice
 	shallyan_self_sacrifice = {

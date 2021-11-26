@@ -3021,6 +3021,37 @@ character_event = {
 
     immediate = {
         generate_new_false_clues_effect = yes
+        ## AI Shallyan rulers might send someone to a sanitorium
+        if = {
+            limit = {
+                society_member_of = cult_of_shallya
+                wealth = 10
+                ai = yes
+                any_courtier = {
+                    prisoner = no
+                    is_mutated_trigger = yes
+                }
+            }
+            random = {
+                chance = 65
+                wealth = -10
+                change_society_currency = 50
+                add_character_modifier = {
+                    name = shallyan_sorrow_modifier
+                    months = 6
+                }
+                random_courtier = {
+                    limit = {
+                        prisoner = no
+                        is_mutated_trigger = yes
+                    }
+                    death = {
+                        death_reason = death_shallyan_sanitorium
+                    }
+                    reduce_doom_progress_tiny_effect = yes
+                }
+            }
+        }
         ## Witch Hunt Logic ##
         #ai might invest in faster investigation
         if = {

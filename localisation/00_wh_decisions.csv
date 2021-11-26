@@ -733,6 +733,11 @@ chariot_mount_desc;Chariots are an ancient military transport but still remain h
 #
 shallyan_resistance;The Path of Mercy;;;;;;;;;;;;x
 shallyan_resistance_power_desc;Dedicating your life to Shallya makes you more resistant to the temptations of Chaos.;;;;;;;;;;;;x
+shallyan_commit_to_sanitorium;Commit to Sanitorium;;;;;;;;;;;;x
+shallyan_commit_to_sanitorium_desc;[Root.GetBestName] is showing signs of mutation. You could pay to have [Root.GetFirstName] taken to a Shallyan sanitorium, ensuring that less understanding souls won't react badly to [Root.GetHerHis] condition.;;;;;;;;;;;;x
+shallyan_commit_to_sanitorium_power_desc;Most of the people of the Old World react to mutation with horror and fear, frequently executing or banishing people whose only 'crime' is to suffer at the hand of Chaos. Shallya teaches mercy to all, and her faithful have set up sanitoriums where unfortunate mutants can live with some dignity.;;;;;;;;;;;;x
+shallyan_sorrow_modifier;Bleeding Heart;;;;;;;;;;;;x
+shallyan_sorrow_modifier_desc;This character recently inflicted a small pain to prevent a greater one. They need more time alone to process their feelings.;;;;;;;;;;;;x
 shallyan_prosperity;Merciful Rule;;;;;;;;;;;;x
 shallyan_prosperity_desc;Your dedication to Shallya and responsibilities as a ruler are difficult to combine - but not impossible. By using your secular wealth and drawing on the expertise of your co-religionists, you can reduce the suffering of your people.;;;;;;;;;;;;x
 shallyan_prosperity_power_desc;This power unlocks a decision in the intrigue menu that allows you to enact a period of more gentle, merciful rule over your demesne and vassals, resulting in greater stability.;;;;;;;;;;;;x
@@ -741,6 +746,15 @@ shallyan_prosperity_modifier_desc;This ruler is managing their realm in accordan
 shallyan_self_sacrifice;Give up your worldly life;;;;;;;;;;;;x
 shallyan_self_sacrifice_desc;You are much admired and respected, but such things are not the way of a true follower of Shallya. Cast off the burdens of prestige and rank and devote yourself entirely to the goddess's mercy.;;;;;;;;;;;;x
 shallyan_self_sacrifice_power_desc;This power unlocks the option to right-click on your character portrait and renounce your worldly position. Doing so will retire the character (functionally killing them). Making this sacrifice will set back the advance of Chaos.;;;;;;;;;;;;x
+#triggered events
 EVTDESC_wh_cult_of_shallya_society.200;The time has come. You have set affairs in order and can now turn your back on power and prestige, in order to devote yourself entirely to serving the Goddess of Mercy. Are you ready?;;;;;;;;;;;;x
 EVTOPTA_wh_cult_of_shallya_society.200;I am ready. Praise Shallya!;;;;;;;;;;;;x
 EVTOPTB_wh_cult_of_shallya_society.200;I can still do good in this worldly life;;;;;;;;;;;;x
+EVTDESC_wh_cult_of_shallya_society.201;You summon poor [sanitorium_candidate.GetFirstName] to discuss your plan. [sanitorium_candidate.GetSheHeCap] begs not to be sent away, arguing that [sanitorium_candidate.GetHerHis] condition isn't that noticeable. You can't help but be moved. Your solution is gentle, but it won't be painless.;;;;;;;;;;;;x
+EVTOPTA_wh_cult_of_shallya_society.201;A little pain now will prevent worse suffering later;;;;;;;;;;;;x
+EVTOPTB_wh_cult_of_shallya_society.201;Maybe this will work out after all;;;;;;;;;;;;x
+#death reasons
+death_shallyan_self_sacrifice;Gave up their worldly life to serve Shallya;;;;;;;;;;;;x
+DEATH_SHALLYAN_SAINT;gave up their worldly life to serve Shallya;;;;;;;;;;;;x
+death_shallyan_sanitorium;Ushered into a Shallyan sanitoriumdeath_shallyan_sanitorium
+DEATH_SHALLYAN_MUTANT;was committed into the care of a Shallyan sanitorium;;;;;;;;;;;;x

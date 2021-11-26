@@ -11,11 +11,13 @@ character_event = {
     option = {
         name = EVTOPTA_wh_cult_of_shallya_society.200
         piety = 2000
+        #two increments, but we don't want the tooltip twice
+        reduce_doom_progress_massive_effect = yes
         hidden_tooltip = {
             reduce_doom_progress_massive_effect = yes
         }
         death = {
-            death_reason = death_vanished
+            death_reason = death_shallyan_self_sacrifice
         }
     }
 
@@ -25,5 +27,34 @@ character_event = {
             ai = no
         }
     }
+}
 
+#Commit to sanitorium
+character_event = {
+    id = wh_cult_of_shallya_society.201
+    picture = GFX_evt_shallya_priest
+    desc = EVTDESC_wh_cult_of_shallya_society.201
+
+    is_triggered_only = yes
+
+    option = {
+        name = EVTOPTA_wh_cult_of_shallya_society.201
+        wealth = -50
+        change_society_currency = 50
+        reduce_doom_progress_tiny_effect = yes
+        add_character_modifier = {
+            name = shallyan_sorrow_modifier
+            months = 6
+        }
+        event_target:sanitorium_candidate = {
+            death = {
+                death_reason = death_shallyan_sanitorium
+            }
+        }
+
+    }
+
+    option = {
+        name = EVTOPTB_wh_cult_of_shallya_society.201
+    }
 }
