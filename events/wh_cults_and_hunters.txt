@@ -2758,6 +2758,9 @@ narrative_event = {
         event_target:hunter_candidate = {
             death = { death_reason = death_missing }
         }
+    }
+
+    after = {
         clr_character_flag = employing_witch_hunter
     }
 }
@@ -2786,6 +2789,9 @@ narrative_event = {
         event_target:hunter_candidate = {
             death = { death_reason = death_missing }
         }
+    }
+
+    after = {
         clr_character_flag = employing_witch_hunter
     }
 }
@@ -2814,6 +2820,9 @@ narrative_event = {
         event_target:hunter_candidate = {
             death = { death_reason = death_missing }
         }
+    }
+
+    after = {
         clr_character_flag = employing_witch_hunter
     }
 }
@@ -2842,6 +2851,9 @@ narrative_event = {
         event_target:hunter_candidate = {
             death = { death_reason = death_missing }
         }
+    }
+
+    after = {
         clr_character_flag = employing_witch_hunter
     }
 }
@@ -2870,6 +2882,9 @@ narrative_event = {
         event_target:hunter_candidate = {
             death = { death_reason = death_missing }
         }
+    }
+
+    after = {
         clr_character_flag = employing_witch_hunter
     }
 }
@@ -2898,6 +2913,9 @@ narrative_event = {
         event_target:hunter_candidate = {
             death = { death_reason = death_missing }
         }
+    }
+
+    after = {
         clr_character_flag = employing_witch_hunter
     }
 }
@@ -2926,6 +2944,9 @@ narrative_event = {
         event_target:hunter_candidate = {
             death = { death_reason = death_missing }
         }
+    }
+
+    after = {
         clr_character_flag = employing_witch_hunter
     }
 }
@@ -2954,6 +2975,9 @@ narrative_event = {
         event_target:hunter_candidate = {
             death = { death_reason = death_missing }
         }
+    }
+
+    after = {
         clr_character_flag = employing_witch_hunter
     }
 }
@@ -2977,6 +3001,7 @@ narrative_event = {
         event_target:hunter_candidate = {
             give_minor_title = title_court_witchhunter
         }
+        clr_character_flag = employing_witch_hunter
         #should probably have some extra narrative events but that could wait for Land of the Law God
     }
 }
@@ -2997,19 +3022,14 @@ character_event = {
     immediate = {
         generate_new_false_clues_effect = yes
         ## Witch Hunt Logic ##
+        #ai might invest in faster investigation
         if = {
-            limit = {
-                ai = no
-            }
-            #no effect
-        }
-        else_if = {
             limit = {
                 any_courtier_or_vassal = {
                     trait = on_witch_hunt
                 }
+                ai = yes
             }
-            #ai might invest in faster investigation
             random = {
                 chance = 50
                 mult_modifier = {
@@ -3069,6 +3089,17 @@ character_event = {
                 }
             }
         }
+    }
+}
+
+#hunter double-tap effect (we need this as a separate event so that a delay can be applied)
+character_event = {
+    id = wh_cults_and_hunters.602
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        witch_hunter_looks_for_deviant_courtiers_effect = yes
     }
 }
 

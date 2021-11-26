@@ -2974,6 +2974,9 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
         #cult member
         30 = {
             trigger = {
+                NOT = {
+                    trait = underground_cult_member
+                }
                 any_realm_character = {
                     trait = underground_cult_member
                 }
@@ -3019,6 +3022,9 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
             random_realm_character = {
                 limit = {
                     is_mutated_trigger = yes
+                    NOT = {
+                        character = event_target:court_witchhunter
+                    }
                 }
                 accused_by_witch_hunter_effect = yes
             }
@@ -3053,6 +3059,9 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
                             religion = kislev_gods
                         }
                         is_female = no
+                    }
+                    NOT = {
+                        character = event_target:court_witchhunter
                     }
                 }
                 accused_by_witch_hunter_effect = yes
@@ -3089,6 +3098,9 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
                         }
                         is_female = no
                     }
+                    NOT = {
+                        character = event_target:court_witchhunter
+                    }
                 }
                 accused_by_witch_hunter_effect = yes
             }
@@ -3123,12 +3135,19 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
                         trait = lore_tzeentch
                         trait = lore_necromancy
                     }
+                    NOT = {
+                        character = event_target:court_witchhunter
+                    }
                 }
                 accused_by_witch_hunter_effect = yes
             }
         }
         #accuse innocent
         20 = {
+            modifier = {
+                factor = 5
+                trait = underground_cult_member
+            }
             modifier = {
                 factor = 0.8
                 event_target:court_witchhunter = {
@@ -3160,6 +3179,11 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
                 }
             }
             random_realm_character = {
+                limit = {
+                    NOT = {
+                        character = event_target:court_witchhunter
+                    }
+                }
                 accused_by_witch_hunter_effect = yes
             }
         }
@@ -3344,7 +3368,7 @@ accused_by_witch_hunter_effect = {
         #hunter flag advantages
         trigger_switch = {
             on_trigger = has_character_flag
-            #champion of order
+            #champion of order - shreds chaos
             emissary_of_order_witch_hunter = {
                 if = {
                     limit = {
@@ -3353,6 +3377,17 @@ accused_by_witch_hunter_effect = {
                     change_variable = {
                         which = witch_hunter_evidence
                         value = 5
+                    }
+                    #chance of double-tap
+                    random = {
+                        chance = 60
+                        event_target:witch_hunter_employer = {
+                            character_event = {
+                                id = wh_cults_and_hunters.602
+                                days = 45
+                                random = 45
+                            }
+                        }
                     }
                 }
             }
@@ -3366,6 +3401,17 @@ accused_by_witch_hunter_effect = {
                         which = witch_hunter_evidence
                         value = 3
                     }
+                    #chance of double-tap
+                    random = {
+                        chance = 45
+                        event_target:witch_hunter_employer = {
+                            character_event = {
+                                id = wh_cults_and_hunters.602
+                                days = 60
+                                random = 60
+                            }
+                        }
+                    }
                 }
             }
             #specialist chaos fighters
@@ -3378,13 +3424,90 @@ accused_by_witch_hunter_effect = {
                         which = witch_hunter_evidence
                         value = 3
                     }
+                    #chance of double-tap
+                    random = {
+                        chance = 45
+                        event_target:witch_hunter_employer = {
+                            character_event = {
+                                id = wh_cults_and_hunters.602
+                                days = 60
+                                random = 60
+                            }
+                        }
+                    }
                 }
             }
-            #Order of the Sword and Scale are masterful investigators
+            #Order of the Sword and Scale are masterful investigators but a bit slow
             order_of_the_sword_and_scale_witch_hunter = {
                 change_variable = {
                     which = witch_hunter_evidence
                     value = 8
+                }
+            }
+            #Zealots may not be more effective, but they go hard
+            myrmidian_inquisitor_witch_hunter = {
+                #chance of double-tap
+                random = {
+                    chance = 45
+                    event_target:witch_hunter_employer = {
+                        character_event = {
+                            id = wh_cults_and_hunters.602
+                            days = 60
+                            random = 60
+                        }
+                    }
+                }
+            }
+            sigmarite_templar_witch_hunter = {
+                #chance of double-tap
+                random = {
+                    chance = 45
+                    event_target:witch_hunter_employer = {
+                        character_event = {
+                            id = wh_cults_and_hunters.602
+                            days = 60
+                            random = 60
+                        }
+                    }
+                }
+            }
+            bretonnian_knight_witch_hunter = {
+                #chance of double-tap
+                random = {
+                    chance = 45
+                    event_target:witch_hunter_employer = {
+                        character_event = {
+                            id = wh_cults_and_hunters.602
+                            days = 60
+                            random = 60
+                        }
+                    }
+                }
+            }
+            ice_witch_witch_hunter = {
+                #chance of double-tap
+                random = {
+                    chance = 45
+                    event_target:witch_hunter_employer = {
+                        character_event = {
+                            id = wh_cults_and_hunters.602
+                            days = 60
+                            random = 60
+                        }
+                    }
+                }
+            }
+            fallback = {
+                #small chance of double-tap
+                random = {
+                    chance = 10
+                    event_target:witch_hunter_employer = {
+                        character_event = {
+                            id = wh_cults_and_hunters.602
+                            days = 60
+                            random = 60
+                        }
+                    }
                 }
             }
         }
@@ -3516,6 +3639,8 @@ found_guilty_by_witch_hunter_effect = {
             }
             character_event = {
                 id = wh_cults_and_hunters.700
+                days = 3
+                random = 12
             }
         }
         #the arrow of law compels you!
