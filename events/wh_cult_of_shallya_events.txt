@@ -11,10 +11,78 @@ character_event = {
     option = {
         name = EVTOPTA_wh_cult_of_shallya_society.200
         piety = 2000
-        #two increments, but we don't want the tooltip twice
+        #there are multiple doom effects, but we don't want the tooltip showing up repeatedly
         reduce_doom_progress_massive_effect = yes
         hidden_tooltip = {
-            reduce_doom_progress_massive_effect = yes
+            #tier effect - proxy for influence
+            trigger_switch = {
+                on_trigger = TIER
+                EMPEROR = {
+                    reduce_doom_progress_massive_effect = yes
+                }
+                KING = {
+                    reduce_doom_progress_major_effect = yes
+                }
+                DUKE = {
+                    reduce_doom_progress_medium_effect = yes
+                }
+                COUNT = {
+                    reduce_doom_progress_minor_effect = yes
+                }
+                fallback = {
+                    reduce_doom_progress_tiny_effect = yes
+                }
+            }
+            #how much of your life you're giving to Shallya
+            if = {
+                limit = {
+                    age < 35
+                }
+                reduce_doom_progress_massive_effect = yes
+            }
+            else_if = {
+                limit = {
+                    age < 45
+                }
+                reduce_doom_progress_major_effect = yes
+            }
+            else_if = {
+                limit = {
+                    age < 55
+                }
+                reduce_doom_progress_medium_effect = yes
+            }
+            else = {
+                reduce_doom_progress_minor_effect = yes
+            }
+            #it means more to sacrifice a competent ruler
+            if = {
+                limit = {
+                    is_smart_trigger = yes
+                }
+                reduce_doom_progress_medium_effect = yes
+            }
+            else_if = {
+                limit = {
+                    NOT = {
+                        is_dumb_trigger = yes
+                    }
+                }
+                reduce_doom_progress_tiny_effect = yes
+            }
+            #it counts for more if the ruler is in good health
+            if = {
+                limit = {
+                    health > 7
+                }
+                reduce_doom_progress_medium_effect = yes
+            }
+            else_if = {
+                limit = {
+                    health > 5.5
+                }
+                reduce_doom_progress_minor_effect = yes
+            }
         }
         death = {
             death_reason = death_shallyan_self_sacrifice
@@ -33,7 +101,20 @@ character_event = {
 character_event = {
     id = wh_cult_of_shallya_society.201
     picture = GFX_evt_shallya_priest
-    desc = EVTDESC_wh_cult_of_shallya_society.201
+    desc = {
+        trigger = {
+            character = event_target:sanitorium_candidate
+        }
+        text = EVTDESC_wh_cult_of_shallya_society.201_self
+    }
+    desc = {
+        trigger = {
+            NOT = {
+                character = event_target:sanitorium_candidate
+            }
+        }
+        text = EVTDESC_wh_cult_of_shallya_society.201
+    }
 
     is_triggered_only = yes
 

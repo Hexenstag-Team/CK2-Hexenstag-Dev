@@ -44,10 +44,20 @@ witch_hunter_law_3_desc;Witch Hunters are given emergency powers to fight back t
 #
 witch_hunter;Witch Hunter;;;;;;;;;;;;;x
 witch_hunter_desc;All manner of men and women take up the trials of Witch Hunting. Most are scoundrels and adventurers brought in to do the dirty job for nothing more than pay. But the best Witch Hunters belong to a handful of templar orders and employ ancient techniques in their battle against the dark.;;;;;;;;;;;;;x
-on_witch_hunt;Scouring [witch_hunt_county.GetName];;;;;;;;;;;;;x
-on_witch_hunt_desc;This character is currently on a Witch hunt, actively rooting out malign forces in [witch_hunt_county.GetName].;;;;;;;;;;;;;x
-underground_cult_member;[underground_cult_allegiance.GetBaseName] Member;;;;;;;;;;;;;x
-underground_cult_member_desc;This character has been corrupted by the [underground_cult_allegiance.GetBaseName] and now serves their base agenda.;;;;;;;;;;;;;x
+on_witch_hunt;[on_witch_hunt_trait];;;;;;;;;;;;;x
+on_witch_hunt_cult;Attacking the [target_cult.GetName];;;;;;;;;;;;;x
+on_witch_hunt_county;Scouring [witch_hunt_county.GetName];;;;;;;;;;;;;x
+on_witch_hunt_died;Died fighting evil;;;;;;;;;;;;;x
+on_witch_hunt_desc;[on_witch_hunt_trait_desc];;;;;;;;;;;;;x
+on_witch_hunt_cult_desc;This character has discovered key information about the dreaded [target_cult.GetName] and is bravely leading an attack on the Cult's center!;;;;;;;;;;;;;x
+on_witch_hunt_county_desc;This character is currently on a Witch hunt, actively rooting out malign forces in [witch_hunt_county.GetName].;;;;;;;;;;;;;x
+on_witch_hunt_died_desc;This heroic character gave their life to keep the Old World safe from the terrible forces that lurk in the darkness;;;;;;;;;;;;;x
+underground_cult_member;[underground_cult_trait];;;;;;;;;;;;;x
+underground_cult_member_living;[underground_cult_allegiance.GetBaseName] Member;;;;;;;;;;;;;x
+underground_cult_member_dead;Underground Cult Member;;;;;;;;;;;;;x
+underground_cult_member_desc;[underground_cult_trait_desc];;;;;;;;;;;;;x
+underground_cult_member_desc_living;This character has been corrupted by the [underground_cult_allegiance.GetBaseName] and now serves their base agenda.;;;;;;;;;;;;;x
+underground_cult_member_desc_dead;This character was corrupted by an underground cult and served their base agenda.;;;;;;;;;;;;;x
 #
 # CULTS AND HUNTERS DECISIONS
 #
@@ -161,6 +171,9 @@ EVTDESC_wh_cults_and_hunters_510;The witch hunter has arrived from the temple of
 EVTTITLE_wh_cults_and_hunters_511;Emissary of Order;;;;;;;;;;;;;x
 EVTDESC_wh_cults_and_hunters_511;The witch hunter has arrived from the Temple of Solkan, but [hunter_candidate.GetSheHe] is not at all what you expected. [hunter_candidate.GetFirstName] is a mage from the far South, trained to channel the Light of the Law God in battle with the Ruinous Powers. [hunter_candidate.GetSheHeCap] locks your gaze with [hunter_candidate.GetHerHis] own and you can see the faint glow of power in the mage's eyes. [hunter_candidate.GetFirstName] solemnly intones, "I bring the Light."\nAll manner of questions fill your mind and you struggle to force them past your lips. But your will is not enough. You give a deep nod of acknowledgement and reply,;;;;;;;;;;;;;x
 EVTOPTA_wh_cults_and_hunters_511;Banish the Darkness!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_603;Your loyal Witch Hunter, [court_witchhunter.GetFirstName] reports that the initial investigation in [clue_county.GetName] is complete and with a bit of support the trials could be wound up in a few days. [court_witchhunter.GetSheHeCap] would then be available for other tasks.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_603;Of course!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_603;I'm not made of money!;;;;;;;;;;;;;x
 EVTDESC_wh_cults_and_hunters_610;[court_witchhunter.GetBestName] is now hunting down the mutants, cultists, and witches who plague [clue_county.GetName].;;;;;;;;;;;;;x
 EVTDESC_wh_cults_and_hunters_611;[court_witchhunter.GetBestName] has returned from [court_witchhunter.GetHerHis] mission to [clue_county.GetName]. The troubles are over and many suspected cultists have been dealt with.;;;;;;;;;;;;;x
 EVTDESC_wh_cults_and_hunters_700;[court_witchhunter.GetBestName] brings charges against [courtier_accused_by_witch_hunter.GetBestName]. "This foul miscreant has betrayed all that is right in the world, consorting with deviants and foul spirits. Consign them to my care that the full spread of conspiracy might be discovered!";;;;;;;;;;;;;x
@@ -173,11 +186,33 @@ EVTOPTB_wh_cults_and_hunters_701;Insist that you know nothing;;;;;;;;;;;;;x
 EVTTITLE_wh_cults_and_hunters_702;Agent of Order;;;;;;;;;;;;;x
 EVTDESC_wh_cults_and_hunters_702;You have been captured by the Witch Hunter [court_witchhunter.GetBestName]. Although you try to look away, the wizard's terrible eyes bore into yours. "Tell me everything you know. Everything!" he commands and his gaze becomes a radiant beam of light. You begin to speak but the words are lost to you. All that you feel is the searing touch of [court_witchhunter.GetFirstName]'s magic.\nWhen it finishes burning, you are no more.;;;;;;;;;;;;;x
 EVTOPTA_wh_cults_and_hunters_702;Answer the hunter's questions;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_710;[court_witchhunter.GetFirstName] reports a significant breakthrough. Information extracted from the deviant, [courtier_accused_by_witch_hunter.GetFirstName], has revealed that the dreaded [witch_hunter_target_cult.GetName] is operating in your lands - and a counter-attack is possible!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_710;[court_witchhunter.GetFirstName] reports on their new plan. Information extracted from the deviant, [courtier_accused_by_witch_hunter.GetFirstName], has revealed that the dreaded [witch_hunter_target_cult.GetName] is operating in your lands - and a counter-attack is being prepared!;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_710;You have my full support, [court_witchhunter.GetFirstName]!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_710;Let's not get carried away;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_710;Banish the darkness!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_711;[court_witchhunter.GetFirstName] is making progress but needs coin to follow the trail of the [witch_hunter_target_cult.GetName].;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_711;Whatever you need!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_711;Of course!;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_711;Very well;;;;;;;;;;;;;x
+EVTOPTD_wh_cults_and_hunters_711;What's the least you need?;;;;;;;;;;;;;x
+EVTOPTE_wh_cults_and_hunters_711;Banish the Darkness!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_712;Bad news. [court_witchhunter.GetFirstName] reports that the trail of the [witch_hunter_target_cult.GetName] has gone cold.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_712;We'll get them next time!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_712;You have failed me for the last time, [court_witchhunter.GetFirstName]!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_713;[court_witchhunter.GetFirstName]'s preparations are complete. [court_witchhunter.GetSheHeCap] will go to [active_cult_leader.location.GetName] to tear out the heart of the [witch_hunter_target_cult.GetName] - or die trying.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_713;Good luck, [court_witchhunter.GetFirstName];;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_713;And I will be fighting at your side, [court_witchhunter.GetFirstName]!;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_713;And I will bring my magic to the fight, [court_witchhunter.GetFirstName]!;;;;;;;;;;;;;x
+EVTTITLE_wh_cults_and_hunters_715;Daemonslayer;;;;;;;;;;;;;x
+EVTTITLE_wh_cults_and_hunters_717;The Final Battle;;;;;;;;;;;;;x
 EVTDESC_wh_cults_and_hunters_800;Two years ago you committed to emergency measures to fight the spread of underground cults in your realm. Today the council calls on you to restore normal life.;;;;;;;;;;;;;x
 EVTOPTA_wh_cults_and_hunters_800;Very well;;;;;;;;;;;;;x
 EVTOPTB_wh_cults_and_hunters_800;Not yet;;;;;;;;;;;;;x
 # # TOOLTIPS & REUSED TEXT # #
 EVTOPT_wh_cults_and_hunters_unwanted_hunter;[hunter_candidate.GetBestName] is not what I'm looking for;;;;;;;;;;;;;x
+available_because_a_good_sword_to_fight_evil;This option is available because you are a skilled warrior;;;;;;;;;;;;;x
+available_because_a_skilled_mage_to_fight_evil;This option is available because of your magical ability;;;;;;;;;;;;;x
 available_because_classical_pantheon;This option is available because you venerate the Classical Pantheon;;;;;;;;;;;;;x
 available_because_grail;This option is available because you are a servant of the Lady;;;;;;;;;;;;;x
 available_because_imperial_pantheon;This option is available because you venerate the Imperial Pantheon;;;;;;;;;;;;;x
@@ -190,6 +225,7 @@ killed_by_abductors_tt;You are killed in the struggle!;;;;;;;;;;;;;x
 required_because_arrow_of_law;§GThe §WArrow of Law§! §Gcompels you!§!;;;;;;;;;;;;;x
 return_to_previous_menu_tt;Return to the previous menu;;;;;;;;;;;;;x
 witch_hunter_arrives_shortly_tt;The hunter will arrive shortly;;;;;;;;;;;;;x
+witch_hunter_smiles_impressed_tt;[court_witchhunter.GetFirstName] smiles, impressed by your bravery;;;;;;;;;;;;;x
 #
 # PROVINCE MODIFIERS
 #

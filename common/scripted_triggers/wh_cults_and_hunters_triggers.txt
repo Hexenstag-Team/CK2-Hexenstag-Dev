@@ -49,3 +49,44 @@ has_possible_cultic_activity_trigger = {
         has_province_modifier = clue_celebration_normal
     }
 }
+
+witch_hunter_is_emissary_of_order_trigger = {
+    event_target:court_witchhunter = {
+        has_character_flag = emissary_of_order_witch_hunter
+    }
+}
+
+witch_hunter_boss_fight_total_victory_trigger = {
+    check_variable = {
+        which = boss_fight_strength
+        value >= 50
+    }
+}
+
+witch_hunter_boss_fight_killed_cult_leader_trigger = {
+    check_variable = {
+        which = boss_fight_strength
+        value >= 0
+    }
+}
+
+witch_hunter_boss_fight_catastrophe_trigger = {
+    check_variable = {
+        which = boss_fight_strength
+        value < -50
+    }
+}
+
+witch_hunter_boss_fight_pyrrhic_victory_trigger = {
+    NOT = {
+        witch_hunter_boss_fight_total_victory_trigger = yes
+    }
+    witch_hunter_boss_fight_killed_cult_leader_trigger = yes
+}
+
+witch_hunter_boss_fight_partial_victory_trigger = {
+    NOR = {
+        witch_hunter_boss_fight_killed_cult_leader_trigger = yes
+        witch_hunter_boss_fight_catastrophe_trigger = yes
+    }
+}

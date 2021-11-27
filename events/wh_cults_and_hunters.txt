@@ -100,9 +100,20 @@ character_event = {
                     }
                 }
                 narrative_event = {
-
+                    id = wh_cults_and_hunters.4
                 }
             }
+        }
+        #historical cult members
+        #Konrad von Blutheim
+        c_11401 = {
+            set_character_flag = underground_cult_member
+            add_trait = underground_cult_member
+            save_persistent_event_target = {
+                name = underground_cult_allegiance
+                scope = k_throne_pact
+            }
+            set_secret_religion = khorne
         }
     }
 }
@@ -217,6 +228,23 @@ character_event = {
             limit = {
                 ai = yes
             }
+            #most cult leaders are heavily mutated
+            if = {
+                limit = {
+                    religion_group = chaos_gods_group
+                }
+                while = {
+                    count = 5
+                    random = {
+                        chance = 60
+                        mult_modifier = {
+                            factor = 1.1
+                            religion = tzeentch
+                        }
+                        mutations_table_list = yes
+                    }
+                }
+            }
             find_starting_cultic_activity_kingdom_target_effect = yes
             save_persistent_event_target = {
                 name = cultic_activity_target
@@ -329,6 +357,8 @@ character_event = {
 
     only_playable = yes
     has_character_flag = underground_cult_leader
+    capable_only = yes
+    prisoner = no
     ai = yes
 
     immediate = {
@@ -3073,7 +3103,19 @@ character_event = {
                 }
                 scaled_wealth = -0.25
                 piety = 50
+                prepare_to_hurry_witch_hunt_effect = yes
                 hurry_witch_hunt_effect = yes
+            }
+        }
+        else_if = {
+            limit = {
+                any_courtier_or_vassal = {
+                    trait = on_witch_hunt
+                }
+                #ai = no in virtue of previous clause
+            }
+            character_event = {
+                id = wh_cults_and_hunters.603
             }
         }
         #specialist hunter
@@ -3131,6 +3173,32 @@ character_event = {
 
     immediate = {
         witch_hunter_looks_for_deviant_courtiers_effect = yes
+    }
+}
+
+#player option to hurry witch hunting
+character_event = {
+    id = wh_cults_and_hunters.603
+    picture = GFX_evt_burning_stake
+    desc = EVTDESC_wh_cults_and_hunters_603
+
+    is_triggered_only = yes
+
+    immediate = {
+        prepare_to_hurry_witch_hunt_effect = yes
+    }
+
+    #support hunter
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_603
+        scaled_wealth = -0.25
+        piety = 50
+        hurry_witch_hunt_effect = yes
+    }
+
+    #nah
+    option = {
+        name = EVTOPTB_wh_cults_and_hunters_603
     }
 }
 
@@ -3221,9 +3289,7 @@ character_event = {
                 }
                 else_if = {
                     limit = {
-                        event_target:court_witchhunter = {
-                            has_character_flag = emissary_of_order_witch_hunter
-                        }
+                        witch_hunter_is_emissary_of_order_trigger = yes
                         religion_group = chaos_gods_group
                     }
                     subtract_variable = {
@@ -3367,10 +3433,8 @@ character_event = {
     #guilty!
     option = {
         trigger = {
-            event_target:court_witchhunter = {
-                NOT = {
-                    has_character_flag = emissary_of_order_witch_hunter
-                }
+            NOT = {
+                witch_hunter_is_emissary_of_order_trigger = yes
             }
         }
         name = EVTOPTA_wh_cults_and_hunters_700
@@ -3382,10 +3446,8 @@ character_event = {
     #not guilty
     option = {
         trigger = {
-            event_target:court_witchhunter = {
-                NOT = {
-                    has_character_flag = emissary_of_order_witch_hunter
-                }
+            NOT = {
+                witch_hunter_is_emissary_of_order_trigger = yes
             }
         }
         name = EVTOPTB_wh_cults_and_hunters_700
@@ -3398,9 +3460,7 @@ character_event = {
 
     option = {
         trigger = {
-            event_target:court_witchhunter = {
-                has_character_flag = emissary_of_order_witch_hunter
-            }
+            witch_hunter_is_emissary_of_order_trigger = yes
         }
         name = EVTOPTC_wh_cults_and_hunters_700
         tooltip_info_custom = required_because_arrow_of_law
@@ -3527,6 +3587,7 @@ character_event = {
                         trait = stubborn
                     }
                     persistent_event_target:underground_cult_allegiance = {
+                        save_event_target_as = witch_hunter_target_cult
                         holder_scope = {
                             subtract_variable = {
                                 which = cultic_influence
@@ -3538,6 +3599,12 @@ character_event = {
                         death_reason = death_execution_burning
                         killer = event_target:witch_hunter_employer
                     }
+                    event_target:witch_hunter_employer = {
+                        character_event = {
+                            id = wh_cults_and_hunters.710
+                            days = 3
+                        }
+                    }
                 }
             }
         }
@@ -3547,9 +3614,11 @@ character_event = {
     option = {
         trigger = {
             trait = underground_cult_member
+            ai = no
         }
         name = EVTOPTA_wh_cults_and_hunters_701
         persistent_event_target:underground_cult_allegiance = {
+            save_event_target_as = witch_hunter_target_cult
             holder_scope = {
                 subtract_variable = {
                     which = cultic_influence
@@ -3561,11 +3630,20 @@ character_event = {
             death_reason = death_execution_burning
             killer = event_target:witch_hunter_employer
         }
+        event_target:witch_hunter_employer = {
+            character_event = {
+                id = wh_cults_and_hunters.710
+                days = 3
+            }
+        }
     }
 
     #Schultz it
     option = {
         name = EVTOPTB_wh_cults_and_hunters_701
+        trigger = {
+            ai = no
+        }
         prestige = -100
         #stress
         50 = {
@@ -3629,6 +3707,14 @@ character_event = {
             }
         }
     }
+
+    #safety ai-only
+    option = {
+        trigger = {
+            ai = yes
+        }
+        name = OK
+    }
 }
 
 #At the mercy of the emissary
@@ -3649,6 +3735,7 @@ narrative_event = {
             }
             #"tell me everything you know - everything!"
             persistent_event_target:underground_cult_allegiance = {
+                save_event_target_as = witch_hunter_target_cult
                 holder_scope = {
                     subtract_variable = {
                         which = cultic_influence
@@ -3656,11 +3743,873 @@ narrative_event = {
                     }
                 }
             }
+            event_target:witch_hunter_employer = {
+                character_event = {
+                    id = wh_cults_and_hunters.710
+                    days = 3
+                }
+            }
         }
         #this kills the accused courtier
         death = {
             death_reason = death_execution_burning
             killer = event_target:court_witchhunter
+        }
+    }
+}
+
+#Witch Hunter proposes counter-attack
+character_event = {
+    id = wh_cults_and_hunters.710
+    picture = GFX_evt_burning_stake
+
+    desc = {
+        trigger = {
+            has_law = witch_hunter_law_3
+        }
+        text = EVTDESC_wh_cults_and_hunters_710_extreme_measures
+    }
+    desc = {
+        trigger = {
+            NOT = { has_law = witch_hunter_law_3 }
+        }
+        text = EVTDESC_wh_cults_and_hunters_710
+    }
+
+    is_triggered_only = yes
+
+    immediate = {
+        if = {
+            limit = {
+                ai = yes
+            }
+            random = {
+                chance = 30
+                mult_modifier = {
+                    factor = 1.2
+                    tier = DUKE
+                }
+                mult_modifier = {
+                    factor = 1.5
+                    tier = KING
+                }
+                mult_modifier = {
+                    factor = 1.8
+                    tier = EMPEROR
+                }
+                mult_modifier = {
+                    factor = 0
+                    trait = underground_cult_member
+                }
+                mult_modifier = {
+                    factor = 2
+                    trait = zealous
+                }
+                mult_modifier = {
+                    factor = 1.2
+                    trait = ambitious
+                }
+                mult_modifier = {
+                    factor = 0.8
+                    trait = content
+                }
+                mult_modifier = {
+                    factor = 0.7
+                    trait = cynical
+                }
+                #the following conditions railroad the player and should guarantee this check succeeds
+                mult_modifier = {
+                    factor = 5
+                    witch_hunter_is_emissary_of_order_trigger = yes
+                }
+                mult_modifier = {
+                    factor = 5
+                    has_law = witch_hunter_law_3
+                }
+                witch_hunter_prepares_counter_attack_effect = yes
+                #making counter-attack, so decide investment
+                random_list = {
+                    20 = {
+                        trigger = {
+                            wealth > 500
+                        }
+                        modifier = {
+                            factor = 0.5
+                            trait = greedy
+                        }
+                        modifier = {
+                            factor = 2
+                            trait = zealous
+                        }
+                        wealth - 500
+                        witch_hunter_gets_major_support_effect = yes
+                    }
+                    20 = {
+                        trigger = {
+                            wealth > 250
+                        }
+                        wealth = -250
+                        witch_hunter_gets_medium_support_effect = yes
+                    }
+                    30 = {
+                        trigger = {
+                            wealth > 100
+                        }
+                        wealth = -100
+                        witch_hunter_gets_minor_support_effect = yes
+                    }
+                    30 = {
+                        wealth = -50
+                    }
+                }
+                cult_leader_attempts_to_avoid_counter_attack_effect = yes
+            }
+        }
+    }
+
+    #yup!
+    option = {
+        trigger = {
+            ai = no
+            NOT = {
+                witch_hunter_is_emissary_of_order_trigger = yes
+            }
+        }
+        name = EVTOPTA_wh_cults_and_hunters_710
+        witch_hunter_prepares_counter_attack_effect = yes
+        character_event = {
+            id = wh_cults_and_hunters.711
+            days = 3
+        }
+    }
+
+    #nah
+    option = {
+        trigger = {
+            ai = no
+            NOR = {
+                has_law = witch_hunter_law_3
+                witch_hunter_is_emissary_of_order_trigger = yes
+            }
+        }
+        name = EVTOPTB_wh_cults_and_hunters_710
+    }
+
+    #Arrow of Law
+    option = {
+        trigger = {
+            ai = no
+            witch_hunter_is_emissary_of_order_trigger = yes
+        }
+        name = EVTOPTC_wh_cults_and_hunters_710
+        tooltip_info_custom = required_because_arrow_of_law
+        witch_hunter_prepares_counter_attack_effect = yes
+        character_event = {
+            id = wh_cults_and_hunters.711
+            days = 3
+        }
+
+    }
+
+    #ai-only safety
+    option = {
+        trigger = {
+            ai = yes
+        }
+        name = OK
+    }
+}
+
+#Witch Hunter requests support
+character_event = {
+    id = wh_cults_and_hunters.711
+    desc = EVTDESC_wh_cults_and_hunters_711
+    picture = GFX_evt_witch_hunters
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            NOT = { witch_hunter_is_emissary_of_order_trigger = yes }
+        }
+        name = EVTOPTA_wh_cults_and_hunters_711
+        wealth = -500
+        witch_hunter_gets_major_support_effect = yes
+    }
+
+    option = {
+        trigger = {
+            NOT = { witch_hunter_is_emissary_of_order_trigger = yes }
+        }
+        name = EVTOPTB_wh_cults_and_hunters_711
+        wealth = -250
+        witch_hunter_gets_medium_support_effect = yes
+    }
+
+    option = {
+        trigger = {
+            NOT = {
+                has_law = witch_hunter_law_3
+                witch_hunter_is_emissary_of_order_trigger = yes
+            }
+        }
+        name = EVTOPTC_wh_cults_and_hunters_711
+        wealth = -100
+        witch_hunter_gets_minor_support_effect = yes
+    }
+
+    option = {
+        trigger = {
+            NOT = {
+                has_law = witch_hunter_law_3
+                witch_hunter_is_emissary_of_order_trigger = yes
+            }
+        }
+        name = EVTOPTD_wh_cults_and_hunters_711
+        wealth = -50
+    }
+
+    option = {
+        trigger = {
+            witch_hunter_is_emissary_of_order_trigger = yes
+        }
+        name = EVTOPTE_wh_cults_and_hunters_711
+        tooltip_info_custom = required_because_arrow_of_law
+        wealth = -500
+        witch_hunter_gets_major_support_effect = yes
+    }
+
+    after = {
+        cult_leader_attempts_to_avoid_counter_attack_effect = yes
+    }
+}
+
+#712 - failed to find cult
+character_event = {
+    id = wh_cults_and_hunters.712
+    picture = GFX_evt_witch_hunters
+    desc = EVTDESC_wh_cults_and_hunters_712
+
+    #welp
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_712
+        event_target:court_witchhunter = {
+            witch_hunter_counter_attack_cleanup_effect = yes
+        }
+    }
+
+    #not tolerating failure
+    option = {
+        name = EVTOPTB_wh_cults_and_hunters_712
+        trigger = {
+            NOR = {
+                has_law = witch_hunter_law_3
+                witch_hunter_is_emissary_of_order_trigger = yes
+            }
+        }
+        witch_hunter_counter_attack_cleanup_effect = yes
+        event_target:court_witchhunter = {
+            witch_hunter_counter_attack_cleanup_effect = yes
+            remove_title = title_court_witchhunter
+            banish = yes
+        }
+    }
+}
+
+#713 - Found them! Time to ATTACK
+character_event = {
+    id = wh_cults_and_hunters.713
+    desc = EVTDESC_wh_cults_and_hunters_713
+    picture = GFX_evt_witch_hunters
+
+    is_triggered_only = yes
+
+    immediate = {
+        event_target:witch_hunter_target_cult = {
+            holder_scope = {
+                save_event_target_as = active_cult_leader
+            }
+        }
+    }
+
+    #Good luck!
+    option = {
+        name = EVTOPTA_wh_cults_and_hunters_713
+    }
+
+    #warrior liege joins
+    option = {
+        name = EVTOPTB_wh_cults_and_hunters_713
+        trigger = {
+            combat_rating > 80
+        }
+        tooltip_info_custom = available_because_a_good_sword_to_fight_evil
+        add_trait = brave
+        add_trait = on_witch_hunt
+        set_character_flag = attacking_cult
+        save_persistent_event_target = {
+            name = target_cult
+            scope = event_target:witch_hunter_target_cult
+        }
+        custom_tooltip = {
+            text = witch_hunter_smiles_impressed_tt
+        }
+    }
+
+    #mage liege joins
+    option = {
+        name = EVTOPTC_wh_cults_and_hunters_713
+        trigger = {
+            is_trained_mage = yes
+        }
+        tooltip_info_custom = available_because_a_skilled_mage_to_fight_evil
+        add_trait = brave
+        add_trait = on_witch_hunt
+        set_character_flag = attacking_cult
+        save_persistent_event_target = {
+            name = target_cult
+            scope = event_target:witch_hunter_target_cult
+        }
+        custom_tooltip = {
+            text = witch_hunter_smiles_impressed_tt
+        }
+    }
+
+    after = {
+        #delay arrival
+        if = {
+            limit = {
+                distance = {
+                    who = event_target:active_cult_leader
+                    value < 500
+                }
+            }
+            character_event = {
+                id = wh_cults_and_hunters.714
+                days = 14
+                random = 7
+            }
+        }
+        else_if = {
+            limit = {
+                distance = {
+                    who = event_target:active_cult_leader
+                    value < 1000
+                }
+            }
+            character_event = {
+                id = wh_cults_and_hunters.714
+                days = 28
+                random = 14
+            }
+        }
+        else_if = {
+            limit = {
+                distance = {
+                    who = event_target:active_cult_leader
+                    value < 1500
+                }
+            }
+            character_event = {
+                id = wh_cults_and_hunters.714
+                days = 42
+                random = 28
+            }
+        }
+        else_if = {
+            limit = {
+                distance = {
+                    who = event_target:active_cult_leader
+                    value < 2000
+                }
+            }
+            character_event = {
+                id = wh_cults_and_hunters.714
+                days = 56
+                random = 42
+            }
+        }
+        else_if = {
+            limit = {
+                distance = {
+                    who = event_target:active_cult_leader
+                    value < 3000
+                }
+            }
+            character_event = {
+                id = wh_cults_and_hunters.714
+                days = 84
+                random = 56
+            }
+        }
+        else = {
+            character_event = {
+                id = wh_cults_and_hunters.714
+                days = 105
+                random = 70
+            }
+        }
+    }
+}
+
+#calculate outcome
+character_event = {
+    id = wh_cults_and_hunters.714
+    hide_window = yes
+
+    is_triggered_only = yes
+
+    immediate = {
+        #identify cult leader again - this could be several months after the last event
+        event_target:witch_hunter_target_cult = {
+            holder_scope = {
+                save_event_target_as = active_cult_leader
+            }
+        }
+        event_target:court_witchhunter = {
+            boss_fight_base_strength_effect = yes
+            change_variable = {
+                which = boss_fight_strength
+                which = counter_attack_strength
+            }
+            #all hunters have a +10 combat rating bonus from the trait, so we only need to boost the specialists here
+            if = {
+                limit = {
+                    event_target:active_cult_leader = {
+                        religion_group = chaos_gods_group
+                    }
+                }
+                trigger_switch = {
+                    on_trigger = has_character_flag
+                    emissary_of_order_witch_hunter = {
+                        multiply_variable = {
+                            which = boss_fight_strength
+                            value = 2
+                        }
+                    }
+                    temple_of_solkan_witch_hunter = {
+                        multiply_variable = {
+                            which = boss_fight_strength
+                            value = 1.5
+                        }
+                    }
+                }
+            }
+            else_if = {
+                limit = {
+                    event_target:active_cult_leader = {
+                        religion_group = necromantic_group
+                    }
+                    has_character_flag = order_of_the_shroud_witch_hunter
+                }
+                multiply_variable = {
+                    which = boss_fight_strength
+                    value = 1.5
+                }
+            }
+        }
+        event_target:active_cult_leader = {
+            boss_fight_base_strength_effect = yes
+            #home field advantage
+            multiply_variable = {
+                which = boss_fight_strength
+                value = 2
+            }
+            #hunter's impact
+            subtract_variable = {
+                which = boss_fight_strength
+                which = event_target:court_witchhunter
+            }
+        }
+        #liege impact, if any
+        if = {
+            limit = {
+                trait = on_witch_hunt
+            }
+            boss_fight_base_strength_effect = yes
+        }
+        else = {
+            set_variable = {
+                which = boss_fight_strength
+                value = 0
+            }
+        }
+        subtract_variable = {
+            which = boss_fight_strength
+            which = event_target:active_cult_leader
+        }
+        #At this point, the boss fight strength tells us the outcome:
+        #-50 or less is a catastrophe
+        #between -49 and 0 means the cult was chased out of their lair, though their leader survived
+        #from 0 to 49, the cult leader was slain but the witch hunter died as well
+        #above 50 is straight up winning
+        #
+        ##Special Outcomes ##
+        #Daemonslayer
+        if = {
+            limit = {
+                event_target:active_cult_leader = {
+                    is_daemon_prince_trigger = yes
+                }
+                witch_hunter_boss_fight_killed_cult_leader_trigger = yes
+            }
+            narrative_event = {
+                id = wh_cults_and_hunters.715
+            }
+        }
+        #Vampireslayer - necromantic cults aren't active so we can skip this one for now
+        #else_if = {
+        #    limit = {
+        #        event_target:active_cult_leader = {
+        #            is_vampire_trigger = yes
+        #        }
+        #        witch_hunter_boss_fight_killed_cult_leader_trigger = yes
+        #    }
+        #    narrative_event = {
+        #       id = wh_cults_and_hunters.716
+        #    }
+        #}
+        else = {
+            narrative_event = {
+                id = wh_cults_and_hunters.717
+            }
+        }
+    }
+}
+
+narrative_event = {
+    id = wh_cults_and_hunters.715
+    picture = GFX_evt_daemon_prince
+    title = EVTTITLE_wh_cults_and_hunters_715
+    desc = {
+        trigger = {
+            trait = on_witch_hunt
+            witch_hunter_boss_fight_total_victory_trigger = yes
+        }
+        text = EVTDESC_wh_cults_and_hunters_715_liege_fought_total_victory
+    }
+    desc = {
+        trigger = {
+            trait = on_witch_hunt
+            NOT = { witch_hunter_boss_fight_total_victory_trigger = yes }
+        }
+        text = EVTDESC_wh_cults_and_hunters_715_liege_fought_pyrrhic_victory
+    }
+    desc = {
+        trigger = {
+            NOT = { trait = on_witch_hunt }
+            witch_hunter_boss_fight_total_victory_trigger = yes
+        }
+        text = EVTDESC_wh_cults_and_hunters_715_hunter_solo_total_victory
+    }
+    desc = {
+        trigger = {
+            NOR = {
+                trait = on_witch_hunt
+                witch_hunter_boss_fight_total_victory_trigger = yes
+            }
+        }
+        text = EVTDESC_wh_cults_and_hunters_715_hunter_solo_pyrrhic_victory
+    }
+
+    is_triggered_only = yes
+
+    option = {
+        trigger = {
+            trait = on_witch_hunt
+            witch_hunter_boss_fight_total_victory_trigger = yes
+        }
+        name = EVTOPTA_wh_cults_and_hunters_715
+        add_trait = wounded
+        witch_hunter_kills_cult_leader_effect = yes
+        reduce_doom_progress_catastrophic_effect = yes
+        witch_hunter_counter_attack_cleanup_effect = yes
+        prestige = 2500
+        piety = 2500
+        event_target:court_witchhunter = {
+            add_trait = wounded
+            witch_hunter_counter_attack_cleanup_effect = yes
+            prestige = 2500
+            piety = 2500
+        }
+    }
+
+    option = {
+        trigger = {
+            trait = on_witch_hunt
+            NOT = { witch_hunter_boss_fight_total_victory_trigger = yes }
+        }
+        name = EVTOPTB_wh_cults_and_hunters_715
+        random_list = {
+            70 = {
+                add_trait = wounded
+            }
+            30 = {
+                add_maimed_trait_effect = yes
+            }
+        }
+        witch_hunter_kills_cult_leader_effect = yes
+        reduce_doom_progress_catastrophic_effect = yes
+        witch_hunter_counter_attack_cleanup_effect = yes
+        prestige = 2500
+        piety = 2500
+        event_target:court_witchhunter = {
+            prestige = 2500
+            piety = 2500
+            cult_leader_kills_witch_hunter_effect = yes
+        }
+    }
+
+    option = {
+        trigger = {
+            NOT = { trait = on_witch_hunt }
+            witch_hunter_boss_fight_total_victory_trigger = yes
+        }
+        name = EVTOPTC_wh_cults_and_hunters_715
+        witch_hunter_kills_cult_leader_effect = yes
+        reduce_doom_progress_catastrophic_effect = yes
+        prestige = 250
+        piety = 250
+        event_target:court_witchhunter = {
+            random_list = {
+                70 = {
+                    add_trait = wounded
+                }
+                30 = {
+                    add_maimed_trait_effect = yes
+                }
+            }
+            witch_hunter_counter_attack_cleanup_effect = yes
+            prestige = 5000
+            piety = 5000
+        }
+    }
+
+    option = {
+        trigger = {
+            NOR = {
+                trait = on_witch_hunt
+                witch_hunter_boss_fight_total_victory_trigger = yes
+            }
+        }
+        name = EVTOPTD_wh_cults_and_hunters_715
+        witch_hunter_kills_cult_leader_effect = yes
+        reduce_doom_progress_catastrophic_effect = yes
+        prestige = 250
+        piety = 250
+        event_target:court_witchhunter = {
+            prestige = 5000
+            piety = 5000
+            cult_leader_kills_witch_hunter_effect = yes
+        }
+    }
+}
+
+#narrative_event 716 reserved for Vampireslayer result
+
+narrative_event = {
+    id = wh_cults_and_hunters.717
+    picture = GFX_evt_witch_hunter_fight
+    title = EVTTITLE_wh_cults_and_hunters_717
+    desc = {
+        trigger = {
+            witch_hunter_boss_fight_total_victory_trigger = yes
+            trait = on_witch_hunt
+        }
+        text = EVTDESC_wh_cults_and_hunters_717_liege_fought_total_victory
+    }
+    desc = {
+        trigger = {
+            witch_hunter_boss_fight_total_victory_trigger = yes
+            NOT = { trait = on_witch_hunt }
+        }
+        text = EVTDESC_wh_cults_and_hunters_717_hunter_solo_total_victory
+    }
+    desc = {
+        trigger = {
+            witch_hunter_boss_fight_pyrrhic_victory_trigger = yes
+            trait = on_witch_hunt
+        }
+        text = EVTDESC_wh_cults_and_hunters_717_liege_fought_pyrrhic_victory
+    }
+    desc = {
+        trigger = {
+            witch_hunter_boss_fight_pyrrhic_victory_trigger = yes
+            NOT = { trait = on_witch_hunt }
+        }
+        text = EVTDESC_wh_cults_and_hunters_717_hunter_solo_pyrrhic_victory
+    }
+    desc = {
+        trigger = {
+            witch_hunter_boss_fight_partial_victory_trigger = yes
+            trait = on_witch_hunt
+        }
+        text = EVTDESC_wh_cults_and_hunters_717_liege_fought_partial_victory
+    }
+    desc = {
+        trigger = {
+            witch_hunter_boss_fight_partial_victory_trigger = yes
+            NOT = { trait = on_witch_hunt }
+        }
+        text = EVTDESC_wh_cults_and_hunters_717_hunter_solo_partial_victory
+    }
+    desc = {
+        trigger = {
+            witch_hunter_boss_fight_catastrophe_trigger = yes
+            trait = on_witch_hunt
+        }
+        text = EVTDESC_wh_cults_and_hunters_717_liege_fought_catastrophe
+    }
+    desc = {
+        trigger = {
+            witch_hunter_boss_fight_catastrophe_trigger = yes
+            NOT = { trait = on_witch_hunt }
+        }
+        text = EVTDESC_wh_cults_and_hunters_717_hunter_solo_catastrophe
+    }
+
+
+    option = {
+        trigger = {
+            witch_hunter_boss_fight_total_victory_trigger = yes
+            trait = on_witch_hunt
+        }
+        name = EVTOPTA_wh_cults_and_hunters_717
+        add_trait = wounded
+        witch_hunter_kills_cult_leader_effect = yes
+        reduce_doom_progress_enormous_effect = yes
+        witch_hunter_counter_attack_cleanup_effect = yes
+        prestige = 1000
+        piety = 1000
+        event_target:court_witchhunter = {
+            add_trait = wounded
+            witch_hunter_counter_attack_cleanup_effect = yes
+            prestige = 1000
+            piety = 1000
+        }
+    }
+
+    option = {
+        trigger = {
+            witch_hunter_boss_fight_total_victory_trigger = yes
+            NOT = { trait = on_witch_hunt }
+        }
+        name = EVTOPTB_wh_cults_and_hunters_717
+        witch_hunter_kills_cult_leader_effect = yes
+        reduce_doom_progress_enormous_effect = yes
+        prestige = 100
+        piety = 100
+        event_target:court_witchhunter = {
+            add_trait = wounded
+            witch_hunter_counter_attack_cleanup_effect = yes
+            prestige = 2500
+            piety = 2500
+        }
+    }
+
+    option = {
+        trigger = {
+            witch_hunter_boss_fight_pyrrhic_victory_trigger = yes
+            trait = on_witch_hunt
+        }
+        name = EVTOPTC_wh_cults_and_hunters_717
+        random_list = {
+            70 = {
+                add_trait = wounded
+            }
+            30 = {
+                add_maimed_trait_effect = yes
+            }
+        }
+        witch_hunter_kills_cult_leader_effect = yes
+        reduce_doom_progress_enormous_effect = yes
+        witch_hunter_counter_attack_cleanup_effect = yes
+        prestige = 1000
+        piety = 1000
+        event_target:court_witchhunter = {
+            prestige = 1000
+            piety = 1000
+            cult_leader_kills_witch_hunter_effect = yes
+        }
+    }
+
+    option = {
+        trigger = {
+            witch_hunter_boss_fight_pyrrhic_victory_trigger = yes
+            NOT = { trait = on_witch_hunt }
+        }
+        name = EVTOPTD_wh_cults_and_hunters_717
+        witch_hunter_kills_cult_leader_effect = yes
+        reduce_doom_progress_enormous_effect = yes
+        prestige = 100
+        piety = 100
+        event_target:court_witchhunter = {
+            prestige = 2500
+            piety = 2500
+            cult_leader_kills_witch_hunter_effect = yes
+        }
+    }
+
+    option = {
+        trigger = {
+            witch_hunter_boss_fight_partial_victory_trigger = yes
+            trait = on_witch_hunt
+        }
+        name = EVTOPTE_wh_cults_and_hunters_717
+        add_trait = wounded
+        cult_leader_operations_severely_disrupted_by_witch_hunter_attack_effect = yes
+        reduce_doom_progress_massive_effect = yes
+        witch_hunter_counter_attack_cleanup_effect = yes
+        prestige = 500
+        piety = 500
+        event_target:court_witchhunter = {
+            add_trait = wounded
+            witch_hunter_counter_attack_cleanup_effect = yes
+            prestige = 500
+            piety = 500
+        }
+    }
+
+    option = {
+        trigger = {
+            witch_hunter_boss_fight_partial_victory_trigger = yes
+            NOT = { trait = on_witch_hunt }
+        }
+        name = EVTOPTF_wh_cults_and_hunters_717
+        cult_leader_operations_severely_disrupted_by_witch_hunter_attack_effect = yes
+        reduce_doom_progress_massive_effect = yes
+        prestige = 50
+        piety = 50
+        event_target:court_witchhunter = {
+            add_trait = wounded
+            witch_hunter_counter_attack_cleanup_effect = yes
+            prestige = 1000
+            piety = 1000
+        }
+    }
+
+    option = {
+        trigger = {
+            witch_hunter_boss_fight_catastrophe_trigger = yes
+            trait = on_witch_hunt
+        }
+        name = EVTOPTG_wh_cults_and_hunters_717
+        add_doom_progress_medium_effect = yes
+        cult_leader_kills_witch_hunter_effect = yes
+        event_target:court_witchhunter = {
+            cult_leader_kills_witch_hunter_effect = yes
+        }
+    }
+
+    option = {
+        trigger = {
+            witch_hunter_boss_fight_catastrophe_trigger = yes
+            NOT = { trait = on_witch_hunt }
+        }
+        name = EVTOPTH_wh_cults_and_hunters_717
+        add_doom_progress_medium_effect = yes
+        event_target:court_witchhunter = {
+            cult_leader_kills_witch_hunter_effect = yes
         }
     }
 }

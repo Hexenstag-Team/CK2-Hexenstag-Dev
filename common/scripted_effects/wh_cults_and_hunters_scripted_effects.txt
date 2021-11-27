@@ -2930,7 +2930,8 @@ witch_hunt_begins_effect = {
 }
 
 #witch hunter employer scope
-hurry_witch_hunt_effect = {
+#split from following effect to allow for loc targets to be found before plyaer decides whether to hurry
+prepare_to_hurry_witch_hunt_effect = {
     #find event targets
     random_courtier_or_vassal = {
         limit = {
@@ -2943,6 +2944,10 @@ hurry_witch_hunt_effect = {
             save_event_target_as = clue_county
         }
     }
+}
+
+#witch hunter employer scope, be sure to use previous effect to find targets upstream in the event chain
+hurry_witch_hunt_effect = {
     event_target:clue_county = {
         if = {
             limit = {
@@ -3771,6 +3776,7 @@ at_the_mercy_of_the_emissary_effect = {
             }
             #"tell me everything you know - everything!"
             persistent_event_target:underground_cult_allegiance = {
+                save_event_target_as = witch_hunter_target_cult
                 holder_scope = {
                     subtract_variable = {
                         which = cultic_influence
@@ -3778,11 +3784,222 @@ at_the_mercy_of_the_emissary_effect = {
                     }
                 }
             }
+            event_target:witch_hunter_employer = {
+                character_event = {
+                    id = wh_cults_and_hunters.710
+                    days = 3
+                }
+            }
         }
         #this kills the accused courtier
         death = {
             death_reason = death_execution_burning
             killer = event_target:court_witchhunter
+        }
+    }
+}
+
+#witch hunter employer scope
+witch_hunter_gets_minor_support_effect = {
+    event_target:court_witchhunter = {
+        change_variable = {
+            which = counter_attack_strength
+            value = 2
+        }
+    }
+}
+
+witch_hunter_gets_medium_support_effect = {
+    event_target:court_witchhunter = {
+        change_variable = {
+            which = counter_attack_strength
+            value = 5
+        }
+    }
+}
+
+witch_hunter_gets_major_support_effect = {
+    event_target:court_witchhunter = {
+        change_variable = {
+            which = counter_attack_strength
+            value = 10
+        }
+    }
+}
+
+#witch hunter employer scope (could be any though)
+witch_hunter_prepares_counter_attack_effect = {
+    event_target:court_witchhunter = {
+        add_trait = on_witch_hunt
+        set_character_flag = attacking_cult
+        export_to_variable = {
+            which = counter_attack_strength
+            value = intrigue
+        }
+        trigger_switch = {
+            on_trigger = has_character_flag
+            emissary_of_order_witch_hunter = {
+                if = {
+                    limit = {
+                        event_target:witch_hunter_target_cult = {
+                            holder_scope = {
+                                religion_group = chaos_gods_group
+                            }
+                        }
+                    }
+                    witch_hunter_gets_major_support_effect = yes
+                }
+            }
+            temple_of_solkan_witch_hunter = {
+                if = {
+                    limit = {
+                        event_target:witch_hunter_target_cult = {
+                            holder_scope = {
+                                religion_group = chaos_gods_group
+                            }
+                        }
+                    }
+                    witch_hunter_gets_medium_support_effect = yes
+                }
+            }
+            order_of_the_shroud_witch_hunter = {
+                if = {
+                    limit = {
+                        event_target:witch_hunter_target_cult = {
+                            holder_scope = {
+                                religion_group = necromantic_group
+                            }
+                        }
+                    }
+                    witch_hunter_gets_medium_support_effect = yes
+                }
+            }
+            myrmidian_inquisitor_witch_hunter = {
+                witch_hunter_gets_minor_support_effect = yes
+            }
+            sigmarite_templar_witch_hunter = {
+                witch_hunter_gets_minor_support_effect = yes
+            }
+            bretonnian_knight_witch_hunter = {
+                witch_hunter_gets_minor_support_effect = yes
+            }
+            ice_witch_witch_hunter = {
+                witch_hunter_gets_minor_support_effect = yes
+            }
+        }
+        save_persistent_event_target = {
+            name = target_cult
+            scope = event_target:witch_hunter_target_cult
+        }
+    }
+}
+
+#not scope sensitive but should have calculated witch hunter's counter attack strength first
+cult_leader_attempts_to_avoid_counter_attack_effect = {
+    event_target:witch_hunter_target_cult = {
+        holder_scope = {
+            export_to_variable = {
+                which = counter_attack_strength
+                value = intrigue
+            }
+            subtract_variable = {
+                which = counter_attack_strength
+                which = event_target:court_witchhunter
+            }
+            if = {
+                limit = {
+                    check_variable = {
+                        which = counter_attack_strength
+                        value < 0
+                    }
+                }
+                event_target:witch_hunter_employer = {
+                    character_event = {
+                        id = wh_cults_and_hunters.713
+                        days = 15
+                        random = 15
+                    }
+                }
+            }
+            else = {
+                event_target:witch_hunter_employer = {
+                    character_event = {
+                        id = wh_cults_and_hunters.712
+                        days = 15
+                        random = 15
+                    }
+                }
+            }
+        }
+    }
+}
+
+#character scope to cleanup - witch hunter if they're alive, liege if they fought and survived
+witch_hunter_counter_attack_cleanup_effect = {
+    remove_trait = on_witch_hunt
+    clr_character_flag = attacking_cult
+    clear_persistent_event_target = target_cult
+}
+
+#any boss fight combatant scope
+boss_fight_base_strength_effect = {
+    export_to_variable = {
+        which = boss_fight_strength
+        value = combat_rating
+    }
+    trigger_switch = {
+        on_trigger = has_character_modifier
+        magic_power_4 = {
+            change_variable = {
+                which = boss_fight_strength
+                value = 40
+            }
+        }
+        magic_power_3 = {
+            change_variable = {
+                which = boss_fight_strength
+                value = 30
+            }
+        }
+        magic_power_2 = {
+            change_variable = {
+                which = boss_fight_strength
+                value = 20
+            }
+        }
+        magic_power_1 = {
+            change_variable = {
+                which = boss_fight_strength
+                value = 10
+            }
+        }
+    }
+}
+
+#any scope
+witch_hunter_kills_cult_leader_effect = {
+    event_target:active_cult_leader = {
+        death = {
+            death_reason = death_battle
+            killer = event_target:court_witchhunter
+        }
+    }
+}
+
+#dying character scope
+cult_leader_kills_witch_hunter_effect = {
+    death = {
+        death_reason = death_battle
+        killer = event_target:active_cult_leader
+    }
+}
+
+#any scope
+cult_leader_operations_severely_disrupted_by_witch_hunter_attack_effect = {
+    event_target:active_cult_leader = {
+        multiply_variable = {
+            which = cultic_influence
+            value = 0.2
         }
     }
 }

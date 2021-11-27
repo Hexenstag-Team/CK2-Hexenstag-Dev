@@ -30,3 +30,79 @@ defined_text = {
 		localisation_key = ConvertToChaosHordeDesc
 	}
 }
+
+defined_text = {
+	name = underground_cult_trait
+	
+	text = {
+		localisation_key = underground_cult_member_living
+		trigger = {
+			is_alive = yes
+		}
+	}
+	fallback_text = {
+		localisation_key = underground_cult_member_dead
+	}
+}
+
+defined_text = {
+	name = underground_cult_trait_desc
+	
+	text = {
+		localisation_key = underground_cult_member_desc_living
+		trigger = {
+			is_alive = yes
+		}
+	}
+	fallback_text = {
+		localisation_key = underground_cult_member_desc_dead
+	}
+}
+
+defined_text = {
+	name = on_witch_hunt_trait
+	
+	use_first_valid  = yes
+	
+	text = {
+		localisation_key = on_witch_hunt_cult
+		trigger = {
+			has_character_flag = attacking_cult
+		}
+	}
+	
+	text = {
+		localisation_key = on_witch_hunt_county
+		trigger = {
+			is_alive = yes
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = on_witch_hunt_died
+	}
+}
+
+defined_text = {
+	name = on_witch_hunt_trait_desc
+	
+		use_first_valid  = yes
+	
+	text = {
+		localisation_key = on_witch_hunt_cult_desc
+		trigger = {
+			has_character_flag = attacking_cult
+		}
+	}
+	
+	text = {
+		localisation_key = on_witch_hunt_county_desc
+		trigger = {
+			is_alive = yes
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = on_witch_hunt_died_desc
+	}
+}
