@@ -829,19 +829,7 @@ find_starting_cultic_activity_kingdom_target_effect = {
 
 #cult leader scope
 find_new_cultic_activity_kingdom_target_effect = {
-    persistent_event_target:cultic_activity_target = {
-        save_event_target_as = current_area_of_operations
-    }
-    #clear old influencing flags - 2 year window for witch hunts to wrap up before the trail goes cold
-    any_province = {
-        limit = {
-            de_jure_liege_or_above = event_target:current_area_of_operations
-        }
-        province_event = {
-            id = wh_cults_and_hunters.3
-            days = 730
-        }
-    }
+    clear_cult_influence_flags_effect = yes
     random_list = {
         #shift targets in same de jure Empire
         30 = {
@@ -893,7 +881,7 @@ find_new_cultic_activity_kingdom_target_effect = {
                             title = event_target:current_area_of_operations
                             holder_scope = {
                                 OR = {
-                                    religion_group = choas_gods_group
+                                    religion_group = chaos_gods_group
                                     religion_group = necromantic_group
                                 }
                             }
@@ -990,6 +978,22 @@ find_new_cultic_activity_kingdom_target_effect = {
                     save_event_target_as = target_kingdom
                 }
             }
+        }
+    }
+}
+
+clear_cult_influence_flags_effect = {
+    persistent_event_target:cultic_activity_target = {
+        save_event_target_as = current_area_of_operations
+    }
+    #clear old influencing flags - 2 year window for witch hunts to wrap up before the trail goes cold
+    any_province = {
+        limit = {
+            de_jure_liege_or_above = event_target:current_area_of_operations
+        }
+        province_event = {
+            id = wh_cults_and_hunters.3
+            days = 730
         }
     }
 }
@@ -1213,10 +1217,13 @@ cultic_tactical_action_effect = {
         #cult vs. cult
         50 = {
             trigger = {
-                any_title = {
-                    limit = {
+                e_realm_of_undivided = {
+                    any_direct_de_jure_vassal_title = {
                         has_title_flag = underground_cult
                         holder_scope = {
+                            NOT = {
+                                character = event_target:active_cult_leader
+                            }
                             persistent_event_target:cultic_activity_target = {
                                 title = event_target:cultic_area_of_operations
                             }
@@ -1229,25 +1236,33 @@ cultic_tactical_action_effect = {
                 which = cultic_influence
                 value = 50
             }
-            random_title = {
-                limit = {
-                    has_title_flag = underground_cult
-                    holder_scope = {
-                        persistent_event_target:cultic_activity_target = {
-                            title = event_target:cultic_area_of_operations
+            e_realm_of_undivided = {
+                random_direct_de_jure_vassal_title = {
+                    limit = {
+                        has_title_flag = underground_cult
+                        holder_scope = {
+                            NOT = {
+                                character = event_target:active_cult_leader
+                            }
+                            persistent_event_target:cultic_activity_target = {
+                                title = event_target:cultic_area_of_operations
+                            }
                         }
                     }
-                }
-                wealth = -50
-                subtract_variable = {
-                    which = cultic_influence
-                    value = 50
+                    holder_scope = {
+                        wealth = -50
+                        subtract_variable = {
+                            which = cultic_influence
+                            value = 50
+                        }
+                    }
                 }
             }
         }
         #TODO
-        #undead uprising
-        #blood dragon... thing?
+        #Necromantic cults
+        #less corruption, more just running around doing bad things
+        #undead uprisings?
     }
     subtract_variable = {
         which = cult_tactical_actions
@@ -2933,11 +2948,24 @@ witch_hunt_begins_effect = {
 #split from following effect to allow for loc targets to be found before plyaer decides whether to hurry
 prepare_to_hurry_witch_hunt_effect = {
     #find event targets
-    random_courtier_or_vassal = {
+    if = {
         limit = {
-            trait = on_witch_hunt
+            has_law = witch_hunter_law_0
         }
-        save_event_target_as = court_witchhunter
+        any_courtier_or_vassal = {
+            limit = {
+                has_job_title = job_spiritual
+            }
+            save_event_target_as = court_witchhunter
+        }
+    }
+    else = {
+        random_courtier_or_vassal = {
+            limit = {
+                trait = on_witch_hunt
+            }
+            save_event_target_as = court_witchhunter
+        }
     }
     event_target:court_witchhunter = {
         persistent_event_target:witch_hunt_county = {
@@ -3011,11 +3039,14 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
                 accused_by_witch_hunter_effect = yes
             }
         }
-        #mutant
+        #mutant or beastman (seeing as beastmen sometimes end up in Old World Courts, we might as well burn them)
         60 = {
             trigger = {
                 any_realm_character = {
-                    is_mutated_trigger = yes
+                    OR = {
+                        is_mutated_trigger = yes
+                        trait = creature_beastman
+                    }
                 }
             }
             modifier = {
@@ -3026,7 +3057,10 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
             }
             random_realm_character = {
                 limit = {
-                    is_mutated_trigger = yes
+                    OR = {
+                        is_mutated_trigger = yes
+                        trait = creature_beastman
+                    }
                     NOT = {
                         character = event_target:court_witchhunter
                     }
@@ -3247,7 +3281,83 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
                     trait = diligent
                 }
             }
-            #might request additional resources?
+            if = {
+                limit = {
+                    event_target:court_witchhunter = {
+                        trait = witch_hunter
+                    }
+                }
+                witch_hunter_asks_to_go_fight_evil_elsewhere_effect = yes
+            }
+        }
+    }
+}
+
+#witch hunter employer scope
+witch_hunter_asks_to_go_fight_evil_elsewhere_effect = {
+    if = {
+        limit = {
+            ai = no
+        }
+        character_event = {
+            id = wh_cults_and_hunters.604
+            days = 1
+            random = 2
+        }
+    }
+    else = {
+        random_list = {
+            50 = {
+                modifier = {
+                    factor = 2
+                    trait = zealous
+                }
+                modifier = {
+                    factor = 0.4
+                    tier = COUNT
+                }
+                modifier = {
+                    factor = 0.6
+                    tier = DUKE
+                }
+                modifier = {
+                    factor = 1.2
+                    tier = KING
+                }
+                modifier = {
+                    factor = 2.5
+                    tier = EMPEROR
+                }
+                witch_hunter_goes_to_fight_evil_elsewhere_effect = yes
+            }
+            50 = {
+                modifier = {
+                    factor = 2
+                    trait = greedy
+                }
+                #no effect
+            }
+        }
+    }
+}
+
+#witch hunter employer scope
+witch_hunter_goes_to_fight_evil_elsewhere_effect = {
+    event_target:court_witchhunter = {
+        trigger_switch = {
+            on_trigger = has_character_flag
+            emissary_of_order_witch_hunter = {
+                reduce_doom_progress_major_effect = yes
+            }
+            temple_of_solkan_witch_hunter = {
+                reduce_doom_progress_medium_effect = yes
+            }
+            fallback = {
+                reduce_doom_progress_minor_effect = yes
+            }
+        }
+        death = {
+            death_reason = death_missing
         }
     }
 }
@@ -3256,53 +3366,71 @@ witch_hunter_looks_for_deviant_courtiers_effect = {
 #event_target:court_witchhunter must be identified going into this
 accused_by_witch_hunter_effect = {
     save_event_target_as = courtier_accused_by_witch_hunter
-    #determin accused's evidence
-    set_variable = {
-        which = witch_hunter_evidence
-        value = 0
+    #cultists know that they're suspicious and will try to avoid detection
+    if = {
+        limit = {
+            trait = underground_cult_member
+        }
+        random = {
+            chance = 15
+            mult_modifier = {
+                factor = 1.2
+                intrigue > 10
+            }
+            mult_modifier = {
+                factor = 1.2
+                intrigue > 15
+            }
+            mult_modifier = {
+                factor = 1.2
+                intrigue > 20
+            }
+            mult_modifier = {
+                factor = 0.5
+                true_religion_group = chaos_gods_group
+                event_target:court_witchhunter = {
+                    has_character_flag = emissary_of_order_witch_hunter
+                }
+            }
+            mult_modifier = {
+                factor = 0.5
+                event_target:court_witchhunter = {
+                    has_character_flag = order_of_the_sword_and_scale_witch_hunter
+                }
+            }
+            mult_modifier = {
+                factor = 0.75
+                true_religion_group = chaos_gods_group
+                event_target:court_witchhunter = {
+                    has_character_flag = temple_of_solkan_witch_hunter
+                }
+            }
+            mult_modifier = {
+                factor = 0.75
+                true_religion_group = necromantic_group
+                event_target:court_witchhunter = {
+                    has_character_flag = order_of_the_shroud_witch_hunter
+                }
+            }
+            break = yes
+        }
     }
     #even if the accused is innocent, having a strong intrigue score means that they probably avoided suspicious behavior
     export_to_variable = {
         which = witch_hunter_evidence
         value = intrigue
     }
-    #the powerful are protected
-    trigger_switch = {
-        on_trigger = tier
-        BARON = {
-            change_variable = {
-                which = witch_hunter_evidence
-                value = 2
-            }
-        }
-        COUNT = {
-            change_variable = {
-                which = witch_hunter_evidence
-                value = 4
-            }
-        }
-        DUKE = {
-            change_variable = {
-                which = witch_hunter_evidence
-                value = 6
-            }
-        }
-        KING = {
-            change_variable = {
-                which = witch_hunter_evidence
-                value = 8
-            }
-        }
-        KING = {
-            change_variable = {
-                which = witch_hunter_evidence
-                value = 10
-            }
-        }
-    }
     ## Mutation effects ##
-    #massive mutation
+    #beastman - I've seen enough
     if = {
+        limit = {
+            trait = creature_beastman
+        }
+        found_guilty_by_witch_hunter_effect = yes
+        break = yes
+    }
+    #massive mutation
+    else_if = {
         limit = {
             check_variable = {
                 which = mutation_counter
@@ -3340,16 +3468,69 @@ accused_by_witch_hunter_effect = {
             value = 1
         }
     }
+    #the powerful are protected
+    trigger_switch = {
+        on_trigger = tier
+        BARON = {
+            change_variable = {
+                which = witch_hunter_evidence
+                value = 2
+            }
+        }
+        COUNT = {
+            change_variable = {
+                which = witch_hunter_evidence
+                value = 4
+            }
+        }
+        DUKE = {
+            change_variable = {
+                which = witch_hunter_evidence
+                value = 6
+            }
+        }
+        KING = {
+            change_variable = {
+                which = witch_hunter_evidence
+                value = 8
+            }
+        }
+        KING = {
+            change_variable = {
+                which = witch_hunter_evidence
+                value = 10
+            }
+        }
+    }
     #determine strength of hunter's case & simulate their judgment
     #the intent is to simulate a "kangaroo court" where the accused is believed guilty going in and will struggle to clear their name
     event_target:court_witchhunter = {
-        set_variable = {
-            which = witch_hunter_evidence
-            value = 0
-        }
         export_to_variable = {
             which = witch_hunter_evidence
             value = intrigue
+        }
+        #apparatus modifiers
+        if = {
+            limit = {
+                employer = {
+                    has_law = witch_hunter_law_3
+                }
+            }
+            multiply_variable = {
+                which = witch_hunter_evidence
+                value = 1.5
+            }
+        }
+        else_if = {
+            limit = {
+                employer = {
+                    has_law = witch_hunter_law_2
+                }
+            }
+            multiply_variable = {
+                which = witch_hunter_evidence
+                value = 1.25
+            }
         }
         #trait modifiers
         if = {
@@ -3386,6 +3567,12 @@ accused_by_witch_hunter_effect = {
                     #chance of double-tap
                     random = {
                         chance = 60
+                        mult_modifier = {
+                            factor = 1.2
+                            employer = {
+                                has_law = witch_hunter_law_3
+                            }
+                        }
                         event_target:witch_hunter_employer = {
                             character_event = {
                                 id = wh_cults_and_hunters.602
@@ -3409,6 +3596,12 @@ accused_by_witch_hunter_effect = {
                     #chance of double-tap
                     random = {
                         chance = 45
+                        mult_modifier = {
+                            factor = 1.2
+                            employer = {
+                                has_law = witch_hunter_law_3
+                            }
+                        }
                         event_target:witch_hunter_employer = {
                             character_event = {
                                 id = wh_cults_and_hunters.602
@@ -3432,6 +3625,12 @@ accused_by_witch_hunter_effect = {
                     #chance of double-tap
                     random = {
                         chance = 45
+                        mult_modifier = {
+                            factor = 1.2
+                            employer = {
+                                has_law = witch_hunter_law_3
+                            }
+                        }
                         event_target:witch_hunter_employer = {
                             character_event = {
                                 id = wh_cults_and_hunters.602
@@ -3454,6 +3653,12 @@ accused_by_witch_hunter_effect = {
                 #chance of double-tap
                 random = {
                     chance = 45
+                    mult_modifier = {
+                        factor = 1.2
+                        employer = {
+                            has_law = witch_hunter_law_3
+                        }
+                    }
                     event_target:witch_hunter_employer = {
                         character_event = {
                             id = wh_cults_and_hunters.602
@@ -3467,6 +3672,12 @@ accused_by_witch_hunter_effect = {
                 #chance of double-tap
                 random = {
                     chance = 45
+                    mult_modifier = {
+                        factor = 1.2
+                        employer = {
+                            has_law = witch_hunter_law_3
+                        }
+                    }
                     event_target:witch_hunter_employer = {
                         character_event = {
                             id = wh_cults_and_hunters.602
@@ -3480,6 +3691,12 @@ accused_by_witch_hunter_effect = {
                 #chance of double-tap
                 random = {
                     chance = 45
+                    mult_modifier = {
+                        factor = 1.2
+                        employer = {
+                            has_law = witch_hunter_law_3
+                        }
+                    }
                     event_target:witch_hunter_employer = {
                         character_event = {
                             id = wh_cults_and_hunters.602
@@ -3493,6 +3710,12 @@ accused_by_witch_hunter_effect = {
                 #chance of double-tap
                 random = {
                     chance = 45
+                    mult_modifier = {
+                        factor = 1.2
+                        employer = {
+                            has_law = witch_hunter_law_3
+                        }
+                    }
                     event_target:witch_hunter_employer = {
                         character_event = {
                             id = wh_cults_and_hunters.602
@@ -3506,6 +3729,12 @@ accused_by_witch_hunter_effect = {
                 #small chance of double-tap
                 random = {
                     chance = 10
+                    mult_modifier = {
+                        factor = 1.2
+                        employer = {
+                            has_law = witch_hunter_law_3
+                        }
+                    }
                     event_target:witch_hunter_employer = {
                         character_event = {
                             id = wh_cults_and_hunters.602
@@ -3546,6 +3775,7 @@ accused_by_witch_hunter_effect = {
                         OR = {
                             trait = underground_cult_member
                             is_mutated_trigger = yes
+                            trait = creature_beastman
                             has_magic_potential = yes
                             is_foe = PREV
                         }
@@ -3636,6 +3866,13 @@ found_guilty_by_witch_hunter_effect = {
         who = event_target:court_witchhunter
         years = 100
     }
+    if = {
+        limit = {
+            trait = creature_beastman
+        }
+        found_guilty_by_any_liege_effect = yes
+        break = yes #shouldn't need this but just in case
+    }
     #judgment by liege
     event_target:witch_hunter_employer = {
         if = {
@@ -3646,6 +3883,15 @@ found_guilty_by_witch_hunter_effect = {
                 id = wh_cults_and_hunters.700
                 days = 3
                 random = 12
+            }
+        }
+        #Emergency measures - no appeal to liege!
+        else_if = {
+            limit = {
+                has_law = witch_hunter_law_3
+            }
+            event_target:courtier_accused_by_witch_hunter = {
+                found_guilty_by_any_liege_effect = yes
             }
         }
         #the arrow of law compels you!
@@ -3752,6 +3998,11 @@ found_guilty_by_witch_hunter_effect = {
 #accused character scope
 found_guilty_by_any_liege_effect = {
     imprison = event_target:witch_hunter_employer
+    reverse_opinion = {
+        modifier = opinion_traitor
+        who = event_target:witch_hunter_employer
+        years = 100
+    }
     character_event = {
         id = wh_cults_and_hunters.701
         days = 2
@@ -3784,17 +4035,59 @@ at_the_mercy_of_the_emissary_effect = {
                     }
                 }
             }
-            event_target:witch_hunter_employer = {
-                character_event = {
-                    id = wh_cults_and_hunters.710
-                    days = 3
-                }
-            }
+            witch_hunter_investigate_leads_to_cult_center_effect = yes
         }
         #this kills the accused courtier
         death = {
             death_reason = death_execution_burning
             killer = event_target:court_witchhunter
+        }
+    }
+}
+
+witch_hunter_investigate_leads_to_cult_center_effect = {
+    event_target:court_witchhunter = {
+        random = {
+            chance = 60
+            mult_modifier = {
+                factor = 1.1
+                intrigue > 10
+            }
+            mult_modifier = {
+                factor = 1.1
+                intrigue > 15
+            }
+            mult_modifier = {
+                factor = 1.1
+                intrigue > 20
+            }
+            mult_modifier = {
+                factor = 1.2
+                is_smart_trigger = yes
+            }
+            #if hunter is busy, additional information just damages the cult
+            if = {
+                limit = {
+                    trait = on_witch_hunt
+                }
+                event_target:witch_hunter_target_cult = {
+                    holder_scope = {
+                        subtract_variable = {
+                            which = cultic_influence
+                            value = 50
+                        }
+                    }
+                }
+            }
+            #if they're not, a counter-attack is proposed
+            else = {
+                event_target:witch_hunter_employer = {
+                    character_event = {
+                        id = wh_cults_and_hunters.710
+                        days = 3
+                    }
+                }
+            }
         }
     }
 }
@@ -3901,6 +4194,10 @@ cult_leader_attempts_to_avoid_counter_attack_effect = {
             export_to_variable = {
                 which = counter_attack_strength
                 value = intrigue
+            }
+            multiply_variable = {
+                which = counter_attack_strength
+                value = 1.5
             }
             subtract_variable = {
                 which = counter_attack_strength

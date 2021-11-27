@@ -11489,6 +11489,16 @@ religious_revolt = {
 					days = -1
 				}
 			}
+			if = {
+				limit = {
+					trait = underground_cult_member
+				}
+				FROM = {
+					character_event = {
+						id = wh_cults_and_hunters.620
+					}
+				}
+			}
 		}
 		FROM = {
 			prestige = 50

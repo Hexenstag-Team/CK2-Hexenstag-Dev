@@ -45,11 +45,11 @@ witch_hunter_law_3_desc;Witch Hunters are given emergency powers to fight back t
 witch_hunter;Witch Hunter;;;;;;;;;;;;;x
 witch_hunter_desc;All manner of men and women take up the trials of Witch Hunting. Most are scoundrels and adventurers brought in to do the dirty job for nothing more than pay. But the best Witch Hunters belong to a handful of templar orders and employ ancient techniques in their battle against the dark.;;;;;;;;;;;;;x
 on_witch_hunt;[on_witch_hunt_trait];;;;;;;;;;;;;x
-on_witch_hunt_cult;Attacking the [target_cult.GetName];;;;;;;;;;;;;x
+on_witch_hunt_cult;Attacking the [target_cult.GetBaseName];;;;;;;;;;;;;x
 on_witch_hunt_county;Scouring [witch_hunt_county.GetName];;;;;;;;;;;;;x
 on_witch_hunt_died;Died fighting evil;;;;;;;;;;;;;x
 on_witch_hunt_desc;[on_witch_hunt_trait_desc];;;;;;;;;;;;;x
-on_witch_hunt_cult_desc;This character has discovered key information about the dreaded [target_cult.GetName] and is bravely leading an attack on the Cult's center!;;;;;;;;;;;;;x
+on_witch_hunt_cult_desc;This character has discovered key information about the dreaded [target_cult.GetBaseName] and is bravely leading an attack on the Cult's center!;;;;;;;;;;;;;x
 on_witch_hunt_county_desc;This character is currently on a Witch hunt, actively rooting out malign forces in [witch_hunt_county.GetName].;;;;;;;;;;;;;x
 on_witch_hunt_died_desc;This heroic character gave their life to keep the Old World safe from the terrible forces that lurk in the darkness;;;;;;;;;;;;;x
 underground_cult_member;[underground_cult_trait];;;;;;;;;;;;;x
@@ -174,8 +174,12 @@ EVTOPTA_wh_cults_and_hunters_511;Banish the Darkness!;;;;;;;;;;;;;x
 EVTDESC_wh_cults_and_hunters_603;Your loyal Witch Hunter, [court_witchhunter.GetFirstName] reports that the initial investigation in [clue_county.GetName] is complete and with a bit of support the trials could be wound up in a few days. [court_witchhunter.GetSheHeCap] would then be available for other tasks.;;;;;;;;;;;;;x
 EVTOPTA_wh_cults_and_hunters_603;Of course!;;;;;;;;;;;;;x
 EVTOPTB_wh_cults_and_hunters_603;I'm not made of money!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_604;"There is no evidence of malign activity within your borders," concludes [court_witchhunter.GetFirstName]. "I ask that you release me from your service, so that I may go in search of evil to fight.";;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_604;Go with my blessing!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_604;I need you to remain on watch here;;;;;;;;;;;;;x
 EVTDESC_wh_cults_and_hunters_610;[court_witchhunter.GetBestName] is now hunting down the mutants, cultists, and witches who plague [clue_county.GetName].;;;;;;;;;;;;;x
 EVTDESC_wh_cults_and_hunters_611;[court_witchhunter.GetBestName] has returned from [court_witchhunter.GetHerHis] mission to [clue_county.GetName]. The troubles are over and many suspected cultists have been dealt with.;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_620;The revolt has been crushed and its leader, [courtier_accused_by_witch_hunter.GetBestName], is at your mercy. You ponder the best method of execution but [court_witchhunter.GetFirstName] has a better idea: torture the miscreant for information about their cult's activity.;;;;;;;;;;;;;x
 EVTDESC_wh_cults_and_hunters_700;[court_witchhunter.GetBestName] brings charges against [courtier_accused_by_witch_hunter.GetBestName]. "This foul miscreant has betrayed all that is right in the world, consorting with deviants and foul spirits. Consign them to my care that the full spread of conspiracy might be discovered!";;;;;;;;;;;;;x
 EVTOPTA_wh_cults_and_hunters_700;Guilty!;;;;;;;;;;;;;x
 EVTOPTB_wh_cults_and_hunters_700;Not guilty;;;;;;;;;;;;;x
