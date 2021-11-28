@@ -1,5 +1,5 @@
-#Used IDs 12001-12028
-#Free IDs 12029-12300
+#Used IDs 12001-12029
+#Free IDs 12030-12300
 
 12001 = {	#70000
 	name = Mana
@@ -516,8 +516,8 @@
 
 12027 = {	#73029
 	name = Ilmaneitsi
-	dynasty = 33155 
-	culture = ropsmann  
+	dynasty = 33155
+	culture = ropsmann
 	religion = kislev_gods
 	martial = 3
 	diplomacy = 6
@@ -558,4 +558,34 @@
 	stewardship=6
 	1961.3.5 = {birth = yes}
 	2031.5.23 = {death = yes}
+}
+
+#Cult Magus of the Throne Pact
+12029 = {
+	name = Waldeko
+	female=no
+	dynasty=0
+	culture = ropsmann
+	religion = khorne
+	add_trait = creature_human
+	add_trait = misguided_warrior
+	add_trait = wroth
+	add_trait = ambitious
+	add_trait = brave
+	add_trait = zealous
+	add_trait = duelist
+	learning=5
+	martial=12
+	diplomacy=3
+	intrigue=7
+	stewardship=4
+	1977.3.18 = {birth = yes}
+	2004.7.7 = {
+		effect = {
+			add_trait = mark_khorne
+			add_trait = chosen_khorne
+			add_trait = khorne_berserker
+		}
+	}
+	2021.12.25 = {death = yes}
 }

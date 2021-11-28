@@ -1,341 +1,277 @@
-# LAST EDIT: 2020/15/4 - Deadliest
-################
-# WITCH HUNTER #
-################
+#####################
+# CULTS AND HUNTERS #
+#####################
 ###ÄNSI
-#Artifacts
-succ_witch_hunter_elective;Inquisitorial Elective;;;;;;;;;;;;;x
-succ_whunter_elective_desc;The Title is passed down on Elected Witch Hunter from within the Order to carry on the responsibilities of predecessor.;;;;;;;;;;;;;x
-request_whunter_weapon;Comission Witch Hunter Weaponry;;;;;;;;;;;;;x
-request_whunter_weapon_desc;Comission Witch Hunter Weaponry;;;;;;;;;;;;;x
-request_whunter_weapon_power_desc;Allows requesting weapons from the Order's own crafters that specailize in damaging heretics;;;;;;;;;;;;;x
-witch_hunter_rapier;Witch Hunter Rapier;;;;;;;;;;;;;x
-witch_hunter_rapier_desc;Specially crafted rapier from Silver, believed to do great harm against undead and daemons.;;;;;;;;;;;;;x
-#Society
-currency_name_sigmar_witch_hunters;Holy Fervor;;;;;;;;;;;;;x
-sigmar_witch_hunters;Order of Sigmar;;;;;;;;;;;;;x
-sigmar_witch_hunters_desc;The Order of the Templars of Sigmar, is an organization dedicated on eradication of heretics be they warlocks, witches, sorcerers, fortune-tellers, necromancers, worshippers of dark gods, mutants, blasphemers, sinners, profanities, servants of daemons, composers of corrupting music. Indeed there are few who altogether escape the suspicions of the witch hunters the possible exception of other witch hunters.;;;;;;;;;;;;;x
-sigmar_witch_hunters_rank_5_female;Witch Hunter General;;;;;;;;;;;;x #Unlikely But mweh
-sigmar_witch_hunters_rank_4_female;Witch Hunter General;;;;;;;;;;;;x
-sigmar_witch_hunters_rank_3_female;Witch Hunter Captain;;;;;;;;;;;;x
-sigmar_witch_hunters_rank_2_female;Witch Hunter Templar;;;;;;;;;;;;x
-sigmar_witch_hunters_rank_1_female;Apprentice;;;;;;;;;;;;x
-sigmar_witch_hunters_rank_5_male;Witch Hunter General;;;;;;;;;;;;x
-sigmar_witch_hunters_rank_4_male;Witch Hunter General;;;;;;;;;;;;x
-sigmar_witch_hunters_rank_3_male;Witch Hunter Captain;;;;;;;;;;;;x
-sigmar_witch_hunters_rank_2_male;Witch Hunter Templar;;;;;;;;;;;;x
-sigmar_witch_hunters_rank_1_male;Apprentice;;;;;;;;;;;;x
-sigmar_witch_hunters_leader_desc;This person has a belief in sigmar so brightly that he will purge every heretic with rightious fury, no heretic, mutant or enemy of sigmar will perish!;;;;;;;;;;;;x
-full_witch_hunter_general_rank_tt;There are allready 5 Witch Hunter Generals;;;;;;;;;;;;x
-landed_chapter_master;Landed Chapter Master;;;;;;;;;;;;x
-grandmaster_of_order_of_sigmar;Grandmaster of Templars of Sigmar;;;;;;;;;;;;xco
-inquisitorial_enlisting_courtier;Enlist a Courtier;;;;;;;;;;;;x
-inquisitorial_enlisting_courtier_power_desc;allow enlististing your courtiers into the Militant side of the order;;;;;;;;;;;;x
-scour_barony_power;Scour a Province;;;;;;;;;;;;x
-scour_barony_power_power_desc;Allows ordering witch hunter agents to scour provinces.;;;;;;;;;;;;x
-request_a_barony_inquisition_power_desc;Allows Requesting land from within religion group to establish chapter houses;;;;;;;;;;;;x
-request_a_barony_inquisition;Request Land;;;;;;;;;;;;x
-request_a_barony_inquisition;Request Land;;;;;;;;;;;;x
-request_recruit;Request Land;;;;;;;;;;;;x
-request_recruit_power_desc;Request an Recruit from noble families around the old world;;;;;;;;;;;;x
-is_certified_witch_hunter;is Certified Witch Hunter;;;;;;;;;;;;x
-is_certified_witch_hunter_2;is State Certified Witch Hunter;;;;;;;;;;;;x
-title_court_state_witchhunter;Witch Hunter of [This.Society.GetName];;;;;;;;;;;;x
-is_vampire_hidden_or_visible;Is Hidden or Visible Vampire;;;;;;;;;;;;x
-quest_inquisitorial_investigation;Investigate a Target;;;;;;;;;;;;x
-#Tooltips
-assign_witch_hunter;You need to assign an court witch hunter;;;;;;;;;;;;x
-cleansed_the_province_TT;Cleansed province of corruption;;;;;;;;;;;;x
-burned_a_witch_TT;Burned a Witch;;;;;;;;;;;;x
-cannot_order_from_court_of_grandmaster_TT;Either you are grand master or Character is not in court of Grandmaster;;;;;;;;;;;;x
-# Witch Hunter Modifiers
-witch_hunter_politicking_cooldown;Recently Reassigned to another chapter;;;;;;;;;;;;x
 #
-# WITCH HUNTER TRAITS
+# RULES
+#
+RULE_WARHAMMER_CULT_GRACE_PERIOD;§KWarhammer:§! Cult Grace Period;;;;;;;;;;;;;x
+RULE_WARHAMMER_DEFAULT_CULT_GRACE_PERIOD;Default;;;;;;;;;;;;;x
+RULE_WARHAMMER_DEFAULT_CULT_GRACE_PERIOD_DESC;By default, your main character is immune to Cult actions in the first game year.;;;;;;;;;;;;;x
+RULE_WARHAMMER_NO_CULT_GRACE_PERIOD;No Grace Period;;;;;;;;;;;;;x
+RULE_WARHAMMER_NO_CULT_GRACE_PERIOD_DESC;This setting removes your immunity to Cult actions and allows you to join Cults by decision.;;;;;;;;;;;;;x
+RULE_WARHAMMER_LONGER_CULT_GRACE_PERIOD;Longer Grace Period;;;;;;;;;;;;;x
+RULE_WARHAMMER_LONGER_CULT_GRACE_PERIOD_DESC;This extends your character's immunity to Cult actions out to the first five years, further reducing the chance of an early gameover.;;;;;;;;;;;;;x
+#
+# TITLES
+#
+CHAOS_CULT_MAGUS;Cult Magus;;;;;;;;;;;;;x
+CHAOS_CULT_MAGUS_FOA;Enlightened One;;;;;;;;;;;;;x
+k_children_of_doom;Children of Doom;;;;;;;;;;;;;x
+k_cult_of_illumination;Cult of Illumination;;;;;;;;;;;;;x
+k_path_of_fury;Path of Fury;;;;;;;;;;;;;x
+k_purple_hand;Purple Hand;;;;;;;;;;;;;x
+k_red_crown;Red Crown;;;;;;;;;;;;;x
+k_singular_retreat;Singular Retreat;;;;;;;;;;;;;x
+k_throne_pact;Throne Pact;;;;;;;;;;;;;x
+k_tinean_fellowship;Tinean Fellowship;;;;;;;;;;;;;x
+CHAOS_CULTIST_REVOLT;Cultist Uprising;;;;;;;;;;;;;x
+#
+# WITCH HUNTER LAWS
+#
+witch_hunter_law;Witch Hunting;;;;;;;;;;;;;x
+witch_hunter_law_desc;The Old World is plagued by supernatural threats. In the shadows of the night all manner of cultic activity takes place - often innocent meetings in the name of the Gods of Men, but sometimes foul actions to spread the influence of malign powers.;;;;;;;;;;;;;x
+witch_hunter_law_0;Traditional;;;;;;;;;;;;;x
+witch_hunter_law_0_desc;No special methods are used for rooting out malign influences.\n§YYour court priest will monitor the realm for heresy.§!;;;;;;;;;;;;;x
+witch_hunter_law_1;Specialists;;;;;;;;;;;;;x
+witch_hunter_law_1_desc;A Chief Witch Hunter is empowered to fight against witches, mutants, and cultists.\n§YA new decision to recruit specialists is now available.§!;;;;;;;;;;;;;x
+witch_hunter_law_2;Inquisition;;;;;;;;;;;;;x
+witch_hunter_law_2_desc;The activity of your realm is intertwined with the actions of a specialized Witch Hunting order.\n§YAgents of that order are now much cheaper to recruit.\nWitch Hunting is more effective.§!;;;;;;;;;;;;;x
+witch_hunter_law_3;Summary Judgment;;;;;;;;;;;;;x
+witch_hunter_law_3_desc;Witch Hunters are given emergency powers to fight back the tide of darkness.\n§YWitch Hunting is far more effective but no longer under your control.§!\n§RThis emergency measure will only last for two years.§!;;;;;;;;;;;;;x
+#
+# CULT AND HUNTER TRAITS
 #
 witch_hunter;Witch Hunter;;;;;;;;;;;;;x
-witch_hunter_desc;Agents of the temples charged with rooting out heresy, Witch Hunters can be found all over the old world where rulers of the benign faiths still hold power. Their methods can be cruel and excessive, but they are the first line of defence against the powers of Chaos who always seek to pervert and destroy all that is good from within.;;;;;;;;;;;;;x
-on_witch_hunt;On Witch Hunt;;;;;;;;;;;;;x
-on_witch_hunt_desc;This character is currently on a Witch hunt, actively rooting out heresy in a suspect location.;;;;;;;;;;;;;x
+witch_hunter_desc;All manner of men and women take up the trials of Witch Hunting. Most are scoundrels and adventurers brought in to do the dirty job for nothing more than pay. But the best Witch Hunters belong to a handful of templar orders and employ ancient techniques in their battle against the dark.;;;;;;;;;;;;;x
+on_witch_hunt;[on_witch_hunt_trait];;;;;;;;;;;;;x
+on_witch_hunt_cult;Attacking the [target_cult.GetBaseName];;;;;;;;;;;;;x
+on_witch_hunt_county;Scouring [witch_hunt_county.GetName];;;;;;;;;;;;;x
+on_witch_hunt_died;Died fighting evil;;;;;;;;;;;;;x
+on_witch_hunt_desc;[on_witch_hunt_trait_desc];;;;;;;;;;;;;x
+on_witch_hunt_cult_desc;This character has discovered key information about the dreaded [target_cult.GetBaseName] and is bravely leading an attack on the Cult's center!;;;;;;;;;;;;;x
+on_witch_hunt_county_desc;This character is currently on a Witch hunt, actively rooting out malign forces in [witch_hunt_county.GetName].;;;;;;;;;;;;;x
+on_witch_hunt_died_desc;This heroic character gave their life to keep the Old World safe from the terrible forces that lurk in the darkness;;;;;;;;;;;;;x
+underground_cult_member;[underground_cult_trait];;;;;;;;;;;;;x
+underground_cult_member_living;[underground_cult_allegiance.GetBaseName] Member;;;;;;;;;;;;;x
+underground_cult_member_dead;Underground Cult Member;;;;;;;;;;;;;x
+underground_cult_member_desc;[underground_cult_trait_desc];;;;;;;;;;;;;x
+underground_cult_member_desc_living;This character has been corrupted by the [underground_cult_allegiance.GetBaseName] and now serves their base agenda.;;;;;;;;;;;;;x
+underground_cult_member_desc_dead;This character was corrupted by an underground cult and served their base agenda.;;;;;;;;;;;;;x
 #
-# WITCH HUNTER EVENTS
+# CULTS AND HUNTERS DECISIONS
 #
-witchhunter.1.a;We must send for a witch hunter immediately.;;;;;;;;;;;;x
-witchhunter.1.b;No, Witch hunters cause too much trouble.;;;;;;;;;;;;x
-witchhunter.5.a;Indeed, time to return to the temple.;;;;;;;;;;;;x
-witchhunter.8.a;I will confront this individual.;;;;;;;;;;;;x
-witchhunter.9.a;I... ehh, heresy? No no, let me explain!;;;;;;;;;;;;x
-witchhunter.10.b;A good cultist is a good liar! This is proof of guilt!;;;;;;;;;;;;x
-witchhunter.13.a;All heretics must die by fire!;;;;;;;;;;;;x
-witchhunter.13.b;I'm sure you are not a heretic.;;;;;;;;;;;;x
-witchhunter.19.a;I will confront this individual.;;;;;;;;;;;;x
-witchhunter.20.a;I... ehh, heresy? No no, let me explain!;;;;;;;;;;;;x
-witchhunter.21.b;A good cultist is a good liar! This is proof of guilt!;;;;;;;;;;;;x
-witchhunter.24.a;All heretics must die by fire!;;;;;;;;;;;;x
-witchhunter.24.b;I'm sure you are not a heretic.;;;;;;;;;;;;x
-witchhunter.28.b;No! Witch Hunters cause trouble.;;;;;;;;;;;;x
-witchhunter.29.b;Do not bother me with such news again.;;;;;;;;;;;;x
-witchhunter.30.a;I must inform my liege at once!;;;;;;;;;;;;x
-witchhunter.31.a;Yes, of course - get to work at once.;;;;;;;;;;;;x
-witchhunter.33.a;No, not like this - I was promised eternal life!;;;;;;;;;;;;x
-witchhunter.34.b;No, Witch Hunters are troublesome.;;;;;;;;;;;;x
-WITCH_HUNT;Witch Hunt;;;;;;;;;;;;x
-WITCH_HUNTERS;Witch Hunters;;;;;;;;;;;;x
+join_underground_cult;Join the [Root.GetName];;;;;;;;;;;;;x
+join_underground_cult_desc;Normal life lacks a certain lustre. Perhaps you'll find what you're looking for in the ranks of the [Root.GetName]?;;;;;;;;;;;;;x
+send_aid_to_underground_cult;Support the [underground_cult_allegiance.GetName];;;;;;;;;;;;;x
+send_aid_to_underground_cult_desc;Take the opportunity to support the Cult. Make a commitment!];;;;;;;;;;;;;x
+start_county_witch_hunt;Start Witch Hunt in [Root.GetName];;;;;;;;;;;;;x
+start_county_witch_hunt_desc;Send your Witch Hunter to root out the darkness plaguing this province.;;;;;;;;;;;;;x
 #
-witchhunter35desc;There are known worshippers of Chaos in the realm... these must be rooted out with fire, steel, and cannon if need be!;;;;;;;;;;;;x
-witchhunter36desc;My liege, there are known followers of the Ruinous Powers infesting your realm! These must be hunted down at once. Will you give the temple the authority to cleanse the land of this foul taint?;;;;;;;;;;;;x
-witchhunter37desc;Your top liege has ordered that open Chaos followers in the realm be exterminated - temple armies led by Witch Hunters approach with fire and steel, but due to your skills you manage to escape them alive!;;;;;;;;;;;;x
-witchhunter38desc;Your top liege has ordered that open Chaos followers in the realm be exterminated and temple armies led by Witch Hunters approach with fire and steel. You try to run, but they manage to corner you!;;;;;;;;;;;;x
+# CULTS AND HUNTER EVENTS
 #
-# WITCH HUNTER
+EVTTITLE_wh_cults_and_hunters_4;Slaves to Darkness;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_4;You are playing with no protection from the influence of Chaos Cults and your character can be corrupted by their activity.\nIf you would prefer to cut out the narratives and directly join a cult, just find the cult's title (they're all de jure vassals to Be'lakor's Empire of Undivided title), then right-click on it and take the decision to join the cult.;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_102;The [underground_cult_allegiance.GetName] always needs more support. What would you offer to your beloved Cult?;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_102;I'll send money;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_102;I'll spend money to buy influence;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_102;I'll buy influence AND send money;;;;;;;;;;;;;x
+EVTOPTD_wh_cults_and_hunters_102;I, um... I gave on the way in?;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_251;You have received an invitation to an exclusive event, a meeting of the most worthy people of [root.location.GetName] to implore the Gods for enlightenment.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_251;This sounds very promising!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_251;This sounds deeply suspicious;;;;;;;;;;;;;x
+EVTOPC_wh_cults_and_hunters_251;I should be helping the needy instead;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_252;When you arrive at the meeting, you're surprised at some of the claims that the other attendees make about the character of the Gods. You begin to wonder if they really know what they're talking about.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_252;Am I out of touch?;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_252;No, it's the cultists who are wrong.;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_253;Setting aside your misgivings, you participate in the rite and learn some secret truths about the world.;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_253_dark_secrets;Setting aside your misgivings, you participate in the rite. It is truly enlightening!;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_253;Finally the truth is revealed;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_253;There's nothing like doing your own research;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_253;Even so, you're not convinced;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_261;You have received an invitation to an exclusive party, where all the most fabulous and beautiful people of [root.location.GetName] will gather!;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_261;I should be helping the needy instead;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_261;It wouldn't be a party without me!;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_261;Oh, whatever would I wear and what I would I say...;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_262;You're glad you came! The refreshments are good and the company agreeable. But the party is going rather late and you've had your fill.
+EVTOPTA_wh_cults_and_hunters_262;Stay and mingle;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_262;Best not to over-do it;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_263;Despite the late hour, the excitement of the event keeps you highly alert and you try to take advantage of the chance to mingle.;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_263_dangerous_excess;Despite the late hour, the excitement of the event keeps you... stimulated. You want to sample everything this event has to offer!;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_263;And I still want more!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_263;What a great night!;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_263;Then again, perhaps you shouldn't be here;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_271;While out late at night, you feel the hairs rising on the back of your neck. From the corner of your eye, you see the glint of moonlight on steel. Your life is in danger!;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_271;Run for it!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_271;Stand and fight!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_272;You fight bravely but your assailant is too fast and too strong. You suffer a cruel blow and fall. By the will of the Gods, the sound of voices approaching sees off your assailant before another blow falls.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_272;That could have been worse;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_273;You fight bravely but your assailant is too fast and too strong. You are struck down, but live to see the killer become a torturer.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_273;Oh Shallya, why?;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_274;You more than match your assailant for skill and speed and the coward turns to flee. Thinking only to stop their senseless violence, you strike a mortal blow!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_274_blood_addiction;Rage takes hold and you forget yourself, wallowing in the red heat of battle. When your head clears, your assailant is dead.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_274;When I woke up this morning, I was feeling pretty dangerous;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_274;And the blood! The blood is so red.;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_281;While out late at night, you feel the hairs rising on the back of your neck. A gang of ruffians emerge from the shadows with clubs raised.\n"Don't make this hard on yourself," the leader says.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_281;Run away!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_281;Stand and fight!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_282;Despite your best efforts, you have been abducted. Your captors explain the price you'll have to pay and the consequences for failing to cooperate.;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_282_cult_captive;Despite your best efforts, you have been abducted. Your captors explain that they mean you no harm - in fact, they say, their objective is to free you from a lie.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_282;Do your worst!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_282;I'll pay your price;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_282;At last, I am free;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_283;The ruffians didn't mean to kill you, but they did. At least you won't have to suffer whatever horrible things they had planned.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_283;At least I die free;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_284;The gang of cowards who assaulted you never expected you to fight so fiercely. You scatter them with a few well-placed blows and have to stop yourself from chasing them through the streets.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_284;That will teach them!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_291;A filthy peasant attempts to accost you while you go about your business in [root.location.GetName]. The old man's rambling isn't as disturbing as the foul stench about him and you worry that he carries the miasma of disease.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_291;See the poor wretch to a hospice and pay for his care;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_291;Get out of there!;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_291;Have your guards get rid of him!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_292;You can't help thinking about that encounter with the diseased peasant. Will you get sick as well? Will the disease take your mind as well as your body? You struggle to sleep.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_292;Hope for the best;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_292;Seek out the peasant;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_293;You take advice from your physician on how to protect yourself and seek out the old man again. He is not hard to find, and is happy to explain more about his condition...;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_293;Yes. Yes, it's all so clear!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_294;You take advice from your physician on how to protect yourself and seek out the old man again. You find him with a little difficulty and make him explain his condition.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_294;Ha! I'm safe after all!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_294;Pay for his care at a hospice;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_401;Disaster! Nefarious forces have burst out into the open and launched an open revolt in [root.GetName[.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_401;Rally our forces!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_501;Having decided to find a specialist Witch Hunter to lead the struggle against malign forces in your realm, you must now decide which sort of agent you're looking for.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_501;A skilled adventurer;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_501;A Myrmidian Inquisitor;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_501;A Knight of Bretonnia;;;;;;;;;;;;;x
+EVTOPTD_wh_cults_and_hunters_501;A Sigmarite Templar;;;;;;;;;;;;;x
+EVTOPTE_wh_cults_and_hunters_501;An Ice Witch;;;;;;;;;;;;;x
+EVTOPTF_wh_cults_and_hunters_501;An agent from a secretive order;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_502;Hunters from these orders can be more effective in some situations, but they come with their own agendas. Which order do you wish to contact?;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_502;The Order of the Shroud;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_502;The Order of the Scale and Sword;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_502;The Temple of Solkan;;;;;;;;;;;;;x
+EVTOPTD_wh_cults_and_hunters_502;Maybe a more conventional answer is best;;;;;;;;;;;;;x
+EVTTITLE_wh_cults_and_hunters_503;Adventurer;;;;;;;;;;;;;x
+EVTDESCA_wh_cults_and_hunters_503;The witch hunter has arrived. [hunter_candidate.GetBestName] is a veteran warrior and skilled investigator. [hunter_candidate.GetSheHeCap] swears to protect your realm from unseen threats.;;;;;;;;;;;;;x
+EVTDESCB_wh_cults_and_hunters_503;The witch hunter has arrived. [hunter_candidate.GetBestName] is highly knowledgable and bold in the face of malign forces. [hunter_candidate.GetSheHeCap] swears to protect your realm from unseen threats.;;;;;;;;;;;;;x
+EVTDESCC_wh_cults_and_hunters_503;The witch hunter has arrived. [hunter_candidate.GetBestName] is a cunning spy who can see through the intrigues of your unholy enemies. [hunter_candidate.GetSheHeCap] swears to protect your realm from unseen threats.;;;;;;;;;;;;;x
+EVTTITLE_wh_cults_and_hunters_504;In Myrmidia's Name;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_504;The witch hunter has arrived. [hunter_candidate.GetBestName] is part of the Inquisition of Myrmidia. This holy order was founded in Estalia during the vampire Nourgoul's terrible War of Blood and has established itself as the foremost enemy of dark forces in the south of the Old World. [hunter_candidate.GetFirstName]'s chief weapon is surprise. And fear. Fear and surpise...;;;;;;;;;;;;;x
+EVTTITLE_wh_cults_and_hunters_505;For the Lady;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_505;The witch hunter has arrived. [hunter_candidate.GetBestName] is a valiant Knight of Bretonnia. The Knights go back to the very founding of Bretonnia, when the warrior king Giles le Breton led his companions in a long war against chaotic and greenskin forces. [hunter_candidate.GetFirstName] has sworn an oath to destroy the minions of darkness no matter how well they hide themselves.;;;;;;;;;;;;;x
+EVTTITLE_wh_cults_and_hunters_506;Blessed Sigmar!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_506;The witch hunter has arrived. [hunter_candidate.GetBestName] is a ruthless Templar of Sigmar. [hunter_candidate.GetHerHisCap] order is rightly feared by the cultists, mutants and witches who threaten the Empire from within, as their ruthless zeal knows no bounds.;;;;;;;;;;;;;x
+EVTTITLE_wh_cults_and_hunters_507;Power of the Land;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_507;The witch hunter has arrived. [hunter_candidate.GetBestName] is a member of Kislev's sisterhood of Ice Witches and wields formidable magic. [hunter_candidate.GetSheHeCap]  favours you with a thing smile and pledges to defend the land you rule.\nYou would have been happier to hear [hunter_candidate.GetFirstName] swearing to defeat your enemies, but the Ice Witches are a law unto themselves at times.;;;;;;;;;;;;;x
+EVTTITLE_wh_cults_and_hunters_508;Slayer of the Dead;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_508;The witch hunter has arrived from the Temple of Morr. [hunter_candidate.GetBestName] is pale and unhealthy-looking, but [hunter_candidate.GetSheHe] moves gracefully and [hunter_candidate.GetHerHis] eyes are full of a quiet strength. [hunter_candidate.GetFirstName] bows before you and promises to root out any necromantic conspiracy in your realm, and you're sure that's true.\nBut what if your enemies are of another kind? The Order of the Shroud has little experience and hardly any interest in hunting down mutants and witches if no necromancy is involved.;;;;;;;;;;;;;x
+EVTTITLE_wh_cults_and_hunters_509;Verena's Justice;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_509;The witch hunter has arrived from the temple of Verena. [hunter_candidate.GetBestName] kneels before you and swears to defend your land and its people to the best of [hunter_candidate.GetHerHis] ability. The templar's words ring with sincerity and you feel sure that you can trust [hunter_candidate.GetHerHim] to behave justly.\nBut is justice enough? Critics of the Order of the Sword and Scale often complain that their methods are too soft and allow troubles to grow unnecessarily. But unlike other hunters, the Verenans aren't even rumoured to kill innocents in their fight against evil.;;;;;;;;;;;;;x
+EVTTITLE_wh_cults_and_hunters_510;Solkan's Fury;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_510;The witch hunter has arrived from the temple of Solkan. [hunter_candidate.GetBestName] has been carefully trained by that ancient order to fight the Ruinous Powers. [hunter_candidate.GetSheHeCap] is eager to destroy the enemies of Solkan lurking in your realm.\nPerhaps a little too eager, at that. Solkanite Templars have a reputation for getting their job done no matter the cost, and it seems like [hunter_candidate.GetFirstName] is no exception to the rule.;;;;;;;;;;;;;x
+EVTTITLE_wh_cults_and_hunters_511;Emissary of Order;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_511;The witch hunter has arrived from the Temple of Solkan, but [hunter_candidate.GetSheHe] is not at all what you expected. [hunter_candidate.GetFirstName] is a mage from the far South, trained to channel the Light of the Law God in battle with the Ruinous Powers. [hunter_candidate.GetSheHeCap] locks your gaze with [hunter_candidate.GetHerHis] own and you can see the faint glow of power in the mage's eyes. [hunter_candidate.GetFirstName] solemnly intones, "I bring the Light."\nAll manner of questions fill your mind and you struggle to force them past your lips. But your will is not enough. You give a deep nod of acknowledgement and reply,;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_511;Banish the Darkness!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_603;Your loyal Witch Hunter, [court_witchhunter.GetFirstName] reports that the initial investigation in [clue_county.GetName] is complete and with a bit of support the trials could be wound up in a few days. [court_witchhunter.GetSheHeCap] would then be available for other tasks.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_603;Of course!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_603;I'm not made of money!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_604;"There is no evidence of malign activity within your borders," concludes [court_witchhunter.GetFirstName]. "I ask that you release me from your service, so that I may go in search of evil to fight.";;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_604;Go with my blessing!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_604;I need you to remain on watch here;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_610;[court_witchhunter.GetBestName] is now hunting down the mutants, cultists, and witches who plague [clue_county.GetName].;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_611;[court_witchhunter.GetBestName] has returned from [court_witchhunter.GetHerHis] mission to [clue_county.GetName]. The troubles are over and many suspected cultists have been dealt with.;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_620;The revolt has been crushed and its leader, [courtier_accused_by_witch_hunter.GetBestName], is at your mercy. You ponder the best method of execution but [court_witchhunter.GetFirstName] has a better idea: torture the miscreant for information about their cult's activity.;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_700;[court_witchhunter.GetBestName] brings charges against [courtier_accused_by_witch_hunter.GetBestName]. "This foul miscreant has betrayed all that is right in the world, consorting with deviants and foul spirits. Consign them to my care that the full spread of conspiracy might be discovered!";;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_700;Guilty!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_700;Not guilty;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_700;"Banish the Darkness!";;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_701;[witch_hunter_employer.GetBestName] has put you at the 'mercy' of the Witch Hunter, [court_witchhunter.GetBestName]! Your captor demands that you tell [court_witchhunter.GetHerHim] everything you know about the activity of your cult and threatens to torture you.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_701;Tell them what you know;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_701;Insist that you know nothing;;;;;;;;;;;;;x
+EVTTITLE_wh_cults_and_hunters_702;Agent of Order;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_702;You have been captured by the Witch Hunter [court_witchhunter.GetBestName]. Although you try to look away, the wizard's terrible eyes bore into yours. "Tell me everything you know. Everything!" he commands and his gaze becomes a radiant beam of light. You begin to speak but the words are lost to you. All that you feel is the searing touch of [court_witchhunter.GetFirstName]'s magic.\nWhen it finishes burning, you are no more.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_702;Answer the hunter's questions;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_710;[court_witchhunter.GetFirstName] reports a significant breakthrough. Information extracted from the deviant, [courtier_accused_by_witch_hunter.GetFirstName], has revealed that the dreaded [witch_hunter_target_cult.GetName] is operating in your lands - and a counter-attack is possible!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_710;[court_witchhunter.GetFirstName] reports on their new plan. Information extracted from the deviant, [courtier_accused_by_witch_hunter.GetFirstName], has revealed that the dreaded [witch_hunter_target_cult.GetName] is operating in your lands - and a counter-attack is being prepared!;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_710;You have my full support, [court_witchhunter.GetFirstName]!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_710;Let's not get carried away;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_710;Banish the darkness!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_711;[court_witchhunter.GetFirstName] is making progress but needs coin to follow the trail of the [witch_hunter_target_cult.GetName].;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_711;Whatever you need!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_711;Of course!;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_711;Very well;;;;;;;;;;;;;x
+EVTOPTD_wh_cults_and_hunters_711;What's the least you need?;;;;;;;;;;;;;x
+EVTOPTE_wh_cults_and_hunters_711;Banish the Darkness!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_712;Bad news. [court_witchhunter.GetFirstName] reports that the trail of the [witch_hunter_target_cult.GetName] has gone cold.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_712;We'll get them next time!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_712;You have failed me for the last time, [court_witchhunter.GetFirstName]!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_713;[court_witchhunter.GetFirstName]'s preparations are complete. [court_witchhunter.GetSheHeCap] will go to [active_cult_leader.location.GetName] to tear out the heart of the [witch_hunter_target_cult.GetName] - or die trying.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_713;Good luck, [court_witchhunter.GetFirstName];;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_713;And I will be fighting at your side, [court_witchhunter.GetFirstName]!;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_713;And I will bring my magic to the fight, [court_witchhunter.GetFirstName]!;;;;;;;;;;;;;x
+EVTTITLE_wh_cults_and_hunters_715;Daemonslayer;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_715;Praise [Root.Religion.GetHighGodNameCap]!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_715;Praise [Root.Religion.GetHighGodNameCap]!;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_715;I will never forget [court_witchhunter.GetFirstName];;;;;;;;;;;;;x
+EVTOPTD_wh_cults_and_hunters_715;I will never forget [court_witchhunter.GetFirstName];;;;;;;;;;;;;x
+EVTTITLE_wh_cults_and_hunters_717;The Final Battle;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_717;Praise [Root.Religion.GetHighGodNameCap]!;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_717;Praise [Root.Religion.GetHighGodNameCap]!;;;;;;;;;;;;;x
+EVTOPTC_wh_cults_and_hunters_717;I will never forget [court_witchhunter.GetFirstName];;;;;;;;;;;;;x
+EVTOPTD_wh_cults_and_hunters_717;I will never forget [court_witchhunter.GetFirstName];;;;;;;;;;;;;x
+EVTOPTE_wh_cults_and_hunters_717;Frustrating, but a victory none the less;;;;;;;;;;;;;x
+EVTOPTF_wh_cults_and_hunters_717;Frustrating, but a victory none the less;;;;;;;;;;;;;x
+EVTOPTG_wh_cults_and_hunters_717;No!;;;;;;;;;;;;;x
+EVTOPTD_wh_cults_and_hunters_717;Nothing to do now but to find a new Witch Hunter;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_800;Two years ago you committed to emergency measures to fight the spread of underground cults in your realm. Today the council calls on you to restore normal life.;;;;;;;;;;;;;x
+EVTOPTA_wh_cults_and_hunters_800;Very well;;;;;;;;;;;;;x
+EVTOPTB_wh_cults_and_hunters_800;Not yet;;;;;;;;;;;;;x
+# # TOOLTIPS & REUSED TEXT # #
+EVTOPT_wh_cults_and_hunters_unwanted_hunter;[hunter_candidate.GetBestName] is not what I'm looking for;;;;;;;;;;;;;x
+available_because_a_good_sword_to_fight_evil;This option is available because you are a skilled warrior;;;;;;;;;;;;;x
+available_because_a_skilled_mage_to_fight_evil;This option is available because of your magical ability;;;;;;;;;;;;;x
+available_because_classical_pantheon;This option is available because you venerate the Classical Pantheon;;;;;;;;;;;;;x
+available_because_grail;This option is available because you are a servant of the Lady;;;;;;;;;;;;;x
+available_because_imperial_pantheon;This option is available because you venerate the Imperial Pantheon;;;;;;;;;;;;;x
+available_because_kislev_gods;This option is available because you venerate the Gods of Kislev;;;;;;;;;;;;;x
+available_because_member_of_cult_of_shallya;This option is available because you are a member of the Cult of Shallya;;;;;;;;;;;;;x
+captured_by_abductors_tt;They catch you!;;;;;;;;;;;;;x
+escape_from_abductors_tt;You escape!;;;;;;;;;;;;;x
+fought_off_abductors_tt;Fight off your assailants!;;;;;;;;;;;;;x
+killed_by_abductors_tt;You are killed in the struggle!;;;;;;;;;;;;;x
+required_because_arrow_of_law;§GThe §WArrow of Law§! §Gcompels you!§!;;;;;;;;;;;;;x
+return_to_previous_menu_tt;Return to the previous menu;;;;;;;;;;;;;x
+witch_hunter_arrives_shortly_tt;The hunter will arrive shortly;;;;;;;;;;;;;x
+witch_hunter_smiles_impressed_tt;[court_witchhunter.GetFirstName] smiles, impressed by your bravery;;;;;;;;;;;;;x
 #
-EVTOPTAwhuntersCleanse; Cleanse the province of [target_province.GetName];;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_0;Witch Hunters are a necessary evil - though their methods can be cruel, they are often the first and last line of defence against the spread of Chaos. As the holder of a major religious site, you have several Witch Hunters in your court.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_0A;I feel safer already.;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_1;Part of your demesne bears the taint of Chaos. Your courtiers and local lords want you to call in a professional to track down the root of this evil, and cleanse it from your lands.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_1A;We must send for our Witch Hunter immediately.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_1C;Sadly i do not Have avaivable Witch hunter...;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_1B;No, Witch Hunters cause too much trouble.;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_2;A local lord has sent a request to you, asking your aid in uncovering and rooting out the taint of Chaos in their land.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_2A;I leave immediately.;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_3;A Witch Hunter arrives in your court. They will begin the investigation immediately.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_3A;Excellent.;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_4;You arrive at the court. Now, it's time to get to work...;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_4A;Indeed!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_5;You've done what you can here. It's time to move on again and root out new evils.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_5A;Indeed, time to return to the temple.;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_6;The Witch Hunter comes to your council meeting and informs you that they have done their best to burn out the taint in your demesne. While there is always potential for further 'improvement', they must now leave for other lands where the foul taint of heresy must be cleansed.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_6A;It was about time!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_7;The Witch Hunter, unusually polite, asks permission to start rooting out the foul taint of Chaos in your demesne. The methods will be harsh, but they promise to find any hidden threats and purify your land with sword and flame.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_7A;Very well.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_7B;No, leave the peasants alone.;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_8;No one is immune to the taint of Chaos, and while it is better to burn an entire village than risk contamination by one individual, you must be more careful here in the court. But there is one courtier who you suspect to be a cultist...;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_8A;I will confront this individual.;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_9;You are confronted by the Witch Hunter currently investigating your court, who asks you to explain certain suspicious actions of yours...;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_9A;I... ehh, heresy? No no, let me explain!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_10;The suspected heretic had a good explanation for their suspicious behaviour. They seems to be telling the truth.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_10A;Fine...;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_10B;A good cultist is a good liar! This is proof of guilt!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_11;The courtier did not had a good explanation. You must inform the liege of this heretic in our midst!;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_11A;At once!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_12;The Witch Hunter is accusing you of crimes most foul, a sure death sentence if they get their way. What do you do?;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_12A;Banish him!;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_12B;Imprison him!;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_12C;Appeal to my liege!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_13;My liege, the Witch Hunter has accused me of heresy. These charges are completely baseless, I implore you to intervene on my behalf and clear my good name! In the name of all that is holy!;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_13A;All heretics must die by fire!;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_13B;I'm sure you are not a heretic.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_13C;To the dungeons with you!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_14;Your liege sides with your accuser. The Witch Hunter has already won the loyalty of your personal guards, who seize you and drag you to the court yard where a great pyre is being prepared for your execution.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_14A;Nooooo!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_15;Your liege sides with the Witch Hunter. Your own guards seize you, and drag you to the dungeons. At least your liege was merciful, and did not condemn you to purification by fire.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_15A;Nooooo!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_16;Your liege intervenes, and the Witch Hunter - grudgingly - backs off. You will not suffer death by fire.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_16A;A close call!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_17;You have managed to burn the taint of Chaos from the province. But there may still be cultists and heretics lurking about...;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_17A;Excellent.;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_18;The Witch Hunter has purged the taint of Chaos from your demesne province, but warns you that heretics and cultists may still be about. He will continue his investigation for a while yet.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_18A;Good job, Witch Hunter.;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_19;No one is immune to the taint of Chaos, and while it is better to burn an entire village than risk contamination by one individual, you must be more careful here in the court. But there is one courtier who you suspect to be a cultist...;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_19A;I will confront this individual.;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_20;You are confronted by the Witch Hunter currently investigating your court, who asks you to explain certain suspicious actions of yours...;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_20A;I... ehh, heresy? No no, let me explain!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_21;The courtier had a good explanation. They seems to be telling the truth.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_21A;Fine...;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_21B;A good cultist is a good liar! This is proof of guilt!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_22;The courtier did not had a good explanation. You must inform the liege of this heretic in our midst!;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_22B;At once!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_23;The Witch Hunter is accusing you of crimes most foul, a sure death sentence if they get their way. What do you do?;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_23A;Banish him!;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_23B;Imprison him!;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_23C;Appeal to my liege!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_24;My liege, the Witch Hunter has accused me of heresy. These charges are completely baseless, I implore you to intervene on my behalf and clear my good name! In the name of all that is holy!;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_24A;All heretics must die by fire!;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_24B;I'm sure you are not a heretic.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_24C;To the dungeons with you!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_25;Your liege sides with your accuser. The Witch Hunter has already won the loyalty of your personal guards, who seize you and drag you to the court yard where a great pyre is being prepared for your execution.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_25A;Nooooo!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_26;Your liege sides with the Witch Hunter. Your own guards seize you, and drag you to the dungeons. At least your liege was merciful, and did not condemn you to purification by fire.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_26A;Nooooo!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_27;Your liege intervenes, and the Witch Hunter - grudgingly - backs off. You will not suffer death by fire.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_27A;A close call!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_28;You receive word from one of the more 'militant' sects of your faith. They'd like you to host a Witch Hunter for a while, so as to curtail any potential heresy in your land.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_28A;Sure... why not?;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_28B;No! Witch Hunters cause trouble.;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_29;This noble of your realm has been burned alive by the Witch Hunters, on suspicion of heretical activities.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_29A;I see.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_29B;Do not bother me with such news again.;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_30;There are known vampires in the realm... these must be rooted out with fire, stakes, silver and faith!;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_30A;I must inform my liege at once!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_31;My liege, there are known vampires infesting your realm! These must be hunted down at once. Will you give the order to cleanse the land of this foul taint?;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_31A;Yes, of course - get to work at once.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_32B;No, leave them alone...;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_33;Your liege has ordered that open vampires in the realm be exterminated - fanatical peasant armies led by Witch Hunters approach with fire and silver blades, but due to your skills you manage to escape them alive!;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_33A;My lands... lost!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_34;Your top liege has ordered that open vampires in the realm be exterminated, and fanatical peasants led by Witch Hunters approach with fire and silver blades. You try to run, but they manage to corner you!;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_34A;No, not like this - I was promised eternal life!;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_35;Witch Hunters are a necessary evil - though their methods can be cruel, they are often the first and last line of defence against the spread of Chaos. Since there are no Witch Hunters in your realm, do you want to invite some?;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_35A;Yes, immediately.;;;;;;;;;;;;;x
-EVTOPT_WITCHHUNTER_35B;No, Witch Hunters are troublesome.;;;;;;;;;;;;;x
+# PROVINCE MODIFIERS
 #
-# WITCH HUNTER INITIATION
-#
-EVTDESC_WITCHHUNTER_INITIATION_0;The Witch Hunters do good work. I should help them root out evil.;;;;;;;;;;;;;x
-EVTOPTA_WITCHHUNTER_INITIATION_0;Ask to go;;;;;;;;;;;;;x
-EVTOPTB_WITCHHUNTER_INITIATION_0;It's a bad idea;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_INITIATION_1;My [GetFromRelation], [From.GetTitledFirstName], has requested to join the Witch Hunters in their struggle against the heretic, even though this will forever disinherit him.;;;;;;;;;;;;;x
-EVTOPTA_WITCHHUNTER_INITIATION_1;Go with my blessing.;;;;;;;;;;;;;x
-#EVTTOOLTIP_WITCHHUNTER_INITIATION_1;[This.GetTitledFirstName] becomes a Witch Hunter.;;;;;;;;;;;;;x
-EVTOPTB_WITCHHUNTER_INITIATION_1;Absolutely not!;;;;;;;;;;;;;x
-EVTTOOLTIP_WITCHHUNTER_INITIATION_1;[This.GetTitledFirstName] is disappointed.;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_INITIATION_2;[This.GetTitledFirstName] becomes a Witch Hunter.;;;;;;;;;;;;;x
-EVTDESC_WITCHHUNTER_INITIATION_3;You were refused;;;;;;;;;;;;;x
-EVTOPTA_WITCHHUNTER_INITIATION_3;Damn;;;;;;;;;;;;;x
-#
-# MISC EVENTS
-#
-EVTDESCswhunters1;As you're no longer capable of giving orders nor exact any of your duties, the other Masters have decided to relieve you of your position from within the Council.;;;;;;;;;;;;;;
-EVTOPTAswhunters1;Hnnnghllh...;;;;;;;;;;;;;;
-EVTDESCswhunters10001;It was but a formality to convince the other Council-Knights of [From.GetFirstName]'s discharge. A new, better Templar will take [From.GetHerHis] place now.;;;;;;;;;;;;;;
-EVTOPTAswhunters10001;Good.;;;;;;;;;;;;;;
-EVTDESCswhunters2;[FromFrom.GetTitledFirstName] has accused you of bad conduct, reuniting the other Master Templars of the Council and claiming you are no longer fit to hold your current position within the holy congregation.;;;;;;;;;;;;;;
-EVTOPTAswhunters2;Absurd!;;;;;;;;;;;;;;
-EVTDESCswhunters20001;[FromFromFrom.GetTitledFirstName] has accused [From.GetTitledFirstName] of bad conduct, reuniting the other Master Templars of the Council and claiming [From.GetHerHim] to be unfit for duty. What is your opinion on the matter?;;;;;;;;;;;;;;
-EVTOPTAswhunters20001;The accuse has merits.;;;;;;;;;;;;;;
-EVTOPTBswhunters20001;The accuse is baseless.;;;;;;;;;;;;;;
-EVTDESCAswhunters3;The Council has spoken: [From.GetTitledFirstName] has stained [From.GetHerHis] office with clumsiness and unholy conduct and must therefore be removed immediately, lest [From.GetSheHe] lead further corruption inside the Order.;;;;;;;;;;;;;;
-EVTDESCBswhunters3;The Council has spoken: [From.GetTitledFirstName]'s accuses are unfounded and every charge against [From.GetHerHim] should be lifted.;;;;;;;;;;;;;;
-EVTOPTAswhunters3;Burn [From.GetHerHim]!;;;;;;;;;;;;;;
-EVTOPTBswhunters3;Exile it is.;;;;;;;;;;;;;;
-EVTOPTCswhunters3;The accuser was obviously misled.;;;;;;;;;;;;;;
-EVTDESCswhunters_33;The Council-Knights were on the side of the accuser. The Order has sentenced you to death by the stake for your unholy conduct, to cleanse the Temple from your stain.;;;;;;;;;;;;;;
-EVTOPTAswhunters_33;Arrrgh!;;;;;;;;;;;;;;
-EVTDESCswhunters_34;The Council-Knights were on the side of the accuser. The Order has sentenced you to exile for your unholy conduct, you are to abandon your possessions and leave at once, never to return.;;;;;;;;;;;;;;
-EVTOPTAswhunters_34;You are mistaken!;;;;;;;;;;;;;;
-EVTDESCswhunters_35;Your work has been accomplished. The Council-Knights have recognized the righteousness of your charges and burned the vile apostate to cleanse the holy walls of the Order.;;;;;;;;;;;;;;
-EVTOPTAswhunters_35;Praised be Sigmar.;;;;;;;;;;;;;;
-EVTDESCswhunters_36;Your work has been accomplished. The Council-Knights have recognized the righteousness of your charges and exiled the vile apostate forever from the Order.;;;;;;;;;;;;;;
-EVTOPTAswhunters_36;Yet the blasphemer still breathes...;;;;;;;;;;;;;;
-EVTDESCswhunters_37;The Order does not make mistakes, clearly your accuser was the one being misled, for the Council-Knights have agreed upon your innocence of all charges.;;;;;;;;;;;;;;
-EVTOPTAswhunters_37;I never doubted the Order to see the Truth.;;;;;;;;;;;;;;
-EVTDESCswhunters_38;Some foul power must be aiding the blasphemer, for the Council-Knights could not see the unholiness beneath them and decided to drop your charges.;;;;;;;;;;;;;;
-EVTOPTAswhunters_38;There are no innocents!;;;;;;;;;;;;;;
-EVTDESCswhunters4;You feel that with the impending doom of Chaos looming over all, your life cannot have a meaning, if not pledged on the defense of the world against this deadly threat. You've decided to enter the Holy Order of the Templars of Sigmar and fight the wicked.;;;;;;;;;;;;;;
-EVTOPTAswhunters4;I'll ask my liege at once.;;;;;;;;;;;;;;
-EVTOPTBswhunters4;Well, thinking back at it...;;;;;;;;;;;;;;
-EVTDESCswhunters41;Your [GetFromRelation] [From.GetFirstName] has decided to leave and join the Witch Hunters, to fight corruption everywhere, pledging [From.GetHerHis] life to cleanse the enemies of humanity from the world.;;;;;;;;;;;;;;
-EVTOPTAswhunters_41;Go in the light of Sigmar, [GetFromRelation].;;;;;;;;;;;;;;
-EVTOPTBswhunters_41;Nonsense, I have plans for you here.;;;;;;;;;;;;;;
-EVTDESCswhunters_42;Your [GetFromRelation] understood your request and decided to grant your wish.;;;;;;;;;;;;;;
-EVTDESCswhunters_43;Your [GetFromRelation] did not seem to understand nor share your concerns and denied you to leave.;;;;;;;;;;;;;;
-EVTOPTAswhunters_43;But I could make a difference!;;;;;;;;;;;;;;
-EVTDESCswhunters5;Esteemed [Root.GetTitledName],\n\nI write you in dire need of help. My realm is incurring in several expenses which go beyond the capacities of my treasury. I humbly ask your Order for support in these dark time, promising I'll soon be able to repay in full the sum requested.\n\nHumbly,\n[FromFrom.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters5;Request granted.;;;;;;;;;;;;;;
-EVTOPTBswhunters5;The Order has no money to spare right now.;;;;;;;;;;;;;;
-EVTDESCswhunters_51;Most virtuous [Root.GetTitledFirstName], of course we, the Holy Order of the Templars of Sigmar, can lend you 500 gold. All that we ask in return is your future assistance in certain matters as they might arise. Sigmar protects,\n\nGrand Master [From.GetFirstName];;;;;;;;;;;;;;
-EVTDESCswhunters_69;Most virtuous [Root.GetTitledFirstName], sadly, I must decline your request of 500 gold. The Holy Order of the Templars of Sigmar is tangled in a never-ending battle agaisnt Chaos and such a war requires our every resource. Sigmar protects,\n\nGrand Master [From.GetFirstName];;;;;;;;;;;;;;
-EVTOPTAswhunters_69;Curses.;;;;;;;;;;;;;;
-EVTDESCswhunters6;Esteemed [Root.GetTitledName],\n\nI, humble servant of Sigmar, send you this small sum to aid you in your battle against corruption and to show my unrelenting support for the good and virtuous Templars of the Order.\n\nHumbly,\n[FromFrom.GetTitledName];;;;;;;;;;;;;;
-EVTDESCswhunters60001;Most virtuous [Root.GetTitledFirstName], the Order gladly accepts your humble donation and takes note of your outstanding action for future reference,\n\nGrand Master [From.GetFirstName];;;;;;;;;;;;;;
-EVTDESCswhunters_71;Accursed [Root.GetTitledName],\n\nYour attempts at obstructing our holy charge do nothing but confirm your wickedness. Be assured the Order shall not rest until your heresy has been exposed and the corruption in your realm wiped out through our Lord's blessed flames.\n\nBy the glory of Sigmar,\n[FromFrom.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters_71;That went well...;;;;;;;;;;;;;;
-EVTDESCswhunters_72;Esteemed [Root.GetTitledName],\n\nDespite your virtuous charge, I've found your Order's envoys to be nothing but agitators and murderers. Although this might be through none of your or your noble peers's fault, I see it no longer in my interest to allow the agents of the Order to roam within my realm.\n\nHumbly,\n[FromFrom.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters_72;The slyness betrays [FromFrom.GetHerHis] heresy.;;;;;;;;;;;;;;
-EVTDESCswhunters8;Esteemed [Root.GetTitledName],\n\nI see now the error of our ways and desire to immediately make ammends for our past mistakes by opening once more my realm's gates to the Holy Order's agents, so that you may continue your righteous charge here.\n\nHumbly,\n[FromFrom.GetTitledName];;;;;;;;;;;;;;
-EVTDESCswhunters_81;Most virtuous [Root.GetTitledFirstName], the Order is relieved of your wise decision. We shall soon send new agents in your court to root out whatever vile heresy has sprung in your realm during our absence and properly eradicate it,\n\nGrand Master [From.GetFirstName];;;;;;;;;;;;;;
-EVTOPTAswhunters_81;Good.;;;;;;;;;;;;;;
-EVTDESCswhunters_93;Esteemed [Root.GetTitledName],\n\nOur agents have found interest and promise in  your [GetFromFromRelation]'s [FromFrom.GetFirstName] and, due to your existing dept towards the Order, we ask, in exchange for an extension to your charge, to receive [FromFrom.GetHerHim], to be trained as a Templar of the Order.\n\nSigmar's grace,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTDESCswhunters13;Esteemed [Root.GetTitledName],\n\nAs you've yet to repay the Order for our generous loan to your treasury, we ask, in an exchange for an extension to your charge, to allow us to build a fortress in a province of our choosing within your borders.\n\nSigmar's grace,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTDESCswhunters14;As agreed upon, a fortress has been built in [Root.GetName] to be garrisoned by the holy warriors of the Templar Order.;;;;;;;;;;;;;;
-EVTDESCswhunters18;Esteemed [Root.GetTitledName],\n\nWe've found a good area within your borders to build a fortress of the Order, from which to extend our protection against heresy and corruption. The Order humbly ask to receive permission to build such a fortress in your realm.\n\nSigmar's grace,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTDESCswhunters19;As agreed upon, a fortress has been built in [Root.GetName] to be garrisoned by the holy warriors of the Templar Order.;;;;;;;;;;;;;;
-EVTDESCswhunters21;I require your [GetFromRelation] [From.GetFirstName] for the Order.;;;;;;;;;;;;;;
-EVTOPTAswhunters21;Granted.;;;;;;;;;;;;;;
-EVTOPTBswhunters21;I'll pay my debt instead.;;;;;;;;;;;;;;
-EVTOPTCswhunters21;Denied.;;;;;;;;;;;;;;
-EVTDESCswhunters21001;Esteemed [Root.GetTitledName],\n\nI am glad to allow [FromFrom.GetFirstName] to join the Holy Order of the Templars. May [FromFrom.GetSheHe] aid you well in your sacred quest against heresy and corruption.\n\nHumbly,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters21001;Good.;;;;;;;;;;;;;;
-EVTDESCswhunters21002;Esteemed [Root.GetTitledName],\n\nWhile I have no desire to go against the wishes of the Order, I understand this request comes from my upstanding debt towards your treasury, which I am now ready to pay in exchange for the future of [FromFrom.GetFirstName].\n\nHumbly,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters21002;Acceptable...;;;;;;;;;;;;;;
-EVTDESCswhunters21003;Esteemed [Root.GetTitledName],\n\nWhile I have no desire to go against the wishes of the Order, I must deny this request, for [FromFrom.GetFirstName] is very dear to me and I would not want to be departed from [FromFrom.GetHerHim] at this time.\n\nHumbly,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters21003;Why? What depraved deed are they concocting?;;;;;;;;;;;;;;
-EVTDESCswhunters23;I require land in [From.GetName] to build a fortress for the Order.;;;;;;;;;;;;;;
-EVTOPTAswhunters23;Very well.;;;;;;;;;;;;;;
-EVTOPTBswhunters23;I'll pay my debt instead.;;;;;;;;;;;;;;
-EVTOPTCswhunters23;Denied.;;;;;;;;;;;;;;
-EVTDESCswhunters23001;Esteemed [Root.GetTitledName],\n\nI am glad to allow your Order to build an outpost within my borders. I am certain everyone will feel safer knowing that the Templars are protecting us.\n\nHumbly,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters23001;Good.;;;;;;;;;;;;;;
-EVTDESCswhunters23002;Esteemed [Root.GetTitledName],\n\nWhile I have no desire to go against the wishes of the Order, I understand this request comes from my upstanding debt towards your treasury, which I am now ready to pay in exchange for the land in [FromFrom.GetName].\n\nHumbly,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters23002;Acceptable...;;;;;;;;;;;;;;
-EVTDESCswhunters23003;Esteemed [Root.GetTitledName],\n\nWhile I have no desire to go against the wishes of the Order, I must deny this request, for [FromFrom.GetName] is a precious part of my demesne and I'd not like to be departed from it.\n\nHumbly,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters23003;Why? What depraved acts are being performed there?;;;;;;;;;;;;;;
-EVTDESCswhunters24;[Root.GetTitledName],\n\nThe Order of the Templars of Sigmar will not let you stand alone against the growing darkness. Hold steady, for we will come and bear the full might of our Lord upon your enemies.\n\nBy Sigmar's grace,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters24;Good.;;;;;;;;;;;;;;
-EVTDESCswhunters240001;[Root.GetTitledName],\n\nThe Order of the Templars of Sigmar is sympathetic to your just cause, but cannot spare men at the time being to aid you in your war.\n\nSigmar protects,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters240001;Curses.;;;;;;;;;;;;;;
-EVTDESCswhunters25;Esteemed [Root.GetTitledName],\n\nI beseech the Holy Order for assistance against most foul enemies I am assaulted from. This unholy creatures could certainly be no match for the Templars of Sigmar.\n\nHumbly,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTDswhunters25;We shall join you at once!;;;;;;;;;;;;;;
-EVTOPTCswhunters25;Not this time, sadly.;;;;;;;;;;;;;;
-EVTDESCswhunters27;Esteemed [Root.GetTitledName],\n\nThe [chapter_master.Society.GetName] requires your compliance for an investigation within your borders. We are certain of the collaboration of any [chapter_master.Religion.GetHighGodName]-fearing good ruler.\n\nHumbly,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters27;Request granted.;;;;;;;;;;;;;;
-EVTOPTBswhunters27;I'd rather pay our standing debt.;;;;;;;;;;;;;;
-EVTOPTCswhunters27;Request denied.;;;;;;;;;;;;;;
-EVTDESCswhunters27001;Esteemed [Root.GetTitledName],\n\nI am glad to allow your agents to scour my lands. I am certain everyone will feel safer knowing that the Templars are protecting us.\n\nHumbly,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters27001;[witch_hunter.GetFirstNameWithNick] shall do [Root.Religion.GetHighGodName]'s work now.;;;;;;;;;;;;;;
-EVTDESCswhunters27002;Esteemed [Root.GetTitledName],\n\nWhile I have no desire to go against the wishes of the Order, I understand this request comes from my upstanding debt towards your treasury, which I am now ready to pay in exchange for your discretion.\n\nHumbly,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters27002;Acceptable...;;;;;;;;;;;;;;
-EVTDESCswhunters27003;Esteemed [Root.GetTitledName],\n\nWhile I have no desire to go against the wishes of the Order, I must deny this request. I assure you there is nothing wrong in my lands and your presence might do nothing but stir the peasants.\n\nHumbly,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters27003;Why? What depraved acts are being performed there?;;;;;;;;;;;;;;
-EVTDESCswhunters28;Blessed brother [Root.GetFirstName],\n\nThe Order commands you to go on a mission to root out Chaos and depravity wherever you'll find them.\n\nSigmar be with you,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters28;So it shall be!;;;;;;;;;;;;;;
-EVTDESCswhunters28001;After relentless days of work, the Witch Hunter sent by the Order has cleansed the province of [Root.GetName] of any wicked influence.;;;;;;;;;;;;;;
-EVTOPTAswhunters28001;I see...;;;;;;;;;;;;;;
-EVTDESCswhunters28002;Blessed [Root.GetTitledFirstName],\n\nBy the grace of Sigmar, I have made premilinary scouting in these lands and am prepared to bring swift justice upon any form of corruption and depravity I shall find here. Do you wish me to proceed with my investigation at the court of the local lord or the province or to return to the Chapter?\n\nSigmar protects,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters28002;Go and burn any wicked soul you find.;;;;;;;;;;;;;;
-EVTOPTBswhunters28002;Go and capture any wicked soul you find.;;;;;;;;;;;;;;
-EVTOPTCswhunters28002;Your work is done, you may return to your chapter.;;;;;;;;;;;;;;
-EVTOPTCswhunters282b;Your work is done, i could use someone like you...;;;;;;;;;;;;;;
-EVTDESCswhunters28003;Your suspicions might have been all too correct. Word is sent your agent [From.GetFirstName] has tragically and mysteriously disappeared in the province [From.GetSheHe] was sent to investigate upon.;;;;;;;;;;;;;;
-EVTOPTAswhunters28003;Something lurks there...;;;;;;;;;;;;;;
-EVTDESCswhunters31;Blessed [Root.GetTitledFirstName],\n\nSigmar be with you. I have completed my task, hunted down and publically executed all those who scourged these lands with sin, Grand Master. May the glorious light of Sigmar shine upon these lands once more.\n\nSigmar protects,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTDESCswhunters32;Blessed [Root.GetTitledFirstName],\n\nSigmar be with you. I have completed my task, hunted down and sent back to the Temple all those who were suspicious enough to be hiding corruption within them, Grand Master. May you judge them and bring an end to their vile ways.\n\nSigmar protects,\n[From.GetTitledName];;;;;;;;;;;;;;
-EVTOPTAswhunters32;Good. Return to us now.;;;;;;;;;;;;;;x
-EVTDESCswhunters_52;Hail, [Root.GetSocietyRank]! \n\nAs members of [Root.Society.GetName] we must always be vigilant at face of heresy. To prove your skill, i request that you investigate [investigate_target.GetTitledFirstName] – for any sign of heresy. You shall find [investigate_target.GetHerHim] in [investigate_target.Location.GetName].\n\nSigned, [From.GetTitledFirstName];;;;;;;;;;;;;;;x
-EVTDESCswhunters_52_b;Hail, [Root.GetSocietyRank]! \n\nAs members of [Root.Society.GetName] we must always be vigilant at face of heresy. To prove your skill, i urge that you investigate [investigate_target.GetTitledFirstName] our fellow brother – for any sign of heresy. You shall find [investigate_target.GetHerHim] in [investigate_target.Location.GetName].\n\nSigned, [From.GetTitledFirstName];;;;;;;;;;;;;;;x
-EVTDESCswhunters_54;[From.GetTitledName] Having accepted your presence in his domain, you must act very carefully while investigating the lord and his court...;;;;;;;;;;;;;;x
-EVTOPTswhunters_54;[From.GetFirstName]'s Secrets shall be laid bare in name of [Root.Religion.GetHighGodName]!;;;;;;;;;;;;;;x
-EVTDESC_swhunters_57;I have Decided to ask around in the court information of lord and his family, now whom should i approach about this?;;;;;;;;;;;;;;x
-EVTOPTB_swhunters_57;[person_questioned_2.GetTitledFirstName] Might help me, he allready dislikes [investigate_target.GetFirstName];;;;;;;;;;;;;;x
-EVTOPTA_swhunters_57;[person_questioned.GetTitledFirstName] could be useful with [person_questioned.GetHerHis] ties to [investigate_target.GetFirstName];;;;;;;;;;;;;;x
-EVTDESC_swhunters_58b;You have been caught by [investigate_target.GetTitledFirstName] while questioning [person_questioned.GetTitledFirstName], now your fate lies in [investigate_target.GetHerHis] hands...;;;;;;;;;;;;;;x
-EVTDESC_swhunters_58a;You Caught [From.GetTitledFirstName] talking to [person_questioned.GetFirstName] about you and your close family's doings. trying to implicate that you would be part of an Secret Cult...;;;;;;;;;;;;;;x
-EVTDESC_swhunters_59;I have Decided to do some investigating, now what kind of an approach should i take for this?;;;;;;;;;;;;;;x
-EVTOPTA_swhunters_58;Burn this meddle some Witch Hunter;;;;;;;;;;;;;;x
-EVTOPTA_swhunters_59;I shall lay an trap for [investigate_target.GetFirstName];;;;;;;;;;;;;;x
-EVTOPTB_swhunters_59;I shall follow [investigate_target.GetFirstName] around;;;;;;;;;;;;;;x
-EVTOPTC_swhunters_59;I shall fabricate evidence against [investigate_target.GetFirstName];;;;;;;;;;;;;;x
-EVTDESCswhunters_60A;The Proof against [investigate_target.GetTitledFirstName], has been unsurmountable forcing many in the court and your own retinue to find it hard but to sentence the [investigate_target.GetTitledFirstName] Quilty of crimes of Heresy \n [lodge_hero.GetFirstName] seems to have found this outcome most pleasing..;;;;;;;;;;;;;;x
-EVTDESCswhunters_60B;There simply hasn't been enough evidence to prove the quilt of an [investigate_target.GetTitledFirstName], so the [lodge_hero.GetFirstName] has deemed it necessary to stop further investigation into the matter..;;;;;;;;;;;;;;x
-EVTDESCBswhunters_60A;The Proof against you, has been unsurmountable forcing many in the court and your own retinue to find it hard but to look at you with dismay, you've been found quilty crimes of Heresy \n [lodge_hero.GetFirstName] seems to be shocked about this...;;;;;;;;;;;;;;x
-EVTDESCBswhunters_60B;[From.GetFirstName] has approached you and revealed that he has been infact been investigating your behavior these past few months, but has found you innocent of crimes of heresy.;;;;;;;;;;;;;;x
-EVTOPTA_swhunters_60;Of course am innocent, silly witch Hunter;;;;;;;;;;;;;;x
-EVTOPTB_swhunters_60;How unsettling thought...;;;;;;;;;;;;;;x
-EVTOPTC_swhunters_60;ARGH! CURSE YOU WITCH HUNTERS!;;;;;;;;;;;;;;x
-EVTOPTD_swhunters_60;But, but am innocent!;;;;;;;;;;;;;;x
-EVTOPTA_swhunters_60B;Burn [investigate_target.GetHerHim]!;;;;;;;;;;;;;;x
-EVTOPTB_swhunters_60B;Lock [investigate_target.GetHerHim] Up;;;;;;;;;;;;;;x
-EVTOPTC_swhunters_60B;I still can't believe it...;;;;;;;;;;;;;;x
-EVTDESCAswhunters_61;You have learned from your informants that you have been part of the investigation of the Witch Hunters you allowed to remain in your realm;;;;;;;;;;;;;;x
-EVTDESCBswhunters_61;You have learned from your informants that you have been part of the investigation of the Witch Hunters you allowed to remain in your realm, the evidence [From.GetTitledFirstName] has gathered seems substantial;;;;;;;;;;;;;;x
-EVTDESCCswhunters_61;You have learned from your informants that you have been part of the investigation of the Witch Hunters you allowed to remain in your realm, the evidence [From.GetTitledFirstName] has gathered seems Minimal;;;;;;;;;;;;;;x
-EVTOPTA_swhunters_61;Murder the Witch Hunter;;;;;;;;;;;;;;x
-EVTOPTB_swhunters_61;Imprison [witch_hunter.GetHerHim];;;;;;;;;;;;;;x
-EVTOPTC_swhunters_61;Try to Obfuscate;;;;;;;;;;;;;;x
-EVTOPTD_swhunters_61;Better not do anything;;;;;;;;;;;;;;x
-EVT_TITLE_WITCH_HUNT;Witch Hunting;;;;;;;;;;;;;;x
-WITCH_HUNTER_COUNCIL;Witch Hunter's Council;;;;;;;;;;;;;;x
-DESC_witchhunter_42;As one of the Council Knights has ascended to the Status of a Grandmaster of the [Root.Society.GetName], it will only warrant the council seat granted someone capable.;;;;;;;;;;;;;;x
-EVTOPTAwitchhunter_42;[witch_hunter_general_choice_1.GetFirstName] Shall be promoted;;;;;;;;;;;;;;
-EVTOPTBwitchhunter_42;[witch_hunter_general_choice_2.GetFirstName] Shall be promoted;;;;;;;;;;;;;;
-EVTOPTCwitchhunter_42;[witch_hunter_general_choice_3.GetFirstName] Shall be promoted;;;;;;;;;;;;;;
-EVTOPTDwitchhunter_42;[witch_hunter_general_choice_4.GetFirstName] Shall be promoted;;;;;;;;;;;;;;
+clue_extortion_cultic;Extortion;;;;;;;;;;;;;x
+clue_extortion_cultic_desc;Criminal extortion is becoming a serious problem in this county. Perhaps this is a sign of something... fouler?;;;;;;;;;;;;;x
+clue_extortion_normal;Extortion;;;;;;;;;;;;;x
+clue_extortion_normal_desc;Criminal extortion is becoming a serious problem in this county. Perhaps this is a sign of something... fouler?;;;;;;;;;;;;;x
+clue_rituals_cultic;Strange Rites;;;;;;;;;;;;;x
+clue_rituals_cultic_desc;Attendance at temples are down and there are reports of strange rituals being performed by night. Are these just harmless mysteries, or are they the work of dark forces?;;;;;;;;;;;;;x
+clue_rituals_normal;Strange Rites;;;;;;;;;;;;;x
+clue_rituals_normal_desc;Attendance at temples are down and there are reports of strange rituals being performed by night. Are these just harmless mysteries, or are they the work of dark forces?;;;;;;;;;;;;;x
+clue_abductions_cultic;Abductions;;;;;;;;;;;;;x
+clue_abductions_cultic_desc;Reports of missing persons are up. Why is this happening?;;;;;;;;;;;;;x
+clue_abductions_normal;Abductions;;;;;;;;;;;;;x
+clue_abductions_normal_desc;Reports of missing persons are up. Why is this happening?;;;;;;;;;;;;;x
+clue_murders_cultic;Murders;;;;;;;;;;;;;x
+clue_murders_cultic_desc;The people are terrorized by a spate of murders. What is the cause of these crimes?;;;;;;;;;;;;;x
+clue_murders_normal;Murders;;;;;;;;;;;;;x
+clue_murders_normal_desc;The people are terrorized by a spate of murders. What is the cause of these crimes?;;;;;;;;;;;;;x
+clue_contagion_cultic;Contagion;;;;;;;;;;;;;x
+clue_contagion_cultic_desc;The people of this region are troubled by an uptick in sickness and disease. Is there some guiding hand behind this misery?;;;;;;;;;;;;;x
+clue_contagion_normal;Contagion;;;;;;;;;;;;;x
+clue_contagion_normal_desc;The people of this region are troubled by an uptick in sickness and disease. Is there some guiding hand behind this misery?;;;;;;;;;;;;;x
+clue_celebration_cultic;Excessive celebration;;;;;;;;;;;;;x
+clue_celebration_cultic_desc;Recently the people of this region have been celebrating Saint's days and other festival occasions with uncommon vigor. Are they just blowing off steam, or are they being influenced by an unnatural power?;;;;;;;;;;;;;x
+clue_celebration_normal;Excessive celebration;;;;;;;;;;;;;x
+clue_celebration_normal_desc;Recently the people of this region have been celebrating Saint's days and other festival occasions with uncommon vigor. Are they just blowing off steam, or are they being influenced by an unnatural power?;;;;;;;;;;;;;x
+terrorized_by_witch_hunter;Terrorized by Witch Hunter;;;;;;;;;;;;;x
+terrorized_by_witch_hunter_desc;The local population has recently suffered through a harrowing witch hunt. It was for their own good!;;;;;;;;;;;;;x
+touch_of_the_law_god;Touch of the Law God;;;;;;;;;;;;;x
+touch_of_the_law_god_desc;The Emissary of Order has recently driven Chaos from this province. The locals are now obedient, but strangely passive.;;;;;;;;;;;;;x
+verenan_order;Verena's Order;;;;;;;;;;;;;x
+verenan_order_desc;A Witch Hunter from the Order of the Sword and Scale has carefully removed corrupt influences from this province. The people are grateful for the unexpectedly just treatment they received.;;;;;;;;;;;;;x

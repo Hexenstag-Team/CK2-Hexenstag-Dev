@@ -1,5 +1,5 @@
-#Used IDs 12751-12776
-#Free IDs 12777-12900
+#Used IDs 12751-12777
+#Free IDs 12778-12900
 
 12751 = {	#69000
 	name = Megistos
@@ -52,8 +52,8 @@
 
 	1992.11.12 = {birth = yes}
 	2007.5.19 = {
-		give_nickname = nick_the_lawless 
-		effect = {set_character_flag = special_marshal} 
+		give_nickname = nick_the_lawless
+		effect = {set_character_flag = special_marshal}
 	}
 	2060.8.10 = {death = yes}
 }
@@ -527,4 +527,36 @@
 	1976.4.2 = {birth = yes}
 	1993.12.12 = {add_spouse = 1826}
 	1995.2.3 = {death = {death_reason = death_murder_unknown}}
+}
+
+12777 = {
+	name = Marozia
+	female = yes
+	dynasty = 0
+	culture = myken
+	religion = slaanesh
+	martial = 2
+	diplomacy = 7
+	stewardship = 5
+	intrigue = 7
+	learning = 3
+	add_trait = creature_human
+	add_trait = hedonist
+	add_trait = intricate_webweaver
+	add_trait = is_fat
+	add_trait = beautiful
+	add_trait = gregarious
+	add_trait = charitable
+	add_trait = slothful
+	add_trait = proud
+	add_trait = champion_slaanesh
+	add_trait = lore_slaanesh
+	add_trait = magic_potential_2
+	1969.9.6 = {
+		birth = yes
+		effect = {
+			set_character_flag = magic_potential_flag_1
+		}
+	}
+	2069.6.9 = {death = yes}
 }

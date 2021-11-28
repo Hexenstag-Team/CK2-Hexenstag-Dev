@@ -525,7 +525,7 @@ character_event = {
 	#Disapproving of ormazd
 	option = {
 		trigger = {
-			event_target:assassins_recruiter = { society_member_of = the_assassins } 
+			event_target:assassins_recruiter = { society_member_of = the_assassins }
 			true_religion_shiite_trigger = no
 		}
 
@@ -617,7 +617,7 @@ character_event = {
 	#Disapproving of ormazd
 	option = {
 		trigger = {
-			event_target:assassins_recruiter = { society_member_of = eshin_society } 
+			event_target:assassins_recruiter = { society_member_of = eshin_society }
 			true_religion_shiite_trigger = no
 		}
 
@@ -679,7 +679,7 @@ character_event = {
 	#Go ahead
 	option = {
 		trigger = { FROM = { has_character_flag = approves_of_ormazd }
-		event_target:assassins_recruiter = { society_member_of = the_assassins } 
+		event_target:assassins_recruiter = { society_member_of = the_assassins }
 		}
 		name = EVTOPTA_6021
 		custom_tooltip = { text = EVTOPTA_6021_TOOLTIP }
@@ -695,7 +695,7 @@ character_event = {
 	#Go ahead
 	option = {
 		trigger = { FROM = { has_character_flag = approves_of_ormazd }
-		event_target:assassins_recruiter = { society_member_of = eshin_society } 
+		event_target:assassins_recruiter = { society_member_of = eshin_society }
 		}
 		name = EVTOPTA_6021
 		custom_tooltip = { text = EVTOPTA_6021_TOOLTIP }
@@ -809,7 +809,7 @@ character_event = {
 	option = {
 		name = EVTOPTB_6022
 		trigger={
-		event_target:assassins_recruiter = { society_member_of = the_assassins } 
+		event_target:assassins_recruiter = { society_member_of = the_assassins }
 		}
 
 		reverse_opinion = {
@@ -853,7 +853,7 @@ character_event = {
 	option = {
 		name = EVTOPTB_6022
 		trigger={
-		event_target:assassins_recruiter = { society_member_of = eshin_society } 
+		event_target:assassins_recruiter = { society_member_of = eshin_society }
 		}
 
 		reverse_opinion = {
@@ -1067,7 +1067,7 @@ character_event = {
 							set_secret_religion = ormazd
 						}
 					}
-				
+
 				}
 			}
 		}
@@ -1152,7 +1152,7 @@ character_event = {
 	immediate = {
 		if = {
 			limit={event_target:assassins_inductor = { society_member_of = the_assassins } }
-			
+
 			hidden_effect = {
 				random_society_member = {
 					limit = {
@@ -1185,9 +1185,9 @@ character_event = {
 
 	#Allahu akbar!
 	option = {
-		trigger = { 
-			religion = ormazd 
-			event_target:grand_master = { society_member_of = the_assassins } 
+		trigger = {
+			religion = ormazd
+			event_target:grand_master = { society_member_of = the_assassins }
 		}
 		name = {
 			trigger = {
@@ -1218,7 +1218,7 @@ character_event = {
 	#For the great Horned one!
 	option = {
 		trigger = {
-			event_target:grand_master = { society_member_of = eshin_society } 
+			event_target:grand_master = { society_member_of = eshin_society }
 		}
 		name =EVTOPTA_6028_ALT
 		custom_tooltip = { text = EVTOPTE_6028_TOOLTIP }
@@ -1229,7 +1229,7 @@ character_event = {
 	#I will convert
 	option = {
 		trigger = { NOT = { religion = ormazd }
-			event_target:grand_master = { society_member_of = the_assassins } 
+			event_target:grand_master = { society_member_of = the_assassins }
 		}
 		name = {
 			trigger = {
@@ -1284,7 +1284,7 @@ character_event = {
 	#I will convert, secretly
 	option = {
 		trigger = { NOT = { religion = ormazd }
-			event_target:grand_master = { society_member_of = the_assassins } 
+			event_target:grand_master = { society_member_of = the_assassins }
 		}
 		name = {
 			trigger = {
@@ -1429,7 +1429,7 @@ character_event = {
 
 	immediate = {
 		if = {
-			limit = { 
+			limit = {
 				NOT = { event_target:assassins_inductor = { is_alive = yes } }
 				FROMFROM={has_character_flag=the_assassins_joining}
 			}
@@ -1488,7 +1488,7 @@ character_event = {
 			}
 		}
 		if = {
-			limit = { 
+			limit = {
 				NOT = { event_target:assassins_inductor = { is_alive = yes } }
 				FROMFROM={has_character_flag=the_eshin_joining}
 			}
@@ -4301,13 +4301,7 @@ character_event = {
 							assassins_appropriate_target_trigger = yes
 							is_within_diplo_range = ROOT #Not using assassins_appropriate_target_trigger here to also find vassals/commanders
 							NOT = { society_member_of = the_assassins }
-							OR = {
-								society_member_of = cult_of_khorne
-								society_member_of = cult_of_nurgle
-								society_member_of = cult_of_tzeentch
-								society_member_of = cult_of_slaanesh
-								society_member_of = cult_of_undivided
-							}
+							trait = underground_cult_member
 						}
 					}
 				}
@@ -7648,9 +7642,9 @@ character_event = {
 	hide_window = yes
 	is_triggered_only = yes
 
-	trigger = { 
+	trigger = {
 		OR={
-			has_character_flag = assassins_target_marked_for_death 
+			has_character_flag = assassins_target_marked_for_death
 			has_character_flag = eshin_target_marked_for_death
 		}
 	}

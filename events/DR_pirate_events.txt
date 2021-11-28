@@ -918,15 +918,15 @@ character_event = {
 		OR = {
 			AND = {
 				NOT = { trait = one_eyed }
-				character_modifier = one_eyed_pirate
+				has_character_modifier = one_eyed_pirate
 			}
 			AND = {
 				NOT = { trait = one_handed }
-				character_modifier = one_handed_pirate
+				has_character_modifier = one_handed_pirate
 			}
 			AND = {
 				NOT = { trait = one_legged }
-				character_modifier = one_legged_pirate
+				has_character_modifier = one_legged_pirate
 			}
 		}
 	}
@@ -935,21 +935,21 @@ character_event = {
 		if = {
 			limit = {
 				NOT = { trait = one_eyed }
-				character_modifier = one_eyed_pirate
+				has_character_modifier = one_eyed_pirate
 			}
 			remove_character_modifier = { name = one_eyed_pirate }
 		}
 		if = {
 			limit = {
 				NOT = { trait = one_handed }
-				character_modifier = one_handed_pirate
+				has_character_modifier = one_handed_pirate
 			}
 			remove_character_modifier = { name = one_handed_pirate }
 		}
 		if = {
 			limit = {
 				NOT = { trait = one_legged }
-				character_modifier = one_legged_pirate
+				has_character_modifier = one_legged_pirate
 			}
 			remove_character_modifier = { name = one_legged_pirate }
 		}

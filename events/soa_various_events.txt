@@ -184,10 +184,6 @@ character_event = {
 			factor = 0.75
 			trait = impaler
 		}
-		modifier = {
-			factor = 0.25
-			society_member_of = cult_of_tzeentch
-		}
 	}
 
 	immediate = {
@@ -238,13 +234,13 @@ narrative_event = {
 		name = {
 			text = EVTOPTA_SOA_3002 # Pray and fast, father
 			trigger = {
-				NOT = { society_member_of = cult_of_tzeentch }
+				NOT = { true_religion = tzeentch }
 			}
 		}
 		name = {
 			text = EVTOPTA_SOA_3002_SATANIST # Rejoice, father
 			trigger = {
-				society_member_of = cult_of_tzeentch
+				true_religion = tzeentch
 			}
 		}
 
@@ -253,7 +249,7 @@ narrative_event = {
 		}
 
 		if = {
-			limit = { society_member_of = cult_of_tzeentch }
+			limit = { true_religion = tzeentch }
 			add_society_currency_major_effect = yes
 		}
 
@@ -278,13 +274,13 @@ narrative_event = {
 		name = {
 			text = EVTOPTB_SOA_3002 # Pray and fast, mother
 			trigger = {
-				NOT = { society_member_of = cult_of_tzeentch }
+				NOT = { true_religion = tzeentch }
 			}
 		}
 		name = {
 			text = EVTOPTB_SOA_3002_SATANIST # Rejoice, mother
 			trigger = {
-				society_member_of = cult_of_tzeentch
+				true_religion = tzeentch
 			}
 		}
 
@@ -294,11 +290,6 @@ narrative_event = {
 
 		ai_chance = {
 			factor = 100
-		}
-
-		if = {
-			limit = { society_member_of = cult_of_tzeentch }
-			add_society_currency_massive_effect = yes
 		}
 
 		random_list = {
@@ -329,7 +320,7 @@ narrative_event = {
 		name = EVTOPTC_SOA_3002 # Consult the Court Chaplain
 
 		trigger = {
-			NOT = { society_member_of = cult_of_tzeentch }
+			NOT = { true_religion = tzeentch }
 			job_spiritual = {
 				religion = ROOT
 			}
@@ -356,7 +347,7 @@ character_event = {
 			modifier = {
 				factor = 0
 				trait = zealous
-				NOT = { society_member_of = cult_of_tzeentch }
+				NOT = { true_religion = tzeentch }
 			}
 			modifier = {
 				factor = 2
@@ -407,7 +398,7 @@ character_event = {
 			}
 			modifier = {
 				factor = 0
-				society_member_of = cult_of_tzeentch
+				true_religion = tzeentch
 			}
 			modifier = {
 				factor = 2
@@ -501,7 +492,7 @@ character_event = {
 			}
 			modifier = {
 				factor = 0
-				society_member_of = cult_of_tzeentch
+				true_religion = tzeentch
 			}
 			modifier = {
 				factor = 2
@@ -1368,13 +1359,13 @@ narrative_event = {
 		name = {
 			text = EVTOPTA_SOA_3021
 			trigger = {
-				NOT = { society_member_of = cult_of_tzeentch }
+				NOT = { true_religion = tzeentch }
 			}
 		}
 		name = {
 			text = EVTOPTA_SOA_3021_SATANIST
 			trigger = {
-				society_member_of = cult_of_tzeentch
+				true_religion = tzeentch
 			}
 		}
 	}
@@ -1577,13 +1568,13 @@ narrative_event = {
 	option = {
 		name = EVTOPTA_SOA_3039
 		trigger = {
-			NOT = { society_member_of = cult_of_tzeentch }
+			NOT = { true_religion = tzeentch }
 		}
 	}
 	option = {
 		name = EVTOPTA_SOA_3039_SATANIST
 		trigger = {
-			society_member_of = cult_of_tzeentch
+			true_religion = tzeentch
 		}
 	}
 }
@@ -1601,13 +1592,13 @@ narrative_event = {
 	option = {
 		name = EVTOPTA_SOA_3040
 		trigger = {
-			NOT = { society_member_of = cult_of_tzeentch }
+			NOT = { true_religion = tzeentch }
 		}
 	}
 	option = {
 		name = EVTOPTA_SOA_3039_SATANIST
 		trigger = {
-			society_member_of = cult_of_tzeentch
+			true_religion = tzeentch
 		}
 	}
 }
@@ -1625,13 +1616,13 @@ narrative_event = {
 	option = {
 		name = EVTOPTA_SOA_3041
 		trigger = {
-			NOT = { society_member_of = cult_of_tzeentch }
+			NOT = { true_religion = tzeentch }
 		}
 	}
 	option = {
 		name = EVTOPTA_SOA_3039_SATANIST
 		trigger = {
-			society_member_of = cult_of_tzeentch
+			true_religion = tzeentch
 		}
 	}
 }
@@ -2437,13 +2428,13 @@ narrative_event = {
 		name = {
 			text = EVTOPTA_SOA_3077
 			trigger = {
-				NOT = { society_member_of = cult_of_tzeentch }
+				NOT = { true_religion = tzeentch }
 			}
 		}
 		name = {
 			text = EVTOPTA_SOA_3078
 			trigger = {
-				society_member_of = cult_of_tzeentch
+				true_religion = tzeentch
 			}
 		}
 	}
@@ -2476,7 +2467,7 @@ character_event = {
 		set_global_flag = demon_child_to_aztecs
 
 		if = {
-			limit = { society_member_of = cult_of_tzeentch }
+			limit = { true_religion = tzeentch }
 			society = {
 				any_society_member = {
 					limit = {
@@ -2648,13 +2639,13 @@ narrative_event = {
 		name = {
 			text = EVTOPTA_SOA_3082
 			trigger = {
-				society_member_of = cult_of_tzeentch
+				true_religion = tzeentch
 			}
 		}
 		name = {
 			text = EVTOPTA_SOA_3083
 			trigger = {
-				NOT = { society_member_of = cult_of_tzeentch }
+				NOT = { true_religion = tzeentch }
 			}
 		}
 	}
@@ -2711,15 +2702,6 @@ character_event = {
 	}
 
 	immediate = {
-		if = {
-			limit = { society_member_of = cult_of_tzeentch }
-			society = {
-				any_society_member = {
-					limit = { NOT = { character = ROOT } }
-					narrative_event = { id = SoA.3092 }
-				}
-			}
-		}
 	}
 }
 
