@@ -35,6 +35,7 @@ character_event = {
                 holder_scope = {
                     add_trait = underground_cult_member
                     set_character_flag = underground_cult_leader
+                    add_cult_leader_starting_duel_experience_effect = yes
                     save_persistent_event_target = {
                         name = underground_cult_allegiance
                         scope = primary_title
@@ -224,13 +225,38 @@ character_event = {
             name = underground_cult_allegiance
             scope = primary_title
         }
+        #set up AI cult leader
         if = {
             limit = {
                 ai = yes
             }
+            #intrigue is the key stat for cult leaders
+            change_intrigue = 2
+            #add duel experience to make new Cult Magus a more formidable boss fight
+            add_cult_leader_starting_duel_experience_effect = yes
+            remove_lifestyle_trait_effect = yes
+            #chaos cult leader effects
             if = {
                 limit = {
                     religion_group = chaos_gods_group
+                }
+                #doom bonuses
+                trigger_switch = {
+                    on_trigger = has_global_flag
+                    is_doom_very_high = {
+                        change_intrigue = 2
+                        add_ten_duel_experience_modifier = yes
+                        small_chance_for_one_duel_experience_modifier = yes
+                    }
+                    is_doom_high = {
+                        change_intrigue = 1
+                        add_five_duel_experience_modifier = yes
+                        small_chance_for_one_duel_experience_modifier = yes
+                    }
+                    fallback = {
+                        add_one_duel_experience_modifier = yes
+                        small_chance_for_one_duel_experience_modifier = yes
+                    }
                 }
                 #most cult leaders are heavily mutated
                 while = {
@@ -244,30 +270,80 @@ character_event = {
                         mutations_table_list = yes
                     }
                 }
-                #intrigue is the key stat for cult leaders
-                change_intrigue = 2
-                #by definition, the cult leaders are champions of Chaos
+                #by definition, the chaos cult leaders are champions of Chaos
                 trigger_switch = {
                     on_trigger = religion
                     khorne = {
                         add_trait = champion_khorne
                         add_trait = mark_khorne
                         change_martial = 2
+                        random_list = {
+                            10 = {
+                                add_trait = duelist
+                            }
+                            10 = {
+                                add_trait = hunter
+                            }
+                            10 = {
+                                add_trait = strategist
+                            }
+                        }
                     }
                     nurgle = {
                         add_trait = champion_nurgle
                         add_trait = mark_nurgle
                         change_stewardship = 2
+                        random_list = {
+                            10 = {
+                                add_trait = physician
+                            }
+                            10 = {
+                                add_trait = gardener
+                            }
+                            10 = {
+                                add_trait = socializer
+                            }
+                        }
                     }
                     slaanesh = {
                         add_trait = champion_slaanesh
                         add_trait = mark_slaanesh
                         change_diplomacy = 2
+                        random_list = {
+                            10 = {
+                                add_trait = hedonist
+                            }
+                            10 = {
+                                if = {
+                                    limit = {
+                                        is_female = yes
+                                    }
+                                    add_trait = seductress
+                                }
+                                else = {
+                                    add_trait = seducer
+                                }
+                            }
+                            10 = {
+                                add_trait = impaler
+                            }
+                        }
                     }
                     tzeentch = {
                         add_trait = champion_tzeentch
                         add_trait = mark_tzeentch
                         change_learning = 2
+                        random_list = {
+                            10 = {
+                                add_trait = schemer
+                            }
+                            10 = {
+                                add_trait = scholar
+                            }
+                            10 = {
+                                add_trait = mystic
+                            }
+                        }
                     }
                 }
             }
@@ -3317,12 +3393,18 @@ character_event = {
     is_triggered_only = yes
 
     immediate = {
+        event_target:court_witchhunter = {
+            small_chance_for_one_duel_experience_modifier = yes
+        }
         #apply damage to the cult, if applicable
         if = {
             limit = {
                 event_target:clue_county = {
                     has_province_flag = cultic_activity
                 }
+            }
+            event_target:court_witchhunter = {
+                add_one_duel_experience_modifier = yes
             }
             event_target:active_cult_leader = {
                 #base damage from flag/trait - honor player intuitions about hunters
@@ -4499,6 +4581,7 @@ narrative_event = {
             witch_hunter_boss_fight_total_victory_trigger = yes
         }
         name = EVTOPTA_wh_cults_and_hunters_715
+        add_ten_duel_experience_modifier = yes
         add_trait = wounded
         witch_hunter_kills_cult_leader_effect = yes
         reduce_doom_progress_catastrophic_effect = yes
@@ -4506,6 +4589,7 @@ narrative_event = {
         prestige = 2500
         piety = 2500
         event_target:court_witchhunter = {
+            add_ten_duel_experience_modifier = yes
             add_trait = wounded
             if = {
                 limit = {
@@ -4540,6 +4624,7 @@ narrative_event = {
                 add_maimed_trait_effect = yes
             }
         }
+        add_ten_duel_experience_modifier = yes
         witch_hunter_kills_cult_leader_effect = yes
         reduce_doom_progress_catastrophic_effect = yes
         witch_hunter_counter_attack_cleanup_effect = yes
@@ -4563,6 +4648,7 @@ narrative_event = {
         prestige = 250
         piety = 250
         event_target:court_witchhunter = {
+            add_ten_duel_experience_modifier = yes
             random_list = {
                 70 = {
                     add_trait = wounded
@@ -4683,6 +4769,7 @@ narrative_event = {
             trait = on_witch_hunt
         }
         name = EVTOPTA_wh_cults_and_hunters_717
+        add_five_duel_experience_modifier = yes
         add_trait = wounded
         witch_hunter_kills_cult_leader_effect = yes
         reduce_doom_progress_enormous_effect = yes
@@ -4690,6 +4777,7 @@ narrative_event = {
         prestige = 1000
         piety = 1000
         event_target:court_witchhunter = {
+            add_five_duel_experience_modifier = yes
             add_trait = wounded
             witch_hunter_counter_attack_cleanup_effect = yes
             prestige = 1000
@@ -4708,6 +4796,7 @@ narrative_event = {
         prestige = 100
         piety = 100
         event_target:court_witchhunter = {
+            add_five_duel_experience_modifier = yes
             add_trait = wounded
             witch_hunter_counter_attack_cleanup_effect = yes
             prestige = 2500
@@ -4729,6 +4818,7 @@ narrative_event = {
                 add_maimed_trait_effect = yes
             }
         }
+        add_five_duel_experience_modifier = yes
         witch_hunter_kills_cult_leader_effect = yes
         reduce_doom_progress_enormous_effect = yes
         witch_hunter_counter_attack_cleanup_effect = yes
@@ -4764,14 +4854,17 @@ narrative_event = {
             trait = on_witch_hunt
         }
         name = EVTOPTE_wh_cults_and_hunters_717
+        add_one_duel_experience_modifier = yes
+        small_chance_for_one_duel_experience_modifier = yes
         add_trait = wounded
         cult_leader_operations_severely_disrupted_by_witch_hunter_attack_effect = yes
-        reduce_doom_progress_massive_effect = yes
         witch_hunter_counter_attack_cleanup_effect = yes
         prestige = 500
         piety = 500
         event_target:court_witchhunter = {
             add_trait = wounded
+            add_one_duel_experience_modifier = yes
+            small_chance_for_one_duel_experience_modifier = yes
             witch_hunter_counter_attack_cleanup_effect = yes
             prestige = 500
             piety = 500
@@ -4785,11 +4878,12 @@ narrative_event = {
         }
         name = EVTOPTF_wh_cults_and_hunters_717
         cult_leader_operations_severely_disrupted_by_witch_hunter_attack_effect = yes
-        reduce_doom_progress_massive_effect = yes
         prestige = 50
         piety = 50
         event_target:court_witchhunter = {
             add_trait = wounded
+            add_one_duel_experience_modifier = yes
+            small_chance_for_one_duel_experience_modifier = yes
             witch_hunter_counter_attack_cleanup_effect = yes
             prestige = 1000
             piety = 1000
@@ -4802,12 +4896,13 @@ narrative_event = {
             trait = on_witch_hunt
         }
         name = EVTOPTG_wh_cults_and_hunters_717
-        add_doom_progress_tiny_effect = yes
+        add_doom_progress_minor_effect = yes
         cult_leader_kills_witch_hunter_effect = yes
         event_target:court_witchhunter = {
             cult_leader_kills_witch_hunter_effect = yes
         }
         event_target:active_cult_leader = {
+            add_five_duel_experience_modifier = yes
             random_list = {
                 70 = {
                     add_trait = wounded
@@ -4830,6 +4925,7 @@ narrative_event = {
             cult_leader_kills_witch_hunter_effect = yes
         }
         event_target:active_cult_leader = {
+            add_five_duel_experience_modifier = yes
             random_list = {
                 70 = {
                     add_trait = wounded

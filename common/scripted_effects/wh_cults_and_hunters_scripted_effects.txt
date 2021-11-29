@@ -708,6 +708,81 @@ create_emissary_of_order_witch_hunter_effect = {
 ###Hunter employment effects end###
 
 #cult leader scope
+add_cult_leader_starting_duel_experience_effect = {
+    random_list = {
+        20 = {
+            modifier = {
+                factor = 0
+                religion = khorne
+            }
+            add_five_duel_experience_modifier = yes
+            small_chance_for_one_duel_experience_modifier = yes
+        }
+        20 = {
+            modifier = {
+                factor = 0.5
+                religion = khorne
+            }
+            add_five_duel_experience_modifier = yes
+            add_one_duel_experience_modifier = yes
+            small_chance_for_one_duel_experience_modifier = yes
+            small_chance_for_one_duel_experience_modifier = yes
+        }
+        20 = {
+            modifier = {
+                factor = 0.5
+                religion = khorne
+            }
+            add_ten_duel_experience_modifier = yes
+            small_chance_for_one_duel_experience_modifier = yes
+            small_chance_for_one_duel_experience_modifier = yes
+        }
+        20 = {
+            modifier = {
+                factor = 1.5
+                religion = khorne
+            }
+            while = {
+                count = 3
+                add_five_duel_experience_modifier = yes
+            }
+            while = {
+                count = 3
+                small_chance_for_one_duel_experience_modifier = yes
+            }
+        }
+        20 = {
+            modifier = {
+                factor = 1.5
+                religion = khorne
+            }
+            while = {
+                count = 2
+                add_ten_duel_experience_modifier = yes
+            }
+            while = {
+                count = 3
+                small_chance_for_one_duel_experience_modifier = yes
+            }
+        }
+        10 = {
+            trigger = {
+                religion = khorne
+            }
+            while = {
+                count = 2
+                add_ten_duel_experience_modifier = yes
+            }
+            add_five_duel_experience_modifier = yes
+            while = {
+                count = 4
+                small_chance_for_one_duel_experience_modifier = yes
+            }
+        }
+    }
+}
+
+#cult leader scope
 find_starting_cultic_activity_kingdom_target_effect = {
     random_list = {
         #40% of the time, a Cult will start targeting their home Kingdom
@@ -3307,33 +3382,49 @@ witch_hunter_asks_to_go_fight_evil_elsewhere_effect = {
     }
     else = {
         random_list = {
-            50 = {
+            10 = {
                 modifier = {
                     factor = 2
+                    trait = kind
+                }
+                modifier = {
+                    factor = 2
+                    trait = brave
+                }
+                modifier = {
+                    factor = 3
                     trait = zealous
                 }
                 modifier = {
-                    factor = 0.4
+                    factor = 0
                     tier = COUNT
                 }
                 modifier = {
-                    factor = 0.6
+                    factor = 0.2
                     tier = DUKE
                 }
                 modifier = {
-                    factor = 1.2
+                    factor = 0.6
                     tier = KING
                 }
                 modifier = {
-                    factor = 2.5
+                    factor = 1.2
                     tier = EMPEROR
                 }
                 witch_hunter_goes_to_fight_evil_elsewhere_effect = yes
             }
-            50 = {
+            90 = {
                 modifier = {
                     factor = 2
                     trait = greedy
+                }
+                modifier = {
+                    factor = 2
+                    trait = envious
+                }
+                modifier = {
+                    factor = 4
+                    trait = paranoid
                 }
                 #no effect
             }
@@ -3347,13 +3438,13 @@ witch_hunter_goes_to_fight_evil_elsewhere_effect = {
         trigger_switch = {
             on_trigger = has_character_flag
             emissary_of_order_witch_hunter = {
-                reduce_doom_progress_major_effect = yes
-            }
-            temple_of_solkan_witch_hunter = {
                 reduce_doom_progress_medium_effect = yes
             }
-            fallback = {
+            temple_of_solkan_witch_hunter = {
                 reduce_doom_progress_minor_effect = yes
+            }
+            fallback = {
+                reduce_doom_progress_tiny_effect = yes
             }
         }
         death = {
@@ -4048,7 +4139,7 @@ at_the_mercy_of_the_emissary_effect = {
 witch_hunter_investigate_leads_to_cult_center_effect = {
     event_target:court_witchhunter = {
         random = {
-            chance = 60
+            chance = 65
             mult_modifier = {
                 factor = 1.1
                 intrigue > 10
@@ -4197,7 +4288,7 @@ cult_leader_attempts_to_avoid_counter_attack_effect = {
             }
             multiply_variable = {
                 which = counter_attack_strength
-                value = 1.5
+                value = 1.25
             }
             subtract_variable = {
                 which = counter_attack_strength
@@ -4293,6 +4384,7 @@ cult_leader_kills_witch_hunter_effect = {
 
 #any scope
 cult_leader_operations_severely_disrupted_by_witch_hunter_attack_effect = {
+    reduce_doom_progress_medium_effect = yes
     event_target:active_cult_leader = {
         multiply_variable = {
             which = cultic_influence

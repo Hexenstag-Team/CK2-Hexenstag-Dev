@@ -209,6 +209,10 @@ EVTOPTA_wh_cults_and_hunters_713;Good luck, [court_witchhunter.GetFirstName];;;;
 EVTOPTB_wh_cults_and_hunters_713;And I will be fighting at your side, [court_witchhunter.GetFirstName]!;;;;;;;;;;;;;x
 EVTOPTC_wh_cults_and_hunters_713;And I will bring my magic to the fight, [court_witchhunter.GetFirstName]!;;;;;;;;;;;;;x
 EVTTITLE_wh_cults_and_hunters_715;Daemonslayer;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_715_liege_fought_total_victory;[court_witchhunter.GetFirstName] leads your party into the lair of the [witch_hunter_target_cult.GetBaseName]. You have the advantage of surprise and overcome the acolytes guarding the inner sanctum - but within is the [final_battle_daemon_adjective] form of the daemon [active_cult_leader.GetFullName]!\nNobody in your party escapes unscathed and many laid down their lives today, but between [court_witchhunter.GetFirstName]'s [court_witchhunter_battle_skill] and your own [witchhunter_liege_battle_skill] you have defeated a terrible threat to the Old World!;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_715_liege_fought_pyrrhic_victory;[court_witchhunter.GetFirstName] leads your party into the lair of the [witch_hunter_target_cult.GetBaseName]. The acolytes guarding the inner sanctum put up a hard fight, and within is the [final_battle_daemon_adjective] form of the daemon [active_cult_leader.GetFullName]!\nThe daemon is a terrible foe and slaughters your men, but your [witchhunter_liege_battle_skill] is not so easily dismissed. You strike [active_cult_leader.GetFirstName] a terrible blow! Then the counterstroke sends you to the earth. You dimly see the daemon's clawed hand close around [court_witchhunter.GetFirstName]'s throat as steel flashes through the air.\nWhen the monster's death cry ends, you find the strength to turn your head and catch [court_witchhunter.GetFirstName]'s fading gaze. Your hunter smiles weakly, then [court_witchhunter.GetSheHe] is gone.;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_715_hunter_solo_total_victory;[court_witchhunter.GetBestName] has returned from their attack on the [witch_hunter_target_cult.GetBaseName] in triumph. The heroic hunter successfully cornered and slew the Cult's leader, the daemon [active_cult_leader.GetFullName]! You are awed by this demonstration of your servant's [court_witchhunter_battle_skill].\nIf it was possible to admit the horrors that lurk in the darkness, you would praise [court_witchhunter.GetFirstName] across your realm. But it's enough that the Old World is a little safer today.;;;;;;;;;;;;;x
+EVTDESC_wh_cults_and_hunters_715_hunter_solo_pyrrhic_victory;At last, one - just one - of the party you dispatched to fight the [witch_hunter_target_cult.GetBaseName] has returned. The survivor recounts the story haltingly, still suffering from the wounds they received. You know that [court_witchhunter.GetFirstName] must have died, or else [court_witchhunter.GetSheHe] would have come back, but it still saddens you to hear that the bold witch hunter fell in battle.\nYou draw comfort from the other side of the story. [active_cult_leader.GetBestName], not merely the leader of [witch_hunter_target_cult.GetBaseName] but also a daemon of [active_cult_leader.Religion.GetName] has been banished from the Old World. You cannot admit the truth of what has happened and hold a public remembrance for [court_witchhunter.GetFirstName], but privately you give thanks for [court_witchhunter.GetHerHis] selfless courage and [court_witchhunter_battle_skill].;;;;;;;;;;;;;x
 EVTOPTA_wh_cults_and_hunters_715;Praise [Root.Religion.GetHighGodNameCap]!;;;;;;;;;;;;;x
 EVTOPTB_wh_cults_and_hunters_715;Praise [Root.Religion.GetHighGodNameCap]!;;;;;;;;;;;;;x
 EVTOPTC_wh_cults_and_hunters_715;I will never forget [court_witchhunter.GetFirstName];;;;;;;;;;;;;x
@@ -226,7 +230,22 @@ EVTDESC_wh_cults_and_hunters_800;Two years ago you committed to emergency measur
 EVTOPTA_wh_cults_and_hunters_800;Very well;;;;;;;;;;;;;x
 EVTOPTB_wh_cults_and_hunters_800;Not yet;;;;;;;;;;;;;x
 # # TOOLTIPS & REUSED TEXT # #
+#Custom Localisation for Events
+final_battle_khorne_adjective_1;blood-drenched;;;;;;;;;;;;;x
+final_battle_khorne_adjective_2;terrifying;;;;;;;;;;;;;x
+final_battle_nurgle_adjective_1;putrid;;;;;;;;;;;;;x
+final_battle_nurgle_adjective_2;bloated;;;;;;;;;;;;;x
+final_battle_slaanesh_adjective_1;bizarre;;;;;;;;;;;;;x
+final_battle_slaanesh_adjective_2;eldritch;;;;;;;;;;;;;x
+final_battle_tzeentch_adjective_1;weirdly alluring;;;;;;;;;;;;;x
+final_battle_tzeentch_adjective_2;sensuous;;;;;;;;;;;;;x
+witchhunter_battle_skill_is_magic;potent battle magic;;;;;;;;;;;;;x
+witchhunter_battle_skill_is_badassery;awesome warrior skills;;;;;;;;;;;;;x
+witchhunter_battle_skill_is_solkan_training;ancient battle wisdom;;;;;;;;;;;;;x
+witchhunter_battle_skill_is_just_being_there;stoic determination;;;;;;;;;;;;;x
+#Reused Event Options
 EVTOPT_wh_cults_and_hunters_unwanted_hunter;[hunter_candidate.GetBestName] is not what I'm looking for;;;;;;;;;;;;;x
+#Tooltips
 available_because_a_good_sword_to_fight_evil;This option is available because you are a skilled warrior;;;;;;;;;;;;;x
 available_because_a_skilled_mage_to_fight_evil;This option is available because of your magical ability;;;;;;;;;;;;;x
 available_because_classical_pantheon;This option is available because you venerate the Classical Pantheon;;;;;;;;;;;;;x

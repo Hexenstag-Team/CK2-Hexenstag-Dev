@@ -86,7 +86,7 @@ defined_text = {
 defined_text = {
 	name = on_witch_hunt_trait_desc
 	
-		use_first_valid  = yes
+	use_first_valid  = yes
 	
 	text = {
 		localisation_key = on_witch_hunt_cult_desc
@@ -104,5 +104,149 @@ defined_text = {
 	
 	fallback_text = {
 		localisation_key = on_witch_hunt_died_desc
+	}
+}
+
+defined_text = {
+	name = final_battle_daemon_adjective
+
+	text = {
+		localisation_key = final_battle_khorne_adjective_1
+		trigger = {
+			event_target:active_cult_leader = {
+				religion = khorne
+			}
+		}
+	}
+
+	text = {
+		localisation_key = final_battle_khorne_adjective_2
+		trigger = {
+			event_target:active_cult_leader = {
+				religion = khorne
+			}
+		}
+	}
+
+	text = {
+		localisation_key = final_battle_nurgle_adjective_1
+		trigger = {
+			event_target:active_cult_leader = {
+				religion = nurgle
+			}
+		}
+	}
+
+	text = {
+		localisation_key = final_battle_nurgle_adjective_2
+		trigger = {
+			event_target:active_cult_leader = {
+				religion = nurgle
+			}
+		}
+	}
+	
+	text = {
+		localisation_key = final_battle_slaanesh_adjective_1
+		trigger = {
+			event_target:active_cult_leader = {
+				religion = slaanesh
+			}
+		}
+	}
+
+	text = {
+		localisation_key = final_battle_slaanesh_adjective_2
+		trigger = {
+			event_target:active_cult_leader = {
+				religion = slaanesh
+			}
+		}
+	}
+	
+	text = {
+		localisation_key = final_battle_tzeentch_adjective_1
+		trigger = {
+			event_target:active_cult_leader = {
+				religion = tzeentch
+			}
+		}
+	}
+	
+	text = {
+		localisation_key = final_battle_tzeentch_adjective_2
+		trigger = {
+			event_target:active_cult_leader = {
+				religion = tzeentch
+			}
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = final_battle_undivided_adjective
+	}
+}
+
+defined_text = {
+	name = court_witchhunter_battle_skill
+		
+	text = {
+		localisation_key = witchhunter_battle_skill_is_magic
+		trigger = {
+			event_target:court_witchhunter = {
+				is_trained_mage = yes
+			}
+		}
+	}
+	
+	text = {
+		localisation_key = witchhunter_battle_skill_is_badassery
+		trigger = {
+			event_target:court_witchhunter = {
+				combat_rating > 80
+				NOT = {
+					is_trained_mage = yes
+				}
+			}
+		}
+	}	
+	
+	text = {
+		localisation_key = witchhunter_battle_skill_is_solkan_training
+		trigger = {
+			event_target:court_witchhunter = {
+				has_character_flag = temple_of_solkan_witch_hunter
+			}
+		}
+	}
+	
+	fallback_text = {
+		localisation_key = witchhunter_battle_skill_is_just_being_there
+	}
+}
+
+defined_text = {
+	name = witchhunter_liege_battle_skill
+		
+	text = {
+		localisation_key = witchhunter_battle_skill_is_magic
+		trigger = {
+			is_trained_mage = yes
+		}
+	}
+	
+	text = {
+		localisation_key = witchhunter_battle_skill_is_badassery
+			trigger = {
+				NOT = {
+					is_trained_mage = yes
+				}
+				combat_rating > 80
+			}
+		}
+	}	
+	
+	fallback_text = {
+		localisation_key = witchhunter_battle_skill_is_just_being_there
 	}
 }
