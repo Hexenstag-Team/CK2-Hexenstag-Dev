@@ -8558,3 +8558,331 @@ patron_imperial_pantheon_effect = {
 		}
 	}
 }
+
+patron_classical_pantheon_effect = {
+	random_list = {
+		#classical_pantheon Gods
+		5 = {	#Taal&Rhya
+			modifier = {
+				factor = 100
+				OR = {
+					has_landed_title = e_talabecland
+					has_landed_title = d_cult_of_taal_and_rhya
+					has_landed_title = d_longshanks
+					has_landed_title = d_knights_of_taals_fury
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					culture = talabeclander
+					culture = ostermarker
+					culture = ostlander
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					culture_group = kislevite_group
+					culture_group = norscan_group
+					culture = nordlander
+					culture = middenlander
+					culture = hochlander
+					culture = drakwalder
+				}
+			}
+			if = {
+				limit = {
+					NOR = {
+						has_global_flag = imperial_churches_unified_sigmar
+						has_global_flag = imperial_churches_unified_taal_rhya
+						has_global_flag = imperial_churches_unified_ulric
+						has_global_flag = imperial_churches_unified
+					}
+				}
+				add_trait = patron_taal_rhya
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_global_flag = imperial_churches_unified_sigmar
+						has_global_flag = imperial_churches_unified_taal_rhya
+						has_global_flag = imperial_churches_unified_ulric
+						has_global_flag = imperial_churches_unified
+					}
+				}
+				add_trait = patron_taal_rhya_united
+			}
+		}
+		5 = {	#Ulric
+			modifier = {
+				factor = 100
+				OR = {
+					has_landed_title = e_middenland
+					has_landed_title = d_cult_of_ulric
+					
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					culture_group = norscan_group
+					culture = middenlander
+					culture = drakwalder
+					culture = hochlander
+					culture = ostlander
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					culture_group = kislevite_group
+					culture = talabeclander
+					culture = ostermarker
+					culture = nordlander
+				}
+			}
+			if = {
+				limit = {
+					NOR = {
+						has_global_flag = imperial_churches_unified_sigmar
+						has_global_flag = imperial_churches_unified_taal_rhya
+						has_global_flag = imperial_churches_unified_ulric
+						has_global_flag = imperial_churches_unified
+					}
+				}
+				add_trait = patron_ulric
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_global_flag = imperial_churches_unified_sigmar
+						has_global_flag = imperial_churches_unified_taal_rhya
+						has_global_flag = imperial_churches_unified_ulric
+						has_global_flag = imperial_churches_unified
+					}
+				}
+				add_trait = patron_ulric_united
+			}
+		}
+		5 = {	#Manann
+			modifier = {
+				factor = 100
+				OR = {
+					has_landed_title = d_knights_mariner
+					has_landed_title = d_sons_of_manann
+				}
+			}
+			modifier = {
+				factor = 10
+				culture = westerlander
+			}
+			modifier = {
+				factor = 10
+				government = merchant_republic_government
+			}
+			
+			modifier = {
+				factor = 5
+				location = { port = yes }
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					culture_group = norscan_group
+					culture_group = sartosan_group
+				}
+			}
+			add_trait = patron_manann
+		}
+		5 = {	#Morr
+			modifier = {
+				factor = 100
+				OR = {
+					# has_landed_title = d_cult_of_morr
+					has_landed_title = d_knights_of_the_black_rose
+					has_landed_title = d_order_of_the_raven
+					has_landed_title = d_knights_of_morr
+				}
+				
+			}
+			modifier = {
+				factor = 10
+				culture = sylvanian
+			}
+			add_trait = patron_morr
+		}
+		10 = {	#Verena
+			modifier = {
+				factor = 5
+				OR = {
+					learning > 15
+					diplomacy > 15
+					stewardship > 15
+					trait = grey_eminence
+					trait = midas_touched
+					is_learned_trigger = yes
+
+				}
+			}
+			modifier = {
+				factor = 2.5
+				OR = {
+					trait = charismatic_negotiator
+					trait = brilliant_strategist
+					trait = fortune_builder
+					trait = elusive_shadow
+					trait = martial_cleric
+					is_smart_trigger = yes
+				}
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+			add_trait = patron_verena
+		}
+		10 = {	#Myrmidia
+			modifier = {
+				factor = 100
+				OR = {
+					has_landed_title = k_cult_of_myrmidia
+					has_landed_title = d_high_temple_of_remas
+					has_landed_title = d_high_temple_of_magritta
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					culture_group = tilean_group
+					culture_group = estalian_group
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					trait = brilliant_strategist
+					has_lifestyle_martial_trigger = yes
+				}
+			}
+			add_trait = patron_myrmidia
+		}
+		5 = {	#Shallya
+			modifier = {
+				factor = 100
+				has_landed_title = k_cult_of_shallya
+			}
+			modifier = {
+				factor = 10
+				is_lowborn = yes
+				NOT = { trait = peasant_leader }
+			}
+			modifier = {
+				factor = 5
+				is_female = yes
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					trait = monk
+					trait = nun
+				}
+			}
+			add_trait = patron_shallya
+		}
+		5 = {	#Ranald
+			modifier = {
+				factor = 10
+				government = merchant_republic_government
+			}
+			modifier = {
+				factor = 5
+				culture = westerlander
+			}
+			modifier = {
+				factor = 5
+				trait = midas_touched
+			}
+			add_trait = patron_ranald
+		}
+
+	###Minor Gods###
+
+		#Minor Lucian Gods
+		20 = {	#Lucan
+			trigger = {
+				culture = lucian
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_lucan
+		}
+		20 = {	#Luccina
+			trigger = {
+				culture = lucian
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_luccina
+		}
+		#Minor Miraglian Gods
+		20 = {	#Santo Galdin
+			trigger = {
+				culture = miraglian
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_santo_galdin
+		}
+		#Minor Myken Gods
+		20 = {	#Santo Plinio
+			trigger = {
+				culture = myken
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_santo_plinio
+		}
+		#Minor Reman Gods
+		20 = {	#Santo Giacomo
+			trigger = {
+				culture = reman
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_santo_giacomo
+		}
+		#Minor Tobaro Gods
+		20 = {	#Santo Tomasso
+			trigger = {
+				culture = tobaran
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_santo_tomasso
+		}
+		#Minor Umbrian Gods
+		20 = {	#Santo Slessandro
+			trigger = {
+				culture = umbrian
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_santo_alessandro
+		}
+	}
+}
