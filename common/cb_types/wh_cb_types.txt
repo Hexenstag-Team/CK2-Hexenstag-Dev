@@ -585,11 +585,15 @@ vlad_subjugation = {
 	allow_whitepeace = no
 	can_call_vassals = no
 	can_call_allies = no
-	allow_distant = yes
-	max_attacker_battle_score = 0
-	max_attacker_occupation_score = 0
-	max_defender_battle_score = 0
-	max_defender_occupation_score = 0
+	allow_distant = yes 
+	infamy_modifier = 5
+	battle_warscore_mult = 0.1
+	#occupation_warscore_mult = 0.2
+	max_attacker_battle_score = 60
+	max_attacker_occupation_score = 60
+	max_defender_battle_score = 100
+	max_defender_occupation_score = 100
+	capturing_defender_is_complete_victory = no
 	
     can_use = {
     }
@@ -604,19 +608,24 @@ vlad_subjugation = {
 	}
 
     on_success = {
-        ROOT = {
+        e_sylvania = {
             piety = 1000
+        }
+		 e_imperial_alliance = {
+            piety = -500
+			prestige = -500
+			destroy_landed_title = e_imperial_alliance
         }
         any_attacker = {
             limit = {
-				character = ROOT
+				character = e_sylvania
 			}
             participation_scaled_prestige = 1000
         }
         any_attacker = {
             limit = {
 				NOT = {
-					character = ROOT
+					character = e_sylvania
 				}
 			}
             hidden_tooltip = {
@@ -641,15 +650,15 @@ vlad_subjugation = {
 						destroy_landed_title = THIS
 					}
 				}
-				set_defacto_liege = ROOT
+				set_defacto_liege = e_sylvania
 				hidden_tooltip = {
 					opinion = {
 						modifier = opinion_subjugated_vlad
-						who = ROOT
+						who = e_sylvania
 						months = 120
 					}
 				}
-				any_vassal = {
+				any_defender = {
 					if = {
 						limit = {
 							primary_title = {
@@ -657,11 +666,11 @@ vlad_subjugation = {
 							}
 							controls_religion = no
 						}
-						set_defacto_liege = ROOT
+						set_defacto_liege = e_sylvania
 						hidden_tooltip = {
 							opinion = {
 								modifier = opinion_subjugated_vlad
-								who = ROOT
+								who = e_sylvania
 								months = 120
 							}
 						}
@@ -674,13 +683,13 @@ vlad_subjugation = {
     on_fail = { }
 
     on_reverse_demand = {
-        ROOT = {
+        e_sylvania = {
 			destroy_landed_title = e_sylvania
-			
         }
-        FROM = {
+        e_imperial_alliance = {
             piety = 500
 			prestige = 500
+			destroy_landed_title = e_imperial_alliance
         }
         any_defender = {
             limit = {
@@ -698,6 +707,168 @@ vlad_subjugation = {
 				participation_scaled_prestige = 100
 			}
         }
+		k_drakwald = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_solland = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_reikland = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_averland = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_hochland = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_middenland = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_mootland = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_nordland = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_ostermark = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_ostland = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_stirland = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_sylvania = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_talabecland = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_westerland = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_wissenland = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_carroburg_middenland = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		k_middenheim = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
+		d_nuln = {
+			holder_scope = {
+				imperial_claimant_vassal = yes
+				character_event = {
+					id = wh_von_carstein.160
+					days = 2
+				}
+			}
+		}
     }
 
     attacker_ai_victory_worth = {
@@ -705,15 +876,15 @@ vlad_subjugation = {
     }
 
     attacker_ai_defeat_worth = {
-        factor = 100
+        factor = 10000
     }
 
     defender_ai_victory_worth = {
-        factor = -1 # always accept
+        factor = 10000
     }
 
     defender_ai_defeat_worth = {
-        factor = 100
+        factor = 10000
     }
 }
 
@@ -926,188 +1097,6 @@ vlad_subjugation = {
         # factor = 100
     # }
 # }
-
-##Imperial Reconquest for Emperors - THIS IS FOR THE CIVIL WAR ERA, IT WILL BE INVALIDATED ONCE THE TITULAR TITLES DISAPPEAR AS THE EMPIRE IS REFROMED##
-imperial_reconquest2 = {
-    name = CB_NAME_IMPERIAL
-    war_name = WAR_NAME_IMPERIAL
-    sprite = 17
-    truce_days = 1825
-    is_permanent = yes
-    check_de_jure_tier = DUKE # this scans all dejure duchies for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
-
-	can_use_gui = {
-	}
-    can_use = {
-		OR={ ROOT={has_character_modifier=expelled_k_witch_hunters_order}
-		FROM={NOT={ has_landed_title = k_witch_hunters_order } }
-		ROOT={NOT={religion_group=old_world_group}}
-		FROM={NOT={religion_group=old_world_group}}
-		}
-		FROM={
-			NOR={
-				trait=creature_goblin
-				trait=creature_beastman
-				trait=creature_orc
-			}
-		}
-        ROOT = {
-            OR = {
-                has_landed_title = e_westerland
-                has_landed_title = e_reikland
-                has_landed_title = e_middenland
-                has_landed_title = e_talabecland
-				has_landed_title = e_ostermark
-				has_landed_title = e_nordland
-				has_landed_title = e_hochland
-				has_landed_title = e_averland
-				has_landed_title = e_ostland
-				has_landed_title = e_wissenland
-				has_landed_title = e_stirland
-				has_landed_title = e_solland
-				has_landed_title = e_drakwald
-				has_landed_title = e_imperial_sylvania
-				has_landed_title = e_imperial_mootland
-                AND = {
-                    has_landed_title = e_sylvania
-                    NOT = { has_artifact = carstein_ring}
-                }
-            }
-			independent = yes
-			NOT = { same_realm = FROM }
-        }
-    }
-
-    can_use_title = {
-		any_de_jure_vassal_title = {
-			tier=count
-			location={
-				any_neighbor_province = {
-					has_owner = yes
-					owner = {
-						OR = {
-							character = ROOT
-							is_liege_or_above = ROOT
-						}
-					}
-				}
-			}
-		}
-		NAND = {
-			location = { region = world_albion }
-			ROOT = {
-				has_global_flag = mists_of_albion
-				capital_scope = { NOT = { region = world_albion } }
-			}
-		}
-		NOT = { de_jure_liege_or_above = e_the_under_empire }
-        OR = {
-            de_jure_liege_or_above = k_westerland
-            de_jure_liege_or_above = k_middenland
-            de_jure_liege_or_above = k_nordland
-            de_jure_liege_or_above = k_hochland
-            de_jure_liege_or_above = k_ostland
-            de_jure_liege_or_above = k_talabecland
-            de_jure_liege_or_above = k_stirland
-            de_jure_liege_or_above = k_reikland
-            de_jure_liege_or_above = k_wissenland
-            de_jure_liege_or_above = k_averland
-            de_jure_liege_or_above = k_ostermark
-        }
-    }
-
-    is_valid = {
-		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
-		FROM = {
-			NOT = {
-				any_war = {
-					using_cb = new_crusade
-				}
-			}
-		}
-        ROOT = {
-            independent = yes
-            NOT = { same_realm = FROM }
-        }
-    }
-
-    on_success = {
-        any_attacker = {
-            limit = { character = ROOT }
-            participation_scaled_prestige = 100
-        }
-        any_attacker = {
-            limit = { NOT = { character = ROOT } }
-            hidden_tooltip = {
-                participation_scaled_prestige = 100
-            }
-        }
-        FROM = { prestige = -100 }
-    }
-
-    on_success_title = {
-        custom_tooltip = {
-            text = tribal_invasion_succ_tip
-            hidden_tooltip = {
-                ROOT = {
-                    vassalize_or_take_under_title = {
-                        title = PREV
-                        enemy = FROM
-                    }
-                }
-            }
-        }
-        if = {
-            limit = {
-                holder_scope = { character = FROM }
-            }
-            usurp_title_only = ROOT
-        }
-    }
-
-    on_fail = {
-        ROOT = { prestige = -150 }
-    }
-
-    on_reverse_demand = {
-        ROOT = {
-            transfer_scaled_wealth = {
-                to = FROM
-                value = 4.0
-            }
-            ROOT = { prestige = -200 }
-        }
-        any_defender = {
-            limit = { character = FROM }
-            participation_scaled_piety = 100
-            participation_scaled_prestige = 200
-        }
-        any_defender = {
-            limit = { NOT = { character = FROM } }
-            hidden_tooltip = {
-                participation_scaled_piety = 100
-                participation_scaled_prestige = 200
-            }
-        }
-    }
-
-    attacker_ai_victory_worth = {
-        factor = -1 # always accept
-    }
-
-    attacker_ai_defeat_worth = {
-        factor = 100
-    }
-
-    defender_ai_victory_worth = {
-        factor = -1 # always accept
-    }
-
-    defender_ai_defeat_worth = {
-        factor = 100
-    }
-}
-
 
 cultist_bid_for_independence = { #WIP
 	name = CB_NAME_INDEPENDENCE
@@ -2812,6 +2801,21 @@ reiklander_nulnian_war_cb = {
 			}
 		}
 		set_global_flag = reiklander_nulnian_war_reikland
+		k_averland = {
+			clr_imperial_flags = yes
+			set_title_flag = vassal_of_reikland
+		}
+		k_stirland = {
+			clr_imperial_flags = yes
+			set_title_flag = vassal_of_reikland
+		}
+		k_wissenland = {
+			clr_imperial_flags = yes
+			set_title_flag = vassal_of_reikland
+		}
+		d_nuln = {
+			clr_imperial_flags = yes
+		}
     }
 
     on_fail = { }
@@ -2873,6 +2877,18 @@ reiklander_nulnian_war_cb = {
 			}
 		}
 		set_global_flag = reiklander_nulnian_war_nuln
+		k_reikland = {
+			clr_imperial_flags = yes
+			set_title_flag = vassal_of_nuln
+		}
+		k_carroburg_middenland = {
+			clr_imperial_flags = yes
+			set_title_flag = vassal_of_nuln
+		}
+		k_mootland = {
+			clr_imperial_flags = yes
+			set_title_flag = vassal_of_nuln
+		}
     }
 	
     attacker_ai_victory_worth = {

@@ -1110,3 +1110,33 @@ is_hashut_bad_minion_trigger = {
 	NOT = { has_hashut_good_trait_trigger = yes }
 	has_hashut_bad_trait_trigger = yes
 }
+
+is_imperial_claimant = {
+	primary_title = {
+		has_title_flag = claimant_vw
+	}
+}
+
+has_imperial_vassal_flag = {
+	primary_title = {
+		OR = {
+			has_title_flag = vassal_of_sylvania
+			has_title_flag = vassal_of_reikland
+			has_title_flag = vassal_of_westerland
+			has_title_flag = vassal_of_talabecland
+			has_title_flag = vassal_of_middenland
+			has_title_flag = vassal_of_ostermark
+			has_title_flag = vassal_of_nordland
+			has_title_flag = vassal_of_hochland
+			has_title_flag = vassal_of_averland
+			has_title_flag = vassal_of_ostland
+			has_title_flag = vassal_of_wissenland
+			has_title_flag = vassal_of_stirland
+			has_title_flag = vassal_of_solland
+			has_title_flag = vassal_of_drakwald
+			has_title_flag = vassal_of_imperial_sylvania
+			has_title_flag = vassal_of_imperial_mootland
+			has_title_flag = vassal_of_nuln
+		}
+	}
+}

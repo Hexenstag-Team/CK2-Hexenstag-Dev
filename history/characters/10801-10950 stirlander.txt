@@ -115,7 +115,13 @@
 	add_trait = charismatic_negotiator
 	add_trait = greedy
 	add_trait = gregarious
-	1967.5.26 = {birth = yes}
+	1967.5.26 = {
+		birth = yes
+		create_bloodline = {
+			type = asoborn_blood
+			has_dlc = "Holy Fury"
+		}
+	}
 	2062.2.19 = {death = yes}
 }
 

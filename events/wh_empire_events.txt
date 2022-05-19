@@ -662,7 +662,7 @@ character_event = {
 	}
 	
 	option = {	#Taal&Rhya, Ulric
-		name = EVTOPTA_WH_EMPIRE_EVENTS_100D
+		name = EVTOPTA_WH_EMPIRE_EVENTS_100B
 		trigger = {
 			has_global_flag = imperial_churches_unified_taal_rhya
 		}
@@ -670,12 +670,12 @@ character_event = {
 	}
 	
 	option = {	#Manann, Morr, Verena
-		name = EVTOPTA_WH_EMPIRE_EVENTS_100B
+		name = EVTOPTA_WH_EMPIRE_EVENTS_100C
 		character_event = { id = wh_empire_events.102 }
 	}
 	
 	option = {	#Myrmidia, Shallya, Ranald
-		name = EVTOPTA_WH_EMPIRE_EVENTS_100C
+		name = EVTOPTA_WH_EMPIRE_EVENTS_100D
 		character_event = { id = wh_empire_events.103 }
 	}
 	
@@ -687,9 +687,10 @@ character_event = {
 				culture = old_imperial
 				culture = witchhunter_culture
 				culture = sudenburger
+				culture = sylvanian
 			}
 		}
-		name = EVTOPTA_WH_EMPIRE_EVENTS_100D
+		name = EVTOPTA_WH_EMPIRE_EVENTS_100E
 		character_event = { id = wh_empire_events.106 }
 	}
 }
@@ -1185,12 +1186,167 @@ character_event = {
 		character_event = { id = wh_empire_events.100 }
 	}
 }
-	
 
+character_event = {
+	id = wh_empire_events.200
+	hide_window = yes
+	is_triggered_only = yes
 	
+	trigger = {
+		primary_title = {
+			has_title_flag = claimant
+		}
+		independent = yes
+		NOT = { has_landed_title = e_imperial_alliance }
+	}
 	
+	immediate = {
+		any_independent_ruler = {
+			limit = {
+				ai = yes
+				opinion = {
+					who = ROOT
+					value = 100
+				}
+				primary_title = {
+					has_title_flag = independent
+				}
+			}
+			character_event = {
+				id = wh_empire_events.201
+				days = 1
+				random = 30
+			}
+		}
+		any_vassal = {
+			limit = {
+				opinion = {
+					who = liege
+					value <= -50
+				}
+				has_imperial_vassal_flag = yes
+			}
+			character_event = {
+				id = wh_empire_events.203
+				random = 30
+			}
+		}
+		if = {
+			limit = {
+				num_of_king_titles_in_realm < 2
+				is_imperial_claimant = yes
+			}
+			character_event = {
+				id = wh_empire_events.205
+				random = 30
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_empire_events.201
+	hide_window = yes
+	is_triggered_only = yes
 	
+	immediate = {
+		FROM = {
+			character_event = {
+				id = wh_empire_events.202
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_empire_events.202
+	desc = EVTDESC_WH_EMPIRE_EVENTS_202
+	picture = "GFX_evt_rival_rulers"
 	
+	is_triggered_only = yes
 	
+	option = {
+		name = EVTOPTA_WH_EMPIRE_EVENTS_202
+		show_portrait = FROM
+		if = {
+			limit = {
+				is_imperial_claimant = yes
+			}
+			FROM = {
+				set_defacto_liege = ROOT
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = {
+					is_imperial_claimant = yes
+				}
+			}
+			primary_title = {
+				set_title_flag = claimant
+			}
+			imperial_claimant = yes
+			FROM = {
+				set_defacto_liege = ROOT
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_empire_events.203
+	hide_window = yes
+	is_triggered_only = yes
 	
+	immediate = {
+		liege = {
+			character_event = {
+				id = wh_empire_events.204
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_empire_events.204
+	desc = EVTDESC_WH_EMPIRE_EVENTS_204
+	picture = "GFX_evt_rival_rulers"
 	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_WH_EMPIRE_EVENTS_204
+		show_portrait = FROM
+		FROM = {
+			set_defacto_liege = THIS
+			clr_imperial_flags = yes
+			change_imperial_flags = yes
+		}
+	}
+}
+
+character_event = {
+	id = wh_empire_events.205
+	desc = EVTDESC_WH_EMPIRE_EVENTS_205
+	picture = "GFX_evt_rival_rulers"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_WH_EMPIRE_EVENTS_205
+		destroy_landed_title = primary_title
+		clr_imperial_flags = yes
+		primary_title = {
+			set_title_flag = independent
+		}
+	}
+}
+
+
+
+
+

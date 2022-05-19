@@ -465,6 +465,7 @@ job_spiritual = {
 	}
 	dismiss_trigger = {
 		FROM = {
+			NOT = { trait = creature_halfling }
 			OR = {
 				NOT = { religion_group = ormazd_gods_group }
 				NOT = { religion = ROOT }

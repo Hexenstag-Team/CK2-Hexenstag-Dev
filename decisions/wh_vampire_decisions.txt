@@ -2462,21 +2462,21 @@ decisions = {
 		only_independent = yes
 		ai_check_interval = 12
 		potential = {
-			c_18068 = { is_alive = yes }
+			c_31 = { is_alive = yes }
 			independent = yes
 			is_living_human_trigger = yes
 			OR = {
 				religion = vampiric
 				religion = drachen
 			}
-			has_landed_title = c_drachenberg
+			has_landed_title = c_drackenfels
 			NOT = { has_global_flag = drachenfels_back }
 		}
 
 		allow = {
 			completely_controls = d_drachen_corridor
 			has_landed_title = d_drachen_corridor
-			has_landed_title = c_drachenberg
+			has_landed_title = c_drackenfels
 			trait = lore_necromancy
 			has_character_modifier = magic_power_4
 			independent = yes
@@ -2484,12 +2484,12 @@ decisions = {
 
 		effect = {
 			religion = drachen
-			c_18068 = {
+			c_31 = {
 				grant_title = d_drachen_corridor
-				grant_title = c_drachenberg
+				grant_title = c_drackenfels
 				remove_trait = incapable
 			}
-			set_player_character = 18068
+			set_player_character = 31
 			set_global_flag = drachenfels_back
 		}
 	}

@@ -7633,7 +7633,7 @@ spawn_bull_centaur_effect = {
 }
 
 vlad_troops_effect = {
-	#10,000 Back Knights and 100,000 Undead Hordes
+	#8,000 Back Knights and 80,000 Undead Hordes
 	spawn_unit = {	#knights 1000
 		owner = ROOT
 		province = 386 # c_drakenhof
@@ -7790,45 +7790,29 @@ vlad_troops_effect = {
 			}
 		}
 	}
-	spawn_unit = {	#knights 1000
-		owner = ROOT
-		province = 386 # c_drakenhof
-		home = 386 # c_drakenhof
-		disband_on_peace = yes
-		cannot_inherit = yes
-		attrition = 0
-		merge = yes
-		
-		troops = {
-			knights = {
-				1000
-				1000
-			}
-			undead_horde = {
-				10000
-				10000
-			}
-		}
-	}
-	spawn_unit = {	#knights 1000
-		owner = ROOT
-		province = 386 # c_drakenhof
-		home = 386 # c_drakenhof
-		disband_on_peace = yes
-		cannot_inherit = yes
-		attrition = 0
-		merge = yes
-		
-		troops = {
-			knights = {
-				1000
-				1000
-			}
-			undead_horde = {
-				10000
-				10000
-			}
-		}
+}
+
+clr_imperial_flags = {
+	primary_title = {
+		clr_title_flag = claimant
+		clr_title_flag = independent
+		clr_title_flag = vassal_of_sylvania
+		clr_title_flag = vassal_of_reikland
+		clr_title_flag = vassal_of_westerland
+		clr_title_flag = vassal_of_talabecland
+		clr_title_flag = vassal_of_middenland
+		clr_title_flag = vassal_of_ostermark
+		clr_title_flag = vassal_of_nordland
+		clr_title_flag = vassal_of_hochland
+		clr_title_flag = vassal_of_averland
+		clr_title_flag = vassal_of_ostland
+		clr_title_flag = vassal_of_wissenland
+		clr_title_flag = vassal_of_stirland
+		clr_title_flag = vassal_of_solland
+		clr_title_flag = vassal_of_drakwald
+		clr_title_flag = vassal_of_imperial_sylvania
+		clr_title_flag = vassal_of_imperial_mootland
+		clr_title_flag = vassal_of_nuln
 	}
 }
 
@@ -8886,3 +8870,530 @@ patron_classical_pantheon_effect = {
 		}
 	}
 }
+
+imperial_claimant_vassal = {
+	imperial_claimant = yes
+	imperial_vassal = yes
+}
+
+imperial_claimant = {
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_drakwald
+			}
+		}
+		holder_scope = {
+			gain_title = e_drakwald
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_solland
+			}
+		}
+		holder_scope = {
+			gain_title = e_solland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_reikland
+			}
+		}
+		holder_scope = {
+			gain_title = e_reikland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_averland
+			}
+		}
+		holder_scope = {
+			gain_title = e_averland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_hochland
+			}
+		}
+		holder_scope = {
+			gain_title = e_hochland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_middenland
+			}
+		}
+		holder_scope = {
+			gain_title = e_middenland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_mootland
+			}
+		}
+		holder_scope = {
+			gain_title = e_imperial_mootland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_nordland
+			}
+		}
+		holder_scope = {
+			gain_title = e_nordland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_ostermark
+			}
+		}
+		holder_scope = {
+			gain_title = e_ostermark
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_ostland
+			}
+		}
+		holder_scope = {
+			gain_title = e_ostland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_stirland
+			}
+		}
+		holder_scope = {
+			gain_title = e_stirland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_sylvania
+			}
+		}
+		holder_scope = {
+			gain_title = e_imperial_sylvania
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_talabecland
+			}
+		}
+		holder_scope = {
+			gain_title = e_talabecland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_westerland
+			}
+		}
+		holder_scope = {
+			gain_title = e_westerland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_wissenland
+			}
+		}
+		holder_scope = {
+			gain_title = e_wissenland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = d_nuln
+			}
+		}
+		holder_scope = {
+			gain_title = e_nuln
+		}
+	}
+}
+
+imperial_vassal = {
+	imperial_vassal_drakwald = yes
+	imperial_vassal_solland = yes
+	imperial_vassal_reikland = yes
+	imperial_vassal_averland = yes
+	imperial_vassal_hochland = yes
+	imperial_vassal_middenland = yes
+	imperial_vassal_mootland = yes
+	imperial_vassal_nordland = yes
+	imperial_vassal_ostermark = yes
+	imperial_vassal_ostland = yes
+	imperial_vassal_ostland = yes
+	imperial_vassal_stirland = yes
+	imperial_vassal_sylvania = yes
+	imperial_vassal_talabecland = yes
+	imperial_vassal_westerland = yes
+	imperial_vassal_wissenland = yes
+	imperial_vassal_nuln = yes
+}
+
+imperial_vassal_drakwald = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_drakwald
+			}
+		}
+		set_defacto_liege = e_drakwald
+	}
+}
+
+imperial_vassal_solland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_solland
+			}
+		}
+		set_defacto_liege = e_solland
+	}
+}
+
+imperial_vassal_reikland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_reikland
+			}
+		}
+		set_defacto_liege = e_reikland
+	}
+}
+
+imperial_vassal_averland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_averland
+			}
+		}
+		set_defacto_liege = e_averland
+	}
+}
+
+imperial_vassal_hochland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_hochland
+			}
+		}
+		set_defacto_liege = e_hochland
+	}
+}
+
+imperial_vassal_middenland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_middenland
+			}
+		}
+		set_defacto_liege = e_middenland
+	}
+}
+
+imperial_vassal_mootland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_mootland
+			}
+		}
+		set_defacto_liege = e_imperial_mootland
+	}
+}
+
+imperial_vassal_nordland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_nordland
+			}
+		}
+		set_defacto_liege = e_nordland
+	}
+}
+
+imperial_vassal_ostermark = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_ostermark
+			}
+		}
+		set_defacto_liege = e_ostermark
+	}
+}
+
+imperial_vassal_ostland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_ostland
+			}
+		}
+		set_defacto_liege = e_ostland
+	}
+}
+
+imperial_vassal_stirland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_stirland
+			}
+		}
+		set_defacto_liege = e_stirland
+	}
+}
+
+imperial_vassal_sylvania = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_sylvania
+			}
+		}
+		set_defacto_liege = e_imperial_sylvania
+	}
+}
+
+imperial_vassal_talabecland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_talabecland
+			}
+		}
+		set_defacto_liege = e_talabecland
+	}
+}
+
+imperial_vassal_westerland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_westerland
+			}
+		}
+		set_defacto_liege = e_westerland
+	}
+}
+
+imperial_vassal_wissenland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_wissenland
+			}
+		}
+		set_defacto_liege = e_wissenland
+	}
+}
+
+imperial_vassal_nuln = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_nuln
+			}
+		}
+		set_defacto_liege = e_nuln
+	}
+}
+
+change_imperial_flags = {
+	if = {
+		limit = {
+			independent = yes
+			NOT = {
+				is_imperial_claimant = yes
+			}
+		}
+		primary_title = {
+			set_title_flag = independent
+		}
+	}
+	change_imperial_vassal = yes
+}
+
+change_imperial_vassal = {
+	if = {
+		limit = {
+			vassal_of = e_drakwald
+		}
+		primary_title = {
+			set_title_flag = vassal_of_drakwald
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_solland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_solland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_reikland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_reikland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_averland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_averland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_hochland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_hochland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_middenland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_middenland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_imperial_mootland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_mootland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_nordland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_nordland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_ostermark
+		}
+		primary_title = {
+			set_title_flag = vassal_of_ostermark
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_ostland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_ostland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_stirland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_stirland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_imperial_mootland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_sylvania
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_talabecland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_talabecland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_westerland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_westerland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_wissenland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_wissenland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_nuln
+		}
+		primary_title = {
+			set_title_flag = vassal_of_nuln
+		}
+	}
+}
+
