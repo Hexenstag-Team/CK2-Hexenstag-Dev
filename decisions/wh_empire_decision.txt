@@ -226,7 +226,7 @@ decisions = {
 		
 		potential = {
 			religion = imperial_pantheon
-			NOT = { has_character_flag = has_patron }
+			has_patron_trigger = yes
 			trait = creature_human
 		}
 		allow = {
@@ -236,7 +236,6 @@ decisions = {
 		effect = {
 			#patron_imperial_pantheon_effect = yes
 			character_event = { id = wh_empire_events.100 }
-			set_character_flag = has_patron
 		}
 	}
 }

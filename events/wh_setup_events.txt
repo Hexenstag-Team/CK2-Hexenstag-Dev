@@ -1660,6 +1660,7 @@ character_event = {	#Reiklander-Nulnian War start up event
 	is_save_game = no
 
 	trigger = {
+		NOT = { has_global_flag = reiklander_nulnian_war }
 		any_war = {
 			using_cb = reiklander_nulnian_war_cb
 		}
@@ -1667,6 +1668,7 @@ character_event = {	#Reiklander-Nulnian War start up event
 	}
 
 	immediate = {
+		set_global_flag = reiklander_nulnian_war
 		narrative_event = { id = wh_setup.25 }
 		any_realm_character = {
 			limit = {
