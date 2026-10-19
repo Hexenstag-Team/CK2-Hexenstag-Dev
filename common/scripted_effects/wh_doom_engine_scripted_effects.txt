@@ -91,9 +91,9 @@ reduce_doom_progress_massive_effect = {
 reduce_doom_progress_enormous_effect = {
 	custom_tooltip = { text = chaos_decreases_tt }
 	hidden_effect = {
-		multiply_variable = {
+		subtract_variable = {
 			which = "global_doom_counter"
-			value = 0.8
+			value = 60
 		}
 		check_doom_not_negative = yes
 	}
@@ -104,7 +104,7 @@ reduce_doom_progress_catastrophic_effect = {
 	hidden_effect = {
 		multiply_variable = {
 			which = "global_doom_counter"
-			value = 0.6
+			value = 0.8 #-20%
 		}
 		check_doom_not_negative = yes
 	}
