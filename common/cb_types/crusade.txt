@@ -46,6 +46,7 @@ crusade = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			can_call_crusade = yes
 		}
@@ -56,6 +57,9 @@ crusade = {
 				is_heresy_of = ROOT
 				is_parent_religion = ROOT
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 

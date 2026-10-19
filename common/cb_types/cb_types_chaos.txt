@@ -54,6 +54,9 @@ daemonic_subjugation = {
 			NOT = { same_realm = FROM }
             NOT = { is_liege_or_above = FROM }
         }
+        FROM = {
+            target_not_in_old_empire_sylvania_trigger = yes
+        }
     }
 
 	can_use_gui = {
@@ -439,6 +442,7 @@ unholy_raid = {
 		ROOT = { prestige = -50 }
 	}
 	can_use = {
+
 		ROOT = {
             NOT = { culture_group = beastman_group }
 			is_within_diplo_range = FROM
@@ -459,6 +463,9 @@ unholy_raid = {
 			NOT = { religion = nurgle }
 			NOT = { religion = chaos }
 			}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	can_use_title = {
@@ -710,6 +717,7 @@ everchosen_invasion = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			NOT = { trait = creature_beastman }
 			NOT = { trait = creature_orc }
@@ -720,6 +728,9 @@ everchosen_invasion = {
 
 		ROOT = {
 			NOT = { same_realm = FROM }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -944,8 +955,12 @@ cultist_bid_for_independence = { #WIP
 	is_independence = yes
 
 	can_use = {
+
 		ROOT = {
 			vassal_of = FROM
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 

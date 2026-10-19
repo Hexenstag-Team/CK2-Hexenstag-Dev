@@ -23,6 +23,7 @@ great_wild_hunt = {
 		ROOT = { prestige = -200 }
 	}
 	can_use = {
+
 		ROOT = {
 			NOT = { trait = resting }
 			religion = asrai_cadai
@@ -35,6 +36,9 @@ great_wild_hunt = {
 		FROM = {
 			NOT = { religion = asrai_cadai }
 			}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	can_use_title = {
@@ -247,6 +251,7 @@ athel_loren_reconquest = {
 	}
 
 	can_use = {
+
 		FROM = { NOT = { religion = asrai_cadai } }
 		ROOT = {
 			NOT = { trait = resting }
@@ -263,6 +268,9 @@ athel_loren_reconquest = {
 					}
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 	can_use_title = {
@@ -434,12 +442,16 @@ bretonnian_forest_claim = {
 	allow_distant = yes
 
 	can_use = {
+
 		ROOT = {
 			religion = grail
 			NOT = { same_realm = FROM }
 		}
 		FROM = {
 			religion = asrai_cadai
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -627,6 +639,7 @@ empire_forest_claim = {
 	allow_distant = yes
 
 	can_use = {
+
 		ROOT = {
 			NOT = { same_realm = FROM }
 			prestige=250
@@ -636,6 +649,9 @@ empire_forest_claim = {
 			NOT={
 				capital_scope = { empire = { title = e_athel_loren } }
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 

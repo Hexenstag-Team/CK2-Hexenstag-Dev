@@ -11,6 +11,7 @@ skaven_tributary_cb = {
 	battle_warscore_mult = 0.75	#Skaven stubborness
 
 	can_use = {
+
 		#no Skaven right now, so disable this
 		always = no
 		has_dlc = "Horse Lords"
@@ -100,6 +101,9 @@ skaven_tributary_cb = {
 					using_cb = tributary_cb
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 	on_attacker_leader_death = { end_war = invalid }
@@ -379,6 +383,7 @@ skaven_county_conquest = {
 	battle_warscore_mult = 0.3	#Skaven stubborness
 
 	can_use = {
+
 		#no Skaven right now, so disable this
 		always = no
 		ROOT = {
@@ -399,6 +404,9 @@ skaven_county_conquest = {
 		}
 		FROM = { culture_group = skaven_group }
 
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	can_use_title = {
@@ -620,6 +628,7 @@ skaven_foreignconquest = {
 	check_de_jure_tier = DUKE # this scans all dejure duchies for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
 
 	can_use = {
+
 		#no Skaven right now, so disable this
 		always = no
 		#Skaven are barred from using most usual CBs
@@ -662,6 +671,9 @@ skaven_foreignconquest = {
 			NOT = { religion_group = cadai_group }	# They expand through colonial cb
 			NOT = { religion = hashut }	# They get different stuff
 			NOT = { same_realm = FROM }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -896,6 +908,7 @@ underempire_conquest = {
 	battle_warscore_mult = 0.05	#Skaven stubborness
 
 	can_use = {
+
 		#no Underempire right now, so disable this
 		always = no
 		ROOT = {
@@ -920,6 +933,9 @@ underempire_conquest = {
 			}
 		}
 
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	can_use_title = {

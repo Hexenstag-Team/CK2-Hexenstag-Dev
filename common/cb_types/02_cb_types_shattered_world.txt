@@ -86,6 +86,7 @@ shattered_world_county_conquest = {
 	}
 
 	can_use = {
+
 		is_shattered_world = yes
 		NOT = {
 			has_alternate_start_setting = {
@@ -118,6 +119,9 @@ shattered_world_county_conquest = {
 		ROOT = {
 			NOT = { is_liege_or_above = FROM }
 			mercenary = no
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -571,6 +575,7 @@ shattered_invasion = {
 	sort_priority = 1100
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = great_conqueror
 		}
@@ -578,6 +583,9 @@ shattered_invasion = {
 		ROOT = {
 			NOT = { is_liege_or_above = FROM }
 			mercenary = no
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 

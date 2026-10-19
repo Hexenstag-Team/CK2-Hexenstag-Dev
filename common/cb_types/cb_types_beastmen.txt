@@ -15,11 +15,15 @@ beastmen_uprising = {
 	is_independence = yes
 
 	can_use = {
+
 		ROOT = { is_landed = no
 			culture_group = beastman_group
 			#primary_title = { temporary = yes } # Revolter or adventurer trigger
 			war = no
 			NOT = { is_liege_or_above = FROM }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -204,10 +208,14 @@ beastman_county_conquest = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			religion_group = chaos_gods_group
 			trait = creature_beastman
 			NOT = { is_liege_or_above = FROM }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 	on_attacker_leader_death = { end_war = invalid }
@@ -571,6 +579,7 @@ beastman_cleanse = {
 	}
 
 	can_use = {
+
 		FROM={
 			trait = creature_beastman
 		}
@@ -582,6 +591,9 @@ beastman_cleanse = {
 			}
 			NOT={trait = creature_beastman}
 			NOT = { is_liege_or_above = FROM }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 	
@@ -896,12 +908,16 @@ beastman_migration = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			trait = creature_beastman
 			#independent = yes
 			higher_tier_than = COUNT
 		}
 		FROM = { higher_tier_than = COUNT }
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 	on_attacker_leader_death = { end_war = invalid }
 
@@ -1116,6 +1132,7 @@ king_beastman_migration = {
 	}
 
 	can_use = {
+
 		FROM = { higher_tier_than = COUNT }
 		ROOT = {
 			prestige = 50
@@ -1137,6 +1154,9 @@ king_beastman_migration = {
 
 		ROOT = {
 			NOT = { same_realm = FROM }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -1344,6 +1364,7 @@ beastmen_despoilment = {
 		}
 	}
 	can_use = {
+
 		ROOT = {
 			NOT = { trait = resting }
 			religion_group = chaos_gods_group
@@ -1358,6 +1379,9 @@ beastmen_despoilment = {
 				is_theocracy = yes
 			}
 			NOT={religion_group=chaos_gods_group}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 	on_add = {
@@ -1764,6 +1788,7 @@ horde_subjugation = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			is_nomadic = yes
 			tier = emperor
@@ -1785,6 +1810,9 @@ horde_subjugation = {
 					NOT = { distance_from_realm = { who = ROOT value = 100 } }
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -2018,6 +2046,7 @@ despoiler_invasion = {
 		}
 	}
 	can_use = {
+
 		ROOT = { trait = beastman_despoiler
 		mercenary = no
 			NOT = { same_realm = FROM }
@@ -2037,6 +2066,9 @@ despoiler_invasion = {
 			}
 		}
 		NOT={ROOT={any_war= {using_cb = despoiler_invasion}}}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 	on_add = {
 		hidden_tooltip = { fire_haruspicy_event_effect = yes }

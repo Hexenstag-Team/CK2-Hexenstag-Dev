@@ -11,6 +11,7 @@
 #	trigger = {
 #		example_trigger = yes
 #	}
+
 can_use_retinue_trigger = {
 	OR = {
 		ai = no
@@ -1169,5 +1170,17 @@ has_patron_trigger = {
 		trait = norscan_patron_shornaal
 		trait = norscan_patron_ulric
 		trait = norscan_patron_ursun
+	}
+}
+
+target_not_in_old_empire_sylvania_trigger = {
+	NOT = {
+		any_realm_province = {
+			region = world_old_empire_sylvania
+		}
+	}
+	NOR = {
+		had_global_flag = vlad_subjugation_success
+		had_global_flag = united_empire
 	}
 }

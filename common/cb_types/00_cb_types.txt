@@ -32,6 +32,12 @@
 #
 # 0: If you have a personal claim upon a title in a realm, you can push this claim to usurp the title.
 claim = {
+	can_use = {
+
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
+	}
 	name = CB_NAME_CLAIM
 	war_name = WAR_NAME_CLAIM
 	sprite = 1
@@ -402,9 +408,13 @@ other_claim = {
 	sort_priority = 900
 
 	can_use = {
+
 		ROOT = {
 			mercenary = no
 			NOT = { trait = witch_hunter }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -873,6 +883,12 @@ other_claim = {
 
 # 2
 claim_on_liege = {
+	can_use = {
+
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
+	}
 	name = CB_NAME_CLAIM
 	war_name = WAR_NAME_CLAIM_LIEGE
 	sprite = 3
@@ -1245,6 +1261,12 @@ claim_on_liege = {
 
 # 3
 claim_on_liege_plot = {
+	can_use = {
+
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
+	}
 	name = CB_NAME_CLAIM
 	war_name = WAR_NAME_CLAIM_LIEGE
 	sprite = 3
@@ -1540,6 +1562,12 @@ claim_on_liege_plot = {
 
 # 4
 claim_on_vassal_plot = {
+	can_use = {
+
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
+	}
 	name = CB_NAME_CLAIM_VASSAL
 	war_name = WAR_NAME_CLAIM_VASSAL
 	sprite = 3
@@ -1729,6 +1757,12 @@ claim_on_vassal_plot = {
 
 # 5
 other_claim_on_liege = {
+	can_use = {
+
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
+	}
 	name = CB_NAME_CLAIM
 	war_name = WAR_NAME_OTHER_CLAIM
 	sprite = 4
@@ -2216,6 +2250,7 @@ claim_all = {
 	sort_priority = 1100
 
 	can_use = {
+
 		ROOT = {
 			total_claims = {
 				who = FROM
@@ -2239,6 +2274,9 @@ claim_all = {
 					culture_group = beastman_group
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -2462,6 +2500,7 @@ change_seniority_succession_law = {
 	major_revolt = yes
 
 	can_use = {
+
 		ROOT = {
 			vassal_of = FROM
 		}
@@ -2486,6 +2525,9 @@ change_seniority_succession_law = {
 			NOT = {
 				trait = witch_hunter
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 	can_use_gui = {
@@ -2712,6 +2754,7 @@ change_primogeniture_succession_law = {
 	major_revolt = yes
 
 	can_use = {
+
 		ROOT = {
 			vassal_of = FROM
 		}
@@ -2736,6 +2779,9 @@ change_primogeniture_succession_law = {
 			NOT = {
 				trait = witch_hunter
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -2966,6 +3012,7 @@ change_feudal_elective_succession_law = {
 	major_revolt = yes
 
 	can_use = {
+
 		ROOT = {
 			vassal_of = FROM
 		}
@@ -2990,6 +3037,9 @@ change_feudal_elective_succession_law = {
 			NOT = {
 				trait = witch_hunter
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -3229,8 +3279,12 @@ invasion = {
 	sort_priority = 2000
 
 	can_use = {
+
 		ROOT = {
 			mercenary = no
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -3594,6 +3648,12 @@ invasion = {
 }
 
 tribal_invasion = {
+	can_use = {
+
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
+	}
 	name = CB_NAME_INVASION
 	war_name = WAR_NAME_INVASION
 	sprite = 8
@@ -4124,6 +4184,7 @@ crusade = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			uses_new_crusade = no
 			can_call_crusade = yes
@@ -4135,6 +4196,9 @@ crusade = {
 				is_heresy_of = ROOT
 				is_parent_religion = ROOT
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -4662,6 +4726,7 @@ new_crusade = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			uses_new_crusade = yes
 			can_call_crusade = yes
@@ -4677,6 +4742,9 @@ new_crusade = {
 				is_heresy_of = ROOT
 				is_parent_religion = ROOT
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -5916,6 +5984,7 @@ religious = {
 	}
 
 	can_use = {
+
 		NOR={ #Theres nothing Holy about this
 			ROOT={government=pirate_government}
 			FROM={government=pirate_government}
@@ -6057,6 +6126,9 @@ religious = {
 			NOT = { religion_group = greenskin_gods_group }
 			NOT = { culture = mootlander }
 			NOT = { trait = creature_nehekharan }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -6521,6 +6593,7 @@ excommunicated_ruler = {
 	sort_priority = 750
 
 	can_use = {
+
 		FROM = {
 			excommunicated_for = ROOT
 			in_revolt = no
@@ -6535,6 +6608,9 @@ excommunicated_ruler = {
 		ROOT = {
 			NOT = { excommunicated_for = ROOT }
 			mercenary = no
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -6725,6 +6801,7 @@ bid_for_independence = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			de_facto_liege = FROM
 
@@ -6778,6 +6855,9 @@ bid_for_independence = {
 					}
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -7023,6 +7103,7 @@ depose_liege = {
 	}
 
 	can_use = {
+
 		always = no # v2.21 - Disabled - not working well
 		ROOT = {
 			de_facto_liege = FROM
@@ -7054,6 +7135,9 @@ depose_liege = {
 					}
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -7234,6 +7318,7 @@ overthrow_ruler = {
 	}
 
 	can_use = {
+
 		FROM = {
 			primary_title = {
 				is_vice_royalty = no
@@ -7241,6 +7326,9 @@ overthrow_ruler = {
 		}
 		ROOT = {
 			de_facto_liege = FROM
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -7471,6 +7559,7 @@ overthrow_ruler_no_calls = {
 	}
 
 	can_use = {
+
 		FROM = {
 			primary_title = {
 				is_vice_royalty = no
@@ -7478,6 +7567,9 @@ overthrow_ruler_no_calls = {
 		}
 		ROOT = {
 			de_facto_liege = FROM
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -7651,8 +7743,12 @@ change_gavelkind_succession_law = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			vassal_of = FROM
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -7875,10 +7971,14 @@ lower_crown_authority_law = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			vassal_of = FROM
 		}
 		NOT = { has_dlc = "Zeus" }
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	can_use_title = {
@@ -8101,8 +8201,12 @@ lower_tribal_organization_law = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			vassal_of = FROM
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -8314,6 +8418,7 @@ coastal_republic = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			OR = {
 				is_merchant_republic = yes
@@ -8323,6 +8428,9 @@ coastal_republic = {
 			NOT = { is_vassal_or_below = FROM }
 			NOT = { same_liege = FROM }
 			mercenary = no
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -8505,6 +8613,7 @@ coastal_county_republic = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			OR = {
 				is_merchant_republic = yes
@@ -8514,6 +8623,9 @@ coastal_county_republic = {
 			NOT = { is_vassal_or_below = FROM }
 			NOT = { same_liege = FROM }
 			mercenary = no
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -8723,6 +8835,12 @@ coastal_county_republic = {
 
 
 weaken_vassal_plot = {
+	can_use = {
+
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
+	}
 	name = CB_NAME_WEAKEN_VASSAL
 	war_name = WAR_NAME_WEAKEN_VASSAL
 	sprite = 3
@@ -8943,8 +9061,12 @@ decadence_invasion = {
 	can_ask_to_join_war = no
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = decadence_invader
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -9198,6 +9320,7 @@ muslim_invasion = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			OR = {
 				ai = yes
@@ -9232,6 +9355,9 @@ muslim_invasion = {
 		ROOT = {
 			NOT = { is_liege_or_above = FROM }
 			mercenary = no
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -9611,9 +9737,13 @@ cb_faction_independence = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			vassal_of = FROM
 			mercenary = no
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -9900,6 +10030,7 @@ embargo_cb = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			independent = yes
 			NOT = { has_embargo = FROM }
@@ -9936,6 +10067,9 @@ embargo_cb = {
 					}
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -10130,6 +10264,7 @@ seize_trade_post = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			OR = {
 				is_merchant_republic = yes
@@ -10153,6 +10288,9 @@ seize_trade_post = {
 		}
 		FROM = {
 			NOT = { is_liege_or_above = ROOT }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -10320,10 +10458,14 @@ viking_invasion = {
 	sort_priority = 3000
 
 	can_use = {
+
 		ROOT = {
 			has_opinion_modifier = { who = FROM modifier = preparing_to_invade }
 			NOT = { is_liege_or_above = FROM }
 			mercenary = no
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -10535,6 +10677,7 @@ pagan_subjugation = {
 	sort_priority = 2000
 
 	can_use = {
+
 		ROOT = {
 			is_daemon_prince_trigger = no
 			OR = {
@@ -10602,6 +10745,9 @@ pagan_subjugation = {
 					}
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -10784,11 +10930,15 @@ peasant_revolt = {
 	is_independence = yes
 
 	can_use = {
+
 		ROOT = {
 			primary_title = { temporary = yes } # Revolter or adventurer trigger
 			war = no
 			NOT = { is_liege_or_above = FROM }
 			mercenary = no
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -10927,7 +11077,11 @@ heretic_revolt = {
 	check_de_jure_tier = DUKE
 
 	can_use = {
+
 		ROOT = { has_character_flag = heretic_revolter }
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	is_valid = {
@@ -11097,7 +11251,11 @@ religious_revolt = {
 	check_de_jure_tier = DUKE
 
 	can_use = {
+
 		ROOT = { has_character_flag = religious_revolter }
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	is_valid = {
@@ -11277,7 +11435,11 @@ liberation_revolt = {
 	is_independence = yes
 
 	can_use = {
+
 		ROOT = { has_character_flag = nationalist_rebel }
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	can_use_title = {
@@ -11441,7 +11603,11 @@ duchy_adventure = {
 	check_de_jure_tier = DUKE # this scans all dejure duchies for the counties which are held by or vassals(or below) of selected character
 
 	can_use = {
+
 		ROOT = { has_character_flag = duchy_adventurer }
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	is_valid = {
@@ -11573,8 +11739,12 @@ kingdom_adventure = { # Used mainly for Arabyans adventuring into Nehekhara
 	check_de_jure_tier = KING # this scans all dejure duchies for the counties which are held by or vassals(or below) of selected character
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = duchy_adventurer
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -11999,6 +12169,7 @@ caliphal_subjugation = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			OR = {
 				ai = yes
@@ -12031,6 +12202,9 @@ caliphal_subjugation = {
 		FROM = {
 			religion = ROOT
 			NOT = { is_offmap_governor = yes }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -12207,6 +12381,7 @@ muslim_county_conquest = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			NOT = { is_liege_or_above = FROM }
 			mercenary = no
@@ -12214,6 +12389,9 @@ muslim_county_conquest = {
 		}
 		FROM = {
 			NOT = { religion_group = greenskin_gods_group }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -12543,6 +12721,7 @@ pagan_county_conquest = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			NOT = { trait = creature_beastman }
 			OR={
@@ -12607,6 +12786,9 @@ pagan_county_conquest = {
 					NOT = { religion = ROOT }
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -13513,6 +13695,7 @@ dejure_barony_claim = {
 	}
 
 	can_use = {
+
 		FROM = {
 			NOT = { is_vassal_or_below = ROOT }
 			OR = {
@@ -13693,6 +13876,7 @@ other_dejure_barony_claim = {
 	is_permanent = no
 
 	can_use = {
+
 		always = no # Obsolete, disabled
 	}
 
@@ -13768,6 +13952,7 @@ other_dejure_county_claim = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			NOT = {
 				OR = {
@@ -14019,8 +14204,12 @@ ormazd_caliphate_rising = {
 	apply_short_occ_mod = no # Do not apply the 'recently_conquered' modifier to Holdings
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = ormazd_caliphate_pretender
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -14245,6 +14434,7 @@ cb_decadence_usurption = {
 	allowed_to_target_tributaries = no
 
 	can_use = {
+
 		ROOT = {
 			religion_group = ormazd_gods_group
 		}
@@ -14268,6 +14458,9 @@ cb_decadence_usurption = {
 
 		ROOT = {
 			mercenary = no
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -14390,6 +14583,7 @@ rivalry_cb = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			is_rival = FROM
 		}
@@ -14400,6 +14594,9 @@ rivalry_cb = {
 					modifier = opinion_humiliated_rival
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -14553,6 +14750,7 @@ tributary_cb = {
 	}
 
 	can_use = {
+
 		has_dlc = "Horse Lords"
 		OR={
 			ROOT={
@@ -14682,6 +14880,9 @@ tributary_cb = {
 					using_cb = tributary_nomad_cb
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -15083,6 +15284,7 @@ free_tributary_cb = {
 	sort_priority = 1100
 
 	can_use = {
+
 		ROOT = {
 			OR = {
 				AND = {
@@ -15140,6 +15342,9 @@ free_tributary_cb = {
 					}
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -15467,10 +15672,14 @@ cb_install_khan2 = {
 	}
 
 	can_use = {
+
 		has_dlc = "Horse Lords"
 
 		ROOT = {
 			is_nomadic = yes
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -15612,6 +15821,7 @@ nomad_dispute = {
 	}
 
 	can_use = {
+
 		has_dlc = "Horse Lords"
 
 		FROM = {
@@ -15628,6 +15838,9 @@ nomad_dispute = {
 
 		ROOT = {
 			mercenary = no
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -15964,11 +16177,15 @@ cb_minor_clan_revolt = {
 	is_independence = yes
 
 	can_use = {
+
 		ROOT = {
 			primary_title = { temporary = yes } # Revolter or adventurer trigger
 			war = no
 			NOT = { is_liege_or_above = FROM }
 			mercenary = no
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -16211,6 +16428,7 @@ nomad_subjugation = {
 	}
 
 	can_use = {
+
 		FROM = {
 			OR = {
 				AND = {
@@ -16275,6 +16493,9 @@ nomad_subjugation = {
 					count = 5
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -16565,6 +16786,7 @@ nomad_invasion = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			distance_from_realm = { who = FROM value < 500 }
 		}
@@ -16602,6 +16824,9 @@ nomad_invasion = {
 					title = PREV
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -16864,6 +17089,7 @@ nomad_expansion = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			NOT = { trait = creature_beastman }
 			NOT = { trait = creature_orc }
@@ -16871,6 +17097,9 @@ nomad_expansion = {
 			is_nomadic = yes
 			NOT = { same_realm = FROM }
 			mercenary = no
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -17105,8 +17334,12 @@ increase_council_power_war = { # Started from faction
 	}
 
 	can_use = {
+
 		ROOT = {
 			vassal_of = FROM
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -17303,6 +17536,7 @@ nomad_humiliate_cb = {
 	}
 
 	can_use = {
+
 		has_dlc = "Horse Lords"
 
 		FROM = {
@@ -17368,6 +17602,9 @@ nomad_humiliate_cb = {
 					}
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -17616,8 +17853,12 @@ powerful_vassal_takeover_war = { # Started from faction
 	}
 
 	can_use = {
+
 		ROOT = {
 			vassal_of = FROM
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -17908,6 +18149,7 @@ reconquista_astarios = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
@@ -18019,6 +18261,9 @@ reconquista_astarios = {
 				religion_group = ROOT
 			}
 		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	is_valid = {
@@ -18127,6 +18372,7 @@ reconquista_cantonia = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
@@ -18238,6 +18484,9 @@ reconquista_cantonia = {
 				religion_group = ROOT
 			}
 		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	is_valid = {
@@ -18345,6 +18594,7 @@ reconquista_obregon = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
@@ -18456,6 +18706,9 @@ reconquista_obregon = {
 				religion_group = ROOT
 			}
 		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	is_valid = {
@@ -18558,6 +18811,7 @@ reconquista_tigarre = {
 		}
 	}
 	can_use = {
+
 		ROOT = {
 			has_character_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
@@ -18669,6 +18923,9 @@ reconquista_tigarre = {
 			NOT = {
 				religion_group = ROOT
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -18785,6 +19042,7 @@ reconquista_castillona = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
@@ -18897,6 +19155,9 @@ reconquista_castillona = {
 				religion_group = ROOT
 			}
 		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	is_valid = {
@@ -19004,6 +19265,7 @@ reconquista_tobaro = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
@@ -19116,6 +19378,9 @@ reconquista_tobaro = {
 				religion_group = ROOT
 			}
 		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	is_valid = {
@@ -19215,6 +19480,7 @@ reconquista_luccini = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
@@ -19327,6 +19593,9 @@ reconquista_luccini = {
 				religion_group = ROOT
 			}
 		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	is_valid = {
@@ -19434,6 +19703,7 @@ reconquista_verezzo = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
@@ -19546,6 +19816,9 @@ reconquista_verezzo = {
 				religion_group = ROOT
 			}
 		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	is_valid = {
@@ -19645,6 +19918,7 @@ reconquista_remas = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
@@ -19757,6 +20031,9 @@ reconquista_remas = {
 				religion_group = ROOT
 			}
 		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	is_valid = {
@@ -19856,6 +20133,7 @@ reconquista_pavona = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
@@ -19963,6 +20241,9 @@ reconquista_pavona = {
 				religion_group = ROOT
 			}
 		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	is_valid = {
@@ -20061,6 +20342,7 @@ reconquista_trantio = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
@@ -20168,6 +20450,9 @@ reconquista_trantio = {
 				religion_group = ROOT
 			}
 		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	is_valid = {
@@ -20270,6 +20555,7 @@ reconquista_miragliano = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
@@ -20377,6 +20663,9 @@ reconquista_miragliano = {
 				religion_group = ROOT
 			}
 		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	is_valid = {
@@ -20475,6 +20764,7 @@ reconquista_monte_castello = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			has_character_flag = currently_reconquering_iberia
 			not_reconquista_check_trigger = yes
@@ -20581,6 +20871,9 @@ reconquista_monte_castello = {
 			NOT = {
 				religion_group = ROOT
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 

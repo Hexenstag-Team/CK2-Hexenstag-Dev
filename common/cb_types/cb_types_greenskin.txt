@@ -24,8 +24,12 @@ orc_county_conquest = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			NOT = { is_liege_or_above = FROM }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 	on_attacker_leader_death = { end_war = invalid }
@@ -401,6 +405,7 @@ waaagh_invasion = {
 	apply_short_occ_mod = no # Do not apply the 'recently_conquered' modifier to Holdings
 
 	can_use = {
+
 		ROOT = {
 			has_opinion_modifier = { who = FROM modifier = preparing_waaagh_invasion_opinion }
 			OR = {
@@ -422,6 +427,9 @@ waaagh_invasion = {
 				# }
 			# }
 		# }
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	can_use_title = {
@@ -715,10 +723,14 @@ greenskin_uprising = {
 	is_independence = yes
 
 	can_use = {
+
 		ROOT = {
 			primary_title = { temporary = yes } # Revolter or adventurer trigger
 			war = no
 			NOT = { is_liege_or_above = FROM }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -871,6 +883,7 @@ purge_greenskins = {
 
 
 	can_use = {
+
 		ROOT = {
 			NOT = { trait = creature_nehekharan }
 			NOT = { trait = creature_beastman }
@@ -890,6 +903,9 @@ purge_greenskins = {
 			}
 		}
 
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	can_use_title = {
@@ -1317,6 +1333,7 @@ greenskin_migration = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			OR={
 				trait=creature_orc
@@ -1331,6 +1348,9 @@ greenskin_migration = {
 				trait=creature_orc
 				trait=creature_goblin
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 	on_attacker_leader_death = { end_war = invalid }
@@ -1528,6 +1548,7 @@ greenskin_subjugation = {
 	}
 
 	can_use = {
+
 		#FROM={
 		#	relative_realm_size = {
 		#		who = ROOT
@@ -1591,6 +1612,9 @@ greenskin_subjugation = {
 					count = 8
 				}
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 

@@ -42,8 +42,12 @@ nehekharan_county_conquest_external = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			NOT = { is_liege_or_above = FROM }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -221,6 +225,7 @@ nehekharan_county_conquest = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			NOT = { is_liege_or_above = FROM }
 		}
@@ -232,6 +237,9 @@ nehekharan_county_conquest = {
 				}
 				NOT = { distance_from_realm = { who = ROOT value = 200 } }
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -402,6 +410,7 @@ nehekharan_subjugation = {
 		ROOT = { prestige = -750 }
 	}
 	can_use = {
+
 		ROOT = {
 			trait = khemri_tomb_king
 			higher_tier_than = DUKE
@@ -423,6 +432,9 @@ nehekharan_subjugation = {
 				}
 				NOT = { distance_from_realm = { who = ROOT value = 100 } }
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -611,6 +623,7 @@ desert_expedition = {
 		ROOT = { wealth = -20 }
 	}
 	can_use = {
+
 		ROOT = {
 			NOT = { trait = creature_nehekharan }
 			NOT = { same_realm = FROM }
@@ -620,6 +633,9 @@ desert_expedition = {
 			capital_scope = { empire = { title = e_nehekhara } }
 			trait = creature_nehekharan
 			}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
+		}
 	}
 
 	can_use_title = {
@@ -831,11 +847,15 @@ punish_graverobbers = {
 	battle_warscore_mult = 1.25
 
 	can_use = {
+
 		ROOT = {
 			trait = creature_nehekharan
 			NOT = { same_realm = FROM }
 			NOT = { is_liege_or_above = FROM }
 			has_opinion_modifier = { who = FROM modifier = opinion_graverobbed_me }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 
@@ -972,8 +992,12 @@ nehekharan_county_colonisation = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			NOT = { is_liege_or_above = FROM }
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 

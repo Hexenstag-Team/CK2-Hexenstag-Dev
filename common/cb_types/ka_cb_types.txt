@@ -24,6 +24,7 @@ southern_crusade_war = {
 	}
 
 	can_use = {
+
 		ROOT = {
 			OR = {
 				has_landed_title = d_knights_of_antoch
@@ -34,6 +35,9 @@ southern_crusade_war = {
 			NOT = {
 				religion_group = ROOT
 			}
+		}
+		FROM = {
+			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 	can_use_title = {
