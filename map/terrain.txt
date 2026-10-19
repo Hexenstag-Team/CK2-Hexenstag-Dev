@@ -164,6 +164,16 @@ categories =  {
 		supply_limit = 1
 		bottleneck_chance = 5
 	}
+	
+	moot = {
+		movement_cost = 2
+		max_attrition = 0.05
+		color = { 137 104 165 }
+		
+		garrison_size = 0.5
+		supply_limit = -2
+		bottleneck_chance = 5
+	}
 }
 
 ter_mount_dry		= { type = mountain 	color = { 	0	} priority = 	0	 } 		#dry mountain
@@ -194,7 +204,7 @@ ter_hills_volc		= { type = wasteland 	color = { 	20	} priority = 	20	 } 		#volca
 ter_mount_volc		= { type = wasteland 	color = { 	21	} priority = 	21	 } 		#volcano mountain
 ter_hills_warp		= { type = wasteland 	color = { 	22	} priority = 	22	 } 		#warpstone hill
 ter_urban			= { type = farmlands 	color = { 	23	} priority = 	23	 } 		#urban
-ter_obsidian		= { type = wasteland 	color = { 	24	} priority = 	24	 }		#obsidian
+ter_moot			= { type = farmlands 	color = { 	24	} priority = 	24	 }		#moot
 
 # Need to be here to identify forest
 text_25	= { type = forest color = { 	25	 } priority = 	25	 }

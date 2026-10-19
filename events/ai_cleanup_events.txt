@@ -338,7 +338,15 @@ character_event = {
 		}
 		if = {
 			limit = { has_landed_title = e_sylvania }
-			e_sylvania = { unsafe_destroy_landed_title = THIS }
+			e_sylvania = {
+				unsafe_destroy_landed_title = THIS
+			}
+			any_war = {
+				limit = {
+					using_cb = vlad_subjugation
+				}
+				end_war = reverse_demand
+			}
 		}
 	}
 }

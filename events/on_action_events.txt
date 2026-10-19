@@ -5172,15 +5172,6 @@ narrative_event = {
 		}
 		if = {
 			limit = { #Offer chance to switch the vassals' succession laws.
-				ROOT = { has_religion_feature = religion_no_leader }
-				ai = yes
-			}
-			hidden_tooltip = {
-				character_event = { id = HF.23016 days = 20 random = 20 }
-			}
-		}
-		if = {
-			limit = { #Offer chance to switch the vassals' succession laws.
 				ROOT = { has_religion_feature = religion_matriarchal }
 			}
 			custom_tooltip = { text = tooltip_HF23014_A }

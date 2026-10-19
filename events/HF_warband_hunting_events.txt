@@ -52,92 +52,15 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = {
 		trigger = {
-			has_character_flag = flag_hunting_wolf_norse
+			has_character_flag = flag_hunting_warband
 		}
 		text = EVTDESCAHF25600
 	}
-	desc = {
-		trigger = {
-			has_character_flag = flag_hunting_wolf_baltic
-		}
-		text = EVTDESCBHF25600
-	}
-	desc = {
-		trigger = {
-			has_character_flag = flag_hunting_wolf_hellenic
-		}
-		text = EVTDESCCHF25600
-	}
-	desc = {
-		trigger = {
-			has_character_flag = flag_hunting_eagle_slavic
-		}
-		text = EVTDESCDHF25600 
-	}
-	desc = {
-		trigger = {
-			has_character_flag = flag_hunting_eagle_tengri
-		}
-		text = EVTDESCEHF25600
-	}
-	desc = {
-		trigger = {
-			has_character_flag = flag_hunting_eagle_bon
-		}
-		text = EVTDESCFHF25600
-	}
-	desc = {
-		trigger = {
-			has_character_flag = flag_hunting_bear_finnish
-		}
-		text = EVTDESCGHF25600
-	}
-	desc = {
-		trigger = {
-			has_character_flag = flag_hunting_lion_west_african
-		}
-		text = EVTDESCHHF25600
-	}
-	desc = {
-		trigger = {
-			has_character_flag = flag_hunting_lion_zun
-		}
-		text = EVTDESCIHF25600
-	}
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	hide_new = yes
@@ -180,7 +103,7 @@ character_event = {
 			WL_ritual_hunt_cleanup_effect = yes #Safety cleanup.
 			if = { 
 				limit = { is_member_of_any_warband_trigger = yes } 
-				set_character_flag = flag_hunting_wolf_norse
+				set_character_flag = flag_hunting_warband
 			}
 			random_list = { 
 				33 = { sound_effect = pagan_cheering_01 } 
@@ -562,56 +485,13 @@ character_event = {
 			limit = { ai = no } #Cheaty AI...
 			scaled_wealth = { value = -0.5 min = -50 max = -150 } 
 		}
-		hidden_tooltip = { 
+		hidden_tooltip = {
 			change_variable = { which = wl_ritual_hunting value = 10 }
 			#Tattoos and Warpaint.
 			add_blood_splatter_effect = yes
-			if = {
-				limit = {
-					is_member_of_any_warband_trigger = yes
-					#NOR = {
-					#	trait = norse_tattoo_1
-					#	trait = norse_tattoo_2
-					#	trait = norse_tattoo_3
-					#	trait = norse_tattoo_4
-					#	trait = norse_tattoo_5
-					#	trait = norse_tattoo_6
-					#}
-				}
-				#random_list = { 
-				#	40 = { add_trait = norse_tattoo_1 }
-				#	40 = { add_trait = norse_tattoo_2 } 
-				#	20 = { add_trait = norse_tattoo_3 } 
-				#	20 = { add_trait = norse_tattoo_4 } 
-				#	10 = { add_trait = norse_tattoo_5 } 
-				#	10 = { add_trait = norse_tattoo_6 } 
-				#}
-			}
-			#Tattoos and Warpaint. - For partner.
 
 			event_target:scoped_WL_co_hunter = { 
 				add_blood_splatter_effect = yes
-				if = { 
-					limit = { 
-						is_member_of_any_warband_trigger = yes
-						#NOR = { 
-						#	trait = norse_tattoo_1
-						#	trait = norse_tattoo_2
-						#	trait = norse_tattoo_3
-						#	trait = norse_tattoo_4
-						#	trait = norse_tattoo_5
-						#	trait = norse_tattoo_6
-						#}
-					}
-					#random_list = { 
-					#	40 = { add_trait = norse_tattoo_1 }
-					#	40 = { add_trait = norse_tattoo_2 } 
-					#	20 = { add_trait = norse_tattoo_3 } 
-					#	20 = { add_trait = norse_tattoo_4 } 
-					#	10 = { add_trait = norse_tattoo_5 } 
-					#	10 = { add_trait = norse_tattoo_6 } 
-					#}
-				}
 			}
 		}
 		ai_chance = { 
@@ -674,39 +554,10 @@ character_event = {
 		text = EVTDESCBHF25602
 	}
 	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+		trigger = {
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -738,38 +589,9 @@ character_event = {
 	desc = EVTDESCAHF25603
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -942,38 +764,9 @@ character_event = {
 	desc = EVTDESCAHF25604
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -1085,38 +878,9 @@ character_event = {
 	desc = EVTDESCAHF25605
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -1203,38 +967,9 @@ character_event = {
 	desc = EVTDESCAHF25606
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -1358,38 +1093,9 @@ character_event = {
 	desc = EVTDESCAHF25607
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -1491,38 +1197,9 @@ character_event = {
 	desc = EVTDESCAHF25627
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -1551,74 +1228,16 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		text = EVTDESCAHF25608
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25608
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25608
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25608
 	}
 
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -1811,75 +1430,18 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
-		} 
+			has_character_flag = flag_hunting_warband
+		}
 		text = EVTDESCAHF25609
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25609
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25609
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25609
 	}
 
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
 	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
-	}
+
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
 
@@ -2051,74 +1613,16 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		text = EVTDESCAHF25610
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25610
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25610
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25610
 	}
 
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -2308,74 +1812,16 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		text = EVTDESCAHF25611
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25611
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25611
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25611
 	}
 
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -2550,74 +1996,16 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+				has_character_flag = flag_hunting_warband
 		} 
 		text = EVTDESCAHF25612
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25612
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25612
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25612
 	}
 
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -2806,75 +2194,17 @@ character_event = {
 	id = WB.25613
 	title = EVTTITLEHF25600
 	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+		trigger = {  
+			has_character_flag = flag_hunting_warband
 		} 
 		text = EVTDESCAHF25613
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25613
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25613
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25613
 	}
 
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -3047,74 +2377,16 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		text = EVTDESCAHF25614
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25614
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25614
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25614
 	}
 
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -3170,38 +2442,9 @@ character_event = {
 	}
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -3499,38 +2742,9 @@ character_event = {
 	desc  = EVTDESCAHF25617
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -3559,74 +2773,17 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		text = EVTDESCAHF25618
 	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25618
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25618
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25618
-	}
+
 
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		}
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -4250,74 +3407,17 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		text = EVTDESCAHF25619
 	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25619
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25619
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25619
-	}
+
 
 	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+		trigger = {  
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		}
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -4611,74 +3711,16 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		text = EVTDESCAHF25620
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25620
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25620
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25620
 	}
 
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		}
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -4702,98 +3744,14 @@ character_event = {
 		name = EVTOPTAHF25620
 		if = { 
 			limit = { 
-				OR = { 
-					has_character_flag = flag_hunting_wolf_norse
-					has_character_flag = flag_hunting_wolf_baltic
-					has_character_flag = flag_hunting_wolf_hellenic
-				} 
+				has_character_flag = flag_hunting_warband
 			} 
 			add_character_modifier = { 
 				name = ritual_hunt_trophy_wolf
 				duration = 36500
 			}
 		}
-		if = { 
-			limit = { 
-				OR = { 
-					has_character_flag = flag_hunting_eagle_slavic
-					has_character_flag = flag_hunting_eagle_tengri
-					has_character_flag = flag_hunting_eagle_bon
-				} 
-			} 
-			add_character_modifier = { 
-				name = ritual_hunt_trophy_eagle
-				duration = 36500
-			}
-		}
-		if = { 
-			limit = { 
-				has_character_flag = flag_hunting_bear_finnish 
-			} 
-			add_character_modifier = { 
-				name = ritual_hunt_trophy_bear
-				duration = 36500
-			}
-		}
-		if = { 
-			limit = { 
-				OR = { 
-					has_character_flag = flag_hunting_lion_west_african
-					has_character_flag = flag_hunting_lion_zun
-				} 
-			} 
-			add_character_modifier = { 
-				name = ritual_hunt_trophy_lion
-				duration = 36500
-			}
-		}
 		tiered_prestige_reward_effect = yes
-		ai_chance = { factor = 20 }
-	}
-	option = { #Burn carcass to the gods./(Finns) Celebration of the Bear.
-		name = {
-			text = EVTOPTBHF25620_A
-			trigger = {
-				NOT = {
-					has_character_flag = flag_hunting_bear_finnish
-				}
-			}
-		}
-		name = {
-			text = EVTOPTBHF25620_B
-			trigger = {
-				has_character_flag = flag_hunting_bear_finnish
-			}
-		}
-		if = {
-			limit = {
-				society_rank == 1
-			}
-			piety = 25
-		}
-		else_if = {
-			limit = {
-				society_rank == 2
-			}
-			piety = 50
-		}
-		else_if = {
-			limit = {
-				society_rank == 3
-			}
-			piety = 75
-		}
-		else_if = {
-			limit = {
-				society_rank == 4
-			}
-			piety = 100
-		}
-
-		if = { 
-			limit = { has_character_flag = flag_hunting_bear_finnish OR = { religion = finnish_pagan religion = finnish_pagan_reformed } }
-			hidden_tooltip = { character_event = { id = WB.25626 } } #Fluff.
-		}
 		ai_chance = { factor = 20 }
 	}
 	option = { #Take meat to share with society members.
@@ -4826,13 +3784,6 @@ character_event = {
 		hidden_tooltip = { character_event = { id = WB.25628 } } #Fluff.
 		ai_chance = { factor = 20 }
 	}
-	option = { #Tengri finds eagle.
-		name = EVTOPTDHF25620
-		trigger = { has_character_flag = flag_hunting_eagle_tengri OR = { religion = tengri_pagan religion = tengri_pagan_reformed } }
-		custom_tooltip = { text = TT_EVTOPTDHF252620 }
-		hidden_tooltip = { character_event = { id = WB.25629 } } #Fluff.
-		ai_chance = { factor = 50 }
-	}
 
 	after = { 
 		add_legend_progress_minor_effect = yes
@@ -4854,74 +3805,17 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband 
 		} 
 		text = EVTDESCAHF25621
 	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25621
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25621
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25621
-	}
+
 
 	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+		trigger = {  
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		}
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -4945,48 +3839,10 @@ character_event = {
 		name = EVTOPTAHF25620
 		if = { 
 			limit = { 
-				OR = { 
-					has_character_flag = flag_hunting_wolf_norse
-					has_character_flag = flag_hunting_wolf_baltic
-					has_character_flag = flag_hunting_wolf_hellenic
-				} 
+				has_character_flag = flag_hunting_warband
 			} 
 			add_character_modifier = { 
 				name = ritual_hunt_trophy_wolf
-				duration = 36500
-			}
-		}
-		if = { 
-			limit = { 
-				OR = { 
-					has_character_flag = flag_hunting_eagle_slavic
-					has_character_flag = flag_hunting_eagle_tengri
-					has_character_flag = flag_hunting_eagle_bon
-				} 
-			} 
-			add_character_modifier = { 
-				name = ritual_hunt_trophy_eagle
-				duration = 36500
-			}
-		}
-		if = { 
-			limit = { 
-				has_character_flag = flag_hunting_bear_finnish 
-			} 
-			add_character_modifier = { 
-				name = ritual_hunt_trophy_bear
-				duration = 36500
-			}
-		}
-		if = { 
-			limit = { 
-				OR = { 
-					has_character_flag = flag_hunting_lion_west_african
-					has_character_flag = flag_hunting_lion_zun
-				} 
-			} 
-			add_character_modifier = { 
-				name = ritual_hunt_trophy_lion
 				duration = 36500
 			}
 		}
@@ -4995,20 +3851,8 @@ character_event = {
 		ai_chance = { factor = 20 }
 	}
 	option = { #Burn carcass to the gods./(Finns) Celebration of the Bear.
-		name = {
-			text = EVTOPTBHF25620_A
-			trigger = {
-				NOT = {
-					has_character_flag = flag_hunting_bear_finnish
-				}
-			}
-		}
-		name = {
-			text = EVTOPTBHF25620_B
-			trigger = {
-				has_character_flag = flag_hunting_bear_finnish
-			}
-		}
+		name = EVTOPTBHF25620_A
+
 		if = {
 			limit = {
 				society_rank == 1
@@ -5032,11 +3876,6 @@ character_event = {
 				society_rank == 4
 			}
 			piety = 100
-		}
-
-		if = { 
-			limit = { has_character_flag = flag_hunting_bear_finnish }
-			hidden_tooltip = { character_event = { id = WB.25626 } } #Fluff.
 		}
 		ai_chance = { factor = 20 }
 	}
@@ -5089,34 +3928,12 @@ character_event = {
 		} 
 		else_if = { 
 			limit = { trait = wounded has_dlc = "Reapers" } 
-			if = { 
-				limit = { 
-					OR = { 
-						has_character_flag = flag_hunting_eagle_slavic
-						has_character_flag = flag_hunting_eagle_tengri
-						has_character_flag = flag_hunting_eagle_bon
-					} 
-					NOT = { trait = blinded } 
-				}
-				add_trait = blinded
-			}
 			else = { 
 				add_trait = mangled
 			}
 		}
 		else_if = { 
 			limit = { trait = wounded NOT = { has_dlc = "Reapers" } } 
-			if = { 
-				limit = { 
-					OR = { 
-						has_character_flag = flag_hunting_eagle_slavic
-						has_character_flag = flag_hunting_eagle_tengri
-						has_character_flag = flag_hunting_eagle_bon
-					} 
-					NOT = { trait = blinded } 
-				}
-				add_trait = blinded
-			}
 			else = { 
 				add_trait = maimed
 			}
@@ -5131,74 +3948,16 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		text = EVTDESCAHF25622
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25622
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25622
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25622
 	}
 
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		}
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -5226,34 +3985,12 @@ character_event = {
 		} 
 		else_if = { 
 			limit = { trait = wounded has_dlc = "Reapers" } 
-			if = { 
-				limit = { 
-					OR = { 
-						has_character_flag = flag_hunting_eagle_slavic
-						has_character_flag = flag_hunting_eagle_tengri
-						has_character_flag = flag_hunting_eagle_bon
-					} 
-					NOT = { trait = blinded } 
-				}
-				add_trait = blinded
-			}
 			else = { 
 				add_trait = mangled
 			}
 		}
 		else_if = { 
 			limit = { trait = wounded NOT = { has_dlc = "Reapers" } } 
-			if = { 
-				limit = { 
-					OR = { 
-						has_character_flag = flag_hunting_eagle_slavic
-						has_character_flag = flag_hunting_eagle_tengri
-						has_character_flag = flag_hunting_eagle_bon
-					} 
-					NOT = { trait = blinded } 
-				}
-				add_trait = blinded
-			}
 			else = { 
 				add_trait = maimed
 			}
@@ -5269,74 +4006,16 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		text = EVTDESCAHF25623
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25623
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25623
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25623
 	}
 
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		}
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -5369,74 +4048,16 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		text = EVTDESCAHF25624
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25624
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25624
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25624
 	}
 
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		}
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -5496,74 +4117,16 @@ character_event = {
 	title = EVTTITLEHF25600
 	desc = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		text = EVTDESCAHF25624
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		text = EVTDESCBHF25624
-	}
-	desc = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		text = EVTDESCCHF25624
-	}
-	desc = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		} 
-		text = EVTDESCDHF25624
 	}
 
 	picture = { 
 		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_wolf_norse
-				has_character_flag = flag_hunting_wolf_baltic
-				has_character_flag = flag_hunting_wolf_hellenic
-			} 
+			has_character_flag = flag_hunting_warband
 		} 
 		picture = GFX_evt_mysterious_forest
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_eagle_slavic
-				has_character_flag = flag_hunting_eagle_tengri
-				has_character_flag = flag_hunting_eagle_bon
-			} 
-		} 
-		picture = GFX_evt_desert
-	}
-	picture = { 
-		trigger = { 
-			has_character_flag = flag_hunting_bear_finnish 
-		} 
-		picture = GFX_evt_midwinter_blot_oldgods
-	}
-	picture = { 
-		trigger = { 
-			OR = { 
-				has_character_flag = flag_hunting_lion_west_african
-				has_character_flag = flag_hunting_lion_zun
-			} 
-		}
-		picture = GFX_evt_bandits
 	}
 	border = GFX_event_normal_frame_war
 	portrait = event_target:scoped_WL_co_hunter
@@ -5614,34 +4177,12 @@ character_event = {
 		} 
 		else_if = { 
 			limit = { trait = wounded has_dlc = "Reapers" } 
-			if = { 
-				limit = { 
-					OR = { 
-						has_character_flag = flag_hunting_eagle_slavic
-						has_character_flag = flag_hunting_eagle_tengri
-						has_character_flag = flag_hunting_eagle_bon
-					} 
-					NOT = { trait = blinded } 
-				}
-				add_trait = blinded
-			}
 			else = { 
 				add_trait = mangled
 			}
 		}
 		else_if = { 
 			limit = { trait = wounded NOT = { has_dlc = "Reapers" } } 
-			if = { 
-				limit = { 
-					OR = { 
-						has_character_flag = flag_hunting_eagle_slavic
-						has_character_flag = flag_hunting_eagle_tengri
-						has_character_flag = flag_hunting_eagle_bon
-					} 
-					NOT = { trait = blinded } 
-				}
-				add_trait = blinded
-			}
 			else = { 
 				add_trait = maimed
 			}
@@ -5652,26 +4193,6 @@ character_event = {
 		} 
 		WL_ritual_hunt_cleanup_effect = yes 
 		ai_chance = { factor = 20 }
-	}
-}
-
-#Bear burning.
-character_event = {
-	id = WB.25626
-	title = EVTTITLEHF25600
-	desc = EVTDESCAHF25626
-	picture = GFX_evt_mysterious_forest
-	border = GFX_event_normal_frame_war
-	portrait = event_target:scoped_WL_co_hunter
-
-	is_triggered_only = yes
-
-	option = { 
-		name = EVTOPTAHF25626
-		add_character_modifier = {  
-			name = finnish_bear_burning
-			years = 2
-		}
 	}
 }
 

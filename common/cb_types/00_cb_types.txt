@@ -610,9 +610,9 @@ other_claim = {
 			if = {
 				limit = {
 					OR = {
-						title = k_cult_of_sigmar
-						title = k_cult_of_ulric
-						title = k_cult_of_morr
+						title = d_cult_of_sigmar
+						title = d_cult_of_ulric
+						# title = d_cult_of_morr
 					}
 				}
 				FROM = {
@@ -3547,20 +3547,6 @@ invasion = {
 
 	ai_will_do = {
 		factor = 1
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 
 		modifier = {
 			factor = 0
@@ -4012,20 +3998,6 @@ tribal_invasion = {
 
 		modifier = {
 			factor = 0.9 # Prefer using CB's without on_add costs
-		}
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
 		}
 		modifier = {
 			factor = 0
@@ -5563,36 +5535,6 @@ new_crusade = {
 						}
 					}
 				}
-				if = {
-					limit = {
-						has_dlc = "Holy Fury"
-					}
-					if = {
-						limit = {
-							crusader_king = {
-								is_female = yes
-							}
-						}
-						crusader_king = {
-							create_bloodline = {
-								type = black_crusade_lord
-								religion = THIS
-								inheritance = matrilineal
-							}
-							set_bloodline_founder_religion_flag_effect = yes
-						}
-					}
-					else = {
-						crusader_king = {
-							create_bloodline = {
-								type = black_crusade_lord
-								religion = THIS
-								inheritance = patrilineal
-							}
-							set_bloodline_founder_religion_flag_effect = yes
-						}
-					}
-				}
 			}
 
 			# Checks if First Crusade
@@ -6489,20 +6431,6 @@ religious = {
 	ai_will_do = {
 		factor = 1
 
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 
 		modifier = {
 			factor = 0
@@ -6647,29 +6575,8 @@ excommunicated_ruler = {
 			}
 		}
 	}
-	on_invalidation = {
-		# Coronation request locks cleared on invalidation or loss, to avoid locking the player in the middle of the negotiation forever.
-		hidden_tooltip = {
-			if = {
-				limit = {
-					ROOT = { has_character_flag = flag_excommunicated_for_coronation }
-				}
-				ROOT = {
-					character_event = { id = HF.20220 } #Papal Coronation may proceed.
-				}
-			}
-		}
-	}
 
 	on_success = {
-		if = {
-			limit = {
-				ROOT = { has_character_flag = flag_excommunicated_for_coronation }
-				}
-			ROOT = {
-				character_event = { id = HF.20220 } #Papal Coronation may proceed.
-			}
-		}
 		ROOT = {
 			if = {
 				limit = {
@@ -9974,172 +9881,6 @@ cb_faction_independence = {
 	}
 }
 
-# imperial_reconquest = {
-	# name = CB_NAME_IMPERIAL
-	# war_name = WAR_NAME_IMPERIAL
-	# sprite = 17
-	# truce_days = 3650
-	# is_permanent = yes
-	# check_de_jure_tier = DUKE # this scans all dejure duchies for the counties which are held by or vassals(or below) of selected character. Only valid if is_permanent = yes
-
-	# allowed_to_target_tributaries = no
-
-	# can_use = {
-		# ROOT = {
-			# has_landed_title = e_roman_empire
-			# independent = yes
-			# religion_group = christian
-			# NOT = { same_realm = FROM }
-			# mercenary = no
-		# }
-		# FROM = {
-			# NOT = { religion_group = muslim }
-		# }
-	# }
-
-	# can_use_title = {
-		# NAND = {
-			# location = { region = world_albion }
-			# ROOT = {
-				# has_global_flag = mists_of_albion
-				# capital_scope = { NOT = { region = world_albion } }
-			# }
-		# }
-		# OR = {
-			# de_jure_liege_or_above = k_byzantium
-			# de_jure_liege_or_above = k_anatolia
-			# de_jure_liege_or_above = k_armenia
-			# de_jure_liege_or_above = k_bulgaria
-			# de_jure_liege_or_above = k_serbia
-			# de_jure_liege_or_above = k_croatia
-			# de_jure_liege_or_above = k_italy
-			# de_jure_liege_or_above = k_sicily
-			# de_jure_liege_or_above = k_bavaria
-			# de_jure_liege_or_above = k_burgundy
-			# de_jure_liege_or_above = k_france
-			# de_jure_liege_or_above = k_aquitaine
-			# de_jure_liege_or_above = k_brittany
-			# de_jure_liege_or_above = k_england
-			# de_jure_liege_or_above = k_wales
-			# de_jure_liege_or_above = k_frisia
-			# de_jure_liege_or_above = k_lotharingia
-			# de_jure_liege_or_above = k_aragon
-			# de_jure_liege_or_above = k_castille
-			# de_jure_liege_or_above = k_andalusia
-			# de_jure_liege_or_above = k_leon
-			# de_jure_liege_or_above = k_spanish_galicia
-			# de_jure_liege_or_above = k_portugal
-			# de_jure_liege_or_above = k_navarra
-			# de_jure_liege_or_above = k_syria
-			# de_jure_liege_or_above = k_jerusalem
-			# de_jure_liege_or_above = k_egypt
-			# de_jure_liege_or_above = k_africa
-			# de_jure_liege_or_above = k_mauretania
-			# de_jure_liege_or_above = k_papal_state
-			# de_jure_liege_or_above = k_venice
-			# de_jure_liege_or_above = k_asturias
-		# }
-	# }
-
-	# is_valid = {
-		# ROOT = {
-			# independent = yes
-			# religion_group = christian
-			# NOT = { same_realm = FROM }
-		# }
-	# }
-
-	# on_success = {
-		# any_attacker = {
-			# limit = { character = ROOT }
-			# participation_scaled_prestige = 100
-		# }
-		# any_attacker = {
-			# limit = { NOT = { character = ROOT } }
-			# hidden_tooltip = {
-				# participation_scaled_prestige = 100
-			# }
-		# }
-
-		# FROM = { prestige = -100 }
-	# }
-
-	# on_success_title = {
-		# custom_tooltip = {
-			# text = other_invasion_succ_tip
-			# hidden_tooltip = {
-				# ROOT = {
-					# vassalize_or_take_under_title = {
-						# title = PREV
-						# enemy = FROM
-						# type = invasion
-					# }
-				# }
-			# }
-		# }
-		# if = {
-			# limit = {
-				# holder_scope = { character = FROM }
-			# }
-			# usurp_title_only = { target = ROOT type = invasion }
-		# }
-	# }
-
-	# on_fail = {
-		# ROOT = { prestige = -150 }
-	# }
-
-	# on_reverse_demand = {
-		# ROOT = {
-			# transfer_scaled_wealth = {
-				# to = FROM
-				# value = 4.0
-			# }
-			# ROOT = { prestige = -200 }
-		# }
-		# any_defender = {
-			# limit = { character = FROM }
-			# participation_scaled_piety = 100
-			# participation_scaled_prestige = 200
-			# if = {
-				# limit = {
-					# uses_decadence = yes
-				# }
-				# participation_scaled_decadence = -10
-			# }
-		# }
-		# any_defender = {
-			# limit = { NOT = { character = FROM } }
-			# hidden_tooltip = {
-				# participation_scaled_piety = 100
-				# participation_scaled_prestige = 200
-				# if = {
-					# limit = {
-						# uses_decadence = yes
-					# }
-					# participation_scaled_decadence = -10
-				# }
-			# }
-		# }
-	# }
-
-	# attacker_ai_victory_worth = {
-		# factor = -1 # always accept
-	# }
-
-	# attacker_ai_defeat_worth = {
-		# factor = 100
-	# }
-
-	# defender_ai_victory_worth = {
-		# factor = -1 # always accept
-	# }
-
-	# defender_ai_defeat_worth = {
-		# factor = 100
-	# }
-# }
-
 # Embargo Merchant Republic CB
 embargo_cb = {
 	name = CB_NAME_EMBARGO
@@ -10347,20 +10088,6 @@ embargo_cb = {
 	# ai importance placed on this CB: scope is the targeted title, ROOT is the attacking character, FROM is the defending character
 	ai_will_do = {
 		factor = 1
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 		modifier = {
 			factor = 0
 			ROOT = {
@@ -10566,20 +10293,6 @@ seize_trade_post = {
 	# ai importance placed on this CB: scope is the targeted title, ROOT is the attacking character, FROM is the defending character
 	ai_will_do = {
 		factor = 1
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 		modifier = {
 			factor = 0.25
 			ROOT = {
@@ -11051,20 +10764,6 @@ pagan_subjugation = {
 
 	ai_will_do = {
 		factor = 1
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 	}
 }
 
@@ -15277,20 +14976,6 @@ tributary_cb = {
 
 	ai_will_do = {
 		factor = 1
-			modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 		modifier = {
 			factor = 0.1 # Low prio CB
 		}
@@ -15743,20 +15428,6 @@ free_tributary_cb = {
 		modifier = {
 			factor = 1.5
 		}
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 
 		modifier = {
 			factor = 4
@@ -16081,20 +15752,6 @@ nomad_dispute = {
 
 	ai_will_do = {
 		factor = 2
-		modifier = { #Focus on Coronation first.
-			factor = 0.1
-			has_dlc = "Holy Fury"
-			ROOT = {
-				is_feudal = yes
-				religion = imperial_pantheon
-				NOR = {
-					trait = crowned_by_priest
-					trait = crowned_by_bishop
-					trait = crowned_by_pope
-					trait = crowned_by_myself
-				}
-			}
-		}
 	}
 
 }

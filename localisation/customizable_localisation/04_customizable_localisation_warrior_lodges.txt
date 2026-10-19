@@ -3,43 +3,7 @@ defined_text = { #Used in HF.10040 (Power: Warrior Training)
 	name = GetWarriorLodgeTrainingDesc
 	
 	text = {
-		trigger = { society_member_of = warrior_lodge_norse }
-		localisation_key = string_norse_training
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_tengri }
-		localisation_key = string_tengri_training
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_baltic }
-		localisation_key = string_baltic_training
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_finnish }
-		localisation_key = string_finnish_training
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_slavic }
-		localisation_key = string_slavic_training
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_west_african }
-		localisation_key = string_west_african_training
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_zun }
-		localisation_key = string_zun_training
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_bon }
-		localisation_key = string_bon_training
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_hellenic }
-		localisation_key = string_hellenic_training
-	}
-	fallback_text = {
-		localisation_key = string_norse_training #fallback, in case it fails to find relevant info
+		localisation_key = string_warriorlodgetraining
 	}
 }
 
@@ -47,129 +11,21 @@ defined_text = { #Used in HFP.11028 (battle event)
 	name = GetWarriorLodgeSymbol
 	
 	text = {
-		trigger = { society_member_of = warrior_lodge_norse }
-		localisation_key = string_norse_symbol
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_tengri }
-		localisation_key = string_tengri_symbol
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_baltic }
-		localisation_key = string_baltic_symbol
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_finnish }
-		localisation_key = string_finnish_symbol
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_slavic }
-		localisation_key = string_slavic_symbol
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_west_african }
-		localisation_key = string_west_african_symbol
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_zun }
-		localisation_key = string_zun_symbol
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_bon }
-		localisation_key = string_bon_symbol
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_hellenic }
-		localisation_key = string_hellenic_symbol
-	}
-	fallback_text = {
-		localisation_key = string_hellenic_symbol #"the gods". Fallback, in case it fails to find relevant info
+		localisation_key = string_warriorlodgesymbol
 	}
 }
 defined_text = { #Used here and there? Made *singular*, on purpose...
 	name = GetWarriorLodgeSymbolShort #forest, light, wolf, etc...
 	
 	text = {
-		trigger = { society_member_of = warrior_lodge_norse }
-		localisation_key = string_norse_symbol_short
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_tengri }
-		localisation_key = string_tengri_symbol_short
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_baltic }
-		localisation_key = string_baltic_symbol_short
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_finnish }
-		localisation_key = string_finnish_symbol_short
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_slavic }
-		localisation_key = string_slavic_symbol_short
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_west_african }
-		localisation_key = string_west_african_symbol_short
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_zun }
-		localisation_key = string_zun_symbol_short
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_bon }
-		localisation_key = string_bon_symbol_short
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_hellenic }
-		localisation_key = string_hellenic_symbol_short
-	}
-	fallback_text = {
-		localisation_key = string_hellenic_symbol_short #"the gods". Fallback, in case it fails to find relevant info
+		localisation_key = string_warriorlodgesymbol_symbol_short
 	}
 }
 defined_text = { #Used here and there? Made *singular*, on purpose...
 	name = GetWarriorLodgeSymbolShortCap #Forest, Light, Wolf, etc...
 	
 	text = {
-		trigger = { society_member_of = warrior_lodge_norse }
-		localisation_key = string_norse_symbol_short_cap
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_tengri }
-		localisation_key = string_tengri_symbol_short_cap
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_baltic }
-		localisation_key = string_baltic_symbol_short_cap
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_finnish }
-		localisation_key = string_finnish_symbol_short_cap
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_slavic }
-		localisation_key = string_slavic_symbol_short_cap
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_west_african }
-		localisation_key = string_west_african_symbol_short_cap
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_zun }
-		localisation_key = string_zun_symbol_short_cap
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_bon }
-		localisation_key = string_bon_symbol_short_cap
-	}
-	text = {
-		trigger = { society_member_of = warrior_lodge_hellenic }
-		localisation_key = string_hellenic_symbol_short_cap
-	}
-	fallback_text = {
-		localisation_key = string_hellenic_symbol_short_cap #"the gods". Fallback, in case it fails to find relevant info
+		localisation_key = string_warriorlodgesymbol_symbol_short_cap
 	}
 }
 defined_text = { #Used in HFP.11037 (battle event)
@@ -257,52 +113,6 @@ defined_text = { #Used in HF.10513 (mission event to Wage War)
 		localisation_key = string_march_your_troops
 	}
 }
-
-
-defined_text = { #Used in HFP.11038 (battle event)
-	name = GetWLCanJoinReligion
-	
-	text = {
-		trigger = { FROM = { is_society = warrior_lodge_norse } }
-		localisation_key = string_WL_norse_religion
-	}
-	text = {
-		trigger = { FROM = { is_society = warrior_lodge_tengri } }
-		localisation_key = string_WL_tengri_religion
-	}
-	text = {
-		trigger = { FROM = { is_society = warrior_lodge_baltic } }
-		localisation_key = string_WL_baltic_religion
-	}
-	text = {
-		trigger = { FROM = { is_society = warrior_lodge_finnish } }
-		localisation_key = string_WL_finnish_religion
-	}
-	text = {
-		trigger = { FROM = { is_society = warrior_lodge_slavic } }
-		localisation_key = string_WL_slavic_religion
-	}
-	text = {
-		trigger = { FROM = { is_society = warrior_lodge_west_african } }
-		localisation_key = string_WL_west_african_religion
-	}
-	text = {
-		trigger = { FROM = { is_society = warrior_lodge_zun } }
-		localisation_key = string_WL_zun_religion
-	}
-	text = {
-		trigger = { FROM = { is_society = warrior_lodge_bon } }
-		localisation_key = string_WL_bon_religion
-	}
-	text = {
-		trigger = { FROM = { is_society = warrior_lodge_hellenic } }
-		localisation_key = string_WL_hellenic_religion
-	}
-	fallback_text = {
-		localisation_key = string_no_religion # Fallback, in case it fails to find relevant info
-	}
-}
-
 
 ## Flything Insults Custom Loc extravaganza. ##
 
@@ -1733,31 +1543,10 @@ defined_text = { #Used to refer to a type of "warrior", initial cap...
 	name = GetWarriorLodgeCompetitionType
 	
 	text = {
-		localisation_key = String_flyting
-		trigger = {
-			OR = { #Only for northeners
-				society_member_of = warrior_lodge_norse
-				society_member_of = warrior_lodge_slavic
-				society_member_of = warrior_lodge_baltic
-				society_member_of = warrior_lodge_finnish
-			}
-		}
-	}
-	text = {
 		localisation_key = String_arm_wrestling
 	}
 	text = {
 		localisation_key = String_drinking
-		trigger = { NOT = { society_member_of = warrior_lodge_bon } }
-	}
-	text = {
-		localisation_key = String_dice
-		trigger = { 
-			OR = { 
-				society_member_of = warrior_lodge_bon
-				society_member_of = warrior_lodge_hellenic
-			}
-		}
 	}
 	fallback_text = {
 		localisation_key = String_arm_wrestling # Fallback, in case it fails to find relevant info

@@ -2991,54 +2991,6 @@ feudal_elective = {
 				}
 			}
 		}
-		additive_modifier = { #Shunned for being of opposite pagan branch.
-			value = -25
-			localisation_key = tooltip_feudal_elector_vote_pagan_branch_negative
-			NOT = { character = FROM } #Do not judge yourself.
-			religion = FROM #Will care only if of same religion.
-			OR = {
-				AND = {
-					trait = pagan_branch_1
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_3
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_2
-					FROM = {
-						OR = {
-							trait = pagan_branch_1
-							trait = pagan_branch_3
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_3
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_1
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_4
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_3
-							trait = pagan_branch_1
-						}
-					}
-				}
-			}
-		}
 		additive_modifier = { #Shunned for being unproved courtier in the shadow of the ruler.
 			value = -10
 			localisation_key = tooltip_feudal_elector_vote_spoiled_courtier
@@ -6327,54 +6279,6 @@ tanistry = {
 				}
 			}
 		}
-		additive_modifier = { #Shunned for being of opposite pagan branch.
-			value = -15
-			localisation_key = tooltip_feudal_elector_vote_pagan_branch_negative
-			NOT = { character = FROM } #Do not judge yourself.
-			religion = FROM #Will care only if of same religion.
-			OR = {
-				AND = {
-					trait = pagan_branch_1
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_3
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_2
-					FROM = {
-						OR = {
-							trait = pagan_branch_1
-							trait = pagan_branch_3
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_3
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_1
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_4
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_3
-							trait = pagan_branch_1
-						}
-					}
-				}
-			}
-		}
 		additive_modifier = { #Shunned for being unproved courtier in the shadow of the ruler.
 			value = -10
 			localisation_key = tooltip_feudal_elector_vote_spoiled_courtier
@@ -9639,54 +9543,6 @@ elective_gavelkind = {
 				OR = {
 					trait = is_fat
 					trait = is_malnourished
-				}
-			}
-		}
-		additive_modifier = { #Shunned for being of opposite pagan branch.
-			value = -15
-			localisation_key = tooltip_feudal_elector_vote_pagan_branch_negative
-			NOT = { character = FROM } #Do not judge yourself.
-			religion = FROM #Will care only if of same religion.
-			OR = {
-				AND = {
-					trait = pagan_branch_1
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_3
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_2
-					FROM = {
-						OR = {
-							trait = pagan_branch_1
-							trait = pagan_branch_3
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_3
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_1
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_4
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_3
-							trait = pagan_branch_1
-						}
-					}
 				}
 			}
 		}
@@ -13313,57 +13169,6 @@ eldership_rules = {
 				holder_scope = { character = ROOT }
 			}
 		}
-		additive_modifier = { #Shunned for being of opposite pagan branch.
-			value = -15
-			localisation_key = tooltip_feudal_elector_vote_pagan_branch_negative
-			NOT = { character = FROM } #Do not judge yourself.
-			religion = FROM #Will care only if of same religion.
-			OR = {
-				AND = {
-					trait = pagan_branch_1
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_3
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_2
-					FROM = {
-						OR = {
-							trait = pagan_branch_1
-							trait = pagan_branch_3
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_3
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_1
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_4
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_3
-							trait = pagan_branch_1
-						}
-					}
-				}
-			}
-			FROMFROM = {
-				holder_scope = { character = ROOT }
-			}
-		}
 		##########################   Raw Opinion bonus towards Candidate   ##########################
 		additive_modifier = {
 			value = -50
@@ -16191,55 +15996,6 @@ eldership_rules = {
 				OR = {
 					trait = is_fat
 					trait = is_malnourished
-				}
-			}
-			has_elector_stance = { stance = elder_pleased title = FROMFROM }
-		}
-		additive_modifier = { #Shunned for being of opposite pagan branch.
-			value = -15
-			localisation_key = tooltip_feudal_elector_vote_pagan_branch_negative
-			NOT = { character = FROM } #Do not judge yourself.
-			religion = FROM #Will care only if of same religion.
-			OR = {
-				AND = {
-					trait = pagan_branch_1
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_3
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_2
-					FROM = {
-						OR = {
-							trait = pagan_branch_1
-							trait = pagan_branch_3
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_3
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_1
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_4
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_3
-							trait = pagan_branch_1
-						}
-					}
 				}
 			}
 			has_elector_stance = { stance = elder_pleased title = FROMFROM }

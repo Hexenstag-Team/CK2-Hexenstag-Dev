@@ -6981,6 +6981,190 @@ spawn_bull_centaur_effect = {
 	}
 }
 
+vlad_troops_effect = {
+	#8,000 Back Knights and 80,000 Undead Hordes
+	spawn_unit = {	#knights 1000
+		owner = ROOT
+		province = 386 # c_drakenhof
+		home = 386 # c_drakenhof
+		disband_on_peace = yes
+		cannot_inherit = yes
+		attrition = 0
+		merge = yes
+		
+		troops = {
+			knights = {
+				1000
+				1000
+			}
+			undead_horde = {
+				10000
+				10000
+			}
+		}
+	}
+	spawn_unit = {	#knights 1000
+		owner = ROOT
+		province = 386 # c_drakenhof
+		home = 386 # c_drakenhof
+		disband_on_peace = yes
+		cannot_inherit = yes
+		attrition = 0
+		merge = yes
+		
+		troops = {
+			knights = {
+				1000
+				1000
+			}
+		}
+	}
+	spawn_unit = {	#knights 1000
+		owner = ROOT
+		province = 386 # c_drakenhof
+		home = 386 # c_drakenhof
+		disband_on_peace = yes
+		cannot_inherit = yes
+		attrition = 0
+		merge = yes
+		
+		troops = {
+			knights = {
+				1000
+				1000
+			}
+			undead_horde = {
+				10000
+				10000
+			}
+		}
+	}
+	spawn_unit = {	#knights 1000
+		owner = ROOT
+		province = 386 # c_drakenhof
+		home = 386 # c_drakenhof
+		disband_on_peace = yes
+		cannot_inherit = yes
+		attrition = 0
+		merge = yes
+		
+		troops = {
+			knights = {
+				1000
+				1000
+			}
+			undead_horde = {
+				10000
+				10000
+			}
+		}
+	}
+	spawn_unit = {	#knights 1000
+		owner = ROOT
+		province = 386 # c_drakenhof
+		home = 386 # c_drakenhof
+		disband_on_peace = yes
+		cannot_inherit = yes
+		attrition = 0
+		merge = yes
+		
+		troops = {
+			knights = {
+				1000
+				1000
+			}
+			undead_horde = {
+				10000
+				10000
+			}
+		}
+	}
+	spawn_unit = {	#knights 1000
+		owner = ROOT
+		province = 386 # c_drakenhof
+		home = 386 # c_drakenhof
+		disband_on_peace = yes
+		cannot_inherit = yes
+		attrition = 0
+		merge = yes
+		
+		troops = {
+			knights = {
+				1000
+				1000
+			}
+			undead_horde = {
+				10000
+				10000
+			}
+		}
+	}
+	spawn_unit = {	#knights 1000
+		owner = ROOT
+		province = 386 # c_drakenhof
+		home = 386 # c_drakenhof
+		disband_on_peace = yes
+		cannot_inherit = yes
+		attrition = 0
+		merge = yes
+		
+		troops = {
+			knights = {
+				1000
+				1000
+			}
+			undead_horde = {
+				10000
+				10000
+			}
+		}
+	}
+	spawn_unit = {	#knights 1000
+		owner = ROOT
+		province = 386 # c_drakenhof
+		home = 386 # c_drakenhof
+		disband_on_peace = yes
+		cannot_inherit = yes
+		attrition = 0
+		merge = yes
+		
+		troops = {
+			knights = {
+				1000
+				1000
+			}
+			undead_horde = {
+				10000
+				10000
+			}
+		}
+	}
+}
+
+clr_imperial_flags = {
+	primary_title = {
+		clr_title_flag = claimant
+		clr_title_flag = independent
+		clr_title_flag = vassal_of_sylvania
+		clr_title_flag = vassal_of_reikland
+		clr_title_flag = vassal_of_westerland
+		clr_title_flag = vassal_of_talabecland
+		clr_title_flag = vassal_of_middenland
+		clr_title_flag = vassal_of_ostermark
+		clr_title_flag = vassal_of_nordland
+		clr_title_flag = vassal_of_hochland
+		clr_title_flag = vassal_of_averland
+		clr_title_flag = vassal_of_ostland
+		clr_title_flag = vassal_of_wissenland
+		clr_title_flag = vassal_of_stirland
+		clr_title_flag = vassal_of_solland
+		clr_title_flag = vassal_of_drakwald
+		clr_title_flag = vassal_of_imperial_sylvania
+		clr_title_flag = vassal_of_imperial_mootland
+		clr_title_flag = vassal_of_nuln
+	}
+}
+
 patron_imperial_pantheon_effect = {
 	random_list = {
 		#imperial_pantheon Gods
@@ -7000,11 +7184,15 @@ patron_imperial_pantheon_effect = {
 				factor = 100
 				OR = {
 					has_landed_title = e_reikland
-					has_landed_title = k_cult_of_sigmar
+					has_landed_title = d_cult_of_sigmar
 					has_landed_title = d_arch_lectory_talabheim
 					has_landed_title = d_arch_lectory_nuln
 					culture = witchhunter_culture
 				}
+			}
+			modifier = {
+				factor = 20
+				any_owned_bloodline = { has_bloodline_flag = legend_bloodline_bjorn }
 			}
 			modifier = {
 				factor = 10
@@ -7057,7 +7245,7 @@ patron_imperial_pantheon_effect = {
 				factor = 100
 				OR = {
 					has_landed_title = e_talabecland
-					has_landed_title = k_cult_of_taal_and_rhya
+					has_landed_title = d_cult_of_taal_and_rhya
 					has_landed_title = d_longshanks
 					has_landed_title = d_knights_of_taals_fury
 				}
@@ -7109,7 +7297,8 @@ patron_imperial_pantheon_effect = {
 				factor = 100
 				OR = {
 					has_landed_title = e_middenland
-					has_landed_title = k_cult_of_ulric
+					has_landed_title = d_cult_of_ulric
+					
 				}
 			}
 			modifier = {
@@ -7188,7 +7377,7 @@ patron_imperial_pantheon_effect = {
 			modifier = {
 				factor = 100
 				OR = {
-					has_landed_title = k_cult_of_morr
+					# has_landed_title = d_cult_of_morr
 					has_landed_title = d_knights_of_the_black_rose
 					has_landed_title = d_order_of_the_raven
 					has_landed_title = d_knights_of_morr
@@ -7702,3 +7891,858 @@ patron_imperial_pantheon_effect = {
 		}
 	}
 }
+
+patron_classical_pantheon_effect = {
+	random_list = {
+		#classical_pantheon Gods
+		5 = {	#Taal&Rhya
+			modifier = {
+				factor = 100
+				OR = {
+					has_landed_title = e_talabecland
+					has_landed_title = d_cult_of_taal_and_rhya
+					has_landed_title = d_longshanks
+					has_landed_title = d_knights_of_taals_fury
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					culture = talabeclander
+					culture = ostermarker
+					culture = ostlander
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					culture_group = kislevite_group
+					culture_group = norscan_group
+					culture = nordlander
+					culture = middenlander
+					culture = hochlander
+					culture = drakwalder
+				}
+			}
+			if = {
+				limit = {
+					NOR = {
+						has_global_flag = imperial_churches_unified_sigmar
+						has_global_flag = imperial_churches_unified_taal_rhya
+						has_global_flag = imperial_churches_unified_ulric
+						has_global_flag = imperial_churches_unified
+					}
+				}
+				add_trait = patron_taal_rhya
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_global_flag = imperial_churches_unified_sigmar
+						has_global_flag = imperial_churches_unified_taal_rhya
+						has_global_flag = imperial_churches_unified_ulric
+						has_global_flag = imperial_churches_unified
+					}
+				}
+				add_trait = patron_taal_rhya_united
+			}
+		}
+		5 = {	#Ulric
+			modifier = {
+				factor = 100
+				OR = {
+					has_landed_title = e_middenland
+					has_landed_title = d_cult_of_ulric
+					
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					culture_group = norscan_group
+					culture = middenlander
+					culture = drakwalder
+					culture = hochlander
+					culture = ostlander
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					culture_group = kislevite_group
+					culture = talabeclander
+					culture = ostermarker
+					culture = nordlander
+				}
+			}
+			if = {
+				limit = {
+					NOR = {
+						has_global_flag = imperial_churches_unified_sigmar
+						has_global_flag = imperial_churches_unified_taal_rhya
+						has_global_flag = imperial_churches_unified_ulric
+						has_global_flag = imperial_churches_unified
+					}
+				}
+				add_trait = patron_ulric
+			}
+			else_if = {
+				limit = {
+					OR = {
+						has_global_flag = imperial_churches_unified_sigmar
+						has_global_flag = imperial_churches_unified_taal_rhya
+						has_global_flag = imperial_churches_unified_ulric
+						has_global_flag = imperial_churches_unified
+					}
+				}
+				add_trait = patron_ulric_united
+			}
+		}
+		5 = {	#Manann
+			modifier = {
+				factor = 100
+				OR = {
+					has_landed_title = d_knights_mariner
+					has_landed_title = d_sons_of_manann
+				}
+			}
+			modifier = {
+				factor = 10
+				culture = westerlander
+			}
+			modifier = {
+				factor = 10
+				government = merchant_republic_government
+			}
+			
+			modifier = {
+				factor = 5
+				location = { port = yes }
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					culture_group = norscan_group
+					culture_group = sartosan_group
+				}
+			}
+			add_trait = patron_manann
+		}
+		5 = {	#Morr
+			modifier = {
+				factor = 100
+				OR = {
+					# has_landed_title = d_cult_of_morr
+					has_landed_title = d_knights_of_the_black_rose
+					has_landed_title = d_order_of_the_raven
+					has_landed_title = d_knights_of_morr
+				}
+				
+			}
+			modifier = {
+				factor = 10
+				culture = sylvanian
+			}
+			add_trait = patron_morr
+		}
+		10 = {	#Verena
+			modifier = {
+				factor = 5
+				OR = {
+					learning > 15
+					diplomacy > 15
+					stewardship > 15
+					trait = grey_eminence
+					trait = midas_touched
+					is_learned_trigger = yes
+
+				}
+			}
+			modifier = {
+				factor = 2.5
+				OR = {
+					trait = charismatic_negotiator
+					trait = brilliant_strategist
+					trait = fortune_builder
+					trait = elusive_shadow
+					trait = martial_cleric
+					is_smart_trigger = yes
+				}
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+			add_trait = patron_verena
+		}
+		10 = {	#Myrmidia
+			modifier = {
+				factor = 100
+				OR = {
+					has_landed_title = k_cult_of_myrmidia
+					has_landed_title = d_high_temple_of_remas
+					has_landed_title = d_high_temple_of_magritta
+				}
+			}
+			modifier = {
+				factor = 10
+				OR = {
+					culture_group = tilean_group
+					culture_group = estalian_group
+				}
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					trait = brilliant_strategist
+					has_lifestyle_martial_trigger = yes
+				}
+			}
+			add_trait = patron_myrmidia
+		}
+		5 = {	#Shallya
+			modifier = {
+				factor = 100
+				has_landed_title = k_cult_of_shallya
+			}
+			modifier = {
+				factor = 10
+				is_lowborn = yes
+				NOT = { trait = peasant_leader }
+			}
+			modifier = {
+				factor = 5
+				is_female = yes
+			}
+			modifier = {
+				factor = 5
+				OR = {
+					trait = monk
+					trait = nun
+				}
+			}
+			add_trait = patron_shallya
+		}
+		5 = {	#Ranald
+			modifier = {
+				factor = 10
+				government = merchant_republic_government
+			}
+			modifier = {
+				factor = 5
+				culture = westerlander
+			}
+			modifier = {
+				factor = 5
+				trait = midas_touched
+			}
+			add_trait = patron_ranald
+		}
+
+	###Minor Gods###
+
+		#Minor Lucian Gods
+		20 = {	#Lucan
+			trigger = {
+				culture = lucian
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_lucan
+		}
+		20 = {	#Luccina
+			trigger = {
+				culture = lucian
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_luccina
+		}
+		#Minor Miraglian Gods
+		20 = {	#Santo Galdin
+			trigger = {
+				culture = miraglian
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_santo_galdin
+		}
+		#Minor Myken Gods
+		20 = {	#Santo Plinio
+			trigger = {
+				culture = myken
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_santo_plinio
+		}
+		#Minor Reman Gods
+		20 = {	#Santo Giacomo
+			trigger = {
+				culture = reman
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_santo_giacomo
+		}
+		#Minor Tobaro Gods
+		20 = {	#Santo Tomasso
+			trigger = {
+				culture = tobaran
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_santo_tomasso
+		}
+		#Minor Umbrian Gods
+		20 = {	#Santo Slessandro
+			trigger = {
+				culture = umbrian
+			}
+			modifier = {
+				factor = 2
+				is_lowborn = yes
+			}
+			add_trait = patron_santo_alessandro
+		}
+	}
+}
+
+imperial_claimant_vassal = {
+	imperial_claimant = yes
+	imperial_vassal = yes
+}
+
+imperial_claimant = {
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_drakwald
+			}
+		}
+		holder_scope = {
+			gain_title = e_drakwald
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_solland
+			}
+		}
+		holder_scope = {
+			gain_title = e_solland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_reikland
+			}
+		}
+		holder_scope = {
+			gain_title = e_reikland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_averland
+			}
+		}
+		holder_scope = {
+			gain_title = e_averland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_hochland
+			}
+		}
+		holder_scope = {
+			gain_title = e_hochland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_middenland
+			}
+		}
+		holder_scope = {
+			gain_title = e_middenland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_mootland
+			}
+		}
+		holder_scope = {
+			gain_title = e_imperial_mootland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_nordland
+			}
+		}
+		holder_scope = {
+			gain_title = e_nordland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_ostermark
+			}
+		}
+		holder_scope = {
+			gain_title = e_ostermark
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_ostland
+			}
+		}
+		holder_scope = {
+			gain_title = e_ostland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_stirland
+			}
+		}
+		holder_scope = {
+			gain_title = e_stirland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_sylvania
+			}
+		}
+		holder_scope = {
+			gain_title = e_imperial_sylvania
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_talabecland
+			}
+		}
+		holder_scope = {
+			gain_title = e_talabecland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_westerland
+			}
+		}
+		holder_scope = {
+			gain_title = e_westerland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = k_wissenland
+			}
+		}
+		holder_scope = {
+			gain_title = e_wissenland
+		}
+	}
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			primary_title = {
+				title = d_nuln
+			}
+		}
+		holder_scope = {
+			gain_title = e_nuln
+		}
+	}
+}
+
+imperial_vassal = {
+	imperial_vassal_drakwald = yes
+	imperial_vassal_solland = yes
+	imperial_vassal_reikland = yes
+	imperial_vassal_averland = yes
+	imperial_vassal_hochland = yes
+	imperial_vassal_middenland = yes
+	imperial_vassal_mootland = yes
+	imperial_vassal_nordland = yes
+	imperial_vassal_ostermark = yes
+	imperial_vassal_ostland = yes
+	imperial_vassal_ostland = yes
+	imperial_vassal_stirland = yes
+	imperial_vassal_sylvania = yes
+	imperial_vassal_talabecland = yes
+	imperial_vassal_westerland = yes
+	imperial_vassal_wissenland = yes
+	imperial_vassal_nuln = yes
+}
+
+imperial_vassal_drakwald = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_drakwald
+			}
+		}
+		set_defacto_liege = e_drakwald
+	}
+}
+
+imperial_vassal_solland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_solland
+			}
+		}
+		set_defacto_liege = e_solland
+	}
+}
+
+imperial_vassal_reikland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_reikland
+			}
+		}
+		set_defacto_liege = e_reikland
+	}
+}
+
+imperial_vassal_averland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_averland
+			}
+		}
+		set_defacto_liege = e_averland
+	}
+}
+
+imperial_vassal_hochland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_hochland
+			}
+		}
+		set_defacto_liege = e_hochland
+	}
+}
+
+imperial_vassal_middenland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_middenland
+			}
+		}
+		set_defacto_liege = e_middenland
+	}
+}
+
+imperial_vassal_mootland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_mootland
+			}
+		}
+		set_defacto_liege = e_imperial_mootland
+	}
+}
+
+imperial_vassal_nordland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_nordland
+			}
+		}
+		set_defacto_liege = e_nordland
+	}
+}
+
+imperial_vassal_ostermark = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_ostermark
+			}
+		}
+		set_defacto_liege = e_ostermark
+	}
+}
+
+imperial_vassal_ostland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_ostland
+			}
+		}
+		set_defacto_liege = e_ostland
+	}
+}
+
+imperial_vassal_stirland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_stirland
+			}
+		}
+		set_defacto_liege = e_stirland
+	}
+}
+
+imperial_vassal_sylvania = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_sylvania
+			}
+		}
+		set_defacto_liege = e_imperial_sylvania
+	}
+}
+
+imperial_vassal_talabecland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_talabecland
+			}
+		}
+		set_defacto_liege = e_talabecland
+	}
+}
+
+imperial_vassal_westerland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_westerland
+			}
+		}
+		set_defacto_liege = e_westerland
+	}
+}
+
+imperial_vassal_wissenland = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_wissenland
+			}
+		}
+		set_defacto_liege = e_wissenland
+	}
+}
+
+imperial_vassal_nuln = {
+	if = {
+		limit = {
+			primary_title = {
+				has_title_flag = vassal_of_nuln
+			}
+		}
+		set_defacto_liege = e_nuln
+	}
+}
+
+change_imperial_flags = {
+	if = {
+		limit = {
+			independent = yes
+			NOT = {
+				is_imperial_claimant = yes
+			}
+		}
+		primary_title = {
+			set_title_flag = independent
+		}
+	}
+	change_imperial_vassal = yes
+}
+
+change_imperial_vassal = {
+	if = {
+		limit = {
+			vassal_of = e_drakwald
+		}
+		primary_title = {
+			set_title_flag = vassal_of_drakwald
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_solland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_solland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_reikland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_reikland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_averland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_averland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_hochland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_hochland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_middenland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_middenland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_imperial_mootland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_mootland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_nordland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_nordland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_ostermark
+		}
+		primary_title = {
+			set_title_flag = vassal_of_ostermark
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_ostland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_ostland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_stirland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_stirland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_imperial_mootland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_sylvania
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_talabecland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_talabecland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_westerland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_westerland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_wissenland
+		}
+		primary_title = {
+			set_title_flag = vassal_of_wissenland
+		}
+	}
+	if = {
+		limit = {
+			vassal_of = e_nuln
+		}
+		primary_title = {
+			set_title_flag = vassal_of_nuln
+		}
+	}
+}
+

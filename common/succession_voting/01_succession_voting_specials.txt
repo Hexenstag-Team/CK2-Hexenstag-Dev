@@ -4299,54 +4299,6 @@ byzantine_elective = {
 				}
 			}
 		}
-		additive_modifier = { #Shunned for being of opposite pagan branch.
-			value = -25
-			localisation_key = tooltip_feudal_elector_vote_pagan_branch_negative
-			NOT = { character = FROM } #Do not judge yourself.
-			religion = FROM #Will care only if of same religion.
-			OR = {
-				AND = {
-					trait = pagan_branch_1
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_3
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_2
-					FROM = {
-						OR = {
-							trait = pagan_branch_1
-							trait = pagan_branch_3
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_3
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_1
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = {
-					trait = pagan_branch_4
-					FROM = {
-						OR = {
-							trait = pagan_branch_2
-							trait = pagan_branch_3
-							trait = pagan_branch_1
-						}
-					}
-				}
-			}
-		}
 		additive_modifier = { #Shunned for being unproved courtier in the shadow of the ruler.
 			value = -10
 			localisation_key = tooltip_feudal_elector_vote_spoiled_courtier
@@ -4815,13 +4767,13 @@ hre_feudal_elective = {
 		additive_modifier = {
 			localisation_key = tooltip_hre_vote_strength_theocracy
 			is_theocracy = yes
-			ROOT = { has_landed_title = k_cult_of_sigmar}
+			ROOT = { has_landed_title = d_cult_of_sigmar}
 			value = 1
 		}
 		additive_modifier = {
 			localisation_key = tooltip_hre_vote_strength_theocracy
 			is_theocracy = yes
-			ROOT = { has_landed_title = k_cult_of_sigmar}
+			ROOT = { has_landed_title = d_cult_of_sigmar}
 			value = 1
 		}
 	}
@@ -4850,8 +4802,8 @@ hre_feudal_elective = {
 		additive_modifier = {
 			value = 50
 			OR = {
-				has_landed_title = k_cult_of_sigmar
-				has_landed_title = k_cult_of_ulric
+				has_landed_title = d_cult_of_sigmar
+				has_landed_title = d_cult_of_ulric
 				has_landed_title = k_reikland
 				has_landed_title = k_averland
 				has_landed_title = k_hochland
@@ -14346,54 +14298,6 @@ military_elective = {
 				OR = { 
 					trait = is_fat
 					trait = is_malnourished
-				}
-			}
-		}
-		additive_modifier = { #Shunned for being of opposite pagan branch.
-			value = -25
-			localisation_key = tooltip_feudal_elector_vote_pagan_branch_negative
-			NOT = { character = FROM } #Do not judge yourself.
-			religion = FROM #Will care only if of same religion.
-			OR = { 
-				AND = { 
-					trait = pagan_branch_1 	
-					FROM = { 
-						OR = { 
-							trait = pagan_branch_2
-							trait = pagan_branch_3
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = { 
-					trait = pagan_branch_2 	
-					FROM = { 
-						OR = { 
-							trait = pagan_branch_1
-							trait = pagan_branch_3
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = { 
-					trait = pagan_branch_3 	
-					FROM = { 
-						OR = { 
-							trait = pagan_branch_2
-							trait = pagan_branch_1
-							trait = pagan_branch_4
-						}
-					}
-				}
-				AND = { 
-					trait = pagan_branch_4 	
-					FROM = { 
-						OR = { 
-							trait = pagan_branch_2
-							trait = pagan_branch_3
-							trait = pagan_branch_1
-						}
-					}
 				}
 			}
 		}
