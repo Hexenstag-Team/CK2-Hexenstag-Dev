@@ -715,14 +715,13 @@ character_event = {
 	is_triggered_only = yes
 
 	option = { name = EVTOPTAschaos17
-		trigger = { OR = {
-			society_member_of = cult_of_tzeentch
-			society_member_of = cult_of_undivided
-			trait = lore_tzeentch
+		trigger = {
+			OR = {
+				trait = lore_tzeentch
 				lore_of_shadows_trigger = yes
 				trait = lore_dark_magic
-				}
 			}
+		}
 		random_list = {
 			60 = {
 					modifier = {
@@ -806,8 +805,6 @@ character_event = {
 	}
 	option = { name = EVTOPTBschaos17
 		trigger = { OR = {
-				society_member_of = cult_of_nurgle
-				society_member_of = cult_of_undivided
 				trait = lore_nurgle
 				trait = chaos_dwarf_sorcerer
 				trait = lore_dark_magic } }
@@ -894,8 +891,6 @@ character_event = {
 	}
 	option = { name = EVTOPTCschaos17
 		trigger = { OR = {
-					society_member_of = cult_of_slaanesh
-					society_member_of = cult_of_undivided
 					trait = lore_slaanesh
 				lore_of_shadows_trigger = yes
 				trait = lore_tzeentch
@@ -983,8 +978,6 @@ character_event = {
 	}
 	option = { name = EVTOPTDschaos17
 		trigger = { OR = {
-					society_member_of = cult_of_khorne
-					society_member_of = cult_of_undivided
 					trait = lore_dark_magic
 					trait = lore_tzeentch
 					trait = lore_slaanesh
@@ -3216,21 +3209,7 @@ character_event = {
 		FROMFROM = { character_event = { id = schaos.43 } }
 		ai_chance = { factor = 1
 			modifier = { factor = 0
-				OR = { society_member_of = cult_of_tzeentch3
-				society_member_of = cult_of_tzeentch2
-				society_member_of = cult_of_tzeentch
-				society_member_of = cult_of_nurgle3
-				society_member_of = cult_of_nurgle2
-				society_member_of = cult_of_nurgle
-				society_member_of = cult_of_slaanesh3
-				society_member_of = cult_of_slaanesh2
-				society_member_of = cult_of_slaanesh
-				society_member_of = cult_of_khorne3
-				society_member_of = cult_of_khorne2
-				society_member_of = cult_of_khorne
-				society_member_of = cult_of_undivided3
-				society_member_of = cult_of_undivided2
-				society_member_of = cult_of_undivided
+				OR = {
 					religion_group = chaos_gods_group }
 				}
 			 }
@@ -3241,21 +3220,6 @@ character_event = {
 		increase_visibility_effect = yes
 		ai_chance = { factor = 1
 			modifier = { factor = 0
-			NOR = { society_member_of = cult_of_tzeentch3
-				society_member_of = cult_of_tzeentch2
-				society_member_of = cult_of_tzeentch
-				society_member_of = cult_of_nurgle3
-				society_member_of = cult_of_nurgle2
-				society_member_of = cult_of_nurgle
-				society_member_of = cult_of_slaanesh3
-				society_member_of = cult_of_slaanesh2
-				society_member_of = cult_of_slaanesh
-				society_member_of = cult_of_khorne3
-				society_member_of = cult_of_khorne2
-				society_member_of = cult_of_khorne
-				society_member_of = cult_of_undivided3
-				society_member_of = cult_of_undivided2
-				society_member_of = cult_of_undivided }
 				NOT = { religion_group = chaos_gods_group }
 				}
 			 }

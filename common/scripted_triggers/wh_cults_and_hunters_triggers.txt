@@ -1,0 +1,92 @@
+cults_grace_period_trigger = {
+    OR  = {
+        ai = yes
+        total_years_played >= 5 #will cover ai = no in most cases, including the easier setting
+        #now address edge cases in first five years
+        has_game_rule = {
+            name = warhammer_cult_grace_period
+            value = hardmode
+        }
+        AND = {
+            total_years_played >= 1
+            has_game_rule = {
+                name = warhammer_cult_grace_period
+                value = default
+            }
+        }
+    }
+}
+
+#used in event chains where the accused has already been identified as event_target:courtier_accused_by_witch_hunter
+accused_courtier_is_secret_chaos_worshipper_trigger = {
+    event_target:courtier_accused_by_witch_hunter = {
+        OR = {
+            true_religion_group = chaos_gods_group
+            is_mutated_trigger = yes
+        }
+    }
+}
+
+accused_courtier_is_secret_necromantic_acolyte_trigger = {
+    event_target:courtier_accused_by_witch_hunter = {
+        true_religion_group = necromantic_group
+    }
+}
+
+has_possible_cultic_activity_trigger = {
+    OR = {
+        has_province_modifier = clue_extortion_cultic
+        has_province_modifier = clue_extortion_normal
+        has_province_modifier = clue_rituals_cultic
+        has_province_modifier = clue_rituals_normal
+        has_province_modifier = clue_abductions_cultic
+        has_province_modifier = clue_abductions_normal
+        has_province_modifier = clue_murders_cultic
+        has_province_modifier = clue_murders_normal
+        has_province_modifier = clue_contagion_cultic
+        has_province_modifier = clue_contagion_normal
+        has_province_modifier = clue_celebration_cultic
+        has_province_modifier = clue_celebration_normal
+    }
+}
+
+witch_hunter_is_emissary_of_order_trigger = {
+    event_target:court_witchhunter = {
+        has_character_flag = emissary_of_order_witch_hunter
+    }
+}
+
+witch_hunter_boss_fight_total_victory_trigger = {
+    check_variable = {
+        which = boss_fight_strength
+        value >= 50
+    }
+}
+
+witch_hunter_boss_fight_killed_cult_leader_trigger = {
+    check_variable = {
+        which = boss_fight_strength
+        value >= 0
+    }
+}
+
+witch_hunter_boss_fight_catastrophe_trigger = {
+    check_variable = {
+        which = boss_fight_strength
+        value < -50
+    }
+}
+
+witch_hunter_boss_fight_pyrrhic_victory_trigger = {
+    NOT = {
+        witch_hunter_boss_fight_total_victory_trigger = yes
+    }
+    witch_hunter_boss_fight_killed_cult_leader_trigger = yes
+}
+
+witch_hunter_boss_fight_partial_victory_trigger = {
+    NOR = {
+        witch_hunter_boss_fight_killed_cult_leader_trigger = yes
+        witch_hunter_boss_fight_catastrophe_trigger = yes
+    }
+}

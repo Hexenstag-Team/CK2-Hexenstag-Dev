@@ -1,0 +1,133 @@
+hunter_pattern_for = {
+    icon = 9
+    pattern_type = for
+
+    witch_hunter_law_0 = {
+        #moving to traditional methods is favored by less zealous courtiers, though as the doom track advances all but the most cynical will be cautious about such laxity
+        OR = {
+            AND = {
+                is_doom_very_low = yes
+                ai_zeal < 50
+            }
+            AND = {
+                is_doom_low = yes
+                ai_zeal < 0
+            }
+            AND = {
+                is_doom_medium = yes
+                ai_zeal < -50
+            }
+            ai_zeal < -80
+        }
+    }
+
+    witch_hunter_law_1 = {
+        OR = {
+            #renouncing tradition and employing specialists is favored mainly by zealous courtiers, though others will change their mind as the doom track advances
+            AND = {
+                has_law = witch_hunter_law_0
+                OR = {
+                    ai_zeal > 50
+                    OR = {
+                        is_doom_medium = yes
+                        is_doom_high = yes
+                        is_doom_very_high = yes
+                    }
+                }
+            }
+            #abandoning an inquisition is only favored by cynics
+            AND = {
+                has_law = witch_hunter_law_2
+                ai_zeal < -50
+            }
+        }
+    }
+
+    witch_hunter_law_2 = {
+        #don't worry about stepping down from emergency measures, it doesn't last long enough
+        ai_zeal > 0
+        OR = {
+            is_doom_very_high = yes
+            AND = {
+                ai_zeal > 25
+                OR = {
+                    is_doom_medium = yes
+                    is_doom_high = yes
+                }
+            }
+        }
+    }
+
+    witch_hunter_law_3 = {
+        #only allowed when doom is high or very high
+        #nobody really wants exceptional measures, but
+        ai_zeal > 0
+        OR = {
+            is_doom_very_high = yes
+            ai_zeal > -50
+        }
+    }
+
+}
+
+hunter_pattern_against = {
+    icon = 10
+    pattern_type = against
+
+    witch_hunter_law_0 = {
+        OR = {
+            AND = {
+                is_doom_very_low = yes
+                ai_zeal > 75
+            }
+            AND = {
+                is_doom_low = yes
+                ai_zeal > 25
+            }
+            AND = {
+                is_doom_medium = yes
+                ai_zeal > -75
+            }
+            ai_zeal > -90
+        }
+    }
+
+    witch_hunter_law_1 = {
+        OR = {
+            #renouncing tradition and employing specialists is favored mainly by zealous courtiers, though others will change their mind as the doom track advances
+            AND = {
+                has_law = witch_hunter_law_0
+                OR = {
+                    ai_zeal < 25
+                    is_doom_very_low
+                }
+            }
+            #abandoning an inquisition is only favored by cynics
+            AND = {
+                has_law = witch_hunter_law_2
+                ai_zeal > -25
+            }
+        }
+    }
+
+    witch_hunter_law_2 = {
+        ai_zeal < -25
+        OR = {
+            is_doom_very_high = yes
+            AND = {
+                ai_zeal < -75
+                OR = {
+                    is_doom_medium = yes
+                    is_doom_high = yes
+                }
+            }
+        }    }
+
+    witch_hunter_law_3 = {
+        ai_zeal < -25
+        OR = {
+            is_doom_very_high = yes
+            ai_zeal < -75
+        }
+    }
+}

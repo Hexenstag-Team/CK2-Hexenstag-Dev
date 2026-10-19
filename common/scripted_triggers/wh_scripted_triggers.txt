@@ -53,30 +53,6 @@ can_use_retinue_trigger = {
 	}
 }
 
-is_state_witch_hunter_trigger = {
-	custom_tooltip = {
-		text = is_certified_witch_hunter_2
-		OR = {
-			society_member_of = sigmar_witch_hunters
-			#society_member_of = the_inquisition
-			#society_member_of = bretonnian_inquisiton
-			#society_member_of = solkanite_witch_hunters
-		}
-	}
-}
-is_witch_hunter_trigger = {
-	custom_tooltip = {
-		text = is_certified_witch_hunter
-		OR = {
-			trait = witch_hunter
-			society_member_of = sigmar_witch_hunters
-			#society_member_of = the_inquisition
-			#society_member_of = bretonnian_inquisiton
-			#society_member_of = solkanite_witch_hunters
-		}
-		society_rank = 3 #Rank 3 and Up can order up Regulars
-	}
-}
 is_vampire_trigger = {
 	custom_tooltip = {
 		text = is_vampire_hidden_or_visible
@@ -265,23 +241,6 @@ is_incapacitated_trigger = {
 			trait = hollowed
 			has_virtue_quest = yes
 		}
-	}
-}
-
-is_cultist_trigger = {
-	OR = {
-		society_member_of = cult_of_khorne
-		society_member_of = cult_of_khorne2
-		society_member_of = cult_of_khorne3
-		society_member_of = cult_of_nurgle
-		society_member_of = cult_of_nurgle2
-		society_member_of = cult_of_nurgle3
-		society_member_of = cult_of_slaanesh
-		society_member_of = cult_of_slaanesh2
-		society_member_of = cult_of_slaanesh3
-		society_member_of = cult_of_tzeentch
-		society_member_of = cult_of_tzeentch2
-		society_member_of = cult_of_tzeentch3
 	}
 }
 

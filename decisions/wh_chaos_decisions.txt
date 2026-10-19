@@ -786,9 +786,9 @@ settlement_decisions ={
 			is_landed = yes
 		}
 		potential = {
+			is_capital=yes
 			#Only available if you only live in the wastes.
 			location = {region = world_chaos_wastes}
-			is_capital=yes
 			OR={
 				FROM={ai=no}
 				location={num_of_max_settlements >= 5}

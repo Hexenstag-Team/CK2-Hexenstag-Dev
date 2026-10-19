@@ -82,4 +82,37 @@ fort = {
         scouting = yes
         ai_creation_factor = 88
     }
+    ft_greenskin_patrol = {
+        desc = ft_greenskin_patrol_desc
+        potential = {
+            FROM = {
+                NOR = {
+                    trait = creature_orc
+                    trait = creature_goblin
+                }
+            }
+            OR = {
+                #main greenskin homelands
+                region = world_karaz_ankor
+                region = world_badlands
+                region = world_darklands
+                #other greenskin zones
+                region = world_chaos_wastes_eastern_steppes
+                region = world_old_world_border_princes
+                region = world_troll_country
+                region = world_old_empire_drakwald
+                region = world_old_empire_solland
+                de_jure_liege_or_above = d_marche_orcale
+                de_jure_liege_or_above = d_ostlichschattenwald
+            }
+        }
+        trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
+        gold_cost = 30
+        build_time = 182
+        fort_level = 0.5
+        light_cavalry = 50
+        garrison_size = 0.25
+
+        ai_creation_factor = 88
+    }
 }

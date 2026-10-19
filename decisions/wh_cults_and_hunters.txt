@@ -1,0 +1,160 @@
+decisions = {
+    send_aid_to_underground_cult = {
+        ai = no
+        ai_check_interval = 6000
+
+        potential = {
+            trait = underground_cult_member
+            NOT = {
+                has_character_modifier = underground_cult_member_gave_aid_modifier
+            }
+        }
+
+        allow = {
+            scaled_wealth = 0.5
+        }
+
+        effect = {
+            character_event = {
+                 id = wh_cults_and_hunters.102
+            }
+        }
+		ai_will_do = {
+			factor = 0
+		}
+    }
+}
+
+title_decisions = {
+    start_county_witch_hunt = {
+        ai = no
+        is_high_prio = yes
+        filter = sub_realm
+        ai_target_filter = none
+        ai_check_interval = 6000
+
+        from_potential = {
+            OR = {
+                has_law = witch_hunter_law_0
+                any_courtier_or_vassal = {
+                    has_minor_title = title_court_witchhunter
+                }
+            }
+            NOT = {
+                any_courtier_or_vassal = {
+                    trait = on_witch_hunt
+                }
+            }
+        }
+
+        potential = {
+            tier = COUNT
+            location = {
+                has_possible_cultic_activity_trigger = yes
+            }
+            NOT = {
+                any_courtier_or_vassal = {
+                    trait = on_witch_hunt
+                }
+            }
+        }
+
+        allow = {
+            always = yes
+        }
+
+        effect = {
+            hidden_tooltip = {
+                location = {
+                    save_event_target_as = clue_county
+                    if = {
+                        limit = {
+                            has_province_flag = cultic_activity
+                        }
+                        e_realm_of_undivided = {
+                            random_direct_de_jure_vassal_title = {
+                                limit = {
+                                    has_title_flag = cult_is_influencing_@event_target:clue_county
+                                }
+                                holder_scope = {
+                                    save_event_target_as = active_cult_leader
+                                }
+                            }
+                        }
+                    }
+                }
+                FROM = {
+                    if = {
+                        limit = {
+                            has_law = witch_hunter_law_0
+                        }
+                        random_courtier_or_vassal = {
+                            limit = {
+                                has_job_title = job_spiritual
+                            }
+                            save_event_target_as = court_witchhunter
+                        }
+                    }
+                    else = {
+                        random_courtier_or_vassal = {
+                            limit = {
+                                has_minor_title = title_court_witchhunter
+                            }
+                            save_event_target_as = court_witchhunter
+                        }
+                    }
+                    character_event = {
+                        id = wh_cults_and_hunters.610
+                    }
+                }
+            }
+        }
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+
+    join_underground_cult = {
+        ai = no
+        ai_target_filter = none
+        ai_check_interval = 6000
+
+        from_potential = {
+            has_game_rule = {
+                name = warhammer_cult_grace_period
+                value = hardmode
+            }
+            NOT = {
+                trait = underground_cult_member
+            }
+            religion_group = old_world_group
+            has_secret_religion = no
+        }
+        potential = {
+            has_title_flag = underground_cult
+        }
+        allow = { }
+        effect = {
+            holder_scope = {
+                FROM = {
+                    set_secret_religion = PREV
+                    add_trait = underground_cult_member
+                    set_character_flag = underground_cult_member
+                    save_persistent_event_target = {
+                        name = underground_cult_allegiance
+                        scope = ROOT
+                    }
+                }
+            }
+        }
+		revoke_allowed = {
+			always = no
+		}
+		ai_will_do = {
+			factor = 0
+		}
+    }
+}

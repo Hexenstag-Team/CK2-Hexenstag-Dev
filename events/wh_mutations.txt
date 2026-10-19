@@ -172,6 +172,11 @@ character_event = {
             factor = 0.25
             true_religion_group = ormazd_gods_group
         }
+        #The Emmisary is incorruptible
+        modifier = {
+            factor = 0
+            has_character_flag = emmisary_of_order_witch_hunter
+        }
         # # Magic - touched by the Winds # #
         modifier = {
             factor = 1.1
@@ -233,6 +238,13 @@ character_event = {
         modifier = {
             factor = 0.5
             society_member_of = cult_of_shallya
+        }
+        #Order of the Bleeding Heart - Shallyan Prosperity
+        modifier = {
+            factor = 0.9
+            any_liege = {
+                has_character_modifier = shallyan_prosperity_modifier
+            }
         }
         #Engineers Guild - why are you touching THAT?
         modifier = {
@@ -816,184 +828,4 @@ character_event = {
 			}
 		}
 	}
-}
-
-#################################################
-#####BR ADDITIONS - WITCH HUNTER INTERACTION#####
-#################################################
-###Now the Witch Hunter goes after actual cultists, or those with high suspicion factors###
-
-character_event = {
-	id = wh_mutation.400
-	title = WITCH_HUNT
-	desc = mutation13	###Rename###
-	picture = "GFX_evt_beheading"
-
-	trigger = {
-		age = 16
-		trait = on_witch_hunt
-		top_liege = {
-			NOT = { has_character_modifier = expelled_k_witch_hunters_order }
-		}
-	}
-
-	mean_time_to_happen = { months = 9 }
-
-	option = {
-		name = EVTOPT_WITCHHUNTER_19A
-		random_courtier = {
-			limit = {
-				NOT = { trait = in_hiding }
-				has_major_mutation_trigger = yes
-			}
-			character_event = { id = wh_mutation.401 }
-		}
-	}
-}
-
-#courtier is confronted#
-character_event = {
-	id = wh_mutation.401
-	title = WITCH_HUNT
-	desc = mutation14	###Rename###
-	picture = "GFX_evt_beheading"
-
-	is_triggered_only = yes
-
-	#If not independent, appeal to your liege##
-	option = {
-		name = mutation14a #
-		trigger = { independent = no }
-		liege = {
-			character_event = { id = wh_mutation.402 }
-		}
-	}
-
-	option = {
-		name = EVTOPT_WITCHHUNTER_23A #"Banish him!"
-		trigger = { independent = yes }
-		increase_visibility_effect = yes
-		FROM = { banish = yes }
-		FROM = { remove_trait = on_witch_hunt }
-	}
-
-	option = {
-		name = EVTOPT_WITCHHUNTER_23B #IMPRISON_HIM
-		trigger = { independent = yes }
-		increase_visibility_effect = yes
-		FROM = { imprison = yes }
-		FROM = { remove_trait = on_witch_hunt }
-	}
-}
-
-#liege is informed one of this courtiers is a suspected cultist/heretic#
-	character_event = {
-	id = wh_mutation.402
-	title = WITCH_HUNT
-	desc = mutation15	###Rename###
-	picture = "GFX_evt_beheading"
-
-	is_triggered_only = yes
-
-	option = {
-		name = mutation15a #Unclean abomination - death by fire for you!#
-		trigger = {
-			OR = {
-				ai = no
-				trait = zealous
-				trait = paranoid
-				trait = arbitrary
-				trait = cruel
-				NOT = {
-					ROOT = {
-						opinion = { who = FROM value = 1 }
-					}
-				}
-			}
-		}
-		decrease_visibility_effect = yes
-		FROM = {
-			character_event = { id = witchhunter.25 }
-		}
-	}
-
-	option = {
-		name = mutation15b #Very well, I shall show mercy. But see a surgeon at once!#
-		trigger = {
-			OR = {
-				ai = no
-				ROOT = {
-					opinion = { who = FROM value = 50 }
-				}
-			}
-		}
-		increase_visibility_minor_effect = yes
-		FROM = {
-			character_event = { id = witchhunter.27 }
-		}
-	}
-
-	option = {
-		name = mutation15c #I will not slay you, but nor will I let you roam free...#
-		decrease_visibility_effect = yes
-		FROM = {
-			character_event = { id = witchhunter.26 }
-		}
-	}
-}
-
-##Mutants with major or massive mutations who are NOT in hiding are quickly exposed if they are from the good old world religion groups##
-character_event = {
-	id = wh_mutation.403
-	title = Mutation
-	desc = mutation16	###Rename###
-	picture = "GFX_evt_mutation"
-
-	trigger = {
-		religion_group = old_world_group
-		OR = {
-			has_major_mutation_trigger = yes
-			has_massive_mutation_trigger = yes
-		}
-		NOT = { trait = in_hiding }
-		NOT = { trait = illusion_of_normality }
-	}
-
-	mean_time_to_happen = { days = 7 }
-
-	option = {
-		name = mutation16a
-		if = {
-			limit = { is_invincible_trigger = yes }
-			antideath_effect = yes
-			break = yes
-		}
-		death = { death_reason = death_execution }
-		if = {
-			limit = { higher_tier_than = BARON }
-			any_realm_lord = {
-				limit = {
-					ai = no
-					NOT = { has_character_flag = wh_mutation403 }
-				}
-				character_event = { id = wh_mutation.403 }
-			}
-		}
-	}
-}
-##PC rulers are informed if a fellow realm lord has been killed as a mutant##
-character_event = {
-	id = wh_mutation.404
-	title = Mutation
-	desc = mutation17	###Rename###
-	picture = "GFX_evt_mutation"
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPT_WITCHHUNTER_29B #"Do not bother me with such news again."
-		set_character_flag = wh_mutation403
-	}
-
-	option = { name = OK }
 }
