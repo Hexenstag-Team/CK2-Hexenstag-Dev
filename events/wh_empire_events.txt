@@ -586,41 +586,15 @@ character_event = {
 	id = wh_empire_events.001
 	is_triggered_only = yes
 	hide_window = yes
-	ai = yes
 	religion = imperial_pantheon
 	
 	potential = {
 		NOT = { has_patron_trigger = yes }
-		age = 16
 		trait = creature_human
 	}
 	
 	immediate = {
-		random_list = {
-			10 = {
-				modifier = {
-					factor = 9
-					trait = zealous
-				}
-				modifier = {
-					factor = 91
-					OR = {
-						government = theocracy_government
-						government = congregation_government
-						tier = EMPEROR
-					}
-				}
-				modifier = {
-					factor = 0
-					trait = cynical
-				}
-				patron_imperial_pantheon_effect = yes
-				set_character_flag = has_patron
-			}
-			90 = {
-				
-			}
-		}
+		patron_imperial_pantheon_effect = yes
 	}
 }
 

@@ -7166,728 +7166,1408 @@ clr_imperial_flags = {
 }
 
 patron_imperial_pantheon_effect = {
-	random_list = {
-		#imperial_pantheon Gods
-		10 = {	#Sigmar
-			trigger = {
-				OR = {
-					culture = witchhunter_culture
-					NOR = {
-						top_liege = {
-							has_landed_title = e_talabecland
+	IF = {
+		limit = { trait = creature_human }
+		set_character_flag = has_patron
+		random_list = {
+			#imperial_pantheon Gods
+			10 = {	#Sigmar
+				trigger = {
+					OR = {
+						culture = witchhunter_culture
+						NOR = {
+							top_liege = {
+								has_landed_title = e_talabecland
+							}
+							has_global_flag = imperial_churches_unified_taal_rhya
 						}
-						has_global_flag = imperial_churches_unified_taal_rhya
 					}
 				}
-			}
-			modifier = {
-				factor = 100
-				OR = {
-					has_landed_title = e_reikland
-					has_landed_title = d_cult_of_sigmar
-					has_landed_title = d_arch_lectory_talabheim
-					has_landed_title = d_arch_lectory_nuln
-					culture = witchhunter_culture
+				modifier = {
+					factor = 100
+					OR = {
+						has_landed_title = e_reikland
+						has_landed_title = d_cult_of_sigmar
+						has_landed_title = d_arch_lectory_talabheim
+						has_landed_title = d_arch_lectory_nuln
+						culture = witchhunter_culture
+					}
+				}
+				modifier = {
+					factor = 20
+					any_owned_bloodline = { has_bloodline_flag = legend_bloodline_bjorn }
+				}
+				modifier = {
+					factor = 10
+					OR = {
+						culture = reiklander
+						culture = wissenlander
+						culture = sollander
+						culture = averlander
+						culture = sudenburger
+					}
+				}
+				modifier = {
+					factor = 5
+					OR = {
+						culture = westerlander
+						culture = nordlander
+						culture = stirlander
+						culture = neueslander
+						culture = sylvanian
+					}
+				}
+				modifier = {
+					factor = 0.5
+					NOT = { culture_group = imperial }
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_sigmar
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_sigmar
+					}
+				}
+				if = {
+					limit = {
+						NOR = {
+							has_global_flag = imperial_churches_unified_sigmar
+							has_global_flag = imperial_churches_unified_taal_rhya
+							has_global_flag = imperial_churches_unified_ulric
+							has_global_flag = imperial_churches_unified
+						}
+					}
+					add_trait = patron_sigmar
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_global_flag = imperial_churches_unified_sigmar
+							has_global_flag = imperial_churches_unified_ulric
+							has_global_flag = imperial_churches_unified
+						}
+					}
+					add_trait = patron_sigmar_united
 				}
 			}
-			modifier = {
-				factor = 20
-				any_owned_bloodline = { has_bloodline_flag = legend_bloodline_bjorn }
-			}
-			modifier = {
-				factor = 10
-				OR = {
-					culture = reiklander
-					culture = wissenlander
-					culture = sollander
-					culture = averlander
-					culture = sudenburger
+			10 = {	#Taal&Rhya
+				modifier = {
+					factor = 100
+					OR = {
+						has_landed_title = e_talabecland
+						has_landed_title = d_cult_of_taal_and_rhya
+						has_landed_title = d_longshanks
+						has_landed_title = d_knights_of_taals_fury
+					}
+				}
+				modifier = {
+					factor = 10
+					OR = {
+						culture = talabeclander
+						culture = ostermarker
+						culture = ostlander
+					}
+				}
+				modifier = {
+					factor = 5
+					OR = {
+						culture_group = kislevite_group
+						culture_group = norscan_group
+						culture = nordlander
+						culture = middenlander
+						culture = hochlander
+						culture = drakwalder
+					}
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_taal_rhya
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_taal_rhya
+					}
+				}
+				if = {
+					limit = {
+						NOR = {
+							has_global_flag = imperial_churches_unified_sigmar
+							has_global_flag = imperial_churches_unified_taal_rhya
+							has_global_flag = imperial_churches_unified_ulric
+							has_global_flag = imperial_churches_unified
+						}
+					}
+					add_trait = patron_taal_rhya
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_global_flag = imperial_churches_unified_sigmar
+							has_global_flag = imperial_churches_unified_taal_rhya
+							has_global_flag = imperial_churches_unified_ulric
+							has_global_flag = imperial_churches_unified
+						}
+					}
+					add_trait = patron_taal_rhya_united
 				}
 			}
-			modifier = {
-				factor = 5
-				OR = {
+			10 = {	#Ulric
+				modifier = {
+					factor = 100
+					OR = {
+						has_landed_title = e_middenland
+						has_landed_title = d_cult_of_ulric
+						
+					}
+				}
+				modifier = {
+					factor = 10
+					OR = {
+						culture_group = norscan_group
+						culture = middenlander
+						culture = drakwalder
+						culture = hochlander
+						culture = ostlander
+					}
+				}
+				modifier = {
+					factor = 5
+					OR = {
+						culture_group = kislevite_group
+						culture = talabeclander
+						culture = ostermarker
+						culture = nordlander
+					}
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_ulric
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_ulric
+					}
+				}
+				if = {
+					limit = {
+						NOR = {
+							has_global_flag = imperial_churches_unified_sigmar
+							has_global_flag = imperial_churches_unified_taal_rhya
+							has_global_flag = imperial_churches_unified_ulric
+							has_global_flag = imperial_churches_unified
+						}
+					}
+					add_trait = patron_ulric
+				}
+				else_if = {
+					limit = {
+						OR = {
+							has_global_flag = imperial_churches_unified_sigmar
+							has_global_flag = imperial_churches_unified_taal_rhya
+							has_global_flag = imperial_churches_unified_ulric
+							has_global_flag = imperial_churches_unified
+						}
+					}
+					add_trait = patron_ulric_united
+				}
+			}
+			5 = {	#Manann
+				modifier = {
+					factor = 100
+					OR = {
+						has_landed_title = d_knights_mariner
+						has_landed_title = d_sons_of_manann
+					}
+				}
+				modifier = {
+					factor = 10
 					culture = westerlander
-					culture = nordlander
-					culture = stirlander
-					culture = neueslander
+				}
+				modifier = {
+					factor = 10
+					government = merchant_republic_government
+				}
+
+				modifier = {
+					factor = 5
+					location = { port = yes }
+				}
+				modifier = {
+					factor = 5
+					OR = {
+						culture_group = norscan_group
+						culture_group = sartosan_group
+					}
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_manann
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_manann
+					}
+				}
+				add_trait = patron_manann
+			}
+			5 = {	#Morr
+				modifier = {
+					factor = 100
+					OR = {
+						# has_landed_title = d_cult_of_morr
+						has_landed_title = d_knights_of_the_black_rose
+						has_landed_title = d_order_of_the_raven
+						has_landed_title = d_knights_of_morr
+					}
+
+				}
+				modifier = {
+					factor = 100
+					society_member_of = cult_of_morr
+				}
+				modifier = {
+					factor = 10
 					culture = sylvanian
 				}
-			}
-			modifier = {
-				factor = 0.5
-				NOT = { culture_group = imperial }
-			}
-			if = {
-				limit = {
-					NOR = {
-						has_global_flag = imperial_churches_unified_sigmar
-						has_global_flag = imperial_churches_unified_taal_rhya
-						has_global_flag = imperial_churches_unified_ulric
-						has_global_flag = imperial_churches_unified
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_morr
 					}
 				}
-				add_trait = patron_sigmar
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_morr
+					}
+				}
+				add_trait = patron_morr
 			}
-			else_if = {
-				limit = {
+			5 = {	#Verena
+				modifier = {
+					factor = 5
 					OR = {
-						has_global_flag = imperial_churches_unified_sigmar
-						has_global_flag = imperial_churches_unified_ulric
-						has_global_flag = imperial_churches_unified
-					}
-				}
-				add_trait = patron_sigmar_united
-			}
-		}
-		10 = {	#Taal&Rhya
-			modifier = {
-				factor = 100
-				OR = {
-					has_landed_title = e_talabecland
-					has_landed_title = d_cult_of_taal_and_rhya
-					has_landed_title = d_longshanks
-					has_landed_title = d_knights_of_taals_fury
-				}
-			}
-			modifier = {
-				factor = 10
-				OR = {
-					culture = talabeclander
-					culture = ostermarker
-					culture = ostlander
-				}
-			}
-			modifier = {
-				factor = 5
-				OR = {
-					culture_group = kislevite_group
-					culture_group = norscan_group
-					culture = nordlander
-					culture = middenlander
-					culture = hochlander
-					culture = drakwalder
-				}
-			}
-			if = {
-				limit = {
-					NOR = {
-						has_global_flag = imperial_churches_unified_sigmar
-						has_global_flag = imperial_churches_unified_taal_rhya
-						has_global_flag = imperial_churches_unified_ulric
-						has_global_flag = imperial_churches_unified
-					}
-				}
-				add_trait = patron_taal_rhya
-			}
-			else_if = {
-				limit = {
-					OR = {
-						has_global_flag = imperial_churches_unified_sigmar
-						has_global_flag = imperial_churches_unified_taal_rhya
-						has_global_flag = imperial_churches_unified_ulric
-						has_global_flag = imperial_churches_unified
-					}
-				}
-				add_trait = patron_taal_rhya_united
-			}
-		}
-		10 = {	#Ulric
-			modifier = {
-				factor = 100
-				OR = {
-					has_landed_title = e_middenland
-					has_landed_title = d_cult_of_ulric
-					
-				}
-			}
-			modifier = {
-				factor = 10
-				OR = {
-					culture_group = norscan_group
-					culture = middenlander
-					culture = drakwalder
-					culture = hochlander
-					culture = ostlander
-				}
-			}
-			modifier = {
-				factor = 5
-				OR = {
-					culture_group = kislevite_group
-					culture = talabeclander
-					culture = ostermarker
-					culture = nordlander
-				}
-			}
-			if = {
-				limit = {
-					NOR = {
-						has_global_flag = imperial_churches_unified_sigmar
-						has_global_flag = imperial_churches_unified_taal_rhya
-						has_global_flag = imperial_churches_unified_ulric
-						has_global_flag = imperial_churches_unified
-					}
-				}
-				add_trait = patron_ulric
-			}
-			else_if = {
-				limit = {
-					OR = {
-						has_global_flag = imperial_churches_unified_sigmar
-						has_global_flag = imperial_churches_unified_taal_rhya
-						has_global_flag = imperial_churches_unified_ulric
-						has_global_flag = imperial_churches_unified
-					}
-				}
-				add_trait = patron_ulric_united
-			}
-		}
-		5 = {	#Manann
-			modifier = {
-				factor = 100
-				OR = {
-					has_landed_title = d_knights_mariner
-					has_landed_title = d_sons_of_manann
-				}
-			}
-			modifier = {
-				factor = 10
-				culture = westerlander
-			}
-			modifier = {
-				factor = 10
-				government = merchant_republic_government
-			}
+						learning > 15
+						diplomacy > 15
+						stewardship > 15
+						trait = grey_eminence
+						trait = midas_touched
+						is_learned_trigger = yes
 
-			modifier = {
-				factor = 5
-				location = { port = yes }
-			}
-			modifier = {
-				factor = 5
-				OR = {
-					culture_group = norscan_group
-					culture_group = sartosan_group
+					}
 				}
-			}
-			add_trait = patron_manann
-		}
-		5 = {	#Morr
-			modifier = {
-				factor = 100
-				OR = {
-					# has_landed_title = d_cult_of_morr
-					has_landed_title = d_knights_of_the_black_rose
-					has_landed_title = d_order_of_the_raven
-					has_landed_title = d_knights_of_morr
+				modifier = {
+					factor = 2.5
+					OR = {
+						trait = charismatic_negotiator
+						trait = brilliant_strategist
+						trait = fortune_builder
+						trait = elusive_shadow
+						trait = martial_cleric
+						is_smart_trigger = yes
+					}
 				}
-
+				modifier = {
+					factor = 2
+					trait = just
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_verena
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_verena
+					}
+				}
+				add_trait = patron_verena
 			}
-			modifier = {
-				factor = 10
-				culture = sylvanian
+			5 = {	#Myrmidia
+				modifier = {
+					factor = 100
+					OR = {
+						has_landed_title = k_cult_of_myrmidia
+						has_landed_title = d_high_temple_of_remas
+						has_landed_title = d_high_temple_of_magritta
+					}
+				}
+				modifier = {
+					factor = 10
+					OR = {
+						culture_group = tilean_group
+						culture_group = estalian_group
+					}
+				}
+				modifier = {
+					factor = 5
+					OR = {
+						trait = brilliant_strategist
+						has_lifestyle_martial_trigger = yes
+					}
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_myrmidia
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_myrmidia
+					}
+				}
+				add_trait = patron_myrmidia
 			}
-			add_trait = patron_morr
-		}
-		5 = {	#Verena
-			modifier = {
-				factor = 5
-				OR = {
-					learning > 15
-					diplomacy > 15
-					stewardship > 15
-					trait = grey_eminence
+			5 = {	#Shallya
+				modifier = {
+					factor = 100
+					has_landed_title = k_cult_of_shallya
+				}
+				modifier = {
+					factor = 10
+					is_lowborn = yes
+					NOT = { trait = peasant_leader }
+				}
+				modifier = {
+					factor = 5
+					is_female = yes
+				}
+				modifier = {
+					factor = 5
+					OR = {
+						trait = monk
+						trait = nun
+					}
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_shallya
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_shallya
+					}
+				}
+				add_trait = patron_shallya
+			}
+			5 = {	#Ranald
+				modifier = {
+					factor = 10
+					government = merchant_republic_government
+				}
+				modifier = {
+					factor = 5
+					culture = westerlander
+				}
+				modifier = {
+					factor = 5
 					trait = midas_touched
-					is_learned_trigger = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_ranald
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_ranald
+					}
+				}
+				add_trait = patron_ranald
+			}
 
-				}
-			}
-			modifier = {
-				factor = 2.5
-				OR = {
-					trait = charismatic_negotiator
-					trait = brilliant_strategist
-					trait = fortune_builder
-					trait = elusive_shadow
-					trait = martial_cleric
-					is_smart_trigger = yes
-				}
-			}
-			modifier = {
-				factor = 2
-				trait = just
-			}
-			add_trait = patron_verena
-		}
-		5 = {	#Myrmidia
-			modifier = {
-				factor = 100
-				OR = {
-					has_landed_title = k_cult_of_myrmidia
-					has_landed_title = d_high_temple_of_remas
-					has_landed_title = d_high_temple_of_magritta
-				}
-			}
-			modifier = {
-				factor = 10
-				OR = {
-					culture_group = tilean_group
-					culture_group = estalian_group
-				}
-			}
-			modifier = {
-				factor = 5
-				OR = {
-					trait = brilliant_strategist
-					has_lifestyle_martial_trigger = yes
-				}
-			}
-			add_trait = patron_myrmidia
-		}
-		5 = {	#Shallya
-			modifier = {
-				factor = 100
-				has_landed_title = k_cult_of_shallya
-			}
-			modifier = {
-				factor = 10
-				is_lowborn = yes
-				NOT = { trait = peasant_leader }
-			}
-			modifier = {
-				factor = 5
-				is_female = yes
-			}
-			modifier = {
-				factor = 5
-				OR = {
-					trait = monk
-					trait = nun
-				}
-			}
-			add_trait = patron_shallya
-		}
-		5 = {	#Ranald
-			modifier = {
-				factor = 10
-				government = merchant_republic_government
-			}
-			modifier = {
-				factor = 5
-				culture = westerlander
-			}
-			modifier = {
-				factor = 5
-				trait = midas_touched
-			}
-			add_trait = patron_ranald
-		}
+		###Minor Gods###
 
-	###Minor Gods###
-
-		#Minor Reiklander Gods
-		20 = {	#Dyrath
-			trigger = {
-				culture = reiklander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_dyrath
-		}
-		20 = {	#Borchband
-			trigger = {
-				culture = reiklander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_borchband
-		}
-		20 = {	#Katya
-			trigger = {
-				culture = reiklander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_katya
-		}
-		#Minor Middenlander Gods
-		20 = {	#Artho
-			trigger = {
-				culture = middenlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_artho
-		}
-		20 = {	#Rudric
-			trigger = {
-				culture = middenlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_rudric
-		}
-		20 = {	#Dark Helgis
-			trigger = {
-				culture = middenlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_dark_helgis
-		}
-		#Minor Westerlander Gods
-		20 = {	#Tharveg
-			trigger = {
-				culture = westerlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_tharveg
-		}
-		20 = {	#Shaback
-			trigger = {
-				culture = westerlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_shaback
-		}
-		20 = {	#Haleth
-			trigger = {
-				culture = westerlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_haleth_westerlander
-		}
-		#Minor Talabeclander Gods
-		20 = {	#Toar
-			trigger = {
-				culture = talabeclander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_toar
-		}
-		20 = {	#Renbaeth
-			trigger = {
-				culture = talabeclander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_renbaeth
-		}
-		20 = {	#Shadreth
-			trigger = {
-				culture = talabeclander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_shadreth
-		}
-		#Minor Wissenlander Gods
-		20 = {	#Mittlmund
-			trigger = {
-				culture = wissenlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_mittlmund
-		}
-		20 = {	#Wendred
-			trigger = {
-				culture = wissenlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_wendred
-		}
-		20 = {	#Gargali
-			trigger = {
-				culture = wissenlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_gargali
-		}
-		#Minor Sollander Gods
-		20 = {	#Ahalt
-			trigger = {
-				culture = sollander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_ahalt
-		}
-		20 = {	#Söll
-			trigger = {
-				culture = sollander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_soll
-		}
-		20 = {	#Khirreth
-			trigger = {
-				culture = sollander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_khirreth
-		}
-		#Minor Averlander Gods
-		20 = {	#Margileo
-			trigger = {
-				culture = averlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_margileo
-		}
-		20 = {	#Sheirrich
-			trigger = {
-				culture = averlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_sheirrich
-		}
-		20 = {	#Hyssron
-			trigger = {
-				culture = averlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_hyssron
-		}
-		#Minor Stirlander Gods
-		20 = {	#Narvorga
-			trigger = {
-				culture = stirlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_narvorga
-		}
-		20 = {	#Seppel
-			trigger = {
-				culture = stirlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_seppel
-		}
-		20 = {	#Gadd
-			trigger = {
-				culture = stirlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_gadd
-		}
-		#Minor Nordlander Gods
-		20 = {	#Karog
-			trigger = {
-				culture = nordlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_karog
-		}
-		20 = {	#Vallich
-			trigger = {
-				culture = nordlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_vallich
-		}
-		20 = {	#Stovarok
-			trigger = {
-				culture = nordlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_stovarok
-		}
-		#Minor Hochlander Gods
-		20 = {	#Oboroch
-			trigger = {
-				culture = hochlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_oboroch
-		}
-		20 = {	#Ahltler
-			trigger = {
-				culture = hochlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_ahltler
-		}
-		20 = {	#Lupos
-			trigger = {
-				culture = hochlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_lupos
-		}
-		#Minor Drakwalder Gods
-		20 = {	#Uutann
-			trigger = {
-				culture = drakwalder
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_uutann
-		}
-		20 = {	#Haleth
-			trigger = {
-				culture = drakwalder
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_haleth_drakwalder
-		}
-		20 = {	#Drak
-			trigger = {
-				culture = drakwalder
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_drak
-		}
-		#Minor Ostlander Gods
-		20 = {	#Ursash
-			trigger = {
-				culture = ostlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_ursash
-		}
-		20 = {	#Skalor
-			trigger = {
-				culture = ostlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_skalor
-		}
-		20 = {	#Narlog
-			trigger = {
-				culture = ostlander
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_narlog
-		}
-		#Minor Ostermarker Gods
-		20 = {	#Kavarich
-			trigger = {
-				culture = ostermarker
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_kavarich
-		}
-		20 = {	#Styriss
-			trigger = {
-				culture = ostermarker
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_styriss
-		}
-		20 = {	#Arvala
-			trigger = {
-				culture = ostermarker
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			add_trait = patron_arvala
+			#Minor Reiklander Gods
+			20 = {	#Dyrath
+				trigger = {
+					culture = reiklander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_dyrath
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_dyrath
+					}
+				}
+				add_trait = patron_dyrath
+			}
+			20 = {	#Borchband
+				trigger = {
+					culture = reiklander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_borchband
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_borchband
+					}
+				}
+				add_trait = patron_borchband
+			}
+			20 = {	#Katya
+				trigger = {
+					culture = reiklander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_katya
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_katya
+					}
+				}
+				add_trait = patron_katya
+			}
+			#Minor Middenlander Gods
+			20 = {	#Artho
+				trigger = {
+					culture = middenlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_artho
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_artho
+					}
+				}
+				add_trait = patron_artho
+			}
+			20 = {	#Rudric
+				trigger = {
+					culture = middenlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_rudric
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_rudric
+					}
+				}
+				add_trait = patron_rudric
+			}
+			20 = {	#Dark Helgis
+				trigger = {
+					culture = middenlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_dark_helgis
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_dark_helgis
+					}
+				}
+				add_trait = patron_dark_helgis
+			}
+			#Minor Westerlander Gods
+			20 = {	#Tharveg
+				trigger = {
+					culture = westerlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_tharveg
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_tharveg
+					}
+				}
+				add_trait = patron_tharveg
+			}
+			20 = {	#Shaback
+				trigger = {
+					culture = westerlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_shaback
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_shaback
+					}
+				}
+				add_trait = patron_shaback
+			}
+			20 = {	#Haleth
+				trigger = {
+					culture = westerlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_haleth_westerlander
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_haleth_westerlander
+					}
+				}
+				add_trait = patron_haleth_westerlander
+			}
+			#Minor Talabeclander Gods
+			20 = {	#Toar
+				trigger = {
+					culture = talabeclander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_toar
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_toar
+					}
+				}
+				add_trait = patron_toar
+			}
+			20 = {	#Renbaeth
+				trigger = {
+					culture = talabeclander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_renbaeth
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_renbaeth
+					}
+				}
+				add_trait = patron_renbaeth
+			}
+			20 = {	#Shadreth
+				trigger = {
+					culture = talabeclander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_shadreth
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_shadreth
+					}
+				}
+				add_trait = patron_shadreth
+			}
+			#Minor Wissenlander Gods
+			20 = {	#Mittlmund
+				trigger = {
+					culture = wissenlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_mittlmund
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_mittlmund
+					}
+				}
+				add_trait = patron_mittlmund
+			}
+			20 = {	#Wendred
+				trigger = {
+					culture = wissenlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_wendred
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_wendred
+					}
+				}
+				add_trait = patron_wendred
+			}
+			20 = {	#Gargali
+				trigger = {
+					culture = wissenlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_gargali
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_gargali
+					}
+				}
+				add_trait = patron_gargali
+			}
+			#Minor Sollander Gods
+			20 = {	#Ahalt
+				trigger = {
+					culture = sollander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_ahalt
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_ahalt
+					}
+				}
+				add_trait = patron_ahalt
+			}
+			20 = {	#Söll
+				trigger = {
+					culture = sollander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_soll
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_soll
+					}
+				}
+				add_trait = patron_soll
+			}
+			20 = {	#Khirreth
+				trigger = {
+					culture = sollander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_khirreth
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_khirreth
+					}
+				}
+				add_trait = patron_khirreth
+			}
+			#Minor Averlander Gods
+			20 = {	#Margileo
+				trigger = {
+					culture = averlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_margileo
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_margileo
+					}
+				}
+				add_trait = patron_margileo
+			}
+			20 = {	#Sheirrich
+				trigger = {
+					culture = averlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_sheirrich
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_sheirrich
+					}
+				}
+				add_trait = patron_sheirrich
+			}
+			20 = {	#Hyssron
+				trigger = {
+					culture = averlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_hyssron
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_hyssron
+					}
+				}
+				add_trait = patron_hyssron
+			}
+			#Minor Stirlander Gods
+			20 = {	#Narvorga
+				trigger = {
+					culture = stirlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_narvorga
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_narvorga
+					}
+				}
+				add_trait = patron_narvorga
+			}
+			20 = {	#Seppel
+				trigger = {
+					culture = stirlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_seppel
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_seppel
+					}
+				}
+				add_trait = patron_seppel
+			}
+			20 = {	#Gadd
+				trigger = {
+					culture = stirlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_gadd
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_gadd
+					}
+				}
+				add_trait = patron_gadd
+			}
+			#Minor Nordlander Gods
+			20 = {	#Karog
+				trigger = {
+					culture = nordlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_karog
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_karog
+					}
+				}
+				add_trait = patron_karog
+			}
+			20 = {	#Vallich
+				trigger = {
+					culture = nordlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_vallich
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_vallich
+					}
+				}
+				add_trait = patron_vallich
+			}
+			20 = {	#Stovarok
+				trigger = {
+					culture = nordlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_stovarok
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_stovarok
+					}
+				}
+				add_trait = patron_stovarok
+			}
+			#Minor Hochlander Gods
+			20 = {	#Oboroch
+				trigger = {
+					culture = hochlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_oboroch
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_oboroch
+					}
+				}
+				add_trait = patron_oboroch
+			}
+			20 = {	#Ahltler
+				trigger = {
+					culture = hochlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_ahltler
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_ahltler
+					}
+				}
+				add_trait = patron_ahltler
+			}
+			20 = {	#Lupos
+				trigger = {
+					culture = hochlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_lupos
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_lupos
+					}
+				}
+				add_trait = patron_lupos
+			}
+			#Minor Drakwalder Gods
+			20 = {	#Uutann
+				trigger = {
+					culture = drakwalder
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_uutann
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_uutann
+					}
+				}
+				add_trait = patron_uutann
+			}
+			20 = {	#Haleth
+				trigger = {
+					culture = drakwalder
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_haleth_drakwalder
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_haleth_drakwalder
+					}
+				}
+				add_trait = patron_haleth_drakwalder
+			}
+			20 = {	#Drak
+				trigger = {
+					culture = drakwalder
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_drak
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_drak
+					}
+				}
+				add_trait = patron_drak
+			}
+			#Minor Ostlander Gods
+			20 = {	#Ursash
+				trigger = {
+					culture = ostlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_ursash
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_ursash
+					}
+				}
+				add_trait = patron_ursash
+			}
+			20 = {	#Skalor
+				trigger = {
+					culture = ostlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_skalor
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_skalor
+					}
+				}
+				add_trait = patron_skalor
+			}
+			20 = {	#Narlog
+				trigger = {
+					culture = ostlander
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_narlog
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_narlog
+					}
+				}
+				add_trait = patron_narlog
+			}
+			#Minor Ostermarker Gods
+			20 = {	#Kavarich
+				trigger = {
+					culture = ostermarker
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_kavarich
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_kavarich
+					}
+				}
+				add_trait = patron_kavarich
+			}
+			20 = {	#Styriss
+				trigger = {
+					culture = ostermarker
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_styriss
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_styriss
+					}
+				}
+				add_trait = patron_styriss
+			}
+			20 = {	#Arvala
+				trigger = {
+					culture = ostermarker
+				}
+				modifier = {
+					factor = 2
+					is_lowborn = yes
+				}
+				modifier = {
+					factor = 10
+					is_male = yes
+					father = {
+						trait = patron_arvala
+					}
+				}
+				modifier = {
+					factor = 10
+					is_female = yes
+					mother = {
+						trait = patron_arvala
+					}
+				}
+				add_trait = patron_arvala
+			}
 		}
 	}
 }
@@ -7922,6 +8602,20 @@ patron_classical_pantheon_effect = {
 					culture = middenlander
 					culture = hochlander
 					culture = drakwalder
+				}
+			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_taal_rhya
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_taal_rhya
 				}
 			}
 			if = {
@@ -7975,6 +8669,20 @@ patron_classical_pantheon_effect = {
 					culture = nordlander
 				}
 			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_ulric
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_ulric
+				}
+			}
 			if = {
 				limit = {
 					NOR = {
@@ -8026,6 +8734,20 @@ patron_classical_pantheon_effect = {
 					culture_group = sartosan_group
 				}
 			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_manann
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_manann
+				}
+			}
 			add_trait = patron_manann
 		}
 		5 = {	#Morr
@@ -8040,8 +8762,26 @@ patron_classical_pantheon_effect = {
 				
 			}
 			modifier = {
+				factor = 100
+				society_member_of = cult_of_morr
+			}
+			modifier = {
 				factor = 10
 				culture = sylvanian
+			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_morr
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_morr
+				}
 			}
 			add_trait = patron_morr
 		}
@@ -8073,6 +8813,20 @@ patron_classical_pantheon_effect = {
 				factor = 2
 				trait = just
 			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_verena
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_verena
+				}
+			}
 			add_trait = patron_verena
 		}
 		10 = {	#Myrmidia
@@ -8098,6 +8852,20 @@ patron_classical_pantheon_effect = {
 					has_lifestyle_martial_trigger = yes
 				}
 			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_myrmidia
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_myrmidia
+				}
+			}
 			add_trait = patron_myrmidia
 		}
 		5 = {	#Shallya
@@ -8121,6 +8889,20 @@ patron_classical_pantheon_effect = {
 					trait = nun
 				}
 			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_shallya
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_shallya
+				}
+			}
 			add_trait = patron_shallya
 		}
 		5 = {	#Ranald
@@ -8136,6 +8918,20 @@ patron_classical_pantheon_effect = {
 				factor = 5
 				trait = midas_touched
 			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_ranald
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_ranald
+				}
+			}
 			add_trait = patron_ranald
 		}
 
@@ -8150,6 +8946,20 @@ patron_classical_pantheon_effect = {
 				factor = 2
 				is_lowborn = yes
 			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_lucan
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_lucan
+				}
+			}
 			add_trait = patron_lucan
 		}
 		20 = {	#Luccina
@@ -8159,6 +8969,20 @@ patron_classical_pantheon_effect = {
 			modifier = {
 				factor = 2
 				is_lowborn = yes
+			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_luccina
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_luccina
+				}
 			}
 			add_trait = patron_luccina
 		}
@@ -8171,6 +8995,20 @@ patron_classical_pantheon_effect = {
 				factor = 2
 				is_lowborn = yes
 			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_santo_galdin
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_santo_galdin
+				}
+			}
 			add_trait = patron_santo_galdin
 		}
 		#Minor Myken Gods
@@ -8181,6 +9019,20 @@ patron_classical_pantheon_effect = {
 			modifier = {
 				factor = 2
 				is_lowborn = yes
+			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_santo_plinio
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_santo_plinio
+				}
 			}
 			add_trait = patron_santo_plinio
 		}
@@ -8193,6 +9045,20 @@ patron_classical_pantheon_effect = {
 				factor = 2
 				is_lowborn = yes
 			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_santo_giacomo
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_santo_giacomo
+				}
+			}
 			add_trait = patron_santo_giacomo
 		}
 		#Minor Tobaro Gods
@@ -8204,6 +9070,20 @@ patron_classical_pantheon_effect = {
 				factor = 2
 				is_lowborn = yes
 			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_santo_tomasso
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_santo_tomasso
+				}
+			}
 			add_trait = patron_santo_tomasso
 		}
 		#Minor Umbrian Gods
@@ -8214,6 +9094,20 @@ patron_classical_pantheon_effect = {
 			modifier = {
 				factor = 2
 				is_lowborn = yes
+			}
+			modifier = {
+				factor = 10
+				is_male = yes
+				father = {
+					trait = patron_santo_alessandro
+				}
+			}
+			modifier = {
+				factor = 10
+				is_female = yes
+				mother = {
+					trait = patron_santo_alessandro
+				}
 			}
 			add_trait = patron_santo_alessandro
 		}

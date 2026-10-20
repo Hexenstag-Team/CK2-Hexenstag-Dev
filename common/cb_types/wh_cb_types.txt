@@ -2964,6 +2964,13 @@ sylvania_boogaloo = {
 
 	sort_priority = 690
 
+	can_use_gui = {
+		FROM = {
+			show_scope_change = no
+			NOT = { same_realm = ROOT }
+		}
+	}
+
 	can_use = {
 		ROOT = {
 			capital_scope = { region = world_old_empire_sylvania }
@@ -2977,6 +2984,7 @@ sylvania_boogaloo = {
 	}
 	on_add = {
 	}
+
 	is_valid = {
 	}
 
