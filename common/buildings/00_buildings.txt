@@ -903,10 +903,7 @@ city = {
 				culture_group = asur_group
 				culture_group = lizardman_group
 				culture_group = dwarf_group
-				culture_group = sartosan_group
-				culture_group = arabyan_group
 				culture_group = skaven_group
-				culture = nehekka
 				culture = nehekharan
 			}
 		}
@@ -926,10 +923,7 @@ city = {
 				culture_group = asur_group
 				culture_group = lizardman_group
 				culture_group = dwarf_group
-				culture_group = sartosan_group
-				culture_group = arabyan_group
 				culture_group = skaven_group
-				culture = nehekka
 				culture = nehekharan
 			}
 		}
@@ -951,10 +945,7 @@ city = {
 				culture_group = asur_group
 				culture_group = lizardman_group
 				culture_group = dwarf_group
-				culture_group = sartosan_group
-				culture_group = arabyan_group
 				culture_group = skaven_group
-				culture = nehekka
 				culture = nehekharan
 			}
 		}
@@ -976,10 +967,7 @@ city = {
 				culture_group = asur_group
 				culture_group = lizardman_group
 				culture_group = dwarf_group
-				culture_group = sartosan_group
-				culture_group = arabyan_group
 				culture_group = skaven_group
-				culture = nehekka
 				culture = nehekharan
 			}
 		}
@@ -1001,10 +989,7 @@ city = {
 				culture_group = asur_group
 				culture_group = lizardman_group
 				culture_group = dwarf_group
-				culture_group = sartosan_group
-				culture_group = arabyan_group
 				culture_group = skaven_group
-				culture = nehekka
 				culture = nehekharan
 			}
 		}
@@ -1024,10 +1009,7 @@ city = {
 				culture_group = asur_group
 				culture_group = lizardman_group
 				culture_group = dwarf_group
-				culture_group = sartosan_group
-				culture_group = arabyan_group
 				culture_group = skaven_group
-				culture = nehekka
 				culture = nehekharan
 			}
 		}
@@ -1712,6 +1694,7 @@ city = {
 				culture_group = imperial_group
 				culture_group = estalian_group
 				culture_group = tilean_group
+				culture_group = sartosan_group
 			}
 		}
 		replaces = ct_university_1
@@ -1731,6 +1714,7 @@ city = {
 				culture_group = imperial_group
 				culture_group = estalian_group
 				culture_group = tilean_group
+				culture_group = sartosan_group
 			}
 		}
 		replaces = ct_university_2
@@ -1751,6 +1735,7 @@ city = {
 				culture_group = imperial_group
 				culture_group = estalian_group
 				culture_group = tilean_group
+				culture_group = sartosan_group
 			}
 		}
 		replaces = ct_university_3
@@ -2104,29 +2089,6 @@ city = {
 
 # Temple
 temple = {
-	# Unique buildings
-	#Great Temple of Sigmar, garrison size, prestige/piety, gunpowder and heavy infantry with 15% morale bonus
-	tp_witchhunter_base = {
-		desc = tp_witchhunter_base_desc
-		potential = {
-			FROMFROM = { title = b_heiligefeuer }
-		}
-
-		gold_cost = 1000
-		build_time = 3000
-		liege_piety = 0.20
-		liege_prestige = 0.20
-		garrison_size = 0.5
-		heavy_infantry = 150
-		gunpowder = 150
-		land_morale = 0.15
-		ai_creation_factor = 97
-		add_number_to_name = no
-
-		extra_tech_building_start = 0.2
-	}
-
-
 	#Temple Wall, fort level, levy size and tax income
 	tp_wall_1 = {
 		desc = ca_wall_1_desc
@@ -2815,8 +2777,7 @@ temple = {
 		replaces = tp_templar_barracks_1
 		gold_cost = 100
 		build_time = 365
-		daemonic_host = 15
-		heavy_infantry = 15
+		daemonic_host = 30
 		ai_creation_factor = 95
 
 		extra_tech_building_start = 0.5
@@ -2835,8 +2796,7 @@ temple = {
 		upgrades_from = tp_djinntrove_1
 		gold_cost = 120
 		build_time = 730
-		daemonic_host = 20
-		heavy_infantry = 15
+		daemonic_host = 35
 		ai_creation_factor = 94
 
 		extra_tech_building_start = 1.0
@@ -2855,8 +2815,7 @@ temple = {
 		upgrades_from = tp_djinntrove_2
 		gold_cost = 200
 		build_time = 730
-		daemonic_host = 25
-		heavy_infantry = 15
+		daemonic_host = 40
 		ai_creation_factor = 93
 
 		extra_tech_building_start = 0.2
@@ -2874,8 +2833,7 @@ temple = {
 		upgrades_from = tp_djinntrove_3
 		gold_cost = 300
 		build_time = 1095
-		daemonic_host = 30
-		heavy_infantry = 15
+		daemonic_host = 45
 		ai_creation_factor = 92
 
 		extra_tech_building_start = 0.2
@@ -2893,8 +2851,7 @@ temple = {
 		upgrades_from = tp_djinntrove_4
 		gold_cost = 400
 		build_time = 2190
-		daemonic_host = 35
-		heavy_infantry = 15
+		daemonic_host = 50
 		ai_creation_factor = 92
 
 		extra_tech_building_start = 0.2
@@ -2913,8 +2870,7 @@ temple = {
 		upgrades_from = tp_djinntrove_5
 		gold_cost = 500
 		build_time = 2190
-		daemonic_host = 40
-		heavy_infantry = 15
+		daemonic_host = 55
 		ai_creation_factor = 90
 
 		extra_tech_building_start = 0.2
@@ -4085,8 +4041,6 @@ temple = {
 				culture_group = dwarf_group
 				culture_group = asrai_group
 				culture_group = druchi_group
-				culture_group = arabyan_group
-				culture = nehekka
 				culture = nehekharan
 			}
 		}
@@ -4108,8 +4062,6 @@ temple = {
 				culture_group = dwarf_group
 				culture_group = asrai_group
 				culture_group = druchi_group
-				culture_group = arabyan_group
-				culture = nehekka
 				culture = nehekharan
 			}
 		}
@@ -4133,8 +4085,6 @@ temple = {
 				culture_group = dwarf_group
 				culture_group = asrai_group
 				culture_group = druchi_group
-				culture_group = arabyan_group
-				culture = nehekka
 				culture = nehekharan
 			}
 		}
@@ -4158,8 +4108,6 @@ temple = {
 				culture_group = dwarf_group
 				culture_group = asrai_group
 				culture_group = druchi_group
-				culture_group = arabyan_group
-				culture = nehekka
 				culture = nehekharan
 			}
 		}
@@ -4182,8 +4130,6 @@ temple = {
 				culture_group = dwarf_group
 				culture_group = asrai_group
 				culture_group = druchi_group
-				culture_group = arabyan_group
-				culture = nehekka
 				culture = nehekharan
 			}
 		}
@@ -4206,8 +4152,6 @@ temple = {
 				culture_group = dwarf_group
 				culture_group = asrai_group
 				culture_group = druchi_group
-				culture_group = arabyan_group
-				culture = nehekka
 				culture = nehekharan
 			}
 		}
@@ -4476,8 +4420,6 @@ temple = {
 				culture_group = dwarf_group
 				culture_group = asrai_group
 				culture_group = druchi_group
-				culture_group = arabyan_group
-				culture = nehekka
 				culture_group = skaven_group
 				culture = nehekharan
 				#need this line for 2nd order replacments
@@ -4508,8 +4450,6 @@ temple = {
 				culture_group = dwarf_group
 				culture_group = asrai_group
 				culture_group = druchi_group
-				culture_group = arabyan_group
-				culture = nehekka
 				culture_group = skaven_group
 				culture = nehekharan
 			}
@@ -4537,9 +4477,8 @@ temple = {
 		potential = {
 			is_human = yes
 			#patched up. Both should replace but release deadline is looming
-			NOR = {
+			NOT = {
 				religion_group = chaos_gods_group
-				religion_group = ormazd_gods_group
 			}
 		}
 		is_active_trigger = {
@@ -4583,6 +4522,48 @@ temple = {
 		ai_creation_factor = 91
 
 		extra_tech_building_start = 1.0
+	}
+
+
+	tp_jack_o_the_sea_1 = {
+		desc = tp_jack_o_the_sea_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 0 }
+		potential = {
+			religion = stromfels
+		}
+		is_active_trigger = {
+			religion = FROM
+		}
+		replaces = tp_morr_gardens_1
+		gold_cost = 200
+		build_time = 370
+		galleys = 7
+		archers = 50
+		ai_creation_factor = 95
+
+		extra_tech_building_start = 0.5
+	}
+
+
+	tp_jack_o_the_sea_2 = {
+		desc = tp_jack_o_the_sea_desc
+		trigger = { TECH_CITY_CONSTRUCTION = 6 }
+		potential = {
+			religion = stromfels
+		}
+		is_active_trigger = {
+			religion = FROM
+		}
+		replaces = tp_morr_gardens_2
+		prerequisites = { tp_wall_2 }
+		upgrades_from = tp_jack_o_the_sea_1
+		gold_cost = 200
+		build_time = 370
+		galleys = 8
+		archers = 50
+		ai_creation_factor = 95
+
+		extra_tech_building_start = 0.5
 	}
 
 	#Apprentice necromancers

@@ -4,15 +4,37 @@
 title = c_lashiek
 
 # Settlements
-max_settlements = 4
+max_settlements = 6
 
-b_lashiek = castle
+b_lashiek = city
 b_sunn = temple
-#b_faraman = temple
-#b_eltarf = castle
+b_faraman = city
+b_eltarf = castle
+b_soujal = castle
+# b_barinsamu 
 
 # Misc
 culture = cophic
-religion = atruhayid
+religion = ormazd
 
 #History
+1.1.1 = {
+	build_wonder = wonder_old_world_city
+	set_wonder_stage = 2
+	build_wonder_upgrade = upgrade_great_port
+	build_wonder_upgrade = upgrade_university
+	build_wonder_upgrade = upgrade_dockyard_district
+	build_wonder_upgrade = upgrade_palace
+	build_wonder_upgrade = upgrade_great_walls
+	build_wonder_upgrade = upgrade_school_of_medicine
+}
+
+1000.1.1 = {
+	set_wonder_stage = 4
+	build_wonder_upgrade = upgrade_harbour_patrol
+	build_wonder_upgrade = upgrade_city_gardens
+	build_wonder_upgrade = upgrade_crypt
+	build_wonder_upgrade = upgrade_temple_quarter
+	build_wonder_upgrade = upgrade_carpet_weavers
+	build_wonder_upgrade = upgrade_great_ormazd_temple
+}
