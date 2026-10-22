@@ -582,21 +582,21 @@ narrative_event = {
 
 namespace = wh_empire_events
 
-character_event = {
-	id = wh_empire_events.001
-	is_triggered_only = yes
-	hide_window = yes
-	religion = imperial_pantheon
-	
-	potential = {
-		NOT = { has_patron_trigger = yes }
-		trait = creature_human
-	}
-	
-	immediate = {
-		patron_imperial_pantheon_effect = yes
-	}
-}
+#character_event = {
+#	id = wh_empire_events.001
+#	is_triggered_only = yes
+#	hide_window = yes
+#	religion = imperial_pantheon
+#
+#	potential = {
+#		NOT = { has_patron_trigger = yes }
+#		trait = creature_human
+#	}
+#	
+#	immediate = {
+#		patron_imperial_pantheon_effect = yes
+#	}
+#}
 
 character_event = {
 	id = wh_empire_events.100
@@ -609,36 +609,34 @@ character_event = {
 	option = {	#Sigmar, Taal&Rhya, Ulric
 		name = EVTOPTA_WH_EMPIRE_EVENTS_100A
 		trigger = {
-			NOT = {
-				has_global_flag = imperial_churches_unified_taal_rhya
-			}
-		}
-		if = {
-			limit = {
-				NOR = {
-					has_global_flag = imperial_churches_unified_sigmar
+			NOR = {
+				AND = {
+					has_global_flag = imperial_churches_unified_taal_rhya
+					culture = reiklander
+				}
+				AND = {
 					has_global_flag = imperial_churches_unified_ulric
-					has_global_flag = imperial_churches_unified
+					culture = reiklander
 				}
 			}
-			character_event = { id = wh_empire_events.101 }
 		}
-		else_if = {
-			limit = {
-				OR = {
-					has_global_flag = imperial_churches_unified_sigmar
-					has_global_flag = imperial_churches_unified_ulric
-					has_global_flag = imperial_churches_unified
-				}
-				character_event = { id = wh_empire_events.104 }
-			}
-		}
+		character_event = { id = wh_empire_events.101 }
 	}
-	
+
 	option = {	#Taal&Rhya, Ulric
-		name = EVTOPTA_WH_EMPIRE_EVENTS_100B
+		name = EVTOPTA_WH_EMPIRE_EVENTS_100B_TAAL
 		trigger = {
 			has_global_flag = imperial_churches_unified_taal_rhya
+			NOT = { culture = reiklander }
+		}
+		character_event = { id = wh_empire_events.105 }
+	}
+	
+	option = {	#Ulric, Taal&Rhya
+		name = EVTOPTA_WH_EMPIRE_EVENTS_100_ULRIC
+		trigger = {
+			has_global_flag = imperial_churches_unified_ulric
+			NOT = { culture = reiklander }
 		}
 		character_event = { id = wh_empire_events.105 }
 	}
@@ -671,27 +669,103 @@ character_event = {
 
 character_event = {
 	id = wh_empire_events.101
-	desc = EVTDESC_WH_EMPIRE_EVENTS_101
+	desc = {
+        trigger = {
+            has_global_flag = imperial_churches_unified_sigmar
+        }
+        text = EVTDESC_WH_EMPIRE_EVENTS_101_SIGMAR
+    }
+    desc = {
+        trigger = {
+            has_character_flag = imperial_churches_unified_taal_rhya
+        }
+        text = EVTDESC_WH_EMPIRE_EVENTS_101_TAAL
+    }
+	desc = {
+        trigger = {
+        	has_character_flag = imperial_churches_unified_ulric
+        }
+        text = EVTDESC_WH_EMPIRE_EVENTS_101_ULRIC
+    }
+    desc = {
+        trigger = {
+			NOR = {
+				has_global_flag = imperial_churches_unified_sigmar
+				has_character_flag = imperial_churches_unified_taal_rhya
+				has_character_flag = imperial_churches_unified_ulric
+			}
+        }
+        text = EVTDESC_WH_EMPIRE_EVENTS_101
+    }
+
 	picture = GFX_evt_runestone_raising_oldgods
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
 	
+	option = {	#Sigmar Win
+		name = EVTOPTA_WH_EMPIRE_EVENTS_101A
+		trigger = {
+			has_global_flag = imperial_churches_unified_sigmar
+		}
+		add_trait = patron_sigmar
+	}
+
+	option = {	#Taal&Rhya Win
+		name = EVTOPTA_WH_EMPIRE_EVENTS_101B
+		trigger = {
+			has_global_flag = imperial_churches_unified_taal_rhya
+		}
+		add_trait = patron_taal_rhya_united
+	}
+
+	option = {	#Ulric Win
+		name = EVTOPTA_WH_EMPIRE_EVENTS_101C
+		trigger = {
+			has_global_flag = imperial_churches_unified_ulric
+		}
+		add_trait = patron_ulric_united
+	}
+
 	option = {	#Sigmar
 		name = EVTOPTA_WH_EMPIRE_EVENTS_101A
+		trigger = {
+			NOR = {
+				has_global_flag = imperial_churches_unified_sigmar
+				has_global_flag = imperial_churches_unified_sigmar_ban
+			}
+		}
 		add_trait = patron_sigmar
 	}
 	
 	option = {	#Taal&Rhya
 		name = EVTOPTA_WH_EMPIRE_EVENTS_101B
+		trigger = {
+			NOT = {
+				has_global_flag = imperial_churches_unified_taal_rhya
+			}
+		}
 		add_trait = patron_taal_rhya
 	}
 	
 	option = {	#Ulric
 		name = EVTOPTA_WH_EMPIRE_EVENTS_101C
+		trigger = {
+			NOT = {
+				has_global_flag = imperial_churches_unified_ulric
+			}
+		}
 		add_trait = patron_ulric
 	}
 	
+	option = {	#Sigmar Ban
+		name = EVTOPTA_WH_EMPIRE_EVENTS_101_SIGMAR_BAN
+		trigger = {
+			has_global_flag = imperial_churches_unified_with_sigmar_ban
+		}
+		add_trait = patron_sigmar
+	}
+
 	option = {	#Back to Master list
 		name = EVTOPTA_WH_EMPIRE_EVENTS_101D
 		character_event = { id = wh_empire_events.100 }
@@ -756,57 +830,65 @@ character_event = {
 	}
 }
 
-character_event = {
+character_event = {	#Taal&Rhya Win
 	id = wh_empire_events.104
 	desc = EVTDESC_WH_EMPIRE_EVENTS_104
 	picture = GFX_evt_runestone_raising_oldgods
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
-	
-	option = {	#Sigmar
-		name = EVTOPTA_WH_EMPIRE_EVENTS_104A
-		add_trait = patron_sigmar_united
-	}
-	
-	option = {	#Taal&Rhya
-		name = EVTOPTA_WH_EMPIRE_EVENTS_104B
+
+	option = {	#Taal&Rhya Win
+		name = EVTOPTA_WH_EMPIRE_EVENTS_101B
 		add_trait = patron_taal_rhya_united
 	}
 	
 	option = {	#Ulric
-		name = EVTOPTA_WH_EMPIRE_EVENTS_104C
-		add_trait = patron_ulric_united
+		name = EVTOPTA_WH_EMPIRE_EVENTS_101C
+		add_trait = patron_ulric
 	}
-	
+
 	option = {	#Back to Master list
-		name = EVTOPTA_WH_EMPIRE_EVENTS_104D
+		name = EVTOPTA_WH_EMPIRE_EVENTS_101D
 		character_event = { id = wh_empire_events.100 }
+	}
+
+	#test
+	option = {	
+		name = TEST
+		imperial_pantheon = {
+			set_divine_blood = yes
+			set_heir_designation = yes
+            set_allow_looting = yes
+			set_allow_rivermovement = yes
+			set_seafaring = yes
+        }
 	}
 }
 
-character_event = {
+character_event = {	#Ulric Win
 	id = wh_empire_events.105
 	desc = EVTDESC_WH_EMPIRE_EVENTS_105
 	picture = GFX_evt_runestone_raising_oldgods
 	border = GFX_event_normal_frame_religion
 
 	is_triggered_only = yes
-	
-	option = {	#Taal&Rhya
-		name = EVTOPTA_WH_EMPIRE_EVENTS_105A
-		add_trait = patron_taal_rhya_united
-	}
-	
-	option = {	#Ulric
-		name = EVTOPTA_WH_EMPIRE_EVENTS_105B
+
+	option = {	#Ulric Win
+		name = EVTOPTA_WH_EMPIRE_EVENTS_101C
 		add_trait = patron_ulric_united
 	}
 	
+	option = {	#Taal&Rhya
+		name = EVTOPTA_WH_EMPIRE_EVENTS_101B
+		add_trait = patron_taal_rhya
+	}
+
 	option = {	#Back to Master list
-		name = EVTOPTA_WH_EMPIRE_EVENTS_105C
+		name = EVTOPTA_WH_EMPIRE_EVENTS_101D
 		character_event = { id = wh_empire_events.100 }
 	}
+
 }
 
 character_event = {
