@@ -582,21 +582,21 @@ narrative_event = {
 
 namespace = wh_empire_events
 
-character_event = {
-	id = wh_empire_events.001
-	is_triggered_only = yes
-	hide_window = yes
-	religion = imperial_pantheon
-	
-	potential = {
-		NOT = { has_patron_trigger = yes }
-		trait = creature_human
-	}
-	
-	immediate = {
-		patron_imperial_pantheon_effect = yes
-	}
-}
+#character_event = {
+#	id = wh_empire_events.001
+#	is_triggered_only = yes
+#	hide_window = yes
+#	religion = imperial_pantheon
+#
+#	potential = {
+#		NOT = { has_patron_trigger = yes }
+#		trait = creature_human
+#	}
+#	
+#	immediate = {
+#		patron_imperial_pantheon_effect = yes
+#	}
+#}
 
 character_event = {
 	id = wh_empire_events.100
