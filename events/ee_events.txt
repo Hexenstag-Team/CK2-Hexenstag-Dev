@@ -78,3 +78,121 @@ narrative_event = {
 		name = EVTOPTA_EE_4
 	}
 }
+
+###Sylvania Reunification###
+#Necromantic Sylvania
+narrative_event = {
+	id = ee.5
+	desc = EVTDESC_EE_5
+	title = EVTTITLE_EE_5
+	picture = empire_eastern
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_global_flag = no_sylvania_war
+		de_jure_realm_sylvania_effect = yes
+	}
+	
+	option = {
+		name = EVTOPTA_EE_5
+		primary_title = {
+			k_sylvania = {
+				grant_title = ROOT
+				copy_title_laws = PREV
+				make_primary_title = yes
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = ee.6
+	desc = EVTDESC_EE_6
+	title = EVTTITLE_EE_6
+	picture = empire_eastern
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_EE_6
+	}
+}
+
+#Imperial Sylvania
+narrative_event = {
+	id = ee.7
+	desc = EVTDESC_EE_7
+	title = EVTTITLE_EE_7
+	picture = empire_eastern
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_global_flag = no_sylvania_war
+		de_jure_realm_sylvania_effect = yes
+	}
+	
+	option = {
+		name = EVTOPTA_EE_7
+		primary_title = {
+			k_sylvania = {
+				grant_title = ROOT
+				copy_title_laws = PREV
+				make_primary_title = yes
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = ee.8
+	desc = EVTDESC_EE_8
+	title = EVTTITLE_EE_8
+	picture = empire_eastern
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_EE_8
+	}
+}
+
+#Other Sylvania
+narrative_event = {
+	id = ee.9
+	desc = EVTDESC_EE_9
+	title = EVTTITLE_EE_9
+	picture = empire_eastern
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		remove_global_flag = no_sylvania_war
+		de_jure_realm_sylvania_effect = yes
+	}
+	
+	option = {
+		name = EVTOPTA_EE_9
+		primary_title = {
+			k_sylvania = {
+				grant_title = ROOT
+				copy_title_laws = PREV
+				make_primary_title = yes
+			}
+		}
+	}
+}
+
+narrative_event = {
+	id = ee.10
+	desc = EVTDESC_EE_10
+	title = EVTTITLE_EE_10
+	picture = empire_eastern
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_EE_10
+	}
+}
