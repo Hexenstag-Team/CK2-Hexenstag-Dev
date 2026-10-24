@@ -88,7 +88,11 @@ wonder_old_world_city = {
 	allow_coastal = yes
 	picture = GFX_wonder_strip_oldworldcity
 	potential = {
-		religion_group = old_world_group #should become broader as more content is developed
+		OR = {
+			religion_group = old_world_group #should become broader as more content is developed
+			religion_group = stromfels_group
+			religion_group = ormazd_gods_group
+		}
 	}
 	active = {
 	}
@@ -105,17 +109,20 @@ wonder_old_world_city = {
 
 	###CITY THINGS###
 	upgrade_banking_district
+	upgrade_carpet_weavers
 	upgrade_city_farms
 	upgrade_city_gardens
 	upgrade_clock_tower
 	upgrade_court_of_law
 	upgrade_customs_wall
 	upgrade_dwarf_quarter
+	upgrade_great_vinyards
 	upgrade_halfling_quarter
 	upgrade_industrial_district
 	upgrade_opera_house
 	upgrade_racetrack
 	upgrade_sewer_system
+	upgrade_spice_gardens
 	upgrade_sports_field
 	upgrade_streetlights
 
@@ -156,6 +163,7 @@ wonder_old_world_city = {
 	upgrade_engineered_defences
 
 	###MILITARY###
+	upgrade_great_defenses
 	upgrade_great_keep
 	upgrade_great_walls
 	upgrade_gunnery_school
@@ -179,8 +187,10 @@ wonder_old_world_city = {
 	upgrade_great_manann_temple
 	upgrade_great_morr_temple
 	upgrade_great_myrmidia_temple
+	upgrade_great_ormazd_temple
 	upgrade_great_sigmar_temple
 	upgrade_great_shallya_temple
+	upgrade_great_stromfels_temple
 	upgrade_great_taal_rhya_temple
 	#no great temple of Tor because he doesn't have much of a cult
 	upgrade_great_ulric_temple

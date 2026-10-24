@@ -977,7 +977,6 @@ castle = {
 				culture_group = goblin_group
 				culture_group = lizardman_group
 				culture_group = druchi_group
-				culture_group = sartosan_group
 				culture = nehekharan
 				region = world_underempire
 			}
@@ -998,7 +997,6 @@ castle = {
 				culture_group = goblin_group
 				culture_group = lizardman_group
 				culture_group = druchi_group
-				culture_group = sartosan_group
 				culture = nehekharan
 				region = world_underempire
 			}
@@ -1021,7 +1019,6 @@ castle = {
 				culture_group = goblin_group
 				culture_group = lizardman_group
 				culture_group = druchi_group
-				culture_group = sartosan_group
 				culture = nehekharan
 				region = world_underempire
 			}
@@ -1043,7 +1040,6 @@ castle = {
 				culture_group = goblin_group
 				culture_group = lizardman_group
 				culture_group = druchi_group
-				culture_group = sartosan_group
 				culture = nehekharan
 				region = world_underempire
 			}
@@ -1065,7 +1061,6 @@ castle = {
 				culture_group = goblin_group
 				culture_group = lizardman_group
 				culture_group = druchi_group
-				culture_group = sartosan_group
 				culture = nehekharan
 				region = world_underempire
 			}
@@ -1394,7 +1389,6 @@ castle = {
 				culture_group = goblin_group
 				culture_group = asur_group
 				culture_group = lizardman_group
-				culture_group = sartosan_group
 				culture = nehekharan
 				region = world_underempire
 			}
@@ -1417,7 +1411,6 @@ castle = {
 				culture_group = goblin_group
 				culture_group = asur_group
 				culture_group = lizardman_group
-				culture_group = sartosan_group
 				culture = nehekharan
 				region = world_underempire
 			}
@@ -1442,7 +1435,6 @@ castle = {
 				culture_group = goblin_group
 				culture_group = asur_group
 				culture_group = lizardman_group
-				culture_group = sartosan_group
 				culture = nehekharan
 				region = world_underempire
 			}
@@ -1468,7 +1460,6 @@ castle = {
 				culture_group = goblin_group
 				culture_group = asur_group
 				culture_group = lizardman_group
-				culture_group = sartosan_group
 				culture = nehekharan
 				region = world_underempire
 			}
@@ -1491,7 +1482,6 @@ castle = {
 				culture_group = goblin_group
 				culture_group = asur_group
 				culture_group = lizardman_group
-				culture_group = sartosan_group
 				culture = nehekharan
 				region = world_underempire
 			}
@@ -1515,7 +1505,6 @@ castle = {
 				culture_group = goblin_group
 				culture_group = asur_group
 				culture_group = lizardman_group
-				culture_group = sartosan_group
 				culture = nehekharan
 				region = world_underempire
 			}
@@ -1634,78 +1623,6 @@ castle = {
 
 		extra_tech_building_start = 0.3
 	}
-	#REAVER PORT, replaces tribal shipyard, more galleys tax income and heavy infantry
-	ca_norscan_reavers_1 = {
-	    desc = ca_norscan_reavers_1_desc
-		port = yes
-		potential = {
-			location = { culture_group = norscan_group }
-		}
-		trigger = { TECH_NAVAL = 0 }
-		replaces = ca_shipyard_1
-		gold_cost = 100
-		build_time = 365
-		tax_income = 1
-		galleys = 8
-		heavy_infantry = 15
-		ai_creation_factor = 100
-
-		extra_tech_building_start = 0.3
-	}
-	ca_norscan_reavers_2 = {
-	    desc = ca_norscan_reavers_1_desc
-		port = yes
-		potential = {
-			location = { culture_group = norscan_group }
-		}
-		trigger = { TECH_NAVAL = 1 }
-		upgrades_from = ca_norscan_reavers_1
-		replaces = ca_shipyard_2
-		gold_cost = 100
-		build_time = 730
-		tax_income = 1
-		galleys = 9
-		heavy_infantry = 15
-		ai_creation_factor = 99
-
-		extra_tech_building_start = 0.3
-	}
-	ca_norscan_reavers_3 = {
-	    desc = ca_norscan_reavers_1_desc
-		port = yes
-		potential = {
-			location = { culture_group = norscan_group }
-		}
-		trigger = { TECH_NAVAL = 2 }
-		upgrades_from = ca_norscan_reavers_2
-		replaces = ca_shipyard_3
-		gold_cost = 100
-		build_time = 1095
-		tax_income = 1
-		galleys = 10
-		heavy_infantry = 15
-		ai_creation_factor = 98
-
-		extra_tech_building_start = 0.3
-	}
-	ca_norscan_reavers_4 = {
-	    desc = ca_norscan_reavers_1_desc
-		port = yes
-		potential = {
-			location = { culture_group = norscan_group }
-		}
-		trigger = { TECH_NAVAL = 4 }
-		upgrades_from = ca_norscan_reavers_3
-		replaces = ca_shipyard_4
-		gold_cost = 100
-		build_time = 1460
-		tax_income = 2
-		galleys = 11
-		heavy_infantry = 15
-		ai_creation_factor = 97
-
-		extra_tech_building_start = 0.3
-	}
 
 	#Armoury, gives morale and reinforcement rate
 	ca_training_grounds_1 = {
@@ -1718,7 +1635,6 @@ castle = {
 				culture_group = goblin_group
 				culture_group = lizardman_group
 				culture_group = dawi_zharr_group
-				culture_group = sartosan_group
 				culture_group = skaven_group
 				culture = nehekharan
 			}
@@ -1745,7 +1661,6 @@ castle = {
 				culture_group = goblin_group
 				culture_group = lizardman_group
 				culture_group = dawi_zharr_group
-				culture_group = sartosan_group
 				culture_group = skaven_group
 				culture = nehekharan
 			}
@@ -1772,7 +1687,6 @@ castle = {
 				culture_group = goblin_group
 				culture_group = lizardman_group
 				culture_group = dawi_zharr_group
-				culture_group = sartosan_group
 				culture_group = skaven_group
 				culture = nehekharan
 			}
@@ -1873,7 +1787,6 @@ castle = {
 				culture_group = asur_group
 				culture_group = lizardman_group
 				culture_group = dawi_zharr_group
-				culture_group = arabyan_group
 				culture_group = nehekharan_group
 				culture_group = kislevite_group
 				culture_group = skaven_group
@@ -1899,7 +1812,6 @@ castle = {
 				culture_group = asur_group
 				culture_group = lizardman_group
 				culture_group = dawi_zharr_group
-				culture_group = arabyan_group
 				culture_group = nehekharan_group
 				culture_group = kislevite_group
 				culture_group = skaven_group
@@ -1927,7 +1839,6 @@ castle = {
 				culture_group = asur_group
 				culture_group = lizardman_group
 				culture_group = dawi_zharr_group
-				culture_group = arabyan_group
 				culture_group = nehekharan_group
 				culture_group = kislevite_group
 				culture_group = skaven_group
@@ -1954,7 +1865,6 @@ castle = {
 				culture_group = asur_group
 				culture_group = lizardman_group
 				culture_group = dawi_zharr_group
-				culture_group = arabyan_group
 				culture_group = nehekharan_group
 				culture_group = kislevite_group
 				culture_group = skaven_group
@@ -2647,76 +2557,6 @@ castle = {
 
 		extra_tech_building_start = 0.5
 	}
-
-
-	#Sudenburg secondary military focus buildings
-	#Gunpowder Focus, offensive/defensive bonus, unlocks gunners
-	ca_sudgunner_1 = {
-		desc = ca_sudgunner_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-				NOR = {
-					has_building = ca_sudartillery_1
-					has_building = ca_sudelephant_1
-				}
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
-		not_if_x_exists = { ca_sudartillery_1 ca_sudelephant_1 }
-		gold_cost = 100
-		build_time = 365
-		gunpowder_offensive = 0.40
-		gunpowder_defensive = 0.40
-		ai_creation_factor = 105
-
-		extra_tech_building_start = 1.0
-	}
-	#Artillery Focus, offensive/defensive bonus, unlocks artillery
-	ca_sudartillery_1 = {
-		desc = ca_sudartillery_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-				NOR = {
-					has_building = ca_sudgunner_1
-					has_building = ca_sudelephant_1
-				}
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
-		not_if_x_exists = { ca_sudgunner_1 ca_sudelephant_1 }
-		gold_cost = 100
-		build_time = 365
-		artillery_offensive = 0.40
-		artillery_defensive = 0.40
-		ai_creation_factor = 103
-
-		extra_tech_building_start = 1.0
-	}
-	#Elephant Focus, offensive/defensive bonus, unlocks elephants
-	ca_sudelephant_1 = {
-		desc = ca_sudelephant_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-				NOR = {
-					has_building = ca_sudgunner_1
-					has_building = ca_sudartillery_1
-				}
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
-		not_if_x_exists = { ca_sudgunner_1 ca_sudartillery_1 }
-		gold_cost = 100
-		build_time = 365
-		war_elephants_offensive = 0.40
-		war_elephants_defensive = 0.40
-		ai_creation_factor = 104
-
-		extra_tech_building_start = 1.0
-	}
-
 
 	#Barracks, gives heavy infantry and pikemen, adjusted for more pikemen in the WH world
 	ca_barracks_1 = {
@@ -4337,143 +4177,6 @@ castle = {
 
 		extra_tech_building_start = 0.2
 	}
-	#Desert Stable, gives light cavalry & horse archers
-	ca_desert_stable_1 = {
-		desc = ca_desert_stable_desc
-		potential = {
-			terrain = desert
-			FROM = {
-				OR = {
-					culture_group = southlander_group
-					culture_group = arabyan_group
-				}
-			}
-		}
-		replaces = ca_stable_1
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		gold_cost = 100
-		build_time = 365
-		light_cavalry = 25
-		camel_cavalry = 10
-		ai_creation_factor = 89
-
-		extra_tech_building_start = 0.4
-	}
-	ca_desert_stable_2 = {
-		desc = ca_desert_stable_desc
-		potential = {
-			terrain = desert
-			FROM = {
-				OR = {
-					culture_group = southlander_group
-					culture_group = arabyan_group
-				}
-			}
-		}
-		replaces = ca_stable_2
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		prerequisites = { ca_wall_1 }
-		upgrades_from = ca_desert_stable_1
-		gold_cost = 120
-		build_time = 547
-		light_cavalry = 25
-		camel_cavalry = 20
-		ai_creation_factor = 88
-
-		extra_tech_building_start = 0.8
-	}
-	ca_desert_stable_3 = {
-		desc = ca_desert_stable_desc
-		potential = {
-			terrain = desert
-			FROM = {
-				OR = {
-					culture_group = southlander_group
-					culture_group = arabyan_group
-				}
-			}
-		}
-		replaces = ca_stable_3
-		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
-		prerequisites = { ca_wall_2 }
-		upgrades_from = ca_desert_stable_2
-		gold_cost = 200
-		build_time = 730
-		light_cavalry = 35
-		camel_cavalry = 20
-		ai_creation_factor = 87
-
-		extra_tech_building_start = 0.2
-	}
-	ca_desert_stable_4 = {
-		desc = ca_desert_stable_desc
-		potential = {
-			terrain = desert
-			FROM = {
-				OR = {
-					culture_group = southlander_group
-					culture_group = arabyan_group
-				}
-			}
-		}
-		replaces = ca_stable_4
-		trigger = { TECH_CASTLE_CONSTRUCTION = 4 }
-		upgrades_from = ca_desert_stable_3
-		gold_cost = 300
-		build_time = 1095
-		light_cavalry = 35
-		camel_cavalry = 20
-		knights = 5
-		ai_creation_factor = 86
-
-		extra_tech_building_start = 0.2
-	}
-	ca_desert_stable_5 = {
-		desc = ca_desert_stable_desc
-		potential = {
-			terrain = desert
-			FROM = {
-				OR = {
-					culture_group = southlander_group
-					culture_group = arabyan_group
-				}
-			}
-		}
-		replaces = ca_stable_5
-		trigger = { TECH_CASTLE_CONSTRUCTION = 6 }
-		upgrades_from = ca_desert_stable_4
-		gold_cost = 400
-		build_time = 2190
-		light_cavalry = 35
-		camel_cavalry = 20
-		knights = 10
-		ai_creation_factor = 85
-
-		extra_tech_building_start = 0.2
-	}
-	ca_desert_stable_6 = {
-		desc = ca_desert_stable_desc
-		potential = {
-			terrain = desert
-			FROM = {
-				OR = {
-					culture_group = southlander_group
-					culture_group = arabyan_group
-				}
-			}
-		}
-		replaces = ca_stable_6
-		trigger = { TECH_CASTLE_CONSTRUCTION = 8 }
-		upgrades_from = ca_desert_stable_5
-		gold_cost = 500
-		build_time = 2190
-		light_cavalry = 35
-		camel_cavalry = 20
-		knights = 20
-		ai_creation_factor = 85
-
-		extra_tech_building_start = 0.2
-	}
 	#Gospodar Stable, gives light cavalry and heavy cavalry
 	ca_kislevite_stable_1 = {
 		desc = ca_kislevite_stable_desc
@@ -4837,9 +4540,8 @@ castle = {
 		replaces = ca_stable_1
 		gold_cost = 100
 		build_time = 365
-		light_cavalry = 50
-		horse_archers = 10
-		light_cavalry_offensive = 0.05
+		light_cavalry = 30
+		horse_archers = 5
 
 		ai_creation_factor = 89
 
@@ -4859,9 +4561,8 @@ castle = {
 		replaces = ca_stable_2
 		gold_cost = 120
 		build_time = 547
-		light_cavalry = 55
-		horse_archers = 20
-		light_cavalry_offensive = 0.05
+		light_cavalry = 35
+		horse_archers = 10
 
 		ai_creation_factor = 88
 
@@ -4881,9 +4582,8 @@ castle = {
 		replaces = ca_stable_3
 		gold_cost = 200
 		build_time = 730
-		light_cavalry = 60
-		horse_archers = 25
-		light_cavalry_offensive = 0.05
+		light_cavalry = 40
+		horse_archers = 15
 
 		ai_creation_factor = 87
 
@@ -4903,9 +4603,8 @@ castle = {
 		replaces = ca_stable_4
 		gold_cost = 300
 		build_time = 1095
-		light_cavalry = 65
-		horse_archers = 30
-		light_cavalry_offensive = 0.05
+		light_cavalry = 45
+		horse_archers = 20
 
 		ai_creation_factor = 86
 
@@ -4925,9 +4624,8 @@ castle = {
 		replaces = ca_stable_5
 		gold_cost = 400
 		build_time = 2190
-		light_cavalry = 65
-		horse_archers = 35
-		light_cavalry_offensive = 0.05
+		light_cavalry = 55
+		horse_archers = 30
 
 		ai_creation_factor = 85
 
@@ -4947,9 +4645,8 @@ castle = {
 		replaces = ca_stable_6
 		gold_cost = 500
 		build_time = 2190
-		light_cavalry = 70
-		horse_archers = 40
-		light_cavalry_offensive = 0.05
+		light_cavalry = 60
+		horse_archers = 45
 
 		ai_creation_factor = 98
 
@@ -5391,114 +5088,6 @@ castle = {
 
 		extra_tech_building_start = 0.8
 	}
-	#Satrap Cavalry Companies, replaces Stables, gives more knights
-	ca_sudcalvcorps_1 = {
-		desc = ca_sudcalvcorps_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 0 }
-		replaces = ca_stable_1
-		#prerequisites = { ca_sudcalv_focus_1 }
-		gold_cost = 100
-		build_time = 365
-		light_cavalry = 40
-		knights = 10
-		ai_creation_factor = 89
-		extra_tech_building_start = 0.8
-	}
-	ca_sudcalvcorps_2 = {
-		desc = ca_sudcalvcorps_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 1 }
-		replaces = ca_stable_2
-		prerequisites = { ca_wall_1 }
-		upgrades_from = ca_sudcalvcorps_1
-		gold_cost = 120
-		build_time = 547
-		light_cavalry = 45
-		knights = 10
-		ai_creation_factor = 88
-
-		extra_tech_building_start = 2.2
-	}
-	ca_sudcalvcorps_3 = {
-		desc = ca_sudcalvcorps_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 2 }
-		replaces = ca_stable_3
-		upgrades_from = ca_sudcalvcorps_2
-		gold_cost = 200
-		build_time = 730
-		light_cavalry = 55
-		knights = 10
-		ai_creation_factor = 87
-		extra_tech_building_start = 1.6
-	}
-	ca_sudcalvcorps_4 = {
-		desc = ca_sudcalvcorps_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 3 }
-		replaces = ca_stable_4
-		upgrades_from = ca_sudcalvcorps_3
-		gold_cost = 300
-		build_time = 1095
-		light_cavalry = 55
-		knights = 10
-		ai_creation_factor = 86
-
-		extra_tech_building_start = 1.2
-	}
-	ca_sudcalvcorps_5 = {
-		desc = ca_sudcalvcorps_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 5 }
-		replaces = ca_stable_5
-		upgrades_from = ca_sudcalvcorps_4
-		gold_cost = 400
-		build_time = 2190
-		light_cavalry = 55
-		knights = 20
-		ai_creation_factor = 85
-
-		extra_tech_building_start = 0.8
-	}
-	ca_sudcalvcorps_6 = {
-		desc = ca_sudcalvcorps_1_desc
-		potential = {
-			location = {
-				culture = sudenburger
-			}
-		}
-		trigger = { TECH_CASTLE_CONSTRUCTION = 7 }
-		replaces = ca_stable_6
-		upgrades_from = ca_sudcalvcorps_3
-		gold_cost = 500
-		build_time = 2190
-		light_cavalry = 55
-		knights = 40
-		ai_creation_factor = 85
-
-		extra_tech_building_start = 0.2
-	}
 
 	#War Sheep Riders, replaces Stable, light cavalry only
 	ca_War_Sheep_Riders_1 = {
@@ -5512,7 +5101,7 @@ castle = {
 		replaces = ca_stable_1
 		gold_cost = 100
 		build_time = 365
-		light_cavalry = 20
+		light_cavalry = 35
 		ai_creation_factor = 89
 
 		extra_tech_building_start = 0.8
@@ -5530,7 +5119,7 @@ castle = {
 		replaces = ca_stable_2
 		gold_cost = 120
 		build_time = 547
-		light_cavalry = 20
+		light_cavalry = 45
 		ai_creation_factor = 88
 
 		extra_tech_building_start = 2.2
@@ -5548,8 +5137,7 @@ castle = {
 		replaces = ca_stable_3
 		gold_cost = 300
 		build_time = 1095
-		light_cavalry = 20
-		knights = 10
+		light_cavalry = 55
 		ai_creation_factor = 86
 
 		extra_tech_building_start = 1.2
@@ -5566,8 +5154,7 @@ castle = {
 		replaces = ca_stable_4
 		gold_cost = 500
 		build_time = 2190
-		light_cavalry = 20
-		knights = 10
+		light_cavalry = 65
 		ai_creation_factor = 85
 
 		extra_tech_building_start = 0.8
@@ -5679,7 +5266,7 @@ castle = {
 		prerequisites = { ca_wall_2 }
 		gold_cost = 350
 		build_time = 1025
-		liege_piety = 0.10
+        	knights = 15
 		knights_morale = 0.10
 		knights_offensive = 0.10
 		knights_defensive = 0.10
@@ -5697,7 +5284,7 @@ castle = {
 		upgrades_from = ca_grail_knights_1
 		gold_cost = 450
 		build_time = 1650
-		liege_piety = 0.10
+        	knights = 20
 		knights_morale = 0.10
 		knights_offensive = 0.10
 		knights_defensive = 0.10
@@ -5715,7 +5302,7 @@ castle = {
 		upgrades_from = ca_grail_knights_2
 		gold_cost = 550
 		build_time = 2190
-		liege_piety = 0.15
+		knights = 25
 		knights_morale = 0.15
 		knights_offensive = 0.15
 		knights_defensive = 0.15
@@ -5733,7 +5320,7 @@ castle = {
 		upgrades_from = ca_grail_knights_3
 		gold_cost = 650
 		build_time = 2190
-		liege_piety = 0.15
+		knights = 30
 		knights_morale = 0.15
 		knights_offensive = 0.15
 		knights_defensive = 0.15

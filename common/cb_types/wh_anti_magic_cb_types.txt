@@ -12,12 +12,8 @@ antimagic_revolt = {
 	is_independence = yes
 
 	can_use = {
-
 		ROOT = {
 			vassal_of = FROM
-		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 	on_add = {
@@ -258,12 +254,8 @@ promagic_revolt = {
 	is_independence = yes
 
 	can_use = {
-
 		ROOT = {
 			vassal_of = FROM
-		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 	on_add = {
@@ -505,7 +497,6 @@ impose_magic_law_0 = {
 	sort_priority = 2000
 
 	can_use = {
-
 		ROOT = {
 			has_magic_law_3 = no
 			independent = yes
@@ -517,9 +508,6 @@ impose_magic_law_0 = {
 			in_revolt = no
 			has_magic_law_1_or_above = yes
 			culture_group = ROOT
-		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
 		}
 	}
 	on_add = {

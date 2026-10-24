@@ -675,35 +675,6 @@ character_event = {
 					}
 					50 = {
 						trigger = {
-							can_join_society = runesmith_society
-						}
-						join_society = runesmith_society
-						random_list = { # Artificially increase society influence for balance purposes
-							75 = {
-								modifier = {
-									factor = 0
-									society_influence >= 30
-								}
-								add_mission_succeed_influence_effect = yes
-							}
-							25 = {
-							}
-						}
-						if = {
-							limit = {
-								NOT = {
-									society = {
-										any_society_member = {
-											is_society_grandmaster = yes
-										}
-									}
-								}
-							}
-							set_society_grandmaster = yes
-						}
-					}
-					50 = {
-						trigger = {
 							can_join_society = cult_of_khorne
 						}
 						modifier = {

@@ -653,10 +653,6 @@ character_event = {
 						trait = creature_human
 						trait = creature_beastman
 					}
-					OR = {
-						ai = no
-						NOT = { has_global_flag = optionB }
-					}
 				}
 			}
 			AND = {
@@ -664,47 +660,30 @@ character_event = {
 				spouse = {
 					NOT = { trait = creature_dwarf }
 					NOT = { trait = creature_chaos_dwarf }
-					OR = {
-						ai = no
-						NOT = { has_global_flag = optionB }
-					}
 				}
 			}
 			AND = {
 				trait = creature_elf
 				 spouse = {
 					NOT = { trait = creature_elf }
-					OR = { ai = no
-						NOT = { has_global_flag = optionB }
-					}
 				}
 			}
 			AND = {
 				trait = creature_halfling
 				spouse = {
 					NOT = { trait = creature_halfling }
-					OR = {
-						ai = no
-						NOT = { has_global_flag = optionB }
-					}
 				}
 			}
 			AND = {
 				trait = creature_ogre
 				spouse = {
 					NOT = { trait = creature_ogre }
-					OR = {
-						ai = no
-						NOT = { has_global_flag = optionB }
-					}
 				}
 			}
 			AND = {
 				trait = creature_skaven
 				spouse = {
 					NOT = { trait = creature_skaven }
-					OR = { ai = no
-						NOT = { has_global_flag = optionB } }
 				}
 			}
 			#these creatures shouldn't marry at all
@@ -726,6 +705,41 @@ character_event = {
 	immediate = {
 		any_spouse = {
 			remove_spouse = ROOT
+		}
+		if = {
+			limit = {
+				trait = creature_halfling
+			}
+			create_random_intriguer = {
+				religion = ROOT
+				culture = ROOT
+				dynasty = none
+				health = 5.5
+				fertility = 0.65
+				attributes = {
+					martial = 4
+					diplomacy = 5
+					stewardship = 5
+					intrigue = 5
+					learning = 3
+				}
+				add_trait = creature_halfling
+			}
+			new_character = {
+				if = {
+					limit = {
+						ROOT = {
+							is_female = no
+						}
+					}
+					set_gender = female
+					add_spouse = ROOT
+				}
+				else = {
+					set_gender = male
+					add_spouse_matrilineal = ROOT
+				}
+			}
 		}
 	}
 }
