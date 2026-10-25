@@ -2956,3 +2956,129 @@ slaanesh_warp = {
 		}
 	}
 }
+
+offmap_imperial_pantheon = {
+	name = offmap_imperial_pantheon
+	window_name = imperial_pantheon_offmaps_window
+	button_name = icon_offmaps_imperial_pantheon
+	sound = china_interaction_interface
+	currency_name = TXT_CHIVALRY
+	currency_gain = CHIVALRY
+	currency_below_zero = no
+	currency_reset_on_dynasty_change = yes
+
+	#Minor title for holder, and titular title for governor
+	holder_title = title_imperial_pantheon
+	governor_title = e_realm_of_imperial_pantheon
+
+	#Other parameters
+	tier = emperor
+	coa_religion = imperial_pantheon
+	government = fuedal_government
+	beginning_of_history = 1.1.1
+	display_trigger = {
+		#has_dlc = "Jade Dragon"
+		FROM = {
+			#imperial_pantheon_offmap_enabled_trigger = yes
+			religion = imperial_pantheon
+		}
+	}
+
+	policies = {
+		status_god_sigmar
+	}
+
+	statuses = {
+		status_god_sigmar
+	}
+
+	buttons = {
+		#must match button_name in offmap decision(s) and .gui
+		offmap_gifts = {
+			is_active_trigger = {
+				always = no
+			}
+		}
+		offmap_boons = {
+			is_active_trigger = {
+				always = yes
+			}
+		}
+		offmap_hostility = {
+			is_active_trigger = {
+				always = no
+			}
+			display_trigger = {
+				always = no
+			}
+		}
+	}
+	#These conditions only effect the appearance of the button, it does not actually disable them from being clickable. The same triggers are used in all tribute/boon decisions respectively
+
+	icon_triggers = {
+	}
+
+	monthly_currency_gain = {
+	}
+
+	holder_succession = {
+		#When the current offmap power holder dies, generates a new character by rolling for each section in order
+		#In the triggers of additive_modifiers:
+		#  ROOT is the offmap power
+		#  FROM is the former holder (invalid if no previous holder)
+		#  new_character is the new holder, who may not be fully generated yet (e.g., as of "culture", only the gender is known)
+
+		is_female = {
+			value = 0
+		}
+
+		culture = {
+			old_imperial = {
+				value = 100
+			}
+		}
+
+		religion = {
+			imperial_pantheon = {
+				value = 100
+			}
+		}
+
+		dynasty = {
+			FROM = {
+				value = 100
+			}
+		}
+
+		graphical_culture = {
+			FROM = {
+				value = 100
+			}
+		}
+
+		likes = {
+			likes_smart = {
+				value = 1000
+			}
+		}
+
+		dislikes = {
+			likes_stubborn = {
+				value = 1000
+			}
+		}
+	}
+
+	diplomatic_range = {
+		religion = imperial_pantheon
+	}
+
+	temple_names = {
+		{
+			#List of founder names
+		}
+		{
+			#List of non-founder names
+		}
+	}
+}
