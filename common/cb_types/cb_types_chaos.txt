@@ -54,9 +54,6 @@ daemonic_subjugation = {
 			NOT = { same_realm = FROM }
             NOT = { is_liege_or_above = FROM }
         }
-        FROM = {
-            target_not_in_old_empire_sylvania_trigger = yes
-        }
     }
 
 	can_use_gui = {
@@ -145,6 +142,7 @@ daemonic_subjugation = {
 	}
 
     can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -463,12 +461,10 @@ unholy_raid = {
 			NOT = { religion = nurgle }
 			NOT = { religion = chaos }
 			}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -729,9 +725,6 @@ everchosen_invasion = {
 		ROOT = {
 			NOT = { same_realm = FROM }
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = {
@@ -751,6 +744,10 @@ everchosen_invasion = {
 				de_jure_liege_or_above = PREVPREV
 			}
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -959,9 +956,6 @@ cultist_bid_for_independence = { #WIP
 		ROOT = {
 			vassal_of = FROM
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = {
@@ -999,6 +993,10 @@ cultist_bid_for_independence = { #WIP
 				}
 			}
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {

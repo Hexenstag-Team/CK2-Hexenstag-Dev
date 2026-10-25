@@ -36,12 +36,10 @@ great_wild_hunt = {
 		FROM = {
 			NOT = { religion = asrai_cadai }
 			}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -269,11 +267,9 @@ athel_loren_reconquest = {
 				}
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -450,12 +446,10 @@ bretonnian_forest_claim = {
 		FROM = {
 			religion = asrai_cadai
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -650,12 +644,10 @@ empire_forest_claim = {
 				capital_scope = { empire = { title = e_athel_loren } }
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {

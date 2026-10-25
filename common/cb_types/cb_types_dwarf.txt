@@ -51,13 +51,11 @@ dwarven_reconquest = {
 				}
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		location = {
 			OR={
 				region = world_karaz_ankor
@@ -323,9 +321,10 @@ settle_grudge = {
 		}
 
 		FROM = { prisoner = no }
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
+	}
+	
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	is_valid = {
@@ -613,9 +612,10 @@ oathbreaker_ruler = {
 			trait = creature_dwarf
 
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	is_valid = {

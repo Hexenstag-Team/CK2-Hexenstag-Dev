@@ -102,11 +102,12 @@ skaven_tributary_cb = {
 				}
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 	on_attacker_leader_death = { end_war = invalid }
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
+	}
 
 	on_success = {
 		FROM = {
@@ -403,14 +404,10 @@ skaven_county_conquest = {
 			}
 		}
 		FROM = { culture_group = skaven_group }
-
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
-
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -672,9 +669,6 @@ skaven_foreignconquest = {
 			NOT = { religion = hashut }	# They get different stuff
 			NOT = { same_realm = FROM }
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_gui = {
@@ -698,6 +692,7 @@ skaven_foreignconquest = {
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -932,13 +927,10 @@ underempire_conquest = {
 				}
 			}
 		}
-
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {

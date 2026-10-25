@@ -17,6 +17,7 @@ imperial_reconquest = {
     }
 
     can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -599,6 +600,7 @@ vlad_subjugation = {
     }
 
     can_use_title = {
+		cb_restrictions_trigger = yes
     }
 	
 	is_valid = {
@@ -1116,6 +1118,10 @@ cultist_bid_for_independence = { #WIP
 		}
 	}
 
+	can_use_title = {
+		cb_restrictions_trigger = yes
+	}
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -1611,6 +1617,10 @@ witch_hunter_forceinvestigation_cb = {
 				has_character_modifier = expelled_k_witch_hunters_order }
 	}
 
+	can_use_title = {
+		cb_restrictions_trigger = yes
+	}
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -1721,6 +1731,7 @@ strigoi_invasion = {
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -1902,6 +1913,7 @@ strygan_reconquest = {
     }
 
     can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -2051,6 +2063,7 @@ necrarch_thrall_raid = {
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -2242,6 +2255,7 @@ jade_eradication_conquest = {
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -2397,6 +2411,7 @@ cathayan_eradication_conquest = {
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -2555,6 +2570,10 @@ cathayan_subjugation = {
          }
     }
 
+	can_use_title = {
+		cb_restrictions_trigger = yes
+	}
+
 	is_valid = {
 		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
 		FROM = {
@@ -2669,230 +2688,6 @@ cathayan_subjugation = {
 
     attacker_ai_victory_worth = {
         factor = 200
-    }
-
-    attacker_ai_defeat_worth = {
-        factor = 100
-    }
-
-    defender_ai_victory_worth = {
-        factor = -1 # always accept
-    }
-
-    defender_ai_defeat_worth = {
-        factor = 100
-    }
-}
-
-reiklander_nulnian_war_cb = {
-    name = CB_NAME_REIKLANDER_NULNIAN_WAR_CB
-    war_name = WAR_NAME_REIKLANDER_NULNIAN_WAR_CB
-    sprite = 1
-    truce_days = 3650
-    hostile_against_others = yes
-    is_permanent = no
-	battle_warscore_mult = 2
-	max_attacker_battle_score = 100
-	allow_whitepeace = no
-	attacker_unoccupied_warscore  = yes
-
-    can_use = {
-		ROOT = {
-			has_landed_title = e_reikland
-		}
-		FROM = {
-			has_landed_title = e_nuln
-		}
-    }
-
-	can_use_title = {
-		ROOT = {
-			primary_title = {
-				has_landed_title = e_reikland
-			}
-		}
-		FROM = {
-			primary_title = {
-				has_landed_title = e_nuln
-			}
-		}
-    }
-	
-	is_valid = {
-		# The defender is not in any black crusades, otherwise the joining effect for defenders will join the wrong war
-		FROM = {
-			NOT = {
-				any_war = {
-					using_cb = new_crusade
-				}
-			}
-		}
-		ROOT = {
-			primary_title = { higher_tier_than = KING }
-		}
-		FROM = {
-			primary_title = { higher_tier_than = KING }
-		}
-	}
-	
-	is_valid_title = {
-		FROM = {
-			has_landed_title = e_nuln
-		}
-		ROOT = {
-			has_landed_title = e_reikland
-		}
-	}
-	
-    on_success = {
-        ROOT = {
-            prestige = 1000
-        }
-        any_attacker = {
-            limit = {
-				character = ROOT
-			}
-            participation_scaled_prestige = 1000
-        }
-        any_attacker = {
-            limit = {
-				NOT = {
-					character = ROOT
-				}
-			}
-            hidden_tooltip = {
-				participation_scaled_prestige = 100
-			}
-        }
-        FROM = {
-            prestige = -1000
-			any_vassal = {
-				if = {
-					limit = {
-						primary_title = {
-							higher_tier_than = DUKE
-						}
-					}
-					set_defacto_liege = ROOT
-					hidden_tooltip = {
-						opinion = {
-							modifier = opinion_traitor
-							who = ROOT
-							months = 160
-						}
-					}
-				}
-			}
-			primary_title = {
-				if = {
-					limit = {
-						higher_tier_than = KING
-					}
-					destroy_landed_title = THIS
-				}
-			}
-			set_defacto_liege = ROOT
-			hidden_tooltip = {
-				opinion = {
-					modifier = opinion_regicide_traitor
-					who = ROOT
-					months = 1200
-				}
-			}
-		}
-		set_global_flag = reiklander_nulnian_war_reikland
-		k_averland = {
-			clr_imperial_flags = yes
-			set_title_flag = vassal_of_reikland
-		}
-		k_stirland = {
-			clr_imperial_flags = yes
-			set_title_flag = vassal_of_reikland
-		}
-		k_wissenland = {
-			clr_imperial_flags = yes
-			set_title_flag = vassal_of_reikland
-		}
-		d_nuln = {
-			clr_imperial_flags = yes
-		}
-    }
-
-    on_fail = { }
-
-    on_reverse_demand = {
-		FROM = {
-            prestige = 1000
-        }
-        any_defender = {
-            limit = {
-				character = FROM
-			}
-            participation_scaled_prestige = 1000
-        }
-        any_defender = {
-            limit = {
-				NOT = {
-					character = FROM
-				}
-			}
-            hidden_tooltip = {
-				participation_scaled_prestige = 100
-			}
-        }
-        ROOT = {
-            prestige = -1000
-			any_vassal = {
-				if = {
-					limit = {
-						primary_title = {
-							higher_tier_than = DUKE
-						}
-					}
-					set_defacto_liege = FROM
-					hidden_tooltip = {
-						opinion = {
-							modifier = opinion_traitor
-							who = FROM
-							months = 160
-						}
-					}
-				}
-			}
-			primary_title = {
-				if = {
-					limit = {
-						higher_tier_than = KING
-					}
-					destroy_landed_title = THIS
-				}
-			}
-			set_defacto_liege = FROM
-			hidden_tooltip = {
-				opinion = {
-					modifier = opinion_regicide_traitor
-					who = FROM
-					months = 1200
-				}
-			}
-		}
-		set_global_flag = reiklander_nulnian_war_nuln
-		k_reikland = {
-			clr_imperial_flags = yes
-			set_title_flag = vassal_of_nuln
-		}
-		k_carroburg_middenland = {
-			clr_imperial_flags = yes
-			set_title_flag = vassal_of_nuln
-		}
-		k_mootland = {
-			clr_imperial_flags = yes
-			set_title_flag = vassal_of_nuln
-		}
-    }
-	
-    attacker_ai_victory_worth = {
-        factor = -1 # always accept
     }
 
     attacker_ai_defeat_worth = {

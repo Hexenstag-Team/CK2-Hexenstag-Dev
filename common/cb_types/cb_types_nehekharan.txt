@@ -46,12 +46,10 @@ nehekharan_county_conquest_external = {
 		ROOT = {
 			NOT = { is_liege_or_above = FROM }
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -238,12 +236,10 @@ nehekharan_county_conquest = {
 				NOT = { distance_from_realm = { who = ROOT value = 200 } }
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -433,12 +429,10 @@ nehekharan_subjugation = {
 				NOT = { distance_from_realm = { who = ROOT value = 100 } }
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -633,12 +627,10 @@ desert_expedition = {
 			capital_scope = { empire = { title = e_nehekhara } }
 			trait = creature_nehekharan
 			}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -854,9 +846,6 @@ punish_graverobbers = {
 			NOT = { is_liege_or_above = FROM }
 			has_opinion_modifier = { who = FROM modifier = opinion_graverobbed_me }
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = {
@@ -865,6 +854,7 @@ punish_graverobbers = {
 		}
 	}
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -996,12 +986,10 @@ nehekharan_county_colonisation = {
 		ROOT = {
 			NOT = { is_liege_or_above = FROM }
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {

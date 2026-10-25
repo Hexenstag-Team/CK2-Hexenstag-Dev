@@ -57,15 +57,6 @@ de_jure_realm_solland_effect = {
 	add_artifact = grudge_settler
 }
 
-de_jure_realm_sylvania_effect = {
-	if = {
-		limit = {
-			completely_controls = d_brachland
-		}
-		d_brachland = { de_jure_liege = k_sylvania }
-	}
-}
-
 DR_generate_male_child_effect = {
 	if = {
 		limit = { NOT = { num_of_children = 2 } }

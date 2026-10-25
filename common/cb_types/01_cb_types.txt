@@ -103,6 +103,7 @@ dejure_duchy_claim = { # New1
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 
 		OR = {
 			holder = ROOT
@@ -621,9 +622,6 @@ force_vassalization = { # New2
 			}
 			shares_realm_border_with = ROOT
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = {
@@ -639,6 +637,10 @@ force_vassalization = { # New2
 			is_landed = yes
 			lower_tier_than = ROOT
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -774,6 +776,7 @@ great_realm_conflict = { # New3
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		ROOT = {
 			is_nomadic = no
 			independent = yes
@@ -1056,12 +1059,10 @@ ducal_county_conquest = { # New4
 				}
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		ROOT = {
 			NOR = { # These all have other ways to expand in the early game
 				religion_group = ormazd_gods_group
@@ -1302,9 +1303,6 @@ hostages_cb = { # New5
 				}
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = {
@@ -1328,6 +1326,10 @@ hostages_cb = { # New5
 				detract_grace_super_huge_effect = yes
 			}
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -1682,12 +1684,10 @@ liberate_religion = { # New6
 				religion = ROOT
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		any_de_jure_vassal_title = {
 			tier = COUNT
 			holder_scope = {
@@ -2365,11 +2365,18 @@ unjust_conquest = { # New7
 	}
 
 	can_use = {
-
-		OR={ ROOT={has_character_modifier=expelled_k_witch_hunters_order}
-		FROM={NOT={ has_landed_title = k_witch_hunters_order } }
-		ROOT={NOT={religion_group=old_world_group}}
-		FROM={NOT={religion_group=old_world_group}}
+		cb_restrictions_empire_trigger = yes
+		OR = { 
+			ROOT = { has_character_modifier = expelled_k_witch_hunters_order }
+			FROM = {
+				NOT = { has_landed_title = k_witch_hunters_order }
+			}
+			ROOT = { 
+				NOT = { religion_group = old_world_group }
+			}
+			FROM = { 
+				NOT = { religion_group = old_world_group }
+			}
 		}
 		ROOT={
 			NOT={
@@ -2440,12 +2447,10 @@ unjust_conquest = { # New7
 				}
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		tier = count
 		OR={
 			FROM={religion_group = root}
@@ -3177,9 +3182,6 @@ tributary_permanent_cb = { # New8
 				}
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = {
@@ -3217,6 +3219,10 @@ tributary_permanent_cb = { # New8
 				detract_grace_super_huge_effect = yes
 			}
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -3489,9 +3495,6 @@ tributary_nomad_cb = { # New9
 				}
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = {
@@ -3529,6 +3532,10 @@ tributary_nomad_cb = { # New9
 				detract_grace_super_huge_effect = yes
 			}
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -3848,9 +3855,10 @@ offmap_submission = {
 			in_revolt = no
 			is_nomadic = no # Nomads cannot be subjugated
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -4383,9 +4391,6 @@ tributary_offmap_cb = {
 			independent = yes
 			in_revolt = no
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = {
@@ -4396,6 +4401,10 @@ tributary_offmap_cb = {
 				}
 			}
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -4546,9 +4555,10 @@ dismantle_pretender_cathay_cb = {
 		FROM = {
 			primary_title = { has_title_flag = rebel_general_title }
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -4689,13 +4699,14 @@ force_open_cathay_cb = {
 			is_offmap_governor = yes
 			offmap_power = { is_offmap_tag = offmap_cathay }
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = {
 		offmap_cathay = { has_policy = cathay_isolationist }
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -4847,9 +4858,10 @@ destabilization_cathay_cb = {
 			NOT = { is_liege_or_above = FROM }
 			mercenary = no
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -4980,12 +4992,13 @@ invasion_of_cathay_cb = {
 			is_offmap_governor = yes
 			offmap_power = { is_offmap_tag = offmap_cathay }
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = { event_target:invasion_of_cathay_claimant = { is_alive = yes } }
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
+	}
 
 	on_success = {
 		ROOT = {
@@ -5309,9 +5322,6 @@ truebelievers_bid_for_independence = {
 		ROOT = {
 			vassal_of = FROM
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = {
@@ -5350,6 +5360,10 @@ truebelievers_bid_for_independence = {
 				}
 			}
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -5694,12 +5708,10 @@ pepin_religious = {
 				is_heresy_of = ROOT
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		# The attacker needs to be within diplo range of the target, and the target title must be one of the historical Papal Duchies.
 		OR = {
 			title = d_latium
@@ -6183,9 +6195,6 @@ roman_christian_revolt = {
 	can_use = {
 
 		ROOT = { has_character_flag = roman_christian_revolter }
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	on_add = {
@@ -6197,6 +6206,10 @@ roman_christian_revolt = {
 				detract_grace_super_huge_effect = yes
 			}
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -6367,9 +6380,6 @@ abrahamic_antihellenic_revolt = {
 		ROOT = {
 			vassal_of = FROM
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 	on_add = {
 		hidden_tooltip = { fire_haruspicy_event_effect = yes }
@@ -6409,6 +6419,10 @@ abrahamic_antihellenic_revolt = {
 				}
 			}
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -6636,9 +6650,6 @@ flower_war_cb = {
 				}
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 	is_valid = {
 		ROOT = {
@@ -6660,6 +6671,10 @@ flower_war_cb = {
 				detract_grace_super_huge_effect = yes
 			}
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -6877,9 +6892,6 @@ childrens_crusade = {
 				}
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = {
@@ -6963,6 +6975,10 @@ childrens_crusade = {
 			narrative_event = { id = HF.25824 } #Notify infidels that the children have arrived.
 		}
 
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success_title = {
@@ -7381,9 +7397,6 @@ matriarchal_deposition_war = {
 			is_female = no
 			independent = yes
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = {
@@ -7400,6 +7413,10 @@ matriarchal_deposition_war = {
 			is_merchant_republic = no
 			is_theocracy = no
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -7840,9 +7857,6 @@ patriarchal_deposition_war = {
 			is_merchant_republic = no
 			is_theocracy = no
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = {
@@ -7860,6 +7874,10 @@ patriarchal_deposition_war = {
 			is_female = yes
 			independent = yes
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -8267,9 +8285,6 @@ depose_impious_pope = {
 	can_use = {
 
 		always = no #Can only be initiated through special means
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	is_valid = {
@@ -8281,6 +8296,10 @@ depose_impious_pope = {
 			}
 			independent = yes
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
@@ -8407,9 +8426,6 @@ shepherds_crusade_invasion = {
 	can_use = {
 
 		always = no # Can only be initiated through special means
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 	is_valid = {
 		FROM = {
@@ -8423,6 +8439,10 @@ shepherds_crusade_invasion = {
 		any_playable_ruler = {
 			narrative_event = { id = HFP.42310 }
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success_title = {
@@ -8735,11 +8755,9 @@ northern_crusade_war = {
 				religion_group = ROOT
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		kingdom = {
 			has_title_flag = northern_crusade_active_target
 		}

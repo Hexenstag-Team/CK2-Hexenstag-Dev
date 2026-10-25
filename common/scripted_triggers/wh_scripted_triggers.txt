@@ -1181,3 +1181,18 @@ target_not_in_old_empire_sylvania_trigger = {
 	}
 	has_global_flag = no_sylvania_war
 }
+
+cb_restrictions_trigger = {
+	OR = {
+		AND = {
+			FROM = { 
+				NOT = {
+					location = { region = world_old_empire_sylvania }
+				}
+			}
+			offmap_imperial_pantheon = {
+				NOT = { has_status = status_golden_age }
+			}
+		}
+	}
+}

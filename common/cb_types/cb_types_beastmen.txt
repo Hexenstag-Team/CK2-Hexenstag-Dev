@@ -22,14 +22,12 @@ beastmen_uprising = {
 			war = no
 			NOT = { is_liege_or_above = FROM }
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	on_attacker_leader_death = { end_war = invalid }
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		tier = count
 	}
 	
@@ -214,9 +212,6 @@ beastman_county_conquest = {
 			trait = creature_beastman
 			NOT = { is_liege_or_above = FROM }
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 	on_attacker_leader_death = { end_war = invalid }
 	
@@ -232,6 +227,7 @@ beastman_county_conquest = {
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -592,14 +588,12 @@ beastman_cleanse = {
 			NOT={trait = creature_beastman}
 			NOT = { is_liege_or_above = FROM }
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 	
 	on_attacker_leader_death = { end_war = invalid }
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -915,13 +909,11 @@ beastman_migration = {
 			higher_tier_than = COUNT
 		}
 		FROM = { higher_tier_than = COUNT }
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 	on_attacker_leader_death = { end_war = invalid }
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -1155,12 +1147,10 @@ king_beastman_migration = {
 		ROOT = {
 			NOT = { same_realm = FROM }
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NAND = {
 			location = { region = world_albion }
 			ROOT = {
@@ -1380,9 +1370,6 @@ beastmen_despoilment = {
 			}
 			NOT={religion_group=chaos_gods_group}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 	on_add = {
 		hidden_tooltip = { fire_haruspicy_event_effect = yes }
@@ -1405,6 +1392,7 @@ beastmen_despoilment = {
 		set_title_flag =under_despoilment
 	}
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		NOT={has_title_flag=under_despoilment}
 		NAND = {
 			location = { region = world_albion }
@@ -1811,12 +1799,10 @@ horde_subjugation = {
 				}
 			}
 		}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = yes
 		tier = king
 		clan = yes
 		OR={
@@ -2066,9 +2052,6 @@ despoiler_invasion = {
 			}
 		}
 		NOT={ROOT={any_war= {using_cb = despoiler_invasion}}}
-		FROM = {
-			target_not_in_old_empire_sylvania_trigger = yes
-		}
 	}
 	on_add = {
 		hidden_tooltip = { fire_haruspicy_event_effect = yes }
@@ -2105,6 +2088,10 @@ despoiler_invasion = {
 				de_jure_liege_or_above = PREVPREV
 			}
 		}
+	}
+
+	can_use_title = {
+		cb_restrictions_trigger = yes
 	}
 
 	on_success = {
