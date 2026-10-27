@@ -204,14 +204,6 @@ reiklander_nulnian_war_cb = {
 			clr_imperial_flags = yes
 			set_title_flag = vassal_of_nuln
 		}
-		death = {
-			death_reason = death_execution
-			killer = 2701
-		}
-		death = {
-			death_reason = death_execution
-			killer = 2713
-		}
     }
 
     attacker_ai_victory_worth = {
@@ -255,6 +247,7 @@ sylvania_boogaloo = {
 	}
 
 	can_use = {
+		has_global_flag = no_sylvania_war
 		cb_restrictions_trigger = no
 		ROOT = {
 			capital_scope = { region = world_old_empire_sylvania }
@@ -262,7 +255,8 @@ sylvania_boogaloo = {
 	}
 
 	can_use_title = {
-		capital_scope = { region = world_old_empire_sylvania }
+		location = { region = world_old_empire_sylvania }
+		tier = count
 	}
 
 	is_valid = {

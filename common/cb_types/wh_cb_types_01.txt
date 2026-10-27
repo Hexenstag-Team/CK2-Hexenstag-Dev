@@ -685,8 +685,13 @@ vlad_subjugation = {
     on_fail = { }
 
     on_reverse_demand = {
+		set_global_flag = no_sylvania_war
+		death = {
+			killer = e_sylvania
+		}
         e_sylvania = {
 			destroy_landed_title = e_sylvania
+			destroy_landed_title = k_sylvania
         }
         e_imperial_alliance = {
             piety = 500

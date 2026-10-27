@@ -851,7 +851,7 @@ character_event = {
 
 	option = {
 		name = DAMNATIONS# Damnations!
-			set_global_flag = undead_disbanded
+		set_global_flag = undead_disbanded
 		disband_event_forces = vlad_undead
 		any_playable_ruler = {
 			limit = {
@@ -984,7 +984,6 @@ narrative_event = {	#Vald Setup
 	
 	immediate = {
 		set_global_flag = valdsetup
-		set_global_flag = no_sylvania_war
 		e_reikland = {
 			set_title_flag = claimant
 		}

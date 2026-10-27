@@ -25194,7 +25194,10 @@ e_the_empire = {
 		old_imperial = "Fennone"
 
 		allow = {
-			NOT = { has_global_flag = no_sylvania_war }
+			custom_tooltip = {
+				text = CANT_FORM_SYLVANIA
+				NOT = { has_global_flag = no_sylvania_war }
+			}
 		}
 
 		d_drakenhoehenzug = {
