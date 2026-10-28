@@ -1101,6 +1101,27 @@ has_imperial_vassal_flag = {
 	}
 }
 
+sigmarite_trigger = {
+	OR = {
+		trait = patron_sigmar
+		trait = patron_sigmar_united
+	}
+}
+
+taalite_trigger = {
+	OR = {
+		trait = patron_taal_rhya
+		trait = patron_taal_rhya_united
+	}
+}
+
+ulrican_trigger = {
+	OR = {
+		trait = patron_ulric
+		trait = patron_ulric_united
+	}
+}
+
 has_patron_trigger = {
 	OR = {
 		trait = patron_sigmar
@@ -1186,7 +1207,7 @@ cb_restrictions_trigger = {
 					location = { region = world_old_empire_sylvania }
 				}
 			}
-			offmap_imperial_pantheon = {
+			offmap_imperial = {
 				NOT = { has_status = status_golden_age }
 			}
 		}

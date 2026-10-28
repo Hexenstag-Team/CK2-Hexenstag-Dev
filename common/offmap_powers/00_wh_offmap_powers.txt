@@ -2957,19 +2957,19 @@ slaanesh_warp = {
 	}
 }
 
-offmap_imperial_pantheon = {
-	name = offmap_imperial_pantheon
-	window_name = imperial_pantheon_offmaps_window
-	button_name = icon_offmaps_imperial_pantheon
+offmap_the_empire = {
+	name = offmap_the_empire
+	window_name = the_empire_offmaps_window
+	button_name = icon_offmaps_the_empire
 	sound = china_interaction_interface
-	currency_name = TXT_CURRENCY_IMPERIAL
-	currency_gain = CURRENCY_IMPERIAL
+	currency_name = TXT_CURRENCY_THE_EMPIRE
+	currency_gain = CURRENCY_THE_EMPIRE
 	currency_below_zero = no
 	currency_reset_on_dynasty_change = yes
 
 	#Minor title for holder, and titular title for governor
-	holder_title = title_imperial_pantheon
-	governor_title = e_realm_of_imperial_pantheon
+	holder_title = title_the_empire
+	governor_title = e_realm_of_the_empire
 
 	#Other parameters
 	tier = emperor
@@ -2979,17 +2979,25 @@ offmap_imperial_pantheon = {
 	display_trigger = {
 		#has_dlc = "Jade Dragon"
 		FROM = {
-			#imperial_pantheon_offmap_enabled_trigger = yes
-			religion = imperial_pantheon
+			the_empire_offmap_enabled_trigger = yes
 		}
 	}
 
 	policies = {
-		status_god_sigmar
+		policy_god_sigmar
+		policy_god_ulric
+		policy_god_taal_rhya
 	}
 
 	statuses = {
-		status_god_sigmar
+		status_golden_age
+		status_stable
+		status_unrest
+		status_civil_war
+		status_chaos_invasion
+		#status_greenskin_invasion 	#Maybe
+		#status_plague #Turn Off for now... Skaven
+		status_decadence
 	}
 
 	buttons = {

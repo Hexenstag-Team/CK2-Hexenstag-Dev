@@ -1,0 +1,169 @@
+offmap_decisions = {
+	empire_support_sigmar_policy = {
+		only_playable = yes
+		button_name = offmap_boons
+
+		potential = {
+			is_offmap_tag = offmap_the_empire
+		}
+
+		from_potential = {
+			the_empire_offmap_enabled_trigger = yes
+		}
+
+		allow = {
+			FROM = {
+				sigmarite_trigger = yes
+				is_in_society = yes
+				has_society_currency_medium_trigger = yes
+			}
+		}
+
+		effect = {
+			FROM = {
+				detract_society_currency_medium_effect = yes
+			}
+			change_variable = {
+				which = empire_policy_sigmar_influence
+				value = 1
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = empire_policy_sigmar_influence
+						value = 100
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_policy = policy_god_sigmar }
+					}
+					set_policy = policy_god_sigmar
+				}
+				set_variable = { which = empire_policy_sigmar_influence value = 0 }
+				set_variable = { which = empire_policy_ulric_influence value = 0 }
+				set_variable = { which = empire_policy_taal_rhya_influence value = 0 }
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	empire_support_taal_rhya_policy = {
+		only_playable = yes
+		button_name = offmap_boons
+
+		potential = {
+			is_offmap_tag = offmap_the_empire
+		}
+
+		from_potential = {
+			the_empire_offmap_enabled_trigger = yes
+		}
+
+		allow = {
+			FROM = {
+				taalite_trigger = yes
+				is_in_society = yes
+				has_society_currency_medium_trigger = yes
+			}
+		}
+
+		effect = {
+			FROM = {
+				detract_society_currency_medium_effect = yes
+			}
+			change_variable = {
+				which = empire_policy_taal_rhya_influence
+				value = 1
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = empire_policy_taal_rhya_influence
+						value = 100
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_policy = policy_god_taal_rhya }
+					}
+					set_policy = policy_god_taal_rhya
+				}
+				set_variable = { which = empire_policy_sigmar_influence value = 0 }
+				set_variable = { which = empire_policy_ulric_influence value = 0 }
+				set_variable = { which = empire_policy_taal_rhya_influence value = 0 }
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
+	empire_support_ulric_policy = {
+		only_playable = yes
+		button_name = offmap_boons
+
+		potential = {
+			is_offmap_tag = offmap_the_empire
+		}
+
+		from_potential = {
+			the_empire_offmap_enabled_trigger = yes
+		}
+
+		allow = {
+			FROM = {
+				ulrican_trigger = yes
+				is_in_society = yes
+				has_society_currency_medium_trigger = yes
+			}
+		}
+
+		effect = {
+			FROM = {
+				detract_society_currency_medium_effect = yes
+			}
+			change_variable = {
+				which = empire_policy_ulric_influence
+				value = 1
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = empire_policy_ulric_influence
+						value = 100
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_policy = policy_god_ulric }
+					}
+					set_policy = policy_god_ulric
+				}
+				set_variable = { which = empire_policy_sigmar_influence value = 0 }
+				set_variable = { which = empire_policy_ulric_influence value = 0 }
+				set_variable = { which = empire_policy_taal_rhya_influence value = 0 }
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+		}
+
+		ai_will_do = {
+			factor = 0
+		}
+	}
+}

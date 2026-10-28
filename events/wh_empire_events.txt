@@ -506,80 +506,6 @@ character_event = {
 	}
 }
 
-## Unification of the Imperial religions
-namespace = DR_imperial
-
-#Sigmarite/Taalite/Ulrican/Morrian triumphant
-narrative_event = {
-	id = DR_imperial.1
-	title = EVTTITLE_DR_imperial_religion_unification
-
-	desc = EVTDESCA_DR_imperial_religion_unification
-
-	picture = GFX_evt_icon
-
-	is_triggered_only = yes
-
-	option = {
-		name = EVTOPTA_DR_imperial_religion_unification
-		if = {
-			limit = {
-				trait = patron_sigmar
-			}
-			set_high_god_name = GOD_SIGMAR
-			set_global_flag = imperial_churches_unified_sigmar
-			give_nickname = nick_the_pious
-		}
-
-		else_if = {
-			limit = {
-				trait = patron_taal_rhya
-			}
-			set_high_god_name = GOD_TAAL
-			remove_god_names = yes
-			add_god_name = {
-				GOD_TAAL
-				GOD_RHYA
-				GOD_MANANN
-				GOD_ULRIC
-				GOD_MORR
-				GOD_VERENA
-				GOD_MYRMIDIA
-				GOD_SHALLYA
-				GOD_RANALD		
-			}
-			set_global_flag = imperial_churches_unified_taal_rhya
-			give_nickname = nick_the_pious
-			character_event = { id = swhunters.7 }
-		}
-
-		else_if = {
-			limit = {
-				trait = patron_ulric
-			}
-			set_high_god_name = GOD_ULRIC
-			set_global_flag = imperial_churches_unified_ulric
-			give_nickname = nick_the_pious
-		}
-
-		else_if = {
-			limit = {
-				NOR = {
-					trait = patron_sigmar
-					trait = patron_taal_rhya
-					trait = patron_ulric
-				}
-			}
-			set_global_flag = imperial_churches_unified
-			give_nickname = nick_the_pious
-		}
-
-		hidden_tooltip = {
-			religion_authority = { modifier = faith_triumphant }
-		}
-	}
-}
-
 namespace = wh_empire_events
 
 character_event = {
@@ -637,11 +563,11 @@ character_event = {
 		trigger = {
 			NOR = {
 				AND = {
-					has_global_flag = imperial_churches_unified_taal_rhya
+					offmap_the_empire = { has_policy = policy_god_taal_rhya }
 					culture = reiklander
 				}
 				AND = {
-					has_global_flag = imperial_churches_unified_ulric
+					offmap_the_empire = { has_policy = policy_god_ulric }
 					culture = reiklander
 				}
 			}
@@ -652,7 +578,7 @@ character_event = {
 	option = {	#Taal&Rhya, Ulric
 		name = EVTOPTA_WH_EMPIRE_EVENTS_100B_TAAL
 		trigger = {
-			has_global_flag = imperial_churches_unified_taal_rhya
+			offmap_the_empire = { has_policy = policy_god_taal_rhya }
 			NOT = { culture = reiklander }
 		}
 		character_event = { id = wh_empire_events.105 }
@@ -661,7 +587,7 @@ character_event = {
 	option = {	#Ulric, Taal&Rhya
 		name = EVTOPTA_WH_EMPIRE_EVENTS_100_ULRIC
 		trigger = {
-			has_global_flag = imperial_churches_unified_ulric
+			offmap_the_empire = { has_policy = policy_god_ulric }
 			NOT = { culture = reiklander }
 		}
 		character_event = { id = wh_empire_events.105 }
@@ -697,28 +623,28 @@ character_event = {
 	id = wh_empire_events.101
 	desc = {
         trigger = {
-            has_global_flag = imperial_churches_unified_sigmar
+            offmap_the_empire = { has_policy = policy_god_sigmar }
         }
         text = EVTDESC_WH_EMPIRE_EVENTS_101_SIGMAR
     }
     desc = {
         trigger = {
-            has_character_flag = imperial_churches_unified_taal_rhya
+            offmap_the_empire = { has_policy = policy_god_taal_rhya }
         }
         text = EVTDESC_WH_EMPIRE_EVENTS_101_TAAL
     }
 	desc = {
         trigger = {
-        	has_character_flag = imperial_churches_unified_ulric
+        	offmap_the_empire = { has_policy = policy_god_ulric }
         }
         text = EVTDESC_WH_EMPIRE_EVENTS_101_ULRIC
     }
     desc = {
         trigger = {
 			NOR = {
-				has_global_flag = imperial_churches_unified_sigmar
-				has_character_flag = imperial_churches_unified_taal_rhya
-				has_character_flag = imperial_churches_unified_ulric
+				offmap_the_empire = { has_policy = policy_god_sigmar }
+				offmap_the_empire = { has_policy = policy_god_taal_rhya }
+				offmap_the_empire = { has_policy = policy_god_ulric }
 			}
         }
         text = EVTDESC_WH_EMPIRE_EVENTS_101
@@ -732,15 +658,15 @@ character_event = {
 	option = {	#Sigmar Win
 		name = EVTOPTA_WH_EMPIRE_EVENTS_101A
 		trigger = {
-			has_global_flag = imperial_churches_unified_sigmar
+			offmap_the_empire = { has_policy = policy_god_sigmar }
 		}
-		add_trait = patron_sigmar
+		add_trait = patron_sigmar_united
 	}
 
 	option = {	#Taal&Rhya Win
 		name = EVTOPTA_WH_EMPIRE_EVENTS_101B
 		trigger = {
-			has_global_flag = imperial_churches_unified_taal_rhya
+			offmap_the_empire = { has_policy = policy_god_taal_rhya }
 		}
 		add_trait = patron_taal_rhya_united
 	}
@@ -748,7 +674,7 @@ character_event = {
 	option = {	#Ulric Win
 		name = EVTOPTA_WH_EMPIRE_EVENTS_101C
 		trigger = {
-			has_global_flag = imperial_churches_unified_ulric
+			offmap_the_empire = { has_policy = policy_god_ulric }
 		}
 		add_trait = patron_ulric_united
 	}
@@ -757,8 +683,8 @@ character_event = {
 		name = EVTOPTA_WH_EMPIRE_EVENTS_101A
 		trigger = {
 			NOR = {
-				has_global_flag = imperial_churches_unified_sigmar
-				has_global_flag = imperial_churches_unified_sigmar_ban
+				offmap_the_empire = { has_policy = policy_god_sigmar }
+				has_global_flag = imperial_churches_unified_with_sigmar_ban
 			}
 		}
 		add_trait = patron_sigmar
@@ -768,7 +694,7 @@ character_event = {
 		name = EVTOPTA_WH_EMPIRE_EVENTS_101B
 		trigger = {
 			NOT = {
-				has_global_flag = imperial_churches_unified_taal_rhya
+				offmap_the_empire = { has_policy = policy_god_taal_rhya }
 			}
 		}
 		add_trait = patron_taal_rhya
@@ -778,7 +704,7 @@ character_event = {
 		name = EVTOPTA_WH_EMPIRE_EVENTS_101C
 		trigger = {
 			NOT = {
-				has_global_flag = imperial_churches_unified_ulric
+				offmap_the_empire = { has_policy = policy_god_ulric }
 			}
 		}
 		add_trait = patron_ulric

@@ -7180,7 +7180,7 @@ patron_imperial_pantheon_effect = {
 							top_liege = {
 								has_landed_title = e_talabecland
 							}
-							has_global_flag = imperial_churches_unified_taal_rhya
+							offmap_the_empire = { has_policy = policy_god_taal_rhya }
 						}
 					}
 				}
@@ -7238,22 +7238,15 @@ patron_imperial_pantheon_effect = {
 				}
 				if = {
 					limit = {
-						NOR = {
-							has_global_flag = imperial_churches_unified_sigmar
-							has_global_flag = imperial_churches_unified_taal_rhya
-							has_global_flag = imperial_churches_unified_ulric
-							has_global_flag = imperial_churches_unified
+						NOT = {
+							offmap_the_empire = { has_policy = policy_god_sigmar }
 						}
 					}
 					add_trait = patron_sigmar
 				}
 				else_if = {
 					limit = {
-						OR = {
-							has_global_flag = imperial_churches_unified_sigmar
-							has_global_flag = imperial_churches_unified_ulric
-							has_global_flag = imperial_churches_unified
-						}
+						offmap_the_empire = { has_policy = policy_god_sigmar }
 					}
 					add_trait = patron_sigmar_united
 				}
@@ -7303,23 +7296,15 @@ patron_imperial_pantheon_effect = {
 				}
 				if = {
 					limit = {
-						NOR = {
-							has_global_flag = imperial_churches_unified_sigmar
-							has_global_flag = imperial_churches_unified_taal_rhya
-							has_global_flag = imperial_churches_unified_ulric
-							has_global_flag = imperial_churches_unified
+						NOT = {
+							offmap_the_empire = { has_policy = policy_god_taal_rhya }
 						}
 					}
 					add_trait = patron_taal_rhya
 				}
 				else_if = {
 					limit = {
-						OR = {
-							has_global_flag = imperial_churches_unified_sigmar
-							has_global_flag = imperial_churches_unified_taal_rhya
-							has_global_flag = imperial_churches_unified_ulric
-							has_global_flag = imperial_churches_unified
-						}
+						offmap_the_empire = { has_policy = policy_god_taal_rhya }
 					}
 					add_trait = patron_taal_rhya_united
 				}
@@ -7368,23 +7353,15 @@ patron_imperial_pantheon_effect = {
 				}
 				if = {
 					limit = {
-						NOR = {
-							has_global_flag = imperial_churches_unified_sigmar
-							has_global_flag = imperial_churches_unified_taal_rhya
-							has_global_flag = imperial_churches_unified_ulric
-							has_global_flag = imperial_churches_unified
+						NOT = {
+							offmap_the_empire = { has_policy = policy_god_ulric }
 						}
 					}
 					add_trait = patron_ulric
 				}
 				else_if = {
 					limit = {
-						OR = {
-							has_global_flag = imperial_churches_unified_sigmar
-							has_global_flag = imperial_churches_unified_taal_rhya
-							has_global_flag = imperial_churches_unified_ulric
-							has_global_flag = imperial_churches_unified
-						}
+						offmap_the_empire = { has_policy = policy_god_ulric }
 					}
 					add_trait = patron_ulric_united
 				}
@@ -8621,23 +8598,15 @@ patron_classical_pantheon_effect = {
 			}
 			if = {
 				limit = {
-					NOR = {
-						has_global_flag = imperial_churches_unified_sigmar
-						has_global_flag = imperial_churches_unified_taal_rhya
-						has_global_flag = imperial_churches_unified_ulric
-						has_global_flag = imperial_churches_unified
+					NOT = {
+						offmap_the_empire = { has_policy = policy_god_taal_rhya }
 					}
 				}
 				add_trait = patron_taal_rhya
 			}
 			else_if = {
 				limit = {
-					OR = {
-						has_global_flag = imperial_churches_unified_sigmar
-						has_global_flag = imperial_churches_unified_taal_rhya
-						has_global_flag = imperial_churches_unified_ulric
-						has_global_flag = imperial_churches_unified
-					}
+					offmap_the_empire = { has_policy = policy_god_taal_rhya }
 				}
 				add_trait = patron_taal_rhya_united
 			}
@@ -8686,23 +8655,15 @@ patron_classical_pantheon_effect = {
 			}
 			if = {
 				limit = {
-					NOR = {
-						has_global_flag = imperial_churches_unified_sigmar
-						has_global_flag = imperial_churches_unified_taal_rhya
-						has_global_flag = imperial_churches_unified_ulric
-						has_global_flag = imperial_churches_unified
+					NOT = {
+						offmap_the_empire = { has_policy = policy_god_ulric }
 					}
 				}
 				add_trait = patron_ulric
 			}
 			else_if = {
 				limit = {
-					OR = {
-						has_global_flag = imperial_churches_unified_sigmar
-						has_global_flag = imperial_churches_unified_taal_rhya
-						has_global_flag = imperial_churches_unified_ulric
-						has_global_flag = imperial_churches_unified
-					}
+					offmap_the_empire = { has_policy = policy_god_ulric }
 				}
 				add_trait = patron_ulric_united
 			}

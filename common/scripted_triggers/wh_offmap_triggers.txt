@@ -914,3 +914,15 @@ the_lady_offmap_enabled_trigger = {
 	is_member_of_bretonnia_trigger = yes
 	society_rank = 2
 }
+
+imperial_offmap_enabled_trigger = {
+	capital_scope = { region = world_old_empire }
+	OR = {
+		culture_group = imperial_group
+		religion = imperial_pantheon
+	}
+}
+
+the_empire_offmap_enabled_trigger = {
+	imperial_offmap_enabled_trigger = yes
+}
