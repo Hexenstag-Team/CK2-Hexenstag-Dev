@@ -1154,10 +1154,10 @@ character_event = {
 		name = EVTOPTA_wh_von_carstein_103
 		set_defacto_liege = THIS
 		k_middenheim = {
-			set_title_flag = independent
 			holder_scope = {
 				clr_imperial_flags = yes
 			}
+			set_title_flag = independent
 		}
 		ai_chance = {
 			factor = 10
@@ -1510,3 +1510,773 @@ character_event = {
 	}
 }
 
+#wh_von_carstein.161-199
+
+character_event = {	#2nd+ Vampire War
+	id = wh_von_carstein.200
+	title = CONQUEST
+	desc = EVTDESC_wh_von_carstein_200
+	picture = "GFX_evt_zombies"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_wh_von_carstein_200
+		vlad_troops_effect = yes
+		k_ostermark = {
+			holder_scope = {
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+				top_liege = {
+					clr_imperial_flags = yes
+					change_imperial_flags = yes
+					any_demesne_title = {
+						limit = {
+							tier = EMPEROR
+						}
+						set_title_flag = imperial_alliance_holder
+					}
+					character_event = {
+						id = wh_von_carstein.201
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.201
+	desc = EVTDESC_wh_von_carstein_201
+	picture = "GFX_evt_zombies"
+
+	is_triggered_only = yes
+	
+	immediate = {
+		gain_title = e_imperial_alliance
+		e_imperial_alliance = {
+			add_law = succ_hre_elective
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_wh_von_carstein_201
+		reverse_unsafe_war = {
+			target = ROOT
+			casus_belli = vlad_subjugation
+			thirdparty = FROM
+		}
+		any_demesne_title = {
+			limit = {
+				has_title_flag = imperial_alliance_holder
+				NOT = {
+					title = e_imperial_alliance
+				}
+			}
+			destroy_landed_title = THIS
+		}
+		k_ostermark = {
+			holder_scope = {
+				if = {
+					limit = {
+						NOT = { character = ROOT }
+						NOT = { has_character_flag = carstein_202_event_sent }
+					}
+					set_character_flag = carstein_202_event_sent
+					character_event = {
+						id = wh_von_carstein.202
+					}
+				}
+			}
+		}
+		k_talabecland = {
+			holder_scope = {
+				if = {
+					limit = {
+						NOT = { character = ROOT }
+						NOT = { has_character_flag = carstein_202_event_sent }
+					}
+					set_character_flag = carstein_202_event_sent
+					character_event = {
+						id = wh_von_carstein.202
+					}
+				}
+			}
+		}
+		any_playable_ruler = {
+			limit = {
+				ai = no
+				capital_scope = {
+					region = world_old_world
+				}
+				NOR = {
+					has_landed_title = k_ostermark
+					has_landed_title = k_talabecland
+				}
+			}
+			character_event = {
+				id = wh_von_carstein.203
+				days = 7
+			}
+		}
+	}
+}
+
+character_event = {	#Ostermark and Talabecland join Vampire war
+	id = wh_von_carstein.202
+	desc = EVTDESC_wh_von_carstein_202
+	picture = "GFX_evt_zombies"
+
+	is_triggered_only = yes
+	
+	option = {
+		name = EVTOPTA_wh_von_carstein_202
+		join_defender_wars = e_imperial_alliance
+		set_defacto_liege = e_imperial_alliance
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.203
+	title = RISE_OF_THE_UNDEAD
+	desc = EVTDESC_wh_von_carstein_203
+	picture = "GFX_evt_carstein"
+
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_203
+	}
+}
+
+character_event = {	#Vlad has 20% War Score
+	id = wh_von_carstein.210
+	desc = EVTDESC_wh_von_carstein_210
+	picture = "GFX_evt_zombies"
+	
+	trigger = {
+		NOT = { has_global_flag = vlad_20_war_score }
+		has_landed_title = e_sylvania
+		any_war = {
+			using_cb = vlad_subjugation
+			war_score = 20
+		}
+	}
+	
+	immediate = {
+		set_global_flag = vlad_20_war_score
+		k_middenheim = {
+			holder_scope = {
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+				top_liege = {
+					clr_imperial_flags = yes
+					change_imperial_flags = yes
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_20_join_event_sent }
+						}
+						set_character_flag = vlad_20_join_event_sent
+						character_event = {
+							id = wh_von_carstein.211
+						}
+					}
+				}
+			}
+		}
+		k_middenland = {
+			holder_scope = {
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+				top_liege = {
+					clr_imperial_flags = yes
+					change_imperial_flags = yes
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_20_join_event_sent }
+						}
+						set_character_flag = vlad_20_join_event_sent
+						character_event = {
+							id = wh_von_carstein.211
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_wh_von_carstein_210
+		vlad_troops_effect = yes
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.211
+	desc = EVTDESC_wh_von_carstein_211
+	picture = "GFX_evt_zombies"
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		independent = yes
+	}
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_211
+		join_defender_wars = e_imperial_alliance
+		set_defacto_liege = e_imperial_alliance
+		k_middenheim = {
+			holder_scope = {
+				top_liege = {
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_20_vassal_event_sent }
+						}
+						set_character_flag = vlad_20_vassal_event_sent
+						character_event = {
+							id = wh_von_carstein.212
+						}
+					}
+				}
+			}
+		}
+		k_middenland = {
+			holder_scope = {
+				top_liege = {
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_20_vassal_event_sent }
+						}
+						set_character_flag = vlad_20_vassal_event_sent
+						character_event = {
+							id = wh_von_carstein.212
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.212
+	desc = EVTDESC_wh_von_carstein_212
+	picture = "GFX_evt_zombies"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_212
+		join_defender_wars = e_imperial_alliance
+		set_defacto_liege = e_imperial_alliance
+	}
+}
+
+character_event = {	#Vlad has 40% War Score
+	id = wh_von_carstein.220
+	desc = EVTDESC_wh_von_carstein_220
+	picture = "GFX_evt_zombies"
+	
+	trigger = {
+		NOT = { has_global_flag = vlad_40_war_score }
+		has_landed_title = e_sylvania
+		any_war = {
+			using_cb = vlad_subjugation
+			war_score = 40
+		}
+	}
+	
+	immediate = {
+		set_global_flag = vlad_40_war_score
+		k_hochland = {
+			holder_scope = {
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+				top_liege = {
+					clr_imperial_flags = yes
+					change_imperial_flags = yes
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_40_join_event_sent }
+						}
+						set_character_flag = vlad_40_join_event_sent
+						character_event = {
+							id = wh_von_carstein.221
+						}
+					}
+				}
+			}
+		}
+		k_ostland = {
+			holder_scope = {
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+				top_liege = {
+					clr_imperial_flags = yes
+					change_imperial_flags = yes
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_40_join_event_sent }
+						}
+						set_character_flag = vlad_40_join_event_sent
+						character_event = {
+							id = wh_von_carstein.221
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_wh_von_carstein_220
+		vlad_troops_effect = yes
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.221
+	desc = EVTDESC_wh_von_carstein_221
+	picture = "GFX_evt_zombies"
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		independent = yes
+	}
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_221
+		join_defender_wars = e_imperial_alliance
+		set_defacto_liege = e_imperial_alliance
+		k_hochland = {
+			holder_scope = {
+				top_liege = {
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_40_vassal_event_sent }
+						}
+						set_character_flag = vlad_40_vassal_event_sent
+						character_event = {
+							id = wh_von_carstein.222
+						}
+					}
+				}
+			}
+		}
+		k_ostland = {
+			holder_scope = {
+				top_liege = {
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_40_vassal_event_sent }
+						}
+						set_character_flag = vlad_40_vassal_event_sent
+						character_event = {
+							id = wh_von_carstein.222
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.222
+	desc = EVTDESC_wh_von_carstein_222
+	picture = "GFX_evt_zombies"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_222
+		join_defender_wars = e_imperial_alliance
+		set_defacto_liege = e_imperial_alliance
+	}
+}
+
+character_event = {	#Vlad has 50% War Score
+	id = wh_von_carstein.230
+	desc = EVTDESC_wh_von_carstein_230
+	picture = "GFX_evt_zombies"
+	
+	trigger = {
+		NOT = { has_global_flag = vlad_50_war_score }
+		has_landed_title = e_sylvania
+		any_war = {
+			using_cb = vlad_subjugation
+			war_score = 50
+		}
+	}
+	
+	immediate = {
+		set_global_flag = vlad_50_war_score
+		k_reikland = {
+			holder_scope = {
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+				top_liege = {
+					clr_imperial_flags = yes
+					change_imperial_flags = yes
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_50_join_event_sent }
+						}
+						set_character_flag = vlad_50_join_event_sent
+						character_event = {
+							id = wh_von_carstein.231
+						}
+					}
+				}
+			}
+		}
+		k_carroburg_middenland = {
+			holder_scope = {
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+				top_liege = {
+					clr_imperial_flags = yes
+					change_imperial_flags = yes
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_50_join_event_sent }
+						}
+						set_character_flag = vlad_50_join_event_sent
+						character_event = {
+							id = wh_von_carstein.231
+						}
+					}
+				}
+			}
+		}
+		k_averland = {
+			holder_scope = {
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+				top_liege = {
+					clr_imperial_flags = yes
+					change_imperial_flags = yes
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_50_join_event_sent }
+						}
+						set_character_flag = vlad_50_join_event_sent
+						character_event = {
+							id = wh_von_carstein.231
+						}
+					}
+				}
+			}
+		}
+		k_mootland = {
+			holder_scope = {
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+				top_liege = {
+					clr_imperial_flags = yes
+					change_imperial_flags = yes
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_50_join_event_sent }
+						}
+						set_character_flag = vlad_50_join_event_sent
+						character_event = {
+							id = wh_von_carstein.231
+						}
+					}
+				}
+			}
+		}
+		k_stirland = {
+			holder_scope = {
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+				top_liege = {
+					clr_imperial_flags = yes
+					change_imperial_flags = yes
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_50_join_event_sent }
+						}
+						set_character_flag = vlad_50_join_event_sent
+						character_event = {
+							id = wh_von_carstein.231
+						}
+					}
+				}
+			}
+		}
+		k_wissenland = {
+			holder_scope = {
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+				top_liege = {
+					clr_imperial_flags = yes
+					change_imperial_flags = yes
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_50_join_event_sent }
+						}
+						set_character_flag = vlad_50_join_event_sent
+						character_event = {
+							id = wh_von_carstein.231
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_wh_von_carstein_230
+		vlad_troops_effect = yes
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.231
+	desc = EVTDESC_wh_von_carstein_231
+	picture = "GFX_evt_zombies"
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		independent = yes
+	}
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_231
+		join_defender_wars = e_imperial_alliance
+		set_defacto_liege = e_imperial_alliance
+		k_reikland = {
+			holder_scope = {
+				top_liege = {
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_50_vassal_event_sent }
+						}
+						set_character_flag = vlad_50_vassal_event_sent
+						character_event = {
+							id = wh_von_carstein.232
+						}
+					}
+				}
+			}
+		}
+		k_carroburg_middenland = {
+			holder_scope = {
+				top_liege = {
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_50_vassal_event_sent }
+						}
+						set_character_flag = vlad_50_vassal_event_sent
+						character_event = {
+							id = wh_von_carstein.232
+						}
+					}
+				}
+			}
+		}
+		k_averland = {
+			holder_scope = {
+				top_liege = {
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_50_vassal_event_sent }
+						}
+						set_character_flag = vlad_50_vassal_event_sent
+						character_event = {
+							id = wh_von_carstein.232
+						}
+					}
+				}
+			}
+		}
+		k_mootland = {
+			holder_scope = {
+				top_liege = {
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_50_vassal_event_sent }
+						}
+						set_character_flag = vlad_50_vassal_event_sent
+						character_event = {
+							id = wh_von_carstein.232
+						}
+					}
+				}
+			}
+		}
+		k_stirland = {
+			holder_scope = {
+				top_liege = {
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_50_vassal_event_sent }
+						}
+						set_character_flag = vlad_50_vassal_event_sent
+						character_event = {
+							id = wh_von_carstein.232
+						}
+					}
+				}
+			}
+		}
+		k_wissenland = {
+			holder_scope = {
+				top_liege = {
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_50_vassal_event_sent }
+						}
+						set_character_flag = vlad_50_vassal_event_sent
+						character_event = {
+							id = wh_von_carstein.232
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.232
+	desc = EVTDESC_wh_von_carstein_232
+	picture = "GFX_evt_zombies"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_232
+		join_defender_wars = e_imperial_alliance
+		set_defacto_liege = e_imperial_alliance
+	}
+}
+
+character_event = {	#Vlad has 70% War Score
+	id = wh_von_carstein.240
+	desc = EVTDESC_wh_von_carstein_240
+	picture = "GFX_evt_zombies"
+	
+	trigger = {
+		NOT = { has_global_flag = vlad_70_war_score }
+		has_landed_title = e_sylvania
+		any_war = {
+			using_cb = vlad_subjugation
+			war_score = 70
+		}
+	}
+	
+	immediate = {
+		set_global_flag = vlad_70_war_score
+		k_nordland = {
+			holder_scope = {
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+				top_liege = {
+					clr_imperial_flags = yes
+					change_imperial_flags = yes
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_70_join_event_sent }
+						}
+						set_character_flag = vlad_70_join_event_sent
+						character_event = {
+							id = wh_von_carstein.241
+						}
+					}
+				}
+			}
+		}
+		k_westerland = {
+			holder_scope = {
+				clr_imperial_flags = yes
+				change_imperial_flags = yes
+				top_liege = {
+					clr_imperial_flags = yes
+					change_imperial_flags = yes
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_70_join_event_sent }
+						}
+						set_character_flag = vlad_70_join_event_sent
+						character_event = {
+							id = wh_von_carstein.241
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	option = {
+		name = EVTOPTA_wh_von_carstein_240
+		vlad_troops_effect = yes
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.241
+	desc = EVTDESC_wh_von_carstein_241
+	picture = "GFX_evt_zombies"
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		independent = yes
+	}
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_241
+		join_defender_wars = e_imperial_alliance
+		set_defacto_liege = e_imperial_alliance
+		k_nordland = {
+			holder_scope = {
+				top_liege = {
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_70_vassal_event_sent }
+						}
+						set_character_flag = vlad_70_vassal_event_sent
+						character_event = {
+							id = wh_von_carstein.242
+						}
+					}
+				}
+			}
+		}
+		k_westerland = {
+			holder_scope = {
+				top_liege = {
+					if = {
+						limit = {
+							NOT = { has_character_flag = vlad_70_vassal_event_sent }
+						}
+						set_character_flag = vlad_70_vassal_event_sent
+						character_event = {
+							id = wh_von_carstein.242
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.242
+	desc = EVTDESC_wh_von_carstein_242
+	picture = "GFX_evt_zombies"
+	
+	is_triggered_only = yes
+
+	option = {
+		name = EVTOPTA_wh_von_carstein_242
+		join_defender_wars = e_imperial_alliance
+		set_defacto_liege = e_imperial_alliance
+	}
+}

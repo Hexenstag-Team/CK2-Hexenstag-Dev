@@ -7144,6 +7144,7 @@ vlad_troops_effect = {
 clr_imperial_flags = {
 	primary_title = {
 		clr_title_flag = claimant
+		clr_title_flag = claimant_vw
 		clr_title_flag = independent
 		clr_title_flag = vassal_of_sylvania
 		clr_title_flag = vassal_of_reikland
@@ -8021,17 +8022,17 @@ patron_imperial_pantheon_effect = {
 					factor = 10
 					is_male = yes
 					father = {
-						trait = patron_soll
+						trait = patron_solkan
 					}
 				}
 				modifier = {
 					factor = 10
 					is_female = yes
 					mother = {
-						trait = patron_soll
+						trait = patron_solkan
 					}
 				}
-				add_trait = patron_soll
+				add_trait = patron_solkan
 			}
 			20 = {	#Khirreth
 				trigger = {

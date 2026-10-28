@@ -1,0 +1,120 @@
+namespace = wh_classical_events
+
+character_event = {
+	id = wh_classical_events.100
+	desc = EVTDESC_wh_classical_events_100
+	picture = GFX_evt_runestone_raising_oldgods
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {	#Myrmidia, Morr, Verena
+		name = EVTOPTA_wh_classical_events_100A
+		character_event = { id = wh_classical_events.101 }
+	}
+	
+	option = {	#Shallya, Ranald, Mathann
+		name = EVTOPTA_wh_classical_events_100B
+		character_event = { id = wh_classical_events.102 }
+	}
+	
+	option = {	#Karnos&Ishea, Solkan, #Khaine?
+		name = EVTOPTA_wh_classical_events_100C
+		character_event = { id = wh_classical_events.103 }
+	}
+
+	#option = {	#3 more gods can be added
+	#	name = EVTOPTA_wh_classical_events_100D
+	#	character_event = { id = wh_classical_events.104 }
+	#}
+}
+
+character_event = {
+	id = wh_classical_events.101
+	desc = EVTDESC_wh_classical_events_101
+	picture = GFX_evt_runestone_raising_oldgods
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {	#Myrmidia
+		name = EVTOPTA_wh_classical_events_101A
+		add_trait = patron_myrmidia
+	}
+	
+	option = {	#Morr
+		name = EVTOPTA_wh_classical_events_101B
+		add_trait = patron_morr
+	}
+	
+	option = {	#Verena
+		name = EVTOPTA_wh_classical_events_101C
+		add_trait = patron_verena
+	}
+	
+	option = {	#Back to Master list
+		name = "Back to Master list"
+		character_event = { id = wh_classical_events.100 }
+	}
+}
+
+character_event = {
+	id = wh_classical_events.102
+	desc = EVTDESC_wh_classical_events_102
+	picture = GFX_evt_runestone_raising_oldgods
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {	#Shallya
+		name = EVTOPTA_wh_classical_events_102A
+		add_trait = patron_shallya
+	}
+	
+	option = {	#Ranald
+		name = EVTOPTA_wh_classical_events_102B
+		add_trait = patron_ranald
+	}
+	
+	option = {	#Mathann
+		name = EVTOPTA_wh_classical_events_102C
+		add_trait = patron_manann
+	}
+	
+	option = {	#Back to Master list
+		name = "Back to Master list"
+		character_event = { id = wh_classical_events.100 }
+	}
+}
+
+character_event = {
+	id = wh_classical_events.103
+	desc = EVTDESC_wh_classical_events_103
+	picture = GFX_evt_runestone_raising_oldgods
+	border = GFX_event_normal_frame_religion
+
+	is_triggered_only = yes
+	
+	option = {	#Karnos&Ishea
+		name = EVTOPTA_wh_classical_events_103A
+		add_trait = patron_taal_rhya
+	}
+	
+	option = {	#Solkan
+		name = EVTOPTA_wh_classical_events_103B
+		add_trait = patron_solkan
+	}
+	
+	#option = {	#Khaine?
+	#	name = EVTOPTA_wh_classical_events_103C
+	#	add_trait = patron_khaine
+	#}
+	
+	option = {	#Back to Master list
+		name = "Back to Master list"
+		character_event = { id = wh_classical_events.100 }
+	}
+}
+
+
+

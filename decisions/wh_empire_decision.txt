@@ -222,8 +222,6 @@ decisions = {
     }
 
 	imperial_pantheon_patron_decision = {
-		ai = no
-		
 		potential = {
 			religion = imperial_pantheon
 			#has_patron_trigger = yes
@@ -232,10 +230,30 @@ decisions = {
 		allow = {
 			age = 16
 			is_incapacitated_trigger = no
+			NOT = { has_character_modifier = imperial_pantheon_patron_decision_cooldown }
 		}
 		effect = {
-			#patron_imperial_pantheon_effect = yes
-			character_event = { id = wh_empire_events.100 }
+			add_character_modifier = {
+				name = imperial_pantheon_patron_decision_cooldown
+				years = 10
+				hidden = yes
+			}
+			if = {
+				limit = {
+					ai = yes
+				}
+				patron_imperial_pantheon_effect = yes
+			}
+			else = {
+				character_event = { id = wh_empire_events.100 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				has_patron_trigger = yes
+			}
 		}
 	}
 }
