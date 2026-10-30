@@ -1,6 +1,6 @@
 namespace = wh_offmap_empire_events
 
-character_event = {
+character_event = {	#Setup for Offmap Empire
 	id = wh_offmap_empire_events.0
 	is_triggered_only = yes
 	hide_window = yes
@@ -8,6 +8,338 @@ character_event = {
 	immediate = {
 		offmap_the_empire = {
 			set_policy = policy_god_sigmar
+		}
+		e_realm_of_the_empire = {
+			holder_scope = {
+				change_variable = { which = the_empire_stability value = -100 }
+				update_the_empire_stability_status_effect = yes
+			}
+		}
+	}
+}
+
+character_event = {	# Update patron traits to match the Empire's current patron god.
+	id = wh_offmap_empire_events.1
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		FROM = { is_offmap_tag = offmap_the_empire }
+	}
+
+	immediate = {
+		update_patron_trait = yes
+	}
+}
+
+character_event = {
+	id = wh_offmap_empire_events.2
+	desc = "Empire Test Event"
+	picture = GFX_evt_large_army
+
+	is_triggered_only = yes
+
+	option = {
+		name = "Sigmar is King"
+		change_variable = {
+				which = empire_policy_sigmar_influence
+				value = 50
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = empire_policy_sigmar_influence
+						value = 100
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_policy = policy_god_sigmar }
+					}
+					offmap_the_empire = { set_policy = policy_god_sigmar }
+					e_realm_of_the_empire = {
+						holder_scope = {
+							change_variable = { which = the_empire_stability value = -10 }
+							if = {
+								limit = { NOT = { check_variable = { which = the_empire_stability value = 0 } } }
+								set_variable = { which = the_empire_stability value = 0 }
+							}
+							update_the_empire_stability_status_effect = yes
+							update_imperial_patron_trait = yes
+						}
+					}
+				}
+				set_variable = { which = empire_policy_sigmar_influence value = 0 }
+				set_variable = { which = empire_policy_ulric_influence value = 0 }
+				set_variable = { which = empire_policy_taal_rhya_influence value = 0 }
+			}
+	}
+	option = {
+		name = "Taal & Rhya are King & Queen"
+		change_variable = {
+				which = empire_policy_taal_rhya_influence
+				value = 50
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = empire_policy_taal_rhya_influence
+						value = 100
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_policy = policy_god_taal_rhya }
+					}
+					offmap_the_empire = { set_policy = policy_god_taal_rhya }
+					e_realm_of_the_empire = {
+						holder_scope = {
+							change_variable = { which = the_empire_stability value = -10 }
+							if = {
+								limit = { NOT = { check_variable = { which = the_empire_stability value = 0 } } }
+								set_variable = { which = the_empire_stability value = 0 }
+							}
+							update_the_empire_stability_status_effect = yes
+							update_imperial_patron_trait = yes
+						}
+					}
+				}
+				set_variable = { which = empire_policy_sigmar_influence value = 0 }
+				set_variable = { which = empire_policy_ulric_influence value = 0 }
+				set_variable = { which = empire_policy_taal_rhya_influence value = 0 }
+			}
+	}
+	option = {
+		name = "Ulric is Lord"
+		change_variable = {
+				which = empire_policy_ulric_influence
+				value = 50
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = empire_policy_ulric_influence
+						value = 100
+					}
+				}
+				if = {
+					limit = {
+						NOT = { has_policy = policy_god_ulric }
+					}
+					offmap_the_empire = { set_policy = policy_god_ulric }
+					e_realm_of_the_empire = {
+						holder_scope = {
+							change_variable = { which = the_empire_stability value = -10 }
+							if = {
+								limit = { NOT = { check_variable = { which = the_empire_stability value = 0 } } }
+								set_variable = { which = the_empire_stability value = 0 }
+							}
+							update_the_empire_stability_status_effect = yes
+							update_imperial_patron_trait = yes
+						}
+					}
+				}
+				set_variable = { which = empire_policy_sigmar_influence value = 0 }
+				set_variable = { which = empire_policy_ulric_influence value = 0 }
+				set_variable = { which = empire_policy_taal_rhya_influence value = 0 }
+			}
+	}
+	option = {
+		name = "Empire Stability"
+		e_realm_of_the_empire = {
+			holder_scope = {
+				change_variable = { which = the_empire_stability value = 50 }
+				if = {
+					limit = { NOT = { check_variable = { which = the_empire_stability value = 0 } } }
+					set_variable = { which = the_empire_stability value = 0 }
+				}
+				update_the_empire_stability_status_effect = yes
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_offmap_empire_events.3
+	desc = "Empire Test Event"
+	picture = GFX_evt_large_army
+
+	is_triggered_only = yes
+
+	option = {
+		name = "+Empire Stability"
+		e_realm_of_the_empire = {
+			holder_scope = {
+				change_variable = { which = the_empire_stability value = 50 }
+				if = {
+					limit = { NOT = { check_variable = { which = the_empire_stability value = 0 } } }
+					set_variable = { which = the_empire_stability value = 0 }
+				}
+				update_the_empire_stability_status_effect = yes
+			}
+		}
+	}
+	option = {
+		name = "-Empire Stability"
+		e_realm_of_the_empire = {
+			holder_scope = {
+				change_variable = { which = the_empire_stability value = -50 }
+				if = {
+					limit = { NOT = { check_variable = { which = the_empire_stability value = 0 } } }
+					set_variable = { which = the_empire_stability value = 0 }
+				}
+				update_the_empire_stability_status_effect = yes
+			}
+		}
+	}
+}
+
+
+
+character_event = {	# Empire wars reduce stability by 20.
+	id = wh_offmap_empire_events.10
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		AND = {
+			ROOT = { the_empire_offmap_enabled_trigger = yes }
+			FROM = { the_empire_offmap_enabled_trigger = yes }
+		}
+	}
+
+	immediate = {
+		e_realm_of_the_empire = {
+			holder_scope = {
+				change_variable = { which = the_empire_stability value = -1 }
+				if = {
+					limit = { NOT = { check_variable = { which = the_empire_stability value = 0 } } }
+					set_variable = { which = the_empire_stability value = 0 }
+				}
+				update_the_empire_stability_status_effect = yes
+			}
+		}
+	}
+}
+
+character_event = {	# A successful assassination of an Imperial character reduces stability by 15.
+	id = wh_offmap_empire_events.12
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		ROOT = { the_empire_offmap_enabled_trigger = yes }
+	}
+
+	immediate = {
+		e_realm_of_the_empire = {
+			holder_scope = {
+				change_variable = { which = the_empire_stability value = -2 }
+				if = {
+					limit = { NOT = { check_variable = { which = the_empire_stability value = 0 } } }
+					set_variable = { which = the_empire_stability value = 0 }
+				}
+				update_the_empire_stability_status_effect = yes
+			}
+		}
+	}
+}
+
+character_event = {	# A failed assassination attempt against an Imperial character reduces stability by 10.
+	id = wh_offmap_empire_events.13
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		ROOT = { the_empire_offmap_enabled_trigger = yes }
+	}
+
+	immediate = {
+		e_realm_of_the_empire = {
+			holder_scope = {
+				change_variable = { which = the_empire_stability value = -1 }
+				if = {
+					limit = { NOT = { check_variable = { which = the_empire_stability value = 0 } } }
+					set_variable = { which = the_empire_stability value = 0 }
+				}
+				update_the_empire_stability_status_effect = yes
+			}
+		}
+	}
+}
+
+province_event = {	# An outbreak in the Empire reduces its stability by 1.
+	id = wh_offmap_empire_events.14
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		region = world_old_empire
+	}
+
+	immediate = {
+		e_realm_of_the_empire = {
+			holder_scope = {
+				change_variable = { which = the_empire_stability value = -1 }
+				if = {
+					limit = { NOT = { check_variable = { which = the_empire_stability value = 0 } } }
+					set_variable = { which = the_empire_stability value = 0 }
+				}
+				update_the_empire_stability_status_effect = yes
+			}
+		}
+	}
+}
+
+character_event = {	# The temporary elector dies after the succession vote.
+	id = wh_offmap_empire_events.90
+	is_triggered_only = yes
+	hide_window = yes
+
+	immediate = {
+		death = { death_reason = death_accident }
+	}
+}
+
+
+
+
+
+
+
+
+#wh_offmap_empire_events.30-99
+
+character_event = {	# Stability is initialized at 300 and recovers by 1 each year.
+	id = wh_offmap_empire_events.100
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = {
+		FROM = { is_offmap_tag = offmap_the_empire }
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				FROM = { NOT = { has_offmap_flag = the_empire_stability_initialized } }
+			}
+			set_variable = { which = the_empire_stability value = 300 }
+			FROM = {
+				set_offmap_flag = the_empire_stability_initialized
+				set_status = status_golden_age
+			}
+		}
+		else = {
+			if = {
+				limit = { NOT = { check_variable = { which = the_empire_stability value >= 300 } } }
+				change_variable = { which = the_empire_stability value = 1 }
+			}
+			if = {
+				limit = { check_variable = { which = the_empire_stability value >= 300 } }
+				set_variable = { which = the_empire_stability value = 300 }
+			}
+			update_the_empire_stability_status_effect = yes
 		}
 	}
 }

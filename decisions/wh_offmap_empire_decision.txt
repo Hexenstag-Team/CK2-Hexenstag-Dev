@@ -1,4 +1,5 @@
 offmap_decisions = {
+	#Support Gods
 	empire_support_sigmar_policy = {
 		only_playable = yes
 		button_name = offmap_boons
@@ -38,7 +39,18 @@ offmap_decisions = {
 					limit = {
 						NOT = { has_policy = policy_god_sigmar }
 					}
-					set_policy = policy_god_sigmar
+					offmap_the_empire = { set_policy = policy_god_sigmar }
+					e_realm_of_the_empire = {
+						holder_scope = {
+							change_variable = { which = the_empire_stability value = -10 }
+							if = {
+								limit = { NOT = { check_variable = { which = the_empire_stability value = 0 } } }
+								set_variable = { which = the_empire_stability value = 0 }
+							}
+							update_the_empire_stability_status_effect = yes
+							update_imperial_patron_trait = yes
+						}
+					}
 				}
 				set_variable = { which = empire_policy_sigmar_influence value = 0 }
 				set_variable = { which = empire_policy_ulric_influence value = 0 }
@@ -94,7 +106,18 @@ offmap_decisions = {
 					limit = {
 						NOT = { has_policy = policy_god_taal_rhya }
 					}
-					set_policy = policy_god_taal_rhya
+					offmap_the_empire = { set_policy = policy_god_taal_rhya }
+					e_realm_of_the_empire = {
+						holder_scope = {
+							change_variable = { which = the_empire_stability value = -10 }
+							if = {
+								limit = { NOT = { check_variable = { which = the_empire_stability value = 0 } } }
+								set_variable = { which = the_empire_stability value = 0 }
+							}
+							update_the_empire_stability_status_effect = yes
+							update_imperial_patron_trait = yes
+						}
+					}
 				}
 				set_variable = { which = empire_policy_sigmar_influence value = 0 }
 				set_variable = { which = empire_policy_ulric_influence value = 0 }
@@ -150,7 +173,18 @@ offmap_decisions = {
 					limit = {
 						NOT = { has_policy = policy_god_ulric }
 					}
-					set_policy = policy_god_ulric
+					offmap_the_empire = { set_policy = policy_god_ulric }
+					e_realm_of_the_empire = {
+						holder_scope = {
+							change_variable = { which = the_empire_stability value = -10 }
+							if = {
+								limit = { NOT = { check_variable = { which = the_empire_stability value = 0 } } }
+								set_variable = { which = the_empire_stability value = 0 }
+							}
+							update_the_empire_stability_status_effect = yes
+							update_imperial_patron_trait = yes
+						}
+					}
 				}
 				set_variable = { which = empire_policy_sigmar_influence value = 0 }
 				set_variable = { which = empire_policy_ulric_influence value = 0 }
@@ -166,4 +200,7 @@ offmap_decisions = {
 			factor = 0
 		}
 	}
+
+	#Imperial Decisions
+
 }

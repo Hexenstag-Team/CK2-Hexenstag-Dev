@@ -16,19 +16,19 @@ can_use_retinue_trigger = {
 	OR = {
 		ai = no
 		is_patrician = yes
-		OR={
+		OR = {
 			AND={
-				independent=yes
-				prestige=500
-				OR={
-					government=beastman_government
-					government=chaos_horde_government
+				independent = yes
+				prestige = 500
+				OR = {
+					government = beastman_government
+					government = chaos_horde_government
 				}
 				is_nomadic = yes
 			}
-			AND={
-				independent=no
-				prestige=250
+			AND = {
+				independent = no
+				prestige = 250
 				is_nomadic = yes
 			}
 			total_years_played <= 1
@@ -1104,21 +1104,21 @@ has_imperial_vassal_flag = {
 sigmarite_trigger = {
 	OR = {
 		trait = patron_sigmar
-		trait = patron_sigmar_united
+		trait = patron_sigmar_empire
 	}
 }
 
 taalite_trigger = {
 	OR = {
 		trait = patron_taal_rhya
-		trait = patron_taal_rhya_united
+		trait = patron_taal_rhya_empire
 	}
 }
 
 ulrican_trigger = {
 	OR = {
 		trait = patron_ulric
-		trait = patron_ulric_united
+		trait = patron_ulric_empire
 	}
 }
 
@@ -1127,9 +1127,9 @@ has_patron_trigger = {
 		trait = patron_sigmar
 		trait = patron_taal_rhya
 		trait = patron_ulric
-		trait = patron_sigmar_united
-		trait = patron_taal_rhya_united
-		trait = patron_ulric_united
+		trait = patron_sigmar_empire
+		trait = patron_taal_rhya_empire
+		trait = patron_ulric_empire
 		trait = patron_manann
 		trait = patron_morr
 		trait = patron_verena
@@ -1196,19 +1196,29 @@ has_patron_trigger = {
 
 cb_restrictions_trigger = {
 	OR = {
-		AND = {
-			FROM = { 
-				NOT = {
-					location = { region = world_old_empire_sylvania }
-				}
-			}
+		NAND = {
+			location = { region = world_albion }
 			ROOT = {
-				NOT = {
-					location = { region = world_old_empire_sylvania }
-				}
+				has_global_flag = mists_of_albion
+				capital_scope = { NOT = { region = world_albion } }
+			}
+		}
+		NAND = {
+			location = { region = world_old_empire_sylvania }
+			ROOT = {
+				capital_scope = { NOT = { region = world_old_empire_sylvania } }
 			}
 			offmap_imperial = {
-				NOT = { has_status = status_golden_age }
+				NOT = { has_status = status_civil_war }
+			}
+		}
+		NAND = {
+			location = { region = world_old_empire }
+			ROOT = {
+				capital_scope = { NOT = { region = world_old_empire } }
+			}
+			offmap_imperial = {
+				NOT = { has_status = status_civil_war }
 			}
 		}
 	}

@@ -7248,7 +7248,7 @@ patron_imperial_pantheon_effect = {
 					limit = {
 						offmap_the_empire = { has_policy = policy_god_sigmar }
 					}
-					add_trait = patron_sigmar_united
+					add_trait = patron_sigmar_empire
 				}
 			}
 			10 = {	#Taal&Rhya
@@ -7306,7 +7306,7 @@ patron_imperial_pantheon_effect = {
 					limit = {
 						offmap_the_empire = { has_policy = policy_god_taal_rhya }
 					}
-					add_trait = patron_taal_rhya_united
+					add_trait = patron_taal_rhya_empire
 				}
 			}
 			10 = {	#Ulric
@@ -7363,7 +7363,7 @@ patron_imperial_pantheon_effect = {
 					limit = {
 						offmap_the_empire = { has_policy = policy_god_ulric }
 					}
-					add_trait = patron_ulric_united
+					add_trait = patron_ulric_empire
 				}
 			}
 			5 = {	#Manann
@@ -8608,7 +8608,7 @@ patron_classical_pantheon_effect = {
 				limit = {
 					offmap_the_empire = { has_policy = policy_god_taal_rhya }
 				}
-				add_trait = patron_taal_rhya_united
+				add_trait = patron_taal_rhya_empire
 			}
 		}
 		5 = {	#Ulric
@@ -8665,7 +8665,7 @@ patron_classical_pantheon_effect = {
 				limit = {
 					offmap_the_empire = { has_policy = policy_god_ulric }
 				}
-				add_trait = patron_ulric_united
+				add_trait = patron_ulric_empire
 			}
 		}
 		5 = {	#Manann
@@ -9602,3 +9602,198 @@ change_imperial_vassal = {
 	}
 }
 
+update_imperial_patron_trait = {
+	any_character = {
+		limit = {
+			the_empire_offmap_enabled_trigger = yes
+			OR = {
+				trait = patron_sigmar
+				trait = patron_sigmar_empire
+				trait = patron_taal_rhya
+				trait = patron_taal_rhya_empire
+				trait = patron_ulric
+				trait = patron_ulric_empire
+			}
+		}
+		if = {
+			limit = {
+				OR = {
+					trait = patron_sigmar_empire
+					trait = patron_taal_rhya_empire
+					trait = patron_ulric_empire
+				}
+			}
+			if = {
+				limit = {
+					trait = patron_sigmar_empire
+					NOT = { offmap_the_empire = { has_policy = policy_god_sigmar } }
+				}
+				add_trait = patron_sigmar
+			}
+			if = {
+				limit = {
+					trait = patron_taal_rhya_empire
+					NOT = { offmap_the_empire = { has_policy = policy_god_taal_rhya } }
+				}
+				add_trait = patron_taal_rhya
+			}
+			if = {
+				limit = {
+					trait = patron_ulric_empire
+					NOT = { offmap_the_empire = { has_policy = policy_god_ulric } }
+				}
+				add_trait = patron_ulric
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					OR = {
+						offmap_the_empire = { has_policy = policy_god_sigmar }
+						offmap_the_empire = { has_policy = policy_god_taal_rhya }
+						offmap_the_empire = { has_policy = policy_god_ulric }
+					}
+				}
+				if = {
+					limit = {
+						trait = patron_sigmar
+						offmap_the_empire = { has_policy = policy_god_sigmar }
+					}
+					add_trait = patron_sigmar_empire
+				}
+				else_if = {
+					limit = {
+						trait = patron_taal_rhya
+						offmap_the_empire = { has_policy = policy_god_taal_rhya }
+					}
+					add_trait = patron_taal_rhya_empire
+				}
+				else_if = {
+					limit = {
+						trait = patron_ulric
+						offmap_the_empire = { has_policy = policy_god_ulric }
+					}
+					add_trait = patron_ulric_empire
+				}
+			}
+		}
+	}
+}
+
+break_the_empire_for_civil_war_effect = {
+	offmap_the_empire = {
+		set_offmap_flag = empire_broken_by_civil_war
+	}
+	e_the_empire = {
+		if = {
+			limit = { has_holder = yes }
+			destroy_landed_title = THIS
+		}
+	}
+	any_independent_ruler = {
+		limit = {
+			the_empire_offmap_enabled_trigger = yes
+			is_imperial_claimant = yes
+		}
+		imperial_claimant = yes
+	}
+}
+
+reform_the_empire_after_civil_war_effect = {
+	create_character = {
+		name = "Imperial Elector"
+		random_traits = no
+		culture = ROOT
+		religion = ROOT
+		female = no
+		age = 50
+	}
+	new_character = {
+		save_event_target_as = civil_war_reform_elector
+	}
+	e_the_empire = {
+		grant_title = event_target:civil_war_reform_elector
+		add_law = {
+			law = succ_hre_elective
+			cooldown = no
+			opinion_effect = no
+		}
+		add_law = {
+			law = true_cognatic_succession
+			cooldown = no
+			opinion_effect = no
+		}
+	}
+	any_independent_ruler = {
+		limit = {
+			the_empire_offmap_enabled_trigger = yes
+			NOT = { has_landed_title = e_the_empire }
+		}
+		any_vassal = {
+			limit = {
+				tier = KING
+			}
+			set_defacto_liege = e_the_empire
+		}
+		any_demesne_title = {
+			limit = {
+				tier = EMPEROR
+				is_titular = yes
+			}
+			destroy_landed_title = THIS
+		}
+		set_defacto_liege = e_the_empire
+	}
+	event_target:civil_war_reform_elector = {
+		character_event = {
+			id = wh_offmap_empire_events.90
+			days = 30
+		}
+	}
+	clear_event_target = civil_war_reform_elector
+	offmap_the_empire = {
+		clr_offmap_flag = empire_broken_by_civil_war
+	}
+}
+
+update_the_empire_stability_status_effect = {
+	if = {
+		limit = {
+			offmap_the_empire = {
+				OR = {
+					has_status = status_golden_age
+					has_status = status_stable
+					has_status = status_unrest
+					has_status = status_civil_war
+				}
+			}
+		}
+		if = {
+			limit = { check_variable = { which = the_empire_stability value >= 300 } }
+			offmap_the_empire = { set_status = status_golden_age }
+			if = {
+				limit = { offmap_the_empire = { has_offmap_flag = empire_broken_by_civil_war } }
+				reform_the_empire_after_civil_war_effect = yes
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = the_empire_stability value >= 200 } }
+			offmap_the_empire = { set_status = status_stable }
+			if = {
+				limit = { offmap_the_empire = { has_offmap_flag = empire_broken_by_civil_war } }
+				reform_the_empire_after_civil_war_effect = yes
+			}
+		}
+		else_if = {
+			limit = { check_variable = { which = the_empire_stability value >= 100 } }
+			offmap_the_empire = { set_status = status_unrest }
+		}
+		else = {
+			if = {
+				limit = { offmap_the_empire = { NOT = { has_offmap_flag = empire_broken_by_civil_war } } }
+				break_the_empire_for_civil_war_effect = yes
+			}
+			offmap_the_empire = { set_status = status_civil_war }
+		}
+	}
+}

@@ -2185,6 +2185,7 @@ k_carroburg_middenland;Middenland;;;;;;;;;;;;x
 #
 imperial_pantheon_patron_decision;Change your Patron God;;;;;;;;;;;;x
 imperial_pantheon_patron_decision_desc;You can change your Patron God every 10 years.;;;;;;;;;;;;x
+imperial_pantheon_patron_decision_cooldown;Patron God Cooldown;;;;;;;;;;;;x
 EVTDESC_WH_EMPIRE_EVENTS_100;The Imperial Pantheon has many gods, perhaps now I should adopt a single patron to worship.;;;;;;;;;;;;x
 EVTOPTA_WH_EMPIRE_EVENTS_100A;Sigmar, Taal & Rhya, Ulric;;;;;;;;;;;;x
 EVTOPTA_WH_EMPIRE_EVENTS_100B;Taal & Rhya, Ulric;;;;;;;;;;;;x
@@ -2270,6 +2271,7 @@ EVTOPTA_WH_EMPIRE_EVENTS_106D;Back to Master list;;;;;;;;;;;;x
 #######################################
 classical_pantheon_patron_decision;Change your Patron God;;;;;;;;;;;;x
 classical_pantheon_patron_decision_desc;You can change your Patron God every 10 years.;;;;;;;;;;;;x
+classical_pantheon_patron_decision_cooldown;Patron God Cooldown;;;;;;;;;;;;x
 EVTDESC_wh_classical_events_100;The Classical Pantheon has many gods, perhaps now I should adopt a single patron to worship.;;;;;;;;;;;;x
 EVTOPTA_wh_classical_events_100A;Myrmidia, Morr, Verena;;;;;;;;;;;;x
 EVTOPTA_wh_classical_events_100B;Shallya, Ranald, Mathann;;;;;;;;;;;;x
@@ -2350,13 +2352,49 @@ EVTDESC_wh_von_carstein_160;If your seeing this make a bug report.;;;;;;;;;;;;x
 EVTOPTA_wh_von_carstein_160;Damn you Otto;;;;;;;;;;;;x
 
 ##########################################
+offmap_the_empire;The Empire;;;;;;;;;;;;x
+
 empire_support_sigmar_policy;Support Sigmar;;;;;;;;;x
 empire_support_sigmar_policy_desc;Use you're influence to support Sigmar.;;;;;;;;;x
 empire_support_ulric_policy;Support Ulric;;;;;;;;;x
 empire_support_ulric_policy_desc;Use you're influence to support Ulric.;;;;;;;;;x
 empire_support_taal_rhya_policy;Support Taal and Rhya;;;;;;;;;x
 empire_support_taal_rhya_policy_desc;Use you're influence to support Taal and Rhya.;;;;;;;;;x
-
-
-
-
+#
+OFFMAP_THE_EMPIRE_BOONS;Imperial Decisions;;;;;;;;;;;;;x
+OFFMAP_THE_EMPIRE_BOONS_DESC;Here you can support your god as the Imperial Patron, and as Emperor make Empire wide Decisions.;;;;;;;;;;;;;x
+#
+policy_god_sigmar;God-King Sigmar;;;;;;;;;;;;;x
+policy_god_sigmar_desc;The Empire recognizes Sigmar as its patron. Sigmarite society members may gather influence to establish his worship across the realm.;;;;;;;;;;;;;;x
+policy_god_sigmar_effect_desc;At 100 influence, Sigmar becomes the Imperial patron. Changing the patron reduces Imperial stability by 10.;;;;;;;;;;;;;;x
+policy_god_ulric;Lord Ulric;;;;;;;;;;;;;x
+policy_god_ulric_desc;The Empire recognizes Ulric as its patron. Ulrican society members may gather influence to establish his worship across the realm.;;;;;;;;;;;;;;x
+policy_god_ulric_effect_desc;At 100 influence, Ulric becomes the Imperial patron. Changing the patron reduces Imperial stability by 10.;;;;;;;;;;;;;;x
+policy_god_taal_rhya;King Taal and Queen Rhya;;;;;;;;;;;;;x
+policy_god_taal_rhya_desc;The Empire recognizes Taal and Rhya as its patrons. Their society members may gather influence to establish their worship across the realm.;;;;;;;;;;;;;;x
+policy_god_taal_rhya_effect_desc;At 100 influence, Taal and Rhya become the Imperial patrons. Changing the patron reduces Imperial stability by 10.;;;;;;;;;;;;;;x
+#
+status_golden_age;Imperial Golden Age;;;;;;;;;;x
+status_golden_age_desc;The Empire is united and prosperous. Confidence in the Emperor and the institutions of the Empire is at its height.;;;;;;;;;x
+status_golden_age_effect_desc;Empire Stability: 300 or higher.;;;;;;;;;x
+status_stable;Imperial Stable;;;;;;;;;;x
+status_stable_desc;The Empire has weathered its troubles. Its institutions are holding, though continued stability is needed to prevent unrest from returning.;;;;;;;;;;x
+status_stable_effect_desc;Empire Stability: 200-299.;;;;;;;;;;x
+status_unrest;Imperial Unrest;;;;;;;;;;x
+status_unrest_desc;Discontent is spreading through the Empire. The Emperor's authority is weakening, and further instability may lead to civil war.;;;;;;;;;;x
+status_unrest_effect_desc;Empire Stability: 100-199.;;;;;;;;;;x
+status_civil_war;Imperial Civil War;;;;;;;;;;x
+status_civil_war_desc;The Empire has fractured into rival realms. Imperial claimants have taken up their regional titles, and the old imperial throne lies vacant.;;;;;;;;;;x
+status_civil_war_effect_desc;Empire Stability: below 100. When stability reaches 200, the Empire reforms under a temporary elector. He dies after 30 days, allowing the electors to choose a new ruler.;;;;;;;;;;x
+status_chaos_invasion;Chaos Invasion;;;;;;;;;;x
+status_chaos_invasion_desc;Daemonic armies and their mortal followers threaten to overrun the Empire. Its provinces must stand together or be consumed by Chaos.;;;;;;;;;;x
+status_chaos_invasion_effect_desc;No additional status-specific effects are currently scripted.;;;;;;;;;;x
+status_greenskin_invasion;Greenskin Invasion;;;;;;;;;;x
+status_greenskin_invasion_desc;Orc and Goblin warbands pour into the Empire, burning settlements and challenging its rulers.;;;;;;;;;;x
+status_greenskin_invasion_effect_desc;This status is currently disabled and has no scripted effects.;;;;;;;;;;x
+status_plague;Plague;;;;;;;;;;x
+status_plague_desc;A deadly plague spreads through the Empire, bringing sickness, fear, and disruption in its wake.;;;;;;;;;;x
+status_plague_effect_desc;This status is currently disabled and has no scripted effects.;;;;;;;;;;x
+status_decadence;Imperial Decadence;;;;;;;;;;x
+status_decadence_desc;The Empire's rulers have grown complacent. Courtly excess and neglect of duty threaten the strength of the realm.;;;;;;;;;;x
+status_decadence_effect_desc;No additional status-specific effects are currently scripted.;;;;;;;;;;x

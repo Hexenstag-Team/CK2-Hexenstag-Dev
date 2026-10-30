@@ -726,6 +726,35 @@ on_character_convert_religion = {
 on_war_started = {
 	events = {
 		slizardmen.30 #Slann is restless or awakes on its own
+		wh_offmap_empire_events.10
+	}
+}
+
+#character
+on_failed_assassination = {
+	events = {
+		wh_offmap_empire_events.13
+	}
+}
+
+#character
+on_failed_assassination_disc = {
+	events = {
+		wh_offmap_empire_events.13
+	}
+}
+
+#character
+on_assassination = {
+	events = {
+		wh_offmap_empire_events.12
+	}
+}
+
+#character
+on_assassination_disc = {
+	events = {
+		wh_offmap_empire_events.12
 	}
 }
 
@@ -761,6 +790,28 @@ on_war_ended_defeat = {
 on_war_ended_invalid = {
 	events = {
 		chaosr.1514		#Sacking maintenance
+	}
+}
+
+on_outbreak = {
+	events = {
+		wh_offmap_empire_events.14
+	}
+}
+
+# Root = Governor
+# From = Offmap
+on_offmap_policy_changed = {
+	events = {
+		wh_offmap_empire_events.1
+	}
+}
+
+# Root = Governor
+# From = Offmap
+on_offmap_yearly_pulse = {
+	events = {
+		wh_offmap_empire_events.100
 	}
 }
 
