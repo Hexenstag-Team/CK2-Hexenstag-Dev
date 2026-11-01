@@ -1022,7 +1022,7 @@ claim_on_liege = {
 		}
 		OR = {
 			has_law = succ_feudal_elective
-			has_law = succ_hre_elective
+			has_law = succ_the_empire_elective
 			ROOT = { has_claim = PREV }
 		}
 	}
@@ -1886,7 +1886,7 @@ other_claim_on_liege = {
 
 		OR = {
 			has_law = succ_feudal_elective
-			has_law = succ_hre_elective
+			has_law = succ_the_empire_elective
 			ROOT = { has_claim = PREV }
 		}
 
@@ -3055,7 +3055,7 @@ change_feudal_elective_succession_law = {
 	is_valid_title = {
 		NOR = {
 			has_law = succ_feudal_elective
-			has_law = succ_hre_elective
+			has_law = succ_the_empire_elective
 		}
 		OR = {
 			tier = emperor
@@ -3151,7 +3151,7 @@ change_feudal_elective_succession_law = {
 		}
 		if = {
 			limit = { title = e_the_empire }
-			add_law_w_cooldown = succ_hre_elective
+			add_law_w_cooldown = succ_the_empire_elective
 			#succession_w_cooldown = {
 			#	base_type = feudal_elective
 			#	voting_rules = hre_feudal_elective
@@ -17348,7 +17348,7 @@ powerful_vassal_takeover_war = { # Started from faction
 					if = {
 						limit = {
 							title = e_the_empire
-							NOR = { has_law = succ_feudal_elective has_law = succ_hre_elective }
+							NOR = { has_law = succ_feudal_elective has_law = succ_the_empire_elective }
 							has_law = law_voting_power_1
 							has_law = banish_voting_power_1
 							has_law = execution_voting_power_1
@@ -17357,12 +17357,12 @@ powerful_vassal_takeover_war = { # Started from faction
 							has_law = imprison_voting_power_1
 							has_law = war_voting_power_1
 						}
-						add_law_w_cooldown = succ_hre_elective
+						add_law_w_cooldown = succ_the_empire_elective
 		}
 		if = {
 						limit = {
 							NOR = { title = e_the_empire }
-							NOR = { has_law = succ_feudal_elective has_law = succ_hre_elective }
+							NOR = { has_law = succ_feudal_elective has_law = succ_the_empire_elective }
 							has_law = law_voting_power_1
 							has_law = banish_voting_power_1
 							has_law = execution_voting_power_1
@@ -17376,7 +17376,7 @@ powerful_vassal_takeover_war = { # Started from faction
 					if = {
 						limit = {
 							NOT = { has_law = succ_gavelkind }
-							NOR = { has_law = succ_feudal_elective has_law = succ_hre_elective }
+							NOR = { has_law = succ_feudal_elective has_law = succ_the_empire_elective }
 							NAND = {
 								has_law = succ_feudal_elective
 								has_law = law_voting_power_1

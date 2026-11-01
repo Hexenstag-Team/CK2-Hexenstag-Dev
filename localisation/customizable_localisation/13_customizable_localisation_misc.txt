@@ -237,14 +237,13 @@ defined_text = {
 	
 	text = {
 		localisation_key = witchhunter_battle_skill_is_badassery
-			trigger = {
-				NOT = {
-					is_trained_mage = yes
-				}
-				combat_rating > 80
+		trigger = {
+			NOT = {
+				is_trained_mage = yes
 			}
+			combat_rating > 80
 		}
-	}	
+	}
 	
 	fallback_text = {
 		localisation_key = witchhunter_battle_skill_is_just_being_there

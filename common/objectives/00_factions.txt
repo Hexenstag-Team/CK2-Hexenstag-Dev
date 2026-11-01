@@ -123,7 +123,7 @@ faction_succ_seniority = {
 			}
 			AND = {
 				has_law = succession_voting_power_1
-				has_law = succ_hre_elective
+				has_law = succ_the_empire_elective
 			}
 		}
 
@@ -856,7 +856,7 @@ faction_succ_primogeniture = {
 			}
 			AND = {
 				has_law = succession_voting_power_1
-				has_law = succ_hre_elective
+				has_law = succ_the_empire_elective
 			}
 		}
 
@@ -1567,7 +1567,7 @@ faction_succ_gavelkind = {
 			}
 			AND = {
 				has_law = succession_voting_power_1
-				has_law = succ_hre_elective
+				has_law = succ_the_empire_elective
 			}
 		}
 
@@ -1655,7 +1655,7 @@ faction_succ_gavelkind = {
 			factor = 0
 			OR = {
 				has_law = succ_feudal_elective
-				has_law = succ_hre_elective
+				has_law = succ_the_empire_elective
 			}
 			NOT = {
 				holder_scope = {
@@ -2344,20 +2344,20 @@ faction_succ_feudal_elective = {
 				is_law_allowed = succ_feudal_elective
 			}
 			AND = {
-				is_law_potential = succ_hre_elective
-				is_law_allowed = succ_hre_elective
+				is_law_potential = succ_the_empire_elective
+				is_law_allowed = succ_the_empire_elective
 			}
 		}
 		NOR = {
 			has_law = succ_feudal_elective
-			has_law = succ_hre_elective
+			has_law = succ_the_empire_elective
 			AND = {
 				has_law = succession_voting_power_1
 				has_law = succ_feudal_elective
 			}
 			AND = {
 				has_law = succession_voting_power_1
-				has_law = succ_hre_elective
+				has_law = succ_the_empire_elective
 			}
 		}
 
@@ -3011,7 +3011,7 @@ faction_succ_feudal_elective = {
 	success = {
 		OR = {
 			has_law = succ_feudal_elective
-			has_law = succ_hre_elective
+			has_law = succ_the_empire_elective
 		}
 	}
 
@@ -5376,7 +5376,7 @@ faction_claimant = {
 
 			OR = {
 				ROOT = { has_law = succ_feudal_elective }
-				ROOT = { has_law = succ_hre_elective }
+				ROOT = { has_law = succ_the_empire_elective }
 				has_claim = ROOT
 			}
 
@@ -5510,7 +5510,7 @@ faction_claimant = {
 		modifier = { # Title does NOT have Elective and the current heir is me
 			factor = 0
 			NOT = { has_law = succ_feudal_elective }
-			NOT = { has_law = succ_hre_elective }
+			NOT = { has_law = succ_the_empire_elective }
 			current_heir = {
 				NOT = { trait = khemri_tomb_king }
 				NOT = { trait = creature_skaven }
@@ -5605,7 +5605,7 @@ faction_claimant = {
 
 		modifier = {
 			factor = 0
-			OR = { has_law = succ_hre_elective has_law = succ_feudal_elective }
+			OR = { has_law = succ_the_empire_elective has_law = succ_feudal_elective }
 			new_character = {
 			NOT = { trait = khemri_tomb_king }
 				NOT = { trait = creature_skaven }

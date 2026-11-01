@@ -52,7 +52,7 @@ character_event = {
 		e_the_empire = {
 			grant_title = ROOT
 			add_law = {
-				law = succ_hre_elective
+				law = succ_the_empire_elective
 				cooldown = no
 				opinion_effect = no
 			}
@@ -1201,9 +1201,7 @@ character_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		primary_title = {
-			has_title_flag = claimant
-		}
+		is_imperial_claimant = yes
 		independent = yes
 		NOT = { has_landed_title = e_imperial_alliance }
 	}
@@ -1219,6 +1217,7 @@ character_event = {
 				primary_title = {
 					has_title_flag = independent
 				}
+				can_be_imperial_claimant = yes
 			}
 			character_event = {
 				id = wh_empire_events.201
@@ -1253,107 +1252,139 @@ character_event = {
 }
 
 character_event = {
-	id = wh_empire_events.201
-	hide_window = yes
-	is_triggered_only = yes
-	
-	immediate = {
-		FROM = {
-			character_event = {
-				id = wh_empire_events.202
-			}
-		}
-	}
-}
+	id = wh_empire_events.300
+	desc = EVTDESC_WH_EMPIRE_EVENTS_301
+	picture = GFX_evt_rival_rulers
 
-character_event = {
-	id = wh_empire_events.202
-	desc = EVTDESC_WH_EMPIRE_EVENTS_202
-	picture = "GFX_evt_rival_rulers"
-	
 	is_triggered_only = yes
-	
+
 	option = {
-		name = EVTOPTA_WH_EMPIRE_EVENTS_202
-		show_portrait = FROM
+		name = EVTOPTA_WH_EMPIRE_EVENTS_301
+		show_portrait = event_target:wh_empire_support_requester
 		if = {
 			limit = {
-				is_imperial_claimant = yes
+				event_target:wh_empire_support_requester = { is_imperial_claimant = no }
 			}
-			FROM = {
-				set_defacto_liege = ROOT
-				clr_imperial_flags = yes
-				change_imperial_flags = yes
-			}
-		}
-		else_if = {
-			limit = {
-				NOT = {
-					is_imperial_claimant = yes
+			event_target:wh_empire_support_requester = {
+				primary_title = {
+					set_title_flag = claimant_vw
 				}
-			}
-			primary_title = {
-				set_title_flag = claimant
-			}
-			imperial_claimant = yes
-			FROM = {
-				set_defacto_liege = ROOT
 				clr_imperial_flags = yes
-				change_imperial_flags = yes
+				imperial_claimant = yes
 			}
 		}
-	}
-}
-
-character_event = {
-	id = wh_empire_events.203
-	hide_window = yes
-	is_triggered_only = yes
-	
-	immediate = {
-		liege = {
-			character_event = {
-				id = wh_empire_events.204
-			}
-		}
-	}
-}
-
-character_event = {
-	id = wh_empire_events.204
-	desc = EVTDESC_WH_EMPIRE_EVENTS_204
-	picture = "GFX_evt_rival_rulers"
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTA_WH_EMPIRE_EVENTS_204
-		show_portrait = FROM
-		FROM = {
-			set_defacto_liege = THIS
-			clr_imperial_flags = yes
-			change_imperial_flags = yes
-		}
-	}
-}
-
-character_event = {
-	id = wh_empire_events.205
-	desc = EVTDESC_WH_EMPIRE_EVENTS_205
-	picture = "GFX_evt_rival_rulers"
-	
-	is_triggered_only = yes
-	
-	option = {
-		name = EVTOPTA_WH_EMPIRE_EVENTS_205
-		destroy_landed_title = primary_title
+		set_defacto_liege = event_target:wh_empire_support_requester
 		clr_imperial_flags = yes
-		primary_title = {
-			set_title_flag = independent
+		change_imperial_flags = yes
+		event_target:wh_empire_support_requester = {
+			character_event = { id = wh_empire_events.301 }
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.5
+				trait = kind
+			}
+			modifier = {
+				factor = 1.5
+				trait = honest
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+			modifier = {
+				factor = 2
+				trait = humble
+			}
+			modifier = {
+				factor = 1.5
+				opinion = { who = event_target:wh_empire_support_requester value = 25 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:wh_empire_support_requester value = 50 }
+			}
+			modifier = {
+				factor = 4
+				opinion = { who = event_target:wh_empire_support_requester value = 100 }
+			}
+			modifier = {
+				factor = 2
+				event_target:wh_empire_support_requester = { trait = brilliant_strategist }
+			}
+			modifier = {
+				factor = 3
+				event_target:wh_empire_support_requester = { trait = charismatic_negotiator }
+			}
+			modifier = {
+				factor = 4
+				event_target:wh_empire_support_requester = { trait = grey_eminence }
+			}
+			modifier = {
+				factor = 1.5
+				event_target:wh_empire_support_requester = { trait = just }
+			}
+		}
+	}
+
+	option = {
+		name = EVTOPTB_WH_EMPIRE_EVENTS_301
+		event_target:wh_empire_support_requester = {
+			character_event = { id = wh_empire_events.302 }
+		}
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 1.5
+				trait = ambitious
+			}
+			modifier = {
+				factor = 1.5
+				trait = proud
+			}
+			modifier = {
+				factor = 1.5
+				trait = cruel
+			}
+			modifier = {
+				factor = 1.5
+				opinion = { who = event_target:wh_empire_support_requester value = 0 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = event_target:wh_empire_support_requester value = -50 }
+			}
+			modifier = {
+				factor = 4
+				opinion = { who = event_target:wh_empire_support_requester value = -100 }
+			}
 		}
 	}
 }
 
+character_event = {
+	id = wh_empire_events.301
+	desc = EVTDESC_WH_EMPIRE_EVENTS_302
+	picture = GFX_evt_rival_rulers
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+	}
+}
+
+character_event = {
+	id = wh_empire_events.302
+	desc = EVTDESC_WH_EMPIRE_EVENTS_303
+	picture = GFX_evt_rival_rulers
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+	}
+}
 
 
 

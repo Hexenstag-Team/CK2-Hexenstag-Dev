@@ -890,6 +890,121 @@ targetted_decisions = {
             add_THIS_to_FROM_existing_league_effect = yes
         }
     }
+
+	imperial_claimant_request_support = {
+		ai_target_filter = independent_rulers
+		ai_check_interval = 24
+
+		from_potential = {
+			OR = {
+				is_imperial_claimant = yes
+				is_human = yes
+				AND = {
+					can_be_imperial_claimant = yes
+					primary_title = {
+						has_title_flag = independent
+					}
+				}
+			}
+		}
+
+		potential = {
+			NOT = { character = FROM }
+			independent = yes
+			is_human = yes
+			#culture_group = imperial_group
+			religion_group = old_world_group
+			primary_title = {
+				has_title_flag = independent
+			}
+		}
+
+		allow = {
+			FROM = {
+				NOT = { has_character_modifier = imperial_claimant_support_requested }
+				OR = {
+					is_imperial_claimant = yes
+					AND = {
+						can_be_imperial_claimant = yes
+						primary_title = {
+							has_title_flag = independent
+						}
+					}
+				}
+			}
+		}
+
+		effect = {
+			FROM = {
+				add_character_modifier = {
+					name = imperial_claimant_support_requested
+					years = 10
+					hidden = yes
+				}
+				save_event_target_as = wh_empire_support_requester
+			}
+			ROOT = {
+				character_event = { id = wh_empire_events.300 }
+			}
+		}
+
+		revoke_allowed = {
+			always = no
+			independent = yes
+		}
+
+		ai_will_do = {
+			factor = 0.05
+			modifier = {
+				factor = 0
+				opinion = { who = FROM value = -50 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = FROM value = 25 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = FROM value = 50 }
+			}
+			modifier = {
+				factor = 2
+				opinion = { who = FROM value = 100 }
+			}
+			modifier = {
+				factor = 1.5
+				trait = kind
+			}
+			modifier = {
+				factor = 1.5
+				trait = honest
+			}
+			modifier = {
+				factor = 2
+				trait = just
+			}
+			modifier = {
+				factor = 2
+				trait = humble
+			}
+			modifier = {
+				factor = 10
+				trait = ambitious
+			}
+			modifier = {
+				factor = 3
+				FROM = { trait = charismatic_negotiator }
+			}
+			modifier = {
+				factor = 4
+				FROM = { trait = grey_eminence }
+			}
+			modifier = {
+				factor = 2
+				FROM = { trait = brilliant_strategist }
+			}
+		}
+	}
 }
 
 decisions = {

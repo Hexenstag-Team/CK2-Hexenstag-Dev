@@ -117,19 +117,28 @@ reiklander_nulnian_war_cb = {
 		}
 		set_global_flag = reiklander_nulnian_war_reikland
 		k_averland = {
-			clr_imperial_flags = yes
+			holder_scope = { clr_imperial_flags = yes }
+			clr_imperial_title_flags = yes
 			set_title_flag = vassal_of_reikland
+			holder_scope = { change_imperial_flags = yes }
 		}
 		k_stirland = {
-			clr_imperial_flags = yes
+			holder_scope = { clr_imperial_flags = yes }
+			clr_imperial_title_flags = yes
 			set_title_flag = vassal_of_reikland
+			holder_scope = { change_imperial_flags = yes }
 		}
 		k_wissenland = {
-			clr_imperial_flags = yes
+			holder_scope = { clr_imperial_flags = yes }
+			clr_imperial_title_flags = yes
 			set_title_flag = vassal_of_reikland
+			holder_scope = { change_imperial_flags = yes }
 		}
 		d_nuln = {
-			clr_imperial_flags = yes
+			holder_scope = { clr_imperial_flags = yes }
+			clr_imperial_title_flags = yes
+			set_title_flag = vassal_of_reikland
+			holder_scope = { change_imperial_flags = yes }
 		}
     }
 
@@ -193,16 +202,16 @@ reiklander_nulnian_war_cb = {
 		}
 		set_global_flag = reiklander_nulnian_war_nuln
 		k_reikland = {
-			clr_imperial_flags = yes
+			holder_scope = { clr_imperial_flags = yes }
+			clr_imperial_title_flags = yes
 			set_title_flag = vassal_of_nuln
+			holder_scope = { change_imperial_flags = yes }
 		}
 		k_carroburg_middenland = {
-			clr_imperial_flags = yes
+			holder_scope = { clr_imperial_flags = yes }
+			clr_imperial_title_flags = yes
 			set_title_flag = vassal_of_nuln
-		}
-		k_mootland = {
-			clr_imperial_flags = yes
-			set_title_flag = vassal_of_nuln
+			holder_scope = { change_imperial_flags = yes }
 		}
     }
 
@@ -238,9 +247,6 @@ sylvania_boogaloo = {
 	sort_priority = 900
 
 	can_use_gui = {
-		ROOT = {
-			piety = 250
-		}
 	}
 
 	on_add = {
@@ -248,13 +254,13 @@ sylvania_boogaloo = {
 
 	can_use = {
 		has_global_flag = no_sylvania_war
-		cb_restrictions_trigger = no
 		ROOT = {
 			capital_scope = { region = world_old_empire_sylvania }
 		}
 	}
 
 	can_use_title = {
+		cb_restrictions_trigger = no
 		location = { region = world_old_empire_sylvania }
 		tier = count
 	}
@@ -332,20 +338,18 @@ sylvania_boogaloo = {
 		factor = 1
 
 		modifier = {
+			factor = 5
+			ROOT = {
+				is_vampire_trigger = yes
+			}
+		}
+
+		modifier = {
 			factor = 0
 			ROOT = {
 				OR = {
 					trait = just
 					trait = content
-				}
-			}
-		}
-		modifier = {
-			factor = 0
-			ROOT = {
-				NOR = {
-					trait = arbitrary
-					trait = ambitious
 				}
 			}
 		}

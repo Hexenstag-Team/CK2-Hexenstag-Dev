@@ -110,21 +110,21 @@ succession_laws = {
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 					has_dlc = "Conclave"
 					}
 				has_law = law_voting_power_0
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 					NOT = { has_dlc = "Conclave" }
 				}
 				has_law = crown_authority_4
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 				}
 				has_law = centralization_4
 			}
@@ -139,7 +139,7 @@ succession_laws = {
 							has_law = succession_voting_power_1
 							OR = {
 								has_law = succ_feudal_elective
-								has_law = succ_hre_elective
+								has_law = succ_the_empire_elective
 							}
 						}
 					}
@@ -238,7 +238,7 @@ succession_laws = {
 							has_law = succession_voting_power_1
 							OR = {
 								has_law = succ_feudal_elective
-								has_law = succ_hre_elective
+								has_law = succ_the_empire_elective
 							}
 						}
 					}
@@ -250,21 +250,21 @@ succession_laws = {
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 					has_dlc = "Conclave"
 				}
 				has_law = law_voting_power_0
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 					NOT = { has_dlc = "Conclave" }
 				}
 				has_law = crown_authority_4
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 				}
 				has_law = centralization_4
 			}
@@ -361,7 +361,7 @@ succession_laws = {
 							has_law = succession_voting_power_1
 							OR = {
 								has_law = succ_feudal_elective
-								has_law = succ_hre_elective
+								has_law = succ_the_empire_elective
 							}
 						}
 					}
@@ -469,7 +469,7 @@ succession_laws = {
 			conditional_tooltip = {
 				trigger = {
 					NOT = { has_dlc = "Conclave" }
-					NOT = { has_law = succ_hre_elective }
+					NOT = { has_law = succ_the_empire_elective }
 				}
 				OR = {
 					hidden_tooltip = {
@@ -520,7 +520,7 @@ succession_laws = {
 							has_law = succession_voting_power_1
 							OR = {
 								has_law = succ_feudal_elective
-								has_law = succ_hre_elective
+								has_law = succ_the_empire_elective
 							}
 						}
 					}
@@ -528,21 +528,21 @@ succession_laws = {
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 					has_dlc = "Conclave"
 				}
 				has_law = law_voting_power_0
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 					NOT = { has_dlc = "Conclave" }
 				}
 				has_law = crown_authority_4
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 				}
 				has_law = centralization_4
 			}
@@ -657,7 +657,7 @@ succession_laws = {
 			conditional_tooltip = {
 				trigger = {
 					NOT = { has_dlc = "Conclave" }
-					NOT = { has_law = succ_hre_elective }
+					NOT = { has_law = succ_the_empire_elective }
 				}
 				OR = {
 					holder_scope = { # Viceroyalties can always have primogeniture if not muslim
@@ -696,7 +696,7 @@ succession_laws = {
 							has_law = succession_voting_power_1
 							OR = {
 								has_law = succ_feudal_elective
-								has_law = succ_hre_elective
+								has_law = succ_the_empire_elective
 							}
 						}
 					}
@@ -704,14 +704,14 @@ succession_laws = {
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 					has_dlc = "Conclave"
 				}
 				has_law = law_voting_power_0
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 					NOT = { has_dlc = "Conclave" }
 				}
 				OR = {
@@ -721,7 +721,7 @@ succession_laws = {
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 				}
 				has_law = centralization_4
 			}
@@ -758,7 +758,7 @@ succession_laws = {
 					has_law = succession_voting_power_1
 					OR = {
 						has_law = succ_feudal_elective # Keep it even if you revoke Full Council Authority
-						has_law = succ_hre_elective
+						has_law = succ_the_empire_elective
 					}
 					ROOT = {
 						has_title_flag = alternate_hre
@@ -786,7 +786,7 @@ succession_laws = {
 					has_law = succession_voting_power_1
 					OR = {
 						has_law = succ_feudal_elective # Keep it even if you revoke Full Council Authority
-						has_law = succ_hre_elective
+						has_law = succ_the_empire_elective
 					}
 					ROOT = {
 						has_title_flag = alternate_hre
@@ -814,7 +814,7 @@ succession_laws = {
 					has_law = succession_voting_power_1
 					OR = {
 						has_law = succ_feudal_elective # Keep it even if you revoke Full Council Authority
-						has_law = succ_hre_elective
+						has_law = succ_the_empire_elective
 					}
 					ROOT = {
 						has_title_flag = alternate_hre
@@ -840,101 +840,6 @@ succession_laws = {
 			succession = {
 				base_type = feudal_elective
 				voting_rules = feudal_elective
-			}
-		}
-		revoke_allowed = {
-			always = no
-		}
-	}
-
-	succ_hre_elective = {
-		oldest_child_opinion = -15
-		child_opinion = -5
-		dynasty_opinion = -5
-		vassal_opinion = 15
-		vassal_limit = 20
-		potential = {
-			OR = {
-				title = e_the_empire #Title-bound.
-				ROOT = {
-					has_title_flag = alternate_hre
-				}
-			}
-			holder_scope = {
-				religion_group = old_world_group
-				OR = {
-					independent = yes
-					NOT = {
-						any_liege = {
-							holy_order = yes
-						}
-					}
-				}
-				OR = {
-					NOT = {	religion_group = ormazd_gods_group }
-					has_law = succession_voting_power_1
-					has_law = succ_feudal_elective # Keep it even if you revoke Full Council Authority
-					has_law = succ_hre_elective
-					ROOT = {
-						has_title_flag = alternate_hre
-					}
-				}
-				is_merchant_republic = no
-				is_patrician = no
-
-				OR = {
-					NOT = { religion_group = chaos_gods_group }
-					is_reformed_religion = yes
-					#religion = hellenic_pagan
-					has_law = succession_voting_power_1
-					has_law = succ_feudal_elective # Keep it even if you revoke Full Council Authority
-					has_law = succ_hre_elective
-					ROOT = {
-						has_title_flag = alternate_hre
-					}
-				}
-				OR = {
-					independent = yes
-					NOT = {
-						any_demesne_title = {
-							is_vice_royalty = yes
-						}
-					}
-				}
-			}
-			OR = {
-				is_landless_type_title = no
-				is_tribal_type_title = yes
-				temporary = yes
-			}
-			is_primary_type_title = no
-			NOT = { tier = BARON }
-			holder_scope = {
-				OR = {
-					is_feudal = yes
-					has_law = succession_voting_power_1
-					has_law = succ_feudal_elective # Keep it even if you revoke Full Council Authority
-					has_law = succ_hre_elective
-					ROOT = {
-						has_title_flag = alternate_hre
-					}
-				}
-			}
-			#NOT = { holder_scope = { government = confucian_bureaucracy } }
-			#NOT = { holder_scope = { government = cathayan_imperial_government } }
-		}
-		allow = {
-			custom_tooltip = {
-				text = not_forced_tt
-				hidden_tooltip = {
-					holder_scope = { NOT = { has_character_flag = liege_forced_succ_law } }
-				}
-			}
-		}
-		effect = {
-			succession = {
-				base_type = feudal_elective
-				voting_rules = hre_feudal_elective
 			}
 		}
 		revoke_allowed = {
@@ -1085,7 +990,7 @@ succession_laws = {
 							has_law = succession_voting_power_1
 							OR = {
 								has_law = succ_feudal_elective
-								has_law = succ_hre_elective
+								has_law = succ_the_empire_elective
 							}
 						}
 					}
@@ -1093,21 +998,21 @@ succession_laws = {
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 					has_dlc = "Conclave"
 				}
 				has_law = law_voting_power_0
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 					NOT = { has_dlc = "Conclave" }
 				}
 				has_law = crown_authority_4
 			}
 			conditional_tooltip = {
 				trigger = {
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 				}
 				has_law = centralization_4
 			}
@@ -1205,7 +1110,7 @@ succession_laws = {
 				conditional_tooltip = {
 					trigger = {
 						NOT = { has_dlc = "Conclave" }
-						NOT = { has_law = succ_hre_elective }
+						NOT = { has_law = succ_the_empire_elective }
 					}
 					OR = {
 						hidden_tooltip = {
@@ -1242,7 +1147,7 @@ succession_laws = {
 								has_law = succession_voting_power_1
 								OR = {
 									has_law = succ_feudal_elective
-									has_law = succ_hre_elective
+									has_law = succ_the_empire_elective
 								}
 							}
 						}
@@ -1250,21 +1155,21 @@ succession_laws = {
 				}
 				conditional_tooltip = {
 					trigger = {
-						has_law = succ_hre_elective
+						has_law = succ_the_empire_elective
 						has_dlc = "Conclave"
 					}
 					has_law = law_voting_power_0
 				}
 				conditional_tooltip = {
 					trigger = {
-						has_law = succ_hre_elective
+						has_law = succ_the_empire_elective
 						NOT = { has_dlc = "Conclave" }
 					}
 					has_law = crown_authority_4
 				}
 				conditional_tooltip = {
 					trigger = {
-						has_law = succ_hre_elective
+						has_law = succ_the_empire_elective
 					}
 					has_law = centralization_4
 				}
@@ -1342,7 +1247,7 @@ succession_laws = {
 				has_law = succession_voting_power_1
 				OR = {
 					has_law = succ_feudal_elective
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 				}
 			}
 			#NOT = { holder_scope = { government = confucian_bureaucracy } }
@@ -1483,7 +1388,7 @@ succession_laws = {
 				has_law = succession_voting_power_1
 				OR = {
 					has_law = succ_feudal_elective
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 				}
 			}
 			#NOT = { holder_scope = { government = confucian_bureaucracy } }
@@ -1633,7 +1538,7 @@ succession_laws = {
 				has_law = succession_voting_power_1
 				OR = {
 					has_law = succ_feudal_elective
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 				}
 			}
 			#NOT = { holder_scope = { government = confucian_bureaucracy } }
@@ -1671,7 +1576,7 @@ succession_laws = {
 				has_law = succession_voting_power_1
 				OR = {
 					has_law = succ_feudal_elective
-					has_law = succ_hre_elective
+					has_law = succ_the_empire_elective
 				}
 			}
 			#NOT = { holder_scope = { government = confucian_bureaucracy } }

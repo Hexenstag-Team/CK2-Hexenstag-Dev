@@ -20245,7 +20245,7 @@ letter_event = {
 							if = {
 								limit = {
 									title = e_hre
-									NOT = { has_law = succ_hre_elective }
+									NOT = { has_law = succ_the_empire_elective }
 									NOT = { has_law = succ_feudal_elective }
 									has_law = law_voting_power_1
 									has_law = banish_voting_power_1
@@ -20255,12 +20255,12 @@ letter_event = {
 									has_law = imprison_voting_power_1
 									has_law = war_voting_power_1
 								}
-								add_law_w_cooldown = succ_hre_elective
+								add_law_w_cooldown = succ_the_empire_elective
 							}
 							if = {
 								limit = {
 									NOT = { title = e_hre }
-									NOT = { has_law = succ_hre_elective }
+									NOT = { has_law = succ_the_empire_elective }
 									NOT = { has_law = succ_feudal_elective }
 									has_law = law_voting_power_1
 									has_law = banish_voting_power_1
@@ -20276,7 +20276,7 @@ letter_event = {
 								limit = {
 									NOT = { has_law = succ_gavelkind }
 									NOT = { has_law = succ_feudal_elective }
-									NOT = { has_law = succ_hre_elective }
+									NOT = { has_law = succ_the_empire_elective }
 									NAND = {
 										has_law = succ_feudal_elective
 										has_law = law_voting_power_1

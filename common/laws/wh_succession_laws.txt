@@ -1,0 +1,32 @@
+# DO NOT ALTER THE NAME OR NUMBER OF THESE!
+
+succession_laws = {
+	succ_the_empire_elective = {
+		#vassal_limit = 20
+		potential = {
+			title = e_the_empire #Title-bound.
+			holder_scope = {
+				religion_group = old_world_group
+				independent = yes
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				text = not_forced_tt
+				hidden_tooltip = {
+					holder_scope = { NOT = { has_character_flag = liege_forced_succ_law } }
+				}
+			}
+		}
+		effect = {
+			succession = {
+				base_type = feudal_elective
+				voting_rules = imperial_elective
+			}
+		}
+		revoke_allowed = {
+			always = no
+		}
+	}
+
+}

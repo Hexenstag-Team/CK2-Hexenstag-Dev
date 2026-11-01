@@ -984,6 +984,7 @@ narrative_event = {	#Vald Setup
 	
 	immediate = {
 		set_global_flag = valdsetup
+		set_global_flag = no_sylvania_war
 		e_reikland = {
 			set_title_flag = claimant
 		}
@@ -1003,7 +1004,7 @@ narrative_event = {	#Vald Setup
 			set_title_flag = vassal_of_reikland
 		}
 		k_mootland = {
-			set_title_flag = vassal_of_reikland
+			set_title_flag = independent
 		}
 		k_nordland = {
 			set_title_flag = vassal_of_westerland
@@ -1090,18 +1091,18 @@ character_event = {
 	immediate = {
 		gain_title = e_imperial_alliance
 		e_imperial_alliance = {
-			add_law = succ_hre_elective
+			add_law = succ_the_empire_elective
 		}
 	}
 	
 	option = {
 		name = EVTOPTA_wh_von_carstein_101
+		vlad_suppress_claimant_title_for_war = yes
 		reverse_unsafe_war = {
 			target = ROOT
 			casus_belli = vlad_subjugation
 			thirdparty = FROM
 		}
-		destroy_landed_title = e_talabecland
 		k_ostermark = {
 			holder_scope = {
 				character_event = {
@@ -1138,6 +1139,7 @@ character_event = {
 	
 	option = {
 		name = EVTOPTA_wh_von_carstein_102
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 	}
@@ -1173,6 +1175,7 @@ character_event = {
 	
 	option = {	#Middenheim joins war
 		name = EVTOPTB_wh_von_carstein_103
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 		ai_chance = {
@@ -1247,6 +1250,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_121
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 	}
@@ -1299,6 +1303,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_131
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 	}
@@ -1387,6 +1392,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_141
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 	}
@@ -1439,7 +1445,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_151
-		destroy_landed_title = e_reikland
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 	}
@@ -1454,7 +1460,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_152
-		destroy_landed_title = e_nuln
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 	}
@@ -1469,6 +1475,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_153
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 	}
@@ -1483,7 +1490,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_154
-		destroy_landed_title = e_westerland
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 	}
@@ -1525,9 +1532,11 @@ character_event = {	#2nd+ Vampire War
 		vlad_troops_effect = yes
 		k_ostermark = {
 			holder_scope = {
+				vlad_suppress_claimant_title_for_war = yes
 				clr_imperial_flags = yes
 				change_imperial_flags = yes
 				top_liege = {
+					vlad_suppress_claimant_title_for_war = yes
 					clr_imperial_flags = yes
 					change_imperial_flags = yes
 					any_demesne_title = {
@@ -1553,9 +1562,10 @@ character_event = {
 	is_triggered_only = yes
 	
 	immediate = {
+		vlad_suppress_claimant_title_for_war = yes
 		gain_title = e_imperial_alliance
 		e_imperial_alliance = {
-			add_law = succ_hre_elective
+			add_law = succ_the_empire_elective
 		}
 	}
 	
@@ -1565,15 +1575,6 @@ character_event = {
 			target = ROOT
 			casus_belli = vlad_subjugation
 			thirdparty = FROM
-		}
-		any_demesne_title = {
-			limit = {
-				has_title_flag = imperial_alliance_holder
-				NOT = {
-					title = e_imperial_alliance
-				}
-			}
-			destroy_landed_title = THIS
 		}
 		k_ostermark = {
 			holder_scope = {
@@ -1631,6 +1632,7 @@ character_event = {	#Ostermark and Talabecland join Vampire war
 	
 	option = {
 		name = EVTOPTA_wh_von_carstein_202
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 	}
@@ -1667,9 +1669,11 @@ character_event = {	#Vlad has 20% War Score
 		set_global_flag = vlad_20_war_score
 		k_middenheim = {
 			holder_scope = {
+				vlad_suppress_claimant_title_for_war = yes
 				clr_imperial_flags = yes
 				change_imperial_flags = yes
 				top_liege = {
+					vlad_suppress_claimant_title_for_war = yes
 					clr_imperial_flags = yes
 					change_imperial_flags = yes
 					if = {
@@ -1686,9 +1690,11 @@ character_event = {	#Vlad has 20% War Score
 		}
 		k_middenland = {
 			holder_scope = {
+				vlad_suppress_claimant_title_for_war = yes
 				clr_imperial_flags = yes
 				change_imperial_flags = yes
 				top_liege = {
+					vlad_suppress_claimant_title_for_war = yes
 					clr_imperial_flags = yes
 					change_imperial_flags = yes
 					if = {
@@ -1724,6 +1730,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_211
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 		k_middenheim = {
@@ -1768,6 +1775,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_212
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 	}
@@ -1791,9 +1799,11 @@ character_event = {	#Vlad has 40% War Score
 		set_global_flag = vlad_40_war_score
 		k_hochland = {
 			holder_scope = {
+				vlad_suppress_claimant_title_for_war = yes
 				clr_imperial_flags = yes
 				change_imperial_flags = yes
 				top_liege = {
+					vlad_suppress_claimant_title_for_war = yes
 					clr_imperial_flags = yes
 					change_imperial_flags = yes
 					if = {
@@ -1810,9 +1820,11 @@ character_event = {	#Vlad has 40% War Score
 		}
 		k_ostland = {
 			holder_scope = {
+				vlad_suppress_claimant_title_for_war = yes
 				clr_imperial_flags = yes
 				change_imperial_flags = yes
 				top_liege = {
+					vlad_suppress_claimant_title_for_war = yes
 					clr_imperial_flags = yes
 					change_imperial_flags = yes
 					if = {
@@ -1848,6 +1860,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_221
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 		k_hochland = {
@@ -1892,6 +1905,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_222
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 	}
@@ -1915,9 +1929,11 @@ character_event = {	#Vlad has 50% War Score
 		set_global_flag = vlad_50_war_score
 		k_reikland = {
 			holder_scope = {
+				vlad_suppress_claimant_title_for_war = yes
 				clr_imperial_flags = yes
 				change_imperial_flags = yes
 				top_liege = {
+					vlad_suppress_claimant_title_for_war = yes
 					clr_imperial_flags = yes
 					change_imperial_flags = yes
 					if = {
@@ -1934,9 +1950,12 @@ character_event = {	#Vlad has 50% War Score
 		}
 		k_carroburg_middenland = {
 			holder_scope = {
+				vlad_suppress_claimant_title_for_war = yes
 				clr_imperial_flags = yes
 				change_imperial_flags = yes
 				top_liege = {
+					vlad_suppress_claimant_title_for_war = yes
+					clr_imperial_flags = yes
 					clr_imperial_flags = yes
 					change_imperial_flags = yes
 					if = {
@@ -1953,9 +1972,12 @@ character_event = {	#Vlad has 50% War Score
 		}
 		k_averland = {
 			holder_scope = {
+				vlad_suppress_claimant_title_for_war = yes
 				clr_imperial_flags = yes
 				change_imperial_flags = yes
 				top_liege = {
+					vlad_suppress_claimant_title_for_war = yes
+					clr_imperial_flags = yes
 					clr_imperial_flags = yes
 					change_imperial_flags = yes
 					if = {
@@ -1972,9 +1994,12 @@ character_event = {	#Vlad has 50% War Score
 		}
 		k_mootland = {
 			holder_scope = {
+				vlad_suppress_claimant_title_for_war = yes
 				clr_imperial_flags = yes
 				change_imperial_flags = yes
 				top_liege = {
+					vlad_suppress_claimant_title_for_war = yes
+					clr_imperial_flags = yes
 					clr_imperial_flags = yes
 					change_imperial_flags = yes
 					if = {
@@ -1991,9 +2016,12 @@ character_event = {	#Vlad has 50% War Score
 		}
 		k_stirland = {
 			holder_scope = {
+				vlad_suppress_claimant_title_for_war = yes
 				clr_imperial_flags = yes
 				change_imperial_flags = yes
 				top_liege = {
+					vlad_suppress_claimant_title_for_war = yes
+					clr_imperial_flags = yes
 					clr_imperial_flags = yes
 					change_imperial_flags = yes
 					if = {
@@ -2010,9 +2038,12 @@ character_event = {	#Vlad has 50% War Score
 		}
 		k_wissenland = {
 			holder_scope = {
+				vlad_suppress_claimant_title_for_war = yes
 				clr_imperial_flags = yes
 				change_imperial_flags = yes
 				top_liege = {
+					vlad_suppress_claimant_title_for_war = yes
+					clr_imperial_flags = yes
 					clr_imperial_flags = yes
 					change_imperial_flags = yes
 					if = {
@@ -2048,6 +2079,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_231
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 		k_reikland = {
@@ -2152,6 +2184,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_232
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 	}
@@ -2175,9 +2208,12 @@ character_event = {	#Vlad has 70% War Score
 		set_global_flag = vlad_70_war_score
 		k_nordland = {
 			holder_scope = {
+				vlad_suppress_claimant_title_for_war = yes
 				clr_imperial_flags = yes
 				change_imperial_flags = yes
 				top_liege = {
+					vlad_suppress_claimant_title_for_war = yes
+					clr_imperial_flags = yes
 					clr_imperial_flags = yes
 					change_imperial_flags = yes
 					if = {
@@ -2194,9 +2230,12 @@ character_event = {	#Vlad has 70% War Score
 		}
 		k_westerland = {
 			holder_scope = {
+				vlad_suppress_claimant_title_for_war = yes
 				clr_imperial_flags = yes
 				change_imperial_flags = yes
 				top_liege = {
+					vlad_suppress_claimant_title_for_war = yes
+					clr_imperial_flags = yes
 					clr_imperial_flags = yes
 					change_imperial_flags = yes
 					if = {
@@ -2232,6 +2271,7 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_241
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
 		k_nordland = {
@@ -2276,7 +2316,44 @@ character_event = {
 
 	option = {
 		name = EVTOPTA_wh_von_carstein_242
+		vlad_suppress_claimant_title_for_war = yes
 		join_defender_wars = e_imperial_alliance
 		set_defacto_liege = e_imperial_alliance
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.249
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = {
+			if = {
+				limit = {
+					any_war = { using_cb = vlad_subjugation }
+				}
+				vlad_suppress_claimant_title_for_war = yes
+			}
+		}
+		ROOT = {
+			if = {
+				limit = {
+					any_war = { using_cb = vlad_subjugation }
+				}
+				vlad_suppress_claimant_title_for_war = yes
+			}
+		}
+	}
+}
+
+character_event = {
+	id = wh_von_carstein.250
+	hide_window = yes
+	is_triggered_only = yes
+
+	immediate = {
+		FROM = { vlad_restore_claimant_title_after_war = yes }
+		ROOT = { vlad_restore_claimant_title_after_war = yes }
 	}
 }

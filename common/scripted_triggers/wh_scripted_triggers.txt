@@ -774,9 +774,7 @@ health_20_trigger = {
 	health = 20
 }
 
-health_10+_trigger = {
-	health = 10
-}
+
 
 hidden_trait = {
 	OR = {
@@ -1072,8 +1070,55 @@ is_hashut_bad_minion_trigger = {
 }
 
 is_imperial_claimant = {
+	OR = {
+		any_demesne_title = {
+			tier = EMPEROR
+			has_title_flag = claimant
+		}
+		any_demesne_title = {
+			OR = {
+				title = k_drakwald
+				title = k_solland
+				title = k_reikland
+				title = k_averland
+				title = k_hochland
+				title = k_middenland
+				title = k_mootland
+				title = k_nordland
+				title = k_ostermark
+				title = k_ostland
+				title = k_stirland
+				title = k_sylvania
+				title = k_talabecland
+				title = k_westerland
+				title = k_wissenland
+				title = d_nuln
+			}
+			has_title_flag = claimant_vw
+		}
+	}
+}
+
+can_be_imperial_claimant = {
 	primary_title = {
-		has_title_flag = claimant_vw
+		OR = {
+			title = k_drakwald
+			title = k_solland
+			title = k_reikland
+			title = k_averland
+			title = k_hochland
+			title = k_middenland
+			title = k_mootland
+			title = k_nordland
+			title = k_ostermark
+			title = k_ostland
+			title = k_stirland
+			title = k_sylvania
+			title = k_talabecland
+			title = k_westerland
+			title = k_wissenland
+			title = d_nuln
+		}
 	}
 }
 
@@ -1092,10 +1137,10 @@ has_imperial_vassal_flag = {
 			has_title_flag = vassal_of_ostland
 			has_title_flag = vassal_of_wissenland
 			has_title_flag = vassal_of_stirland
+			has_title_flag = vassal_of_mootland
 			has_title_flag = vassal_of_solland
 			has_title_flag = vassal_of_drakwald
 			has_title_flag = vassal_of_imperial_sylvania
-			has_title_flag = vassal_of_imperial_mootland
 			has_title_flag = vassal_of_nuln
 		}
 	}
@@ -1175,13 +1220,6 @@ has_patron_trigger = {
 		trait = patron_kavarich
 		trait = patron_styriss
 		trait = patron_arvala
-		trait = patron_lucan
-		trait = patron_luccina
-		trait = patron_santo_galdin
-		trait = patron_santo_plinio
-		trait = patron_santo_giacomo
-		trait = patron_santo_tomasso
-		trait = patron_santo_alessandro
 		#####Old Patron#####
 		trait = greenskin_gods_gork
 		trait = greenskin_gods_mork
@@ -1196,29 +1234,58 @@ has_patron_trigger = {
 
 cb_restrictions_trigger = {
 	OR = {
-		NAND = {
-			location = { region = world_albion }
+		AND = {
+			has_global_flag = mists_of_albion
 			ROOT = {
-				has_global_flag = mists_of_albion
-				capital_scope = { NOT = { region = world_albion } }
+				capital_scope = { region = world_albion }
+			}
+			location = {
+				region = world_albion
 			}
 		}
-		NAND = {
-			location = { region = world_old_empire_sylvania }
+		AND = {
 			ROOT = {
-				capital_scope = { NOT = { region = world_old_empire_sylvania } }
+				capital_scope = { region = world_old_empire_sylvania }
 			}
-			offmap_imperial = {
-				NOT = { has_status = status_civil_war }
+			NOT = { has_global_flag = no_sylvania_war }
+		}
+		AND = {
+			ROOT = {
+				capital_scope = {
+					region = world_old_empire
+					NOT = { region = world_old_empire_sylvania }
+				}
+				NOT = { religion_group = old_world_group }
+			}
+			FROM = {
+				location = {
+					OR = {
+						offmap_the_empire = { has_status = status_golden_age }
+						AND = {
+							region = world_old_empire
+							NOT = { region = world_old_empire_sylvania }
+						}
+						AND = {
+							region = world_old_empire
+							offmap_the_empire = { has_status = status_stable }
+						}
+					}
+				}
+				religion_group = old_world_group
 			}
 		}
-		NAND = {
-			location = { region = world_old_empire }
+		AND = {
 			ROOT = {
-				capital_scope = { NOT = { region = world_old_empire } }
+				capital_scope = {
+					region = world_old_empire
+					NOT = { region = world_old_empire_sylvania }
+				}
+				NOT = { religion_group = old_world_group }
 			}
-			offmap_imperial = {
-				NOT = { has_status = status_civil_war }
+		}
+		ROOT = {
+			NOT = {
+				capital_scope = { region = world_old_empire }
 			}
 		}
 	}

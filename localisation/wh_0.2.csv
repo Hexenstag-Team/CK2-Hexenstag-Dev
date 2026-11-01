@@ -2173,12 +2173,19 @@ d_wurtbad_adj;Wurtbad;;;;;;;;;;;;x
 d_wurtbad;Wurtbad;;;;;;;;;;;;x
 d_zuidhaven_adj;Zuidhaven;;;;;;;;;;;;x
 d_zuidhaven;Zuidhaven;;;;;;;;;;;;x
-e_imperial_alliance_adj;;Imperial;;;;;;;;;;;x
+e_imperial_alliance_adj;Imperial;;;;;;;;;;;;x
 e_imperial_alliance;Imperial Alliance;;;;;;;;;;;;x
 k_carroburg_middenland_adj;Middenlander;;;;;;;;;;;;x
 k_carroburg_middenland;Middenland;;;;;;;;;;;;x
 
-
+####################################################
+imperial_elective;Imperial Diet;;;;;;;;;;;;x
+imperial_elective_desc;The Emperor, the Elector-Counts and the powerful Cults of the Empire can nominate a successor from among the Elector-Counts and the heir of the Emperor realm.;;;;;;;;;;;x
+succ_the_empire_elective;Imperial Diet;;;;;;;;;;;;
+succ_the_empire_elective_desc;The Emperor, the Elector-Counts and the powerful Cults of the Empire can nominate a successor from among the Elector-Counts and the heir of the Emperor realm.;;;;;;;;;;;x
+gov_the_empire;The Empire of Man;;;;;;;;;;;;;x
+imperial_claimant_request_support;Ask to support your imperial claim;;;;;;;;;;;;x
+imperial_claimant_request_support_desc;If accepted, the elector becomes your vassal. If you do not yet hold an imperial claimant title, their support can establish your claim.;;;;;;;;;;;;x
 ####################################################
 #
 # Pantheon
@@ -2261,12 +2268,12 @@ EVTOPTA_WH_EMPIRE_EVENTS_106_KAVARICH;Kavarich;;;;;;;;;;;;x
 EVTOPTA_WH_EMPIRE_EVENTS_106_STYRISS;Styriss;;;;;;;;;;;;x
 EVTOPTA_WH_EMPIRE_EVENTS_106_ARVALA;Arvala;;;;;;;;;;;;x
 EVTOPTA_WH_EMPIRE_EVENTS_106D;Back to Master list;;;;;;;;;;;;x
-#EVTDESC_WH_EMPIRE_EVENTS_202;[From.GetBestName] ;;;;;;;;;;;;x
-#EVTOPTA_WH_EMPIRE_EVENTS_202
-#EVTDESC_WH_EMPIRE_EVENTS_204
-#EVTOPTA_WH_EMPIRE_EVENTS_204
-#EVTDESC_WH_EMPIRE_EVENTS_205
-#EVTOPTA_WH_EMPIRE_EVENTS_205;;;;;;;;;;;;;x
+EVTDESC_WH_EMPIRE_EVENTS_301;A fellow ruler asks you to support their claim to the Imperial throne.;;;;;;;;;;;;x
+EVTOPTA_WH_EMPIRE_EVENTS_301;Accept and become their vassal;;;;;;;;;;;;x
+EVTOPTB_WH_EMPIRE_EVENTS_301;Decline;;;;;;;;;;;;x
+EVTDESC_WH_EMPIRE_EVENTS_302;The ruler has accepted your claim and joined your realm as a vassal.;;;;;;;;;;;;x
+EVTDESC_WH_EMPIRE_EVENTS_303;The ruler has declined your request to support your claim.;;;;;;;;;;;;x
+
 
 #######################################
 classical_pantheon_patron_decision;Change your Patron God;;;;;;;;;;;;x
@@ -2352,7 +2359,7 @@ EVTDESC_wh_von_carstein_160;If your seeing this make a bug report.;;;;;;;;;;;;x
 EVTOPTA_wh_von_carstein_160;Damn you Otto;;;;;;;;;;;;x
 
 ##########################################
-offmap_the_empire;The Empire;;;;;;;;;;;;x
+offmap_the_empire;The Sacred Empire;;;;;;;;;;;;x
 
 empire_support_sigmar_policy;Support Sigmar;;;;;;;;;x
 empire_support_sigmar_policy_desc;Use you're influence to support Sigmar.;;;;;;;;;x
@@ -2398,3 +2405,9 @@ status_plague_effect_desc;This status is currently disabled and has no scripted 
 status_decadence;Imperial Decadence;;;;;;;;;;x
 status_decadence_desc;The Empire's rulers have grown complacent. Courtly excess and neglect of duty threaten the strength of the realm.;;;;;;;;;;x
 status_decadence_effect_desc;No additional status-specific effects are currently scripted.;;;;;;;;;;x
+
+tooltip_d_cult_of_sigmar_policy_god_sigmar;Arch Lectors;;;;;;;;;;x
+tooltip_d_cult_of_ulric_policy_god_ulric;Knights of the White Wolf;;;;;;;;;;x
+tooltip_d_cult_of_taal_and_rhya_policy_god_sigmar;Cults of Taal and Rhya;;;;;;;;;;x
+
+imperial_claimant_support_requested;Can't ask again for 10 years;;;;;;;;;;x

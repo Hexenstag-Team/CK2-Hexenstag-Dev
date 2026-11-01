@@ -134,3 +134,48 @@ candidate_trigger_is_correct_race = {
 		}
 	}
 }
+
+imperial_electors = {
+	OR = {
+		has_landed_title = d_cult_of_sigmar
+		has_landed_title = d_cult_of_ulric
+		has_landed_title = k_reikland
+		has_landed_title = k_averland
+		has_landed_title = k_hochland
+		has_landed_title = k_middenland
+		has_landed_title = k_mootland
+		has_landed_title = k_nordland
+		has_landed_title = k_ostermark
+		has_landed_title = k_ostland
+		has_landed_title = k_stirland
+		has_landed_title = k_talabecland
+		has_landed_title = k_westerland
+		has_landed_title = k_wissenland
+		has_landed_title = k_drakwald
+		has_landed_title = k_solland
+		if = {
+			limit = {
+				k_middenland = { holder = no }
+			}
+			has_landed_title = k_middenheim
+		}
+		if = {
+			limit = {
+				k_middenland = { holder = no }
+			}
+			has_landed_title = k_carroburg_middenland
+		}
+		if = {
+			limit = {
+				k_middenland = { is_human = yes }
+			}
+			has_landed_title = k_sylvania
+		}
+		if = {
+			limit = {
+				offmap_the_empire = { policy_god_taal_rhya }
+			}
+			has_landed_title = d_cult_of_taal_and_rhya
+		}
+	}
+}

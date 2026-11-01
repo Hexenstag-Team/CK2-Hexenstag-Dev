@@ -7142,28 +7142,36 @@ vlad_troops_effect = {
 }
 
 clr_imperial_flags = {
-	primary_title = {
+	any_demesne_title = {
 		clr_title_flag = claimant
 		clr_title_flag = claimant_vw
-		clr_title_flag = independent
-		clr_title_flag = vassal_of_sylvania
-		clr_title_flag = vassal_of_reikland
-		clr_title_flag = vassal_of_westerland
-		clr_title_flag = vassal_of_talabecland
-		clr_title_flag = vassal_of_middenland
-		clr_title_flag = vassal_of_ostermark
-		clr_title_flag = vassal_of_nordland
-		clr_title_flag = vassal_of_hochland
-		clr_title_flag = vassal_of_averland
-		clr_title_flag = vassal_of_ostland
-		clr_title_flag = vassal_of_wissenland
-		clr_title_flag = vassal_of_stirland
-		clr_title_flag = vassal_of_solland
-		clr_title_flag = vassal_of_drakwald
-		clr_title_flag = vassal_of_imperial_sylvania
-		clr_title_flag = vassal_of_imperial_mootland
-		clr_title_flag = vassal_of_nuln
 	}
+	primary_title = {
+		clr_imperial_title_flags = yes
+	}
+}
+
+clr_imperial_title_flags = {
+	clr_title_flag = claimant
+	clr_title_flag = claimant_vw
+	clr_title_flag = independent
+	clr_title_flag = vassal_of_sylvania
+	clr_title_flag = vassal_of_reikland
+	clr_title_flag = vassal_of_westerland
+	clr_title_flag = vassal_of_talabecland
+	clr_title_flag = vassal_of_middenland
+	clr_title_flag = vassal_of_ostermark
+	clr_title_flag = vassal_of_nordland
+	clr_title_flag = vassal_of_hochland
+	clr_title_flag = vassal_of_averland
+	clr_title_flag = vassal_of_ostland
+	clr_title_flag = vassal_of_wissenland
+	clr_title_flag = vassal_of_stirland
+	clr_title_flag = vassal_of_solland
+	clr_title_flag = vassal_of_drakwald
+	clr_title_flag = vassal_of_mootland
+	clr_title_flag = vassal_of_imperial_sylvania
+	clr_title_flag = vassal_of_nuln
 }
 
 patron_imperial_pantheon_effect = {
@@ -8896,183 +8904,6 @@ patron_classical_pantheon_effect = {
 			}
 			add_trait = patron_ranald
 		}
-
-	###Minor Gods###
-
-		#Minor Lucian Gods
-		20 = {	#Lucan
-			trigger = {
-				culture = lucian
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			modifier = {
-				factor = 10
-				is_male = yes
-				father = {
-					trait = patron_lucan
-				}
-			}
-			modifier = {
-				factor = 10
-				is_female = yes
-				mother = {
-					trait = patron_lucan
-				}
-			}
-			add_trait = patron_lucan
-		}
-		20 = {	#Luccina
-			trigger = {
-				culture = lucian
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			modifier = {
-				factor = 10
-				is_male = yes
-				father = {
-					trait = patron_luccina
-				}
-			}
-			modifier = {
-				factor = 10
-				is_female = yes
-				mother = {
-					trait = patron_luccina
-				}
-			}
-			add_trait = patron_luccina
-		}
-		#Minor Miraglian Gods
-		20 = {	#Santo Galdin
-			trigger = {
-				culture = miraglian
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			modifier = {
-				factor = 10
-				is_male = yes
-				father = {
-					trait = patron_santo_galdin
-				}
-			}
-			modifier = {
-				factor = 10
-				is_female = yes
-				mother = {
-					trait = patron_santo_galdin
-				}
-			}
-			add_trait = patron_santo_galdin
-		}
-		#Minor Myken Gods
-		20 = {	#Santo Plinio
-			trigger = {
-				culture = myken
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			modifier = {
-				factor = 10
-				is_male = yes
-				father = {
-					trait = patron_santo_plinio
-				}
-			}
-			modifier = {
-				factor = 10
-				is_female = yes
-				mother = {
-					trait = patron_santo_plinio
-				}
-			}
-			add_trait = patron_santo_plinio
-		}
-		#Minor Reman Gods
-		20 = {	#Santo Giacomo
-			trigger = {
-				culture = reman
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			modifier = {
-				factor = 10
-				is_male = yes
-				father = {
-					trait = patron_santo_giacomo
-				}
-			}
-			modifier = {
-				factor = 10
-				is_female = yes
-				mother = {
-					trait = patron_santo_giacomo
-				}
-			}
-			add_trait = patron_santo_giacomo
-		}
-		#Minor Tobaro Gods
-		20 = {	#Santo Tomasso
-			trigger = {
-				culture = tobaran
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			modifier = {
-				factor = 10
-				is_male = yes
-				father = {
-					trait = patron_santo_tomasso
-				}
-			}
-			modifier = {
-				factor = 10
-				is_female = yes
-				mother = {
-					trait = patron_santo_tomasso
-				}
-			}
-			add_trait = patron_santo_tomasso
-		}
-		#Minor Umbrian Gods
-		20 = {	#Santo Slessandro
-			trigger = {
-				culture = umbrian
-			}
-			modifier = {
-				factor = 2
-				is_lowborn = yes
-			}
-			modifier = {
-				factor = 10
-				is_male = yes
-				father = {
-					trait = patron_santo_alessandro
-				}
-			}
-			modifier = {
-				factor = 10
-				is_female = yes
-				mother = {
-					trait = patron_santo_alessandro
-				}
-			}
-			add_trait = patron_santo_alessandro
-		}
 	}
 }
 
@@ -9092,6 +8923,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_drakwald
 		}
+		e_drakwald = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9103,6 +8935,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_solland
 		}
+		e_solland = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9114,6 +8947,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_reikland
 		}
+		e_reikland = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9125,6 +8959,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_averland
 		}
+		e_averland = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9136,6 +8971,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_hochland
 		}
+		e_hochland = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9147,6 +8983,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_middenland
 		}
+		e_middenland = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9158,6 +8995,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_imperial_mootland
 		}
+		e_imperial_mootland = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9169,6 +9007,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_nordland
 		}
+		e_nordland = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9180,6 +9019,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_ostermark
 		}
+		e_ostermark = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9191,6 +9031,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_ostland
 		}
+		e_ostland = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9202,6 +9043,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_stirland
 		}
+		e_stirland = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9213,6 +9055,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_imperial_sylvania
 		}
+		e_imperial_sylvania = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9224,6 +9067,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_talabecland
 		}
+		e_talabecland = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9235,6 +9079,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_westerland
 		}
+		e_westerland = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9246,6 +9091,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_wissenland
 		}
+		e_wissenland = { set_title_flag = claimant }
 	}
 	if = {
 		limit = {
@@ -9257,6 +9103,7 @@ imperial_claimant = {
 		holder_scope = {
 			gain_title = e_nuln
 		}
+		e_nuln = { set_title_flag = claimant }
 	}
 }
 
@@ -9270,7 +9117,6 @@ imperial_vassal = {
 	imperial_vassal_mootland = yes
 	imperial_vassal_nordland = yes
 	imperial_vassal_ostermark = yes
-	imperial_vassal_ostland = yes
 	imperial_vassal_ostland = yes
 	imperial_vassal_stirland = yes
 	imperial_vassal_sylvania = yes
@@ -9405,7 +9251,10 @@ imperial_vassal_sylvania = {
 	if = {
 		limit = {
 			primary_title = {
-				has_title_flag = vassal_of_sylvania
+				OR = {
+					has_title_flag = vassal_of_sylvania
+					has_title_flag = vassal_of_imperial_sylvania
+				}
 			}
 		}
 		set_defacto_liege = e_imperial_sylvania
@@ -9453,6 +9302,80 @@ imperial_vassal_nuln = {
 			}
 		}
 		set_defacto_liege = e_nuln
+	}
+}
+
+vlad_suppress_claimant_title_for_war = {
+	if = {
+		limit = {
+			is_imperial_claimant = yes
+			any_demesne_title = {
+				tier = EMPEROR
+				has_title_flag = claimant
+			}
+		}
+		set_character_flag = vlad_claimant_title_suppressed
+		any_demesne_title = {
+			limit = {
+				has_title_flag = claimant_vw
+			}
+			set_title_flag = vlad_claimant_title_restore
+		}
+		if = {
+			limit = {
+				can_be_imperial_claimant = yes
+			}
+			primary_title = {
+				set_title_flag = claimant_vw
+				set_title_flag = vlad_claimant_title_restore
+			}
+		}
+		any_demesne_title = {
+			limit = {
+				tier = EMPEROR
+				has_title_flag = claimant
+			}
+			destroy_landed_title = THIS
+		}
+	}
+}
+
+vlad_restore_claimant_title_after_war = {
+	if = {
+		limit = {
+			has_character_flag = vlad_claimant_title_suppressed
+			NOT = {
+				any_war = {
+					using_cb = vlad_subjugation
+				}
+			}
+			any_demesne_title = {
+				has_title_flag = vlad_claimant_title_restore
+			}
+		}
+		any_demesne_title = {
+			limit = {
+				has_title_flag = vlad_claimant_title_restore
+			}
+			set_title_flag = claimant_vw
+			make_primary_title = yes
+		}
+		imperial_claimant = yes
+		if = {
+			limit = {
+				has_landed_title = e_imperial_alliance
+			}
+			e_imperial_alliance = {
+				make_primary_title = yes
+			}
+		}
+		any_demesne_title = {
+			limit = {
+				has_title_flag = vlad_claimant_title_restore
+			}
+			clr_title_flag = vlad_claimant_title_restore
+		}
+		clr_character_flag = vlad_claimant_title_suppressed
 	}
 }
 
@@ -9562,7 +9485,7 @@ change_imperial_vassal = {
 	}
 	if = {
 		limit = {
-			vassal_of = e_imperial_mootland
+			vassal_of = e_imperial_sylvania
 		}
 		primary_title = {
 			set_title_flag = vassal_of_sylvania
@@ -9714,7 +9637,7 @@ reform_the_empire_after_civil_war_effect = {
 	e_the_empire = {
 		grant_title = event_target:civil_war_reform_elector
 		add_law = {
-			law = succ_hre_elective
+			law = succ_the_empire_elective
 			cooldown = no
 			opinion_effect = no
 		}
@@ -9769,15 +9692,14 @@ update_the_empire_stability_status_effect = {
 			}
 		}
 		if = {
-			limit = { check_variable = { which = the_empire_stability value >= 300 } }
+			limit = { check_variable = { which = global_the_empire_stability value >= 300 } }
 			offmap_the_empire = { set_status = status_golden_age }
 			if = {
 				limit = { offmap_the_empire = { has_offmap_flag = empire_broken_by_civil_war } }
-				reform_the_empire_after_civil_war_effect = yes
 			}
 		}
 		else_if = {
-			limit = { check_variable = { which = the_empire_stability value >= 200 } }
+			limit = { check_variable = { which = global_the_empire_stability value >= 200 } }
 			offmap_the_empire = { set_status = status_stable }
 			if = {
 				limit = { offmap_the_empire = { has_offmap_flag = empire_broken_by_civil_war } }
@@ -9785,7 +9707,7 @@ update_the_empire_stability_status_effect = {
 			}
 		}
 		else_if = {
-			limit = { check_variable = { which = the_empire_stability value >= 100 } }
+			limit = { check_variable = { which = global_the_empire_stability value >= 100 } }
 			offmap_the_empire = { set_status = status_unrest }
 		}
 		else = {

@@ -7031,10 +7031,10 @@ this_is_diplomatic_culture_trigger = { #Not really about culture - Used in AI vo
 		is_merchant_republic = yes
 	}
 	OR = {
-	NOT = { trait = patron_ulric }
-		religion_group = old_world_group
-		has_religion_feature = religion_cosmopolitan
-	}
+		NOT = { trait = patron_ulric }
+			religion_group = old_world_group
+			has_religion_feature = religion_cosmopolitan
+		}
 }
 this_is_spiritual_culture_trigger = { #Not really about culture - Used in AI voting logic.
 	OR = {
